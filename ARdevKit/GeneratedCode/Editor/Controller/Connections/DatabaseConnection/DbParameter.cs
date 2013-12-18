@@ -11,9 +11,14 @@ namespace Editor.Controller.Connections.DatabaseConnection
 	using System.Linq;
 	using System.Text;
 
-	/// <summary>
-	/// Represents a parameter to a DbCommand and optionally, its mapping to a DataSet column.
-	/// </summary>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>
+    /// Represents a parameter to a DbCommand and optionally, its mapping to a DataSet column.
+    /// </summary>
+    ///
+    /// <remarks>   Geht, 18.12.2013. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	public class DbParameter
 	{
 		public virtual {

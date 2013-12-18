@@ -11,14 +11,30 @@ namespace Editor.Controller.Connections.DatabaseConnection
 	using System.Linq;
 	using System.Text;
 
-	/// <summary>
-	/// Represents a set of methods for creating instances of a provider's implementation of the data source classes.
-	/// </summary>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>
+    /// Represents a set of methods for creating instances of a provider's implementation of the data
+    /// source classes.
+    /// </summary>
+    ///
+    /// <remarks>   Geht, 18.12.2013. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	public class DbProviderFactory
 	{
-		/// <summary>
-		/// Returns a new instance of the provider's class that implements the DbConnection class.
-		/// </summary>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// Returns a new instance of the provider's class that implements the DbConnection class.
+        /// </summary>
+        ///
+        /// <remarks>   Geht, 18.12.2013. </remarks>
+        ///
+        /// <exception cref="NotImplementedException">  Thrown when the requested operation is
+        ///                                             unimplemented. </exception>
+        ///
+        /// <returns>   The new connection. </returns>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 		public virtual ARdevKit_UML::Editor::Controller::Connections::DatabaseConnection::DbConnection CreateConnection()
 		{
 			throw new System.NotImplementedException();

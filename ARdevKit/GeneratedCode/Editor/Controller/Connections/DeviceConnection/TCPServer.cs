@@ -11,22 +11,68 @@ namespace Editor.Controller.Connections.DeviceConnection
 	using System.Linq;
 	using System.Text;
 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   A TCP server. </summary>
+    ///
+    /// <remarks>   Geht, 18.12.2013. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	public class TCPServer
 	{
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Connects the given IP. </summary>
+        ///
+        /// <remarks>   Geht, 18.12.2013. </remarks>
+        ///
+        /// <exception cref="NotImplementedException">  Thrown when the requested operation is
+        ///                                             unimplemented. </exception>
+        ///
+        /// <param name="IP">   The IP to connect. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 		public virtual void connect(IPAddress IP)
 		{
 			throw new System.NotImplementedException();
 		}
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Disconnects this object. </summary>
+        ///
+        /// <remarks>   Geht, 18.12.2013. </remarks>
+        ///
+        /// <exception cref="NotImplementedException">  Thrown when the requested operation is
+        ///                                             unimplemented. </exception>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		public virtual void disconnect()
 		{
 			throw new System.NotImplementedException();
 		}
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Sends the file. </summary>
+        ///
+        /// <remarks>   Geht, 18.12.2013. </remarks>
+        ///
+        /// <exception cref="NotImplementedException">  Thrown when the requested operation is
+        ///                                             unimplemented. </exception>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 		public virtual void sendFile()
 		{
 			throw new System.NotImplementedException();
 		}
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Receive string. </summary>
+        ///
+        /// <remarks>   Geht, 18.12.2013. </remarks>
+        ///
+        /// <exception cref="NotImplementedException">  Thrown when the requested operation is
+        ///                                             unimplemented. </exception>
+        ///
+        /// <returns>   A string. </returns>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		public virtual string receiveString()
 		{

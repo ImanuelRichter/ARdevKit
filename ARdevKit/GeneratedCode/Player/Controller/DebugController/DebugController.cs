@@ -13,18 +13,50 @@ namespace Player.Controller.DebugController
 	using System.Linq;
 	using System.Text;
 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   A controller for handling debugs. </summary>
+    ///
+    /// <remarks>   Geht, 18.12.2013. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	public class DebugController : IObserver
 	{
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the TCP client. </summary>
+        ///
+        /// <value> The TCP client. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 		public virtual TCPClient TCPClient
 		{
 			get;
 			set;
 		}
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Notifies. </summary>
+        ///
+        /// <remarks>   Geht, 18.12.2013. </remarks>
+        ///
+        /// <exception cref="NotImplementedException">  Thrown when the requested operation is
+        ///                                             unimplemented. </exception>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 		public virtual void notify()
 		{
 			throw new System.NotImplementedException();
 		}
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Notifies. </summary>
+        ///
+        /// <remarks>   Geht, 18.12.2013. </remarks>
+        ///
+        /// <exception cref="NotImplementedException">  Thrown when the requested operation is
+        ///                                             unimplemented. </exception>
+        ///
+        /// <param name="msg">  The message. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		public virtual void notify(string msg)
 		{

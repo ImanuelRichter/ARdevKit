@@ -11,9 +11,12 @@ namespace Editor.Controller.Connections.DatabaseConnection
 	using System.Linq;
 	using System.Text;
 
-	/// <summary>
-	/// Represents an in-memory cache of data.
-	/// </summary>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   Represents an in-memory cache of data. </summary>
+    ///
+    /// <remarks>   Geht, 18.12.2013. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	public class DataSet
 	{
 		public virtual {

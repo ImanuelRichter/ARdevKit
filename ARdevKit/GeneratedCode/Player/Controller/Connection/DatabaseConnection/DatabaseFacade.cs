@@ -11,7 +11,15 @@ namespace Player.Controller.Connection.DatabaseConnection
 	using System.Linq;
 	using System.Text;
 
-	/// <remarks>Enthält alle nötigen Methoden, die für den Player gebraucht werden. Falls das unsinnig ist, bitte löschen und korrigieren :)</remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   A database facade. </summary>
+    ///
+    /// <remarks>
+    /// Enthält alle nötigen Methoden, die für den Player gebraucht werden. Falls das unsinnig ist,
+    /// bitte löschen und korrigieren :)
+    /// </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	public class DatabaseFacade
 	{
 	}

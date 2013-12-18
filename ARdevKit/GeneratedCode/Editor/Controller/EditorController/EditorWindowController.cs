@@ -14,23 +14,47 @@ namespace Editor.Controller.EditorController
 	using System.Linq;
 	using System.Text;
 
-	/// <remarks>
-	/// bei Programmstart wird registerElements() aufgerufen.
-	/// In registerElements() stehen alle Elemente die einer Szene hinzugefügt werden können und werden zu kategorien hinzugefügt. die Kategorien werden mit addCategory zum Controller hinzugefügt.
-	/// </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   A controller for handling editor windows. </summary>
+    ///
+    /// <remarks>
+    /// bei Programmstart wird registerElements() aufgerufen. In registerElements() stehen alle
+    /// Elemente die einer Szene hinzugefügt werden können und werden zu kategorien hinzugefügt. die
+    /// Kategorien werden mit addCategory zum Controller hinzugefügt.
+    /// </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	public class EditorWindowController
 	{
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets a value indicating whether the start debug mode local. </summary>
+        ///
+        /// <value> true if start debug mode local, false if not. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 		private boolean startDebugModeLocal
 		{
 			get;
 			set;
 		}
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets a value indicating whether the start debug mode device. </summary>
+        ///
+        /// <value> true if start debug mode device, false if not. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 		private boolean startDebugModeDevice
 		{
 			get;
 			set;
 		}
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the categories the element belongs to. </summary>
+        ///
+        /// <value> The element categories. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		private List<SceneElementCategory> elementCategories
 		{

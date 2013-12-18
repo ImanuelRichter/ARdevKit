@@ -11,23 +11,67 @@ namespace Editor.Controller.EditorController
 	using System.Linq;
 	using System.Text;
 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   A controller for handling previews. </summary>
+    ///
+    /// <remarks>   Geht, 18.12.2013. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	public class PreviewController
 	{
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the current meta category. </summary>
+        ///
+        /// <value> The current meta category. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 		private ARdevKit_UML::Editor::Controller::EditorController::MetaCategory currentMetaCategory
 		{
 			get;
 			set;
 		}
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Updates the preview panel. </summary>
+        ///
+        /// <remarks>   Geht, 18.12.2013. </remarks>
+        ///
+        /// <exception cref="NotImplementedException">  Thrown when the requested operation is
+        ///                                             unimplemented. </exception>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 		public virtual void updatePreviewPanel()
 		{
 			throw new System.NotImplementedException();
 		}
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Move i previewable. </summary>
+        ///
+        /// <remarks>   Geht, 18.12.2013. </remarks>
+        ///
+        /// <exception cref="NotImplementedException">  Thrown when the requested operation is
+        ///                                             unimplemented. </exception>
+        ///
+        /// <param name="p">    The IPreviewable to process. </param>
+        /// <param name="v">    The Vector3D to process. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 		public virtual void moveIPreviewable(IPreviewable p, Vector3D v)
 		{
 			throw new System.NotImplementedException();
 		}
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Adds a previewable. </summary>
+        ///
+        /// <remarks>   Geht, 18.12.2013. </remarks>
+        ///
+        /// <exception cref="NotImplementedException">  Thrown when the requested operation is
+        ///                                             unimplemented. </exception>
+        ///
+        /// <param name="p">    The IPreviewable to process. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		public virtual void addPreviewable(IPreviewable p)
 		{

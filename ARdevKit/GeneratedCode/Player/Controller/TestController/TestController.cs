@@ -12,18 +12,54 @@ namespace Player.Controller.TestController
 	using System.Linq;
 	using System.Text;
 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   A controller for handling tests. </summary>
+    ///
+    /// <remarks>   Geht, 18.12.2013. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	public abstract class TestController
 	{
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the debug controller. </summary>
+        ///
+        /// <value> The debug controller. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 		public virtual DebugController DebugController
 		{
 			get;
 			set;
 		}
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Updates this object. </summary>
+        ///
+        /// <remarks>   Geht, 18.12.2013. </remarks>
+        ///
+        /// <exception cref="NotImplementedException">  Thrown when the requested operation is
+        ///                                             unimplemented. </exception>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 		public virtual void update()
 		{
 			throw new System.NotImplementedException();
 		}
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Initializes the renderer. </summary>
+        ///
+        /// <remarks>   Geht, 18.12.2013. </remarks>
+        ///
+        /// <exception cref="NotImplementedException">  Thrown when the requested operation is
+        ///                                             unimplemented. </exception>
+        ///
+        /// <param name="width">                                The width. </param>
+        /// <param name="height">                               The height. </param>
+        /// <param name="metaio::ESCREEN_ROTATION_0">           The metaio escreen rotation 0. </param>
+        /// <param name="metaio::ERENDER_SYSTEM_OPENGL_ES_2_0"> The metaio erender system opengl es 2 0. </param>
+        /// <param name="this->m_hWnd">                         this >m h window. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		public virtual void initializeRenderer(object int width, object int height, object metaio::ESCREEN_ROTATION_0, object metaio::ERENDER_SYSTEM_OPENGL_ES_2_0, object this->m_hWnd)
 		{

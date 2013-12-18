@@ -12,23 +12,62 @@ namespace Player.Controller.PlayerController
 	using System.Linq;
 	using System.Text;
 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   A controller for handling players. </summary>
+    ///
+    /// <remarks>   Geht, 18.12.2013. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	public class PlayerController
 	{
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the arel file. </summary>
+        ///
+        /// <value> The arel file. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 		public virtual ArelFile ArelFile
 		{
 			get;
 			set;
 		}
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Loads the project. </summary>
+        ///
+        /// <remarks>   Geht, 18.12.2013. </remarks>
+        ///
+        /// <exception cref="NotImplementedException">  Thrown when the requested operation is
+        ///                                             unimplemented. </exception>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 		public virtual void loadProject()
 		{
 			throw new System.NotImplementedException();
 		}
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Closes the project. </summary>
+        ///
+        /// <remarks>   Geht, 18.12.2013. </remarks>
+        ///
+        /// <exception cref="NotImplementedException">  Thrown when the requested operation is
+        ///                                             unimplemented. </exception>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 		public virtual void closeProject()
 		{
 			throw new System.NotImplementedException();
 		}
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Enables the debug mode. </summary>
+        ///
+        /// <remarks>   Geht, 18.12.2013. </remarks>
+        ///
+        /// <exception cref="NotImplementedException">  Thrown when the requested operation is
+        ///                                             unimplemented. </exception>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		public virtual void enableDebugMode()
 		{

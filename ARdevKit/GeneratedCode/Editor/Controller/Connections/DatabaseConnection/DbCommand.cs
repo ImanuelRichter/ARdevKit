@@ -11,9 +11,14 @@ namespace Editor.Controller.Connections.DatabaseConnection
 	using System.Linq;
 	using System.Text;
 
-	/// <summary>
-	/// Represents an DB statement or stored procedure to execute against a data source.
-	/// </summary>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>
+    /// Represents an DB statement or stored procedure to execute against a data source.
+    /// </summary>
+    ///
+    /// <remarks>   Geht, 18.12.2013. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	public class DbCommand
 	{
 		public virtual {

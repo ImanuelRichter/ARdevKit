@@ -11,8 +11,15 @@ namespace Player.Controller
 	using System.Linq;
 	using System.Text;
 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   Interface for observer 2. </summary>
+    ///
+    /// <remarks>   Geht, 18.12.2013. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	public interface IObserver2 
 	{
+        /// <summary>   Notifies this object. </summary>
 		void notify();
 
 	}

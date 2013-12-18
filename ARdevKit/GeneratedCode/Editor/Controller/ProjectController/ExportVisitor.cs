@@ -11,28 +11,84 @@ namespace Editor.Controller.ProjectController
 	using System.Linq;
 	using System.Text;
 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   An export visitor. </summary>
+    ///
+    /// <remarks>   Geht, 18.12.2013. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	public class ExportVisitor : AbstractProjectVisitor
 	{
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the stream. </summary>
+        ///
+        /// <value> The stream. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 		private Stream stream
 		{
 			get;
 			set;
 		}
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Visits the given identifier marker. </summary>
+        ///
+        /// <remarks>   Geht, 18.12.2013. </remarks>
+        ///
+        /// <exception cref="NotImplementedException">  Thrown when the requested operation is
+        ///                                             unimplemented. </exception>
+        ///
+        /// <param name="barGraph"> The bar graph. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 		public override void visit(BarGraph barGraph)
 		{
 			throw new System.NotImplementedException();
 		}
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Visits the given identifier marker. </summary>
+        ///
+        /// <remarks>   Geht, 18.12.2013. </remarks>
+        ///
+        /// <exception cref="NotImplementedException">  Thrown when the requested operation is
+        ///                                             unimplemented. </exception>
+        ///
+        /// <param name="dbSource"> The database source. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		public override void visit(DbSource dbSource)
 		{
 			throw new System.NotImplementedException();
 		}
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Visits the given identifier marker. </summary>
+        ///
+        /// <remarks>   Geht, 18.12.2013. </remarks>
+        ///
+        /// <exception cref="NotImplementedException">  Thrown when the requested operation is
+        ///                                             unimplemented. </exception>
+        ///
+        /// <param name="pictureMarker">    The picture marker. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 		public override void visit(PictureMarker pictureMarker)
 		{
 			throw new System.NotImplementedException();
 		}
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Visits the given identifier marker. </summary>
+        ///
+        /// <remarks>   Geht, 18.12.2013. </remarks>
+        ///
+        /// <exception cref="NotImplementedException">  Thrown when the requested operation is
+        ///                                             unimplemented. </exception>
+        ///
+        /// <param name="idMarker"> The identifier marker. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		public override void visit(IDMarker idMarker)
 		{

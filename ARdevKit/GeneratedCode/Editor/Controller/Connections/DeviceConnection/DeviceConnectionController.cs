@@ -11,13 +11,31 @@ namespace Editor.Controller.Connections.DeviceConnection
 	using System.Linq;
 	using System.Text;
 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   A controller for handling device connections. </summary>
+    ///
+    /// <remarks>   Geht, 18.12.2013. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	public class DeviceConnectionController
 	{
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the UDP server. </summary>
+        ///
+        /// <value> The UDP server. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 		public virtual UDPServer UDPServer
 		{
 			get;
 			set;
 		}
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the TCP server. </summary>
+        ///
+        /// <value> The TCP server. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		public virtual TCPServer TCPServer
 		{
@@ -25,20 +43,60 @@ namespace Editor.Controller.Connections.DeviceConnection
 			set;
 		}
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets possible clients. </summary>
+        ///
+        /// <remarks>   Geht, 18.12.2013. </remarks>
+        ///
+        /// <exception cref="NotImplementedException">  Thrown when the requested operation is
+        ///                                             unimplemented. </exception>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 		public virtual void getPossibleClients()
 		{
 			throw new System.NotImplementedException();
 		}
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Connects to device. </summary>
+        ///
+        /// <remarks>   Geht, 18.12.2013. </remarks>
+        ///
+        /// <exception cref="NotImplementedException">  Thrown when the requested operation is
+        ///                                             unimplemented. </exception>
+        ///
+        /// <param name="index">    Zero-based index of the. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		public virtual void connectToDevice(int index)
 		{
 			throw new System.NotImplementedException();
 		}
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Sends the project. </summary>
+        ///
+        /// <remarks>   Geht, 18.12.2013. </remarks>
+        ///
+        /// <exception cref="NotImplementedException">  Thrown when the requested operation is
+        ///                                             unimplemented. </exception>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 		public virtual void sendProject()
 		{
 			throw new System.NotImplementedException();
 		}
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets debug message. </summary>
+        ///
+        /// <remarks>   Geht, 18.12.2013. </remarks>
+        ///
+        /// <exception cref="NotImplementedException">  Thrown when the requested operation is
+        ///                                             unimplemented. </exception>
+        ///
+        /// <returns>   The debug message. </returns>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		public virtual string getDebugMessage()
 		{

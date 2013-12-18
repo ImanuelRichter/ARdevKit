@@ -11,13 +11,31 @@ namespace Editor.Model.Project
 	using System.Linq;
 	using System.Text;
 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   An abstract source. </summary>
+    ///
+    /// <remarks>   Geht, 18.12.2013. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	public abstract class AbstractSource : Serializable, IPreviewable
 	{
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the icon. </summary>
+        ///
+        /// <value> The icon. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 		private Bitmap icon
 		{
 			get;
 			set;
 		}
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the identifier of the source. </summary>
+        ///
+        /// <value> The identifier of the source. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		private string sourceID
 		{
@@ -25,15 +43,45 @@ namespace Editor.Model.Project
 			set;
 		}
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Accepts the given visitor. </summary>
+        ///
+        /// <remarks>   Geht, 18.12.2013. </remarks>
+        ///
+        /// <exception cref="NotImplementedException">  Thrown when the requested operation is
+        ///                                             unimplemented. </exception>
+        ///
+        /// <param name="visitor">  The visitor. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 		public virtual void accept(ProjectVisitor visitor)
 		{
 			throw new System.NotImplementedException();
 		}
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets the preview. </summary>
+        ///
+        /// <remarks>   Geht, 18.12.2013. </remarks>
+        ///
+        /// <exception cref="NotImplementedException">  Thrown when the requested operation is
+        ///                                             unimplemented. </exception>
+        ///
+        /// <returns>   The preview. </returns>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 		public virtual Bitmap getPreview()
 		{
 			throw new System.NotImplementedException();
 		}
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets property list. </summary>
+        ///
+        /// <remarks>   Geht, 18.12.2013. </remarks>
+        ///
+        /// <returns>   The property list. </returns>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		public abstract List<AbstractProperty> getPropertyList();
 

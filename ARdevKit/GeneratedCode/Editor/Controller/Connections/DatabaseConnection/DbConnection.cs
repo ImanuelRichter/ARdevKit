@@ -11,14 +11,20 @@ namespace Editor.Controller.Connections.DatabaseConnection
 	using System.Linq;
 	using System.Text;
 
-	/// <summary>
-	/// Represents a connection to a database.
-	/// </summary>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   Represents a connection to a database. </summary>
+    ///
+    /// <remarks>   Geht, 18.12.2013. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	public class DbConnection
 	{
-		/// <summary>
-		/// Gets or sets the string used to open a database.
-		/// </summary>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the string used to open a database. </summary>
+        ///
+        /// <value> The connection string. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 		private object ConnectionString
 		{
 			get;
