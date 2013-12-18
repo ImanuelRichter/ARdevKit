@@ -63,6 +63,7 @@
             this.pnl_editor_szenes = new System.Windows.Forms.Panel();
             this.btn_editor_scene_new = new System.Windows.Forms.Button();
             this.pnl_editor_status = new System.Windows.Forms.Panel();
+            this.ofd_LoadFile = new System.Windows.Forms.OpenFileDialog();
             this.mst_editor_menu.SuspendLayout();
             this.pnl_editor_selection.SuspendLayout();
             this.pnl_editor_properties.SuspendLayout();
@@ -243,6 +244,7 @@
             this.tsm_editor_menu_test_loadVideo.Name = "tsm_editor_menu_test_loadVideo";
             this.tsm_editor_menu_test_loadVideo.Size = new System.Drawing.Size(152, 22);
             this.tsm_editor_menu_test_loadVideo.Text = "Video laden";
+            this.tsm_editor_menu_test_loadVideo.Click += new System.EventHandler(this.tsm_editor_menu_test_loadVideo_Click);
             // 
             // tss_editor_meu_test_loadVideo_togleDebug
             // 
@@ -357,6 +359,10 @@
             this.pnl_editor_status.Size = new System.Drawing.Size(1008, 23);
             this.pnl_editor_status.TabIndex = 3;
             // 
+            // ofd_LoadFile
+            // 
+            this.ofd_LoadFile.FileName = "testImage";
+            // 
             // EditorWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -418,6 +424,7 @@
         private System.Windows.Forms.ComboBox cmb_editor_selection_toolSelection;
         private System.Windows.Forms.ComboBox cmb_editor_properties_objectSelection;
         private System.Windows.Forms.Button btn_editor_scene_new;
+        private System.Windows.Forms.OpenFileDialog ofd_LoadFile;
     }
 }
 
