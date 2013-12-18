@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_editor_1_1_view_1_1_editor_window_1_1_color_property" kind="class" prot="public">
+    <compoundname>Editor::View::EditorWindow::ColorProperty</compoundname>
+    <basecompoundref refid="class_editor_1_1_view_1_1_editor_window_1_1_abstract_property" prot="public" virt="non-virtual">Editor.View.EditorWindow.AbstractProperty</basecompoundref>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_editor_1_1_view_1_1_editor_window_1_1_color_property_1ad1cd0e9dcd3654fb7e9e7688f4e3f9f6" prot="private" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>Color</type>
+        <definition>Color Editor.View.EditorWindow.ColorProperty.value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <briefdescription>
+<para>Gets or sets the value. </para>        </briefdescription>
+        <detaileddescription>
+<para>The value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/View/EditorWindow/ColorProperty.cs" line="28" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/View/EditorWindow/ColorProperty.cs" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A color property. </para>    </briefdescription>
+    <detaileddescription>
+<para>Geht, 18.12.2013. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="438">
+        <label>AbstractProperty</label>
+        <link refid="class_editor_1_1_view_1_1_editor_window_1_1_abstract_property"/>
+      </node>
+      <node id="437">
+        <label>Editor.View.EditorWindow.ColorProperty</label>
+        <link refid="class_editor_1_1_view_1_1_editor_window_1_1_color_property"/>
+        <childnode refid="438" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="440">
+        <label>AbstractProperty</label>
+        <link refid="class_editor_1_1_view_1_1_editor_window_1_1_abstract_property"/>
+      </node>
+      <node id="439">
+        <label>Editor.View.EditorWindow.ColorProperty</label>
+        <link refid="class_editor_1_1_view_1_1_editor_window_1_1_color_property"/>
+        <childnode refid="440" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/View/EditorWindow/ColorProperty.cs" line="21" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/View/EditorWindow/ColorProperty.cs" bodystart="20" bodyend="34"/>
+    <listofallmembers>
+      <member refid="class_editor_1_1_view_1_1_editor_window_1_1_abstract_property_1a0b12f79ee5b1fb7d34454a7788dce90f" prot="public" virt="virtual"><scope>Editor::View::EditorWindow::ColorProperty</scope><name>[instance initializer]</name></member>
+      <member refid="class_editor_1_1_view_1_1_editor_window_1_1_abstract_property_1a9c5fd1dffa544ba83c6b194a6bd2aedd" prot="public" virt="pure-virtual"><scope>Editor::View::EditorWindow::ColorProperty</scope><name>getVisualRepresentation</name></member>
+      <member refid="class_editor_1_1_view_1_1_editor_window_1_1_color_property_1ad1cd0e9dcd3654fb7e9e7688f4e3f9f6" prot="private" virt="non-virtual"><scope>Editor::View::EditorWindow::ColorProperty</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

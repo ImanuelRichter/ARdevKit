@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="dir_e9c6ce3d75d5f98d92bf11344e0f0e0d" kind="dir">
+    <compoundname>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player</compoundname>
+    <innerdir refid="dir_fa5375c86574866ac7e5551105b9b406">C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller</innerdir>
+    <innerdir refid="dir_071d023afdc7745c0ebbb6cd2dc6faa1">C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Model</innerdir>
+    <innerdir refid="dir_92042a10848ad8cb4c5efc0e43e0c5c7">C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/View</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/"/>
+  </compounddef>
+</doxygen>

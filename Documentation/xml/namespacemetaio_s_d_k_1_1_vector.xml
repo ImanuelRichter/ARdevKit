@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="namespacemetaio_s_d_k_1_1_vector" kind="namespace">
+    <compoundname>metaioSDK::Vector</compoundname>
+    <innerclass refid="classmetaio_s_d_k_1_1_vector_1_1_vector2d" prot="public">metaioSDK::Vector::Vector2d</innerclass>
+    <innerclass refid="classmetaio_s_d_k_1_1_vector_1_1_vector2di" prot="public">metaioSDK::Vector::Vector2di</innerclass>
+    <innerclass refid="classmetaio_s_d_k_1_1_vector_1_1_vector3d" prot="public">metaioSDK::Vector::Vector3d</innerclass>
+    <innerclass refid="classmetaio_s_d_k_1_1_vector_1_1_vector4d" prot="public">metaioSDK::Vector::Vector4d</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/metaioSDK/Vector/Vector2d.cs" line="8" column="1"/>
+  </compounddef>
+</doxygen>

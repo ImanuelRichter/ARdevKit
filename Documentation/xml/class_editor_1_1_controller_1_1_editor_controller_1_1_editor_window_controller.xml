@@ -1,0 +1,367 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller" kind="class" prot="public">
+    <compoundname>Editor::Controller::EditorController::EditorWindowController</compoundname>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1ae3c2086d9f30c400a233a2cc4f040228" prot="private" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>boolean</type>
+        <definition>boolean Editor.Controller.EditorController.EditorWindowController.startDebugModeLocal</definition>
+        <argsstring></argsstring>
+        <name>startDebugModeLocal</name>
+        <briefdescription>
+<para>Gets or sets a value indicating whether the start debug mode local. </para>        </briefdescription>
+        <detaileddescription>
+<para>true if start debug mode local, false if not. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" line="35" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1af130a17e0148f5db82e1908077289069" prot="private" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>boolean</type>
+        <definition>boolean Editor.Controller.EditorController.EditorWindowController.startDebugModeDevice</definition>
+        <argsstring></argsstring>
+        <name>startDebugModeDevice</name>
+        <briefdescription>
+<para>Gets or sets a value indicating whether the start debug mode device. </para>        </briefdescription>
+        <detaileddescription>
+<para>true if start debug mode device, false if not. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" line="47" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1a9a2c1eadb050f3f8dea5bcd435f8cf95" prot="private" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>List&lt; <ref refid="class_editor_1_1_controller_1_1_editor_controller_1_1_scene_element_category" kindref="compound">SceneElementCategory</ref> &gt;</type>
+        <definition>List&lt;SceneElementCategory&gt; Editor.Controller.EditorController.EditorWindowController.elementCategories</definition>
+        <argsstring></argsstring>
+        <name>elementCategories</name>
+        <briefdescription>
+<para>Gets or sets the categories the element belongs to. </para>        </briefdescription>
+        <detaileddescription>
+<para>The element categories. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" line="59" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1abb81fa4b5a66d7f1daa3d8e2696c01ab" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual Editor.Controller.EditorController.EditorWindowController.[instance initializer]</definition>
+        <argsstring></argsstring>
+        <name>[instance initializer]</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" line="65" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1abb81fa4b5a66d7f1daa3d8e2696c01ab" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual Editor.Controller.EditorController.EditorWindowController.[instance initializer]</definition>
+        <argsstring></argsstring>
+        <name>[instance initializer]</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" line="70" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1abb81fa4b5a66d7f1daa3d8e2696c01ab" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual Editor.Controller.EditorController.EditorWindowController.[instance initializer]</definition>
+        <argsstring></argsstring>
+        <name>[instance initializer]</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" line="75" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1abb81fa4b5a66d7f1daa3d8e2696c01ab" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual Editor.Controller.EditorController.EditorWindowController.[instance initializer]</definition>
+        <argsstring></argsstring>
+        <name>[instance initializer]</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" line="80" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1abb81fa4b5a66d7f1daa3d8e2696c01ab" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual Editor.Controller.EditorController.EditorWindowController.[instance initializer]</definition>
+        <argsstring></argsstring>
+        <name>[instance initializer]</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" line="85" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1abb81fa4b5a66d7f1daa3d8e2696c01ab" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual Editor.Controller.EditorController.EditorWindowController.[instance initializer]</definition>
+        <argsstring></argsstring>
+        <name>[instance initializer]</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" line="90" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1a611cfa811b027a0fd7d39abd97aef4d0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Editor.Controller.EditorController.EditorWindowController.loadProject</definition>
+        <argsstring>()</argsstring>
+        <name>loadProject</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" line="95" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" bodystart="95" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1a91f657d45f317c81096baaa366fc2889" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Editor.Controller.EditorController.EditorWindowController.saveProject</definition>
+        <argsstring>()</argsstring>
+        <name>saveProject</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" line="100" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" bodystart="100" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1a9c1fb471800c8ec1912edb1957a09416" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Editor.Controller.EditorController.EditorWindowController.exportProject</definition>
+        <argsstring>()</argsstring>
+        <name>exportProject</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" line="105" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" bodystart="105" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1ac771305e6947674e61611122ed7662b8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Editor.Controller.EditorController.EditorWindowController.createNewProject</definition>
+        <argsstring>(string name)</argsstring>
+        <name>createNewProject</name>
+        <param>
+          <type>string</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" line="110" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" bodystart="110" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1af7635018e28adce77b1bfd3913fa7036" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Editor.Controller.EditorController.EditorWindowController.sendToDevice</definition>
+        <argsstring>()</argsstring>
+        <name>sendToDevice</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" line="120" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" bodystart="120" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1ae77dd0da0661aed2fb0b5a2ae0d81b12" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Editor.Controller.EditorController.EditorWindowController.updatePreviewPanel</definition>
+        <argsstring>()</argsstring>
+        <name>updatePreviewPanel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" line="125" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" bodystart="125" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1abf5eb61f078be7dc2b5c872f20afdb27" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Editor.Controller.EditorController.EditorWindowController.updateSceneSelectionPanel</definition>
+        <argsstring>()</argsstring>
+        <name>updateSceneSelectionPanel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" line="130" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" bodystart="130" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1ae7f0417a4afb207e2550c4cea698e15c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Editor.Controller.EditorController.EditorWindowController.updateStatusBar</definition>
+        <argsstring>()</argsstring>
+        <name>updateStatusBar</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" line="135" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" bodystart="135" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1ab729495754c06bd5bd12b11a4f5207d9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Editor.Controller.EditorController.EditorWindowController.openTestWindow</definition>
+        <argsstring>()</argsstring>
+        <name>openTestWindow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" line="140" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" bodystart="140" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1a5ce04245191c66bf1c3611a39bd2cfcf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Editor.Controller.EditorController.EditorWindowController.openDebugWindow</definition>
+        <argsstring>()</argsstring>
+        <name>openDebugWindow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" line="145" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" bodystart="145" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1a545bc513d44f64b9f045d23e05b9b215" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Editor.Controller.EditorController.EditorWindowController.addDevice</definition>
+        <argsstring>()</argsstring>
+        <name>addDevice</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" line="150" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" bodystart="150" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1af1253e9444dacb7c2782c0867b734595" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Editor.Controller.EditorController.EditorWindowController.updatePropertyPanel</definition>
+        <argsstring>(IPreviewable selectedElement)</argsstring>
+        <name>updatePropertyPanel</name>
+        <param>
+          <type><ref refid="interface_editor_1_1_model_1_1_project_1_1_i_previewable" kindref="compound">IPreviewable</ref></type>
+          <declname>selectedElement</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" line="155" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" bodystart="155" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1a4ec2b3ab63afede2be27dec349b050d2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Editor.Controller.EditorController.EditorWindowController.updateElementSelectionPanel</definition>
+        <argsstring>()</argsstring>
+        <name>updateElementSelectionPanel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" line="160" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" bodystart="160" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="function" id="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1af1ce6a7e64eb24cb3b897f3c0451dc4a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Editor.Controller.EditorController.EditorWindowController.registerElements</definition>
+        <argsstring>()</argsstring>
+        <name>registerElements</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" line="165" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" bodystart="165" bodyend="168"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1ada353b4497a1194be35f7b81972f5d50" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Editor.Controller.EditorController.EditorWindowController.addCategory</definition>
+        <argsstring>(ARdevKit_UML::Editor::Controller::EditorController::SceneElementCategory category)</argsstring>
+        <name>addCategory</name>
+        <param>
+          <type>ARdevKit_UML::Editor::Controller::EditorController::SceneElementCategory</type>
+          <declname>category</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" line="115" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" bodystart="115" bodyend="118"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A controller for handling editor windows. </para>    </briefdescription>
+    <detaileddescription>
+<para>bei Programmstart wird registerElements() aufgerufen. In registerElements() stehen alle Elemente die einer Szene hinzugefügt werden können und werden zu kategorien hinzugefügt. die Kategorien werden mit addCategory zum <ref refid="namespace_editor_1_1_controller" kindref="compound">Controller</ref> hinzugefügt. </para>    </detaileddescription>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" line="28" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/EditorWindowController.cs" bodystart="27" bodyend="170"/>
+    <listofallmembers>
+      <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1abb81fa4b5a66d7f1daa3d8e2696c01ab" prot="public" virt="virtual"><scope>Editor::Controller::EditorController::EditorWindowController</scope><name>[instance initializer]</name></member>
+      <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1abb81fa4b5a66d7f1daa3d8e2696c01ab" prot="public" virt="virtual"><scope>Editor::Controller::EditorController::EditorWindowController</scope><name>[instance initializer]</name></member>
+      <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1abb81fa4b5a66d7f1daa3d8e2696c01ab" prot="public" virt="virtual"><scope>Editor::Controller::EditorController::EditorWindowController</scope><name>[instance initializer]</name></member>
+      <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1abb81fa4b5a66d7f1daa3d8e2696c01ab" prot="public" virt="virtual"><scope>Editor::Controller::EditorController::EditorWindowController</scope><name>[instance initializer]</name></member>
+      <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1abb81fa4b5a66d7f1daa3d8e2696c01ab" prot="public" virt="virtual"><scope>Editor::Controller::EditorController::EditorWindowController</scope><name>[instance initializer]</name></member>
+      <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1abb81fa4b5a66d7f1daa3d8e2696c01ab" prot="public" virt="virtual"><scope>Editor::Controller::EditorController::EditorWindowController</scope><name>[instance initializer]</name></member>
+      <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1ada353b4497a1194be35f7b81972f5d50" prot="private" virt="non-virtual"><scope>Editor::Controller::EditorController::EditorWindowController</scope><name>addCategory</name></member>
+      <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1a545bc513d44f64b9f045d23e05b9b215" prot="public" virt="virtual"><scope>Editor::Controller::EditorController::EditorWindowController</scope><name>addDevice</name></member>
+      <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1ac771305e6947674e61611122ed7662b8" prot="public" virt="virtual"><scope>Editor::Controller::EditorController::EditorWindowController</scope><name>createNewProject</name></member>
+      <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1a9a2c1eadb050f3f8dea5bcd435f8cf95" prot="private" virt="non-virtual"><scope>Editor::Controller::EditorController::EditorWindowController</scope><name>elementCategories</name></member>
+      <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1a9c1fb471800c8ec1912edb1957a09416" prot="public" virt="virtual"><scope>Editor::Controller::EditorController::EditorWindowController</scope><name>exportProject</name></member>
+      <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1a611cfa811b027a0fd7d39abd97aef4d0" prot="public" virt="virtual"><scope>Editor::Controller::EditorController::EditorWindowController</scope><name>loadProject</name></member>
+      <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1a5ce04245191c66bf1c3611a39bd2cfcf" prot="public" virt="virtual"><scope>Editor::Controller::EditorController::EditorWindowController</scope><name>openDebugWindow</name></member>
+      <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1ab729495754c06bd5bd12b11a4f5207d9" prot="public" virt="virtual"><scope>Editor::Controller::EditorController::EditorWindowController</scope><name>openTestWindow</name></member>
+      <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1af1ce6a7e64eb24cb3b897f3c0451dc4a" prot="public" virt="virtual"><scope>Editor::Controller::EditorController::EditorWindowController</scope><name>registerElements</name></member>
+      <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1a91f657d45f317c81096baaa366fc2889" prot="public" virt="virtual"><scope>Editor::Controller::EditorController::EditorWindowController</scope><name>saveProject</name></member>
+      <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1af7635018e28adce77b1bfd3913fa7036" prot="public" virt="virtual"><scope>Editor::Controller::EditorController::EditorWindowController</scope><name>sendToDevice</name></member>
+      <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1af130a17e0148f5db82e1908077289069" prot="private" virt="non-virtual"><scope>Editor::Controller::EditorController::EditorWindowController</scope><name>startDebugModeDevice</name></member>
+      <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1ae3c2086d9f30c400a233a2cc4f040228" prot="private" virt="non-virtual"><scope>Editor::Controller::EditorController::EditorWindowController</scope><name>startDebugModeLocal</name></member>
+      <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1a4ec2b3ab63afede2be27dec349b050d2" prot="public" virt="virtual"><scope>Editor::Controller::EditorController::EditorWindowController</scope><name>updateElementSelectionPanel</name></member>
+      <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1ae77dd0da0661aed2fb0b5a2ae0d81b12" prot="public" virt="virtual"><scope>Editor::Controller::EditorController::EditorWindowController</scope><name>updatePreviewPanel</name></member>
+      <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1af1253e9444dacb7c2782c0867b734595" prot="public" virt="virtual"><scope>Editor::Controller::EditorController::EditorWindowController</scope><name>updatePropertyPanel</name></member>
+      <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1abf5eb61f078be7dc2b5c872f20afdb27" prot="public" virt="virtual"><scope>Editor::Controller::EditorController::EditorWindowController</scope><name>updateSceneSelectionPanel</name></member>
+      <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1ae7f0417a4afb207e2550c4cea698e15c" prot="public" virt="virtual"><scope>Editor::Controller::EditorController::EditorWindowController</scope><name>updateStatusBar</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

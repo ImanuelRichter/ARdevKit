@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="namespace_editor_1_1_view_1_1_editor_window" kind="namespace">
+    <compoundname>Editor::View::EditorWindow</compoundname>
+    <innerclass refid="class_editor_1_1_view_1_1_editor_window_1_1_abstract_property" prot="public">Editor::View::EditorWindow::AbstractProperty</innerclass>
+    <innerclass refid="class_editor_1_1_view_1_1_editor_window_1_1_add_scene_button" prot="public">Editor::View::EditorWindow::AddSceneButton</innerclass>
+    <innerclass refid="class_editor_1_1_view_1_1_editor_window_1_1_category_combo_box" prot="public">Editor::View::EditorWindow::CategoryComboBox</innerclass>
+    <innerclass refid="class_editor_1_1_view_1_1_editor_window_1_1_color_property" prot="public">Editor::View::EditorWindow::ColorProperty</innerclass>
+    <innerclass refid="class_editor_1_1_view_1_1_editor_window_1_1_editor_window" prot="public">Editor::View::EditorWindow::EditorWindow</innerclass>
+    <innerclass refid="class_editor_1_1_view_1_1_editor_window_1_1_element_combo_box" prot="public">Editor::View::EditorWindow::ElementComboBox</innerclass>
+    <innerclass refid="class_editor_1_1_view_1_1_editor_window_1_1_element_icon" prot="public">Editor::View::EditorWindow::ElementIcon</innerclass>
+    <innerclass refid="class_editor_1_1_view_1_1_editor_window_1_1_element_selection_panel" prot="public">Editor::View::EditorWindow::ElementSelectionPanel</innerclass>
+    <innerclass refid="interface_editor_1_1_view_1_1_editor_window_1_1_i_property_list_panel" prot="public">Editor::View::EditorWindow::IPropertyListPanel</innerclass>
+    <innerclass refid="class_editor_1_1_view_1_1_editor_window_1_1_menu_bar" prot="public">Editor::View::EditorWindow::MenuBar</innerclass>
+    <innerclass refid="class_editor_1_1_view_1_1_editor_window_1_1_menu_element" prot="public">Editor::View::EditorWindow::MenuElement</innerclass>
+    <innerclass refid="class_editor_1_1_view_1_1_editor_window_1_1_name_text_field" prot="public">Editor::View::EditorWindow::NameTextField</innerclass>
+    <innerclass refid="class_editor_1_1_view_1_1_editor_window_1_1_picture_box" prot="public">Editor::View::EditorWindow::PictureBox</innerclass>
+    <innerclass refid="class_editor_1_1_view_1_1_editor_window_1_1_preview_panel" prot="public">Editor::View::EditorWindow::PreviewPanel</innerclass>
+    <innerclass refid="class_editor_1_1_view_1_1_editor_window_1_1_property_list_panel" prot="public">Editor::View::EditorWindow::PropertyListPanel</innerclass>
+    <innerclass refid="class_editor_1_1_view_1_1_editor_window_1_1_property_panel" prot="public">Editor::View::EditorWindow::PropertyPanel</innerclass>
+    <innerclass refid="class_editor_1_1_view_1_1_editor_window_1_1_reference_property" prot="public">Editor::View::EditorWindow::ReferenceProperty</innerclass>
+    <innerclass refid="class_editor_1_1_view_1_1_editor_window_1_1_scene_element" prot="public">Editor::View::EditorWindow::SceneElement</innerclass>
+    <innerclass refid="class_editor_1_1_view_1_1_editor_window_1_1_scene_element_category_panel" prot="public">Editor::View::EditorWindow::SceneElementCategoryPanel</innerclass>
+    <innerclass refid="class_editor_1_1_view_1_1_editor_window_1_1_scene_icon" prot="public">Editor::View::EditorWindow::SceneIcon</innerclass>
+    <innerclass refid="class_editor_1_1_view_1_1_editor_window_1_1_scene_list_panel" prot="public">Editor::View::EditorWindow::SceneListPanel</innerclass>
+    <innerclass refid="class_editor_1_1_view_1_1_editor_window_1_1_scene_name_text_field" prot="public">Editor::View::EditorWindow::SceneNameTextField</innerclass>
+    <innerclass refid="class_editor_1_1_view_1_1_editor_window_1_1_scene_selection_panel" prot="public">Editor::View::EditorWindow::SceneSelectionPanel</innerclass>
+    <innerclass refid="class_editor_1_1_view_1_1_editor_window_1_1_status_bar" prot="public">Editor::View::EditorWindow::StatusBar</innerclass>
+    <innerclass refid="class_editor_1_1_view_1_1_editor_window_1_1_text_property" prot="public">Editor::View::EditorWindow::TextProperty</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/View/EditorWindow/AbstractProperty.cs" line="8" column="1"/>
+  </compounddef>
+</doxygen>

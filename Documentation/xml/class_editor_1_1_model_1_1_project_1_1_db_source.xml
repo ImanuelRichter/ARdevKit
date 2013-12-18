@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_editor_1_1_model_1_1_project_1_1_db_source" kind="class" prot="public">
+    <compoundname>Editor::Model::Project::DbSource</compoundname>
+    <basecompoundref refid="class_editor_1_1_model_1_1_project_1_1_abstract_source" prot="public" virt="non-virtual">Editor.Model.Project.AbstractSource</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_editor_1_1_model_1_1_project_1_1_db_source_1a242b791ad177b9babdc34d1b0b3b762c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual Editor.Model.Project.DbSource.[instance initializer]</definition>
+        <argsstring></argsstring>
+        <name>[instance initializer]</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/DbSource.cs" line="23" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A database source. </para>    </briefdescription>
+    <detaileddescription>
+<para>Geht, 18.12.2013. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="459">
+        <label>Serializable</label>
+        <link refid="interface_serializable"/>
+      </node>
+      <node id="458">
+        <label>AbstractSource</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_abstract_source"/>
+        <childnode refid="459" relation="public-inheritance">
+        </childnode>
+        <childnode refid="460" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="460">
+        <label>IPreviewable</label>
+        <link refid="interface_editor_1_1_model_1_1_project_1_1_i_previewable"/>
+      </node>
+      <node id="457">
+        <label>Editor.Model.Project.DbSource</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_db_source"/>
+        <childnode refid="458" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="463">
+        <label>Serializable</label>
+        <link refid="interface_serializable"/>
+      </node>
+      <node id="462">
+        <label>AbstractSource</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_abstract_source"/>
+        <childnode refid="463" relation="public-inheritance">
+        </childnode>
+        <childnode refid="464" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="464">
+        <label>IPreviewable</label>
+        <link refid="interface_editor_1_1_model_1_1_project_1_1_i_previewable"/>
+      </node>
+      <node id="461">
+        <label>Editor.Model.Project.DbSource</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_db_source"/>
+        <childnode refid="462" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/DbSource.cs" line="22" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/DbSource.cs" bodystart="21" bodyend="28"/>
+    <listofallmembers>
+      <member refid="class_editor_1_1_model_1_1_project_1_1_db_source_1a242b791ad177b9babdc34d1b0b3b762c" prot="public" virt="virtual"><scope>Editor::Model::Project::DbSource</scope><name>[instance initializer]</name></member>
+      <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_source_1a4a4c82647a2aa9fe8ff029d56fdbb119" prot="public" virt="virtual"><scope>Editor::Model::Project::DbSource</scope><name>accept</name></member>
+      <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_source_1a5dfe2d0830196f740e1df732134d2c83" prot="public" virt="virtual"><scope>Editor::Model::Project::DbSource</scope><name>getPreview</name></member>
+      <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_source_1aee7e5d52eaf1ea95ed5875b1b6d65a8b" prot="public" virt="pure-virtual"><scope>Editor::Model::Project::DbSource</scope><name>getPropertyList</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

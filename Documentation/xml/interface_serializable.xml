@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="interface_serializable" kind="interface" prot="public">
+    <compoundname>Serializable</compoundname>
+    <derivedcompoundref refid="class_editor_1_1_model_1_1_project_1_1_abstract_augmentation" prot="public" virt="non-virtual">Editor.Model.Project.AbstractAugmentation</derivedcompoundref>
+    <derivedcompoundref refid="class_editor_1_1_model_1_1_project_1_1_abstract_source" prot="public" virt="non-virtual">Editor.Model.Project.AbstractSource</derivedcompoundref>
+    <derivedcompoundref refid="class_editor_1_1_model_1_1_project_1_1_abstract_trackable" prot="public" virt="non-virtual">Editor.Model.Project.AbstractTrackable</derivedcompoundref>
+    <derivedcompoundref refid="class_editor_1_1_model_1_1_project_1_1_project" prot="public" virt="non-virtual">Editor.Model.Project.Project</derivedcompoundref>
+    <briefdescription>
+<para>Interface for serializable. </para>    </briefdescription>
+    <detaileddescription>
+<para>Geht, 18.12.2013. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="660">
+        <label>Editor.Model.Project.AbstractDynamic2DAugmentation</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_abstract_dynamic2_d_augmentation"/>
+        <childnode refid="659" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="658">
+        <label>Serializable</label>
+        <link refid="interface_serializable"/>
+      </node>
+      <node id="659">
+        <label>Editor.Model.Project.AbstractAugmentation</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_abstract_augmentation"/>
+        <childnode refid="658" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="661">
+        <label>Editor.Model.Project.Graph</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_graph"/>
+        <childnode refid="660" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="669">
+        <label>Editor.Model.Project.PictureMarker</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_picture_marker"/>
+        <childnode refid="667" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="667">
+        <label>Editor.Model.Project.AbstractMarker</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_abstract_marker"/>
+        <childnode refid="666" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="665">
+        <label>Editor.Model.Project.FileSource</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_file_source"/>
+        <childnode refid="663" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="668">
+        <label>Editor.Model.Project.IDMarker</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_i_d_marker"/>
+        <childnode refid="667" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="670">
+        <label>Editor.Model.Project.Project</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_project"/>
+        <childnode refid="658" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="663">
+        <label>Editor.Model.Project.AbstractSource</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_abstract_source"/>
+        <childnode refid="658" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="662">
+        <label>Editor.Model.Project.BarGraph</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_bar_graph"/>
+        <childnode refid="661" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="664">
+        <label>Editor.Model.Project.DbSource</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_db_source"/>
+        <childnode refid="663" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="666">
+        <label>Editor.Model.Project.AbstractTrackable</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_abstract_trackable"/>
+        <childnode refid="658" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Serializable.cs" line="19" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Serializable.cs" bodystart="18" bodyend="20"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

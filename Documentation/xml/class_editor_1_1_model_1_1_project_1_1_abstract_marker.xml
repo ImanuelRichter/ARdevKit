@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_editor_1_1_model_1_1_project_1_1_abstract_marker" kind="class" prot="public">
+    <compoundname>Editor::Model::Project::AbstractMarker</compoundname>
+    <basecompoundref refid="class_editor_1_1_model_1_1_project_1_1_abstract_trackable" prot="public" virt="non-virtual">Editor.Model.Project.AbstractTrackable</basecompoundref>
+    <derivedcompoundref refid="class_editor_1_1_model_1_1_project_1_1_i_d_marker" prot="public" virt="non-virtual">Editor.Model.Project.IDMarker</derivedcompoundref>
+    <derivedcompoundref refid="class_editor_1_1_model_1_1_project_1_1_picture_marker" prot="public" virt="non-virtual">Editor.Model.Project.PictureMarker</derivedcompoundref>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_editor_1_1_model_1_1_project_1_1_abstract_marker_1ad045236e707243b20d383fcd08780ff5" prot="private" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>string</type>
+        <definition>string Editor.Model.Project.AbstractMarker.sensorCosID</definition>
+        <argsstring></argsstring>
+        <name>sensorCosID</name>
+        <briefdescription>
+<para>Gets or sets the identifier of the sensor cosine. </para>        </briefdescription>
+        <detaileddescription>
+<para>The identifier of the sensor cosine. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/AbstractMarker.cs" line="28" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/AbstractMarker.cs" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_editor_1_1_model_1_1_project_1_1_abstract_marker_1a09aea5ddb9d7e0e05701855704c8ee7e" prot="private" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>int</type>
+        <definition>int Editor.Model.Project.AbstractMarker.size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <briefdescription>
+<para>Gets or sets the size. </para>        </briefdescription>
+        <detaileddescription>
+<para>The size. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/AbstractMarker.cs" line="40" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/AbstractMarker.cs" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>An abstract marker. </para>    </briefdescription>
+    <detaileddescription>
+<para>Geht, 18.12.2013. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="379">
+        <label>Serializable</label>
+        <link refid="interface_serializable"/>
+      </node>
+      <node id="378">
+        <label>AbstractTrackable</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_abstract_trackable"/>
+        <childnode refid="379" relation="public-inheritance">
+        </childnode>
+        <childnode refid="380" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="382">
+        <label>Editor.Model.Project.PictureMarker</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_picture_marker"/>
+        <childnode refid="377" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="380">
+        <label>IPreviewable</label>
+        <link refid="interface_editor_1_1_model_1_1_project_1_1_i_previewable"/>
+      </node>
+      <node id="377">
+        <label>Editor.Model.Project.AbstractMarker</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_abstract_marker"/>
+        <childnode refid="378" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="381">
+        <label>Editor.Model.Project.IDMarker</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_i_d_marker"/>
+        <childnode refid="377" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="385">
+        <label>Serializable</label>
+        <link refid="interface_serializable"/>
+      </node>
+      <node id="384">
+        <label>AbstractTrackable</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_abstract_trackable"/>
+        <childnode refid="385" relation="public-inheritance">
+        </childnode>
+        <childnode refid="386" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="386">
+        <label>IPreviewable</label>
+        <link refid="interface_editor_1_1_model_1_1_project_1_1_i_previewable"/>
+      </node>
+      <node id="383">
+        <label>Editor.Model.Project.AbstractMarker</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_abstract_marker"/>
+        <childnode refid="384" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/AbstractMarker.cs" line="21" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/AbstractMarker.cs" bodystart="20" bodyend="46"/>
+    <listofallmembers>
+      <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_trackable_1ab15dc9a21778fdea93f19e4da02ff763" prot="public" virt="virtual"><scope>Editor::Model::Project::AbstractMarker</scope><name>[instance initializer]</name></member>
+      <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_trackable_1abbada0cdfa32b9ebaaaf8f41bbee16a0" prot="public" virt="virtual"><scope>Editor::Model::Project::AbstractMarker</scope><name>accept</name></member>
+      <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_trackable_1a9fa5446dcb4263c5922f8e6e2f0796d1" prot="public" virt="virtual"><scope>Editor::Model::Project::AbstractMarker</scope><name>getPreview</name></member>
+      <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_trackable_1a7d0cabfe145ec2afb30a5d3a98869629" prot="public" virt="pure-virtual"><scope>Editor::Model::Project::AbstractMarker</scope><name>getPropertyList</name></member>
+      <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_marker_1ad045236e707243b20d383fcd08780ff5" prot="private" virt="non-virtual"><scope>Editor::Model::Project::AbstractMarker</scope><name>sensorCosID</name></member>
+      <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_marker_1a09aea5ddb9d7e0e05701855704c8ee7e" prot="private" virt="non-virtual"><scope>Editor::Model::Project::AbstractMarker</scope><name>size</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

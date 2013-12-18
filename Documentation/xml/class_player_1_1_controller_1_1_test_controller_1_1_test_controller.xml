@@ -1,0 +1,253 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_player_1_1_controller_1_1_test_controller_1_1_test_controller" kind="class" prot="public">
+    <compoundname>Player::Controller::TestController::TestController</compoundname>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_player_1_1_controller_1_1_test_controller_1_1_test_controller_1a194c8319c61c50590131a184fc4e4acc" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type><ref refid="class_player_1_1_controller_1_1_debug_controller_1_1_debug_controller" kindref="compound">DebugController</ref></type>
+        <definition>virtual DebugController Player.Controller.TestController.TestController.DebugController</definition>
+        <argsstring></argsstring>
+        <name>DebugController</name>
+        <briefdescription>
+<para>Gets or sets the debug controller. </para>        </briefdescription>
+        <detaileddescription>
+<para>The debug controller. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller/TestController/TestController.cs" line="29" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller/TestController/TestController.cs" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_player_1_1_controller_1_1_test_controller_1_1_test_controller_1a6d500c61a96b3a459a7630e0a0e83dfa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Player.Controller.TestController.TestController.update</definition>
+        <argsstring>()</argsstring>
+        <name>update</name>
+        <briefdescription>
+<para>Updates this object. </para>        </briefdescription>
+        <detaileddescription>
+<para>Geht, 18.12.2013. </para><para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>NotImplementedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when the requested operation is unimplemented. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller/TestController/TestController.cs" line="44" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller/TestController/TestController.cs" bodystart="44" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1_1_controller_1_1_test_controller_1_1_test_controller_1a3e1c361879d6aaa682e360b9adf9aea2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Player.Controller.TestController.TestController.initializeRenderer</definition>
+        <argsstring>(object int width, object int height, object metaio::ESCREEN_ROTATION_0, object metaio::ERENDER_SYSTEM_OPENGL_ES_2_0, object this-&gt;m_hWnd)</argsstring>
+        <name>initializeRenderer</name>
+        <param>
+          <type>object int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>object int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>object metaio::ESCREEN_ROTATION_0</type>
+        </param>
+        <param>
+          <type>object metaio::ERENDER_SYSTEM_OPENGL_ES_2_0</type>
+        </param>
+        <param>
+          <type>object this-&gt;</type>
+          <declname>m_hWnd</declname>
+        </param>
+        <briefdescription>
+<para>Initializes the renderer. </para>        </briefdescription>
+        <detaileddescription>
+<para>Geht, 18.12.2013. </para><para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>NotImplementedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when the requested operation is unimplemented. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The width. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The height. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>metaio::ESCREEN_ROTATION_0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The metaio escreen rotation 0. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>metaio::ERENDER_SYSTEM_OPENGL_ES_2_0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The metaio erender system opengl es 2 0. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>this-&gt;m_hWnd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>this &gt;m h window. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller/TestController/TestController.cs" line="64" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller/TestController/TestController.cs" bodystart="64" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1_1_controller_1_1_test_controller_1_1_test_controller_1aac67031a79ac5a793ab6f959ada4dd68" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Player.Controller.TestController.TestController.createSDK</definition>
+        <argsstring>()</argsstring>
+        <name>createSDK</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller/TestController/TestController.cs" line="69" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller/TestController/TestController.cs" bodystart="69" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1_1_controller_1_1_test_controller_1_1_test_controller_1aadba2a81ec672dd9482c5842aa9ce259" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Player.Controller.TestController.TestController.registerCallback</definition>
+        <argsstring>(object this)</argsstring>
+        <name>registerCallback</name>
+        <param>
+          <type>object</type>
+          <declname>this</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller/TestController/TestController.cs" line="74" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller/TestController/TestController.cs" bodystart="74" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1_1_controller_1_1_test_controller_1_1_test_controller_1ad62a4ef918a31e035260a1031b242b5d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Player.Controller.TestController.TestController.startCamera</definition>
+        <argsstring>(object 0)</argsstring>
+        <name>startCamera</name>
+        <param>
+          <type>object</type>
+          <declname>0</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller/TestController/TestController.cs" line="79" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller/TestController/TestController.cs" bodystart="79" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1_1_controller_1_1_test_controller_1_1_test_controller_1a10417bdaacf6959766e0b58f4a69aabb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Player.Controller.TestController.TestController.CreateSensorsComponent</definition>
+        <argsstring>()</argsstring>
+        <name>CreateSensorsComponent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller/TestController/TestController.cs" line="84" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller/TestController/TestController.cs" bodystart="84" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1_1_controller_1_1_test_controller_1_1_test_controller_1ac9c52b1d9a01f4fe428df265888e4722" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Player.Controller.TestController.TestController.registerSensorsComponent</definition>
+        <argsstring>()</argsstring>
+        <name>registerSensorsComponent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller/TestController/TestController.cs" line="89" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller/TestController/TestController.cs" bodystart="89" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1_1_controller_1_1_test_controller_1_1_test_controller_1a89441363e3ac3c264a89fb7ba2e57ef5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Player.Controller.TestController.TestController.notify</definition>
+        <argsstring>()</argsstring>
+        <name>notify</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller/TestController/TestController.cs" line="94" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller/TestController/TestController.cs" bodystart="94" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1_1_controller_1_1_test_controller_1_1_test_controller_1a7e6b3e910c94da87e8d566829bc612e0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Player.Controller.TestController.TestController.registerObserver</definition>
+        <argsstring>()</argsstring>
+        <name>registerObserver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller/TestController/TestController.cs" line="99" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller/TestController/TestController.cs" bodystart="99" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1_1_controller_1_1_test_controller_1_1_test_controller_1a83ae1f5f98a70d152d4231f835e1350e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Player.Controller.TestController.TestController.unregisterObserver</definition>
+        <argsstring>(Observer observer)</argsstring>
+        <name>unregisterObserver</name>
+        <param>
+          <type>Observer</type>
+          <declname>observer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller/TestController/TestController.cs" line="104" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller/TestController/TestController.cs" bodystart="104" bodyend="107"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A controller for handling tests. </para>    </briefdescription>
+    <detaileddescription>
+<para>Geht, 18.12.2013. </para>    </detaileddescription>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller/TestController/TestController.cs" line="22" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller/TestController/TestController.cs" bodystart="21" bodyend="109"/>
+    <listofallmembers>
+      <member refid="class_player_1_1_controller_1_1_test_controller_1_1_test_controller_1aac67031a79ac5a793ab6f959ada4dd68" prot="public" virt="virtual"><scope>Player::Controller::TestController::TestController</scope><name>createSDK</name></member>
+      <member refid="class_player_1_1_controller_1_1_test_controller_1_1_test_controller_1a10417bdaacf6959766e0b58f4a69aabb" prot="public" virt="virtual"><scope>Player::Controller::TestController::TestController</scope><name>CreateSensorsComponent</name></member>
+      <member refid="class_player_1_1_controller_1_1_test_controller_1_1_test_controller_1a194c8319c61c50590131a184fc4e4acc" prot="public" virt="non-virtual"><scope>Player::Controller::TestController::TestController</scope><name>DebugController</name></member>
+      <member refid="class_player_1_1_controller_1_1_test_controller_1_1_test_controller_1a3e1c361879d6aaa682e360b9adf9aea2" prot="public" virt="virtual"><scope>Player::Controller::TestController::TestController</scope><name>initializeRenderer</name></member>
+      <member refid="class_player_1_1_controller_1_1_test_controller_1_1_test_controller_1a89441363e3ac3c264a89fb7ba2e57ef5" prot="public" virt="virtual"><scope>Player::Controller::TestController::TestController</scope><name>notify</name></member>
+      <member refid="class_player_1_1_controller_1_1_test_controller_1_1_test_controller_1aadba2a81ec672dd9482c5842aa9ce259" prot="public" virt="virtual"><scope>Player::Controller::TestController::TestController</scope><name>registerCallback</name></member>
+      <member refid="class_player_1_1_controller_1_1_test_controller_1_1_test_controller_1a7e6b3e910c94da87e8d566829bc612e0" prot="public" virt="virtual"><scope>Player::Controller::TestController::TestController</scope><name>registerObserver</name></member>
+      <member refid="class_player_1_1_controller_1_1_test_controller_1_1_test_controller_1ac9c52b1d9a01f4fe428df265888e4722" prot="public" virt="virtual"><scope>Player::Controller::TestController::TestController</scope><name>registerSensorsComponent</name></member>
+      <member refid="class_player_1_1_controller_1_1_test_controller_1_1_test_controller_1ad62a4ef918a31e035260a1031b242b5d" prot="public" virt="virtual"><scope>Player::Controller::TestController::TestController</scope><name>startCamera</name></member>
+      <member refid="class_player_1_1_controller_1_1_test_controller_1_1_test_controller_1a83ae1f5f98a70d152d4231f835e1350e" prot="public" virt="virtual"><scope>Player::Controller::TestController::TestController</scope><name>unregisterObserver</name></member>
+      <member refid="class_player_1_1_controller_1_1_test_controller_1_1_test_controller_1a6d500c61a96b3a459a7630e0a0e83dfa" prot="public" virt="virtual"><scope>Player::Controller::TestController::TestController</scope><name>update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

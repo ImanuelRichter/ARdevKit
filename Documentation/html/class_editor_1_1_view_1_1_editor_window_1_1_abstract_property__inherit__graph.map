@@ -1,0 +1,5 @@
+<map id="Editor.View.EditorWindow.AbstractProperty" name="Editor.View.EditorWindow.AbstractProperty">
+<area shape="rect" id="node2" href="$class_editor_1_1_view_1_1_editor_window_1_1_color_property.html" title="A color property. " alt="" coords="229,5,405,46"/>
+<area shape="rect" id="node3" href="$class_editor_1_1_view_1_1_editor_window_1_1_reference_property.html" title="A reference property. " alt="" coords="229,70,405,111"/>
+<area shape="rect" id="node4" href="$class_editor_1_1_view_1_1_editor_window_1_1_text_property.html" title="A text property. " alt="" coords="229,135,405,177"/>
+</map>

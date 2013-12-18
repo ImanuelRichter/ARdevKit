@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="dir_a0682f02ce717c65ce05a73bd87ee5f5" kind="dir">
+    <compoundname>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/metaioSDK/Visual Search</compoundname>
+    <innerfile refid="_i_visual_search_callback_8cs">IVisualSearchCallback.cs</innerfile>
+    <innerfile refid="_visual_search_response_8cs">VisualSearchResponse.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/metaioSDK/Visual Search/"/>
+  </compounddef>
+</doxygen>

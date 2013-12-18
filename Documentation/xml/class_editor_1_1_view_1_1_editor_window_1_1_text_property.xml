@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_editor_1_1_view_1_1_editor_window_1_1_text_property" kind="class" prot="public">
+    <compoundname>Editor::View::EditorWindow::TextProperty</compoundname>
+    <basecompoundref refid="class_editor_1_1_view_1_1_editor_window_1_1_abstract_property" prot="public" virt="non-virtual">Editor.View.EditorWindow.AbstractProperty</basecompoundref>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_editor_1_1_view_1_1_editor_window_1_1_text_property_1aecd12181ba5414af354f3e8213fa09cc" prot="private" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>string</type>
+        <definition>string Editor.View.EditorWindow.TextProperty.value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <briefdescription>
+<para>Gets or sets the value. </para>        </briefdescription>
+        <detaileddescription>
+<para>The value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/View/EditorWindow/TextProperty.cs" line="28" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/View/EditorWindow/TextProperty.cs" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A text property. </para>    </briefdescription>
+    <detaileddescription>
+<para>Geht, 18.12.2013. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="692">
+        <label>Editor.View.EditorWindow.TextProperty</label>
+        <link refid="class_editor_1_1_view_1_1_editor_window_1_1_text_property"/>
+        <childnode refid="693" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="693">
+        <label>AbstractProperty</label>
+        <link refid="class_editor_1_1_view_1_1_editor_window_1_1_abstract_property"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="694">
+        <label>Editor.View.EditorWindow.TextProperty</label>
+        <link refid="class_editor_1_1_view_1_1_editor_window_1_1_text_property"/>
+        <childnode refid="695" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="695">
+        <label>AbstractProperty</label>
+        <link refid="class_editor_1_1_view_1_1_editor_window_1_1_abstract_property"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/View/EditorWindow/TextProperty.cs" line="21" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/View/EditorWindow/TextProperty.cs" bodystart="20" bodyend="34"/>
+    <listofallmembers>
+      <member refid="class_editor_1_1_view_1_1_editor_window_1_1_abstract_property_1a0b12f79ee5b1fb7d34454a7788dce90f" prot="public" virt="virtual"><scope>Editor::View::EditorWindow::TextProperty</scope><name>[instance initializer]</name></member>
+      <member refid="class_editor_1_1_view_1_1_editor_window_1_1_abstract_property_1a9c5fd1dffa544ba83c6b194a6bd2aedd" prot="public" virt="pure-virtual"><scope>Editor::View::EditorWindow::TextProperty</scope><name>getVisualRepresentation</name></member>
+      <member refid="class_editor_1_1_view_1_1_editor_window_1_1_text_property_1aecd12181ba5414af354f3e8213fa09cc" prot="private" virt="non-virtual"><scope>Editor::View::EditorWindow::TextProperty</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="dir_e00763edb906f18d72e5b8bd24d64072" kind="dir">
+    <compoundname>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller</compoundname>
+    <innerdir refid="dir_6622139ecec2cc9958013ab14b326488">C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/Connections</innerdir>
+    <innerdir refid="dir_9b74b8c6c95188d91fbf0b9412e3106a">C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/DebugController</innerdir>
+    <innerdir refid="dir_ec54693c279bbe6e3c54caf2ec1a5b83">C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController</innerdir>
+    <innerdir refid="dir_d02e1807fadc14e15b0f7e82321ecaca">C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/ProjectController</innerdir>
+    <innerdir refid="dir_c8ae7134df5f136e9b4d82772e865397">C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/TestController</innerdir>
+    <innerfile refid="_editor_2_controller_2_i_observer_8cs">IObserver.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/"/>
+  </compounddef>
+</doxygen>

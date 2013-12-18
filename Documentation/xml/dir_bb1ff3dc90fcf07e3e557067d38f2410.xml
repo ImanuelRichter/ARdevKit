@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="dir_bb1ff3dc90fcf07e3e557067d38f2410" kind="dir">
+    <compoundname>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/View/EditorWindow</compoundname>
+    <innerfile refid="_abstract_property_8cs">AbstractProperty.cs</innerfile>
+    <innerfile refid="_add_scene_button_8cs">AddSceneButton.cs</innerfile>
+    <innerfile refid="_category_combo_box_8cs">CategoryComboBox.cs</innerfile>
+    <innerfile refid="_color_property_8cs">ColorProperty.cs</innerfile>
+    <innerfile refid="_editor_window_8cs">EditorWindow.cs</innerfile>
+    <innerfile refid="_element_combo_box_8cs">ElementComboBox.cs</innerfile>
+    <innerfile refid="_element_icon_8cs">ElementIcon.cs</innerfile>
+    <innerfile refid="_element_selection_panel_8cs">ElementSelectionPanel.cs</innerfile>
+    <innerfile refid="_i_property_list_panel_8cs">IPropertyListPanel.cs</innerfile>
+    <innerfile refid="_editor_window_2_menu_bar_8cs">MenuBar.cs</innerfile>
+    <innerfile refid="_menu_element_8cs">MenuElement.cs</innerfile>
+    <innerfile refid="_name_text_field_8cs">NameTextField.cs</innerfile>
+    <innerfile refid="_picture_box_8cs">PictureBox.cs</innerfile>
+    <innerfile refid="_preview_panel_8cs">PreviewPanel.cs</innerfile>
+    <innerfile refid="_property_list_panel_8cs">PropertyListPanel.cs</innerfile>
+    <innerfile refid="_property_panel_8cs">PropertyPanel.cs</innerfile>
+    <innerfile refid="_reference_property_8cs">ReferenceProperty.cs</innerfile>
+    <innerfile refid="_view_2_editor_window_2_scene_element_8cs">SceneElement.cs</innerfile>
+    <innerfile refid="_scene_element_category_panel_8cs">SceneElementCategoryPanel.cs</innerfile>
+    <innerfile refid="_scene_icon_8cs">SceneIcon.cs</innerfile>
+    <innerfile refid="_scene_list_panel_8cs">SceneListPanel.cs</innerfile>
+    <innerfile refid="_scene_name_text_field_8cs">SceneNameTextField.cs</innerfile>
+    <innerfile refid="_scene_selection_panel_8cs">SceneSelectionPanel.cs</innerfile>
+    <innerfile refid="_editor_window_2_status_bar_8cs">StatusBar.cs</innerfile>
+    <innerfile refid="_text_property_8cs">TextProperty.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/View/EditorWindow/"/>
+  </compounddef>
+</doxygen>

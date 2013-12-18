@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="dir_e109bc9719b3993cb227bc5b1f408d6b" kind="dir">
+    <compoundname>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project</compoundname>
+    <innerfile refid="_abstract_augmentation_8cs">AbstractAugmentation.cs</innerfile>
+    <innerfile refid="_abstract_dynamic2_d_augmentation_8cs">AbstractDynamic2DAugmentation.cs</innerfile>
+    <innerfile refid="_abstract_marker_8cs">AbstractMarker.cs</innerfile>
+    <innerfile refid="_abstract_source_8cs">AbstractSource.cs</innerfile>
+    <innerfile refid="_abstract_trackable_8cs">AbstractTrackable.cs</innerfile>
+    <innerfile refid="_bar_graph_8cs">BarGraph.cs</innerfile>
+    <innerfile refid="_db_source_8cs">DbSource.cs</innerfile>
+    <innerfile refid="_file_source_8cs">FileSource.cs</innerfile>
+    <innerfile refid="_graph_8cs">Graph.cs</innerfile>
+    <innerfile refid="_i_d_marker_8cs">IDMarker.cs</innerfile>
+    <innerfile refid="_i_previewable_8cs">IPreviewable.cs</innerfile>
+    <innerfile refid="_picture_marker_8cs">PictureMarker.cs</innerfile>
+    <innerfile refid="_project_8cs">Project.cs</innerfile>
+    <innerfile refid="_editor_2_model_2_project_2_vector3_d_8cs">Vector3D.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="namespace_player_1_1_controller" kind="namespace">
+    <compoundname>Player::Controller</compoundname>
+    <innerclass refid="interface_player_1_1_controller_1_1_i_observer" prot="public">Player::Controller::IObserver</innerclass>
+    <innerclass refid="interface_player_1_1_controller_1_1_i_observer1" prot="public">Player::Controller::IObserver1</innerclass>
+    <innerclass refid="interface_player_1_1_controller_1_1_i_observer2" prot="public">Player::Controller::IObserver2</innerclass>
+    <innernamespace refid="namespace_player_1_1_controller_1_1_connection">Player::Controller::Connection</innernamespace>
+    <innernamespace refid="namespace_player_1_1_controller_1_1_debug_controller">Player::Controller::DebugController</innernamespace>
+    <innernamespace refid="namespace_player_1_1_controller_1_1_player_controller">Player::Controller::PlayerController</innernamespace>
+    <innernamespace refid="namespace_player_1_1_controller_1_1_test_controller">Player::Controller::TestController</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="[generated]" line="1" column="1"/>
+  </compounddef>
+</doxygen>

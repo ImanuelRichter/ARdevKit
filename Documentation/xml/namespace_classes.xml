@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="namespace_classes" kind="namespace">
+    <compoundname>Classes</compoundname>
+    <innerclass refid="class_classes_1_1_camera" prot="public">Classes::Camera</innerclass>
+    <innerclass refid="class_classes_1_1_render_event" prot="public">Classes::RenderEvent</innerclass>
+    <innerclass refid="class_classes_1_1_rotation" prot="public">Classes::Rotation</innerclass>
+    <innerclass refid="class_classes_1_1_tracking_state" prot="public">Classes::TrackingState</innerclass>
+    <innerclass refid="class_classes_1_1_tracking_values" prot="public">Classes::TrackingValues</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/metaioSDK/Helper Structs and Classes/Camera.cs" line="8" column="1"/>
+  </compounddef>
+</doxygen>

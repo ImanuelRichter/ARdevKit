@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="interface_player_1_1_controller_1_1_i_observer1" kind="interface" prot="public">
+    <compoundname>Player::Controller::IObserver1</compoundname>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="interface_player_1_1_controller_1_1_i_observer1_1a15e41bf113f0e083e93e077558cda2cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Player.Controller.IObserver1.notify</definition>
+        <argsstring>()</argsstring>
+        <name>notify</name>
+        <briefdescription>
+<para>Notifies this object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller/IObserver1.cs" line="23" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Interface for observer 1. </para>    </briefdescription>
+    <detaileddescription>
+<para>Geht, 18.12.2013. </para>    </detaileddescription>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller/IObserver1.cs" line="21" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller/IObserver1.cs" bodystart="20" bodyend="25"/>
+    <listofallmembers>
+      <member refid="interface_player_1_1_controller_1_1_i_observer1_1a15e41bf113f0e083e93e077558cda2cf" prot="public" virt="non-virtual"><scope>Player::Controller::IObserver1</scope><name>notify</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_editor_1_1_controller_1_1_connections_1_1_database_connection_1_1_db_data_reader" kind="class" prot="public">
+    <compoundname>Editor::Controller::Connections::DatabaseConnection::DbDataReader</compoundname>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_editor_1_1_controller_1_1_connections_1_1_database_connection_1_1_db_data_reader_1a5fac3607f780363201c58509e1005207" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Editor.Controller.Connections.DatabaseConnection.DbDataReader.close</definition>
+        <argsstring>()</argsstring>
+        <name>close</name>
+        <briefdescription>
+<para>Closes the <ref refid="class_editor_1_1_controller_1_1_connections_1_1_database_connection_1_1_db_data_reader" kindref="compound">DbDataReader</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para>Geht, 18.12.2013. </para><para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>NotImplementedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when the requested operation is unimplemented. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/Connections/DatabaseConnection/DbDataReader.cs" line="31" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/Connections/DatabaseConnection/DbDataReader.cs" bodystart="31" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="class_editor_1_1_controller_1_1_connections_1_1_database_connection_1_1_db_data_reader_1a4746c09887a0d23ddb4ab25b542e9373" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>ARdevKit_UML::Editor::Controller::Connections::DatabaseConnection::DbDataReader</type>
+        <definition>virtual ARdevKit_UML::Editor::Controller::Connections::DatabaseConnection::DbDataReader Editor.Controller.Connections.DatabaseConnection.DbDataReader.getData</definition>
+        <argsstring>()</argsstring>
+        <name>getData</name>
+        <briefdescription>
+<para>Returns a <ref refid="class_editor_1_1_controller_1_1_connections_1_1_database_connection_1_1_db_data_reader" kindref="compound">DbDataReader</ref> object for the requested column ordinal. </para>        </briefdescription>
+        <detaileddescription>
+<para>Geht, 18.12.2013. </para><para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>NotImplementedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when the requested operation is unimplemented. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para><para><simplesect kind="return"><para>The data. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/Connections/DatabaseConnection/DbDataReader.cs" line="47" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/Connections/DatabaseConnection/DbDataReader.cs" bodystart="47" bodyend="50"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Reads a forward-only stream of rows from a data source. </para>    </briefdescription>
+    <detaileddescription>
+<para>Geht, 18.12.2013. </para>    </detaileddescription>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/Connections/DatabaseConnection/DbDataReader.cs" line="21" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/Connections/DatabaseConnection/DbDataReader.cs" bodystart="20" bodyend="52"/>
+    <listofallmembers>
+      <member refid="class_editor_1_1_controller_1_1_connections_1_1_database_connection_1_1_db_data_reader_1a5fac3607f780363201c58509e1005207" prot="public" virt="virtual"><scope>Editor::Controller::Connections::DatabaseConnection::DbDataReader</scope><name>close</name></member>
+      <member refid="class_editor_1_1_controller_1_1_connections_1_1_database_connection_1_1_db_data_reader_1a4746c09887a0d23ddb4ab25b542e9373" prot="public" virt="virtual"><scope>Editor::Controller::Connections::DatabaseConnection::DbDataReader</scope><name>getData</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

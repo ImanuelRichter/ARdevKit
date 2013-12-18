@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="dir_d28a6703b8b4d3853446f6153acbfef0" kind="dir">
+    <compoundname>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/Connections/DeviceConnection</compoundname>
+    <innerfile refid="_device_connection_controller_8cs">DeviceConnectionController.cs</innerfile>
+    <innerfile refid="_t_c_p_server_8cs">TCPServer.cs</innerfile>
+    <innerfile refid="_u_d_p_server_8cs">UDPServer.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/Connections/DeviceConnection/"/>
+  </compounddef>
+</doxygen>

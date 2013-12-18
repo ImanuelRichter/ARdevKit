@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$class_editor_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor.html" title="An abstract project visitor. " alt="" coords="5,38,213,79"/>
+<area shape="rect" id="node2" href="$class_editor_1_1_controller_1_1_project_controller_1_1_export_visitor.html" title="An export visitor. " alt="" coords="261,5,421,46"/>
+<area shape="rect" id="node3" href="$class_editor_1_1_controller_1_1_project_controller_1_1_save_visitor.html" title="A save visitor. " alt="" coords="261,70,421,111"/>
+</map>

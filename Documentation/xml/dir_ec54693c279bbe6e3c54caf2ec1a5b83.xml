@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="dir_ec54693c279bbe6e3c54caf2ec1a5b83" kind="dir">
+    <compoundname>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController</compoundname>
+    <innerfile refid="_a_rdev_kit_8cs">ARdevKit.cs</innerfile>
+    <innerfile refid="_editor_window_controller_8cs">EditorWindowController.cs</innerfile>
+    <innerfile refid="_element_selection_controller_8cs">ElementSelectionController.cs</innerfile>
+    <innerfile refid="_meta_category_8cs">MetaCategory.cs</innerfile>
+    <innerfile refid="_preview_controller_8cs">PreviewController.cs</innerfile>
+    <innerfile refid="_property_controller_8cs">PropertyController.cs</innerfile>
+    <innerfile refid="_controller_2_editor_controller_2_scene_element_8cs">SceneElement.cs</innerfile>
+    <innerfile refid="_scene_element_category_8cs">SceneElementCategory.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/"/>
+  </compounddef>
+</doxygen>
