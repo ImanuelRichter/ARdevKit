@@ -1,0 +1,6 @@
+<map id="Editor.Model.Project.AbstractSource" name="Editor.Model.Project.AbstractSource">
+<area shape="rect" id="node4" href="$class_editor_1_1_model_1_1_project_1_1_db_source.html" title="A database source. " alt="" coords="5,179,205,205"/>
+<area shape="rect" id="node5" href="$class_editor_1_1_model_1_1_project_1_1_file_source.html" title="A file source. " alt="" coords="231,171,396,213"/>
+<area shape="rect" id="node2" href="$interface_serializable.html" title="Interface for serializable. " alt="" coords="107,5,196,32"/>
+<area shape="rect" id="node3" href="$interface_editor_1_1_model_1_1_project_1_1_i_previewable.html" title="Interface for previewable. " alt="" coords="221,5,315,32"/>
+</map>

@@ -1,0 +1,384 @@
+\contentsline {chapter}{\numberline {1}Namespace Index}{1}
+\contentsline {section}{\numberline {1.1}Packages}{1}
+\contentsline {chapter}{\numberline {2}Hierarchical Index}{3}
+\contentsline {section}{\numberline {2.1}Class Hierarchy}{3}
+\contentsline {chapter}{\numberline {3}Class Index}{7}
+\contentsline {section}{\numberline {3.1}Class List}{7}
+\contentsline {chapter}{\numberline {4}Namespace Documentation}{13}
+\contentsline {section}{\numberline {4.1}Package Classes}{13}
+\contentsline {section}{\numberline {4.2}Package Editor}{13}
+\contentsline {section}{\numberline {4.3}Package Editor.\discretionary {-}{}{}Controller}{13}
+\contentsline {section}{\numberline {4.4}Package Editor.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Connections}{14}
+\contentsline {section}{\numberline {4.5}Package Editor.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Connections.\discretionary {-}{}{}Database\discretionary {-}{}{}Connection}{14}
+\contentsline {section}{\numberline {4.6}Package Editor.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Connections.\discretionary {-}{}{}Device\discretionary {-}{}{}Connection}{14}
+\contentsline {section}{\numberline {4.7}Package Editor.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Debug\discretionary {-}{}{}Controller}{14}
+\contentsline {subsection}{\numberline {4.7.1}Enumeration Type Documentation}{15}
+\contentsline {subsubsection}{\numberline {4.7.1.1}Filter}{15}
+\contentsline {section}{\numberline {4.8}Package Editor.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Editor\discretionary {-}{}{}Controller}{15}
+\contentsline {subsection}{\numberline {4.8.1}Enumeration Type Documentation}{15}
+\contentsline {subsubsection}{\numberline {4.8.1.1}Meta\discretionary {-}{}{}Category}{15}
+\contentsline {section}{\numberline {4.9}Package Editor.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Project\discretionary {-}{}{}Controller}{16}
+\contentsline {section}{\numberline {4.10}Package Editor.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Test\discretionary {-}{}{}Controller}{16}
+\contentsline {section}{\numberline {4.11}Package Editor.\discretionary {-}{}{}Model}{16}
+\contentsline {section}{\numberline {4.12}Package Editor.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project}{16}
+\contentsline {section}{\numberline {4.13}Package Editor.\discretionary {-}{}{}View}{17}
+\contentsline {section}{\numberline {4.14}Package Editor.\discretionary {-}{}{}View.\discretionary {-}{}{}Debug\discretionary {-}{}{}Window}{17}
+\contentsline {section}{\numberline {4.15}Package Editor.\discretionary {-}{}{}View.\discretionary {-}{}{}Editor\discretionary {-}{}{}Window}{17}
+\contentsline {section}{\numberline {4.16}Package Editor.\discretionary {-}{}{}View.\discretionary {-}{}{}Test\discretionary {-}{}{}View\discretionary {-}{}{}Window}{19}
+\contentsline {section}{\numberline {4.17}Package Handler}{19}
+\contentsline {section}{\numberline {4.18}Package metaio\discretionary {-}{}{}S\discretionary {-}{}{}D\discretionary {-}{}{}K}{19}
+\contentsline {section}{\numberline {4.19}Package metaio\discretionary {-}{}{}S\discretionary {-}{}{}D\discretionary {-}{}{}K.\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}E\discretionary {-}{}{}L}{19}
+\contentsline {section}{\numberline {4.20}Package metaio\discretionary {-}{}{}S\discretionary {-}{}{}D\discretionary {-}{}{}K.\discretionary {-}{}{}Geometry}{20}
+\contentsline {section}{\numberline {4.21}Package metaio\discretionary {-}{}{}S\discretionary {-}{}{}D\discretionary {-}{}{}K.\discretionary {-}{}{}S\discretionary {-}{}{}D\discretionary {-}{}{}K}{20}
+\contentsline {section}{\numberline {4.22}Package metaio\discretionary {-}{}{}S\discretionary {-}{}{}D\discretionary {-}{}{}K.\discretionary {-}{}{}Sensor}{20}
+\contentsline {section}{\numberline {4.23}Package metaio\discretionary {-}{}{}S\discretionary {-}{}{}D\discretionary {-}{}{}K.\discretionary {-}{}{}Vector}{20}
+\contentsline {section}{\numberline {4.24}Package Player}{21}
+\contentsline {section}{\numberline {4.25}Package Player.\discretionary {-}{}{}Controller}{21}
+\contentsline {section}{\numberline {4.26}Package Player.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Connection}{21}
+\contentsline {section}{\numberline {4.27}Package Player.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Connection.\discretionary {-}{}{}Database\discretionary {-}{}{}Connection}{21}
+\contentsline {section}{\numberline {4.28}Package Player.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Connection.\discretionary {-}{}{}Device\discretionary {-}{}{}Connection}{21}
+\contentsline {section}{\numberline {4.29}Package Player.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Debug\discretionary {-}{}{}Controller}{22}
+\contentsline {section}{\numberline {4.30}Package Player.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Player\discretionary {-}{}{}Controller}{22}
+\contentsline {section}{\numberline {4.31}Package Player.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Test\discretionary {-}{}{}Controller}{22}
+\contentsline {section}{\numberline {4.32}Package Player.\discretionary {-}{}{}Model}{22}
+\contentsline {section}{\numberline {4.33}Package Player.\discretionary {-}{}{}View}{22}
+\contentsline {section}{\numberline {4.34}Package Search}{23}
+\contentsline {chapter}{\numberline {5}Class Documentation}{25}
+\contentsline {section}{\numberline {5.1}Editor.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Abstract\discretionary {-}{}{}Augmentation Class Reference}{25}
+\contentsline {subsection}{\numberline {5.1.1}Detailed Description}{26}
+\contentsline {subsection}{\numberline {5.1.2}Member Function Documentation}{26}
+\contentsline {subsubsection}{\numberline {5.1.2.1}get\discretionary {-}{}{}Preview}{26}
+\contentsline {subsubsection}{\numberline {5.1.2.2}get\discretionary {-}{}{}Property\discretionary {-}{}{}List}{26}
+\contentsline {section}{\numberline {5.2}Editor.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Abstract\discretionary {-}{}{}Dynamic2\discretionary {-}{}{}D\discretionary {-}{}{}Augmentation Class Reference}{27}
+\contentsline {subsection}{\numberline {5.2.1}Detailed Description}{28}
+\contentsline {section}{\numberline {5.3}Editor.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Abstract\discretionary {-}{}{}Marker Class Reference}{28}
+\contentsline {subsection}{\numberline {5.3.1}Detailed Description}{29}
+\contentsline {section}{\numberline {5.4}Editor.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Project\discretionary {-}{}{}Controller.\discretionary {-}{}{}Abstract\discretionary {-}{}{}Project\discretionary {-}{}{}Visitor Class Reference}{30}
+\contentsline {subsection}{\numberline {5.4.1}Detailed Description}{30}
+\contentsline {subsection}{\numberline {5.4.2}Member Function Documentation}{30}
+\contentsline {subsubsection}{\numberline {5.4.2.1}visit}{30}
+\contentsline {subsubsection}{\numberline {5.4.2.2}visit}{31}
+\contentsline {subsubsection}{\numberline {5.4.2.3}visit}{31}
+\contentsline {subsubsection}{\numberline {5.4.2.4}visit}{31}
+\contentsline {section}{\numberline {5.5}Editor.\discretionary {-}{}{}View.\discretionary {-}{}{}Editor\discretionary {-}{}{}Window.\discretionary {-}{}{}Abstract\discretionary {-}{}{}Property Class Reference}{32}
+\contentsline {subsection}{\numberline {5.5.1}Detailed Description}{32}
+\contentsline {section}{\numberline {5.6}Editor.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Abstract\discretionary {-}{}{}Source Class Reference}{32}
+\contentsline {subsection}{\numberline {5.6.1}Detailed Description}{33}
+\contentsline {subsection}{\numberline {5.6.2}Member Function Documentation}{34}
+\contentsline {subsubsection}{\numberline {5.6.2.1}accept}{34}
+\contentsline {subsubsection}{\numberline {5.6.2.2}get\discretionary {-}{}{}Preview}{34}
+\contentsline {subsubsection}{\numberline {5.6.2.3}get\discretionary {-}{}{}Property\discretionary {-}{}{}List}{34}
+\contentsline {section}{\numberline {5.7}Editor.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Abstract\discretionary {-}{}{}Trackable Class Reference}{34}
+\contentsline {subsection}{\numberline {5.7.1}Detailed Description}{36}
+\contentsline {subsection}{\numberline {5.7.2}Member Function Documentation}{36}
+\contentsline {subsubsection}{\numberline {5.7.2.1}get\discretionary {-}{}{}Preview}{36}
+\contentsline {subsubsection}{\numberline {5.7.2.2}get\discretionary {-}{}{}Property\discretionary {-}{}{}List}{36}
+\contentsline {section}{\numberline {5.8}Editor.\discretionary {-}{}{}View.\discretionary {-}{}{}Editor\discretionary {-}{}{}Window.\discretionary {-}{}{}Add\discretionary {-}{}{}Scene\discretionary {-}{}{}Button Class Reference}{36}
+\contentsline {subsection}{\numberline {5.8.1}Detailed Description}{36}
+\contentsline {section}{\numberline {5.9}Editor.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Editor\discretionary {-}{}{}Controller.\discretionary {-}{}{}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit Class Reference}{36}
+\contentsline {subsection}{\numberline {5.9.1}Detailed Description}{37}
+\contentsline {section}{\numberline {5.10}Player.\discretionary {-}{}{}Model.\discretionary {-}{}{}Arel\discretionary {-}{}{}File Class Reference}{37}
+\contentsline {subsection}{\numberline {5.10.1}Detailed Description}{37}
+\contentsline {section}{\numberline {5.11}Editor.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Bar\discretionary {-}{}{}Graph Class Reference}{37}
+\contentsline {subsection}{\numberline {5.11.1}Detailed Description}{38}
+\contentsline {section}{\numberline {5.12}Player.\discretionary {-}{}{}View.\discretionary {-}{}{}Button Class Reference}{38}
+\contentsline {subsection}{\numberline {5.12.1}Detailed Description}{38}
+\contentsline {section}{\numberline {5.13}Classes.\discretionary {-}{}{}Camera Class Reference}{39}
+\contentsline {subsection}{\numberline {5.13.1}Detailed Description}{39}
+\contentsline {section}{\numberline {5.14}Editor.\discretionary {-}{}{}View.\discretionary {-}{}{}Editor\discretionary {-}{}{}Window.\discretionary {-}{}{}Category\discretionary {-}{}{}Combo\discretionary {-}{}{}Box Class Reference}{39}
+\contentsline {subsection}{\numberline {5.14.1}Detailed Description}{39}
+\contentsline {section}{\numberline {5.15}Editor.\discretionary {-}{}{}View.\discretionary {-}{}{}Editor\discretionary {-}{}{}Window.\discretionary {-}{}{}Color\discretionary {-}{}{}Property Class Reference}{39}
+\contentsline {subsection}{\numberline {5.15.1}Detailed Description}{40}
+\contentsline {section}{\numberline {5.16}Editor.\discretionary {-}{}{}View.\discretionary {-}{}{}Debug\discretionary {-}{}{}Window.\discretionary {-}{}{}Console\discretionary {-}{}{}Panel Class Reference}{40}
+\contentsline {subsection}{\numberline {5.16.1}Detailed Description}{40}
+\contentsline {section}{\numberline {5.17}Player.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Connection.\discretionary {-}{}{}Database\discretionary {-}{}{}Connection.\discretionary {-}{}{}Database\discretionary {-}{}{}Facade Class Reference}{40}
+\contentsline {subsection}{\numberline {5.17.1}Detailed Description}{40}
+\contentsline {section}{\numberline {5.18}Editor.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Connections.\discretionary {-}{}{}Database\discretionary {-}{}{}Connection.\discretionary {-}{}{}Data\discretionary {-}{}{}Set Class Reference}{41}
+\contentsline {subsection}{\numberline {5.18.1}Detailed Description}{41}
+\contentsline {section}{\numberline {5.19}Editor.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Connections.\discretionary {-}{}{}Database\discretionary {-}{}{}Connection.\discretionary {-}{}{}Db\discretionary {-}{}{}Command Class Reference}{41}
+\contentsline {subsection}{\numberline {5.19.1}Detailed Description}{41}
+\contentsline {subsection}{\numberline {5.19.2}Member Function Documentation}{41}
+\contentsline {subsubsection}{\numberline {5.19.2.1}Create\discretionary {-}{}{}Db\discretionary {-}{}{}Parameter}{41}
+\contentsline {subsubsection}{\numberline {5.19.2.2}Execute\discretionary {-}{}{}Db\discretionary {-}{}{}Data\discretionary {-}{}{}Reader}{41}
+\contentsline {section}{\numberline {5.20}Editor.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Connections.\discretionary {-}{}{}Database\discretionary {-}{}{}Connection.\discretionary {-}{}{}Db\discretionary {-}{}{}Connection Class Reference}{42}
+\contentsline {subsection}{\numberline {5.20.1}Detailed Description}{42}
+\contentsline {subsection}{\numberline {5.20.2}Member Function Documentation}{42}
+\contentsline {subsubsection}{\numberline {5.20.2.1}close}{42}
+\contentsline {subsubsection}{\numberline {5.20.2.2}create\discretionary {-}{}{}Db\discretionary {-}{}{}Command}{42}
+\contentsline {subsubsection}{\numberline {5.20.2.3}open}{42}
+\contentsline {section}{\numberline {5.21}Editor.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Connections.\discretionary {-}{}{}Database\discretionary {-}{}{}Connection.\discretionary {-}{}{}Db\discretionary {-}{}{}Data\discretionary {-}{}{}Reader Class Reference}{42}
+\contentsline {subsection}{\numberline {5.21.1}Detailed Description}{43}
+\contentsline {subsection}{\numberline {5.21.2}Member Function Documentation}{43}
+\contentsline {subsubsection}{\numberline {5.21.2.1}close}{43}
+\contentsline {subsubsection}{\numberline {5.21.2.2}get\discretionary {-}{}{}Data}{43}
+\contentsline {section}{\numberline {5.22}Editor.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Connections.\discretionary {-}{}{}Database\discretionary {-}{}{}Connection.\discretionary {-}{}{}Db\discretionary {-}{}{}Parameter Class Reference}{43}
+\contentsline {subsection}{\numberline {5.22.1}Detailed Description}{43}
+\contentsline {section}{\numberline {5.23}Editor.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Connections.\discretionary {-}{}{}Database\discretionary {-}{}{}Connection.\discretionary {-}{}{}Db\discretionary {-}{}{}Provider\discretionary {-}{}{}Factory Class Reference}{44}
+\contentsline {subsection}{\numberline {5.23.1}Detailed Description}{44}
+\contentsline {subsection}{\numberline {5.23.2}Member Function Documentation}{44}
+\contentsline {subsubsection}{\numberline {5.23.2.1}Create\discretionary {-}{}{}Connection}{44}
+\contentsline {section}{\numberline {5.24}Editor.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Db\discretionary {-}{}{}Source Class Reference}{44}
+\contentsline {subsection}{\numberline {5.24.1}Detailed Description}{45}
+\contentsline {section}{\numberline {5.25}Editor.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Debug\discretionary {-}{}{}Controller.\discretionary {-}{}{}Debug\discretionary {-}{}{}Controller Class Reference}{46}
+\contentsline {subsection}{\numberline {5.25.1}Detailed Description}{46}
+\contentsline {subsection}{\numberline {5.25.2}Member Function Documentation}{47}
+\contentsline {subsubsection}{\numberline {5.25.2.1}notify}{47}
+\contentsline {section}{\numberline {5.26}Player.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Debug\discretionary {-}{}{}Controller.\discretionary {-}{}{}Debug\discretionary {-}{}{}Controller Class Reference}{47}
+\contentsline {subsection}{\numberline {5.26.1}Detailed Description}{48}
+\contentsline {subsection}{\numberline {5.26.2}Member Function Documentation}{48}
+\contentsline {subsubsection}{\numberline {5.26.2.1}notify}{48}
+\contentsline {subsubsection}{\numberline {5.26.2.2}notify}{48}
+\contentsline {subsection}{\numberline {5.26.3}Property Documentation}{48}
+\contentsline {subsubsection}{\numberline {5.26.3.1}T\discretionary {-}{}{}C\discretionary {-}{}{}P\discretionary {-}{}{}Client}{48}
+\contentsline {section}{\numberline {5.27}Editor.\discretionary {-}{}{}View.\discretionary {-}{}{}Debug\discretionary {-}{}{}Window.\discretionary {-}{}{}Debug\discretionary {-}{}{}Window Class Reference}{49}
+\contentsline {subsection}{\numberline {5.27.1}Detailed Description}{49}
+\contentsline {section}{\numberline {5.28}Editor.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Connections.\discretionary {-}{}{}Device\discretionary {-}{}{}Connection.\discretionary {-}{}{}Device\discretionary {-}{}{}Connection\discretionary {-}{}{}Controller Class Reference}{49}
+\contentsline {subsection}{\numberline {5.28.1}Detailed Description}{49}
+\contentsline {subsection}{\numberline {5.28.2}Member Function Documentation}{49}
+\contentsline {subsubsection}{\numberline {5.28.2.1}connect\discretionary {-}{}{}To\discretionary {-}{}{}Device}{49}
+\contentsline {subsubsection}{\numberline {5.28.2.2}get\discretionary {-}{}{}Debug\discretionary {-}{}{}Message}{50}
+\contentsline {subsubsection}{\numberline {5.28.2.3}get\discretionary {-}{}{}Possible\discretionary {-}{}{}Clients}{50}
+\contentsline {subsubsection}{\numberline {5.28.2.4}send\discretionary {-}{}{}Project}{50}
+\contentsline {subsection}{\numberline {5.28.3}Property Documentation}{50}
+\contentsline {subsubsection}{\numberline {5.28.3.1}T\discretionary {-}{}{}C\discretionary {-}{}{}P\discretionary {-}{}{}Server}{50}
+\contentsline {subsubsection}{\numberline {5.28.3.2}U\discretionary {-}{}{}D\discretionary {-}{}{}P\discretionary {-}{}{}Server}{51}
+\contentsline {section}{\numberline {5.29}Editor.\discretionary {-}{}{}View.\discretionary {-}{}{}Editor\discretionary {-}{}{}Window.\discretionary {-}{}{}Editor\discretionary {-}{}{}Window Class Reference}{51}
+\contentsline {subsection}{\numberline {5.29.1}Detailed Description}{51}
+\contentsline {section}{\numberline {5.30}Editor.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Editor\discretionary {-}{}{}Controller.\discretionary {-}{}{}Editor\discretionary {-}{}{}Window\discretionary {-}{}{}Controller Class Reference}{51}
+\contentsline {subsection}{\numberline {5.30.1}Detailed Description}{52}
+\contentsline {section}{\numberline {5.31}Editor.\discretionary {-}{}{}View.\discretionary {-}{}{}Editor\discretionary {-}{}{}Window.\discretionary {-}{}{}Element\discretionary {-}{}{}Combo\discretionary {-}{}{}Box Class Reference}{52}
+\contentsline {subsection}{\numberline {5.31.1}Detailed Description}{52}
+\contentsline {section}{\numberline {5.32}Editor.\discretionary {-}{}{}View.\discretionary {-}{}{}Editor\discretionary {-}{}{}Window.\discretionary {-}{}{}Element\discretionary {-}{}{}Icon Class Reference}{52}
+\contentsline {subsection}{\numberline {5.32.1}Detailed Description}{52}
+\contentsline {subsection}{\numberline {5.32.2}Property Documentation}{52}
+\contentsline {subsubsection}{\numberline {5.32.2.1}element}{52}
+\contentsline {section}{\numberline {5.33}Editor.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Editor\discretionary {-}{}{}Controller.\discretionary {-}{}{}Element\discretionary {-}{}{}Selection\discretionary {-}{}{}Controller Class Reference}{53}
+\contentsline {subsection}{\numberline {5.33.1}Detailed Description}{53}
+\contentsline {section}{\numberline {5.34}Editor.\discretionary {-}{}{}View.\discretionary {-}{}{}Editor\discretionary {-}{}{}Window.\discretionary {-}{}{}Element\discretionary {-}{}{}Selection\discretionary {-}{}{}Panel Class Reference}{53}
+\contentsline {subsection}{\numberline {5.34.1}Detailed Description}{53}
+\contentsline {section}{\numberline {5.35}Editor.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Project\discretionary {-}{}{}Controller.\discretionary {-}{}{}Export\discretionary {-}{}{}Visitor Class Reference}{53}
+\contentsline {subsection}{\numberline {5.35.1}Detailed Description}{54}
+\contentsline {subsection}{\numberline {5.35.2}Member Function Documentation}{54}
+\contentsline {subsubsection}{\numberline {5.35.2.1}visit}{54}
+\contentsline {subsubsection}{\numberline {5.35.2.2}visit}{55}
+\contentsline {subsubsection}{\numberline {5.35.2.3}visit}{55}
+\contentsline {subsubsection}{\numberline {5.35.2.4}visit}{55}
+\contentsline {section}{\numberline {5.36}Player.\discretionary {-}{}{}View.\discretionary {-}{}{}File Class Reference}{55}
+\contentsline {subsection}{\numberline {5.36.1}Detailed Description}{55}
+\contentsline {section}{\numberline {5.37}Editor.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}File\discretionary {-}{}{}Source Class Reference}{56}
+\contentsline {subsection}{\numberline {5.37.1}Detailed Description}{56}
+\contentsline {section}{\numberline {5.38}Editor.\discretionary {-}{}{}View.\discretionary {-}{}{}Debug\discretionary {-}{}{}Window.\discretionary {-}{}{}Filter\discretionary {-}{}{}Panel Class Reference}{57}
+\contentsline {subsection}{\numberline {5.38.1}Detailed Description}{57}
+\contentsline {section}{\numberline {5.39}Handler.\discretionary {-}{}{}Geometry\discretionary {-}{}{}Extension Class Reference}{57}
+\contentsline {subsection}{\numberline {5.39.1}Detailed Description}{57}
+\contentsline {section}{\numberline {5.40}Handler.\discretionary {-}{}{}Gesture\discretionary {-}{}{}Handler Class Reference}{57}
+\contentsline {subsection}{\numberline {5.40.1}Detailed Description}{57}
+\contentsline {section}{\numberline {5.41}Editor.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Graph Class Reference}{57}
+\contentsline {subsection}{\numberline {5.41.1}Detailed Description}{59}
+\contentsline {section}{\numberline {5.42}metaio\discretionary {-}{}{}S\discretionary {-}{}{}D\discretionary {-}{}{}K.\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}E\discretionary {-}{}{}L.\discretionary {-}{}{}I\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}E\discretionary {-}{}{}L\discretionary {-}{}{}Interpreter Class Reference}{59}
+\contentsline {subsection}{\numberline {5.42.1}Detailed Description}{59}
+\contentsline {section}{\numberline {5.43}metaio\discretionary {-}{}{}S\discretionary {-}{}{}D\discretionary {-}{}{}K.\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}E\discretionary {-}{}{}L.\discretionary {-}{}{}I\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}E\discretionary {-}{}{}L\discretionary {-}{}{}Interpreter\discretionary {-}{}{}Callback Class Reference}{59}
+\contentsline {subsection}{\numberline {5.43.1}Detailed Description}{59}
+\contentsline {section}{\numberline {5.44}metaio\discretionary {-}{}{}S\discretionary {-}{}{}D\discretionary {-}{}{}K.\discretionary {-}{}{}Geometry.\discretionary {-}{}{}I\discretionary {-}{}{}Billboard\discretionary {-}{}{}Group Class Reference}{59}
+\contentsline {subsection}{\numberline {5.44.1}Detailed Description}{59}
+\contentsline {section}{\numberline {5.45}Editor.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}I\discretionary {-}{}{}D\discretionary {-}{}{}Marker Class Reference}{59}
+\contentsline {subsection}{\numberline {5.45.1}Detailed Description}{61}
+\contentsline {section}{\numberline {5.46}metaio\discretionary {-}{}{}S\discretionary {-}{}{}D\discretionary {-}{}{}K.\discretionary {-}{}{}Geometry.\discretionary {-}{}{}I\discretionary {-}{}{}Geometry Class Reference}{61}
+\contentsline {subsection}{\numberline {5.46.1}Detailed Description}{61}
+\contentsline {section}{\numberline {5.47}Handler.\discretionary {-}{}{}I\discretionary {-}{}{}Gesture\discretionary {-}{}{}Handler\discretionary {-}{}{}Callback Class Reference}{61}
+\contentsline {subsection}{\numberline {5.47.1}Detailed Description}{61}
+\contentsline {section}{\numberline {5.48}metaio\discretionary {-}{}{}S\discretionary {-}{}{}D\discretionary {-}{}{}K.\discretionary {-}{}{}S\discretionary {-}{}{}D\discretionary {-}{}{}K.\discretionary {-}{}{}I\discretionary {-}{}{}Metaio\discretionary {-}{}{}S\discretionary {-}{}{}D\discretionary {-}{}{}K Class Reference}{61}
+\contentsline {subsection}{\numberline {5.48.1}Detailed Description}{61}
+\contentsline {section}{\numberline {5.49}metaio\discretionary {-}{}{}S\discretionary {-}{}{}D\discretionary {-}{}{}K.\discretionary {-}{}{}S\discretionary {-}{}{}D\discretionary {-}{}{}K.\discretionary {-}{}{}I\discretionary {-}{}{}Metaio\discretionary {-}{}{}S\discretionary {-}{}{}D\discretionary {-}{}{}K\discretionary {-}{}{}Callback Class Reference}{61}
+\contentsline {subsection}{\numberline {5.49.1}Detailed Description}{61}
+\contentsline {section}{\numberline {5.50}metaio\discretionary {-}{}{}S\discretionary {-}{}{}D\discretionary {-}{}{}K.\discretionary {-}{}{}S\discretionary {-}{}{}D\discretionary {-}{}{}K.\discretionary {-}{}{}I\discretionary {-}{}{}Metaio\discretionary {-}{}{}S\discretionary {-}{}{}D\discretionary {-}{}{}K\discretionary {-}{}{}Win32 Class Reference}{62}
+\contentsline {subsection}{\numberline {5.50.1}Detailed Description}{62}
+\contentsline {section}{\numberline {5.51}Editor.\discretionary {-}{}{}Controller.\discretionary {-}{}{}I\discretionary {-}{}{}Observer Interface Reference}{62}
+\contentsline {subsection}{\numberline {5.51.1}Detailed Description}{62}
+\contentsline {subsection}{\numberline {5.51.2}Member Function Documentation}{62}
+\contentsline {subsubsection}{\numberline {5.51.2.1}notify}{63}
+\contentsline {section}{\numberline {5.52}Player.\discretionary {-}{}{}Controller.\discretionary {-}{}{}I\discretionary {-}{}{}Observer Interface Reference}{63}
+\contentsline {subsection}{\numberline {5.52.1}Detailed Description}{63}
+\contentsline {subsection}{\numberline {5.52.2}Member Function Documentation}{63}
+\contentsline {subsubsection}{\numberline {5.52.2.1}notify}{63}
+\contentsline {section}{\numberline {5.53}Player.\discretionary {-}{}{}Controller.\discretionary {-}{}{}I\discretionary {-}{}{}Observer1 Interface Reference}{63}
+\contentsline {subsection}{\numberline {5.53.1}Detailed Description}{64}
+\contentsline {subsection}{\numberline {5.53.2}Member Function Documentation}{64}
+\contentsline {subsubsection}{\numberline {5.53.2.1}notify}{64}
+\contentsline {section}{\numberline {5.54}Player.\discretionary {-}{}{}Controller.\discretionary {-}{}{}I\discretionary {-}{}{}Observer2 Interface Reference}{64}
+\contentsline {subsection}{\numberline {5.54.1}Detailed Description}{64}
+\contentsline {subsection}{\numberline {5.54.2}Member Function Documentation}{64}
+\contentsline {subsubsection}{\numberline {5.54.2.1}notify}{64}
+\contentsline {section}{\numberline {5.55}Editor.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}I\discretionary {-}{}{}Previewable Interface Reference}{64}
+\contentsline {subsection}{\numberline {5.55.1}Detailed Description}{65}
+\contentsline {subsection}{\numberline {5.55.2}Member Function Documentation}{65}
+\contentsline {subsubsection}{\numberline {5.55.2.1}get\discretionary {-}{}{}Preview}{65}
+\contentsline {subsubsection}{\numberline {5.55.2.2}get\discretionary {-}{}{}Property\discretionary {-}{}{}List}{65}
+\contentsline {section}{\numberline {5.56}Editor.\discretionary {-}{}{}View.\discretionary {-}{}{}Editor\discretionary {-}{}{}Window.\discretionary {-}{}{}I\discretionary {-}{}{}Property\discretionary {-}{}{}List\discretionary {-}{}{}Panel Interface Reference}{66}
+\contentsline {subsection}{\numberline {5.56.1}Detailed Description}{66}
+\contentsline {subsection}{\numberline {5.56.2}Member Function Documentation}{66}
+\contentsline {subsubsection}{\numberline {5.56.2.1}create}{66}
+\contentsline {section}{\numberline {5.57}metaio\discretionary {-}{}{}S\discretionary {-}{}{}D\discretionary {-}{}{}K.\discretionary {-}{}{}Sensor.\discretionary {-}{}{}I\discretionary {-}{}{}Sensors\discretionary {-}{}{}Component Class Reference}{66}
+\contentsline {subsection}{\numberline {5.57.1}Detailed Description}{67}
+\contentsline {section}{\numberline {5.58}Search.\discretionary {-}{}{}I\discretionary {-}{}{}Visual\discretionary {-}{}{}Search\discretionary {-}{}{}Callback Class Reference}{67}
+\contentsline {subsection}{\numberline {5.58.1}Detailed Description}{67}
+\contentsline {section}{\numberline {5.59}Editor.\discretionary {-}{}{}View.\discretionary {-}{}{}Test\discretionary {-}{}{}View\discretionary {-}{}{}Window.\discretionary {-}{}{}Menu\discretionary {-}{}{}Bar Class Reference}{67}
+\contentsline {subsection}{\numberline {5.59.1}Detailed Description}{67}
+\contentsline {section}{\numberline {5.60}Editor.\discretionary {-}{}{}View.\discretionary {-}{}{}Debug\discretionary {-}{}{}Window.\discretionary {-}{}{}Menu\discretionary {-}{}{}Bar Class Reference}{67}
+\contentsline {subsection}{\numberline {5.60.1}Detailed Description}{67}
+\contentsline {section}{\numberline {5.61}Editor.\discretionary {-}{}{}View.\discretionary {-}{}{}Editor\discretionary {-}{}{}Window.\discretionary {-}{}{}Menu\discretionary {-}{}{}Bar Class Reference}{67}
+\contentsline {subsection}{\numberline {5.61.1}Detailed Description}{68}
+\contentsline {section}{\numberline {5.62}Editor.\discretionary {-}{}{}View.\discretionary {-}{}{}Editor\discretionary {-}{}{}Window.\discretionary {-}{}{}Menu\discretionary {-}{}{}Element Class Reference}{68}
+\contentsline {subsection}{\numberline {5.62.1}Detailed Description}{68}
+\contentsline {section}{\numberline {5.63}Metaio\discretionary {-}{}{}Wrapper Class Reference}{68}
+\contentsline {subsection}{\numberline {5.63.1}Detailed Description}{68}
+\contentsline {section}{\numberline {5.64}Editor.\discretionary {-}{}{}View.\discretionary {-}{}{}Editor\discretionary {-}{}{}Window.\discretionary {-}{}{}Name\discretionary {-}{}{}Text\discretionary {-}{}{}Field Class Reference}{68}
+\contentsline {subsection}{\numberline {5.64.1}Detailed Description}{68}
+\contentsline {section}{\numberline {5.65}Ole\discretionary {-}{}{}D\discretionary {-}{}{}B\discretionary {-}{}{}Connection Class Reference}{68}
+\contentsline {subsection}{\numberline {5.65.1}Detailed Description}{68}
+\contentsline {section}{\numberline {5.66}Editor.\discretionary {-}{}{}View.\discretionary {-}{}{}Editor\discretionary {-}{}{}Window.\discretionary {-}{}{}Picture\discretionary {-}{}{}Box Class Reference}{69}
+\contentsline {subsection}{\numberline {5.66.1}Detailed Description}{69}
+\contentsline {section}{\numberline {5.67}Editor.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Picture\discretionary {-}{}{}Marker Class Reference}{69}
+\contentsline {subsection}{\numberline {5.67.1}Detailed Description}{70}
+\contentsline {section}{\numberline {5.68}Player.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Player\discretionary {-}{}{}Controller.\discretionary {-}{}{}Player\discretionary {-}{}{}Controller Class Reference}{70}
+\contentsline {subsection}{\numberline {5.68.1}Detailed Description}{71}
+\contentsline {subsection}{\numberline {5.68.2}Member Function Documentation}{71}
+\contentsline {subsubsection}{\numberline {5.68.2.1}close\discretionary {-}{}{}Project}{71}
+\contentsline {subsubsection}{\numberline {5.68.2.2}enable\discretionary {-}{}{}Debug\discretionary {-}{}{}Mode}{71}
+\contentsline {subsubsection}{\numberline {5.68.2.3}load\discretionary {-}{}{}Project}{71}
+\contentsline {subsection}{\numberline {5.68.3}Property Documentation}{71}
+\contentsline {subsubsection}{\numberline {5.68.3.1}Arel\discretionary {-}{}{}File}{71}
+\contentsline {section}{\numberline {5.69}Player.\discretionary {-}{}{}View.\discretionary {-}{}{}Player\discretionary {-}{}{}Page Class Reference}{71}
+\contentsline {subsection}{\numberline {5.69.1}Detailed Description}{72}
+\contentsline {section}{\numberline {5.70}Editor.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Editor\discretionary {-}{}{}Controller.\discretionary {-}{}{}Preview\discretionary {-}{}{}Controller Class Reference}{72}
+\contentsline {subsection}{\numberline {5.70.1}Detailed Description}{72}
+\contentsline {subsection}{\numberline {5.70.2}Member Function Documentation}{72}
+\contentsline {subsubsection}{\numberline {5.70.2.1}add\discretionary {-}{}{}Previewable}{72}
+\contentsline {subsubsection}{\numberline {5.70.2.2}move\discretionary {-}{}{}I\discretionary {-}{}{}Previewable}{73}
+\contentsline {subsubsection}{\numberline {5.70.2.3}update\discretionary {-}{}{}Preview\discretionary {-}{}{}Panel}{73}
+\contentsline {section}{\numberline {5.71}Editor.\discretionary {-}{}{}View.\discretionary {-}{}{}Editor\discretionary {-}{}{}Window.\discretionary {-}{}{}Preview\discretionary {-}{}{}Panel Class Reference}{73}
+\contentsline {subsection}{\numberline {5.71.1}Detailed Description}{73}
+\contentsline {section}{\numberline {5.72}Editor.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Project Class Reference}{73}
+\contentsline {subsection}{\numberline {5.72.1}Detailed Description}{74}
+\contentsline {section}{\numberline {5.73}Editor.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Editor\discretionary {-}{}{}Controller.\discretionary {-}{}{}Property\discretionary {-}{}{}Controller Class Reference}{74}
+\contentsline {subsection}{\numberline {5.73.1}Detailed Description}{75}
+\contentsline {subsection}{\numberline {5.73.2}Member Function Documentation}{75}
+\contentsline {subsubsection}{\numberline {5.73.2.1}add\discretionary {-}{}{}Custom\discretionary {-}{}{}User\discretionary {-}{}{}Event}{75}
+\contentsline {subsubsection}{\numberline {5.73.2.2}edit\discretionary {-}{}{}Custom\discretionary {-}{}{}User\discretionary {-}{}{}Event}{75}
+\contentsline {subsubsection}{\numberline {5.73.2.3}update\discretionary {-}{}{}Property\discretionary {-}{}{}Panel}{75}
+\contentsline {section}{\numberline {5.74}Editor.\discretionary {-}{}{}View.\discretionary {-}{}{}Editor\discretionary {-}{}{}Window.\discretionary {-}{}{}Property\discretionary {-}{}{}List\discretionary {-}{}{}Panel Class Reference}{76}
+\contentsline {subsection}{\numberline {5.74.1}Detailed Description}{77}
+\contentsline {subsection}{\numberline {5.74.2}Member Function Documentation}{77}
+\contentsline {subsubsection}{\numberline {5.74.2.1}create}{77}
+\contentsline {section}{\numberline {5.75}Editor.\discretionary {-}{}{}View.\discretionary {-}{}{}Editor\discretionary {-}{}{}Window.\discretionary {-}{}{}Property\discretionary {-}{}{}Panel Class Reference}{77}
+\contentsline {subsection}{\numberline {5.75.1}Detailed Description}{77}
+\contentsline {section}{\numberline {5.76}Editor.\discretionary {-}{}{}View.\discretionary {-}{}{}Editor\discretionary {-}{}{}Window.\discretionary {-}{}{}Reference\discretionary {-}{}{}Property Class Reference}{77}
+\contentsline {subsection}{\numberline {5.76.1}Detailed Description}{78}
+\contentsline {section}{\numberline {5.77}Editor.\discretionary {-}{}{}View.\discretionary {-}{}{}Test\discretionary {-}{}{}View\discretionary {-}{}{}Window.\discretionary {-}{}{}Renderer\discretionary {-}{}{}Panel Class Reference}{78}
+\contentsline {subsection}{\numberline {5.77.1}Detailed Description}{78}
+\contentsline {section}{\numberline {5.78}Player.\discretionary {-}{}{}View.\discretionary {-}{}{}Renderer\discretionary {-}{}{}Panel Class Reference}{78}
+\contentsline {subsection}{\numberline {5.78.1}Detailed Description}{78}
+\contentsline {section}{\numberline {5.79}Classes.\discretionary {-}{}{}Render\discretionary {-}{}{}Event Class Reference}{79}
+\contentsline {subsection}{\numberline {5.79.1}Detailed Description}{79}
+\contentsline {section}{\numberline {5.80}Classes.\discretionary {-}{}{}Rotation Class Reference}{79}
+\contentsline {subsection}{\numberline {5.80.1}Detailed Description}{79}
+\contentsline {section}{\numberline {5.81}Editor.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Project\discretionary {-}{}{}Controller.\discretionary {-}{}{}Save\discretionary {-}{}{}Visitor Class Reference}{79}
+\contentsline {subsection}{\numberline {5.81.1}Detailed Description}{80}
+\contentsline {subsection}{\numberline {5.81.2}Member Function Documentation}{80}
+\contentsline {subsubsection}{\numberline {5.81.2.1}visit}{80}
+\contentsline {subsubsection}{\numberline {5.81.2.2}visit}{81}
+\contentsline {subsubsection}{\numberline {5.81.2.3}visit}{81}
+\contentsline {subsubsection}{\numberline {5.81.2.4}visit}{81}
+\contentsline {section}{\numberline {5.82}Editor.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Editor\discretionary {-}{}{}Controller.\discretionary {-}{}{}Scene\discretionary {-}{}{}Element Class Reference}{81}
+\contentsline {subsection}{\numberline {5.82.1}Detailed Description}{82}
+\contentsline {subsection}{\numberline {5.82.2}Constructor \& Destructor Documentation}{82}
+\contentsline {subsubsection}{\numberline {5.82.2.1}Scene\discretionary {-}{}{}Element}{82}
+\contentsline {subsection}{\numberline {5.82.3}Member Function Documentation}{82}
+\contentsline {subsubsection}{\numberline {5.82.3.1}create\discretionary {-}{}{}Element\discretionary {-}{}{}Icon}{82}
+\contentsline {section}{\numberline {5.83}Editor.\discretionary {-}{}{}View.\discretionary {-}{}{}Editor\discretionary {-}{}{}Window.\discretionary {-}{}{}Scene\discretionary {-}{}{}Element Class Reference}{82}
+\contentsline {subsection}{\numberline {5.83.1}Detailed Description}{82}
+\contentsline {section}{\numberline {5.84}Editor.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Editor\discretionary {-}{}{}Controller.\discretionary {-}{}{}Scene\discretionary {-}{}{}Element\discretionary {-}{}{}Category Class Reference}{82}
+\contentsline {subsection}{\numberline {5.84.1}Detailed Description}{83}
+\contentsline {subsection}{\numberline {5.84.2}Member Function Documentation}{83}
+\contentsline {subsubsection}{\numberline {5.84.2.1}add\discretionary {-}{}{}Element}{83}
+\contentsline {section}{\numberline {5.85}Editor.\discretionary {-}{}{}View.\discretionary {-}{}{}Editor\discretionary {-}{}{}Window.\discretionary {-}{}{}Scene\discretionary {-}{}{}Element\discretionary {-}{}{}Category\discretionary {-}{}{}Panel Class Reference}{83}
+\contentsline {subsection}{\numberline {5.85.1}Detailed Description}{83}
+\contentsline {section}{\numberline {5.86}Editor.\discretionary {-}{}{}View.\discretionary {-}{}{}Editor\discretionary {-}{}{}Window.\discretionary {-}{}{}Scene\discretionary {-}{}{}Icon Class Reference}{83}
+\contentsline {subsection}{\numberline {5.86.1}Detailed Description}{83}
+\contentsline {section}{\numberline {5.87}Editor.\discretionary {-}{}{}View.\discretionary {-}{}{}Editor\discretionary {-}{}{}Window.\discretionary {-}{}{}Scene\discretionary {-}{}{}List\discretionary {-}{}{}Panel Class Reference}{84}
+\contentsline {subsection}{\numberline {5.87.1}Detailed Description}{84}
+\contentsline {section}{\numberline {5.88}Editor.\discretionary {-}{}{}View.\discretionary {-}{}{}Editor\discretionary {-}{}{}Window.\discretionary {-}{}{}Scene\discretionary {-}{}{}Name\discretionary {-}{}{}Text\discretionary {-}{}{}Field Class Reference}{84}
+\contentsline {subsection}{\numberline {5.88.1}Detailed Description}{84}
+\contentsline {section}{\numberline {5.89}Editor.\discretionary {-}{}{}View.\discretionary {-}{}{}Editor\discretionary {-}{}{}Window.\discretionary {-}{}{}Scene\discretionary {-}{}{}Selection\discretionary {-}{}{}Panel Class Reference}{84}
+\contentsline {subsection}{\numberline {5.89.1}Detailed Description}{84}
+\contentsline {section}{\numberline {5.90}metaio\discretionary {-}{}{}S\discretionary {-}{}{}D\discretionary {-}{}{}K.\discretionary {-}{}{}Sensor.\discretionary {-}{}{}Sensor\discretionary {-}{}{}Reading Class Reference}{84}
+\contentsline {subsection}{\numberline {5.90.1}Detailed Description}{84}
+\contentsline {section}{\numberline {5.91}metaio\discretionary {-}{}{}S\discretionary {-}{}{}D\discretionary {-}{}{}K.\discretionary {-}{}{}Sensor.\discretionary {-}{}{}Sensor\discretionary {-}{}{}Values Class Reference}{84}
+\contentsline {subsection}{\numberline {5.91.1}Detailed Description}{85}
+\contentsline {section}{\numberline {5.92}Serializable Interface Reference}{85}
+\contentsline {subsection}{\numberline {5.92.1}Detailed Description}{85}
+\contentsline {section}{\numberline {5.93}Sql\discretionary {-}{}{}Connection Class Reference}{85}
+\contentsline {subsection}{\numberline {5.93.1}Detailed Description}{85}
+\contentsline {section}{\numberline {5.94}Player.\discretionary {-}{}{}View.\discretionary {-}{}{}Stack\discretionary {-}{}{}Panel Class Reference}{85}
+\contentsline {subsection}{\numberline {5.94.1}Detailed Description}{86}
+\contentsline {subsection}{\numberline {5.94.2}Property Documentation}{86}
+\contentsline {subsubsection}{\numberline {5.94.2.1}Button}{86}
+\contentsline {section}{\numberline {5.95}Editor.\discretionary {-}{}{}View.\discretionary {-}{}{}Editor\discretionary {-}{}{}Window.\discretionary {-}{}{}Status\discretionary {-}{}{}Bar Class Reference}{86}
+\contentsline {subsection}{\numberline {5.95.1}Detailed Description}{86}
+\contentsline {section}{\numberline {5.96}Editor.\discretionary {-}{}{}View.\discretionary {-}{}{}Debug\discretionary {-}{}{}Window.\discretionary {-}{}{}Status\discretionary {-}{}{}Bar Class Reference}{86}
+\contentsline {subsection}{\numberline {5.96.1}Detailed Description}{86}
+\contentsline {section}{\numberline {5.97}Editor.\discretionary {-}{}{}View.\discretionary {-}{}{}Test\discretionary {-}{}{}View\discretionary {-}{}{}Window.\discretionary {-}{}{}Status\discretionary {-}{}{}Bar Class Reference}{86}
+\contentsline {subsection}{\numberline {5.97.1}Detailed Description}{86}
+\contentsline {section}{\numberline {5.98}Player.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Connection.\discretionary {-}{}{}Device\discretionary {-}{}{}Connection.\discretionary {-}{}{}T\discretionary {-}{}{}C\discretionary {-}{}{}P\discretionary {-}{}{}Client Class Reference}{87}
+\contentsline {subsection}{\numberline {5.98.1}Detailed Description}{87}
+\contentsline {subsection}{\numberline {5.98.2}Member Function Documentation}{87}
+\contentsline {subsubsection}{\numberline {5.98.2.1}connect}{87}
+\contentsline {subsubsection}{\numberline {5.98.2.2}disconnect}{87}
+\contentsline {subsubsection}{\numberline {5.98.2.3}listen\discretionary {-}{}{}And\discretionary {-}{}{}Receive}{87}
+\contentsline {subsubsection}{\numberline {5.98.2.4}send\discretionary {-}{}{}String}{88}
+\contentsline {section}{\numberline {5.99}Editor.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Connections.\discretionary {-}{}{}Device\discretionary {-}{}{}Connection.\discretionary {-}{}{}T\discretionary {-}{}{}C\discretionary {-}{}{}P\discretionary {-}{}{}Server Class Reference}{88}
+\contentsline {subsection}{\numberline {5.99.1}Detailed Description}{88}
+\contentsline {subsection}{\numberline {5.99.2}Member Function Documentation}{88}
+\contentsline {subsubsection}{\numberline {5.99.2.1}connect}{88}
+\contentsline {subsubsection}{\numberline {5.99.2.2}disconnect}{89}
+\contentsline {subsubsection}{\numberline {5.99.2.3}receive\discretionary {-}{}{}String}{89}
+\contentsline {subsubsection}{\numberline {5.99.2.4}send\discretionary {-}{}{}File}{89}
+\contentsline {section}{\numberline {5.100}Editor.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Test\discretionary {-}{}{}Controller.\discretionary {-}{}{}Test\discretionary {-}{}{}Controller Class Reference}{89}
+\contentsline {subsection}{\numberline {5.100.1}Detailed Description}{90}
+\contentsline {section}{\numberline {5.101}Player.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Test\discretionary {-}{}{}Controller.\discretionary {-}{}{}Test\discretionary {-}{}{}Controller Class Reference}{90}
+\contentsline {subsection}{\numberline {5.101.1}Detailed Description}{90}
+\contentsline {subsection}{\numberline {5.101.2}Member Function Documentation}{91}
+\contentsline {subsubsection}{\numberline {5.101.2.1}initialize\discretionary {-}{}{}Renderer}{91}
+\contentsline {subsubsection}{\numberline {5.101.2.2}update}{91}
+\contentsline {subsection}{\numberline {5.101.3}Property Documentation}{91}
+\contentsline {subsubsection}{\numberline {5.101.3.1}Debug\discretionary {-}{}{}Controller}{91}
+\contentsline {section}{\numberline {5.102}Editor.\discretionary {-}{}{}View.\discretionary {-}{}{}Test\discretionary {-}{}{}View\discretionary {-}{}{}Window.\discretionary {-}{}{}Test\discretionary {-}{}{}View\discretionary {-}{}{}Window Class Reference}{91}
+\contentsline {subsection}{\numberline {5.102.1}Detailed Description}{91}
+\contentsline {section}{\numberline {5.103}Editor.\discretionary {-}{}{}View.\discretionary {-}{}{}Editor\discretionary {-}{}{}Window.\discretionary {-}{}{}Text\discretionary {-}{}{}Property Class Reference}{92}
+\contentsline {subsection}{\numberline {5.103.1}Detailed Description}{92}
+\contentsline {section}{\numberline {5.104}Classes.\discretionary {-}{}{}Tracking\discretionary {-}{}{}State Class Reference}{93}
+\contentsline {subsection}{\numberline {5.104.1}Detailed Description}{93}
+\contentsline {section}{\numberline {5.105}Classes.\discretionary {-}{}{}Tracking\discretionary {-}{}{}Values Class Reference}{93}
+\contentsline {subsection}{\numberline {5.105.1}Detailed Description}{93}
+\contentsline {section}{\numberline {5.106}Player.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Connection.\discretionary {-}{}{}Device\discretionary {-}{}{}Connection.\discretionary {-}{}{}U\discretionary {-}{}{}D\discretionary {-}{}{}P\discretionary {-}{}{}Client Class Reference}{93}
+\contentsline {subsection}{\numberline {5.106.1}Detailed Description}{93}
+\contentsline {subsection}{\numberline {5.106.2}Member Function Documentation}{93}
+\contentsline {subsubsection}{\numberline {5.106.2.1}listen}{93}
+\contentsline {subsection}{\numberline {5.106.3}Property Documentation}{94}
+\contentsline {subsubsection}{\numberline {5.106.3.1}T\discretionary {-}{}{}C\discretionary {-}{}{}P\discretionary {-}{}{}Client}{94}
+\contentsline {section}{\numberline {5.107}Editor.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Connections.\discretionary {-}{}{}Device\discretionary {-}{}{}Connection.\discretionary {-}{}{}U\discretionary {-}{}{}D\discretionary {-}{}{}P\discretionary {-}{}{}Server Class Reference}{94}
+\contentsline {subsection}{\numberline {5.107.1}Detailed Description}{94}
+\contentsline {subsection}{\numberline {5.107.2}Member Function Documentation}{94}
+\contentsline {subsubsection}{\numberline {5.107.2.1}broadcast}{94}
+\contentsline {section}{\numberline {5.108}metaio\discretionary {-}{}{}S\discretionary {-}{}{}D\discretionary {-}{}{}K.\discretionary {-}{}{}Vector.\discretionary {-}{}{}Vector2d Class Reference}{94}
+\contentsline {subsection}{\numberline {5.108.1}Detailed Description}{94}
+\contentsline {section}{\numberline {5.109}metaio\discretionary {-}{}{}S\discretionary {-}{}{}D\discretionary {-}{}{}K.\discretionary {-}{}{}Vector.\discretionary {-}{}{}Vector2di Class Reference}{95}
+\contentsline {subsection}{\numberline {5.109.1}Detailed Description}{95}
+\contentsline {section}{\numberline {5.110}metaio\discretionary {-}{}{}S\discretionary {-}{}{}D\discretionary {-}{}{}K.\discretionary {-}{}{}Vector.\discretionary {-}{}{}Vector3d Class Reference}{95}
+\contentsline {subsection}{\numberline {5.110.1}Detailed Description}{95}
+\contentsline {section}{\numberline {5.111}Editor.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Vector3\discretionary {-}{}{}D Class Reference}{95}
+\contentsline {subsection}{\numberline {5.111.1}Detailed Description}{95}
+\contentsline {section}{\numberline {5.112}metaio\discretionary {-}{}{}S\discretionary {-}{}{}D\discretionary {-}{}{}K.\discretionary {-}{}{}Vector.\discretionary {-}{}{}Vector4d Class Reference}{95}
+\contentsline {subsection}{\numberline {5.112.1}Detailed Description}{95}
+\contentsline {section}{\numberline {5.113}Search.\discretionary {-}{}{}Visual\discretionary {-}{}{}Search\discretionary {-}{}{}Response Class Reference}{96}
+\contentsline {subsection}{\numberline {5.113.1}Detailed Description}{96}

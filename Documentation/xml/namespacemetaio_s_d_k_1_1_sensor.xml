@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="namespacemetaio_s_d_k_1_1_sensor" kind="namespace">
+    <compoundname>metaioSDK::Sensor</compoundname>
+    <innerclass refid="classmetaio_s_d_k_1_1_sensor_1_1_i_sensors_component" prot="public">metaioSDK::Sensor::ISensorsComponent</innerclass>
+    <innerclass refid="classmetaio_s_d_k_1_1_sensor_1_1_sensor_reading" prot="public">metaioSDK::Sensor::SensorReading</innerclass>
+    <innerclass refid="classmetaio_s_d_k_1_1_sensor_1_1_sensor_values" prot="public">metaioSDK::Sensor::SensorValues</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/metaioSDK/Sensor/ISensorsComponent.cs" line="8" column="1"/>
+  </compounddef>
+</doxygen>

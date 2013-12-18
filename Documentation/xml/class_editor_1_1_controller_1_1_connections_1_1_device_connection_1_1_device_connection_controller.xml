@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller" kind="class" prot="public">
+    <compoundname>Editor::Controller::Connections::DeviceConnection::DeviceConnectionController</compoundname>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a7140b30e3c3b5b35896bb18f0f0da552" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type><ref refid="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_u_d_p_server" kindref="compound">UDPServer</ref></type>
+        <definition>virtual UDPServer Editor.Controller.Connections.DeviceConnection.DeviceConnectionController.UDPServer</definition>
+        <argsstring></argsstring>
+        <name>UDPServer</name>
+        <briefdescription>
+<para>Gets or sets the UDP server. </para>        </briefdescription>
+        <detaileddescription>
+<para>The UDP server. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" line="28" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a5d39c82d739df7023c05aab4d4ab4593" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type><ref refid="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_t_c_p_server" kindref="compound">TCPServer</ref></type>
+        <definition>virtual TCPServer Editor.Controller.Connections.DeviceConnection.DeviceConnectionController.TCPServer</definition>
+        <argsstring></argsstring>
+        <name>TCPServer</name>
+        <briefdescription>
+<para>Gets or sets the TCP server. </para>        </briefdescription>
+        <detaileddescription>
+<para>The TCP server. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" line="40" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a1a0821d7bf2e027321c9addb1d37b440" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Editor.Controller.Connections.DeviceConnection.DeviceConnectionController.getPossibleClients</definition>
+        <argsstring>()</argsstring>
+        <name>getPossibleClients</name>
+        <briefdescription>
+<para>Gets possible clients. </para>        </briefdescription>
+        <detaileddescription>
+<para>Geht, 18.12.2013. </para><para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>NotImplementedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when the requested operation is unimplemented. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" line="55" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" bodystart="55" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a1a254a9280502811171118dcac13600c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Editor.Controller.Connections.DeviceConnection.DeviceConnectionController.connectToDevice</definition>
+        <argsstring>(int index)</argsstring>
+        <name>connectToDevice</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Connects to device. </para>        </briefdescription>
+        <detaileddescription>
+<para>Geht, 18.12.2013. </para><para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>NotImplementedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when the requested operation is unimplemented. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Zero-based index of the. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" line="71" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" bodystart="71" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1aa9749bb261bfdcb77ec5f2776120b202" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Editor.Controller.Connections.DeviceConnection.DeviceConnectionController.sendProject</definition>
+        <argsstring>()</argsstring>
+        <name>sendProject</name>
+        <briefdescription>
+<para>Sends the project. </para>        </briefdescription>
+        <detaileddescription>
+<para>Geht, 18.12.2013. </para><para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>NotImplementedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when the requested operation is unimplemented. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" line="85" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" bodystart="85" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1aef3993746fae7ca5e0849646264df6af" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>string</type>
+        <definition>virtual string Editor.Controller.Connections.DeviceConnection.DeviceConnectionController.getDebugMessage</definition>
+        <argsstring>()</argsstring>
+        <name>getDebugMessage</name>
+        <briefdescription>
+<para>Gets debug message. </para>        </briefdescription>
+        <detaileddescription>
+<para>Geht, 18.12.2013. </para><para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>NotImplementedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when the requested operation is unimplemented. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para><para><simplesect kind="return"><para>The debug message. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" line="101" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" bodystart="101" bodyend="104"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A controller for handling device connections. </para>    </briefdescription>
+    <detaileddescription>
+<para>Geht, 18.12.2013. </para>    </detaileddescription>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" line="21" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" bodystart="20" bodyend="106"/>
+    <listofallmembers>
+      <member refid="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a1a254a9280502811171118dcac13600c" prot="public" virt="virtual"><scope>Editor::Controller::Connections::DeviceConnection::DeviceConnectionController</scope><name>connectToDevice</name></member>
+      <member refid="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1aef3993746fae7ca5e0849646264df6af" prot="public" virt="virtual"><scope>Editor::Controller::Connections::DeviceConnection::DeviceConnectionController</scope><name>getDebugMessage</name></member>
+      <member refid="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a1a0821d7bf2e027321c9addb1d37b440" prot="public" virt="virtual"><scope>Editor::Controller::Connections::DeviceConnection::DeviceConnectionController</scope><name>getPossibleClients</name></member>
+      <member refid="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1aa9749bb261bfdcb77ec5f2776120b202" prot="public" virt="virtual"><scope>Editor::Controller::Connections::DeviceConnection::DeviceConnectionController</scope><name>sendProject</name></member>
+      <member refid="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a5d39c82d739df7023c05aab4d4ab4593" prot="public" virt="non-virtual"><scope>Editor::Controller::Connections::DeviceConnection::DeviceConnectionController</scope><name>TCPServer</name></member>
+      <member refid="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a7140b30e3c3b5b35896bb18f0f0da552" prot="public" virt="non-virtual"><scope>Editor::Controller::Connections::DeviceConnection::DeviceConnectionController</scope><name>UDPServer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,181 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_editor_1_1_model_1_1_project_1_1_abstract_augmentation" kind="class" prot="public" abstract="yes">
+    <compoundname>Editor::Model::Project::AbstractAugmentation</compoundname>
+    <basecompoundref refid="interface_serializable" prot="public" virt="non-virtual">Serializable</basecompoundref>
+    <basecompoundref refid="interface_editor_1_1_model_1_1_project_1_1_i_previewable" prot="public" virt="non-virtual">Editor.Model.Project.IPreviewable</basecompoundref>
+    <derivedcompoundref refid="class_editor_1_1_model_1_1_project_1_1_abstract_dynamic2_d_augmentation" prot="public" virt="non-virtual">Editor.Model.Project.AbstractDynamic2DAugmentation</derivedcompoundref>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_editor_1_1_model_1_1_project_1_1_abstract_augmentation_1a0ae72913fd71ae35ed580280a4f06478" prot="private" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>int</type>
+        <definition>int Editor.Model.Project.AbstractAugmentation.coordinatesystemid</definition>
+        <argsstring></argsstring>
+        <name>coordinatesystemid</name>
+        <briefdescription>
+<para>Gets or sets the coordinatesystemid. </para>        </briefdescription>
+        <detaileddescription>
+<para>The coordinatesystemid. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/AbstractAugmentation.cs" line="28" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/AbstractAugmentation.cs" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_editor_1_1_model_1_1_project_1_1_abstract_augmentation_1ad509c062957807428498aa76d328e4e7" prot="private" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>boolean</type>
+        <definition>boolean Editor.Model.Project.AbstractAugmentation.isVisible</definition>
+        <argsstring></argsstring>
+        <name>isVisible</name>
+        <briefdescription>
+<para>Gets or sets a value indicating whether this object is visible. </para>        </briefdescription>
+        <detaileddescription>
+<para>true if this object is visible, false if not. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/AbstractAugmentation.cs" line="40" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/AbstractAugmentation.cs" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_editor_1_1_model_1_1_project_1_1_abstract_augmentation_1ab5cb535c877204d06d763618751ccdba" prot="private" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>List&lt; File &gt;</type>
+        <definition>List&lt;File&gt; Editor.Model.Project.AbstractAugmentation.customUserEvents</definition>
+        <argsstring></argsstring>
+        <name>customUserEvents</name>
+        <briefdescription>
+<para>Gets or sets the custom user events. </para>        </briefdescription>
+        <detaileddescription>
+<para>The custom user events. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/AbstractAugmentation.cs" line="52" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/AbstractAugmentation.cs" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_editor_1_1_model_1_1_project_1_1_abstract_augmentation_1a529a84463853dd31fcad7aa33c90b7c3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual Editor.Model.Project.AbstractAugmentation.[instance initializer]</definition>
+        <argsstring></argsstring>
+        <name>[instance initializer]</name>
+        <reimplementedby refid="class_editor_1_1_model_1_1_project_1_1_abstract_dynamic2_d_augmentation_1a9d9677fc74f7086eede97e342d41a6cd">[instance initializer]</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/AbstractAugmentation.cs" line="58" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_editor_1_1_model_1_1_project_1_1_abstract_augmentation_1a436d2ad8cc50aac47ff96bd0f134acbe" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Editor.Model.Project.AbstractAugmentation.accept</definition>
+        <argsstring>(ProjectVisitor visitor)</argsstring>
+        <name>accept</name>
+        <param>
+          <type>ProjectVisitor</type>
+          <declname>visitor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/AbstractAugmentation.cs" line="63" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/AbstractAugmentation.cs" bodystart="63" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="class_editor_1_1_model_1_1_project_1_1_abstract_augmentation_1ada071b620589ac642213e6121da7511c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>Bitmap</type>
+        <definition>virtual Bitmap Editor.Model.Project.AbstractAugmentation.getPreview</definition>
+        <argsstring>()</argsstring>
+        <name>getPreview</name>
+        <reimplements refid="interface_editor_1_1_model_1_1_project_1_1_i_previewable_1a6076a009c6dd80240dc18bf4507df15a">getPreview</reimplements>
+        <briefdescription>
+<para>Gets the preview. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The preview. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/AbstractAugmentation.cs" line="68" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/AbstractAugmentation.cs" bodystart="68" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="class_editor_1_1_model_1_1_project_1_1_abstract_augmentation_1a53e3bb959d54ee200b6030e33e3f98fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>abstract List&lt; AbstractProperty &gt;</type>
+        <definition>abstract List&lt;AbstractProperty&gt; Editor.Model.Project.AbstractAugmentation.getPropertyList</definition>
+        <argsstring>()</argsstring>
+        <name>getPropertyList</name>
+        <reimplements refid="interface_editor_1_1_model_1_1_project_1_1_i_previewable_1a2cf3a3510afada4587b1fb68743f1145">getPropertyList</reimplements>
+        <briefdescription>
+<para>Gets property list. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The property list. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/AbstractAugmentation.cs" line="73" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>An abstract augmentation. </para>    </briefdescription>
+    <detaileddescription>
+<para>Geht, 18.12.2013. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="361">
+        <label>Editor.Model.Project.AbstractDynamic2DAugmentation</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_abstract_dynamic2_d_augmentation"/>
+        <childnode refid="358" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="359">
+        <label>Serializable</label>
+        <link refid="interface_serializable"/>
+      </node>
+      <node id="358">
+        <label>Editor.Model.Project.AbstractAugmentation</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_abstract_augmentation"/>
+        <childnode refid="359" relation="public-inheritance">
+        </childnode>
+        <childnode refid="360" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="362">
+        <label>Editor.Model.Project.Graph</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_graph"/>
+        <childnode refid="361" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="360">
+        <label>IPreviewable</label>
+        <link refid="interface_editor_1_1_model_1_1_project_1_1_i_previewable"/>
+      </node>
+      <node id="363">
+        <label>Editor.Model.Project.BarGraph</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_bar_graph"/>
+        <childnode refid="362" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="365">
+        <label>Serializable</label>
+        <link refid="interface_serializable"/>
+      </node>
+      <node id="364">
+        <label>Editor.Model.Project.AbstractAugmentation</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_abstract_augmentation"/>
+        <childnode refid="365" relation="public-inheritance">
+        </childnode>
+        <childnode refid="366" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="366">
+        <label>IPreviewable</label>
+        <link refid="interface_editor_1_1_model_1_1_project_1_1_i_previewable"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/AbstractAugmentation.cs" line="21" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/AbstractAugmentation.cs" bodystart="20" bodyend="75"/>
+    <listofallmembers>
+      <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_augmentation_1a529a84463853dd31fcad7aa33c90b7c3" prot="public" virt="virtual"><scope>Editor::Model::Project::AbstractAugmentation</scope><name>[instance initializer]</name></member>
+      <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_augmentation_1a436d2ad8cc50aac47ff96bd0f134acbe" prot="public" virt="virtual"><scope>Editor::Model::Project::AbstractAugmentation</scope><name>accept</name></member>
+      <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_augmentation_1a0ae72913fd71ae35ed580280a4f06478" prot="private" virt="non-virtual"><scope>Editor::Model::Project::AbstractAugmentation</scope><name>coordinatesystemid</name></member>
+      <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_augmentation_1ab5cb535c877204d06d763618751ccdba" prot="private" virt="non-virtual"><scope>Editor::Model::Project::AbstractAugmentation</scope><name>customUserEvents</name></member>
+      <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_augmentation_1ada071b620589ac642213e6121da7511c" prot="public" virt="virtual"><scope>Editor::Model::Project::AbstractAugmentation</scope><name>getPreview</name></member>
+      <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_augmentation_1a53e3bb959d54ee200b6030e33e3f98fb" prot="public" virt="pure-virtual"><scope>Editor::Model::Project::AbstractAugmentation</scope><name>getPropertyList</name></member>
+      <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_augmentation_1ad509c062957807428498aa76d328e4e7" prot="private" virt="non-virtual"><scope>Editor::Model::Project::AbstractAugmentation</scope><name>isVisible</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

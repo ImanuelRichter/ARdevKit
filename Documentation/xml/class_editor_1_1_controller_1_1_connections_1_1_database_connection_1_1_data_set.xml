@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_editor_1_1_controller_1_1_connections_1_1_database_connection_1_1_data_set" kind="class" prot="public">
+    <compoundname>Editor::Controller::Connections::DatabaseConnection::DataSet</compoundname>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_editor_1_1_controller_1_1_connections_1_1_database_connection_1_1_data_set_1a12f186105fce06907ec2c1e6ba08f1be" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual Editor.Controller.Connections.DatabaseConnection.DataSet.[instance initializer]</definition>
+        <argsstring></argsstring>
+        <name>[instance initializer]</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/Connections/DatabaseConnection/DataSet.cs" line="22" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Represents an in-memory cache of data. </para>    </briefdescription>
+    <detaileddescription>
+<para>Geht, 18.12.2013. </para>    </detaileddescription>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/Connections/DatabaseConnection/DataSet.cs" line="21" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/Connections/DatabaseConnection/DataSet.cs" bodystart="20" bodyend="27"/>
+    <listofallmembers>
+      <member refid="class_editor_1_1_controller_1_1_connections_1_1_database_connection_1_1_data_set_1a12f186105fce06907ec2c1e6ba08f1be" prot="public" virt="virtual"><scope>Editor::Controller::Connections::DatabaseConnection::DataSet</scope><name>[instance initializer]</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

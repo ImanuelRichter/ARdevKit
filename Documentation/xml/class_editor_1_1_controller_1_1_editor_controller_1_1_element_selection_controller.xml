@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_editor_1_1_controller_1_1_editor_controller_1_1_element_selection_controller" kind="class" prot="public">
+    <compoundname>Editor::Controller::EditorController::ElementSelectionController</compoundname>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_editor_1_1_controller_1_1_editor_controller_1_1_element_selection_controller_1a32d8bb669a502450c8b88bf29224c12a" prot="private" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>List&lt; <ref refid="class_editor_1_1_view_1_1_editor_window_1_1_scene_element_category_panel" kindref="compound">SceneElementCategoryPanel</ref> &gt;</type>
+        <definition>List&lt;SceneElementCategoryPanel&gt; Editor.Controller.EditorController.ElementSelectionController.categoryPanels</definition>
+        <argsstring></argsstring>
+        <name>categoryPanels</name>
+        <briefdescription>
+<para>Gets or sets the category panels. </para>        </briefdescription>
+        <detaileddescription>
+<para>The category panels. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/ElementSelectionController.cs" line="28" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/ElementSelectionController.cs" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_editor_1_1_controller_1_1_editor_controller_1_1_element_selection_controller_1afe28842352c26aa053f1fe990bdf4d1e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual Editor.Controller.EditorController.ElementSelectionController.[instance initializer]</definition>
+        <argsstring></argsstring>
+        <name>[instance initializer]</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/ElementSelectionController.cs" line="34" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_editor_1_1_controller_1_1_editor_controller_1_1_element_selection_controller_1a98414d49779be7518b3ca05ed0c70d5b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Editor.Controller.EditorController.ElementSelectionController.updateElementSelectionPanel</definition>
+        <argsstring>()</argsstring>
+        <name>updateElementSelectionPanel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/ElementSelectionController.cs" line="39" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/ElementSelectionController.cs" bodystart="39" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="class_editor_1_1_controller_1_1_editor_controller_1_1_element_selection_controller_1ac9dab5bd64e8a76ac6d698b91ca08f8a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Editor.Controller.EditorController.ElementSelectionController.createCategoryPanels</definition>
+        <argsstring>()</argsstring>
+        <name>createCategoryPanels</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/ElementSelectionController.cs" line="44" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/ElementSelectionController.cs" bodystart="44" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="class_editor_1_1_controller_1_1_editor_controller_1_1_element_selection_controller_1a93b2c408b70d1981fc94a91257b34465" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Editor.Controller.EditorController.ElementSelectionController.populateComboBox</definition>
+        <argsstring>()</argsstring>
+        <name>populateComboBox</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/ElementSelectionController.cs" line="49" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/ElementSelectionController.cs" bodystart="49" bodyend="52"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A controller for handling element selections. </para>    </briefdescription>
+    <detaileddescription>
+<para>Geht, 18.12.2013. </para>    </detaileddescription>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/ElementSelectionController.cs" line="21" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/ElementSelectionController.cs" bodystart="20" bodyend="54"/>
+    <listofallmembers>
+      <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_element_selection_controller_1afe28842352c26aa053f1fe990bdf4d1e" prot="public" virt="virtual"><scope>Editor::Controller::EditorController::ElementSelectionController</scope><name>[instance initializer]</name></member>
+      <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_element_selection_controller_1a32d8bb669a502450c8b88bf29224c12a" prot="private" virt="non-virtual"><scope>Editor::Controller::EditorController::ElementSelectionController</scope><name>categoryPanels</name></member>
+      <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_element_selection_controller_1ac9dab5bd64e8a76ac6d698b91ca08f8a" prot="public" virt="virtual"><scope>Editor::Controller::EditorController::ElementSelectionController</scope><name>createCategoryPanels</name></member>
+      <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_element_selection_controller_1a93b2c408b70d1981fc94a91257b34465" prot="public" virt="virtual"><scope>Editor::Controller::EditorController::ElementSelectionController</scope><name>populateComboBox</name></member>
+      <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_element_selection_controller_1a98414d49779be7518b3ca05ed0c70d5b" prot="public" virt="virtual"><scope>Editor::Controller::EditorController::ElementSelectionController</scope><name>updateElementSelectionPanel</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

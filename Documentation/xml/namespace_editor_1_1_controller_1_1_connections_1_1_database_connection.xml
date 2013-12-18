@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="namespace_editor_1_1_controller_1_1_connections_1_1_database_connection" kind="namespace">
+    <compoundname>Editor::Controller::Connections::DatabaseConnection</compoundname>
+    <innerclass refid="class_editor_1_1_controller_1_1_connections_1_1_database_connection_1_1_data_set" prot="public">Editor::Controller::Connections::DatabaseConnection::DataSet</innerclass>
+    <innerclass refid="class_editor_1_1_controller_1_1_connections_1_1_database_connection_1_1_db_command" prot="public">Editor::Controller::Connections::DatabaseConnection::DbCommand</innerclass>
+    <innerclass refid="class_editor_1_1_controller_1_1_connections_1_1_database_connection_1_1_db_connection" prot="public">Editor::Controller::Connections::DatabaseConnection::DbConnection</innerclass>
+    <innerclass refid="class_editor_1_1_controller_1_1_connections_1_1_database_connection_1_1_db_data_reader" prot="public">Editor::Controller::Connections::DatabaseConnection::DbDataReader</innerclass>
+    <innerclass refid="class_editor_1_1_controller_1_1_connections_1_1_database_connection_1_1_db_parameter" prot="public">Editor::Controller::Connections::DatabaseConnection::DbParameter</innerclass>
+    <innerclass refid="class_editor_1_1_controller_1_1_connections_1_1_database_connection_1_1_db_provider_factory" prot="public">Editor::Controller::Connections::DatabaseConnection::DbProviderFactory</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/Connections/DatabaseConnection/DataSet.cs" line="8" column="1"/>
+  </compounddef>
+</doxygen>

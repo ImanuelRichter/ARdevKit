@@ -1,0 +1,837 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.5">
+  <compound refid="class_editor_1_1_model_1_1_project_1_1_abstract_augmentation" kind="class"><name>Editor::Model::Project::AbstractAugmentation</name>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_augmentation_1a0ae72913fd71ae35ed580280a4f06478" kind="property"><name>coordinatesystemid</name></member>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_augmentation_1ad509c062957807428498aa76d328e4e7" kind="property"><name>isVisible</name></member>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_augmentation_1ab5cb535c877204d06d763618751ccdba" kind="property"><name>customUserEvents</name></member>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_augmentation_1a529a84463853dd31fcad7aa33c90b7c3" kind="function"><name>[instance initializer]</name></member>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_augmentation_1a436d2ad8cc50aac47ff96bd0f134acbe" kind="function"><name>accept</name></member>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_augmentation_1ada071b620589ac642213e6121da7511c" kind="function"><name>getPreview</name></member>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_augmentation_1a53e3bb959d54ee200b6030e33e3f98fb" kind="function"><name>getPropertyList</name></member>
+  </compound>
+  <compound refid="class_editor_1_1_model_1_1_project_1_1_abstract_dynamic2_d_augmentation" kind="class"><name>Editor::Model::Project::AbstractDynamic2DAugmentation</name>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_dynamic2_d_augmentation_1ad64d37320e2d7bd52bf8ba6229ed3a4a" kind="property"><name>width</name></member>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_dynamic2_d_augmentation_1a5bcf1c522992cc657a7c44a34e9ec5be" kind="property"><name>height</name></member>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_dynamic2_d_augmentation_1a9d9677fc74f7086eede97e342d41a6cd" kind="function"><name>[instance initializer]</name></member>
+  </compound>
+  <compound refid="class_editor_1_1_model_1_1_project_1_1_abstract_marker" kind="class"><name>Editor::Model::Project::AbstractMarker</name>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_marker_1ad045236e707243b20d383fcd08780ff5" kind="property"><name>sensorCosID</name></member>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_marker_1a09aea5ddb9d7e0e05701855704c8ee7e" kind="property"><name>size</name></member>
+  </compound>
+  <compound refid="class_editor_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor" kind="class"><name>Editor::Controller::ProjectController::AbstractProjectVisitor</name>
+    <member refid="class_editor_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor_1a19e9f61a3d1e029456bca07f4cf3e956" kind="function"><name>visit</name></member>
+    <member refid="class_editor_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor_1ac86088c0efe692ff21253ab6726b7e79" kind="function"><name>visit</name></member>
+    <member refid="class_editor_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor_1a28b4badcd04ebce8805e12fbbda1f7ce" kind="function"><name>visit</name></member>
+    <member refid="class_editor_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor_1a2bcd98210f07d067e3aa6a60570613d7" kind="function"><name>visit</name></member>
+  </compound>
+  <compound refid="class_editor_1_1_view_1_1_editor_window_1_1_abstract_property" kind="class"><name>Editor::View::EditorWindow::AbstractProperty</name>
+    <member refid="class_editor_1_1_view_1_1_editor_window_1_1_abstract_property_1a0b12f79ee5b1fb7d34454a7788dce90f" kind="function"><name>[instance initializer]</name></member>
+    <member refid="class_editor_1_1_view_1_1_editor_window_1_1_abstract_property_1a9c5fd1dffa544ba83c6b194a6bd2aedd" kind="function"><name>getVisualRepresentation</name></member>
+  </compound>
+  <compound refid="class_editor_1_1_model_1_1_project_1_1_abstract_source" kind="class"><name>Editor::Model::Project::AbstractSource</name>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_source_1aacfe3c47e4f0ffa23ac9f7e934130144" kind="property"><name>icon</name></member>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_source_1aafa9c6119aee5a8194bfbc1fc904090c" kind="property"><name>sourceID</name></member>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_source_1a4a4c82647a2aa9fe8ff029d56fdbb119" kind="function"><name>accept</name></member>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_source_1a5dfe2d0830196f740e1df732134d2c83" kind="function"><name>getPreview</name></member>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_source_1aee7e5d52eaf1ea95ed5875b1b6d65a8b" kind="function"><name>getPropertyList</name></member>
+  </compound>
+  <compound refid="class_editor_1_1_model_1_1_project_1_1_abstract_trackable" kind="class"><name>Editor::Model::Project::AbstractTrackable</name>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_trackable_1a51b4a378dac7cf7c178558c8005d7591" kind="property"><name>sensorID</name></member>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_trackable_1a870d726abee0db9db6feb520ce59d165" kind="property"><name>sensorType</name></member>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_trackable_1a43b38c4a3a97508373d12052fdbcb48d" kind="property"><name>sensorSubType</name></member>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_trackable_1ab15dc9a21778fdea93f19e4da02ff763" kind="function"><name>[instance initializer]</name></member>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_trackable_1abbada0cdfa32b9ebaaaf8f41bbee16a0" kind="function"><name>accept</name></member>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_trackable_1a9fa5446dcb4263c5922f8e6e2f0796d1" kind="function"><name>getPreview</name></member>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_trackable_1a7d0cabfe145ec2afb30a5d3a98869629" kind="function"><name>getPropertyList</name></member>
+  </compound>
+  <compound refid="class_editor_1_1_view_1_1_editor_window_1_1_add_scene_button" kind="class"><name>Editor::View::EditorWindow::AddSceneButton</name>
+  </compound>
+  <compound refid="class_editor_1_1_controller_1_1_editor_controller_1_1_a_rdev_kit" kind="class"><name>Editor::Controller::EditorController::ARdevKit</name>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_a_rdev_kit_1a3ad44a8204598cfdb4d3cd3b74b2664b" kind="function"><name>[instance initializer]</name></member>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_a_rdev_kit_1a78d09e1aff2838aa06add6c671298fcc" kind="function"><name>Run</name></member>
+  </compound>
+  <compound refid="class_player_1_1_model_1_1_arel_file" kind="class"><name>Player::Model::ArelFile</name>
+  </compound>
+  <compound refid="class_editor_1_1_model_1_1_project_1_1_bar_graph" kind="class"><name>Editor::Model::Project::BarGraph</name>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_bar_graph_1ab56dfd22268ee47a733db65bed0edec9" kind="property"><name>optimalValue</name></member>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_bar_graph_1a527f6bd3ff9ff40bd00950aa3933c732" kind="property"><name>maxValueColor</name></member>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_bar_graph_1ab10677f39285ea6c6028745b3ebb5c9e" kind="property"><name>minValueColor</name></member>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_bar_graph_1a4de1fb0dbe8a78c7598c7e15073d8679" kind="property"><name>optimalValueColor</name></member>
+  </compound>
+  <compound refid="class_player_1_1_view_1_1_button" kind="class"><name>Player::View::Button</name>
+  </compound>
+  <compound refid="class_classes_1_1_camera" kind="class"><name>Classes::Camera</name>
+  </compound>
+  <compound refid="class_editor_1_1_view_1_1_editor_window_1_1_category_combo_box" kind="class"><name>Editor::View::EditorWindow::CategoryComboBox</name>
+  </compound>
+  <compound refid="class_editor_1_1_view_1_1_editor_window_1_1_color_property" kind="class"><name>Editor::View::EditorWindow::ColorProperty</name>
+    <member refid="class_editor_1_1_view_1_1_editor_window_1_1_color_property_1ad1cd0e9dcd3654fb7e9e7688f4e3f9f6" kind="property"><name>value</name></member>
+  </compound>
+  <compound refid="class_editor_1_1_view_1_1_debug_window_1_1_console_panel" kind="class"><name>Editor::View::DebugWindow::ConsolePanel</name>
+  </compound>
+  <compound refid="class_player_1_1_controller_1_1_connection_1_1_database_connection_1_1_database_facade" kind="class"><name>Player::Controller::Connection::DatabaseConnection::DatabaseFacade</name>
+  </compound>
+  <compound refid="class_editor_1_1_controller_1_1_connections_1_1_database_connection_1_1_data_set" kind="class"><name>Editor::Controller::Connections::DatabaseConnection::DataSet</name>
+    <member refid="class_editor_1_1_controller_1_1_connections_1_1_database_connection_1_1_data_set_1a12f186105fce06907ec2c1e6ba08f1be" kind="function"><name>[instance initializer]</name></member>
+  </compound>
+  <compound refid="class_editor_1_1_controller_1_1_connections_1_1_database_connection_1_1_db_command" kind="class"><name>Editor::Controller::Connections::DatabaseConnection::DbCommand</name>
+    <member refid="class_editor_1_1_controller_1_1_connections_1_1_database_connection_1_1_db_command_1a4d99f82fb9e48a2e6f341c51183d6558" kind="function"><name>[instance initializer]</name></member>
+    <member refid="class_editor_1_1_controller_1_1_connections_1_1_database_connection_1_1_db_command_1a504ebcb10f916efffadcc4a12a5be812" kind="function"><name>CreateDbParameter</name></member>
+    <member refid="class_editor_1_1_controller_1_1_connections_1_1_database_connection_1_1_db_command_1aa8d55156096456613bbf3db3a27d8880" kind="function"><name>ExecuteDbDataReader</name></member>
+  </compound>
+  <compound refid="class_editor_1_1_controller_1_1_connections_1_1_database_connection_1_1_db_connection" kind="class"><name>Editor::Controller::Connections::DatabaseConnection::DbConnection</name>
+    <member refid="class_editor_1_1_controller_1_1_connections_1_1_database_connection_1_1_db_connection_1a5f5c280f5689add31f74c876e3670821" kind="property"><name>ConnectionString</name></member>
+    <member refid="class_editor_1_1_controller_1_1_connections_1_1_database_connection_1_1_db_connection_1a95c534b8d4c35f1fcb5e7edabd2a9ed3" kind="function"><name>[instance initializer]</name></member>
+    <member refid="class_editor_1_1_controller_1_1_connections_1_1_database_connection_1_1_db_connection_1af0dd2c19e63c0b982001f1b263f13a6f" kind="function"><name>open</name></member>
+    <member refid="class_editor_1_1_controller_1_1_connections_1_1_database_connection_1_1_db_connection_1aa3ec7de2c089548fcdf6f498d6a0c9de" kind="function"><name>close</name></member>
+    <member refid="class_editor_1_1_controller_1_1_connections_1_1_database_connection_1_1_db_connection_1a006c5b2c7dbf01ac2d72896e074d10f1" kind="function"><name>createDbCommand</name></member>
+  </compound>
+  <compound refid="class_editor_1_1_controller_1_1_connections_1_1_database_connection_1_1_db_data_reader" kind="class"><name>Editor::Controller::Connections::DatabaseConnection::DbDataReader</name>
+    <member refid="class_editor_1_1_controller_1_1_connections_1_1_database_connection_1_1_db_data_reader_1a5fac3607f780363201c58509e1005207" kind="function"><name>close</name></member>
+    <member refid="class_editor_1_1_controller_1_1_connections_1_1_database_connection_1_1_db_data_reader_1a4746c09887a0d23ddb4ab25b542e9373" kind="function"><name>getData</name></member>
+  </compound>
+  <compound refid="class_editor_1_1_controller_1_1_connections_1_1_database_connection_1_1_db_parameter" kind="class"><name>Editor::Controller::Connections::DatabaseConnection::DbParameter</name>
+    <member refid="class_editor_1_1_controller_1_1_connections_1_1_database_connection_1_1_db_parameter_1ad4bc36e3f3983736062d90b6e28ee5ac" kind="function"><name>[instance initializer]</name></member>
+  </compound>
+  <compound refid="class_editor_1_1_controller_1_1_connections_1_1_database_connection_1_1_db_provider_factory" kind="class"><name>Editor::Controller::Connections::DatabaseConnection::DbProviderFactory</name>
+    <member refid="class_editor_1_1_controller_1_1_connections_1_1_database_connection_1_1_db_provider_factory_1a37f6aba34ee4e922b36c89f5aa1ce8c0" kind="function"><name>CreateConnection</name></member>
+  </compound>
+  <compound refid="class_editor_1_1_model_1_1_project_1_1_db_source" kind="class"><name>Editor::Model::Project::DbSource</name>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_db_source_1a242b791ad177b9babdc34d1b0b3b762c" kind="function"><name>[instance initializer]</name></member>
+  </compound>
+  <compound refid="class_editor_1_1_controller_1_1_debug_controller_1_1_debug_controller" kind="class"><name>Editor::Controller::DebugController::DebugController</name>
+    <member refid="class_editor_1_1_controller_1_1_debug_controller_1_1_debug_controller_1af6cc4a40ea7592003d5ee883d883e539" kind="property"><name>DeviceConnectionController</name></member>
+    <member refid="class_editor_1_1_controller_1_1_debug_controller_1_1_debug_controller_1adcee9d70b6976140eee84b49eea5e76d" kind="function"><name>[instance initializer]</name></member>
+    <member refid="class_editor_1_1_controller_1_1_debug_controller_1_1_debug_controller_1af57c8f0d4ba1bed17de0c25f7603a3ad" kind="function"><name>notify</name></member>
+    <member refid="class_editor_1_1_controller_1_1_debug_controller_1_1_debug_controller_1adea57873bc83668d2929a6fb31bab29a" kind="function"><name>notify</name></member>
+  </compound>
+  <compound refid="class_player_1_1_controller_1_1_debug_controller_1_1_debug_controller" kind="class"><name>Player::Controller::DebugController::DebugController</name>
+    <member refid="class_player_1_1_controller_1_1_debug_controller_1_1_debug_controller_1ae8bbb7ce146fd8050fd8ed032f407975" kind="property"><name>TCPClient</name></member>
+    <member refid="class_player_1_1_controller_1_1_debug_controller_1_1_debug_controller_1afc9918b9236e651ca44b6f5ba6356e99" kind="function"><name>notify</name></member>
+    <member refid="class_player_1_1_controller_1_1_debug_controller_1_1_debug_controller_1a919ff1ec473cbd14f2081e31b84e8797" kind="function"><name>notify</name></member>
+  </compound>
+  <compound refid="class_editor_1_1_view_1_1_debug_window_1_1_debug_window" kind="class"><name>Editor::View::DebugWindow::DebugWindow</name>
+  </compound>
+  <compound refid="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller" kind="class"><name>Editor::Controller::Connections::DeviceConnection::DeviceConnectionController</name>
+    <member refid="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a7140b30e3c3b5b35896bb18f0f0da552" kind="property"><name>UDPServer</name></member>
+    <member refid="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a5d39c82d739df7023c05aab4d4ab4593" kind="property"><name>TCPServer</name></member>
+    <member refid="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a1a0821d7bf2e027321c9addb1d37b440" kind="function"><name>getPossibleClients</name></member>
+    <member refid="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a1a254a9280502811171118dcac13600c" kind="function"><name>connectToDevice</name></member>
+    <member refid="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1aa9749bb261bfdcb77ec5f2776120b202" kind="function"><name>sendProject</name></member>
+    <member refid="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1aef3993746fae7ca5e0849646264df6af" kind="function"><name>getDebugMessage</name></member>
+  </compound>
+  <compound refid="class_editor_1_1_view_1_1_editor_window_1_1_editor_window" kind="class"><name>Editor::View::EditorWindow::EditorWindow</name>
+  </compound>
+  <compound refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller" kind="class"><name>Editor::Controller::EditorController::EditorWindowController</name>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1ae3c2086d9f30c400a233a2cc4f040228" kind="property"><name>startDebugModeLocal</name></member>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1af130a17e0148f5db82e1908077289069" kind="property"><name>startDebugModeDevice</name></member>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1a9a2c1eadb050f3f8dea5bcd435f8cf95" kind="property"><name>elementCategories</name></member>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1abb81fa4b5a66d7f1daa3d8e2696c01ab" kind="function"><name>[instance initializer]</name></member>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1abb81fa4b5a66d7f1daa3d8e2696c01ab" kind="function"><name>[instance initializer]</name></member>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1abb81fa4b5a66d7f1daa3d8e2696c01ab" kind="function"><name>[instance initializer]</name></member>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1abb81fa4b5a66d7f1daa3d8e2696c01ab" kind="function"><name>[instance initializer]</name></member>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1abb81fa4b5a66d7f1daa3d8e2696c01ab" kind="function"><name>[instance initializer]</name></member>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1abb81fa4b5a66d7f1daa3d8e2696c01ab" kind="function"><name>[instance initializer]</name></member>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1a611cfa811b027a0fd7d39abd97aef4d0" kind="function"><name>loadProject</name></member>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1a91f657d45f317c81096baaa366fc2889" kind="function"><name>saveProject</name></member>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1a9c1fb471800c8ec1912edb1957a09416" kind="function"><name>exportProject</name></member>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1ac771305e6947674e61611122ed7662b8" kind="function"><name>createNewProject</name></member>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1af7635018e28adce77b1bfd3913fa7036" kind="function"><name>sendToDevice</name></member>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1ae77dd0da0661aed2fb0b5a2ae0d81b12" kind="function"><name>updatePreviewPanel</name></member>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1abf5eb61f078be7dc2b5c872f20afdb27" kind="function"><name>updateSceneSelectionPanel</name></member>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1ae7f0417a4afb207e2550c4cea698e15c" kind="function"><name>updateStatusBar</name></member>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1ab729495754c06bd5bd12b11a4f5207d9" kind="function"><name>openTestWindow</name></member>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1a5ce04245191c66bf1c3611a39bd2cfcf" kind="function"><name>openDebugWindow</name></member>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1a545bc513d44f64b9f045d23e05b9b215" kind="function"><name>addDevice</name></member>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1af1253e9444dacb7c2782c0867b734595" kind="function"><name>updatePropertyPanel</name></member>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1a4ec2b3ab63afede2be27dec349b050d2" kind="function"><name>updateElementSelectionPanel</name></member>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1af1ce6a7e64eb24cb3b897f3c0451dc4a" kind="function"><name>registerElements</name></member>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_editor_window_controller_1ada353b4497a1194be35f7b81972f5d50" kind="function"><name>addCategory</name></member>
+  </compound>
+  <compound refid="class_editor_1_1_view_1_1_editor_window_1_1_element_combo_box" kind="class"><name>Editor::View::EditorWindow::ElementComboBox</name>
+  </compound>
+  <compound refid="class_editor_1_1_view_1_1_editor_window_1_1_element_icon" kind="class"><name>Editor::View::EditorWindow::ElementIcon</name>
+    <member refid="class_editor_1_1_view_1_1_editor_window_1_1_element_icon_1a299decc6d6e4e2cc95bee1cb3f625e4c" kind="property"><name>element</name></member>
+    <member refid="class_editor_1_1_view_1_1_editor_window_1_1_element_icon_1a0aaa5b1d409bcd14bc3a005b976cdd46" kind="function"><name>[instance initializer]</name></member>
+    <member refid="class_editor_1_1_view_1_1_editor_window_1_1_element_icon_1a8c6c3844fa4ba6003294cedff86c14e4" kind="function"><name>onDragDrop</name></member>
+  </compound>
+  <compound refid="class_editor_1_1_controller_1_1_editor_controller_1_1_element_selection_controller" kind="class"><name>Editor::Controller::EditorController::ElementSelectionController</name>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_element_selection_controller_1a32d8bb669a502450c8b88bf29224c12a" kind="property"><name>categoryPanels</name></member>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_element_selection_controller_1afe28842352c26aa053f1fe990bdf4d1e" kind="function"><name>[instance initializer]</name></member>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_element_selection_controller_1a98414d49779be7518b3ca05ed0c70d5b" kind="function"><name>updateElementSelectionPanel</name></member>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_element_selection_controller_1ac9dab5bd64e8a76ac6d698b91ca08f8a" kind="function"><name>createCategoryPanels</name></member>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_element_selection_controller_1a93b2c408b70d1981fc94a91257b34465" kind="function"><name>populateComboBox</name></member>
+  </compound>
+  <compound refid="class_editor_1_1_view_1_1_editor_window_1_1_element_selection_panel" kind="class"><name>Editor::View::EditorWindow::ElementSelectionPanel</name>
+  </compound>
+  <compound refid="class_editor_1_1_controller_1_1_project_controller_1_1_export_visitor" kind="class"><name>Editor::Controller::ProjectController::ExportVisitor</name>
+    <member refid="class_editor_1_1_controller_1_1_project_controller_1_1_export_visitor_1a2264acf1aafb264f07e224dad1e8bd37" kind="property"><name>stream</name></member>
+    <member refid="class_editor_1_1_controller_1_1_project_controller_1_1_export_visitor_1a76827c925578a8beb332e1ad7accfc28" kind="function"><name>visit</name></member>
+    <member refid="class_editor_1_1_controller_1_1_project_controller_1_1_export_visitor_1a7c56e0cb1c4d1f6f3c82e871fea186fc" kind="function"><name>visit</name></member>
+    <member refid="class_editor_1_1_controller_1_1_project_controller_1_1_export_visitor_1ab2d7a61f8c94d6251e6ef69c430a8aba" kind="function"><name>visit</name></member>
+    <member refid="class_editor_1_1_controller_1_1_project_controller_1_1_export_visitor_1acd84484b230e41d12e03d4f223a8f84d" kind="function"><name>visit</name></member>
+  </compound>
+  <compound refid="class_player_1_1_view_1_1_file" kind="class"><name>Player::View::File</name>
+  </compound>
+  <compound refid="class_editor_1_1_model_1_1_project_1_1_file_source" kind="class"><name>Editor::Model::Project::FileSource</name>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_file_source_1a09b2b02bc3b5b15e4839d7eb1fa1e4d7" kind="property"><name>sourceFile</name></member>
+  </compound>
+  <compound refid="class_editor_1_1_view_1_1_debug_window_1_1_filter_panel" kind="class"><name>Editor::View::DebugWindow::FilterPanel</name>
+  </compound>
+  <compound refid="class_handler_1_1_geometry_extension" kind="class"><name>Handler::GeometryExtension</name>
+  </compound>
+  <compound refid="class_handler_1_1_gesture_handler" kind="class"><name>Handler::GestureHandler</name>
+  </compound>
+  <compound refid="class_editor_1_1_model_1_1_project_1_1_graph" kind="class"><name>Editor::Model::Project::Graph</name>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_graph_1a690156c34c77d79566f6483a0523db48" kind="property"><name>minValue</name></member>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_graph_1a796dd55513b6a8a0b4c8a4d5aa8019f9" kind="property"><name>maxValue</name></member>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_graph_1a2adcd91efefda3cef5567662fb8ddc34" kind="property"><name>scaling</name></member>
+  </compound>
+  <compound refid="classmetaio_s_d_k_1_1_a_r_e_l_1_1_i_a_r_e_l_interpreter" kind="class"><name>metaioSDK::AREL::IARELInterpreter</name>
+  </compound>
+  <compound refid="classmetaio_s_d_k_1_1_a_r_e_l_1_1_i_a_r_e_l_interpreter_callback" kind="class"><name>metaioSDK::AREL::IARELInterpreterCallback</name>
+  </compound>
+  <compound refid="classmetaio_s_d_k_1_1_geometry_1_1_i_billboard_group" kind="class"><name>metaioSDK::Geometry::IBillboardGroup</name>
+  </compound>
+  <compound refid="class_editor_1_1_model_1_1_project_1_1_i_d_marker" kind="class"><name>Editor::Model::Project::IDMarker</name>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_i_d_marker_1a35742f47910a1f4706a2d6c210bf87b8" kind="property"><name>matrixID</name></member>
+  </compound>
+  <compound refid="classmetaio_s_d_k_1_1_geometry_1_1_i_geometry" kind="class"><name>metaioSDK::Geometry::IGeometry</name>
+  </compound>
+  <compound refid="class_handler_1_1_i_gesture_handler_callback" kind="class"><name>Handler::IGestureHandlerCallback</name>
+  </compound>
+  <compound refid="classmetaio_s_d_k_1_1_s_d_k_1_1_i_metaio_s_d_k" kind="class"><name>metaioSDK::SDK::IMetaioSDK</name>
+  </compound>
+  <compound refid="classmetaio_s_d_k_1_1_s_d_k_1_1_i_metaio_s_d_k_callback" kind="class"><name>metaioSDK::SDK::IMetaioSDKCallback</name>
+  </compound>
+  <compound refid="classmetaio_s_d_k_1_1_s_d_k_1_1_i_metaio_s_d_k_win32" kind="class"><name>metaioSDK::SDK::IMetaioSDKWin32</name>
+  </compound>
+  <compound refid="interface_editor_1_1_controller_1_1_i_observer" kind="interface"><name>Editor::Controller::IObserver</name>
+    <member refid="interface_editor_1_1_controller_1_1_i_observer_1ad63f4a913bd937c1594ab02e4de9e21f" kind="function"><name>notify</name></member>
+  </compound>
+  <compound refid="interface_player_1_1_controller_1_1_i_observer" kind="interface"><name>Player::Controller::IObserver</name>
+    <member refid="interface_player_1_1_controller_1_1_i_observer_1a8a4f517b3c9317fe3602b14ba0384540" kind="function"><name>notify</name></member>
+  </compound>
+  <compound refid="interface_player_1_1_controller_1_1_i_observer1" kind="interface"><name>Player::Controller::IObserver1</name>
+    <member refid="interface_player_1_1_controller_1_1_i_observer1_1a15e41bf113f0e083e93e077558cda2cf" kind="function"><name>notify</name></member>
+  </compound>
+  <compound refid="interface_player_1_1_controller_1_1_i_observer2" kind="interface"><name>Player::Controller::IObserver2</name>
+    <member refid="interface_player_1_1_controller_1_1_i_observer2_1a9f8eb77929fbd63ec69dd67ebf398ead" kind="function"><name>notify</name></member>
+  </compound>
+  <compound refid="interface_editor_1_1_model_1_1_project_1_1_i_previewable" kind="interface"><name>Editor::Model::Project::IPreviewable</name>
+    <member refid="interface_editor_1_1_model_1_1_project_1_1_i_previewable_1a6076a009c6dd80240dc18bf4507df15a" kind="function"><name>getPreview</name></member>
+    <member refid="interface_editor_1_1_model_1_1_project_1_1_i_previewable_1a2cf3a3510afada4587b1fb68743f1145" kind="function"><name>getPropertyList</name></member>
+  </compound>
+  <compound refid="interface_editor_1_1_view_1_1_editor_window_1_1_i_property_list_panel" kind="interface"><name>Editor::View::EditorWindow::IPropertyListPanel</name>
+    <member refid="interface_editor_1_1_view_1_1_editor_window_1_1_i_property_list_panel_1acd62829dae5fe0d170b9a18f7ba9c4f1" kind="function"><name>create</name></member>
+  </compound>
+  <compound refid="classmetaio_s_d_k_1_1_sensor_1_1_i_sensors_component" kind="class"><name>metaioSDK::Sensor::ISensorsComponent</name>
+  </compound>
+  <compound refid="class_search_1_1_i_visual_search_callback" kind="class"><name>Search::IVisualSearchCallback</name>
+  </compound>
+  <compound refid="class_editor_1_1_view_1_1_test_view_window_1_1_menu_bar" kind="class"><name>Editor::View::TestViewWindow::MenuBar</name>
+  </compound>
+  <compound refid="class_editor_1_1_view_1_1_debug_window_1_1_menu_bar" kind="class"><name>Editor::View::DebugWindow::MenuBar</name>
+  </compound>
+  <compound refid="class_editor_1_1_view_1_1_editor_window_1_1_menu_bar" kind="class"><name>Editor::View::EditorWindow::MenuBar</name>
+    <member refid="class_editor_1_1_view_1_1_editor_window_1_1_menu_bar_1acef74fbbac202deb00c0ced106dd0ce7" kind="function"><name>[instance initializer]</name></member>
+  </compound>
+  <compound refid="class_editor_1_1_view_1_1_editor_window_1_1_menu_element" kind="class"><name>Editor::View::EditorWindow::MenuElement</name>
+  </compound>
+  <compound refid="class_metaio_wrapper" kind="class"><name>MetaioWrapper</name>
+  </compound>
+  <compound refid="class_editor_1_1_view_1_1_editor_window_1_1_name_text_field" kind="class"><name>Editor::View::EditorWindow::NameTextField</name>
+  </compound>
+  <compound refid="class_ole_d_b_connection" kind="class"><name>OleDBConnection</name>
+  </compound>
+  <compound refid="class_editor_1_1_view_1_1_editor_window_1_1_picture_box" kind="class"><name>Editor::View::EditorWindow::PictureBox</name>
+    <member refid="class_editor_1_1_view_1_1_editor_window_1_1_picture_box_1a3f00c62e2aaee891870bfe2906bcfb24" kind="property"><name>preview</name></member>
+  </compound>
+  <compound refid="class_editor_1_1_model_1_1_project_1_1_picture_marker" kind="class"><name>Editor::Model::Project::PictureMarker</name>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_picture_marker_1a4496d7dd15b4ed20ac1a02f62a4f2cfe" kind="property"><name>image</name></member>
+  </compound>
+  <compound refid="class_player_1_1_controller_1_1_player_controller_1_1_player_controller" kind="class"><name>Player::Controller::PlayerController::PlayerController</name>
+    <member refid="class_player_1_1_controller_1_1_player_controller_1_1_player_controller_1af8c90d7b79252403dd2560265234b2f3" kind="property"><name>ArelFile</name></member>
+    <member refid="class_player_1_1_controller_1_1_player_controller_1_1_player_controller_1aba528737c76756bbdaa0d8bb531a41ac" kind="function"><name>loadProject</name></member>
+    <member refid="class_player_1_1_controller_1_1_player_controller_1_1_player_controller_1a517590584ac873af060c8bbfe21f05e0" kind="function"><name>closeProject</name></member>
+    <member refid="class_player_1_1_controller_1_1_player_controller_1_1_player_controller_1ac1383d56bed42f89f7278f11a95883c8" kind="function"><name>enableDebugMode</name></member>
+  </compound>
+  <compound refid="class_player_1_1_view_1_1_player_page" kind="class"><name>Player::View::PlayerPage</name>
+    <member refid="class_player_1_1_view_1_1_player_page_1abb398da657775c6f06d5c86038eeb287" kind="property"><name>File</name></member>
+    <member refid="class_player_1_1_view_1_1_player_page_1a4cabead14e173f48e4c254d542479d40" kind="property"><name>StackPanel</name></member>
+    <member refid="class_player_1_1_view_1_1_player_page_1abb276a9fc5d077551c630c85eee8d29f" kind="function"><name>[instance initializer]</name></member>
+  </compound>
+  <compound refid="class_editor_1_1_controller_1_1_editor_controller_1_1_preview_controller" kind="class"><name>Editor::Controller::EditorController::PreviewController</name>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_preview_controller_1a7ba617585c529e97860d31623defe346" kind="property"><name>currentMetaCategory</name></member>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_preview_controller_1af4f266d5346f24d2452826cb21f1fa3b" kind="function"><name>updatePreviewPanel</name></member>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_preview_controller_1a7118ae0b2ea906381dd14b7e5c7abb52" kind="function"><name>moveIPreviewable</name></member>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_preview_controller_1aeb73b7b96f651b584f0b730651461b8e" kind="function"><name>addPreviewable</name></member>
+  </compound>
+  <compound refid="class_editor_1_1_view_1_1_editor_window_1_1_preview_panel" kind="class"><name>Editor::View::EditorWindow::PreviewPanel</name>
+    <member refid="class_editor_1_1_view_1_1_editor_window_1_1_preview_panel_1a1535e92a02d7df77e1066c1ce2aee7bd" kind="function"><name>[instance initializer]</name></member>
+  </compound>
+  <compound refid="class_editor_1_1_model_1_1_project_1_1_project" kind="class"><name>Editor::Model::Project::Project</name>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_project_1a78eb5e1de8c7a408f974c34bcdd3f75d" kind="property"><name>name</name></member>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_project_1adfc52520e73648e6419024c3c8e68486" kind="function"><name>[instance initializer]</name></member>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_project_1adfc52520e73648e6419024c3c8e68486" kind="function"><name>[instance initializer]</name></member>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_project_1a55ae2b7c6b3ffd67b38e1cde96e856e9" kind="function"><name>accept</name></member>
+  </compound>
+  <compound refid="class_editor_1_1_controller_1_1_editor_controller_1_1_property_controller" kind="class"><name>Editor::Controller::EditorController::PropertyController</name>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_property_controller_1ae7184432b4c275184834ee2c441215e6" kind="function"><name>addCustomUserEvent</name></member>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_property_controller_1a43bc0474fd061b12402ba1f6a1af54d1" kind="function"><name>editCustomUserEvent</name></member>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_property_controller_1a548eaf6fdb412e3eec2e69d1e032fa29" kind="function"><name>updatePropertyPanel</name></member>
+  </compound>
+  <compound refid="class_editor_1_1_view_1_1_editor_window_1_1_property_list_panel" kind="class"><name>Editor::View::EditorWindow::PropertyListPanel</name>
+    <member refid="class_editor_1_1_view_1_1_editor_window_1_1_property_list_panel_1a0a0d87f873b5b9fb6816449d1c3556fe" kind="function"><name>[instance initializer]</name></member>
+    <member refid="class_editor_1_1_view_1_1_editor_window_1_1_property_list_panel_1a180b72378e61e7a36f771b7d8f8d4b58" kind="function"><name>create</name></member>
+  </compound>
+  <compound refid="class_editor_1_1_view_1_1_editor_window_1_1_property_panel" kind="class"><name>Editor::View::EditorWindow::PropertyPanel</name>
+  </compound>
+  <compound refid="class_editor_1_1_view_1_1_editor_window_1_1_reference_property" kind="class"><name>Editor::View::EditorWindow::ReferenceProperty</name>
+    <member refid="class_editor_1_1_view_1_1_editor_window_1_1_reference_property_1a8d7207d12b3c25453805062d15079f16" kind="property"><name>value</name></member>
+  </compound>
+  <compound refid="class_editor_1_1_view_1_1_test_view_window_1_1_renderer_panel" kind="class"><name>Editor::View::TestViewWindow::RendererPanel</name>
+  </compound>
+  <compound refid="class_player_1_1_view_1_1_renderer_panel" kind="class"><name>Player::View::RendererPanel</name>
+  </compound>
+  <compound refid="class_classes_1_1_render_event" kind="class"><name>Classes::RenderEvent</name>
+  </compound>
+  <compound refid="class_classes_1_1_rotation" kind="class"><name>Classes::Rotation</name>
+  </compound>
+  <compound refid="class_editor_1_1_controller_1_1_project_controller_1_1_save_visitor" kind="class"><name>Editor::Controller::ProjectController::SaveVisitor</name>
+    <member refid="class_editor_1_1_controller_1_1_project_controller_1_1_save_visitor_1a084d7909ffad73051791d8a214cbb07f" kind="property"><name>stream</name></member>
+    <member refid="class_editor_1_1_controller_1_1_project_controller_1_1_save_visitor_1af881fb93bfce8c108a273045fab81778" kind="property"><name>formatter</name></member>
+    <member refid="class_editor_1_1_controller_1_1_project_controller_1_1_save_visitor_1a7249cf567fc2c0d683e45b7c7e27ca16" kind="function"><name>visit</name></member>
+    <member refid="class_editor_1_1_controller_1_1_project_controller_1_1_save_visitor_1aa400552284fb181dc3018f4e857b1240" kind="function"><name>visit</name></member>
+    <member refid="class_editor_1_1_controller_1_1_project_controller_1_1_save_visitor_1a6ee9db78096b15b422ae2d066e208d4b" kind="function"><name>visit</name></member>
+    <member refid="class_editor_1_1_controller_1_1_project_controller_1_1_save_visitor_1a3b5da9ca155600176f3180e78c6e3d78" kind="function"><name>visit</name></member>
+  </compound>
+  <compound refid="class_editor_1_1_controller_1_1_editor_controller_1_1_scene_element" kind="class"><name>Editor::Controller::EditorController::SceneElement</name>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_scene_element_1a0116ef6d699e36424f96c0132ddf30d6" kind="property"><name>dummy</name></member>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_scene_element_1a8c53f3b9dc36343e46ed4fb4f226abaf" kind="property"><name>name</name></member>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_scene_element_1a74dcb79959ad6d7d8c1bdf3b06870c5b" kind="property"><name>icon</name></member>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_scene_element_1a450a9b0c83d4af9bb1fe46a618ebf16b" kind="function"><name>SceneElement</name></member>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_scene_element_1a9f62bc91b285b110b2f080ffa729eef6" kind="function"><name>createElementIcon</name></member>
+  </compound>
+  <compound refid="class_editor_1_1_view_1_1_editor_window_1_1_scene_element" kind="class"><name>Editor::View::EditorWindow::SceneElement</name>
+  </compound>
+  <compound refid="class_editor_1_1_controller_1_1_editor_controller_1_1_scene_element_category" kind="class"><name>Editor::Controller::EditorController::SceneElementCategory</name>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_scene_element_category_1a7030db857d1d241888bde498e9ad92c6" kind="property"><name>sceneElements</name></member>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_scene_element_category_1a5e4bfbc9a66804e7046dc23c3d24c886" kind="property"><name>name</name></member>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_scene_element_category_1aeba39055c86c2c8fbdaa631675fff314" kind="property"><name>metaCategory</name></member>
+    <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_scene_element_category_1a0fedf779b30e62ce957c8bc7b97de691" kind="function"><name>addElement</name></member>
+  </compound>
+  <compound refid="class_editor_1_1_view_1_1_editor_window_1_1_scene_element_category_panel" kind="class"><name>Editor::View::EditorWindow::SceneElementCategoryPanel</name>
+    <member refid="class_editor_1_1_view_1_1_editor_window_1_1_scene_element_category_panel_1a9c439108027996760533b88f7ae2f231" kind="property"><name>category</name></member>
+  </compound>
+  <compound refid="class_editor_1_1_view_1_1_editor_window_1_1_scene_icon" kind="class"><name>Editor::View::EditorWindow::SceneIcon</name>
+  </compound>
+  <compound refid="class_editor_1_1_view_1_1_editor_window_1_1_scene_list_panel" kind="class"><name>Editor::View::EditorWindow::SceneListPanel</name>
+  </compound>
+  <compound refid="class_editor_1_1_view_1_1_editor_window_1_1_scene_name_text_field" kind="class"><name>Editor::View::EditorWindow::SceneNameTextField</name>
+  </compound>
+  <compound refid="class_editor_1_1_view_1_1_editor_window_1_1_scene_selection_panel" kind="class"><name>Editor::View::EditorWindow::SceneSelectionPanel</name>
+  </compound>
+  <compound refid="classmetaio_s_d_k_1_1_sensor_1_1_sensor_reading" kind="class"><name>metaioSDK::Sensor::SensorReading</name>
+  </compound>
+  <compound refid="classmetaio_s_d_k_1_1_sensor_1_1_sensor_values" kind="class"><name>metaioSDK::Sensor::SensorValues</name>
+  </compound>
+  <compound refid="interface_serializable" kind="interface"><name>Serializable</name>
+  </compound>
+  <compound refid="class_sql_connection" kind="class"><name>SqlConnection</name>
+  </compound>
+  <compound refid="class_player_1_1_view_1_1_stack_panel" kind="class"><name>Player::View::StackPanel</name>
+    <member refid="class_player_1_1_view_1_1_stack_panel_1a728ee1e2f3dd3339866de5f8d4455365" kind="property"><name>Button</name></member>
+  </compound>
+  <compound refid="class_editor_1_1_view_1_1_editor_window_1_1_status_bar" kind="class"><name>Editor::View::EditorWindow::StatusBar</name>
+  </compound>
+  <compound refid="class_editor_1_1_view_1_1_debug_window_1_1_status_bar" kind="class"><name>Editor::View::DebugWindow::StatusBar</name>
+  </compound>
+  <compound refid="class_editor_1_1_view_1_1_test_view_window_1_1_status_bar" kind="class"><name>Editor::View::TestViewWindow::StatusBar</name>
+  </compound>
+  <compound refid="class_player_1_1_controller_1_1_connection_1_1_device_connection_1_1_t_c_p_client" kind="class"><name>Player::Controller::Connection::DeviceConnection::TCPClient</name>
+    <member refid="class_player_1_1_controller_1_1_connection_1_1_device_connection_1_1_t_c_p_client_1a94c9a0a7e2c503bea8b70686d62665e0" kind="function"><name>connect</name></member>
+    <member refid="class_player_1_1_controller_1_1_connection_1_1_device_connection_1_1_t_c_p_client_1aba96f13b192d5b1119b8d56516896298" kind="function"><name>sendString</name></member>
+    <member refid="class_player_1_1_controller_1_1_connection_1_1_device_connection_1_1_t_c_p_client_1a53895fdb435ce9b485f6030bcd99301b" kind="function"><name>disconnect</name></member>
+    <member refid="class_player_1_1_controller_1_1_connection_1_1_device_connection_1_1_t_c_p_client_1acb08cfb31092455f8d5b165073f0950f" kind="function"><name>listenAndReceive</name></member>
+  </compound>
+  <compound refid="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_t_c_p_server" kind="class"><name>Editor::Controller::Connections::DeviceConnection::TCPServer</name>
+    <member refid="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_t_c_p_server_1a3ad2ae799bf2e53d91222bf8cb6cec9c" kind="function"><name>connect</name></member>
+    <member refid="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_t_c_p_server_1ae02c08c05049643e2d0f76acd6da5ef8" kind="function"><name>disconnect</name></member>
+    <member refid="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_t_c_p_server_1a2cd26b33c256b43b1ffb224fabaf334b" kind="function"><name>sendFile</name></member>
+    <member refid="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_t_c_p_server_1a23855853f106d84d20c9530a87ac13ab" kind="function"><name>receiveString</name></member>
+  </compound>
+  <compound refid="class_editor_1_1_controller_1_1_test_controller_1_1_test_controller" kind="class"><name>Editor::Controller::TestController::TestController</name>
+    <member refid="class_editor_1_1_controller_1_1_test_controller_1_1_test_controller_1a5a748c8b3b9fe0d560d4e04d8918c494" kind="function"><name>[instance initializer]</name></member>
+    <member refid="class_editor_1_1_controller_1_1_test_controller_1_1_test_controller_1a2b8d33e941ae8ab65f1da5ef0b8ca894" kind="function"><name>update</name></member>
+    <member refid="class_editor_1_1_controller_1_1_test_controller_1_1_test_controller_1aa7a7d60f7587bb2862ef2a79ee0f89bc" kind="function"><name>initializeRenderer</name></member>
+    <member refid="class_editor_1_1_controller_1_1_test_controller_1_1_test_controller_1adc5b14db22e38ffc097506bb5efed194" kind="function"><name>createSDK</name></member>
+    <member refid="class_editor_1_1_controller_1_1_test_controller_1_1_test_controller_1a83498f88c2b265dbc20968a331d527d0" kind="function"><name>registerCallback</name></member>
+    <member refid="class_editor_1_1_controller_1_1_test_controller_1_1_test_controller_1af6e1bceb576db556d46ee03390b825b7" kind="function"><name>startCamera</name></member>
+    <member refid="class_editor_1_1_controller_1_1_test_controller_1_1_test_controller_1af4a3010516485dde56cd57f9487d24d9" kind="function"><name>CreateSensorsComponent</name></member>
+    <member refid="class_editor_1_1_controller_1_1_test_controller_1_1_test_controller_1abe4cc2f579ad059245b1f4af84bd9bce" kind="function"><name>registerSensorsComponent</name></member>
+    <member refid="class_editor_1_1_controller_1_1_test_controller_1_1_test_controller_1a159f3eb6809fab40b90855e887086673" kind="function"><name>notify</name></member>
+    <member refid="class_editor_1_1_controller_1_1_test_controller_1_1_test_controller_1a1789624c34ababf998d61b4dc05c7387" kind="function"><name>registerObserver</name></member>
+    <member refid="class_editor_1_1_controller_1_1_test_controller_1_1_test_controller_1a6bf6ea1d274040e3f014fca67b4221d4" kind="function"><name>unregisterObserver</name></member>
+  </compound>
+  <compound refid="class_player_1_1_controller_1_1_test_controller_1_1_test_controller" kind="class"><name>Player::Controller::TestController::TestController</name>
+    <member refid="class_player_1_1_controller_1_1_test_controller_1_1_test_controller_1a194c8319c61c50590131a184fc4e4acc" kind="property"><name>DebugController</name></member>
+    <member refid="class_player_1_1_controller_1_1_test_controller_1_1_test_controller_1a6d500c61a96b3a459a7630e0a0e83dfa" kind="function"><name>update</name></member>
+    <member refid="class_player_1_1_controller_1_1_test_controller_1_1_test_controller_1a3e1c361879d6aaa682e360b9adf9aea2" kind="function"><name>initializeRenderer</name></member>
+    <member refid="class_player_1_1_controller_1_1_test_controller_1_1_test_controller_1aac67031a79ac5a793ab6f959ada4dd68" kind="function"><name>createSDK</name></member>
+    <member refid="class_player_1_1_controller_1_1_test_controller_1_1_test_controller_1aadba2a81ec672dd9482c5842aa9ce259" kind="function"><name>registerCallback</name></member>
+    <member refid="class_player_1_1_controller_1_1_test_controller_1_1_test_controller_1ad62a4ef918a31e035260a1031b242b5d" kind="function"><name>startCamera</name></member>
+    <member refid="class_player_1_1_controller_1_1_test_controller_1_1_test_controller_1a10417bdaacf6959766e0b58f4a69aabb" kind="function"><name>CreateSensorsComponent</name></member>
+    <member refid="class_player_1_1_controller_1_1_test_controller_1_1_test_controller_1ac9c52b1d9a01f4fe428df265888e4722" kind="function"><name>registerSensorsComponent</name></member>
+    <member refid="class_player_1_1_controller_1_1_test_controller_1_1_test_controller_1a89441363e3ac3c264a89fb7ba2e57ef5" kind="function"><name>notify</name></member>
+    <member refid="class_player_1_1_controller_1_1_test_controller_1_1_test_controller_1a7e6b3e910c94da87e8d566829bc612e0" kind="function"><name>registerObserver</name></member>
+    <member refid="class_player_1_1_controller_1_1_test_controller_1_1_test_controller_1a83ae1f5f98a70d152d4231f835e1350e" kind="function"><name>unregisterObserver</name></member>
+  </compound>
+  <compound refid="class_editor_1_1_view_1_1_test_view_window_1_1_test_view_window" kind="class"><name>Editor::View::TestViewWindow::TestViewWindow</name>
+  </compound>
+  <compound refid="class_editor_1_1_view_1_1_editor_window_1_1_text_property" kind="class"><name>Editor::View::EditorWindow::TextProperty</name>
+    <member refid="class_editor_1_1_view_1_1_editor_window_1_1_text_property_1aecd12181ba5414af354f3e8213fa09cc" kind="property"><name>value</name></member>
+  </compound>
+  <compound refid="class_classes_1_1_tracking_state" kind="class"><name>Classes::TrackingState</name>
+  </compound>
+  <compound refid="class_classes_1_1_tracking_values" kind="class"><name>Classes::TrackingValues</name>
+  </compound>
+  <compound refid="class_player_1_1_controller_1_1_connection_1_1_device_connection_1_1_u_d_p_client" kind="class"><name>Player::Controller::Connection::DeviceConnection::UDPClient</name>
+    <member refid="class_player_1_1_controller_1_1_connection_1_1_device_connection_1_1_u_d_p_client_1ae7159fd17e457b46ae60964268d0ec37" kind="property"><name>TCPClient</name></member>
+    <member refid="class_player_1_1_controller_1_1_connection_1_1_device_connection_1_1_u_d_p_client_1a83bdce89f472d012409f92748b8d345d" kind="function"><name>listen</name></member>
+    <member refid="class_player_1_1_controller_1_1_connection_1_1_device_connection_1_1_u_d_p_client_1afc4e0ba57c4d2a82a056915c6f2c4b20" kind="function"><name>respond</name></member>
+  </compound>
+  <compound refid="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_u_d_p_server" kind="class"><name>Editor::Controller::Connections::DeviceConnection::UDPServer</name>
+    <member refid="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_u_d_p_server_1a94c10964b0a0228813a6cc052b7a3077" kind="property"><name>ClientList</name></member>
+    <member refid="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_u_d_p_server_1a5ceedd520cd5bd69d7ea411c6cfd9a1b" kind="function"><name>broadcast</name></member>
+    <member refid="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_u_d_p_server_1a37f6b8c304da2d10385896632dda2f8c" kind="function"><name>listenAndFillList</name></member>
+  </compound>
+  <compound refid="classmetaio_s_d_k_1_1_vector_1_1_vector2d" kind="class"><name>metaioSDK::Vector::Vector2d</name>
+  </compound>
+  <compound refid="classmetaio_s_d_k_1_1_vector_1_1_vector2di" kind="class"><name>metaioSDK::Vector::Vector2di</name>
+  </compound>
+  <compound refid="classmetaio_s_d_k_1_1_vector_1_1_vector3d" kind="class"><name>metaioSDK::Vector::Vector3d</name>
+  </compound>
+  <compound refid="class_editor_1_1_model_1_1_project_1_1_vector3_d" kind="class"><name>Editor::Model::Project::Vector3D</name>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_vector3_d_1a0c2cdcc4a6f7d34c9df88a0cfd6369ed" kind="property"><name>x</name></member>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_vector3_d_1ad3aa858866e849644daf364c412a0ebc" kind="property"><name>y</name></member>
+    <member refid="class_editor_1_1_model_1_1_project_1_1_vector3_d_1a7739d5f8c4a4afad81591364605053c8" kind="property"><name>z</name></member>
+  </compound>
+  <compound refid="classmetaio_s_d_k_1_1_vector_1_1_vector4d" kind="class"><name>metaioSDK::Vector::Vector4d</name>
+  </compound>
+  <compound refid="class_search_1_1_visual_search_response" kind="class"><name>Search::VisualSearchResponse</name>
+  </compound>
+  <compound refid="namespace_classes" kind="namespace"><name>Classes</name>
+  </compound>
+  <compound refid="namespace_editor" kind="namespace"><name>Editor</name>
+  </compound>
+  <compound refid="namespace_editor_1_1_controller" kind="namespace"><name>Editor::Controller</name>
+  </compound>
+  <compound refid="namespace_editor_1_1_controller_1_1_connections" kind="namespace"><name>Editor::Controller::Connections</name>
+  </compound>
+  <compound refid="namespace_editor_1_1_controller_1_1_connections_1_1_database_connection" kind="namespace"><name>Editor::Controller::Connections::DatabaseConnection</name>
+  </compound>
+  <compound refid="namespace_editor_1_1_controller_1_1_connections_1_1_device_connection" kind="namespace"><name>Editor::Controller::Connections::DeviceConnection</name>
+  </compound>
+  <compound refid="namespace_editor_1_1_controller_1_1_debug_controller" kind="namespace"><name>Editor::Controller::DebugController</name>
+    <member refid="namespace_editor_1_1_controller_1_1_debug_controller_1a3bb0a25f26e1c734a346719eff9bfcb3" kind="enum"><name>Filter</name></member>
+    <member refid="namespace_editor_1_1_controller_1_1_debug_controller_1a3bb0a25f26e1c734a346719eff9bfcb3ad2335eb1e161a0ac39660d4e39558704" kind="enumvalue"><name>dbConnection</name></member>
+    <member refid="namespace_editor_1_1_controller_1_1_debug_controller_1a3bb0a25f26e1c734a346719eff9bfcb3a42552b1f133f9f8eb406d4f306ea9fd1" kind="enumvalue"><name>exception</name></member>
+    <member refid="namespace_editor_1_1_controller_1_1_debug_controller_1a3bb0a25f26e1c734a346719eff9bfcb3acb5e100e5a9a3e7f6d1fd97512215282" kind="enumvalue"><name>error</name></member>
+    <member refid="namespace_editor_1_1_controller_1_1_debug_controller_1a3bb0a25f26e1c734a346719eff9bfcb3a5f57534c9d110866bcb3a5f5517851b7" kind="enumvalue"><name>userEvent</name></member>
+  </compound>
+  <compound refid="namespace_editor_1_1_controller_1_1_editor_controller" kind="namespace"><name>Editor::Controller::EditorController</name>
+    <member refid="namespace_editor_1_1_controller_1_1_editor_controller_1ad8726486dd7c43c96d76f71074a7c275" kind="enum"><name>MetaCategory</name></member>
+    <member refid="namespace_editor_1_1_controller_1_1_editor_controller_1ad8726486dd7c43c96d76f71074a7c275a2c17a5b4725c0a522919927058d7f4c5" kind="enumvalue"><name>AUGMENTATION</name></member>
+    <member refid="namespace_editor_1_1_controller_1_1_editor_controller_1ad8726486dd7c43c96d76f71074a7c275a656a7577dfd32e562f084c12c6ad2ecd" kind="enumvalue"><name>TRACKABLE</name></member>
+    <member refid="namespace_editor_1_1_controller_1_1_editor_controller_1ad8726486dd7c43c96d76f71074a7c275ae60b4854b44ccfb2d92aa6f035171bb4" kind="enumvalue"><name>SOURCE</name></member>
+  </compound>
+  <compound refid="namespace_editor_1_1_controller_1_1_project_controller" kind="namespace"><name>Editor::Controller::ProjectController</name>
+  </compound>
+  <compound refid="namespace_editor_1_1_controller_1_1_test_controller" kind="namespace"><name>Editor::Controller::TestController</name>
+  </compound>
+  <compound refid="namespace_editor_1_1_model" kind="namespace"><name>Editor::Model</name>
+  </compound>
+  <compound refid="namespace_editor_1_1_model_1_1_project" kind="namespace"><name>Editor::Model::Project</name>
+  </compound>
+  <compound refid="namespace_editor_1_1_view" kind="namespace"><name>Editor::View</name>
+  </compound>
+  <compound refid="namespace_editor_1_1_view_1_1_debug_window" kind="namespace"><name>Editor::View::DebugWindow</name>
+  </compound>
+  <compound refid="namespace_editor_1_1_view_1_1_editor_window" kind="namespace"><name>Editor::View::EditorWindow</name>
+  </compound>
+  <compound refid="namespace_editor_1_1_view_1_1_test_view_window" kind="namespace"><name>Editor::View::TestViewWindow</name>
+  </compound>
+  <compound refid="namespace_handler" kind="namespace"><name>Handler</name>
+  </compound>
+  <compound refid="namespacemetaio_s_d_k" kind="namespace"><name>metaioSDK</name>
+  </compound>
+  <compound refid="namespacemetaio_s_d_k_1_1_a_r_e_l" kind="namespace"><name>metaioSDK::AREL</name>
+  </compound>
+  <compound refid="namespacemetaio_s_d_k_1_1_geometry" kind="namespace"><name>metaioSDK::Geometry</name>
+  </compound>
+  <compound refid="namespacemetaio_s_d_k_1_1_s_d_k" kind="namespace"><name>metaioSDK::SDK</name>
+  </compound>
+  <compound refid="namespacemetaio_s_d_k_1_1_sensor" kind="namespace"><name>metaioSDK::Sensor</name>
+  </compound>
+  <compound refid="namespacemetaio_s_d_k_1_1_vector" kind="namespace"><name>metaioSDK::Vector</name>
+  </compound>
+  <compound refid="namespace_player" kind="namespace"><name>Player</name>
+  </compound>
+  <compound refid="namespace_player_1_1_controller" kind="namespace"><name>Player::Controller</name>
+  </compound>
+  <compound refid="namespace_player_1_1_controller_1_1_connection" kind="namespace"><name>Player::Controller::Connection</name>
+  </compound>
+  <compound refid="namespace_player_1_1_controller_1_1_connection_1_1_database_connection" kind="namespace"><name>Player::Controller::Connection::DatabaseConnection</name>
+  </compound>
+  <compound refid="namespace_player_1_1_controller_1_1_connection_1_1_device_connection" kind="namespace"><name>Player::Controller::Connection::DeviceConnection</name>
+  </compound>
+  <compound refid="namespace_player_1_1_controller_1_1_debug_controller" kind="namespace"><name>Player::Controller::DebugController</name>
+  </compound>
+  <compound refid="namespace_player_1_1_controller_1_1_player_controller" kind="namespace"><name>Player::Controller::PlayerController</name>
+  </compound>
+  <compound refid="namespace_player_1_1_controller_1_1_test_controller" kind="namespace"><name>Player::Controller::TestController</name>
+  </compound>
+  <compound refid="namespace_player_1_1_model" kind="namespace"><name>Player::Model</name>
+  </compound>
+  <compound refid="namespace_player_1_1_view" kind="namespace"><name>Player::View</name>
+  </compound>
+  <compound refid="namespace_search" kind="namespace"><name>Search</name>
+  </compound>
+  <compound refid="namespace_system" kind="namespace"><name>System</name>
+  </compound>
+  <compound refid="namespace_system_1_1_collections_1_1_generic" kind="namespace"><name>System::Collections::Generic</name>
+  </compound>
+  <compound refid="namespace_system_1_1_linq" kind="namespace"><name>System::Linq</name>
+  </compound>
+  <compound refid="namespace_system_1_1_reflection" kind="namespace"><name>System::Reflection</name>
+  </compound>
+  <compound refid="namespace_system_1_1_runtime_1_1_compiler_services" kind="namespace"><name>System::Runtime::CompilerServices</name>
+  </compound>
+  <compound refid="namespace_system_1_1_runtime_1_1_interop_services" kind="namespace"><name>System::Runtime::InteropServices</name>
+  </compound>
+  <compound refid="namespace_system_1_1_text" kind="namespace"><name>System::Text</name>
+  </compound>
+  <compound refid="_data_set_8cs" kind="file"><name>DataSet.cs</name>
+  </compound>
+  <compound refid="_db_command_8cs" kind="file"><name>DbCommand.cs</name>
+  </compound>
+  <compound refid="_db_connection_8cs" kind="file"><name>DbConnection.cs</name>
+  </compound>
+  <compound refid="_db_data_reader_8cs" kind="file"><name>DbDataReader.cs</name>
+  </compound>
+  <compound refid="_db_parameter_8cs" kind="file"><name>DbParameter.cs</name>
+  </compound>
+  <compound refid="_db_provider_factory_8cs" kind="file"><name>DbProviderFactory.cs</name>
+  </compound>
+  <compound refid="_device_connection_controller_8cs" kind="file"><name>DeviceConnectionController.cs</name>
+  </compound>
+  <compound refid="_t_c_p_server_8cs" kind="file"><name>TCPServer.cs</name>
+  </compound>
+  <compound refid="_u_d_p_server_8cs" kind="file"><name>UDPServer.cs</name>
+  </compound>
+  <compound refid="_editor_2_controller_2_debug_controller_2_debug_controller_8cs" kind="file"><name>DebugController.cs</name>
+  </compound>
+  <compound refid="_player_2_controller_2_debug_controller_2_debug_controller_8cs" kind="file"><name>DebugController.cs</name>
+  </compound>
+  <compound refid="_filter_8cs" kind="file"><name>Filter.cs</name>
+  </compound>
+  <compound refid="_a_rdev_kit_8cs" kind="file"><name>ARdevKit.cs</name>
+  </compound>
+  <compound refid="_editor_window_controller_8cs" kind="file"><name>EditorWindowController.cs</name>
+  </compound>
+  <compound refid="_element_selection_controller_8cs" kind="file"><name>ElementSelectionController.cs</name>
+  </compound>
+  <compound refid="_meta_category_8cs" kind="file"><name>MetaCategory.cs</name>
+  </compound>
+  <compound refid="_preview_controller_8cs" kind="file"><name>PreviewController.cs</name>
+  </compound>
+  <compound refid="_property_controller_8cs" kind="file"><name>PropertyController.cs</name>
+  </compound>
+  <compound refid="_controller_2_editor_controller_2_scene_element_8cs" kind="file"><name>SceneElement.cs</name>
+  </compound>
+  <compound refid="_view_2_editor_window_2_scene_element_8cs" kind="file"><name>SceneElement.cs</name>
+  </compound>
+  <compound refid="_scene_element_category_8cs" kind="file"><name>SceneElementCategory.cs</name>
+  </compound>
+  <compound refid="_editor_2_controller_2_i_observer_8cs" kind="file"><name>IObserver.cs</name>
+  </compound>
+  <compound refid="_player_2_controller_2_i_observer_8cs" kind="file"><name>IObserver.cs</name>
+  </compound>
+  <compound refid="_abstract_project_visitor_8cs" kind="file"><name>AbstractProjectVisitor.cs</name>
+  </compound>
+  <compound refid="_export_visitor_8cs" kind="file"><name>ExportVisitor.cs</name>
+  </compound>
+  <compound refid="_save_visitor_8cs" kind="file"><name>SaveVisitor.cs</name>
+  </compound>
+  <compound refid="_editor_2_controller_2_test_controller_2_test_controller_8cs" kind="file"><name>TestController.cs</name>
+  </compound>
+  <compound refid="_player_2_controller_2_test_controller_2_test_controller_8cs" kind="file"><name>TestController.cs</name>
+  </compound>
+  <compound refid="_abstract_augmentation_8cs" kind="file"><name>AbstractAugmentation.cs</name>
+  </compound>
+  <compound refid="_abstract_dynamic2_d_augmentation_8cs" kind="file"><name>AbstractDynamic2DAugmentation.cs</name>
+  </compound>
+  <compound refid="_abstract_marker_8cs" kind="file"><name>AbstractMarker.cs</name>
+  </compound>
+  <compound refid="_abstract_source_8cs" kind="file"><name>AbstractSource.cs</name>
+  </compound>
+  <compound refid="_abstract_trackable_8cs" kind="file"><name>AbstractTrackable.cs</name>
+  </compound>
+  <compound refid="_bar_graph_8cs" kind="file"><name>BarGraph.cs</name>
+  </compound>
+  <compound refid="_db_source_8cs" kind="file"><name>DbSource.cs</name>
+  </compound>
+  <compound refid="_file_source_8cs" kind="file"><name>FileSource.cs</name>
+  </compound>
+  <compound refid="_graph_8cs" kind="file"><name>Graph.cs</name>
+  </compound>
+  <compound refid="_i_d_marker_8cs" kind="file"><name>IDMarker.cs</name>
+  </compound>
+  <compound refid="_i_previewable_8cs" kind="file"><name>IPreviewable.cs</name>
+  </compound>
+  <compound refid="_picture_marker_8cs" kind="file"><name>PictureMarker.cs</name>
+  </compound>
+  <compound refid="_project_8cs" kind="file"><name>Project.cs</name>
+  </compound>
+  <compound refid="_editor_2_model_2_project_2_vector3_d_8cs" kind="file"><name>Vector3D.cs</name>
+  </compound>
+  <compound refid="metaio_s_d_k_2_vector_2_vector3_d_8cs" kind="file"><name>Vector3d.cs</name>
+  </compound>
+  <compound refid="_console_panel_8cs" kind="file"><name>ConsolePanel.cs</name>
+  </compound>
+  <compound refid="_debug_window_8cs" kind="file"><name>DebugWindow.cs</name>
+  </compound>
+  <compound refid="_filter_panel_8cs" kind="file"><name>FilterPanel.cs</name>
+  </compound>
+  <compound refid="_debug_window_2_menu_bar_8cs" kind="file"><name>MenuBar.cs</name>
+  </compound>
+  <compound refid="_editor_window_2_menu_bar_8cs" kind="file"><name>MenuBar.cs</name>
+  </compound>
+  <compound refid="_test_view_window_2_menu_bar_8cs" kind="file"><name>MenuBar.cs</name>
+  </compound>
+  <compound refid="_debug_window_2_status_bar_8cs" kind="file"><name>StatusBar.cs</name>
+  </compound>
+  <compound refid="_editor_window_2_status_bar_8cs" kind="file"><name>StatusBar.cs</name>
+  </compound>
+  <compound refid="_test_view_window_2_status_bar_8cs" kind="file"><name>StatusBar.cs</name>
+  </compound>
+  <compound refid="_abstract_property_8cs" kind="file"><name>AbstractProperty.cs</name>
+  </compound>
+  <compound refid="_add_scene_button_8cs" kind="file"><name>AddSceneButton.cs</name>
+  </compound>
+  <compound refid="_category_combo_box_8cs" kind="file"><name>CategoryComboBox.cs</name>
+  </compound>
+  <compound refid="_color_property_8cs" kind="file"><name>ColorProperty.cs</name>
+  </compound>
+  <compound refid="_editor_window_8cs" kind="file"><name>EditorWindow.cs</name>
+  </compound>
+  <compound refid="_element_combo_box_8cs" kind="file"><name>ElementComboBox.cs</name>
+  </compound>
+  <compound refid="_element_icon_8cs" kind="file"><name>ElementIcon.cs</name>
+  </compound>
+  <compound refid="_element_selection_panel_8cs" kind="file"><name>ElementSelectionPanel.cs</name>
+  </compound>
+  <compound refid="_i_property_list_panel_8cs" kind="file"><name>IPropertyListPanel.cs</name>
+  </compound>
+  <compound refid="_menu_element_8cs" kind="file"><name>MenuElement.cs</name>
+  </compound>
+  <compound refid="_name_text_field_8cs" kind="file"><name>NameTextField.cs</name>
+  </compound>
+  <compound refid="_picture_box_8cs" kind="file"><name>PictureBox.cs</name>
+  </compound>
+  <compound refid="_preview_panel_8cs" kind="file"><name>PreviewPanel.cs</name>
+  </compound>
+  <compound refid="_property_list_panel_8cs" kind="file"><name>PropertyListPanel.cs</name>
+  </compound>
+  <compound refid="_property_panel_8cs" kind="file"><name>PropertyPanel.cs</name>
+  </compound>
+  <compound refid="_reference_property_8cs" kind="file"><name>ReferenceProperty.cs</name>
+  </compound>
+  <compound refid="_scene_element_category_panel_8cs" kind="file"><name>SceneElementCategoryPanel.cs</name>
+  </compound>
+  <compound refid="_scene_icon_8cs" kind="file"><name>SceneIcon.cs</name>
+  </compound>
+  <compound refid="_scene_list_panel_8cs" kind="file"><name>SceneListPanel.cs</name>
+  </compound>
+  <compound refid="_scene_name_text_field_8cs" kind="file"><name>SceneNameTextField.cs</name>
+  </compound>
+  <compound refid="_scene_selection_panel_8cs" kind="file"><name>SceneSelectionPanel.cs</name>
+  </compound>
+  <compound refid="_text_property_8cs" kind="file"><name>TextProperty.cs</name>
+  </compound>
+  <compound refid="_editor_2_view_2_test_view_window_2_renderer_panel_8cs" kind="file"><name>RendererPanel.cs</name>
+  </compound>
+  <compound refid="_player_2_view_2_renderer_panel_8cs" kind="file"><name>RendererPanel.cs</name>
+  </compound>
+  <compound refid="_test_view_window_8cs" kind="file"><name>TestViewWindow.cs</name>
+  </compound>
+  <compound refid="_i_a_r_e_l_interpreter_8cs" kind="file"><name>IARELInterpreter.cs</name>
+  </compound>
+  <compound refid="_i_a_r_e_l_interpreter_callback_8cs" kind="file"><name>IARELInterpreterCallback.cs</name>
+  </compound>
+  <compound refid="_i_billboard_group_8cs" kind="file"><name>IBillboardGroup.cs</name>
+  </compound>
+  <compound refid="_i_geometry_8cs" kind="file"><name>IGeometry.cs</name>
+  </compound>
+  <compound refid="_geometry_extension_8cs" kind="file"><name>GeometryExtension.cs</name>
+  </compound>
+  <compound refid="_gesture_handler_8cs" kind="file"><name>GestureHandler.cs</name>
+  </compound>
+  <compound refid="_i_gesture_handler_callback_8cs" kind="file"><name>IGestureHandlerCallback.cs</name>
+  </compound>
+  <compound refid="_camera_8cs" kind="file"><name>Camera.cs</name>
+  </compound>
+  <compound refid="_render_event_8cs" kind="file"><name>RenderEvent.cs</name>
+  </compound>
+  <compound refid="_rotation_8cs" kind="file"><name>Rotation.cs</name>
+  </compound>
+  <compound refid="_tracking_state_8cs" kind="file"><name>TrackingState.cs</name>
+  </compound>
+  <compound refid="_tracking_values_8cs" kind="file"><name>TrackingValues.cs</name>
+  </compound>
+  <compound refid="_i_metaio_s_d_k_8cs" kind="file"><name>IMetaioSDK.cs</name>
+  </compound>
+  <compound refid="_i_metaio_s_d_k_callback_8cs" kind="file"><name>IMetaioSDKCallback.cs</name>
+  </compound>
+  <compound refid="_i_metaio_s_d_k_win32_8cs" kind="file"><name>IMetaioSDKWin32.cs</name>
+  </compound>
+  <compound refid="_i_sensors_component_8cs" kind="file"><name>ISensorsComponent.cs</name>
+  </compound>
+  <compound refid="_sensor_reading_8cs" kind="file"><name>SensorReading.cs</name>
+  </compound>
+  <compound refid="_sensor_values_8cs" kind="file"><name>SensorValues.cs</name>
+  </compound>
+  <compound refid="_vector2d_8cs" kind="file"><name>Vector2d.cs</name>
+  </compound>
+  <compound refid="_vector2di_8cs" kind="file"><name>Vector2di.cs</name>
+  </compound>
+  <compound refid="_vector4d_8cs" kind="file"><name>Vector4d.cs</name>
+  </compound>
+  <compound refid="_i_visual_search_callback_8cs" kind="file"><name>IVisualSearchCallback.cs</name>
+  </compound>
+  <compound refid="_visual_search_response_8cs" kind="file"><name>VisualSearchResponse.cs</name>
+  </compound>
+  <compound refid="_metaio_wrapper_8cs" kind="file"><name>MetaioWrapper.cs</name>
+  </compound>
+  <compound refid="_ole_d_b_connection_8cs" kind="file"><name>OleDBConnection.cs</name>
+  </compound>
+  <compound refid="_database_facade_8cs" kind="file"><name>DatabaseFacade.cs</name>
+  </compound>
+  <compound refid="_t_c_p_client_8cs" kind="file"><name>TCPClient.cs</name>
+  </compound>
+  <compound refid="_u_d_p_client_8cs" kind="file"><name>UDPClient.cs</name>
+  </compound>
+  <compound refid="_i_observer1_8cs" kind="file"><name>IObserver1.cs</name>
+  </compound>
+  <compound refid="_i_observer2_8cs" kind="file"><name>IObserver2.cs</name>
+  </compound>
+  <compound refid="_player_controller_8cs" kind="file"><name>PlayerController.cs</name>
+  </compound>
+  <compound refid="_arel_file_8cs" kind="file"><name>ArelFile.cs</name>
+  </compound>
+  <compound refid="_button_8cs" kind="file"><name>Button.cs</name>
+  </compound>
+  <compound refid="_player_page_8cs" kind="file"><name>PlayerPage.cs</name>
+  </compound>
+  <compound refid="_stack_panel_8cs" kind="file"><name>StackPanel.cs</name>
+  </compound>
+  <compound refid="_x_a_m_l-_file_8cs" kind="file"><name>XAML-File.cs</name>
+  </compound>
+  <compound refid="_serializable_8cs" kind="file"><name>Serializable.cs</name>
+  </compound>
+  <compound refid="_sql_connection_8cs" kind="file"><name>SqlConnection.cs</name>
+  </compound>
+  <compound refid="_temporary_generated_file__036_c0_b5_b-1481-4323-8_d20-8_f5_a_d_c_b23_d92_8cs" kind="file"><name>TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs</name>
+  </compound>
+  <compound refid="_temporary_generated_file__5937a670-0e60-4077-877b-f7221da3dda1_8cs" kind="file"><name>TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs</name>
+  </compound>
+  <compound refid="_temporary_generated_file___e7_a71_f73-0_f8_d-4_b9_b-_b56_e-8_e70_b10_b_c5_d3_8cs" kind="file"><name>TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs</name>
+  </compound>
+  <compound refid="_assembly_info_8cs" kind="file"><name>AssemblyInfo.cs</name>
+  </compound>
+  <compound refid="dir_91d8ee31da1121e5be080b894e25f664" kind="dir"><name>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit</name>
+  </compound>
+  <compound refid="dir_83f962f07bcce43db811072021c92c94" kind="dir"><name>C:/Users/geht/Source/Repos/ARdevKit</name>
+  </compound>
+  <compound refid="dir_1c7cb86e239f081baa67de640358bd53" kind="dir"><name>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/metaioSDK/AREL</name>
+  </compound>
+  <compound refid="dir_84847949b605322acdb63a8141f3555d" kind="dir"><name>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller/Connection</name>
+  </compound>
+  <compound refid="dir_6622139ecec2cc9958013ab14b326488" kind="dir"><name>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/Connections</name>
+  </compound>
+  <compound refid="dir_fa5375c86574866ac7e5551105b9b406" kind="dir"><name>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller</name>
+  </compound>
+  <compound refid="dir_e00763edb906f18d72e5b8bd24d64072" kind="dir"><name>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller</name>
+  </compound>
+  <compound refid="dir_39c592cc8a50901c989ce353746a04c4" kind="dir"><name>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller/Connection/DatabaseConnection</name>
+  </compound>
+  <compound refid="dir_bb6c80363d1acd2f8d905c4acaa1ab2b" kind="dir"><name>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/Connections/DatabaseConnection</name>
+  </compound>
+  <compound refid="dir_2716d902a35c73f4143d3e2b27e2543e" kind="dir"><name>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/obj/Debug</name>
+  </compound>
+  <compound refid="dir_2afa2a833af711d8532ede1edeeea477" kind="dir"><name>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller/DebugController</name>
+  </compound>
+  <compound refid="dir_9b74b8c6c95188d91fbf0b9412e3106a" kind="dir"><name>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/DebugController</name>
+  </compound>
+  <compound refid="dir_dda1c2c093674dc1dde5e727445d0c8d" kind="dir"><name>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/View/DebugWindow</name>
+  </compound>
+  <compound refid="dir_0cd81b7d1746344d6b7ba572e044b0a6" kind="dir"><name>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller/Connection/DeviceConnection</name>
+  </compound>
+  <compound refid="dir_d28a6703b8b4d3853446f6153acbfef0" kind="dir"><name>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/Connections/DeviceConnection</name>
+  </compound>
+  <compound refid="dir_765f2e99c75dd86af763d525919376ee" kind="dir"><name>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor</name>
+  </compound>
+  <compound refid="dir_ec54693c279bbe6e3c54caf2ec1a5b83" kind="dir"><name>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController</name>
+  </compound>
+  <compound refid="dir_bb1ff3dc90fcf07e3e557067d38f2410" kind="dir"><name>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/View/EditorWindow</name>
+  </compound>
+  <compound refid="dir_0eea96936422df97555706f66d832486" kind="dir"><name>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode</name>
+  </compound>
+  <compound refid="dir_c819ce971cd1b39c4581a05e46b33dcd" kind="dir"><name>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/metaioSDK/Geometry</name>
+  </compound>
+  <compound refid="dir_dd90b61eb2ffc2ab0e1cac955d0427f8" kind="dir"><name>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/metaioSDK/Gesture Handler</name>
+  </compound>
+  <compound refid="dir_491cf79b4a2234cefbbfd75b10acc9cb" kind="dir"><name>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/metaioSDK/Helper Structs and Classes</name>
+  </compound>
+  <compound refid="dir_b823c3ab7b23fb3c75592182c85a7fb5" kind="dir"><name>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/metaioSDK</name>
+  </compound>
+  <compound refid="dir_071d023afdc7745c0ebbb6cd2dc6faa1" kind="dir"><name>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Model</name>
+  </compound>
+  <compound refid="dir_2e8998034d032ce944334ec7985e2221" kind="dir"><name>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model</name>
+  </compound>
+  <compound refid="dir_b93999a4df7abde888924ac2b64439b1" kind="dir"><name>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/obj</name>
+  </compound>
+  <compound refid="dir_e9c6ce3d75d5f98d92bf11344e0f0e0d" kind="dir"><name>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player</name>
+  </compound>
+  <compound refid="dir_df85c0153396420545218fb1fbdaa680" kind="dir"><name>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller/PlayerController</name>
+  </compound>
+  <compound refid="dir_e109bc9719b3993cb227bc5b1f408d6b" kind="dir"><name>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project</name>
+  </compound>
+  <compound refid="dir_d02e1807fadc14e15b0f7e82321ecaca" kind="dir"><name>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/ProjectController</name>
+  </compound>
+  <compound refid="dir_3d2a927618998007640a865edbbedffe" kind="dir"><name>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/Properties</name>
+  </compound>
+  <compound refid="dir_58a8fb89223f4c93a95f3dadb4798d2e" kind="dir"><name>C:/Users/geht/Source/Repos</name>
+  </compound>
+  <compound refid="dir_33fcdc3d6b81c65e5e8af37f1a484675" kind="dir"><name>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/metaioSDK/SDK</name>
+  </compound>
+  <compound refid="dir_f01bb70a4dc2d3083043d710cca93635" kind="dir"><name>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/metaioSDK/Sensor</name>
+  </compound>
+  <compound refid="dir_74389ed8173ad57b461b9d623a1f3867" kind="dir"><name>C:/Users/geht/Source</name>
+  </compound>
+  <compound refid="dir_5f98fbb4db7ec840fe4ebdaf4e5d38fe" kind="dir"><name>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller/TestController</name>
+  </compound>
+  <compound refid="dir_c8ae7134df5f136e9b4d82772e865397" kind="dir"><name>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/TestController</name>
+  </compound>
+  <compound refid="dir_236c2c4bed4683df2c29f16a305ab173" kind="dir"><name>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/View/TestViewWindow</name>
+  </compound>
+  <compound refid="dir_fcfbc83e180e64ed5914eadf375a5870" kind="dir"><name>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/metaioSDK/Vector</name>
+  </compound>
+  <compound refid="dir_92042a10848ad8cb4c5efc0e43e0c5c7" kind="dir"><name>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/View</name>
+  </compound>
+  <compound refid="dir_2b876fe9fa3a2c1a1534914e7256c6d4" kind="dir"><name>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/View</name>
+  </compound>
+  <compound refid="dir_a0682f02ce717c65ce05a73bd87ee5f5" kind="dir"><name>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/metaioSDK/Visual Search</name>
+  </compound>
+</doxygenindex>

@@ -1,0 +1,13 @@
+<map id="Editor.Model.Project.IPreviewable" name="Editor.Model.Project.IPreviewable">
+<area shape="rect" id="node2" href="$class_editor_1_1_model_1_1_project_1_1_abstract_augmentation.html" title="An abstract augmentation. " alt="" coords="270,11,463,53"/>
+<area shape="rect" id="node6" href="$class_editor_1_1_model_1_1_project_1_1_abstract_source.html" title="An abstract source. " alt="" coords="270,102,463,143"/>
+<area shape="rect" id="node9" href="$class_editor_1_1_model_1_1_project_1_1_abstract_trackable.html" title="An abstract trackable. " alt="" coords="270,181,463,222"/>
+<area shape="rect" id="node3" href="$class_editor_1_1_model_1_1_project_1_1_abstract_dynamic2_d_augmentation.html" title="An abstract dynamic 2 d augmentation. " alt="" coords="517,5,710,46"/>
+<area shape="rect" id="node4" href="$class_editor_1_1_model_1_1_project_1_1_graph.html" title="A graph. " alt="" coords="772,12,951,39"/>
+<area shape="rect" id="node5" href="$class_editor_1_1_model_1_1_project_1_1_bar_graph.html" title="A bar graph. " alt="" coords="1009,5,1173,46"/>
+<area shape="rect" id="node7" href="$class_editor_1_1_model_1_1_project_1_1_db_source.html" title="A database source. " alt="" coords="513,71,714,97"/>
+<area shape="rect" id="node8" href="$class_editor_1_1_model_1_1_project_1_1_file_source.html" title="A file source. " alt="" coords="531,122,696,163"/>
+<area shape="rect" id="node10" href="$class_editor_1_1_model_1_1_project_1_1_abstract_marker.html" title="An abstract marker. " alt="" coords="517,187,710,229"/>
+<area shape="rect" id="node11" href="$class_editor_1_1_model_1_1_project_1_1_i_d_marker.html" title="An identifier marker. " alt="" coords="763,165,959,192"/>
+<area shape="rect" id="node12" href="$class_editor_1_1_model_1_1_project_1_1_picture_marker.html" title="A picture marker. " alt="" coords="769,217,954,258"/>
+</map>

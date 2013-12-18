@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_editor_1_1_model_1_1_project_1_1_vector3_d" kind="class" prot="public">
+    <compoundname>Editor::Model::Project::Vector3D</compoundname>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_editor_1_1_model_1_1_project_1_1_vector3_d_1a0c2cdcc4a6f7d34c9df88a0cfd6369ed" prot="private" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>int</type>
+        <definition>int Editor.Model.Project.Vector3D.x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <briefdescription>
+<para>Gets or sets the x coordinate. </para>        </briefdescription>
+        <detaileddescription>
+<para>The x coordinate. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/Vector3D.cs" line="28" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/Vector3D.cs" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_editor_1_1_model_1_1_project_1_1_vector3_d_1ad3aa858866e849644daf364c412a0ebc" prot="private" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>int</type>
+        <definition>int Editor.Model.Project.Vector3D.y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <briefdescription>
+<para>Gets or sets the y coordinate. </para>        </briefdescription>
+        <detaileddescription>
+<para>The y coordinate. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/Vector3D.cs" line="40" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/Vector3D.cs" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_editor_1_1_model_1_1_project_1_1_vector3_d_1a7739d5f8c4a4afad81591364605053c8" prot="private" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>int</type>
+        <definition>int Editor.Model.Project.Vector3D.z</definition>
+        <argsstring></argsstring>
+        <name>z</name>
+        <briefdescription>
+<para>Gets or sets the z coordinate. </para>        </briefdescription>
+        <detaileddescription>
+<para>The z coordinate. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/Vector3D.cs" line="52" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/Vector3D.cs" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A vector 3 d. </para>    </briefdescription>
+    <detaileddescription>
+<para>Geht, 18.12.2013. </para>    </detaileddescription>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/Vector3D.cs" line="21" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/Vector3D.cs" bodystart="20" bodyend="58"/>
+    <listofallmembers>
+      <member refid="class_editor_1_1_model_1_1_project_1_1_vector3_d_1a0c2cdcc4a6f7d34c9df88a0cfd6369ed" prot="private" virt="non-virtual"><scope>Editor::Model::Project::Vector3D</scope><name>x</name></member>
+      <member refid="class_editor_1_1_model_1_1_project_1_1_vector3_d_1ad3aa858866e849644daf364c412a0ebc" prot="private" virt="non-virtual"><scope>Editor::Model::Project::Vector3D</scope><name>y</name></member>
+      <member refid="class_editor_1_1_model_1_1_project_1_1_vector3_d_1a7739d5f8c4a4afad81591364605053c8" prot="private" virt="non-virtual"><scope>Editor::Model::Project::Vector3D</scope><name>z</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

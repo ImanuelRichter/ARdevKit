@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="dir_0eea96936422df97555706f66d832486" kind="dir">
+    <compoundname>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode</compoundname>
+    <innerdir refid="dir_765f2e99c75dd86af763d525919376ee">C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor</innerdir>
+    <innerdir refid="dir_b823c3ab7b23fb3c75592182c85a7fb5">C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/metaioSDK</innerdir>
+    <innerdir refid="dir_e9c6ce3d75d5f98d92bf11344e0f0e0d">C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player</innerdir>
+    <innerfile refid="_metaio_wrapper_8cs">MetaioWrapper.cs</innerfile>
+    <innerfile refid="_ole_d_b_connection_8cs">OleDBConnection.cs</innerfile>
+    <innerfile refid="_serializable_8cs">Serializable.cs</innerfile>
+    <innerfile refid="_sql_connection_8cs">SqlConnection.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/"/>
+  </compounddef>
+</doxygen>

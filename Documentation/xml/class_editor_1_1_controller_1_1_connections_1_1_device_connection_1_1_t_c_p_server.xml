@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_t_c_p_server" kind="class" prot="public">
+    <compoundname>Editor::Controller::Connections::DeviceConnection::TCPServer</compoundname>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_t_c_p_server_1a3ad2ae799bf2e53d91222bf8cb6cec9c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Editor.Controller.Connections.DeviceConnection.TCPServer.connect</definition>
+        <argsstring>(IPAddress IP)</argsstring>
+        <name>connect</name>
+        <param>
+          <type>IPAddress</type>
+          <declname>IP</declname>
+        </param>
+        <briefdescription>
+<para>Connects the given IP. </para>        </briefdescription>
+        <detaileddescription>
+<para>Geht, 18.12.2013. </para><para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>NotImplementedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when the requested operation is unimplemented. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>IP</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The IP to connect. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/Connections/DeviceConnection/TCPServer.cs" line="33" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/Connections/DeviceConnection/TCPServer.cs" bodystart="33" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_t_c_p_server_1ae02c08c05049643e2d0f76acd6da5ef8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Editor.Controller.Connections.DeviceConnection.TCPServer.disconnect</definition>
+        <argsstring>()</argsstring>
+        <name>disconnect</name>
+        <briefdescription>
+<para>Disconnects this object. </para>        </briefdescription>
+        <detaileddescription>
+<para>Geht, 18.12.2013. </para><para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>NotImplementedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when the requested operation is unimplemented. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/Connections/DeviceConnection/TCPServer.cs" line="47" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/Connections/DeviceConnection/TCPServer.cs" bodystart="47" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_t_c_p_server_1a2cd26b33c256b43b1ffb224fabaf334b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Editor.Controller.Connections.DeviceConnection.TCPServer.sendFile</definition>
+        <argsstring>()</argsstring>
+        <name>sendFile</name>
+        <briefdescription>
+<para>Sends the file. </para>        </briefdescription>
+        <detaileddescription>
+<para>Geht, 18.12.2013. </para><para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>NotImplementedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when the requested operation is unimplemented. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/Connections/DeviceConnection/TCPServer.cs" line="61" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/Connections/DeviceConnection/TCPServer.cs" bodystart="61" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_t_c_p_server_1a23855853f106d84d20c9530a87ac13ab" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>string</type>
+        <definition>virtual string Editor.Controller.Connections.DeviceConnection.TCPServer.receiveString</definition>
+        <argsstring>()</argsstring>
+        <name>receiveString</name>
+        <briefdescription>
+<para>Receive string. </para>        </briefdescription>
+        <detaileddescription>
+<para>Geht, 18.12.2013. </para><para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>NotImplementedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when the requested operation is unimplemented. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para><para><simplesect kind="return"><para>A string. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/Connections/DeviceConnection/TCPServer.cs" line="77" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/Connections/DeviceConnection/TCPServer.cs" bodystart="77" bodyend="80"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A TCP server. </para>    </briefdescription>
+    <detaileddescription>
+<para>Geht, 18.12.2013. </para>    </detaileddescription>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/Connections/DeviceConnection/TCPServer.cs" line="21" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/Connections/DeviceConnection/TCPServer.cs" bodystart="20" bodyend="82"/>
+    <listofallmembers>
+      <member refid="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_t_c_p_server_1a3ad2ae799bf2e53d91222bf8cb6cec9c" prot="public" virt="virtual"><scope>Editor::Controller::Connections::DeviceConnection::TCPServer</scope><name>connect</name></member>
+      <member refid="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_t_c_p_server_1ae02c08c05049643e2d0f76acd6da5ef8" prot="public" virt="virtual"><scope>Editor::Controller::Connections::DeviceConnection::TCPServer</scope><name>disconnect</name></member>
+      <member refid="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_t_c_p_server_1a23855853f106d84d20c9530a87ac13ab" prot="public" virt="virtual"><scope>Editor::Controller::Connections::DeviceConnection::TCPServer</scope><name>receiveString</name></member>
+      <member refid="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_t_c_p_server_1a2cd26b33c256b43b1ffb224fabaf334b" prot="public" virt="virtual"><scope>Editor::Controller::Connections::DeviceConnection::TCPServer</scope><name>sendFile</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

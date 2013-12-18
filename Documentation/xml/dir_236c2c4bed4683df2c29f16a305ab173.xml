@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="dir_236c2c4bed4683df2c29f16a305ab173" kind="dir">
+    <compoundname>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/View/TestViewWindow</compoundname>
+    <innerfile refid="_test_view_window_2_menu_bar_8cs">MenuBar.cs</innerfile>
+    <innerfile refid="_editor_2_view_2_test_view_window_2_renderer_panel_8cs">RendererPanel.cs</innerfile>
+    <innerfile refid="_test_view_window_2_status_bar_8cs">StatusBar.cs</innerfile>
+    <innerfile refid="_test_view_window_8cs">TestViewWindow.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/View/TestViewWindow/"/>
+  </compounddef>
+</doxygen>

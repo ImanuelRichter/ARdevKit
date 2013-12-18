@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="dir_fa5375c86574866ac7e5551105b9b406" kind="dir">
+    <compoundname>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller</compoundname>
+    <innerdir refid="dir_84847949b605322acdb63a8141f3555d">C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller/Connection</innerdir>
+    <innerdir refid="dir_2afa2a833af711d8532ede1edeeea477">C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller/DebugController</innerdir>
+    <innerdir refid="dir_df85c0153396420545218fb1fbdaa680">C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller/PlayerController</innerdir>
+    <innerdir refid="dir_5f98fbb4db7ec840fe4ebdaf4e5d38fe">C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller/TestController</innerdir>
+    <innerfile refid="_player_2_controller_2_i_observer_8cs">IObserver.cs</innerfile>
+    <innerfile refid="_i_observer1_8cs">IObserver1.cs</innerfile>
+    <innerfile refid="_i_observer2_8cs">IObserver2.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Player/Controller/"/>
+  </compounddef>
+</doxygen>

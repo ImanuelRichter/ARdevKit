@@ -1,0 +1,97 @@
+.TH "Editor.Model.Project.AbstractSource" 3 "Wed Dec 18 2013" "Version 0.1" "ARdevkit" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Editor.Model.Project.AbstractSource \- 
+.PP
+An abstract source\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSerializable\fP, and \fBEditor\&.Model\&.Project\&.IPreviewable\fP\&.
+.PP
+Inherited by \fBEditor\&.Model\&.Project\&.DbSource\fP, and \fBEditor\&.Model\&.Project\&.FileSource\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBaccept\fP (ProjectVisitor visitor)"
+.br
+.RI "\fIAccepts the given visitor\&. \fP"
+.ti -1c
+.RI "virtual Bitmap \fBgetPreview\fP ()"
+.br
+.RI "\fIGets the preview\&. \fP"
+.ti -1c
+.RI "abstract List< AbstractProperty > \fBgetPropertyList\fP ()"
+.br
+.RI "\fIGets property list\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+An abstract source\&. 
+
+Geht, 18\&.12\&.2013\&. 
+.PP
+Definition at line 20 of file AbstractSource\&.cs\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void Editor\&.Model\&.Project\&.AbstractSource\&.accept (ProjectVisitorvisitor)\fC [virtual]\fP"
+
+.PP
+Accepts the given visitor\&. Geht, 18\&.12\&.2013\&. 
+.PP
+\fBExceptions:\fP
+.RS 4
+\fINotImplementedException\fP Thrown when the requested operation is unimplemented\&. 
+.RE
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvisitor\fP The visitor\&. 
+.RE
+.PP
+
+.PP
+Definition at line 57 of file AbstractSource\&.cs\&.
+.SS "virtual Bitmap Editor\&.Model\&.Project\&.AbstractSource\&.getPreview ()\fC [virtual]\fP"
+
+.PP
+Gets the preview\&. Geht, 18\&.12\&.2013\&. 
+.PP
+\fBExceptions:\fP
+.RS 4
+\fINotImplementedException\fP Thrown when the requested operation is unimplemented\&. 
+.RE
+.PP
+.PP
+\fBReturns:\fP
+.RS 4
+The preview\&. 
+.RE
+.PP
+
+.PP
+Implements \fBEditor\&.Model\&.Project\&.IPreviewable\fP\&.
+.PP
+Definition at line 73 of file AbstractSource\&.cs\&.
+.SS "abstract List<AbstractProperty> Editor\&.Model\&.Project\&.AbstractSource\&.getPropertyList ()\fC [pure virtual]\fP"
+
+.PP
+Gets property list\&. Geht, 18\&.12\&.2013\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+The property list\&. 
+.RE
+.PP
+
+.PP
+Implements \fBEditor\&.Model\&.Project\&.IPreviewable\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ARdevkit from the source code\&.

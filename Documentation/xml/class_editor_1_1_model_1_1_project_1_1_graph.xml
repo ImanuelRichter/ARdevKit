@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_editor_1_1_model_1_1_project_1_1_graph" kind="class" prot="public">
+    <compoundname>Editor::Model::Project::Graph</compoundname>
+    <basecompoundref refid="class_editor_1_1_model_1_1_project_1_1_abstract_dynamic2_d_augmentation" prot="public" virt="non-virtual">Editor.Model.Project.AbstractDynamic2DAugmentation</basecompoundref>
+    <derivedcompoundref refid="class_editor_1_1_model_1_1_project_1_1_bar_graph" prot="public" virt="non-virtual">Editor.Model.Project.BarGraph</derivedcompoundref>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_editor_1_1_model_1_1_project_1_1_graph_1a690156c34c77d79566f6483a0523db48" prot="private" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>int</type>
+        <definition>int Editor.Model.Project.Graph.minValue</definition>
+        <argsstring></argsstring>
+        <name>minValue</name>
+        <briefdescription>
+<para>Gets or sets the minimum value. </para>        </briefdescription>
+        <detaileddescription>
+<para>The minimum value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/Graph.cs" line="28" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/Graph.cs" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_editor_1_1_model_1_1_project_1_1_graph_1a796dd55513b6a8a0b4c8a4d5aa8019f9" prot="private" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>int</type>
+        <definition>int Editor.Model.Project.Graph.maxValue</definition>
+        <argsstring></argsstring>
+        <name>maxValue</name>
+        <briefdescription>
+<para>Gets or sets the maximum value. </para>        </briefdescription>
+        <detaileddescription>
+<para>The maximum value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/Graph.cs" line="40" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/Graph.cs" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_editor_1_1_model_1_1_project_1_1_graph_1a2adcd91efefda3cef5567662fb8ddc34" prot="private" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>int</type>
+        <definition>int Editor.Model.Project.Graph.scaling</definition>
+        <argsstring></argsstring>
+        <name>scaling</name>
+        <briefdescription>
+<para>Gets or sets the scaling. </para>        </briefdescription>
+        <detaileddescription>
+<para>The scaling. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/Graph.cs" line="52" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/Graph.cs" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A graph. </para>    </briefdescription>
+    <detaileddescription>
+<para>Geht, 18.12.2013. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="512">
+        <label>Serializable</label>
+        <link refid="interface_serializable"/>
+      </node>
+      <node id="509">
+        <label>Editor.Model.Project.Graph</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_graph"/>
+        <childnode refid="510" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="511">
+        <label>AbstractAugmentation</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_abstract_augmentation"/>
+        <childnode refid="512" relation="public-inheritance">
+        </childnode>
+        <childnode refid="513" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="510">
+        <label>AbstractDynamic2DAugmentation</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_abstract_dynamic2_d_augmentation"/>
+        <childnode refid="511" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="513">
+        <label>IPreviewable</label>
+        <link refid="interface_editor_1_1_model_1_1_project_1_1_i_previewable"/>
+      </node>
+      <node id="514">
+        <label>Editor.Model.Project.BarGraph</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_bar_graph"/>
+        <childnode refid="509" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="518">
+        <label>Serializable</label>
+        <link refid="interface_serializable"/>
+      </node>
+      <node id="515">
+        <label>Editor.Model.Project.Graph</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_graph"/>
+        <childnode refid="516" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="517">
+        <label>AbstractAugmentation</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_abstract_augmentation"/>
+        <childnode refid="518" relation="public-inheritance">
+        </childnode>
+        <childnode refid="519" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="516">
+        <label>AbstractDynamic2DAugmentation</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_abstract_dynamic2_d_augmentation"/>
+        <childnode refid="517" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="519">
+        <label>IPreviewable</label>
+        <link refid="interface_editor_1_1_model_1_1_project_1_1_i_previewable"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/Graph.cs" line="21" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/Graph.cs" bodystart="20" bodyend="58"/>
+    <listofallmembers>
+      <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_dynamic2_d_augmentation_1a9d9677fc74f7086eede97e342d41a6cd" prot="public" virt="virtual"><scope>Editor::Model::Project::Graph</scope><name>[instance initializer]</name></member>
+      <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_augmentation_1a436d2ad8cc50aac47ff96bd0f134acbe" prot="public" virt="virtual"><scope>Editor::Model::Project::Graph</scope><name>accept</name></member>
+      <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_augmentation_1ada071b620589ac642213e6121da7511c" prot="public" virt="virtual"><scope>Editor::Model::Project::Graph</scope><name>getPreview</name></member>
+      <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_augmentation_1a53e3bb959d54ee200b6030e33e3f98fb" prot="public" virt="pure-virtual"><scope>Editor::Model::Project::Graph</scope><name>getPropertyList</name></member>
+      <member refid="class_editor_1_1_model_1_1_project_1_1_graph_1a796dd55513b6a8a0b4c8a4d5aa8019f9" prot="private" virt="non-virtual"><scope>Editor::Model::Project::Graph</scope><name>maxValue</name></member>
+      <member refid="class_editor_1_1_model_1_1_project_1_1_graph_1a690156c34c77d79566f6483a0523db48" prot="private" virt="non-virtual"><scope>Editor::Model::Project::Graph</scope><name>minValue</name></member>
+      <member refid="class_editor_1_1_model_1_1_project_1_1_graph_1a2adcd91efefda3cef5567662fb8ddc34" prot="private" virt="non-virtual"><scope>Editor::Model::Project::Graph</scope><name>scaling</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="dir_33fcdc3d6b81c65e5e8af37f1a484675" kind="dir">
+    <compoundname>C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/metaioSDK/SDK</compoundname>
+    <innerfile refid="_i_metaio_s_d_k_8cs">IMetaioSDK.cs</innerfile>
+    <innerfile refid="_i_metaio_s_d_k_callback_8cs">IMetaioSDKCallback.cs</innerfile>
+    <innerfile refid="_i_metaio_s_d_k_win32_8cs">IMetaioSDKWin32.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/metaioSDK/SDK/"/>
+  </compounddef>
+</doxygen>

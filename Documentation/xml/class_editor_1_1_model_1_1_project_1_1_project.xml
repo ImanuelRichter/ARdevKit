@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_editor_1_1_model_1_1_project_1_1_project" kind="class" prot="public">
+    <compoundname>Editor::Model::Project::Project</compoundname>
+    <basecompoundref refid="interface_serializable" prot="public" virt="non-virtual">Serializable</basecompoundref>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_editor_1_1_model_1_1_project_1_1_project_1a78eb5e1de8c7a408f974c34bcdd3f75d" prot="private" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>string</type>
+        <definition>string Editor.Model.Project.Project.name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+<para>Gets or sets the name. </para>        </briefdescription>
+        <detaileddescription>
+<para>The name. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/Project.cs" line="28" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/Project.cs" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_editor_1_1_model_1_1_project_1_1_project_1adfc52520e73648e6419024c3c8e68486" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual Editor.Model.Project.Project.[instance initializer]</definition>
+        <argsstring></argsstring>
+        <name>[instance initializer]</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/Project.cs" line="34" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_editor_1_1_model_1_1_project_1_1_project_1adfc52520e73648e6419024c3c8e68486" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual Editor.Model.Project.Project.[instance initializer]</definition>
+        <argsstring></argsstring>
+        <name>[instance initializer]</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/Project.cs" line="39" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_editor_1_1_model_1_1_project_1_1_project_1a55ae2b7c6b3ffd67b38e1cde96e856e9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Editor.Model.Project.Project.accept</definition>
+        <argsstring>(ProjectVisitor visitor)</argsstring>
+        <name>accept</name>
+        <param>
+          <type>ProjectVisitor</type>
+          <declname>visitor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/Project.cs" line="44" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/Project.cs" bodystart="44" bodyend="47"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A project. </para>    </briefdescription>
+    <detaileddescription>
+<para>Geht, 18.12.2013. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="611">
+        <label>Serializable</label>
+        <link refid="interface_serializable"/>
+      </node>
+      <node id="610">
+        <label>Editor.Model.Project.Project</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_project"/>
+        <childnode refid="611" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="613">
+        <label>Serializable</label>
+        <link refid="interface_serializable"/>
+      </node>
+      <node id="612">
+        <label>Editor.Model.Project.Project</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_project"/>
+        <childnode refid="613" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/Project.cs" line="21" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/Project.cs" bodystart="20" bodyend="49"/>
+    <listofallmembers>
+      <member refid="class_editor_1_1_model_1_1_project_1_1_project_1adfc52520e73648e6419024c3c8e68486" prot="public" virt="virtual"><scope>Editor::Model::Project::Project</scope><name>[instance initializer]</name></member>
+      <member refid="class_editor_1_1_model_1_1_project_1_1_project_1adfc52520e73648e6419024c3c8e68486" prot="public" virt="virtual"><scope>Editor::Model::Project::Project</scope><name>[instance initializer]</name></member>
+      <member refid="class_editor_1_1_model_1_1_project_1_1_project_1a55ae2b7c6b3ffd67b38e1cde96e856e9" prot="public" virt="virtual"><scope>Editor::Model::Project::Project</scope><name>accept</name></member>
+      <member refid="class_editor_1_1_model_1_1_project_1_1_project_1a78eb5e1de8c7a408f974c34bcdd3f75d" prot="private" virt="non-virtual"><scope>Editor::Model::Project::Project</scope><name>name</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

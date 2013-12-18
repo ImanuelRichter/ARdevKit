@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_editor_1_1_controller_1_1_editor_controller_1_1_property_controller" kind="class" prot="public">
+    <compoundname>Editor::Controller::EditorController::PropertyController</compoundname>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_editor_1_1_controller_1_1_editor_controller_1_1_property_controller_1ae7184432b4c275184834ee2c441215e6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>File</type>
+        <definition>virtual File Editor.Controller.EditorController.PropertyController.addCustomUserEvent</definition>
+        <argsstring>()</argsstring>
+        <name>addCustomUserEvent</name>
+        <briefdescription>
+<para>Adds custom user event. </para>        </briefdescription>
+        <detaileddescription>
+<para>Geht, 18.12.2013. </para><para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>NotImplementedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when the requested operation is unimplemented. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para><para><simplesect kind="return"><para>A File. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/PropertyController.cs" line="33" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/PropertyController.cs" bodystart="33" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="class_editor_1_1_controller_1_1_editor_controller_1_1_property_controller_1a43bc0474fd061b12402ba1f6a1af54d1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Editor.Controller.EditorController.PropertyController.editCustomUserEvent</definition>
+        <argsstring>(File customUserEvent)</argsstring>
+        <name>editCustomUserEvent</name>
+        <param>
+          <type>File</type>
+          <declname>customUserEvent</declname>
+        </param>
+        <briefdescription>
+<para>Edit custom user event. </para>        </briefdescription>
+        <detaileddescription>
+<para>Geht, 18.12.2013. </para><para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>NotImplementedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when the requested operation is unimplemented. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>customUserEvent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The custom user event. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/PropertyController.cs" line="49" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/PropertyController.cs" bodystart="49" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="class_editor_1_1_controller_1_1_editor_controller_1_1_property_controller_1a548eaf6fdb412e3eec2e69d1e032fa29" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Editor.Controller.EditorController.PropertyController.updatePropertyPanel</definition>
+        <argsstring>(IPreviewable selectedElement)</argsstring>
+        <name>updatePropertyPanel</name>
+        <param>
+          <type><ref refid="interface_editor_1_1_model_1_1_project_1_1_i_previewable" kindref="compound">IPreviewable</ref></type>
+          <declname>selectedElement</declname>
+        </param>
+        <briefdescription>
+<para>Updates the property panel described by selectedElement. </para>        </briefdescription>
+        <detaileddescription>
+<para>Geht, 18.12.2013. </para><para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>NotImplementedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when the requested operation is unimplemented. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>selectedElement</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The selected element. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/PropertyController.cs" line="65" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/PropertyController.cs" bodystart="65" bodyend="68"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A controller for handling properties. </para>    </briefdescription>
+    <detaileddescription>
+<para>Geht, 18.12.2013. </para>    </detaileddescription>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/PropertyController.cs" line="21" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Controller/EditorController/PropertyController.cs" bodystart="20" bodyend="70"/>
+    <listofallmembers>
+      <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_property_controller_1ae7184432b4c275184834ee2c441215e6" prot="public" virt="virtual"><scope>Editor::Controller::EditorController::PropertyController</scope><name>addCustomUserEvent</name></member>
+      <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_property_controller_1a43bc0474fd061b12402ba1f6a1af54d1" prot="public" virt="virtual"><scope>Editor::Controller::EditorController::PropertyController</scope><name>editCustomUserEvent</name></member>
+      <member refid="class_editor_1_1_controller_1_1_editor_controller_1_1_property_controller_1a548eaf6fdb412e3eec2e69d1e032fa29" prot="public" virt="virtual"><scope>Editor::Controller::EditorController::PropertyController</scope><name>updatePropertyPanel</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

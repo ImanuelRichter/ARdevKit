@@ -1,0 +1,74 @@
+.TH "Editor.Model.Project.AbstractTrackable" 3 "Wed Dec 18 2013" "Version 0.1" "ARdevkit" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Editor.Model.Project.AbstractTrackable \- 
+.PP
+An abstract trackable\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSerializable\fP, and \fBEditor\&.Model\&.Project\&.IPreviewable\fP\&.
+.PP
+Inherited by \fBEditor\&.Model\&.Project\&.AbstractMarker\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB[instance initializer]\fP"
+.br
+.ti -1c
+.RI "virtual void \fBaccept\fP (ProjectVisitor visitor)"
+.br
+.ti -1c
+.RI "virtual Bitmap \fBgetPreview\fP ()"
+.br
+.RI "\fIGets the preview\&. \fP"
+.ti -1c
+.RI "abstract List< AbstractProperty > \fBgetPropertyList\fP ()"
+.br
+.RI "\fIGets property list\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+An abstract trackable\&. 
+
+Geht, 18\&.12\&.2013\&. 
+.PP
+Definition at line 20 of file AbstractTrackable\&.cs\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual Bitmap Editor\&.Model\&.Project\&.AbstractTrackable\&.getPreview ()\fC [virtual]\fP"
+
+.PP
+Gets the preview\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+The preview\&. 
+.RE
+.PP
+
+.PP
+Implements \fBEditor\&.Model\&.Project\&.IPreviewable\fP\&.
+.PP
+Definition at line 68 of file AbstractTrackable\&.cs\&.
+.SS "abstract List<AbstractProperty> Editor\&.Model\&.Project\&.AbstractTrackable\&.getPropertyList ()\fC [pure virtual]\fP"
+
+.PP
+Gets property list\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+The property list\&. 
+.RE
+.PP
+
+.PP
+Implements \fBEditor\&.Model\&.Project\&.IPreviewable\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ARdevkit from the source code\&.

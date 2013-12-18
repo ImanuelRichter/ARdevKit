@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_editor_1_1_model_1_1_project_1_1_bar_graph" kind="class" prot="public">
+    <compoundname>Editor::Model::Project::BarGraph</compoundname>
+    <basecompoundref refid="class_editor_1_1_model_1_1_project_1_1_graph" prot="public" virt="non-virtual">Editor.Model.Project.Graph</basecompoundref>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_editor_1_1_model_1_1_project_1_1_bar_graph_1ab56dfd22268ee47a733db65bed0edec9" prot="private" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>int</type>
+        <definition>int Editor.Model.Project.BarGraph.optimalValue</definition>
+        <argsstring></argsstring>
+        <name>optimalValue</name>
+        <briefdescription>
+<para>Gets or sets the optimal value. </para>        </briefdescription>
+        <detaileddescription>
+<para>The optimal value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/BarGraph.cs" line="28" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/BarGraph.cs" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_editor_1_1_model_1_1_project_1_1_bar_graph_1a527f6bd3ff9ff40bd00950aa3933c732" prot="private" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>Color</type>
+        <definition>Color Editor.Model.Project.BarGraph.maxValueColor</definition>
+        <argsstring></argsstring>
+        <name>maxValueColor</name>
+        <briefdescription>
+<para>Gets or sets the color of the maximum value. </para>        </briefdescription>
+        <detaileddescription>
+<para>The color of the maximum value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/BarGraph.cs" line="40" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/BarGraph.cs" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_editor_1_1_model_1_1_project_1_1_bar_graph_1ab10677f39285ea6c6028745b3ebb5c9e" prot="private" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>Color</type>
+        <definition>Color Editor.Model.Project.BarGraph.minValueColor</definition>
+        <argsstring></argsstring>
+        <name>minValueColor</name>
+        <briefdescription>
+<para>Gets or sets the color of the minimum value. </para>        </briefdescription>
+        <detaileddescription>
+<para>The color of the minimum value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/BarGraph.cs" line="52" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/BarGraph.cs" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_editor_1_1_model_1_1_project_1_1_bar_graph_1a4de1fb0dbe8a78c7598c7e15073d8679" prot="private" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>Color</type>
+        <definition>Color Editor.Model.Project.BarGraph.optimalValueColor</definition>
+        <argsstring></argsstring>
+        <name>optimalValueColor</name>
+        <briefdescription>
+<para>Gets or sets the color of the optimal value. </para>        </briefdescription>
+        <detaileddescription>
+<para>The color of the optimal value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/BarGraph.cs" line="64" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/BarGraph.cs" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A bar graph. </para>    </briefdescription>
+    <detaileddescription>
+<para>Geht, 18.12.2013. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="423">
+        <label>Serializable</label>
+        <link refid="interface_serializable"/>
+      </node>
+      <node id="422">
+        <label>AbstractAugmentation</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_abstract_augmentation"/>
+        <childnode refid="423" relation="public-inheritance">
+        </childnode>
+        <childnode refid="424" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="421">
+        <label>AbstractDynamic2DAugmentation</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_abstract_dynamic2_d_augmentation"/>
+        <childnode refid="422" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="424">
+        <label>IPreviewable</label>
+        <link refid="interface_editor_1_1_model_1_1_project_1_1_i_previewable"/>
+      </node>
+      <node id="420">
+        <label>Graph</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_graph"/>
+        <childnode refid="421" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="419">
+        <label>Editor.Model.Project.BarGraph</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_bar_graph"/>
+        <childnode refid="420" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="429">
+        <label>Serializable</label>
+        <link refid="interface_serializable"/>
+      </node>
+      <node id="428">
+        <label>AbstractAugmentation</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_abstract_augmentation"/>
+        <childnode refid="429" relation="public-inheritance">
+        </childnode>
+        <childnode refid="430" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="427">
+        <label>AbstractDynamic2DAugmentation</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_abstract_dynamic2_d_augmentation"/>
+        <childnode refid="428" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="430">
+        <label>IPreviewable</label>
+        <link refid="interface_editor_1_1_model_1_1_project_1_1_i_previewable"/>
+      </node>
+      <node id="426">
+        <label>Graph</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_graph"/>
+        <childnode refid="427" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="425">
+        <label>Editor.Model.Project.BarGraph</label>
+        <link refid="class_editor_1_1_model_1_1_project_1_1_bar_graph"/>
+        <childnode refid="426" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/BarGraph.cs" line="21" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/GeneratedCode/Editor/Model/Project/BarGraph.cs" bodystart="20" bodyend="70"/>
+    <listofallmembers>
+      <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_dynamic2_d_augmentation_1a9d9677fc74f7086eede97e342d41a6cd" prot="public" virt="virtual"><scope>Editor::Model::Project::BarGraph</scope><name>[instance initializer]</name></member>
+      <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_augmentation_1a436d2ad8cc50aac47ff96bd0f134acbe" prot="public" virt="virtual"><scope>Editor::Model::Project::BarGraph</scope><name>accept</name></member>
+      <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_augmentation_1ada071b620589ac642213e6121da7511c" prot="public" virt="virtual"><scope>Editor::Model::Project::BarGraph</scope><name>getPreview</name></member>
+      <member refid="class_editor_1_1_model_1_1_project_1_1_abstract_augmentation_1a53e3bb959d54ee200b6030e33e3f98fb" prot="public" virt="pure-virtual"><scope>Editor::Model::Project::BarGraph</scope><name>getPropertyList</name></member>
+      <member refid="class_editor_1_1_model_1_1_project_1_1_bar_graph_1a527f6bd3ff9ff40bd00950aa3933c732" prot="private" virt="non-virtual"><scope>Editor::Model::Project::BarGraph</scope><name>maxValueColor</name></member>
+      <member refid="class_editor_1_1_model_1_1_project_1_1_bar_graph_1ab10677f39285ea6c6028745b3ebb5c9e" prot="private" virt="non-virtual"><scope>Editor::Model::Project::BarGraph</scope><name>minValueColor</name></member>
+      <member refid="class_editor_1_1_model_1_1_project_1_1_bar_graph_1ab56dfd22268ee47a733db65bed0edec9" prot="private" virt="non-virtual"><scope>Editor::Model::Project::BarGraph</scope><name>optimalValue</name></member>
+      <member refid="class_editor_1_1_model_1_1_project_1_1_bar_graph_1a4de1fb0dbe8a78c7598c7e15073d8679" prot="private" virt="non-virtual"><scope>Editor::Model::Project::BarGraph</scope><name>optimalValueColor</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
