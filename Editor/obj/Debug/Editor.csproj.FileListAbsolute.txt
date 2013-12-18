@@ -25,3 +25,4 @@ D:\Dropbox\dev\c#\ARdevKit\Editor\obj\Debug\ARdevKit.Properties.Resources.resour
 D:\Dropbox\dev\c#\ARdevKit\Editor\obj\Debug\Editor.csproj.GenerateResource.Cache
 D:\Dropbox\dev\c#\ARdevKit\Editor\obj\Debug\ARdevKit.exe
 D:\Dropbox\dev\c#\ARdevKit\Editor\obj\Debug\ARdevKit.pdb
+D:\Dropbox\dev\c#\ARdevKit\Editor\obj\Debug\ARdevKit.TestWindow.resources

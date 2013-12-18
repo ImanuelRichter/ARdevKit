@@ -7,15 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MetaioWrapper;
 
 namespace ARdevKit
 {
     public partial class EditorWindow : Form
     {
-        //[DllImport("MetaioWrapper.dll", CallingConvention = CallingConvention.Cdecl)]
-        //private static extern void initializeSDK();
-
         public EditorWindow()
         {
             InitializeComponent();
@@ -28,22 +24,18 @@ namespace ARdevKit
 
         private void tsm_editor_menu_file_new_Click(object sender, EventArgs e)
         {
-            MyMetaioWrapper wrapper = new MyMetaioWrapper();
-            unsafe
-            {
-                void* panel = pnl_editor_preview.Handle.ToPointer();
-                wrapper.initializeSDK(pnl_editor_preview.Width, pnl_editor_preview.Height, panel);
-            }
-            while (true) {
-                wrapper.update();
-                //pnl_editor_preview.Refresh();
-            }
-            //MessageBox.Show(wrapper.getVersion());
+
         }
 
         private void tsm_editor_menu_file_exit_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Application.Exit();
+        }
+
+        private void tsm_editor_menu_test_loadImage_Click(object sender, EventArgs e)
+        {
+            TestWindow testWindow = new TestWindow();
+            testWindow.Show();
         }
     }
 }
