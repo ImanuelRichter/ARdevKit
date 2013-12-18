@@ -1,0 +1,13 @@
+﻿Der Buildvorgang wurde am 18.12.2013 16:28:36 gestartet.
+     1>Projekt "D:\Dropbox\dev\c#\ARdevKit\MetaioWrapper\MetaioWrapper.vcxproj" auf Knoten "2", Build Ziel(e).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(357,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+     1>Link:
+         D:\Programme\Visual Studio\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\bin\Debug\MetaioWrapper.dll" /INCREMENTAL /NOLOGO /LIBPATH:..\bin\Debug MetaioBridge.lib metaioSDK.lib metaioSDKD.lib user32.lib /NODEFAULTLIB:MSVCRT.lib /NODEFAULTLIB:libcmtd.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:"D:\Programme\Visual Studio\VC\Include\Manifest\dpiaware.manifest" /DEBUG /PDB:"..\bin\Debug\MetaioWrapper.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /FIXED:NO /NXCOMPAT /IMPLIB:"..\bin\Debug\MetaioWrapper.lib" /MACHINE:X86 /ignore:4099 /DLL Debug\MetaioWrapper.obj
+         "Debug\.NETFramework,Version=v4.0.AssemblyAttributes.obj"
+     1>MetaioBridge.lib(MetaioBridge.obj) : warning LNK4075: /EDITANDCONTINUE wird aufgrund der Angabe von /OPT:LBR ignoriert.
+         MetaioWrapper.vcxproj -> D:\Dropbox\dev\c#\ARdevKit\MetaioWrapper\..\bin\Debug\MetaioWrapper.dll
+     1>Die Erstellung des Projekts "D:\Dropbox\dev\c#\ARdevKit\MetaioWrapper\MetaioWrapper.vcxproj" ist abgeschlossen, Build Ziel(e).
+
+Build erfolgreich.
+
+Verstrichene Zeit 00:00:01.27

@@ -1,0 +1,9 @@
+D:\Dropbox\dev\c#\ARdevKit\bin\Debug\ARdevKit.exe.config
+D:\Dropbox\dev\c#\ARdevKit\bin\Debug\ARdevKit.exe
+D:\Dropbox\dev\c#\ARdevKit\bin\Debug\ARdevKit.pdb
+D:\Dropbox\dev\c#\ARdevKit\ARdevKit\obj\Debug\ARdevKitEditor.csprojResolveAssemblyReference.cache
+D:\Dropbox\dev\c#\ARdevKit\ARdevKit\obj\Debug\ARdevKit.EditorWindow.resources
+D:\Dropbox\dev\c#\ARdevKit\ARdevKit\obj\Debug\ARdevKit.Properties.Resources.resources
+D:\Dropbox\dev\c#\ARdevKit\ARdevKit\obj\Debug\ARdevKitEditor.csproj.GenerateResource.Cache
+D:\Dropbox\dev\c#\ARdevKit\ARdevKit\obj\Debug\ARdevKit.exe
+D:\Dropbox\dev\c#\ARdevKit\ARdevKit\obj\Debug\ARdevKit.pdb
