@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{811AB8AF-0A13-4604-8816-94D43E9AC3E3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ARdevKit</RootNamespace>
+    <AssemblyName>ARdevKit</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GeneratedCode\Editor\Controller\Connections\DatabaseConnection\DataSet.cs" />
+    <Compile Include="GeneratedCode\Editor\Controller\Connections\DatabaseConnection\DbCommand.cs" />
+    <Compile Include="GeneratedCode\Editor\Controller\Connections\DatabaseConnection\DbConnection.cs" />
+    <Compile Include="GeneratedCode\Editor\Controller\Connections\DatabaseConnection\DbDataReader.cs" />
+    <Compile Include="GeneratedCode\Editor\Controller\Connections\DatabaseConnection\DbParameter.cs" />
+    <Compile Include="GeneratedCode\Editor\Controller\Connections\DatabaseConnection\DbProviderFactory.cs" />
+    <Compile Include="GeneratedCode\Editor\Controller\Connections\DeviceConnection\DeviceConnectionController.cs" />
+    <Compile Include="GeneratedCode\Editor\Controller\Connections\DeviceConnection\TCPServer.cs" />
+    <Compile Include="GeneratedCode\Editor\Controller\Connections\DeviceConnection\UDPServer.cs" />
+    <Compile Include="GeneratedCode\Editor\Controller\DebugController\DebugController.cs" />
+    <Compile Include="GeneratedCode\Editor\Controller\DebugController\Filter.cs" />
+    <Compile Include="GeneratedCode\Editor\Controller\EditorController\ARdevKit.cs" />
+    <Compile Include="GeneratedCode\Editor\Controller\EditorController\EditorWindowController.cs" />
+    <Compile Include="GeneratedCode\Editor\Controller\EditorController\ElementSelectionController.cs" />
+    <Compile Include="GeneratedCode\Editor\Controller\EditorController\MetaCategory.cs" />
+    <Compile Include="GeneratedCode\Editor\Controller\EditorController\PreviewController.cs" />
+    <Compile Include="GeneratedCode\Editor\Controller\EditorController\PropertyController.cs" />
+    <Compile Include="GeneratedCode\Editor\Controller\EditorController\SceneElement.cs" />
+    <Compile Include="GeneratedCode\Editor\Controller\EditorController\SceneElementCategory.cs" />
+    <Compile Include="GeneratedCode\Editor\Controller\IObserver.cs" />
+    <Compile Include="GeneratedCode\Editor\Controller\ProjectController\AbstractProjectVisitor.cs" />
+    <Compile Include="GeneratedCode\Editor\Controller\ProjectController\ExportVisitor.cs" />
+    <Compile Include="GeneratedCode\Editor\Controller\ProjectController\SaveVisitor.cs" />
+    <Compile Include="GeneratedCode\Editor\Controller\TestController\TestController.cs" />
+    <Compile Include="GeneratedCode\Editor\Model\Project\AbstractAugmentation.cs" />
+    <Compile Include="GeneratedCode\Editor\Model\Project\AbstractDynamic2DAugmentation.cs" />
+    <Compile Include="GeneratedCode\Editor\Model\Project\AbstractMarker.cs" />
+    <Compile Include="GeneratedCode\Editor\Model\Project\AbstractSource.cs" />
+    <Compile Include="GeneratedCode\Editor\Model\Project\AbstractTrackable.cs" />
+    <Compile Include="GeneratedCode\Editor\Model\Project\BarGraph.cs" />
+    <Compile Include="GeneratedCode\Editor\Model\Project\DbSource.cs" />
+    <Compile Include="GeneratedCode\Editor\Model\Project\FileSource.cs" />
+    <Compile Include="GeneratedCode\Editor\Model\Project\Graph.cs" />
+    <Compile Include="GeneratedCode\Editor\Model\Project\IDMarker.cs" />
+    <Compile Include="GeneratedCode\Editor\Model\Project\IPreviewable.cs" />
+    <Compile Include="GeneratedCode\Editor\Model\Project\PictureMarker.cs" />
+    <Compile Include="GeneratedCode\Editor\Model\Project\Project.cs" />
+    <Compile Include="GeneratedCode\Editor\Model\Project\Vector3D.cs" />
+    <Compile Include="GeneratedCode\Editor\View\DebugWindow\ConsolePanel.cs" />
+    <Compile Include="GeneratedCode\Editor\View\DebugWindow\DebugWindow.cs" />
+    <Compile Include="GeneratedCode\Editor\View\DebugWindow\FilterPanel.cs" />
+    <Compile Include="GeneratedCode\Editor\View\DebugWindow\MenuBar.cs" />
+    <Compile Include="GeneratedCode\Editor\View\DebugWindow\StatusBar.cs" />
+    <Compile Include="GeneratedCode\Editor\View\EditorWindow\AbstractProperty.cs" />
+    <Compile Include="GeneratedCode\Editor\View\EditorWindow\AddSceneButton.cs" />
+    <Compile Include="GeneratedCode\Editor\View\EditorWindow\CategoryComboBox.cs" />
+    <Compile Include="GeneratedCode\Editor\View\EditorWindow\ColorProperty.cs" />
+    <Compile Include="GeneratedCode\Editor\View\EditorWindow\EditorWindow.cs" />
+    <Compile Include="GeneratedCode\Editor\View\EditorWindow\ElementComboBox.cs" />
+    <Compile Include="GeneratedCode\Editor\View\EditorWindow\ElementIcon.cs" />
+    <Compile Include="GeneratedCode\Editor\View\EditorWindow\ElementSelectionPanel.cs" />
+    <Compile Include="GeneratedCode\Editor\View\EditorWindow\IPropertyListPanel.cs" />
+    <Compile Include="GeneratedCode\Editor\View\EditorWindow\MenuBar.cs" />
+    <Compile Include="GeneratedCode\Editor\View\EditorWindow\MenuElement.cs" />
+    <Compile Include="GeneratedCode\Editor\View\EditorWindow\NameTextField.cs" />
+    <Compile Include="GeneratedCode\Editor\View\EditorWindow\PictureBox.cs" />
+    <Compile Include="GeneratedCode\Editor\View\EditorWindow\PreviewPanel.cs" />
+    <Compile Include="GeneratedCode\Editor\View\EditorWindow\PropertyListPanel.cs" />
+    <Compile Include="GeneratedCode\Editor\View\EditorWindow\PropertyPanel.cs" />
+    <Compile Include="GeneratedCode\Editor\View\EditorWindow\ReferenceProperty.cs" />
+    <Compile Include="GeneratedCode\Editor\View\EditorWindow\SceneElement.cs" />
+    <Compile Include="GeneratedCode\Editor\View\EditorWindow\SceneElementCategoryPanel.cs" />
+    <Compile Include="GeneratedCode\Editor\View\EditorWindow\SceneIcon.cs" />
+    <Compile Include="GeneratedCode\Editor\View\EditorWindow\SceneListPanel.cs" />
+    <Compile Include="GeneratedCode\Editor\View\EditorWindow\SceneNameTextField.cs" />
+    <Compile Include="GeneratedCode\Editor\View\EditorWindow\SceneSelectionPanel.cs" />
+    <Compile Include="GeneratedCode\Editor\View\EditorWindow\StatusBar.cs" />
+    <Compile Include="GeneratedCode\Editor\View\EditorWindow\TextProperty.cs" />
+    <Compile Include="GeneratedCode\Editor\View\TestViewWindow\MenuBar.cs" />
+    <Compile Include="GeneratedCode\Editor\View\TestViewWindow\RendererPanel.cs" />
+    <Compile Include="GeneratedCode\Editor\View\TestViewWindow\StatusBar.cs" />
+    <Compile Include="GeneratedCode\Editor\View\TestViewWindow\TestViewWindow.cs" />
+    <Compile Include="GeneratedCode\MetaioWrapper.cs" />
+    <Compile Include="GeneratedCode\OleDBConnection.cs" />
+    <Compile Include="GeneratedCode\Player\Controller\Connection\DatabaseConnection\DatabaseFacade.cs" />
+    <Compile Include="GeneratedCode\Player\Controller\Connection\DeviceConnection\TCPClient.cs" />
+    <Compile Include="GeneratedCode\Player\Controller\Connection\DeviceConnection\UDPClient.cs" />
+    <Compile Include="GeneratedCode\Player\Controller\DebugController\DebugController.cs" />
+    <Compile Include="GeneratedCode\Player\Controller\IObserver.cs" />
+    <Compile Include="GeneratedCode\Player\Controller\IObserver1.cs" />
+    <Compile Include="GeneratedCode\Player\Controller\IObserver2.cs" />
+    <Compile Include="GeneratedCode\Player\Controller\PlayerController\PlayerController.cs" />
+    <Compile Include="GeneratedCode\Player\Controller\TestController\TestController.cs" />
+    <Compile Include="GeneratedCode\Player\Model\ArelFile.cs" />
+    <Compile Include="GeneratedCode\Player\View\Button.cs" />
+    <Compile Include="GeneratedCode\Player\View\PlayerPage.cs" />
+    <Compile Include="GeneratedCode\Player\View\RendererPanel.cs" />
+    <Compile Include="GeneratedCode\Player\View\StackPanel.cs" />
+    <Compile Include="GeneratedCode\Player\View\XAML-File.cs" />
+    <Compile Include="GeneratedCode\Serializable.cs" />
+    <Compile Include="GeneratedCode\SqlConnection.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
