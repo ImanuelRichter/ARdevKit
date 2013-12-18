@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="f5b1a316-5c75-4d4f-959c-46eab84e25b0"
+  name="View" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="5daa8471-a84f-4cc1-a1a8-c93b4bad0511"
+        LastKnownName="DebugWindow"
+        LastKnownLocation="Package14_1511.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="1d8d3d6b-73d6-4510-8633-58629d2e115e"
+        LastKnownName="TestViewWindow"
+        LastKnownLocation="Package15_1511.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="924607ae-6983-4cb5-a39f-d0750bb35e36"
+        LastKnownName="EditorWindow"
+        LastKnownLocation="Package16_1511.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

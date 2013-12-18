@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="33201cf2-d89e-4db5-b37e-0c1e8b7c1acb"
+  name="metaioSDK" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="63649e37-1c0f-4a4c-980e-4e52e5d6cb64"
+        LastKnownName="AREL"
+        LastKnownLocation="Package26_1511.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="fe1ddb37-d480-4210-beef-5f5ae152dd61"
+        LastKnownName="Geometry"
+        LastKnownLocation="Package27_1511.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="6c1d3b56-686a-4c76-b943-53cea3873365"
+        LastKnownName="Gesture Handler"
+        LastKnownLocation="Package28_1511.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="16e243b2-5b0c-4935-a9e3-55cd02700920"
+        LastKnownName="Helper Structs and Classes"
+        LastKnownLocation="Package29_1511.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="62721e44-d567-456f-890a-9670320abf44"
+        LastKnownName="SDK"
+        LastKnownLocation="Package30_1511.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="33cd9bbd-bdea-4d9f-b056-78e1e40de13f"
+        LastKnownName="Sensor"
+        LastKnownLocation="Package31_1511.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="2f40539b-f000-4a36-8b5b-2d73b763912e"
+        LastKnownName="Vector"
+        LastKnownLocation="Package32_1511.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="d71a51b5-d56b-48eb-9bd0-2d608fe923e1"
+        LastKnownName="Visual Search"
+        LastKnownLocation="Package33_1511.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

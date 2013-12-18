@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="d283c5fd-d993-42f6-88a3-7cddb13a15b5"
+  name="Model" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <suppliersInternal>
+    <dependency
+      Id="1c78943b-d198-488f-857c-604fd249a12b">
+      <classMoniker
+        Id="a52134ec-7a1f-410b-ba61-8f11a91423b4"
+        LastKnownName="MetaioWrapper"
+        LastKnownLocation="UML.uml" />
+    </dependency>
+  </suppliersInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="7869ba30-5ec6-48b1-a536-c1929be43bbe"
+        name="ArelFile"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="1cfd6753-d0e8-488e-925e-7069ab6aa071"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="58246155-4b83-468c-a156-5417e5647242">
+                <propertyInstance
+                  Id="c70f7912-c26f-4b70-bfd2-0b9a5b2a19fb"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="81bb89ef-b669-4864-8ef3-f2de6aec4594">
+                <propertyInstance
+                  Id="17c254b9-0ef1-4a5f-aa8f-99630c9e0bfe"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a01d2008-c487-4935-8b8e-1a4f6c020cbf">
+                <propertyInstance
+                  Id="145934c2-ca3d-467a-8150-e82c7a11e1ab"
+                  name="IsStatic"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="72057298-62c1-4678-b565-50a03114dc0c">
+                <propertyInstance
+                  Id="f59e662d-8125-466e-a718-e34414058ed3"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="1c029cda-4be8-4999-886a-999acf0e6835">
+                <propertyInstance
+                  Id="e475b13e-ca65-43f9-b7cf-79cb41b495df"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

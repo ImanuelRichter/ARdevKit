@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="18ff5445-3758-414e-9331-73de25e70740"
+  name="Connection" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="ab757dca-1517-4baa-b8b8-75963a0e95de">
+      <body>Enthält alle nötigen Methoden, die für den Player gebraucht werden. Falls das unsinnig ist, bitte löschen und korrigieren :)</body>
+      <annotatedElements>
+        <classMoniker
+          Id="bbb79ebf-cdcd-4c65-83b3-0e492dd3815a"
+          LastKnownName="DatabaseFacade"
+          LastKnownLocation="Package9_1511.uml" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="d66bbfc2-494a-4f54-a4b2-4a2727ea1649"
+        LastKnownName="DeviceConnection"
+        LastKnownLocation="Package8_1511.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="27a4ed2f-0fa1-407f-b58e-50868199b7f8"
+        LastKnownName="DatabaseConnection"
+        LastKnownLocation="Package9_1511.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
