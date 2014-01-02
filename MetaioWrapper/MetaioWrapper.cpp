@@ -1,26 +1,36 @@
+#pragma once
 #include "MetaioWrapper.h"
 #include <MetaioBridge\MetaioBridge.h>
 
+using namespace msclr::interop;
+using namespace std;
+
 namespace MetaioWrapper
 {
-	MyMetaioSDK metaioSDK;
+	MyMetaioSDK* metaioSDK;
 
-	void MyMetaioWrapper::initializeSDK(int wndWidth, int wndHeight, void* hWnd)
+	MyMetaioWrapper::MyMetaioWrapper(int wndWidth, int wndHeight, void* hWnd)
 	{
-		if (metaioSDK.initializeMetaioSDK(wndWidth, wndHeight, hWnd) == -1)
-			MessageBox(NULL, TEXT("loading image failed"), TEXT("Error!"), MB_OK);
-		else MessageBox(NULL, TEXT("perfekt :)"), TEXT("Succes!"), MB_OK);
-	};
+		metaioSDK = new MyMetaioSDK(wndWidth, wndHeight, hWnd);
+	}
+
+	bool MyMetaioWrapper::setTrackingConfiguration(String^ path)
+	{
+		const string tmp = marshal_as<string>(path);
+		metaio::stlcompat::String str = metaio::stlcompat::String(tmp.c_str());
+
+		return metaioSDK->setTrackingConfiguaration(str);
+	}
 
 	void MyMetaioWrapper::update()
 	{
-		metaioSDK.update();
+		metaioSDK->update();
 	}
 
-	System::String^ MyMetaioWrapper::getVersion()
+	String^ MyMetaioWrapper::getVersion()
 	{
-		const char* tmp = metaioSDK.getVersion();
-		System::String^ version = msclr::interop::marshal_as<System::String^>(tmp);
+		const char* tmp = metaioSDK->getVersion();
+		System::String^ version = marshal_as<String^>(tmp);
 
 		return version;
 	}

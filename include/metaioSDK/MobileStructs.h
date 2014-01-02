@@ -54,30 +54,6 @@ enum ESCREEN_ROTATION
 	ESCREEN_ROTATION_270,
 };
 
-
-/**
- * Definition of a camera available on the system
- */
-struct METAIO_DLL_API Camera
-{
-	
-	/**
-	 * Zero-based camera index as used with IMetaioSDK::startCamera call
-	 *
-	 * On mobile platforms, this will be 0 for the back facing and 1 for the front facing camera, if
-	 * any is available.
-	 *
-	 * \sa IMetaioSDK::startCamera
-	 */
-	int					index;
-
-	/// Name of the camera (not necessarily unique if you have multiple cameras of the same model!)
-	stlcompat::String	friendlyName;
-
-	Camera();
-};
-
-
 /// Render event type
 enum ERENDER_EVENT_TYPE
 {
@@ -443,6 +419,12 @@ struct METAIO_DLL_API Vector3d
 	float norm() const;
 
 	/**
+	 * Get normalized vector
+	 * \return normalized vector of norm (length) 1
+	 */
+	Vector3d normalize() const;
+
+	/**
 	 * Determine if the vector is null
 	 * \return true if null vector, else false
 	 */
@@ -626,6 +608,102 @@ struct METAIO_DLL_API Correspondence2D3D
 	 */
 	Correspondence2D3D(const Vector2d& observed, const Vector3d& reference);
 	
+};
+
+/**
+ * Definition of a camera available on the system
+ */
+struct METAIO_DLL_API Camera
+{
+	
+	/// No information about camera facing direction
+	static const int FACE_UNDEFINED =		0;
+
+	/// Camera facing back (rear) direction
+	static const int FACE_BACK =			1;
+
+	/// Camera facing front direction
+	static const int FACE_FRONT =			1<<1;
+
+	/// No flip
+    static const int FLIP_NONE =			0;
+
+    /// Vertical flip
+    static const int FLIP_VERTICAL =		1;
+
+    /// Horizontal flip
+    static const int FLIP_HORIZONTAL =		1<<1;
+
+    /// Both vertical and horizontal flips (180 degrees rotation)
+    static const int FLIP_BOTH =			FLIP_VERTICAL|FLIP_HORIZONTAL;
+
+
+	/// Unique camera index
+	int	index;
+
+    /// base index for OpenNI based devices
+    static const int BASE_INDEX_OPENNI = 5000;
+
+	/// Name of the camera (not necessarily unique if the system has multiple cameras of the same model!)
+	stlcompat::String friendlyName;
+
+	/**
+	 * Camera image resolution (x=width, y=height).
+	 * This is used as requested resolution in the IMetaioSDK::startCamera call,
+	 * and is updated with actual resolution after a succesfull call
+	 * \sa IMetaioSDK::startCamera
+	 */
+	Vector2di resolution;
+
+	/** 
+	 * Camera FPS, if 0, the maximum available fps will be choosen
+	 * On Android and iOS, both x (min) and y (max) values are used,
+	 * while on Windows only x is used as maximum FPS.
+	 * This is used as requested FPS in the IMetaioSDK::startCamera call,
+	 * and is updated with actual FPS after a succesfull call
+	 * \sa IMetaioSDK::startCamera
+	 */
+	Vector2d fps;
+
+	/** 
+	 * Downsample image for tracking, must be greater than 0.
+	 * This is only used as input for startCamera call.
+	 * \sa IMetaioSDK::startCamera
+	 */
+	int downsample;
+
+	/**
+     * YUV pipeline, only used as input for startCamera call.
+     * This is ignored on Windows and OSX because YUV pipeline can only be enabled on Android or iOS.
+	 * \sa IMetaioSDK::startCamera
+	 */
+	bool yuvPipeline;
+
+	/// Camera facing direction, FACE_BACK, FACE_FRONT or FACE_UNDEFINED.
+	int facing;
+
+	 
+	/// Flip camera image. This is only used as input for startCamera call.
+	int flip;
+
+	/// Create camera with default parameters
+	Camera();
+
+	stlcompat::String toString() const;
+	
+	/**
+	 * Validate camera parameters
+	 * \return true if parameters are valid
+	 */
+	bool validateParameters() const;
+	
+	/** 
+	 * Check if two camera parmeters are equal
+	 *
+	 * \param other Camera to compare with
+	 * \return true if both camera parameters are equal
+	 */
+	bool operator ==(const Camera& other) const;
 };
 
 /** 
@@ -881,6 +959,19 @@ struct METAIO_DLL_API VisualSearchResponse
 	 */
 	VisualSearchResponse();
 	
+	/** 
+	 * Copy operator
+	 *
+	 * \param[in] from VisualSearchResponse to copy from
+	 * \return copied VisualSearchResponse
+	 */
+	inline VisualSearchResponse& operator=(const VisualSearchResponse& from) {
+		trackingConfigurationName = from.trackingConfigurationName;
+		trackingConfiguration = from.trackingConfiguration;
+		visualSearchScore = from.visualSearchScore;
+		metadata = from.metadata;
+		return *this;
+	}
 };
 
 } // namespace metaio

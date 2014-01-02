@@ -44,7 +44,6 @@
             this.pnl_TestWindowMain.Name = "pnl_TestWindowMain";
             this.pnl_TestWindowMain.Size = new System.Drawing.Size(784, 561);
             this.pnl_TestWindowMain.TabIndex = 0;
-            this.pnl_TestWindowMain.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_TestWindowView_Paint);
             // 
             // pnl_TestWindowMetaioRenderer
             // 

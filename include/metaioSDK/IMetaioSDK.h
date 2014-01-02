@@ -82,7 +82,7 @@ public:
 	 * Get the SDK version string
 	 * \return version string
 	 */
-	virtual const char* getVersion() const = 0;
+	virtual stlcompat::String getVersion() const = 0;
 
 	/**
 	 *  Set tracking configuration from an XML file.
@@ -127,7 +127,8 @@ public:
 	 * \sa IMetaioSDKCallback.onInstantTrackingEvent
 	 */
 	virtual void startInstantTracking(const stlcompat::String& trackingMode,
-	                                  const stlcompat::String& outFile = "") = 0;
+	                                  const stlcompat::String& outFile = "",
+									  bool enablePreview = false ) = 0;
 
 
 	/**
@@ -277,7 +278,7 @@ public:
 	 * \sa IMetaioSDK::startCamera
 	 * \return Definitions of available cameras
 	 */
-	virtual metaio::stlcompat::Vector<metaio::Camera> listCameras() const = 0;
+	virtual metaio::stlcompat::Vector<metaio::Camera> getCameraList() const = 0;
 
 	/**
 	 * Start capturing on a camera.
@@ -288,6 +289,9 @@ public:
 	 * is enabled.
 	 * The YUV pipeline can only be enabled on Android or iOS. It is enabled by default on these
 	 * platforms.
+
+	 * \deprecated This method is deprecated and will be removed in the future version. Please use startCamera
+	 *             with Camera object containing full parameters.
 	 *
 	 * \param index The index of the camera to start (zero-based).
 	 * \param width The desired width of the camera frame (default=320).
@@ -300,6 +304,24 @@ public:
 	 */
 	virtual Vector2di startCamera(int index, unsigned int width = 320, unsigned int height = 240,
 		int downsample = 1, bool enableYUVpipeline = true) = 0;
+
+	/**
+	 * Start capturing on a camera.
+	 * Start the specified camera (index) with the given capture parameters (resolution, FPS, image format etc.)
+	 * The captured image can be optionally downsampled for tracking to allow rendering at higher resolution.
+	 * This is always valid on Android, while on other platforms, it is only valid if YUV pipeline
+	 * is enabled. The YUV pipeline can only be enabled on Android or iOS.
+     * On success, the input camera object will be updated with actual parameters that are used by
+	 * the system.
+	 * To get a list of avaiable cameras that can be used see getCameraList
+	 * 
+	 * \param[in,out] camera A camera object containing all the requested parameters. On success,
+	 *						 it will be updated with actual supported parameters.
+	 * \return true on success
+	 * \sa getCameraList
+	 * \SA stopCamera
+	 */
+	virtual bool startCamera(Camera& camera) = 0;
 
 	/**
 	 *  Stop capturing on a camera.
@@ -467,6 +489,53 @@ public:
 	virtual void setRendererFrameBuffers( unsigned int frameBuffer, unsigned int renderBuffer ) = 0;
 
 	/**
+	 * Enable or disable the advanced rendering features. If this option is
+	 * enabled the advanced rendering effects are run on every device. This
+	 * should not be enabled on older devices. These effects are extremely
+	 * performance intensive and require an iPhone 5, similar or newer device
+	 * to run at a decent speed.
+	 *
+	 * \param enable If set to true the features are enabled, default is false
+	 *
+	 * \sa setAutoEnableAdvancedRenderingFeatures
+	 */
+	virtual void setAdvancedRenderingFeatures(const bool enable) = 0;
+	
+	/**
+	 * This is a convenience method for setAdvancedRenderingFeatures
+	 * It checks if metaio::isAdvancedRenderingSupported() (iOS) or
+	 * isAdvancedRenderingSupported (com.metaio.tools.SystemInfo, Android) 
+	 * returns true or false and enables advanced rendering accordingly.
+	 *
+	 * \return true if advanced rendering was enabled, false if not
+	 *
+	 * \sa setAdvancedRenderingFeatures
+	 */
+	virtual bool autoEnableAdvancedRenderingFeatures() = 0;
+	
+	/**
+	 * Sets the parameters for the Depth of Field (DoF) effect
+	 *
+	 * \param focalLength The focal length
+	 * \param focalDistance The folcal distance, the distance wher the object is 
+	 * focused. This is in range [0,1] where 1 is at the far clipping plane
+	 * and 0 at the near clipping plane. Keep in mind that DoF currently is only
+	 * rendered in between the focal plane and the near clipping plane.
+	 * \param aperture Size of the aperture
+	 */
+	virtual void setDepthOfFieldParameters(const float focalLength = 0.1f,
+										   const float focalDistance = 0.6f,
+										   const float aperture = 0.2f) = 0;
+	
+	/**
+	 * Sets the intensity of the motion blur applied to the rendering.
+	 * Default value is 1.0. The length of the motion vector is multiplied
+	 * by this value.
+	 * \param intensity The intensity of the motion blur
+	 */
+	virtual void setMotionBlurIntensity(const float intensity) = 0;
+	
+	/**
 	 * Take a screenshot and put it into an ImageStruct.
 	 *
 	 * The returned ImageStruct and its' buffer must be released by the
@@ -477,6 +546,20 @@ public:
 	 * \sa requestScreenshot
 	 */
 	virtual ImageStruct* getScreenshot() = 0;
+
+	/**
+	 * Get the duration in milliseconds per frame it took to render the 3D geometry, UI and camera image.
+	 *
+	 * \return The duration in seconds for rendering the last frame.
+	 */
+	virtual unsigned int getRenderingDuration() const = 0;
+
+	/**
+	 * Get the duration in milliseconds per frame it took to perform tracking.
+	 *
+	 * \return The duration in seconds for tracking the last frame.
+	 */
+	virtual unsigned int getTrackingDuration() const = 0;
 
 	/**
 	 * Get the current rendering frame rate.
@@ -552,6 +635,19 @@ public:
 	 */
 	virtual metaio::stlcompat::Vector<metaio::TrackingValues> getTrackingValues(bool rotate = false) = 0;
 
+	/**
+	 * Set whether IMetaioSDKCallback::onTrackingEvent should always receive all tracking values and
+	 * not only those with tracking state changes
+	 *
+	 * Use this to receive all tracking value changes, i.e. also changes to the pose even if the
+	 * tracking state has not changed.
+	 *
+	 * Default is to only pass tracking values which indicate a state change (ETS_INITIALIZED,
+	 * ETS_FOUND, ETS_LOST, ETS_REGISTERED, but e.g. not ETS_TRACKING).
+	 *
+	 * \param enable Whether to propagate all tracking values
+	 */
+	virtual void setTrackingEventCallbackReceivesAllChanges(bool enable) = 0;
 
 	/**
 	 * Computes the spatial relationship, which is a rigid model transformation, between two coordinate systems.
@@ -634,9 +730,63 @@ public:
 	 * It is useful e.g. when overlaying the metaio SDK view on top of another view that renders the camera image.
 	 *
 	 * \param seeThrough If true, the camera image is not displayed, otherwise it is drawn as by default.
+	 * \param seeThroughColor Sets the color that will be drawn as see through part
 	 */
 	virtual void setSeeThrough(bool seeThrough) = 0;
+	
+	/**
+	 * Sets the color for the seeh through parts
+	 *
+	 * \param red red value of see through color
+	 * \param green green value of see through color
+	 * \param blue blue value of see through color
+	 * \param alpha alpha value of see through color
+	 */
+	virtual void setSeeThroughColor(unsigned int red,
+									unsigned int green,
+									unsigned int blue,
+									unsigned int alpha) = 0;
 
+    
+    /**
+     * Toggle stereo rendering for 3D capeable devices.
+     * 
+     * The rendering is is performed twice from two horizontally offset locations.
+     * By default stereo rendering is set to false.
+     *
+     * \param stereoRendering If true, the rendering is performed in stereo mode, otherwise normal
+     * rendering is performed.
+	 *
+	 * \sa setStereoRenderingLeftCameraTransformation, setStereoRenderingRightCameraTransformation
+     */
+    virtual void setStereoRendering(bool stereoRendering) = 0;
+    
+	/**
+	 * Sets the transformation for the rendering for the left eye.
+	 * By default the translation is set to [0, 0, 0] and the look at to [0, 0, -100]
+	 *
+	 * \param translation The translation vector for the camera position
+	 * \param upVecto The camera's up vector
+	 * \param lookAt The cameras look at position
+	 * \sa setStereoRendering
+	 */
+	virtual void setStereoRenderingLeftCameraTransformation(const Vector3d &translation,
+															const Vector3d &upVecotr = Vector3d(0.0f, 1.0f, 0.0f),
+															const Vector3d &lookAt = Vector3d(0.0f, 0.0f, -100.0f)) = 0;
+	
+	/**
+	 * Sets the transformation for the rendering for the right eye.
+	 * By default the translation is set to [-10, 0, 0] and the look at to [0, 0, -100]
+	 *
+	 * \param translation The translation vector for the camera position
+	 * \param upVecto The camera's up vector
+	 * \param lookAt The cameras look at position
+	 * \sa setStereoRendering
+	 */
+	virtual void setStereoRenderingRightCameraTransformation(const Vector3d &translation,
+															 const Vector3d &upVecotr = Vector3d(0.0f, 1.0f, 0.0f),
+															 const Vector3d &lookAt = Vector3d(0.0f, 0.0f, -100.0f)) = 0;
+    
 	/**
      * Freeze tracking.
 	 *
@@ -674,7 +824,7 @@ public:
 	 * \param nearCP The distance of the near clipping plane in millimeters.
 	 * \param farCP The distance of the far clipping plane in millimeters.
 	 */
-	virtual void setRendererClippingPlaneLimits(float nearCP, float farCP) = 0;
+	virtual void setRendererClippingPlaneLimits(const float nearCP, const float farCP) = 0;
 
 	/**
 	 * Load a 3D geometry from a given file.
@@ -863,14 +1013,24 @@ public:
 	 *
 	 * The near limit will ensure that all geometries closer than this limit are pushed back to the near limit.
 	 * The far limit will ensure that all geometries farther away than this limit are pulled forward to the far limit.
+	 * Set both limits to 0 to disable this feature.
 	 *
 	 * This is especially helpful for billboards.
 	 *
-	 * \param nearLimit The near limit or 0 to disable.
-	 * \param farLimit The far limit or 0 disable.
-	 * \sa setLLALimitsEnabled
+	 * \param nearLimit The near limit in meters
+	 * \param farLimit The far limit in meters
+	 * \sa IGeometry::setLLALimitsEnabled
+	 * \sa getLLAObjectRenderingLimits
 	 */
-	virtual void setLLAObjectRenderingLimits(int nearLimit, int farLimit) = 0;
+	virtual void setLLAObjectRenderingLimits(const int nearLimit, const int farLimit) = 0;
+
+
+	/**
+	 * Get the rendering limits for geometries with LLA coordinates.
+	 * \return Rendering limits, x=near limit, y=far limit in meters
+	 * \sa setLLAObjectRenderingLimits
+	 */
+	virtual Vector2di getLLAObjectRenderingLimits() const = 0;
 
 	/**
 	 * Creates or gets the billboard group object.
@@ -887,7 +1047,7 @@ public:
 	 * \param farValue The maximum billboard-to-camera distance a billboard can have (default 800).
 	 * \return Pointer to the billboard group.
 	 */
-	virtual metaio::IBillboardGroup* createBillboardGroup(float nearValue=580.f, float farValue=800.f) = 0;
+	virtual metaio::IBillboardGroup* createBillboardGroup(const float nearValue=580.f, const float farValue=800.f) = 0;
 
 	/**
 	 * Loads shader materials from XML (file or buffer)

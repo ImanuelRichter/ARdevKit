@@ -184,19 +184,43 @@ public:
 		return m_pData ? m_pData : EMPTY_STRING_CONSTANT;
 	}
 
-	/// \copydoc compare(const char*, unsigned long)
+	/**
+	 * Compares with another string
+	 *
+	 * \param other String to compare with
+	 * \return 0 if both strings are equal, <0 if either the value of the first non-matching
+	 *         character in the other string is larger or the other string is longer, >0 if either
+	 *         the value of the first non-matching character in the other string is smaller or the
+	 *         other string is shorter
+	 */
 	int compare(const stlcompat::String& other) const
 	{
 		return compare(other.c_str(), other.size());
 	}
 
-	/// \copydoc compare(const char*, unsigned long)
+	/**
+	 * Compares with another string
+	 *
+	 * \param other String to compare with
+	 * \return 0 if both strings are equal, <0 if either the value of the first non-matching
+	 *         character in the other string is larger or the other string is longer, >0 if either
+	 *         the value of the first non-matching character in the other string is smaller or the
+	 *         other string is shorter
+	 */
 	int compare(const std::string& other) const
 	{
 		return compare(other.c_str(), static_cast<unsigned long>(other.size()));
 	}
 
-	/// \copydoc compare(const char*, unsigned long)
+	/**
+	 * Compares with another string
+	 *
+	 * \param other String to compare with
+	 * \return 0 if both strings are equal, <0 if either the value of the first non-matching
+	 *         character in the other string is larger or the other string is longer, >0 if either
+	 *         the value of the first non-matching character in the other string is smaller or the
+	 *         other string is shorter
+	 */
 	int compare(const char* other) const
 	{
 		return compare(other, static_cast<unsigned long>(strlen(other)));
@@ -239,6 +263,7 @@ public:
 	 *
 	 * \param startIndex Index from which the substring should begin
 	 * \param length Maximum number of characters that the substring should contain
+	 * \return The substring
 	 */
 	String substr(unsigned long startIndex, unsigned long length = npos) const
 	{
@@ -335,6 +360,7 @@ public:
 		return !(lhs == rhs);
 	}
 
+	/// Appends this string to a string stream
 	friend std::ostream& operator<<(std::ostream& stream, const String& s)
 	{
 		return stream << std::string(s);

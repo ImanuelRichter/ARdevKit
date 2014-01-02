@@ -143,6 +143,7 @@ public:
 	float				quality;
 
 	double				timeElapsed;				///< Time elapsed (in ms) since last state change of the tracking system
+	double				trackingTimeMs;				///< Time (in milliseconds) used for tracking the respective frame
 	int					coordinateSystemID;			///< The ID of the coordinate system
 	stlcompat::String	cosName;                    ///< The name of the coordinate system (configured via Connection/COS/Name)
 	stlcompat::String	additionalValues;           ///< Extra space for information provided by a sensor that cannot be expressed with translation and rotation properly.

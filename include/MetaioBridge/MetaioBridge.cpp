@@ -1,7 +1,7 @@
 #include "MetaioBridge.h"
 #include <metaioSDK\IGeometry.h>
 
-int MyMetaioSDK::initializeMetaioSDK(int wndWidth, int wndHeight, void* hWnd)
+MyMetaioSDK::MyMetaioSDK(int wndWidth, int wndHeight, void* hWnd) : m_pMetaioSDK(0)
 {
 	// create the SDK
 	m_pMetaioSDK = metaio::CreateMetaioSDKWin32();
@@ -15,8 +15,21 @@ int MyMetaioSDK::initializeMetaioSDK(int wndWidth, int wndHeight, void* hWnd)
 
 	// activate 1st camera
 	m_pMetaioSDK->startCamera(0);
-	//if (m_pMetaioSDK->setImage("metaioman_target.png") == NULL) return -1;
-	return 0;
+
+	if (!m_pMetaioSDK->setTrackingConfiguration("..\\res\\trackingconfigurations\\TrackingData_MarkerlessFast.xml"))
+	{
+		MessageBoxA(NULL, "In constructor doesnt work either", "MetaioBridge", MB_OK);
+	}
+}
+
+bool MyMetaioSDK::setTrackingConfiguaration(metaio::stlcompat::String path)
+{
+	//MessageBoxA(NULL, path.c_str(), "MetaioBridge", MB_OK);
+	if (!fopen(path.c_str(), "r"))
+	{
+		MessageBoxA(NULL, "Could not find *.xml", "MetaioBridge", MB_OK);
+	}
+	return m_pMetaioSDK->setTrackingConfiguration(path, true);
 }
 
 void MyMetaioSDK::update()
@@ -26,7 +39,7 @@ void MyMetaioSDK::update()
 
 const char* MyMetaioSDK::getVersion()
 {
-	return m_pMetaioSDK->getVersion();
+	return m_pMetaioSDK->getVersion().c_str();
 }
 
 void MyMetaioSDK::onAnimationEnd(metaio::IGeometry* geometry, const metaio::stlcompat::String& animationName)
@@ -42,4 +55,5 @@ void MyMetaioSDK::onTrackingEvent(const metaio::stlcompat::Vector<metaio::Tracki
 		printf("Tracking state changed:  %i\n", values[0].state);
 	}
 }
+
 

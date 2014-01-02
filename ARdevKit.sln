@@ -6,8 +6,15 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "UML", "UML\UML.modelproj", "{B659E0E2-3330-472F-A2C7-93C641C5FD18}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Editor", "Editor\Editor.csproj", "{89322CCE-624D-489E-A157-06C0DD4A3719}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8B928A1E-CA89-4A57-A3FD-505DF590A7C1} = {8B928A1E-CA89-4A57-A3FD-505DF590A7C1}
+		{155718FE-3C9B-4F14-969E-003907CB2DB3} = {155718FE-3C9B-4F14-969E-003907CB2DB3}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MetaioWrapper", "MetaioWrapper\MetaioWrapper.vcxproj", "{8B928A1E-CA89-4A57-A3FD-505DF590A7C1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{155718FE-3C9B-4F14-969E-003907CB2DB3} = {155718FE-3C9B-4F14-969E-003907CB2DB3}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MetaioBridge", "include\MetaioBridge\MetaioBridge.vcxproj", "{155718FE-3C9B-4F14-969E-003907CB2DB3}"
 EndProject

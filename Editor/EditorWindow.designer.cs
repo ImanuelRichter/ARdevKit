@@ -63,7 +63,6 @@
             this.pnl_editor_szenes = new System.Windows.Forms.Panel();
             this.btn_editor_scene_new = new System.Windows.Forms.Button();
             this.pnl_editor_status = new System.Windows.Forms.Panel();
-            this.ofd_LoadFile = new System.Windows.Forms.OpenFileDialog();
             this.mst_editor_menu.SuspendLayout();
             this.pnl_editor_selection.SuspendLayout();
             this.pnl_editor_properties.SuspendLayout();
@@ -235,27 +234,27 @@
             // tsm_editor_menu_test_loadImage
             // 
             this.tsm_editor_menu_test_loadImage.Name = "tsm_editor_menu_test_loadImage";
-            this.tsm_editor_menu_test_loadImage.Size = new System.Drawing.Size(152, 22);
+            this.tsm_editor_menu_test_loadImage.Size = new System.Drawing.Size(136, 22);
             this.tsm_editor_menu_test_loadImage.Text = "Bild laden";
             this.tsm_editor_menu_test_loadImage.Click += new System.EventHandler(this.tsm_editor_menu_test_loadImage_Click);
             // 
             // tsm_editor_menu_test_loadVideo
             // 
             this.tsm_editor_menu_test_loadVideo.Name = "tsm_editor_menu_test_loadVideo";
-            this.tsm_editor_menu_test_loadVideo.Size = new System.Drawing.Size(152, 22);
+            this.tsm_editor_menu_test_loadVideo.Size = new System.Drawing.Size(136, 22);
             this.tsm_editor_menu_test_loadVideo.Text = "Video laden";
             this.tsm_editor_menu_test_loadVideo.Click += new System.EventHandler(this.tsm_editor_menu_test_loadVideo_Click);
             // 
             // tss_editor_meu_test_loadVideo_togleDebug
             // 
             this.tss_editor_meu_test_loadVideo_togleDebug.Name = "tss_editor_meu_test_loadVideo_togleDebug";
-            this.tss_editor_meu_test_loadVideo_togleDebug.Size = new System.Drawing.Size(149, 6);
+            this.tss_editor_meu_test_loadVideo_togleDebug.Size = new System.Drawing.Size(133, 6);
             // 
             // tsm_editor_menu_test_togleDebug
             // 
             this.tsm_editor_menu_test_togleDebug.CheckOnClick = true;
             this.tsm_editor_menu_test_togleDebug.Name = "tsm_editor_menu_test_togleDebug";
-            this.tsm_editor_menu_test_togleDebug.Size = new System.Drawing.Size(152, 22);
+            this.tsm_editor_menu_test_togleDebug.Size = new System.Drawing.Size(136, 22);
             this.tsm_editor_menu_test_togleDebug.Text = "Debug";
             // 
             // tsm_editor_menu_help
@@ -359,10 +358,6 @@
             this.pnl_editor_status.Size = new System.Drawing.Size(1008, 23);
             this.pnl_editor_status.TabIndex = 3;
             // 
-            // ofd_LoadFile
-            // 
-            this.ofd_LoadFile.FileName = "testImage";
-            // 
             // EditorWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -424,7 +419,6 @@
         private System.Windows.Forms.ComboBox cmb_editor_selection_toolSelection;
         private System.Windows.Forms.ComboBox cmb_editor_properties_objectSelection;
         private System.Windows.Forms.Button btn_editor_scene_new;
-        private System.Windows.Forms.OpenFileDialog ofd_LoadFile;
     }
 }
 

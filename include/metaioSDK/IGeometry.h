@@ -32,6 +32,34 @@ enum EPLAYBACK_STATUS
 };
 
 /**
+ * Renderoptions that can be set per geometry
+ */
+enum ERENDER_OPTION
+{
+	ERENDEROPTION_BACKFACECULLING,
+	ERENDEROPTION_FRONTFACECULLING,
+	ERENDEROPTION_ZWRITE,
+	ERENDEROPTION_ZTEST,
+	ERENDEROPTION_COLORMASK,
+	ERENDEROPTION_DEBUGDATA
+};
+
+/**
+ * Enum values for enabling/disabling color planes for rendering
+ * to be used with ERENDEROPTION
+ */
+enum ECOLOR_MASK
+{
+	ECM_NONE=0,		///< No color enabled
+	ECM_ALPHA=1,	///< Alpha enabled
+	ECM_RED=2,		///< Red enabled
+	ECM_GREEN=4,	///< Green enabled
+	ECM_BLUE=8,		///< Blue enabled
+	ECM_RGB=14,		///< All colors, no alpha
+	ECM_ALL=15		///< All planes enabled
+};
+
+/**
  * Flags determining which debug visualizations are used
  */
 enum EDEBUG_VISIBILITY
@@ -396,21 +424,30 @@ public:
 	 */
 	virtual void setVisible(bool visible) = 0;
 
+	/**
+	 * Set special render options of a geometry. This can be used: 
+	 * - to turn front-/backface culling on/off
+	 * - to turn writing to z-buffer on/off
+	 * - to turn z-test on/off
+	 * - to set certain colormask					(see ECOLOR_MASK)
+	 * - to set certain combination of debugdata	(see EDEBUG_VISIBILITY)
+	 * \param option ERENDER_OPTION
+	 * \param value value to set for this option (either of type bool or respective enum for debug data or colormask)
+	 * \sa getRenderOption
+	 * \sa setDebugDataVisibility
+	 * \sa getDebugDataVisibility
+	 */
+	virtual void setRenderOption(ERENDER_OPTION option, int value) = 0;
 
 	/**
-	 * Set the rendering mode of a geometry to "x-ray".
-	 *
-	 * This method shall be used if a model should be drawn on top of
-	 * all others and therefore ignore the z-buffer.
-	 * It is only available with OpenGL ES 2.0 rendering.
-	 *
-	 * \param xray If true, the geometry will be rendered with the x-ray effect, otherwise it will be displayed normally.
-	 * \sa setVisible and isVisible
-	 * \sa setOcclusionMode
-	 * \sa setTransparency
-	 * \sa setPickingEnabled
+	 * Get special render options of a geometry.
+	 * \param option ERENDER_OPTION
+	 * \return currently set value for this option (either of type bool or respective enum EDEBUG_VISIBILITY or ECOLOR_MASK)
+	 * \sa setRenderOption
+	 * \sa setDebugDataVisibility
+	 * \sa getDebugDataVisibility
 	 */
-	virtual void setRenderAsXray(bool xray) = 0;
+	virtual int getRenderOption(ERENDER_OPTION option) = 0;
 
 	/**
 	 * Set the rendering order of the geometry
@@ -419,7 +456,7 @@ public:
 	 * The ordering depends on the value of the level that is passed, the lower levels are drawn before higher levels,
 	 * which means that a geometry with higher level will be on top of a geometry with lower level.
 	 *
-	 * The z-buffer (depth) check can be optionaly disabled so that geomrteis are rendered independant of their
+	 * The z-buffer (depth) check can be optionaly disabled so that geometrys are rendered independant of their
 	 * real distance from the camera. This is usefull when more than one geometries are positioned at same depth (z), or
 	 * a geometry with greater depth needs to be rendered in front of a geometry with less depth. Note that it works only
 	 * for simple geometries, e.g a plane or sphere.
@@ -479,7 +516,6 @@ public:
 	 */
 	virtual void setTransparency(float transparency) = 0;
 
-
 	/**
 	 * Get the transparency of the geometry.
 	 *
@@ -487,6 +523,26 @@ public:
 	 * \sa setTransparency
 	 */
 	virtual float getTransparency() = 0;
+
+
+	/**
+	 * Set the fade in transparency effect for the geometry when assigned COS is tracked
+	 *
+	 * \param duration Time in ms specifying the duration of the fade in effect from full transparency to final transparency of the model.
+	 * Specify duration <= 0.0f to have no fade in effect
+	 * \sa getFadeInTime
+	 * \sa setTransparency
+	 */
+	virtual void setFadeInTime(float duration) = 0;
+
+	/**
+	 * Get the time of the fade in transparency effect for the geometry when assigned COS is tracked
+	 *
+	 * \return time in ms specifying the duration of the fade in effect from full transparency to final transparency of the model.
+	 * \sa setFadeInTime
+	 */
+	virtual float getFadeInTime() const = 0;
+
 
 	/**
 	 * Start a specific animation of the geometry.

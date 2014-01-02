@@ -100,7 +100,7 @@ public:
 
 	/**
 	 * Callback that delivers screenshot as new ImageStruct.
-	 * The ImageStruct and its' buffer will be released by the SDK after this method call.
+	 * The ImageStruct and its buffer will be released by the SDK after this method call.
 	 * Note: This callback is called on the render thread.
 	 * 
 	 * \param image Screenshot image
@@ -124,9 +124,11 @@ public:
 	*
 	* This callback reports initialized, found and lost states only. To retrieve actual tracking
 	* information, use IMetaioSDK::getTrackingValues.
+	* Use IMetaioSDK::setTrackingEventCallbackReceivesAllChanges to receive all tracking values,
+	* independent of the tracking state.
 	*
 	* Note that this function is called in rendering thread, thus it would block
-	* rendering. It should be returned as soon as possible without any expensive
+	* rendering. It should return as soon as possible without any expensive
 	* processing.
 	*
 	* \param trackingValues current tracking values

@@ -34,6 +34,7 @@ enum ECOLOR_FORMAT
 	ECF_YV12 = 9,			///< 12 bit YV12 planar YUV image format
     ECF_GRAY = 10,			///< 8 bit gray image format
     ECF_HSV = 11,			///< HSV color format
+    ECF_D16 = 100,	        ///< depth format, 2-byte unsigned shorts for depth(usually measure in mm)
 	ECF_UNKNOWN = 999		///< unknown image format
 };
 

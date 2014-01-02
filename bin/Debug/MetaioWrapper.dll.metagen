@@ -6,8 +6,8 @@ Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934
 Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
 Class MetaioWrapper.MyMetaioWrapper: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Int32, Int32, Void*): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
-    initializeSDK(Int32, Int32, Void*): PrivateScope, Public, HideBySig
     update(): PrivateScope, Public, HideBySig
+    setTrackingConfiguration(String): PrivateScope, Public, HideBySig
     getVersion(): PrivateScope, Public, HideBySig

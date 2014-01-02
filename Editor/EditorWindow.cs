@@ -34,7 +34,6 @@ namespace ARdevKit
 
         private void tsm_editor_menu_test_loadImage_Click(object sender, EventArgs e)
         {
-            //ofd_LoadFile.ShowDialog();
             TestWindow testWindow = new TestWindow();
             testWindow.Show();
         }

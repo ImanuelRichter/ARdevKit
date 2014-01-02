@@ -13,23 +13,44 @@ namespace ARdevKit
 {
     public partial class TestWindow : Form
     {
+        private System.Windows.Forms.Timer updateSDKTimer;
+        private MyMetaioWrapper wrapper;
+        private Panel metaioPanel;
+        private Label version;
+        private unsafe static void* panelPointer;
+        private int fps = 60;
+
         public TestWindow()
         {
             InitializeComponent();
-        }
+            metaioPanel = pnl_TestWindowMetaioRenderer;
+            version = lbl_TestWindowVersion;
 
-        private void pnl_TestWindowView_Paint(object sender, PaintEventArgs e)
-        {
-            MyMetaioWrapper wrapper = new MyMetaioWrapper();
+            updateSDKTimer = new System.Windows.Forms.Timer();
+            updateSDKTimer.Tick += new EventHandler(performUpdate);
+            updateSDKTimer.Interval = 1000 / fps;
+
             unsafe
             {
-                void* panel = pnl_TestWindowView.Handle.ToPointer();
-                wrapper.initializeSDK(pnl_TestWindowView.Width, pnl_TestWindowView.Height, panel);
+                panelPointer = metaioPanel.Handle.ToPointer();
+                wrapper = new MyMetaioWrapper(metaioPanel.Width, metaioPanel.Height, panelPointer);
             }
-            while (true)
+            version.Text = wrapper.getVersion();
+
+            /*
+            String trackingConfigurationPath = "..\\res\\trackingconfigurations\\TrackingData_MarkerlessFast.xml";
+            if (!wrapper.setTrackingConfiguration(trackingConfigurationPath))
             {
-                wrapper.update();
+                MessageBox.Show("Failed to load tracking configuration", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+             * */
+
+            updateSDKTimer.Start();
+        }
+
+        private void performUpdate(object o, EventArgs e)
+        {
+            wrapper.update();
         }
     }
 }
