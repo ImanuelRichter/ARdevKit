@@ -154,3 +154,6 @@ $RECYCLE.BIN/
 
 # Mac desktop service store files
 .DS_Store
+ARdevKit.sdf
+Editor/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+Editor/obj/Debug/Editor.csproj.FileListAbsolute.txt
