@@ -37,9 +37,10 @@ void MyMetaioSDK::update()
 	m_pMetaioSDK->render();
 }
 
-const char* MyMetaioSDK::getVersion()
+std::string MyMetaioSDK::getVersion()
 {
-	return m_pMetaioSDK->getVersion().c_str();
+	std::string tmp = m_pMetaioSDK->getVersion().c_str();
+	return tmp;
 }
 
 void MyMetaioSDK::onAnimationEnd(metaio::IGeometry* geometry, const metaio::stlcompat::String& animationName)
