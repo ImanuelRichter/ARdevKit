@@ -1,19 +1,5 @@
-﻿Der Buildvorgang wurde am 04.01.2014 16:12:53 gestartet.
-     1>Projekt "C:\Users\geht\Source\Repos\ARdevKit\MetaioWrapper\MetaioWrapper.vcxproj" auf Knoten "2", Rebuild Ziel(e).
-     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(357,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\include /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /Zi /clr /nologo /W3 /WX- /sdl- /Od /Oy- /D AS_USE_METAIOSDKDLL /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D METAIOWRAPPER_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /D _AFXDLL /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\mscorlib.dll" /analyze- /errorReport:prompt /clr:nostdlib MetaioWrapper.cpp
-         MetaioWrapper.cpp
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\include /Zi /clr /nologo /W3 /WX- /sdl- /Od /Oy- /D AS_USE_METAIOSDKDLL /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D METAIOWRAPPER_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /D _AFXDLL /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt "C:\Users\geht\AppData\Local\Temp\.NETFramework,Version=v4.0.AssemblyAttributes.cpp"
-         .NETFramework,Version=v4.0.AssemblyAttributes.cpp
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\bin\Debug\MetaioWrapper.dll" /INCREMENTAL /NOLOGO /LIBPATH:..\bin\Debug MetaioBridge.lib metaioSDK.lib metaioSDKD.lib user32.lib /NODEFAULTLIB:MSVCRT.lib /NODEFAULTLIB:libcmtd.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:"C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\Include\Manifest\dpiaware.manifest" /DEBUG /PDB:"..\bin\Debug\MetaioWrapper.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /FIXED:NO /NXCOMPAT /IMPLIB:"..\bin\Debug\MetaioWrapper.lib" /MACHINE:X86 /ignore:4099 /FORCE:MULTIPLE /DLL Debug\MetaioWrapper.obj
-         "Debug\.NETFramework,Version=v4.0.AssemblyAttributes.obj"
-     1>LINK : warning LNK4075: /INCREMENTAL wird aufgrund der Angabe von /FORCE ignoriert.
-     1>MetaioBridge.lib(MetaioBridge.obj) : warning LNK4075: /EDITANDCONTINUE wird aufgrund der Angabe von /OPT:LBR ignoriert.
-         MetaioWrapper.vcxproj -> C:\Users\geht\Source\Repos\ARdevKit\MetaioWrapper\..\bin\Debug\MetaioWrapper.dll
-     1>Die Erstellung des Projekts "C:\Users\geht\Source\Repos\ARdevKit\MetaioWrapper\MetaioWrapper.vcxproj" ist abgeschlossen, Rebuild Ziel(e).
+﻿Der Buildvorgang wurde am 04.01.2014 16:18:12 gestartet.
 
 Build erfolgreich.
 
-Verstrichene Zeit 00:00:02.13
+Verstrichene Zeit 00:00:00.02
