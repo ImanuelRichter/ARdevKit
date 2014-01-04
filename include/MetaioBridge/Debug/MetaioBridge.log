@@ -1,16 +1,16 @@
-﻿Der Buildvorgang wurde am 02.01.2014 14:04:01 gestartet.
-     1>Projekt "D:\Dropbox\dev\c#\ARdevKit\include\MetaioBridge\MetaioBridge.vcxproj" auf Knoten "2", Build Ziel(e).
+﻿Der Buildvorgang wurde am 04.01.2014 16:12:52 gestartet.
+     1>Projekt "C:\Users\geht\Source\Repos\ARdevKit\include\MetaioBridge\MetaioBridge.vcxproj" auf Knoten "2", Rebuild Ziel(e).
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(357,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
      1>ClCompile:
-         D:\Programme\Visual Studio\VC\bin\CL.exe /c /I..\ /ZI /nologo /W3 /WX- /Od /Oy- /D AS_USE_METAIOSDKDLL /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt MetaioBridge.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\ /ZI /nologo /W3 /WX- /Od /Oy- /D AS_USE_METAIOSDKDLL /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt MetaioBridge.cpp
          MetaioBridge.cpp
-     1>d:\dropbox\dev\c#\ardevkit\include\metaiobridge\metaiobridge.cpp(28): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\programme\visual studio\vc\include\stdio.h(211): Siehe Deklaration von 'fopen'
+     1>c:\users\geht\source\repos\ardevkit\include\metaiobridge\metaiobridge.cpp(28): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(211): Siehe Deklaration von 'fopen'
        Lib:
-         D:\Programme\Visual Studio\VC\bin\Lib.exe /OUT:"..\..\bin\Debug\MetaioBridge.lib" /NOLOGO Debug\MetaioBridge.obj
-         MetaioBridge.vcxproj -> D:\Dropbox\dev\c#\ARdevKit\include\MetaioBridge\..\..\bin\Debug\MetaioBridge.lib
-     1>Die Erstellung des Projekts "D:\Dropbox\dev\c#\ARdevKit\include\MetaioBridge\MetaioBridge.vcxproj" ist abgeschlossen, Build Ziel(e).
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"..\..\bin\Debug\MetaioBridge.lib" /NOLOGO Debug\MetaioBridge.obj
+         MetaioBridge.vcxproj -> C:\Users\geht\Source\Repos\ARdevKit\include\MetaioBridge\..\..\bin\Debug\MetaioBridge.lib
+     1>Die Erstellung des Projekts "C:\Users\geht\Source\Repos\ARdevKit\include\MetaioBridge\MetaioBridge.vcxproj" ist abgeschlossen, Rebuild Ziel(e).
 
 Build erfolgreich.
 
-Verstrichene Zeit 00:00:00.99
+Verstrichene Zeit 00:00:01.27

@@ -26,3 +26,13 @@ D:\Dropbox\dev\c#\ARdevKit\Editor\obj\Debug\Editor.csproj.GenerateResource.Cache
 D:\Dropbox\dev\c#\ARdevKit\Editor\obj\Debug\ARdevKit.exe
 D:\Dropbox\dev\c#\ARdevKit\Editor\obj\Debug\ARdevKit.pdb
 D:\Dropbox\dev\c#\ARdevKit\Editor\obj\Debug\ARdevKit.TestWindow.resources
+C:\Users\geht\Source\Repos\ARdevKit\bin\Debug\ARdevKit.exe.config
+C:\Users\geht\Source\Repos\ARdevKit\bin\Debug\ARdevKit.exe
+C:\Users\geht\Source\Repos\ARdevKit\bin\Debug\ARdevKit.pdb
+C:\Users\geht\Source\Repos\ARdevKit\Editor\obj\Debug\Editor.csprojResolveAssemblyReference.cache
+C:\Users\geht\Source\Repos\ARdevKit\Editor\obj\Debug\ARdevKit.EditorWindow.resources
+C:\Users\geht\Source\Repos\ARdevKit\Editor\obj\Debug\ARdevKit.Properties.Resources.resources
+C:\Users\geht\Source\Repos\ARdevKit\Editor\obj\Debug\ARdevKit.TestWindow.resources
+C:\Users\geht\Source\Repos\ARdevKit\Editor\obj\Debug\Editor.csproj.GenerateResource.Cache
+C:\Users\geht\Source\Repos\ARdevKit\Editor\obj\Debug\ARdevKit.exe
+C:\Users\geht\Source\Repos\ARdevKit\Editor\obj\Debug\ARdevKit.pdb
