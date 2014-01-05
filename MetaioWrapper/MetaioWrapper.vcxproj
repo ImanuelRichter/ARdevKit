@@ -65,7 +65,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>MetaioBridge.lib;metaioSDK.lib;metaioSDKD.lib;user32.lib</AdditionalDependencies>
+      <AdditionalDependencies>MetaioBridge.lib;metaioSDKD.lib;user32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\bin\Debug</AdditionalLibraryDirectories>
       <AdditionalOptions>/ignore:4099 /FORCE:MULTIPLE %(AdditionalOptions)</AdditionalOptions>
       <IgnoreSpecificDefaultLibraries>MSVCRT.lib;libcmtd.lib</IgnoreSpecificDefaultLibraries>

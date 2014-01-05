@@ -27,10 +27,13 @@ namespace MetaioWrapper
 		metaioSDK->update();
 	}
 
+	/* 
+	 * returns the verion of the used metaioSDK
+	 */
 	String^ MyMetaioWrapper::getVersion()
 	{
-		const char* tmp = metaioSDK->getVersion();
-		System::String^ version = marshal_as<String^>(tmp);
+		std::string tmp = metaioSDK->getVersion();
+		String^ version = marshal_as<String^>(tmp);
 
 		return version;
 	}

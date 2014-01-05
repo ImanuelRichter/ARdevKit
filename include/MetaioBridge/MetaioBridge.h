@@ -4,7 +4,7 @@ class MyMetaioSDK : metaio::IMetaioSDKCallback
 {
 public:
 	MyMetaioSDK(int wndWidth, int wndHeight, void* hWnd);
-	const char* getVersion();
+	std::string getVersion();
 	bool setTrackingConfiguaration(metaio::stlcompat::String path);
 	void update();
 
