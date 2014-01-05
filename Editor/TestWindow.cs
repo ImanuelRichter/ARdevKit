@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using MetaioWrapper;
 
 namespace ARdevKit
@@ -23,6 +24,7 @@ namespace ARdevKit
         public TestWindow()
         {
             InitializeComponent();
+
             metaioPanel = pnl_TestWindowMetaioRenderer;
             version = lbl_TestWindowVersion;
 
@@ -37,13 +39,11 @@ namespace ARdevKit
             }
             version.Text = wrapper.getVersion();
 
-            /*
             String trackingConfigurationPath = "..\\res\\trackingconfigurations\\TrackingData_MarkerlessFast.xml";
             if (!wrapper.setTrackingConfiguration(trackingConfigurationPath))
             {
                 MessageBox.Show("Failed to load tracking configuration", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-             * */
 
             updateSDKTimer.Start();
         }
