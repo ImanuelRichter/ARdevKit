@@ -52,8 +52,31 @@ namespace ARdevKit
         /// </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        //not yet implemented...
-        //private List<SceneElementCategory> elementCategories;
+        // not yet implemented... private List<SceneElementCategory> elementCategories;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// New process for the player.
+        /// </summary>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private Process player = new Process();
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// ATTENTION! HARDCODED FOR TEST PURPOSES! Full pathname of the player file.
+        /// </summary>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private string playerPath = "D:\\Dropbox\\dev\\ARdevKit - Player\\bin\\Debug\\Player.exe";
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// ATTENTION! HARDCODED FOR TEST PURPOSES! Full pathname of the project file.
+        /// </summary>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private string projectPath = "D:\\Dropbox\\dev\\ARdevKit - Player\\res";
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
@@ -65,7 +88,7 @@ namespace ARdevKit
         /// if true the debug window will be opened when starting the test mode on the device.
         /// </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-
+      
         public bool StartDebugModeDevice
         {
             get { return startDebugModeDevice; }
@@ -107,13 +130,57 @@ namespace ARdevKit
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
+        /// Gets or sets the process for the player.
+        /// </summary>
+        ///
+        /// <value>
+        /// The process for the player.
+        /// </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public Process Player
+        {
+            get { return player; }
+            set { player = value; }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// Gets or sets the full pathname of the player file.
+        /// </summary>
+        ///
+        /// <value>
+        /// The full pathname of the player file.
+        /// </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public string PlayerPath
+        {
+            get { return playerPath; }
+            set { playerPath = value; }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// Gets or sets the full pathname of the project file.
+        /// </summary>
+        ///
+        /// <value>
+        /// The full pathname of the project file.
+        /// </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public string ProjectPath
+        {
+            get { return projectPath; }
+            set { projectPath = value; }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
         /// Default constructor. initializes components on startup.
         /// </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        private Process player = new Process();
-        private string playerPath = "D:\\Dropbox\\dev\\ARdevKit - Player\\bin\\Debug\\Player.exe";
-        private string projectPath = "D:\\Dropbox\\dev\\ARdevKit - Player\\res";
 
         public EditorWindow()
         {
