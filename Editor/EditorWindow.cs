@@ -52,7 +52,7 @@ namespace ARdevKit
         /// </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        // not yet implemented... private List<SceneElementCategory> elementCategories;
+        //TODO: implement private List<SceneElementCategory> elementCategories;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
@@ -121,7 +121,7 @@ namespace ARdevKit
         /// </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        //not yet implemented...
+        //TODO: implement
         //private List<SceneElementCategory> ElementCategories
         //{
         //    get { return elementCategories; }
