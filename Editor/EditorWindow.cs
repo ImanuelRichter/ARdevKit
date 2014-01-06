@@ -81,6 +81,30 @@ namespace ARdevKit
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
+        /// Linked list containing all IPreviewables.
+        /// </summary>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private LinkedList<IPreviewable> allElements;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// Gets or sets allElements.
+        /// </summary>
+        ///
+        /// <value>
+        /// Linked list containing elements.
+        /// </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public LinkedList<IPreviewable> AllElements
+        {
+            get { return allElements; }
+            set { allElements = value; }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
         /// Gets or sets a value indicating whether to start debug mode if test mode is started on the
         /// device.
         /// </summary>
@@ -89,7 +113,7 @@ namespace ARdevKit
         /// if true the debug window will be opened when starting the test mode on the device.
         /// </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-      
+
         public bool StartDebugModeDevice
         {
             get { return startDebugModeDevice; }
@@ -123,7 +147,7 @@ namespace ARdevKit
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         //TODO: implement SceneElementCategory
-        private List<SceneElementCategory> ElementCategories
+        public List<SceneElementCategory> ElementCategories
         {
             get { return elementCategories; }
             set { elementCategories = value; }
@@ -186,6 +210,7 @@ namespace ARdevKit
         public EditorWindow()
         {
             InitializeComponent();
+            allElements = new LinkedList<IPreviewable>();
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
