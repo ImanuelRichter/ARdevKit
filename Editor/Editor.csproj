@@ -53,12 +53,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ARdevKitEditor.cs" />
+    <Compile Include="Controller\EditorController\PropertyController.cs" />
     <Compile Include="EditorWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EditorWindow.designer.cs">
       <DependentUpon>EditorWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Project\AbstractAugmentation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestWindow.cs">
       <SubType>Form</SubType>
@@ -93,6 +95,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Controller\Connections\DatabaseConnection\foo.txt" />
+    <Content Include="Controller\Connections\DeviceConnection\foo.txt" />
+    <Content Include="Controller\DebugController\foo.txt" />
+    <Content Include="Controller\ProjectController\foo.txt" />
+    <Content Include="Model\Project\foo.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

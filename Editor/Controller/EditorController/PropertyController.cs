@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.IO;
+using Model.Project;
 
 namespace Controller.EditorController
 {
@@ -13,14 +14,15 @@ namespace Controller.EditorController
     /// </summary>
     class PropertyController
     {
-        public static void addCustomUserEvent(AbstractAugmentation selectedElement)
+        public static void addCustomUserEvent(AbstractAugmentation selectedElement, string[] content)
         {
-
+            string name = "customUserEvent" + (selectedElement.listCounter() + 1);
+            selectedElement.addCustomUserEvent(name, content);
         }
 
-        public static void editCusomUserEvent(File customUserEvent)
+        public static string[] getCusomUserEvent(AbstractAugmentation selectedElement, string name)
         {
-
+            return selectedElement.getCustomUserEvent(name);
         }
 
         public static void updatePropertyPanel(IPreviewable selectedElement)
