@@ -52,7 +52,8 @@ namespace ARdevKit
         /// </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        //TODO: implement private List<SceneElementCategory> elementCategories;
+        //TODO: implement SceneElementCategory
+        private List<SceneElementCategory> elementCategories;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
@@ -121,12 +122,12 @@ namespace ARdevKit
         /// </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        //TODO: implement
-        //private List<SceneElementCategory> ElementCategories
-        //{
-        //    get { return elementCategories; }
-        //    set { elementCategories = value; }
-        //}
+        //TODO: implement SceneElementCategory
+        private List<SceneElementCategory> ElementCategories
+        {
+            get { return elementCategories; }
+            set { elementCategories = value; }
+        }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
@@ -284,6 +285,81 @@ namespace ARdevKit
         private void tsm_editor_menu_file_open_Click(object sender, System.EventArgs e)
         {
             throw new System.NotImplementedException();
+        }
+
+        public void addDevice()
+        {
+            //TODO: implement addDevice()
+        }
+
+        public void createNewProject(String name)
+        {
+            //TODO: implement createNewProject(String name)
+        }
+
+        public void exportProject()
+        {
+            //TODO: implement exportProject()
+        }
+
+        public void loadProject()
+        {
+            //TODO: implement loadProject()
+        }
+
+        public void openDebugWindow()
+        {
+            //TODO: implement openDebugWindow()
+        }
+
+        public void openTestWindow()
+        {
+            //TODO: implement openTestWindow()
+        }
+
+        public void registerElements()
+        {
+            //TODO: implement registerElements()
+        }
+
+        public void saveProject()
+        {
+            //TODO: implement saveProject()
+        }
+
+        public void sendToDevice()
+        {
+            //TODO: implement sendToDevice()
+        }
+
+        public void updateElementSelectionPanel()
+        {
+            //TODO: implement updateElementSelectionPanel()
+        }
+
+        public void updatePreviewPanel()
+        {
+            //TODO: implement updatePreviewPanel()
+        }
+
+        public void updatePropertyPanel(IPreviewable selectedElement)
+        {
+            //TODO: implement updatePropertyPanel(IPreviewable selectedElement)
+        }
+
+        public void updateSceneSelectionPanel()
+        {
+            //TODO: implement updateSceneSelectionPanel()
+        }
+
+        public void updateStatusBar()
+        {
+            //TODO: implement updateStatusBar()
+        }
+
+        private void addCategory(SceneElementCategory category)
+        {
+            //TODO: implement addCategory(SceneElementCategory category)
         }
     }
 }
