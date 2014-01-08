@@ -154,26 +154,3 @@ $RECYCLE.BIN/
 
 # Mac desktop service store files
 .DS_Store
-ARdevKit.sdf
-Editor/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
-Editor/obj/Debug/Editor.csproj.FileListAbsolute.txt
-
-# Debug
-!bin/
-
-bin/*
-!bin/Debug/
-
-!bin/Debug/*.xml
-!bin/Debug/*.dll
-!bin/Debug/*.lib
-bin/Debug/*.exe
-bin/Debug/*.config
-bin/Debug/*.manifest
-bin/Debug/MetaioBridge.lib
-bin/Debug/MetaioWrapper.dll
-bin/Debug/MetaioWrapper.dll.metagen
-bin/Debug/Microsoft.QualityTools.Testing.Fakes.dll
-
-!bin/Debug/phonon_backend/
-bin/Debug/de/
