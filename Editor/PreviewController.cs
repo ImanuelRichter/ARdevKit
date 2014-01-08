@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,13 +11,17 @@ namespace ARdevKit
     class PreviewController
     {
 
-        /// <summary>   The MetaCategory of the current element, which is important for the current method.
-        ///             The MetaCategory is set in the event, which use the method. </summary>
+        /// <summary>   The MetaCategory of the current element </summary>
         private MetaCategory currentMetaCategory;
+        /// <summary>   The MetaCategory of the over element. </summary>
+        private MetaCategory overMetaCategory;
         /// <summary>   The Trackable is the element which is the top element so we need the trackable for save the other elements. </summary>
-        private IPreviewable trackable;
+        private AbstractTrackable trackable;
         /// <summary>   The PreviewPanel which we need to add Previewables. </summary>
-        private PreviewPanel panel;
+        private Panel panel;
+        /// <summary>   The vector of the Trackable. </summary>
+        private Vector3D vector;
+
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Default constructor. </summary>
@@ -23,11 +29,12 @@ namespace ARdevKit
         /// <param name="p">    The PreviewPanel which we need to add Previewables. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public PreviewController(PreviewPanel p) 
+        public PreviewController(PreviewPanel p)
         {
             panel = p;
             trackable = null;
             currentMetaCategory = null;
+            overMetaCategory = null;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -42,8 +49,22 @@ namespace ARdevKit
 
         public void addTrackable(IPreviewable currentTrackable, Vector3D v) 
         {
-            throw new NotImplementedException();
-            //TODO add Trackable to the Previewpanel.
+            if(currentMetaCategory == Trackable) {
+                trackable = currentTrackable;
+                vector = v;
+            
+            PictureBox tempBox = new PictureBox;
+            tempBox.Location = new Point(vector.getX(), vector.getY());
+            tempBox.Image = (Image) currentTrackable.getPreview();            
+            tempBox.Size = currentTrackable.getPreview().Size;
+
+            panel.Add(tempBox);
+            }
+
+            else() {
+                //TODO ERROR WINDOW NOT ALLOWED.
+            }
+            
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -60,16 +81,40 @@ namespace ARdevKit
         public void addPreviewable(IPreviewable currentElement, IPreviewable overElement) 
         {
             throw new NotImplementedException();
-            if(currentMetaCategory == Source) {
-                //TODO Source add
+            if(currentMetaCategory == Source && overMetaCategory == Augmentation) {
+                if()
             }
 
-            else if(currentMetaCategory == Augmentation) {
-                //TODO Augmentation add
+            else if(currentMetaCategory == Augmentation && overMetaCategory == Trackable) {
+                if((AbstractTrackable)currentElement == trackable) {
+             //TODO add remove methode schreiben.
+                    trackable.addList((AbstractAugmentation)currentElement);
+
+                }
+                else {
+                    
+                }
             }
 
             else{
                 //TODO Throw WindowException Trackable can't be used here.
+            }
+        }
+
+
+        public void removePreviewable(PictureBox p, IPreviewable prev)
+        {
+            if (currentMetaCategory == Source) {
+                panel.Controls.Remove(p);
+                // AbstractAugmentation[3] aug = trackable.getArray();
+                for (int i = 0; i < 3; i++)
+                {
+                    if(aug[i].exists(prev)) {
+           //CHANGE METHODNAMES
+                    aug[i].remove(prev);
+                    }
+                    tracka
+                }
             }
         }
 
@@ -79,13 +124,11 @@ namespace ARdevKit
         ///     position.
         /// </summary>
         ///
-        /// <remarks>   Lizzard, 1/8/2014. </remarks>
-        ///
         /// <param name="currentTrackable"> The current Trackable, which should set in the previewPanel. </param>
         /// <param name="v">                The Vector3D to move the Trackable. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public void moveTrackable(IPreviewable currentTrackable, Vector3D v) 
+        public void moveTrackable(IPreviewable currentTrackable, Vector3D v)
         {
             throw new NotImplementedException();
             //TODO move Trackable and all augmentations + sources which are connected to the trackable.
@@ -100,7 +143,7 @@ namespace ARdevKit
             throw new NotImplementedException();
             //TODO !?
         }
-    
-    
+
+
     }
 }
