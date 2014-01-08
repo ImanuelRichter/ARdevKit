@@ -64,7 +64,7 @@ namespace Model.Project
         {
             foreach (CustomUserEvent cue in customUserEvent)
             {
-                if (cue.Name == name)
+                if (String.Equals(cue.Name, name, StringComparison.Ordinal))
                 {
                     customUserEvent.Remove(cue);
                 }
@@ -76,14 +76,23 @@ namespace Model.Project
         /// </summary>
         /// <param name="name">Name of the customUserEvent</param>
         /// <returns>Content of the customUserEvent</returns>
-        public string[] getCustomUserEvent(string name)
+        public string[] getCustomUserEventContent(string name)
         {
             foreach (CustomUserEvent cue in customUserEvent)
             {
-                if (cue.Name == name)
+                if (String.Equals(cue.Name, name, StringComparison.Ordinal))
                     return cue.Content;
             }
             return null;
+        }
+
+        public void editCustomUserEventContent(string name, string[] content)
+        {
+            foreach (CustomUserEvent cue in customUserEvent)
+            {
+                if (String.Equals(cue.Name, name, StringComparison.Ordinal))
+                    cue.Content = content;
+            }
         }
 
         /// <summary>

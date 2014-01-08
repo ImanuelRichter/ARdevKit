@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using System.IO;
 using Model.Project;
+using ARdevKit;
 
 namespace Controller.EditorController
 {
@@ -14,12 +15,29 @@ namespace Controller.EditorController
     /// </summary>
     class PropertyController
     {
+        private EditorWindow editorWindowController;
+        
+        public PropertyController(EditorWindow ew)
+        {
+            editorWindowController = ew;
+        }
+
+        [Obsolete("addCustomUserEvent() : File is completly invalid, because with the original method signature it is impossible to implement."
+            + "Please use the method addCustomUserEvent(selectedElement : AbstractAugmentation, content : string[]) instead.", true)]
+        public File addCustomUserEvent()
+        { throw new NotImplementedException(); }
+
+        [Obsolete("editCustomUserEvent(customUserEvent : File) is completly invalid, because with the original method signature it is impossible to implement."
+            + "Please use the method setCustomUserEventContent(selectedElement : AbstractAugmentation, name : string, content : string[]) instead.", true)]
+        public void editCustomUserEvent(File customUserEvent)
+        { throw new NotImplementedException(); }
+
         /// <summary>
         /// Adds a customUserEvent to a selected element.
         /// </summary>
         /// <param name="selectedElement">Current selected AbstractAugmentation</param>
         /// <param name="content">Content of the customUserEvent</param>
-        public static void addCustomUserEvent(AbstractAugmentation selectedElement, string[] content)
+        public void addCustomUserEvent(AbstractAugmentation selectedElement, string[] content)
         {
             string name = "customUserEvent" + (selectedElement.listCounter() + 1);
             selectedElement.addCustomUserEvent(name, content);
@@ -30,23 +48,34 @@ namespace Controller.EditorController
         /// </summary>
         /// <param name="selectedElement">Current selected AbstractAugmentation</param>
         /// <param name="name">Name/ID of the customUserEvent</param>
-        public static void deleteCustomUserEvent(AbstractAugmentation selectedElement, string name)
+        public void deleteCustomUserEvent(AbstractAugmentation selectedElement, string name)
         {
             selectedElement.deleteCustomUserEvent(name);
         }
 
         /// <summary>
-        /// Gets a customUserEvent from a selected element.
+        /// Gets the content of a customUserEvent from a selected element.
         /// </summary>
         /// <param name="selectedElement">Current selected element</param>
         /// <param name="name">Name/ID of the customUserEvent</param>
         /// <returns>Returns the content of the customUserEvent</returns>
-        public static string[] getCusomUserEvent(AbstractAugmentation selectedElement, string name)
+        public string[] getCustomUserEventContent(AbstractAugmentation selectedElement, string name)
         {
-            return selectedElement.getCustomUserEvent(name);
+            return selectedElement.getCustomUserEventContent(name);
         }
 
-        public static void updatePropertyPanel(IPreviewable selectedElement)
+        /// <summary>
+        /// Sets (or edit, whatever you want to call it) the content of a customUserEvent from the selected Element.
+        /// </summary>
+        /// <param name="selectedElement">Current selected element</param>
+        /// <param name="name">Name/ID of the customUserEvent</param>
+        /// <param name="content">The new/edited content of the customUserEvent</param>
+        public void setCustomUserEventContent(AbstractAugmentation selectedElement, string name, string[] content)
+        {
+            selectedElement.editCustomUserEventContent(name, content);
+        }
+
+        public void updatePropertyPanel(IPreviewable selectedElement)
         {
             throw new NotImplementedException();
         }
