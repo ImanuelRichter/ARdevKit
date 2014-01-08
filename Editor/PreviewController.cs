@@ -26,10 +26,10 @@ namespace ARdevKit
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Default constructor. </summary>
         ///
-        /// <param name="p">    The PreviewPanel which we need to add Previewables. </param>
+        /// <param name="p">    The Panel which we need to add Previewables. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public PreviewController(PreviewPanel p)
+        public PreviewController(Panel p)
         {
             panel = p;
             trackable = null;
@@ -47,7 +47,7 @@ namespace ARdevKit
         /// <param name="v">                The Vector3D to set the Trackable. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public void addTrackable(IPreviewable currentTrackable, Vector3D v) 
+        public void addPreviewable(IPreviewable currentTrackable, Vector3D v) 
         {
             if(currentMetaCategory == Trackable) {
                 trackable = currentTrackable;
