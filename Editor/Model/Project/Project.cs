@@ -16,7 +16,7 @@ namespace ARdevKit.Model.Project
 
         public void accept(AbstractProjectVisitor visitor)
         {
-
+            visitor.visit(this);
         }
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)

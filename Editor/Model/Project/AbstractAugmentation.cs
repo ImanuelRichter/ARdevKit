@@ -15,7 +15,7 @@ namespace ARdevKit.Model.Project
     {
         private int coordinatesystemid;
         private List<String> costumUserEvents;
-        private bool isVisibles;
+        private bool isVisible;
         private Vector3D[] vectors;
 
         public abstract void accept(AbstractProjectVisitor visitor);
@@ -24,12 +24,17 @@ namespace ARdevKit.Model.Project
         {
             throw new NotImplementedException();
         }
-        
-        public abstract List<AbstractProperty> getPorpertList();
+
+        public abstract List<AbstractProperty> getPropertyList();
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             throw new NotImplementedException();
         }
+
+
+
+
+
     }
 }

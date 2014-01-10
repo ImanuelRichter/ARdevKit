@@ -11,5 +11,16 @@ namespace ARdevKit.Model.Project
         private int maxValue;
         private int minValue;
         private int scaling;
+
+        public override void accept(Controller.ProjectController.AbstractProjectVisitor visitor)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override List<View.AbstractProperty>  getPropertyList()
+        {
+            throw new NotImplementedException();
+        }
+        
     }
 }

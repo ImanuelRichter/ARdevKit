@@ -13,5 +13,6 @@ namespace ARdevKit.Controller.ProjectController
         public abstract void visit(DbSource source);
         public abstract void visit(PictureMarker pictureMarker);
         public abstract void visit(IDMarker idMarker);
+        public abstract void visit(Project project);
     }
 }

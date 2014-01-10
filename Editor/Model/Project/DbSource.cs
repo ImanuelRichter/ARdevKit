@@ -10,5 +10,15 @@ namespace ARdevKit.Model.Project
     class DbSource : AbstractSource
     {
         private DbConnection connection;
+
+        public override void accept(Controller.ProjectController.AbstractProjectVisitor visitor)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override List<View.AbstractProperty> getPropertyList()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

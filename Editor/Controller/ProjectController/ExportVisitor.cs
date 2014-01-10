@@ -11,19 +11,23 @@ namespace ARdevKit.Controller.ProjectController
     class ExportVisitor
     {
         private Stream stream;
-        public abstract void visit(BarGraph graph)
+        public void visit(BarGraph graph)
         {
             throw new NotImplementedException();
         }
-        public abstract void visit(DbSource source)
+        public void visit(DbSource source)
         {
             throw new NotImplementedException();
         }
-        public abstract void visit(PictureMarker pictureMarker)
+        public void visit(PictureMarker pictureMarker)
         {
             throw new NotImplementedException();
         }
-        public abstract void visit(IDMarker idMarker)
+        public void visit(IDMarker idMarker)
+        {
+            throw new NotImplementedException();
+        }
+        public void visit(Project project)
         {
             throw new NotImplementedException();
         }

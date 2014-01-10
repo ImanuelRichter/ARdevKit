@@ -24,10 +24,7 @@ namespace ARdevKit.Model.Project
             return icon;
         }
 
-        public List<AbstractProperty> getPropertyList()
-        {
-            throw new NotImplementedException();
-        }
+        public abstract List<AbstractProperty> getPropertyList();
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {

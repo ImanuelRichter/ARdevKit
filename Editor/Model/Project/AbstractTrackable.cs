@@ -30,5 +30,44 @@ namespace ARdevKit.Model.Project
         {
             throw new NotImplementedException();
         }
+
+        public bool isAugmented()
+        {
+            for (int i = 0; i < augmentations.Length; i++)
+            {
+                if (augmentations[i] != null)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public void addAugmentation(AbstractAugmentation augmentation)
+        {
+            for (int i = 0; i < augmentations.Length; i++)
+			{
+                if (augmentations[i] == null)
+                {
+                    augmentations[i] = augmentation;
+                    return;
+                }
+            }
+            throw new NotSupportedException("There are already 3 augmentations connected to this trackable.");
+		}
+
+        public void removeAugmentation(AbstractAugmentation augmentation)
+        {
+            for (int i = 0; i < augmentations.Length; i++)
+            {
+                if (augmentations[i] == augmentation)
+                {
+                    augmentations[i] = null;
+                    return;
+                }
+            }
+            throw new NotSupportedException("The augmentation which should be removed, could not be found.");
+        }
+			
     }
 }
