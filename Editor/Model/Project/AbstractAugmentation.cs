@@ -45,81 +45,40 @@ namespace Model.Project
             this.isVisible = isVisible;
         }
 
-        public int listCounter()
-        {
-            return customUserEvent.Count;
-        }
-
         /// <summary>
-        /// Adds a user-generated customUserEvent to the List.
+        /// Gets the list of all customUserEvent of this augmentation. (Only readable)
         /// </summary>
-        /// <param name="name">Name of the customUserEvent</param>
-        /// <param name="content">The content of the customUserEvent</param>
-        public void addCustomUserEvent(string name, string[] content)
+        public List<CustomUserEvent> CustomUserEventList
         {
-            customUserEvent.Add(new CustomUserEvent(name, content));
+            get { return customUserEvent; }
+
+        }
+    }
+
+    /// <summary>
+    /// Just a class for AbstractAugmentations. With this we are able to List all the customUserEvents.
+    /// </summary>
+    public class CustomUserEvent
+    {
+        private string name;
+        private string[] content;
+
+        public CustomUserEvent(string name, string[] content)
+        {
+            this.name = name;
+            this.content = content;
         }
 
-        public void deleteCustomUserEvent(string name)
+        public string Name
         {
-            foreach (CustomUserEvent cue in customUserEvent)
-            {
-                if (String.Equals(cue.Name, name, StringComparison.Ordinal))
-                {
-                    customUserEvent.Remove(cue);
-                }
-            }
+            get { return name; }
+            set { name = value; }
         }
 
-        /// <summary>
-        /// Method for getting the content of an customUserEvent
-        /// </summary>
-        /// <param name="name">Name of the customUserEvent</param>
-        /// <returns>Content of the customUserEvent</returns>
-        public string[] getCustomUserEventContent(string name)
+        public string[] Content
         {
-            foreach (CustomUserEvent cue in customUserEvent)
-            {
-                if (String.Equals(cue.Name, name, StringComparison.Ordinal))
-                    return cue.Content;
-            }
-            return null;
-        }
-
-        public void editCustomUserEventContent(string name, string[] content)
-        {
-            foreach (CustomUserEvent cue in customUserEvent)
-            {
-                if (String.Equals(cue.Name, name, StringComparison.Ordinal))
-                    cue.Content = content;
-            }
-        }
-
-        /// <summary>
-        /// Just an intern class for AbstractAugmentations. With this we are able to List all the customUserEvents.
-        /// </summary>
-        private class CustomUserEvent
-        {
-            private string name;
-            private string[] content;
-
-            public CustomUserEvent(string name, string[] content)
-            {
-                this.name = name;
-                this.content = content;
-            }
-
-            public string Name
-            {
-                get { return name; }
-                set { name = value; }
-            }
-
-            public string[] Content
-            {
-                get { return content; }
-                set { content = value; }
-            }
+            get { return content; }
+            set { content = value; }
         }
     }
 }
