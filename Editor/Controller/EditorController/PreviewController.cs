@@ -5,8 +5,7 @@ using System.Windows.Forms;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-namespace ARdevKit
+using ARdevKit.Model.Project;
 {
     class PreviewController
     {
@@ -19,7 +18,8 @@ namespace ARdevKit
         private AbstractTrackable trackable;
         /// <summary>   The PreviewPanel which we need to add Previewables. </summary>
         private Panel panel;
-        /// <summary>   The vector of the Trackable. </summary>
+        /// <summary>   The Dictionary to hold the Pictureboxes and the IPreviewable, which belongs to the Picturebox. </summary>
+        private Dictionary<PictureBox, IPreviewable> dic;
         private Vector3D vector;
 
 
@@ -35,6 +35,7 @@ namespace ARdevKit
             trackable = null;
             currentMetaCategory = null;
             overMetaCategory = null;
+            dic = new Dictionary<PictureBox, IPreviewable>;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -47,26 +48,28 @@ namespace ARdevKit
         /// <param name="v">                The Vector3D to set the Trackable. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         
-        [Obsolete]
+       [Obsolete]
         public void addPreviewable(IPreviewable currentTrackable, Vector3D v) 
         {
-            if(currentMetaCategory == Trackable) {
-                trackable = currentTrackable;
-                vector = v;
+                if(currentMetaCategory == Trackable && trackable == null) {
+                    trackable = (AbstractTrackable)currentTrackable;
+                    vector = v;
             
-            PictureBox tempBox = new PictureBox;
-            tempBox.Location = new Point(vector.getX(), vector.getY());
-            tempBox.Image = (Image) currentTrackable.getPreview();            
-            tempBox.Size = currentTrackable.getPreview().Size;
-            panel.Add(tempBox);
-            }
+                PictureBox tempBox = new PictureBox;
+                tempBox.Location = new Point(v.getX(), v.getY());
+                tempBox.Image = (Image) currentTrackable.getPreview();            
+                tempBox.Size = currentTrackable.getPreview().Size;
+                panel.Controls.Add(tempBox);
+            
+                dic.Add(tempBox, currentTrackable);
+                }
+                else {
+                    //TODO ERROR WINDOW NOT ALLOWED.
+                }
 
-            FlowLayoutPanel
-            else() {
-                //TODO ERROR WINDOW NOT ALLOWED.
+                currentMetaCategory = null;
             }
-            
-        }
+       
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
@@ -79,18 +82,32 @@ namespace ARdevKit
         /// <param name="overElement">      The over element. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-         [Obsolete]
+       [Obsolete]
         public void addPreviewable(IPreviewable currentElement, IPreviewable overElement) 
         {
-            throw new NotImplementedException();
             if(currentMetaCategory == Source && overMetaCategory == Augmentation) {
-                if()
+                AbstractAugmentation[] aug = trackable.getList();
+                
+                for(int i = 0; i < 3; i++) {
+                    if(aug[i] == (AbstractAugmentation) overElement && aug[i].getSource() == null) {
+                        aug[i].add((AbstractSource)currentElement);
+                        
+                        PictureBox tempBox = new PictureBox;
+          // location berechnung!              tempBox.Location = new Point(vector.getX() + , vector.getY());
+                        tempBox.Image = (Image) currentElement.getPreview();            
+                        tempBox.Size = currentElement.getPreview().Size;
+                        panel.Controls.Add(tempBox);
+                        
+                        dic.Add(tempBox, currentElement);
+                        break;
+                     }
+                
+                }
             }
 
             else if(currentMetaCategory == Augmentation && overMetaCategory == Trackable) {
                 if((AbstractTrackable)currentElement == trackable) {
-             //TODO add remove methode schreiben.
-                    trackable.addList((AbstractAugmentation)currentElement);
+                   trackable.addList((AbstractAugmentation)currentElement);
 
                 }
                 else {
@@ -101,23 +118,28 @@ namespace ARdevKit
             else{
                 //TODO Throw WindowException Trackable can't be used here.
             }
+            currentMetaCategory = null;
+            overMetaCategory = null;
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Removes the Previewable and the Objekt, what is linked to the Previewable. </summary>
+        ///
+        /// <param name="p">    The p control. </param>
+        /// <param name="prev"> The previous. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public void removePreviewable(PictureBox p, IPreviewable prev)
+        [Obsolete]
+        public void removePreviewable(PictureBox p)
         {
-            if (currentMetaCategory == Source) {
-                panel.Controls.Remove(p);
-                // AbstractAugmentation[3] aug = trackable.getArray();
-                for (int i = 0; i < 3; i++)
-                {
-                    if(aug[i].exists(prev)) {
-           //CHANGE METHODNAMES
-                    aug[i].remove(prev);
-                    }
-                    tracka
-                }
+            if(dic.ContainsKey(p)) {
+                dic.Remove(p);
+                //TODO REMOVE SUBOBJEKTS
             }
+            else {
+                throw new NotImplementedException;   
+            }
+            
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -130,10 +152,21 @@ namespace ARdevKit
         /// <param name="v">                The Vector3D to move the Trackable. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public void moveTrackable(IPreviewable currentTrackable, Vector3D v)
+        public void moveTrackable(PictureBox p, Vector3D v)
         {
-            throw new NotImplementedException();
-            //TODO move Trackable and all augmentations + sources which are connected to the trackable.
+            if(this.isTrackable(p)) {
+                vector = v;
+                IPreviewable temp = null;
+                if(this.dic.TryGetValue(p, out temp)) {
+                    dic.Remove(p);
+                    p.Location = new Point(v.getX(), v.getY());
+                    dic.Add(p, temp);
+                }
+
+            }
+            else{
+                //Throw new Exception other Objekts than Trackables can't move without trackable.
+            }
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -144,6 +177,30 @@ namespace ARdevKit
         {
             throw new NotImplementedException();
             //TODO !?
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Tests if the linked value is the trackable. </summary>
+        ///
+        /// <param name="p">    The p control. </param>
+        ///
+        /// <returns>   true if trackable, false if not. </returns>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private bool isTrackable(PictureBox p) {
+            if(dic.ContainsKey(p)){
+                IPreviewable temp = null;
+                this.dic.TryGetValue(p, out temp);
+                if((trackable)temp = trackable) {
+                    return true;
+                }
+                else{
+                    return false;
+                }
+            }
+            else {
+                return false;
+            }
         }
 
 

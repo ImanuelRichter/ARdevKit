@@ -70,6 +70,7 @@
       <DependentUpon>EditorWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Controller\EditorController\PreviewController.cs" />
+    <Compile Include="Model\Project\AbstractTrackable.cs" />
     <Compile Include="Model\Project\BarGraph.cs" />
     <Compile Include="Model\Project\DbSource.cs" />
     <Compile Include="Model\Project\FileSource.cs" />

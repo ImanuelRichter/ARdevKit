@@ -46,7 +46,7 @@ namespace ARdevKit.Model.Project
         public void addAugmentation(AbstractAugmentation augmentation)
         {
             for (int i = 0; i < augmentations.Length; i++)
-			{
+            {
                 if (augmentations[i] == null)
                 {
                     augmentations[i] = augmentation;
@@ -54,7 +54,7 @@ namespace ARdevKit.Model.Project
                 }
             }
             throw new NotSupportedException("There are already 3 augmentations connected to this trackable.");
-		}
+        }
 
         public void removeAugmentation(AbstractAugmentation augmentation)
         {
@@ -68,6 +68,6 @@ namespace ARdevKit.Model.Project
             }
             throw new NotSupportedException("The augmentation which should be removed, could not be found.");
         }
-			
+
     }
 }
