@@ -29,9 +29,9 @@ namespace ARdevKit
         /// <param name="p">    The Panel which we need to add Previewables. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public PreviewController(Panel p)
+        public PreviewController()
         {
-            panel = p;
+            panel = this.getPreviewPanel();
             trackable = null;
             currentMetaCategory = null;
             overMetaCategory = null;
@@ -46,7 +46,8 @@ namespace ARdevKit
         /// <param name="currentTrackable"> The current Trackable, which should set in the previewPanel. </param>
         /// <param name="v">                The Vector3D to set the Trackable. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-
+        
+        [Obsolete]
         public void addPreviewable(IPreviewable currentTrackable, Vector3D v) 
         {
             if(currentMetaCategory == Trackable) {
@@ -57,10 +58,10 @@ namespace ARdevKit
             tempBox.Location = new Point(vector.getX(), vector.getY());
             tempBox.Image = (Image) currentTrackable.getPreview();            
             tempBox.Size = currentTrackable.getPreview().Size;
-
             panel.Add(tempBox);
             }
 
+            FlowLayoutPanel
             else() {
                 //TODO ERROR WINDOW NOT ALLOWED.
             }
@@ -78,6 +79,7 @@ namespace ARdevKit
         /// <param name="overElement">      The over element. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+         [Obsolete]
         public void addPreviewable(IPreviewable currentElement, IPreviewable overElement) 
         {
             throw new NotImplementedException();

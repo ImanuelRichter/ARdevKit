@@ -59,7 +59,7 @@
     <Compile Include="EditorWindow.designer.cs">
       <DependentUpon>EditorWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="PreviewController.cs" />
+    <Compile Include="Controller\EditorController\PreviewController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestWindow.cs">
       <SubType>Form</SubType>
@@ -82,6 +82,7 @@
     <EmbeddedResource Include="TestWindow.resx">
       <DependentUpon>TestWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\EditorWindow.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
