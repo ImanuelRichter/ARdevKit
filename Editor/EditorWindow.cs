@@ -64,19 +64,19 @@ namespace ARdevKit
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
-        /// ATTENTION! HARDCODED FOR TEST PURPOSES! Full pathname of the player file.
+        /// Pathname of the player file.
         /// </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        private string playerPath = "D:\\Dropbox\\dev\\ARdevKit - Player\\bin\\Debug\\Player.exe";
+        private string playerPath = "..\\..\\..\\ARdevKitPlayer\\bin\\Debug\\Player.exe";
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
-        /// ATTENTION! HARDCODED FOR TEST PURPOSES! Full pathname of the project file.
+        /// Pathname of the project file.
         /// </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        private string projectPath = "D:\\Dropbox\\dev\\ARdevKit - Player\\res";
+        private string projectPath;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
@@ -243,30 +243,18 @@ namespace ARdevKit
         /// <param name="e">        Event information. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        private void tsm_editor_menu_test_loadImage_Click(object sender, EventArgs e)
+        private void tsm_editor_menu_test_startTestmode_Click(object sender, EventArgs e)
         {
             //TestWindow testWindow = new TestWindow();
             //testWindow.Show();
+            projectPath = System.IO.Path.Combine(System.Windows.Forms.Application.StartupPath, "currentProject");
+            Process manyCam = new Process();
+            manyCam.StartInfo.FileName = "VirtualCamera.lnk";
+            manyCam.Start();
 
             player.StartInfo.FileName = playerPath;
             player.StartInfo.Arguments = projectPath;
             player.Start();
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Event handler. Called by tsm_editor_menu_test_loadVideo for click events. Starts the test
-        /// mode for videos.
-        /// </summary>
-        ///
-        /// <param name="sender">   Source of the event. </param>
-        /// <param name="e">        Event information. </param>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        private void tsm_editor_menu_test_loadVideo_Click(object sender, EventArgs e)
-        {
-            TestWindow testWindow = new TestWindow();
-            testWindow.Show();
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////

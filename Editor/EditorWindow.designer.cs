@@ -48,8 +48,7 @@
             this.tsm_editor_menu_edit_copie = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_editor_menu_edit_paste = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_editor_menu_test = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsm_editor_menu_test_loadImage = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsm_editor_menu_test_loadVideo = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_editor_menu_test_startTestmode = new System.Windows.Forms.ToolStripMenuItem();
             this.tss_editor_meu_test_loadVideo_togleDebug = new System.Windows.Forms.ToolStripSeparator();
             this.tsm_editor_menu_test_togleDebug = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_editor_menu_help = new System.Windows.Forms.ToolStripMenuItem();
@@ -223,38 +222,30 @@
             // tsm_editor_menu_test
             // 
             this.tsm_editor_menu_test.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsm_editor_menu_test_loadImage,
-            this.tsm_editor_menu_test_loadVideo,
+            this.tsm_editor_menu_test_startTestmode,
             this.tss_editor_meu_test_loadVideo_togleDebug,
             this.tsm_editor_menu_test_togleDebug});
             this.tsm_editor_menu_test.Name = "tsm_editor_menu_test";
             this.tsm_editor_menu_test.Size = new System.Drawing.Size(41, 20);
             this.tsm_editor_menu_test.Text = "Test";
             // 
-            // tsm_editor_menu_test_loadImage
+            // tsm_editor_menu_test_startTestmode
             // 
-            this.tsm_editor_menu_test_loadImage.Name = "tsm_editor_menu_test_loadImage";
-            this.tsm_editor_menu_test_loadImage.Size = new System.Drawing.Size(136, 22);
-            this.tsm_editor_menu_test_loadImage.Text = "Bild laden";
-            this.tsm_editor_menu_test_loadImage.Click += new System.EventHandler(this.tsm_editor_menu_test_loadImage_Click);
-            // 
-            // tsm_editor_menu_test_loadVideo
-            // 
-            this.tsm_editor_menu_test_loadVideo.Name = "tsm_editor_menu_test_loadVideo";
-            this.tsm_editor_menu_test_loadVideo.Size = new System.Drawing.Size(136, 22);
-            this.tsm_editor_menu_test_loadVideo.Text = "Video laden";
-            this.tsm_editor_menu_test_loadVideo.Click += new System.EventHandler(this.tsm_editor_menu_test_loadVideo_Click);
+            this.tsm_editor_menu_test_startTestmode.Name = "tsm_editor_menu_test_startTestmode";
+            this.tsm_editor_menu_test_startTestmode.Size = new System.Drawing.Size(172, 22);
+            this.tsm_editor_menu_test_startTestmode.Text = "Testmodus starten";
+            this.tsm_editor_menu_test_startTestmode.Click += new System.EventHandler(this.tsm_editor_menu_test_startTestmode_Click);
             // 
             // tss_editor_meu_test_loadVideo_togleDebug
             // 
             this.tss_editor_meu_test_loadVideo_togleDebug.Name = "tss_editor_meu_test_loadVideo_togleDebug";
-            this.tss_editor_meu_test_loadVideo_togleDebug.Size = new System.Drawing.Size(133, 6);
+            this.tss_editor_meu_test_loadVideo_togleDebug.Size = new System.Drawing.Size(169, 6);
             // 
             // tsm_editor_menu_test_togleDebug
             // 
             this.tsm_editor_menu_test_togleDebug.CheckOnClick = true;
             this.tsm_editor_menu_test_togleDebug.Name = "tsm_editor_menu_test_togleDebug";
-            this.tsm_editor_menu_test_togleDebug.Size = new System.Drawing.Size(136, 22);
+            this.tsm_editor_menu_test_togleDebug.Size = new System.Drawing.Size(172, 22);
             this.tsm_editor_menu_test_togleDebug.Text = "Debug";
             // 
             // tsm_editor_menu_help
@@ -396,8 +387,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_file_exit;
         private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_edit;
         private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_test;
-        private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_test_loadImage;
-        private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_test_loadVideo;
+        private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_test_startTestmode;
         private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_test_togleDebug;
         private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_help;
         private System.Windows.Forms.ToolStripSeparator tss_editor_menu_file_opnen_save;
