@@ -52,7 +52,7 @@ namespace ARdevKit
         /// </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        //TODO: implement private List<SceneElementCategory> elementCategories;
+        private List<SceneElementCategory> elementCategories;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
@@ -80,6 +80,62 @@ namespace ARdevKit
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
+        /// Linked list containing all IPreviewables.
+        /// </summary>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private LinkedList<IPreviewable> allElements;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// The element selection controller.
+        /// </summary>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private ElementSelectionController elementSelectionController;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// The preview controller.
+        /// </summary>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private PreviewController previewController;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// The property controller.
+        /// </summary>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private PropertyController propertyController;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// The device connection controller.
+        /// </summary>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private DeviceConnectionController deviceConnectionController;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// Gets or sets allElements.
+        /// </summary>
+        ///
+        /// <value>
+        /// Linked list containing elements.
+        /// </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public LinkedList<IPreviewable> AllElements
+        {
+            get { return allElements; }
+            set { allElements = value; }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
         /// Gets or sets a value indicating whether to start debug mode if test mode is started on the
         /// device.
         /// </summary>
@@ -88,7 +144,7 @@ namespace ARdevKit
         /// if true the debug window will be opened when starting the test mode on the device.
         /// </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-      
+
         public bool StartDebugModeDevice
         {
             get { return startDebugModeDevice; }
@@ -121,12 +177,11 @@ namespace ARdevKit
         /// </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        //TODO: implement
-        //private List<SceneElementCategory> ElementCategories
-        //{
-        //    get { return elementCategories; }
-        //    set { elementCategories = value; }
-        //}
+        public List<SceneElementCategory> ElementCategories
+        {
+            get { return elementCategories; }
+            set { elementCategories = value; }
+        }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
@@ -185,6 +240,7 @@ namespace ARdevKit
         public EditorWindow()
         {
             InitializeComponent();
+            allElements = new LinkedList<IPreviewable>();
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -284,6 +340,81 @@ namespace ARdevKit
         private void tsm_editor_menu_file_open_Click(object sender, System.EventArgs e)
         {
             throw new System.NotImplementedException();
+        }
+
+        public void addDevice()
+        {
+            //TODO: implement addDevice()
+        }
+
+        public void createNewProject(String name)
+        {
+            //TODO: implement createNewProject(String name)
+        }
+
+        public void exportProject()
+        {
+            //TODO: implement exportProject()
+        }
+
+        public void loadProject()
+        {
+            //TODO: implement loadProject()
+        }
+
+        public void openDebugWindow()
+        {
+            //TODO: implement openDebugWindow()
+        }
+
+        public void openTestWindow()
+        {
+            //TODO: implement openTestWindow()
+        }
+
+        public void registerElements()
+        {
+            //TODO: implement registerElements()
+        }
+
+        public void saveProject()
+        {
+            //TODO: implement saveProject()
+        }
+
+        public void sendToDevice()
+        {
+            //TODO: implement sendToDevice()
+        }
+
+        public void updateElementSelectionPanel()
+        {
+            //TODO: implement updateElementSelectionPanel()
+        }
+
+        public void updatePreviewPanel()
+        {
+            //TODO: implement updatePreviewPanel()
+        }
+
+        public void updatePropertyPanel(IPreviewable selectedElement)
+        {
+            //TODO: implement updatePropertyPanel(IPreviewable selectedElement)
+        }
+
+        public void updateSceneSelectionPanel()
+        {
+            //TODO: implement updateSceneSelectionPanel()
+        }
+
+        public void updateStatusBar()
+        {
+            //TODO: implement updateStatusBar()
+        }
+
+        private void addCategory(SceneElementCategory category)
+        {
+            //TODO: implement addCategory(SceneElementCategory category)
         }
     }
 }
