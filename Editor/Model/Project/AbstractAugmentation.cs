@@ -16,7 +16,8 @@ namespace ARdevKit.Model.Project
         private int coordinatesystemid;
         private List<String> costumUserEvents;
         private bool isVisible;
-        private Vector3D[] vectors;
+        public Vector3D vector { get; set; }
+
         public AbstractSource source { get; set; }
 
         public abstract void accept(AbstractProjectVisitor visitor);

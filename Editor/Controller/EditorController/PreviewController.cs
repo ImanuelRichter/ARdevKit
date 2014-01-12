@@ -48,7 +48,6 @@ using ARdevKit;
         /// <summary>   EditorWindow Instanz </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         private EditorWindow ew;
- 
         
         public PreviewController(EditorWindow ew)
         {
@@ -79,6 +78,7 @@ using ARdevKit;
                     tempBox.Location = new Point(v.x, v.y);
                     tempBox.Image = (Image) currentElement.getPreview();            
                     tempBox.Size = currentElement.getPreview().Size;
+                    ((AbstractTrackable)currentElement).vector = v;
                     tempBox.Tag = (AbstractTrackable) currentElement;
                     
                     panel.Controls.Add(tempBox);
@@ -97,6 +97,7 @@ using ARdevKit;
                     tempBox.Image = (Image) currentElement.getPreview();            
                     tempBox.Size = currentElement.getPreview().Size;
                     tempBox.Location = new Point(v.x, v.y);
+                    ((AbstractAugmentation)currentElement).vector = v;
                     tempBox.Tag = (AbstractAugmentation) currentElement;
                     
                     this.panel.Controls.Add(tempBox);
@@ -131,7 +132,8 @@ using ARdevKit;
                 if(!trackable.isAugmentionFull() && (trackable.findAugmentation((AbstractAugmentation) overElement) != -1)) {
                     AbstractAugmentation[] aug = this.trackable.augmentations;
                     aug[trackable.findAugmentation((AbstractAugmentation) overElement)].source = (AbstractSource) currentElement;
-                    
+                    this.trackable.augmentations = aug;
+
                     PictureBox temp;
                     this.dic.TryGetValue(currentElement, out temp);
                     this.panel.Controls.Remove(temp);
@@ -139,6 +141,14 @@ using ARdevKit;
                     temp.Tag = aug[trackable.findAugmentation((AbstractAugmentation) overElement)];
                     this.dic.Remove(currentElement);
                     this.dic.Add(currentElement, temp);
+                    this.panel.Controls.Add(temp); 
+                
+                    this.dic.TryGetValue((IPreviewable) trackable, out temp);
+                    this.panel.Controls.Remove(temp);
+                    temp.Tag = trackable;
+                    this.dic.Remove(trackable);
+                    this.dic.Add((IPreviewable)trackable, temp);
+                    
                     this.panel.Controls.Add(temp); 
                 }
             }
@@ -177,7 +187,7 @@ using ARdevKit;
         }
 
         [Obsolete]
-        private void removeAll(){
+        private void removeAll() {
             this.panel.Controls.Clear();
             this.dic.Clear();
             this.trackable = null;
@@ -193,16 +203,36 @@ using ARdevKit;
         /// <param name="v">                The Vector3D to move the Trackable. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public void moveTrackable(IPreviewable currentElement, Vector3D v)
+        public void moveElement(IPreviewable currentElement, Vector3D v)
         {
-             PictureBox temp;
-             this.dic.TryGetValue(currentElement, out temp);
-
-             this.panel.Controls.Remove(temp);
-
-             temp.Location = new Point(v.x, v.y);
-
-             this.panel.Controls.Add(temp);
+                 PictureBox temp;
+                 this.dic.TryGetValue(currentElement, out temp);
+                 this.panel.Controls.Remove(temp);
+                 temp.Location = new Point(v.x, v.y);
+                 
+                 if(currentMetaCategory == MetaCategory.Trackable) {
+                         ((AbstractTrackable)temp.Tag).vector = v;
+                 }
+                 else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null){
+                         ((AbstractAugmentation)temp.Tag).vector = v;
+                 }
+                 
+                 this.panel.Controls.Add(temp);
+                 this.currentMetaCategory = new MetaCategory();
         }
-    }
+
+        [Obsolete]
+       public void reloadPanel(Panel p) {
+           this.trackable = null;
+           this.dic = new Dictionary<IPreviewable,PictureBox>;
+
+           foreach (Control comp in p.Controls)
+           {
+               this.dic.Add((IPreviewable)((PictureBox)comp.Tag), (PictureBox)comp);
+                if(comp.Tag.GetType() == trackable.GetType()) {
+                    trackable = (AbstractTrackable)comp.Tag;
+                }
+           }
+      } 
+ }
 

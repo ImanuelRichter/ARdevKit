@@ -15,6 +15,7 @@ namespace ARdevKit.Model.Project
         private String sensorID;
         private String sensorSubType;
         private String sensorType;
+        public Vector3D vector { get; set; }
         public AbstractAugmentation[] augmentations { get; set; }
 
         public abstract void accept(AbstractProjectVisitor visitor);

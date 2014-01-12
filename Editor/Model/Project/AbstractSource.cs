@@ -12,7 +12,6 @@ namespace ARdevKit.Model.Project
 {
     abstract class AbstractSource : ISerializable, IPreviewable
     {
-        private Bitmap icon;
         private String sourceID;
         private List<AbstractDynamic2DAugmentation> augmentions;
 
