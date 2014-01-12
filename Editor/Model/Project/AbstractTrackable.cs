@@ -15,7 +15,7 @@ namespace ARdevKit.Model.Project
         private String sensorID;
         private String sensorSubType;
         private String sensorType;
-        private AbstractAugmentation[] augmentations;
+        public AbstractAugmentation[] augmentations { get; set; }
 
         public abstract void accept(AbstractProjectVisitor visitor);
 
@@ -67,6 +67,31 @@ namespace ARdevKit.Model.Project
                 }
             }
             throw new NotSupportedException("The augmentation which should be removed, could not be found.");
+        }
+
+        public bool isAugmentionFull()
+        {
+            if (augmentations.Length < 3)
+            {
+                return false;
+            }
+
+            else
+            {
+                return true;
+            }
+        }
+
+        public int findAugmentation(AbstractAugmentation a)
+        {
+            for (int i = 0; i < augmentations.Length; i++)
+            {
+                if (augmentations[i] == a)
+                {
+                    return i;
+                }
+            }
+            return -1;
         }
 
     }

@@ -17,6 +17,7 @@ namespace ARdevKit.Model.Project
         private List<String> costumUserEvents;
         private bool isVisible;
         private Vector3D[] vectors;
+        public AbstractSource source { get; set; }
 
         public abstract void accept(AbstractProjectVisitor visitor);
 

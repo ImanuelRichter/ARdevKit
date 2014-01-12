@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\EditorController\PropertyController.cs" />
     <Compile Include="Controller\ProjectController\AbstractProjectVisitor.cs" />
     <Compile Include="ARdevKitEditor.cs" />
     <Compile Include="Controller\ProjectController\ExportVisitor.cs" />

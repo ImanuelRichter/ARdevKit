@@ -18,6 +18,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using ARdevKit.Model.Project;
+using Controller.EditorController;
 
 namespace ARdevKit
 {
@@ -166,7 +168,7 @@ namespace ARdevKit
             get { return startDebugModeLocal; }
             set { startDebugModeLocal = value; }
         }
-
+        
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
         /// Gets or sets the categories the element belongs to.
@@ -392,11 +394,6 @@ namespace ARdevKit
             //TODO: implement updateElementSelectionPanel()
         }
 
-        public void updatePreviewPanel()
-        {
-            //TODO: implement updatePreviewPanel()
-        }
-
         public void updatePropertyPanel(IPreviewable selectedElement)
         {
             //TODO: implement updatePropertyPanel(IPreviewable selectedElement)
@@ -405,6 +402,11 @@ namespace ARdevKit
         public void updateSceneSelectionPanel()
         {
             //TODO: implement updateSceneSelectionPanel()
+        }
+
+        public Panel getPreviewPanel()
+        {
+            return this.pnl_editor_preview;
         }
 
         public void updateStatusBar()

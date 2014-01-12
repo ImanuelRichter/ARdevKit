@@ -7,26 +7,57 @@ using System.Text;
 using System.Threading.Tasks;
 using ARdevKit.Model.Project;
 using System.Collections;
-{
-    class PreviewController
-    {
+using ARdevKit;
 
-        /// <summary>   The MetaCategory of the current element </summary>
+
+
+    class PreviewController 
+    {
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   MetaCategory is need for some things. </summary>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        public enum MetaCategory { Source, Augmentation, Trackable};
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   The MetaCategory of the current element. </summary>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
         private MetaCategory currentMetaCategory;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   The MetaCategory of the over element. </summary>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
         private MetaCategory overMetaCategory;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   The Trackable which hold the Augmentations and Sources. </summary>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
         private AbstractTrackable trackable;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   The PreviewPanel which we need to add Previewables. </summary>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
         private Panel panel;
-        private Dictionary<IPreviewable, PictureBox> dic;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   The Dictionary which hold the PictureBoxes and the Keys of Objekts. </summary>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        private Dictionary<IPreviewable, PictureBox> dic { get; set; }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   EditorWindow Instanz </summary>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        private EditorWindow ew;
+ 
         
-        public PreviewController()
+        public PreviewController(EditorWindow ew)
         {
-            panel = this.getPreviewPanel();
-            trackable = null;
-            dic = null;
-            currentMetaCategory = null;
-            overMetaCategory = null;
+            this.ew = ew;
+            this.panel = this.ew.getPreviewPanel();
+            this.trackable = null;
+            this.dic = null;
+            this.currentMetaCategory = new MetaCategory();
+            this.overMetaCategory = new MetaCategory();
             
         }
 
@@ -43,9 +74,9 @@ using System.Collections;
        [Obsolete]
         public void addPreviewable(IPreviewable currentElement, Vector3D v) 
         {
-                if(currentMetaCategory == Trackable && trackable == null) {        
-                    PictureBox tempBox = new PictureBox;
-                    tempBox.Location = new Point(v.getX(), v.getY());
+                if(currentMetaCategory == MetaCategory.Trackable && trackable == null) {        
+                    PictureBox tempBox = new PictureBox();
+                    tempBox.Location = new Point(v.x, v.y);
                     tempBox.Image = (Image) currentElement.getPreview();            
                     tempBox.Size = currentElement.getPreview().Size;
                     tempBox.Tag = (AbstractTrackable) currentElement;
@@ -57,15 +88,15 @@ using System.Collections;
                 
             
                 }
-                else if(currentMetaCategory == Augmentation && trackable != null) {
+                else if(currentMetaCategory == MetaCategory.Augmentation && trackable != null) {
                     
                     trackable.addAugmentation((AbstractAugmentation) currentElement);
                    
-                    PictureBox tempBox = new PictureBox;
+                    PictureBox tempBox = new PictureBox();
            
                     tempBox.Image = (Image) currentElement.getPreview();            
                     tempBox.Size = currentElement.getPreview().Size;
-                    tempBox.Location = new Point(v.getX(), v.getY());
+                    tempBox.Location = new Point(v.x, v.y);
                     tempBox.Tag = (AbstractAugmentation) currentElement;
                     
                     this.panel.Controls.Add(tempBox);
@@ -77,7 +108,7 @@ using System.Collections;
                     //TODO ERROR WINDOW NOT ALLOWED.
                 }
 
-                currentMetaCategory = null;
+                currentMetaCategory = new MetaCategory();
             }
        
 
@@ -95,16 +126,17 @@ using System.Collections;
        [Obsolete]
         public void addSource(IPreviewable currentElement, IPreviewable overElement) 
         {
-            if(currentMetaCategory == Source && overMetaCategory == Augmentation) {
-                if(!trackable.isFull() && (trackable.find(currentElement) != -1) {
-                    AbstractAugmentation aug[] = this.trackable.getAugmentation();
-                    aug[trackable.findAugmentation(overElement)].setSource = (AbstractSource) currentElement;
+            if (currentMetaCategory == MetaCategory.Source && overMetaCategory == MetaCategory.Augmentation)
+            {
+                if(!trackable.isAugmentionFull() && (trackable.findAugmentation((AbstractAugmentation) overElement) != -1)) {
+                    AbstractAugmentation[] aug = this.trackable.augmentations;
+                    aug[trackable.findAugmentation((AbstractAugmentation) overElement)].source = (AbstractSource) currentElement;
                     
                     PictureBox temp;
                     this.dic.TryGetValue(currentElement, out temp);
                     this.panel.Controls.Remove(temp);
                     
-                    temp.Tag = aug[trackable.findAugmentation(overElement)];
+                    temp.Tag = aug[trackable.findAugmentation((AbstractAugmentation) overElement)];
                     this.dic.Remove(currentElement);
                     this.dic.Add(currentElement, temp);
                     this.panel.Controls.Add(temp); 
@@ -114,8 +146,8 @@ using System.Collections;
                 //TODO Throw WindowException Trackable can't be used here.
             }
 
-            currentMetaCategory = null;
-            overMetaCategory = null;
+            currentMetaCategory = new MetaCategory();
+            overMetaCategory = new MetaCategory();
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -127,10 +159,10 @@ using System.Collections;
 
         [Obsolete]
         public void removePreviewable(IPreviewable currentElement) {
-            if(currentMetaCategory == Trackable && trackable == null) {
+            if(currentMetaCategory == MetaCategory.Trackable && trackable == null) {
                 this.removeAll();
             }
-            else if(currentMetaCategory == Augmentation && trackable != null) {
+            else if(currentMetaCategory == MetaCategory.Augmentation && trackable != null) {
                 this.trackable.removeAugmentation((AbstractAugmentation) currentElement);
                 
                 PictureBox temp;
@@ -168,19 +200,9 @@ using System.Collections;
 
              this.panel.Controls.Remove(temp);
 
-             temp.Location.X = v.getX();
-             temp.Location.Y = v.getY();
+             temp.Location = new Point(v.x, v.y);
 
              this.panel.Controls.Add(temp);
         }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Updates the previewables, when their look was changed. </summary>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        public void updatePreviewables()
-        {
-                //TODO
-        }
     }
-}
+
