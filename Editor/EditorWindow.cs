@@ -21,6 +21,8 @@ using System.Diagnostics;
 using ARdevKit.Model.Project;
 using Controller.EditorController;
 using ARdevKit.Controller.ProjectController;
+using ARdevKit.Controller.EditorController;
+using ARdevKit.Controller.Connections.DeviceConnection;
 
 namespace ARdevKit
 {
@@ -155,7 +157,7 @@ namespace ARdevKit
         /// </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public IPreviewable CurrentElement
+        internal IPreviewable CurrentElement
         {
             get { return currentElement; }
             set { currentElement = value; }
@@ -171,7 +173,7 @@ namespace ARdevKit
         /// </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public ExportVisitor ExportVisitor
+        internal ExportVisitor ExportVisitor
         {
             get { return exportVisitor; }
             set { exportVisitor = value; }
@@ -187,7 +189,7 @@ namespace ARdevKit
         /// </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public SaveVisitor SaveVisitor
+        internal SaveVisitor SaveVisitor
         {
             get { return saveVisitor; }
             set { saveVisitor = value; }
@@ -203,7 +205,7 @@ namespace ARdevKit
         /// </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public LinkedList<IPreviewable> AllElements
+        internal LinkedList<IPreviewable> AllElements
         {
             get { return allElements; }
             set { allElements = value; }
@@ -236,7 +238,7 @@ namespace ARdevKit
         /// </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public bool StartDebugModeLocal
+        internal bool StartDebugModeLocal
         {
             get { return startDebugModeLocal; }
             set { startDebugModeLocal = value; }
@@ -252,7 +254,7 @@ namespace ARdevKit
         /// </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public List<SceneElementCategory> ElementCategories
+        internal List<SceneElementCategory> ElementCategories
         {
             get { return elementCategories; }
             set { elementCategories = value; }
@@ -479,7 +481,7 @@ namespace ARdevKit
             //TODO: implement updatePreviewPanel()
         }
 
-        public void updatePropertyPanel(IPreviewable selectedElement)
+        internal void updatePropertyPanel(IPreviewable selectedElement)
         {
             //TODO: implement updatePropertyPanel(IPreviewable selectedElement)
         }
