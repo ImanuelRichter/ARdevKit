@@ -13,11 +13,29 @@ namespace ARdevKit.Model.Project
 {
     abstract class AbstractAugmentation : ISerializable, IPreviewable
     {
+        /// <summary>
+        /// ToDo
+        /// </summary>
         private int coordinatesystemid;
-        private List<String> costumUserEvents;
+
+        /// <summary>
+        /// A list of all customUserEvents the current selected Element has.
+        /// </summary>
+        public List<String> costumUserEvents { get; set; }
+
+        /// <summary>
+        /// ToDo
+        /// </summary>
         private bool isVisible;
+
+        /// <summary>
+        /// Vector of Augmentation
+        /// </summar>
         public Vector3D vector { get; set; }
 
+        /// <summary>
+        /// Source which is linked to Augmentation
+        /// </summary>
         public AbstractSource source { get; set; }
 
         public abstract void accept(AbstractProjectVisitor visitor);
@@ -33,10 +51,5 @@ namespace ARdevKit.Model.Project
         {
             throw new NotImplementedException();
         }
-
-
-
-
-
     }
 }

@@ -58,7 +58,7 @@ using ARdevKit;
         public PreviewController(EditorWindow ew)
         {
             this.ew = ew;
-            this.panel = this.ew.getPreviewPanel();
+            this.panel = this.ew.Pnl_editor_preview;
             this.trackable = null;
             this.dic = null;
             this.currentMetaCategory = new MetaCategory();
@@ -131,33 +131,36 @@ using ARdevKit;
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
        [Obsolete]
-        public void addSource(IPreviewable currentElement, IPreviewable overElement) 
-        {
-            if (currentMetaCategory == MetaCategory.Source && overMetaCategory == MetaCategory.Augmentation)
-            {
-                if(!trackable.isAugmentionFull() && (trackable.findAugmentation((AbstractAugmentation) overElement) != -1)) {
-                    AbstractAugmentation[] aug = this.trackable.augmentations;
-                    aug[trackable.findAugmentation((AbstractAugmentation) overElement)].source = (AbstractSource) currentElement;
-                    this.trackable.augmentations = aug;
+       public void addSource(AbstractSource source, IPreviewable overElement)
+       {
+           if (currentMetaCategory == MetaCategory.Source && overMetaCategory == MetaCategory.Augmentation)
+           {
+               if (!trackable.isAugmentionFull() && (trackable.findAugmentation((AbstractAugmentation)overElement) != -1))
+               {
+                   //fügt neue Source in Trackable ein
+                   AbstractAugmentation[] aug = this.trackable.augmentations;
+                   aug[trackable.findAugmentation((AbstractAugmentation)overElement)].source = source;
+                   this.trackable.augmentations = aug;
 
-                    PictureBox temp;
-                    this.dic.TryGetValue(currentElement, out temp);
-                    this.panel.Controls.Remove(temp);
-                    
-                    temp.Tag = aug[trackable.findAugmentation((AbstractAugmentation) overElement)];
-                    this.dic.Remove(currentElement);
-                    this.dic.Add(currentElement, temp);
-                    this.panel.Controls.Add(temp); 
-                
-                    this.dic.TryGetValue((IPreviewable) trackable, out temp);
-                    this.panel.Controls.Remove(temp);
-                    temp.Tag = trackable;
-                    this.dic.Remove(trackable);
-                    this.dic.Add((IPreviewable)trackable, temp);
-                    
-                    this.panel.Controls.Add(temp); 
-                }
-            }
+                   //search the linked PictureBox out of Dictionary, replace the Tag with the new Augmentation and replace the Picturebox in Panel
+                   PictureBox temp;
+                   this.dic.TryGetValue(overElement, out temp);
+                   this.panel.Controls.Remove(temp);
+
+                   temp.Tag = aug[trackable.findAugmentation((AbstractAugmentation)overElement)];
+                   this.dic.Remove(overElement);
+                   this.dic.Add((IPreviewable)aug[trackable.findAugmentation((AbstractAugmentation)overElement)], temp);
+                   this.panel.Controls.Add(temp);
+
+                   this.dic.TryGetValue((IPreviewable)trackable, out temp);
+                   this.panel.Controls.Remove(temp);
+                   temp.Tag = trackable;
+                   this.dic.Remove(trackable);
+                   this.dic.Add((IPreviewable)trackable, temp);
+
+                   this.panel.Controls.Add(temp);
+               }
+           }
             else{
                 //TODO Throw WindowException Trackable can't be used here.
             }
