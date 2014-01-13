@@ -63,7 +63,7 @@ namespace ARdevKit
             player = new Process();
             player.StartInfo.FileName = playerPath;
             player.StartInfo.Arguments = projectPath;
-            
+
             switch (mode)
             {
                 case (IMAGE):
@@ -112,7 +112,7 @@ namespace ARdevKit
             string projectPath = System.IO.Path.Combine(System.Windows.Forms.Application.StartupPath, "currentProject");
             StartPlayer(projectPath, IMAGE);
         }
-        
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
         /// Starts the player passing the passed projectPath and a testFilePath which is the result of an
