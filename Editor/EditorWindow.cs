@@ -187,17 +187,31 @@ namespace ARdevKit
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
-        /// Event handler. Called by tsm_editor_menu_test_loadImage for click events. Starts the test
+        /// Event handler. Called by tsm_editor_menu_test_startWithImage for click events. Starts the test
         /// mode for images.
         /// </summary>
         ///
         /// <param name="sender">   Source of the event. </param>
         /// <param name="e">        Event information. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        private void tsm_editor_menu_test_startTestmode_Click(object sender, EventArgs e)
+        private void tsm_editor_menu_test_startImage_Click(object sender, EventArgs e)
         {
-            TestController.StartTestMode();
+            TestController.StartWithImage();
+        }
+        
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// Event handler. Called by tsm_editor_menu_test_startWithVirtualCamera for click events. Starts the test
+        /// mode using a virtual camera.
+        /// </summary>
+        ///
+        /// <param name="sender">   Source of the event. </param>
+        /// <param name="e">        Event information. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private void tsm_editor_menu_test_startWithVirtualCamera_Click(object sender, EventArgs e)
+        {
+            TestController.StartWithVirtualCamera();
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////

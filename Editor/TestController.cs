@@ -12,6 +12,30 @@ namespace ARdevKit
     {
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
+        /// Used in <see cref="StartPlayer(string, int)"/> to load an image
+        /// </summary>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private const int IMAGE = 0;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// Used in <see cref="StartPlayer(string, int)"/> load a video
+        /// </summary>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private const int VIDEO = 1;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// Used in <see cref="StartPlayer(string, int)"/> start a virtual camera
+        /// </summary>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private const int CAMERA = 2;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
         /// New process for the player.
         /// </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -20,47 +44,105 @@ namespace ARdevKit
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
-        /// Starts the player passing the projectPath and a testFilePath which is the result of an opened
-        /// FileDialog.
+        /// The path to the player. Gonna be the startupPath at the end.
         /// </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        public static void StartTestMode()
+
+        private static string playerPath = "..\\..\\..\\ARdevKitPlayer\\bin\\Debug\\Player.exe";
+
+        /// <summary>
+        /// Starts the player with the specified settings.
+        /// </summary>
+        /// <param name="projectPath">The location of the project</param>
+        /// <param name="mode">
+        /// Tells if an image<see cref="IMAGE"/> or video<see cref="VIDEO"/>
+        /// should be loaded or if a virtual camera<see cref="CAMERA"/> should be started
+        /// </param>
+        private static void StartPlayer(string projectPath, int mode)
         {
-            string playerPath = "..\\..\\..\\ARdevKitPlayer\\bin\\Debug\\Player.exe";
-            string projectPath = System.IO.Path.Combine(System.Windows.Forms.Application.StartupPath, "currentProject");
-            OpenFileDialog openTestFileDialog = new OpenFileDialog();
-            openTestFileDialog.ShowDialog();
-            string testFilePath = openTestFileDialog.FileName;
-            /*
-            Process manyCam = new Process();
-            manyCam.StartInfo.FileName = "VirtualCamera.lnk";
-            manyCam.Start();
-             * */
             player = new Process();
             player.StartInfo.FileName = playerPath;
-            player.StartInfo.Arguments = projectPath + " -" + testFilePath;
-            player.Start();
+            player.StartInfo.Arguments = projectPath;
+            
+            switch (mode)
+            {
+                case (IMAGE):
+                    OpenFileDialog openTestFileDialog = new OpenFileDialog();
+                    openTestFileDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
+                    if (openTestFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        string testFilePath = openTestFileDialog.FileName;
+                        player.StartInfo.Arguments += " -" + testFilePath;
+                        player.Start();
+                    }
+                    break;
+                case (VIDEO) :
+                    // TODO
+                    break;
+                case (CAMERA):
+                    OpenFileDialog openVirualCameraPathDialog = new OpenFileDialog();
+                    if (openVirualCameraPathDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        string virtualCameraPath = openVirualCameraPathDialog.FileName;
+
+                        Process vCam = new Process();
+                        vCam.StartInfo.FileName = virtualCameraPath;
+                        vCam.Start();
+
+                        player.Start();
+                    }
+                    break;
+            }
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
-        /// Starts the player passing the projectPath and an extern virtualCamera which is used to load
-        /// test content.
+        /// Starts the player passing the projectPath and a testFilePath
+        /// which is the result of an opened FileDialog.
         /// </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        public static void StartTestMode(string virtualCamera)
+        public static void StartWithImage()
         {
-            string playerPath = "..\\..\\..\\ARdevKitPlayer\\bin\\Debug\\Player.exe";
             string projectPath = System.IO.Path.Combine(System.Windows.Forms.Application.StartupPath, "currentProject");
+            StartPlayer(projectPath, IMAGE);
+        }
+        
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// Starts the player passing the passed projectPath and a testFilePath which is the result of an
+        /// opened FileDialog.
+        /// </summary>
+        /// <param name="projectPath">The location of the project</param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        public static void StartWithImage(string projectPath)
+        {
+            StartPlayer(projectPath, IMAGE);
+        }
 
-            Process manyCam = new Process();
-            manyCam.StartInfo.FileName = "VirtualCamera.lnk";
-            manyCam.Start();
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// Starts the player passing the projectPath and an extern virtualCamera which
+        /// is used to load test content.
+        /// FileDialog.
+        /// </summary>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        public static void StartWithVirtualCamera()
+        {
+            string projectPath = System.IO.Path.Combine(System.Windows.Forms.Application.StartupPath, "currentProject");
+            StartPlayer(projectPath, CAMERA);
+        }
 
-            player = new Process();
-            player.StartInfo.FileName = playerPath;
-            player.StartInfo.Arguments = projectPath;
-            player.Start();
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// Starts the player passing the passed projectPath and an extern virtualCamera which
+        /// is used to load test content.
+        /// FileDialog.
+        /// </summary>
+        /// <param name="projectPath">The location of the project</param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        public static void StartWithVirtualCamera(string projectPath)
+        {
+            StartPlayer(projectPath, CAMERA);
         }
     }
 }

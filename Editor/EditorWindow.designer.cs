@@ -48,7 +48,8 @@
             this.tsm_editor_menu_edit_copie = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_editor_menu_edit_paste = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_editor_menu_test = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsm_editor_menu_test_startTestmode = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_editor_menu_test_startImage = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_editor_menu_test_startWithVirtualCamera = new System.Windows.Forms.ToolStripMenuItem();
             this.tss_editor_meu_test_loadVideo_togleDebug = new System.Windows.Forms.ToolStripSeparator();
             this.tsm_editor_menu_test_togleDebug = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_editor_menu_help = new System.Windows.Forms.ToolStripMenuItem();
@@ -222,30 +223,38 @@
             // tsm_editor_menu_test
             // 
             this.tsm_editor_menu_test.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsm_editor_menu_test_startTestmode,
+            this.tsm_editor_menu_test_startImage,
+            this.tsm_editor_menu_test_startWithVirtualCamera,
             this.tss_editor_meu_test_loadVideo_togleDebug,
             this.tsm_editor_menu_test_togleDebug});
             this.tsm_editor_menu_test.Name = "tsm_editor_menu_test";
             this.tsm_editor_menu_test.Size = new System.Drawing.Size(41, 20);
             this.tsm_editor_menu_test.Text = "Test";
             // 
-            // tsm_editor_menu_test_startTestmode
+            // tsm_editor_menu_test_startImage
             // 
-            this.tsm_editor_menu_test_startTestmode.Name = "tsm_editor_menu_test_startTestmode";
-            this.tsm_editor_menu_test_startTestmode.Size = new System.Drawing.Size(172, 22);
-            this.tsm_editor_menu_test_startTestmode.Text = "Testmodus starten";
-            this.tsm_editor_menu_test_startTestmode.Click += new System.EventHandler(this.tsm_editor_menu_test_startTestmode_Click);
+            this.tsm_editor_menu_test_startImage.Name = "tsm_editor_menu_test_startImage";
+            this.tsm_editor_menu_test_startImage.Size = new System.Drawing.Size(152, 22);
+            this.tsm_editor_menu_test_startImage.Text = "Bild laden";
+            this.tsm_editor_menu_test_startImage.Click += new System.EventHandler(this.tsm_editor_menu_test_startImage_Click);
+            // 
+            // tsm_editor_menu_test_startWithVirtualCamera
+            // 
+            this.tsm_editor_menu_test_startWithVirtualCamera.Name = "tsm_editor_menu_test_startWithVirtualCamera";
+            this.tsm_editor_menu_test_startWithVirtualCamera.Size = new System.Drawing.Size(160, 22);
+            this.tsm_editor_menu_test_startWithVirtualCamera.Text = "Virtuelle Kamera";
+            this.tsm_editor_menu_test_startWithVirtualCamera.Click += new System.EventHandler(this.tsm_editor_menu_test_startWithVirtualCamera_Click);
             // 
             // tss_editor_meu_test_loadVideo_togleDebug
             // 
             this.tss_editor_meu_test_loadVideo_togleDebug.Name = "tss_editor_meu_test_loadVideo_togleDebug";
-            this.tss_editor_meu_test_loadVideo_togleDebug.Size = new System.Drawing.Size(169, 6);
+            this.tss_editor_meu_test_loadVideo_togleDebug.Size = new System.Drawing.Size(149, 6);
             // 
             // tsm_editor_menu_test_togleDebug
             // 
             this.tsm_editor_menu_test_togleDebug.CheckOnClick = true;
             this.tsm_editor_menu_test_togleDebug.Name = "tsm_editor_menu_test_togleDebug";
-            this.tsm_editor_menu_test_togleDebug.Size = new System.Drawing.Size(172, 22);
+            this.tsm_editor_menu_test_togleDebug.Size = new System.Drawing.Size(152, 22);
             this.tsm_editor_menu_test_togleDebug.Text = "Debug";
             // 
             // tsm_editor_menu_help
@@ -387,7 +396,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_file_exit;
         private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_edit;
         private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_test;
-        private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_test_startTestmode;
+        private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_test_startWithVirtualCamera;
         private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_test_togleDebug;
         private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_help;
         private System.Windows.Forms.ToolStripSeparator tss_editor_menu_file_opnen_save;
@@ -409,6 +418,7 @@
         private System.Windows.Forms.ComboBox cmb_editor_selection_toolSelection;
         private System.Windows.Forms.ComboBox cmb_editor_properties_objectSelection;
         private System.Windows.Forms.Button btn_editor_scene_new;
+        private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_test_startImage;
     }
 }
 
