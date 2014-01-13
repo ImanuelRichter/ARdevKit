@@ -10,9 +10,19 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Model.Project
 {
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>
+    ///     AbstractSource is no PictureBox in the Panel, so it doesn't need an bitmap and so we
+    ///     don't need getPreview(),
+    ///     though this IPreviewable can't be a Interface for AbstractSource.
+    /// </summary>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
     abstract class AbstractSource : ISerializable
     {
         private String sourceID;
+
+
         private List<AbstractDynamic2DAugmentation> augmentions;
 
 

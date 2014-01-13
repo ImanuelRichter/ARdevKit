@@ -14,11 +14,6 @@ namespace ARdevKit.Model.Project
     abstract class AbstractAugmentation : ISerializable, IPreviewable
     {
         /// <summary>
-        /// ToDo
-        /// </summary>
-        private int coordinatesystemid;
-
-        /// <summary>
         /// A list of all customUserEvents the current selected Element has.
         /// </summary>
         private List<CustomUserEvent> customUserEvent;
@@ -29,12 +24,12 @@ namespace ARdevKit.Model.Project
         private bool isVisible;
 
         /// <summary>
-        /// Vector of Augmentation
+        /// Vector to know the Position on the PreviewPanel.
         /// </summar>
         public Vector3D vector { get; set; }
 
         /// <summary>
-        /// Source which is linked to Augmentation
+        /// New Variable which is for link a Source with this Augmentation
         /// </summary>
         public AbstractSource source { get; set; }
 

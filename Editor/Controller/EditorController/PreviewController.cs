@@ -67,6 +67,21 @@ using ARdevKit;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   (This method is obsolete) adds a preview able. </summary>
+        ///
+        /// <exception cref="NotImplementedException"> Thrown when the requested operation is
+        /// unimplemented. </exception>
+        ///
+        /// <param name="p">    The Panel to process. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        [Obsolete("addPreviewable(IPreviewable p) : eache IPreviewable needs a Vector where the new Previewable should sit in the panel"
+            + "you should use addPreviewable(IPreviewable currentElement, Vector3d v) for Augmentations & Trackables", true)]
+        public /*File*/void addPreviewAble(IPreviewable p)
+             { throw new NotImplementedException(); }
+
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
         ///     add Trackable is the method for adding the trackable, each PreviewPanel can holding one
         ///     Trackable.
@@ -75,8 +90,6 @@ using ARdevKit;
         /// <param name="currentTrackable"> The current Trackable, which should set in the previewPanel. </param>
         /// <param name="v">                The Vector3D to set the Trackable. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        
-       [Obsolete]
         public void addPreviewable(IPreviewable currentElement, Vector3D v) 
         {
                 if(currentMetaCategory == MetaCategory.Trackable && trackable == null) {        
@@ -130,7 +143,6 @@ using ARdevKit;
         /// <param name="overElement">      The over element. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-       [Obsolete]
        public void addSource(AbstractSource source, IPreviewable overElement)
        {
            if (currentMetaCategory == MetaCategory.Source && overMetaCategory == MetaCategory.Augmentation)
@@ -176,7 +188,6 @@ using ARdevKit;
         /// <param name="prev"> The previous. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        [Obsolete]
         public void removePreviewable(IPreviewable currentElement) {
             if(currentMetaCategory == MetaCategory.Trackable && trackable == null) {
                 this.removeAll();
@@ -196,10 +207,9 @@ using ARdevKit;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   (This method is obsolete) removes all. </summary>
+        /// <summary>  Removes all Elements from the PreviewPanel and clear all lists and dictionarys </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        [Obsolete]
         private void removeAll() {
             this.panel.Controls.Clear();
             this.dic.Clear();
@@ -235,12 +245,16 @@ using ARdevKit;
         }
 
        ////////////////////////////////////////////////////////////////////////////////////////////////////
-       /// <summary>    (This method is obsolete) reload panel. </summary>
+       /// <summary>
+       ///  Reloads all Variables which we need for the other funktions. this Method is here to open a
+       ///  saved Panel.
+       /// </summary>
+       ///
+       /// <remarks>    Lizzard, 1/13/2014. </remarks>
        ///
        /// <param name="p"> The Panel to process. </param>
        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        [Obsolete]
        public void reloadPanel(Panel p) {
            this.trackable = null;
            this.dic = new Dictionary<IPreviewable,PictureBox>();
@@ -252,6 +266,19 @@ using ARdevKit;
                     trackable = (AbstractTrackable)comp.Tag;
                 }
            }
-      } 
+      }
+
+       ////////////////////////////////////////////////////////////////////////////////////////////////////
+       /// <summary>    (This method is obsolete) updates the preview panel. </summary>
+       ///
+       /// <exception cref="NotImplementedException"> Thrown when the requested operation is
+       /// unimplemented. </exception>
+       ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        [Obsolete("updatePreviewPanel() : don't need is funktion", true)]
+       public void updatePreviewPanel()
+       {
+           throw new NotImplementedException(); 
+       }
  }
 
