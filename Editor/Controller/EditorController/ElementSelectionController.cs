@@ -3,66 +3,79 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace ARdevKit.Controller.Connections.DeviceConnection
+namespace ARdevKit.Controller.EditorController
 {
-    class UDPServer
+    class ElementSelectionController
     {
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        ///     Ist bei der der Initialisierung leer und wird erst durch listenAndFillList() befüllt.
-        ///     Hier sind die IPAdressen der im Netzwerk reagierenden Geräte gelistet.
-        /// </summary>
+        /// <summary>  Hält die SceneElementCategoryPanels des SceneSelectionPanels. </summary>
         ///
-        /// <value> The clientlist. </value>
+        /// <value> The category panels. </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public List<String> Clientlist { get; set; }
+        public List<Panel> categoryPanels { get; set; }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Default constructor. </summary>
+        /// <summary>   Constructor. </summary>
+        ///
+        /// <remarks>   Lizzard, 1/13/2014. </remarks>
+        ///
+        /// <exception cref="NotImplementedException"> Thrown when the requested operation is
+        /// unimplemented. </exception>
+        ///
+        /// <param name="ew">   The ew. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public ElementSelectionController(EditorWindow ew)
+        {
+            throw new NotImplementedException();
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Aktualisiert das ElementSelectionPanel. </summary>
+        ///
+        /// <remarks>   Lizzard, 1/13/2014. </remarks>
         ///
         /// <exception cref="NotImplementedException"> Thrown when the requested operation is
         /// unimplemented. </exception>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public UDPServer()
+        public void updateElementSelectionPanel()
+        {
+            throw new NotImplementedException();
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Erstellt die SceneCategoryElementPanels und hält sie in einer Liste. </summary>
+        ///
+        /// <remarks>   Lizzard, 1/13/2014. </remarks>
+        ///
+        /// <exception cref="NotImplementedException"> Thrown when the requested operation is
+        /// unimplemented. </exception>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public void createCategoryPanels()
         {
             throw new NotImplementedException();
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
-        ///     Sendet eine Nachricht an alle im Netzwerk befindlichen Geräte auf einem festgelegten
-        ///     Port. diese Nachricht beinhaltet unter anderem die IPAdresse des Gerätes, auf dem der
-        ///     Editor läuft.
+        ///     Fügt die SceneElementCategories der ComboBox des ElementSelectionPanels hinzu.
         /// </summary>
+        ///
+        /// <remarks>   Lizzard, 1/13/2014. </remarks>
         ///
         /// <exception cref="NotImplementedException"> Thrown when the requested operation is
         /// unimplemented. </exception>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public void broadcast()
+        public void populateComboBox()
         {
             throw new NotImplementedException();
         }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        ///     Wird normal einem eigenen Thread ausgeführt und nimmt Antworten an, die auf einem
-        ///     bestimmten Port eingehen, falls sie einem bestimmten Format genügen werden sie in die
-        ///     ClientList eingetragen. Nach einer gewissen Zeit wird die ClientList zum zurückgeben
-        ///     freigegeben.
-        /// </summary>
-        ///
-        /// <exception cref="NotImplementedException"> Thrown when the requested operation is
-        /// unimplemented. </exception>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        private void listenAndFillList()
-        {
-            throw new NotImplementedException();
-        }
-
+            
     }
 }

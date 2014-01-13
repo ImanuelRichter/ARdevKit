@@ -1,68 +1,71 @@
-﻿using System;
+﻿using ARdevKit.Model.Project;
+using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ARdevKit.Controller.Connections.DeviceConnection
+namespace ARdevKit.Controller.EditorController
 {
-    class UDPServer
+    class SceneElement
     {
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        ///     Ist bei der der Initialisierung leer und wird erst durch listenAndFillList() befüllt.
-        ///     Hier sind die IPAdressen der im Netzwerk reagierenden Geräte gelistet.
-        /// </summary>
+        /// <summary>   Dummyelement. </summary>
         ///
-        /// <value> The clientlist. </value>
+        /// <value> The dummy. </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public List<String> Clientlist { get; set; }
+        public IPreviewable dummy { get; set; }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Default constructor. </summary>
+        /// <summary>   grafische Repräsentation des Elements. </summary>
+        ///
+        /// <value> The icon. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public Bitmap icon { get; set; }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the name. </summary>
+        ///
+        /// <value> Name des Elements. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public String name { get; set; }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Erstellt das ElementIcon. </summary>
+        ///
+        /// <remarks>   Lizzard, 1/13/2014. </remarks>
         ///
         /// <exception cref="NotImplementedException"> Thrown when the requested operation is
         /// unimplemented. </exception>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public UDPServer()
+        public void createElementIcon()
         {
             throw new NotImplementedException();
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
-        ///     Sendet eine Nachricht an alle im Netzwerk befindlichen Geräte auf einem festgelegten
-        ///     Port. diese Nachricht beinhaltet unter anderem die IPAdresse des Gerätes, auf dem der
-        ///     Editor läuft.
+        ///     Konstruktor. Erzeugt ein neues SceneElement Objekt, akzeptiert dafür ein dummy vom Typ
+        ///     IPreviewable, ein icon vom Typ Bitmap, sowie name vom Typ String.
         /// </summary>
+        ///
+        /// <remarks>   Lizzard, 1/13/2014. </remarks>
         ///
         /// <exception cref="NotImplementedException"> Thrown when the requested operation is
         /// unimplemented. </exception>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        public void broadcast()
-        {
-            throw new NotImplementedException();
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        ///     Wird normal einem eigenen Thread ausgeführt und nimmt Antworten an, die auf einem
-        ///     bestimmten Port eingehen, falls sie einem bestimmten Format genügen werden sie in die
-        ///     ClientList eingetragen. Nach einer gewissen Zeit wird die ClientList zum zurückgeben
-        ///     freigegeben.
-        /// </summary>
         ///
-        /// <exception cref="NotImplementedException"> Thrown when the requested operation is
-        /// unimplemented. </exception>
+        /// <param name="dummy">    The dummy. </param>
+        /// <param name="icon">     The icon. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        private void listenAndFillList()
+        public SceneElement(IPreviewable dummy, Bitmap icon)
         {
             throw new NotImplementedException();
         }
-
     }
 }
