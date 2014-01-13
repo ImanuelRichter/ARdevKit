@@ -63,7 +63,3 @@ namespace ARdevKit.Model.Project
     }
 }
 
-        }
-    }
-}
-
