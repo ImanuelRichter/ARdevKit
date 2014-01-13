@@ -111,6 +111,12 @@ namespace ARdevKit
             set { startDebugModeLocal = value; }
         }
 
+        public System.Windows.Forms.Panel Pnl_editor_preview
+        {
+            get { return pnl_editor_preview; }
+            set { pnl_editor_preview = value; }
+        }
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
         /// Gets or sets the categories the element belongs to.

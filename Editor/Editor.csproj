@@ -73,6 +73,7 @@
     <Compile Include="Controller\EditorController\PreviewController.cs" />
     <Compile Include="Model\Project\AbstractTrackable.cs" />
     <Compile Include="Model\Project\BarGraph.cs" />
+    <Compile Include="Model\Project\CustomUserEvent.cs" />
     <Compile Include="Model\Project\DbSource.cs" />
     <Compile Include="Model\Project\FileSource.cs" />
     <Compile Include="Model\Project\IDMarker.cs" />

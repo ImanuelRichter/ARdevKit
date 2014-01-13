@@ -412,11 +412,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_help_help;
         private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_help_info;
         private System.Windows.Forms.Panel pnl_editor_selection;
-        public System.Windows.Forms.Panel Pnl_editor_preview
-        {
-            get { return pnl_editor_preview; }
-            set { pnl_editor_preview = value; }
-        }
+        private System.Windows.Forms.Panel pnl_editor_preview;
         private System.Windows.Forms.Panel pnl_editor_szenes;
         private System.Windows.Forms.Panel pnl_editor_properties;
         private System.Windows.Forms.Panel pnl_editor_status;

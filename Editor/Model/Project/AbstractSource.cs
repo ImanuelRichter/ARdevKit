@@ -10,18 +10,13 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Model.Project
 {
-    abstract class AbstractSource : ISerializable, IPreviewable
+    abstract class AbstractSource : ISerializable
     {
         private String sourceID;
         private List<AbstractDynamic2DAugmentation> augmentions;
 
 
         abstract public void accept(AbstractProjectVisitor visitor);
-
-        public Bitmap getPreview()
-        {
-            return icon;
-        }
 
         public abstract List<AbstractProperty> getPropertyList();
 

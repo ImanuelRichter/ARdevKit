@@ -21,7 +21,7 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// A list of all customUserEvents the current selected Element has.
         /// </summary>
-        public List<String> costumUserEvents { get; set; }
+        private List<CustomUserEvent> customUserEvent;
 
         /// <summary>
         /// ToDo
@@ -37,6 +37,15 @@ namespace ARdevKit.Model.Project
         /// Source which is linked to Augmentation
         /// </summary>
         public AbstractSource source { get; set; }
+
+        /// <summary>
+        /// Gets the list of all customUserEvent of this augmentation. (Only readable)
+        /// </summary>
+        public List<CustomUserEvent> CustomUserEventList
+        {
+            get { return customUserEvent; }
+
+        }
 
         public abstract void accept(AbstractProjectVisitor visitor);
 
