@@ -56,22 +56,6 @@ namespace ARdevKit
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
-        /// New process for the player.
-        /// </summary>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        private Process player = new Process();
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Pathname of the player file.
-        /// </summary>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        private string playerPath = "..\\..\\..\\ARdevKitPlayer\\bin\\Debug\\Player.exe";
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
         /// Pathname of the project file.
         /// </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -127,38 +111,6 @@ namespace ARdevKit
         //    get { return elementCategories; }
         //    set { elementCategories = value; }
         //}
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Gets or sets the process for the player.
-        /// </summary>
-        ///
-        /// <value>
-        /// The process for the player.
-        /// </value>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        public Process Player
-        {
-            get { return player; }
-            set { player = value; }
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Gets or sets the full pathname of the player file.
-        /// </summary>
-        ///
-        /// <value>
-        /// The full pathname of the player file.
-        /// </value>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        public string PlayerPath
-        {
-            get { return playerPath; }
-            set { playerPath = value; }
-        }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
@@ -245,16 +197,7 @@ namespace ARdevKit
 
         private void tsm_editor_menu_test_startTestmode_Click(object sender, EventArgs e)
         {
-            //TestWindow testWindow = new TestWindow();
-            //testWindow.Show();
-            projectPath = System.IO.Path.Combine(System.Windows.Forms.Application.StartupPath, "currentProject");
-            Process manyCam = new Process();
-            manyCam.StartInfo.FileName = "VirtualCamera.lnk";
-            manyCam.Start();
-
-            player.StartInfo.FileName = playerPath;
-            player.StartInfo.Arguments = projectPath;
-            player.Start();
+            TestController.StartTestMode();
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
