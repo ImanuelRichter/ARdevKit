@@ -419,6 +419,22 @@
         private System.Windows.Forms.ComboBox cmb_editor_selection_toolSelection;
         private System.Windows.Forms.ComboBox cmb_editor_properties_objectSelection;
         private System.Windows.Forms.Button btn_editor_scene_new;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// Gets or sets the pnl editor preview.
+        /// </summary>
+        ///
+        /// <value>
+        /// The pnl editor preview.
+        /// </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public System.Windows.Forms.Panel Pnl_editor_preview
+        {
+            get { return pnl_editor_preview; }
+            set { pnl_editor_preview = value; }
+        }
     }
 }
 
