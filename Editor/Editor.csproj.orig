@@ -57,6 +57,7 @@
     <Compile Include="Controller\EditorController\PropertyController.cs" />
     <Compile Include="Controller\ProjectController\AbstractProjectVisitor.cs" />
     <Compile Include="ARdevKitEditor.cs" />
+    <Compile Include="Controller\EditorController\PropertyController.cs" />
     <Compile Include="Controller\ProjectController\ExportVisitor.cs" />
     <Compile Include="Controller\ProjectController\SaveVisitor.cs" />
     <Compile Include="Controller\Connections\DatabaseConnection\DbConnection.cs" />
@@ -70,6 +71,8 @@
     <Compile Include="EditorWindow.designer.cs">
       <DependentUpon>EditorWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Project\AbstractAugmentation.cs" />
+    <Compile Include="Model\Project\CustumUserEvent.cs" />
     <Compile Include="Controller\EditorController\PreviewController.cs" />
     <Compile Include="Model\Project\AbstractTrackable.cs" />
     <Compile Include="Model\Project\BarGraph.cs" />
@@ -82,7 +85,6 @@
     <Compile Include="Model\Project\Project.cs" />
     <Compile Include="Model\Project\Vector3D.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestController.cs" />
     <Compile Include="TestWindow.cs">
       <SubType>Form</SubType>
     </Compile>
