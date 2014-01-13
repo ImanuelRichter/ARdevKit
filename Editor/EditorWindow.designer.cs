@@ -49,6 +49,7 @@
             this.tsm_editor_menu_edit_paste = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_editor_menu_test = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_editor_menu_test_startImage = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_editor_menu_test_startVideo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_editor_menu_test_startWithVirtualCamera = new System.Windows.Forms.ToolStripMenuItem();
             this.tss_editor_meu_test_loadVideo_togleDebug = new System.Windows.Forms.ToolStripSeparator();
             this.tsm_editor_menu_test_togleDebug = new System.Windows.Forms.ToolStripMenuItem();
@@ -224,6 +225,7 @@
             // 
             this.tsm_editor_menu_test.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsm_editor_menu_test_startImage,
+            this.tsm_editor_menu_test_startVideo,
             this.tsm_editor_menu_test_startWithVirtualCamera,
             this.tss_editor_meu_test_loadVideo_togleDebug,
             this.tsm_editor_menu_test_togleDebug});
@@ -238,11 +240,18 @@
             this.tsm_editor_menu_test_startImage.Text = "Bild laden";
             this.tsm_editor_menu_test_startImage.Click += new System.EventHandler(this.tsm_editor_menu_test_startImage_Click);
             // 
+            // tsm_editor_menu_test_startVideo
+            // 
+            this.tsm_editor_menu_test_startVideo.Name = "tsm_editor_menu_test_startVideo";
+            this.tsm_editor_menu_test_startVideo.Size = new System.Drawing.Size(152, 22);
+            this.tsm_editor_menu_test_startVideo.Text = "Video laden";
+            this.tsm_editor_menu_test_startVideo.Click += new System.EventHandler(this.tsm_editor_menu_test_startVideo_Click);
+            // 
             // tsm_editor_menu_test_startWithVirtualCamera
             // 
             this.tsm_editor_menu_test_startWithVirtualCamera.Name = "tsm_editor_menu_test_startWithVirtualCamera";
-            this.tsm_editor_menu_test_startWithVirtualCamera.Size = new System.Drawing.Size(160, 22);
-            this.tsm_editor_menu_test_startWithVirtualCamera.Text = "Virtuelle Kamera";
+            this.tsm_editor_menu_test_startWithVirtualCamera.Size = new System.Drawing.Size(152, 22);
+            this.tsm_editor_menu_test_startWithVirtualCamera.Text = "vCam nutzen";
             this.tsm_editor_menu_test_startWithVirtualCamera.Click += new System.EventHandler(this.tsm_editor_menu_test_startWithVirtualCamera_Click);
             // 
             // tss_editor_meu_test_loadVideo_togleDebug
@@ -419,6 +428,7 @@
         private System.Windows.Forms.ComboBox cmb_editor_properties_objectSelection;
         private System.Windows.Forms.Button btn_editor_scene_new;
         private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_test_startImage;
+        private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_test_startVideo;
     }
 }
 

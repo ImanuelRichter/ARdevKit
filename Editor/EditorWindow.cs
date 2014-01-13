@@ -198,6 +198,20 @@ namespace ARdevKit
         {
             TestController.StartWithImage();
         }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// Event handler. Called by tsm_editor_menu_test_startWithVideo for click events. Starts the test
+        /// mode for images.
+        /// </summary>
+        ///
+        /// <param name="sender">   Source of the event. </param>
+        /// <param name="e">        Event information. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        private void tsm_editor_menu_test_startVideo_Click(object sender, EventArgs e)
+        {
+            TestController.StartWithVideo();
+        }
         
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>

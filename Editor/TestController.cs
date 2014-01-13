@@ -67,17 +67,23 @@ namespace ARdevKit
             switch (mode)
             {
                 case (IMAGE):
-                    OpenFileDialog openTestFileDialog = new OpenFileDialog();
-                    openTestFileDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
-                    if (openTestFileDialog.ShowDialog() == DialogResult.OK)
+                    OpenFileDialog openTestImageDialog = new OpenFileDialog();
+                    openTestImageDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
+                    if (openTestImageDialog.ShowDialog() == DialogResult.OK)
                     {
-                        string testFilePath = openTestFileDialog.FileName;
-                        player.StartInfo.Arguments += " -" + testFilePath;
+                        string testFilePath = openTestImageDialog.FileName;
+                        player.StartInfo.Arguments += " -0 -" + testFilePath;
                         player.Start();
                     }
                     break;
-                case (VIDEO) :
-                    // TODO
+                case (VIDEO):
+                    OpenFileDialog openTestVideoDialog = new OpenFileDialog();
+                    if (openTestVideoDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        string testFilePath = openTestVideoDialog.FileName;
+                        player.StartInfo.Arguments += " -1 -" + testFilePath;
+                        player.Start();
+                    }
                     break;
                 case (CAMERA):
                     OpenFileDialog openVirualCameraPathDialog = new OpenFileDialog();
@@ -117,6 +123,30 @@ namespace ARdevKit
         public static void StartWithImage(string projectPath)
         {
             StartPlayer(projectPath, IMAGE);
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// Starts the player passing the projectPath and a testFilePath
+        /// which is the result of an opened FileDialog.
+        /// </summary>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        public static void StartWithVideo()
+        {
+            string projectPath = System.IO.Path.Combine(System.Windows.Forms.Application.StartupPath, "currentProject");
+            StartPlayer(projectPath, VIDEO);
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// Starts the player passing the passed projectPath and a testFilePath which is the result of an
+        /// opened FileDialog.
+        /// </summary>
+        /// <param name="projectPath">The location of the project</param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        public static void StartWithVideo(string projectPath)
+        {
+            StartPlayer(projectPath, VIDEO);
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
