@@ -22,14 +22,17 @@ namespace Controller.EditorController
             editorWindowController = ew;
         }
 
+        /// <summary>
+        /// See issue #13 for reason of these invalid methods etc.
+        /// </summary>
         [Obsolete("addCustomUserEvent() : File is completly invalid, because with the original method signature it is impossible to implement."
             + "Please use the method addCustomUserEvent(selectedElement : AbstractAugmentation, content : string[]) instead.", true)]
-        public File addCustomUserEvent()
+        public /*File*/void addCustomUserEvent()
         { throw new NotImplementedException(); }
 
         [Obsolete("editCustomUserEvent(customUserEvent : File) is completly invalid, because with the original method signature it is impossible to implement."
             + "Please use the method setCustomUserEventContent(selectedElement : AbstractAugmentation, name : string, content : string[]) instead.", true)]
-        public void editCustomUserEvent(File customUserEvent)
+        public void editCustomUserEvent(/*File customUserEvent*/)
         { throw new NotImplementedException(); }
 
         /// <summary>
@@ -118,9 +121,11 @@ namespace Controller.EditorController
             }
         }
 
+        /* possible unnecessary method. see issue #13 for reason of it.
         public void updatePropertyPanel(IPreviewable selectedElement)
         {
             throw new NotImplementedException();
         }
+         * */
     }
 }

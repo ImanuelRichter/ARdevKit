@@ -14,6 +14,8 @@ namespace Model.Project
     /// This class is till TODO!!! Set and Get methods from some variables are still missing, also some methods from the 
     /// design patern and comments for the documentation.
     /// 
+    /// If you want to know, why this looks so different from the design pattern, see issue #13
+    /// 
     public class AbstractAugmentation
     {
         /// <summary>
@@ -31,6 +33,9 @@ namespace Model.Project
         /// </summary>
         private bool isVisible;
 
+        /// <summary>
+        /// ToDo
+        /// </summary>
         public AbstractAugmentation()
         {
             customUserEvent = new List<CustomUserEvent>();
@@ -38,6 +43,11 @@ namespace Model.Project
             isVisible = false;
         }
 
+        /// <summary>
+        /// ToDo
+        /// </summary>
+        /// <param name="coordId">ToDo</param>
+        /// <param name="isVisible">ToDo</param>
         public AbstractAugmentation(int coordId, bool isVisible)
         {
             customUserEvent = new List<CustomUserEvent>();
@@ -56,7 +66,8 @@ namespace Model.Project
     }
 
     /// <summary>
-    /// Just a class for AbstractAugmentations. With this we are able to List all the customUserEvents.
+    /// Just a class for AbstractAugmentations. With this we are able to List all the customUserEvents. 
+    /// See issue #13 for reason of this class.
     /// </summary>
     public class CustomUserEvent
     {
