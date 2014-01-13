@@ -41,6 +41,8 @@
     <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -52,8 +54,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\EditorController\PropertyController.cs" />
+    <Compile Include="Controller\ProjectController\AbstractProjectVisitor.cs" />
     <Compile Include="ARdevKitEditor.cs" />
     <Compile Include="Controller\EditorController\PropertyController.cs" />
+    <Compile Include="Controller\ProjectController\ExportVisitor.cs" />
+    <Compile Include="Controller\ProjectController\SaveVisitor.cs" />
+    <Compile Include="Controller\Connections\DatabaseConnection\DbConnection.cs" />
+    <Compile Include="Model\Project\AbstractAugmentation.cs" />
+    <Compile Include="Model\Project\AbstractDynamic2DAugmentation.cs" />
+    <Compile Include="Model\Project\AbstractMarker.cs" />
+    <Compile Include="Model\Project\AbstractSource.cs" />
     <Compile Include="EditorWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +73,17 @@
     </Compile>
     <Compile Include="Model\Project\AbstractAugmentation.cs" />
     <Compile Include="Model\Project\CustumUserEvent.cs" />
+    <Compile Include="Controller\EditorController\PreviewController.cs" />
+    <Compile Include="Model\Project\AbstractTrackable.cs" />
+    <Compile Include="Model\Project\BarGraph.cs" />
+    <Compile Include="Model\Project\CustomUserEvent.cs" />
+    <Compile Include="Model\Project\DbSource.cs" />
+    <Compile Include="Model\Project\FileSource.cs" />
+    <Compile Include="Model\Project\IDMarker.cs" />
+    <Compile Include="Model\Project\IPreviewable.cs" />
+    <Compile Include="Model\Project\PictureMarker.cs" />
+    <Compile Include="Model\Project\Project.cs" />
+    <Compile Include="Model\Project\Vector3D.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestWindow.cs">
       <SubType>Form</SubType>
@@ -69,6 +91,7 @@
     <Compile Include="TestWindow.Designer.cs">
       <DependentUpon>TestWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\AbstractProperty.cs" />
     <EmbeddedResource Include="EditorWindow.resx">
       <DependentUpon>EditorWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -84,6 +107,8 @@
     <EmbeddedResource Include="TestWindow.resx">
       <DependentUpon>TestWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\EditorWindow.datasource" />
+    <Compile Include="Model\Project\Graph.cs" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -104,6 +129,7 @@
     <Content Include="Controller\ProjectController\foo.txt" />
     <Content Include="Model\Project\foo.txt" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

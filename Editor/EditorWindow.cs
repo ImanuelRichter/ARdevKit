@@ -88,7 +88,7 @@ namespace ARdevKit
         /// if true the debug window will be opened when starting the test mode on the device.
         /// </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-      
+
         public bool StartDebugModeDevice
         {
             get { return startDebugModeDevice; }
@@ -109,6 +109,12 @@ namespace ARdevKit
         {
             get { return startDebugModeLocal; }
             set { startDebugModeLocal = value; }
+        }
+
+        public System.Windows.Forms.Panel Pnl_editor_preview
+        {
+            get { return pnl_editor_preview; }
+            set { pnl_editor_preview = value; }
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////

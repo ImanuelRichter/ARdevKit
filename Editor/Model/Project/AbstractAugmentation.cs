@@ -1,24 +1,23 @@
-﻿using ARdevKit.Model.Project;
+﻿using ARdevKit.Controller.ProjectController;
+using ARdevKit.View;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Model.Project
+namespace ARdevKit.Model.Project
 {
-    /// <summary>
-    /// This class is an abstract Element which every AbstractTrackable has. Other elements like a diagramm
-    /// or images must be succeeded by this class.
-    /// </summary>
-    /// 
-    /// This class is till TODO!!! Set and Get methods from some variables are still missing, also some methods from the 
-    /// design patern and comments for the documentation.
-    /// 
-    /// If you want to know, why this looks so different from the design pattern, see issue #13
-    /// 
-    public class AbstractAugmentation
+    abstract class AbstractAugmentation : ISerializable, IPreviewable
     {
+        /// <summary>
+        /// ToDo
+        /// </summary>
+        private int coordinatesystemid;
+
         /// <summary>
         /// A list of all customUserEvents the current selected Element has.
         /// </summary>
@@ -27,34 +26,17 @@ namespace Model.Project
         /// <summary>
         /// ToDo
         /// </summary>
-        private int coordinateSystemId;
-
-        /// <summary>
-        /// ToDo
-        /// </summary>
         private bool isVisible;
 
         /// <summary>
-        /// ToDo
-        /// </summary>
-        public AbstractAugmentation()
-        {
-            customUserEvent = new List<CustomUserEvent>();
-            coordinateSystemId = 0;
-            isVisible = false;
-        }
+        /// Vector of Augmentation
+        /// </summar>
+        public Vector3D vector { get; set; }
 
         /// <summary>
-        /// ToDo
+        /// Source which is linked to Augmentation
         /// </summary>
-        /// <param name="coordId">ToDo</param>
-        /// <param name="isVisible">ToDo</param>
-        public AbstractAugmentation(int coordId, bool isVisible)
-        {
-            customUserEvent = new List<CustomUserEvent>();
-            coordinateSystemId = coordId;
-            this.isVisible = isVisible;
-        }
+        public AbstractSource source { get; set; }
 
         /// <summary>
         /// Gets the list of all customUserEvent of this augmentation. (Only readable)
@@ -62,6 +44,24 @@ namespace Model.Project
         public List<CustomUserEvent> CustomUserEventList
         {
             get { return customUserEvent; }
+
+        }
+
+        public abstract void accept(AbstractProjectVisitor visitor);
+
+        public Bitmap getPreview()
+        {
+            throw new NotImplementedException();
+        }
+
+        public abstract List<AbstractProperty> getPropertyList();
+
+        public void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            throw new NotImplementedException();
+        }
+    }
+}
 
         }
     }
