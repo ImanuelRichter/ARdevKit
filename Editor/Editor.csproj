@@ -61,7 +61,6 @@
     <Compile Include="Controller\EditorController\PropertyController.cs" />
     <Compile Include="Controller\EditorController\SceneElement.cs" />
     <Compile Include="Controller\EditorController\SceneElementCategory.cs" />
-    <Compile Include="Controller\EditorController\TestController.cs" />
     <Compile Include="Controller\ProjectController\AbstractProjectVisitor.cs" />
     <Compile Include="ARdevKitEditor.cs" />
     <Compile Include="Controller\ProjectController\ExportVisitor.cs" />

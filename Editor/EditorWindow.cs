@@ -62,27 +62,11 @@ namespace ARdevKit
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
-        /// New process for the player.
+        /// The path of the current project
         /// </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        private Process player = new Process();
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// ATTENTION! HARDCODED FOR TEST PURPOSES! Full pathname of the player file.
-        /// </summary>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        private string playerPath = "D:\\Dropbox\\dev\\ARdevKit - Player\\bin\\Debug\\Player.exe";
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// ATTENTION! HARDCODED FOR TEST PURPOSES! Full pathname of the project file.
-        /// </summary>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        private string projectPath = "D:\\Dropbox\\dev\\ARdevKit - Player\\res";
+        private string projectPath;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
@@ -263,38 +247,6 @@ namespace ARdevKit
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
-        /// Gets or sets the process for the player.
-        /// </summary>
-        ///
-        /// <value>
-        /// The process for the player.
-        /// </value>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        public Process Player
-        {
-            get { return player; }
-            set { player = value; }
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Gets or sets the full pathname of the player file.
-        /// </summary>
-        ///
-        /// <value>
-        /// The full pathname of the player file.
-        /// </value>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        public string PlayerPath
-        {
-            get { return playerPath; }
-            set { playerPath = value; }
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
         /// Gets or sets the full pathname of the project file.
         /// </summary>
         ///
@@ -378,7 +330,10 @@ namespace ARdevKit
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         private void tsm_editor_menu_test_startImage_Click(object sender, EventArgs e)
         {
-            TestController.StartWithImage();
+            if (projectPath == null)
+                TestController.StartWithImage();
+            else
+                TestController.StartWithImage(projectPath);
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -392,7 +347,10 @@ namespace ARdevKit
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         private void tsm_editor_menu_test_startVideo_Click(object sender, EventArgs e)
         {
-            TestController.StartWithVideo();
+            if (projectPath == null)
+                TestController.StartWithVideo();
+            else
+                TestController.StartWithVideo(projectPath);
         }
         
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -407,7 +365,10 @@ namespace ARdevKit
 
         private void tsm_editor_menu_test_startWithVirtualCamera_Click(object sender, EventArgs e)
         {
-            TestController.StartWithVirtualCamera();
+            if (projectPath == null)
+                TestController.StartWithVirtualCamera();
+            else
+                TestController.StartWithVirtualCamera(projectPath);
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////

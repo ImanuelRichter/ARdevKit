@@ -48,7 +48,7 @@ namespace ARdevKit.Controller.TestController
         /// </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        private static string playerPath = "..\\..\\..\\ARdevKitPlayer\\bin\\Debug\\Player.exe";
+        private static string playerPath = "..\\..\\..\\ARdevKitPlayer\\Debug\\Player.exe";
 
         /// <summary>
         /// Starts the player with the specified settings.
@@ -103,7 +103,7 @@ namespace ARdevKit.Controller.TestController
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
-        /// Starts the player passing the projectPath and a testFilePath
+        /// Starts the player passing the projectPath (startupPath\currentProject) and a testFilePath
         /// which is the result of an opened FileDialog.
         /// </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -127,7 +127,7 @@ namespace ARdevKit.Controller.TestController
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
-        /// Starts the player passing the projectPath and a testFilePath
+        /// Starts the player passing the projectPath (startupPath\currentProject) and a testFilePath
         /// which is the result of an opened FileDialog.
         /// </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -151,7 +151,7 @@ namespace ARdevKit.Controller.TestController
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
-        /// Starts the player passing the projectPath and an extern virtualCamera which
+        /// Starts the player passing the projectPath (startupPath\currentProject) and an extern virtualCamera which
         /// is used to load test content.
         /// FileDialog.
         /// </summary>
