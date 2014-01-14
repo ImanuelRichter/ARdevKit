@@ -18,6 +18,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using ARdevKit.Model.Project;
+using Controller.EditorController;
+using ARdevKit.Controller.ProjectController;
+using ARdevKit.Controller.EditorController;
+using ARdevKit.Controller.Connections.DeviceConnection;
 
 namespace ARdevKit
 {
@@ -52,15 +57,159 @@ namespace ARdevKit
         /// </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        //TODO: implement private List<SceneElementCategory> elementCategories;
+        private List<SceneElementCategory> elementCategories;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
-        /// Pathname of the project file.
+        /// New process for the player.
         /// </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        private string projectPath;
+        private Process player = new Process();
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// ATTENTION! HARDCODED FOR TEST PURPOSES! Full pathname of the player file.
+        /// </summary>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private string playerPath = "D:\\Dropbox\\dev\\ARdevKit - Player\\bin\\Debug\\Player.exe";
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// ATTENTION! HARDCODED FOR TEST PURPOSES! Full pathname of the project file.
+        /// </summary>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private string projectPath = "D:\\Dropbox\\dev\\ARdevKit - Player\\res";
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// Linked list containing all IPreviewables.
+        /// </summary>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private LinkedList<IPreviewable> allElements;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// The element selection controller.
+        /// </summary>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private ElementSelectionController elementSelectionController;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// The preview controller.
+        /// </summary>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private PreviewController previewController;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// The property controller.
+        /// </summary>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private PropertyController propertyController;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// The device connection controller.
+        /// </summary>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private DeviceConnectionController deviceConnectionController;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// The save visitor.
+        /// </summary>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private SaveVisitor saveVisitor;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// The export visitor.
+        /// </summary>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private ExportVisitor exportVisitor;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// The current element.
+        /// </summary>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private IPreviewable currentElement;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// Gets or sets the current element.
+        /// </summary>
+        ///
+        /// <value>
+        /// The current element.
+        /// </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        internal IPreviewable CurrentElement
+        {
+            get { return currentElement; }
+            set { currentElement = value; }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// Gets or sets the export visitor.
+        /// </summary>
+        ///
+        /// <value>
+        /// The export visitor.
+        /// </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        internal ExportVisitor ExportVisitor
+        {
+            get { return exportVisitor; }
+            set { exportVisitor = value; }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// Gets or sets the save visitor.
+        /// </summary>
+        ///
+        /// <value>
+        /// The save visitor.
+        /// </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        internal SaveVisitor SaveVisitor
+        {
+            get { return saveVisitor; }
+            set { saveVisitor = value; }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// Gets or sets allElements.
+        /// </summary>
+        ///
+        /// <value>
+        /// Linked list containing elements.
+        /// </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        internal LinkedList<IPreviewable> AllElements
+        {
+            get { return allElements; }
+            set { allElements = value; }
+        }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
@@ -89,16 +238,10 @@ namespace ARdevKit
         /// </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public bool StartDebugModeLocal
+        internal bool StartDebugModeLocal
         {
             get { return startDebugModeLocal; }
             set { startDebugModeLocal = value; }
-        }
-
-        public System.Windows.Forms.Panel Pnl_editor_preview
-        {
-            get { return pnl_editor_preview; }
-            set { pnl_editor_preview = value; }
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -111,12 +254,43 @@ namespace ARdevKit
         /// </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        //TODO: implement
-        //private List<SceneElementCategory> ElementCategories
-        //{
-        //    get { return elementCategories; }
-        //    set { elementCategories = value; }
-        //}
+        internal List<SceneElementCategory> ElementCategories
+        {
+            get { return elementCategories; }
+            set { elementCategories = value; }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// Gets or sets the process for the player.
+        /// </summary>
+        ///
+        /// <value>
+        /// The process for the player.
+        /// </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public Process Player
+        {
+            get { return player; }
+            set { player = value; }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// Gets or sets the full pathname of the player file.
+        /// </summary>
+        ///
+        /// <value>
+        /// The full pathname of the player file.
+        /// </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public string PlayerPath
+        {
+            get { return playerPath; }
+            set { playerPath = value; }
+        }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
@@ -143,6 +317,7 @@ namespace ARdevKit
         public EditorWindow()
         {
             InitializeComponent();
+            allElements = new LinkedList<IPreviewable>();
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -249,6 +424,81 @@ namespace ARdevKit
         private void tsm_editor_menu_file_open_Click(object sender, System.EventArgs e)
         {
             throw new System.NotImplementedException();
+        }
+
+        public void addDevice()
+        {
+            //TODO: implement addDevice()
+        }
+
+        public void createNewProject(String name)
+        {
+            //TODO: implement createNewProject(String name)
+        }
+
+        public void exportProject()
+        {
+            //TODO: implement exportProject()
+        }
+
+        public void loadProject()
+        {
+            //TODO: implement loadProject()
+        }
+
+        public void openDebugWindow()
+        {
+            //TODO: implement openDebugWindow()
+        }
+
+        public void openTestWindow()
+        {
+            //TODO: implement openTestWindow()
+        }
+
+        public void registerElements()
+        {
+            //TODO: implement registerElements()
+        }
+
+        public void saveProject()
+        {
+            //TODO: implement saveProject()
+        }
+
+        public void sendToDevice()
+        {
+            //TODO: implement sendToDevice()
+        }
+
+        public void updateElementSelectionPanel()
+        {
+            //TODO: implement updateElementSelectionPanel()
+        }
+
+        public void updatePreviewPanel()
+        {
+            //TODO: implement updatePreviewPanel()
+        }
+
+        internal void updatePropertyPanel(IPreviewable selectedElement)
+        {
+            //TODO: implement updatePropertyPanel(IPreviewable selectedElement)
+        }
+
+        public void updateSceneSelectionPanel()
+        {
+            //TODO: implement updateSceneSelectionPanel()
+        }
+
+        public void updateStatusBar()
+        {
+            //TODO: implement updateStatusBar()
+        }
+
+        private void addCategory(SceneElementCategory category)
+        {
+            //TODO: implement addCategory(SceneElementCategory category)
         }
     }
 }

@@ -429,6 +429,22 @@
         private System.Windows.Forms.Button btn_editor_scene_new;
         private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_test_startImage;
         private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_test_startVideo;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// Gets or sets the pnl editor preview.
+        /// </summary>
+        ///
+        /// <value>
+        /// The pnl editor preview.
+        /// </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public System.Windows.Forms.Panel Pnl_editor_preview
+        {
+            get { return pnl_editor_preview; }
+            set { pnl_editor_preview = value; }
+        }
     }
 }
 
