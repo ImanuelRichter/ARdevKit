@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 
-namespace ARdevKit
+namespace ARdevKit.Controller.TestController
 {
     static class TestController
     {
