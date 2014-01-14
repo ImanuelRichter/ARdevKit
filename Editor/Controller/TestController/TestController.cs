@@ -62,7 +62,7 @@ namespace ARdevKit
         {
             player = new Process();
             player.StartInfo.FileName = playerPath;
-            player.StartInfo.Arguments = projectPath;
+            player.StartInfo.Arguments = projectPath + " -" + mode;
             
             switch (mode)
             {
@@ -72,7 +72,7 @@ namespace ARdevKit
                     if (openTestImageDialog.ShowDialog() == DialogResult.OK)
                     {
                         string testFilePath = openTestImageDialog.FileName;
-                        player.StartInfo.Arguments += " -0 -" + testFilePath;
+                        player.StartInfo.Arguments += " -" + testFilePath;
                         player.Start();
                     }
                     break;
@@ -81,7 +81,7 @@ namespace ARdevKit
                     if (openTestVideoDialog.ShowDialog() == DialogResult.OK)
                     {
                         string testFilePath = openTestVideoDialog.FileName;
-                        player.StartInfo.Arguments += " -1 -" + testFilePath;
+                        player.StartInfo.Arguments += " -" + testFilePath;
                         player.Start();
                     }
                     break;
