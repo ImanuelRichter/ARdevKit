@@ -7,22 +7,27 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Model.Project.File
 {
-    class ProjectConfigHTML
+    class ProjectConfigHTML : ConfigFile
     {
-        private const string header = "<!DOCTYPE html>";
-        private ConfigFile file;
-
-        public ConfigFile File
+        public ProjectConfigHTML(Tag tag)
         {
-            get { return file; }
-            set { file = value; }
+            header = "<!DOCTYPE html>";
+            this.tag = tag;
         }
 
-        public void Write(string projectPath)
+        public override void Write(string projectPath)
         {
             StreamWriter writer = new StreamWriter(projectPath + ".html");
             writer.WriteLine(header);
-            file.Write(writer);
+            writer.WriteLine(tag);
+            if (Sections != null)
+            {
+                foreach (Section cs in Sections)
+                {
+                    cs.Write(writer);
+                }
+            }
+            writer.WriteLine(tag);
             writer.Close();
         }
     }

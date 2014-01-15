@@ -35,11 +35,9 @@ namespace ARdevKit.Controller.ProjectController
 
         public override void visit(Project project)
         {
-            ProjectConfigHTML projectConfigHTML = new ProjectConfigHTML();
-            ConfigFile config = new ConfigFile(new Tag("html"));
-            projectConfigHTML.File = config;
+            ProjectConfigHTML projectConfigHTML = new ProjectConfigHTML(new Tag("html"));
             Section headSection = new Section(new Tag("head"));
-            config.AddSection(headSection);
+            projectConfigHTML.AddSection(headSection);
 
             headSection.AddLine(new Line(new OpenTag("meta", "charset=\"UTF-8\"")));
             headSection.AddLine(new Line(new OpenTag("meta", "name=\"viewport\" content=\"width=device-width, initial-scale=1\"")));
@@ -48,7 +46,7 @@ namespace ARdevKit.Controller.ProjectController
             headSection.AddLine(new Line(new Tag("title"), project.Name));
 
             Section body = new Section(new Tag("body"));
-            config.AddSection(body);
+            projectConfigHTML.AddSection(body);
 
             projectConfigHTML.Write(Path.Combine(projectPath, project.Name));
         }

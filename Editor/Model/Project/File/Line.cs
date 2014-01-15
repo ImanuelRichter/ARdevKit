@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Model.Project.File
 {
-    class Line : Section
+    class Line : SubSection
     {
         private string value = "";
 
