@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace ARdevKit.Model.Project
 {
@@ -18,6 +19,15 @@ namespace ARdevKit.Model.Project
         public override List<View.AbstractProperty> getPropertyList()
         {
             throw new NotImplementedException();
+        }
+        public override Bitmap getPreview()
+        {
+            return Properties.Resources.ARRMarker_normal_;
+        }
+
+        public override Bitmap getIcon()
+        {
+            return Properties.Resources.ARRMarker_small_;
         }
     }
 }

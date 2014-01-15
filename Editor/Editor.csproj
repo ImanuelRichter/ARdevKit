@@ -101,6 +101,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\DataSources\EditorWindow.datasource" />
@@ -124,6 +125,18 @@
     <Content Include="Controller\DebugController\foo.txt" />
     <Content Include="Controller\ProjectController\foo.txt" />
     <Content Include="Model\Project\foo.txt" />
+    <None Include="Resources\ARRMarker%28small%29.bmp" />
+    <None Include="Resources\ARMarker%28small%29.bmp" />
+    <None Include="Resources\sourcePreview%28small%29.bmp" />
+    <None Include="Resources\PieChart%28small%29.bmp" />
+    <None Include="Resources\FileSource%28small%29.bmp" />
+    <None Include="Resources\FileSource%28normal%29.bmp" />
+    <None Include="Resources\coordinationAxis%28small%29.bmp" />
+    <None Include="Resources\sourcePreview%28normal%29.bmp" />
+    <None Include="Resources\coordinationAxis%28normal%29.bmp" />
+    <None Include="Resources\PieChart%28normal%29.bmp" />
+    <None Include="Resources\ARRMarker%28normal%29.bmp" />
+    <None Include="Resources\ARMarker%28normal%29.bmp" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

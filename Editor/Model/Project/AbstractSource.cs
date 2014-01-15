@@ -18,7 +18,7 @@ namespace ARdevKit.Model.Project
     /// </summary>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    abstract class AbstractSource : ISerializable
+    abstract class AbstractSource : ISerializable, IPreviewable
     {
         private String sourceID;
 
@@ -34,5 +34,9 @@ namespace ARdevKit.Model.Project
         {
             throw new NotImplementedException();
         }
+
+        public abstract Bitmap getPreview();
+
+        public abstract Bitmap getIcon();
     }
 }

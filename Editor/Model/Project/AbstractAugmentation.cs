@@ -44,10 +44,9 @@ namespace ARdevKit.Model.Project
 
         public abstract void accept(AbstractProjectVisitor visitor);
 
-        public Bitmap getPreview()
-        {
-            throw new NotImplementedException();
-        }
+        abstract public Bitmap getPreview();
+
+        abstract public Bitmap getIcon();
 
         public abstract List<AbstractProperty> getPropertyList();
 
