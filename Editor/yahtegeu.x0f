@@ -400,9 +400,9 @@ namespace ARdevKit
             previewController.overMetaCategory = PreviewController.MetaCategory.Augmentation;
             previewController.addSource(new FileSource("Bullshit"), tempAug);
 
-            previewController.reloadPreviewPanel(1);
-            previewController.reloadPreviewPanel(1);
-            previewController.reloadPreviewPanel(0);
+            previewController.updatePreviewPanel(1);
+            previewController.updatePreviewPanel(1);
+            previewController.updatePreviewPanel(0);
 
         }
 

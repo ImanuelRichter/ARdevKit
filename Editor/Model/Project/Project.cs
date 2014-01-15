@@ -10,16 +10,18 @@ namespace ARdevKit.Model.Project
 {
     public class Project : ISerializable
     {
-        private String name;
+        public String Name { get; set; }
 
-        public String Name
+        public List<AbstractSource> sources { get; set; }
+
+        public List<AbstractTrackable> trackables { get; set; }
+
+        public Project()
         {
-            get { return name; }
-            set { name = value; }
+            this.trackables = new List<AbstractTrackable>();
+            this.sources = new List<AbstractSource>();
+            this.Name = null;  
         }
-        private List<AbstractSource> sources;
-        private List<AbstractTrackable> trackables;
-
         public void accept(AbstractProjectVisitor visitor)
         {
             visitor.visit(this);

@@ -26,6 +26,10 @@ namespace ARdevKit.Model.Project
 
         public abstract List<AbstractProperty> getPropertyList();
 
+        public AbstractTrackable()
+        {
+            this.augmentations = new AbstractAugmentation[3];
+        }
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             throw new NotImplementedException();
