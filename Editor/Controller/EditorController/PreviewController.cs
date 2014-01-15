@@ -115,9 +115,10 @@ public class PreviewController
             tempBox.SizeMode = PictureBoxSizeMode.StretchImage;
             tempBox.Location = new Point(v.x, v.y);
             ((AbstractAugmentation)currentElement).vector = v;
+            ((AbstractAugmentation)currentElement).trackable = this.trackable;
 
-            trackable.addAugmentation((AbstractAugmentation)currentElement);
-            tempBox.Tag = this.trackable.augmentations[this.trackable.findAugmentation((AbstractAugmentation)currentElement)];
+            trackable.augmentations.Add((AbstractAugmentation)currentElement);
+            tempBox.Tag = this.trackable.findAugmentation((AbstractAugmentation)currentElement);
             
 
             this.panel.Controls.Add(tempBox);
@@ -147,14 +148,14 @@ public class PreviewController
     {
         if (currentMetaCategory == MetaCategory.Source && overMetaCategory == MetaCategory.Augmentation)
         {
-            if (this.trackable != null && trackable.findAugmentation((AbstractAugmentation)currentElement) != -1 )
+            if (this.trackable != null && trackable.existAugmentation((AbstractAugmentation)currentElement))
             {
                 //search the linked PictureBox out of Dictionary, replace the Tag with the new Augmentation and replace the Picturebox in Panel
                 this.currentMetaCategory = MetaCategory.Augmentation;
                 ((AbstractAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).source
                     = source;
-                this.trackable.augmentations[trackable.findAugmentation((AbstractAugmentation)currentElement)].source.augmentions
-                    .Add((AbstractDynamic2DAugmentation)this.trackable.augmentations[trackable.findAugmentation((AbstractAugmentation)currentElement)]);
+                this.trackable.findAugmentation((AbstractAugmentation)currentElement).source.augmentions
+                    .Add((AbstractDynamic2DAugmentation)this.trackable.findAugmentation((AbstractAugmentation)currentElement));
                 this.ew.project.sources.Add(((AbstractAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).source);
             }
         }
@@ -179,12 +180,12 @@ public class PreviewController
     public void removeSource(AbstractSource source, IPreviewable currentElement) {
         if (currentMetaCategory == MetaCategory.Augmentation)
         {
-            if (this.ew.project.sources[this.ew.project.sources.IndexOf(source)].augmentions.Count > 1)
+            if (this.ew.project.findSource(source).augmentions.Count > 1)
             {
                 ((AbstractAugmentation)currentElement).source = null;
-                this.ew.project.sources[this.ew.project.sources.IndexOf(source)].augmentions.Remove((AbstractDynamic2DAugmentation)currentElement);
+                this.ew.project.findSource(source).augmentions.Remove((AbstractDynamic2DAugmentation)currentElement);
             }
-            else if (this.ew.project.sources[this.ew.project.sources.IndexOf(source)].augmentions.Count == 1)
+            else if (this.ew.project.findSource(source).augmentions.Count == 1)
             {
                 ((AbstractAugmentation)currentElement).source = null;
                 this.ew.project.sources.Remove(source);
@@ -209,7 +210,7 @@ public class PreviewController
         }
         else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null)
         {
-            this.trackable.removeAugmentation((AbstractAugmentation)currentElement);
+            this.trackable.augmentations.Remove((AbstractAugmentation)currentElement);
 
             this.panel.Controls.Remove(this.findBox((AbstractAugmentation)currentElement));
         }
@@ -312,12 +313,10 @@ public class PreviewController
     private void addAllToPanel(AbstractTrackable trackable)
     {
         PictureBox tempBox;
-        if (trackable.augmentations.Length > 0)
+        if (trackable.augmentations.Count > 0)
         {
             foreach( AbstractAugmentation aug in trackable.augmentations)
-            {
-                if (aug != null)
-                {
+            {              
                     tempBox = new PictureBox();
                     tempBox.Tag = aug;
                     tempBox.Location = new Point(aug.vector.x, aug.vector.y);
@@ -325,7 +324,6 @@ public class PreviewController
                     tempBox.Size = new Size(aug.getPreview().Height / 4, aug.getPreview().Width / 4);
                     tempBox.SizeMode = PictureBoxSizeMode.StretchImage;
                     this.panel.Controls.Add(tempBox);
-                }  
             }
         }
 

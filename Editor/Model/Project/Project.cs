@@ -31,6 +31,23 @@ namespace ARdevKit.Model.Project
         {
             throw new NotImplementedException();
         }
+
+        public AbstractSource findSource(AbstractSource source)
+        {
+            return this.sources[this.sources.IndexOf(source)];
+        }
+
+        public bool existSource(AbstractSource source)
+        {
+            foreach (AbstractSource s in sources)
+            {
+                if (s == source)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 
     

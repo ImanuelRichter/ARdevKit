@@ -40,5 +40,22 @@ namespace ARdevKit.Model.Project
         public abstract Bitmap getPreview();
 
         public abstract Bitmap getIcon();
+
+        public AbstractAugmentation findAugmentation(IPreviewable a)
+        {
+            return this.augmentions[this.augmentions.IndexOf((AbstractDynamic2DAugmentation)a)];
+        }
+
+        public bool existAugmentation(IPreviewable a)
+        {
+            foreach (AbstractDynamic2DAugmentation aug in augmentions)
+            {
+                if (aug == (AbstractDynamic2DAugmentation) a)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }
