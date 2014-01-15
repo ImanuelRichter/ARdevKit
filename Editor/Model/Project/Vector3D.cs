@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Model.Project
 {
-    class Vector3D
+    public class Vector3D
     {
         public int x { get; set; }
         public int y { get; set; }

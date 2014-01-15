@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace ARdevKit.Model.Project
 {
-    class IDMarker : AbstractMarker
+    public class IDMarker : AbstractMarker
     {
         private int matrixID;
 

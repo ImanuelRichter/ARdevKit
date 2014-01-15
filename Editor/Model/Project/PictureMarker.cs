@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Model.Project
 {
-    class PictureMarker : AbstractMarker
+    public class PictureMarker : AbstractMarker
     {
         private String imagePath;
 

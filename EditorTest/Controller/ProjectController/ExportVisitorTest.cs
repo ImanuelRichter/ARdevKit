@@ -4,15 +4,19 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ARdevKit.Controller.ProjectController;
 using ARdevKit.Model.Project;
 
-namespace ARdevKit
+namespace EditorTest.Controller.ProjectController
 {
     [TestClass]
-    public class ExportVisitorTest
+    class ExportVisitorTest
     {
         [TestMethod]
         public void VisitProjectTest()
         {
-            throw new NotImplementedException();
+            Project p = new Project();
+            p.Name = "Hello World";
+
+            ExportVisitor exporter = new ExportVisitor("");
+            exporter.visit(p);
         }
     }
 }

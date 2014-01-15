@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Model.Project
 {
-    abstract class AbstractDynamic2DAugmentation : AbstractAugmentation
+    public abstract class AbstractDynamic2DAugmentation : AbstractAugmentation
     {
         private int height;
         private int width;

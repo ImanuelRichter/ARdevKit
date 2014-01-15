@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Model.Project
 {
-    abstract class AbstractAugmentation : ISerializable, IPreviewable
+    public abstract class AbstractAugmentation : ISerializable, IPreviewable
     {
         /// <summary>
         /// A list of all customUserEvents the current selected Element has.

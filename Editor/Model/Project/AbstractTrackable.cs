@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Model.Project
 {
-    abstract class AbstractTrackable : ISerializable, IPreviewable
+    public abstract class AbstractTrackable : ISerializable, IPreviewable
     {
         private String sensorID;
         private String sensorSubType;
