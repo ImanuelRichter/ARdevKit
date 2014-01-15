@@ -7,7 +7,7 @@ using ARdevKit.Model.Project;
 namespace EditorTest.Controller.ProjectController
 {
     [TestClass]
-    class ExportVisitorTest
+    public class ExportVisitorTest
     {
         [TestMethod]
         public void VisitProjectTest()

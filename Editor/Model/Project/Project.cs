@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Model.Project
 {
-    class Project : ISerializable
+    public class Project : ISerializable
     {
         private String name;
 
