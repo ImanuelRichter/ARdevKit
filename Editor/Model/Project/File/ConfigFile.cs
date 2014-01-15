@@ -6,19 +6,50 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Model.Project.File
 {
-    abstract class ConfigFile
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   A configuration file. </summary>
+    ///
+    /// <remarks>   Imanuel, 15.01.2014. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public abstract class ConfigFile
     {
+        /// <summary>   The header. </summary>
         protected string header;
 
+        /// <summary>   The starting tag. </summary>
         protected Tag tag;
-        protected List<Section> Sections { get; set; }
 
-        public void AddSection(Section cs)
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the sections. </summary>
+        ///
+        /// <value> The sections. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        protected List<Section> sections;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Adds a section. </summary>
+        ///
+        /// <remarks>   Imanuel, 15.01.2014. </remarks>
+        ///
+        /// <param name="cs">   The section to be added. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public virtual void AddSection(Section cs)
         {
-            Sections = Sections == null ? new List<Section>() : Sections;
+            sections = sections == null ? new List<Section>() : sections;
             cs.ParentFile = this;
-            Sections.Add(cs);
+            sections.Add(cs);
         }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Writes the file at the projectPath. </summary>
+        ///
+        /// <remarks>   Imanuel, 15.01.2014. </remarks>
+        ///
+        /// <param name="projectPath">  The project path to write. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         public abstract void Write(string projectPath);
     }

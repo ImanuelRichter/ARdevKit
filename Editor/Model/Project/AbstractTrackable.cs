@@ -12,13 +12,10 @@ namespace ARdevKit.Model.Project
 {
     public abstract class AbstractTrackable : ISerializable, IPreviewable
     {
-        private String sensorID;
-        private String sensorSubType;
-        private String sensorType;
         public Vector3D vector { get; set; }
         public AbstractAugmentation[] augmentations { get; set; }
 
-        public abstract void accept(AbstractProjectVisitor visitor);
+        public abstract void Accept(AbstractProjectVisitor visitor);
 
         abstract public Bitmap getPreview();
 

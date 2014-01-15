@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using ARdevKit.Controller.ProjectController;
@@ -12,11 +13,16 @@ namespace EditorTest
         [TestMethod]
         public void Export_WithValidPath_ResultingFile()
         {
-            Project p = new Project();
-            p.Name = "Hello World";
+            string projectPath = "..\\..\\..\\bin\\Debug\\currentProject";
+            Project p = new Project("Hello World");
+            p.Trackables.Add(new PictureMarker("metaioman_target.png"));
+            p.Trackables.Add(new PictureMarker("junaioman_target.png"));
 
-            ExportVisitor exporter = new ExportVisitor("..\\..\\..\\bin\\Debug\\currentProject");
-            exporter.visit(p);
+            ExportVisitor exporter = new ExportVisitor();
+            p.Accept(exporter);
+
+            exporter.ProjectConfig.Write(Path.Combine(projectPath, p.Name));
+            exporter.TrackingConfiguration.Write(projectPath);
         }
     }
 }

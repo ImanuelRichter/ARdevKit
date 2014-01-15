@@ -9,16 +9,31 @@ namespace ARdevKit.Model.Project
 {
     public class PictureMarker : AbstractMarker
     {
-        private String imagePath;
+        private string imagePath;
 
-        public PictureMarker(String imagePath)
+        private string imageName;
+        public string ImageName
         {
-            this.imagePath = imagePath;
+            get { return imageName; }
+            set { imageName = value; }
         }
 
-        public override void accept(Controller.ProjectController.AbstractProjectVisitor visitor)
+        private double similarityThreshhold = 0.7;
+        public double SimilarityThreshhold
         {
-            throw new NotImplementedException();
+            get { return similarityThreshhold; }
+            set { similarityThreshhold = value; }
+        }
+
+        public PictureMarker(string imagePath)
+        {
+            this.imagePath = imagePath;
+            imageName = Path.GetFileName(imagePath);
+        }
+
+        public override void Accept(Controller.ProjectController.AbstractProjectVisitor visitor)
+        {
+            visitor.visit(this);
         }
 
         public override List<View.AbstractProperty> getPropertyList()
