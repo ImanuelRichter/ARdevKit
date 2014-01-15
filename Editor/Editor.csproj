@@ -34,10 +34,6 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MetaioWrapper, Version=0.0.0.0, Culture=neutral, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\bin\Debug\MetaioWrapper.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -54,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Project\File\ARELConfigXML.cs" />
     <Compile Include="Controller\Connections\DeviceConnection\DeviceConnectionController.cs" />
     <Compile Include="Controller\Connections\DeviceConnection\TCPServer.cs" />
     <Compile Include="Controller\Connections\DeviceConnection\UDPServer.cs" />
@@ -82,11 +79,20 @@
     <Compile Include="Model\Project\CustomUserEvent.cs" />
     <Compile Include="Model\Project\DbSource.cs" />
     <Compile Include="Model\Project\FileSource.cs" />
+    <Compile Include="Model\Project\File\ConfigFile.cs" />
+    <Compile Include="Model\Project\File\Line.cs" />
+    <Compile Include="Model\Project\File\ValuedLine.cs" />
+    <Compile Include="Model\Project\File\OpenTag.cs" />
+    <Compile Include="Model\Project\File\Section.cs" />
+    <Compile Include="Model\Project\File\SubSection.cs" />
+    <Compile Include="Model\Project\File\Tag.cs" />
+    <Compile Include="Model\Project\File\TrackingConfigurationXML.cs" />
     <Compile Include="Model\Project\IDMarker.cs" />
     <Compile Include="Model\Project\IPreviewable.cs" />
     <Compile Include="Model\Project\PictureMarker.cs" />
     <Compile Include="Model\Project\Project.cs" />
     <Compile Include="Model\Project\Vector3D.cs" />
+    <Compile Include="Model\Project\File\ProjectConfigHTML.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controller\TestController\TestController.cs" />
     <Compile Include="View\AbstractProperty.cs" />
