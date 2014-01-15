@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Project\IDMarkerSensor.cs" />
     <Compile Include="Model\Project\File\ARELConfigFile.cs" />
     <Compile Include="Controller\Connections\DeviceConnection\DeviceConnectionController.cs" />
     <Compile Include="Controller\Connections\DeviceConnection\TCPServer.cs" />
@@ -89,7 +90,9 @@
     <Compile Include="Model\Project\IDMarker.cs" />
     <Compile Include="Model\Project\IPreviewable.cs" />
     <Compile Include="Model\Project\PictureMarker.cs" />
+    <Compile Include="Model\Project\PictureMarkerSensor.cs" />
     <Compile Include="Model\Project\Project.cs" />
+    <Compile Include="Model\Project\AbstractSensor.cs" />
     <Compile Include="Model\Project\Vector3D.cs" />
     <Compile Include="Model\Project\File\ProjectConfigFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

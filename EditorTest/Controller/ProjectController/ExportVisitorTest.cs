@@ -14,15 +14,18 @@ namespace EditorTest
         public void Export_WithValidPath_ResultingFile()
         {
             string projectPath = "..\\..\\..\\bin\\Debug\\currentProject";
-            Project p = new Project("Hello World");
-            p.Trackables.Add(new PictureMarker("metaioman_target.png"));
-            p.Trackables.Add(new PictureMarker("junaioman_target.png"));
+            Project project = new Project("Hello World");
+            PictureMarker pictureMarker1 = new PictureMarker("metaioman_target.png");
+            PictureMarker pictureMarker2 = new PictureMarker("junaioman_target.png");
+
+            project.Trackables.Add(pictureMarker1);
+            project.Trackables.Add(pictureMarker2);
 
             ExportVisitor exporter = new ExportVisitor();
-            p.Accept(exporter);
+            project.Accept(exporter);
 
-            exporter.ProjectConfig.Write(Path.Combine(projectPath, p.Name));
-            exporter.TrackingConfiguration.Write(projectPath);
+            exporter.ProjectConfig.Write(Path.Combine(projectPath, project.Name));
+            exporter.TrackingConfig.Write(projectPath);
         }
     }
 }

@@ -25,10 +25,18 @@ namespace ARdevKit.Model.Project
             set { similarityThreshhold = value; }
         }
 
+        private PictureMarkerSensor pictureMarkerTrackingSensor;
+        public PictureMarkerSensor PictureMarkerTrackingSensor
+        {
+            get { return pictureMarkerTrackingSensor; }
+            set { pictureMarkerTrackingSensor = value; }
+        }
+
         public PictureMarker(string imagePath)
         {
             this.imagePath = imagePath;
             imageName = Path.GetFileName(imagePath);
+            pictureMarkerTrackingSensor = new PictureMarkerSensor();
         }
 
         public override void Accept(Controller.ProjectController.AbstractProjectVisitor visitor)

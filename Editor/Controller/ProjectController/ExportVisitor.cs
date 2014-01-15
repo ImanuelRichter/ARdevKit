@@ -25,14 +25,15 @@ namespace ARdevKit.Controller.ProjectController
         }
 
         /// <summary>   The trackin configuration XML. </summary>
-        private TrackingConfigurationFile trackingConfiguration;
-        public TrackingConfigurationFile TrackingConfiguration
+        private TrackingConfigurationFile trackingConfig;
+        public TrackingConfigurationFile TrackingConfig
         {
-            get { return trackingConfiguration; }
-            set { trackingConfiguration = value; }
+            get { return trackingConfig; }
+            set { trackingConfig = value; }
         }
-        private SubSection sensorSubSection;
+        private Section sensorsSection;
         private int pictureMarkerCounter = 1;
+        private int idMarkerCounter = 1;
 
         public ExportVisitor()
         {
@@ -48,6 +49,23 @@ namespace ARdevKit.Controller.ProjectController
         }
         public override void visit(PictureMarker pictureMarker)
         {
+            // Sensors
+            string sensorExtension = "Type=\"" + pictureMarker.PictureMarkerTrackingSensor.SensorType + "\" Subtype=\"" + pictureMarker.PictureMarkerTrackingSensor.SensorSubType + "\"";
+            SubSection sensorSubSection = new SubSection(new Tag("Sensor", sensorExtension));
+            sensorsSection.AddSubSection(sensorSubSection);
+
+            // SensorID
+            sensorSubSection.AddLine(new Line(new Tag("SensorID"), pictureMarker.PictureMarkerTrackingSensor.SensorID.ToString()));
+
+            // Parameters
+            SubSection parametersSubSection = new SubSection(new Tag("Parameters"));
+            sensorSubSection.AddSubSection(parametersSubSection);
+
+            parametersSubSection.AddLine(new Line(new Tag("FeatureDescriptorAlignment"), pictureMarker.PictureMarkerTrackingSensor.FeatureDescriptorAlignment.ToString()));
+            parametersSubSection.AddLine(new Line(new Tag("MaxObjectsToDetectPerFrame"), pictureMarker.PictureMarkerTrackingSensor.MaxObjectsToDetectPerFrame.ToString()));
+            parametersSubSection.AddLine(new Line(new Tag("MaxObjectsToTrackInParallel"), pictureMarker.PictureMarkerTrackingSensor.MaxObjectsToTrackInParallel.ToString()));
+            parametersSubSection.AddLine(new Line(new Tag("SimilarityThreshold"), pictureMarker.PictureMarkerTrackingSensor.SimilarityThreshold.ToString()));
+
             SubSection sensorCOSSubSection = new SubSection(new Tag("SensorCOS"));
             sensorSubSection.AddSubSection(sensorCOSSubSection);
 
@@ -60,15 +78,51 @@ namespace ARdevKit.Controller.ProjectController
         }
         public override void visit(IDMarker idMarker)
         {
-            throw new NotImplementedException();
+            // Sensors
+            string sensorExtension = "Type=\"" + idMarker.IdMarkerTrackingSensor.SensorType + "\" Subtype=\"" + idMarker.IdMarkerTrackingSensor.SensorSubType + "\"";
+            SubSection sensorSubSection = new SubSection(new Tag("Sensor", sensorExtension));
+            sensorsSection.AddSubSection(sensorSubSection);
+
+            // SensorID
+            sensorSubSection.AddLine(new Line(new Tag("SensorID"), idMarker.IdMarkerTrackingSensor.SensorID.ToString()));
+
+            // Parameters
+            SubSection parametersSubSection = new SubSection(new Tag("Parameters"));
+            sensorSubSection.AddSubSection(parametersSubSection);
+
+            // MarkerParameters
+            SubSection markerTrackingParametersSubSection = new SubSection(new Tag("MarkerTrackingParameters"));
+            parametersSubSection.AddSubSection(markerTrackingParametersSubSection);
+
+            markerTrackingParametersSubSection.AddLine(new Line(new Tag("TrackingQuality"), idMarker.IdMarkerTrackingSensor.TrackingQuality.ToString()));
+            markerTrackingParametersSubSection.AddLine(new Line(new Tag("ThresholdOffset"), idMarker.IdMarkerTrackingSensor.ThresholdOffset.ToString()));
+            markerTrackingParametersSubSection.AddLine(new Line(new Tag("NumberOfSearchIterations"), idMarker.IdMarkerTrackingSensor.NumberOfSearchIterations.ToString()));
+
+            // SensorCOS
+            SubSection sensorCOSSubSection = new SubSection(new Tag("SensorCOS"));
+            sensorSubSection.AddSubSection(sensorCOSSubSection);
+
+            sensorCOSSubSection.AddLine(new Line(new Tag("SensorCosID"), "IDMarker" + idMarkerCounter++));
+
+            // Parameters
+            SubSection parameterSubSection = new SubSection(new Tag("Parameters"));
+            sensorCOSSubSection.AddSubSection(parameterSubSection);
+
+            // MarkerParameters
+            SubSection markerParametersSubSection = new SubSection(new Tag("MarkerParameters"));
+            parametersSubSection.AddSubSection(markerParametersSubSection);
+
+            //markerParametersSubSection.AddLine(new Line(new Tag("Size"), idMarker.Size.ToString()));
+            markerParametersSubSection.AddLine(new Line(new Tag("Size"), "60"));
+            markerParametersSubSection.AddLine(new Line(new Tag("MatrixID"), idMarker.MatrixID.ToString()));
         }
 
         public override void visit(Project p)
         {
             // Create [projectName].html
-            ProjectConfigFile projectConfigHTML = new ProjectConfigFile(new Tag("html"));
+            projectConfig = new ProjectConfigFile(new Tag("html"));
             Section headSection = new Section(new Tag("head"));
-            projectConfigHTML.AddSection(headSection);
+            projectConfig.AddSection(headSection);
 
             headSection.AddLine(new Line(new OpenTag("meta", "charset=\"UTF-8\"")));
             headSection.AddLine(new Line(new OpenTag("meta", "name=\"viewport\" content=\"width=device-width, initial-scale=1\"")));
@@ -77,29 +131,12 @@ namespace ARdevKit.Controller.ProjectController
             headSection.AddLine(new Line(new Tag("title"), p.Name));
 
             Section body = new Section(new Tag("body"));
-            projectConfigHTML.AddSection(body);
+            projectConfig.AddSection(body);
 
             // Prepare TrackinConfiguration.xml
-            TrackingConfiguration = new TrackingConfigurationFile(new Tag("TrackingData"));
-            Section sensorsSection = new Section(new Tag("Sensors"));
-            TrackingConfiguration.AddSection(sensorsSection);
-
-            // Sensors
-            string sensorExtension = "Type=\"" + p.SensorType + "\" Subtype=\"" + p.SensorSubType + "\"";
-            sensorSubSection = new SubSection(new Tag("Sensor", sensorExtension));
-            sensorsSection.AddSubSection(sensorSubSection);
-
-            // SensorID
-            sensorSubSection.AddLine(new Line(new Tag("SensorID"), p.SensorID.ToString()));
-
-            // Parameters
-            SubSection parametersSubSection = new SubSection(new Tag("Parameters"));
-            sensorSubSection.AddSubSection(parametersSubSection);
-
-            parametersSubSection.AddLine(new Line(new Tag("FeatureDescriptorAlignment"), p.FeatureDescriptorAlignment.ToString()));
-            parametersSubSection.AddLine(new Line(new Tag("MaxObjectsToDetectPerFrame"), p.MaxObjectsToDetectPerFrame.ToString()));
-            parametersSubSection.AddLine(new Line(new Tag("MaxObjectsToTrackInParallel"), p.MaxObjectsToTrackInParallel.ToString()));
-            parametersSubSection.AddLine(new Line(new Tag("SimilarityThreshold"), p.SimilarityThreshold.ToString()));
+            TrackingConfig = new TrackingConfigurationFile(new Tag("TrackingData"));
+            sensorsSection = new Section(new Tag("Sensors"));
+            TrackingConfig.AddSection(sensorsSection);
         }
     }
 }

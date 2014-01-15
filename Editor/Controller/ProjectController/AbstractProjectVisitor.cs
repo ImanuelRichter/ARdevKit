@@ -9,10 +9,6 @@ namespace ARdevKit.Controller.ProjectController
 {
     public abstract class AbstractProjectVisitor
     {
-        /// <summary>
-        /// The projectPath choosen by the user
-        /// </summary>
-        protected string projectPath;
         public abstract void visit(BarGraph graph);
         public abstract void visit(DbSource source);
         public abstract void visit(PictureMarker pictureMarker);

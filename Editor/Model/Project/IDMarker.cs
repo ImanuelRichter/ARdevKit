@@ -10,6 +10,18 @@ namespace ARdevKit.Model.Project
     public class IDMarker : AbstractMarker
     {
         private int matrixID;
+        public int MatrixID
+        {
+            get { return matrixID; }
+            set { matrixID = value; }
+        }
+
+        private IDMarkerSensor idMarkerTrackingSensor;
+        public IDMarkerSensor IdMarkerTrackingSensor
+        {
+            get { return idMarkerTrackingSensor; }
+            set { idMarkerTrackingSensor = value; }
+        }
 
         public override void Accept(Controller.ProjectController.AbstractProjectVisitor visitor)
         {
