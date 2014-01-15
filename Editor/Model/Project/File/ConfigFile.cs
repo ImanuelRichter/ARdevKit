@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Model.Project.File
 {
-    public class ConfigFile
+    class ConfigFile
     {
         public int Level { get; set; }
 

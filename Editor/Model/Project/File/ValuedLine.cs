@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Model.Project.File
 {
-    public class ValuedLine : Line
+    class ValuedLine : Line
     {
         private string value;
 

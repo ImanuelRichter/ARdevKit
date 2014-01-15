@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Model.Project.File
 {
-    public class Section : ConfigFile
+    class Section : ConfigFile
     {
         public ConfigFile Parent { get; set; }
         protected List<SubSection> SubSections { get; set; }

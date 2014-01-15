@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ARdevKit.Controller.ProjectController;
 using ARdevKit.Model.Project;
 
-namespace EditorTest
+namespace ARdevKit
 {
     [TestClass]
     public class ExportVisitorTest
