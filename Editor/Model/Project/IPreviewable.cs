@@ -12,5 +12,6 @@ namespace ARdevKit.Model.Project
     {
         Bitmap getPreview();
         List<AbstractProperty> getPropertyList();
+        Bitmap getIcon();
     }
 }

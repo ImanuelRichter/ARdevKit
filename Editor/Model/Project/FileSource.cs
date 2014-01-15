@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace ARdevKit.Model.Project
 {
@@ -24,6 +25,14 @@ namespace ARdevKit.Model.Project
         {
             throw new NotImplementedException();
         }
+        public override Bitmap getPreview()
+        {
+            return Properties.Resources.FileSource_normal_;
+        }
 
+        public override Bitmap getIcon()
+        {
+            return Properties.Resources.FileSource_small_;
+        }
     }
 }

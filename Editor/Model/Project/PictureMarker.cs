@@ -15,6 +15,7 @@ namespace ARdevKit.Model.Project
         {
             this.imagePath = imagePath;
         }
+
         public override void accept(Controller.ProjectController.AbstractProjectVisitor visitor)
         {
             throw new NotImplementedException();
@@ -23,6 +24,16 @@ namespace ARdevKit.Model.Project
         public override List<View.AbstractProperty> getPropertyList()
         {
             throw new NotImplementedException();
+        }
+
+        public override System.Drawing.Bitmap getPreview()
+        {
+           return Properties.Resources.ARMarker_normal_;
+        }
+
+        public override System.Drawing.Bitmap getIcon()
+        {
+            return Properties.Resources.ARMarker_small_;
         }
     }
 }
