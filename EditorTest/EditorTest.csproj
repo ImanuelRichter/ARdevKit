@@ -53,6 +53,12 @@
     <Compile Include="Controller\ProjectController\ExportVisitorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Editor\Editor.csproj">
+      <Project>{89322cce-624d-489e-a157-06c0dd4a3719}</Project>
+      <Name>Editor</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

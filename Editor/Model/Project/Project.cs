@@ -8,9 +8,15 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Model.Project
 {
-    class Project : ISerializable
+    public class Project : ISerializable
     {
         private String name;
+
+        public String Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
         private List<AbstractSource> sources;
         private List<AbstractTrackable> trackables;
 
