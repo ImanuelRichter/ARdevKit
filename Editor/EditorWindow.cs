@@ -24,6 +24,7 @@ using ARdevKit.Controller.ProjectController;
 using ARdevKit.Controller.EditorController;
 using ARdevKit.Controller.Connections.DeviceConnection;
 using ARdevKit.Controller.TestController;
+using ARdevKit.View;
 
 namespace ARdevKit
 {
@@ -107,6 +108,11 @@ namespace ARdevKit
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         private PreviewController previewController;
+
+        public PreviewController PreviewController
+        {
+            get { return previewController; }
+        }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
@@ -319,6 +325,9 @@ namespace ARdevKit
         {
             InitializeComponent();
             allElements = new LinkedList<IPreviewable>();
+            elementCategories = new List<SceneElementCategory>();
+            registerElements();
+            previewController = new PreviewController(this);
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -332,7 +341,8 @@ namespace ARdevKit
 
         private void Editor_Load(object sender, EventArgs e)
         {
-            //stub
+            elementSelectionController = new ElementSelectionController(this);
+            elementSelectionController.populateComboBox();
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -457,9 +467,26 @@ namespace ARdevKit
             //TODO: implement openTestWindow()
         }
 
+        /**
+         * <summary>    Registers all SceneElements. </summary>
+         *
+         * <remarks>    Robin, 14.01.2014. </remarks>
+         */
+
         public void registerElements()
         {
-            //TODO: implement registerElements()
+            Bitmap dummy=Properties.Resources.PreviewDummy; //TODO: Make preview Bitmaps for all Elements
+            SceneElementCategory sources = new SceneElementCategory(SceneElementCategory.MetaCategory.Source, "Sources");
+            sources.addElement(new SceneElement("Database Source", new DbSource(),dummy,this));
+            sources.addElement(new SceneElement("FileSource", new FileSource(""),dummy,this));
+            SceneElementCategory augmentations = new SceneElementCategory(SceneElementCategory.MetaCategory.Augmentation, "Augmentations");
+            augmentations.addElement(new SceneElement("Bar Graph", new BarGraph(),dummy,this));
+            SceneElementCategory trackables = new SceneElementCategory(SceneElementCategory.MetaCategory.Trackable, "Trackables");
+            trackables.addElement(new SceneElement("Picture Marker",new PictureMarker(""),dummy,this));
+            trackables.addElement(new SceneElement("IDMarker",new IDMarker(),dummy,this));
+            addCategory(trackables);
+            addCategory(augmentations);
+            addCategory(sources);
         }
 
         public void saveProject()
@@ -499,7 +526,13 @@ namespace ARdevKit
 
         private void addCategory(SceneElementCategory category)
         {
-            //TODO: implement addCategory(SceneElementCategory category)
+            elementCategories.Add(category);
+        }
+
+        private void cmb_editor_selection_toolSelection_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            elementSelectionController.updateElementSelectionPanel();
+            previewController.currentMetaCategory = ((SceneElementCategoryPanel) cmb_editor_selection_toolSelection.SelectedItem).Category.Category;
         }
     }
 }

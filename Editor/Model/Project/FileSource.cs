@@ -25,5 +25,10 @@ namespace ARdevKit.Model.Project
             throw new NotImplementedException();
         }
 
+        public override System.Drawing.Bitmap getPreview()
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }

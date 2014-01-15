@@ -18,7 +18,7 @@ namespace ARdevKit.Model.Project
     /// </summary>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    abstract class AbstractSource : ISerializable
+    abstract class AbstractSource : ISerializable, IPreviewable
     {
         private String sourceID;
 
@@ -29,6 +29,8 @@ namespace ARdevKit.Model.Project
         abstract public void accept(AbstractProjectVisitor visitor);
 
         public abstract List<AbstractProperty> getPropertyList();
+
+        public abstract Bitmap getPreview();
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {

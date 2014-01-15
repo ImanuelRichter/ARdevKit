@@ -72,11 +72,6 @@
             // 
             // mst_editor_menu
             // 
-            this.mst_editor_menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsm_editor_menu_file,
-            this.tsm_editor_menu_edit,
-            this.tsm_editor_menu_test,
-            this.tsm_editor_menu_help});
             this.mst_editor_menu.Location = new System.Drawing.Point(0, 0);
             this.mst_editor_menu.Name = "mst_editor_menu";
             this.mst_editor_menu.Size = new System.Drawing.Size(1008, 24);
@@ -236,34 +231,34 @@
             // tsm_editor_menu_test_startImage
             // 
             this.tsm_editor_menu_test_startImage.Name = "tsm_editor_menu_test_startImage";
-            this.tsm_editor_menu_test_startImage.Size = new System.Drawing.Size(152, 22);
+            this.tsm_editor_menu_test_startImage.Size = new System.Drawing.Size(144, 22);
             this.tsm_editor_menu_test_startImage.Text = "Bild laden";
             this.tsm_editor_menu_test_startImage.Click += new System.EventHandler(this.tsm_editor_menu_test_startImage_Click);
             // 
             // tsm_editor_menu_test_startVideo
             // 
             this.tsm_editor_menu_test_startVideo.Name = "tsm_editor_menu_test_startVideo";
-            this.tsm_editor_menu_test_startVideo.Size = new System.Drawing.Size(152, 22);
+            this.tsm_editor_menu_test_startVideo.Size = new System.Drawing.Size(144, 22);
             this.tsm_editor_menu_test_startVideo.Text = "Video laden";
             this.tsm_editor_menu_test_startVideo.Click += new System.EventHandler(this.tsm_editor_menu_test_startVideo_Click);
             // 
             // tsm_editor_menu_test_startWithVirtualCamera
             // 
             this.tsm_editor_menu_test_startWithVirtualCamera.Name = "tsm_editor_menu_test_startWithVirtualCamera";
-            this.tsm_editor_menu_test_startWithVirtualCamera.Size = new System.Drawing.Size(152, 22);
+            this.tsm_editor_menu_test_startWithVirtualCamera.Size = new System.Drawing.Size(144, 22);
             this.tsm_editor_menu_test_startWithVirtualCamera.Text = "vCam nutzen";
             this.tsm_editor_menu_test_startWithVirtualCamera.Click += new System.EventHandler(this.tsm_editor_menu_test_startWithVirtualCamera_Click);
             // 
             // tss_editor_meu_test_loadVideo_togleDebug
             // 
             this.tss_editor_meu_test_loadVideo_togleDebug.Name = "tss_editor_meu_test_loadVideo_togleDebug";
-            this.tss_editor_meu_test_loadVideo_togleDebug.Size = new System.Drawing.Size(149, 6);
+            this.tss_editor_meu_test_loadVideo_togleDebug.Size = new System.Drawing.Size(141, 6);
             // 
             // tsm_editor_menu_test_togleDebug
             // 
             this.tsm_editor_menu_test_togleDebug.CheckOnClick = true;
             this.tsm_editor_menu_test_togleDebug.Name = "tsm_editor_menu_test_togleDebug";
-            this.tsm_editor_menu_test_togleDebug.Size = new System.Drawing.Size(152, 22);
+            this.tsm_editor_menu_test_togleDebug.Size = new System.Drawing.Size(144, 22);
             this.tsm_editor_menu_test_togleDebug.Text = "Debug";
             // 
             // tsm_editor_menu_help
@@ -298,20 +293,17 @@
             // 
             // cmb_editor_selection_toolSelection
             // 
+            this.cmb_editor_selection_toolSelection.DisplayMember = "CategoryName";
+            this.cmb_editor_selection_toolSelection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_editor_selection_toolSelection.DropDownWidth = 128;
             this.cmb_editor_selection_toolSelection.FormattingEnabled = true;
             this.cmb_editor_selection_toolSelection.ItemHeight = 13;
-            this.cmb_editor_selection_toolSelection.Items.AddRange(new object[] {
-            "Tool wählen...",
-            "Marker",
-            "Diagramme",
-            "Datenquellen"});
             this.cmb_editor_selection_toolSelection.Location = new System.Drawing.Point(3, 3);
             this.cmb_editor_selection_toolSelection.MaxDropDownItems = 4;
             this.cmb_editor_selection_toolSelection.Name = "cmb_editor_selection_toolSelection";
             this.cmb_editor_selection_toolSelection.Size = new System.Drawing.Size(128, 21);
             this.cmb_editor_selection_toolSelection.TabIndex = 0;
-            this.cmb_editor_selection_toolSelection.Text = "Tool wählen...";
+            this.cmb_editor_selection_toolSelection.SelectedIndexChanged += new System.EventHandler(this.cmb_editor_selection_toolSelection_SelectedIndexChanged);
             // 
             // pnl_editor_preview
             // 
@@ -444,6 +436,30 @@
         {
             get { return pnl_editor_preview; }
             set { pnl_editor_preview = value; }
+        }
+
+        /**
+         * <summary>    Gets or sets the pnl editor selection. </summary>
+         *
+         * <value>  The pnl editor selection. </value>
+         */
+
+        public System.Windows.Forms.Panel Pnl_editor_selection
+        {
+            get { return pnl_editor_selection; }
+            set { pnl_editor_selection = value; }
+        }
+
+        /**
+         * <summary>    Gets or sets the cmb editor selection tool selection. </summary>
+         *
+         * <value>  The cmb editor selection tool selection. </value>
+         */
+
+        public System.Windows.Forms.ComboBox Cmb_editor_selection_toolSelection
+        {
+            get { return cmb_editor_selection_toolSelection; }
+            set { cmb_editor_selection_toolSelection = value; }
         }
     }
 }
