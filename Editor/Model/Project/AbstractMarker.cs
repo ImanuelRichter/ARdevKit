@@ -10,5 +10,19 @@ namespace ARdevKit.Model.Project
     {
         private String sensorCosID;
         private int size;
+
+        private AbstractSensor sensor;
+        public AbstractSensor Sensor
+        {
+            get { return sensor; }
+            set { sensor = value; }
+        }
+
+        private Fuser markerFuser;
+        public Fuser MarkerFuser
+        {
+            get { return markerFuser; }
+            set { markerFuser = value; }
+        }
     }
 }

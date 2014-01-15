@@ -32,12 +32,11 @@ namespace ARdevKit.Controller.ProjectController
             set { trackingConfig = value; }
         }
         private Section sensorsSection;
+        private Section connectionsSection;
         private int pictureMarkerCounter = 1;
         private int idMarkerCounter = 1;
 
-        public ExportVisitor()
-        {
-        }
+        public ExportVisitor() { }
 
         public override void visit(BarGraph graph)
         {
@@ -112,6 +111,7 @@ namespace ARdevKit.Controller.ProjectController
             SubSection markerParametersSubSection = new SubSection(new Tag("MarkerParameters"));
             parametersSubSection.AddSubSection(markerParametersSubSection);
 
+            // Reaktivated when getter is implemented
             //markerParametersSubSection.AddLine(new Line(new Tag("Size"), idMarker.Size.ToString()));
             markerParametersSubSection.AddLine(new Line(new Tag("Size"), "60"));
             markerParametersSubSection.AddLine(new Line(new Tag("MatrixID"), idMarker.MatrixID.ToString()));

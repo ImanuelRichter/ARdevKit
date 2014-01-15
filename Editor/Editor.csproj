@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Project\Fuser.cs" />
     <Compile Include="Model\Project\IDMarkerSensor.cs" />
     <Compile Include="Model\Project\File\ARELConfigFile.cs" />
     <Compile Include="Controller\Connections\DeviceConnection\DeviceConnectionController.cs" />
