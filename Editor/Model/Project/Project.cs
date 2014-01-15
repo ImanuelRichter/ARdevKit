@@ -13,8 +13,9 @@ namespace ARdevKit.Model.Project
         private string name;
         public string Name
         {
-            get { return name; }
-            set { name = value; }
+            this.trackables = new List<AbstractTrackable>();
+            this.sources = new List<AbstractSource>();
+            this.Name = null;  
         }
 
         private List<AbstractSource> sources;
@@ -50,6 +51,23 @@ namespace ARdevKit.Model.Project
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             throw new NotImplementedException();
+        }
+
+        public AbstractSource findSource(AbstractSource source)
+        {
+            return this.sources[this.sources.IndexOf(source)];
+        }
+
+        public bool existSource(AbstractSource source)
+        {
+            foreach (AbstractSource s in sources)
+            {
+                if (s == source)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 

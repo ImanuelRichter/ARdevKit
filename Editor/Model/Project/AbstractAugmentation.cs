@@ -42,6 +42,8 @@ namespace ARdevKit.Model.Project
 
         }
 
+        public AbstractTrackable trackable { get; set; }
+
         public abstract void accept(AbstractProjectVisitor visitor);
 
         abstract public Bitmap getPreview();

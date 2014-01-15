@@ -20,15 +20,17 @@ namespace ARdevKit.Model.Project
 
     public abstract class AbstractSource : ISerializable, IPreviewable
     {
-        private String sourceID;
+        public String sourceID { get; set; }
 
-
-        private List<AbstractDynamic2DAugmentation> augmentions;
-
-
+        public List<AbstractDynamic2DAugmentation> augmentions {get; set; }
         abstract public void accept(AbstractProjectVisitor visitor);
 
         public abstract List<AbstractProperty> getPropertyList();
+
+        public AbstractSource()
+        {
+            this.augmentions = new List<AbstractDynamic2DAugmentation>();
+        }
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
@@ -38,5 +40,22 @@ namespace ARdevKit.Model.Project
         public abstract Bitmap getPreview();
 
         public abstract Bitmap getIcon();
+
+        public AbstractAugmentation findAugmentation(IPreviewable a)
+        {
+            return this.augmentions[this.augmentions.IndexOf((AbstractDynamic2DAugmentation)a)];
+        }
+
+        public bool existAugmentation(IPreviewable a)
+        {
+            foreach (AbstractDynamic2DAugmentation aug in augmentions)
+            {
+                if (aug == (AbstractDynamic2DAugmentation) a)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

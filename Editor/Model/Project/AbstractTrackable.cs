@@ -13,7 +13,7 @@ namespace ARdevKit.Model.Project
     public abstract class AbstractTrackable : ISerializable, IPreviewable
     {
         public Vector3D vector { get; set; }
-        public AbstractAugmentation[] augmentations { get; set; }
+        public List<AbstractAugmentation> augmentations { get; set; }
 
         public abstract void Accept(AbstractProjectVisitor visitor);
 
@@ -23,72 +23,30 @@ namespace ARdevKit.Model.Project
 
         public abstract List<AbstractProperty> getPropertyList();
 
+        public AbstractTrackable()
+        {
+            this.augmentations = new List<AbstractAugmentation>();
+        }
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             throw new NotImplementedException();
         }
 
-        public bool isAugmented()
+        public AbstractAugmentation findAugmentation(IPreviewable a)
         {
-            for (int i = 0; i < augmentations.Length; i++)
-            {
-                if (augmentations[i] != null)
-                {
-                    return false;
-                }
-            }
-            return true;
+            return this.augmentations[this.augmentations.IndexOf((AbstractAugmentation)a)];
         }
 
-        public void addAugmentation(AbstractAugmentation augmentation)
+        public bool existAugmentation(IPreviewable a)
         {
-            for (int i = 0; i < augmentations.Length; i++)
+            foreach (AbstractAugmentation aug in augmentations)
             {
-                if (augmentations[i] == null)
+                if (aug == (AbstractAugmentation)a)
                 {
-                    augmentations[i] = augmentation;
-                    return;
+                    return true;
                 }
             }
-            throw new NotSupportedException("There are already 3 augmentations connected to this trackable.");
-        }
-
-        public void removeAugmentation(AbstractAugmentation augmentation)
-        {
-            for (int i = 0; i < augmentations.Length; i++)
-            {
-                if (augmentations[i] == augmentation)
-                {
-                    augmentations[i] = null;
-                    return;
-                }
-            }
-            throw new NotSupportedException("The augmentation which should be removed, could not be found.");
-        }
-
-        public bool isAugmentionFull()
-        {
-            if (augmentations.Length < 3)
-            {
-                return false;
-            }
-
-            else
-            {
-                return true;
-            }
-        }
-
-        public int findAugmentation(AbstractAugmentation a)
-        {
-            for (int i = 0; i < augmentations.Length; i++)
-            {
-                if (augmentations[i] == a)
-                {
-                    return i;
-                }
-            }
-            return -1;
+            return false;
         }
 
     }
