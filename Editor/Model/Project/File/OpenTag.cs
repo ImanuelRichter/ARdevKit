@@ -8,14 +8,15 @@ namespace ARdevKit.Model.Project.File
 {
     class OpenTag : Tag
     {
-        public OpenTag(string text) : base(text) { }
+        public OpenTag(string text) : base(text)
+        {
+            End = "";
+        }
 
         public OpenTag(string text, string extension)
-            : base(text, extension) { }
-
-        public override string ToString()
+            : base(text, extension)
         {
-            return Start;
+            End = "";
         }
     }
 }

@@ -8,9 +8,14 @@ namespace ARdevKit.Model.Project.File
 {
     class Line : Section
     {
+        private string value = "";
 
         public Line(Tag tag) : base(tag) { }
 
+        public Line(Tag tag, string value) : base(tag)
+        {
+            this.value = value;
+        }
 
         public override void Write(System.IO.StreamWriter writer)
         {
@@ -19,7 +24,7 @@ namespace ARdevKit.Model.Project.File
             {
                 tabs += "\t";
             }
-            writer.WriteLine(tabs + tag);
+            writer.WriteLine(tabs + tag + value + tag);
         }
     }
 }

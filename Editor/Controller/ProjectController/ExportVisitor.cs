@@ -32,10 +32,12 @@ namespace ARdevKit.Controller.ProjectController
         {
             throw new NotImplementedException();
         }
+
         public override void visit(Project project)
         {
             ProjectConfigHTML projectConfigHTML = new ProjectConfigHTML();
             ConfigFile config = new ConfigFile(new Tag("html"));
+            projectConfigHTML.File = config;
             Section headSection = new Section(new Tag("head"));
             config.AddSection(headSection);
 
@@ -43,7 +45,7 @@ namespace ARdevKit.Controller.ProjectController
             headSection.AddLine(new Line(new OpenTag("meta", "name=\"viewport\" content=\"width=device-width, initial-scale=1\"")));
             headSection.AddLine(new Line(new Tag("script", "type=\"text/javascript\" src=\"../arel/arel.js\"")));
             headSection.AddLine(new Line(new Tag("script", "type=\"text/javascript\" src=\"Assets/arelGlue.js\"")));
-            headSection.AddLine(new Line(new Tag("titel", project.Name)));
+            headSection.AddLine(new Line(new Tag("title"), project.Name));
 
             Section body = new Section(new Tag("body"));
             config.AddSection(body);

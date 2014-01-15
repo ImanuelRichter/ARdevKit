@@ -81,7 +81,6 @@
     <Compile Include="Model\Project\FileSource.cs" />
     <Compile Include="Model\Project\File\ConfigFile.cs" />
     <Compile Include="Model\Project\File\Line.cs" />
-    <Compile Include="Model\Project\File\ValuedLine.cs" />
     <Compile Include="Model\Project\File\OpenTag.cs" />
     <Compile Include="Model\Project\File\Section.cs" />
     <Compile Include="Model\Project\File\SubSection.cs" />

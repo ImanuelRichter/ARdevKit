@@ -24,7 +24,7 @@ namespace ARdevKit.Model.Project.File
 
         public Tag(string text, string extension) : this(text)
         {
-            Start.Insert(Start.Length - 1, " " + extension);
+            Start = Start.Insert(Start.Length - 1, " " + extension);
         }
 
         public override string ToString()

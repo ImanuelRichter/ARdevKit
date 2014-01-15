@@ -18,7 +18,7 @@ namespace ARdevKit.Model.Project.File
             SubSections.Add(css);
         }
 
-        public void AddLine(ValuedLine cln)
+        public void AddLine(Line cln)
         {
             Lines = Lines == null ? new List<Line>() : Lines;
             cln.Parent = this;

@@ -20,7 +20,7 @@ namespace ARdevKit.Model.Project.File
 
         public void Write(string projectPath)
         {
-            StreamWriter writer = new StreamWriter(Path.Combine(projectPath, ".html"));
+            StreamWriter writer = new StreamWriter(projectPath + ".html");
             writer.WriteLine(header);
             file.Write(writer);
             writer.Close();
