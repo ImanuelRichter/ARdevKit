@@ -5,12 +5,11 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ARdevKit.Model.Project;
 using ARdevKit.Model.Project.File;
 
 namespace ARdevKit.Controller.ProjectController
 {
-    public class ExportVisitor : AbstractProjectVisitor
+    class ExportVisitor : AbstractProjectVisitor
     {
         private Stream stream;
 
@@ -19,23 +18,23 @@ namespace ARdevKit.Controller.ProjectController
             this.projectPath = projectPath;
         }
 
-        public void visit(BarGraph graph)
+        public override void visit(BarGraph graph)
         {
             throw new NotImplementedException();
         }
-        public void visit(DbSource source)
+        public override void visit(DbSource source)
         {
             throw new NotImplementedException();
         }
-        public void visit(PictureMarker pictureMarker)
+        public override void visit(PictureMarker pictureMarker)
         {
             throw new NotImplementedException();
         }
-        public void visit(IDMarker idMarker)
+        public override void visit(IDMarker idMarker)
         {
             throw new NotImplementedException();
         }
-        public void visit(Project project)
+        public override void visit(Project project)
         {
             ProjectConfigHTML projectConfigHTML = new ProjectConfigHTML();
             ConfigFile config = new ConfigFile(new Tag("html"));

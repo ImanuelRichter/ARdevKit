@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Model.Project.File
 {
-    public class SubSection : Section
+    class SubSection : Section
     {
         public SubSection(Tag tag) : base(tag) { }
 
