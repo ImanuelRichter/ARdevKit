@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.View
 {
-    abstract class AbstractProperty
+    public abstract class AbstractProperty
     {
-        abstract public System.Windows.Forms.Panel getVisualRepresentation();
+        public abstract System.Windows.Forms.Panel getVisualRepresentation();
     }
 }

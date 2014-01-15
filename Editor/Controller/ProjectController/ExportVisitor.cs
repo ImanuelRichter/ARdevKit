@@ -9,10 +9,8 @@ using ARdevKit.Model.Project.File;
 
 namespace ARdevKit.Controller.ProjectController
 {
-    class ExportVisitor : AbstractProjectVisitor
+    public class ExportVisitor : AbstractProjectVisitor
     {
-        private Stream stream;
-
         public ExportVisitor(string projectPath)
         {
             this.projectPath = projectPath;

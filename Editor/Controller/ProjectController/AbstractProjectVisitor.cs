@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Controller.ProjectController
 {
-    abstract class AbstractProjectVisitor
+    public abstract class AbstractProjectVisitor
     {
         /// <summary>
         /// The projectPath choosen by the user

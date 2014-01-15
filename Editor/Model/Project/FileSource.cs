@@ -8,7 +8,7 @@ using System.Drawing;
 
 namespace ARdevKit.Model.Project
 {
-    class FileSource : AbstractSource
+    public class FileSource : AbstractSource
     {
         private String sourceFilePath;
 

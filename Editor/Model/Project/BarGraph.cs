@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Model.Project
 {
-    class BarGraph : Graph
+    public class BarGraph : Graph
     {
         private Color maxValueColor;
         private Color minValueColor;

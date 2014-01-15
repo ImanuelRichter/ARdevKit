@@ -8,7 +8,7 @@ using System.Drawing;
 
 namespace ARdevKit.Model.Project
 {
-    class DbSource : AbstractSource
+    public class DbSource : AbstractSource
     {
         private DbConnection connection;
 

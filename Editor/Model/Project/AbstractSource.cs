@@ -18,7 +18,7 @@ namespace ARdevKit.Model.Project
     /// </summary>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    abstract class AbstractSource : ISerializable, IPreviewable
+    public abstract class AbstractSource : ISerializable, IPreviewable
     {
         private String sourceID;
 
