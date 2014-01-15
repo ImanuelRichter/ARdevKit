@@ -280,7 +280,7 @@
             this.tsm_editor_menu_help_help.Name = "tsm_editor_menu_help_help";
             this.tsm_editor_menu_help_help.Size = new System.Drawing.Size(99, 22);
             this.tsm_editor_menu_help_help.Text = "Hilfe";
-            this.tsm_editor_menu_help_help.Click += new System.EventHandler(this.addPreview);
+
             // 
             // tsm_editor_menu_help_info
             // 

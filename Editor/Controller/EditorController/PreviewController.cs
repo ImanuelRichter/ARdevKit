@@ -164,14 +164,34 @@ public class PreviewController
         }
     }
 
- /*
-    public void removeSource(IPreviewable currentElement, AbstractSource source) {
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>
+    ///     Removes the choosen Source out of the Augmentation and also out of the sourcesList in
+    ///     Project.
+    /// </summary>
+    ///
+    /// <remarks>   Lizzard, 1/15/2014. </remarks>
+    ///
+    /// <param name="source">           Source for the. </param>
+    /// <param name="currentElement">   The current element. </param>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public void removeSource(AbstractSource source, IPreviewable currentElement) {
         if (currentMetaCategory == MetaCategory.Augmentation)
         {
-            AbstractSource shit = this.ew.project.sources.Find();
+            if (this.ew.project.sources[this.ew.project.sources.IndexOf(source)].augmentions.Count > 1)
+            {
+                ((AbstractAugmentation)currentElement).source = null;
+                this.ew.project.sources[this.ew.project.sources.IndexOf(source)].augmentions.Remove((AbstractDynamic2DAugmentation)currentElement);
+            }
+            else if (this.ew.project.sources[this.ew.project.sources.IndexOf(source)].augmentions.Count == 1)
+            {
+                ((AbstractAugmentation)currentElement).source = null;
+                this.ew.project.sources.Remove(source);
+            }       
         }
     }
-*/
+
 
      
     ////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -380,45 +380,6 @@ namespace ARdevKit
                 TestController.StartWithVirtualCamera(projectPath);
         }
 
-        private void addPreview(object sender, EventArgs e)
-        {
-            this.previewController = new PreviewController(this);
-            previewController.currentMetaCategory = PreviewController.MetaCategory.Trackable;
-            IDMarker tempTrackable = new IDMarker();
-            previewController.addPreviewable(tempTrackable, new Vector3D(100, 100, 100));
-            previewController.addPreviewable(tempTrackable, new Vector3D(100, 100, 100));
-            //         previewController.removePreviewable(temp);
-            previewController.moveElement(tempTrackable, new Vector3D(0, 0, 0));
-
-            previewController.currentMetaCategory = PreviewController.MetaCategory.Augmentation;
-            BarGraph tempAug = new BarGraph();
-            previewController.addPreviewable(tempAug, new Vector3D(100, 100, 100));
-            //       previewController.removePreviewable(tempAug);
-            previewController.moveElement(tempAug, new Vector3D(300, 300, 300));
-
-            previewController.currentMetaCategory = PreviewController.MetaCategory.Source;
-            previewController.overMetaCategory = PreviewController.MetaCategory.Augmentation;
-            previewController.addSource(new FileSource("Bullshit"), tempAug);
-
-            previewController.reloadPreviewPanel(1);
-            previewController.reloadPreviewPanel(1);
-            previewController.reloadPreviewPanel(0);
-
-        }
-
-        private void deletePreview(object sender, EventArgs e)
-        {
-
-            foreach (Control comp in Pnl_editor_preview.Controls)
-            {
-                if (comp.Tag.GetType() == previewController.trackable.GetType())
-                {
-                    previewController.currentMetaCategory = PreviewController.MetaCategory.Trackable;
-                    previewController.removePreviewable((IPreviewable)comp.Tag);
-                }
-            }
-        }
-
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
         /// Event handler. Called by tsm_editor_menu_file_open for click events.
