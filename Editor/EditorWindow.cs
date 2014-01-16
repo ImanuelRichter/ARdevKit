@@ -280,6 +280,7 @@ namespace ARdevKit
             InitializeComponent();
             allElements = new LinkedList<IPreviewable>();
             this.project = new Project();
+            this.previewController = new PreviewController(this);
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -378,6 +379,33 @@ namespace ARdevKit
                 TestController.StartWithVirtualCamera();
             else
                 TestController.StartWithVirtualCamera(projectPath);
+        }
+
+        private void btn_editor_scene_scene_change(object sender, EventArgs e) {
+            int temp = Convert.ToInt32(((Button)sender).Text);
+            this.previewController.reloadPreviewPanel(temp - 1);
+        }
+
+        private void btn_editor_scene_scene_new(object sender, EventArgs e)
+        {
+            if (this.project.trackables.Count < 10)
+            {
+                Button tempButton = new Button();
+                tempButton.Location = new System.Drawing.Point(3 + (52*project.trackables.Count), 34);
+                tempButton.Name = "btn_editor_scene_scene_" + (this.project.trackables.Count +1);
+                tempButton.Size = new System.Drawing.Size(46, 45);
+                tempButton.TabIndex = 1;
+                tempButton.Text = Convert.ToString(this.project.trackables.Count + 1);
+                tempButton.UseVisualStyleBackColor = true;
+                tempButton.Click += new System.EventHandler(this.btn_editor_scene_scene_change);
+
+                this.pnl_editor_szenes.Controls.Add(tempButton);
+                this.previewController.reloadPreviewPanel(this.project.trackables.Count);
+            }
+            else
+            {
+                MessageBox.Show("You can't add more than 10 Scenes!");
+            }
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
