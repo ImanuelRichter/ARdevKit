@@ -16,17 +16,12 @@ public class PreviewController
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// <summary>   MetaCategory is need for some things. </summary>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-    public enum MetaCategory { Source, Augmentation, Trackable };
+    public enum MetaCategory {Augmentation, Trackable };
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// <summary>   The MetaCategory of the current element. </summary>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     public MetaCategory currentMetaCategory { get; set; }
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-    /// <summary>   The MetaCategory of the over element. </summary>
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-    public MetaCategory overMetaCategory { get; set; }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// <summary>   The Trackable which hold the Augmentations and Sources. </summary>
@@ -59,9 +54,9 @@ public class PreviewController
         this.ew = ew;
         this.panel = this.ew.Pnl_editor_preview;
         this.currentMetaCategory = new MetaCategory();
-        this.overMetaCategory = new MetaCategory();
         this.index = 0;
         this.trackable = null;
+        this.ew.project.trackables.Add(trackable);
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -75,7 +70,7 @@ public class PreviewController
 
     [Obsolete("addPreviewable(IPreviewable p) : eache IPreviewable needs a Vector where the new Previewable should sit in the panel"
         + "you should use addPreviewable(IPreviewable currentElement, Vector3d v) for Augmentations & Trackables", true)]
-    public /*File*/void addPreviewAble(IPreviewable p)
+    public void addPreviewAble(IPreviewable p)
     { throw new NotImplementedException(); }
 
 
@@ -91,38 +86,43 @@ public class PreviewController
     public void addPreviewable(IPreviewable currentElement, Vector3D v)
     {
         if (currentMetaCategory == MetaCategory.Trackable && trackable == null)
-        {
-            PictureBox tempBox = new PictureBox();
+        {                                                                           
+            PictureBox tempBox = new PictureBox();                                  
             tempBox.Location = new Point(v.x, v.y);
             tempBox.Image = (Image)currentElement.getPreview();
             tempBox.Size = new Size(currentElement.getPreview().Height / 4, currentElement.getPreview().Width / 4);
             tempBox.SizeMode = PictureBoxSizeMode.StretchImage;
-            ((AbstractTrackable)currentElement).vector = v;
 
-            this.ew.project.trackables.Insert(index, (AbstractTrackable)currentElement);
-            tempBox.Tag = this.ew.project.trackables[index]; 
-            this.trackable = this.ew.project.trackables[index];
-            
+            //set the vector to the trackable
+            ((AbstractTrackable)currentElement).vector = v;                                         
+
+            //set references
+            this.ew.project.trackables[index] = (AbstractTrackable) currentElement;                 
+            tempBox.Tag = this.ew.project.trackables[index];
+
             panel.Controls.Add(tempBox);
         }
 
         else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null)
         {
 
-            PictureBox tempBox = new PictureBox();
+            PictureBox tempBox = new PictureBox();                          
             tempBox.Image = (Image)currentElement.getPreview();
-            tempBox.Size = new Size(currentElement.getPreview().Height / 4, currentElement.getPreview().Width / 4);
+            tempBox.Size = new Size(currentElement.getPreview().Height / 4, currentElement.getPreview().Width / 4); 
             tempBox.SizeMode = PictureBoxSizeMode.StretchImage;
             tempBox.Location = new Point(v.x, v.y);
-            ((AbstractAugmentation)currentElement).vector = v;
+
+            //set the vector and the trackable in augmentation
+            ((AbstractAugmentation)currentElement).vector = v;                                      
             ((AbstractAugmentation)currentElement).trackable = this.trackable;
 
-            trackable.augmentations.Add((AbstractAugmentation)currentElement);
-            tempBox.Tag = this.trackable.findAugmentation((AbstractAugmentation)currentElement);
+            //set references 
+            trackable.augmentations.Add((AbstractAugmentation)currentElement);                      
+            tempBox.Tag = this.trackable.findAugmentation((AbstractAugmentation)currentElement);    
             
-
             this.panel.Controls.Add(tempBox);
             
+            //set the new box to the front
             this.findBox(currentElement).BringToFront();
         }
 
@@ -146,7 +146,7 @@ public class PreviewController
 
     public void addSource(AbstractSource source, IPreviewable currentElement)
     {
-        if (currentMetaCategory == MetaCategory.Source && overMetaCategory == MetaCategory.Augmentation)
+        if (currentMetaCategory == MetaCategory.Augmentation)
         {
             if (this.trackable != null && trackable.existAugmentation((AbstractAugmentation)currentElement))
             {
@@ -283,12 +283,15 @@ public class PreviewController
         }
         else if (index < this.ew.project.trackables.Count)
         {
-            MessageBox.Show("Trackable No. " + index + "will be load");
+            MessageBox.Show("Trackable No. " + (index + 1) + " will be load");
             
             this.index = index;
             this.trackable = this.ew.project.trackables[index];
             this.panel.Controls.Clear();
-            this.addAllToPanel(this.ew.project.trackables[index]);
+            if (trackable != null)
+            {
+                this.addAllToPanel(this.ew.project.trackables[index]);
+            }
         }
         else if (index >= this.ew.project.trackables.Count)
         {
@@ -296,6 +299,7 @@ public class PreviewController
             this.index = index;
             this.trackable = null;
             this.panel.Controls.Clear();
+            this.ew.project.trackables.Add(trackable);
         }
     }
 
@@ -334,6 +338,8 @@ public class PreviewController
         tempBox.Size = new Size(trackable.getPreview().Height / 4, trackable.getPreview().Width / 4);
         tempBox.SizeMode = PictureBoxSizeMode.StretchImage;
         this.panel.Controls.Add(tempBox);
+
+        
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
