@@ -397,7 +397,7 @@ namespace ARdevKit
 
         private void btn_editor_scene_scene_change(object sender, EventArgs e)
         {
-            if (this.previewController.trackable == null && this.project.trackables.Count > 1)
+            if (this.previewController.trackable == null && this.project.Trackables.Count > 1)
             {
                 this.updateSceneSelectionPanel();
             }
@@ -421,21 +421,21 @@ namespace ARdevKit
 
         private void btn_editor_scene_scene_new(object sender, EventArgs e)
         {
-            if (this.project.trackables.Count < 10)
+            if (this.project.Trackables.Count < 10)
             {
                 if (this.previewController.trackable != null)
                 {
                     Button tempButton = new Button();
-                    tempButton.Location = new System.Drawing.Point(54 + (52 * project.trackables.Count), 34);
-                    tempButton.Name = "btn_editor_scene_scene_" + (this.project.trackables.Count + 1);
+                    tempButton.Location = new System.Drawing.Point(54 + (52 * project.Trackables.Count), 34);
+                    tempButton.Name = "btn_editor_scene_scene_" + (this.project.Trackables.Count + 1);
                     tempButton.Size = new System.Drawing.Size(46, 45);
                     tempButton.TabIndex = 1;
-                    tempButton.Text = Convert.ToString(this.project.trackables.Count + 1);
+                    tempButton.Text = Convert.ToString(this.project.Trackables.Count + 1);
                     tempButton.UseVisualStyleBackColor = true;
                     tempButton.Click += new System.EventHandler(this.btn_editor_scene_scene_change);
 
                     this.pnl_editor_szenes.Controls.Add(tempButton);
-                    this.previewController.reloadPreviewPanel(this.project.trackables.Count);
+                    this.previewController.reloadPreviewPanel(this.project.Trackables.Count);
                 }
                 else
                 {
@@ -463,17 +463,17 @@ namespace ARdevKit
 
         private void btn_editor_scene_scene_remove(object sender, EventArgs e)
         {
-            if (this.project.trackables.Count > 1)
+            if (this.project.Trackables.Count > 1)
             {
-                this.project.trackables.Remove(this.previewController.trackable);
-                this.previewController.trackable = this.project.trackables[0];
+                this.project.Trackables.Remove(this.previewController.trackable);
+                this.previewController.trackable = this.project.Trackables[0];
                 this.updateSceneSelectionPanel();
                 MessageBox.Show("You've delete this scene! You're now in Scene 1");
                 this.previewController.index = 0;
             }
             else
             {
-                this.project.trackables[0] = null;
+                this.project.Trackables[0] = null;
                 this.previewController.currentMetaCategory = PreviewController.MetaCategory.Trackable;
                 this.previewController.removePreviewable(this.previewController.trackable);
                 MessageBox.Show("You've cleaned this scene!");
@@ -577,11 +577,11 @@ namespace ARdevKit
 
         public void updateSceneSelectionPanel()
         {
-            for (int i = 0; i < this.project.trackables.Count; i++)
+            for (int i = 0; i < this.project.Trackables.Count; i++)
             {
-                if (this.project.trackables[i] == null)
+                if (this.project.Trackables[i] == null)
                 {
-                    this.project.trackables.Remove(this.project.trackables[i]);
+                    this.project.Trackables.Remove(this.project.Trackables[i]);
                 }
             }
 
@@ -589,11 +589,11 @@ namespace ARdevKit
             this.pnl_editor_szenes.Controls.Add(this.btn_editor_scene_new);
             this.pnl_editor_szenes.Controls.Add(this.btn_editor_scene_delete);
 
-            for (int i = 0; i < this.project.trackables.Count; i++)
+            for (int i = 0; i < this.project.Trackables.Count; i++)
             {
                 Button tempButton = new Button();
                 tempButton.Location = new System.Drawing.Point(54 + (i * 52), 34);
-                tempButton.Name = "btn_editor_scene_scene_" + (this.project.trackables.Count + 1);
+                tempButton.Name = "btn_editor_scene_scene_" + (this.project.Trackables.Count + 1);
                 tempButton.Size = new System.Drawing.Size(46, 45);
                 tempButton.Text = Convert.ToString(i + 1);
                 tempButton.UseVisualStyleBackColor = true;

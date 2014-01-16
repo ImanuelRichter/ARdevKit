@@ -9,8 +9,6 @@ using ARdevKit.Model.Project;
 using System.Collections;
 using ARdevKit;
 
-
-
 public class PreviewController
 {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -56,7 +54,7 @@ public class PreviewController
         this.currentMetaCategory = new MetaCategory();
         this.index = 0;
         this.trackable = null;
-        this.ew.project.trackables.Add(trackable);
+        this.ew.project.Trackables.Add(trackable);
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -91,7 +89,7 @@ public class PreviewController
         if (currentMetaCategory == MetaCategory.Trackable && trackable == null)
         {                                                                           
             PictureBox tempBox = new PictureBox();                                  
-            tempBox.Location = new Point(v.x, v.y);
+            tempBox.Location = new Point(v.X, v.Y);
             tempBox.Image = (Image)currentElement.getPreview();
             tempBox.Size = new Size(currentElement.getPreview().Height / 4, currentElement.getPreview().Width / 4);
             tempBox.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -100,8 +98,8 @@ public class PreviewController
             ((AbstractTrackable)currentElement).vector = v;                                         
 
             //set references
-            this.ew.project.trackables[index] = (AbstractTrackable)currentElement;
-            tempBox.Tag = this.ew.project.trackables[index];
+            this.ew.project.Trackables[index] = (AbstractTrackable)currentElement;
+            tempBox.Tag = this.ew.project.Trackables[index];
             this.trackable = (AbstractTrackable)currentElement;
         }
 
@@ -112,7 +110,7 @@ public class PreviewController
             tempBox.Image = (Image)currentElement.getPreview();
             tempBox.Size = new Size(currentElement.getPreview().Height / 4, currentElement.getPreview().Width / 4); 
             tempBox.SizeMode = PictureBoxSizeMode.StretchImage;
-            tempBox.Location = new Point(v.x, v.y);
+            tempBox.Location = new Point(v.X, v.Y);
 
             //set the vector and the trackable in augmentation
             ((AbstractAugmentation)currentElement).vector = v;                                      
@@ -159,7 +157,7 @@ public class PreviewController
                 
                 //add references in Augmentation, Picturebox + project.sources List.
                 ((AbstractAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).source = source;
-                this.ew.project.sources.Add(((AbstractAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).source);
+                this.ew.project.Sources.Add(((AbstractAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).source);
             }
         }
         else
@@ -193,7 +191,7 @@ public class PreviewController
             else if (this.ew.project.findSource(source).augmentions.Count == 1)
             {
                 ((AbstractAugmentation)currentElement).source = null;
-                this.ew.project.sources.Remove(source);
+                this.ew.project.Sources.Remove(source);
             }       
         }
     }
@@ -252,12 +250,12 @@ public class PreviewController
         if (currentMetaCategory == MetaCategory.Trackable && trackable != null)
         {
             ((AbstractTrackable)this.findBox(currentElement).Tag).vector = v;
-            this.findBox(currentElement).Location = new Point(v.x, v.y);
+            this.findBox(currentElement).Location = new Point(v.X, v.Y);
         }
         else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null)
         {
             ((AbstractAugmentation)this.findBox(currentElement).Tag).vector = v;
-            this.findBox(currentElement).Location = new Point(v.x, v.y);
+            this.findBox(currentElement).Location = new Point(v.X, v.Y);
         }
     }
 
@@ -271,7 +269,7 @@ public class PreviewController
     public void updatePreviewPanel()
     {
             this.panel.Controls.Clear();
-            this.ew.project.trackables.Add(trackable);
+            this.ew.project.Trackables.Add(trackable);
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -290,26 +288,26 @@ public class PreviewController
             MessageBox.Show("You've choosen the same Scene");
         }
         //if it's a scene which exists reload scene
-        else if (index < this.ew.project.trackables.Count)
+        else if (index < this.ew.project.Trackables.Count)
         {
             MessageBox.Show("Scene No. " + (index + 1) + " will be load");
             
             this.index = index;
-            this.trackable = this.ew.project.trackables[index];
+            this.trackable = this.ew.project.Trackables[index];
             this.panel.Controls.Clear();
             if (trackable != null)
             {
-                this.addAllToPanel(this.ew.project.trackables[index]);
+                this.addAllToPanel(this.ew.project.Trackables[index]);
             }
         }
         //if the scene is new create a new empty scene
-        else if (index >= this.ew.project.trackables.Count)
+        else if (index >= this.ew.project.Trackables.Count)
         {
             MessageBox.Show("You've choosen a new Scene! gl & hf");
             this.index = index;
             this.trackable = null;
             this.panel.Controls.Clear();
-            this.ew.project.trackables.Add(trackable);
+            this.ew.project.Trackables.Add(trackable);
         }
     }
 
@@ -343,7 +341,7 @@ public class PreviewController
 
         tempBox = new PictureBox();
         tempBox.Tag = trackable;
-        tempBox.Location = new Point(trackable.vector.x, trackable.vector.y);
+        tempBox.Location = new Point(trackable.vector.X, trackable.vector.Y);
         tempBox.Image = (Image)trackable.getPreview();
         tempBox.Size = new Size(trackable.getPreview().Height / 4, trackable.getPreview().Width / 4);
         tempBox.SizeMode = PictureBoxSizeMode.StretchImage;
