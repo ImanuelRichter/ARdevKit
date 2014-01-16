@@ -99,9 +99,9 @@ public class PreviewController
             tempBox.SizeMode = PictureBoxSizeMode.StretchImage;
             ((AbstractTrackable)currentElement).vector = v;
 
-            this.ew.project.trackables.Insert(index, (AbstractTrackable)currentElement);
-            tempBox.Tag = this.ew.project.trackables[index]; 
-            this.trackable = this.ew.project.trackables[index];
+            this.ew.project.Trackables.Insert(index, (AbstractTrackable)currentElement);
+            tempBox.Tag = this.ew.project.Trackables[index]; 
+            this.trackable = this.ew.project.Trackables[index];
             
             panel.Controls.Add(tempBox);
         }
@@ -115,7 +115,7 @@ public class PreviewController
             tempBox.SizeMode = PictureBoxSizeMode.StretchImage;
             tempBox.Location = new Point(v.x, v.y);
             ((AbstractAugmentation)currentElement).vector = v;
-            ((AbstractAugmentation)currentElement).trackable = this.trackable;
+            ((AbstractAugmentation)currentElement).Trackable = this.trackable;
 
             trackable.augmentations.Add((AbstractAugmentation)currentElement);
             tempBox.Tag = this.trackable.findAugmentation((AbstractAugmentation)currentElement);
@@ -156,7 +156,7 @@ public class PreviewController
                     = source;
                 this.trackable.findAugmentation((AbstractAugmentation)currentElement).source.augmentions
                     .Add((AbstractDynamic2DAugmentation)this.trackable.findAugmentation((AbstractAugmentation)currentElement));
-                this.ew.project.sources.Add(((AbstractAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).source);
+                this.ew.project.Sources.Add(((AbstractAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).source);
             }
         }
         else
@@ -188,7 +188,7 @@ public class PreviewController
             else if (this.ew.project.findSource(source).augmentions.Count == 1)
             {
                 ((AbstractAugmentation)currentElement).source = null;
-                this.ew.project.sources.Remove(source);
+                this.ew.project.Sources.Remove(source);
             }       
         }
     }
@@ -281,16 +281,16 @@ public class PreviewController
         {
             MessageBox.Show("You've choosen the same Trackable");
         }
-        else if (index < this.ew.project.trackables.Count)
+        else if (index < this.ew.project.Trackables.Count)
         {
             MessageBox.Show("Trackable No. " + index + "will be load");
             
             this.index = index;
-            this.trackable = this.ew.project.trackables[index];
+            this.trackable = this.ew.project.Trackables[index];
             this.panel.Controls.Clear();
-            this.addAllToPanel(this.ew.project.trackables[index]);
+            this.addAllToPanel(this.ew.project.Trackables[index]);
         }
-        else if (index >= this.ew.project.trackables.Count)
+        else if (index >= this.ew.project.Trackables.Count)
         {
             MessageBox.Show("You've choosen a new Trackable! gl & hf");
             this.index = index;

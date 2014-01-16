@@ -69,5 +69,11 @@ namespace ARdevKit.Model.Project
             get { return numberOfSearchIterations; }
             set { numberOfSearchIterations = value; }
         }
+
+        public IDMarkerSensor()
+        {
+            Name = "IDMarker";
+            SensorIDString = IDFactory.getSensorID(this);
+        }
     }
 }

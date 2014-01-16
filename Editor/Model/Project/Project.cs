@@ -13,9 +13,8 @@ namespace ARdevKit.Model.Project
         private string name;
         public string Name
         {
-            this.trackables = new List<AbstractTrackable>();
-            this.sources = new List<AbstractSource>();
-            this.Name = null;  
+            get { return name; }
+            set { name = value; }
         }
 
         private List<AbstractSource> sources;
@@ -35,6 +34,13 @@ namespace ARdevKit.Model.Project
         public Project(string name)
         {
             this.name = name;
+            trackables = new List<AbstractTrackable>();
+            sources = new List<AbstractSource>();
+        }
+
+        public Project()
+        {
+            this.name = "";
             trackables = new List<AbstractTrackable>();
             sources = new List<AbstractSource>();
         }

@@ -3,54 +3,43 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
 
-namespace ARdevKit.Model.Project.File
+namespace ARdevKit.Model.Project.IO
 {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-    /// <summary>   A project configuration html. </summary>
+    /// <summary>   An open tag is a <see cref="Tag"/> which has no end part. </summary>
     ///
     /// <remarks>   Imanuel, 15.01.2014. </remarks>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public class ProjectConfigFile : ConfigFile
+    public class OpenTag : Tag
     {
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Constructor. </summary>
         ///
         /// <remarks>   Imanuel, 15.01.2014. </remarks>
         ///
-        /// <param name="tag">  The tag. </param>
+        /// <param name="text"> The text. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public ProjectConfigFile(Tag tag)
+        public OpenTag(string text) : base(text)
         {
-            header = "<!DOCTYPE html>";
-            this.tag = tag;
+            End = "";
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Writes the file at the projectPath. </summary>
+        /// <summary>   Constructor. </summary>
         ///
         /// <remarks>   Imanuel, 15.01.2014. </remarks>
         ///
-        /// <param name="path">  The project path to write. </param>
+        /// <param name="text">         The text. </param>
+        /// <param name="extension">    The extension. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public override void Write(string path)
+        public OpenTag(string text, string extension)
+            : base(text, extension)
         {
-            StreamWriter writer = new StreamWriter(path + ".html");
-            writer.WriteLine(header);
-            writer.WriteLine(tag);
-            if (sections != null)
-            {
-                foreach (Section cs in sections)
-                {
-                    cs.Write(writer);
-                }
-            }
-            writer.WriteLine(tag);
-            writer.Close();
+            End = "";
         }
     }
 }

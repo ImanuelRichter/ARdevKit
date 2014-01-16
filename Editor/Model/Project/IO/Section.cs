@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ARdevKit.Model.Project.File
+namespace ARdevKit.Model.Project.IO
 {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-    /// <summary>   A section has a <see cref="Tag"/> and a parent <see cref="ConfigFile"/>.
+    /// <summary>   A section has a <see cref="Tag"/> and a parent <see cref="AbstractFile"/>.
     ///             It can have 0..* <see cref="SubSection"/>s or <see cref="Line"/>s. </summary>
     ///
     /// <remarks>   Imanuel, 15.01.2014. </remarks>
@@ -32,7 +32,7 @@ namespace ARdevKit.Model.Project.File
         /// <value> The parent file. </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public ConfigFile ParentFile { get; set; }
+        public AbstractFile ParentFile { get; set; }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Gets or sets the sub sections. </summary>
@@ -61,7 +61,7 @@ namespace ARdevKit.Model.Project.File
         public Section(Tag tag)
         {
             this.tag = tag;
-            Level = 1;
+            Level = 0;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////

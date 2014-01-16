@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ARdevKit.Model.Project.File
+namespace ARdevKit.Model.Project.IO
 {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// <summary>   A line is a <see cref="SubSection"/> which can have a value or not. </summary>

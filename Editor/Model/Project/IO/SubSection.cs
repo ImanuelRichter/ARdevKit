@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ARdevKit.Model.Project.File
+namespace ARdevKit.Model.Project.IO
 {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// <summary>   A sub section is a <see cref="Section"/> which has a parent <see cref="Section"/>

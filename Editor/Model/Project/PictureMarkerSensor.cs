@@ -95,5 +95,11 @@ namespace ARdevKit.Model.Project
             get { return similarityThreshold; }
             set { similarityThreshold = value; }
         }
+
+        public PictureMarkerSensor()
+        {
+            Name = "PictureMarker";
+            SensorIDString = IDFactory.getSensorID(this);
+        }
     }
 }

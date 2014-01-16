@@ -39,12 +39,16 @@ namespace ARdevKit.Model.Project
         public List<CustomUserEvent> CustomUserEventList
         {
             get { return customUserEvent; }
-
         }
 
-        public AbstractTrackable trackable { get; set; }
+        protected AbstractTrackable trackable;
+        public AbstractTrackable Trackable
+        {
+            get { return trackable; }
+            set { trackable = value; }
+        }
 
-        public abstract void accept(AbstractProjectVisitor visitor);
+        public abstract void Accept(AbstractProjectVisitor visitor);
 
         abstract public Bitmap getPreview();
 

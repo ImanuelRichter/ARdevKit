@@ -8,21 +8,18 @@ namespace ARdevKit.Model.Project
 {
     public abstract class AbstractMarker : AbstractTrackable
     {
-        private String sensorCosID;
-        private int size;
-
-        private AbstractSensor sensor;
-        public AbstractSensor Sensor
+        protected string type;
+        public string Type
         {
-            get { return sensor; }
-            set { sensor = value; }
+            get { return type; }
+            set { type = value; }
         }
 
-        private Fuser markerFuser;
-        public Fuser MarkerFuser
+        protected int size;
+        public int Size
         {
-            get { return markerFuser; }
-            set { markerFuser = value; }
+            get { return size; }
+            set { size = value; }
         }
     }
 }

@@ -23,7 +23,7 @@ namespace ARdevKit.Model.Project
             set { keepPoseForNumberOfFrames = value; }
         }
 
-        private string gravityAssistance;
+        private string gravityAssistance = "";
         public string GravityAssistance
         {
             get { return gravityAssistance; }
@@ -35,6 +35,13 @@ namespace ARdevKit.Model.Project
         {
             get { return alphaTranslation; }
             set { alphaTranslation = value; }
+        }
+
+        private double gammaTranslation = 0.8;
+        public double GammaTranslation
+        {
+            get { return gammaTranslation; }
+            set { gammaTranslation = value; }
         }
 
         private double alphaRotation = 0.5;

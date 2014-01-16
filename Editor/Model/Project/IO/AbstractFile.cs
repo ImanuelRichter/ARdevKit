@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ARdevKit.Model.Project.File
+namespace ARdevKit.Model.Project.IO
 {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// <summary>   A configuration file. </summary>
@@ -12,13 +12,16 @@ namespace ARdevKit.Model.Project.File
     /// <remarks>   Imanuel, 15.01.2014. </remarks>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public abstract class ConfigFile
+    public abstract class AbstractFile
     {
+        protected string filePath;
+        public string FilePath
+        {
+            get { return filePath; }
+        }
+
         /// <summary>   The header. </summary>
         protected string header;
-
-        /// <summary>   The starting tag. </summary>
-        protected Tag tag;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Gets or sets the sections. </summary>
@@ -38,7 +41,8 @@ namespace ARdevKit.Model.Project.File
 
         public virtual void AddSection(Section cs)
         {
-            sections = sections == null ? new List<Section>() : sections;
+            if (sections == null)
+                sections = new List<Section>();
             cs.ParentFile = this;
             sections.Add(cs);
         }
@@ -51,6 +55,8 @@ namespace ARdevKit.Model.Project.File
         /// <param name="projectPath">  The project path to write. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public abstract void Write(string projectPath);
+        public abstract void Save(string projectPath);
+
+        public abstract void Save();
     }
 }
