@@ -13,10 +13,24 @@ namespace ARdevKit.Model.Project
         private int matrixID;
         public int MatrixID
         {
-            get{return matrixID;}
-            set{matrixID = value;}
+            get { return matrixID; }
+            set { matrixID = value; }
         }
 
+        private IDMarkerSensor idMarkerTrackingSensor;
+        public IDMarkerSensor IdMarkerTrackingSensor
+        {
+            get { return idMarkerTrackingSensor; }
+            set { idMarkerTrackingSensor = value; }
+        }
+
+        public IDMarker(int matrixID)
+        {
+            this.matrixID = matrixID;
+            type = "IDMarker";
+            idMarkerTrackingSensor = new IDMarkerSensor();
+            sensorCosID = IDFactory.getSensorCosID(this);
+        }
         public override void Accept(Controller.ProjectController.AbstractProjectVisitor visitor)
         {
             throw new NotImplementedException();

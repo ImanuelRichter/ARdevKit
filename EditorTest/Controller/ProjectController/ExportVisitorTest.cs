@@ -14,15 +14,30 @@ namespace EditorTest
         public void Export_WithValidPath_ResultingFile()
         {
             string projectPath = "..\\..\\..\\bin\\Debug\\currentProject";
-            Project p = new Project("Hello World");
-            p.Trackables.Add(new PictureMarker("metaioman_target.png"));
-            p.Trackables.Add(new PictureMarker("junaioman_target.png"));
+            Project project = new Project("HelloWorld");
+            project.Sensor = new PictureMarkerSensor();
 
-            ExportVisitor exporter = new ExportVisitor();
-            p.Accept(exporter);
+            PictureMarker pictureMarker1 = new PictureMarker("metaioman_target.png");
+            PictureMarker pictureMarker2 = new PictureMarker("pictureMarker1.png");
 
-            exporter.ProjectConfig.Write(Path.Combine(projectPath, p.Name));
-            exporter.TrackingConfiguration.Write(projectPath);
+            BarGraph barGraph = new BarGraph();
+            barGraph.AugmentationPath = "..\\..\\..\\bin\\Debug\\currentProject\\barGraph.png";
+            barGraph.IsVisible = false;
+            barGraph.Coordinatesystemid = 1;
+            barGraph.vector = new Vector3D(3, 3, 3);
+            pictureMarker1.augmentations.Add(barGraph);
+            barGraph.Trackable = pictureMarker1;
+
+            project.Trackables.Add(pictureMarker1);
+            project.Trackables.Add(pictureMarker2);
+
+            ExportVisitor exporter = new ExportVisitor(projectPath);
+            project.Accept(exporter);
+
+            exporter.ArelProjectFile.Save();
+            exporter.TrackingDataFile.Save();
+            exporter.ArelConfigFile.Save();
+            exporter.ArelGlueFile.Save();
         }
     }
 }

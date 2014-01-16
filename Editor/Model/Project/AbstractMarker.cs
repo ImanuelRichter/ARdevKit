@@ -9,7 +9,18 @@ namespace ARdevKit.Model.Project
     [Serializable]
     public abstract class AbstractMarker : AbstractTrackable
     {
-        private String sensorCosID;
-        private int size;
+        protected string type;
+        public string Type
+        {
+            get { return type; }
+            set { type = value; }
+        }
+
+        protected int size;
+        public int Size
+        {
+            get { return size; }
+            set { size = value; }
+        }
     }
 }

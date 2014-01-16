@@ -50,7 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Project\File\ARELConfigFile.cs" />
+    <Compile Include="Model\Project\IDFactory.cs" />
+    <Compile Include="Model\Project\IO\AbstractBlock.cs" />
+    <Compile Include="Model\Project\IO\ARELGlueFile.cs" />
+    <Compile Include="Model\Project\Fuser.cs" />
+    <Compile Include="Model\Project\IDMarkerSensor.cs" />
+    <Compile Include="Model\Project\IO\ARELConfigFile.cs" />
     <Compile Include="Controller\Connections\DeviceConnection\DeviceConnectionController.cs" />
     <Compile Include="Controller\Connections\DeviceConnection\TCPServer.cs" />
     <Compile Include="Controller\Connections\DeviceConnection\UDPServer.cs" />
@@ -79,19 +84,23 @@
     <Compile Include="Model\Project\CustomUserEvent.cs" />
     <Compile Include="Model\Project\DbSource.cs" />
     <Compile Include="Model\Project\FileSource.cs" />
-    <Compile Include="Model\Project\File\ConfigFile.cs" />
-    <Compile Include="Model\Project\File\Line.cs" />
-    <Compile Include="Model\Project\File\OpenTag.cs" />
-    <Compile Include="Model\Project\File\Section.cs" />
-    <Compile Include="Model\Project\File\SubSection.cs" />
-    <Compile Include="Model\Project\File\Tag.cs" />
-    <Compile Include="Model\Project\File\TrackingConfigurationFile.cs" />
+    <Compile Include="Model\Project\IO\AbstractARELFile.cs" />
+    <Compile Include="Model\Project\IO\BlockMarker.cs" />
+    <Compile Include="Model\Project\IO\JavaScriptBlock.cs" />
+    <Compile Include="Model\Project\IO\HTMLLine.cs" />
+    <Compile Include="Model\Project\IO\JavaScriptLine.cs" />
+    <Compile Include="Model\Project\IO\OpenTag.cs" />
+    <Compile Include="Model\Project\IO\HTMLBlock.cs" />
+    <Compile Include="Model\Project\IO\Tag.cs" />
+    <Compile Include="Model\Project\IO\TrackingDataFile.cs" />
     <Compile Include="Model\Project\IDMarker.cs" />
     <Compile Include="Model\Project\IPreviewable.cs" />
     <Compile Include="Model\Project\PictureMarker.cs" />
+    <Compile Include="Model\Project\PictureMarkerSensor.cs" />
     <Compile Include="Model\Project\Project.cs" />
+    <Compile Include="Model\Project\AbstractSensor.cs" />
     <Compile Include="Model\Project\Vector3D.cs" />
-    <Compile Include="Model\Project\File\ProjectConfigFile.cs" />
+    <Compile Include="Model\Project\IO\ARELProjectFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controller\TestController\TestController.cs" />
     <Compile Include="View\AbstractProperty.cs" />

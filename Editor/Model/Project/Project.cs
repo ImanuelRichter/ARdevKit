@@ -11,68 +11,18 @@ namespace ARdevKit.Model.Project
     [Serializable]
     public class Project// : ISerializable
     {
-        [Flags]
-        public enum SensorTypes { FeatureBasedSensorSource };
-        private SensorTypes sensorType = SensorTypes.FeatureBasedSensorSource;
-        public SensorTypes SensorType
-        {
-            get { return sensorType; }
-            set { sensorType = value; }
-        }
-
-        [Flags]
-        public enum SensorSubTypes { Fast };
-        private SensorSubTypes sensorSubType = SensorSubTypes.Fast;
-        public SensorSubTypes SensorSubType
-        {
-            get { return sensorSubType; }
-            set { sensorSubType = value; }
-        }
-
-        [Flags]
-        public enum SensorIDs { FeatureTracking };
-        private SensorIDs sensorID = SensorIDs.FeatureTracking;
-        public SensorIDs SensorID
-        {
-            get { return sensorID; }
-            set { sensorID = value; }
-        }
-
-        [Flags]
-        public enum FeatureDescriptorAlignments { regular };
-        private FeatureDescriptorAlignments featureDescriptorAlignment = FeatureDescriptorAlignments.regular;
-        public FeatureDescriptorAlignments FeatureDescriptorAlignment
-        {
-            get { return featureDescriptorAlignment; }
-            set { featureDescriptorAlignment = value; }
-        }
-
-        private int maxObjectsToDetectPerFrame = 5;
-        public int MaxObjectsToDetectPerFrame
-        {
-            get { return maxObjectsToDetectPerFrame; }
-            set { maxObjectsToDetectPerFrame = value; }
-        }
-
-        private int maxObjectsToTrackInParallel = 1;
-        public int MaxObjectsToTrackInParallel
-        {
-            get { return maxObjectsToTrackInParallel; }
-            set { maxObjectsToTrackInParallel = value; }
-        }
-
-        private double similarityThreshold = 0.7;
-        public double SimilarityThreshold
-        {
-            get { return similarityThreshold; }
-            set { similarityThreshold = value; }
-        }
-
-        private String name;
+        private string name;
         public string Name
         {
             get { return name; }
             set { name = value; }
+        }
+
+        protected AbstractSensor sensor;
+        public AbstractSensor Sensor
+        {
+            get { return sensor; }
+            set { sensor = value; }
         }
 
         private List<AbstractSource> sources;
@@ -96,6 +46,13 @@ namespace ARdevKit.Model.Project
             sources = new List<AbstractSource>();
         }
 
+        public Project()
+        {
+            this.name = "";
+            trackables = new List<AbstractTrackable>();
+            sources = new List<AbstractSource>();
+        }
+
         public void Accept(AbstractProjectVisitor visitor)
         {
             visitor.visit(this);
@@ -108,7 +65,24 @@ namespace ARdevKit.Model.Project
 /*        public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             throw new NotImplementedException();
-        }*/
+        }
+
+        public AbstractSource findSource(AbstractSource source)
+        {
+            return this.sources[this.sources.IndexOf(source)];
+        }
+
+        public bool existSource(AbstractSource source)
+        {
+            foreach (AbstractSource s in sources)
+            {
+                if (s == source)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 
     

@@ -26,15 +26,29 @@ namespace ARdevKit.Model.Project
             set { similarityThreshhold = value; }
         }
 
+        private PictureMarkerSensor pictureMarkerTrackingSensor;
+        public PictureMarkerSensor PictureMarkerTrackingSensor
+        {
+            get { return pictureMarkerTrackingSensor; }
+            set { pictureMarkerTrackingSensor = value; }
+        }
+
         public PictureMarker(string imagePath)
         {
             this.imagePath = imagePath;
             imageName = Path.GetFileName(imagePath);
+            type = "PictureMarker";
+            MarkerFuser = new Fuser();
+            sensorCosID = IDFactory.getSensorCosID(this);
         }
 
         public override void Accept(Controller.ProjectController.AbstractProjectVisitor visitor)
         {
-            visitor.visit(this);
+            visitor.Visit(this);
+            foreach (AbstractAugmentation augmentation in augmentations)
+            {
+                augmentation.Accept(visitor);
+            }
         }
 
         public override List<View.AbstractProperty> getPropertyList()

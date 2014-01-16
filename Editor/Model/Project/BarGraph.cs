@@ -15,9 +15,9 @@ namespace ARdevKit.Model.Project
         private int optimalValue;
         private Color optimalValueColor;
 
-        public override void accept(Controller.ProjectController.AbstractProjectVisitor visitor)
+        public override void Accept(Controller.ProjectController.AbstractProjectVisitor visitor)
         {
-            throw new NotImplementedException();
+            visitor.Visit(this);
         }
 
         public override Bitmap getPreview()

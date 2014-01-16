@@ -14,6 +14,20 @@ namespace ARdevKit.Model.Project
     [Serializable]
     public abstract class AbstractAugmentation : ISerializable, IPreviewable
     {
+        private int coordinatesystemid;
+        public int Coordinatesystemid
+        {
+            get { return coordinatesystemid; }
+            set { coordinatesystemid = value; }
+        }
+
+        private string augmentationPath;
+        public string AugmentationPath
+        {
+            get { return augmentationPath; }
+            set { augmentationPath = value; }
+        }
+
         /// <summary>
         /// A list of all customUserEvents the current selected Element has.
         /// </summary>
@@ -23,6 +37,11 @@ namespace ARdevKit.Model.Project
         /// ToDo
         /// </summary>
         private bool isVisible;
+        public bool IsVisible
+        {
+            get { return isVisible; }
+            set { isVisible = value; }
+        }
 
         /// <summary>
         /// Vector to know the Position on the PreviewPanel.
@@ -40,10 +59,16 @@ namespace ARdevKit.Model.Project
         public List<CustomUserEvent> CustomUserEventList
         {
             get { return customUserEvent; }
-
         }
 
-        public abstract void accept(AbstractProjectVisitor visitor);
+        protected AbstractTrackable trackable;
+        public AbstractTrackable Trackable
+        {
+            get { return trackable; }
+            set { trackable = value; }
+        }
+
+        public abstract void Accept(AbstractProjectVisitor visitor);
 
         abstract public Bitmap getPreview();
 

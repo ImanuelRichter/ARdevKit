@@ -5,15 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace ARdevKit.Model.Project.File
+namespace ARdevKit.Model.Project.IO
 {
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-    /// <summary>   A project configuration html. </summary>
-    ///
-    /// <remarks>   Imanuel, 15.01.2014. </remarks>
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    public class ProjectConfigFile : ConfigFile
+    public class ARELConfigFile : AbstractARELFile
     {
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Constructor. </summary>
@@ -23,10 +17,25 @@ namespace ARdevKit.Model.Project.File
         /// <param name="tag">  The tag. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public ProjectConfigFile(Tag tag)
+        public ARELConfigFile(string header, string projectPath)
         {
-            header = "<!DOCTYPE html>";
-            this.tag = tag;
+            this.header = header;
+            filePath = Path.Combine(projectPath, "arelConfig.xml");
+        }
+
+        public override void Save()
+        {
+            StreamWriter writer = new StreamWriter(filePath);
+            if (header != null && header != "")
+                writer.WriteLine(header);
+            if (blocks != null)
+            {
+                foreach (HTMLBlock htmlBlock in blocks)
+                {
+                    htmlBlock.Write(writer);
+                }
+            }
+            writer.Close();
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -37,20 +46,10 @@ namespace ARdevKit.Model.Project.File
         /// <param name="path">  The project path to write. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public override void Write(string path)
+        public override void Save(string projectPath)
         {
-            StreamWriter writer = new StreamWriter(path + ".html");
-            writer.WriteLine(header);
-            writer.WriteLine(tag);
-            if (sections != null)
-            {
-                foreach (Section cs in sections)
-                {
-                    cs.Write(writer);
-                }
-            }
-            writer.WriteLine(tag);
-            writer.Close();
+            this.filePath = Path.Combine(projectPath, "arelConfig.xml");
+            Save();
         }
     }
 }
