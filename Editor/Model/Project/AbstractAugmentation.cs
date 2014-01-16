@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Model.Project
 {
+    [Serializable]
     public abstract class AbstractAugmentation : ISerializable, IPreviewable
     {
         /// <summary>

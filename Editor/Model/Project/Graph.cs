@@ -7,6 +7,7 @@ using System.Drawing;
 
 namespace ARdevKit.Model.Project
 {
+    [Serializable]
     public abstract class Graph : AbstractDynamic2DAugmentation 
     {
         private int maxValue;

@@ -17,8 +17,8 @@ namespace ARdevKit.Model.Project
     ///     though this IPreviewable can't be a Interface for AbstractSource.
     /// </summary>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    public abstract class AbstractSource : ISerializable, IPreviewable
+    [Serializable]
+    public abstract class AbstractSource : IPreviewable//, ISerializable
     {
         private String sourceID;
 

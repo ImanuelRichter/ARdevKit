@@ -6,35 +6,50 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization;
-using System.Runtime.Serialization.Formatters.Soap;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace ARdevKit.Controller.ProjectController
 {
-    class SaveVisitor
+    public class SaveVisitor : AbstractProjectVisitor
     {
-        private System.Runtime.Serialization.Formatters.Soap.SoapFormatter formatter;
+        public SaveVisitor(string projectPath)
+        {
+            this.projectPath = projectPath;
+            formatter = new BinaryFormatter();
+        }
+        private BinaryFormatter formatter;
         private Stream stream;
 
-        public void visit(BarGraph graph)
+        public override void visit(BarGraph graph)
         {
             throw new NotImplementedException();
         }
-        public void visit(DbSource source)
+        public override void visit(DbSource source)
         {
             throw new NotImplementedException();
         }
-        public void visit(PictureMarker pictureMarker)
+        public override void visit(PictureMarker pictureMarker)
         {
             throw new NotImplementedException();
         }
-        public void visit(IDMarker idMarker)
+        public override void visit(IDMarker idMarker)
         {
             throw new NotImplementedException();
         }
 
-        public void visit(Project project)
+        public override void visit(Project project)
         {
-            throw new NotImplementedException();
+            Stream stream = new FileStream((Path.Combine(projectPath, project.Name.Replace(" ", "_"))+".bin"), FileMode.Create, FileAccess.Write, FileShare.None);
+            formatter.Serialize(stream, project);
+            stream.Close();
+        }
+
+        public Project load(string path)
+        {
+            Stream stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read);
+            Project deserializedProject = (Project)formatter.Deserialize(stream);
+            stream.Close();
+            return deserializedProject;
         }
     }
 }

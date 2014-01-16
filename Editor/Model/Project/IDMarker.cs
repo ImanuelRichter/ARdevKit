@@ -7,9 +7,15 @@ using System.Drawing;
 
 namespace ARdevKit.Model.Project
 {
+    [Serializable]
     public class IDMarker : AbstractMarker
     {
         private int matrixID;
+        public int MatrixID
+        {
+            get{return matrixID;}
+            set{matrixID = value;}
+        }
 
         public override void Accept(Controller.ProjectController.AbstractProjectVisitor visitor)
         {

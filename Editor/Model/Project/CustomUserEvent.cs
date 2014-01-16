@@ -10,6 +10,7 @@ namespace ARdevKit.Model.Project
     /// Just a class for AbstractAugmentations. With this we are able to List all the customUserEvents. 
     /// See issue #13 for reason of this class.
     /// </summary>
+    [Serializable]
     public class CustomUserEvent
     {
         private string name;

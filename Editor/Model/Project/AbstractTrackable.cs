@@ -10,7 +10,8 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Model.Project
 {
-    public abstract class AbstractTrackable : ISerializable, IPreviewable
+    [Serializable]
+    public abstract class AbstractTrackable : IPreviewable//, ISerializable 
     {
         public Vector3D vector { get; set; }
         public AbstractAugmentation[] augmentations { get; set; }

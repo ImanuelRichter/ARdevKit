@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Model.Project
 {
+    [Serializable]
     public class BarGraph : Graph
     {
         private Color maxValueColor;

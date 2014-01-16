@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Model.Project
 {
-    public class Project : ISerializable
+    [Serializable]
+    public class Project// : ISerializable
     {
         [Flags]
         public enum SensorTypes { FeatureBasedSensorSource };
@@ -98,16 +99,16 @@ namespace ARdevKit.Model.Project
         public void Accept(AbstractProjectVisitor visitor)
         {
             visitor.visit(this);
-            foreach (AbstractTrackable t in Trackables)
+            /*foreach (AbstractTrackable t in Trackables)
             {
                 t.Accept(visitor);
-            }
+            }*/
         }
 
-        public void GetObjectData(SerializationInfo info, StreamingContext context)
+/*        public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             throw new NotImplementedException();
-        }
+        }*/
     }
 
     

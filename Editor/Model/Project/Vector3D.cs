@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Model.Project
 {
+    [Serializable]
     public class Vector3D
     {
         public int x { get; set; }
