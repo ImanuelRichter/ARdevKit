@@ -12,11 +12,11 @@ namespace ARdevKit.Model.Project
 {
     public abstract class AbstractTrackable : ISerializable, IPreviewable
     {
-        private Fuser markerFuser;
-        public Fuser MarkerFuser
+        protected MarkerFuser fuser;
+        public MarkerFuser Fuser
         {
-            get { return markerFuser; }
-            set { markerFuser = value; }
+            get { return fuser; }
+            set { fuser = value; }
         }
 
         protected string sensorCosID;
@@ -26,8 +26,15 @@ namespace ARdevKit.Model.Project
             set { sensorCosID = value; }
         }
 
+        private double similarityThreshold = 0.7;
+        protected double SimilarityThreshold
+        {
+            get { return similarityThreshold; }
+            set { similarityThreshold = value; }
+        }
+
         public Vector3D vector { get; set; }
-        public List<AbstractAugmentation> augmentations { get; set; }
+        public List<AbstractAugmention> augmentations { get; set; }
 
         public abstract void Accept(AbstractProjectVisitor visitor);
 
@@ -39,23 +46,23 @@ namespace ARdevKit.Model.Project
 
         public AbstractTrackable()
         {
-            this.augmentations = new List<AbstractAugmentation>();
+            this.augmentations = new List<AbstractAugmention>();
         }
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             throw new NotImplementedException();
         }
 
-        public AbstractAugmentation findAugmentation(IPreviewable a)
+        public AbstractAugmention findAugmentation(IPreviewable a)
         {
-            return this.augmentations[this.augmentations.IndexOf((AbstractAugmentation)a)];
+            return this.augmentations[this.augmentations.IndexOf((AbstractAugmention)a)];
         }
 
         public bool existAugmentation(IPreviewable a)
         {
-            foreach (AbstractAugmentation aug in augmentations)
+            foreach (AbstractAugmention aug in augmentations)
             {
-                if (aug == (AbstractAugmentation)a)
+                if (aug == (AbstractAugmention)a)
                 {
                     return true;
                 }

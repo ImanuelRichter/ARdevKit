@@ -73,8 +73,10 @@ namespace ARdevKit.Model.Project
 
         public IDMarkerSensor()
         {
-            Name = "IDMarker";
+            Name = "Marker";
+            sensorIDBase = SensorIDBases.MarkerTracking;
             SensorIDString = IDFactory.getSensorID(this);
+            sensorType = SensorTypes.MarkerBasedSensorSource;
         }
 
         public override void Accept(AbstractProjectVisitor visitor)

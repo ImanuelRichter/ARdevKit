@@ -114,11 +114,11 @@ public class PreviewController
             tempBox.Size = new Size(currentElement.getPreview().Height / 4, currentElement.getPreview().Width / 4);
             tempBox.SizeMode = PictureBoxSizeMode.StretchImage;
             tempBox.Location = new Point(v.X, v.Y);
-            ((AbstractAugmentation)currentElement).vector = v;
-            ((AbstractAugmentation)currentElement).Trackable = this.trackable;
+            ((AbstractAugmention)currentElement).vector = v;
+            ((AbstractAugmention)currentElement).Trackable = this.trackable;
 
-            trackable.augmentations.Add((AbstractAugmentation)currentElement);
-            tempBox.Tag = this.trackable.findAugmentation((AbstractAugmentation)currentElement);
+            trackable.augmentations.Add((AbstractAugmention)currentElement);
+            tempBox.Tag = this.trackable.findAugmentation((AbstractAugmention)currentElement);
             
 
             this.panel.Controls.Add(tempBox);
@@ -148,15 +148,15 @@ public class PreviewController
     {
         if (currentMetaCategory == MetaCategory.Source && overMetaCategory == MetaCategory.Augmentation)
         {
-            if (this.trackable != null && trackable.existAugmentation((AbstractAugmentation)currentElement))
+            if (this.trackable != null && trackable.existAugmentation((AbstractAugmention)currentElement))
             {
                 //search the linked PictureBox out of Dictionary, replace the Tag with the new Augmentation and replace the Picturebox in Panel
                 this.currentMetaCategory = MetaCategory.Augmentation;
-                ((AbstractAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).source
+                ((AbstractAugmention)this.findBox((AbstractAugmention)currentElement).Tag).source
                     = source;
-                this.trackable.findAugmentation((AbstractAugmentation)currentElement).source.augmentions
-                    .Add((AbstractDynamic2DAugmentation)this.trackable.findAugmentation((AbstractAugmentation)currentElement));
-                this.ew.project.Sources.Add(((AbstractAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).source);
+                this.trackable.findAugmentation((AbstractAugmention)currentElement).source.augmentions
+                    .Add((AbstractDynamic2DAugmention)this.trackable.findAugmentation((AbstractAugmention)currentElement));
+                this.ew.project.Sources.Add(((AbstractAugmention)this.findBox((AbstractAugmention)currentElement).Tag).source);
             }
         }
         else
@@ -182,12 +182,12 @@ public class PreviewController
         {
             if (this.ew.project.findSource(source).augmentions.Count > 1)
             {
-                ((AbstractAugmentation)currentElement).source = null;
-                this.ew.project.findSource(source).augmentions.Remove((AbstractDynamic2DAugmentation)currentElement);
+                ((AbstractAugmention)currentElement).source = null;
+                this.ew.project.findSource(source).augmentions.Remove((AbstractDynamic2DAugmention)currentElement);
             }
             else if (this.ew.project.findSource(source).augmentions.Count == 1)
             {
-                ((AbstractAugmentation)currentElement).source = null;
+                ((AbstractAugmention)currentElement).source = null;
                 this.ew.project.Sources.Remove(source);
             }       
         }
@@ -210,9 +210,9 @@ public class PreviewController
         }
         else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null)
         {
-            this.trackable.augmentations.Remove((AbstractAugmentation)currentElement);
+            this.trackable.augmentations.Remove((AbstractAugmention)currentElement);
 
-            this.panel.Controls.Remove(this.findBox((AbstractAugmentation)currentElement));
+            this.panel.Controls.Remove(this.findBox((AbstractAugmention)currentElement));
         }
         else
         {
@@ -249,7 +249,7 @@ public class PreviewController
         }
         else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null)
         {
-            ((AbstractAugmentation)this.findBox(currentElement).Tag).vector = v;
+            ((AbstractAugmention)this.findBox(currentElement).Tag).vector = v;
             this.findBox(currentElement).Location = new Point(v.X, v.Y);
         }
     }
@@ -315,7 +315,7 @@ public class PreviewController
         PictureBox tempBox;
         if (trackable.augmentations.Count > 0)
         {
-            foreach( AbstractAugmentation aug in trackable.augmentations)
+            foreach( AbstractAugmention aug in trackable.augmentations)
             {              
                     tempBox = new PictureBox();
                     tempBox.Tag = aug;
@@ -360,7 +360,7 @@ public class PreviewController
         {
             foreach (Control comp in panel.Controls)
             {
-                if (comp.Tag == (AbstractAugmentation)prev)
+                if (comp.Tag == (AbstractAugmention)prev)
                 {
                     return (PictureBox)comp;
                 }

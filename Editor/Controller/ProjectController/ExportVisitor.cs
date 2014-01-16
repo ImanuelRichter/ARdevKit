@@ -1,5 +1,4 @@
-﻿using ARdevKit.Model.Project;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -7,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using ARdevKit.Model.Project.IO;
 using System.Globalization;
+
+using ARdevKit.Model.Project;
 
 namespace ARdevKit.Controller.ProjectController
 {
@@ -59,6 +60,7 @@ namespace ARdevKit.Controller.ProjectController
         private HTMLBlock sensorBlock;
         private HTMLBlock sensorParametersBlock;
         private HTMLBlock connectionsBlock;
+        private HTMLBlock fuserBlock;
 
         private int cosCounter = 1;
 
@@ -72,100 +74,83 @@ namespace ARdevKit.Controller.ProjectController
             this.projectPath = projectPath;
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Visits the given graph. </summary>
+        ///
+        /// <remarks>   Imanuel, 16.01.2014. </remarks>
+        ///
+        /// <param name="graph">    The graph. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
         public override void Visit(BarGraph graph)
         {
-            // Connections
-            
-                // COS
-                HTMLBlock cosBlock = new HTMLBlock(new Tag("COS"));
-                connectionsBlock.AddBlock(cosBlock);
+            // Connections 
 
-                    // Name
-                    cosBlock.AddLine(new HTMLLine(new Tag("Name"), project.Sensor.Name + "COS" + cosCounter++));
+            // COS
+            HTMLBlock cosBlock = new HTMLBlock(new Tag("COS"));
+            connectionsBlock.AddBlock(cosBlock);
 
-                    // Fuser
-                    HTMLBlock fuserBlock = new HTMLBlock(new Tag("Fuser", "Type=\"" + graph.Trackable.MarkerFuser.FuserType + "\""));
-                    cosBlock.AddBlock(fuserBlock);
+            // Name
+            cosBlock.AddLine(new HTMLLine(new Tag("Name"), project.Sensor.Name + "COS" + cosCounter++));
 
-                        // Parameters
-                        HTMLBlock fuserParametersBlock = new HTMLBlock(new Tag("Parameters"));
-                        fuserBlock.AddBlock(fuserParametersBlock);
+            // Fuser
+            fuserBlock = new HTMLBlock(new Tag("Dummy"));
+            cosBlock.AddBlock(fuserBlock);
 
-                        string value = graph.Trackable.MarkerFuser.KeepPoseForNumberOfFrames.ToString();
-                        fuserParametersBlock.AddLine(new HTMLLine(new Tag("KeepPoseForNumberOfFrames"), value));
+            // SensorSource
+            HTMLBlock sensorSourceBlock = new HTMLBlock(new Tag("SensorSource", "trigger=\"1\""));
+            cosBlock.AddBlock(sensorSourceBlock);
 
-                        value = graph.Trackable.MarkerFuser.GravityAssistance.ToString();
-                        fuserParametersBlock.AddLine(new HTMLLine(new Tag("GravityAssistance"), value));
+            // SensorID
+            sensorSourceBlock.AddLine(new HTMLLine(new Tag("SensorID"), project.Sensor.SensorIDString));
+            // SensorCosID
+            sensorSourceBlock.AddLine(new HTMLLine(new Tag("SensorCosID"), graph.Trackable.SensorCosID));
 
-                        value = graph.Trackable.MarkerFuser.AlphaTranslation.ToString("F1", CultureInfo.InvariantCulture);
-                        fuserParametersBlock.AddLine(new HTMLLine(new Tag("AlphaTranslation"), value));
+            // Hand-Eye-Calibration
+            HTMLBlock handEyeCalibrationBlock = new HTMLBlock(new Tag("HandEyeCalibration"));
+            sensorSourceBlock.AddBlock(handEyeCalibrationBlock);
 
-                        value = graph.Trackable.MarkerFuser.GammaTranslation.ToString("F1", CultureInfo.InvariantCulture);
-                        fuserParametersBlock.AddLine(new HTMLLine(new Tag("GammaTranslation"), value));
+            // Translation
+            HTMLBlock hecTranslationOffset = new HTMLBlock(new Tag("TranslationOffset"));
+            handEyeCalibrationBlock.AddBlock(hecTranslationOffset);
 
-                        value = graph.Trackable.MarkerFuser.AlphaRotation.ToString("F1", CultureInfo.InvariantCulture);
-                        fuserParametersBlock.AddLine(new HTMLLine(new Tag("AlphaRotation"), value));
+            // TODO get vectors
+            hecTranslationOffset.AddLine(new HTMLLine(new Tag("X"), "0"));
+            hecTranslationOffset.AddLine(new HTMLLine(new Tag("Y"), "0"));
+            hecTranslationOffset.AddLine(new HTMLLine(new Tag("Z"), "0"));
 
-                        value = graph.Trackable.MarkerFuser.GammaRotation.ToString("F1", CultureInfo.InvariantCulture);
-                        fuserParametersBlock.AddLine(new HTMLLine(new Tag("GammaRotation"), value));
+            // Rotation
+            HTMLBlock hecRotationOffset = new HTMLBlock(new Tag("RotationOffset"));
+            handEyeCalibrationBlock.AddBlock(hecRotationOffset);
 
-                        value = graph.Trackable.MarkerFuser.ContinueLostTrackingWithOrientationSensor.ToString().ToLower();
-                        fuserParametersBlock.AddLine(new HTMLLine(new Tag("ContinueLostTrackingWithOrientationSensor"), value));
+            // TODO get vectors
+            hecRotationOffset.AddLine(new HTMLLine(new Tag("X"), "0"));
+            hecRotationOffset.AddLine(new HTMLLine(new Tag("Y"), "0"));
+            hecRotationOffset.AddLine(new HTMLLine(new Tag("Z"), "0"));
+            hecRotationOffset.AddLine(new HTMLLine(new Tag("W"), "1"));
 
-                    // SensorSource
-                    HTMLBlock sensorSourceBlock = new HTMLBlock(new Tag("SensorSource"));
-                    cosBlock.AddBlock(sensorSourceBlock);
+            // COSOffset
+            HTMLBlock COSOffsetBlock = new HTMLBlock(new Tag("COSOffset"));
+            sensorSourceBlock.AddBlock(COSOffsetBlock);
 
-                        // SensorID
-                        sensorSourceBlock.AddLine(new HTMLLine(new Tag("SensorID"), project.Sensor.SensorIDString));
-                        // SensorCosID
-                        sensorSourceBlock.AddLine(new HTMLLine(new Tag("SensorCosID"), graph.Trackable.SensorCosID));
+            // Translation
+            HTMLBlock COSOffsetTranslationOffset = new HTMLBlock(new Tag("TranslationOffset"));
+            COSOffsetBlock.AddBlock(COSOffsetTranslationOffset);
 
-                        // Hand-Eye-Calibration
-                        HTMLBlock handEyeCalibrationBlock = new HTMLBlock(new Tag("HandEyeCalibration"));
-                        sensorSourceBlock.AddBlock(handEyeCalibrationBlock);
+            // TODO get vectors
+            COSOffsetTranslationOffset.AddLine(new HTMLLine(new Tag("X"), "0"));
+            COSOffsetTranslationOffset.AddLine(new HTMLLine(new Tag("Y"), "0"));
+            COSOffsetTranslationOffset.AddLine(new HTMLLine(new Tag("Z"), "0"));
 
-                            // Translation
-                            HTMLBlock hecTranslationOffset = new HTMLBlock(new Tag("TranslationOffset"));
-                            handEyeCalibrationBlock.AddBlock(hecTranslationOffset);
+            // Rotation
+            HTMLBlock COSOffsetRotationOffset = new HTMLBlock(new Tag("RotationOffset"));
+            COSOffsetBlock.AddBlock(COSOffsetRotationOffset);
 
-                                // TODO get vectors
-                                hecTranslationOffset.AddLine(new HTMLLine(new Tag("X"), "0"));
-                                hecTranslationOffset.AddLine(new HTMLLine(new Tag("Y"), "0"));
-                                hecTranslationOffset.AddLine(new HTMLLine(new Tag("Z"), "0"));
-
-                            // Rotation
-                            HTMLBlock hecRotationOffset = new HTMLBlock(new Tag("RotationOffset"));
-                            handEyeCalibrationBlock.AddBlock(hecRotationOffset);
-
-                            // TODO get vectors
-                            hecRotationOffset.AddLine(new HTMLLine(new Tag("X"), "0"));
-                            hecRotationOffset.AddLine(new HTMLLine(new Tag("Y"), "0"));
-                            hecRotationOffset.AddLine(new HTMLLine(new Tag("Z"), "0"));
-                            hecRotationOffset.AddLine(new HTMLLine(new Tag("W"), "1"));
-
-                        // COSOffset
-                        HTMLBlock COSOffsetBlock = new HTMLBlock(new Tag("COSOffset"));
-                        sensorSourceBlock.AddBlock(COSOffsetBlock);
-
-                            // Translation
-                            HTMLBlock COSOffsetTranslationOffset = new HTMLBlock(new Tag("TranslationOffset"));
-                            COSOffsetBlock.AddBlock(COSOffsetTranslationOffset);
-
-                                // TODO get vectors
-                                COSOffsetTranslationOffset.AddLine(new HTMLLine(new Tag("X"), "0"));
-                                COSOffsetTranslationOffset.AddLine(new HTMLLine(new Tag("Y"), "0"));
-                                COSOffsetTranslationOffset.AddLine(new HTMLLine(new Tag("Z"), "0"));
-
-                            // Rotation
-                            HTMLBlock COSOffsetRotationOffset = new HTMLBlock(new Tag("RotationOffset"));
-                            COSOffsetBlock.AddBlock(COSOffsetRotationOffset);
-
-                                // TODO get vectors
-                                COSOffsetRotationOffset.AddLine(new HTMLLine(new Tag("X"), "0"));
-                                COSOffsetRotationOffset.AddLine(new HTMLLine(new Tag("Y"), "0"));
-                                COSOffsetRotationOffset.AddLine(new HTMLLine(new Tag("Z"), "0"));
-                                COSOffsetRotationOffset.AddLine(new HTMLLine(new Tag("W"), "1"));
+            // TODO get vectors
+            COSOffsetRotationOffset.AddLine(new HTMLLine(new Tag("X"), "0"));
+            COSOffsetRotationOffset.AddLine(new HTMLLine(new Tag("Y"), "0"));
+            COSOffsetRotationOffset.AddLine(new HTMLLine(new Tag("Z"), "0"));
+            COSOffsetRotationOffset.AddLine(new HTMLLine(new Tag("W"), "1"));
 
             // arelGlue.js
             JavaScriptBlock loadContentBlock = new JavaScriptBlock();
@@ -183,6 +168,8 @@ namespace ARdevKit.Controller.ProjectController
 
             ifPatternIsFoundBlock.AddLine(new JavaScriptLine("arel.Scene.getObject(\"" + imageVariable + "\").setVisibility(true)"));
             ifPatternIsLostBlock.AddLine(new JavaScriptLine("arel.Scene.getObject(\"" + imageVariable + "\").setVisibility(false)"));
+
+            imageCount++;
         }
 
         public override void Visit(DbSource source)
@@ -200,7 +187,63 @@ namespace ARdevKit.Controller.ProjectController
             HTMLBlock parameterBlock = new HTMLBlock(new Tag("Parameters"));
             sensorCOSBlock.AddBlock(parameterBlock);
 
-            parameterBlock.AddLine(new HTMLLine(new Tag("ReferenceImage"), pictureMarker.ImageName));
+            parameterBlock.AddLine(new HTMLLine(new Tag("Size"), pictureMarker.Size.ToString()));
+
+            HTMLBlock markerParametersBlock = new HTMLBlock(new Tag("MarkerParameters"));
+            parameterBlock.AddBlock(markerParametersBlock);
+            markerParametersBlock.AddLine(new HTMLLine(new Tag("referenceImage", "qualityThreshold=\"0.70\""), pictureMarker.ImageName));
+            string value = pictureMarker.SimilarityThreshhold.ToString("F1", CultureInfo.InvariantCulture);
+            parameterBlock.AddLine(new HTMLLine(new Tag("SimilarityThreshold"), value));
+        }
+
+        public override void Visit(MarkerFuser markerFuser)
+        {
+            // Fuser
+            fuserBlock.Update(new Tag("Fuser", "type=\"" + markerFuser.FuserType + "\""));
+
+            // Parameters
+            HTMLBlock fuserParametersBlock = new HTMLBlock(new Tag("Parameters"));
+            fuserBlock.AddBlock(fuserParametersBlock);
+
+            string value = markerFuser.AlphaRotation.ToString("F1", CultureInfo.InvariantCulture);
+            fuserParametersBlock.AddLine(new HTMLLine(new Tag("AlphaRotation"), value));
+
+            value = markerFuser.AlphaTranslation.ToString("F1", CultureInfo.InvariantCulture);
+            fuserParametersBlock.AddLine(new HTMLLine(new Tag("AlphaTranslation"), value));
+
+            value = markerFuser.KeepPoseForNumberOfFrames.ToString();
+            fuserParametersBlock.AddLine(new HTMLLine(new Tag("KeepPoseForNumberOfFrames"), value));
+        }
+
+        public override void Visit(MarkerlessFuser markerlessFuser)
+        {
+            // Fuser
+            fuserBlock.Update(new Tag("Fuser", "type=\"" + markerlessFuser.FuserType + "\""));
+
+            // Parameters
+            HTMLBlock fuserParametersBlock = new HTMLBlock(new Tag("Parameters"));
+            fuserBlock.AddBlock(fuserParametersBlock);
+
+            string value = markerlessFuser.KeepPoseForNumberOfFrames.ToString();
+            fuserParametersBlock.AddLine(new HTMLLine(new Tag("KeepPoseForNumberOfFrames"), value));
+
+            value = markerlessFuser.GravityAssistance.ToString();
+            fuserParametersBlock.AddLine(new HTMLLine(new Tag("GravityAssistance"), value));
+
+            value = markerlessFuser.AlphaTranslation.ToString("F1", CultureInfo.InvariantCulture);
+            fuserParametersBlock.AddLine(new HTMLLine(new Tag("AlphaTranslation"), value));
+
+            value = markerlessFuser.GammaTranslation.ToString("F1", CultureInfo.InvariantCulture);
+            fuserParametersBlock.AddLine(new HTMLLine(new Tag("GammaTranslation"), value));
+
+            value = markerlessFuser.AlphaRotation.ToString("F1", CultureInfo.InvariantCulture);
+            fuserParametersBlock.AddLine(new HTMLLine(new Tag("AlphaRotation"), value));
+
+            value = markerlessFuser.GammaRotation.ToString("F1", CultureInfo.InvariantCulture);
+            fuserParametersBlock.AddLine(new HTMLLine(new Tag("GammaRotation"), value));
+
+            value = markerlessFuser.ContinueLostTrackingWithOrientationSensor.ToString().ToLower();
+            fuserParametersBlock.AddLine(new HTMLLine(new Tag("ContinueLostTrackingWithOrientationSensor"), value));
         }
 
         public override void Visit(IDMarker idMarker)
@@ -220,9 +263,19 @@ namespace ARdevKit.Controller.ProjectController
             parameterBlock.AddBlock(markerParametersBlock);
 
             // Reaktivated when getter is implemented
-            //markerParametersBlock.AddLine(new Line(new Tag("Size"), idMarker.Size.ToString()));
-            markerParametersBlock.AddLine(new HTMLLine(new Tag("Size"), "60"));
+            markerParametersBlock.AddLine(new HTMLLine(new Tag("Size"), idMarker.Size.ToString()));
             markerParametersBlock.AddLine(new HTMLLine(new Tag("MatrixID"), idMarker.MatrixID.ToString()));
+        }
+
+        public override void Visit(PictureMarkerSensor pictureMarkerSensor)
+        {
+            // MarkerParameters
+            HTMLBlock markerTrackingParametersBlock = new HTMLBlock(new Tag("MarkerTrackingParameters"));
+            sensorParametersBlock.AddBlock(markerTrackingParametersBlock);
+
+            markerTrackingParametersBlock.AddLine(new HTMLLine(new Tag("TrackingQuality"), pictureMarkerSensor.TrackingQuality.ToString()));
+            markerTrackingParametersBlock.AddLine(new HTMLLine(new Tag("ThresholdOffset"), pictureMarkerSensor.ThresholdOffset.ToString()));
+            markerTrackingParametersBlock.AddLine(new HTMLLine(new Tag("NumberOfSearchIterations"), pictureMarkerSensor.NumberOfSearchIterations.ToString()));
         }
 
         public override void Visit(IDMarkerSensor idMarkerSensor)
@@ -236,12 +289,12 @@ namespace ARdevKit.Controller.ProjectController
             markerTrackingParametersBlock.AddLine(new HTMLLine(new Tag("NumberOfSearchIterations"), idMarkerSensor.NumberOfSearchIterations.ToString()));
         }
 
-        public override void Visit(PictureMarkerSensor pictureMarkerSensor)
+        public override void Visit(MarkerlessSensor markerlessSensor)
         {
-            sensorParametersBlock.AddLine(new HTMLLine(new Tag("FeatureDescriptorAlignment"), pictureMarkerSensor.FeatureDescriptorAlignment.ToString()));
-            sensorParametersBlock.AddLine(new HTMLLine(new Tag("MaxObjectsToDetectPerFrame"), pictureMarkerSensor.MaxObjectsToDetectPerFrame.ToString()));
-            sensorParametersBlock.AddLine(new HTMLLine(new Tag("MaxObjectsToTrackInParallel"), pictureMarkerSensor.MaxObjectsToTrackInParallel.ToString()));
-            sensorParametersBlock.AddLine(new HTMLLine(new Tag("SimilarityThreshold"), pictureMarkerSensor.SimilarityThreshold.ToString("F1", CultureInfo.InvariantCulture)));
+            sensorParametersBlock.AddLine(new HTMLLine(new Tag("FeatureDescriptorAlignment"), markerlessSensor.FeatureDescriptorAlignment.ToString()));
+            sensorParametersBlock.AddLine(new HTMLLine(new Tag("MaxObjectsToDetectPerFrame"), markerlessSensor.MaxObjectsToDetectPerFrame.ToString()));
+            sensorParametersBlock.AddLine(new HTMLLine(new Tag("MaxObjectsToTrackInParallel"), markerlessSensor.MaxObjectsToTrackInParallel.ToString()));
+            sensorParametersBlock.AddLine(new HTMLLine(new Tag("SimilarityThreshold"), markerlessSensor.SimilarityThreshold.ToString("F1", CultureInfo.InvariantCulture)));
         }
 
         public override void Visit(Project p)
@@ -277,7 +330,8 @@ namespace ARdevKit.Controller.ProjectController
                 trackingDataBlock.AddBlock(sensorsBlock);
 
                 // Sensors
-                string sensorExtension = "Type=\"" + p.Sensor.SensorType + "\" Subtype=\"" + p.Sensor.SensorSubType + "\"";
+                string sensorExtension = "Type=\"" + p.Sensor.SensorType + "\"";
+                sensorExtension += p.Sensor.SensorSubType != AbstractSensor.SensorSubTypes.None ? " Subtype=\"" + p.Sensor.SensorSubType + "\"" : "";
                 sensorBlock = new HTMLBlock(new Tag("Sensor", sensorExtension));
                 sensorsBlock.AddBlock(sensorBlock);
 

@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace ARdevKit.Model.Project
 {
-    public abstract class Graph : AbstractDynamic2DAugmentation 
+    public abstract class Graph : AbstractDynamic2DAugmention 
     {
         private int maxValue;
         private int minValue;

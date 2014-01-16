@@ -26,13 +26,20 @@ namespace ARdevKit.Model.Project
         public IDMarker(int matrixID)
         {
             this.matrixID = matrixID;
+            size = 60;
             type = "IDMarker";
             idMarkerTrackingSensor = new IDMarkerSensor();
             sensorCosID = IDFactory.getSensorCosID(this);
+            Fuser = new MarkerlessFuser();
         }
         public override void Accept(Controller.ProjectController.AbstractProjectVisitor visitor)
         {
-            throw new NotImplementedException();
+            visitor.Visit(this);
+            foreach (AbstractAugmention augmentation in augmentations)
+            {
+                augmentation.Accept(visitor);
+            }
+            fuser.Accept(visitor);
         }
 
         public override List<View.AbstractProperty> getPropertyList()

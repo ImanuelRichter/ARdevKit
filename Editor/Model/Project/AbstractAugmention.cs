@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Model.Project
 {
-    public abstract class AbstractAugmentation : ISerializable, IPreviewable
+    public abstract class AbstractAugmention : ISerializable, IPreviewable
     {
         private int coordinatesystemid;
         public int Coordinatesystemid

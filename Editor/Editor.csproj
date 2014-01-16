@@ -50,10 +50,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Project\MarkerFuser.cs" />
     <Compile Include="Model\Project\IDFactory.cs" />
     <Compile Include="Model\Project\IO\AbstractBlock.cs" />
     <Compile Include="Model\Project\IO\ARELGlueFile.cs" />
-    <Compile Include="Model\Project\Fuser.cs" />
+    <Compile Include="Model\Project\MarkerlessFuser.cs" />
     <Compile Include="Model\Project\IDMarkerSensor.cs" />
     <Compile Include="Model\Project\IO\ARELConfigFile.cs" />
     <Compile Include="Controller\Connections\DeviceConnection\DeviceConnectionController.cs" />
@@ -68,8 +69,8 @@
     <Compile Include="Controller\ProjectController\ExportVisitor.cs" />
     <Compile Include="Controller\ProjectController\SaveVisitor.cs" />
     <Compile Include="Controller\Connections\DatabaseConnection\DbConnection.cs" />
-    <Compile Include="Model\Project\AbstractAugmentation.cs" />
-    <Compile Include="Model\Project\AbstractDynamic2DAugmentation.cs" />
+    <Compile Include="Model\Project\AbstractAugmention.cs" />
+    <Compile Include="Model\Project\AbstractDynamic2DAugmention.cs" />
     <Compile Include="Model\Project\AbstractMarker.cs" />
     <Compile Include="Model\Project\AbstractSource.cs" />
     <Compile Include="EditorWindow.cs">
@@ -96,6 +97,7 @@
     <Compile Include="Model\Project\IDMarker.cs" />
     <Compile Include="Model\Project\IPreviewable.cs" />
     <Compile Include="Model\Project\PictureMarker.cs" />
+    <Compile Include="Model\Project\MarkerlessSensor.cs" />
     <Compile Include="Model\Project\PictureMarkerSensor.cs" />
     <Compile Include="Model\Project\Project.cs" />
     <Compile Include="Model\Project\AbstractSensor.cs" />

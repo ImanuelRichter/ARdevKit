@@ -25,8 +25,8 @@ namespace ARdevKit.Model.Project
             set { similarityThreshhold = value; }
         }
 
-        private PictureMarkerSensor pictureMarkerTrackingSensor;
-        public PictureMarkerSensor PictureMarkerTrackingSensor
+        private MarkerlessSensor pictureMarkerTrackingSensor;
+        public MarkerlessSensor PictureMarkerTrackingSensor
         {
             get { return pictureMarkerTrackingSensor; }
             set { pictureMarkerTrackingSensor = value; }
@@ -37,14 +37,14 @@ namespace ARdevKit.Model.Project
             this.imagePath = imagePath;
             imageName = Path.GetFileName(imagePath);
             type = "PictureMarker";
-            MarkerFuser = new Fuser();
+            Fuser = new MarkerlessFuser();
             sensorCosID = IDFactory.getSensorCosID(this);
         }
 
         public override void Accept(Controller.ProjectController.AbstractProjectVisitor visitor)
         {
             visitor.Visit(this);
-            foreach (AbstractAugmentation augmentation in augmentations)
+            foreach (AbstractAugmention augmentation in augmentations)
             {
                 augmentation.Accept(visitor);
             }
