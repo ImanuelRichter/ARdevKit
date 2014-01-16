@@ -93,7 +93,7 @@ public class PreviewController
         if (currentMetaCategory == MetaCategory.Trackable && trackable == null)
         {
             PictureBox tempBox = new PictureBox();
-            tempBox.Location = new Point(v.x, v.y);
+            tempBox.Location = new Point(v.X, v.Y);
             tempBox.Image = (Image)currentElement.getPreview();
             tempBox.Size = new Size(currentElement.getPreview().Height / 4, currentElement.getPreview().Width / 4);
             tempBox.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -113,7 +113,7 @@ public class PreviewController
             tempBox.Image = (Image)currentElement.getPreview();
             tempBox.Size = new Size(currentElement.getPreview().Height / 4, currentElement.getPreview().Width / 4);
             tempBox.SizeMode = PictureBoxSizeMode.StretchImage;
-            tempBox.Location = new Point(v.x, v.y);
+            tempBox.Location = new Point(v.X, v.Y);
             ((AbstractAugmentation)currentElement).vector = v;
             ((AbstractAugmentation)currentElement).Trackable = this.trackable;
 
@@ -245,12 +245,12 @@ public class PreviewController
         if (currentMetaCategory == MetaCategory.Trackable && trackable != null)
         {
             ((AbstractTrackable)this.findBox(currentElement).Tag).vector = v;
-            this.findBox(currentElement).Location = new Point(v.x, v.y);
+            this.findBox(currentElement).Location = new Point(v.X, v.Y);
         }
         else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null)
         {
             ((AbstractAugmentation)this.findBox(currentElement).Tag).vector = v;
-            this.findBox(currentElement).Location = new Point(v.x, v.y);
+            this.findBox(currentElement).Location = new Point(v.X, v.Y);
         }
     }
 
@@ -319,7 +319,7 @@ public class PreviewController
             {              
                     tempBox = new PictureBox();
                     tempBox.Tag = aug;
-                    tempBox.Location = new Point(aug.vector.x, aug.vector.y);
+                    tempBox.Location = new Point(aug.vector.X, aug.vector.Y);
                     tempBox.Image = (Image)aug.getPreview();
                     tempBox.Size = new Size(aug.getPreview().Height / 4, aug.getPreview().Width / 4);
                     tempBox.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -329,7 +329,7 @@ public class PreviewController
 
         tempBox = new PictureBox();
         tempBox.Tag = trackable;
-        tempBox.Location = new Point(trackable.vector.x, trackable.vector.y);
+        tempBox.Location = new Point(trackable.vector.X, trackable.vector.Y);
         tempBox.Image = (Image)trackable.getPreview();
         tempBox.Size = new Size(trackable.getPreview().Height / 4, trackable.getPreview().Width / 4);
         tempBox.SizeMode = PictureBoxSizeMode.StretchImage;

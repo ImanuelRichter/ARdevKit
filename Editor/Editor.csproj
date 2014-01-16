@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Project\IDFactory.cs" />
+    <Compile Include="Model\Project\IO\AbstractBlock.cs" />
     <Compile Include="Model\Project\IO\ARELGlueFile.cs" />
     <Compile Include="Model\Project\Fuser.cs" />
     <Compile Include="Model\Project\IDMarkerSensor.cs" />
@@ -83,11 +84,13 @@
     <Compile Include="Model\Project\CustomUserEvent.cs" />
     <Compile Include="Model\Project\DbSource.cs" />
     <Compile Include="Model\Project\FileSource.cs" />
-    <Compile Include="Model\Project\IO\AbstractFile.cs" />
-    <Compile Include="Model\Project\IO\Line.cs" />
+    <Compile Include="Model\Project\IO\AbstractARELFile.cs" />
+    <Compile Include="Model\Project\IO\BlockMarker.cs" />
+    <Compile Include="Model\Project\IO\JavaScriptBlock.cs" />
+    <Compile Include="Model\Project\IO\HTMLLine.cs" />
+    <Compile Include="Model\Project\IO\JavaScriptLine.cs" />
     <Compile Include="Model\Project\IO\OpenTag.cs" />
-    <Compile Include="Model\Project\IO\Section.cs" />
-    <Compile Include="Model\Project\IO\SubSection.cs" />
+    <Compile Include="Model\Project\IO\HTMLBlock.cs" />
     <Compile Include="Model\Project\IO\Tag.cs" />
     <Compile Include="Model\Project\IO\TrackingDataFile.cs" />
     <Compile Include="Model\Project\IDMarker.cs" />

@@ -12,7 +12,7 @@ namespace ARdevKit.Model.Project.IO
     /// <remarks>   Imanuel, 15.01.2014. </remarks>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public abstract class AbstractFile
+    public abstract class AbstractARELFile
     {
         protected string filePath;
         public string FilePath
@@ -29,22 +29,22 @@ namespace ARdevKit.Model.Project.IO
         /// <value> The sections. </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        protected List<Section> sections;
+        protected List<AbstractBlock> blocks;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Adds a section. </summary>
         ///
         /// <remarks>   Imanuel, 15.01.2014. </remarks>
         ///
-        /// <param name="cs">   The section to be added. </param>
+        /// <param name="block">   The section to be added. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public virtual void AddSection(Section cs)
+        public virtual void AddBlock(AbstractBlock block)
         {
-            if (sections == null)
-                sections = new List<Section>();
-            cs.ParentFile = this;
-            sections.Add(cs);
+            if (blocks == null)
+                blocks = new List<AbstractBlock>();
+            block.ParentFile = this;
+            blocks.Add(block);
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -7,7 +7,7 @@ using System.IO;
 
 namespace ARdevKit.Model.Project.IO
 {
-    public class ARELConfigFile : AbstractFile
+    public class ARELConfigFile : AbstractARELFile
     {
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Constructor. </summary>
@@ -28,11 +28,11 @@ namespace ARdevKit.Model.Project.IO
             StreamWriter writer = new StreamWriter(filePath);
             if (header != null && header != "")
                 writer.WriteLine(header);
-            if (sections != null)
+            if (blocks != null)
             {
-                foreach (Section cs in sections)
+                foreach (HTMLBlock htmlBlock in blocks)
                 {
-                    cs.Write(writer);
+                    htmlBlock.Write(writer);
                 }
             }
             writer.Close();

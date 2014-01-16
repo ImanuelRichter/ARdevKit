@@ -8,9 +8,9 @@ namespace ARdevKit.Model.Project
 {
     public class Vector3D
     {
-        public int x { get; set; }
-        public int y { get; set; }
-        public int z { get; set; }
+        public int X { get; set; }
+        public int Y { get; set; }
+        public int Z { get; set; }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Constructor. </summary>
@@ -24,9 +24,9 @@ namespace ARdevKit.Model.Project
 
         public Vector3D(int x, int y, int z)
         {
-            this.x = x;
-            this.y = y;
-            this.z = z;
+            this.X = x;
+            this.Y = y;
+            this.Z = z;
         }
     }
 

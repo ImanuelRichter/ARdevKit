@@ -9,10 +9,12 @@ namespace ARdevKit.Controller.ProjectController
 {
     public abstract class AbstractProjectVisitor
     {
-        public abstract void visit(BarGraph graph);
-        public abstract void visit(DbSource source);
-        public abstract void visit(PictureMarker pictureMarker);
-        public abstract void visit(IDMarker idMarker);
-        public abstract void visit(Project project);
+        public abstract void Visit(BarGraph graph);
+        public abstract void Visit(DbSource source);
+        public abstract void Visit(PictureMarker pictureMarker);
+        public abstract void Visit(IDMarker idMarker);
+        public abstract void Visit(IDMarkerSensor idMarkerSensor);
+        public abstract void Visit(PictureMarkerSensor pictureMarkerSensor);
+        public abstract void Visit(Project project);
     }
 }

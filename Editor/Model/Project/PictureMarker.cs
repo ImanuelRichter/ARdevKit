@@ -37,15 +37,13 @@ namespace ARdevKit.Model.Project
             this.imagePath = imagePath;
             imageName = Path.GetFileName(imagePath);
             type = "PictureMarker";
-            pictureMarkerTrackingSensor = new PictureMarkerSensor();
-            sensor = pictureMarkerTrackingSensor;
             MarkerFuser = new Fuser();
             sensorCosID = IDFactory.getSensorCosID(this);
         }
 
         public override void Accept(Controller.ProjectController.AbstractProjectVisitor visitor)
         {
-            visitor.visit(this);
+            visitor.Visit(this);
             foreach (AbstractAugmentation augmentation in augmentations)
             {
                 augmentation.Accept(visitor);

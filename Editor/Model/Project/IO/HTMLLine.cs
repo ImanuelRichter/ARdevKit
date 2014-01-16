@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 namespace ARdevKit.Model.Project.IO
 {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-    /// <summary>   A line is a <see cref="SubSection"/> which can have a value or not. </summary>
+    /// <summary>   A line is a <see cref="HTMLBlock"/> which can have a value or not. </summary>
     ///
     /// <remarks>   Imanuel, 15.01.2014. </remarks>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public class Line : SubSection
+    public class HTMLLine : HTMLBlock
     {
         /// <summary>   The value. </summary>
         private string value = "";
@@ -25,7 +25,7 @@ namespace ARdevKit.Model.Project.IO
         /// <param name="tag">  The tag. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public Line(Tag tag) : base(tag) { }
+        public HTMLLine(Tag tag) : base(tag) { }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Constructor. </summary>
@@ -36,7 +36,7 @@ namespace ARdevKit.Model.Project.IO
         /// <param name="value">    The value. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public Line(Tag tag, string value) : base(tag)
+        public HTMLLine(Tag tag, string value) : base(tag)
         {
             this.value = value;
         }
@@ -51,12 +51,8 @@ namespace ARdevKit.Model.Project.IO
 
         public override void Write(System.IO.StreamWriter writer)
         {
-            string tabs = "";
-            for (int i = 0; i < Level; i++)
-            {
-                tabs += "\t";
-            }
-            writer.WriteLine(tabs + tag + value + tag);
+            string tabs = getTabs();
+            writer.WriteLine(tabs + blockMarker + value + blockMarker);
         }
     }
 }

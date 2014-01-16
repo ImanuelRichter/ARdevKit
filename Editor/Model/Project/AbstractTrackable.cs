@@ -12,13 +12,6 @@ namespace ARdevKit.Model.Project
 {
     public abstract class AbstractTrackable : ISerializable, IPreviewable
     {
-        protected AbstractSensor sensor;
-        public AbstractSensor Sensor
-        {
-            get { return sensor; }
-            set { sensor = value; }
-        }
-
         private Fuser markerFuser;
         public Fuser MarkerFuser
         {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ARdevKit.Controller.ProjectController;
 
 namespace ARdevKit.Model.Project
 {
@@ -100,6 +101,11 @@ namespace ARdevKit.Model.Project
         {
             Name = "PictureMarker";
             SensorIDString = IDFactory.getSensorID(this);
+        }
+
+        public override void Accept(AbstractProjectVisitor visitor)
+        {
+            visitor.Visit(this);
         }
     }
 }

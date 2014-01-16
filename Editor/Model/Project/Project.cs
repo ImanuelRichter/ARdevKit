@@ -17,6 +17,13 @@ namespace ARdevKit.Model.Project
             set { name = value; }
         }
 
+        protected AbstractSensor sensor;
+        public AbstractSensor Sensor
+        {
+            get { return sensor; }
+            set { sensor = value; }
+        }
+
         private List<AbstractSource> sources;
         public List<AbstractSource> Sources
         {
@@ -47,11 +54,12 @@ namespace ARdevKit.Model.Project
 
         public void Accept(AbstractProjectVisitor visitor)
         {
-            visitor.visit(this);
+            visitor.Visit(this);
             foreach (AbstractTrackable t in Trackables)
             {
                 t.Accept(visitor);
             }
+            sensor.Accept(visitor);
         }
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)

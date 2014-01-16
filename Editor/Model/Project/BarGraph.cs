@@ -16,7 +16,7 @@ namespace ARdevKit.Model.Project
 
         public override void Accept(Controller.ProjectController.AbstractProjectVisitor visitor)
         {
-            visitor.visit(this);
+            visitor.Visit(this);
         }
 
         public override Bitmap getPreview()
