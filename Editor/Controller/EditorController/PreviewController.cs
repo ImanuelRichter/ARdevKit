@@ -68,8 +68,9 @@ public class PreviewController
     /// <param name="p">    The Panel to process. </param>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    [Obsolete("addPreviewable(IPreviewable p) : eache IPreviewable needs a Vector where the new Previewable should sit in the panel"
-        + "you should use addPreviewable(IPreviewable currentElement, Vector3d v) for Augmentations & Trackables", true)]
+    [Obsolete("addPreviewable(IPreviewable p) : eache IPreviewable needs a Vector where the new" 
+                + "Previewable should sit in the panel you should use addPreviewable(IPreviewable"
+                + "currentElement, Vector3d v) for Augmentations & Trackables", true)]
     public void addPreviewAble(IPreviewable p)
     { throw new NotImplementedException(); }
 
@@ -79,6 +80,8 @@ public class PreviewController
     ///     add Trackable is the method for adding the trackable, each PreviewPanel can holding one
     ///     Trackable.
     /// </summary>
+    /// 
+    /// <summary>   currentMetaCategory musst set to Trackable/Augmentation</summary>
     ///
     /// <param name="currentTrackable"> The current Trackable, which should set in the previewPanel. </param>
     /// <param name="v">                The Vector3D to set the Trackable. </param>
@@ -139,6 +142,8 @@ public class PreviewController
     ///     over element by augmentation the overelement is Trackable. by Source the overelement is
     ///     Augmentation.
     /// </summary>
+    /// 
+    /// <summary>   currentMetaCategory musst set to Augmentation</summary>
     ///
     /// <param name="currentElement">   The current element. </param>
     /// <param name="overElement">      The over element. </param>
@@ -150,12 +155,11 @@ public class PreviewController
         {
             if (this.trackable != null && trackable.existAugmentation((AbstractAugmentation)currentElement))
             {
-                //search the linked PictureBox out of Dictionary, replace the Tag with the new Augmentation and replace the Picturebox in Panel
-                this.currentMetaCategory = MetaCategory.Augmentation;
-                ((AbstractAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).source
-                    = source;
-                this.trackable.findAugmentation((AbstractAugmentation)currentElement).source.augmentions
-                    .Add((AbstractDynamic2DAugmentation)this.trackable.findAugmentation((AbstractAugmentation)currentElement));
+                //set reference to the augmentions in Source
+                source.augmentions.Add((AbstractDynamic2DAugmentation)currentElement);
+                
+                //add references in Augmentation, Picturebox + project.sources List.
+                ((AbstractAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).source = source;
                 this.ew.project.sources.Add(((AbstractAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).source);
             }
         }
@@ -171,6 +175,8 @@ public class PreviewController
     ///     Project.
     /// </summary>
     ///
+    /// <summary>   currentMetaCategory musst set to Augmentation </summary>
+    /// 
     /// <remarks>   Lizzard, 1/15/2014. </remarks>
     ///
     /// <param name="source">           Source for the. </param>
@@ -193,13 +199,17 @@ public class PreviewController
         }
     }
 
-
-     
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// <summary>   Removes the Previewable and the Objekt, what is linked to the Previewable. </summary>
+    /// 
+    /// <summary>   currentMetaCategory musst set to Trackable/Augmentation</summary>
+    /// 
+    /// <remarks>   Lizzard, 1/16/2014. </remarks>
     ///
-    /// <param name="p">    The p control. </param>
-    /// <param name="prev"> The previous. </param>
+    /// <param name="currentElement">   The current element. </param>
+    ///
+    /// ### <param name="p">    The p control. </param>
+    /// ### <param name="prev"> The previous. </param>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
     public void removePreviewable(IPreviewable currentElement)
@@ -235,6 +245,8 @@ public class PreviewController
     ///     Move the Trackable whith all connected augmentations &amp; sources to the new vector-
     ///     position.
     /// </summary>
+    ///
+    /// <summary>   currentMetaCategory musst set to Trackable/Augmentation</summary>
     ///
     /// <param name="currentTrackable"> The current Trackable, which should set in the previewPanel. </param>
     /// <param name="v">                The Vector3D to move the Trackable. </param>
@@ -277,13 +289,15 @@ public class PreviewController
 
     public void reloadPreviewPanel(int index)
     {
+        //if it's the same Scene do nothing
         if (index == this.index)
         {
-            MessageBox.Show("You've choosen the same Trackable");
+            MessageBox.Show("You've choosen the same Scene");
         }
+        //if it's a scene which exists reload scene
         else if (index < this.ew.project.trackables.Count)
         {
-            MessageBox.Show("Trackable No. " + (index + 1) + " will be load");
+            MessageBox.Show("Scene No. " + (index + 1) + " will be load");
             
             this.index = index;
             this.trackable = this.ew.project.trackables[index];
@@ -293,9 +307,10 @@ public class PreviewController
                 this.addAllToPanel(this.ew.project.trackables[index]);
             }
         }
+        //if the scene is new create a new empty scene
         else if (index >= this.ew.project.trackables.Count)
         {
-            MessageBox.Show("You've choosen a new Trackable! gl & hf");
+            MessageBox.Show("You've choosen a new Scene! gl & hf");
             this.index = index;
             this.trackable = null;
             this.panel.Controls.Clear();
@@ -374,5 +389,6 @@ public class PreviewController
         }
         return null;
     }
+
 }
 
