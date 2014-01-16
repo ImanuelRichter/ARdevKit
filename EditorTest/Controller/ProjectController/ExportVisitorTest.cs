@@ -24,7 +24,7 @@ namespace EditorTest
             barGraph2.IsVisible = false;
             barGraph2.Coordinatesystemid = 1;
             barGraph2.vector = new Vector3D(3, 3, 3);
-            pictureMarker1.augmentations.Add(barGraph2);
+            pictureMarker1.Augmentions.Add(barGraph2);
             barGraph2.Trackable = pictureMarker1;
 
             BarGraph barGraph3 = new BarGraph();
@@ -32,7 +32,7 @@ namespace EditorTest
             barGraph3.IsVisible = false;
             barGraph3.Coordinatesystemid = 2;
             barGraph3.vector = new Vector3D(3, 3, 3);
-            pictureMarker2.augmentations.Add(barGraph3);
+            pictureMarker2.Augmentions.Add(barGraph3);
             barGraph3.Trackable = pictureMarker2;
 
             project.Sensor = new PictureMarkerSensor();
@@ -62,7 +62,7 @@ namespace EditorTest
             barGraph.IsVisible = false;
             barGraph.Coordinatesystemid = 1;
             barGraph.vector = new Vector3D(3, 3, 3);
-            idMarker1.augmentations.Add(barGraph);
+            idMarker1.Augmentions.Add(barGraph);
             barGraph.Trackable = idMarker1;
 
             BarGraph barGraph1 = new BarGraph();
@@ -70,7 +70,7 @@ namespace EditorTest
             barGraph1.IsVisible = false;
             barGraph1.Coordinatesystemid = 2;
             barGraph1.vector = new Vector3D(3, 3, 3);
-            idMarker2.augmentations.Add(barGraph1);
+            idMarker2.Augmentions.Add(barGraph1);
             barGraph1.Trackable = idMarker2;
 
             project.Sensor = new IDMarkerSensor();

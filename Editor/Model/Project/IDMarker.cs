@@ -35,7 +35,7 @@ namespace ARdevKit.Model.Project
         public override void Accept(Controller.ProjectController.AbstractProjectVisitor visitor)
         {
             visitor.Visit(this);
-            foreach (AbstractAugmention augmentation in augmentations)
+            foreach (AbstractAugmention augmentation in Augmentions)
             {
                 augmentation.Accept(visitor);
             }

@@ -34,7 +34,7 @@ namespace ARdevKit.Model.Project
         }
 
         public Vector3D vector { get; set; }
-        public List<AbstractAugmention> augmentations { get; set; }
+        public List<AbstractAugmention> Augmentions { get; set; }
 
         public abstract void Accept(AbstractProjectVisitor visitor);
 
@@ -46,21 +46,21 @@ namespace ARdevKit.Model.Project
 
         public AbstractTrackable()
         {
-            this.augmentations = new List<AbstractAugmention>();
+            this.Augmentions = new List<AbstractAugmention>();
         }
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             throw new NotImplementedException();
         }
 
-        public AbstractAugmention findAugmentation(IPreviewable a)
+        public AbstractAugmention FindAugmention(IPreviewable a)
         {
-            return this.augmentations[this.augmentations.IndexOf((AbstractAugmention)a)];
+            return this.Augmentions[this.Augmentions.IndexOf((AbstractAugmention)a)];
         }
 
-        public bool existAugmentation(IPreviewable a)
+        public bool existAugmention(IPreviewable a)
         {
-            foreach (AbstractAugmention aug in augmentations)
+            foreach (AbstractAugmention aug in Augmentions)
             {
                 if (aug == (AbstractAugmention)a)
                 {
