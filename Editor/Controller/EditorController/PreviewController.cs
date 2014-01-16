@@ -100,10 +100,9 @@ public class PreviewController
             ((AbstractTrackable)currentElement).vector = v;                                         
 
             //set references
-            this.ew.project.trackables[index] = (AbstractTrackable) currentElement;                 
+            this.ew.project.trackables[index] = (AbstractTrackable)currentElement;
             tempBox.Tag = this.ew.project.trackables[index];
-
-            panel.Controls.Add(tempBox);
+            this.trackable = (AbstractTrackable)currentElement;
         }
 
         else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null)
@@ -223,10 +222,6 @@ public class PreviewController
             this.trackable.augmentations.Remove((AbstractAugmentation)currentElement);
 
             this.panel.Controls.Remove(this.findBox((AbstractAugmentation)currentElement));
-        }
-        else
-        {
-            MessageBox.Show("You can't remove an Object which doesn't exist");
         }
     }
 

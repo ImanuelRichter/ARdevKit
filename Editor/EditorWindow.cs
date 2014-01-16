@@ -381,7 +381,13 @@ namespace ARdevKit
                 TestController.StartWithVirtualCamera(projectPath);
         }
 
-        private void btn_editor_scene_scene_change(object sender, EventArgs e) {
+        private void btn_editor_scene_scene_change(object sender, EventArgs e)
+        {
+            if (this.previewController.trackable == null && this.project.trackables.Count > 1)
+            {
+                this.updateSceneSelectionPanel();
+            }
+
             int temp = Convert.ToInt32(((Button)sender).Text);
             this.previewController.reloadPreviewPanel(temp - 1);
         }
@@ -390,21 +396,47 @@ namespace ARdevKit
         {
             if (this.project.trackables.Count < 10)
             {
-                Button tempButton = new Button();
-                tempButton.Location = new System.Drawing.Point(3 + (52*project.trackables.Count), 34);
-                tempButton.Name = "btn_editor_scene_scene_" + (this.project.trackables.Count +1);
-                tempButton.Size = new System.Drawing.Size(46, 45);
-                tempButton.TabIndex = 1;
-                tempButton.Text = Convert.ToString(this.project.trackables.Count + 1);
-                tempButton.UseVisualStyleBackColor = true;
-                tempButton.Click += new System.EventHandler(this.btn_editor_scene_scene_change);
+                if (this.previewController.trackable != null)
+                {
+                    Button tempButton = new Button();
+                    tempButton.Location = new System.Drawing.Point(54 + (52 * project.trackables.Count), 34);
+                    tempButton.Name = "btn_editor_scene_scene_" + (this.project.trackables.Count + 1);
+                    tempButton.Size = new System.Drawing.Size(46, 45);
+                    tempButton.TabIndex = 1;
+                    tempButton.Text = Convert.ToString(this.project.trackables.Count + 1);
+                    tempButton.UseVisualStyleBackColor = true;
+                    tempButton.Click += new System.EventHandler(this.btn_editor_scene_scene_change);
 
-                this.pnl_editor_szenes.Controls.Add(tempButton);
-                this.previewController.reloadPreviewPanel(this.project.trackables.Count);
+                    this.pnl_editor_szenes.Controls.Add(tempButton);
+                    this.previewController.reloadPreviewPanel(this.project.trackables.Count);
+                }
+                else
+                {
+                    MessageBox.Show("You can't open a new Scene when your current scene is empty");
+                }
             }
             else
             {
                 MessageBox.Show("You can't add more than 10 Scenes!");
+            }
+        }
+
+        private void btn_editor_scene_scene_remove(object sender, EventArgs e)
+        {
+            if (this.project.trackables.Count > 1)
+            {
+                this.project.trackables.Remove(this.previewController.trackable);
+                this.previewController.trackable = this.project.trackables[0];
+                this.updateSceneSelectionPanel();
+                MessageBox.Show("You've delete this scene! You're now in Scene 1");
+                this.previewController.index = 0;
+            }
+            else
+            {
+                this.project.trackables[0] = null;
+                this.previewController.currentMetaCategory = PreviewController.MetaCategory.Trackable;
+                this.previewController.removePreviewable(this.previewController.trackable);
+                MessageBox.Show("You've cleaned this scene!");
             }
         }
 
@@ -487,7 +519,30 @@ namespace ARdevKit
 
         public void updateSceneSelectionPanel()
         {
-            //TODO: implement updateSceneSelectionPanel()
+            for (int i = 0; i < this.project.trackables.Count; i++)
+            {
+                if (this.project.trackables[i] == null)
+                {
+                    this.project.trackables.Remove(this.project.trackables[i]);
+                }
+            }
+
+            this.pnl_editor_szenes.Controls.Clear();
+            this.pnl_editor_szenes.Controls.Add(this.btn_editor_scene_new);
+            this.pnl_editor_szenes.Controls.Add(this.btn_editor_scene_delete);
+
+            for (int i = 0; i < this.project.trackables.Count; i++)
+            {
+                Button tempButton = new Button();
+                tempButton.Location = new System.Drawing.Point(54 + (i * 52), 34);
+                tempButton.Name = "btn_editor_scene_scene_" + (this.project.trackables.Count + 1);
+                tempButton.Size = new System.Drawing.Size(46, 45);
+                tempButton.Text = Convert.ToString(i + 1);
+                tempButton.UseVisualStyleBackColor = true;
+                tempButton.Click += new System.EventHandler(this.btn_editor_scene_scene_change);
+
+                this.pnl_editor_szenes.Controls.Add(tempButton);
+            }
         }
 
         public void updateStatusBar()
