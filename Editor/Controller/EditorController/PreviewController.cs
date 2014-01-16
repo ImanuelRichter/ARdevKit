@@ -268,10 +268,10 @@ public class PreviewController
     /// unimplemented. </exception>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    [Obsolete("updatePreviewPanel() : don't need is funktion", true)]
     public void updatePreviewPanel()
     {
-        throw new NotImplementedException();
+            this.panel.Controls.Clear();
+            this.ew.project.trackables.Add(trackable);
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////

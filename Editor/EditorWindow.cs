@@ -381,6 +381,20 @@ namespace ARdevKit
                 TestController.StartWithVirtualCamera(projectPath);
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        ///     Event handler. This eventHandler is to change the choosen scene from the
+        ///     SceneSelectionPanel. The handler will load an existent scene, which was created in the
+        ///     past. If you change the scene from a new created scene, which is empty this scene will be
+        ///     delete.
+        /// </summary>
+        ///
+        /// <remarks>   Lizzard, 1/16/2014. </remarks>
+        ///
+        /// <param name="sender">   Source of the event. </param>
+        /// <param name="e">        Event information. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
         private void btn_editor_scene_scene_change(object sender, EventArgs e)
         {
             if (this.previewController.trackable == null && this.project.trackables.Count > 1)
@@ -391,6 +405,19 @@ namespace ARdevKit
             int temp = Convert.ToInt32(((Button)sender).Text);
             this.previewController.reloadPreviewPanel(temp - 1);
         }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        ///     Event handler. This eventHandler is to add a scene to the SceneSelectionPanel. This
+        ///     funktion adds a new Button to the SceneSelectionPanel and set a new Scene to the
+        ///     PreviewPanel.
+        /// </summary>
+        ///
+        /// <remarks>   Lizzard, 1/16/2014. </remarks>
+        ///
+        /// <param name="sender">   Source of the event. </param>
+        /// <param name="e">        Event information. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         private void btn_editor_scene_scene_new(object sender, EventArgs e)
         {
@@ -420,6 +447,19 @@ namespace ARdevKit
                 MessageBox.Show("You can't add more than 10 Scenes!");
             }
         }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        ///     Event handler. This eventHandler is to remove a scene from the SceneSelectionPanel. This
+        ///     Functions clean the scene, if there is only one scene, else the funktion removes the
+        ///     panel and set scene 1 to the current scene.
+        /// </summary>
+        ///
+        /// <remarks>   Lizzard, 1/16/2014. </remarks>
+        ///
+        /// <param name="sender">   Source of the event. </param>
+        /// <param name="e">        Event information. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         private void btn_editor_scene_scene_remove(object sender, EventArgs e)
         {
@@ -507,15 +547,33 @@ namespace ARdevKit
             //TODO: implement updateElementSelectionPanel()
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        ///     This functions Updates the scene PreviewPanel. Alle elements will be removed and
+        ///     all current elements will add again to the panel.
+        /// </summary>
+        ///
+        /// <remarks>   Lizzard, 1/16/2014. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
         public void updatePreviewPanel()
         {
-            //TODO: implement updatePreviewPanel()
+            this.previewController.updatePreviewPanel();
         }
 
         internal void updatePropertyPanel(IPreviewable selectedElement)
         {
             //TODO: implement updatePropertyPanel(IPreviewable selectedElement)
         }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        ///     This functions Updates the scene SceneSelectionPanel. Alle elements will be removed and
+        ///     all current elements will add again to the panel.
+        /// </summary>
+        ///
+        /// <remarks>   Lizzard, 1/16/2014. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         public void updateSceneSelectionPanel()
         {
