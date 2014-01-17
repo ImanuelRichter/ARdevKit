@@ -278,9 +278,24 @@ namespace ARdevKit
         public EditorWindow()
         {
             InitializeComponent();
-            allElements = new LinkedList<IPreviewable>();
-            this.project = new Project();
+            this.startDebugModeDevice = false;
+            this.startDebugModeLocal = false;
+            this.projectPath = null;
+            this.allElements = new LinkedList<IPreviewable>();
+
+            try
+            {
+                this.elementSelectionController = new ElementSelectionController(this);
+            }
+            catch (Exception)
+            {
+
+                Debug.WriteLine("ElementSelectionController is not implemented yet...");
+            }
+
             this.previewController = new PreviewController(this);
+            this.propertyController = new PropertyController(this);
+            this.project = new Project();
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
