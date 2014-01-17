@@ -75,20 +75,6 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// ToDo Summary is missing
         /// </summary>
-        private Vector3Di rotationVector;
-        /// <summary>
-        /// ToDo Summary is missing
-        /// </summary>
-        [CategoryAttribute("General")]
-        public Vector3Di RotationVector
-        {
-            get { return rotationVector; }
-            set { rotationVector = value; }
-        }
-
-        /// <summary>
-        /// ToDo Summary is missing
-        /// </summary>
         private Vector3D scalingVector;
         /// <summary>
         /// ToDo Summary is missing
@@ -98,6 +84,20 @@ namespace ARdevKit.Model.Project
         {
             get { return scalingVector; }
             set { scalingVector = value; }
+        }
+
+        /// <summary>
+        /// ToDo Summary is missing
+        /// </summary>
+        private Vector3Di rotationVector;
+        /// <summary>
+        /// ToDo Summary is missing
+        /// </summary>
+        [CategoryAttribute("General")]
+        public Vector3Di RotationVector
+        {
+            get { return rotationVector; }
+            set { rotationVector = value; }
         }
 
         /// <summary>
