@@ -62,10 +62,10 @@
             this.pnl_editor_properties = new System.Windows.Forms.Panel();
             this.cmb_editor_properties_objectSelection = new System.Windows.Forms.ComboBox();
             this.pnl_editor_szenes = new System.Windows.Forms.Panel();
+            this.btn_editor_scene_delete = new System.Windows.Forms.Button();
             this.btn_editor_scene_scene_1 = new System.Windows.Forms.Button();
             this.btn_editor_scene_new = new System.Windows.Forms.Button();
             this.pnl_editor_status = new System.Windows.Forms.Panel();
-            this.btn_editor_scene_delete = new System.Windows.Forms.Button();
             this.mst_editor_menu.SuspendLayout();
             this.pnl_editor_selection.SuspendLayout();
             this.pnl_editor_properties.SuspendLayout();
@@ -132,12 +132,14 @@
             this.tsm_editor_menu_file_save.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.tsm_editor_menu_file_save.Size = new System.Drawing.Size(192, 22);
             this.tsm_editor_menu_file_save.Text = "Speichern";
+            this.tsm_editor_menu_file_save.Click += new System.EventHandler(this.tsm_editor_menu_file_save_Click);
             // 
             // tsm_editor_menu_file_saveAs
             // 
             this.tsm_editor_menu_file_saveAs.Name = "tsm_editor_menu_file_saveAs";
             this.tsm_editor_menu_file_saveAs.Size = new System.Drawing.Size(192, 22);
             this.tsm_editor_menu_file_saveAs.Text = "Speichern unter...";
+            this.tsm_editor_menu_file_saveAs.Click += new System.EventHandler(this.tsm_editor_menu_file_saveAs_Click);
             // 
             // tsm_editor_menu_file_export
             // 
@@ -355,6 +357,16 @@
             this.pnl_editor_szenes.Size = new System.Drawing.Size(661, 114);
             this.pnl_editor_szenes.TabIndex = 2;
             // 
+            // btn_editor_scene_delete
+            // 
+            this.btn_editor_scene_delete.Location = new System.Drawing.Point(611, 34);
+            this.btn_editor_scene_delete.Name = "btn_editor_scene_delete";
+            this.btn_editor_scene_delete.Size = new System.Drawing.Size(45, 45);
+            this.btn_editor_scene_delete.TabIndex = 2;
+            this.btn_editor_scene_delete.Text = "-";
+            this.btn_editor_scene_delete.UseVisualStyleBackColor = true;
+            this.btn_editor_scene_delete.Click += new System.EventHandler(this.btn_editor_scene_scene_remove);
+            // 
             // btn_editor_scene_scene_1
             // 
             this.btn_editor_scene_scene_1.Location = new System.Drawing.Point(54, 34);
@@ -381,16 +393,6 @@
             this.pnl_editor_status.Name = "pnl_editor_status";
             this.pnl_editor_status.Size = new System.Drawing.Size(1008, 23);
             this.pnl_editor_status.TabIndex = 3;
-            // 
-            // btn_editor_scene_delete
-            // 
-            this.btn_editor_scene_delete.Location = new System.Drawing.Point(611, 34);
-            this.btn_editor_scene_delete.Name = "btn_editor_scene_delete";
-            this.btn_editor_scene_delete.Size = new System.Drawing.Size(45, 45);
-            this.btn_editor_scene_delete.TabIndex = 2;
-            this.btn_editor_scene_delete.Text = "-";
-            this.btn_editor_scene_delete.UseVisualStyleBackColor = true;
-            this.btn_editor_scene_delete.Click += new System.EventHandler(this.btn_editor_scene_scene_remove);
             // 
             // EditorWindow
             // 

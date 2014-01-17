@@ -537,9 +537,32 @@ namespace ARdevKit
             //TODO: implement registerElements()
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// Saves the project. Opens file save dialog if project Path isn't set yet. calls save(String path).
+        /// </summary>
+        ///
+        /// <remarks>
+        /// geht, 17.01.2014.
+        /// </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
         public void saveProject()
         {
-            //TODO: implement saveProject()
+            if (projectPath == null)
+            {
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                saveFileDialog1.Filter = "ARdevkit Projektdatei|*.ardev";
+                saveFileDialog1.Title = "Projekt speichern";
+                saveFileDialog1.ShowDialog();
+                this.projectPath = saveFileDialog1.FileName;
+            }
+                this.save(projectPath);
+        }
+
+        private void save(String path)
+        {
+            //TODO: implement save()
         }
 
         public void sendToDevice()
@@ -665,6 +688,45 @@ namespace ARdevKit
             this.updatePropertyPanel(currentElement);
             this.updateSceneSelectionPanel();
             this.updateStatusBar();
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// Event handler. Called by tsm_editor_menu_file_save for click events.
+        /// Click on "Speichern" dialog.
+        /// </summary>
+        ///
+        /// <remarks>
+        /// geht, 17.01.2014.
+        /// </remarks>
+        ///
+        /// <param name="sender">   Source of the event. </param>
+        /// <param name="e">        Event information. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private void tsm_editor_menu_file_save_Click(object sender, EventArgs e)
+        {
+            this.saveProject();
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// Event handler. Called by tsm_editor_menu_file_saveAs for click events.
+        /// Click on "Speichern unter" dialog.
+        /// </summary>
+        ///
+        /// <remarks>
+        /// geht, 17.01.2014.
+        /// </remarks>
+        ///
+        /// <param name="sender">   Source of the event. </param>
+        /// <param name="e">        Event information. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private void tsm_editor_menu_file_saveAs_Click(object sender, EventArgs e)
+        {
+            this.projectPath = null;
+            this.saveProject();
         }
     }
 }
