@@ -21,11 +21,11 @@ namespace ARdevKit.Model.Project
             set { coordinatesystemid = value; }
         }
 
-        private string augmentationPath;
-        public string AugmentationPath
+        private string augmentionPath;
+        public string AugmentionPath
         {
-            get { return augmentationPath; }
-            set { augmentationPath = value; }
+            get { return augmentionPath; }
+            set { augmentionPath = value; }
         }
 
         /// <summary>
@@ -46,7 +46,26 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// Vector to know the Position on the PreviewPanel.
         /// </summar>
-        public Vector3D vector { get; set; }
+        private Vector3D translationVector;
+        public Vector3D TranslationVector
+        {
+            get { return translationVector; }
+            set { translationVector = value; }
+        }
+
+        private Vector3Di rotationVector;
+        public Vector3Di RotationVector
+        {
+            get { return rotationVector; }
+            set { rotationVector = value; }
+        }
+
+        private Vector3D scalingVector;
+        public Vector3D ScalingVector
+        {
+            get { return scalingVector; }
+            set { scalingVector = value; }
+        }
 
         /// <summary>
         /// New Variable which is for link a Source with this Augmentation

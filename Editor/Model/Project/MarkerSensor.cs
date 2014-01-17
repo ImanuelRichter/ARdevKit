@@ -7,7 +7,7 @@ using ARdevKit.Controller.ProjectController;
 
 namespace ARdevKit.Model.Project
 {
-    public class IDMarkerSensor : AbstractSensor
+    public class MarkerSensor : AbstractSensor
     {
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Specifies the <see cref="trackingQuality"/>. </summary>
@@ -27,6 +27,13 @@ namespace ARdevKit.Model.Project
         ///                 the markers, which is less precise, but faster
         ///                 than robust. </summary>
         protected TrackingQualities trackingQuality = TrackingQualities.robust;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the tracking quality. </summary>
+        ///
+        /// <value> The tracking quality. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
         public TrackingQualities TrackingQuality
         {
             get { return trackingQuality; }
@@ -49,6 +56,13 @@ namespace ARdevKit.Model.Project
         ///				threshold can lead to failure. The value range for
         ///				the threshold is between 0 and 255. </summary>
         protected int thresholdOffset = 110;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the threshold offset. </summary>
+        ///
+        /// <value> The threshold offset. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
         public int ThresholdOffset
         {
             get { return thresholdOffset; }
@@ -65,16 +79,31 @@ namespace ARdevKit.Model.Project
         ///             likely to detect a marker, but it also needs more
         ///             computational time, i.e. is slower. </summary>
         protected int numberOfSearchIterations = 3;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the number of search iterations. </summary>
+        ///
+        /// <value> The total number of search iterations. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
         public int NumberOfSearchIterations
         {
             get { return numberOfSearchIterations; }
             set { numberOfSearchIterations = value; }
         }
 
-        public IDMarkerSensor()
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Default constructor. </summary>
+        ///
+        /// <remarks>   Imanuel, 17.01.2014. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public MarkerSensor()
         {
-            Name = "IDMarker";
-            SensorIDString = IDFactory.getSensorID(this);
+            Name = "Marker";
+            sensorIDBase = SensorIDBases.MarkerTracking;
+            SensorIDString = IDFactory.createNewSensorID(this);
+            sensorType = SensorTypes.MarkerBasedSensorSource;
         }
 
         public override void Accept(AbstractProjectVisitor visitor)

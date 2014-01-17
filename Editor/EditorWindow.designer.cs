@@ -62,8 +62,10 @@
             this.pnl_editor_properties = new System.Windows.Forms.Panel();
             this.cmb_editor_properties_objectSelection = new System.Windows.Forms.ComboBox();
             this.pnl_editor_szenes = new System.Windows.Forms.Panel();
+            this.btn_editor_scene_scene_1 = new System.Windows.Forms.Button();
             this.btn_editor_scene_new = new System.Windows.Forms.Button();
             this.pnl_editor_status = new System.Windows.Forms.Panel();
+            this.btn_editor_scene_delete = new System.Windows.Forms.Button();
             this.mst_editor_menu.SuspendLayout();
             this.pnl_editor_selection.SuspendLayout();
             this.pnl_editor_properties.SuspendLayout();
@@ -236,34 +238,34 @@
             // tsm_editor_menu_test_startImage
             // 
             this.tsm_editor_menu_test_startImage.Name = "tsm_editor_menu_test_startImage";
-            this.tsm_editor_menu_test_startImage.Size = new System.Drawing.Size(152, 22);
+            this.tsm_editor_menu_test_startImage.Size = new System.Drawing.Size(144, 22);
             this.tsm_editor_menu_test_startImage.Text = "Bild laden";
             this.tsm_editor_menu_test_startImage.Click += new System.EventHandler(this.tsm_editor_menu_test_startImage_Click);
             // 
             // tsm_editor_menu_test_startVideo
             // 
             this.tsm_editor_menu_test_startVideo.Name = "tsm_editor_menu_test_startVideo";
-            this.tsm_editor_menu_test_startVideo.Size = new System.Drawing.Size(152, 22);
+            this.tsm_editor_menu_test_startVideo.Size = new System.Drawing.Size(144, 22);
             this.tsm_editor_menu_test_startVideo.Text = "Video laden";
             this.tsm_editor_menu_test_startVideo.Click += new System.EventHandler(this.tsm_editor_menu_test_startVideo_Click);
             // 
             // tsm_editor_menu_test_startWithVirtualCamera
             // 
             this.tsm_editor_menu_test_startWithVirtualCamera.Name = "tsm_editor_menu_test_startWithVirtualCamera";
-            this.tsm_editor_menu_test_startWithVirtualCamera.Size = new System.Drawing.Size(152, 22);
+            this.tsm_editor_menu_test_startWithVirtualCamera.Size = new System.Drawing.Size(144, 22);
             this.tsm_editor_menu_test_startWithVirtualCamera.Text = "vCam nutzen";
             this.tsm_editor_menu_test_startWithVirtualCamera.Click += new System.EventHandler(this.tsm_editor_menu_test_startWithVirtualCamera_Click);
             // 
             // tss_editor_meu_test_loadVideo_togleDebug
             // 
             this.tss_editor_meu_test_loadVideo_togleDebug.Name = "tss_editor_meu_test_loadVideo_togleDebug";
-            this.tss_editor_meu_test_loadVideo_togleDebug.Size = new System.Drawing.Size(149, 6);
+            this.tss_editor_meu_test_loadVideo_togleDebug.Size = new System.Drawing.Size(141, 6);
             // 
             // tsm_editor_menu_test_togleDebug
             // 
             this.tsm_editor_menu_test_togleDebug.CheckOnClick = true;
             this.tsm_editor_menu_test_togleDebug.Name = "tsm_editor_menu_test_togleDebug";
-            this.tsm_editor_menu_test_togleDebug.Size = new System.Drawing.Size(152, 22);
+            this.tsm_editor_menu_test_togleDebug.Size = new System.Drawing.Size(144, 22);
             this.tsm_editor_menu_test_togleDebug.Text = "Debug";
             // 
             // tsm_editor_menu_help
@@ -280,7 +282,6 @@
             this.tsm_editor_menu_help_help.Name = "tsm_editor_menu_help_help";
             this.tsm_editor_menu_help_help.Size = new System.Drawing.Size(99, 22);
             this.tsm_editor_menu_help_help.Text = "Hilfe";
-
             // 
             // tsm_editor_menu_help_info
             // 
@@ -346,11 +347,23 @@
             // pnl_editor_szenes
             // 
             this.pnl_editor_szenes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_editor_szenes.Controls.Add(this.btn_editor_scene_delete);
+            this.pnl_editor_szenes.Controls.Add(this.btn_editor_scene_scene_1);
             this.pnl_editor_szenes.Controls.Add(this.btn_editor_scene_new);
             this.pnl_editor_szenes.Location = new System.Drawing.Point(141, 586);
             this.pnl_editor_szenes.Name = "pnl_editor_szenes";
             this.pnl_editor_szenes.Size = new System.Drawing.Size(661, 114);
             this.pnl_editor_szenes.TabIndex = 2;
+            // 
+            // btn_editor_scene_scene_1
+            // 
+            this.btn_editor_scene_scene_1.Location = new System.Drawing.Point(54, 34);
+            this.btn_editor_scene_scene_1.Name = "btn_editor_scene_scene_1";
+            this.btn_editor_scene_scene_1.Size = new System.Drawing.Size(46, 45);
+            this.btn_editor_scene_scene_1.TabIndex = 1;
+            this.btn_editor_scene_scene_1.Text = "1";
+            this.btn_editor_scene_scene_1.UseVisualStyleBackColor = true;
+            this.btn_editor_scene_scene_1.Click += new System.EventHandler(this.btn_editor_scene_scene_change);
             // 
             // btn_editor_scene_new
             // 
@@ -360,6 +373,7 @@
             this.btn_editor_scene_new.TabIndex = 0;
             this.btn_editor_scene_new.Text = "+";
             this.btn_editor_scene_new.UseVisualStyleBackColor = true;
+            this.btn_editor_scene_new.Click += new System.EventHandler(this.btn_editor_scene_scene_new);
             // 
             // pnl_editor_status
             // 
@@ -367,6 +381,16 @@
             this.pnl_editor_status.Name = "pnl_editor_status";
             this.pnl_editor_status.Size = new System.Drawing.Size(1008, 23);
             this.pnl_editor_status.TabIndex = 3;
+            // 
+            // btn_editor_scene_delete
+            // 
+            this.btn_editor_scene_delete.Location = new System.Drawing.Point(611, 34);
+            this.btn_editor_scene_delete.Name = "btn_editor_scene_delete";
+            this.btn_editor_scene_delete.Size = new System.Drawing.Size(45, 45);
+            this.btn_editor_scene_delete.TabIndex = 2;
+            this.btn_editor_scene_delete.Text = "-";
+            this.btn_editor_scene_delete.UseVisualStyleBackColor = true;
+            this.btn_editor_scene_delete.Click += new System.EventHandler(this.btn_editor_scene_scene_remove);
             // 
             // EditorWindow
             // 
@@ -430,6 +454,8 @@
         private System.Windows.Forms.Button btn_editor_scene_new;
         private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_test_startImage;
         private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_test_startVideo;
+        private System.Windows.Forms.Button btn_editor_scene_scene_1;
+        private System.Windows.Forms.Button btn_editor_scene_delete;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>

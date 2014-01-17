@@ -9,98 +9,101 @@ namespace ARdevKit.Model.Project
 {
     public class PictureMarkerSensor : AbstractSensor
     {
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Specifies the <see cref="trackingQuality"/>. </summary>
+        ///
+        /// <remarks>   Imanuel, 15.01.2014. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
         [Flags]
-        public enum FeatureDescriptorAlignments { regular, upright, gravity, rectified };
-        /// <summary>   The following feature descriptor types are available:
-        ///				"regular", "upright", "gravity", "rectified".
-        ///				- The "regular" feature descriptor type is the most
-        ///				  general feature descriptor type and is used as
-        ///				  default if the tag is not specified.
-        ///				- The "upright" feature descriptor type assumes that
-        ///				  the camera is not rotated with respect to the optical
-        ///				  axis, i.e. is turned upside down, during the tracking
-        ///				  process.
-        ///				- The "gravity" feature descriptor type can only be
-        ///				  used with devices with inertial sensors which
-        ///				  measures gravity. It is used for localizing static
-        ///				  objects that provide (close to) vertical surfaces,
-        ///				  e.g. buildings or posters on a wall. The orientation
-        ///				  of the features will then be aligned with gravity.
-        ///				- The "rectified" feature descriptor type can only be
-        ///				  used with devices with inertial sensors which
-        ///				  measures gravity. It is used for planar objects on a
-        ///				  horizontal surface, e.g. a magazine on a table.
-        ///				  This will improve the result of the localization of
-        ///				  planar objects under steep camera angles at the cost
-        ///				  of a lower framerate during localization.
-        ///				  This parameter is for expert usage only. In general it
-        ///				  is advised to leave the value unchanged. </summary>
-        protected FeatureDescriptorAlignments featureDescriptorAlignment = FeatureDescriptorAlignments.regular;
-        public FeatureDescriptorAlignments FeatureDescriptorAlignment
+        public enum TrackingQualities { robust, fast };
+        /// <summary>   Strategy which is used for the marker detection.
+        ///             There are two types available:
+        ///             -   "robust" to use a robust approach to detect the
+        ///                 markers, which usually gives the best results,
+        ///                 but consumes more computational time, i.e. is 
+        ///                 slower.
+        ///             -   "fast" to use a more simple approach to detect
+        ///                 the markers, which is less precise, but faster
+        ///                 than robust. </summary>
+        protected TrackingQualities trackingQuality = TrackingQualities.robust;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the tracking quality. </summary>
+        ///
+        /// <value> The tracking quality. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public TrackingQualities TrackingQuality
         {
-            get { return featureDescriptorAlignment; }
-            set { featureDescriptorAlignment = value; }
+            get { return trackingQuality; }
+            set { trackingQuality = value; }
         }
 
-        /// <summary>   A restriction on the number of reference planar objects
-        ///				to be localized per frame. Localization takes longer
-        ///				than interframe tracking, and if the system tries to
-        ///				localize too many objects at the same time, it might
-        ///				cause a lower framerate. The default value for this is 5
-        ///				and is used if the tag is not specified.
-        ///				Another name that can be used for this parameter is
-        ///				&lt;MultipleReferenceImagesFast&gt;. This name is however
-        ///				deprecated and should not be used any more.
-        ///				This parameter is for expert usage only. In general it
-        ///				is advised to leave the value unchanged. </summary>
-        protected int maxObjectsToDetectPerFrame = 5;
-        public int MaxObjectsToDetectPerFrame
+        /// <summary>   The threshold which is used to binarize the camera
+        ///             image. Binarizing is the process where each pixel
+        ///             is converted to a grayscale value (between 0 and
+        ///             255) and then is set to 0 when the value is below
+        ///             the threshold and to 1 when the value is above.
+        ///             This helps to clearly identify the marker and is
+        ///             therefore important for the detection process. When
+        ///             the tracking quality is set to "fast", then this
+        ///             value is fixed and will not change during the
+        ///             tracking process. When the tracking quality is set
+        ///             to "robust", then the value is only the starting
+        ///             value in the very first frame after loading the
+        ///			    tracking.xml. Detecting markers using a fixed
+        ///				threshold can lead to failure. The value range for
+        ///				the threshold is between 0 and 255. </summary>
+        protected int thresholdOffset = 128;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the threshold offset. </summary>
+        ///
+        /// <value> The threshold offset. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public int ThresholdOffset
         {
-            get { return maxObjectsToDetectPerFrame; }
-            set { maxObjectsToDetectPerFrame = value; }
+            get { return thresholdOffset; }
+            set { thresholdOffset = value; }
         }
 
-        /// <summary>   The maximum number of objects that should be tracked in
-        ///				parallel. Tracking many objects in parallel is quite
-        ///				expensive and might lead to a lower framerate. As soon
-        ///				as the maximum number of tracked objects is reached,
-        ///				the system will no longer try to localize new objects.
-        ///				The default value for this is 1 and is used if the tag
-        ///				is not specified.
-        ///				Another name that can be used for this parameter is
-        ///				&lt;MaxNumCosesForInit&gt;. This name is however deprecated
-        ///				and should not be used any more.
-        ///				This parameter is for expert usage only. In general it
-        ///				is advised to leave the value unchanged. </summary>
-        protected int maxObjectsToTrackInParallel = 1;
-        public int MaxObjectsToTrackInParallel
+        /// <summary>   Number of search iterations which controls the
+        ///             number of attempts to find a marker with a new
+        ///             ThresholdOffset. This parameter matters when "robust"
+        ///				is set as "TrackingQuality", but is ignored for
+        ///				"fast". The ThresholdOffset is adapted when no
+        ///				marker was detected.
+        ///             With a high number, the marker tracker is more
+        ///             likely to detect a marker, but it also needs more
+        ///             computational time, i.e. is slower. </summary>
+        protected int numberOfSearchIterations = 3;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the number of search iterations. </summary>
+        ///
+        /// <value> The total number of search iterations. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public int NumberOfSearchIterations
         {
-            get { return maxObjectsToTrackInParallel; }
-            set { maxObjectsToTrackInParallel = value; }
+            get { return numberOfSearchIterations; }
+            set { numberOfSearchIterations = value; }
         }
 
-        /// <summary>   Default similarity threshold for specifying whether
-        ///				template tracking was successful or failed. The
-        ///				tracking quality measure is defined between -1 and 1,
-        ///				where 1 is the best	possible value. If the tracking
-        ///				quality	is reported to be below the threshold, the
-        ///				tracker will treat the corresponding frame as lost.
-        ///				The default value for this is 0.7 and is used if the
-        ///				tag is not specified. This setting can be overridden
-        ///				for each "COS" if it is defined there.
-        ///				This parameter is for expert usage only. In general it
-        ///				is advised to leave the value unchanged. </summary>
-        protected double similarityThreshold = 0.7;
-        public double SimilarityThreshold
-        {
-            get { return similarityThreshold; }
-            set { similarityThreshold = value; }
-        }
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Default constructor. </summary>
+        ///
+        /// <remarks>   Imanuel, 17.01.2014. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         public PictureMarkerSensor()
         {
             Name = "PictureMarker";
-            SensorIDString = IDFactory.getSensorID(this);
+            sensorIDBase = SensorIDBases.MarkerTracking;
+            SensorIDString = IDFactory.createNewSensorID(this);
+            sensorType = SensorTypes.MarkerBasedSensorSource;
         }
 
         public override void Accept(AbstractProjectVisitor visitor)

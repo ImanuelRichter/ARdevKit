@@ -31,9 +31,13 @@ namespace ARdevKit.Model.Project
             set { name = value; }
         }
 
-        /// <summary>
-        /// The sensor
-        /// </summary>
+        private string projectPath;
+        public string ProjectPath
+        {
+            get { return projectPath; }
+            set { projectPath = value; }
+        }
+
         protected AbstractSensor sensor;
         /// <summary>
         /// Gets or sets the sensor.
@@ -79,13 +83,9 @@ namespace ARdevKit.Model.Project
             set { trackables = value; }
         }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Project"/> class.
-        /// </summary>
-        /// <param name="name">The name.</param>
-        public Project(string name)
+        public Project()
         {
-            this.name = name;
+            this.name = "";
             trackables = new List<AbstractTrackable>();
             sources = new List<AbstractSource>();
         }
@@ -94,10 +94,15 @@ namespace ARdevKit.Model.Project
         /// Initializes a new instance of the <see cref="Project"/> class.
         /// </summary>
         public Project()
+        public Project(string name) : this()
         {
-            this.name = "";
-            trackables = new List<AbstractTrackable>();
-            sources = new List<AbstractSource>();
+            this.name = name;
+        }
+
+        public Project(string name, string projectPath)
+            : this(name)
+        {
+            this.projectPath = projectPath;
         }
 
         /// <summary>
@@ -107,10 +112,11 @@ namespace ARdevKit.Model.Project
         public void Accept(AbstractProjectVisitor visitor)
         {
             visitor.Visit(this);
-            /*foreach (AbstractTrackable t in Trackables)
+            foreach (AbstractTrackable t in Trackables)
             {
                 t.Accept(visitor);
-            }*/
+            }
+            sensor.Accept(visitor);
         }
 
         /// <summary>

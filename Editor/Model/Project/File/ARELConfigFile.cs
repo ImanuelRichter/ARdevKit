@@ -5,8 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace ARdevKit.Model.Project.IO
+namespace ARdevKit.Model.Project.File
 {
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   An arelConfig.xml. </summary>
+    ///
+    /// <remarks>   Imanuel, 17.01.2014. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
     public class ARELConfigFile : AbstractARELFile
     {
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -23,6 +29,12 @@ namespace ARdevKit.Model.Project.IO
             filePath = Path.Combine(projectPath, "arelConfig.xml");
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Saves the file to its <see cref="filePath"/>. </summary>
+        ///
+        /// <remarks>   Imanuel, 17.01.2014. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
         public override void Save()
         {
             StreamWriter writer = new StreamWriter(filePath);
@@ -30,7 +42,7 @@ namespace ARdevKit.Model.Project.IO
                 writer.WriteLine(header);
             if (blocks != null)
             {
-                foreach (HTMLBlock htmlBlock in blocks)
+                foreach (XMLBlock htmlBlock in blocks)
                 {
                     htmlBlock.Write(writer);
                 }
@@ -39,11 +51,11 @@ namespace ARdevKit.Model.Project.IO
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Writes the file at the projectPath. </summary>
+        /// <summary>   Saves the file to the using the passed <see cref="projectPath"/>. </summary>
         ///
-        /// <remarks>   Imanuel, 15.01.2014. </remarks>
+        /// <remarks>   Imanuel, 17.01.2014. </remarks>
         ///
-        /// <param name="path">  The project path to write. </param>
+        /// <param name="projectPath">  The project path to write. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         public override void Save(string projectPath)

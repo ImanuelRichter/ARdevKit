@@ -13,21 +13,11 @@ namespace ARdevKit.Model.Project
     [Serializable]
     public abstract class AbstractTrackable : IPreviewable//, ISerializable 
     {
-
-        /// <summary>
-        /// The marker fuser
-        /// </summary>
-        private Fuser markerFuser;
-        /// <summary>
-        /// Gets or sets the marker fuser.
-        /// </summary>
-        /// <value>
-        /// The marker fuser.
-        /// </value>
-        public Fuser MarkerFuser
+        protected MarkerFuser fuser;
+        public MarkerFuser Fuser
         {
-            get { return markerFuser; }
-            set { markerFuser = value; }
+            get { return fuser; }
+            set { fuser = value; }
         }
 
         /// <summary>
@@ -46,21 +36,15 @@ namespace ARdevKit.Model.Project
             set { sensorCosID = value; }
         }
 
-        /// <summary>
-        /// Gets or sets the vector,
-        /// </summary>
-        /// <value>
-        /// The vector.
-        /// </value>
-        public Vector3D vector { get; set; }
+        private double similarityThreshold = 0.7;
+        protected double SimilarityThreshold
+        {
+            get { return similarityThreshold; }
+            set { similarityThreshold = value; }
+        }
 
-        /// <summary>
-        /// Gets or sets the augmentations.
-        /// </summary>
-        /// <value>
-        /// The augmentations.
-        /// </value>
-        public List<AbstractAugmentation> augmentations { get; set; }
+        public Vector3D vector { get; set; }
+        public List<AbstractAugmention> Augmentions { get; set; }
 
         public abstract void Accept(AbstractProjectVisitor visitor);
 
@@ -77,7 +61,7 @@ namespace ARdevKit.Model.Project
         /// </summary>
         public AbstractTrackable()
         {
-            this.augmentations = new List<AbstractAugmentation>();
+            this.Augmentions = new List<AbstractAugmention>();
         }
 
         /// <summary>
@@ -90,29 +74,26 @@ namespace ARdevKit.Model.Project
         {
             throw new NotImplementedException();
         }
-
-
         /// <summary>
-        /// Finds the augmentation, which is associated with this <see cref="AbstractTrackable"/>.
+        /// Finds the augmention, which is associated with this <see cref="AbstractTrackable"/>.
         /// </summary>
         /// <param name="a">the IPreviewable, which is searched for</param>
-        /// <returns>the Augmentation which is found, otherwise null </returns>
-        public AbstractAugmentation findAugmentation(IPreviewable a)
+        /// <returns>the augmention which is found, otherwise null </returns>
+        public AbstractAugmention FindAugmention(IPreviewable a)
         {
-            return this.augmentations[this.augmentations.IndexOf((AbstractAugmentation)a)];
+            return this.Augmentions[this.Augmentions.IndexOf((AbstractAugmention)a)];
         }
-
         /// <summary>
-        /// Checks if the augmentation is associated with this <see cref="AbstractTrackable"/>.
+        /// Checks if the augmention is associated with this <see cref="AbstractTrackable"/>.
         /// </summary>
         /// <param name="a">the IPreviewable, which is checked existence for</param>
         /// <returns>true, if its associated with this <see cref="AbstractTrackable"/>
         ///          false, else</returns>
-        public bool existAugmentation(IPreviewable a)
+        public bool existAugmention(IPreviewable a)
         {
-            foreach (AbstractAugmentation aug in augmentations)
+            foreach (AbstractAugmention aug in Augmentions)
             {
-                if (aug == (AbstractAugmentation)a)
+                if (aug == (AbstractAugmention)a)
                 {
                     return true;
                 }

@@ -28,14 +28,13 @@ namespace ARdevKit.Model.Project
         /// The source identifier.
         /// </value>
         public String sourceID { get; set; }
-
         /// <summary>
         /// Gets or sets the augmentions, which get their dynamic information from the <see cref="AbstractSource"/>
         /// </summary>
         /// <value>
         /// The augmentions.
         /// </value>
-        public List<AbstractDynamic2DAugmentation> augmentions {get; set; }
+        public List<AbstractDynamic2DAugmention> augmentions {get; set; }
         abstract public void accept(AbstractProjectVisitor visitor);
 
         public abstract List<AbstractProperty> getPropertyList();
@@ -45,7 +44,7 @@ namespace ARdevKit.Model.Project
         /// </summary>
         public AbstractSource()
         {
-            this.augmentions = new List<AbstractDynamic2DAugmentation>();
+            this.augmentions = new List<AbstractDynamic2DAugmention>();
         }
 
         /// <summary>
@@ -62,28 +61,27 @@ namespace ARdevKit.Model.Project
         public abstract Bitmap getPreview();
 
         public abstract Bitmap getIcon();
-
         /// <summary>
-        /// Finds the augmentation, which gets information through this <see cref="AbstractSource"/>.
+        /// Finds the augmention, which gets information through this <see cref="AbstractSource"/>.
         /// </summary>
         /// <param name="a">the IPreviewable, which is searched for</param>
-        /// <returns>the Augmentation which is found, otherwise null </returns>
-        public AbstractAugmentation findAugmentation(IPreviewable a)
+        /// <returns>the augmention which is found, otherwise null </returns>
+        public AbstractAugmention findAugmention(IPreviewable a)
         {
-            return this.augmentions[this.augmentions.IndexOf((AbstractDynamic2DAugmentation)a)];
+            return this.augmentions[this.augmentions.IndexOf((AbstractDynamic2DAugmention)a)];
         }
 
         /// <summary>
-        /// Checks if the augmentation is associated with this <see cref="AbstractSource"/>.
+        /// Checks if the augmention is associated with this <see cref="AbstractSource"/>.
         /// </summary>
         /// <param name="a">the IPreviewable, which is checked existence for</param>
         /// <returns>true, if its associated with this <see cref="AbstractSource"/>
         ///          false, else</returns>
-        public bool existAugmentation(IPreviewable a)
+        public bool existAugmention(IPreviewable a)
         {
-            foreach (AbstractDynamic2DAugmentation aug in augmentions)
+            foreach (AbstractDynamic2DAugmention aug in augmentions)
             {
-                if (aug == (AbstractDynamic2DAugmentation) a)
+                if (aug == (AbstractDynamic2DAugmention) a)
                 {
                     return true;
                 }

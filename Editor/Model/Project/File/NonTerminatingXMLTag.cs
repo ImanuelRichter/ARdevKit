@@ -3,59 +3,43 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
 
-namespace ARdevKit.Model.Project.IO
+namespace ARdevKit.Model.Project.File
 {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-    /// <summary>   A project configuration html. </summary>
+    /// <summary>   A <see cref="NonTerminatingXMLTag"/> is a <see cref="XMLTag"/> which has no end part. </summary>
     ///
     /// <remarks>   Imanuel, 15.01.2014. </remarks>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public class ARELProjectFile : AbstractARELFile
+    public class NonTerminatingXMLTag : XMLTag
     {
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Constructor. </summary>
         ///
         /// <remarks>   Imanuel, 15.01.2014. </remarks>
         ///
-        /// <param name="tag">  The tag. </param>
+        /// <param name="text"> The text. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public ARELProjectFile(string header, string filePath)
+        public NonTerminatingXMLTag(string text) : base(text)
         {
-            this.header = header;
-            this.filePath = filePath;
-        }
-
-        public override void Save()
-        {
-            StreamWriter writer = new StreamWriter(filePath);
-            if (header != null && header != "")
-                writer.WriteLine(header);
-            if (blocks != null)
-            {
-                foreach (HTMLBlock htmlBlock in blocks)
-                {
-                    htmlBlock.Write(writer);
-                }
-            }
-            writer.Close();
+            End = "";
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Writes the file at the projectPath. </summary>
+        /// <summary>   Constructor. </summary>
         ///
         /// <remarks>   Imanuel, 15.01.2014. </remarks>
         ///
-        /// <param name="path">  The project path to write. </param>
+        /// <param name="text">         The text. </param>
+        /// <param name="extension">    The extension. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public override void Save(string filePath)
+        public NonTerminatingXMLTag(string text, string extension)
+            : base(text, extension)
         {
-            this.filePath = filePath;
-            Save();
+            End = "";
         }
     }
 }

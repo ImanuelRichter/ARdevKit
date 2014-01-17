@@ -4,10 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ARdevKit.Model.Project.IO
+namespace ARdevKit.Model.Project.File
 {
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   A <see cref="BlockMarker"/> marks an <see cref="AbstractBlock"/>.
+    ///             It has a <see cref="Start"/> string and an <see cref="End"/> string
+    ///             and can be open or closed. </summary>
+    ///
+    /// <remarks>   Imanuel, 17.01.2014. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
     public class BlockMarker
     {
+        // No state pattern is used because there are just those two states and just one different action
         /// <summary>   true if closed. </summary>
         protected bool closed = true;
 
@@ -27,7 +36,22 @@ namespace ARdevKit.Model.Project.IO
 
         public string End { get; set; }
 
-        protected BlockMarker() { }
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Default constructor. </summary>
+        ///
+        /// <remarks>   Imanuel, 17.01.2014. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public BlockMarker() { }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Constructor. </summary>
+        ///
+        /// <remarks>   Imanuel, 17.01.2014. </remarks>
+        ///
+        /// <param name="start">    The start. </param>
+        /// <param name="end">      The end. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         public BlockMarker(string start, string end)
         {

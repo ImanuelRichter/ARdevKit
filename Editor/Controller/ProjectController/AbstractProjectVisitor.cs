@@ -7,14 +7,112 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Controller.ProjectController
 {
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   An abstract project visitor. </summary>
+    ///
+    /// <remarks>   Imanuel, 17.01.2014. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
     public abstract class AbstractProjectVisitor
     {
-        public abstract void Visit(BarGraph graph);
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Visits the given <see cref="BarGraph"/>. </summary>
+        ///
+        /// <remarks>   Imanuel, 17.01.2014. </remarks>
+        ///
+        /// <param name="barGraph">    The bar graph. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public abstract void Visit(BarGraph barGraph);
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Visits the given <see cref="DbSource"/>. </summary>
+        ///
+        /// <remarks>   Imanuel, 17.01.2014. </remarks>
+        ///
+        /// <param name="source">   Source for the. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
         public abstract void Visit(DbSource source);
-        public abstract void Visit(PictureMarker pictureMarker);
-        public abstract void Visit(IDMarker idMarker);
-        public abstract void Visit(IDMarkerSensor idMarkerSensor);
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Visits the given <see cref="MarkerlessFuser"/>. </summary>
+        ///
+        /// <remarks>   Imanuel, 17.01.2014. </remarks>
+        ///
+        /// <param name="markerlessFuser">  The markerless fuser. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public abstract void Visit(MarkerlessFuser markerlessFuser);
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Visits the given <see cref="MarkerFuser"/>. </summary>
+        ///
+        /// <remarks>   Imanuel, 17.01.2014. </remarks>
+        ///
+        /// <param name="markerFuser">  The marker fuser. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public abstract void Visit(MarkerFuser markerFuser);
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Visits the given <see cref="MarkerlessSensor"/>. </summary>
+        ///
+        /// <remarks>   Imanuel, 17.01.2014. </remarks>
+        ///
+        /// <param name="MarkerlessSensor"> The markerless sensor. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public abstract void Visit(MarkerlessSensor MarkerlessSensor);
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Visits the given <see cref="PictureMarkerSensor"/>. </summary>
+        ///
+        /// <remarks>   Imanuel, 17.01.2014. </remarks>
+        ///
+        /// <param name="pictureMarkerSensor">  The picture marker sensor. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
         public abstract void Visit(PictureMarkerSensor pictureMarkerSensor);
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Visits the given <see cref="PictureMarker"/>. </summary>
+        ///
+        /// <remarks>   Imanuel, 17.01.2014. </remarks>
+        ///
+        /// <param name="pictureMarker">    The picture marker. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public abstract void Visit(PictureMarker pictureMarker);
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Visits the given <see cref="MarkerSensor"/>. </summary>
+        ///
+        /// <remarks>   Imanuel, 17.01.2014. </remarks>
+        ///
+        /// <param name="idMarkerSensor">   The identifier marker sensor. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public abstract void Visit(MarkerSensor idMarkerSensor);
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Visits the given <see cref="IDMarker"/>. </summary>
+        ///
+        /// <remarks>   Imanuel, 17.01.2014. </remarks>
+        ///
+        /// <param name="idMarker"> The identifier marker. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public abstract void Visit(IDMarker idMarker);
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Visits the given <see cref="Project"/>. </summary>
+        ///
+        /// <remarks>   Imanuel, 17.01.2014. </remarks>
+        ///
+        /// <param name="project">  The project. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
         public abstract void Visit(Project project);
     }
 }

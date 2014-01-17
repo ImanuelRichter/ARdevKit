@@ -29,17 +29,8 @@ namespace ARdevKit.Model.Project
             set { matrixID = value; }
         }
 
-        /// <summary>
-        /// The identifier marker tracking sensor
-        /// </summary>
-        private IDMarkerSensor idMarkerTrackingSensor;
-        /// <summary>
-        /// Gets or sets the identifier marker tracking sensor.
-        /// </summary>
-        /// <value>
-        /// The identifier marker tracking sensor.
-        /// </value>
-        public IDMarkerSensor IdMarkerTrackingSensor
+        private MarkerSensor idMarkerTrackingSensor;
+        public MarkerSensor IdMarkerTrackingSensor
         {
             get { return idMarkerTrackingSensor; }
             set { idMarkerTrackingSensor = value; }
@@ -52,18 +43,20 @@ namespace ARdevKit.Model.Project
         public IDMarker(int matrixID)
         {
             this.matrixID = matrixID;
+            size = 60;
             type = "IDMarker";
-            idMarkerTrackingSensor = new IDMarkerSensor();
-            sensorCosID = IDFactory.getSensorCosID(this);
+            idMarkerTrackingSensor = new MarkerSensor();
+            sensorCosID = IDFactory.createNewSensorCosID(this);
+            Fuser = new MarkerlessFuser();
         }
-        /// <summary>
-        /// Accepts the specified visitor.
-        /// </summary>
-        /// <param name="visitor">The visitor.</param>
-        /// <exception cref="System.NotImplementedException"></exception>
         public override void Accept(Controller.ProjectController.AbstractProjectVisitor visitor)
         {
-            throw new NotImplementedException();
+            visitor.Visit(this);
+            foreach (AbstractAugmention augmentation in Augmentions)
+            {
+                augmentation.Accept(visitor);
+            }
+            fuser.Accept(visitor);
         }
 
         /// <summary>
