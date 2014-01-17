@@ -278,39 +278,8 @@ namespace ARdevKit
         public EditorWindow()
         {
             InitializeComponent();
-            try
-            {
-                this.elementSelectionController = new ElementSelectionController(this);
-            }
-            catch (Exception)
-            {
-
-                Debug.WriteLine("ElementSelectionController is not implemented yet...");
-            }
-
-            this.previewController = new PreviewController(this);
-            this.propertyController = new PropertyController(this);
-
-            try
-            {
-                this.deviceConnectionController = new DeviceConnectionController(this);
-            }
-            catch (Exception)
-            {
-                
-                Debug.WriteLine("DeviceConnectionController is not implemented yet...");
-            }
-
-            this.startDebugModeDevice = false;
-            this.startDebugModeLocal = false;
-            this.elementCategories = null;
-            this.projectPath = null;
-            this.allElements = null;
-            this.saveVisitor = null;
-            this.exportVisitor = null;
-            this.currentElement = null;
-            this.project = null;
-            registerElements();
+            initializeEmptyProject();
+            initializeControllers();
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -342,7 +311,6 @@ namespace ARdevKit
         private void tsm_editor_menu_file_new_Click(object sender, EventArgs e)
         {
             //stub
-            throw new NotImplementedException();
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -641,6 +609,46 @@ namespace ARdevKit
         private void addCategory(SceneElementCategory category)
         {
             //TODO: implement addCategory(SceneElementCategory category)
+        }
+
+        private void initializeControllers()
+        {
+            try
+            {
+                this.elementSelectionController = new ElementSelectionController(this);
+            }
+            catch (Exception)
+            {
+
+                Debug.WriteLine("ElementSelectionController is not implemented yet...");
+            }
+
+            this.previewController = new PreviewController(this);
+            this.propertyController = new PropertyController(this);
+
+            try
+            {
+                this.deviceConnectionController = new DeviceConnectionController(this);
+            }
+            catch (Exception)
+            {
+
+                Debug.WriteLine("DeviceConnectionController is not implemented yet...");
+            }
+        }
+
+        private void initializeEmptyProject()
+        {
+            this.project = new Project();
+            this.startDebugModeDevice = false;
+            this.startDebugModeLocal = false;
+            this.elementCategories = new List<SceneElementCategory>();
+            this.projectPath = null;
+            this.allElements = new LinkedList<IPreviewable>();
+            this.saveVisitor = new SaveVisitor();
+            this.exportVisitor = new ExportVisitor();
+            this.currentElement = null;
+            registerElements();
         }
     }
 }
