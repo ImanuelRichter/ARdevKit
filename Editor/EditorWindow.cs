@@ -280,6 +280,7 @@ namespace ARdevKit
             InitializeComponent();
             this.startDebugModeDevice = false;
             this.startDebugModeLocal = false;
+            this.elementCategories = new List<SceneElementCategory>();
             this.projectPath = null;
             this.allElements = new LinkedList<IPreviewable>();
 
@@ -296,6 +297,21 @@ namespace ARdevKit
             this.previewController = new PreviewController(this);
             this.propertyController = new PropertyController(this);
             this.project = new Project();
+
+            try
+            {
+                this.deviceConnectionController = new DeviceConnectionController(this);
+            }
+            catch (Exception)
+            {
+                
+                Debug.WriteLine("DeviceConnectionController is not implemented yet...");
+            }
+
+            this.saveVisitor = new SaveVisitor();
+            this.exportVisitor = new ExportVisitor();
+            this.currentElement = null;
+            registerElements();
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
