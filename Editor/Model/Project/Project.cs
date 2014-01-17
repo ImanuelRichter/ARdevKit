@@ -17,6 +17,13 @@ namespace ARdevKit.Model.Project
             set { name = value; }
         }
 
+        private string projectPath;
+        public string ProjectPath
+        {
+            get { return projectPath; }
+            set { projectPath = value; }
+        }
+
         protected AbstractSensor sensor;
         public AbstractSensor Sensor
         {
@@ -38,18 +45,22 @@ namespace ARdevKit.Model.Project
             set { trackables = value; }
         }
 
-        public Project(string name)
-        {
-            this.name = name;
-            trackables = new List<AbstractTrackable>();
-            sources = new List<AbstractSource>();
-        }
-
         public Project()
         {
             this.name = "";
             trackables = new List<AbstractTrackable>();
             sources = new List<AbstractSource>();
+        }
+
+        public Project(string name) : this()
+        {
+            this.name = name;
+        }
+
+        public Project(string name, string projectPath)
+            : this(name)
+        {
+            this.projectPath = projectPath;
         }
 
         public void Accept(AbstractProjectVisitor visitor)

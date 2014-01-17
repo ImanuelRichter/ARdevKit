@@ -30,7 +30,7 @@ namespace ARdevKit.Model.Project.IO
                 writer.WriteLine(header);
             if (blocks != null)
             {
-                foreach (HTMLBlock htmlBlock in blocks)
+                foreach (XMLBlock htmlBlock in blocks)
                 {
                     htmlBlock.Write(writer);
                 }

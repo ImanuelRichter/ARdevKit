@@ -16,7 +16,7 @@ namespace ARdevKit.Controller.ProjectController
         public abstract void Visit(MarkerlessSensor MarkerlessSensor);
         public abstract void Visit(PictureMarkerSensor pictureMarkerSensor);
         public abstract void Visit(PictureMarker pictureMarker);
-        public abstract void Visit(IDMarkerSensor idMarkerSensor);
+        public abstract void Visit(MarkerSensor idMarkerSensor);
         public abstract void Visit(IDMarker idMarker);
         public abstract void Visit(Project project);
     }

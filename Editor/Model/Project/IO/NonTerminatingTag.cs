@@ -7,26 +7,24 @@ using System.Threading.Tasks;
 namespace ARdevKit.Model.Project.IO
 {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-    /// <summary>   A tag has a begin and an end part as well as a level what means the tabs. </summary>
+    /// <summary>   An open tag is a <see cref="TerminatingTag"/> which has no end part. </summary>
     ///
     /// <remarks>   Imanuel, 15.01.2014. </remarks>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public class Tag : BlockMarker
+    public class NonTerminatingTag : TerminatingTag
     {
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Constructor. </summary>
         ///
         /// <remarks>   Imanuel, 15.01.2014. </remarks>
         ///
-        /// <param name="text"> The text within the brackets (&lt;text&gt;&lt;/text&gt;). </param>
+        /// <param name="text"> The text. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public Tag(string text)
+        public NonTerminatingTag(string text) : base(text)
         {
-            Start = text.Insert(0, "<");
-            Start = Start.Insert(Start.Length, ">");
-            End = Start.Insert(1, "/");
+            End = "";
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -38,9 +36,10 @@ namespace ARdevKit.Model.Project.IO
         /// <param name="extension">    The extension. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public Tag(string text, string extension) : this(text)
+        public NonTerminatingTag(string text, string extension)
+            : base(text, extension)
         {
-            Start = Start.Insert(Start.Length - 1, " " + extension);
+            End = "";
         }
     }
 }

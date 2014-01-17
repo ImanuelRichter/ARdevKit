@@ -7,7 +7,7 @@ using ARdevKit.Controller.ProjectController;
 
 namespace ARdevKit.Model.Project
 {
-    public class IDMarkerSensor : AbstractSensor
+    public class MarkerSensor : AbstractSensor
     {
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Specifies the <see cref="trackingQuality"/>. </summary>
@@ -71,7 +71,7 @@ namespace ARdevKit.Model.Project
             set { numberOfSearchIterations = value; }
         }
 
-        public IDMarkerSensor()
+        public MarkerSensor()
         {
             Name = "Marker";
             sensorIDBase = SensorIDBases.MarkerTracking;

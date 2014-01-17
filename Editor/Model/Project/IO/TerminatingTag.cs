@@ -7,24 +7,26 @@ using System.Threading.Tasks;
 namespace ARdevKit.Model.Project.IO
 {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-    /// <summary>   An open tag is a <see cref="Tag"/> which has no end part. </summary>
+    /// <summary>   A tag has a begin and an end part as well as a level what means the tabs. </summary>
     ///
     /// <remarks>   Imanuel, 15.01.2014. </remarks>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public class OpenTag : Tag
+    public class TerminatingTag : BlockMarker
     {
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Constructor. </summary>
         ///
         /// <remarks>   Imanuel, 15.01.2014. </remarks>
         ///
-        /// <param name="text"> The text. </param>
+        /// <param name="text"> The text within the brackets (&lt;text&gt;&lt;/text&gt;). </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public OpenTag(string text) : base(text)
+        public TerminatingTag(string text)
         {
-            End = "";
+            Start = text.Insert(0, "<");
+            Start = Start.Insert(Start.Length, ">");
+            End = Start.Insert(1, "/");
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -36,10 +38,9 @@ namespace ARdevKit.Model.Project.IO
         /// <param name="extension">    The extension. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public OpenTag(string text, string extension)
-            : base(text, extension)
+        public TerminatingTag(string text, string extension) : this(text)
         {
-            End = "";
+            Start = Start.Insert(Start.Length - 1, " " + extension);
         }
     }
 }

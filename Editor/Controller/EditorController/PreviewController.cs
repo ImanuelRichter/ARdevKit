@@ -113,7 +113,7 @@ public class PreviewController
             tempBox.Location = new Point(v.X, v.Y);
 
             //set the vector and the trackable in Augmention
-            ((AbstractAugmention)currentElement).vector = v;                                      
+            ((AbstractAugmention)currentElement).TranslationVector = v;                                      
             ((AbstractAugmention)currentElement).Trackable = this.trackable;
 
             //set references 
@@ -254,7 +254,7 @@ public class PreviewController
         }
         else if (currentMetaCategory == MetaCategory.Augmention && trackable != null)
         {
-            ((AbstractAugmention)this.findBox(currentElement).Tag).vector = v;
+            ((AbstractAugmention)this.findBox(currentElement).Tag).TranslationVector = v;
             this.findBox(currentElement).Location = new Point(v.X, v.Y);
         }
     }
@@ -331,7 +331,7 @@ public class PreviewController
             {              
                     tempBox = new PictureBox();
                     tempBox.Tag = aug;
-                    tempBox.Location = new Point(aug.vector.X, aug.vector.Y);
+                    tempBox.Location = new Point(aug.TranslationVector.X, aug.TranslationVector.Y);
                     tempBox.Image = (Image)aug.getPreview();
                     tempBox.Size = new Size(aug.getPreview().Height / 4, aug.getPreview().Width / 4);
                     tempBox.SizeMode = PictureBoxSizeMode.StretchImage;

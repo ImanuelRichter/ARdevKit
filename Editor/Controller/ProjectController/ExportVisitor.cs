@@ -21,13 +21,6 @@ namespace ARdevKit.Controller.ProjectController
     {
         private Project project;
 
-        private string projectPath;
-        public string ProjectPath
-        {
-            get { return projectPath; }
-            set { projectPath = value; }
-        }
-
         private ARELProjectFile arelProjectFile;
         public ARELProjectFile ArelProjectFile
         {
@@ -57,10 +50,10 @@ namespace ARdevKit.Controller.ProjectController
             set { arelGlueFile = value; }
         }
 
-        private HTMLBlock sensorBlock;
-        private HTMLBlock sensorParametersBlock;
-        private HTMLBlock connectionsBlock;
-        private HTMLBlock fuserBlock;
+        private XMLBlock sensorBlock;
+        private XMLBlock sensorParametersBlock;
+        private XMLBlock connectionsBlock;
+        private XMLBlock fuserBlock;
 
         private int cosCounter = 1;
 
@@ -68,11 +61,6 @@ namespace ARdevKit.Controller.ProjectController
         private JavaScriptBlock ifPatternIsFoundBlock;
         private JavaScriptBlock ifPatternIsLostBlock;
         private int imageCount = 1;
-
-        public ExportVisitor(string projectPath)
-        {
-            this.projectPath = projectPath;
-        }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Visits the given graph. </summary>
@@ -87,83 +75,89 @@ namespace ARdevKit.Controller.ProjectController
             // Connections 
 
             // COS
-            HTMLBlock cosBlock = new HTMLBlock(new Tag("COS"));
+            XMLBlock cosBlock = new XMLBlock(new TerminatingTag("COS"));
             connectionsBlock.AddBlock(cosBlock);
 
             // Name
-            cosBlock.AddLine(new HTMLLine(new Tag("Name"), project.Sensor.Name + "COS" + cosCounter++));
+            cosBlock.AddLine(new XMLLine(new TerminatingTag("Name"), project.Sensor.Name + "COS" + cosCounter++));
 
             // Fuser
-            fuserBlock = new HTMLBlock(new Tag("Dummy"));
+            fuserBlock = new XMLBlock(new TerminatingTag("Dummy"));
             cosBlock.AddBlock(fuserBlock);
 
             // SensorSource
-            HTMLBlock sensorSourceBlock = new HTMLBlock(new Tag("SensorSource", "trigger=\"1\""));
+            XMLBlock sensorSourceBlock = new XMLBlock(new TerminatingTag("SensorSource", "trigger=\"1\""));
             cosBlock.AddBlock(sensorSourceBlock);
 
             // SensorID
-            sensorSourceBlock.AddLine(new HTMLLine(new Tag("SensorID"), project.Sensor.SensorIDString));
+            sensorSourceBlock.AddLine(new XMLLine(new TerminatingTag("SensorID"), project.Sensor.SensorIDString));
             // SensorCosID
-            sensorSourceBlock.AddLine(new HTMLLine(new Tag("SensorCosID"), graph.Trackable.SensorCosID));
+            sensorSourceBlock.AddLine(new XMLLine(new TerminatingTag("SensorCosID"), graph.Trackable.SensorCosID));
 
             // Hand-Eye-Calibration
-            HTMLBlock handEyeCalibrationBlock = new HTMLBlock(new Tag("HandEyeCalibration"));
+            XMLBlock handEyeCalibrationBlock = new XMLBlock(new TerminatingTag("HandEyeCalibration"));
             sensorSourceBlock.AddBlock(handEyeCalibrationBlock);
 
             // Translation
-            HTMLBlock hecTranslationOffset = new HTMLBlock(new Tag("TranslationOffset"));
+            XMLBlock hecTranslationOffset = new XMLBlock(new TerminatingTag("TranslationOffset"));
             handEyeCalibrationBlock.AddBlock(hecTranslationOffset);
 
             // TODO get vectors
-            hecTranslationOffset.AddLine(new HTMLLine(new Tag("X"), "0"));
-            hecTranslationOffset.AddLine(new HTMLLine(new Tag("Y"), "0"));
-            hecTranslationOffset.AddLine(new HTMLLine(new Tag("Z"), "0"));
+            hecTranslationOffset.AddLine(new XMLLine(new TerminatingTag("X"), "0"));
+            hecTranslationOffset.AddLine(new XMLLine(new TerminatingTag("Y"), "0"));
+            hecTranslationOffset.AddLine(new XMLLine(new TerminatingTag("Z"), "0"));
 
             // Rotation
-            HTMLBlock hecRotationOffset = new HTMLBlock(new Tag("RotationOffset"));
+            XMLBlock hecRotationOffset = new XMLBlock(new TerminatingTag("RotationOffset"));
             handEyeCalibrationBlock.AddBlock(hecRotationOffset);
 
             // TODO get vectors
-            hecRotationOffset.AddLine(new HTMLLine(new Tag("X"), "0"));
-            hecRotationOffset.AddLine(new HTMLLine(new Tag("Y"), "0"));
-            hecRotationOffset.AddLine(new HTMLLine(new Tag("Z"), "0"));
-            hecRotationOffset.AddLine(new HTMLLine(new Tag("W"), "1"));
+            hecRotationOffset.AddLine(new XMLLine(new TerminatingTag("X"), "0"));
+            hecRotationOffset.AddLine(new XMLLine(new TerminatingTag("Y"), "0"));
+            hecRotationOffset.AddLine(new XMLLine(new TerminatingTag("Z"), "0"));
+            hecRotationOffset.AddLine(new XMLLine(new TerminatingTag("W"), "1"));
 
             // COSOffset
-            HTMLBlock COSOffsetBlock = new HTMLBlock(new Tag("COSOffset"));
+            XMLBlock COSOffsetBlock = new XMLBlock(new TerminatingTag("COSOffset"));
             sensorSourceBlock.AddBlock(COSOffsetBlock);
 
             // Translation
-            HTMLBlock COSOffsetTranslationOffset = new HTMLBlock(new Tag("TranslationOffset"));
+            XMLBlock COSOffsetTranslationOffset = new XMLBlock(new TerminatingTag("TranslationOffset"));
             COSOffsetBlock.AddBlock(COSOffsetTranslationOffset);
-
-            // TODO get vectors
-            COSOffsetTranslationOffset.AddLine(new HTMLLine(new Tag("X"), "0"));
-            COSOffsetTranslationOffset.AddLine(new HTMLLine(new Tag("Y"), "0"));
-            COSOffsetTranslationOffset.AddLine(new HTMLLine(new Tag("Z"), "0"));
+            
+            string augmentionPositionX = graph.TranslationVector.X.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentionPositionY = graph.TranslationVector.Y.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentionPositionZ = graph.TranslationVector.Z.ToString("F1", CultureInfo.InvariantCulture);
+            COSOffsetTranslationOffset.AddLine(new XMLLine(new TerminatingTag("X"), augmentionPositionX));
+            COSOffsetTranslationOffset.AddLine(new XMLLine(new TerminatingTag("Y"), augmentionPositionY));
+            COSOffsetTranslationOffset.AddLine(new XMLLine(new TerminatingTag("Z"), augmentionPositionZ));
 
             // Rotation
-            HTMLBlock COSOffsetRotationOffset = new HTMLBlock(new Tag("RotationOffset"));
+            XMLBlock COSOffsetRotationOffset = new XMLBlock(new TerminatingTag("RotationOffset"));
             COSOffsetBlock.AddBlock(COSOffsetRotationOffset);
 
             // TODO get vectors
-            COSOffsetRotationOffset.AddLine(new HTMLLine(new Tag("X"), "0"));
-            COSOffsetRotationOffset.AddLine(new HTMLLine(new Tag("Y"), "0"));
-            COSOffsetRotationOffset.AddLine(new HTMLLine(new Tag("Z"), "0"));
-            COSOffsetRotationOffset.AddLine(new HTMLLine(new Tag("W"), "1"));
+            string augmentionRotationX = graph.RotationVector.X.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentionRotationY = graph.RotationVector.Y.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentionRotationZ = graph.RotationVector.Z.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentionRotationW = graph.RotationVector.W.ToString("F1", CultureInfo.InvariantCulture);
+            COSOffsetRotationOffset.AddLine(new XMLLine(new TerminatingTag("X"), augmentionRotationX));
+            COSOffsetRotationOffset.AddLine(new XMLLine(new TerminatingTag("Y"), augmentionRotationY));
+            COSOffsetRotationOffset.AddLine(new XMLLine(new TerminatingTag("Z"), augmentionRotationZ));
+            COSOffsetRotationOffset.AddLine(new XMLLine(new TerminatingTag("W"), augmentionRotationW));
 
             // arelGlue.js
             JavaScriptBlock loadContentBlock = new JavaScriptBlock();
             sceneReadyFunktionBlock.AddBlock(loadContentBlock);
 
             string imageVariable = "image" + imageCount;
-            loadContentBlock.AddLine(new JavaScriptLine("var " + imageVariable + " = arel.Object.Model3D.createFromImage(\"" + imageVariable + "\",\"Assets/" + Path.GetFileName(graph.AugmentationPath) + "\")"));
+            loadContentBlock.AddLine(new JavaScriptLine("var " + imageVariable + " = arel.Object.Model3D.createFromImage(\"" + imageVariable + "\",\"Assets/" + Path.GetFileName(graph.AugmentionPath) + "\")"));
             loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setVisibility(" + graph.IsVisible.ToString().ToLower() + ")"));
             loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setCoordinateSystemID(" + graph.Coordinatesystemid + ")"));
-            string x = graph.vector.X.ToString("F1", CultureInfo.InvariantCulture);
-            string y = graph.vector.Y.ToString("F1", CultureInfo.InvariantCulture);
-            string z = graph.vector.Z.ToString("F1", CultureInfo.InvariantCulture);
-            loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setScale(new arel.Vector3D(" + x + "," + y + "," + z + "))"));
+            string augmentionScalingX = graph.ScalingVector.X.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentionScalingY = graph.ScalingVector.Y.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentionScalingZ = graph.ScalingVector.Z.ToString("F1", CultureInfo.InvariantCulture);
+            loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setScale(new arel.Vector3D(" + augmentionScalingX + "," + augmentionScalingY + "," + augmentionScalingZ + "))"));
             loadContentBlock.AddLine(new JavaScriptLine("arel.Scene.addObject(" + imageVariable + ")"));
 
             ifPatternIsFoundBlock.AddLine(new JavaScriptLine("arel.Scene.getObject(\"" + imageVariable + "\").setVisibility(true)"));
@@ -179,122 +173,122 @@ namespace ARdevKit.Controller.ProjectController
 
         public override void Visit(PictureMarker pictureMarker)
         {
-            HTMLBlock sensorCOSBlock = new HTMLBlock(new Tag("SensorCOS"));
+            XMLBlock sensorCOSBlock = new XMLBlock(new TerminatingTag("SensorCOS"));
             sensorBlock.AddBlock(sensorCOSBlock);
 
-            sensorCOSBlock.AddLine(new HTMLLine(new Tag("SensorCosID"), pictureMarker.SensorCosID));
+            sensorCOSBlock.AddLine(new XMLLine(new TerminatingTag("SensorCosID"), pictureMarker.SensorCosID));
 
-            HTMLBlock parameterBlock = new HTMLBlock(new Tag("Parameters"));
+            XMLBlock parameterBlock = new XMLBlock(new TerminatingTag("Parameters"));
             sensorCOSBlock.AddBlock(parameterBlock);
 
-            parameterBlock.AddLine(new HTMLLine(new Tag("Size"), pictureMarker.Size.ToString()));
+            parameterBlock.AddLine(new XMLLine(new TerminatingTag("Size"), pictureMarker.Size.ToString()));
 
-            HTMLBlock markerParametersBlock = new HTMLBlock(new Tag("MarkerParameters"));
+            XMLBlock markerParametersBlock = new XMLBlock(new TerminatingTag("MarkerParameters"));
             parameterBlock.AddBlock(markerParametersBlock);
-            markerParametersBlock.AddLine(new HTMLLine(new Tag("referenceImage", "qualityThreshold=\"0.70\""), pictureMarker.ImageName));
+            markerParametersBlock.AddLine(new XMLLine(new TerminatingTag("referenceImage", "qualityThreshold=\"0.70\""), pictureMarker.ImageName));
             string value = pictureMarker.SimilarityThreshhold.ToString("F1", CultureInfo.InvariantCulture);
-            parameterBlock.AddLine(new HTMLLine(new Tag("SimilarityThreshold"), value));
+            parameterBlock.AddLine(new XMLLine(new TerminatingTag("SimilarityThreshold"), value));
         }
 
         public override void Visit(MarkerFuser markerFuser)
         {
             // Fuser
-            fuserBlock.Update(new Tag("Fuser", "type=\"" + markerFuser.FuserType + "\""));
+            fuserBlock.Update(new TerminatingTag("Fuser", "type=\"" + markerFuser.FuserType + "\""));
 
             // Parameters
-            HTMLBlock fuserParametersBlock = new HTMLBlock(new Tag("Parameters"));
+            XMLBlock fuserParametersBlock = new XMLBlock(new TerminatingTag("Parameters"));
             fuserBlock.AddBlock(fuserParametersBlock);
 
             string value = markerFuser.AlphaRotation.ToString("F1", CultureInfo.InvariantCulture);
-            fuserParametersBlock.AddLine(new HTMLLine(new Tag("AlphaRotation"), value));
+            fuserParametersBlock.AddLine(new XMLLine(new TerminatingTag("AlphaRotation"), value));
 
             value = markerFuser.AlphaTranslation.ToString("F1", CultureInfo.InvariantCulture);
-            fuserParametersBlock.AddLine(new HTMLLine(new Tag("AlphaTranslation"), value));
+            fuserParametersBlock.AddLine(new XMLLine(new TerminatingTag("AlphaTranslation"), value));
 
             value = markerFuser.KeepPoseForNumberOfFrames.ToString();
-            fuserParametersBlock.AddLine(new HTMLLine(new Tag("KeepPoseForNumberOfFrames"), value));
+            fuserParametersBlock.AddLine(new XMLLine(new TerminatingTag("KeepPoseForNumberOfFrames"), value));
         }
 
         public override void Visit(MarkerlessFuser markerlessFuser)
         {
             // Fuser
-            fuserBlock.Update(new Tag("Fuser", "type=\"" + markerlessFuser.FuserType + "\""));
+            fuserBlock.Update(new TerminatingTag("Fuser", "type=\"" + markerlessFuser.FuserType + "\""));
 
             // Parameters
-            HTMLBlock fuserParametersBlock = new HTMLBlock(new Tag("Parameters"));
+            XMLBlock fuserParametersBlock = new XMLBlock(new TerminatingTag("Parameters"));
             fuserBlock.AddBlock(fuserParametersBlock);
 
             string value = markerlessFuser.KeepPoseForNumberOfFrames.ToString();
-            fuserParametersBlock.AddLine(new HTMLLine(new Tag("KeepPoseForNumberOfFrames"), value));
+            fuserParametersBlock.AddLine(new XMLLine(new TerminatingTag("KeepPoseForNumberOfFrames"), value));
 
             value = markerlessFuser.GravityAssistance.ToString();
-            fuserParametersBlock.AddLine(new HTMLLine(new Tag("GravityAssistance"), value));
+            fuserParametersBlock.AddLine(new XMLLine(new TerminatingTag("GravityAssistance"), value));
 
             value = markerlessFuser.AlphaTranslation.ToString("F1", CultureInfo.InvariantCulture);
-            fuserParametersBlock.AddLine(new HTMLLine(new Tag("AlphaTranslation"), value));
+            fuserParametersBlock.AddLine(new XMLLine(new TerminatingTag("AlphaTranslation"), value));
 
             value = markerlessFuser.GammaTranslation.ToString("F1", CultureInfo.InvariantCulture);
-            fuserParametersBlock.AddLine(new HTMLLine(new Tag("GammaTranslation"), value));
+            fuserParametersBlock.AddLine(new XMLLine(new TerminatingTag("GammaTranslation"), value));
 
             value = markerlessFuser.AlphaRotation.ToString("F1", CultureInfo.InvariantCulture);
-            fuserParametersBlock.AddLine(new HTMLLine(new Tag("AlphaRotation"), value));
+            fuserParametersBlock.AddLine(new XMLLine(new TerminatingTag("AlphaRotation"), value));
 
             value = markerlessFuser.GammaRotation.ToString("F1", CultureInfo.InvariantCulture);
-            fuserParametersBlock.AddLine(new HTMLLine(new Tag("GammaRotation"), value));
+            fuserParametersBlock.AddLine(new XMLLine(new TerminatingTag("GammaRotation"), value));
 
             value = markerlessFuser.ContinueLostTrackingWithOrientationSensor.ToString().ToLower();
-            fuserParametersBlock.AddLine(new HTMLLine(new Tag("ContinueLostTrackingWithOrientationSensor"), value));
+            fuserParametersBlock.AddLine(new XMLLine(new TerminatingTag("ContinueLostTrackingWithOrientationSensor"), value));
         }
 
         public override void Visit(IDMarker idMarker)
         {
             // SensorCOS
-            HTMLBlock sensorCOSBlock = new HTMLBlock(new Tag("SensorCOS"));
+            XMLBlock sensorCOSBlock = new XMLBlock(new TerminatingTag("SensorCOS"));
             sensorBlock.AddBlock(sensorCOSBlock);
 
-            sensorCOSBlock.AddLine(new HTMLLine(new Tag("SensorCosID"), idMarker.SensorCosID));
+            sensorCOSBlock.AddLine(new XMLLine(new TerminatingTag("SensorCosID"), idMarker.SensorCosID));
 
             // Parameters
-            HTMLBlock parameterBlock = new HTMLBlock(new Tag("Parameters"));
+            XMLBlock parameterBlock = new XMLBlock(new TerminatingTag("Parameters"));
             sensorCOSBlock.AddBlock(parameterBlock);
 
             // MarkerParameters
-            HTMLBlock markerParametersBlock = new HTMLBlock(new Tag("MarkerParameters"));
+            XMLBlock markerParametersBlock = new XMLBlock(new TerminatingTag("MarkerParameters"));
             parameterBlock.AddBlock(markerParametersBlock);
 
             // Reaktivated when getter is implemented
-            markerParametersBlock.AddLine(new HTMLLine(new Tag("Size"), idMarker.Size.ToString()));
-            markerParametersBlock.AddLine(new HTMLLine(new Tag("MatrixID"), idMarker.MatrixID.ToString()));
+            markerParametersBlock.AddLine(new XMLLine(new TerminatingTag("Size"), idMarker.Size.ToString()));
+            markerParametersBlock.AddLine(new XMLLine(new TerminatingTag("MatrixID"), idMarker.MatrixID.ToString()));
         }
 
         public override void Visit(PictureMarkerSensor pictureMarkerSensor)
         {
             // MarkerParameters
-            HTMLBlock markerTrackingParametersBlock = new HTMLBlock(new Tag("MarkerTrackingParameters"));
+            XMLBlock markerTrackingParametersBlock = new XMLBlock(new TerminatingTag("MarkerTrackingParameters"));
             sensorParametersBlock.AddBlock(markerTrackingParametersBlock);
 
-            markerTrackingParametersBlock.AddLine(new HTMLLine(new Tag("TrackingQuality"), pictureMarkerSensor.TrackingQuality.ToString()));
-            markerTrackingParametersBlock.AddLine(new HTMLLine(new Tag("ThresholdOffset"), pictureMarkerSensor.ThresholdOffset.ToString()));
-            markerTrackingParametersBlock.AddLine(new HTMLLine(new Tag("NumberOfSearchIterations"), pictureMarkerSensor.NumberOfSearchIterations.ToString()));
+            markerTrackingParametersBlock.AddLine(new XMLLine(new TerminatingTag("TrackingQuality"), pictureMarkerSensor.TrackingQuality.ToString()));
+            markerTrackingParametersBlock.AddLine(new XMLLine(new TerminatingTag("ThresholdOffset"), pictureMarkerSensor.ThresholdOffset.ToString()));
+            markerTrackingParametersBlock.AddLine(new XMLLine(new TerminatingTag("NumberOfSearchIterations"), pictureMarkerSensor.NumberOfSearchIterations.ToString()));
         }
 
-        public override void Visit(IDMarkerSensor idMarkerSensor)
+        public override void Visit(MarkerSensor idMarkerSensor)
         {
             // MarkerParameters
-            HTMLBlock markerTrackingParametersBlock = new HTMLBlock(new Tag("MarkerTrackingParameters"));
+            XMLBlock markerTrackingParametersBlock = new XMLBlock(new TerminatingTag("MarkerTrackingParameters"));
             sensorParametersBlock.AddBlock(markerTrackingParametersBlock);
 
-            markerTrackingParametersBlock.AddLine(new HTMLLine(new Tag("TrackingQuality"), idMarkerSensor.TrackingQuality.ToString()));
-            markerTrackingParametersBlock.AddLine(new HTMLLine(new Tag("ThresholdOffset"), idMarkerSensor.ThresholdOffset.ToString()));
-            markerTrackingParametersBlock.AddLine(new HTMLLine(new Tag("NumberOfSearchIterations"), idMarkerSensor.NumberOfSearchIterations.ToString()));
+            markerTrackingParametersBlock.AddLine(new XMLLine(new TerminatingTag("TrackingQuality"), idMarkerSensor.TrackingQuality.ToString()));
+            markerTrackingParametersBlock.AddLine(new XMLLine(new TerminatingTag("ThresholdOffset"), idMarkerSensor.ThresholdOffset.ToString()));
+            markerTrackingParametersBlock.AddLine(new XMLLine(new TerminatingTag("NumberOfSearchIterations"), idMarkerSensor.NumberOfSearchIterations.ToString()));
         }
 
         public override void Visit(MarkerlessSensor markerlessSensor)
         {
-            sensorParametersBlock.AddLine(new HTMLLine(new Tag("FeatureDescriptorAlignment"), markerlessSensor.FeatureDescriptorAlignment.ToString()));
-            sensorParametersBlock.AddLine(new HTMLLine(new Tag("MaxObjectsToDetectPerFrame"), markerlessSensor.MaxObjectsToDetectPerFrame.ToString()));
-            sensorParametersBlock.AddLine(new HTMLLine(new Tag("MaxObjectsToTrackInParallel"), markerlessSensor.MaxObjectsToTrackInParallel.ToString()));
-            sensorParametersBlock.AddLine(new HTMLLine(new Tag("SimilarityThreshold"), markerlessSensor.SimilarityThreshold.ToString("F1", CultureInfo.InvariantCulture)));
+            sensorParametersBlock.AddLine(new XMLLine(new TerminatingTag("FeatureDescriptorAlignment"), markerlessSensor.FeatureDescriptorAlignment.ToString()));
+            sensorParametersBlock.AddLine(new XMLLine(new TerminatingTag("MaxObjectsToDetectPerFrame"), markerlessSensor.MaxObjectsToDetectPerFrame.ToString()));
+            sensorParametersBlock.AddLine(new XMLLine(new TerminatingTag("MaxObjectsToTrackInParallel"), markerlessSensor.MaxObjectsToTrackInParallel.ToString()));
+            sensorParametersBlock.AddLine(new XMLLine(new TerminatingTag("SimilarityThreshold"), markerlessSensor.SimilarityThreshold.ToString("F1", CultureInfo.InvariantCulture)));
         }
 
         public override void Visit(Project p)
@@ -302,65 +296,67 @@ namespace ARdevKit.Controller.ProjectController
             project = p;
 
             // Create [projectName].html
-            arelProjectFile = new ARELProjectFile("<!DOCTYPE html>", Path.Combine(projectPath, "arel" + p.Name + ".html"));
+            arelProjectFile = new ARELProjectFile("<!DOCTYPE html>", Path.Combine(project.ProjectPath, "arel" + p.Name + ".html"));
 
             // head
-            HTMLBlock headBlock = new HTMLBlock(new Tag("head"));
+            XMLBlock headBlock = new XMLBlock(new TerminatingTag("head"));
             arelProjectFile.AddBlock(headBlock);
 
-                headBlock.AddLine(new HTMLLine(new OpenTag("meta", "charset=\"UTF-8\"")));
-                headBlock.AddLine(new HTMLLine(new OpenTag("meta", "name=\"viewport\" content=\"width=device-width, initial-scale=1\"")));
-                headBlock.AddLine(new HTMLLine(new Tag("script", "type=\"text/javascript\" src=\"../arel/arel.js\"")));
-                headBlock.AddLine(new HTMLLine(new Tag("script", "type=\"text/javascript\" src=\"Assets/arelGlue.js\"")));
-                headBlock.AddLine(new HTMLLine(new Tag("title"), p.Name));
+                headBlock.AddLine(new XMLLine(new NonTerminatingTag("meta", "charset=\"UTF-8\"")));
+                headBlock.AddLine(new XMLLine(new NonTerminatingTag("meta", "name=\"viewport\" content=\"width=device-width, initial-scale=1\"")));
+                headBlock.AddLine(new XMLLine(new TerminatingTag("script", "type=\"text/javascript\" src=\"../arel/arel.js\"")));
+                headBlock.AddLine(new XMLLine(new TerminatingTag("script", "type=\"text/javascript\" src=\"Assets/arelGlue.js\"")));
+                headBlock.AddLine(new XMLLine(new TerminatingTag("title"), p.Name));
 
             // body
-            HTMLBlock bodyBlock = new HTMLBlock(new Tag("body"));
+            XMLBlock bodyBlock = new XMLBlock(new TerminatingTag("body"));
             arelProjectFile.AddBlock(bodyBlock);
 
             // Prepare TrackinData.xml
-            trackingDataFile = new TrackingDataFile("<?xml version=\"1.0\" encoding=\"UTF-8\"?>", ProjectPath);
+            string trackingDataFileName = "TrackingData_" + project.Sensor.Name;
+            trackingDataFileName += p.Sensor.SensorSubType != AbstractSensor.SensorSubTypes.None ? p.Sensor.SensorSubType.ToString() : "" + ".xml";
+            trackingDataFile = new TrackingDataFile("<?xml version=\"1.0\" encoding=\"UTF-8\"?>", project.ProjectPath, trackingDataFileName);
 
             // TrackingData
-            HTMLBlock trackingDataBlock = new HTMLBlock(new Tag("TrackingData"));
+            XMLBlock trackingDataBlock = new XMLBlock(new TerminatingTag("TrackingData"));
             trackingDataFile.AddBlock(trackingDataBlock);
 
                 // Sensors
-                HTMLBlock sensorsBlock = new HTMLBlock(new Tag("Sensors"));
+                XMLBlock sensorsBlock = new XMLBlock(new TerminatingTag("Sensors"));
                 trackingDataBlock.AddBlock(sensorsBlock);
 
                 // Sensors
                 string sensorExtension = "Type=\"" + p.Sensor.SensorType + "\"";
                 sensorExtension += p.Sensor.SensorSubType != AbstractSensor.SensorSubTypes.None ? " Subtype=\"" + p.Sensor.SensorSubType + "\"" : "";
-                sensorBlock = new HTMLBlock(new Tag("Sensor", sensorExtension));
+                sensorBlock = new XMLBlock(new TerminatingTag("Sensor", sensorExtension));
                 sensorsBlock.AddBlock(sensorBlock);
 
                 // SensorID
-                sensorBlock.AddLine(new HTMLLine(new Tag("SensorID"), p.Sensor.SensorIDString));
+                sensorBlock.AddLine(new XMLLine(new TerminatingTag("SensorID"), p.Sensor.SensorIDString));
 
                 // Parameters
-                sensorParametersBlock = new HTMLBlock(new Tag("Parameters"));
+                sensorParametersBlock = new XMLBlock(new TerminatingTag("Parameters"));
                 sensorBlock.AddBlock(sensorParametersBlock);
 
                 // Connections
-                connectionsBlock = new HTMLBlock(new Tag("Connections"));
+                connectionsBlock = new XMLBlock(new TerminatingTag("Connections"));
                 trackingDataBlock.AddBlock(connectionsBlock);
 
             // Create arelConfig.xml
-            arelConfigFile = new ARELConfigFile("<?xml version=\"1.0\" encoding=\"UTF-8\"?>", projectPath);
+            arelConfigFile = new ARELConfigFile("<?xml version=\"1.0\" encoding=\"UTF-8\"?>", project.ProjectPath);
 
                 // Results
-                HTMLBlock resultsBlock = new HTMLBlock(new Tag("results"));
+                XMLBlock resultsBlock = new XMLBlock(new TerminatingTag("results"));
                 arelConfigFile.AddBlock(resultsBlock);
 
                 // Trackingdata
-                string trackingdataExtension = "channel=\"0\" poiprefix=\"extpoi-124906-\" url=\"Assets/TrackingData.xml\" /";
-                resultsBlock.AddLine(new HTMLLine(new OpenTag("trackingdata", trackingdataExtension)));
-                resultsBlock.AddLine(new HTMLLine(new Tag("apilevel"), "7"));
-                resultsBlock.AddLine(new HTMLLine(new Tag("arel"), Path.GetFileName(arelProjectFile.FilePath)));
+                string trackingdataExtension = "channel=\"0\" poiprefix=\"extpoi-124906-\" url=\"Assets/" + trackingDataFileName +"\" /";
+                resultsBlock.AddLine(new XMLLine(new NonTerminatingTag("trackingdata", trackingdataExtension)));
+                resultsBlock.AddLine(new XMLLine(new TerminatingTag("apilevel"), "7"));
+                resultsBlock.AddLine(new XMLLine(new TerminatingTag("arel"), Path.GetFileName(arelProjectFile.FilePath)));
 
             // Create arelGlue.js
-            arelGlueFile = new ARELGlueFile(projectPath);
+            arelGlueFile = new ARELGlueFile(project.ProjectPath);
             JavaScriptBlock sceneReadyBlock = new JavaScriptBlock("arel.sceneReady", new BlockMarker("(", ");"));
             arelGlueFile.AddBlock(sceneReadyBlock);
             sceneReadyFunktionBlock = new JavaScriptBlock("function()", new BlockMarker("{", "}"));

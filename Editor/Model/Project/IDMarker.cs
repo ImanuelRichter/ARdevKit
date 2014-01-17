@@ -16,8 +16,8 @@ namespace ARdevKit.Model.Project
             set { matrixID = value; }
         }
 
-        private IDMarkerSensor idMarkerTrackingSensor;
-        public IDMarkerSensor IdMarkerTrackingSensor
+        private MarkerSensor idMarkerTrackingSensor;
+        public MarkerSensor IdMarkerTrackingSensor
         {
             get { return idMarkerTrackingSensor; }
             set { idMarkerTrackingSensor = value; }
@@ -28,7 +28,7 @@ namespace ARdevKit.Model.Project
             this.matrixID = matrixID;
             size = 60;
             type = "IDMarker";
-            idMarkerTrackingSensor = new IDMarkerSensor();
+            idMarkerTrackingSensor = new MarkerSensor();
             sensorCosID = IDFactory.getSensorCosID(this);
             Fuser = new MarkerlessFuser();
         }
