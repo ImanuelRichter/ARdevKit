@@ -45,11 +45,44 @@ namespace ARdevKit
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
+        /// Gets or sets a value indicating whether to start debug mode if test mode is started on the
+        /// device.
+        /// </summary>
+        ///
+        /// <value>
+        /// if true the debug window will be opened when starting the test mode on the device.
+        /// </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public bool StartDebugModeDevice
+        {
+            get { return startDebugModeDevice; }
+            set { startDebugModeDevice = value; }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
         /// if true the debug window will be opened when starting the test mode locally.
         /// </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         private bool startDebugModeLocal;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// Gets or sets a value indicating whether to start debug mode locally.
+        /// </summary>
+        ///
+        /// <value>
+        /// if true the debug window will be opened when starting the test mode locally.
+        /// </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        internal bool StartDebugModeLocal
+        {
+            get { return startDebugModeLocal; }
+            set { startDebugModeLocal = value; }
+        }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
@@ -62,6 +95,22 @@ namespace ARdevKit
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
+        /// Gets or sets the categories the element belongs to.
+        /// </summary>
+        ///
+        /// <value>
+        /// The element categories.
+        /// </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        internal List<SceneElementCategory> ElementCategories
+        {
+            get { return elementCategories; }
+            set { elementCategories = value; }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
         /// The path of the current project
         /// </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -70,11 +119,43 @@ namespace ARdevKit
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
+        /// Gets or sets the full pathname of the project file.
+        /// </summary>
+        ///
+        /// <value>
+        /// The full pathname of the project file.
+        /// </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public string ProjectPath
+        {
+            get { return projectPath; }
+            set { projectPath = value; }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
         /// Linked list containing all IPreviewables.
         /// </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         private LinkedList<IPreviewable> allElements;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// Gets or sets allElements.
+        /// </summary>
+        ///
+        /// <value>
+        /// Linked list containing elements.
+        /// </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        internal LinkedList<IPreviewable> AllElements
+        {
+            get { return allElements; }
+            set { allElements = value; }
+        }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
@@ -126,11 +207,43 @@ namespace ARdevKit
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
+        /// Gets or sets the save visitor.
+        /// </summary>
+        ///
+        /// <value>
+        /// The save visitor.
+        /// </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        internal SaveVisitor SaveVisitor
+        {
+            get { return saveVisitor; }
+            set { saveVisitor = value; }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
         /// The export visitor.
         /// </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         private ExportVisitor exportVisitor;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// Gets or sets the export visitor.
+        /// </summary>
+        ///
+        /// <value>
+        /// The export visitor.
+        /// </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        internal ExportVisitor ExportVisitor
+        {
+            get { return exportVisitor; }
+            set { exportVisitor = value; }
+        }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
@@ -154,119 +267,6 @@ namespace ARdevKit
         {
             get { return currentElement; }
             set { currentElement = value; }
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Gets or sets the export visitor.
-        /// </summary>
-        ///
-        /// <value>
-        /// The export visitor.
-        /// </value>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        internal ExportVisitor ExportVisitor
-        {
-            get { return exportVisitor; }
-            set { exportVisitor = value; }
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Gets or sets the save visitor.
-        /// </summary>
-        ///
-        /// <value>
-        /// The save visitor.
-        /// </value>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        internal SaveVisitor SaveVisitor
-        {
-            get { return saveVisitor; }
-            set { saveVisitor = value; }
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Gets or sets allElements.
-        /// </summary>
-        ///
-        /// <value>
-        /// Linked list containing elements.
-        /// </value>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        internal LinkedList<IPreviewable> AllElements
-        {
-            get { return allElements; }
-            set { allElements = value; }
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Gets or sets a value indicating whether to start debug mode if test mode is started on the
-        /// device.
-        /// </summary>
-        ///
-        /// <value>
-        /// if true the debug window will be opened when starting the test mode on the device.
-        /// </value>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        public bool StartDebugModeDevice
-        {
-            get { return startDebugModeDevice; }
-            set { startDebugModeDevice = value; }
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Gets or sets a value indicating whether to start debug mode locally.
-        /// </summary>
-        ///
-        /// <value>
-        /// if true the debug window will be opened when starting the test mode locally.
-        /// </value>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        internal bool StartDebugModeLocal
-        {
-            get { return startDebugModeLocal; }
-            set { startDebugModeLocal = value; }
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Gets or sets the categories the element belongs to.
-        /// </summary>
-        ///
-        /// <value>
-        /// The element categories.
-        /// </value>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        internal List<SceneElementCategory> ElementCategories
-        {
-            get { return elementCategories; }
-            set { elementCategories = value; }
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Gets or sets the full pathname of the project file.
-        /// </summary>
-        ///
-        /// <value>
-        /// The full pathname of the project file.
-        /// </value>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        public string ProjectPath
-        {
-            get { return projectPath; }
-            set { projectPath = value; }
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
