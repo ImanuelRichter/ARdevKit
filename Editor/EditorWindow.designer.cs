@@ -62,10 +62,11 @@
             this.pnl_editor_properties = new System.Windows.Forms.Panel();
             this.cmb_editor_properties_objectSelection = new System.Windows.Forms.ComboBox();
             this.pnl_editor_szenes = new System.Windows.Forms.Panel();
+            this.btn_editor_scene_delete = new System.Windows.Forms.Button();
             this.btn_editor_scene_scene_1 = new System.Windows.Forms.Button();
             this.btn_editor_scene_new = new System.Windows.Forms.Button();
             this.pnl_editor_status = new System.Windows.Forms.Panel();
-            this.btn_editor_scene_delete = new System.Windows.Forms.Button();
+            this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
             this.mst_editor_menu.SuspendLayout();
             this.pnl_editor_selection.SuspendLayout();
             this.pnl_editor_properties.SuspendLayout();
@@ -326,6 +327,7 @@
             // pnl_editor_properties
             // 
             this.pnl_editor_properties.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_editor_properties.Controls.Add(this.propertyGrid1);
             this.pnl_editor_properties.Controls.Add(this.cmb_editor_properties_objectSelection);
             this.pnl_editor_properties.Location = new System.Drawing.Point(808, 27);
             this.pnl_editor_properties.Name = "pnl_editor_properties";
@@ -334,13 +336,14 @@
             // 
             // cmb_editor_properties_objectSelection
             // 
+            this.cmb_editor_properties_objectSelection.Dock = System.Windows.Forms.DockStyle.Top;
             this.cmb_editor_properties_objectSelection.FormattingEnabled = true;
             this.cmb_editor_properties_objectSelection.Items.AddRange(new object[] {
             "Objekt wählen..."});
-            this.cmb_editor_properties_objectSelection.Location = new System.Drawing.Point(3, 3);
+            this.cmb_editor_properties_objectSelection.Location = new System.Drawing.Point(0, 0);
             this.cmb_editor_properties_objectSelection.MaxDropDownItems = 1;
             this.cmb_editor_properties_objectSelection.Name = "cmb_editor_properties_objectSelection";
-            this.cmb_editor_properties_objectSelection.Size = new System.Drawing.Size(194, 21);
+            this.cmb_editor_properties_objectSelection.Size = new System.Drawing.Size(198, 21);
             this.cmb_editor_properties_objectSelection.TabIndex = 1;
             this.cmb_editor_properties_objectSelection.Text = "Objekt wählen...";
             // 
@@ -354,6 +357,16 @@
             this.pnl_editor_szenes.Name = "pnl_editor_szenes";
             this.pnl_editor_szenes.Size = new System.Drawing.Size(661, 114);
             this.pnl_editor_szenes.TabIndex = 2;
+            // 
+            // btn_editor_scene_delete
+            // 
+            this.btn_editor_scene_delete.Location = new System.Drawing.Point(611, 34);
+            this.btn_editor_scene_delete.Name = "btn_editor_scene_delete";
+            this.btn_editor_scene_delete.Size = new System.Drawing.Size(45, 45);
+            this.btn_editor_scene_delete.TabIndex = 2;
+            this.btn_editor_scene_delete.Text = "-";
+            this.btn_editor_scene_delete.UseVisualStyleBackColor = true;
+            this.btn_editor_scene_delete.Click += new System.EventHandler(this.btn_editor_scene_scene_remove);
             // 
             // btn_editor_scene_scene_1
             // 
@@ -382,15 +395,13 @@
             this.pnl_editor_status.Size = new System.Drawing.Size(1008, 23);
             this.pnl_editor_status.TabIndex = 3;
             // 
-            // btn_editor_scene_delete
+            // propertyGrid1
             // 
-            this.btn_editor_scene_delete.Location = new System.Drawing.Point(611, 34);
-            this.btn_editor_scene_delete.Name = "btn_editor_scene_delete";
-            this.btn_editor_scene_delete.Size = new System.Drawing.Size(45, 45);
-            this.btn_editor_scene_delete.TabIndex = 2;
-            this.btn_editor_scene_delete.Text = "-";
-            this.btn_editor_scene_delete.UseVisualStyleBackColor = true;
-            this.btn_editor_scene_delete.Click += new System.EventHandler(this.btn_editor_scene_scene_remove);
+            this.propertyGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.propertyGrid1.Location = new System.Drawing.Point(0, 21);
+            this.propertyGrid1.Name = "propertyGrid1";
+            this.propertyGrid1.Size = new System.Drawing.Size(198, 650);
+            this.propertyGrid1.TabIndex = 2;
             // 
             // EditorWindow
             // 
@@ -456,6 +467,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_test_startVideo;
         private System.Windows.Forms.Button btn_editor_scene_scene_1;
         private System.Windows.Forms.Button btn_editor_scene_delete;
+        private System.Windows.Forms.PropertyGrid propertyGrid1;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
