@@ -4,59 +4,55 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ARdevKit.Model.Project.IO
+namespace ARdevKit.Model.Project.File
 {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-    /// <summary>   A configuration file. </summary>
+    /// <summary>   A line is a <see cref="XMLBlock"/> which can have a value or not. </summary>
     ///
     /// <remarks>   Imanuel, 15.01.2014. </remarks>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public abstract class AbstractARELFile
+    public class XMLLine : XMLBlock
     {
-        protected string filePath;
-        public string FilePath
-        {
-            get { return filePath; }
-        }
-
-        /// <summary>   The header. </summary>
-        protected string header;
+        /// <summary>   The value. </summary>
+        private string value = "";
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Gets or sets the sections. </summary>
-        ///
-        /// <value> The sections. </value>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        protected List<AbstractBlock> blocks;
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Adds a section. </summary>
+        /// <summary>   Constructor. </summary>
         ///
         /// <remarks>   Imanuel, 15.01.2014. </remarks>
         ///
-        /// <param name="block">   The section to be added. </param>
+        /// <param name="tag">  The tag. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public virtual void AddBlock(AbstractBlock block)
-        {
-            if (blocks == null)
-                blocks = new List<AbstractBlock>();
-            block.ParentFile = this;
-            blocks.Add(block);
-        }
+        public XMLLine(XMLTag tag) : base(tag) { }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Writes the file at the projectPath. </summary>
+        /// <summary>   Constructor. </summary>
         ///
         /// <remarks>   Imanuel, 15.01.2014. </remarks>
         ///
-        /// <param name="projectPath">  The project path to write. </param>
+        /// <param name="tag">      The tag. </param>
+        /// <param name="value">    The value. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public abstract void Save(string projectPath);
+        public XMLLine(XMLTag tag, string value) : base(tag)
+        {
+            this.value = value;
+        }
 
-        public abstract void Save();
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Writes itself the given writer. </summary>
+        ///
+        /// <remarks>   Imanuel, 15.01.2014. </remarks>
+        ///
+        /// <param name="writer">   The writer to write. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public override void Write(System.IO.StreamWriter writer)
+        {
+            string tabs = getTabs();
+            writer.WriteLine(tabs + blockMarker + value + blockMarker);
+        }
     }
 }

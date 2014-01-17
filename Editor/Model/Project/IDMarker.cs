@@ -29,7 +29,7 @@ namespace ARdevKit.Model.Project
             size = 60;
             type = "IDMarker";
             idMarkerTrackingSensor = new MarkerSensor();
-            sensorCosID = IDFactory.getSensorCosID(this);
+            sensorCosID = IDFactory.createNewSensorCosID(this);
             Fuser = new MarkerlessFuser();
         }
         public override void Accept(Controller.ProjectController.AbstractProjectVisitor visitor)

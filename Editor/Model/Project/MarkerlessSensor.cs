@@ -36,6 +36,13 @@ namespace ARdevKit.Model.Project
         ///				  This parameter is for expert usage only. In general it
         ///				  is advised to leave the value unchanged. </summary>
         protected FeatureDescriptorAlignments featureDescriptorAlignment = FeatureDescriptorAlignments.regular;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the feature descriptor alignment. </summary>
+        ///
+        /// <value> The feature descriptor alignment. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
         public FeatureDescriptorAlignments FeatureDescriptorAlignment
         {
             get { return featureDescriptorAlignment; }
@@ -54,6 +61,13 @@ namespace ARdevKit.Model.Project
         ///				This parameter is for expert usage only. In general it
         ///				is advised to leave the value unchanged. </summary>
         protected int maxObjectsToDetectPerFrame = 5;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the maximum objects to detect per frame. </summary>
+        ///
+        /// <value> The maximum objects to detect per frame. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
         public int MaxObjectsToDetectPerFrame
         {
             get { return maxObjectsToDetectPerFrame; }
@@ -73,6 +87,13 @@ namespace ARdevKit.Model.Project
         ///				This parameter is for expert usage only. In general it
         ///				is advised to leave the value unchanged. </summary>
         protected int maxObjectsToTrackInParallel = 1;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the maximum objects to track in parallel. </summary>
+        ///
+        /// <value> The maximum objects to track in parallel. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
         public int MaxObjectsToTrackInParallel
         {
             get { return maxObjectsToTrackInParallel; }
@@ -91,16 +112,29 @@ namespace ARdevKit.Model.Project
         ///				This parameter is for expert usage only. In general it
         ///				is advised to leave the value unchanged. </summary>
         protected double similarityThreshold = 0.7;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the similarity threshold. </summary>
+        ///
+        /// <value> The similarity threshold. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
         public double SimilarityThreshold
         {
             get { return similarityThreshold; }
             set { similarityThreshold = value; }
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Default constructor. </summary>
+        ///
+        /// <remarks>   Imanuel, 17.01.2014. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
         public MarkerlessSensor()
         {
             Name = "Markerless";
-            SensorIDString = IDFactory.getSensorID(this);
+            SensorIDString = IDFactory.createNewSensorID(this);
             sensorType = SensorTypes.FeatureBasedSensorSource;
             sensorSubType = SensorSubTypes.Fast;
         }

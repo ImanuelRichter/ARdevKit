@@ -4,13 +4,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ARdevKit.Model.Project.IO
+namespace ARdevKit.Model.Project.File
 {
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   A <see cref="JavaScriptBlock"/> block is an <see cref="AbstractBlock"/>.
+    ///             It has a <see cref="head"/> and constits of other <see cref="JavaScriptBlock"/>s
+    ///             and <see cref="JavaScriptLine"/>s. </summary>
+    ///
+    /// <remarks>   Imanuel, 17.01.2014. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
     public class JavaScriptBlock : AbstractBlock
     {
+        /// <summary>   The head. </summary>
         private string head;
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Default constructor. </summary>
+        ///
+        /// <remarks>   Imanuel, 17.01.2014. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
         public JavaScriptBlock() { }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Constructor. </summary>
+        ///
+        /// <remarks>   Imanuel, 17.01.2014. </remarks>
+        ///
+        /// <param name="head">         The head. </param>
+        /// <param name="blockMarker">  The block marker. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         public JavaScriptBlock(string head, BlockMarker blockMarker)
         {
@@ -18,12 +42,7 @@ namespace ARdevKit.Model.Project.IO
             this.blockMarker = blockMarker;
         }
 
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Gets or sets the lines. </summary>
-        ///
-        /// <value> The lines. </value>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
+        /// <summary>   The lines. </summary>
         protected List<JavaScriptLine> lines;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////

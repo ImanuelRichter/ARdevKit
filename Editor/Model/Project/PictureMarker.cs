@@ -38,7 +38,7 @@ namespace ARdevKit.Model.Project
             imageName = Path.GetFileName(imagePath);
             type = "PictureMarker";
             Fuser = new MarkerlessFuser();
-            sensorCosID = IDFactory.getSensorCosID(this);
+            sensorCosID = IDFactory.createNewSensorCosID(this);
         }
 
         public override void Accept(Controller.ProjectController.AbstractProjectVisitor visitor)

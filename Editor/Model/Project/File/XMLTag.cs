@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ARdevKit.Model.Project.IO
+namespace ARdevKit.Model.Project.File
 {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-    /// <summary>   A tag has a begin and an end part as well as a level what means the tabs. </summary>
+    /// <summary>   A <see cref="XMLTag"/> is a <see cref="BlockMarker"/>. </summary>
     ///
     /// <remarks>   Imanuel, 15.01.2014. </remarks>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public class TerminatingTag : BlockMarker
+    public class XMLTag : BlockMarker
     {
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Constructor. </summary>
@@ -22,7 +22,7 @@ namespace ARdevKit.Model.Project.IO
         /// <param name="text"> The text within the brackets (&lt;text&gt;&lt;/text&gt;). </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public TerminatingTag(string text)
+        public XMLTag(string text)
         {
             Start = text.Insert(0, "<");
             Start = Start.Insert(Start.Length, ">");
@@ -38,7 +38,7 @@ namespace ARdevKit.Model.Project.IO
         /// <param name="extension">    The extension. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public TerminatingTag(string text, string extension) : this(text)
+        public XMLTag(string text, string extension) : this(text)
         {
             Start = Start.Insert(Start.Length - 1, " " + extension);
         }

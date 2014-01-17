@@ -3,20 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
-namespace ARdevKit.Model.Project.IO
+namespace ARdevKit.Model.Project.File
 {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-    /// <summary>   A line is a <see cref="XMLBlock"/> which can have a value or not. </summary>
+    /// <summary>   A arel[projectName].html. </summary>
     ///
     /// <remarks>   Imanuel, 15.01.2014. </remarks>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public class XMLLine : XMLBlock
+    public class ARELProjectFile : AbstractARELFile
     {
-        /// <summary>   The value. </summary>
-        private string value = "";
-
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Constructor. </summary>
         ///
@@ -25,34 +23,45 @@ namespace ARdevKit.Model.Project.IO
         /// <param name="tag">  The tag. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public XMLLine(TerminatingTag tag) : base(tag) { }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Constructor. </summary>
-        ///
-        /// <remarks>   Imanuel, 15.01.2014. </remarks>
-        ///
-        /// <param name="tag">      The tag. </param>
-        /// <param name="value">    The value. </param>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        public XMLLine(TerminatingTag tag, string value) : base(tag)
+        public ARELProjectFile(string header, string filePath)
         {
-            this.value = value;
+            this.header = header;
+            this.filePath = filePath;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Writes itself the given writer. </summary>
+        /// <summary>   Saves the file to its <see cref="filePath"/>. </summary>
         ///
-        /// <remarks>   Imanuel, 15.01.2014. </remarks>
-        ///
-        /// <param name="writer">   The writer to write. </param>
+        /// <remarks>   Imanuel, 17.01.2014. </remarks>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public override void Write(System.IO.StreamWriter writer)
+        public override void Save()
         {
-            string tabs = getTabs();
-            writer.WriteLine(tabs + blockMarker + value + blockMarker);
+            StreamWriter writer = new StreamWriter(filePath);
+            if (header != null && header != "")
+                writer.WriteLine(header);
+            if (blocks != null)
+            {
+                foreach (XMLBlock htmlBlock in blocks)
+                {
+                    htmlBlock.Write(writer);
+                }
+            }
+            writer.Close();
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Saves the file to the using the passed <see cref="projectPath"/>. </summary>
+        ///
+        /// <remarks>   Imanuel, 17.01.2014. </remarks>
+        ///
+        /// <param name="filePath"> The project path to write. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public override void Save(string filePath)
+        {
+            this.filePath = filePath;
+            Save();
         }
     }
 }

@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ARdevKit.Model.Project.IO
+namespace ARdevKit.Model.Project.File
 {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-    /// <summary>   An open tag is a <see cref="TerminatingTag"/> which has no end part. </summary>
+    /// <summary>   A <see cref="NonTerminatingXMLTag"/> is a <see cref="XMLTag"/> which has no end part. </summary>
     ///
     /// <remarks>   Imanuel, 15.01.2014. </remarks>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public class NonTerminatingTag : TerminatingTag
+    public class NonTerminatingXMLTag : XMLTag
     {
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Constructor. </summary>
@@ -22,7 +22,7 @@ namespace ARdevKit.Model.Project.IO
         /// <param name="text"> The text. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public NonTerminatingTag(string text) : base(text)
+        public NonTerminatingXMLTag(string text) : base(text)
         {
             End = "";
         }
@@ -36,7 +36,7 @@ namespace ARdevKit.Model.Project.IO
         /// <param name="extension">    The extension. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public NonTerminatingTag(string text, string extension)
+        public NonTerminatingXMLTag(string text, string extension)
             : base(text, extension)
         {
             End = "";
