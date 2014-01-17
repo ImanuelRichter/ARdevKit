@@ -88,40 +88,25 @@ public class PreviewController
     {
         if (currentMetaCategory == MetaCategory.Trackable && trackable == null)
         {                                                                           
-            PictureBox tempBox = new PictureBox();                                  
-            tempBox.Location = new Point(v.X, v.Y);
-            tempBox.Image = (Image)currentElement.getPreview();
-            tempBox.Size = new Size(currentElement.getPreview().Height / 4, currentElement.getPreview().Width / 4);
-            tempBox.SizeMode = PictureBoxSizeMode.StretchImage;
-
             //set the vector to the trackable
-            ((AbstractTrackable)currentElement).vector = v;                                         
-
-            //set references
-            this.ew.project.Trackables[index] = (AbstractTrackable)currentElement;
-            tempBox.Tag = this.ew.project.Trackables[index];
+            ((AbstractTrackable)currentElement).vector = v;
             this.trackable = (AbstractTrackable)currentElement;
+            this.ew.project.Trackables[index] = (AbstractTrackable)currentElement;
+
+            this.addPictureBox(currentElement, v);
         }
 
         else if (currentMetaCategory == MetaCategory.Augmention && trackable != null)
         {
-
-            PictureBox tempBox = new PictureBox();                          
-            tempBox.Image = (Image)currentElement.getPreview();
-            tempBox.Size = new Size(currentElement.getPreview().Height / 4, currentElement.getPreview().Width / 4); 
-            tempBox.SizeMode = PictureBoxSizeMode.StretchImage;
-            tempBox.Location = new Point(v.X, v.Y);
-
             //set the vector and the trackable in Augmention
             ((AbstractAugmention)currentElement).TranslationVector = v;                                      
             ((AbstractAugmention)currentElement).Trackable = this.trackable;
 
             //set references 
-            trackable.Augmentions.Add((AbstractAugmention)currentElement);                      
-            tempBox.Tag = this.trackable.FindAugmention((AbstractAugmention)currentElement);    
-            
-            this.panel.Controls.Add(tempBox);
-            
+            trackable.Augmentions.Add((AbstractAugmention)currentElement);
+
+            this.addPictureBox(currentElement, v);
+
             //set the new box to the front
             this.findBox(currentElement).BringToFront();
         }
@@ -324,30 +309,37 @@ public class PreviewController
 
     private void addAllToPanel(AbstractTrackable trackable)
     {
-        PictureBox tempBox;
         if (trackable.Augmentions.Count > 0)
         {
             foreach( AbstractAugmention aug in trackable.Augmentions)
-            {              
-                    tempBox = new PictureBox();
-                    tempBox.Tag = aug;
-                    tempBox.Location = new Point(aug.TranslationVector.X, aug.TranslationVector.Y);
-                    tempBox.Image = (Image)aug.getPreview();
-                    tempBox.Size = new Size(aug.getPreview().Height / 4, aug.getPreview().Width / 4);
-                    tempBox.SizeMode = PictureBoxSizeMode.StretchImage;
-                    this.panel.Controls.Add(tempBox);
+            {
+                this.addPictureBox(aug, aug.TranslationVector);
             }
         }
+        this.addPictureBox(trackable, trackable.vector);
+    }
 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   Adds a PictureBox with for the currentElement to the aktuell Scene. </summary>
+    ///
+    /// <remarks>   Lizzard, 1/17/2014. </remarks>
+    ///
+    /// <param name="prev">     The previous. </param>
+    /// <param name="vector">   The vector. </param>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    private void addPictureBox(IPreviewable prev, Vector3D vector)
+    {
+        PictureBox tempBox;
         tempBox = new PictureBox();
-        tempBox.Tag = trackable;
-        tempBox.Location = new Point(trackable.vector.X, trackable.vector.Y);
-        tempBox.Image = (Image)trackable.getPreview();
-        tempBox.Size = new Size(trackable.getPreview().Height / 4, trackable.getPreview().Width / 4);
+        tempBox.Location = new Point(vector.X, vector.Y);
+        tempBox.Image = (Image)prev.getPreview();
+        tempBox.Size = new Size(prev.getPreview().Height / 4, prev.getPreview().Width / 4);
         tempBox.SizeMode = PictureBoxSizeMode.StretchImage;
+        tempBox.Tag = prev;
+
         this.panel.Controls.Add(tempBox);
 
-        
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
