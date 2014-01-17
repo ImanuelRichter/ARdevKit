@@ -280,6 +280,7 @@ namespace ARdevKit
             InitializeComponent();
             initializeEmptyProject();
             initializeControllers();
+            updatePanels();
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -649,6 +650,15 @@ namespace ARdevKit
             this.exportVisitor = new ExportVisitor();
             this.currentElement = null;
             registerElements();
+        }
+
+        private void updatePanels()
+        {
+            this.updateElementSelectionPanel();
+            this.updatePreviewPanel();
+            this.updatePropertyPanel(currentElement);
+            this.updateSceneSelectionPanel();
+            this.updateStatusBar();
         }
     }
 }
