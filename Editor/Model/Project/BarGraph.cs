@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Model.Project
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Serializable]
     public class BarGraph : Graph
     {
@@ -32,7 +35,7 @@ namespace ARdevKit.Model.Project
 
         public override List<View.AbstractProperty> getPropertyList()
         {
-            throw new NotImplementedException();
+             = this.m
         }
     }
 }

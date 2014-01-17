@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\ProjectController\SaveLoadController.cs" />
     <Compile Include="Model\Project\IDFactory.cs" />
     <Compile Include="Model\Project\IO\AbstractBlock.cs" />
     <Compile Include="Model\Project\IO\ARELGlueFile.cs" />
