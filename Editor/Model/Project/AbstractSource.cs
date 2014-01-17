@@ -22,14 +22,14 @@ namespace ARdevKit.Model.Project
     {
         public String sourceID { get; set; }
 
-        public List<AbstractDynamic2DAugmention> augmentions {get; set; }
+        public List<Abstract2DAugmention> augmentions {get; set; }
         abstract public void accept(AbstractProjectVisitor visitor);
 
         public abstract List<AbstractProperty> getPropertyList();
 
         public AbstractSource()
         {
-            this.augmentions = new List<AbstractDynamic2DAugmention>();
+            this.augmentions = new List<Abstract2DAugmention>();
         }
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)
@@ -43,14 +43,14 @@ namespace ARdevKit.Model.Project
 
         public AbstractAugmention findAugmentation(IPreviewable a)
         {
-            return this.augmentions[this.augmentions.IndexOf((AbstractDynamic2DAugmention)a)];
+            return this.augmentions[this.augmentions.IndexOf((Abstract2DAugmention)a)];
         }
 
         public bool existAugmentation(IPreviewable a)
         {
-            foreach (AbstractDynamic2DAugmention aug in augmentions)
+            foreach (Abstract2DAugmention aug in augmentions)
             {
-                if (aug == (AbstractDynamic2DAugmention) a)
+                if (aug == (Abstract2DAugmention) a)
                 {
                     return true;
                 }

@@ -12,5 +12,12 @@ namespace ARdevKit.Model.Project
         private int maxValue;
         private int minValue;
         private int scaling;
+
+        private string graphPath;
+        public string GraphPath
+        {
+            get { return graphPath; }
+            set { graphPath = value; }
+        }
     }
 }

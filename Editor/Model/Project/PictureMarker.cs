@@ -10,6 +10,11 @@ namespace ARdevKit.Model.Project
     public class PictureMarker : AbstractMarker
     {
         private string imagePath;
+        public string ImagePath
+        {
+            get { return imagePath; }
+            set { imagePath = value; }
+        }
 
         private string imageName;
         public string ImageName

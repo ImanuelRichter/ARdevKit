@@ -153,7 +153,7 @@ public class PreviewController
             if (this.trackable != null && trackable.existAugmention((AbstractAugmention)currentElement))
             {
                 //set reference to the augmentions in Source
-                source.augmentions.Add((AbstractDynamic2DAugmention)currentElement);
+                source.augmentions.Add((Abstract2DAugmention)currentElement);
                 
                 //add references in Augmention, Picturebox + project.sources List.
                 ((AbstractAugmention)this.findBox((AbstractAugmention)currentElement).Tag).source = source;
@@ -186,7 +186,7 @@ public class PreviewController
             if (this.ew.project.findSource(source).augmentions.Count > 1)
             {
                 ((AbstractAugmention)currentElement).source = null;
-                this.ew.project.findSource(source).augmentions.Remove((AbstractDynamic2DAugmention)currentElement);
+                this.ew.project.findSource(source).augmentions.Remove((Abstract2DAugmention)currentElement);
             }
             else if (this.ew.project.findSource(source).augmentions.Count == 1)
             {
