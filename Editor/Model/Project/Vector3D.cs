@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.ComponentModel;
+
 namespace ARdevKit.Model.Project
 {
+    /// <summary>   A 3D vektor. </summary>
     [Serializable]
+    [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public class Vector3D
     {
         /// <summary>
@@ -15,6 +19,7 @@ namespace ARdevKit.Model.Project
         /// <value>
         /// The x.
         /// </value>
+        [CategoryAttribute("General")]
         public int X { get; set; }
         /// <summary>
         /// Gets or sets the y.
@@ -22,6 +27,7 @@ namespace ARdevKit.Model.Project
         /// <value>
         /// The y.
         /// </value>
+        [CategoryAttribute("General")]
         public int Y { get; set; }
         /// <summary>
         /// Gets or sets the z.
@@ -29,6 +35,7 @@ namespace ARdevKit.Model.Project
         /// <value>
         /// The z.
         /// </value>
+        [CategoryAttribute("General")]
         public int Z { get; set; }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
