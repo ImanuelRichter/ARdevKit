@@ -21,17 +21,6 @@ namespace EditorTest.Controller.ProjectController
             p.Trackables.Add(mm);
             p.Trackables.Add(jm);
 
-            SaveVisitor visitor = new SaveVisitor("..\\..\\..\\bin\\Debug");
-            p.Accept(visitor);
-        }
-        [TestMethod]
-        public void loadProject()
-        {
-            SaveVisitor visitor = new SaveVisitor("..\\..\\..\\bin\\Debug");
-            Project p = visitor.load("..\\..\\..\\bin\\Debug\\Hello_World.bin");
-
-            Assert.AreEqual<PictureMarker>(mm, (PictureMarker) p.Trackables[0]);
-            Assert.AreEqual<PictureMarker>(jm, (PictureMarker) p.Trackables[1]);
-        }
+        }      
     }
 }

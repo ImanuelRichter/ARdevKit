@@ -83,6 +83,9 @@ namespace ARdevKit.Model.Project
             set { trackables = value; }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Project"/> class.
+        /// </summary>
         public Project()
         {
             this.name = "";
@@ -90,10 +93,6 @@ namespace ARdevKit.Model.Project
             sources = new List<AbstractSource>();
         }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Project"/> class.
-        /// </summary>
-        public Project()
         public Project(string name) : this()
         {
             this.name = name;

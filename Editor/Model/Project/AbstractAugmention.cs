@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace ARdevKit.Model.Project
 {
     [Serializable]
-    public abstract class AbstractAugmentation : IPreviewable//, ISerializables
+    public abstract class AbstractAugmention : IPreviewable//, ISerializables
     {
         private int coordinatesystemid;
         public int Coordinatesystemid
@@ -59,11 +59,6 @@ namespace ARdevKit.Model.Project
             get { return scalingVector; }
             set { scalingVector = value; }
         }
-
-        /// <summary>
-        /// New Variable which is for link a Source with this Augmentation
-        /// </summary>
-        public AbstractSource source { get; set; }
 
         /// <summary>
         /// Gets the list of all customUserEvent of this augmentation. (Only readable)

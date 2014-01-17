@@ -30,22 +30,30 @@ namespace ARdevKit.Controller.ProjectController
         /// <summary>
         /// Initializes a new instance of the <see cref="SaveVisitor"/> class.
         /// </summary>
-        /// <param name="projectPath">The project path.</param>
-        public SaveVisitor(string projectPath)
-        {
-            this.projectPath = projectPath;
+        public SaveVisitor()
+        {            
             formatter = new BinaryFormatter();
         }
-       
+
+        /// <summary>
+        /// Visits the specified project and saves it to the projectPath.
+        /// </summary>
+        /// <param name="project">The project, which is serializable</param>
+        public override void Visit(Project project)
+        {
+            Stream stream = new FileStream((Path.Combine(project.ProjectPath, project.Name.Replace(" ", "_")) + ".bin"), FileMode.Create, FileAccess.Write, FileShare.None);
+            formatter.Serialize(stream, project);
+            stream.Close();
+        }
 
         /// <summary>
         /// Visits the specified graph and serializes it to the projectPath.
         /// </summary>
         /// <param name="graph">The graph.</param>
         /// <exception cref="System.NotImplementedException"></exception>
-        public override void visit(BarGraph graph)
+        public override void Visit(BarGraph graph)
         {
-            throw new NotImplementedException();
+            //do nothing
         }
 
         /// <summary>
@@ -53,9 +61,9 @@ namespace ARdevKit.Controller.ProjectController
         /// </summary>
         /// <param name="source">The source.</param>
         /// <exception cref="System.NotImplementedException"></exception>
-        public override void visit(DbSource source)
+        public override void Visit(DbSource source)
         {
-            throw new NotImplementedException();
+            //do nothing
         }
 
         /// <summary>
@@ -63,30 +71,90 @@ namespace ARdevKit.Controller.ProjectController
         /// </summary>
         /// <param name="pictureMarker">The picture marker.</param>
         /// <exception cref="System.NotImplementedException"></exception>
-        public override void visit(PictureMarker pictureMarker)
+        public override void Visit(PictureMarker pictureMarker)
         {
-            throw new NotImplementedException();
+            //do nothing
         }
 
         /// <summary>
         /// Visits the specified identifier marker and serializes it to the projectPath.
         /// </summary>
         /// <param name="idMarker">The identifier marker.</param>
-        /// <exception cref="System.NotImplementedException"></exception>
-        public override void visit(IDMarker idMarker)
+        public override void Visit(IDMarker idMarker)
         {
-            throw new NotImplementedException();
+            //do nothing
+        }        
+
+        /// <summary>
+        /// Visits the given <see cref="ImageAugmention" />.
+        /// </summary>
+        /// <param name="image">The image.</param>
+        /// <remarks>
+        /// Imanuel, 17.01.2014.
+        /// </remarks>
+        public override void Visit(ImageAugmention image)
+        {
+            //do nothing
         }
 
         /// <summary>
-        /// Visits the specified project and saves it to the projectPath.
+        /// Visits the given <see cref="MarkerlessFuser" />.
         /// </summary>
-        /// <param name="project">The project, which is serializable</param>
-        public override void visit(Project project)
+        /// <param name="markerlessFuser">The markerless fuser.</param>
+        /// <remarks>
+        /// Imanuel, 17.01.2014.
+        /// </remarks>
+        public override void Visit(MarkerlessFuser markerlessFuser)
         {
-            Stream stream = new FileStream((Path.Combine(projectPath, project.Name.Replace(" ", "_"))+".bin"), FileMode.Create, FileAccess.Write, FileShare.None);
-            formatter.Serialize(stream, project);
-            stream.Close();
+            //do nothing
+        }
+
+        /// <summary>
+        /// Visits the given <see cref="MarkerFuser" />.
+        /// </summary>
+        /// <param name="markerFuser">The marker fuser.</param>
+        /// <remarks>
+        /// Imanuel, 17.01.2014.
+        /// </remarks>
+        public override void Visit(MarkerFuser markerFuser)
+        {
+            //do nothing
+        }
+
+        /// <summary>
+        /// Visits the given <see cref="MarkerlessSensor" />.
+        /// </summary>
+        /// <param name="MarkerlessSensor">The markerless sensor.</param>
+        /// <remarks>
+        /// Imanuel, 17.01.2014.
+        /// </remarks>
+        public override void Visit(MarkerlessSensor MarkerlessSensor)
+        {
+            //do nothing
+        }
+
+        /// <summary>
+        /// Visits the given <see cref="PictureMarkerSensor" />.
+        /// </summary>
+        /// <param name="pictureMarkerSensor">The picture marker sensor.</param>
+        /// <remarks>
+        /// Imanuel, 17.01.2014.
+        /// </remarks>
+        public override void Visit(PictureMarkerSensor pictureMarkerSensor)
+        {
+            //do nothing
+        }
+
+        /// <summary>
+        /// Visits the given <see cref="MarkerSensor" />.
+        /// </summary>
+        /// <param name="idMarkerSensor">The identifier marker sensor.</param>
+        /// <remarks>
+        /// Imanuel, 17.01.2014.
+        /// </remarks>
+        public override void Visit(MarkerSensor idMarkerSensor)
+        {
+            //do nothing
         }
     }
 }

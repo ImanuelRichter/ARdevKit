@@ -11,7 +11,7 @@ namespace ARdevKit.Model.Project
     /// 
     /// </summary>
     [Serializable]
-    public abstract class Graph : AbstractDynamic2DAugmentation 
+    public abstract class Graph : AbstractDynamic2DAugmention 
     {
         /// <summary>
         /// Gets or sets the maximum value.
@@ -19,21 +19,21 @@ namespace ARdevKit.Model.Project
         /// <value>
         /// The maximum value.
         /// </value>
-        public int maxValue {get; set;}
+        public int MaxValue {get; set;}
         /// <summary>
         /// Gets or sets the minimum value.
         /// </summary>
         /// <value>
         /// The minimum value.
         /// </value>
-        public int minValue { get; set; }
+        public int MinValue { get; set; }
         /// <summary>
         /// Gets or sets the scaling.
         /// </summary>
         /// <value>
         /// The scaling.
         /// </value>
-        public int scaling { get; set; }
+        public int Scaling { get; set; }
 
         private string graphPath;
         public string GraphPath

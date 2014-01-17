@@ -15,7 +15,7 @@ namespace ARdevKit.Model.Project
     ///
     /// <remarks>   Imanuel, 17.01.2014. </remarks>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-
+    [Serializable]
     public class MarkerlessFuser : MarkerFuser
     {
         /// <summary>   The gravity assistance. </summary>

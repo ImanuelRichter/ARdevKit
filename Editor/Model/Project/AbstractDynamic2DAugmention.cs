@@ -10,36 +10,8 @@ namespace ARdevKit.Model.Project
     public abstract class AbstractDynamic2DAugmention : AbstractAugmention
     {
         /// <summary>
-        /// The height
+        /// New Variable which is for link a Source with this Augmentation
         /// </summary>
-        private int height;
-
-        /// <summary>
-        /// Gets or sets the height.
-        /// </summary>
-        /// <value>
-        /// The height.
-        /// </value>
-        public int Height {
-        get { return height; }
-        set { height = value; }
-        }
-
-        /// <summary>
-        /// The width
-        /// </summary>
-        private int width;
-
-        /// <summary>
-        /// Gets or sets the width.
-        /// </summary>
-        /// <value>
-        /// The width.
-        /// </value>
-        public int Width
-        {
-            get { return width; }
-            set { width = value; }
-        }
+        public AbstractSource source { get; set; }
     }
 }
