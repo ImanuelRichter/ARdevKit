@@ -40,7 +40,7 @@ namespace ARdevKit.Model.Project
             set { size = value; }
         }
 
-        public AbstractMarker() : base()
+        protected AbstractMarker() : base()
         {
             ; // some missing initialization?
         }

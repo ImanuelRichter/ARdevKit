@@ -71,7 +71,7 @@ namespace ARdevKit.Model.Project
         /// Initializes a new instance of the <see cref="AbstractTrackable"/> class.
         /// With no trackables associated.
         /// </summary>
-        public AbstractTrackable()
+        protected AbstractTrackable()
         {
             this.Augmentions = new List<AbstractAugmention>();
             /* could it be here are some missing initialization? */

@@ -39,7 +39,7 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// Initializes a new instance of the <see cref="AbstractSource"/> class.
         /// </summary>
-        public AbstractSource()
+        protected AbstractSource()
         {
             this.augmentions = new List<Abstract2DAugmention>();
         }

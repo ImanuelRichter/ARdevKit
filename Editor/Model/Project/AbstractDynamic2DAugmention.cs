@@ -18,7 +18,7 @@ namespace ARdevKit.Model.Project
         [CategoryAttribute("General")]
         public AbstractSource source { get; set; }
 
-        public AbstractDynamic2DAugmention() : base()
+        protected AbstractDynamic2DAugmention() : base()
         {
             ; // missing initialization
         }

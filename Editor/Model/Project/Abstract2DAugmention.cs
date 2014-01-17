@@ -46,7 +46,7 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// ToDo Summary is missing
         /// </summary>
-        public Abstract2DAugmention() : base()
+        protected Abstract2DAugmention() : base()
         {
             // todo!
         }

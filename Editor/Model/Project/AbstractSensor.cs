@@ -122,7 +122,7 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// ToDo Summary is missing
         /// </summary>
-        public AbstractSensor()
+        protected AbstractSensor()
         {
             ; // initialization missing
         }
