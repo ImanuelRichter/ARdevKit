@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.ComponentModel;
+
 namespace ARdevKit.Model.Project
 {
     /// <summary>
@@ -11,16 +13,36 @@ namespace ARdevKit.Model.Project
     /// See issue #13 for reason of this class.
     /// </summary>
     [Serializable]
+    [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public class CustomUserEvent
     {
         /// <summary>
-        /// The name
+        /// The name of the event
         /// </summary>
         private string name;
         /// <summary>
-        /// The content
+        /// Get or set the name of the event
+        /// </summary>
+        [CategoryAttribute("General")]
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
+        /// <summary>
+        /// The content of the event
         /// </summary>
         private string[] content;
+        /// <summary>
+        /// Get or set the content of the event
+        /// </summary>
+        [CategoryAttribute("General")]
+        public string[] Content
+        {
+            get { return content; }
+            set { content = value; }
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomUserEvent"/> class.
@@ -31,30 +53,6 @@ namespace ARdevKit.Model.Project
         {
             this.name = name;
             this.content = content;
-        }
-
-        /// <summary>
-        /// Gets or sets the name.
-        /// </summary>
-        /// <value>
-        /// The name.
-        /// </value>
-        public string Name
-        {
-            get { return name; }
-            set { name = value; }
-        }
-
-        /// <summary>
-        /// Gets or sets the content.
-        /// </summary>
-        /// <value>
-        /// The content.
-        /// </value>
-        public string[] Content
-        {
-            get { return content; }
-            set { content = value; }
         }
     }
 }

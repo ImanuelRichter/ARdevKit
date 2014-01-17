@@ -9,12 +9,22 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.ComponentModel;
+
 namespace ARdevKit.Model.Project
 {
     [Serializable]
+    [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public abstract class AbstractAugmention : IPreviewable//, ISerializables
     {
+        /// <summary>
+        /// ToDo Summary is missing
+        /// </summary>
         private int coordinatesystemid;
+        /// <summary>
+        /// Get or set the CoordinateSystemId.
+        /// </summary>
+        [CategoryAttribute("General")]
         public int Coordinatesystemid
         {
             get { return coordinatesystemid; }
@@ -22,14 +32,13 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
-        /// A list of all customUserEvents the current selected Element has.
-        /// </summary>
-        private List<CustomUserEvent> customUserEvent;
-
-        /// <summary>
-        /// ToDo
+        /// ToDo Summary is missing
         /// </summary>
         private bool isVisible;
+        /// <summary>
+        /// Get or set if the augmention is visible or not.
+        /// </summary>
+        [CategoryAttribute("General"), DefaultValueAttribute(true)]
         public bool IsVisible
         {
             get { return isVisible; }
@@ -37,35 +46,58 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
+        /// A list of all customUserEvents the current selected Element has.
+        /// </summary>
+        private List<CustomUserEvent> customUserEvent;
+        /// <summary>
+        /// Get a List with all custom user-generated code.
+        /// </summary>
+        [CategoryAttribute("Expert")]
+        public List<CustomUserEvent> CustomUserEventList
+        {
+            get { return customUserEvent; }
+        }
+
+        /// <summary>
         /// Vector to know the Position on the PreviewPanel.
         /// </summar>
         private Vector3D translationVector;
+        /// <summary>
+        /// Get or set the position of the augmention.
+        /// </summary>
+        [CategoryAttribute("General")]
         public Vector3D TranslationVector
         {
             get { return translationVector; }
             set { translationVector = value; }
         }
 
+        /// <summary>
+        /// ToDo Summary is missing
+        /// </summary>
         private Vector3Di rotationVector;
+        /// <summary>
+        /// ToDo Summary is missing
+        /// </summary>
+        [CategoryAttribute("General")]
         public Vector3Di RotationVector
         {
             get { return rotationVector; }
             set { rotationVector = value; }
         }
 
+        /// <summary>
+        /// ToDo Summary is missing
+        /// </summary>
         private Vector3D scalingVector;
+        /// <summary>
+        /// ToDo Summary is missing
+        /// </summary>
+        [CategoryAttribute("General")]
         public Vector3D ScalingVector
         {
             get { return scalingVector; }
             set { scalingVector = value; }
-        }
-
-        /// <summary>
-        /// Gets the list of all customUserEvent of this augmentation. (Only readable)
-        /// </summary>
-        public List<CustomUserEvent> CustomUserEventList
-        {
-            get { return customUserEvent; }
         }
 
         /// <summary>
@@ -74,23 +106,46 @@ namespace ARdevKit.Model.Project
         /// </summary>
         protected AbstractTrackable trackable;
         /// <summary>
-        /// Gets or sets the trackable
+        /// Get or set a trackable to the augmention.
         /// </summary>
-        /// <value>
-        /// The trackable.
-        /// </value>
+        [Browsable(false)]
         public AbstractTrackable Trackable
         {
             get { return trackable; }
             set { trackable = value; }
         }
 
+        /// <summary>
+        /// ToDo Summary is missing
+        /// Body must still be implemented
+        /// </summary>
+        protected AbstractAugmention()
+        {
+            // todo!
+        }
+
+        /// <summary>
+        /// ToDo Summary is missing
+        /// </summary>
+        /// <param name="visitor"></param>
         public abstract void Accept(AbstractProjectVisitor visitor);
 
-        abstract public Bitmap getPreview();
+        /// <summary>
+        /// ToDo Summary is missing
+        /// </summary>
+        /// <returns></returns>
+        public abstract Bitmap getPreview();
 
-        abstract public Bitmap getIcon();
+        /// <summary>
+        /// ToDo Summary is missing
+        /// </summary>
+        /// <returns></returns>
+        public abstract Bitmap getIcon();
 
+        /// <summary>
+        /// ToDo Summary is missing
+        /// </summary>
+        /// <returns></returns>
         public abstract List<AbstractProperty> getPropertyList();
 
         /// <summary>
