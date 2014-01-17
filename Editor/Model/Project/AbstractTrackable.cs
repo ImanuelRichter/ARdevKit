@@ -47,8 +47,8 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// ToDo Summary is missing
         /// </summary>
-        [Browsable(false)]
         private double similarityThreshold = 0.7;
+        [Browsable(false)]
         protected double SimilarityThreshold
         {
             get { return similarityThreshold; }
@@ -74,6 +74,7 @@ namespace ARdevKit.Model.Project
         public AbstractTrackable()
         {
             this.Augmentions = new List<AbstractAugmention>();
+            /* could it be here are some missing initialization? */
         }
 
         /// <summary>

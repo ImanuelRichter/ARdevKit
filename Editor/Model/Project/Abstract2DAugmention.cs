@@ -42,5 +42,13 @@ namespace ARdevKit.Model.Project
             get { return width; }
             set { width = value; }
         }
+
+        /// <summary>
+        /// ToDo Summary is missing
+        /// </summary>
+        public Abstract2DAugmention() : base()
+        {
+            // todo!
+        }
     }
 }
