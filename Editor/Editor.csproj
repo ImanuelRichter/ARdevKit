@@ -53,6 +53,7 @@
     <Compile Include="Model\Project\AbstractDynamic2DAugmention.cs" />
     <Compile Include="Model\Project\ImageAugmention.cs" />
     <Compile Include="Model\Project\MarkerFuser.cs" />
+    <Compile Include="Controller\ProjectController\SaveLoadController.cs" />
     <Compile Include="Model\Project\IDFactory.cs" />
     <Compile Include="Model\Project\File\AbstractBlock.cs" />
     <Compile Include="Model\Project\File\ARELGlueFile.cs" />

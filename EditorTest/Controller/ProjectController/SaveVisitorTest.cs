@@ -1,0 +1,26 @@
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+using ARdevKit.Controller.ProjectController;
+using ARdevKit.Model.Project;
+using System.IO;
+
+namespace EditorTest.Controller.ProjectController
+{
+    [TestClass]
+    public class SaveVisitorTest
+    {
+
+
+        PictureMarker mm = new PictureMarker("metaioman_target.png");
+        PictureMarker jm = new PictureMarker("junaioman_target.png");
+        [TestMethod]
+        public void SaveProject()
+        {
+            Project p = new Project("Hello World");
+            p.Trackables.Add(mm);
+            p.Trackables.Add(jm);
+
+        }      
+    }
+}

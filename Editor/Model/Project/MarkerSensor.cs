@@ -7,6 +7,7 @@ using ARdevKit.Controller.ProjectController;
 
 namespace ARdevKit.Model.Project
 {
+    [Serializable]
     public class MarkerSensor : AbstractSensor
     {
         ////////////////////////////////////////////////////////////////////////////////////////////////////

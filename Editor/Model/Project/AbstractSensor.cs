@@ -14,7 +14,7 @@ namespace ARdevKit.Model.Project
     ///
     /// <remarks>   Imanuel, 17.01.2014. </remarks>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-
+    [Serializable]
     public abstract class AbstractSensor
     {
         /// <summary>   The name. </summary>

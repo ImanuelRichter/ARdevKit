@@ -12,26 +12,47 @@ namespace ARdevKit.Model.Project
 {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// <summary>
-    ///     AbstractSource is no PictureBox in the Panel, so it doesn't need an bitmap and so we
+    ///     AbstractSource is no PictureBox in the PreviewPanel, so it doesn't need an bitmap and so we
     ///     don't need getPreview(),
-    ///     though this IPreviewable can't be a Interface for AbstractSource.
+    ///     though getIcon() is needed for the ElementSelectionPanel.
     /// </summary>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    public abstract class AbstractSource : ISerializable, IPreviewable
+    [Serializable]
+    public abstract class AbstractSource : IPreviewable//, ISerializable
     {
-        public String sourceID { get; set; }
 
-        public List<Abstract2DAugmention> augmentions {get; set; }
+        /// <summary>
+        /// Gets or sets the source identifier.
+        /// </summary>
+        /// <value>
+        /// The source identifier.
+        /// </value>
+        public String sourceID { get; set; }
+        /// <summary>
+        /// Gets or sets the augmentions, which get their dynamic information from the <see cref="AbstractSource"/>
+        /// </summary>
+        /// <value>
+        /// The augmentions.
+        /// </value>
+        public List<Abstract2DAugmention> augmentions { get; set; }
         abstract public void accept(AbstractProjectVisitor visitor);
 
         public abstract List<AbstractProperty> getPropertyList();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AbstractSource"/> class.
+        /// </summary>
         public AbstractSource()
         {
             this.augmentions = new List<Abstract2DAugmention>();
         }
 
+        /// <summary>
+        ///     Is needed for Custom Serialization. And provides the Serializer with the needed information
+        /// </summary>
+        /// <param name="info">Serialization Information, which is modified to encapsulate the things to save</param>
+        /// <param name="context">describes aim and source of a serialized stream</param>
+        [Obsolete("GetObjectData is obsolete, serialization is done without customization.")]
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             throw new NotImplementedException();
@@ -40,13 +61,23 @@ namespace ARdevKit.Model.Project
         public abstract Bitmap getPreview();
 
         public abstract Bitmap getIcon();
-
-        public AbstractAugmention findAugmentation(IPreviewable a)
+        /// <summary>
+        /// Finds the augmention, which gets information through this <see cref="AbstractSource"/>.
+        /// </summary>
+        /// <param name="a">the IPreviewable, which is searched for</param>
+        /// <returns>the augmention which is found, otherwise null </returns>
+        public AbstractAugmention findAugmention(IPreviewable a)
         {
             return this.augmentions[this.augmentions.IndexOf((Abstract2DAugmention)a)];
         }
 
-        public bool existAugmentation(IPreviewable a)
+        /// <summary>
+        /// Checks if the augmention is associated with this <see cref="AbstractSource"/>.
+        /// </summary>
+        /// <param name="a">the IPreviewable, which is checked existence for</param>
+        /// <returns>true, if its associated with this <see cref="AbstractSource"/>
+        ///          false, else</returns>
+        public bool existAugmention(IPreviewable a)
         {
             foreach (Abstract2DAugmention aug in augmentions)
             {

@@ -8,6 +8,10 @@ using System.Drawing;
 
 namespace ARdevKit.Model.Project
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    [Serializable]
     public class DbSource : AbstractSource
     {
         private DbConnection connection;

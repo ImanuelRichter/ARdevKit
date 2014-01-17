@@ -51,6 +51,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Controller\ProjectController\ExportVisitorTest.cs" />
+    <Compile Include="Controller\ProjectController\SaveVisitorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

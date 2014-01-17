@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Model.Project
 {
-    public abstract class AbstractDynamic2DAugmention : Abstract2DAugmention
+    [Serializable]
+    public abstract class AbstractDynamic2DAugmention : AbstractAugmention
     {
+        /// <summary>
+        /// New Variable which is for link a Source with this Augmentation
+        /// </summary>
+        public AbstractSource source { get; set; }
     }
 }

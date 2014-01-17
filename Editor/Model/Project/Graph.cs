@@ -7,11 +7,33 @@ using System.Drawing;
 
 namespace ARdevKit.Model.Project
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    [Serializable]
     public abstract class Graph : AbstractDynamic2DAugmention 
     {
-        private int maxValue;
-        private int minValue;
-        private int scaling;
+        /// <summary>
+        /// Gets or sets the maximum value.
+        /// </summary>
+        /// <value>
+        /// The maximum value.
+        /// </value>
+        public int MaxValue {get; set;}
+        /// <summary>
+        /// Gets or sets the minimum value.
+        /// </summary>
+        /// <value>
+        /// The minimum value.
+        /// </value>
+        public int MinValue { get; set; }
+        /// <summary>
+        /// Gets or sets the scaling.
+        /// </summary>
+        /// <value>
+        /// The scaling.
+        /// </value>
+        public int Scaling { get; set; }
 
         private string graphPath;
         public string GraphPath

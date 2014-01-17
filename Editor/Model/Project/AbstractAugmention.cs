@@ -11,7 +11,8 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Model.Project
 {
-    public abstract class AbstractAugmention : ISerializable, IPreviewable
+    [Serializable]
+    public abstract class AbstractAugmention : IPreviewable//, ISerializables
     {
         private int coordinatesystemid;
         public int Coordinatesystemid
@@ -60,11 +61,6 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
-        /// New Variable which is for link a Source with this Augmentation
-        /// </summary>
-        public AbstractSource source { get; set; }
-
-        /// <summary>
         /// Gets the list of all customUserEvent of this augmentation. (Only readable)
         /// </summary>
         public List<CustomUserEvent> CustomUserEventList
@@ -72,7 +68,17 @@ namespace ARdevKit.Model.Project
             get { return customUserEvent; }
         }
 
+        /// <summary>
+        /// The AbstractTrackable with which this AbstractAugmentation is linked.
+        /// It is visible in the same Scene as the trackable.
+        /// </summary>
         protected AbstractTrackable trackable;
+        /// <summary>
+        /// Gets or sets the trackable
+        /// </summary>
+        /// <value>
+        /// The trackable.
+        /// </value>
         public AbstractTrackable Trackable
         {
             get { return trackable; }
@@ -87,6 +93,12 @@ namespace ARdevKit.Model.Project
 
         public abstract List<AbstractProperty> getPropertyList();
 
+        /// <summary>
+        ///     Is needed for Custom Serialization. And provides the Serializer with the needed information
+        /// </summary>
+        /// <param name="info">Serialization Information, which is modified to encapsulate the things to save</param>
+        /// <param name="context">describes aim and source of a serialized stream</param>
+        [Obsolete("GetObjectData is obsolete, serialization is done without customization.")]
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             throw new NotImplementedException();

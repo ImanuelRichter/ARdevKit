@@ -156,8 +156,8 @@ public class PreviewController
                 source.augmentions.Add((Abstract2DAugmention)currentElement);
                 
                 //add references in Augmention, Picturebox + project.sources List.
-                ((AbstractAugmention)this.findBox((AbstractAugmention)currentElement).Tag).source = source;
-                this.ew.project.Sources.Add(((AbstractAugmention)this.findBox((AbstractAugmention)currentElement).Tag).source);
+                ((AbstractDynamic2DAugmention)this.findBox((AbstractAugmention)currentElement).Tag).source = source;
+                this.ew.project.Sources.Add(((AbstractDynamic2DAugmention)this.findBox((AbstractAugmention)currentElement).Tag).source);
             }
         }
         else
@@ -185,12 +185,12 @@ public class PreviewController
         {
             if (this.ew.project.findSource(source).augmentions.Count > 1)
             {
-                ((AbstractAugmention)currentElement).source = null;
+                ((AbstractDynamic2DAugmention)currentElement).source = null;
                 this.ew.project.findSource(source).augmentions.Remove((Abstract2DAugmention)currentElement);
             }
             else if (this.ew.project.findSource(source).augmentions.Count == 1)
             {
-                ((AbstractAugmention)currentElement).source = null;
+                ((AbstractDynamic2DAugmention)currentElement).source = null;
                 this.ew.project.Sources.Remove(source);
             }       
         }
