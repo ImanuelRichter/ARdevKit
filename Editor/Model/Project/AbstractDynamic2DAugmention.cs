@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ARdevKit.Model.Project
-{[Serializable]
+{
+    [Serializable]
     public abstract class AbstractDynamic2DAugmention : AbstractAugmention
     {
         /// <summary>

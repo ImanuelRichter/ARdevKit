@@ -26,6 +26,16 @@ namespace ARdevKit.Controller.ProjectController
         public abstract void Visit(BarGraph barGraph);
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Visits the given <see cref="ImageAugmention"/>. </summary>
+        ///
+        /// <remarks>   Imanuel, 17.01.2014. </remarks>
+        ///
+        /// <param name="image">    The image. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public abstract void Visit(ImageAugmention image);
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Visits the given <see cref="DbSource"/>. </summary>
         ///
         /// <remarks>   Imanuel, 17.01.2014. </remarks>

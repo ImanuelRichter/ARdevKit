@@ -50,6 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Project\AbstractDynamic2DAugmention.cs" />
+    <Compile Include="Model\Project\ImageAugmention.cs" />
     <Compile Include="Model\Project\MarkerFuser.cs" />
     <Compile Include="Controller\ProjectController\SaveLoadController.cs" />
     <Compile Include="Model\Project\IDFactory.cs" />
@@ -71,7 +73,7 @@
     <Compile Include="Controller\ProjectController\SaveVisitor.cs" />
     <Compile Include="Controller\Connections\DatabaseConnection\DbConnection.cs" />
     <Compile Include="Model\Project\AbstractAugmention.cs" />
-    <Compile Include="Model\Project\AbstractDynamic2DAugmention.cs" />
+    <Compile Include="Model\Project\Abstract2DAugmention.cs" />
     <Compile Include="Model\Project\AbstractMarker.cs" />
     <Compile Include="Model\Project\AbstractSource.cs" />
     <Compile Include="EditorWindow.cs">

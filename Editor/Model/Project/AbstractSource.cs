@@ -34,7 +34,7 @@ namespace ARdevKit.Model.Project
         /// <value>
         /// The augmentions.
         /// </value>
-        public List<AbstractDynamic2DAugmention> augmentions {get; set; }
+        public List<Abstract2DAugmention> augmentions { get; set; }
         abstract public void accept(AbstractProjectVisitor visitor);
 
         public abstract List<AbstractProperty> getPropertyList();
@@ -44,7 +44,7 @@ namespace ARdevKit.Model.Project
         /// </summary>
         public AbstractSource()
         {
-            this.augmentions = new List<AbstractDynamic2DAugmention>();
+            this.augmentions = new List<Abstract2DAugmention>();
         }
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace ARdevKit.Model.Project
         /// <returns>the augmention which is found, otherwise null </returns>
         public AbstractAugmention findAugmention(IPreviewable a)
         {
-            return this.augmentions[this.augmentions.IndexOf((AbstractDynamic2DAugmention)a)];
+            return this.augmentions[this.augmentions.IndexOf((Abstract2DAugmention)a)];
         }
 
         /// <summary>
@@ -79,9 +79,9 @@ namespace ARdevKit.Model.Project
         ///          false, else</returns>
         public bool existAugmention(IPreviewable a)
         {
-            foreach (AbstractDynamic2DAugmention aug in augmentions)
+            foreach (Abstract2DAugmention aug in augmentions)
             {
-                if (aug == (AbstractDynamic2DAugmention) a)
+                if (aug == (Abstract2DAugmention) a)
                 {
                     return true;
                 }

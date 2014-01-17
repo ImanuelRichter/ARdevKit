@@ -20,25 +20,25 @@ namespace EditorTest
             IDMarker idMarker1 = new IDMarker(1);
             IDMarker idMarker2 = new IDMarker(2);
 
-            BarGraph barGraph1 = new BarGraph();
-            barGraph1.AugmentionPath = Path.Combine(testProject.ProjectPath, "frame.png");
-            barGraph1.IsVisible = false;
-            barGraph1.Coordinatesystemid = 1;
-            barGraph1.TranslationVector = new Vector3D(0, 0, 0);
-            barGraph1.RotationVector = new Vector3Di(0, 0, 0, 1);
-            barGraph1.ScalingVector = new Vector3D(0, 0, 0);
-            idMarker1.Augmentions.Add(barGraph1);
-            barGraph1.Trackable = idMarker1;
+            ImageAugmention image1 = new ImageAugmention();
+            image1.ImagePath = Path.Combine(testProject.ProjectPath, "frame.png");
+            image1.IsVisible = false;
+            image1.Coordinatesystemid = 1;
+            image1.TranslationVector = new Vector3D(0, 0, 0);
+            image1.RotationVector = new Vector3Di(0, 0, 0, 1);
+            image1.ScalingVector = new Vector3D(0, 0, 0);
+            idMarker1.Augmentions.Add(image1);
+            image1.Trackable = idMarker1;
 
-            BarGraph barGraph2 = new BarGraph();
-            barGraph2.AugmentionPath = Path.Combine(testProject.ProjectPath, "frame.png");
-            barGraph2.IsVisible = false;
-            barGraph2.Coordinatesystemid = 2;
-            barGraph2.TranslationVector = new Vector3D(0, 0, 0);
-            barGraph2.RotationVector = new Vector3Di(0, 0, 0, 1);
-            barGraph2.ScalingVector = new Vector3D(3, 3, 3);
-            idMarker2.Augmentions.Add(barGraph2);
-            barGraph2.Trackable = idMarker2;
+            ImageAugmention image2 = new ImageAugmention();
+            image2.ImagePath = Path.Combine(testProject.ProjectPath, "frame.png");
+            image2.IsVisible = false;
+            image2.Coordinatesystemid = 2;
+            image2.TranslationVector = new Vector3D(0, 0, 0);
+            image2.RotationVector = new Vector3Di(0, 0, 0, 1);
+            image2.ScalingVector = new Vector3D(3, 3, 3);
+            idMarker2.Augmentions.Add(image2);
+            image2.Trackable = idMarker2;
 
             testProject.Sensor = new MarkerSensor();
             testProject.Trackables.Add(idMarker1);
@@ -53,25 +53,25 @@ namespace EditorTest
             PictureMarker pictureMarker1 = new PictureMarker("pictureMarker1.png");
             PictureMarker pictureMarker2 = new PictureMarker("pictureMarker2.png");
 
-            BarGraph barGraph1 = new BarGraph();
-            barGraph1.AugmentionPath = Path.Combine(testProject.ProjectPath, "pi.jpg");
-            barGraph1.IsVisible = false;
-            barGraph1.Coordinatesystemid = 1;
-            barGraph1.TranslationVector = new Vector3D(2, 3, 0);
-            barGraph1.RotationVector = new Vector3Di(0, 0, 0, 1);
-            barGraph1.ScalingVector = new Vector3D(0, 0, 0);
-            pictureMarker1.Augmentions.Add(barGraph1);
-            barGraph1.Trackable = pictureMarker1;
+            ImageAugmention image1 = new ImageAugmention();
+            image1.ImagePath = Path.Combine(testProject.ProjectPath, "pi.jpg");
+            image1.IsVisible = false;
+            image1.Coordinatesystemid = 1;
+            image1.TranslationVector = new Vector3D(2, 3, 0);
+            image1.RotationVector = new Vector3Di(0, 0, 0, 1);
+            image1.ScalingVector = new Vector3D(0, 0, 0);
+            pictureMarker1.Augmentions.Add(image1);
+            image1.Trackable = pictureMarker1;
 
-            BarGraph barGraph2 = new BarGraph();
-            barGraph2.AugmentionPath = Path.Combine(testProject.ProjectPath, "top.png");
-            barGraph2.IsVisible = false;
-            barGraph2.Coordinatesystemid = 2;
-            barGraph2.TranslationVector = new Vector3D(2, 3, 0);
-            barGraph2.RotationVector = new Vector3Di(0, 0, 0, 1);
-            barGraph2.ScalingVector = new Vector3D(3, 3, 3);
-            pictureMarker2.Augmentions.Add(barGraph2);
-            barGraph2.Trackable = pictureMarker2;
+            ImageAugmention image2 = new ImageAugmention();
+            image2.ImagePath = Path.Combine("..\\..\\..\\res\\imageToCopy.png");
+            image2.IsVisible = false;
+            image2.Coordinatesystemid = 2;
+            image2.TranslationVector = new Vector3D(2, 3, 0);
+            image2.RotationVector = new Vector3Di(0, 0, 0, 1);
+            image2.ScalingVector = new Vector3D(3, 3, 3);
+            pictureMarker2.Augmentions.Add(image2);
+            image2.Trackable = pictureMarker2;
 
             testProject.Sensor = new PictureMarkerSensor();
             testProject.Trackables.Add(pictureMarker1);

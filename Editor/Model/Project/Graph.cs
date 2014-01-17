@@ -34,5 +34,12 @@ namespace ARdevKit.Model.Project
         /// The scaling.
         /// </value>
         public int scaling { get; set; }
+
+        private string graphPath;
+        public string GraphPath
+        {
+            get { return graphPath; }
+            set { graphPath = value; }
+        }
     }
 }

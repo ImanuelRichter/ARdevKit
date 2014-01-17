@@ -21,13 +21,6 @@ namespace ARdevKit.Model.Project
             set { coordinatesystemid = value; }
         }
 
-        private string augmentionPath;
-        public string AugmentionPath
-        {
-            get { return augmentionPath; }
-            set { augmentionPath = value; }
-        }
-
         /// <summary>
         /// A list of all customUserEvents the current selected Element has.
         /// </summary>
