@@ -311,7 +311,13 @@ namespace ARdevKit
 
         private void tsm_editor_menu_file_new_Click(object sender, EventArgs e)
         {
-            //stub
+            if (MessageBox.Show("Möchten Sie das aktuelle Projekt abspeichern, bevor ein neues angelegt wird?", "Projekt speichern?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                this.saveProject();
+            }
+            this.initializeEmptyProject();
+            this.initializeControllers();
+            this.updatePanels();
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
