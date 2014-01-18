@@ -140,7 +140,6 @@
     <Content Include="Controller\DebugController\foo.txt" />
     <Content Include="Controller\ProjectController\foo.txt" />
     <Content Include="Model\Project\foo.txt" />
-    <None Include="Resources\PreviewDummy.ico" />
     <None Include="Resources\PreviewDummy.jpg" />
   </ItemGroup>
   <ItemGroup />
