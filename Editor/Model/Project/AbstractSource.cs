@@ -44,6 +44,11 @@ namespace ARdevKit.Model.Project
             this.augmentions = new List<Abstract2DAugmention>();
         }
 
+        protected AbstractSource(string sourceId)
+        {
+            sourceID = sourceId;
+        }
+
         /// <summary>
         /// ToDo Summary is missing
         /// </summary>

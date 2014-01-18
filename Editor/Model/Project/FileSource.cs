@@ -27,6 +27,16 @@ namespace ARdevKit.Model.Project
             set { sourceFilePath = value; }
         }
 
+        public FileSource(string sourceFilePath) : base()
+        {
+            this.sourceFilePath = sourceFilePath;
+        }
+
+        public FileSource(string sourceId, string sourceFilePath) : base(sourceId)
+        {
+            this.sourceFilePath = sourceFilePath;
+        }
+
         /// <summary>   ToDo Summary is missing. </summary>
         ///
         /// <exception cref="NotImplementedException"> Thrown when the requested operation is
