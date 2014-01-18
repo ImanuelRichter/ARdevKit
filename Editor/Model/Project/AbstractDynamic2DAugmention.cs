@@ -20,7 +20,15 @@ namespace ARdevKit.Model.Project
 
         protected AbstractDynamic2DAugmention() : base()
         {
-            ; // missing initialization
+            this.source = null;
+        }
+
+        protected AbstractDynamic2DAugmention(int coordSystemId, bool isVisible,
+            Vector3D translationVector, Vector3D scaling, AbstractTrackable trackable,
+            AbstractSource source)
+            : base(coordSystemId, isVisible, translationVector, scaling, trackable)
+        {
+            this.source = source;
         }
     }
 }

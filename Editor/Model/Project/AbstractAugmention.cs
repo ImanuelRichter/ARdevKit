@@ -121,7 +121,32 @@ namespace ARdevKit.Model.Project
         /// </summary>
         protected AbstractAugmention()
         {
-            // todo!
+            coordinatesystemid = 0;
+            isVisible = true;
+            customUserEvent = new List<CustomUserEvent>();
+            translationVector = new Vector3D(0, 0, 0);
+            scalingVector = new Vector3D(0, 0, 0);
+            rotationVector = new Vector3Di(0, 0, 0, 0);
+            trackable = null;
+        }
+
+        /// <summary>   ToDo Summary is missing Body must still be implemented. </summary>
+        ///
+        /// <param name="coordSystemId">        Identifier for the coordinate system. </param>
+        /// <param name="isVisible">            ToDo Summary is missing. </param>
+        /// <param name="translationVector"> Vector to know the Position on the PreviewPanel.</summar> </param>
+        /// <param name="scaling">              The scaling. </param>
+        /// <param name="trackable">         The AbstractTrackable with which this AbstractAugmentation is
+        ///     linked. It is visible in the same Scene as the trackable. </param>
+        protected AbstractAugmention(int coordSystemId, bool isVisible, 
+            Vector3D translationVector, Vector3D scaling, AbstractTrackable trackable)
+        {
+            coordinatesystemid = coordSystemId;
+            this.isVisible = isVisible;
+            customUserEvent = new List<CustomUserEvent>();
+            this.translationVector = translationVector;
+            scalingVector = scaling;
+            this.trackable = trackable;
         }
 
         /// <summary>
