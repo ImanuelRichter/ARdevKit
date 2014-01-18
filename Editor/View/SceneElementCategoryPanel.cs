@@ -54,7 +54,7 @@ namespace ARdevKit.View
             this.category = category;
             foreach (SceneElement e in category.SceneElements)
             {
-                add(e.ElementIcon());
+                add(e.ElementIcon);
             }
             WrapContents = false;
         }

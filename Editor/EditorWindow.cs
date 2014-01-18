@@ -25,6 +25,7 @@ using ARdevKit.Controller.EditorController;
 using ARdevKit.Controller.Connections.DeviceConnection;
 using ARdevKit.Controller.TestController;
 using ARdevKit.View;
+using ARdevKit.Controller.EditorController;
 
 namespace ARdevKit
 {
@@ -483,7 +484,7 @@ namespace ARdevKit
             else
             {
                 this.project.Trackables[0] = null;
-                this.previewController.currentMetaCategory = PreviewController.MetaCategory.Trackable;
+                this.previewController.currentMetaCategory = MetaCategory.Trackable;
                 this.previewController.removePreviewable(this.previewController.trackable);
                 MessageBox.Show("You've cleaned this scene!");
             }
@@ -545,14 +546,14 @@ namespace ARdevKit
         public void registerElements()
         {
             Bitmap dummy=Properties.Resources.PreviewDummy; //TODO: Make preview Bitmaps for all Elements
-            SceneElementCategory sources = new SceneElementCategory(SceneElementCategory.MetaCategory.Source, "Sources");
+            SceneElementCategory sources = new SceneElementCategory(MetaCategory.Source, "Sources");
             sources.addElement(new SceneElement("Database Source", new DbSource(),dummy,this));
             sources.addElement(new SceneElement("FileSource", new FileSource(""),dummy,this));
-            SceneElementCategory augmentations = new SceneElementCategory(SceneElementCategory.MetaCategory.Augmentation, "Augmentations");
+            SceneElementCategory augmentations = new SceneElementCategory(MetaCategory.Augmentation, "Augmentations");
             augmentations.addElement(new SceneElement("Bar Graph", new BarGraph(),dummy,this));
-            SceneElementCategory trackables = new SceneElementCategory(SceneElementCategory.MetaCategory.Trackable, "Trackables");
+            SceneElementCategory trackables = new SceneElementCategory(MetaCategory.Trackable, "Trackables");
             trackables.addElement(new SceneElement("Picture Marker",new PictureMarker(""),dummy,this));
-            trackables.addElement(new SceneElement("IDMarker",new IDMarker(),dummy,this));
+            trackables.addElement(new SceneElement("IDMarker",new IDMarker(1),dummy,this));
             addCategory(trackables);
             addCategory(augmentations);
             addCategory(sources);

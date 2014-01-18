@@ -9,8 +9,6 @@ using ARdevKit.Model.Project;
 using System.Collections;
 using ARdevKit;
 using ARdevKit.Controller.EditorController;
-using MetaCategory = ARdevKit.Controller.EditorController.SceneElementCategory.MetaCategory ;
-using ARdevKit.Model.Project;
 
 public class PreviewController
     {
@@ -93,7 +91,7 @@ public class PreviewController
             this.addPictureBox(currentElement, v);
                 }
                     
-        else if (currentMetaCategory == MetaCategory.Augmention && trackable != null)
+        else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null)
         {
             //set the vector and the trackable in Augmention
             ((AbstractAugmention)currentElement).TranslationVector = v;                                      
@@ -130,7 +128,7 @@ public class PreviewController
 
     public void addSource(AbstractSource source, IPreviewable currentElement)
        {
-        if (currentMetaCategory == MetaCategory.Augmention)
+        if (currentMetaCategory == MetaCategory.Augmentation)
            {
             if (this.trackable != null && trackable.existAugmention((AbstractAugmention)currentElement))
                {
@@ -163,7 +161,7 @@ public class PreviewController
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
     public void removeSource(AbstractSource source, IPreviewable currentElement) {
-        if (currentMetaCategory == MetaCategory.Augmention)
+        if (currentMetaCategory == MetaCategory.Augmentation)
         {
             if (this.ew.project.findSource(source).augmentions.Count > 1)
             {
@@ -197,7 +195,7 @@ public class PreviewController
         {
                 this.removeAll();
             }
-        else if (currentMetaCategory == MetaCategory.Augmention && trackable != null)
+        else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null)
         {
             this.trackable.Augmentions.Remove((AbstractAugmention)currentElement);
                 
@@ -234,7 +232,7 @@ public class PreviewController
             ((AbstractTrackable)this.findBox(currentElement).Tag).vector = v;
             this.findBox(currentElement).Location = new Point(v.X, v.Y);
         }
-        else if (currentMetaCategory == MetaCategory.Augmention && trackable != null)
+        else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null)
         {
             ((AbstractAugmention)this.findBox(currentElement).Tag).TranslationVector = v;
             this.findBox(currentElement).Location = new Point(v.X, v.Y);
@@ -359,7 +357,7 @@ public class PreviewController
                 }
             }
         }
-        else if (currentMetaCategory == MetaCategory.Augmention)
+        else if (currentMetaCategory == MetaCategory.Augmentation)
         {
             foreach (Control comp in panel.Controls)
             {

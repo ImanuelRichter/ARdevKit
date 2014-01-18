@@ -7,9 +7,11 @@ using ARdevKit.Controller;
 
 namespace ARdevKit.Controller.EditorController
 {
+    public enum MetaCategory { Source, Augmentation, Trackable }
+
     class SceneElementCategory
     {
-        public enum MetaCategory { Source, Augmentation, Trackable };
+        
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Hält die Kategorie der in den SceneElements enthaltenen IPreviewables. </summary>
