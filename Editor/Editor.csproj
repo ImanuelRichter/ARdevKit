@@ -34,10 +34,6 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MetaioWrapper, Version=0.0.0.0, Culture=neutral, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\bin\Debug\MetaioWrapper.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -54,6 +50,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Project\AbstractDynamic2DAugmention.cs" />
+    <Compile Include="Model\Project\ImageAugmention.cs" />
+    <Compile Include="Model\Project\MarkerFuser.cs" />
+    <Compile Include="Controller\ProjectController\SaveLoadController.cs" />
+    <Compile Include="Model\Project\IDFactory.cs" />
+    <Compile Include="Model\Project\File\AbstractBlock.cs" />
+    <Compile Include="Model\Project\File\ARELGlueFile.cs" />
+    <Compile Include="Model\Project\MarkerlessFuser.cs" />
+    <Compile Include="Model\Project\MarkerSensor.cs" />
+    <Compile Include="Model\Project\File\ARELConfigFile.cs" />
     <Compile Include="Controller\Connections\DeviceConnection\DeviceConnectionController.cs" />
     <Compile Include="Controller\Connections\DeviceConnection\TCPServer.cs" />
     <Compile Include="Controller\Connections\DeviceConnection\UDPServer.cs" />
@@ -66,8 +72,8 @@
     <Compile Include="Controller\ProjectController\ExportVisitor.cs" />
     <Compile Include="Controller\ProjectController\SaveVisitor.cs" />
     <Compile Include="Controller\Connections\DatabaseConnection\DbConnection.cs" />
-    <Compile Include="Model\Project\AbstractAugmentation.cs" />
-    <Compile Include="Model\Project\AbstractDynamic2DAugmentation.cs" />
+    <Compile Include="Model\Project\AbstractAugmention.cs" />
+    <Compile Include="Model\Project\Abstract2DAugmention.cs" />
     <Compile Include="Model\Project\AbstractMarker.cs" />
     <Compile Include="Model\Project\AbstractSource.cs" />
     <Compile Include="EditorWindow.cs">
@@ -82,19 +88,27 @@
     <Compile Include="Model\Project\CustomUserEvent.cs" />
     <Compile Include="Model\Project\DbSource.cs" />
     <Compile Include="Model\Project\FileSource.cs" />
+    <Compile Include="Model\Project\File\AbstractARELFile.cs" />
+    <Compile Include="Model\Project\File\BlockMarker.cs" />
+    <Compile Include="Model\Project\File\JavaScriptBlock.cs" />
+    <Compile Include="Model\Project\File\XMLLine.cs" />
+    <Compile Include="Model\Project\File\JavaScriptLine.cs" />
+    <Compile Include="Model\Project\File\NonTerminatingXMLTag.cs" />
+    <Compile Include="Model\Project\File\XMLBlock.cs" />
+    <Compile Include="Model\Project\File\XMLTag.cs" />
+    <Compile Include="Model\Project\File\TrackingDataFile.cs" />
     <Compile Include="Model\Project\IDMarker.cs" />
     <Compile Include="Model\Project\IPreviewable.cs" />
     <Compile Include="Model\Project\PictureMarker.cs" />
+    <Compile Include="Model\Project\MarkerlessSensor.cs" />
+    <Compile Include="Model\Project\PictureMarkerSensor.cs" />
     <Compile Include="Model\Project\Project.cs" />
+    <Compile Include="Model\Project\AbstractSensor.cs" />
     <Compile Include="Model\Project\Vector3D.cs" />
+    <Compile Include="Model\Project\File\ARELProjectFile.cs" />
+    <Compile Include="Model\Project\Vector3Di.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controller\TestController\TestController.cs" />
-    <Compile Include="TestWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TestWindow.Designer.cs">
-      <DependentUpon>TestWindow.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\AbstractProperty.cs" />
     <Compile Include="View\ElementIcon.cs">
       <SubType>Component</SubType>
@@ -115,9 +129,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="TestWindow.resx">
-      <DependentUpon>TestWindow.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\DataSources\EditorWindow.datasource" />
     <Compile Include="Model\Project\Graph.cs" />
@@ -140,7 +151,18 @@
     <Content Include="Controller\DebugController\foo.txt" />
     <Content Include="Controller\ProjectController\foo.txt" />
     <Content Include="Model\Project\foo.txt" />
-    <None Include="Resources\PreviewDummy.jpg" />
+    <None Include="Resources\ARRMarker%28small%29.bmp" />
+    <None Include="Resources\ARMarker%28small%29.bmp" />
+    <None Include="Resources\sourcePreview%28small%29.bmp" />
+    <None Include="Resources\PieChart%28small%29.bmp" />
+    <None Include="Resources\FileSource%28small%29.bmp" />
+    <None Include="Resources\FileSource%28normal%29.bmp" />
+    <None Include="Resources\coordinationAxis%28small%29.bmp" />
+    <None Include="Resources\sourcePreview%28normal%29.bmp" />
+    <None Include="Resources\coordinationAxis%28normal%29.bmp" />
+    <None Include="Resources\PieChart%28normal%29.bmp" />
+    <None Include="Resources\ARRMarker%28normal%29.bmp" />
+    <None Include="Resources\ARMarker%28normal%29.bmp" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

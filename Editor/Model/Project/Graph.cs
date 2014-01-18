@@ -3,27 +3,43 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace ARdevKit.Model.Project
 {
-    class Graph : AbstractDynamic2DAugmentation 
+    /// <summary>
+    /// 
+    /// </summary>
+    [Serializable]
+    public abstract class Graph : AbstractDynamic2DAugmention 
     {
-        private int maxValue;
-        private int minValue;
-        private int scaling;
+        /// <summary>
+        /// Gets or sets the maximum value.
+        /// </summary>
+        /// <value>
+        /// The maximum value.
+        /// </value>
+        public int MaxValue {get; set;}
+        /// <summary>
+        /// Gets or sets the minimum value.
+        /// </summary>
+        /// <value>
+        /// The minimum value.
+        /// </value>
+        public int MinValue { get; set; }
+        /// <summary>
+        /// Gets or sets the scaling.
+        /// </summary>
+        /// <value>
+        /// The scaling.
+        /// </value>
+        public int Scaling { get; set; }
 
-        public override void accept(Controller.ProjectController.AbstractProjectVisitor visitor)
+        private string graphPath;
+        public string GraphPath
         {
-            throw new NotImplementedException();
-        }
-
-        public override List<View.AbstractProperty>  getPropertyList()
-        {
-            throw new NotImplementedException();
-        }
-        public override System.Drawing.Bitmap getPreview()
-        {
-            throw new NotImplementedException();
+            get { return graphPath; }
+            set { graphPath = value; }
         }
     }
 }

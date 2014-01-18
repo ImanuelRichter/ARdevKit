@@ -8,9 +8,10 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Model.Project
 {
-    interface IPreviewable
+    public interface IPreviewable
     {
         Bitmap getPreview();
         List<AbstractProperty> getPropertyList();
+        Bitmap getIcon();
     }
 }

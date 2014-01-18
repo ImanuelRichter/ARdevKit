@@ -4,10 +4,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace ARdevKit.Model.Project
 {
-    class DbSource : AbstractSource
+    /// <summary>
+    /// 
+    /// </summary>
+    [Serializable]
+    public class DbSource : AbstractSource
     {
         private DbConnection connection;
 
@@ -21,9 +26,14 @@ namespace ARdevKit.Model.Project
             throw new NotImplementedException();
         }
 
-        public override System.Drawing.Bitmap getPreview()
+        public override Bitmap getPreview()
         {
-            throw new NotImplementedException();
+            return Properties.Resources.sourcePreview_normal_;
+        }
+
+        public override Bitmap getIcon()
+        {
+            return Properties.Resources.sourcePreview_small_;
         }
     }
 }

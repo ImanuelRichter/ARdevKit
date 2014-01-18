@@ -23,6 +23,11 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
         /// <param name="index">    Zero-based index of the. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+        public DeviceConnectionController(EditorWindow ew)
+        {
+            throw new NotImplementedException();
+        }
+
         public void connectToDevice(int index)
         {
             throw new NotImplementedException();

@@ -1,25 +1,10 @@
 ARdevKit
 ========
 
-
-Install Guide:
+ARdevKitPlayer
 ==============
 
-After cloning/forking the repository, please downlaod the metaioSDK 5.0 (free) from this site 
-
-http://dev.metaio.com/
-
-and install it. Go to the install folder of the SDK, then to _Windows -> metaioSDK -> bin and copy all the files in the 
-project folder bin/Debug/ (you may create the folders manually first, if you haven't tried to debug the project yet).
-
-After that you should be able to compile and debug the project.
-
-
-
-
-
-
-
+To test the created projects use <a href=https://github.com/Firebusa/ARdevKitPlayer>ARdevKitPlayer</a>
 
 BUG with Visual Studio:
 ======================

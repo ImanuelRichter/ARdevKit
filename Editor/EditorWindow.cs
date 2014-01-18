@@ -63,27 +63,11 @@ namespace ARdevKit
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
-        /// New process for the player.
+        /// The path of the current project
         /// </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        private Process player = new Process();
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// ATTENTION! HARDCODED FOR TEST PURPOSES! Full pathname of the player file.
-        /// </summary>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        private string playerPath = "D:\\Dropbox\\dev\\ARdevKit - Player\\bin\\Debug\\Player.exe";
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// ATTENTION! HARDCODED FOR TEST PURPOSES! Full pathname of the project file.
-        /// </summary>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        private string projectPath = "D:\\Dropbox\\dev\\ARdevKit - Player\\res";
+        private string projectPath;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
@@ -113,6 +97,14 @@ namespace ARdevKit
         {
             get { return previewController; }
         }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the project. </summary>
+        ///
+        /// <value> The project. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public Project project { get; set; }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
@@ -269,38 +261,6 @@ namespace ARdevKit
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
-        /// Gets or sets the process for the player.
-        /// </summary>
-        ///
-        /// <value>
-        /// The process for the player.
-        /// </value>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        public Process Player
-        {
-            get { return player; }
-            set { player = value; }
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Gets or sets the full pathname of the player file.
-        /// </summary>
-        ///
-        /// <value>
-        /// The full pathname of the player file.
-        /// </value>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        public string PlayerPath
-        {
-            get { return playerPath; }
-            set { playerPath = value; }
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
         /// Gets or sets the full pathname of the project file.
         /// </summary>
         ///
@@ -325,6 +285,7 @@ namespace ARdevKit
         {
             InitializeComponent();
             allElements = new LinkedList<IPreviewable>();
+            this.project = new Project();
             elementCategories = new List<SceneElementCategory>();
             registerElements();
             previewController = new PreviewController(this);
@@ -388,7 +349,10 @@ namespace ARdevKit
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         private void tsm_editor_menu_test_startImage_Click(object sender, EventArgs e)
         {
+            if (projectPath == null)
             TestController.StartWithImage();
+            else
+                TestController.StartWithImage(projectPath);
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -402,7 +366,10 @@ namespace ARdevKit
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         private void tsm_editor_menu_test_startVideo_Click(object sender, EventArgs e)
         {
+            if (projectPath == null)
             TestController.StartWithVideo();
+            else
+                TestController.StartWithVideo(projectPath);
         }
         
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -417,7 +384,109 @@ namespace ARdevKit
 
         private void tsm_editor_menu_test_startWithVirtualCamera_Click(object sender, EventArgs e)
         {
+            if (projectPath == null)
             TestController.StartWithVirtualCamera();
+            else
+                TestController.StartWithVirtualCamera(projectPath);
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        ///     Event handler. This eventHandler is to change the choosen scene from the
+        ///     SceneSelectionPanel. The handler will load an existent scene, which was created in the
+        ///     past. If you change the scene from a new created scene, which is empty this scene will be
+        ///     delete.
+        /// </summary>
+        ///
+        /// <remarks>   Lizzard, 1/16/2014. </remarks>
+        ///
+        /// <param name="sender">   Source of the event. </param>
+        /// <param name="e">        Event information. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private void btn_editor_scene_scene_change(object sender, EventArgs e)
+        {
+            if (this.previewController.trackable == null && this.project.Trackables.Count > 1)
+            {
+                this.updateSceneSelectionPanel();
+        }
+
+            int temp = Convert.ToInt32(((Button)sender).Text);
+            this.previewController.reloadPreviewPanel(temp - 1);
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        ///     Event handler. This eventHandler is to add a scene to the SceneSelectionPanel. This
+        ///     funktion adds a new Button to the SceneSelectionPanel and set a new Scene to the
+        ///     PreviewPanel.
+        /// </summary>
+        ///
+        /// <remarks>   Lizzard, 1/16/2014. </remarks>
+        ///
+        /// <param name="sender">   Source of the event. </param>
+        /// <param name="e">        Event information. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private void btn_editor_scene_scene_new(object sender, EventArgs e)
+        {
+            if (this.project.Trackables.Count < 10)
+            {
+                if (this.previewController.trackable != null)
+                {
+                    Button tempButton = new Button();
+                    tempButton.Location = new System.Drawing.Point(54 + (52 * project.Trackables.Count), 34);
+                    tempButton.Name = "btn_editor_scene_scene_" + (this.project.Trackables.Count + 1);
+                    tempButton.Size = new System.Drawing.Size(46, 45);
+                    tempButton.TabIndex = 1;
+                    tempButton.Text = Convert.ToString(this.project.Trackables.Count + 1);
+                    tempButton.UseVisualStyleBackColor = true;
+                    tempButton.Click += new System.EventHandler(this.btn_editor_scene_scene_change);
+
+                    this.pnl_editor_szenes.Controls.Add(tempButton);
+                    this.previewController.reloadPreviewPanel(this.project.Trackables.Count);
+                }
+                else
+                {
+                    MessageBox.Show("You can't open a new Scene when your current scene is empty");
+                }
+            }
+            else
+            {
+                MessageBox.Show("You can't add more than 10 Scenes!");
+            }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        ///     Event handler. This eventHandler is to remove a scene from the SceneSelectionPanel. This
+        ///     Functions clean the scene, if there is only one scene, else the funktion removes the
+        ///     panel and set scene 1 to the current scene.
+        /// </summary>
+        ///
+        /// <remarks>   Lizzard, 1/16/2014. </remarks>
+        ///
+        /// <param name="sender">   Source of the event. </param>
+        /// <param name="e">        Event information. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private void btn_editor_scene_scene_remove(object sender, EventArgs e)
+        {
+            if (this.project.Trackables.Count > 1)
+            {
+                this.project.Trackables.Remove(this.previewController.trackable);
+                this.previewController.trackable = this.project.Trackables[0];
+                this.updateSceneSelectionPanel();
+                MessageBox.Show("You've delete this scene! You're now in Scene 1");
+                this.previewController.index = 0;
+            }
+            else
+            {
+                this.project.Trackables[0] = null;
+                this.previewController.currentMetaCategory = PreviewController.MetaCategory.Trackable;
+                this.previewController.removePreviewable(this.previewController.trackable);
+                MessageBox.Show("You've cleaned this scene!");
+            }
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -504,9 +573,18 @@ namespace ARdevKit
             //TODO: implement updateElementSelectionPanel()
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        ///     This functions Updates the scene PreviewPanel. Alle elements will be removed and
+        ///     all current elements will add again to the panel.
+        /// </summary>
+        ///
+        /// <remarks>   Lizzard, 1/16/2014. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
         public void updatePreviewPanel()
         {
-            //TODO: implement updatePreviewPanel()
+            this.previewController.updatePreviewPanel();
         }
 
         internal void updatePropertyPanel(IPreviewable selectedElement)
@@ -514,9 +592,41 @@ namespace ARdevKit
             //TODO: implement updatePropertyPanel(IPreviewable selectedElement)
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        ///     This functions Updates the scene SceneSelectionPanel. Alle elements will be removed and
+        ///     all current elements will add again to the panel.
+        /// </summary>
+        ///
+        /// <remarks>   Lizzard, 1/16/2014. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
         public void updateSceneSelectionPanel()
         {
-            //TODO: implement updateSceneSelectionPanel()
+            for (int i = 0; i < this.project.Trackables.Count; i++)
+            {
+                if (this.project.Trackables[i] == null)
+                {
+                    this.project.Trackables.Remove(this.project.Trackables[i]);
+                }
+            }
+
+            this.pnl_editor_szenes.Controls.Clear();
+            this.pnl_editor_szenes.Controls.Add(this.btn_editor_scene_new);
+            this.pnl_editor_szenes.Controls.Add(this.btn_editor_scene_delete);
+
+            for (int i = 0; i < this.project.Trackables.Count; i++)
+            {
+                Button tempButton = new Button();
+                tempButton.Location = new System.Drawing.Point(54 + (i * 52), 34);
+                tempButton.Name = "btn_editor_scene_scene_" + (this.project.Trackables.Count + 1);
+                tempButton.Size = new System.Drawing.Size(46, 45);
+                tempButton.Text = Convert.ToString(i + 1);
+                tempButton.UseVisualStyleBackColor = true;
+                tempButton.Click += new System.EventHandler(this.btn_editor_scene_scene_change);
+
+                this.pnl_editor_szenes.Controls.Add(tempButton);
+            }
         }
 
         public void updateStatusBar()

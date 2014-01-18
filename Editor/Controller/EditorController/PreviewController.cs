@@ -10,10 +10,9 @@ using System.Collections;
 using ARdevKit;
 using ARdevKit.Controller.EditorController;
 using MetaCategory = ARdevKit.Controller.EditorController.SceneElementCategory.MetaCategory ;
+using ARdevKit.Model.Project;
 
-
-
-    class PreviewController 
+public class PreviewController
     {
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   The MetaCategory of the current element. </summary>
@@ -21,15 +20,10 @@ using MetaCategory = ARdevKit.Controller.EditorController.SceneElementCategory.M
         public MetaCategory currentMetaCategory { get; set; }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   The MetaCategory of the over element. </summary>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        public MetaCategory overMetaCategory { get; set; }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   The Trackable which hold the Augmentations and Sources. </summary>
+    /// <summary>   The Trackable which hold the Augmentions and Sources. </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        private AbstractTrackable trackable;
+    public AbstractTrackable trackable { get; set; }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   The PreviewPanel which we need to add Previewables. </summary>
@@ -37,14 +31,12 @@ using MetaCategory = ARdevKit.Controller.EditorController.SceneElementCategory.M
         private Panel panel;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   The Dictionary which hold the PictureBoxes and the Keys of Objekts. </summary>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        private Dictionary<IPreviewable, PictureBox> dic { get; set; }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   EditorWindow Instanz </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         private EditorWindow ew;
+
+    /// <summary>   The Index which Trackable out of Project we musst use </summary>
+    public int index;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Constructor. </summary>
@@ -56,11 +48,10 @@ using MetaCategory = ARdevKit.Controller.EditorController.SceneElementCategory.M
         {
             this.ew = ew;
             this.panel = this.ew.Pnl_editor_preview;
-            this.trackable = null;
-            this.dic = null;
             this.currentMetaCategory = new MetaCategory();
-            this.overMetaCategory = new MetaCategory();
-            
+        this.index = 0;
+        this.trackable = null;
+        this.ew.project.Trackables.Add(trackable);
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -72,9 +63,10 @@ using MetaCategory = ARdevKit.Controller.EditorController.SceneElementCategory.M
         /// <param name="p">    The Panel to process. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        [Obsolete("addPreviewable(IPreviewable p) : eache IPreviewable needs a Vector where the new Previewable should sit in the panel"
-            + "you should use addPreviewable(IPreviewable currentElement, Vector3d v) for Augmentations & Trackables", true)]
-        public /*File*/void addPreviewAble(IPreviewable p)
+    [Obsolete("addPreviewable(IPreviewable p) : eache IPreviewable needs a Vector where the new" 
+                + "Previewable should sit in the panel you should use addPreviewable(IPreviewable"
+                + "currentElement, Vector3d v) for Augmentions & Trackables", true)]
+    public void addPreviewAble(IPreviewable p)
              { throw new NotImplementedException(); }
 
 
@@ -84,122 +76,132 @@ using MetaCategory = ARdevKit.Controller.EditorController.SceneElementCategory.M
         ///     Trackable.
         /// </summary>
         ///
+    /// <summary>   currentMetaCategory musst set to Trackable/Augmention</summary>
+    ///
         /// <param name="currentTrackable"> The current Trackable, which should set in the previewPanel. </param>
         /// <param name="v">                The Vector3D to set the Trackable. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         public void addPreviewable(IPreviewable currentElement, Vector3D v) 
         {
-                if(currentMetaCategory == MetaCategory.Trackable && trackable == null) {        
-                    PictureBox tempBox = new PictureBox();
-                    tempBox.Location = new Point(v.x, v.y);
-                    tempBox.Image = (Image) currentElement.getPreview();            
-                    tempBox.Size = currentElement.getPreview().Size;
+        if (currentMetaCategory == MetaCategory.Trackable && trackable == null)
+        {                                                                           
+            //set the vector to the trackable
                     ((AbstractTrackable)currentElement).vector = v;
-                    tempBox.Tag = (AbstractTrackable) currentElement;
+            this.trackable = (AbstractTrackable)currentElement;
+            this.ew.project.Trackables[index] = (AbstractTrackable)currentElement;
                     
-                    panel.Controls.Add(tempBox);
-                    trackable = (AbstractTrackable) currentElement;
-                    dic.Add(currentElement, tempBox);
-                    
-                
-            
+            this.addPictureBox(currentElement, v);
                 }
-                else if(currentMetaCategory == MetaCategory.Augmentation && trackable != null) {
                     
-                    trackable.addAugmentation((AbstractAugmentation) currentElement);
+        else if (currentMetaCategory == MetaCategory.Augmention && trackable != null)
+        {
+            //set the vector and the trackable in Augmention
+            ((AbstractAugmention)currentElement).TranslationVector = v;                                      
+            ((AbstractAugmention)currentElement).Trackable = this.trackable;
                    
-                    PictureBox tempBox = new PictureBox();
+            //set references 
+            trackable.Augmentions.Add((AbstractAugmention)currentElement);
            
-                    tempBox.Image = (Image) currentElement.getPreview();            
-                    tempBox.Size = currentElement.getPreview().Size;
-                    tempBox.Location = new Point(v.x, v.y);
-                    ((AbstractAugmentation)currentElement).vector = v;
-                    tempBox.Tag = (AbstractAugmentation) currentElement;
+            this.addPictureBox(currentElement, v);
                     
-                    this.panel.Controls.Add(tempBox);
-                    dic.Add(currentElement, tempBox);
-                    trackable.addAugmentation((AbstractAugmentation) currentElement);
+            //set the new box to the front
+            this.findBox(currentElement).BringToFront();
                 }
 
-                else {
-                    //TODO ERROR WINDOW NOT ALLOWED.
+        else
+        {
+            MessageBox.Show("More than one Trackable & three Augmentions are not allowed!");
                 }
-
-                currentMetaCategory = new MetaCategory();
             }
        
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
-        ///     add Source or Augmentation, this method can only be used with the element, which is the
-        ///     over element by augmentation the overelement is Trackable. by Source the overelement is
-        ///     Augmentation.
+    ///     add Source or Augmention, this method can only be used with the element, which is the
+    ///     over element by Augmention the overelement is Trackable. by Source the overelement is
+    ///     Augmention.
         /// </summary>
         ///
+    /// <summary>   currentMetaCategory musst set to Augmention</summary>
+    ///
         /// <param name="currentElement">   The current element. </param>
         /// <param name="overElement">      The over element. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-       public void addSource(AbstractSource source, IPreviewable overElement)
+    public void addSource(AbstractSource source, IPreviewable currentElement)
        {
-           if (currentMetaCategory == MetaCategory.Source && overMetaCategory == MetaCategory.Augmentation)
+        if (currentMetaCategory == MetaCategory.Augmention)
            {
-               if (!trackable.isAugmentionFull() && (trackable.findAugmentation((AbstractAugmentation)overElement) != -1))
+            if (this.trackable != null && trackable.existAugmention((AbstractAugmention)currentElement))
                {
-                   //fügt neue Source in Trackable ein
-                   AbstractAugmentation[] aug = this.trackable.augmentations;
-                   aug[trackable.findAugmentation((AbstractAugmentation)overElement)].source = source;
-                   this.trackable.augmentations = aug;
+                //set reference to the augmentions in Source
+                source.augmentions.Add((Abstract2DAugmention)currentElement);
 
-                   //search the linked PictureBox out of Dictionary, replace the Tag with the new Augmentation and replace the Picturebox in Panel
-                   PictureBox temp;
-                   this.dic.TryGetValue(overElement, out temp);
-                   this.panel.Controls.Remove(temp);
-
-                   temp.Tag = aug[trackable.findAugmentation((AbstractAugmentation)overElement)];
-                   this.dic.Remove(overElement);
-                   this.dic.Add((IPreviewable)aug[trackable.findAugmentation((AbstractAugmentation)overElement)], temp);
-                   this.panel.Controls.Add(temp);
-
-                   this.dic.TryGetValue((IPreviewable)trackable, out temp);
-                   this.panel.Controls.Remove(temp);
-                   temp.Tag = trackable;
-                   this.dic.Remove(trackable);
-                   this.dic.Add((IPreviewable)trackable, temp);
-
-                   this.panel.Controls.Add(temp);
-               }
-           }
-            else{
-                //TODO Throw WindowException Trackable can't be used here.
+                //add references in Augmention, Picturebox + project.sources List.
+                ((AbstractDynamic2DAugmention)this.findBox((AbstractAugmention)currentElement).Tag).source = source;
+                this.ew.project.Sources.Add(((AbstractDynamic2DAugmention)this.findBox((AbstractAugmention)currentElement).Tag).source);
             }
+        }
+        else
+        {
+            MessageBox.Show("ERROR in addSource()");
+        }
+    }
 
-            currentMetaCategory = new MetaCategory();
-            overMetaCategory = new MetaCategory();
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>
+    ///     Removes the choosen Source out of the Augmention and also out of the sourcesList in
+    ///     Project.
+    /// </summary>
+    ///
+    /// <summary>   currentMetaCategory musst set to Augmention </summary>
+    /// 
+    /// <remarks>   Lizzard, 1/15/2014. </remarks>
+    ///
+    /// <param name="source">           Source for the. </param>
+    /// <param name="currentElement">   The current element. </param>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public void removeSource(AbstractSource source, IPreviewable currentElement) {
+        if (currentMetaCategory == MetaCategory.Augmention)
+        {
+            if (this.ew.project.findSource(source).augmentions.Count > 1)
+            {
+                ((AbstractDynamic2DAugmention)currentElement).source = null;
+                this.ew.project.findSource(source).augmentions.Remove((Abstract2DAugmention)currentElement);
+               }
+            else if (this.ew.project.findSource(source).augmentions.Count == 1)
+            {
+                ((AbstractDynamic2DAugmention)currentElement).source = null;
+                this.ew.project.Sources.Remove(source);
+           }
+            }
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Removes the Previewable and the Objekt, what is linked to the Previewable. </summary>
         ///
-        /// <param name="p">    The p control. </param>
-        /// <param name="prev"> The previous. </param>
+    /// <summary>   currentMetaCategory musst set to Trackable/Augmention</summary>
+    /// 
+    /// <remarks>   Lizzard, 1/16/2014. </remarks>
+    ///
+    /// <param name="currentElement">   The current element. </param>
+    ///
+    /// ### <param name="p">    The p control. </param>
+    /// ### <param name="prev"> The previous. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public void removePreviewable(IPreviewable currentElement) {
-            if(currentMetaCategory == MetaCategory.Trackable && trackable == null) {
+    public void removePreviewable(IPreviewable currentElement)
+    {
+        if (currentMetaCategory == MetaCategory.Trackable && trackable != null)
+        {
                 this.removeAll();
             }
-            else if(currentMetaCategory == MetaCategory.Augmentation && trackable != null) {
-                this.trackable.removeAugmentation((AbstractAugmentation) currentElement);
+        else if (currentMetaCategory == MetaCategory.Augmention && trackable != null)
+        {
+            this.trackable.Augmentions.Remove((AbstractAugmention)currentElement);
                 
-                PictureBox temp;
-                this.dic.TryGetValue(currentElement, out temp);
-                
-                this.panel.Controls.Remove(temp);
-                this.dic.Remove(currentElement);
-            }
-            else{
-                //TODO Messagebox
+            this.panel.Controls.Remove(this.findBox((AbstractAugmention)currentElement));
             }
         }
 
@@ -207,75 +209,168 @@ using MetaCategory = ARdevKit.Controller.EditorController.SceneElementCategory.M
         /// <summary>  Removes all Elements from the PreviewPanel and clear all lists and dictionarys </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        private void removeAll() {
+    private void removeAll()
+    {
             this.panel.Controls.Clear();
-            this.dic.Clear();
             this.trackable = null;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
-        ///     Move the Trackable whith all connected augmentations &amp; sources to the new vector-
+    ///     Move the Trackable whith all connected Augmentions &amp; sources to the new vector-
         ///     position.
         /// </summary>
         ///
+    /// <summary>   currentMetaCategory musst set to Trackable/Augmention</summary>
+    ///
         /// <param name="currentTrackable"> The current Trackable, which should set in the previewPanel. </param>
         /// <param name="v">                The Vector3D to move the Trackable. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         public void moveElement(IPreviewable currentElement, Vector3D v)
         {
-                 PictureBox temp;
-                 this.dic.TryGetValue(currentElement, out temp);
-                 this.panel.Controls.Remove(temp);
-                 temp.Location = new Point(v.x, v.y);
+        if (currentMetaCategory == MetaCategory.Trackable && trackable != null)
+        {
+            ((AbstractTrackable)this.findBox(currentElement).Tag).vector = v;
+            this.findBox(currentElement).Location = new Point(v.X, v.Y);
+        }
+        else if (currentMetaCategory == MetaCategory.Augmention && trackable != null)
+        {
+            ((AbstractAugmention)this.findBox(currentElement).Tag).TranslationVector = v;
+            this.findBox(currentElement).Location = new Point(v.X, v.Y);
+        }
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>    (This method is obsolete) updates the preview panel. </summary>
+    ///
+    /// <exception cref="NotImplementedException"> Thrown when the requested operation is
+    /// unimplemented. </exception>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
                  
-                 if(currentMetaCategory == MetaCategory.Trackable) {
-                         ((AbstractTrackable)temp.Tag).vector = v;
+    public void updatePreviewPanel()
+    {
+            this.panel.Controls.Clear();
+            this.ew.project.Trackables.Add(trackable);
                  }
-                 else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null){
-                         ((AbstractAugmentation)temp.Tag).vector = v;
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   This Reload funktion is here to load a other Trackable out of the Project. </summary>
+    ///
+    /// <remarks>   Lizzard, 1/15/2014. </remarks>
+    ///
+    /// <param name="index">    The Index which Trackable out of Project we musst use. </param>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public void reloadPreviewPanel(int index)
+    {
+        //if it's the same Scene do nothing
+        if (index == this.index)
+        {
+            MessageBox.Show("You've choosen the same Scene");
                  }
+        //if it's a scene which exists reload scene
+        else if (index < this.ew.project.Trackables.Count)
+        {
+            MessageBox.Show("Scene No. " + (index + 1) + " will be load");
                  
-                 this.panel.Controls.Add(temp);
-                 this.currentMetaCategory = new MetaCategory();
+            this.index = index;
+            this.trackable = this.ew.project.Trackables[index];
+            this.panel.Controls.Clear();
+            if (trackable != null)
+            {
+                this.addAllToPanel(this.ew.project.Trackables[index]);
+            }
+        }
+        //if the scene is new create a new empty scene
+        else if (index >= this.ew.project.Trackables.Count)
+        {
+            MessageBox.Show("You've choosen a new Scene! gl & hf");
+            this.index = index;
+            this.trackable = null;
+            this.panel.Controls.Clear();
+            this.ew.project.Trackables.Add(trackable);
+        }
         }
 
        ////////////////////////////////////////////////////////////////////////////////////////////////////
        /// <summary>
-       ///  Reloads all Variables which we need for the other funktions. this Method is here to open a
-       ///  saved Panel.
+    ///     Add all existent Objects of the trackable in the Panel, this funktion is exists for change
+    ///     the trackable.
        /// </summary>
        ///
-       /// <remarks>    Lizzard, 1/13/2014. </remarks>
+    /// <remarks>   Lizzard, 1/15/2014. </remarks>
        ///
-       /// <param name="p"> The Panel to process. </param>
+    /// <param name="trackable">    The Trackable which hold the Augmentions and Sources. </param>
        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-       public void reloadPanel(Panel p) {
-           this.trackable = null;
-           this.dic = new Dictionary<IPreviewable,PictureBox>();
-
-           foreach (Control comp in p.Controls)
+    private void addAllToPanel(AbstractTrackable trackable)
+    {
+        if (trackable.Augmentions.Count > 0)
+        {
+            foreach( AbstractAugmention aug in trackable.Augmentions)
            {
-               this.dic.Add((IPreviewable)((PictureBox)comp.Tag), (PictureBox)comp);
-                if(comp.Tag.GetType() == trackable.GetType()) {
-                    trackable = (AbstractTrackable)comp.Tag;
+                this.addPictureBox(aug, aug.TranslationVector);
+            }
                 }
+        this.addPictureBox(trackable, trackable.vector);
            }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   Adds a PictureBox with for the currentElement to the aktuell Scene. </summary>
+    ///
+    /// <remarks>   Lizzard, 1/17/2014. </remarks>
+    ///
+    /// <param name="prev">     The previous. </param>
+    /// <param name="vector">   The vector. </param>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    private void addPictureBox(IPreviewable prev, Vector3D vector)
+    {
+        PictureBox tempBox;
+        tempBox = new PictureBox();
+        tempBox.Location = new Point(vector.X, vector.Y);
+        tempBox.Image = (Image)prev.getPreview();
+        tempBox.Size = new Size(prev.getPreview().Height / 4, prev.getPreview().Width / 4);
+        tempBox.SizeMode = PictureBoxSizeMode.StretchImage;
+        tempBox.Tag = prev;
+
+        this.panel.Controls.Add(tempBox);
+
       }
 
        ////////////////////////////////////////////////////////////////////////////////////////////////////
-       /// <summary>    (This method is obsolete) updates the preview panel. </summary>
+    /// <summary>   Searchs in the Panel for the important PictureBox and gives this box back. </summary>
+    ///
+    /// <param name="prev"> The previous. </param>
        ///
-       /// <exception cref="NotImplementedException"> Thrown when the requested operation is
-       /// unimplemented. </exception>
+    /// <returns>   The found box. </returns>
        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        [Obsolete("updatePreviewPanel() : don't need is funktion", true)]
-       public void updatePreviewPanel()
+    private PictureBox findBox(IPreviewable prev)
+    {
+        if (currentMetaCategory == MetaCategory.Trackable)
+        {
+            foreach (Control comp in panel.Controls)
+            {
+                if (comp.Tag == (AbstractTrackable)prev)
+                {
+                    return (PictureBox)comp;
+                }
+            }
+        }
+        else if (currentMetaCategory == MetaCategory.Augmention)
+        {
+            foreach (Control comp in panel.Controls)
+            {
+                if (comp.Tag == (AbstractAugmention)prev)
        {
-           throw new NotImplementedException(); 
+                    return (PictureBox)comp;
+                }
+            }
+        }
+        return null;
        }
+
  }
 

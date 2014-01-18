@@ -10,89 +10,95 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Model.Project
 {
-    abstract class AbstractTrackable : ISerializable, IPreviewable
+    [Serializable]
+    public abstract class AbstractTrackable : IPreviewable//, ISerializable 
     {
-        private String sensorID;
-        private String sensorSubType;
-        private String sensorType;
-        public Vector3D vector { get; set; }
-        public AbstractAugmentation[] augmentations { get; set; }
-
-        public abstract void accept(AbstractProjectVisitor visitor);
-
-        public Bitmap getPreview()
+        protected MarkerFuser fuser;
+        public MarkerFuser Fuser
         {
-            throw new NotImplementedException();
+            get { return fuser; }
+            set { fuser = value; }
         }
+
+        /// <summary>
+        /// The sensor cos identifier
+        /// </summary>
+        protected string sensorCosID;
+        /// <summary>
+        /// Gets or sets the sensor cos identifier.
+        /// </summary>
+        /// <value>
+        /// The sensor cos identifier.
+        /// </value>
+        public string SensorCosID
+        {
+            get { return sensorCosID; }
+            set { sensorCosID = value; }
+        }
+
+        private double similarityThreshold = 0.7;
+        protected double SimilarityThreshold
+        {
+            get { return similarityThreshold; }
+            set { similarityThreshold = value; }
+        }
+
+        public Vector3D vector { get; set; }
+        public List<AbstractAugmention> Augmentions { get; set; }
+
+        public abstract void Accept(AbstractProjectVisitor visitor);
+
+        public abstract Bitmap getPreview();
+
+        public abstract Bitmap getIcon();
 
         public abstract List<AbstractProperty> getPropertyList();
 
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AbstractTrackable"/> class.
+        /// With no trackables associated.
+        /// </summary>
+        public AbstractTrackable()
+        {
+            this.Augmentions = new List<AbstractAugmention>();
+        }
+
+        /// <summary>
+        ///     Is needed for Custom Serialization. And provides the Serializer with the needed information
+        /// </summary>
+        /// <param name="info">Serialization Information, which is modified to encapsulate the things to save</param>
+        /// <param name="context">describes aim and source of a serialized stream</param>
+        [Obsolete("GetObjectData is obsolete, serialization is done without customization.")]
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             throw new NotImplementedException();
         }
-
-        public bool isAugmented()
+        /// <summary>
+        /// Finds the augmention, which is associated with this <see cref="AbstractTrackable"/>.
+        /// </summary>
+        /// <param name="a">the IPreviewable, which is searched for</param>
+        /// <returns>the augmention which is found, otherwise null </returns>
+        public AbstractAugmention FindAugmention(IPreviewable a)
         {
-            for (int i = 0; i < augmentations.Length; i++)
+            return this.Augmentions[this.Augmentions.IndexOf((AbstractAugmention)a)];
+        }
+        /// <summary>
+        /// Checks if the augmention is associated with this <see cref="AbstractTrackable"/>.
+        /// </summary>
+        /// <param name="a">the IPreviewable, which is checked existence for</param>
+        /// <returns>true, if its associated with this <see cref="AbstractTrackable"/>
+        ///          false, else</returns>
+        public bool existAugmention(IPreviewable a)
+        {
+            foreach (AbstractAugmention aug in Augmentions)
             {
-                if (augmentations[i] != null)
+                if (aug == (AbstractAugmention)a)
                 {
-                    return false;
+                    return true;
                 }
             }
-            return true;
-        }
-
-        public void addAugmentation(AbstractAugmentation augmentation)
-        {
-            for (int i = 0; i < augmentations.Length; i++)
-            {
-                if (augmentations[i] == null)
-                {
-                    augmentations[i] = augmentation;
-                    return;
-                }
-            }
-            throw new NotSupportedException("There are already 3 augmentations connected to this trackable.");
-        }
-
-        public void removeAugmentation(AbstractAugmentation augmentation)
-        {
-            for (int i = 0; i < augmentations.Length; i++)
-            {
-                if (augmentations[i] == augmentation)
-                {
-                    augmentations[i] = null;
-                    return;
-                }
-            }
-            throw new NotSupportedException("The augmentation which should be removed, could not be found.");
-        }
-
-        public bool isAugmentionFull()
-        {
-            if (augmentations.Length < 3)
-            {
-                return false;
-            }
-
-            else
-            {
-                return true;
-            }
-        }
-
-        public int findAugmentation(AbstractAugmentation a)
-        {
-            for (int i = 0; i < augmentations.Length; i++)
-            {
-                if (augmentations[i] == a)
-                {
-                    return i;
-                }
-            }
-            return -1;
+            return false;
         }
 
     }
