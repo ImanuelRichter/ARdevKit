@@ -15,6 +15,7 @@ namespace ARdevKit.Model.Project
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public class DbSource : AbstractSource
     {
+        /*
         /// <summary>   The connection. </summary>
         private DbConnection connection;
         /// <summary>   Gets or sets the connection. </summary>
@@ -26,6 +27,7 @@ namespace ARdevKit.Model.Project
             get { return connection; }
             set { connection = value; }
         }
+         * */
 
         /// <summary>   Default constructor. </summary>
         public DbSource()

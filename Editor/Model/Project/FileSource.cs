@@ -21,7 +21,7 @@ namespace ARdevKit.Model.Project
         ///
         /// <value> The file source. </value>
         [CategoryAttribute("General")]
-        public string FileSource
+        public string SourceFilePath
         {
             get { return sourceFilePath; }
             set { sourceFilePath = value; }
