@@ -102,11 +102,11 @@ namespace ARdevKit.Controller.EditorController
         /// <param name="icon">     The icon. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public SceneElement(String name, IPreviewable dummy, Bitmap icon, EditorWindow ew)
+        public SceneElement(String name, IPreviewable dummy, EditorWindow ew)
         {
             this.name = name;
             this.dummy = dummy;
-            this.icon = icon;
+            this.icon = dummy.getIcon();
             this.elementIcon = new ElementIcon(this, ew);
         }
 

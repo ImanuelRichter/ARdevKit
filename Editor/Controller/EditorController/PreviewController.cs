@@ -47,9 +47,9 @@ public class PreviewController
             this.ew = ew;
             this.panel = this.ew.Pnl_editor_preview;
             this.currentMetaCategory = new MetaCategory();
-        this.index = 0;
-        this.trackable = null;
-        this.ew.project.Trackables.Add(trackable);
+            this.index = 0;
+            this.trackable = null;
+            this.ew.project.Trackables.Add(trackable);
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////

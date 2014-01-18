@@ -62,11 +62,10 @@
             this.pnl_editor_properties = new System.Windows.Forms.Panel();
             this.cmb_editor_properties_objectSelection = new System.Windows.Forms.ComboBox();
             this.pnl_editor_szenes = new System.Windows.Forms.Panel();
+            this.btn_editor_scene_delete = new System.Windows.Forms.Button();
             this.btn_editor_scene_scene_1 = new System.Windows.Forms.Button();
             this.btn_editor_scene_new = new System.Windows.Forms.Button();
             this.pnl_editor_status = new System.Windows.Forms.Panel();
-            this.btn_editor_scene_delete = new System.Windows.Forms.Button();
-            this.mst_editor_menu.SuspendLayout();
             this.pnl_editor_selection.SuspendLayout();
             this.pnl_editor_properties.SuspendLayout();
             this.pnl_editor_szenes.SuspendLayout();
@@ -309,11 +308,14 @@
             // 
             // pnl_editor_preview
             // 
+            this.pnl_editor_preview.AllowDrop = true;
             this.pnl_editor_preview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_editor_preview.Location = new System.Drawing.Point(141, 27);
             this.pnl_editor_preview.Name = "pnl_editor_preview";
             this.pnl_editor_preview.Size = new System.Drawing.Size(661, 553);
             this.pnl_editor_preview.TabIndex = 2;
+            this.pnl_editor_preview.DragDrop += new System.Windows.Forms.DragEventHandler(this.pnl_editor_preview_DragDrop);
+            this.pnl_editor_preview.DragEnter += new System.Windows.Forms.DragEventHandler(this.pnl_editor_preview_DragEnter);
             // 
             // pnl_editor_properties
             // 
@@ -347,6 +349,16 @@
             this.pnl_editor_szenes.Size = new System.Drawing.Size(661, 114);
             this.pnl_editor_szenes.TabIndex = 2;
             // 
+            // btn_editor_scene_delete
+            // 
+            this.btn_editor_scene_delete.Location = new System.Drawing.Point(611, 34);
+            this.btn_editor_scene_delete.Name = "btn_editor_scene_delete";
+            this.btn_editor_scene_delete.Size = new System.Drawing.Size(45, 45);
+            this.btn_editor_scene_delete.TabIndex = 2;
+            this.btn_editor_scene_delete.Text = "-";
+            this.btn_editor_scene_delete.UseVisualStyleBackColor = true;
+            this.btn_editor_scene_delete.Click += new System.EventHandler(this.btn_editor_scene_scene_remove);
+            // 
             // btn_editor_scene_scene_1
             // 
             this.btn_editor_scene_scene_1.Location = new System.Drawing.Point(54, 34);
@@ -374,16 +386,6 @@
             this.pnl_editor_status.Size = new System.Drawing.Size(1008, 23);
             this.pnl_editor_status.TabIndex = 3;
             // 
-            // btn_editor_scene_delete
-            // 
-            this.btn_editor_scene_delete.Location = new System.Drawing.Point(611, 34);
-            this.btn_editor_scene_delete.Name = "btn_editor_scene_delete";
-            this.btn_editor_scene_delete.Size = new System.Drawing.Size(45, 45);
-            this.btn_editor_scene_delete.TabIndex = 2;
-            this.btn_editor_scene_delete.Text = "-";
-            this.btn_editor_scene_delete.UseVisualStyleBackColor = true;
-            this.btn_editor_scene_delete.Click += new System.EventHandler(this.btn_editor_scene_scene_remove);
-            // 
             // EditorWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -398,8 +400,6 @@
             this.Name = "EditorWindow";
             this.Text = "ARdevKit";
             this.Load += new System.EventHandler(this.Editor_Load);
-            this.mst_editor_menu.ResumeLayout(false);
-            this.mst_editor_menu.PerformLayout();
             this.pnl_editor_selection.ResumeLayout(false);
             this.pnl_editor_properties.ResumeLayout(false);
             this.pnl_editor_szenes.ResumeLayout(false);

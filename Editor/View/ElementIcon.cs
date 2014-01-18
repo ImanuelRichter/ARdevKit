@@ -23,6 +23,16 @@ namespace ARdevKit.View
         private SceneElement element;
 
         /**
+         * <summary>    Gets the element. </summary>
+         *
+         * <value>  The element. </value>
+         */
+
+        public SceneElement Element {
+            get { return element; }
+        }
+
+        /**
          * <summary>    The label that displays the name. </summary>
          */
 
@@ -41,6 +51,17 @@ namespace ARdevKit.View
         private EditorWindow editorWindow;
 
         /**
+         * <summary>    Gets the editor window. </summary>
+         *
+         * <value>  The editor window. </value>
+         */
+
+        public EditorWindow EditorWindow
+        {
+            get { return editorWindow; }
+        }
+
+        /**
          * <summary>    Constructor. Creates the text label and the pictureBox and adds them to the Panel. Adds event handlers. </summary>
          *
          * <remarks>    Robin, 14.01.2014. </remarks>
@@ -51,22 +72,20 @@ namespace ARdevKit.View
         public ElementIcon(SceneElement element, EditorWindow ew) : base()
         {
             this.element = element;
+            this.editorWindow = ew;
             ColumnCount = 1;
             RowCount = 2;
             EventHandler clickHandler=new EventHandler(onClick);
-            DragEventHandler dragEnterHandler = new DragEventHandler(onDragEnter);
-            DragEventHandler dragDropHandler = new DragEventHandler(onDragDrop);
+            MouseEventHandler mouseDownHandler = new MouseEventHandler(onMouseDown);
             Click += clickHandler;
-            DragEnter += dragEnterHandler;
-            DragDrop += dragDropHandler;
+            MouseDown += mouseDownHandler;
 
             label = new Label();
             label.Text = element.ToString();
             label.AutoSize = true;
             label.Anchor = AnchorStyles.None;
             label.Click += clickHandler;
-            label.DragEnter += dragEnterHandler;
-            label.DragDrop += dragDropHandler;
+            label.MouseDown += mouseDownHandler;
 
             picture = new PictureBox();
             picture.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -74,8 +93,7 @@ namespace ARdevKit.View
             picture.ClientSize = new Size(121, 121);
             picture.Image = (Image) MyImage;
             picture.Click += clickHandler;
-            picture.DragEnter += dragEnterHandler;
-            picture.DragDrop += dragDropHandler;
+            picture.MouseDown += mouseDownHandler;
 
             Controls.Add(picture, 0, 0);
             Controls.Add(label, 0, 1);
@@ -93,35 +111,24 @@ namespace ARdevKit.View
 
         public void onClick(object sender, EventArgs e)
         {
-            //TODO
+            int y = editorWindow.Pnl_editor_preview.Height / 2;
+            int x = editorWindow.Pnl_editor_preview.Width / 2;
+            editorWindow.PreviewController.addPreviewable(element.Dummy, new ARdevKit.Model.Project.Vector3D(x, y, 0));
         }
 
         /**
-         * <summary>    Raises the drag event of the panel, label and picturebox. </summary>
+         * <summary>    Raises the mouse down event. Initiates drag&drop. </summary>
          *
-         * <remarks>    Robin, 14.01.2014. </remarks>
+         * <remarks>    Robin, 18.01.2014. </remarks>
          *
          * <param name="sender">    Source of the event. </param>
          * <param name="e">         Event information to send to registered event handlers. </param>
          */
 
-        public void onDragEnter(object sender, DragEventArgs e)
+        public void onMouseDown(object sender, EventArgs e)
         {
-            //TODO
-        }
-
-        /**
-         * <summary>    Raises the drag event of the panel, label and picturebox. </summary>
-         *
-         * <remarks>    Robin, 14.01.2014. </remarks>
-         *
-         * <param name="sender">    Source of the event. </param>
-         * <param name="e">         Event information to send to registered event handlers. </param>
-         */
-
-        public void onDragDrop(object sender, DragEventArgs e)
-        {
-            //TODO
+            DataObject o = new DataObject();
+            DoDragDrop(this,DragDropEffects.Move);
         }
     }
 }

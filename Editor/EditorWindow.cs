@@ -25,7 +25,6 @@ using ARdevKit.Controller.EditorController;
 using ARdevKit.Controller.Connections.DeviceConnection;
 using ARdevKit.Controller.TestController;
 using ARdevKit.View;
-using ARdevKit.Controller.EditorController;
 
 namespace ARdevKit
 {
@@ -547,13 +546,13 @@ namespace ARdevKit
         {
             Bitmap dummy=Properties.Resources.PreviewDummy; //TODO: Make preview Bitmaps for all Elements
             SceneElementCategory sources = new SceneElementCategory(MetaCategory.Source, "Sources");
-            sources.addElement(new SceneElement("Database Source", new DbSource(),dummy,this));
-            sources.addElement(new SceneElement("FileSource", new FileSource(""),dummy,this));
+            sources.addElement(new SceneElement("Database Source", new DbSource(),this));
+            sources.addElement(new SceneElement("FileSource", new FileSource(""),this));
             SceneElementCategory augmentations = new SceneElementCategory(MetaCategory.Augmentation, "Augmentations");
-            augmentations.addElement(new SceneElement("Bar Graph", new BarGraph(),dummy,this));
+            augmentations.addElement(new SceneElement("Bar Graph", new BarGraph(),this));
             SceneElementCategory trackables = new SceneElementCategory(MetaCategory.Trackable, "Trackables");
-            trackables.addElement(new SceneElement("Picture Marker",new PictureMarker(""),dummy,this));
-            trackables.addElement(new SceneElement("IDMarker",new IDMarker(1),dummy,this));
+            trackables.addElement(new SceneElement("Picture Marker",new PictureMarker(""),this));
+            trackables.addElement(new SceneElement("IDMarker",new IDMarker(1),this));
             addCategory(trackables);
             addCategory(augmentations);
             addCategory(sources);
@@ -635,15 +634,65 @@ namespace ARdevKit
             //TODO: implement updateStatusBar()
         }
 
+        /**
+         * <summary>    Adds a category to the element categories. </summary>
+         *
+         * <remarks>    Robin, 18.01.2014. </remarks>
+         *
+         * <param name="category">  The category. </param>
+         */
+
         private void addCategory(SceneElementCategory category)
         {
             elementCategories.Add(category);
         }
 
+        /**
+         * <summary>
+         *  Event handler. Called by cmb_editor_selection_toolSelection for selected index changed
+         *  events.
+         * </summary>
+         *
+         * <remarks>    Robin, 18.01.2014. </remarks>
+         *
+         * <param name="sender">    Source of the event. </param>
+         * <param name="e">         Event information. </param>
+         */
+
         private void cmb_editor_selection_toolSelection_SelectedIndexChanged(object sender, EventArgs e)
         {
             elementSelectionController.updateElementSelectionPanel();
             previewController.currentMetaCategory = ((SceneElementCategoryPanel) cmb_editor_selection_toolSelection.SelectedItem).Category.Category;
+        }
+
+        /**
+         * <summary>    Event handler. Called by pnl_editor_preview for drag enter events. </summary>
+         *
+         * <remarks>    Robin, 18.01.2014. </remarks>
+         *
+         * <param name="sender">    Source of the event. </param>
+         * <param name="e">         Drag event information. </param>
+         */
+
+        private void pnl_editor_preview_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Move;
+        }
+
+        /**
+         * <summary>    Event handler. Called by pnl_editor_preview for drag drop events when an element is droped on the preview. </summary>
+         *
+         * <remarks>    Robin, 18.01.2014. </remarks>
+         *
+         * <param name="sender">    Source of the event. </param>
+         * <param name="e">         Drag event information. </param>
+         */
+
+        private void pnl_editor_preview_DragDrop(object sender, DragEventArgs e)
+        {
+            ElementIcon icon = (ElementIcon) e.Data.GetData(typeof(ElementIcon));
+            Point p = pnl_editor_preview.PointToClient(Cursor.Position);
+            icon.EditorWindow.PreviewController.addPreviewable(icon.Element.Dummy, new Vector3D(p.X, p.Y, 0));
         }
     }
 }
