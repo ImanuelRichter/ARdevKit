@@ -44,25 +44,6 @@ namespace ARdevKit.Model.Project
             //set { imageName = value; }
         }
 
-        /// <summary>   The picture marker tracking sensor. </summary>
-        private MarkerlessSensor pictureMarkerTrackingSensor;
-        /// <summary>   Gets or sets the picture marker tracking sensor. </summary>
-        ///
-        /// <value> The picture marker tracking sensor. </value>
-        [Browsable(false)/*CategoryAttribute("General")*/]
-        public MarkerlessSensor PictureMarkerTrackingSensor
-        {
-            get { return pictureMarkerTrackingSensor; }
-            set { pictureMarkerTrackingSensor = value; }
-        }
-
-        public PictureMarker() : base()
-        {
-            type = "PictureMarker";
-            Fuser = new MarkerlessFuser();
-            sensorCosID = IDFactory.createNewSensorCosID(this);
-        }
-
         /// <summary>   Constructor. </summary>
         ///
         /// <param name="imagePath">    Full pathname of the image file. </param>
