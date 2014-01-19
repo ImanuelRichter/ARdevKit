@@ -9,9 +9,14 @@ namespace ARdevKit.Controller.EditorController
 {
     public enum MetaCategory { Source, Augmentation, Trackable }
 
+    /**
+     * <summary>    A category for scene elements. </summary>
+     *
+     * <remarks>    Robin, 19.01.2014. </remarks>
+     */
+
     class SceneElementCategory
     {
-        
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Hält die Kategorie der in den SceneElements enthaltenen IPreviewables. </summary>
@@ -81,10 +86,8 @@ namespace ARdevKit.Controller.EditorController
          *
          * <remarks>    Robin, 14.01.2014. </remarks>
          *
-         * <param name="metaCategory">  Hält die Kategorie der in den SceneElements enthaltenen
-         *                              IPreviewables. </param>
-         * <param name="name">          Hält einen Namen, der die Kategorie beschreibt. Dieser wird in
-         *                              der ComboBox des ElementSelectionPanels angezeigt. </param>
+         * <param name="metaCategory">  Holds the Meta Category of the IPreviewables of this category. </param>
+         * <param name="name">          Holds a name for the category that is shown in the ComboBox. </param>
          */
 
         public SceneElementCategory(MetaCategory metaCategory, String name)

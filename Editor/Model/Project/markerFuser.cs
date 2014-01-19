@@ -16,7 +16,7 @@ namespace ARdevKit.Model.Project
     /// <remarks>   Imanuel, 17.01.2014. </remarks>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     [Serializable]
-    public abstract class MarkerFuser
+    public class MarkerFuser
     {
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Values that represent FuserTypes. </summary>
@@ -87,7 +87,7 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>   Specialised default constructor for use only by derived classes. </summary>
-        protected MarkerFuser()
+        public MarkerFuser()
         {
             ; // missing initialization
         }

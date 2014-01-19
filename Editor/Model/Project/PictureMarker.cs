@@ -52,7 +52,7 @@ namespace ARdevKit.Model.Project
             this.imagePath = imagePath;
             imageName = Path.GetFileName(imagePath);
             type = "PictureMarker";
-            Fuser = new MarkerlessFuser();
+            Fuser = new MarkerFuser();
             sensorCosID = IDFactory.createNewSensorCosID(this);
         }
 

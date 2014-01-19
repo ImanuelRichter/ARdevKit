@@ -15,7 +15,7 @@ namespace ARdevKit.View
      * <remarks>    Robin, 14.01.2014. </remarks>
      */
 
-    class SceneElementCategoryPanel : System.Windows.Forms.FlowLayoutPanel 
+    class SceneElementCategoryPanel : System.Windows.Forms.FlowLayoutPanel
     {
         /**
          * <summary>    The category of the elements in the panel. </summary>
@@ -50,7 +50,7 @@ namespace ARdevKit.View
             Visible = false;
             Size = new Size(0, 0);
             FlowDirection = FlowDirection.TopDown;
-           
+
             this.category = category;
             foreach (SceneElement e in category.SceneElements)
             {
@@ -59,17 +59,40 @@ namespace ARdevKit.View
             WrapContents = false;
         }
 
+        /**
+         * <summary>    Adds ElementIcon to the panel. </summary>
+         *
+         * <remarks>    Robin, 19.01.2014. </remarks>
+         *
+         * <param name="icon">  The icon to add. </param>
+         */
+
         public void add(ElementIcon icon)
         {
             Controls.Add(icon);
         }
+
+        /**
+         * <summary>    Gibt eine Zeichenfolgendarstellung für dieses Steuerelement zurück. </summary>
+         *
+         * <remarks>    Robin, 19.01.2014. </remarks>
+         *
+         * <returns>    Eine <see cref="T:System.String" />-Darstellung des Steuerelements. </returns>
+         */
 
         public override string ToString()
         {
             return category.ToString();
         }
 
-        public string CategoryName{
+        /**
+         * <summary>    Gets the name of the category. </summary>
+         *
+         * <value>  The name of the category. </value>
+         */
+
+        public string CategoryName
+        {
             get { return category.Name; }
         }
     }

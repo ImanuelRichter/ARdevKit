@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.ComponentModel;
+using System.Collections;
 
 namespace ARdevKit.Model.Project
 {
@@ -48,12 +49,14 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// A list of all customUserEvents the current selected Element has.
         /// </summary>
-        private List<CustomUserEvent> customUserEvent;
+        private ArrayList customUserEvent;
         /// <summary>
         /// Get a List with all custom user-generated code.
         /// </summary>
         [CategoryAttribute("Expert")]
-        public List<CustomUserEvent> CustomUserEventList
+        [Editor(@"System.Windows.Forms.Design.StringCollectionEditor, System.Design, Version=2.0.0.0, Culture=neutral, 
+            PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))]
+        public ArrayList CustomUserEventList
         {
             get { return customUserEvent; }
         }
@@ -123,7 +126,7 @@ namespace ARdevKit.Model.Project
         {
             coordinatesystemid = 0;
             isVisible = true;
-            customUserEvent = new List<CustomUserEvent>();
+            customUserEvent = new ArrayList();
             translationVector = new Vector3D(0, 0, 0);
             scalingVector = new Vector3D(0, 0, 0);
             rotationVector = new Vector3Di(0, 0, 0, 0);
@@ -143,7 +146,7 @@ namespace ARdevKit.Model.Project
         {
             coordinatesystemid = coordSystemId;
             this.isVisible = isVisible;
-            customUserEvent = new List<CustomUserEvent>();
+            customUserEvent = new ArrayList();
             this.translationVector = translationVector;
             scalingVector = scaling;
             this.trackable = trackable;
