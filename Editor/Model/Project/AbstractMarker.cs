@@ -4,22 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.ComponentModel;
+
 namespace ARdevKit.Model.Project
 {
     [Serializable]
+    [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public abstract class AbstractMarker : AbstractTrackable
     {
         /// <summary>
         /// The type
         /// </summary>
         protected string type;
-
         /// <summary>
         /// Gets or sets the type.
         /// </summary>
-        /// <value>
-        /// The type.
-        /// </value>
+        [CategoryAttribute("General")]
         public string Type
         {
             get { return type; }
@@ -30,17 +30,19 @@ namespace ARdevKit.Model.Project
         /// The size
         /// </summary>
         protected int size;
-
         /// <summary>
         /// Gets or sets the size.
         /// </summary>
-        /// <value>
-        /// The size.
-        /// </value>
+        [CategoryAttribute("General")]
         public int Size
         {
             get { return size; }
             set { size = value; }
+        }
+
+        protected AbstractMarker() : base()
+        {
+            ; // some missing initialization?
         }
     }
 }

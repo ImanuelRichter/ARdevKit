@@ -1,5 +1,7 @@
-﻿using System;
+﻿using ARdevKit.View;
+using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,22 +17,40 @@ namespace ARdevKit.Controller.EditorController
         /// <value> The category panels. </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public List<Panel> categoryPanels { get; set; }
+        private List<SceneElementCategoryPanel> categoryPanels;
+
+        /**
+         * <summary>    Gets or sets the category panels. </summary>
+         *
+         * <value>  The category panels. </value>
+         */
+
+        public List<SceneElementCategoryPanel> CategoryPanels
+        {
+            get { return categoryPanels; }
+            set { categoryPanels = value; }
+        }
+
+        /**
+         * <summary>    The editor window. </summary>
+         */
+        private readonly EditorWindow editorWindow;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Constructor. </summary>
         ///
         /// <remarks>   Lizzard, 1/13/2014. </remarks>
         ///
-        /// <exception cref="NotImplementedException"> Thrown when the requested operation is
-        /// unimplemented. </exception>
+        /// 
         ///
         /// <param name="ew">   The ew. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         public ElementSelectionController(EditorWindow ew)
         {
-            throw new NotImplementedException();
+            this.editorWindow = ew;
+            categoryPanels = new List<SceneElementCategoryPanel>();
+            createCategoryPanels();
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -38,13 +58,16 @@ namespace ARdevKit.Controller.EditorController
         ///
         /// <remarks>   Lizzard, 1/13/2014. </remarks>
         ///
-        /// <exception cref="NotImplementedException"> Thrown when the requested operation is
-        /// unimplemented. </exception>
+        /// 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         public void updateElementSelectionPanel()
         {
-            throw new NotImplementedException();
+            foreach (SceneElementCategoryPanel p in categoryPanels)
+            {
+                p.Visible = false;
+            }
+            ((SceneElementCategoryPanel) editorWindow.Cmb_editor_selection_toolSelection.SelectedItem).Visible = true;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -52,13 +75,20 @@ namespace ARdevKit.Controller.EditorController
         ///
         /// <remarks>   Lizzard, 1/13/2014. </remarks>
         ///
-        /// <exception cref="NotImplementedException"> Thrown when the requested operation is
-        /// unimplemented. </exception>
+        /// 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public void createCategoryPanels()
+        private void createCategoryPanels()
         {
-            throw new NotImplementedException();
+            foreach (SceneElementCategory c in editorWindow.ElementCategories)
+            {
+                SceneElementCategoryPanel n = new SceneElementCategoryPanel(c);
+                categoryPanels.Add(n);
+                editorWindow.Pnl_editor_selection.Controls.Add(n);
+                n.Location = new Point(0, 25);
+                n.Size = new Size(editorWindow.Pnl_editor_selection.Size.Width, editorWindow.Pnl_editor_selection.Size.Height-25);
+                
+            }
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -68,13 +98,16 @@ namespace ARdevKit.Controller.EditorController
         ///
         /// <remarks>   Lizzard, 1/13/2014. </remarks>
         ///
-        /// <exception cref="NotImplementedException"> Thrown when the requested operation is
-        /// unimplemented. </exception>
+        /// 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         public void populateComboBox()
         {
-            throw new NotImplementedException();
+            foreach (SceneElementCategoryPanel p in categoryPanels)
+            {
+                editorWindow.Cmb_editor_selection_toolSelection.Items.Add(p);
+            }
+            editorWindow.Cmb_editor_selection_toolSelection.SelectedIndex = 0;
         }
             
     }

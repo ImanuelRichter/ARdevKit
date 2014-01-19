@@ -86,6 +86,12 @@ namespace ARdevKit.Model.Project
             set { keepPoseForNumberOfFrames = value; }
         }
 
+        /// <summary>   Specialised default constructor for use only by derived classes. </summary>
+        protected MarkerFuser()
+        {
+            ; // missing initialization
+        }
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Accepts the given visitor. </summary>
         ///

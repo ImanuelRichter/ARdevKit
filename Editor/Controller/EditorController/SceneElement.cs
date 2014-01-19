@@ -1,4 +1,5 @@
 ﻿using ARdevKit.Model.Project;
+using ARdevKit.View;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -16,7 +17,19 @@ namespace ARdevKit.Controller.EditorController
         /// <value> The dummy. </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public IPreviewable dummy { get; set; }
+        private IPreviewable dummy;
+
+        /**
+         * <summary>    Gets or sets the dummy. </summary>
+         *
+         * <value>  The dummy. </value>
+         */
+
+        public IPreviewable Dummy
+        {
+            get { return dummy; }
+            set { dummy = value; }
+        }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   grafische Repräsentation des Elements. </summary>
@@ -24,7 +37,19 @@ namespace ARdevKit.Controller.EditorController
         /// <value> The icon. </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public Bitmap icon { get; set; }
+        private Bitmap icon;
+
+        /**
+         * <summary>    Gets or sets the icon. </summary>
+         *
+         * <value>  The icon. </value>
+         */
+
+        public Bitmap Icon
+        {
+            get { return icon; }
+            set { icon = value; }
+        }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Gets or sets the name. </summary>
@@ -32,7 +57,21 @@ namespace ARdevKit.Controller.EditorController
         /// <value> Name des Elements. </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public String name { get; set; }
+        private String name;
+
+        /**
+         * <summary>    Gets or sets the name. </summary>
+         *
+         * <value>  The name. </value>
+         */
+
+        public String Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
+        private ElementIcon elementIcon;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Erstellt das ElementIcon. </summary>
@@ -43,9 +82,9 @@ namespace ARdevKit.Controller.EditorController
         /// unimplemented. </exception>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public void createElementIcon()
+        public ElementIcon ElementIcon
         {
-            throw new NotImplementedException();
+            get { return elementIcon; }
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -63,9 +102,25 @@ namespace ARdevKit.Controller.EditorController
         /// <param name="icon">     The icon. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public SceneElement(IPreviewable dummy, Bitmap icon)
+        public SceneElement(String name, IPreviewable dummy, EditorWindow ew)
         {
-            throw new NotImplementedException();
+            this.name = name;
+            this.dummy = dummy;
+            this.icon = dummy.getIcon();
+            this.elementIcon = new ElementIcon(this, ew);
+        }
+
+        /**
+         * <summary>    Gibt eine Zeichenfolge zurück, die das aktuelle Objekt darstellt. </summary>
+         *
+         * <remarks>    Robin, 14.01.2014. </remarks>
+         *
+         * <returns>    Eine Zeichenfolge, die das aktuelle Objekt darstellt. </returns>
+         */
+
+        public override string ToString()
+        {
+            return name;
         }
     }
 }

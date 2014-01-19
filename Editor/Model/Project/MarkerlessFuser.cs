@@ -80,5 +80,11 @@ namespace ARdevKit.Model.Project
             get { return continueLostTrackingWithOrientationSensor; }
             set { continueLostTrackingWithOrientationSensor = value; }
         }
+
+        /// <summary>   Default constructor. </summary>
+        public MarkerlessFuser() : base()
+        {
+            ; // missing initialization
+        }
     }
 }

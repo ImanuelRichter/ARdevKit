@@ -8,12 +8,22 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.ComponentModel;
+
 namespace ARdevKit.Model.Project
 {
     [Serializable]
+    [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public abstract class AbstractTrackable : IPreviewable//, ISerializable 
     {
+        /// <summary>
+        /// ToDo Summary is missing
+        /// </summary>
         protected MarkerFuser fuser;
+        /// <summary>
+        /// ToDo Summary is missing
+        /// </summary>
+        [Browsable(false)]
         public MarkerFuser Fuser
         {
             get { return fuser; }
@@ -27,42 +37,69 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// Gets or sets the sensor cos identifier.
         /// </summary>
-        /// <value>
-        /// The sensor cos identifier.
-        /// </value>
+        [CategoryAttribute("Expert")]
         public string SensorCosID
         {
             get { return sensorCosID; }
             set { sensorCosID = value; }
         }
 
+        /// <summary>
+        /// ToDo Summary is missing
+        /// </summary>
         private double similarityThreshold = 0.7;
+        [Browsable(false)]
         protected double SimilarityThreshold
         {
             get { return similarityThreshold; }
             set { similarityThreshold = value; }
         }
 
+        /// <summary>
+        /// ToDo Summary is missing
+        /// </summary>
+        [CategoryAttribute("General")]
         public Vector3D vector { get; set; }
+
+        /// <summary>
+        /// ToDo Summary is missing
+        /// </summary>
+        [Browsable(false)]
         public List<AbstractAugmention> Augmentions { get; set; }
-
-        public abstract void Accept(AbstractProjectVisitor visitor);
-
-        public abstract Bitmap getPreview();
-
-        public abstract Bitmap getIcon();
-
-        public abstract List<AbstractProperty> getPropertyList();
-
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AbstractTrackable"/> class.
         /// With no trackables associated.
         /// </summary>
-        public AbstractTrackable()
+        protected AbstractTrackable()
         {
             this.Augmentions = new List<AbstractAugmention>();
+            /* could it be here are some missing initialization? */
         }
+
+        /// <summary>
+        /// ToDo Summary is missing
+        /// </summary>
+        /// <param name="visitor"></param>
+        public abstract void Accept(AbstractProjectVisitor visitor);
+
+        /// <summary>
+        /// ToDo Summary is missing
+        /// </summary>
+        /// <returns></returns>
+        public abstract Bitmap getPreview();
+
+        /// <summary>
+        /// ToDo Summary is missing
+        /// </summary>
+        /// <returns></returns>
+        public abstract Bitmap getIcon();
+
+        /// <summary>
+        /// ToDo Summary is missing
+        /// </summary>
+        /// <returns></returns>
+        public abstract List<AbstractProperty> getPropertyList();
 
         /// <summary>
         ///     Is needed for Custom Serialization. And provides the Serializer with the needed information
@@ -74,6 +111,7 @@ namespace ARdevKit.Model.Project
         {
             throw new NotImplementedException();
         }
+
         /// <summary>
         /// Finds the augmention, which is associated with this <see cref="AbstractTrackable"/>.
         /// </summary>
@@ -83,6 +121,7 @@ namespace ARdevKit.Model.Project
         {
             return this.Augmentions[this.Augmentions.IndexOf((AbstractAugmention)a)];
         }
+
         /// <summary>
         /// Checks if the augmention is associated with this <see cref="AbstractTrackable"/>.
         /// </summary>
@@ -100,6 +139,5 @@ namespace ARdevKit.Model.Project
             }
             return false;
         }
-
     }
 }

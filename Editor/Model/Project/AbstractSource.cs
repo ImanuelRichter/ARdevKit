@@ -8,6 +8,8 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.ComponentModel;
+
 namespace ARdevKit.Model.Project
 {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -18,34 +20,58 @@ namespace ARdevKit.Model.Project
     /// </summary>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     [Serializable]
+    [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public abstract class AbstractSource : IPreviewable//, ISerializable
     {
 
         /// <summary>
         /// Gets or sets the source identifier.
         /// </summary>
-        /// <value>
-        /// The source identifier.
-        /// </value>
+        [ReadOnly(true), CategoryAttribute("General")]
         public String sourceID { get; set; }
+
         /// <summary>
         /// Gets or sets the augmentions, which get their dynamic information from the <see cref="AbstractSource"/>
         /// </summary>
-        /// <value>
-        /// The augmentions.
-        /// </value>
+        [Browsable(false)]
         public List<Abstract2DAugmention> augmentions { get; set; }
-        abstract public void accept(AbstractProjectVisitor visitor);
-
-        public abstract List<AbstractProperty> getPropertyList();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AbstractSource"/> class.
         /// </summary>
-        public AbstractSource()
+        protected AbstractSource()
         {
             this.augmentions = new List<Abstract2DAugmention>();
         }
+
+        protected AbstractSource(string sourceId)
+        {
+            sourceID = sourceId;
+        }
+
+        /// <summary>
+        /// ToDo Summary is missing
+        /// </summary>
+        /// <param name="visitor"></param>
+        public abstract void accept(AbstractProjectVisitor visitor);
+
+        /// <summary>
+        /// ToDo Summary is missing
+        /// </summary>
+        /// <returns></returns>
+        public abstract List<AbstractProperty> getPropertyList();
+
+        /// <summary>
+        /// ToDo Summary is missing
+        /// </summary>
+        /// <returns></returns>
+        public abstract Bitmap getPreview();
+
+        /// <summary>
+        /// ToDo Summary is missing
+        /// </summary>
+        /// <returns></returns>
+        public abstract Bitmap getIcon();
 
         /// <summary>
         ///     Is needed for Custom Serialization. And provides the Serializer with the needed information
@@ -58,9 +84,6 @@ namespace ARdevKit.Model.Project
             throw new NotImplementedException();
         }
 
-        public abstract Bitmap getPreview();
-
-        public abstract Bitmap getIcon();
         /// <summary>
         /// Finds the augmention, which gets information through this <see cref="AbstractSource"/>.
         /// </summary>

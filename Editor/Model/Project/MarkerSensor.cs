@@ -99,7 +99,7 @@ namespace ARdevKit.Model.Project
         /// <remarks>   Imanuel, 17.01.2014. </remarks>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public MarkerSensor()
+        public MarkerSensor() : base() // maybe needs to redo, because of base() ?
         {
             Name = "Marker";
             sensorIDBase = SensorIDBases.MarkerTracking;
@@ -107,6 +107,9 @@ namespace ARdevKit.Model.Project
             sensorType = SensorTypes.MarkerBasedSensorSource;
         }
 
+        /// <summary>   Accepts the given visitor. </summary>
+        ///
+        /// <param name="visitor">  The visitor. </param>
         public override void Accept(AbstractProjectVisitor visitor)
         {
             visitor.Visit(this);
