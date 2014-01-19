@@ -225,7 +225,7 @@ public class PreviewController
         if (currentMetaCategory == MetaCategory.Trackable && trackable != null)
         {
             this.removeAll();
-            if (this.ew.project.isTrackable())
+            if (!this.ew.project.isTrackable())
             {
                 this.ew.ElementSelectionController.setElementEnable(typeof(PictureMarker), true);
                 this.ew.ElementSelectionController.setElementEnable(typeof(IDMarker), true);
