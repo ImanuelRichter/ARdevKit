@@ -333,6 +333,8 @@ public class PreviewController
         tempBox.SizeMode = PictureBoxSizeMode.StretchImage;
         tempBox.Tag = prev;
 
+        tempBox.MouseClick += new MouseEventHandler(selectElement);
+
         this.panel.Controls.Add(tempBox);
 
       }
@@ -362,13 +364,20 @@ public class PreviewController
             foreach (Control comp in panel.Controls)
             {
                 if (comp.Tag == (AbstractAugmention)prev)
-       {
+                {
                     return (PictureBox)comp;
                 }
             }
         }
         return null;
-       }
+    }
 
+    private void selectElement(object sender, MouseEventArgs e)
+    {
+        if (e.Button == MouseButtons.Left)
+        {
+            ew.PropertyGrid1.SelectedObject = ((Control)sender).Tag;
+        }
+    }
  }
 
