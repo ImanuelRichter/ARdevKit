@@ -34,7 +34,7 @@ namespace Controller.EditorController
             + "Please use the method setCustomUserEventContent(selectedElement : AbstractAugmentation, name : string, content : string[]) instead.", true)]
         public void editCustomUserEvent(/*File customUserEvent*/)
         { throw new NotImplementedException(); }
-
+        /*
         /// <summary>
         /// Adds a customUserEvent to a selected element.
         /// </summary>
