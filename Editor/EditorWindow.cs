@@ -361,10 +361,7 @@ namespace ARdevKit
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         private void tsm_editor_menu_test_startImage_Click(object sender, EventArgs e)
         {
-            if (project.ProjectPath == null)
-                TestController.StartWithImage();
-            else
-                TestController.StartWithImage(project.ProjectPath);
+            TestController.StartWithImage(project);
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -378,10 +375,7 @@ namespace ARdevKit
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         private void tsm_editor_menu_test_startVideo_Click(object sender, EventArgs e)
         {
-            if (project.ProjectPath == null)
-                TestController.StartWithVideo();
-            else
-                TestController.StartWithVideo(project.ProjectPath);
+            TestController.StartWithVideo(project);
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -396,10 +390,7 @@ namespace ARdevKit
 
         private void tsm_editor_menu_test_startWithVirtualCamera_Click(object sender, EventArgs e)
         {
-            if (project.ProjectPath == null)
-                TestController.StartWithVirtualCamera();
-            else
-                TestController.StartWithVirtualCamera(project.ProjectPath);
+            TestController.StartWithVirtualCamera(project);
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -427,11 +418,13 @@ namespace ARdevKit
             if (this.project.Trackables.Count > 1)
             {
                 this.previewController.reloadPreviewPanel(temp - 1);
+                this.PropertyGrid1.SelectedObject = null;
             }
             else
             {
                 this.previewController.index = -1;
                 this.previewController.reloadPreviewPanel(0);
+                this.PropertyGrid1.SelectedObject = null;
             }
             
         }
@@ -464,6 +457,7 @@ namespace ARdevKit
 
                     this.pnl_editor_szenes.Controls.Add(tempButton);
                     this.previewController.reloadPreviewPanel(this.project.Trackables.Count);
+                    this.PropertyGrid1.SelectedObject = null;
             }
             else
             {
@@ -510,6 +504,7 @@ namespace ARdevKit
                     this.ElementSelectionController.setElementEnable(typeof(IDMarker), true);
                 }
             }
+            this.PropertyGrid1.SelectedObject = null;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////

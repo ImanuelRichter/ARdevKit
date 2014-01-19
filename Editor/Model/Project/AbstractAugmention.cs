@@ -51,10 +51,11 @@ namespace ARdevKit.Model.Project
 
         /// <summary>
         /// A list of all customUserEvents the current <see cref="AbstractAugmention"/> has.
+        /// The user can write a javascript based code for the augmention.
         /// </summary>
         private ArrayList customUserEvent;
         /// <summary>
-        /// Get a List with all custom user-generated code.
+        /// Get the content of the customUserEvent. Each element in the List represents a line of the code.
         /// </summary>
         [CategoryAttribute("Expert")]
         [Editor(@"System.Windows.Forms.Design.StringCollectionEditor, System.Design, Version=2.0.0.0, Culture=neutral, 

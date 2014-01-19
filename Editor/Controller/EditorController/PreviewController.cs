@@ -66,7 +66,7 @@ public class PreviewController
                 + "Previewable should sit in the panel you should use addPreviewable(IPreviewable"
                 + "currentElement, Vector3d v) for Augmentions & Trackables", true)]
     public void addPreviewAble(IPreviewable p)
-        { throw new NotImplementedException(); }
+    { throw new NotImplementedException(); }
 
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -84,8 +84,10 @@ public class PreviewController
     {
         if (currentMetaCategory == MetaCategory.Trackable && trackable == null)
         {
-            
 
+            Vector3D center = new Vector3D(0, 0, 0);
+            center.Y = panel.Size.Height / 2;
+            center.X = panel.Size.Width / 2;
             //ask the user for the picture (if the trackable is a picturemarker)
             if (currentElement.GetType() == typeof(PictureMarker))
             {
@@ -94,34 +96,35 @@ public class PreviewController
                 if (openTestImageDialog.ShowDialog() == DialogResult.OK)
                 {
                     ((PictureMarker)currentElement).ImagePath = openTestImageDialog.FileName;
-                    
+
                     //set the vector to the trackable
-                    ((AbstractTrackable)currentElement).vector = v;
+                    ((AbstractTrackable)currentElement).vector = center;
                     this.trackable = (AbstractTrackable)currentElement;
                     this.ew.project.Trackables[index] = (AbstractTrackable)currentElement;
-                    this.addPictureBox(currentElement, v);
+                    this.addPictureBox(currentElement, center);
                     if (this.ew.project.isTrackable())
                     {
                         this.ew.ElementSelectionController.setElementEnable(typeof(IDMarker), false);
                         this.ew.project.Sensor = new MarkerSensor();
                     }
-                    
+
                 }
             }
-            else {
+            else
+            {
                 //set the vector to the trackable
-                    ((AbstractTrackable)currentElement).vector = v;
-                    this.trackable = (AbstractTrackable)currentElement;
-                    this.ew.project.Trackables[index] = (AbstractTrackable)currentElement;
-                    this.addPictureBox(currentElement, v);
-                    if (this.ew.project.isTrackable())
-                    {
-                        this.ew.ElementSelectionController.setElementEnable(typeof(PictureMarker), false);
-                        this.ew.project.Sensor = new MarkerSensor();
-                    }
-                    
+                ((AbstractTrackable)currentElement).vector = center;
+                this.trackable = (AbstractTrackable)currentElement;
+                this.ew.project.Trackables[index] = (AbstractTrackable)currentElement;
+                this.addPictureBox(currentElement, center);
+                if (this.ew.project.isTrackable())
+                {
+                    this.ew.ElementSelectionController.setElementEnable(typeof(PictureMarker), false);
+                    this.ew.project.Sensor = new MarkerSensor();
+                }
+
             }
-            
+
         }
         else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null && this.ew.project.Trackables[index].Augmentions.Count < 3)
         {
@@ -314,6 +317,14 @@ public class PreviewController
             {
                 this.addAllToPanel(this.ew.project.Trackables[index]);
             }
+            if (this.trackable != null && trackable.GetType() == typeof(IDMarker))
+            {
+                this.ew.ElementSelectionController.setElementEnable(typeof(PictureMarker), false);
+            }
+            else if (this.trackable != null && trackable.GetType() == typeof(PictureMarker))
+            {
+                this.ew.ElementSelectionController.setElementEnable(typeof(IDMarker), false);
+            }
         }
         //if the scene is new create a new empty scene
         else if (index >= this.ew.project.Trackables.Count)
@@ -385,7 +396,7 @@ public class PreviewController
         tempBox.MouseClick += new MouseEventHandler(selectElement);
 
         if (tempBox.Tag is AbstractAugmention)
-        tempBox.MouseMove += new MouseEventHandler(controlMouseMove);
+            tempBox.MouseMove += new MouseEventHandler(controlMouseMove);
 
         this.panel.Controls.Add(tempBox);
 

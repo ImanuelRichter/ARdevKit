@@ -57,6 +57,7 @@ namespace ARdevKit.Model.Project
             MaxValue = 100;
             Scaling = 0;
             ScalingVector = new Vector3D(0, 0, 0);
+            Style = new ChartStyle();
         }
 
         /// <summary>   ToDo Summary is missing. </summary>
