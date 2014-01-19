@@ -383,7 +383,7 @@ public class PreviewController
         tempBox.MouseClick += new MouseEventHandler(selectElement);
 
         if (tempBox.Tag is AbstractAugmention)
-            tempBox.MouseMove += new MouseEventHandler(controlMouseMove);
+        tempBox.MouseMove += new MouseEventHandler(controlMouseMove);
 
         this.panel.Controls.Add(tempBox);
 

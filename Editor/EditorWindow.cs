@@ -25,6 +25,7 @@ using ARdevKit.Controller.EditorController;
 using ARdevKit.Controller.Connections.DeviceConnection;
 using ARdevKit.Controller.TestController;
 using ARdevKit.View;
+using System.IO;
 
 namespace ARdevKit
 {
@@ -112,30 +113,6 @@ namespace ARdevKit
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
-        /// The path of the current project
-        /// </summary>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        private string projectPath;
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Gets or sets the full pathname of the project file.
-        /// </summary>
-        ///
-        /// <value>
-        /// The full pathname of the project file.
-        /// </value>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        public string ProjectPath
-        {
-            get { return projectPath; }
-            set { projectPath = value; }
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
         /// Linked list containing all IPreviewables.
         /// </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -165,6 +142,18 @@ namespace ARdevKit
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         private ElementSelectionController elementSelectionController;
+
+        /// <summary>
+        /// Gets the element selection controller.
+        /// </summary>
+        /// <value>
+        /// The element selection controller.
+        /// </value>
+        /// <remarks>geht 19.01.2014 23:06</remarks>
+        internal ElementSelectionController ElementSelectionController
+        {
+            get { return elementSelectionController; }
+        }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
@@ -291,9 +280,7 @@ namespace ARdevKit
         public EditorWindow()
         {
             InitializeComponent();
-            initializeEmptyProject();
-            initializeControllers();
-            updatePanels();
+            createNewProject("");
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -307,8 +294,7 @@ namespace ARdevKit
 
         private void Editor_Load(object sender, EventArgs e)
         {
-            elementSelectionController = new ElementSelectionController(this);
-            elementSelectionController.populateComboBox();
+
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -327,11 +313,16 @@ namespace ARdevKit
         {
             if (MessageBox.Show("Möchten Sie das aktuelle Projekt abspeichern, bevor ein neues angelegt wird?", "Projekt speichern?", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
+                try
+                {
                 this.saveProject();
             }
-            this.initializeEmptyProject();
-            this.initializeControllers();
-            this.updatePanels();
+                catch (ArgumentNullException ae)
+                {
+                    Debug.WriteLine(ae.StackTrace);
+        }
+            }
+            createNewProject("");
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -345,6 +336,17 @@ namespace ARdevKit
 
         private void tsm_editor_menu_file_exit_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Möchten Sie das aktuelle Projekt abspeichern, bevor ARdevKit beendet wird?", "Projekt speichern?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    this.saveProject();
+                }
+                catch (ArgumentNullException ae)
+                {
+                    Debug.WriteLine(ae.StackTrace);
+                }
+            }
             System.Windows.Forms.Application.Exit();
         }
 
@@ -359,10 +361,10 @@ namespace ARdevKit
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         private void tsm_editor_menu_test_startImage_Click(object sender, EventArgs e)
         {
-            if (projectPath == null)
+            if (project.ProjectPath == null)
                 TestController.StartWithImage();
             else
-                TestController.StartWithImage(projectPath);
+                TestController.StartWithImage(project.ProjectPath);
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -376,10 +378,10 @@ namespace ARdevKit
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         private void tsm_editor_menu_test_startVideo_Click(object sender, EventArgs e)
         {
-            if (projectPath == null)
+            if (project.ProjectPath == null)
                 TestController.StartWithVideo();
             else
-                TestController.StartWithVideo(projectPath);
+                TestController.StartWithVideo(project.ProjectPath);
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -394,10 +396,10 @@ namespace ARdevKit
 
         private void tsm_editor_menu_test_startWithVirtualCamera_Click(object sender, EventArgs e)
         {
-            if (projectPath == null)
+            if (project.ProjectPath == null)
                 TestController.StartWithVirtualCamera();
             else
-                TestController.StartWithVirtualCamera(projectPath);
+                TestController.StartWithVirtualCamera(project.ProjectPath);
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -431,7 +433,7 @@ namespace ARdevKit
                 this.previewController.index = -1;
                 this.previewController.reloadPreviewPanel(0);
             }
-
+            
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -451,17 +453,17 @@ namespace ARdevKit
         {
             if (this.project.Trackables.Count < 10)
             {
-                Button tempButton = new Button();
-                tempButton.Location = new System.Drawing.Point(54 + (52 * project.Trackables.Count), 34);
-                tempButton.Name = "btn_editor_scene_scene_" + (this.project.Trackables.Count + 1);
-                tempButton.Size = new System.Drawing.Size(46, 45);
-                tempButton.TabIndex = 1;
-                tempButton.Text = Convert.ToString(this.project.Trackables.Count + 1);
-                tempButton.UseVisualStyleBackColor = true;
-                tempButton.Click += new System.EventHandler(this.btn_editor_scene_scene_change);
+                    Button tempButton = new Button();
+                    tempButton.Location = new System.Drawing.Point(54 + (52 * project.Trackables.Count), 34);
+                    tempButton.Name = "btn_editor_scene_scene_" + (this.project.Trackables.Count + 1);
+                    tempButton.Size = new System.Drawing.Size(46, 45);
+                    tempButton.TabIndex = 1;
+                    tempButton.Text = Convert.ToString(this.project.Trackables.Count + 1);
+                    tempButton.UseVisualStyleBackColor = true;
+                    tempButton.Click += new System.EventHandler(this.btn_editor_scene_scene_change);
 
-                this.pnl_editor_szenes.Controls.Add(tempButton);
-                this.previewController.reloadPreviewPanel(this.project.Trackables.Count);
+                    this.pnl_editor_szenes.Controls.Add(tempButton);
+                    this.previewController.reloadPreviewPanel(this.project.Trackables.Count);
             }
             else
             {
@@ -524,24 +526,114 @@ namespace ARdevKit
 
         public void createNewProject(String name)
         {
-            //TODO: implement createNewProject(String name)
+            this.initializeEmptyProject(name);
+            this.initializeControllers();
+            this.updatePanels();
         }
 
+        /// <summary>
+        /// Exports the project. saves the project first and then exports to project path
+        /// </summary>
+        /// <remarks>geht 19.01.2014 22:10</remarks>
         public void exportProject()
         {
-            //TODO: implement exportProject()
+            try
+            {
+                saveProject();
+
+                try
+                {
+                    project.Accept(exportVisitor);
+        }
+                catch (DirectoryNotFoundException de)
+                {
+                    Debug.WriteLine(de.StackTrace);
+                }
+
+                try
+                {
+                    exportVisitor.ArelProjectFile.Save();
+                }
+                catch (NullReferenceException ne)
+                {
+                    Debug.WriteLine(ne.StackTrace);
+                }
+
+                try
+                {
+                    exportVisitor.TrackingDataFile.Save();
+                }
+                catch (NullReferenceException ne)
+                {
+                    Debug.WriteLine(ne.StackTrace);
+                }
+
+                try
+                {
+                    exportVisitor.ArelConfigFile.Save();
+                }
+                catch (NullReferenceException ne)
+                {
+                    Debug.WriteLine(ne.StackTrace);
+                }
+
+                try
+                {
+                    exportVisitor.ArelGlueFile.Save();
+                }
+                catch (NullReferenceException ne)
+                {
+                    Debug.WriteLine(ne.StackTrace);
+                }
+
+                MessageBox.Show("Projekt wurde exportiert!", "Export");
+            }
+            catch (ArgumentNullException ae)
+            {
+                Debug.WriteLine(ae.StackTrace);
+            }
         }
 
+        /// <summary>
+        /// Loads the project. Opens a file dialog to select a saved project.
+        /// </summary>
+        /// <remarks>geht 19.01.2014 17:55</remarks>
         public void loadProject()
         {
-            //TODO: implement loadProject()
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Filter = "ARdevkit Projektdatei|*.ardev";
+            openFileDialog1.Title = "Projekt öffnen";
+            openFileDialog1.ShowDialog();
+            try
+            {
+                initializeLoadedProject(SaveLoadController.loadProject(openFileDialog1.FileName));
+                this.initializeControllers();
+                this.updatePanels();
+                previewController.index = -1;
+                previewController.reloadPreviewPanel(0);
+                this.updateSceneSelectionPanel();
+            }
+            catch (System.ArgumentException)
+            {
+                
+            }            
         }
 
+        /// <summary>
+        /// Should open the DebugWindow, but isn't used...
+        /// </summary>
+        /// <remarks>geht 19.01.2014 22:38</remarks>
+        [System.Obsolete("this method is not used...", false)]
         public void openDebugWindow()
         {
             //TODO: implement openDebugWindow()
         }
 
+        /// <summary>
+        /// Should open the TestWindow, but isn't used...
+        /// </summary>
+        /// <remarks>geht 19.01.2014 22:38</remarks>
+        [System.Obsolete("this method is not used...", false)]
         public void openTestWindow()
         {
             //TODO: implement openTestWindow()
@@ -581,20 +673,41 @@ namespace ARdevKit
 
         public void saveProject()
         {
-            if (projectPath == null)
+            if (project.Sensor == null)
+            {
+                MessageBox.Show("Sie müssen mindestens ein Trackable hinzufügen!", "Achtung", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                Debug.WriteLine("You have to add at least one trackable first!");
+                throw new ArgumentNullException();
+            }
+            else
+            {
+                if (project.ProjectPath == null)
             {
                 SaveFileDialog saveFileDialog1 = new SaveFileDialog();
                 saveFileDialog1.Filter = "ARdevkit Projektdatei|*.ardev";
                 saveFileDialog1.Title = "Projekt speichern";
                 saveFileDialog1.ShowDialog();
-                this.projectPath = saveFileDialog1.FileName;
+                    try
+                    {
+                        project.ProjectPath = Path.GetDirectoryName(saveFileDialog1.FileName);
+                        project.Name = Path.GetFileNameWithoutExtension(saveFileDialog1.FileName);
+                        this.save(project.ProjectPath);
+                    }
+                    catch (System.ArgumentException)
+                    {
+                        project.ProjectPath = null;
+                    }
+                }
+                else
+                {
+                    this.save(project.ProjectPath);
+                }
             }
-            this.save(projectPath);
         }
 
         private void save(String path)
         {
-            //TODO: implement save()
+            SaveLoadController.saveProject(this.project);
         }
 
         public void sendToDevice()
@@ -604,7 +717,9 @@ namespace ARdevKit
 
         public void updateElementSelectionPanel()
         {
-            //TODO: implement updateElementSelectionPanel()
+            this.Cmb_editor_selection_toolSelection.Items.Clear();
+            this.elementSelectionController.populateComboBox();
+            this.elementSelectionController.updateElementSelectionPanel();
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -621,6 +736,12 @@ namespace ARdevKit
             this.previewController.updatePreviewPanel();
         }
 
+        /// <summary>
+        /// Should update the PropertyPanel, but isn't used anyways...
+        /// </summary>
+        /// <param name="selectedElement">The selected element.</param>
+        /// <remarks>geht 19.01.2014 22:37</remarks>
+        [System.Obsolete("this method is not used...", false)]
         internal void updatePropertyPanel(IPreviewable selectedElement)
         {
             //TODO: implement updatePropertyPanel(IPreviewable selectedElement)
@@ -787,13 +908,26 @@ namespace ARdevKit
             }
         }
 
-        private void initializeEmptyProject()
+        private void initializeEmptyProject(String projectname)
         {
-            this.project = new Project();
+            this.project = new Project(projectname);
+            this.project.ProjectPath = null;
             this.startDebugModeDevice = false;
             this.startDebugModeLocal = false;
             this.elementCategories = new List<SceneElementCategory>();
-            this.projectPath = null;
+            this.allElements = new LinkedList<IPreviewable>();
+            this.saveVisitor = new SaveVisitor();
+            this.exportVisitor = new ExportVisitor();
+            this.currentElement = null;
+            registerElements();
+        }
+
+        private void initializeLoadedProject(Project p)
+        {
+            this.project = p;
+            this.startDebugModeDevice = false;
+            this.startDebugModeLocal = false;
+            this.elementCategories = new List<SceneElementCategory>();
             this.allElements = new LinkedList<IPreviewable>();
             this.saveVisitor = new SaveVisitor();
             this.exportVisitor = new ExportVisitor();
@@ -805,8 +939,8 @@ namespace ARdevKit
         {
             this.updateElementSelectionPanel();
             this.updatePreviewPanel();
-            this.updatePropertyPanel(currentElement);
             this.updateSceneSelectionPanel();
+            this.updatePropertyPanel(currentElement);
             this.updateStatusBar();
         }
 
@@ -826,7 +960,14 @@ namespace ARdevKit
 
         private void tsm_editor_menu_file_save_Click(object sender, EventArgs e)
         {
+            try
+            {
             this.saveProject();
+        }
+            catch (ArgumentNullException ae)
+            {
+                Debug.WriteLine(ae.StackTrace);
+            }
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -845,8 +986,41 @@ namespace ARdevKit
 
         private void tsm_editor_menu_file_saveAs_Click(object sender, EventArgs e)
         {
-            this.projectPath = null;
+            this.project.ProjectPath = null;
+            try
+            {
+                this.saveProject();
+            }
+            catch (ArgumentNullException ae)
+            {
+                Debug.WriteLine(ae.StackTrace);
+            }
+        }
+
+        private void tsm_editor_menu_file_open_Click_1(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Möchten Sie das aktuelle Projekt abspeichern, bevor ein anderes geöffnet wird?", "Projekt speichern?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
             this.saveProject();
+        }
+                catch (ArgumentNullException ae)
+                {
+                    Debug.WriteLine(ae.StackTrace);
+                }
+            }
+            this.loadProject();
+        }
+
+        private void tsm_editor_menu_file_export_Click(object sender, EventArgs e)
+        {
+            this.exportProject();
+        }
+
+        private void tsm_editor_menu_help_info_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("ARdevKit Version 0.1 alpha \n\n Rüdiger Heres \n Jonas Lachowitzer \n Robin Lamberti \n Tuong-Vu Mai \n Imanuel Richter\n Marwin Rieger \n\n Nutzung auf eigene Gefahr! \n Das Programm könnte Ihre Kekse auffressen...", "Info");
         }
     }
 }
