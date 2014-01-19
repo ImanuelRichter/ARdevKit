@@ -305,9 +305,9 @@ namespace ARdevKit
                 {
                     this.saveProject();
                 }
-                catch (ArgumentNullException)
+                catch (ArgumentNullException ae)
                 {
-                    
+                    Debug.WriteLine(ae.StackTrace);
                 }
             }
             createNewProject("");
@@ -517,9 +517,9 @@ namespace ARdevKit
                 exportVisitor.ArelConfigFile.Save();
                 exportVisitor.ArelGlueFile.Save();
             }
-            catch (ArgumentNullException)
+            catch (ArgumentNullException ae)
             {
-                
+                Debug.WriteLine(ae.StackTrace);
             }
         }
 
@@ -595,6 +595,7 @@ namespace ARdevKit
             if (project.Sensor == null)
             {
                 MessageBox.Show("Sie müssen mindestens ein Trackable hinzufügen!", "Achtung", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                Debug.WriteLine("You have to add at least one trackable first!");
                 throw new ArgumentNullException();
             }
             else
@@ -851,9 +852,9 @@ namespace ARdevKit
             {
                 this.saveProject();
             }
-            catch (ArgumentNullException)
+            catch (ArgumentNullException ae)
             {
-
+                Debug.WriteLine(ae.StackTrace);
             }
         }
 
@@ -878,9 +879,9 @@ namespace ARdevKit
             {
                 this.saveProject();
             }
-            catch (ArgumentNullException)
+            catch (ArgumentNullException ae)
             {
-
+                Debug.WriteLine(ae.StackTrace);
             }
         }
 
@@ -892,9 +893,9 @@ namespace ARdevKit
                 {
                     this.saveProject();
                 }
-                catch (ArgumentNullException)
+                catch (ArgumentNullException ae)
                 {
-
+                    Debug.WriteLine(ae.StackTrace);
                 }
             }
             this.loadProject();
