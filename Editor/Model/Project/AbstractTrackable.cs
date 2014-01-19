@@ -48,7 +48,7 @@ namespace ARdevKit.Model.Project
         /// ToDo Summary is missing
         /// </summary>
         protected double similarityThreshold = 0.7;
-        [CategoryAttribute("Expert")]
+        [CategoryAttribute("Expert"), DefaultValue(0.7)]
         public double SimilarityThreshold
         {
             get { return similarityThreshold; }
@@ -58,7 +58,7 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// ToDo Summary is missing
         /// </summary>
-        [CategoryAttribute("General")]
+        [CategoryAttribute("General"), Browsable(false)]
         public Vector3D vector { get; set; }
 
         /// <summary>
