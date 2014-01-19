@@ -503,7 +503,11 @@ namespace ARdevKit
         public void exportProject()
         {
             //TODO: implement exportProject()
-            exportVisitor.Visit(project);
+            project.Accept(exportVisitor);
+            exportVisitor.ArelProjectFile.Save();
+            exportVisitor.TrackingDataFile.Save();
+            exportVisitor.ArelConfigFile.Save();
+            exportVisitor.ArelGlueFile.Save();
         }
 
         /// <summary>
