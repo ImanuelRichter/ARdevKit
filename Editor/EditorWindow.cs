@@ -291,9 +291,7 @@ namespace ARdevKit
         public EditorWindow()
         {
             InitializeComponent();
-            initializeEmptyProject();
-            initializeControllers();
-            updatePanels();
+            createNewProject("");
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -328,9 +326,7 @@ namespace ARdevKit
             {
                 this.saveProject();
             }
-            this.initializeEmptyProject();
-            this.initializeControllers();
-            this.updatePanels();
+            createNewProject("");
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -522,7 +518,9 @@ namespace ARdevKit
 
         public void createNewProject(String name)
         {
-            //TODO: implement createNewProject(String name)
+            this.initializeEmptyProject(name);
+            this.initializeControllers();
+            this.updatePanels();
         }
 
         public void exportProject()
@@ -593,6 +591,7 @@ namespace ARdevKit
         private void save(String path)
         {
             //TODO: implement save()
+
         }
 
         public void sendToDevice()
@@ -755,9 +754,9 @@ namespace ARdevKit
             }
         }
 
-        private void initializeEmptyProject()
+        private void initializeEmptyProject(String projectname)
         {
-            this.project = new Project();
+            this.project = new Project(projectname);
             this.startDebugModeDevice = false;
             this.startDebugModeLocal = false;
             this.elementCategories = new List<SceneElementCategory>();
