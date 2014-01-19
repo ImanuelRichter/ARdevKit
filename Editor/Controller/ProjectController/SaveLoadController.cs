@@ -23,7 +23,7 @@ namespace ARdevKit.Controller.ProjectController
         public static void saveProject(Project project)
         {
             BinaryFormatter formatter = new BinaryFormatter();
-            Stream stream = new FileStream((Path.Combine(project.ProjectPath, project.Name.Replace(" ", "_")) + ".bin"), FileMode.Create, FileAccess.Write, FileShare.None);
+            Stream stream = new FileStream((Path.Combine(project.ProjectPath, project.Name.Replace(" ", "_")) + ".ardev"), FileMode.Create, FileAccess.Write, FileShare.None);
             formatter.Serialize(stream, project);
             stream.Close();
         }
