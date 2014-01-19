@@ -427,6 +427,11 @@ public class PreviewController
         return null;
     }
 
+    /// <summary>   Select element (Event). </summary>
+    ///
+    /// <param name="sender">   Source of the event. </param>
+    /// <param name="e">        Mouse event information. </param>
+
     private void selectElement(object sender, MouseEventArgs e)
     {
         if (e.Button == MouseButtons.Left)
@@ -435,14 +440,36 @@ public class PreviewController
         }
     }
 
+    /// <summary>   
+    /// Event to move a object of type Control. 
+    /// Also updates x/y coord in the Tag of the control.            
+    /// </summary>
+    ///
+    /// <param name="sender">   Source of the event. </param>
+    /// <param name="e">        Mouse event information. </param>
     private void controlMouseMove(object sender, MouseEventArgs e)
     {
         if (e.Button == System.Windows.Forms.MouseButtons.Left)
         {
             Control controlToMove = (Control)sender;
             controlToMove.BringToFront();
-            controlToMove.Location = new Point(controlToMove.Location.X + e.Location.X - 30,
-               controlToMove.Location.Y + e.Location.Y - 30);
+            controlToMove.Location = new Point(controlToMove.Location.X + e.Location.X - 60,
+               controlToMove.Location.Y + e.Location.Y - 60);
+
+            if (((Control)sender).Tag is AbstractTrackable)
+            {
+                AbstractTrackable at;
+                at = (AbstractTrackable)((Control)sender).Tag;
+                at.vector.X = controlToMove.Location.X + e.Location.X;
+                at.vector.Y = controlToMove.Location.Y + e.Location.Y;
+            }
+            if (((Control)sender).Tag is AbstractAugmention)
+            {
+                AbstractAugmention aa;
+                aa = (AbstractAugmention)((Control)sender).Tag;
+                aa.TranslationVector.X = controlToMove.Location.X + e.Location.X;
+                aa.TranslationVector.Y = controlToMove.Location.Y + e.Location.Y;
+            }
         }
     }
 }
