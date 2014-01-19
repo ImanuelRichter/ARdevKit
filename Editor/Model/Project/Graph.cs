@@ -52,7 +52,14 @@ namespace ARdevKit.Model.Project
             set { subtitle = value; }
         }
 
+        /// <summary>   The axis title. </summary>
         protected string xAxisTitle;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the axis title. </summary>
+        ///
+        /// <value> The x coordinate axis title. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         public string XAxisTitle
         {
