@@ -728,7 +728,8 @@ namespace ARdevKit
             {
                 ElementIcon icon = (ElementIcon)e.Data.GetData(typeof(ElementIcon));
                 Point p = pnl_editor_preview.PointToClient(Cursor.Position);
-                icon.EditorWindow.PreviewController.addPreviewable(icon.Element.Dummy, new Vector3D(p.X, p.Y, 0));
+                IPreviewable element=ObjectCopier.Clone(icon.Element.Dummy);
+                icon.EditorWindow.PreviewController.addPreviewable(element, new Vector3D(p.X, p.Y, 0));
             }
         }
 

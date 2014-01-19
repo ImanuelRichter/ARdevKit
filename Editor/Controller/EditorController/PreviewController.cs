@@ -352,6 +352,15 @@ public class PreviewController
 
       }
 
+    /**
+     * <summary>    Raises the drag event when a source enters a augmentation. </summary>
+     *
+     * <remarks>    Robin, 19.01.2014. </remarks>
+     *
+     * <param name="sender">    Source of the event. </param>
+     * <param name="e">         Event information to send to registered event handlers. </param>
+     */
+
     public void onAugmentationEnter(object sender, DragEventArgs e)
     {
         if (currentMetaCategory == MetaCategory.Source)
@@ -360,13 +369,23 @@ public class PreviewController
         }
     }
 
+    /**
+     * <summary>    Raises the drag event when a source is droped on an augmentation. </summary>
+     *
+     * <remarks>    Robin, 19.01.2014. </remarks>
+     *
+     * <param name="sender">    Source of the event. </param>
+     * <param name="e">         Event information to send to registered event handlers. </param>
+     */
+
     public void onAugmentationDrop(object sender, DragEventArgs e)
     {
         if (currentMetaCategory == MetaCategory.Source)
         {
             ElementIcon icon = (ElementIcon)e.Data.GetData(typeof(ElementIcon));
             AbstractAugmention augmentation = (AbstractAugmention) ((PictureBox)sender).Tag;
-            icon.EditorWindow.PreviewController.addSource((AbstractSource)icon.Element.Dummy, augmentation);
+            AbstractSource source=ObjectCopier.Clone((AbstractSource)icon.Element.Dummy);
+            addSource(source, augmentation);
         }
     }
 
