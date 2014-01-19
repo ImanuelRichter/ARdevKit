@@ -86,7 +86,7 @@
     </Compile>
     <Compile Include="Controller\EditorController\PreviewController.cs" />
     <Compile Include="Model\Project\AbstractTrackable.cs" />
-    <Compile Include="Model\Project\BarChart.cs" />
+    <Compile Include="Model\Project\BarGraph.cs" />
     <Compile Include="Model\Project\CustomUserEvent.cs" />
     <Compile Include="Model\Project\DbSource.cs" />
     <Compile Include="Model\Project\FileSource.cs" />
@@ -127,7 +127,7 @@
     </Compile>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\DataSources\EditorWindow.datasource" />
-    <Compile Include="Model\Project\Chart.cs" />
+    <Compile Include="Model\Project\Graph.cs" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

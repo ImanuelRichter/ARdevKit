@@ -51,7 +51,7 @@ namespace ARdevKit.Controller.ProjectController
         /// </summary>
         /// <param name="graph">The graph.</param>
         /// <exception cref="System.NotImplementedException"></exception>
-        public override void Visit(BarChart graph)
+        public override void Visit(BarGraph graph)
         {
             //do nothing
         }

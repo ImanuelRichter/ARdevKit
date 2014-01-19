@@ -16,14 +16,14 @@ namespace ARdevKit.Controller.ProjectController
     public abstract class AbstractProjectVisitor
     {
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Visits the given <see cref="BarChart"/>. </summary>
+        /// <summary>   Visits the given <see cref="BarGraph"/>. </summary>
         ///
         /// <remarks>   Imanuel, 17.01.2014. </remarks>
         ///
         /// <param name="barGraph">    The bar graph. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public abstract void Visit(BarChart barGraph);
+        public abstract void Visit(BarGraph barGraph);
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Visits the given <see cref="ImageAugmention"/>. </summary>

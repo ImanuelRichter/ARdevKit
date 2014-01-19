@@ -11,7 +11,7 @@ namespace ARdevKit.Model.Project
     /// 
     /// </summary>
     [Serializable]
-    public class BarChart : Chart
+    public class BarGraph : Graph
     {
         /// <summary>
         /// Gets or sets the maximum color of the value.
@@ -42,7 +42,7 @@ namespace ARdevKit.Model.Project
         /// </value>
         public Color OptimalValueColor { get; set; }
 
-        public BarChart()
+        public BarGraph()
         {
             OptimalValue = 50;
             OptimalValueColor = new Color();

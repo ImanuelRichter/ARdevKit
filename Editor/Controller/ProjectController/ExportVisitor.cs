@@ -113,14 +113,14 @@ namespace ARdevKit.Controller.ProjectController
         private int barChartCount = 1;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Visits the given <see cref="BarChart"/>. </summary>
+        /// <summary>   Visits the given <see cref="BarGraph"/>. </summary>
         ///
         /// <remarks>   Imanuel, 17.01.2014. </remarks>
         ///
         /// <param name="barChart">    The bar graph. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         
-        public override void Visit(BarChart barChart)
+        public override void Visit(BarGraph barChart)
         {
             // TrackingData.xml
 
