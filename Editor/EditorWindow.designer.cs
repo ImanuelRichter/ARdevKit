@@ -300,6 +300,7 @@
             this.tsm_editor_menu_help_info.Name = "tsm_editor_menu_help_info";
             this.tsm_editor_menu_help_info.Size = new System.Drawing.Size(152, 22);
             this.tsm_editor_menu_help_info.Text = "Info";
+            this.tsm_editor_menu_help_info.Click += new System.EventHandler(this.tsm_editor_menu_help_info_Click);
             // 
             // pnl_editor_selection
             // 

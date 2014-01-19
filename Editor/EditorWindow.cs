@@ -961,5 +961,10 @@ namespace ARdevKit
         {
             this.exportProject();
         }
+
+        private void tsm_editor_menu_help_info_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("ARdevKit Version 0.1 alpha \n\n Rüdiger Heres \n Jonas Lachowitzer \n Robin Lamberti \n Tuong-Vu Mai \n Imanuel Richter\n Marwin Rieger \n\n Nutzung auf eigene Gefahr! \n Das Programm könnte Ihre Kekse auffressen...", "Info");
+        }
     }
 }
