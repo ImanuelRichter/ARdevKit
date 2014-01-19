@@ -418,11 +418,20 @@ namespace ARdevKit
         {
             if (this.previewController.trackable == null && this.project.Trackables.Count > 1 && this.previewController.index != Convert.ToInt32(((Button)sender).Text) - 1)
             {
-                this.updateSceneSelectionPanel();
+                this.reloadSelectionPanel();
             }
 
             int temp = Convert.ToInt32(((Button)sender).Text);
-            this.previewController.reloadPreviewPanel(temp - 1);
+            if (this.project.Trackables.Count > 1)
+            {
+                this.previewController.reloadPreviewPanel(temp - 1);
+            }
+            else
+            {
+                this.previewController.index = -1;
+                this.previewController.reloadPreviewPanel(0);
+            }
+            
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -442,8 +451,6 @@ namespace ARdevKit
         {
             if (this.project.Trackables.Count < 10)
             {
-                if (this.previewController.trackable != null)
-                {
                     Button tempButton = new Button();
                     tempButton.Location = new System.Drawing.Point(54 + (52 * project.Trackables.Count), 34);
                     tempButton.Name = "btn_editor_scene_scene_" + (this.project.Trackables.Count + 1);
@@ -455,11 +462,6 @@ namespace ARdevKit
 
                     this.pnl_editor_szenes.Controls.Add(tempButton);
                     this.previewController.reloadPreviewPanel(this.project.Trackables.Count);
-                }
-                else
-                {
-                    MessageBox.Show("You can't open a new Scene when your current scene is empty");
-                }
             }
             else
             {
@@ -486,8 +488,9 @@ namespace ARdevKit
             {
                 this.project.Trackables.Remove(this.previewController.trackable);
                 this.previewController.trackable = this.project.Trackables[0];
-                this.updateSceneSelectionPanel();
-                this.previewController.index = 0;
+                this.reloadSelectionPanel();
+                this.previewController.index = -1;
+                this.previewController.reloadPreviewPanel(0);
             }
             else
             {
@@ -641,7 +644,32 @@ namespace ARdevKit
                     this.project.Trackables.Remove(this.project.Trackables[i]);
                 }
             }
+            this.pnl_editor_szenes.Controls.Clear();
+            this.pnl_editor_szenes.Controls.Add(this.btn_editor_scene_new);
+            this.pnl_editor_szenes.Controls.Add(this.btn_editor_scene_delete);
 
+            for (int i = 0; i < this.project.Trackables.Count; i++)
+            {
+                Button tempButton = new Button();
+                tempButton.Location = new System.Drawing.Point(54 + (i * 52), 34);
+                tempButton.Name = "btn_editor_scene_scene_" + (this.project.Trackables.Count + 1);
+                tempButton.Size = new System.Drawing.Size(46, 45);
+                tempButton.Text = Convert.ToString(i + 1);
+                tempButton.UseVisualStyleBackColor = true;
+                tempButton.Click += new System.EventHandler(this.btn_editor_scene_scene_change);
+
+                this.pnl_editor_szenes.Controls.Add(tempButton);
+            }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Reload selection panel. </summary>
+        ///
+        /// <remarks>   Lizzard, 1/19/2014. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private void reloadSelectionPanel()
+        {
             this.pnl_editor_szenes.Controls.Clear();
             this.pnl_editor_szenes.Controls.Add(this.btn_editor_scene_new);
             this.pnl_editor_szenes.Controls.Add(this.btn_editor_scene_delete);

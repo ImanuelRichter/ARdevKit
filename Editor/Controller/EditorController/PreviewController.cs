@@ -218,7 +218,6 @@ public class PreviewController
         else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null)
         {
             this.trackable.Augmentions.Remove((AbstractAugmention)currentElement);
-            this.ew.project.Trackables[index] = null;
             this.panel.Controls.Remove(this.findBox((AbstractAugmention)currentElement));
         }
     }
@@ -231,6 +230,7 @@ public class PreviewController
     {
         this.panel.Controls.Clear();
         this.trackable = null;
+        this.ew.project.Trackables[index] = null;
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
