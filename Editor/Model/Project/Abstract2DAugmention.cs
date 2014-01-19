@@ -46,7 +46,9 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
-        /// ToDo Summary is missing
+        /// default constructor, 
+        /// for use from implementing classes
+        /// sets <see cref="height"/> and <see cref="width"/> = 0
         /// </summary>
         protected Abstract2DAugmention() : base()
         {
@@ -54,7 +56,8 @@ namespace ARdevKit.Model.Project
             width = 0;
         }
 
-        /// <summary>   ToDo Summary is missing. </summary>
+        /// <summary> constructor, which sets every member of the class as specified,
+        /// for use from implementing classes</summary>
         ///
         /// <param name="coordSystemId">        Identifier for the coordinate system. </param>
         /// <param name="isVisible">            true if this object is visible. </param>

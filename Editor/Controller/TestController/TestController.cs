@@ -7,6 +7,9 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
 
+using ARdevKit.Controller.ProjectController;
+using ARdevKit.Model.Project;
+
 namespace ARdevKit.Controller.TestController
 {
     static class TestController
@@ -59,10 +62,15 @@ namespace ARdevKit.Controller.TestController
         /// Tells if an image<see cref="IMAGE"/> or video<see cref="VIDEO"/>
         /// should be loaded or if a virtual camera<see cref="CAMERA"/> should be started
         /// </param>
-        private static void StartPlayer(string projectPath, int mode)
+        private static void StartPlayer(Project project, int mode)
         {
+            ExportVisitor exporter = new ExportVisitor();
+            project.Name = "Test";
+            project.ProjectPath = System.IO.Path.Combine(System.Windows.Forms.Application.StartupPath, "currentProject");
+            project.Accept(exporter);
+
             player = new Process();
-            player.StartInfo.Arguments = projectPath + " -" + mode;
+            player.StartInfo.Arguments = project.ProjectPath + " -" + mode;
             
             switch (mode)
             {
@@ -115,18 +123,6 @@ namespace ARdevKit.Controller.TestController
                 }
             }
         }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Starts the player passing the projectPath (startupPath\currentProject) and a testFilePath
-        /// which is the result of an opened FileDialog.
-        /// </summary>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        public static void StartWithImage()
-        {
-            string projectPath = System.IO.Path.Combine(System.Windows.Forms.Application.StartupPath, "currentProject");
-            StartPlayer(projectPath, IMAGE);
-        }
         
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
@@ -135,21 +131,9 @@ namespace ARdevKit.Controller.TestController
         /// </summary>
         /// <param name="projectPath">The location of the project</param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        public static void StartWithImage(string projectPath)
+        public static void StartWithImage(Project project)
         {
-            StartPlayer(projectPath, IMAGE);
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Starts the player passing the projectPath (startupPath\currentProject) and a testFilePath
-        /// which is the result of an opened FileDialog.
-        /// </summary>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        public static void StartWithVideo()
-        {
-            string projectPath = System.IO.Path.Combine(System.Windows.Forms.Application.StartupPath, "currentProject");
-            StartPlayer(projectPath, VIDEO);
+            StartPlayer(project, IMAGE);
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -159,22 +143,9 @@ namespace ARdevKit.Controller.TestController
         /// </summary>
         /// <param name="projectPath">The location of the project</param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        public static void StartWithVideo(string projectPath)
+        public static void StartWithVideo(Project project)
         {
-            StartPlayer(projectPath, VIDEO);
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Starts the player passing the projectPath (startupPath\currentProject) and an extern virtualCamera which
-        /// is used to load test content.
-        /// FileDialog.
-        /// </summary>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        public static void StartWithVirtualCamera()
-        {
-            string projectPath = System.IO.Path.Combine(System.Windows.Forms.Application.StartupPath, "currentProject");
-            StartPlayer(projectPath, CAMERA);
+            StartPlayer(project, VIDEO);
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -185,9 +156,9 @@ namespace ARdevKit.Controller.TestController
         /// </summary>
         /// <param name="projectPath">The location of the project</param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        public static void StartWithVirtualCamera(string projectPath)
+        public static void StartWithVirtualCamera(Project project)
         {
-            StartPlayer(projectPath, CAMERA);
+            StartPlayer(project, CAMERA);
         }
     }
 }
