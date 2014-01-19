@@ -489,7 +489,8 @@ namespace ARdevKit
                 this.project.Trackables.Remove(this.previewController.trackable);
                 this.previewController.trackable = this.project.Trackables[0];
                 this.reloadSelectionPanel();
-                this.previewController.index = 0;
+                this.previewController.index = -1;
+                this.previewController.reloadPreviewPanel(0);
             }
             else
             {
@@ -660,6 +661,12 @@ namespace ARdevKit
                 this.pnl_editor_szenes.Controls.Add(tempButton);
             }
         }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Reload selection panel. </summary>
+        ///
+        /// <remarks>   Lizzard, 1/19/2014. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         private void reloadSelectionPanel()
         {
