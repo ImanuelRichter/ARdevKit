@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.ComponentModel;
 using ARdevKit.Controller.ProjectController;
 using ARdevKit.View;
+using System.Drawing;
 
 namespace ARdevKit.Model.Project
 {
@@ -82,9 +83,9 @@ namespace ARdevKit.Model.Project
         /// <summary>   ToDo Summary is missing. </summary>
         ///
         /// <returns>   The preview. </returns>
-        public override System.Drawing.Bitmap getPreview()
+        public override Bitmap getPreview()
         {
-           return Properties.Resources.ARMarker_normal_;
+           return new Bitmap(ImagePath);
         }
 
         /// <summary>   ToDo Summary is missing. </summary>

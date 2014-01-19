@@ -218,6 +218,7 @@ public class PreviewController
         else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null)
         {
             this.trackable.Augmentions.Remove((AbstractAugmention)currentElement);
+            this.ew.project.Trackables[index] = null;
             this.panel.Controls.Remove(this.findBox((AbstractAugmention)currentElement));
         }
     }
@@ -230,7 +231,6 @@ public class PreviewController
     {
         this.panel.Controls.Clear();
         this.trackable = null;
-        this.ew.project.Trackables[index] = null;
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -469,6 +469,7 @@ public class PreviewController
         {
             Control controlToMove = (Control)sender;
             controlToMove.BringToFront();
+<<<<<<< HEAD
             controlToMove.Location = new Point(controlToMove.Location.X + e.Location.X - 60,
                controlToMove.Location.Y + e.Location.Y - 60);
 
@@ -479,6 +480,9 @@ public class PreviewController
                 aa.TranslationVector.X = controlToMove.Location.X + e.Location.X;
                 aa.TranslationVector.Y = controlToMove.Location.Y + e.Location.Y;
             }
+=======
+            controlToMove.Location = new Point(controlToMove.Location.X + e.Location.X - 30,
+            controlToMove.Location.Y + e.Location.Y - 30);
         }
     }
 
@@ -502,6 +506,7 @@ public class PreviewController
         else
         {
             this.currentMetaCategory = MetaCategory.Augmentation;
+>>>>>>> origin/master
         }
 
         this.removePreviewable((IPreviewable)((ContextMenu)((MenuItem)sender).Parent).Tag);

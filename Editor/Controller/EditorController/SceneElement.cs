@@ -9,6 +9,12 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Controller.EditorController
 {
+    /**
+     * <summary>    An element that can be added to a Scene. </summary>
+     *
+     * <remarks>    Robin, 19.01.2014. </remarks>
+     */
+
     class SceneElement
     {
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -74,7 +80,7 @@ namespace ARdevKit.Controller.EditorController
         private ElementIcon elementIcon;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Erstellt das ElementIcon. </summary>
+        /// <summary>   The ElementIcon. </summary>
         ///
         /// <remarks>   Lizzard, 1/13/2014. </remarks>
         ///
@@ -95,11 +101,9 @@ namespace ARdevKit.Controller.EditorController
         ///
         /// <remarks>   Lizzard, 1/13/2014. </remarks>
         ///
-        /// <exception cref="NotImplementedException"> Thrown when the requested operation is
-        /// unimplemented. </exception>
-        ///
+        /// <param name="name">    The name of the Element. </param>
         /// <param name="dummy">    The dummy. </param>
-        /// <param name="icon">     The icon. </param>
+        /// <param name="ew">     The Editor window. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         public SceneElement(String name, IPreviewable dummy, EditorWindow ew)
