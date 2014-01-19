@@ -324,6 +324,17 @@ namespace ARdevKit
 
         private void tsm_editor_menu_file_exit_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Möchten Sie das aktuelle Projekt abspeichern, bevor ARdevKit beendet wird?", "Projekt speichern?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    this.saveProject();
+                }
+                catch (ArgumentNullException ae)
+                {
+                    Debug.WriteLine(ae.StackTrace);
+                }
+            }
             System.Windows.Forms.Application.Exit();
         }
 
