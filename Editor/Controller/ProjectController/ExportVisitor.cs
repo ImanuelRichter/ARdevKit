@@ -267,16 +267,29 @@ namespace ARdevKit.Controller.ProjectController
             barChartFileHighchartBlock.AddBlock(barChartFileHighchartChartBlock);
             barChartFileHighchartChartBlock.AddLine(new JavaScriptInLine("type: 'column'", false));
 
-            JavaScriptBlock barChartFileHighchartTitleBlock = new JavaScriptBlock("title: ", new BlockMarker("{", "},"));
-            barChartFileHighchartBlock.AddBlock(barChartFileHighchartTitleBlock);
-            barChartFileHighchartTitleBlock.AddLine(new JavaScriptInLine("text: '" + barChart.Title + "'", false));
+            if (barChart.Title != "")
+            {
+                JavaScriptBlock barChartFileHighchartTitleBlock = new JavaScriptBlock("title: ", new BlockMarker("{", "},"));
+                barChartFileHighchartBlock.AddBlock(barChartFileHighchartTitleBlock);
+                barChartFileHighchartTitleBlock.AddLine(new JavaScriptInLine("text: '" + barChart.Title + "'", false));
+            }
 
-            JavaScriptBlock barChartFileHighchartSubTitleBlock = new JavaScriptBlock("subtitle: ", new BlockMarker("{", "},"));
-            barChartFileHighchartBlock.AddBlock(barChartFileHighchartSubTitleBlock);
-            barChartFileHighchartSubTitleBlock.AddLine(new JavaScriptInLine("text: '" + barChart.Subtitle + "'", false));
+            if (barChart.Subtitle != "")
+            {
+                JavaScriptBlock barChartFileHighchartSubTitleBlock = new JavaScriptBlock("subtitle: ", new BlockMarker("{", "},"));
+                barChartFileHighchartBlock.AddBlock(barChartFileHighchartSubTitleBlock);
+                barChartFileHighchartSubTitleBlock.AddLine(new JavaScriptInLine("text: '" + barChart.Subtitle + "'", false));
+            }
 
             JavaScriptBlock barChartFileHighchartXAxisBlock = new JavaScriptBlock("xAxis: ", new BlockMarker("{", "},"));
             barChartFileHighchartBlock.AddBlock(barChartFileHighchartXAxisBlock);
+
+            if (barChart.XAxisTitle != "")
+            {
+                JavaScriptBlock barChartFileHighchartXAxisTitleBlock = new JavaScriptBlock("title: ", new BlockMarker("{", "},"));
+                barChartFileHighchartXAxisBlock.AddBlock(barChartFileHighchartXAxisTitleBlock);
+                barChartFileHighchartXAxisTitleBlock.AddLine(new JavaScriptInLine("text: '" + barChart.XAxisTitle + "'", false));
+            }
 
             JavaScriptBlock barChartFileHighchartXAxisCategoriesBlock = new JavaScriptBlock("categories: ", new BlockMarker("[", "]"));
             barChartFileHighchartXAxisBlock.AddBlock(barChartFileHighchartXAxisCategoriesBlock);
@@ -291,9 +304,12 @@ namespace ARdevKit.Controller.ProjectController
             barChartFileHighchartBlock.AddBlock(barChartFileHighchartYAxisBlock);
 
             barChartFileHighchartYAxisBlock.AddLine(new JavaScriptInLine("min: " + barChart.MinValue, true));
-            JavaScriptBlock barChartFileHighchartYAxisTitleBlock = new JavaScriptBlock("title: ", new BlockMarker("{", "}"));
-            barChartFileHighchartYAxisBlock.AddBlock(barChartFileHighchartYAxisTitleBlock);
-            barChartFileHighchartYAxisTitleBlock.AddLine(new JavaScriptInLine("text: '" + barChart.YAxisTitle + "'", false));
+            if (barChart.YAxisTitle != "")
+            {
+                JavaScriptBlock barChartFileHighchartYAxisTitleBlock = new JavaScriptBlock("title: ", new BlockMarker("{", "}"));
+                barChartFileHighchartYAxisBlock.AddBlock(barChartFileHighchartYAxisTitleBlock);
+                barChartFileHighchartYAxisTitleBlock.AddLine(new JavaScriptInLine("text: '" + barChart.YAxisTitle + "'", false));
+            }
 
             JavaScriptBlock barChartFileHighchartTooltipBlock = new JavaScriptBlock("tooltip: ", new BlockMarker("{", "},"));
             barChartFileHighchartBlock.AddBlock(barChartFileHighchartTooltipBlock);
@@ -775,6 +791,15 @@ namespace ARdevKit.Controller.ProjectController
                 ifTrackingInformationAvailiableBlock.AddBlock(ifPatternIsLostBlock);
                 ifPatternIsLostBlock.AddLine(new JavaScriptLine("console.log(\"Tracking lost\")"));
         }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Copies a passed file to the passed directory. </summary>
+        ///
+        /// <remarks>   Imanuel, 19.01.2014. </remarks>
+        ///
+        /// <param name="srcFile">          Source file. </param>
+        /// <param name="destDirectory">    Pathname of the destination directory. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         private void Copy(string srcFile, string destDirectory)
         {

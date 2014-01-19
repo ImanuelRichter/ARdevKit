@@ -39,6 +39,14 @@ namespace ARdevKit.Model.Project
             set { subtitle = value; }
         }
 
+        protected string xAxisTitle;
+
+        public string XAxisTitle
+        {
+            get { return xAxisTitle; }
+            set { xAxisTitle = value; }
+        }
+
         protected string[] categories;
 
         public string[] Categories
