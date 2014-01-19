@@ -57,6 +57,10 @@ namespace EditorTest
             
             BarChart barChart1 = new BarChart();
             barChart1.Coordinatesystemid = 1;
+            barChart1.IsVisible = false;
+            barChart1.TranslationVector = new Vector3D(0, 0, 0);
+            barChart1.RotationVector = new Vector3Di(0, 0, 0, 1);
+            barChart1.ScalingVector = new Vector3D(0, 0, 0);
             barChart1.Width = 500;
             barChart1.Height = 350;
 
@@ -77,7 +81,7 @@ namespace EditorTest
             ImageAugmention image1 = new ImageAugmention();
             image1.ImagePath = Path.Combine(testProject.ProjectPath, "Assets", "frame.png");
             image1.IsVisible = false;
-            image1.Coordinatesystemid = 1;
+            image1.Coordinatesystemid = 2;
             image1.TranslationVector = new Vector3D(0, 0, 0);
             image1.RotationVector = new Vector3Di(0, 0, 0, 1);
             image1.ScalingVector = new Vector3D(0, 0, 0);

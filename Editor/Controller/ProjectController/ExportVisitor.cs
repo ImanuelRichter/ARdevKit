@@ -122,6 +122,84 @@ namespace ARdevKit.Controller.ProjectController
         
         public override void Visit(BarChart barChart)
         {
+            // TrackingData.xml
+
+            // Connections 
+
+            // COS
+            XMLBlock cosBlock = new XMLBlock(new XMLTag("COS"));
+            trackingDataFileConnectionsBlock.AddBlock(cosBlock);
+
+            // Name
+            cosBlock.AddLine(new XMLLine(new XMLTag("Name"), project.Sensor.Name + "COS" + cosCounter++));
+
+            // Fuser
+            trackingDataFileFuserBlock = new XMLBlock(new XMLTag("Dummy"));
+            cosBlock.AddBlock(trackingDataFileFuserBlock);
+
+            // SensorSource
+            XMLBlock sensorSourceBlock = new XMLBlock(new XMLTag("SensorSource", "trigger=\"1\""));
+            cosBlock.AddBlock(sensorSourceBlock);
+
+            // SensorID
+            sensorSourceBlock.AddLine(new XMLLine(new XMLTag("SensorID"), project.Sensor.SensorIDString));
+            // SensorCosID
+            sensorSourceBlock.AddLine(new XMLLine(new XMLTag("SensorCosID"), barChart.Trackable.SensorCosID));
+
+            // Hand-Eye-Calibration
+            XMLBlock handEyeCalibrationBlock = new XMLBlock(new XMLTag("HandEyeCalibration"));
+            sensorSourceBlock.AddBlock(handEyeCalibrationBlock);
+
+            // Translation
+            XMLBlock hecTranslationOffset = new XMLBlock(new XMLTag("TranslationOffset"));
+            handEyeCalibrationBlock.AddBlock(hecTranslationOffset);
+
+            // TODO get vectors
+            hecTranslationOffset.AddLine(new XMLLine(new XMLTag("X"), "0"));
+            hecTranslationOffset.AddLine(new XMLLine(new XMLTag("Y"), "0"));
+            hecTranslationOffset.AddLine(new XMLLine(new XMLTag("Z"), "0"));
+
+            // Rotation
+            XMLBlock hecRotationOffset = new XMLBlock(new XMLTag("RotationOffset"));
+            handEyeCalibrationBlock.AddBlock(hecRotationOffset);
+
+            // TODO get vectors
+            hecRotationOffset.AddLine(new XMLLine(new XMLTag("X"), "0"));
+            hecRotationOffset.AddLine(new XMLLine(new XMLTag("Y"), "0"));
+            hecRotationOffset.AddLine(new XMLLine(new XMLTag("Z"), "0"));
+            hecRotationOffset.AddLine(new XMLLine(new XMLTag("W"), "1"));
+
+            // COSOffset
+            XMLBlock COSOffsetBlock = new XMLBlock(new XMLTag("COSOffset"));
+            sensorSourceBlock.AddBlock(COSOffsetBlock);
+
+            // Translation
+            XMLBlock COSOffsetTranslationOffset = new XMLBlock(new XMLTag("TranslationOffset"));
+            COSOffsetBlock.AddBlock(COSOffsetTranslationOffset);
+
+            string augmentionPositionX = barChart.TranslationVector.X.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentionPositionY = barChart.TranslationVector.Y.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentionPositionZ = barChart.TranslationVector.Z.ToString("F1", CultureInfo.InvariantCulture);
+            COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("X"), augmentionPositionX));
+            COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("Y"), augmentionPositionY));
+            COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("Z"), augmentionPositionZ));
+
+            // Rotation
+            XMLBlock COSOffsetRotationOffset = new XMLBlock(new XMLTag("RotationOffset"));
+            COSOffsetBlock.AddBlock(COSOffsetRotationOffset);
+
+            // TODO get vectors
+            string augmentionRotationX = barChart.RotationVector.X.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentionRotationY = barChart.RotationVector.Y.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentionRotationZ = barChart.RotationVector.Z.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentionRotationW = barChart.RotationVector.W.ToString("F1", CultureInfo.InvariantCulture);
+            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("X"), augmentionRotationX));
+            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("Y"), augmentionRotationY));
+            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("Z"), augmentionRotationZ));
+            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("W"), augmentionRotationW));
+            
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
             // arel[projectName].html
             arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("script", "src=\"Assets/jquery-2.0.3.js\"")));
             arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("script", "src=\"Assets/highcharts.js\"")));
@@ -148,7 +226,10 @@ namespace ARdevKit.Controller.ProjectController
                 barChartPositionLeft + ", \"" + barChart.Width + "px\", \"" + barChart.Height + "px\")"));
             loadContentBlock.AddLine(new JavaScriptLine(barChartVariable + ".hide()"));
 
-            ifPatternIsFoundBlock.AddLine(new JavaScriptLine(barChartVariable + ".show()"));
+            JavaScriptBlock barChartIfPatternIsFoundShowBlock = new JavaScriptBlock("if (param[0].getCoordinateSystemID() == " + barChartVariable + ".getCoordinateSystemID())", new BlockMarker("{", "}"));
+            ifPatternIsFoundBlock.AddBlock(barChartIfPatternIsFoundShowBlock);
+            barChartIfPatternIsFoundShowBlock.AddLine(new JavaScriptLine(barChartVariable + ".show()"));
+
             ifPatternIsLostBlock.AddLine(new JavaScriptLine(barChartVariable + ".hide()"));
 
             // Create barChart[i].js
@@ -264,9 +345,13 @@ namespace ARdevKit.Controller.ProjectController
             barChartFileDefineBlock.AddBlock(barChartShowBlock);
             barChartShowBlock.AddLine(new JavaScriptLine("$('#' + id).show()"));
 
-            JavaScriptBlock barChartHideBlock = new JavaScriptBlock("hide : function()", new BlockMarker("{", "}"));
+            JavaScriptBlock barChartHideBlock = new JavaScriptBlock("hide : function()", new BlockMarker("{", "},"));
             barChartFileDefineBlock.AddBlock(barChartHideBlock);
             barChartHideBlock.AddLine(new JavaScriptLine("$('#' + id).hide()"));
+
+            JavaScriptBlock barChartGetCoordinateSystemIDBlock = new JavaScriptBlock("getCoordinateSystemID : function()", new BlockMarker("{", "}"));
+            barChartFileDefineBlock.AddBlock(barChartGetCoordinateSystemIDBlock);
+            barChartGetCoordinateSystemIDBlock.AddLine(new JavaScriptLine("return coordinateSystemID"));
 
             barChartFiles.Add(barChartFile);
             barChartCount++;
@@ -295,7 +380,7 @@ namespace ARdevKit.Controller.ProjectController
             cosBlock.AddLine(new XMLLine(new XMLTag("Name"), project.Sensor.Name + "COS" + cosCounter++));
 
             // Fuser
-            trackingDataFileFuserBlock = new XMLBlock(new XMLTag("Dummy"));
+            trackingDataFileFuserBlock = new XMLBlock(new XMLTag("Fuser"));
             cosBlock.AddBlock(trackingDataFileFuserBlock);
 
             // SensorSource
@@ -609,7 +694,8 @@ namespace ARdevKit.Controller.ProjectController
 
             // Prepare TrackinData.xml
             string trackingDataFileName = "TrackingData_" + project.Sensor.Name;
-            trackingDataFileName += p.Sensor.SensorSubType != AbstractSensor.SensorSubTypes.None ? p.Sensor.SensorSubType.ToString() : "" + ".xml";
+            trackingDataFileName += p.Sensor.SensorSubType != AbstractSensor.SensorSubTypes.None ? p.Sensor.SensorSubType.ToString() : "";
+            trackingDataFileName += ".xml";
             trackingDataFile = new TrackingDataFile("<?xml version=\"1.0\" encoding=\"UTF-8\"?>", project.ProjectPath, trackingDataFileName);
 
             // TrackingData
