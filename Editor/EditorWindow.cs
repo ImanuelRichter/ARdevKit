@@ -559,6 +559,8 @@ namespace ARdevKit
                 {
                     Debug.WriteLine(ne.StackTrace);
                 }
+
+                MessageBox.Show("Projekt wurde exportiert!", "Export");
             }
             catch (ArgumentNullException ae)
             {
