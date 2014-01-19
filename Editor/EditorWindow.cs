@@ -25,6 +25,7 @@ using ARdevKit.Controller.EditorController;
 using ARdevKit.Controller.Connections.DeviceConnection;
 using ARdevKit.Controller.TestController;
 using ARdevKit.View;
+using System.IO;
 
 namespace ARdevKit
 {
@@ -108,30 +109,6 @@ namespace ARdevKit
         {
             get { return elementCategories; }
             set { elementCategories = value; }
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// The path of the current project
-        /// </summary>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        private string projectPath;
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Gets or sets the full pathname of the project file.
-        /// </summary>
-        ///
-        /// <value>
-        /// The full pathname of the project file.
-        /// </value>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        public string ProjectPath
-        {
-            get { return projectPath; }
-            set { projectPath = value; }
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -354,10 +331,10 @@ namespace ARdevKit
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         private void tsm_editor_menu_test_startImage_Click(object sender, EventArgs e)
         {
-            if (projectPath == null)
+            if (project.ProjectPath == null)
                 TestController.StartWithImage();
             else
-                TestController.StartWithImage(projectPath);
+                TestController.StartWithImage(project.ProjectPath);
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -371,10 +348,10 @@ namespace ARdevKit
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         private void tsm_editor_menu_test_startVideo_Click(object sender, EventArgs e)
         {
-            if (projectPath == null)
+            if (project.ProjectPath == null)
                 TestController.StartWithVideo();
             else
-                TestController.StartWithVideo(projectPath);
+                TestController.StartWithVideo(project.ProjectPath);
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -389,10 +366,10 @@ namespace ARdevKit
 
         private void tsm_editor_menu_test_startWithVirtualCamera_Click(object sender, EventArgs e)
         {
-            if (projectPath == null)
+            if (project.ProjectPath == null)
                 TestController.StartWithVirtualCamera();
             else
-                TestController.StartWithVirtualCamera(projectPath);
+                TestController.StartWithVirtualCamera(project.ProjectPath);
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -577,21 +554,21 @@ namespace ARdevKit
 
         public void saveProject()
         {
-            if (projectPath == null)
+            if (project.ProjectPath == null)
             {
                 SaveFileDialog saveFileDialog1 = new SaveFileDialog();
                 saveFileDialog1.Filter = "ARdevkit Projektdatei|*.ardev";
                 saveFileDialog1.Title = "Projekt speichern";
                 saveFileDialog1.ShowDialog();
-                this.projectPath = saveFileDialog1.FileName;
+                project.ProjectPath = Path.GetDirectoryName(saveFileDialog1.FileName);
+                project.Name = Path.GetFileNameWithoutExtension(saveFileDialog1.FileName);
             }
-                this.save(projectPath);
+            this.save(project.ProjectPath);
         }
 
         private void save(String path)
         {
-            //TODO: implement save()
-
+            SaveLoadController.saveProject(this.project);
         }
 
         public void sendToDevice()
@@ -757,10 +734,10 @@ namespace ARdevKit
         private void initializeEmptyProject(String projectname)
         {
             this.project = new Project(projectname);
+            this.project.ProjectPath = null;
             this.startDebugModeDevice = false;
             this.startDebugModeLocal = false;
             this.elementCategories = new List<SceneElementCategory>();
-            this.projectPath = null;
             this.allElements = new LinkedList<IPreviewable>();
             this.saveVisitor = new SaveVisitor();
             this.exportVisitor = new ExportVisitor();
@@ -812,7 +789,7 @@ namespace ARdevKit
 
         private void tsm_editor_menu_file_saveAs_Click(object sender, EventArgs e)
         {
-            this.projectPath = null;
+            this.project.ProjectPath = null;
             this.saveProject();
         }
     }

@@ -20,10 +20,10 @@ namespace ARdevKit.Controller.ProjectController
         /// </summary>
         /// <param name="project">The <see cref="Project"/>, which need to be serialized</param>
         /// <param name="path">The path to which it should be serialized</param>
-        static void saveProject(Project project, string path)
+        public static void saveProject(Project project)
         {
             BinaryFormatter formatter = new BinaryFormatter();
-            Stream stream = new FileStream((Path.Combine(path, project.Name.Replace(" ", "_")) + ".bin"), FileMode.Create, FileAccess.Write, FileShare.None);
+            Stream stream = new FileStream((Path.Combine(project.ProjectPath, project.Name.Replace(" ", "_")) + ".bin"), FileMode.Create, FileAccess.Write, FileShare.None);
             formatter.Serialize(stream, project);
             stream.Close();
         }
@@ -33,7 +33,7 @@ namespace ARdevKit.Controller.ProjectController
         /// </summary>
         /// <param name="path">The path, where the serialized <see cref="Project"/> is saved</param>
         /// <returns>the deserialized <see cref="Project"/></returns>
-        static Project loadProject(string path)
+        public static Project loadProject(string path)
         {
             BinaryFormatter formatter = new BinaryFormatter();
             Stream stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read);
