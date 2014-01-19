@@ -41,7 +41,7 @@ namespace ARdevKit.Model.Project
             size = 60;
             type = "IDMarker";
             sensorCosID = IDFactory.createNewSensorCosID(this);
-            Fuser = new MarkerlessFuser();
+            Fuser = new MarkerFuser();
         }
 
         /// <summary>   ToDo Summary is missing. </summary>
