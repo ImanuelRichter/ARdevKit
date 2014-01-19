@@ -63,11 +63,18 @@ namespace ARdevKit.Controller.EditorController
 
         public void updateElementSelectionPanel()
         {
-            foreach (SceneElementCategoryPanel p in categoryPanels)
+            foreach (Control c in editorWindow.Pnl_editor_selection.Controls)
             {
-                p.Visible = false;
+                if (c != editorWindow.Cmb_editor_selection_toolSelection)
+                {
+                    editorWindow.Pnl_editor_selection.Controls.Remove(c);
+                }
             }
-            ((SceneElementCategoryPanel) editorWindow.Cmb_editor_selection_toolSelection.SelectedItem).Visible = true;
+            SceneElementCategoryPanel panel = ((SceneElementCategoryPanel)editorWindow.Cmb_editor_selection_toolSelection.SelectedItem);
+            editorWindow.Pnl_editor_selection.Controls.Add(panel);
+            panel.Location = new Point(0, 25);
+            panel.Size = new Size(editorWindow.Pnl_editor_selection.Size.Width, editorWindow.Pnl_editor_selection.Size.Height - 25);
+            panel.Visible = true;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -84,10 +91,6 @@ namespace ARdevKit.Controller.EditorController
             {
                 SceneElementCategoryPanel n = new SceneElementCategoryPanel(c);
                 categoryPanels.Add(n);
-                editorWindow.Pnl_editor_selection.Controls.Add(n);
-                n.Location = new Point(0, 25);
-                n.Size = new Size(editorWindow.Pnl_editor_selection.Size.Width, editorWindow.Pnl_editor_selection.Size.Height-25);
-                
             }
         }
 
@@ -103,6 +106,7 @@ namespace ARdevKit.Controller.EditorController
 
         public void populateComboBox()
         {
+            editorWindow.Cmb_editor_selection_toolSelection.Items.Clear();
             foreach (SceneElementCategoryPanel p in categoryPanels)
             {
                 editorWindow.Cmb_editor_selection_toolSelection.Items.Add(p);

@@ -47,7 +47,7 @@ namespace ARdevKit.View
             : base()
         {
             AutoScroll = true;
-            Visible = false;
+            //Visible = false;
             Size = new Size(0, 0);
             FlowDirection = FlowDirection.TopDown;
            
