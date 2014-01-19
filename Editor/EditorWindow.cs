@@ -503,6 +503,7 @@ namespace ARdevKit
         public void exportProject()
         {
             //TODO: implement exportProject()
+            exportVisitor.Visit(project);
         }
 
         /// <summary>
@@ -843,6 +844,11 @@ namespace ARdevKit
                 this.saveProject();
             }
             this.loadProject();
+        }
+
+        private void tsm_editor_menu_file_export_Click(object sender, EventArgs e)
+        {
+            this.exportProject();
         }
     }
 }

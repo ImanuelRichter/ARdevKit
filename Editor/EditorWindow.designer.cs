@@ -147,7 +147,8 @@
             // 
             this.tsm_editor_menu_file_export.Name = "tsm_editor_menu_file_export";
             this.tsm_editor_menu_file_export.Size = new System.Drawing.Size(192, 22);
-            this.tsm_editor_menu_file_export.Text = "Exporieren";
+            this.tsm_editor_menu_file_export.Text = "Exportieren";
+            this.tsm_editor_menu_file_export.Click += new System.EventHandler(this.tsm_editor_menu_file_export_Click);
             // 
             // tss_editor_menu_file_export_sendTo
             // 
