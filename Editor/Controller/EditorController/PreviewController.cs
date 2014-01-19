@@ -84,8 +84,10 @@ public class PreviewController
     {
         if (currentMetaCategory == MetaCategory.Trackable && trackable == null)
         {
-            
 
+            Vector3D center = new Vector3D(0,0,0);
+            center.Y = panel.Size.Height / 2;
+            center.X = panel.Size.Width / 2;
             //ask the user for the picture (if the trackable is a picturemarker)
             if (currentElement.GetType() == typeof(PictureMarker))
             {
@@ -94,19 +96,32 @@ public class PreviewController
                 if (openTestImageDialog.ShowDialog() == DialogResult.OK)
                 {
                     ((PictureMarker)currentElement).ImagePath = openTestImageDialog.FileName;
+                    
                     //set the vector to the trackable
-                    ((AbstractTrackable)currentElement).vector = v;
+                    ((AbstractTrackable)currentElement).vector = center;
                     this.trackable = (AbstractTrackable)currentElement;
                     this.ew.project.Trackables[index] = (AbstractTrackable)currentElement;
-                    this.addPictureBox(currentElement, v);
+                    this.addPictureBox(currentElement, center);
+                    if (this.ew.project.isTrackable())
+                    {
+                        this.ew.ElementSelectionController.setElementEnable(typeof(IDMarker), false);
+                        this.ew.project.Sensor = new MarkerSensor();
+                    }
+                    
                 }
             }
             else {
                 //set the vector to the trackable
-                    ((AbstractTrackable)currentElement).vector = v;
+                    ((AbstractTrackable)currentElement).vector = center;
                     this.trackable = (AbstractTrackable)currentElement;
                     this.ew.project.Trackables[index] = (AbstractTrackable)currentElement;
-                    this.addPictureBox(currentElement, v);
+                    this.addPictureBox(currentElement, center);
+                    if (this.ew.project.isTrackable())
+                    {
+                        this.ew.ElementSelectionController.setElementEnable(typeof(PictureMarker), false);
+                        this.ew.project.Sensor = new MarkerSensor();
+                    }
+                    
             }
             
         }
@@ -214,6 +229,11 @@ public class PreviewController
         if (currentMetaCategory == MetaCategory.Trackable && trackable != null)
         {
             this.removeAll();
+            if (!this.ew.project.isTrackable())
+            {
+                this.ew.ElementSelectionController.setElementEnable(typeof(PictureMarker), true);
+                this.ew.ElementSelectionController.setElementEnable(typeof(IDMarker), true);
+            }
         }
         else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null)
         {
@@ -343,9 +363,9 @@ public class PreviewController
     {
         PictureBox tempBox;
         tempBox = new PictureBox();
-        tempBox.Location = new Point(vector.X - prev.getPreview().Height / 8, vector.Y - prev.getPreview().Width / 8);
+        tempBox.Location = new Point(vector.X - prev.getPreview().Width / 8, vector.Y - prev.getPreview().Height / 8);
         tempBox.Image = (Image)prev.getPreview();
-        tempBox.Size = new Size(prev.getPreview().Height / 4, prev.getPreview().Width / 4);
+        tempBox.Size = new Size(prev.getPreview().Width / 4, prev.getPreview().Height / 4);
         tempBox.SizeMode = PictureBoxSizeMode.StretchImage;
         tempBox.Tag = prev;
 
@@ -367,7 +387,7 @@ public class PreviewController
         tempBox.MouseClick += new MouseEventHandler(selectElement);
 
         if (tempBox.Tag is AbstractAugmention)
-            tempBox.MouseMove += new MouseEventHandler(controlMouseMove);
+        tempBox.MouseMove += new MouseEventHandler(controlMouseMove);
 
         this.panel.Controls.Add(tempBox);
 
