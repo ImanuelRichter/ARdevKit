@@ -37,6 +37,7 @@
     <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
@@ -50,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\EditorController\ObjectCopier.cs" />
     <Compile Include="Model\Project\AbstractDynamic2DAugmention.cs" />
     <Compile Include="Model\Project\ChartStyle.cs" />
     <Compile Include="Model\Project\File\BarChartFile.cs" />
@@ -116,6 +118,7 @@
     <Compile Include="View\ElementIcon.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="View\FileSelectorTypeEditor.cs" />
     <Compile Include="View\SceneElementCategoryPanel.cs">
       <SubType>Component</SubType>
     </Compile>

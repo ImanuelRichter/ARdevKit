@@ -19,7 +19,7 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// Gets or sets the type.
         /// </summary>
-        [CategoryAttribute("General")]
+        [CategoryAttribute("General"), ReadOnly(true)]
         public string Type
         {
             get { return type; }

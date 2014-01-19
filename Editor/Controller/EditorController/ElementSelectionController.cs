@@ -1,4 +1,5 @@
-﻿using ARdevKit.View;
+﻿using ARdevKit.Model.Project;
+using ARdevKit.View;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -87,7 +88,6 @@ namespace ARdevKit.Controller.EditorController
                 editorWindow.Pnl_editor_selection.Controls.Add(n);
                 n.Location = new Point(0, 25);
                 n.Size = new Size(editorWindow.Pnl_editor_selection.Size.Width, editorWindow.Pnl_editor_selection.Size.Height-25);
-                
             }
         }
 
@@ -108,6 +108,35 @@ namespace ARdevKit.Controller.EditorController
                 editorWindow.Cmb_editor_selection_toolSelection.Items.Add(p);
             }
             editorWindow.Cmb_editor_selection_toolSelection.SelectedIndex = 0;
+        }
+
+        /**
+         * <summary>    Disables or enables the given element in the Element Selection Panel. </summary>
+         *
+         * <remarks>    Robin, 19.01.2014. </remarks>
+         *
+         * <param name="element">   The element to disable or enable. Example: typeof(IDMarker) </param>
+         * <param name="enable">   Whether the element should be dis or enabled. </param>
+         */
+
+        public void setElementEnable(Type element, Boolean enable)
+        {
+            foreach (SceneElementCategoryPanel p in categoryPanels)
+            {
+                foreach (SceneElement e in p.Category.SceneElements)
+                {
+                    if (element.IsInstanceOfType(e.Dummy) )
+                    {
+                        foreach (Control c in p.Controls)
+                        {
+                            if (((ElementIcon)c).Element.Dummy == e.Dummy)
+                            {
+                                c.Visible = enable;
+                            }
+                        }
+                    }
+                }
+            }
         }
             
     }
