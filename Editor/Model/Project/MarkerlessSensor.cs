@@ -5,9 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using ARdevKit.Controller.ProjectController;
 
+using System.ComponentModel;
+
 namespace ARdevKit.Model.Project
 {
     [Serializable]
+    [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public class MarkerlessSensor : AbstractSensor
     {
         [Flags]
@@ -132,7 +135,7 @@ namespace ARdevKit.Model.Project
         /// <remarks>   Imanuel, 17.01.2014. </remarks>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public MarkerlessSensor()
+        public MarkerlessSensor() : base() // maybe needs to redo, because of base() ?
         {
             Name = "Markerless";
             SensorIDString = IDFactory.createNewSensorID(this);
@@ -140,6 +143,9 @@ namespace ARdevKit.Model.Project
             sensorSubType = SensorSubTypes.Fast;
         }
 
+        /// <summary>   Accepts the given visitor. </summary>
+        ///
+        /// <param name="visitor">  The visitor. </param>
         public override void Accept(AbstractProjectVisitor visitor)
         {
             visitor.Visit(this);

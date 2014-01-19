@@ -24,6 +24,7 @@ using ARdevKit.Controller.ProjectController;
 using ARdevKit.Controller.EditorController;
 using ARdevKit.Controller.Connections.DeviceConnection;
 using ARdevKit.Controller.TestController;
+using ARdevKit.View;
 
 namespace ARdevKit
 {
@@ -45,11 +46,44 @@ namespace ARdevKit
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
+        /// Gets or sets a value indicating whether to start debug mode if test mode is started on the
+        /// device.
+        /// </summary>
+        ///
+        /// <value>
+        /// if true the debug window will be opened when starting the test mode on the device.
+        /// </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public bool StartDebugModeDevice
+        {
+            get { return startDebugModeDevice; }
+            set { startDebugModeDevice = value; }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
         /// if true the debug window will be opened when starting the test mode locally.
         /// </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         private bool startDebugModeLocal;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// Gets or sets a value indicating whether to start debug mode locally.
+        /// </summary>
+        ///
+        /// <value>
+        /// if true the debug window will be opened when starting the test mode locally.
+        /// </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        internal bool StartDebugModeLocal
+        {
+            get { return startDebugModeLocal; }
+            set { startDebugModeLocal = value; }
+        }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
@@ -62,6 +96,22 @@ namespace ARdevKit
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
+        /// Gets or sets the categories the element belongs to.
+        /// </summary>
+        ///
+        /// <value>
+        /// The element categories.
+        /// </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        internal List<SceneElementCategory> ElementCategories
+        {
+            get { return elementCategories; }
+            set { elementCategories = value; }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
         /// The path of the current project
         /// </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -70,11 +120,43 @@ namespace ARdevKit
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
+        /// Gets or sets the full pathname of the project file.
+        /// </summary>
+        ///
+        /// <value>
+        /// The full pathname of the project file.
+        /// </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public string ProjectPath
+        {
+            get { return projectPath; }
+            set { projectPath = value; }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
         /// Linked list containing all IPreviewables.
         /// </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         private LinkedList<IPreviewable> allElements;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// Gets or sets allElements.
+        /// </summary>
+        ///
+        /// <value>
+        /// Linked list containing elements.
+        /// </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        internal LinkedList<IPreviewable> AllElements
+        {
+            get { return allElements; }
+            set { allElements = value; }
+        }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
@@ -91,6 +173,18 @@ namespace ARdevKit
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         private PreviewController previewController;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the previewController. </summary>
+        ///
+        /// <value> The previewController. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public PreviewController PreviewController
+        {
+            get { return previewController; }
+            set { previewController = value; }
+        }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Gets or sets the project. </summary>
@@ -126,11 +220,43 @@ namespace ARdevKit
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
+        /// Gets or sets the save visitor.
+        /// </summary>
+        ///
+        /// <value>
+        /// The save visitor.
+        /// </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        internal SaveVisitor SaveVisitor
+        {
+            get { return saveVisitor; }
+            set { saveVisitor = value; }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
         /// The export visitor.
         /// </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         private ExportVisitor exportVisitor;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// Gets or sets the export visitor.
+        /// </summary>
+        ///
+        /// <value>
+        /// The export visitor.
+        /// </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        internal ExportVisitor ExportVisitor
+        {
+            get { return exportVisitor; }
+            set { exportVisitor = value; }
+        }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
@@ -158,119 +284,6 @@ namespace ARdevKit
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
-        /// Gets or sets the export visitor.
-        /// </summary>
-        ///
-        /// <value>
-        /// The export visitor.
-        /// </value>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        internal ExportVisitor ExportVisitor
-        {
-            get { return exportVisitor; }
-            set { exportVisitor = value; }
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Gets or sets the save visitor.
-        /// </summary>
-        ///
-        /// <value>
-        /// The save visitor.
-        /// </value>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        internal SaveVisitor SaveVisitor
-        {
-            get { return saveVisitor; }
-            set { saveVisitor = value; }
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Gets or sets allElements.
-        /// </summary>
-        ///
-        /// <value>
-        /// Linked list containing elements.
-        /// </value>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        internal LinkedList<IPreviewable> AllElements
-        {
-            get { return allElements; }
-            set { allElements = value; }
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Gets or sets a value indicating whether to start debug mode if test mode is started on the
-        /// device.
-        /// </summary>
-        ///
-        /// <value>
-        /// if true the debug window will be opened when starting the test mode on the device.
-        /// </value>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        public bool StartDebugModeDevice
-        {
-            get { return startDebugModeDevice; }
-            set { startDebugModeDevice = value; }
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Gets or sets a value indicating whether to start debug mode locally.
-        /// </summary>
-        ///
-        /// <value>
-        /// if true the debug window will be opened when starting the test mode locally.
-        /// </value>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        internal bool StartDebugModeLocal
-        {
-            get { return startDebugModeLocal; }
-            set { startDebugModeLocal = value; }
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Gets or sets the categories the element belongs to.
-        /// </summary>
-        ///
-        /// <value>
-        /// The element categories.
-        /// </value>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        internal List<SceneElementCategory> ElementCategories
-        {
-            get { return elementCategories; }
-            set { elementCategories = value; }
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Gets or sets the full pathname of the project file.
-        /// </summary>
-        ///
-        /// <value>
-        /// The full pathname of the project file.
-        /// </value>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        public string ProjectPath
-        {
-            get { return projectPath; }
-            set { projectPath = value; }
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
         /// Default constructor. initializes components on startup.
         /// </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -278,9 +291,9 @@ namespace ARdevKit
         public EditorWindow()
         {
             InitializeComponent();
-            allElements = new LinkedList<IPreviewable>();
-            this.project = new Project();
-            this.previewController = new PreviewController(this);
+            initializeEmptyProject();
+            initializeControllers();
+            updatePanels();
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -294,7 +307,8 @@ namespace ARdevKit
 
         private void Editor_Load(object sender, EventArgs e)
         {
-            //stub
+            elementSelectionController = new ElementSelectionController(this);
+            elementSelectionController.populateComboBox();
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -311,8 +325,13 @@ namespace ARdevKit
 
         private void tsm_editor_menu_file_new_Click(object sender, EventArgs e)
         {
-            //stub
-            throw new NotImplementedException();
+            if (MessageBox.Show("Möchten Sie das aktuelle Projekt abspeichern, bevor ein neues angelegt wird?", "Projekt speichern?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                this.saveProject();
+            }
+            this.initializeEmptyProject();
+            this.initializeControllers();
+            this.updatePanels();
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -474,7 +493,7 @@ namespace ARdevKit
             else
             {
                 this.project.Trackables[0] = null;
-                this.previewController.currentMetaCategory = PreviewController.MetaCategory.Trackable;
+                this.previewController.currentMetaCategory = MetaCategory.Trackable;
                 this.previewController.removePreviewable(this.previewController.trackable);
                 MessageBox.Show("You've cleaned this scene!");
             }
@@ -527,14 +546,54 @@ namespace ARdevKit
             //TODO: implement openTestWindow()
         }
 
+        /**
+         * <summary>    Registers all SceneElements. </summary>
+         *
+         * <remarks>    Robin, 14.01.2014. </remarks>
+         */
+
         public void registerElements()
         {
-            //TODO: implement registerElements()
+            Bitmap dummy=Properties.Resources.PreviewDummy; //TODO: Make preview Bitmaps for all Elements
+            SceneElementCategory sources = new SceneElementCategory(MetaCategory.Source, "Sources");
+            sources.addElement(new SceneElement("Database Source", new DbSource(),this));
+            sources.addElement(new SceneElement("FileSource", new FileSource(""),this));
+            SceneElementCategory augmentations = new SceneElementCategory(MetaCategory.Augmentation, "Augmentations");
+            augmentations.addElement(new SceneElement("Bar Graph", new BarGraph(),this));
+            SceneElementCategory trackables = new SceneElementCategory(MetaCategory.Trackable, "Trackables");
+            trackables.addElement(new SceneElement("Picture Marker",new PictureMarker(""),this));
+            trackables.addElement(new SceneElement("IDMarker",new IDMarker(1),this));
+            addCategory(trackables);
+            addCategory(augmentations);
+            addCategory(sources);
         }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// Saves the project. Opens file save dialog if project Path isn't set yet. calls save(String path).
+        /// </summary>
+        ///
+        /// <remarks>
+        /// geht, 17.01.2014.
+        /// </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         public void saveProject()
         {
-            //TODO: implement saveProject()
+            if (projectPath == null)
+            {
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                saveFileDialog1.Filter = "ARdevkit Projektdatei|*.ardev";
+                saveFileDialog1.Title = "Projekt speichern";
+                saveFileDialog1.ShowDialog();
+                this.projectPath = saveFileDialog1.FileName;
+            }
+                this.save(projectPath);
+        }
+
+        private void save(String path)
+        {
+            //TODO: implement save()
         }
 
         public void sendToDevice()
@@ -608,9 +667,153 @@ namespace ARdevKit
             //TODO: implement updateStatusBar()
         }
 
+        /**
+         * <summary>    Adds a category to the element categories. </summary>
+         *
+         * <remarks>    Robin, 18.01.2014. </remarks>
+         *
+         * <param name="category">  The category. </param>
+         */
+
         private void addCategory(SceneElementCategory category)
         {
-            //TODO: implement addCategory(SceneElementCategory category)
+            elementCategories.Add(category);
+        }
+
+        /**
+         * <summary>
+         *  Event handler. Called by cmb_editor_selection_toolSelection for selected index changed
+         *  events.
+         * </summary>
+         *
+         * <remarks>    Robin, 18.01.2014. </remarks>
+         *
+         * <param name="sender">    Source of the event. </param>
+         * <param name="e">         Event information. </param>
+         */
+
+        private void cmb_editor_selection_toolSelection_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            elementSelectionController.updateElementSelectionPanel();
+            previewController.currentMetaCategory = ((SceneElementCategoryPanel) cmb_editor_selection_toolSelection.SelectedItem).Category.Category;
+        }
+
+        /**
+         * <summary>    Event handler. Called by pnl_editor_preview for drag enter events. </summary>
+         *
+         * <remarks>    Robin, 18.01.2014. </remarks>
+         *
+         * <param name="sender">    Source of the event. </param>
+         * <param name="e">         Drag event information. </param>
+         */
+
+        private void pnl_editor_preview_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Move;
+        }
+
+        /**
+         * <summary>    Event handler. Called by pnl_editor_preview for drag drop events when an element is droped on the preview. </summary>
+         *
+         * <remarks>    Robin, 18.01.2014. </remarks>
+         *
+         * <param name="sender">    Source of the event. </param>
+         * <param name="e">         Drag event information. </param>
+         */
+
+        private void pnl_editor_preview_DragDrop(object sender, DragEventArgs e)
+        {
+            ElementIcon icon = (ElementIcon) e.Data.GetData(typeof(ElementIcon));
+            Point p = pnl_editor_preview.PointToClient(Cursor.Position);
+            icon.EditorWindow.PreviewController.addPreviewable(icon.Element.Dummy, new Vector3D(p.X, p.Y, 0));
+        }
+
+        private void initializeControllers()
+        {
+            try
+            {
+                this.elementSelectionController = new ElementSelectionController(this);
+            }
+            catch (Exception)
+            {
+
+                Debug.WriteLine("ElementSelectionController is not implemented yet...");
+            }
+
+            this.previewController = new PreviewController(this);
+            this.propertyController = new PropertyController(this);
+
+            try
+            {
+                this.deviceConnectionController = new DeviceConnectionController(this);
+            }
+            catch (Exception)
+            {
+
+                Debug.WriteLine("DeviceConnectionController is not implemented yet...");
+            }
+        }
+
+        private void initializeEmptyProject()
+        {
+            this.project = new Project();
+            this.startDebugModeDevice = false;
+            this.startDebugModeLocal = false;
+            this.elementCategories = new List<SceneElementCategory>();
+            this.projectPath = null;
+            this.allElements = new LinkedList<IPreviewable>();
+            this.saveVisitor = new SaveVisitor();
+            this.exportVisitor = new ExportVisitor();
+            this.currentElement = null;
+            registerElements();
+        }
+
+        private void updatePanels()
+        {
+            this.updateElementSelectionPanel();
+            this.updatePreviewPanel();
+            this.updatePropertyPanel(currentElement);
+            this.updateSceneSelectionPanel();
+            this.updateStatusBar();
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// Event handler. Called by tsm_editor_menu_file_save for click events.
+        /// Click on "Speichern" dialog.
+        /// </summary>
+        ///
+        /// <remarks>
+        /// geht, 17.01.2014.
+        /// </remarks>
+        ///
+        /// <param name="sender">   Source of the event. </param>
+        /// <param name="e">        Event information. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private void tsm_editor_menu_file_save_Click(object sender, EventArgs e)
+        {
+            this.saveProject();
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// Event handler. Called by tsm_editor_menu_file_saveAs for click events.
+        /// Click on "Speichern unter" dialog.
+        /// </summary>
+        ///
+        /// <remarks>
+        /// geht, 17.01.2014.
+        /// </remarks>
+        ///
+        /// <param name="sender">   Source of the event. </param>
+        /// <param name="e">        Event information. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private void tsm_editor_menu_file_saveAs_Click(object sender, EventArgs e)
+        {
+            this.projectPath = null;
+            this.saveProject();
         }
     }
 }

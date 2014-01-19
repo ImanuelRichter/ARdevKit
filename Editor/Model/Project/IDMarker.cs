@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 
+using System.ComponentModel;
+
 namespace ARdevKit.Model.Project
 {
-    /// <summary>
-    /// 
-    /// </summary>
+    /// <summary>   An identifier marker. </summary>
     [Serializable]
+    [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public class IDMarker : AbstractMarker
     {
         /// <summary>
@@ -23,13 +24,19 @@ namespace ARdevKit.Model.Project
         /// <value>
         /// The matrix identifier.
         /// </value>
+        [CategoryAttribute("General"), ReadOnly(true)]
         public int MatrixID
         {
             get { return matrixID; }
             set { matrixID = value; }
         }
 
+        /// <summary>   The identifier marker tracking sensor. </summary>
         private MarkerSensor idMarkerTrackingSensor;
+        /// <summary>   Gets or sets the identifier marker tracking sensor. </summary>
+        ///
+        /// <value> The identifier marker tracking sensor. </value>
+        [CategoryAttribute("General")]
         public MarkerSensor IdMarkerTrackingSensor
         {
             get { return idMarkerTrackingSensor; }
@@ -40,7 +47,7 @@ namespace ARdevKit.Model.Project
         /// Initializes a new instance of the <see cref="IDMarker"/> class.
         /// </summary>
         /// <param name="matrixID">The matrix identifier.</param>
-        public IDMarker(int matrixID)
+        public IDMarker(int matrixID) : base()
         {
             this.matrixID = matrixID;
             size = 60;
@@ -49,6 +56,10 @@ namespace ARdevKit.Model.Project
             sensorCosID = IDFactory.createNewSensorCosID(this);
             Fuser = new MarkerlessFuser();
         }
+
+        /// <summary>   ToDo Summary is missing. </summary>
+        ///
+        /// <param name="visitor">  . </param>
         public override void Accept(Controller.ProjectController.AbstractProjectVisitor visitor)
         {
             visitor.Visit(this);

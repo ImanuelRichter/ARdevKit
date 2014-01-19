@@ -31,20 +31,22 @@ namespace ARdevKit.Model.Project
             set { name = value; }
         }
 
+        /// <summary>   Full pathname of the project file. </summary>
         private string projectPath;
+        /// <summary>   Gets or sets the full pathname of the project file. </summary>
+        ///
+        /// <value> The full pathname of the project file. </value>
         public string ProjectPath
         {
             get { return projectPath; }
             set { projectPath = value; }
         }
 
+        /// <summary>   The sensor. </summary>
         protected AbstractSensor sensor;
-        /// <summary>
-        /// Gets or sets the sensor.
-        /// </summary>
-        /// <value>
-        /// The sensor.
-        /// </value>
+        /// <summary>   Gets or sets the sensor. </summary>
+        ///
+        /// <value> The sensor. </value>
         public AbstractSensor Sensor
         {
             get { return sensor; }
@@ -93,11 +95,18 @@ namespace ARdevKit.Model.Project
             sources = new List<AbstractSource>();
         }
 
+        /// <summary>   Initializes a new instance of the <see cref="Project"/> class. </summary>
+        /// 
+        /// <param name="name"> The name. </param>
         public Project(string name) : this()
         {
             this.name = name;
         }
 
+        /// <summary>   Initializes a new instance of the <see cref="Project"/> class. </summary>
+        ///
+        /// <param name="name">         The name. </param>
+        /// <param name="projectPath">  Full pathname of the project file. </param>
         public Project(string name, string projectPath)
             : this(name)
         {
