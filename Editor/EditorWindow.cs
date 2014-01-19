@@ -143,6 +143,18 @@ namespace ARdevKit
 
         private ElementSelectionController elementSelectionController;
 
+        /// <summary>
+        /// Gets the element selection controller.
+        /// </summary>
+        /// <value>
+        /// The element selection controller.
+        /// </value>
+        /// <remarks>geht 19.01.2014 23:06</remarks>
+        internal ElementSelectionController ElementSelectionController
+        {
+            get { return elementSelectionController; }
+        }
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
         /// The preview controller.
