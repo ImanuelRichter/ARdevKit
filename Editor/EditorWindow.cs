@@ -301,7 +301,14 @@ namespace ARdevKit
         {
             if (MessageBox.Show("Möchten Sie das aktuelle Projekt abspeichern, bevor ein neues angelegt wird?", "Projekt speichern?", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                this.saveProject();
+                try
+                {
+                    this.saveProject();
+                }
+                catch (ArgumentNullException)
+                {
+                    
+                }
             }
             createNewProject("");
         }
@@ -501,11 +508,19 @@ namespace ARdevKit
         public void exportProject()
         {
             //TODO: implement exportProject()
-            project.Accept(exportVisitor);
-            exportVisitor.ArelProjectFile.Save();
-            exportVisitor.TrackingDataFile.Save();
-            exportVisitor.ArelConfigFile.Save();
-            exportVisitor.ArelGlueFile.Save();
+            try
+            {
+                saveProject();
+                project.Accept(exportVisitor);
+                exportVisitor.ArelProjectFile.Save();
+                exportVisitor.TrackingDataFile.Save();
+                exportVisitor.ArelConfigFile.Save();
+                exportVisitor.ArelGlueFile.Save();
+            }
+            catch (ArgumentNullException)
+            {
+                
+            }
         }
 
         /// <summary>
@@ -577,26 +592,34 @@ namespace ARdevKit
 
         public void saveProject()
         {
-            if (project.ProjectPath == null)
+            if (project.Sensor == null)
             {
-                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-                saveFileDialog1.Filter = "ARdevkit Projektdatei|*.ardev";
-                saveFileDialog1.Title = "Projekt speichern";
-                saveFileDialog1.ShowDialog();
-                try
-                {
-                    project.ProjectPath = Path.GetDirectoryName(saveFileDialog1.FileName);
-                    project.Name = Path.GetFileNameWithoutExtension(saveFileDialog1.FileName);
-                    this.save(project.ProjectPath);
-                }
-                catch (System.ArgumentException)
-                {
-                    project.ProjectPath = null;
-                }
+                MessageBox.Show("Sie müssen mindestens ein Trackable hinzufügen!", "Achtung", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                throw new ArgumentNullException();
             }
             else
             {
-                this.save(project.ProjectPath);
+                if (project.ProjectPath == null)
+                {
+                    SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                    saveFileDialog1.Filter = "ARdevkit Projektdatei|*.ardev";
+                    saveFileDialog1.Title = "Projekt speichern";
+                    saveFileDialog1.ShowDialog();
+                    try
+                    {
+                        project.ProjectPath = Path.GetDirectoryName(saveFileDialog1.FileName);
+                        project.Name = Path.GetFileNameWithoutExtension(saveFileDialog1.FileName);
+                        this.save(project.ProjectPath);
+                    }
+                    catch (System.ArgumentException)
+                    {
+                        project.ProjectPath = null;
+                    }
+                }
+                else
+                {
+                    this.save(project.ProjectPath);
+                }
             }
         }
 
@@ -824,7 +847,14 @@ namespace ARdevKit
 
         private void tsm_editor_menu_file_save_Click(object sender, EventArgs e)
         {
-            this.saveProject();
+            try
+            {
+                this.saveProject();
+            }
+            catch (ArgumentNullException)
+            {
+
+            }
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -844,14 +874,28 @@ namespace ARdevKit
         private void tsm_editor_menu_file_saveAs_Click(object sender, EventArgs e)
         {
             this.project.ProjectPath = null;
-            this.saveProject();
+            try
+            {
+                this.saveProject();
+            }
+            catch (ArgumentNullException)
+            {
+
+            }
         }
 
         private void tsm_editor_menu_file_open_Click_1(object sender, EventArgs e)
         {
             if (MessageBox.Show("Möchten Sie das aktuelle Projekt abspeichern, bevor ein anderes geöffnet wird?", "Projekt speichern?", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                this.saveProject();
+                try
+                {
+                    this.saveProject();
+                }
+                catch (ArgumentNullException)
+                {
+
+                }
             }
             this.loadProject();
         }
