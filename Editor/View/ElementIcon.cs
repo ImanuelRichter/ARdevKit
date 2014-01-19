@@ -201,6 +201,15 @@ namespace ARdevKit.View
             }
         }
 
+        /**
+         * <summary>    Raises the mouse leave event. </summary>
+         *
+         * <remarks>    Robin, 19.01.2014. </remarks>
+         *
+         * <param name="sender">    Source of the event. </param>
+         * <param name="e">         Event information to send to registered event handlers. </param>
+         */
+
         public void onMouseLeave(object sender, EventArgs e)
         {
             isMousePressed = false;

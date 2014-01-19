@@ -431,7 +431,7 @@ namespace ARdevKit
                 this.previewController.index = -1;
                 this.previewController.reloadPreviewPanel(0);
             }
-            
+
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -451,17 +451,17 @@ namespace ARdevKit
         {
             if (this.project.Trackables.Count < 10)
             {
-                    Button tempButton = new Button();
-                    tempButton.Location = new System.Drawing.Point(54 + (52 * project.Trackables.Count), 34);
-                    tempButton.Name = "btn_editor_scene_scene_" + (this.project.Trackables.Count + 1);
-                    tempButton.Size = new System.Drawing.Size(46, 45);
-                    tempButton.TabIndex = 1;
-                    tempButton.Text = Convert.ToString(this.project.Trackables.Count + 1);
-                    tempButton.UseVisualStyleBackColor = true;
-                    tempButton.Click += new System.EventHandler(this.btn_editor_scene_scene_change);
+                Button tempButton = new Button();
+                tempButton.Location = new System.Drawing.Point(54 + (52 * project.Trackables.Count), 34);
+                tempButton.Name = "btn_editor_scene_scene_" + (this.project.Trackables.Count + 1);
+                tempButton.Size = new System.Drawing.Size(46, 45);
+                tempButton.TabIndex = 1;
+                tempButton.Text = Convert.ToString(this.project.Trackables.Count + 1);
+                tempButton.UseVisualStyleBackColor = true;
+                tempButton.Click += new System.EventHandler(this.btn_editor_scene_scene_change);
 
-                    this.pnl_editor_szenes.Controls.Add(tempButton);
-                    this.previewController.reloadPreviewPanel(this.project.Trackables.Count);
+                this.pnl_editor_szenes.Controls.Add(tempButton);
+                this.previewController.reloadPreviewPanel(this.project.Trackables.Count);
             }
             else
             {
@@ -548,22 +548,22 @@ namespace ARdevKit
         }
 
         /**
-         * <summary>    Registers all SceneElements. </summary>
+         * <summary>    Registers all SceneElements that are available. </summary>
          *
          * <remarks>    Robin, 14.01.2014. </remarks>
          */
 
         public void registerElements()
         {
-            Bitmap dummy=Properties.Resources.PreviewDummy; //TODO: Make preview Bitmaps for all Elements
+            Bitmap dummy = Properties.Resources.PreviewDummy; //TODO: Make preview Bitmaps for all Elements
             SceneElementCategory sources = new SceneElementCategory(MetaCategory.Source, "Sources");
-            sources.addElement(new SceneElement("Database Source", new DbSource(),this));
-            sources.addElement(new SceneElement("FileSource", new FileSource(""),this));
+            sources.addElement(new SceneElement("Database Source", new DbSource(), this));
+            sources.addElement(new SceneElement("FileSource", new FileSource(""), this));
             SceneElementCategory augmentations = new SceneElementCategory(MetaCategory.Augmentation, "Augmentations");
-            augmentations.addElement(new SceneElement("Bar Graph", new BarGraph(),this));
+            augmentations.addElement(new SceneElement("Bar Graph", new BarGraph(), this));
             SceneElementCategory trackables = new SceneElementCategory(MetaCategory.Trackable, "Trackables");
-            trackables.addElement(new SceneElement("Picture Marker",new PictureMarker(""),this));
-            trackables.addElement(new SceneElement("IDMarker",new IDMarker(1),this));
+            trackables.addElement(new SceneElement("Picture Marker", new PictureMarker(""), this));
+            trackables.addElement(new SceneElement("IDMarker", new IDMarker(1), this));
             addCategory(trackables);
             addCategory(augmentations);
             addCategory(sources);
@@ -589,7 +589,7 @@ namespace ARdevKit
                 saveFileDialog1.ShowDialog();
                 this.projectPath = saveFileDialog1.FileName;
             }
-                this.save(projectPath);
+            this.save(projectPath);
         }
 
         private void save(String path)
@@ -721,7 +721,7 @@ namespace ARdevKit
         private void cmb_editor_selection_toolSelection_SelectedIndexChanged(object sender, EventArgs e)
         {
             elementSelectionController.updateElementSelectionPanel();
-            previewController.currentMetaCategory = ((SceneElementCategoryPanel) cmb_editor_selection_toolSelection.SelectedItem).Category.Category;
+            previewController.currentMetaCategory = ((SceneElementCategoryPanel)cmb_editor_selection_toolSelection.SelectedItem).Category.Category;
         }
 
         /**
@@ -756,7 +756,7 @@ namespace ARdevKit
             {
                 ElementIcon icon = (ElementIcon)e.Data.GetData(typeof(ElementIcon));
                 Point p = pnl_editor_preview.PointToClient(Cursor.Position);
-                IPreviewable element=ObjectCopier.Clone(icon.Element.Dummy);
+                IPreviewable element = ObjectCopier.Clone(icon.Element.Dummy);
                 icon.EditorWindow.PreviewController.addPreviewable(element, new Vector3D(p.X, p.Y, 0));
             }
         }
