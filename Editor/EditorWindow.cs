@@ -493,12 +493,22 @@ namespace ARdevKit
                 this.reloadSelectionPanel();
                 this.previewController.index = -1;
                 this.previewController.reloadPreviewPanel(0);
+                if (!this.project.isTrackable())
+                {
+                    this.ElementSelectionController.setElementEnable(typeof(PictureMarker), true);
+                    this.ElementSelectionController.setElementEnable(typeof(IDMarker), true);
+                }
             }
             else
             {
                 this.project.Trackables[0] = null;
                 this.previewController.currentMetaCategory = MetaCategory.Trackable;
                 this.previewController.removePreviewable(this.previewController.trackable);
+                if (!this.project.isTrackable())
+                {
+                    this.ElementSelectionController.setElementEnable(typeof(PictureMarker), true);
+                    this.ElementSelectionController.setElementEnable(typeof(IDMarker), true);
+                }
             }
         }
 
