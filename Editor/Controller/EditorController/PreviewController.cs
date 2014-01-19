@@ -105,6 +105,7 @@ public class PreviewController
                     if (this.ew.project.isTrackable())
                     {
                         this.ew.ElementSelectionController.setElementEnable(typeof(IDMarker), false);
+                        this.ew.project.Sensor = new MarkerSensor();
                     }
                     
                 }
@@ -118,6 +119,7 @@ public class PreviewController
                     if (this.ew.project.isTrackable())
                     {
                         this.ew.ElementSelectionController.setElementEnable(typeof(PictureMarker), false);
+                        this.ew.project.Sensor = new MarkerSensor();
                     }
                     
             }
