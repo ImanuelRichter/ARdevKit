@@ -307,8 +307,7 @@ namespace ARdevKit
 
         private void Editor_Load(object sender, EventArgs e)
         {
-            elementSelectionController = new ElementSelectionController(this);
-            elementSelectionController.populateComboBox();
+
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -604,6 +603,8 @@ namespace ARdevKit
         public void updateElementSelectionPanel()
         {
             //TODO: implement updateElementSelectionPanel()
+            this.Cmb_editor_selection_toolSelection.Items.Clear();
+            this.elementSelectionController.populateComboBox();
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
