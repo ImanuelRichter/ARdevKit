@@ -604,11 +604,21 @@ namespace ARdevKit
             }            
         }
 
+        /// <summary>
+        /// Should open the DebugWindow, but isn't used...
+        /// </summary>
+        /// <remarks>geht 19.01.2014 22:38</remarks>
+        [System.Obsolete("this method is not used...", false)]
         public void openDebugWindow()
         {
             //TODO: implement openDebugWindow()
         }
 
+        /// <summary>
+        /// Should open the TestWindow, but isn't used...
+        /// </summary>
+        /// <remarks>geht 19.01.2014 22:38</remarks>
+        [System.Obsolete("this method is not used...", false)]
         public void openTestWindow()
         {
             //TODO: implement openTestWindow()
@@ -711,6 +721,12 @@ namespace ARdevKit
             this.previewController.updatePreviewPanel();
         }
 
+        /// <summary>
+        /// Should update the PropertyPanel, but isn't used anyways...
+        /// </summary>
+        /// <param name="selectedElement">The selected element.</param>
+        /// <remarks>geht 19.01.2014 22:37</remarks>
+        [System.Obsolete("this method is not used...", false)]
         internal void updatePropertyPanel(IPreviewable selectedElement)
         {
             //TODO: implement updatePropertyPanel(IPreviewable selectedElement)
