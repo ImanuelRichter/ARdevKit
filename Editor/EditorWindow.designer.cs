@@ -60,13 +60,13 @@
             this.cmb_editor_selection_toolSelection = new System.Windows.Forms.ComboBox();
             this.pnl_editor_preview = new System.Windows.Forms.Panel();
             this.pnl_editor_properties = new System.Windows.Forms.Panel();
+            this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
             this.cmb_editor_properties_objectSelection = new System.Windows.Forms.ComboBox();
             this.pnl_editor_szenes = new System.Windows.Forms.Panel();
+            this.btn_editor_scene_delete = new System.Windows.Forms.Button();
             this.btn_editor_scene_scene_1 = new System.Windows.Forms.Button();
             this.btn_editor_scene_new = new System.Windows.Forms.Button();
             this.pnl_editor_status = new System.Windows.Forms.Panel();
-            this.btn_editor_scene_delete = new System.Windows.Forms.Button();
-            this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
             this.mst_editor_menu.SuspendLayout();
             this.pnl_editor_selection.SuspendLayout();
             this.pnl_editor_properties.SuspendLayout();
@@ -336,6 +336,14 @@
             this.pnl_editor_properties.Size = new System.Drawing.Size(200, 673);
             this.pnl_editor_properties.TabIndex = 2;
             // 
+            // propertyGrid1
+            // 
+            this.propertyGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.propertyGrid1.Location = new System.Drawing.Point(0, 21);
+            this.propertyGrid1.Name = "propertyGrid1";
+            this.propertyGrid1.Size = new System.Drawing.Size(198, 650);
+            this.propertyGrid1.TabIndex = 2;
+            // 
             // cmb_editor_properties_objectSelection
             // 
             this.cmb_editor_properties_objectSelection.Dock = System.Windows.Forms.DockStyle.Top;
@@ -397,25 +405,6 @@
             this.pnl_editor_status.Size = new System.Drawing.Size(1008, 23);
             this.pnl_editor_status.TabIndex = 3;
             // 
-            // btn_editor_scene_delete
-            // 
-            this.btn_editor_scene_delete.Location = new System.Drawing.Point(611, 34);
-            this.btn_editor_scene_delete.Name = "btn_editor_scene_delete";
-            this.btn_editor_scene_delete.Size = new System.Drawing.Size(45, 45);
-            this.btn_editor_scene_delete.TabIndex = 2;
-            this.btn_editor_scene_delete.Text = "-";
-            this.btn_editor_scene_delete.UseVisualStyleBackColor = true;
-            this.btn_editor_scene_delete.Click += new System.EventHandler(this.btn_editor_scene_scene_remove);
-            // 
-	    // propertyGrid1
-            // 
-            this.propertyGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.propertyGrid1.Location = new System.Drawing.Point(0, 21);
-            this.propertyGrid1.Name = "propertyGrid1";
-            this.propertyGrid1.Size = new System.Drawing.Size(198, 650);
-            this.propertyGrid1.TabIndex = 2;
-            //
-
             // EditorWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

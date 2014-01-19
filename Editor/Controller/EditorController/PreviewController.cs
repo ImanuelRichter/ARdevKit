@@ -9,6 +9,7 @@ using ARdevKit.Model.Project;
 using System.Collections;
 using ARdevKit;
 using ARdevKit.Controller.EditorController;
+using ARdevKit.View;
 
 public class PreviewController
     {
@@ -126,18 +127,18 @@ public class PreviewController
         /// <param name="overElement">      The over element. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public void addSource(AbstractSource source, IPreviewable currentElement)
+    public void addSource(AbstractSource source, AbstractAugmention currentElement)
        {
-        if (currentMetaCategory == MetaCategory.Augmentation)
+        if (currentMetaCategory == MetaCategory.Source)
            {
             if (this.trackable != null && trackable.existAugmention((AbstractAugmention)currentElement))
                {
                 //set reference to the augmentions in Source
-                source.augmentions.Add((Abstract2DAugmention)currentElement);
+                //source.augmentions.Add((Abstract2DAugmention)currentElement);
 
                 //add references in Augmention, Picturebox + project.sources List.
-                ((AbstractDynamic2DAugmention)this.findBox((AbstractAugmention)currentElement).Tag).source = source;
-                this.ew.project.Sources.Add(((AbstractDynamic2DAugmention)this.findBox((AbstractAugmention)currentElement).Tag).source);
+                ((AbstractDynamic2DAugmention) currentElement).source = source;
+                //this.ew.project.Sources.Add(((AbstractDynamic2DAugmention)this.findBox((AbstractAugmention)currentElement).Tag).source);
             }
         }
         else
@@ -333,9 +334,37 @@ public class PreviewController
         tempBox.SizeMode = PictureBoxSizeMode.StretchImage;
         tempBox.Tag = prev;
 
+        //adds drag&drop events for augmentations so that sources can be droped on them
+        if (currentMetaCategory == MetaCategory.Augmentation)
+        {
+            ((Control)tempBox).AllowDrop = true;
+            DragEventHandler enterHandler = new DragEventHandler(onAugmentationEnter);
+            DragEventHandler dropHandler = new DragEventHandler(onAugmentationDrop);
+            tempBox.DragEnter += enterHandler;
+            tempBox.DragDrop += dropHandler;
+        }
+
         this.panel.Controls.Add(tempBox);
 
       }
+
+    public void onAugmentationEnter(object sender, DragEventArgs e)
+    {
+        if (currentMetaCategory == MetaCategory.Source)
+        {
+            e.Effect = DragDropEffects.Move;
+        }
+    }
+
+    public void onAugmentationDrop(object sender, DragEventArgs e)
+    {
+        if (currentMetaCategory == MetaCategory.Source)
+        {
+            ElementIcon icon = (ElementIcon)e.Data.GetData(typeof(ElementIcon));
+            AbstractAugmention augmentation = (AbstractAugmention) ((PictureBox)sender).Tag;
+            icon.EditorWindow.PreviewController.addSource((AbstractSource)icon.Element.Dummy, augmentation);
+        }
+    }
 
        ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// <summary>   Searchs in the Panel for the important PictureBox and gives this box back. </summary>
