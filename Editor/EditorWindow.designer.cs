@@ -161,6 +161,7 @@
             this.tsm_editor_menu_sendTo_win8Device,
             this.tss_editor_menu_file_sendTo_win8Device_togleDebug,
             this.tsm_editor_menu_file_sendTo_togleDebug});
+            this.tsm_editor_menu_file_sendTo.Enabled = false;
             this.tsm_editor_menu_file_sendTo.Name = "tsm_editor_menu_file_sendTo";
             this.tsm_editor_menu_file_sendTo.Size = new System.Drawing.Size(192, 22);
             this.tsm_editor_menu_file_sendTo.Text = "Senden an...";
@@ -185,6 +186,7 @@
             // 
             // tsm_editor_menu_file_connection
             // 
+            this.tsm_editor_menu_file_connection.Enabled = false;
             this.tsm_editor_menu_file_connection.Name = "tsm_editor_menu_file_connection";
             this.tsm_editor_menu_file_connection.Size = new System.Drawing.Size(192, 22);
             this.tsm_editor_menu_file_connection.Text = "Verbindung einrichten";
@@ -214,6 +216,7 @@
             // 
             // tsm_editor_menu_edit_copie
             // 
+            this.tsm_editor_menu_edit_copie.Enabled = false;
             this.tsm_editor_menu_edit_copie.Name = "tsm_editor_menu_edit_copie";
             this.tsm_editor_menu_edit_copie.ShortcutKeyDisplayString = "STRG+C";
             this.tsm_editor_menu_edit_copie.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
@@ -222,6 +225,7 @@
             // 
             // tsm_editor_menu_edit_paste
             // 
+            this.tsm_editor_menu_edit_paste.Enabled = false;
             this.tsm_editor_menu_edit_paste.Name = "tsm_editor_menu_edit_paste";
             this.tsm_editor_menu_edit_paste.ShortcutKeyDisplayString = "STRG+V";
             this.tsm_editor_menu_edit_paste.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
@@ -243,34 +247,36 @@
             // tsm_editor_menu_test_startImage
             // 
             this.tsm_editor_menu_test_startImage.Name = "tsm_editor_menu_test_startImage";
-            this.tsm_editor_menu_test_startImage.Size = new System.Drawing.Size(144, 22);
+            this.tsm_editor_menu_test_startImage.Size = new System.Drawing.Size(152, 22);
             this.tsm_editor_menu_test_startImage.Text = "Bild laden";
             this.tsm_editor_menu_test_startImage.Click += new System.EventHandler(this.tsm_editor_menu_test_startImage_Click);
             // 
             // tsm_editor_menu_test_startVideo
             // 
+            this.tsm_editor_menu_test_startVideo.Enabled = false;
             this.tsm_editor_menu_test_startVideo.Name = "tsm_editor_menu_test_startVideo";
-            this.tsm_editor_menu_test_startVideo.Size = new System.Drawing.Size(144, 22);
+            this.tsm_editor_menu_test_startVideo.Size = new System.Drawing.Size(152, 22);
             this.tsm_editor_menu_test_startVideo.Text = "Video laden";
             this.tsm_editor_menu_test_startVideo.Click += new System.EventHandler(this.tsm_editor_menu_test_startVideo_Click);
             // 
             // tsm_editor_menu_test_startWithVirtualCamera
             // 
             this.tsm_editor_menu_test_startWithVirtualCamera.Name = "tsm_editor_menu_test_startWithVirtualCamera";
-            this.tsm_editor_menu_test_startWithVirtualCamera.Size = new System.Drawing.Size(144, 22);
+            this.tsm_editor_menu_test_startWithVirtualCamera.Size = new System.Drawing.Size(152, 22);
             this.tsm_editor_menu_test_startWithVirtualCamera.Text = "vCam nutzen";
             this.tsm_editor_menu_test_startWithVirtualCamera.Click += new System.EventHandler(this.tsm_editor_menu_test_startWithVirtualCamera_Click);
             // 
             // tss_editor_meu_test_loadVideo_togleDebug
             // 
             this.tss_editor_meu_test_loadVideo_togleDebug.Name = "tss_editor_meu_test_loadVideo_togleDebug";
-            this.tss_editor_meu_test_loadVideo_togleDebug.Size = new System.Drawing.Size(141, 6);
+            this.tss_editor_meu_test_loadVideo_togleDebug.Size = new System.Drawing.Size(149, 6);
             // 
             // tsm_editor_menu_test_togleDebug
             // 
             this.tsm_editor_menu_test_togleDebug.CheckOnClick = true;
+            this.tsm_editor_menu_test_togleDebug.Enabled = false;
             this.tsm_editor_menu_test_togleDebug.Name = "tsm_editor_menu_test_togleDebug";
-            this.tsm_editor_menu_test_togleDebug.Size = new System.Drawing.Size(144, 22);
+            this.tsm_editor_menu_test_togleDebug.Size = new System.Drawing.Size(152, 22);
             this.tsm_editor_menu_test_togleDebug.Text = "Debug";
             // 
             // tsm_editor_menu_help
@@ -284,14 +290,15 @@
             // 
             // tsm_editor_menu_help_help
             // 
+            this.tsm_editor_menu_help_help.Enabled = false;
             this.tsm_editor_menu_help_help.Name = "tsm_editor_menu_help_help";
-            this.tsm_editor_menu_help_help.Size = new System.Drawing.Size(99, 22);
+            this.tsm_editor_menu_help_help.Size = new System.Drawing.Size(152, 22);
             this.tsm_editor_menu_help_help.Text = "Hilfe";
             // 
             // tsm_editor_menu_help_info
             // 
             this.tsm_editor_menu_help_info.Name = "tsm_editor_menu_help_info";
-            this.tsm_editor_menu_help_info.Size = new System.Drawing.Size(99, 22);
+            this.tsm_editor_menu_help_info.Size = new System.Drawing.Size(152, 22);
             this.tsm_editor_menu_help_info.Text = "Info";
             // 
             // pnl_editor_selection
@@ -407,14 +414,6 @@
             this.pnl_editor_status.Size = new System.Drawing.Size(1008, 23);
             this.pnl_editor_status.TabIndex = 3;
             // 
-	        // propertyGrid1
-            // 
-            this.propertyGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.propertyGrid1.Location = new System.Drawing.Point(0, 21);
-            this.propertyGrid1.Name = "propertyGrid1";
-            this.propertyGrid1.Size = new System.Drawing.Size(198, 650);
-            this.propertyGrid1.TabIndex = 2;
-            //
             // EditorWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
