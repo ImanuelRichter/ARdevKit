@@ -303,12 +303,12 @@ namespace ARdevKit
             {
                 try
                 {
-                    this.saveProject();
-                }
+                this.saveProject();
+            }
                 catch (ArgumentNullException ae)
                 {
                     Debug.WriteLine(ae.StackTrace);
-                }
+        }
             }
             createNewProject("");
         }
@@ -532,7 +532,7 @@ namespace ARdevKit
                 try
                 {
                     project.Accept(exportVisitor);
-                }
+        }
                 catch (DirectoryNotFoundException de)
                 {
                     Debug.WriteLine(de.StackTrace);
@@ -628,22 +628,22 @@ namespace ARdevKit
         }
 
         /**
-         * <summary>    Registers all SceneElements. </summary>
+         * <summary>    Registers all SceneElements that are available. </summary>
          *
          * <remarks>    Robin, 14.01.2014. </remarks>
          */
 
         public void registerElements()
         {
-            Bitmap dummy=Properties.Resources.PreviewDummy; //TODO: Make preview Bitmaps for all Elements
+            Bitmap dummy = Properties.Resources.PreviewDummy; //TODO: Make preview Bitmaps for all Elements
             SceneElementCategory sources = new SceneElementCategory(MetaCategory.Source, "Sources");
-            sources.addElement(new SceneElement("Database Source", new DbSource(),this));
-            sources.addElement(new SceneElement("FileSource", new FileSource(""),this));
+            sources.addElement(new SceneElement("Database Source", new DbSource(), this));
+            sources.addElement(new SceneElement("FileSource", new FileSource(""), this));
             SceneElementCategory augmentations = new SceneElementCategory(MetaCategory.Augmentation, "Augmentations");
-            augmentations.addElement(new SceneElement("Bar Graph", new BarGraph(),this));
+            augmentations.addElement(new SceneElement("Bar Graph", new BarGraph(), this));
             SceneElementCategory trackables = new SceneElementCategory(MetaCategory.Trackable, "Trackables");
-            trackables.addElement(new SceneElement("Picture Marker",new PictureMarker(""),this));
-            trackables.addElement(new SceneElement("IDMarker",new IDMarker(1),this));
+            trackables.addElement(new SceneElement("Picture Marker", new PictureMarker(""), this));
+            trackables.addElement(new SceneElement("IDMarker", new IDMarker(1), this));
             addCategory(trackables);
             addCategory(augmentations);
             addCategory(sources);
@@ -670,11 +670,11 @@ namespace ARdevKit
             else
             {
                 if (project.ProjectPath == null)
-                {
-                    SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-                    saveFileDialog1.Filter = "ARdevkit Projektdatei|*.ardev";
-                    saveFileDialog1.Title = "Projekt speichern";
-                    saveFileDialog1.ShowDialog();
+            {
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                saveFileDialog1.Filter = "ARdevkit Projektdatei|*.ardev";
+                saveFileDialog1.Title = "Projekt speichern";
+                saveFileDialog1.ShowDialog();
                     try
                     {
                         project.ProjectPath = Path.GetDirectoryName(saveFileDialog1.FileName);
@@ -830,7 +830,7 @@ namespace ARdevKit
         private void cmb_editor_selection_toolSelection_SelectedIndexChanged(object sender, EventArgs e)
         {
             elementSelectionController.updateElementSelectionPanel();
-            previewController.currentMetaCategory = ((SceneElementCategoryPanel) cmb_editor_selection_toolSelection.SelectedItem).Category.Category;
+            previewController.currentMetaCategory = ((SceneElementCategoryPanel)cmb_editor_selection_toolSelection.SelectedItem).Category.Category;
         }
 
         /**
@@ -865,7 +865,7 @@ namespace ARdevKit
             {
                 ElementIcon icon = (ElementIcon)e.Data.GetData(typeof(ElementIcon));
                 Point p = pnl_editor_preview.PointToClient(Cursor.Position);
-                IPreviewable element=ObjectCopier.Clone(icon.Element.Dummy);
+                IPreviewable element = ObjectCopier.Clone(icon.Element.Dummy);
                 icon.EditorWindow.PreviewController.addPreviewable(element, new Vector3D(p.X, p.Y, 0));
             }
         }
@@ -950,8 +950,8 @@ namespace ARdevKit
         {
             try
             {
-                this.saveProject();
-            }
+            this.saveProject();
+        }
             catch (ArgumentNullException ae)
             {
                 Debug.WriteLine(ae.StackTrace);
@@ -991,8 +991,8 @@ namespace ARdevKit
             {
                 try
                 {
-                    this.saveProject();
-                }
+            this.saveProject();
+        }
                 catch (ArgumentNullException ae)
                 {
                     Debug.WriteLine(ae.StackTrace);

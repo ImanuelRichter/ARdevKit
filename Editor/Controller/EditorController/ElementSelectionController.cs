@@ -13,7 +13,7 @@ namespace ARdevKit.Controller.EditorController
     class ElementSelectionController
     {
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>  Hält die SceneElementCategoryPanels des SceneSelectionPanels. </summary>
+        /// <summary>  Holds the SceneElementCategoryPanels of the SceneSelectionPanels. </summary>
         ///
         /// <value> The category panels. </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -44,7 +44,7 @@ namespace ARdevKit.Controller.EditorController
         ///
         /// 
         ///
-        /// <param name="ew">   The ew. </param>
+        /// <param name="ew">   The Editor Window. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         public ElementSelectionController(EditorWindow ew)
@@ -55,7 +55,7 @@ namespace ARdevKit.Controller.EditorController
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Aktualisiert das ElementSelectionPanel. </summary>
+        /// <summary>   Updates the ElementSelectionPanel. </summary>
         ///
         /// <remarks>   Lizzard, 1/13/2014. </remarks>
         ///
@@ -69,7 +69,7 @@ namespace ARdevKit.Controller.EditorController
                 if (c != editorWindow.Cmb_editor_selection_toolSelection)
                 {
                     editorWindow.Pnl_editor_selection.Controls.Remove(c);
-                }
+            }
             }
             SceneElementCategoryPanel panel = ((SceneElementCategoryPanel)editorWindow.Cmb_editor_selection_toolSelection.SelectedItem);
             editorWindow.Pnl_editor_selection.Controls.Add(panel);
@@ -79,7 +79,7 @@ namespace ARdevKit.Controller.EditorController
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Erstellt die SceneCategoryElementPanels und hält sie in einer Liste. </summary>
+        /// <summary>   Creates the SceneCategoryElementPanels and holds them in a list. </summary>
         ///
         /// <remarks>   Lizzard, 1/13/2014. </remarks>
         ///
@@ -94,13 +94,13 @@ namespace ARdevKit.Controller.EditorController
                 categoryPanels.Add(n);
                 editorWindow.Pnl_editor_selection.Controls.Add(n);
                 n.Location = new Point(0, 25);
-                n.Size = new Size(editorWindow.Pnl_editor_selection.Size.Width, editorWindow.Pnl_editor_selection.Size.Height-25);
+                n.Size = new Size(editorWindow.Pnl_editor_selection.Size.Width, editorWindow.Pnl_editor_selection.Size.Height - 25);
             }
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
-        ///     Fügt die SceneElementCategories der ComboBox des ElementSelectionPanels hinzu.
+        ///     Adds the SceneElementCategories to the ComboBox of the ElementSelectionPanel.
         /// </summary>
         ///
         /// <remarks>   Lizzard, 1/13/2014. </remarks>
@@ -117,7 +117,7 @@ namespace ARdevKit.Controller.EditorController
             }
             editorWindow.Cmb_editor_selection_toolSelection.SelectedIndex = 0;
         }
-            
+
         /**
          * <summary>    Disables or enables the given element in the Element Selection Panel. </summary>
          *
@@ -133,7 +133,7 @@ namespace ARdevKit.Controller.EditorController
             {
                 foreach (SceneElement e in p.Category.SceneElements)
                 {
-                    if (element.IsInstanceOfType(e.Dummy) )
+                    if (element.IsInstanceOfType(e.Dummy))
                     {
                         foreach (Control c in p.Controls)
                         {
