@@ -10,7 +10,7 @@ namespace ARdevKit.Model.Project
     public abstract class Abstract2DAugmention : AbstractAugmention
     {
         /// <summary>
-        /// The height
+        /// The height, in mm
         /// </summary>
         private int height;
 
@@ -18,7 +18,7 @@ namespace ARdevKit.Model.Project
         /// Gets or sets the height.
         /// </summary>
         /// <value>
-        /// The height.
+        /// The height, in mm.
         /// </value>
         public int Height
         {
@@ -27,7 +27,7 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
-        /// The width
+        /// The width, in mm
         /// </summary>
         private int width;
         private int coordSystemId;
@@ -37,7 +37,7 @@ namespace ARdevKit.Model.Project
         /// Gets or sets the width.
         /// </summary>
         /// <value>
-        /// The width.
+        /// The width, in mm.
         /// </value>
         public int Width
         {

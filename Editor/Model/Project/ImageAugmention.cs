@@ -44,13 +44,13 @@ namespace ARdevKit.Model.Project
 
         /// <summary>   ToDo Summary is missing. </summary>
         ///
-        /// <exception cref="NotImplementedException"> Thrown when the requested operation is
-        ///     unimplemented. </exception>
+        /// <exception cref="FileNotFoundException"> Thrown when the requested File is
+        ///     not found in <see cref="ImagePath"/>. </exception>
         ///
         /// <returns>   The preview. </returns>
         public override Bitmap getPreview()
         {
-            throw new NotImplementedException();
+            return new Bitmap(ImagePath);
         }
 
         /// <summary>   ToDo Summary is missing. </summary>
