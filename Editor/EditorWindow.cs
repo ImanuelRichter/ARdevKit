@@ -505,9 +505,28 @@ namespace ARdevKit
             //TODO: implement exportProject()
         }
 
+        /// <summary>
+        /// Loads the project. Opens a file dialog to select a saved project.
+        /// </summary>
+        /// <remarks>geht 19.01.2014 17:55</remarks>
         public void loadProject()
         {
-            //TODO: implement loadProject()
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Filter = "ARdevkit Projektdatei|*.ardev";
+            openFileDialog1.Title = "Projekt öffnen";
+            openFileDialog1.ShowDialog();
+            try
+            {
+                initializeLoadedProject(SaveLoadController.loadProject(openFileDialog1.FileName));
+                this.initializeControllers();
+                this.updatePanels();
+                previewController.index = -1;
+                previewController.reloadPreviewPanel(0);
+            }
+            catch (System.ArgumentException)
+            {
+                
+            }            
         }
 
         public void openDebugWindow()
@@ -560,10 +579,21 @@ namespace ARdevKit
                 saveFileDialog1.Filter = "ARdevkit Projektdatei|*.ardev";
                 saveFileDialog1.Title = "Projekt speichern";
                 saveFileDialog1.ShowDialog();
-                project.ProjectPath = Path.GetDirectoryName(saveFileDialog1.FileName);
-                project.Name = Path.GetFileNameWithoutExtension(saveFileDialog1.FileName);
+                try
+                {
+                    project.ProjectPath = Path.GetDirectoryName(saveFileDialog1.FileName);
+                    project.Name = Path.GetFileNameWithoutExtension(saveFileDialog1.FileName);
+                    this.save(project.ProjectPath);
+                }
+                catch (System.ArgumentException)
+                {
+                    project.ProjectPath = null;
+                }
             }
-            this.save(project.ProjectPath);
+            else
+            {
+                this.save(project.ProjectPath);
+            }
         }
 
         private void save(String path)
@@ -745,12 +775,25 @@ namespace ARdevKit
             registerElements();
         }
 
+        private void initializeLoadedProject(Project p)
+        {
+            this.project = p;
+            this.startDebugModeDevice = false;
+            this.startDebugModeLocal = false;
+            this.elementCategories = new List<SceneElementCategory>();
+            this.allElements = new LinkedList<IPreviewable>();
+            this.saveVisitor = new SaveVisitor();
+            this.exportVisitor = new ExportVisitor();
+            this.currentElement = null;
+            registerElements();
+        }
+
         private void updatePanels()
         {
             this.updateElementSelectionPanel();
+            this.updateSceneSelectionPanel();
             this.updatePreviewPanel();
             this.updatePropertyPanel(currentElement);
-            this.updateSceneSelectionPanel();
             this.updateStatusBar();
         }
 
@@ -791,6 +834,15 @@ namespace ARdevKit
         {
             this.project.ProjectPath = null;
             this.saveProject();
+        }
+
+        private void tsm_editor_menu_file_open_Click_1(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Möchten Sie das aktuelle Projekt abspeichern, bevor ein anderes geöffnet wird?", "Projekt speichern?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                this.saveProject();
+            }
+            this.loadProject();
         }
     }
 }
