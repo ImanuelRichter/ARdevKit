@@ -351,7 +351,9 @@ public class PreviewController
         }
 
         tempBox.MouseClick += new MouseEventHandler(selectElement);
-        tempBox.MouseMove += new MouseEventHandler(controlMouseMove);
+
+        if (tempBox.Tag is AbstractAugmention)
+            tempBox.MouseMove += new MouseEventHandler(controlMouseMove);
 
         this.panel.Controls.Add(tempBox);
 
@@ -456,13 +458,6 @@ public class PreviewController
             controlToMove.Location = new Point(controlToMove.Location.X + e.Location.X - 60,
                controlToMove.Location.Y + e.Location.Y - 60);
 
-            if (((Control)sender).Tag is AbstractTrackable)
-            {
-                AbstractTrackable at;
-                at = (AbstractTrackable)((Control)sender).Tag;
-                at.vector.X = controlToMove.Location.X + e.Location.X;
-                at.vector.Y = controlToMove.Location.Y + e.Location.Y;
-            }
             if (((Control)sender).Tag is AbstractAugmention)
             {
                 AbstractAugmention aa;
