@@ -329,7 +329,7 @@ namespace ARdevKit
                 this.saveProject();
             }
             this.initializeEmptyProject();
-            this.initializeControllers();
+            this.clearControllers();
             this.updatePanels();
         }
 
@@ -753,6 +753,15 @@ namespace ARdevKit
 
                 Debug.WriteLine("DeviceConnectionController is not implemented yet...");
             }
+        }
+
+        /// <summary>
+        /// Clears the controllers whenever a new project is created.
+        /// </summary>
+        /// <remarks>geht 19.01.2014 15:42</remarks>
+        private void clearControllers()
+        {
+            this.previewController = new PreviewController(this);
         }
 
         private void initializeEmptyProject()

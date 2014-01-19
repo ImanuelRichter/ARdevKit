@@ -90,8 +90,8 @@ public class PreviewController
                     
             this.addPictureBox(currentElement, v);
                 }
-                    
-        else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null)
+
+        else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null && this.ew.project.Trackables[index].Augmentions.Count < 3)
         {
             //set the vector and the trackable in Augmention
             ((AbstractAugmention)currentElement).TranslationVector = v;                                      
