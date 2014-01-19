@@ -52,7 +52,14 @@ namespace ARdevKit.Model.Project
             set { subtitle = value; }
         }
 
-        /// <summary>   ToDo </summary>
+        protected string xAxisTitle;
+
+        public string XAxisTitle
+        {
+            get { return xAxisTitle; }
+            set { xAxisTitle = value; }
+        }
+
         protected string[] categories;
         /// <summary>   Gets or sets the categories. </summary>
         ///

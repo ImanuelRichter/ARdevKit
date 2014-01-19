@@ -64,11 +64,12 @@ namespace EditorTest
             barChart1.Style = new ChartStyle();
             barChart1.Style.Top = 100;
             barChart1.Style.Left = 100;
-            barChart1.Width = 500;
-            barChart1.Height = 350;
+            barChart1.Width = 200;
+            barChart1.Height = 200;
 
             barChart1.Title = "Feuchtigkeitsstand";
             barChart1.Subtitle = "sensorbasiert";
+            barChart1.XAxisTitle = "Wochentag";
             barChart1.Categories = new string[] {"Mo", "Di", "Mi"};
             barChart1.MinValue = 0;
             barChart1.YAxisTitle = "Feuchtigkeit in %";
@@ -77,7 +78,7 @@ namespace EditorTest
             barChart1.Names = new List<string>();
             barChart1.Names.Add("Rose");
             barChart1.Data = new List<double[]>();
-            barChart1.Data.Add(new double[] { 49.2, 50.3, 33.1 });
+            barChart1.Data.Add(new double[] { 72.5, 50.3, 33.1 });
             pictureMarker1.Augmentions.Add(barChart1);
             barChart1.Trackable = pictureMarker1;
             
