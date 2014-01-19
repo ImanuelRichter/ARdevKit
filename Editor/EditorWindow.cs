@@ -361,10 +361,7 @@ namespace ARdevKit
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         private void tsm_editor_menu_test_startImage_Click(object sender, EventArgs e)
         {
-            if (project.ProjectPath == null)
-                TestController.StartWithImage();
-            else
-                TestController.StartWithImage(project.ProjectPath);
+            TestController.StartWithImage(project);
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -378,10 +375,7 @@ namespace ARdevKit
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         private void tsm_editor_menu_test_startVideo_Click(object sender, EventArgs e)
         {
-            if (project.ProjectPath == null)
-                TestController.StartWithVideo();
-            else
-                TestController.StartWithVideo(project.ProjectPath);
+            TestController.StartWithVideo(project);
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -396,10 +390,7 @@ namespace ARdevKit
 
         private void tsm_editor_menu_test_startWithVirtualCamera_Click(object sender, EventArgs e)
         {
-            if (project.ProjectPath == null)
-                TestController.StartWithVirtualCamera();
-            else
-                TestController.StartWithVirtualCamera(project.ProjectPath);
+            TestController.StartWithVirtualCamera(project);
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -111,6 +111,7 @@ namespace ARdevKit.Controller.ProjectController
         /// <summary>   Number of images added to the <see cref="arelGlueFile"/>. </summary>
         private int imageCount = 1;
         private int barChartCount = 1;
+        private int coordinateSystemID = 1;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Visits the given <see cref="BarGraph"/>. </summary>
@@ -237,7 +238,7 @@ namespace ARdevKit.Controller.ProjectController
             JavaScriptBlock barChartFileVariablesBlock = new JavaScriptBlock();
 
             barChartFileVariablesBlock.AddLine(new JavaScriptLine("var id = \"" + barChartVariable + "\""));
-            barChartFileVariablesBlock.AddLine(new JavaScriptLine("var coordinateSystemID = " + barChart.Coordinatesystemid));
+            barChartFileVariablesBlock.AddLine(new JavaScriptLine("var coordinateSystemID = " + coordinateSystemID));
             barChartFile.AddBlock(barChartFileVariablesBlock);
 
             JavaScriptBlock barChartFileDefineBlock = new JavaScriptBlock("arel.Plugin.BarChart" + barChartCount.ToString() + " = ", new BlockMarker("{", "};"));
@@ -471,7 +472,7 @@ namespace ARdevKit.Controller.ProjectController
             string imageVariable = "image" + imageCount;
             loadContentBlock.AddLine(new JavaScriptLine("var " + imageVariable + " = arel.Object.Model3D.createFromImage(\"" + imageVariable + "\",\"Assets/" + Path.GetFileName(image.ImagePath) + "\")"));
             loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setVisibility(" + image.IsVisible.ToString().ToLower() + ")"));
-            loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setCoordinateSystemID(" + image.Coordinatesystemid + ")"));
+            loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setCoordinateSystemID(" + coordinateSystemID + ")"));
             string augmentionScalingX = image.ScalingVector.X.ToString("F1", CultureInfo.InvariantCulture);
             string augmentionScalingY = image.ScalingVector.Y.ToString("F1", CultureInfo.InvariantCulture);
             string augmentionScalingZ = image.ScalingVector.Z.ToString("F1", CultureInfo.InvariantCulture);
@@ -482,6 +483,7 @@ namespace ARdevKit.Controller.ProjectController
             ifPatternIsLostBlock.AddLine(new JavaScriptLine("arel.Scene.getObject(\"" + imageVariable + "\").setVisibility(false)"));
 
             imageCount++;
+            coordinateSystemID++;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -633,6 +635,8 @@ namespace ARdevKit.Controller.ProjectController
             markerParametersBlock.AddLine(new XMLLine(new XMLTag("referenceImage", "qualityThreshold=\"0.70\""), pictureMarker.ImageName));
             string value = pictureMarker.SimilarityThreshold.ToString("F1", CultureInfo.InvariantCulture);
             parameterBlock.AddLine(new XMLLine(new XMLTag("SimilarityThreshold"), value));
+
+            coordinateSystemID++;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -681,6 +685,8 @@ namespace ARdevKit.Controller.ProjectController
             // Reaktivated when getter is implemented
             markerParametersBlock.AddLine(new XMLLine(new XMLTag("Size"), idMarker.Size.ToString()));
             markerParametersBlock.AddLine(new XMLLine(new XMLTag("MatrixID"), idMarker.MatrixID.ToString()));
+
+            coordinateSystemID++;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
