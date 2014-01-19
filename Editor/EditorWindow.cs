@@ -427,11 +427,13 @@ namespace ARdevKit
             if (this.project.Trackables.Count > 1)
             {
                 this.previewController.reloadPreviewPanel(temp - 1);
+                this.PropertyGrid1.SelectedObject = null;
             }
             else
             {
                 this.previewController.index = -1;
                 this.previewController.reloadPreviewPanel(0);
+                this.PropertyGrid1.SelectedObject = null;
             }
             
         }
@@ -464,6 +466,7 @@ namespace ARdevKit
 
                     this.pnl_editor_szenes.Controls.Add(tempButton);
                     this.previewController.reloadPreviewPanel(this.project.Trackables.Count);
+                    this.PropertyGrid1.SelectedObject = null;
             }
             else
             {
@@ -510,6 +513,7 @@ namespace ARdevKit
                     this.ElementSelectionController.setElementEnable(typeof(IDMarker), true);
                 }
             }
+            this.PropertyGrid1.SelectedObject = null;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
