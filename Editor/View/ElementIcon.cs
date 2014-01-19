@@ -111,9 +111,12 @@ namespace ARdevKit.View
 
         public void onClick(object sender, EventArgs e)
         {
-            int y = editorWindow.Pnl_editor_preview.Height / 2;
-            int x = editorWindow.Pnl_editor_preview.Width / 2;
-            editorWindow.PreviewController.addPreviewable(element.Dummy, new ARdevKit.Model.Project.Vector3D(x, y, 0));
+            if (editorWindow.PreviewController.currentMetaCategory != MetaCategory.Source)
+            {
+                int y = editorWindow.Pnl_editor_preview.Height / 2;
+                int x = editorWindow.Pnl_editor_preview.Width / 2;
+                editorWindow.PreviewController.addPreviewable(element.Dummy, new ARdevKit.Model.Project.Vector3D(x, y, 0));
+            }
         }
 
         /**
@@ -127,7 +130,6 @@ namespace ARdevKit.View
 
         public void onMouseDown(object sender, EventArgs e)
         {
-            DataObject o = new DataObject();
             DoDragDrop(this,DragDropEffects.Move);
         }
     }

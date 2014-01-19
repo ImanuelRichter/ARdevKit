@@ -707,7 +707,10 @@ namespace ARdevKit
 
         private void pnl_editor_preview_DragEnter(object sender, DragEventArgs e)
         {
-            e.Effect = DragDropEffects.Move;
+            if (previewController.currentMetaCategory != MetaCategory.Source)
+            {
+                e.Effect = DragDropEffects.Move;
+            }
         }
 
         /**
@@ -721,9 +724,12 @@ namespace ARdevKit
 
         private void pnl_editor_preview_DragDrop(object sender, DragEventArgs e)
         {
-            ElementIcon icon = (ElementIcon) e.Data.GetData(typeof(ElementIcon));
-            Point p = pnl_editor_preview.PointToClient(Cursor.Position);
-            icon.EditorWindow.PreviewController.addPreviewable(icon.Element.Dummy, new Vector3D(p.X, p.Y, 0));
+            if (previewController.currentMetaCategory != MetaCategory.Source)
+            {
+                ElementIcon icon = (ElementIcon)e.Data.GetData(typeof(ElementIcon));
+                Point p = pnl_editor_preview.PointToClient(Cursor.Position);
+                icon.EditorWindow.PreviewController.addPreviewable(icon.Element.Dummy, new Vector3D(p.X, p.Y, 0));
+            }
         }
 
         private void initializeControllers()
