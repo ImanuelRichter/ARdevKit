@@ -31,9 +31,6 @@ namespace ARdevKit.Model.Project.File
             get { return filePath; }
         }
 
-        /// <summary>   The header. </summary>
-        protected string header;
-
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   A list of the <see cref="AbstractBlock"/>s this file consists of. </summary>
         ///

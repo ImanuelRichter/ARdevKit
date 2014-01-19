@@ -80,14 +80,24 @@ namespace ARdevKit.Controller.ProjectController
             get { return arelGlueFile; }
         }
 
+        private List<BarChartFile> barChartFiles;
+
+        public List<BarChartFile> BarChartFiles
+        {
+            get { return barChartFiles; }
+            set { barChartFiles = value; }
+        }
+
+        private XMLBlock arelProjectFileHeadBlock;
+
         /// <summary>   The sensor block within the <see cref="trackingDataFile"/>. </summary>
-        private XMLBlock sensorBlock;
+        private XMLBlock trackingDataFileSensorBlock;
         /// <summary>   The sensor parameters block within the <see cref="trackingDataFile"/>. </summary>
-        private XMLBlock sensorParametersBlock;
+        private XMLBlock trackingDataFileSensorParametersBlock;
         /// <summary>   The connections block within the <see cref="trackingDataFile"/>. </summary>
-        private XMLBlock connectionsBlock;
+        private XMLBlock trackingDataFileConnectionsBlock;
         /// <summary>   The fuser block within the <see cref="trackingDataFile"/>. </summary>
-        private XMLBlock fuserBlock;
+        private XMLBlock trackingDataFileFuserBlock;
 
         /// <summary>   The counter for the COSes. </summary>
         private int cosCounter = 1;
@@ -100,115 +110,166 @@ namespace ARdevKit.Controller.ProjectController
         private JavaScriptBlock ifPatternIsLostBlock;
         /// <summary>   Number of images added to the <see cref="arelGlueFile"/>. </summary>
         private int imageCount = 1;
+        private int barChartCount = 1;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Visits the given <see cref="BarGraph"/>. </summary>
+        /// <summary>   Visits the given <see cref="BarChart"/>. </summary>
         ///
         /// <remarks>   Imanuel, 17.01.2014. </remarks>
         ///
-        /// <param name="barGraph">    The bar graph. </param>
+        /// <param name="barChart">    The bar graph. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         
-        public override void Visit(BarGraph barGraph)
+        public override void Visit(BarChart barChart)
         {
-            // Connections
-            string sourceGraphFile = barGraph.GraphPath;
-            string destGraphFile = Path.Combine(project.ProjectPath, "Assets", Path.GetFileName(sourceGraphFile));
-            if (Directory.Exists(Path.Combine(project.ProjectPath, "Assets")) && !File.Exists(destGraphFile))
-            {
-                File.Copy(sourceGraphFile, destGraphFile);
-            }
+            // arel[projectName].html
+            arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("script", "src=\"Assets/jquery-2.0.3.js\"")));
+            arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("script", "src=\"Assets/highcharts.js\"")));
+            arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("script", "src=\"Assets/barChart" + barChartCount + ".js\"")));
 
-            // COS
-            XMLBlock cosBlock = new XMLBlock(new XMLTag("COS"));
-            connectionsBlock.AddBlock(cosBlock);
-
-            // Name
-            cosBlock.AddLine(new XMLLine(new XMLTag("Name"), project.Sensor.Name + "COS" + cosCounter++));
-
-            // Fuser
-            fuserBlock = new XMLBlock(new XMLTag("Dummy"));
-            cosBlock.AddBlock(fuserBlock);
-
-            // SensorSource
-            XMLBlock sensorSourceBlock = new XMLBlock(new XMLTag("SensorSource", "trigger=\"1\""));
-            cosBlock.AddBlock(sensorSourceBlock);
-
-            // SensorID
-            sensorSourceBlock.AddLine(new XMLLine(new XMLTag("SensorID"), project.Sensor.SensorIDString));
-            // SensorCosID
-            sensorSourceBlock.AddLine(new XMLLine(new XMLTag("SensorCosID"), barGraph.Trackable.SensorCosID));
-
-            // Hand-Eye-Calibration
-            XMLBlock handEyeCalibrationBlock = new XMLBlock(new XMLTag("HandEyeCalibration"));
-            sensorSourceBlock.AddBlock(handEyeCalibrationBlock);
-
-            // Translation
-            XMLBlock hecTranslationOffset = new XMLBlock(new XMLTag("TranslationOffset"));
-            handEyeCalibrationBlock.AddBlock(hecTranslationOffset);
-
-            // TODO get vectors
-            hecTranslationOffset.AddLine(new XMLLine(new XMLTag("X"), "0"));
-            hecTranslationOffset.AddLine(new XMLLine(new XMLTag("Y"), "0"));
-            hecTranslationOffset.AddLine(new XMLLine(new XMLTag("Z"), "0"));
-
-            // Rotation
-            XMLBlock hecRotationOffset = new XMLBlock(new XMLTag("RotationOffset"));
-            handEyeCalibrationBlock.AddBlock(hecRotationOffset);
-
-            // TODO get vectors
-            hecRotationOffset.AddLine(new XMLLine(new XMLTag("X"), "0"));
-            hecRotationOffset.AddLine(new XMLLine(new XMLTag("Y"), "0"));
-            hecRotationOffset.AddLine(new XMLLine(new XMLTag("Z"), "0"));
-            hecRotationOffset.AddLine(new XMLLine(new XMLTag("W"), "1"));
-
-            // COSOffset
-            XMLBlock COSOffsetBlock = new XMLBlock(new XMLTag("COSOffset"));
-            sensorSourceBlock.AddBlock(COSOffsetBlock);
-
-            // Translation
-            XMLBlock COSOffsetTranslationOffset = new XMLBlock(new XMLTag("TranslationOffset"));
-            COSOffsetBlock.AddBlock(COSOffsetTranslationOffset);
-            
-            string augmentionPositionX = barGraph.TranslationVector.X.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentionPositionY = barGraph.TranslationVector.Y.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentionPositionZ = barGraph.TranslationVector.Z.ToString("F1", CultureInfo.InvariantCulture);
-            COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("X"), augmentionPositionX));
-            COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("Y"), augmentionPositionY));
-            COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("Z"), augmentionPositionZ));
-
-            // Rotation
-            XMLBlock COSOffsetRotationOffset = new XMLBlock(new XMLTag("RotationOffset"));
-            COSOffsetBlock.AddBlock(COSOffsetRotationOffset);
-
-            // TODO get vectors
-            string augmentionRotationX = barGraph.RotationVector.X.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentionRotationY = barGraph.RotationVector.Y.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentionRotationZ = barGraph.RotationVector.Z.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentionRotationW = barGraph.RotationVector.W.ToString("F1", CultureInfo.InvariantCulture);
-            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("X"), augmentionRotationX));
-            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("Y"), augmentionRotationY));
-            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("Z"), augmentionRotationZ));
-            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("W"), augmentionRotationW));
+            Copy("res\\highcharts\\highcharts.js", Path.Combine(project.ProjectPath, "Assets"));
+            Copy("res\\jquery\\jquery-2.0.3.js", Path.Combine(project.ProjectPath, "Assets"));
 
             // arelGlue.js
             JavaScriptBlock loadContentBlock = new JavaScriptBlock();
             sceneReadyFunktionBlock.AddBlock(loadContentBlock);
 
-            string imageVariable = "image" + imageCount;
-            loadContentBlock.AddLine(new JavaScriptLine("var " + imageVariable + " = arel.Object.Model3D.createFromImage(\"" + imageVariable + "\",\"Assets/" + Path.GetFileName(barGraph.GraphPath) + "\")"));
-            loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setVisibility(" + barGraph.IsVisible.ToString().ToLower() + ")"));
-            loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setCoordinateSystemID(" + barGraph.Coordinatesystemid + ")"));
-            string augmentionScalingX = barGraph.ScalingVector.X.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentionScalingY = barGraph.ScalingVector.Y.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentionScalingZ = barGraph.ScalingVector.Z.ToString("F1", CultureInfo.InvariantCulture);
-            loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setScale(new arel.Vector3D(" + augmentionScalingX + "," + augmentionScalingY + "," + augmentionScalingZ + "))"));
-            loadContentBlock.AddLine(new JavaScriptLine("arel.Scene.addObject(" + imageVariable + ")"));
+            string barChartVariable = "barChart" + barChartCount;
 
-            ifPatternIsFoundBlock.AddLine(new JavaScriptLine("arel.Scene.getObject(\"" + imageVariable + "\").setVisibility(true)"));
-            ifPatternIsLostBlock.AddLine(new JavaScriptLine("arel.Scene.getObject(\"" + imageVariable + "\").setVisibility(false)"));
+            JavaScriptBlock arelGlueVariablesBlock = new JavaScriptBlock();
+            arelGlueVariablesBlock.AddLine(new JavaScriptLine("var " + barChartVariable));
+            arelGlueFile.AddBlock(arelGlueVariablesBlock);
 
-            imageCount++;
+            loadContentBlock.AddLine(new JavaScriptLine(barChartVariable + " = arel.Plugin.BarChart" + barChartCount));
+            // TODO position?
+            string barChartPositionTop = "\"100px\"";
+            string barChartPositionLeft = "\"100px\"";
+            loadContentBlock.AddLine(new JavaScriptLine(barChartVariable + ".create(" + barChartPositionTop + ", " + 
+                barChartPositionLeft + ", \"" + barChart.Width + "px\", \"" + barChart.Height + "px\")"));
+            loadContentBlock.AddLine(new JavaScriptLine(barChartVariable + ".hide()"));
+
+            ifPatternIsFoundBlock.AddLine(new JavaScriptLine(barChartVariable + ".show()"));
+            ifPatternIsLostBlock.AddLine(new JavaScriptLine(barChartVariable + ".hide()"));
+
+            // Create barChart[i].js
+            if (barChartCount == 1)
+                barChartFiles = new List<BarChartFile>();
+
+            BarChartFile barChartFile = new BarChartFile(project.ProjectPath, barChartCount);
+            JavaScriptBlock barChartFileVariablesBlock = new JavaScriptBlock();
+
+            barChartFileVariablesBlock.AddLine(new JavaScriptLine("var id = \"" + barChartVariable + "\""));
+            barChartFileVariablesBlock.AddLine(new JavaScriptLine("var coordinateSystemID = " + barChart.Coordinatesystemid));
+            barChartFile.AddBlock(barChartFileVariablesBlock);
+
+            JavaScriptBlock barChartFileDefineBlock = new JavaScriptBlock("arel.Plugin.BarChart" + barChartCount.ToString() + " = ", new BlockMarker("{", "};"));
+            barChartFile.AddBlock(barChartFileDefineBlock);
+
+            JavaScriptBlock barChartFileCreateBlock = new JavaScriptBlock("create : function(top, left, width, height)", new BlockMarker("{", "},"));
+            barChartFileDefineBlock.AddBlock(barChartFileCreateBlock);
+            barChartFileCreateBlock.AddLine(new JavaScriptLine("var chart = document.createElement(\"div\")"));
+            barChartFileCreateBlock.AddLine(new JavaScriptLine("chart.setAttribute(\"id\", id)"));
+            barChartFileCreateBlock.AddLine(new JavaScriptLine("chart.style.top = top"));
+            barChartFileCreateBlock.AddLine(new JavaScriptLine("chart.style.left = left"));
+            barChartFileCreateBlock.AddLine(new JavaScriptLine("chart.style.width = width"));
+            barChartFileCreateBlock.AddLine(new JavaScriptLine("chart.style.height = height"));
+            barChartFileCreateBlock.AddLine(new JavaScriptLine("document.documentElement.appendChild(chart)"));
+
+            JavaScriptBlock barChartFileHighchartBlock = new JavaScriptBlock("$('#' + id).highcharts", new BlockMarker("({", "});"));
+            barChartFileCreateBlock.AddBlock(barChartFileHighchartBlock);
+
+            JavaScriptBlock barChartFileHighchartChartBlock = new JavaScriptBlock("chart: ", new BlockMarker("{", "},"));
+            barChartFileHighchartBlock.AddBlock(barChartFileHighchartChartBlock);
+            barChartFileHighchartChartBlock.AddLine(new JavaScriptInLine("type: 'column'", false));
+
+            JavaScriptBlock barChartFileHighchartTitleBlock = new JavaScriptBlock("title: ", new BlockMarker("{", "},"));
+            barChartFileHighchartBlock.AddBlock(barChartFileHighchartTitleBlock);
+            barChartFileHighchartTitleBlock.AddLine(new JavaScriptInLine("text: '" + barChart.Title + "'", false));
+
+            JavaScriptBlock barChartFileHighchartSubTitleBlock = new JavaScriptBlock("subtitle: ", new BlockMarker("{", "},"));
+            barChartFileHighchartBlock.AddBlock(barChartFileHighchartSubTitleBlock);
+            barChartFileHighchartSubTitleBlock.AddLine(new JavaScriptInLine("text: '" + barChart.Subtitle + "'", false));
+
+            JavaScriptBlock barChartFileHighchartXAxisBlock = new JavaScriptBlock("xAxis: ", new BlockMarker("{", "},"));
+            barChartFileHighchartBlock.AddBlock(barChartFileHighchartXAxisBlock);
+
+            JavaScriptBlock barChartFileHighchartXAxisCategoriesBlock = new JavaScriptBlock("categories: ", new BlockMarker("[", "]"));
+            barChartFileHighchartXAxisBlock.AddBlock(barChartFileHighchartXAxisCategoriesBlock);
+
+            for (int i = 0; i < barChart.Categories.Length - 1; i++)
+            {
+                barChartFileHighchartXAxisCategoriesBlock.AddLine(new JavaScriptInLine("'" + barChart.Categories[i] + "'", true));
+            }
+            barChartFileHighchartXAxisCategoriesBlock.AddLine(new JavaScriptInLine("'" + barChart.Categories[barChart.Categories.Length - 1] + "'", false));
+
+            JavaScriptBlock barChartFileHighchartYAxisBlock = new JavaScriptBlock("yAxis: ", new BlockMarker("{", "},"));
+            barChartFileHighchartBlock.AddBlock(barChartFileHighchartYAxisBlock);
+
+            barChartFileHighchartYAxisBlock.AddLine(new JavaScriptInLine("min: " + barChart.MinValue, true));
+            JavaScriptBlock barChartFileHighchartYAxisTitleBlock = new JavaScriptBlock("title: ", new BlockMarker("{", "}"));
+            barChartFileHighchartYAxisBlock.AddBlock(barChartFileHighchartYAxisTitleBlock);
+            barChartFileHighchartYAxisTitleBlock.AddLine(new JavaScriptInLine("text: '" + barChart.YAxisTitle + "'", false));
+
+            JavaScriptBlock barChartFileHighchartTooltipBlock = new JavaScriptBlock("tooltip: ", new BlockMarker("{", "},"));
+            barChartFileHighchartBlock.AddBlock(barChartFileHighchartTooltipBlock);
+            // TODO make these things editable
+            barChartFileHighchartTooltipBlock.AddLine(new JavaScriptInLine("headerFormat: '<span style=\"font-size:10px\">{point.key}</span><table>'", true));
+            barChartFileHighchartTooltipBlock.AddLine(new JavaScriptInLine("pointFormat: '<tr><td style=\"color:{series.color};padding:0\">{series.name}: </td>' +\n" +
+					"'<td style=\"padding:0\"><b>{point.y:.1f} mm</b></td></tr>'", true));
+            barChartFileHighchartTooltipBlock.AddLine(new JavaScriptInLine("footerFormat: '</table>'", true));
+            barChartFileHighchartTooltipBlock.AddLine(new JavaScriptInLine("shared: true", true));
+            barChartFileHighchartTooltipBlock.AddLine(new JavaScriptInLine("useHTML: true", false));
+
+            JavaScriptBlock barChartFileHighchartPlotOptions = new JavaScriptBlock("plotOptions: ", new BlockMarker("{", "},"));
+            barChartFileHighchartBlock.AddBlock(barChartFileHighchartPlotOptions);
+
+            JavaScriptBlock barChartFileHighchartPlotOptionsColumn = new JavaScriptBlock("column: ", new BlockMarker("{", "}"));
+            barChartFileHighchartPlotOptions.AddBlock(barChartFileHighchartPlotOptionsColumn);
+            barChartFileHighchartPlotOptionsColumn.AddLine(new JavaScriptInLine("pointPadding: " + barChart.PointPadding.ToString(CultureInfo.InvariantCulture), true));
+            barChartFileHighchartPlotOptionsColumn.AddLine(new JavaScriptInLine("borderWidth: " + barChart.BorderWidth, false));
+
+            JavaScriptBlock barChartFileHighchartSeriesBlock = new JavaScriptBlock("series: ", new BlockMarker("[", "]"));
+            barChartFileHighchartBlock.AddBlock(barChartFileHighchartSeriesBlock);
+
+            int n1 = barChart.Data.Count - 1;
+            for (int i = 0; i < n1; i++)
+            {
+                JavaScriptBlock dataBlock = new JavaScriptBlock("", new BlockMarker("{", "},"));
+                barChartFileHighchartSeriesBlock.AddBlock(dataBlock);
+                dataBlock.AddLine(new JavaScriptInLine("name: '" + barChart.Names[i] + "'", true));
+                string data = "";
+
+                int n2 = barChart.Data[i].Length - 1;
+                for (int j = 0; j < n2; j++)
+                {
+                    data += barChart.Data[i][j].ToString(CultureInfo.InvariantCulture) + ", ";
+                }
+                data += barChart.Data[i][n2].ToString(CultureInfo.InvariantCulture);
+                dataBlock.AddLine(new JavaScriptInLine("data: [" + data + "]", false));
+            }
+            JavaScriptBlock lastDataBlock = new JavaScriptBlock("", new BlockMarker("{", "}"));
+            barChartFileHighchartSeriesBlock.AddBlock(lastDataBlock);
+            lastDataBlock.AddLine(new JavaScriptInLine("name: '" + barChart.Names[n1] + "'", true));
+            string lastData = "";
+
+            int lastN2 = barChart.Data[n1].Length - 1;
+            for (int j = 0; j < lastN2; j++)
+            {
+                lastData += barChart.Data[n1][j].ToString(CultureInfo.InvariantCulture) + ", ";
+            }
+            lastData += barChart.Data[n1][lastN2].ToString(CultureInfo.InvariantCulture);
+            lastDataBlock.AddLine(new JavaScriptInLine("data: [" + lastData + "]", false));
+
+            JavaScriptBlock barChartShowBlock = new JavaScriptBlock("show : function()", new BlockMarker("{", "},"));
+            barChartFileDefineBlock.AddBlock(barChartShowBlock);
+            barChartShowBlock.AddLine(new JavaScriptLine("$('#' + id).show()"));
+
+            JavaScriptBlock barChartHideBlock = new JavaScriptBlock("hide : function()", new BlockMarker("{", "}"));
+            barChartFileDefineBlock.AddBlock(barChartHideBlock);
+            barChartHideBlock.AddLine(new JavaScriptLine("$('#' + id).hide()"));
+
+            barChartFiles.Add(barChartFile);
+            barChartCount++;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -222,25 +283,20 @@ namespace ARdevKit.Controller.ProjectController
         public override void Visit(ImageAugmention image)
         {
             // Copy to projectPath
-            string sourceimageFile = image.ImagePath;
-            string destimageFile = Path.Combine(project.ProjectPath, "Assets", Path.GetFileName(sourceimageFile));
-            if (Directory.Exists(Path.Combine(project.ProjectPath, "Assets")) && !File.Exists(destimageFile))
-            {
-                File.Copy(sourceimageFile, destimageFile);
-            }
+            Copy(image.ImagePath, Path.Combine(project.ProjectPath, "Assets"));
 
             // Connections 
 
             // COS
             XMLBlock cosBlock = new XMLBlock(new XMLTag("COS"));
-            connectionsBlock.AddBlock(cosBlock);
+            trackingDataFileConnectionsBlock.AddBlock(cosBlock);
 
             // Name
             cosBlock.AddLine(new XMLLine(new XMLTag("Name"), project.Sensor.Name + "COS" + cosCounter++));
 
             // Fuser
-            fuserBlock = new XMLBlock(new XMLTag("Dummy"));
-            cosBlock.AddBlock(fuserBlock);
+            trackingDataFileFuserBlock = new XMLBlock(new XMLTag("Dummy"));
+            cosBlock.AddBlock(trackingDataFileFuserBlock);
 
             // SensorSource
             XMLBlock sensorSourceBlock = new XMLBlock(new XMLTag("SensorSource", "trigger=\"1\""));
@@ -350,11 +406,11 @@ namespace ARdevKit.Controller.ProjectController
         public override void Visit(MarkerlessFuser markerlessFuser)
         {
             // Fuser
-            fuserBlock.Update(new XMLTag("Fuser", "type=\"" + markerlessFuser.FuserType + "\""));
+            trackingDataFileFuserBlock.Update(new XMLTag("Fuser", "type=\"" + markerlessFuser.FuserType + "\""));
 
             // Parameters
             XMLBlock fuserParametersBlock = new XMLBlock(new XMLTag("Parameters"));
-            fuserBlock.AddBlock(fuserParametersBlock);
+            trackingDataFileFuserBlock.AddBlock(fuserParametersBlock);
 
             string value = markerlessFuser.KeepPoseForNumberOfFrames.ToString();
             fuserParametersBlock.AddLine(new XMLLine(new XMLTag("KeepPoseForNumberOfFrames"), value));
@@ -388,10 +444,10 @@ namespace ARdevKit.Controller.ProjectController
 
         public override void Visit(MarkerlessSensor markerlessSensor)
         {
-            sensorParametersBlock.AddLine(new XMLLine(new XMLTag("FeatureDescriptorAlignment"), markerlessSensor.FeatureDescriptorAlignment.ToString()));
-            sensorParametersBlock.AddLine(new XMLLine(new XMLTag("MaxObjectsToDetectPerFrame"), markerlessSensor.MaxObjectsToDetectPerFrame.ToString()));
-            sensorParametersBlock.AddLine(new XMLLine(new XMLTag("MaxObjectsToTrackInParallel"), markerlessSensor.MaxObjectsToTrackInParallel.ToString()));
-            sensorParametersBlock.AddLine(new XMLLine(new XMLTag("SimilarityThreshold"), markerlessSensor.SimilarityThreshold.ToString("F1", CultureInfo.InvariantCulture)));
+            trackingDataFileSensorParametersBlock.AddLine(new XMLLine(new XMLTag("FeatureDescriptorAlignment"), markerlessSensor.FeatureDescriptorAlignment.ToString()));
+            trackingDataFileSensorParametersBlock.AddLine(new XMLLine(new XMLTag("MaxObjectsToDetectPerFrame"), markerlessSensor.MaxObjectsToDetectPerFrame.ToString()));
+            trackingDataFileSensorParametersBlock.AddLine(new XMLLine(new XMLTag("MaxObjectsToTrackInParallel"), markerlessSensor.MaxObjectsToTrackInParallel.ToString()));
+            trackingDataFileSensorParametersBlock.AddLine(new XMLLine(new XMLTag("SimilarityThreshold"), markerlessSensor.SimilarityThreshold.ToString("F1", CultureInfo.InvariantCulture)));
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -405,11 +461,11 @@ namespace ARdevKit.Controller.ProjectController
         public override void Visit(MarkerFuser markerFuser)
         {
             // Fuser
-            fuserBlock.Update(new XMLTag("Fuser", "type=\"" + markerFuser.FuserType + "\""));
+            trackingDataFileFuserBlock.Update(new XMLTag("Fuser", "type=\"" + markerFuser.FuserType + "\""));
 
             // Parameters
             XMLBlock fuserParametersBlock = new XMLBlock(new XMLTag("Parameters"));
-            fuserBlock.AddBlock(fuserParametersBlock);
+            trackingDataFileFuserBlock.AddBlock(fuserParametersBlock);
 
             string value = markerFuser.AlphaRotation.ToString("F1", CultureInfo.InvariantCulture);
             fuserParametersBlock.AddLine(new XMLLine(new XMLTag("AlphaRotation"), value));
@@ -433,7 +489,7 @@ namespace ARdevKit.Controller.ProjectController
         {
             // MarkerParameters
             XMLBlock markerTrackingParametersBlock = new XMLBlock(new XMLTag("MarkerTrackingParameters"));
-            sensorParametersBlock.AddBlock(markerTrackingParametersBlock);
+            trackingDataFileSensorParametersBlock.AddBlock(markerTrackingParametersBlock);
 
             markerTrackingParametersBlock.AddLine(new XMLLine(new XMLTag("TrackingQuality"), pictureMarkerSensor.TrackingQuality.ToString()));
             markerTrackingParametersBlock.AddLine(new XMLLine(new XMLTag("ThresholdOffset"), pictureMarkerSensor.ThresholdOffset.ToString()));
@@ -458,7 +514,7 @@ namespace ARdevKit.Controller.ProjectController
             }
 
             XMLBlock sensorCOSBlock = new XMLBlock(new XMLTag("SensorCOS"));
-            sensorBlock.AddBlock(sensorCOSBlock);
+            trackingDataFileSensorBlock.AddBlock(sensorCOSBlock);
 
             sensorCOSBlock.AddLine(new XMLLine(new XMLTag("SensorCosID"), pictureMarker.SensorCosID));
 
@@ -486,7 +542,7 @@ namespace ARdevKit.Controller.ProjectController
         {
             // MarkerParameters
             XMLBlock markerTrackingParametersBlock = new XMLBlock(new XMLTag("MarkerTrackingParameters"));
-            sensorParametersBlock.AddBlock(markerTrackingParametersBlock);
+            trackingDataFileSensorParametersBlock.AddBlock(markerTrackingParametersBlock);
 
             markerTrackingParametersBlock.AddLine(new XMLLine(new XMLTag("TrackingQuality"), idMarkerSensor.TrackingQuality.ToString()));
             markerTrackingParametersBlock.AddLine(new XMLLine(new XMLTag("ThresholdOffset"), idMarkerSensor.ThresholdOffset.ToString()));
@@ -505,7 +561,7 @@ namespace ARdevKit.Controller.ProjectController
         {
             // SensorCOS
             XMLBlock sensorCOSBlock = new XMLBlock(new XMLTag("SensorCOS"));
-            sensorBlock.AddBlock(sensorCOSBlock);
+            trackingDataFileSensorBlock.AddBlock(sensorCOSBlock);
 
             sensorCOSBlock.AddLine(new XMLLine(new XMLTag("SensorCosID"), idMarker.SensorCosID));
 
@@ -538,14 +594,14 @@ namespace ARdevKit.Controller.ProjectController
             arelProjectFile = new ARELProjectFile("<!DOCTYPE html>", Path.Combine(project.ProjectPath, "arel" + p.Name + ".html"));
 
             // head
-            XMLBlock headBlock = new XMLBlock(new XMLTag("head"));
-            arelProjectFile.AddBlock(headBlock);
+            arelProjectFileHeadBlock = new XMLBlock(new XMLTag("head"));
+            arelProjectFile.AddBlock(arelProjectFileHeadBlock);
 
-                headBlock.AddLine(new XMLLine(new NonTerminatingXMLTag("meta", "charset=\"UTF-8\"")));
-                headBlock.AddLine(new XMLLine(new NonTerminatingXMLTag("meta", "name=\"viewport\" content=\"width=device-width, initial-scale=1\"")));
-                headBlock.AddLine(new XMLLine(new XMLTag("script", "type=\"text/javascript\" src=\"../arel/arel.js\"")));
-                headBlock.AddLine(new XMLLine(new XMLTag("script", "type=\"text/javascript\" src=\"Assets/arelGlue.js\"")));
-                headBlock.AddLine(new XMLLine(new XMLTag("title"), p.Name));
+                arelProjectFileHeadBlock.AddLine(new XMLLine(new NonTerminatingXMLTag("meta", "charset=\"UTF-8\"")));
+                arelProjectFileHeadBlock.AddLine(new XMLLine(new NonTerminatingXMLTag("meta", "name=\"viewport\" content=\"width=device-width, initial-scale=1\"")));
+                arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("script", "type=\"text/javascript\" src=\"../arel/arel.js\"")));
+                arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("script", "type=\"text/javascript\" src=\"Assets/arelGlue.js\"")));
+                arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("title"), p.Name));
 
             // body
             XMLBlock bodyBlock = new XMLBlock(new XMLTag("body"));
@@ -567,19 +623,19 @@ namespace ARdevKit.Controller.ProjectController
                 // Sensors
                 string sensorExtension = "Type=\"" + p.Sensor.SensorType + "\"";
                 sensorExtension += p.Sensor.SensorSubType != AbstractSensor.SensorSubTypes.None ? " Subtype=\"" + p.Sensor.SensorSubType + "\"" : "";
-                sensorBlock = new XMLBlock(new XMLTag("Sensor", sensorExtension));
-                sensorsBlock.AddBlock(sensorBlock);
+                trackingDataFileSensorBlock = new XMLBlock(new XMLTag("Sensor", sensorExtension));
+                sensorsBlock.AddBlock(trackingDataFileSensorBlock);
 
                 // SensorID
-                sensorBlock.AddLine(new XMLLine(new XMLTag("SensorID"), p.Sensor.SensorIDString));
+                trackingDataFileSensorBlock.AddLine(new XMLLine(new XMLTag("SensorID"), p.Sensor.SensorIDString));
 
                 // Parameters
-                sensorParametersBlock = new XMLBlock(new XMLTag("Parameters"));
-                sensorBlock.AddBlock(sensorParametersBlock);
+                trackingDataFileSensorParametersBlock = new XMLBlock(new XMLTag("Parameters"));
+                trackingDataFileSensorBlock.AddBlock(trackingDataFileSensorParametersBlock);
 
                 // Connections
-                connectionsBlock = new XMLBlock(new XMLTag("Connections"));
-                trackingDataBlock.AddBlock(connectionsBlock);
+                trackingDataFileConnectionsBlock = new XMLBlock(new XMLTag("Connections"));
+                trackingDataBlock.AddBlock(trackingDataFileConnectionsBlock);
 
             // Create arelConfig.xml
             arelConfigFile = new ARELConfigFile("<?xml version=\"1.0\" encoding=\"UTF-8\"?>", project.ProjectPath);
@@ -628,6 +684,19 @@ namespace ARdevKit.Controller.ProjectController
                 ifPatternIsLostBlock = new JavaScriptBlock("else if(type && type == arel.Events.Scene.ONTRACKING && param[0].getState() == arel.Tracking.STATE_NOTTRACKING)", new BlockMarker("{", "}"));
                 ifTrackingInformationAvailiableBlock.AddBlock(ifPatternIsLostBlock);
                 ifPatternIsLostBlock.AddLine(new JavaScriptLine("console.log(\"Tracking lost\")"));
+        }
+
+        private void Copy(string srcFile, string destDirectory)
+        {
+            if (!Directory.Exists(destDirectory))
+            {
+                Directory.CreateDirectory(destDirectory);
+            }
+            string destFile = Path.Combine(destDirectory, Path.GetFileName(srcFile));
+            if (!File.Exists(destFile))
+            {
+                File.Copy(srcFile, Path.Combine(destDirectory, Path.GetFileName(srcFile)));
+            }
         }
     }
 }

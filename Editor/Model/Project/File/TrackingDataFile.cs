@@ -15,6 +15,9 @@ namespace ARdevKit.Model.Project.File
 
     public class TrackingDataFile : AbstractARELFile
     {
+        /// <summary>   The header. </summary>
+        protected string header;
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Constructor. </summary>
         ///

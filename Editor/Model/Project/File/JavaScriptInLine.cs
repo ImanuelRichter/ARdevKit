@@ -6,18 +6,9 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Model.Project.File
 {
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-    /// <summary>   A <see cref="JavaScriptLine"/> is a <see cref="JavaScriptBlock"/>
-    ///             which has a <see cref="content"/> that is written in a single line. </summary>
-    ///
-    /// <remarks>   Imanuel, 17.01.2014. </remarks>
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    public class JavaScriptLine : JavaScriptBlock
+    public class JavaScriptInLine : JavaScriptLine
     {
-        /// <summary>   The content. </summary>
-        protected string content = "";
-
+        private bool useComma;
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Constructor. </summary>
         ///
@@ -26,9 +17,9 @@ namespace ARdevKit.Model.Project.File
         /// <param name="content">  The content. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public JavaScriptLine(string content)
+        public JavaScriptInLine(string content, bool useComma) : base(content)
         {
-            this.content = content;
+            this.useComma = useComma;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -40,10 +31,9 @@ namespace ARdevKit.Model.Project.File
         /// <param name="blockMarker">  The block marker. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public JavaScriptLine(string content, BlockMarker blockMarker)
+        public JavaScriptInLine(string content, BlockMarker blockMarker, bool useComme) : base(content, blockMarker)
         {
-            this.content = content;
-            this.blockMarker = blockMarker;
+            this.useComma = useComma;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -58,9 +48,19 @@ namespace ARdevKit.Model.Project.File
         {
             string tabs = getTabs();
             if (blockMarker != null)
-                writer.WriteLine(tabs + blockMarker + content + blockMarker + ";");
+            {
+                if (useComma)
+                    writer.WriteLine(tabs + blockMarker + content + blockMarker + ",");
+                else
+                    writer.WriteLine(tabs + blockMarker + content + blockMarker);
+            }
             else
-                writer.WriteLine(tabs + content + ";");
+            {
+                if (useComma)
+                    writer.WriteLine(tabs + content + ",");
+                else
+                    writer.WriteLine(tabs + content);
+            }
         }
     }
 }

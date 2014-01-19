@@ -40,8 +40,6 @@ namespace ARdevKit.Model.Project.File
         public override void Save()
         {
             StreamWriter writer = new StreamWriter(filePath);
-            if (header != null && header != "")
-                writer.WriteLine(header);
             if (blocks != null)
             {
                 foreach (JavaScriptBlock jsBlock in blocks)
