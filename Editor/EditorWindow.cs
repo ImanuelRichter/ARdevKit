@@ -527,6 +527,7 @@ namespace ARdevKit
                 this.updatePanels();
                 previewController.index = -1;
                 previewController.reloadPreviewPanel(0);
+                this.updateSceneSelectionPanel();
             }
             catch (System.ArgumentException)
             {
