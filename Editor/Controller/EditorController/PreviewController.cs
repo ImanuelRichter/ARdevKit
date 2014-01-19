@@ -316,6 +316,14 @@ public class PreviewController
             {
                 this.addAllToPanel(this.ew.project.Trackables[index]);
             }
+            if (trackable.GetType() == typeof(IDMarker))
+            {
+                this.ew.ElementSelectionController.setElementEnable(typeof(PictureMarker), false);
+            }
+            else if (trackable.GetType() == typeof(PictureMarker))
+            {
+                    this.ew.ElementSelectionController.setElementEnable(typeof(IDMarker), false);
+            }
         }
         //if the scene is new create a new empty scene
         else if (index >= this.ew.project.Trackables.Count)
