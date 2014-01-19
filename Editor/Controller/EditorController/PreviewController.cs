@@ -208,7 +208,7 @@ public class PreviewController
         else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null)
         {
             this.trackable.Augmentions.Remove((AbstractAugmention)currentElement);
-
+            this.ew.project.Trackables[index] = null;
             this.panel.Controls.Remove(this.findBox((AbstractAugmention)currentElement));
         }
     }
@@ -340,6 +340,10 @@ public class PreviewController
         tempBox.SizeMode = PictureBoxSizeMode.StretchImage;
         tempBox.Tag = prev;
 
+        ContextMenu cm = new ContextMenu();
+        cm.MenuItems.Add("remove", new EventHandler(this.remove_by_click));
+        cm.Tag = prev;
+
         //adds drag&drop events for augmentations so that sources can be droped on them
         if (currentMetaCategory == MetaCategory.Augmentation)
         {
@@ -350,6 +354,7 @@ public class PreviewController
             tempBox.DragDrop += dropHandler;
         }
 
+        tempBox.ContextMenu = cm;
         tempBox.MouseClick += new MouseEventHandler(selectElement);
         tempBox.MouseMove += new MouseEventHandler(controlMouseMove);
 
@@ -444,6 +449,23 @@ public class PreviewController
             controlToMove.Location = new Point(controlToMove.Location.X + e.Location.X - 30,
                controlToMove.Location.Y + e.Location.Y - 30);
         }
+    }
+
+    private void remove_by_click(object sender, EventArgs e)
+    {
+        IPreviewable temp = (IPreviewable)((ContextMenu)((MenuItem)sender).Parent).Tag;
+        MetaCategory tempMeta = this.currentMetaCategory;
+        if (temp.GetType() == this.trackable.GetType())
+        {
+            this.currentMetaCategory = MetaCategory.Trackable;
+        }
+        else
+        {
+            this.currentMetaCategory = MetaCategory.Augmentation;
+        }
+
+        this.removePreviewable((IPreviewable)((ContextMenu)((MenuItem)sender).Parent).Tag);
+        this.currentMetaCategory = tempMeta;
     }
 }
 
