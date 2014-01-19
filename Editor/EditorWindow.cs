@@ -416,7 +416,7 @@ namespace ARdevKit
 
         private void btn_editor_scene_scene_change(object sender, EventArgs e)
         {
-            if (this.previewController.trackable == null && this.project.Trackables.Count > 1)
+            if (this.previewController.trackable == null && this.project.Trackables.Count > 1 && this.previewController.index != Convert.ToInt32(((Button)sender).Text) - 1)
             {
                 this.updateSceneSelectionPanel();
             }
@@ -487,7 +487,6 @@ namespace ARdevKit
                 this.project.Trackables.Remove(this.previewController.trackable);
                 this.previewController.trackable = this.project.Trackables[0];
                 this.updateSceneSelectionPanel();
-                MessageBox.Show("You've delete this scene! You're now in Scene 1");
                 this.previewController.index = 0;
             }
             else
@@ -495,7 +494,6 @@ namespace ARdevKit
                 this.project.Trackables[0] = null;
                 this.previewController.currentMetaCategory = MetaCategory.Trackable;
                 this.previewController.removePreviewable(this.previewController.trackable);
-                MessageBox.Show("You've cleaned this scene!");
             }
         }
 

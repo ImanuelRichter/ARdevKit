@@ -134,7 +134,7 @@ namespace ARdevKit.Controller.ProjectController
             cosBlock.AddLine(new XMLLine(new XMLTag("Name"), project.Sensor.Name + "COS" + cosCounter++));
 
             // Fuser
-            trackingDataFileFuserBlock = new XMLBlock(new XMLTag("Dummy"));
+            trackingDataFileFuserBlock = new XMLBlock(new XMLTag("Fuser"));
             cosBlock.AddBlock(trackingDataFileFuserBlock);
 
             // SensorSource
@@ -219,11 +219,8 @@ namespace ARdevKit.Controller.ProjectController
             arelGlueFile.AddBlock(arelGlueVariablesBlock);
 
             loadContentBlock.AddLine(new JavaScriptLine(barChartVariable + " = arel.Plugin.BarChart" + barChartCount));
-            // TODO position?
-            string barChartPositionTop = "\"100px\"";
-            string barChartPositionLeft = "\"100px\"";
-            loadContentBlock.AddLine(new JavaScriptLine(barChartVariable + ".create(" + barChartPositionTop + ", " + 
-                barChartPositionLeft + ", \"" + barChart.Width + "px\", \"" + barChart.Height + "px\")"));
+
+            loadContentBlock.AddLine(new JavaScriptLine(barChartVariable + ".create()"));
             loadContentBlock.AddLine(new JavaScriptLine(barChartVariable + ".hide()"));
 
             JavaScriptBlock barChartIfPatternIsFoundShowBlock = new JavaScriptBlock("if (param[0].getCoordinateSystemID() == " + barChartVariable + ".getCoordinateSystemID())", new BlockMarker("{", "}"));
@@ -246,14 +243,21 @@ namespace ARdevKit.Controller.ProjectController
             JavaScriptBlock barChartFileDefineBlock = new JavaScriptBlock("arel.Plugin.BarChart" + barChartCount.ToString() + " = ", new BlockMarker("{", "};"));
             barChartFile.AddBlock(barChartFileDefineBlock);
 
-            JavaScriptBlock barChartFileCreateBlock = new JavaScriptBlock("create : function(top, left, width, height)", new BlockMarker("{", "},"));
+            JavaScriptBlock barChartFileCreateBlock = new JavaScriptBlock("create : function()", new BlockMarker("{", "},"));
             barChartFileDefineBlock.AddBlock(barChartFileCreateBlock);
             barChartFileCreateBlock.AddLine(new JavaScriptLine("var chart = document.createElement(\"div\")"));
             barChartFileCreateBlock.AddLine(new JavaScriptLine("chart.setAttribute(\"id\", id)"));
-            barChartFileCreateBlock.AddLine(new JavaScriptLine("chart.style.top = top"));
-            barChartFileCreateBlock.AddLine(new JavaScriptLine("chart.style.left = left"));
-            barChartFileCreateBlock.AddLine(new JavaScriptLine("chart.style.width = width"));
-            barChartFileCreateBlock.AddLine(new JavaScriptLine("chart.style.height = height"));
+            barChartFileCreateBlock.AddLine(new JavaScriptLine("chart.style.position = \"" + barChart.Style.Position + "\""));
+            if (barChart.Style.Top >= 0)
+                barChartFileCreateBlock.AddLine(new JavaScriptLine("chart.style.top = \"" + barChart.Style.Top + "px\""));
+            if (barChart.Style.Left >= 0)
+                barChartFileCreateBlock.AddLine(new JavaScriptLine("chart.style.left = \"" + barChart.Style.Left + "px\""));
+            if (barChart.Style.Bottom >= 0)
+                barChartFileCreateBlock.AddLine(new JavaScriptLine("chart.style.bottom = \"" + barChart.Style.Bottom + "px\""));
+            if (barChart.Style.Right >= 0)
+                barChartFileCreateBlock.AddLine(new JavaScriptLine("chart.style.right = \"" + barChart.Style.Right + "px\""));
+            barChartFileCreateBlock.AddLine(new JavaScriptLine("chart.style.width = \"" + barChart.Width + "px\""));
+            barChartFileCreateBlock.AddLine(new JavaScriptLine("chart.style.height = \"" + barChart.Height + "px\""));
             barChartFileCreateBlock.AddLine(new JavaScriptLine("document.documentElement.appendChild(chart)"));
 
             JavaScriptBlock barChartFileHighchartBlock = new JavaScriptBlock("$('#' + id).highcharts", new BlockMarker("({", "});"));
