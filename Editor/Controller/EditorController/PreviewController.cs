@@ -94,11 +94,17 @@ public class PreviewController
                 if (openTestImageDialog.ShowDialog() == DialogResult.OK)
                 {
                     ((PictureMarker)currentElement).ImagePath = openTestImageDialog.FileName;
+                    
                     //set the vector to the trackable
                     ((AbstractTrackable)currentElement).vector = v;
                     this.trackable = (AbstractTrackable)currentElement;
                     this.ew.project.Trackables[index] = (AbstractTrackable)currentElement;
                     this.addPictureBox(currentElement, v);
+                    if (this.ew.project.Trackables.Count == 1 && this.ew.project.Trackables[0] == null)
+                    {
+                        this.elementSelectionController.setElementEnable(typeof(IDMarker), false);
+                    }
+                    
                 }
             }
             else {
@@ -107,6 +113,11 @@ public class PreviewController
                     this.trackable = (AbstractTrackable)currentElement;
                     this.ew.project.Trackables[index] = (AbstractTrackable)currentElement;
                     this.addPictureBox(currentElement, v);
+                    if (this.ew.project.Trackables.Count == 1 && this.ew.project.Trackables[0] == null)
+                    {
+                        this.elementSelectionController.setElementEnable(typeof(PictureMarker), false);
+                    }
+                    
             }
             
         }
@@ -214,6 +225,11 @@ public class PreviewController
         if (currentMetaCategory == MetaCategory.Trackable && trackable != null)
         {
             this.removeAll();
+            if (this.ew.project.Trackables.Count == 1)
+            {
+                this.elementSelectionController.setElementEnable(typeof(PictureMarker), true);
+                this.elementSelectionController.setElementEnable(typeof(IDMarker), true);
+            }
         }
         else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null)
         {
