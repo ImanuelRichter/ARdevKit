@@ -47,9 +47,9 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// ToDo Summary is missing
         /// </summary>
-        private double similarityThreshold = 0.7;
-        [Browsable(false)]
-        protected double SimilarityThreshold
+        protected double similarityThreshold = 0.7;
+        [CategoryAttribute("Expert")]
+        public double SimilarityThreshold
         {
             get { return similarityThreshold; }
             set { similarityThreshold = value; }
