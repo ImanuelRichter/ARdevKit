@@ -427,13 +427,15 @@ namespace ARdevKit
             if (this.project.Trackables.Count > 1)
             {
                 this.previewController.reloadPreviewPanel(temp - 1);
+                this.PropertyGrid1.SelectedObject = null;
             }
             else
             {
                 this.previewController.index = -1;
                 this.previewController.reloadPreviewPanel(0);
+                this.PropertyGrid1.SelectedObject = null;
             }
-
+            
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -453,17 +455,18 @@ namespace ARdevKit
         {
             if (this.project.Trackables.Count < 10)
             {
-                Button tempButton = new Button();
-                tempButton.Location = new System.Drawing.Point(54 + (52 * project.Trackables.Count), 34);
-                tempButton.Name = "btn_editor_scene_scene_" + (this.project.Trackables.Count + 1);
-                tempButton.Size = new System.Drawing.Size(46, 45);
-                tempButton.TabIndex = 1;
-                tempButton.Text = Convert.ToString(this.project.Trackables.Count + 1);
-                tempButton.UseVisualStyleBackColor = true;
-                tempButton.Click += new System.EventHandler(this.btn_editor_scene_scene_change);
+                    Button tempButton = new Button();
+                    tempButton.Location = new System.Drawing.Point(54 + (52 * project.Trackables.Count), 34);
+                    tempButton.Name = "btn_editor_scene_scene_" + (this.project.Trackables.Count + 1);
+                    tempButton.Size = new System.Drawing.Size(46, 45);
+                    tempButton.TabIndex = 1;
+                    tempButton.Text = Convert.ToString(this.project.Trackables.Count + 1);
+                    tempButton.UseVisualStyleBackColor = true;
+                    tempButton.Click += new System.EventHandler(this.btn_editor_scene_scene_change);
 
-                this.pnl_editor_szenes.Controls.Add(tempButton);
-                this.previewController.reloadPreviewPanel(this.project.Trackables.Count);
+                    this.pnl_editor_szenes.Controls.Add(tempButton);
+                    this.previewController.reloadPreviewPanel(this.project.Trackables.Count);
+                    this.PropertyGrid1.SelectedObject = null;
             }
             else
             {
@@ -510,6 +513,7 @@ namespace ARdevKit
                     this.ElementSelectionController.setElementEnable(typeof(IDMarker), true);
                 }
             }
+            this.PropertyGrid1.SelectedObject = null;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -601,7 +605,7 @@ namespace ARdevKit
             catch (ArgumentNullException ae)
             {
                 Debug.WriteLine(ae.StackTrace);
-        }
+            }
         }
 
         /// <summary>
@@ -622,10 +626,10 @@ namespace ARdevKit
                 previewController.index = -1;
                 previewController.reloadPreviewPanel(0);
                 this.updateSceneSelectionPanel();
-        }
+            }
             catch (System.ArgumentException)
             {
-
+                
             }            
         }
 
@@ -702,11 +706,11 @@ namespace ARdevKit
                         project.ProjectPath = Path.GetDirectoryName(saveFileDialog1.FileName);
                         project.Name = Path.GetFileNameWithoutExtension(saveFileDialog1.FileName);
                         this.save(project.ProjectPath);
-            }
+                    }
                     catch (System.ArgumentException)
                     {
                         project.ProjectPath = null;
-        }
+                    }
                 }
                 else
                 {
