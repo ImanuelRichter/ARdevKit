@@ -796,8 +796,8 @@ namespace ARdevKit
         private void updatePanels()
         {
             this.updateElementSelectionPanel();
-            this.updateSceneSelectionPanel();
             this.updatePreviewPanel();
+            this.updateSceneSelectionPanel();
             this.updatePropertyPanel(currentElement);
             this.updateStatusBar();
         }
