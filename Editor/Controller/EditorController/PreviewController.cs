@@ -89,10 +89,18 @@ public class PreviewController
             this.trackable = (AbstractTrackable)currentElement;
             this.ew.project.Trackables[index] = (AbstractTrackable)currentElement;
                     
+            //ask the user for the picture (if the trackable is a picturemarker)
+            if (currentElement.GetType() == typeof(PictureMarker)) {
+                OpenFileDialog openTestImageDialog = new OpenFileDialog();
+                openTestImageDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
+                if (openTestImageDialog.ShowDialog() == DialogResult.OK)
+                {
+                    ((PictureMarker)currentElement).ImagePath = openTestImageDialog.FileName;
+                }
+            }
             this.addPictureBox(currentElement, v);
                 }
-                    
-        else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null)
+        else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null && this.ew.project.Trackables[index].Augmentions.Count < 3)
         {
             //set the vector and the trackable in Augmention
             ((AbstractAugmention)currentElement).TranslationVector = v;                                      
@@ -106,7 +114,6 @@ public class PreviewController
             //set the new box to the front
             this.findBox(currentElement).BringToFront();
                 }
-
         else
         {
             MessageBox.Show("More than one Trackable & three Augmentions are not allowed!");
@@ -265,13 +272,10 @@ public class PreviewController
     {
         //if it's the same Scene do nothing
         if (index == this.index)
-        {
-            MessageBox.Show("You've choosen the same Scene");
-                 }
+        { }
         //if it's a scene which exists reload scene
         else if (index < this.ew.project.Trackables.Count)
         {
-            MessageBox.Show("Scene No. " + (index + 1) + " will be load");
                  
             this.index = index;
             this.trackable = this.ew.project.Trackables[index];

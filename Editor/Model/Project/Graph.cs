@@ -16,6 +16,13 @@ namespace ARdevKit.Model.Project
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public abstract class Graph : AbstractDynamic2DAugmention 
     {
+        protected ChartStyle style;
+
+        public ChartStyle Style
+        {
+            get { return style; }
+            set { style = value; }
+        }
         protected string title;
 
         public string Title
