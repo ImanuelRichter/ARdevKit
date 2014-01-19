@@ -90,7 +90,9 @@ namespace ARdevKit.Model.Project
         /// </summary>
         public Project()
         {
-            this.name = "";
+            name = "";
+            projectPath = "";
+            sensor = null; 
             trackables = new List<AbstractTrackable>();
             sources = new List<AbstractSource>();
         }
