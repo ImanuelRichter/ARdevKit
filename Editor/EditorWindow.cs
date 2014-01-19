@@ -505,17 +505,60 @@ namespace ARdevKit
             this.updatePanels();
         }
 
+        /// <summary>
+        /// Exports the project. saves the project first and then exports to project path
+        /// </summary>
+        /// <remarks>geht 19.01.2014 22:10</remarks>
         public void exportProject()
         {
-            //TODO: implement exportProject()
             try
             {
                 saveProject();
-                project.Accept(exportVisitor);
-                exportVisitor.ArelProjectFile.Save();
-                exportVisitor.TrackingDataFile.Save();
-                exportVisitor.ArelConfigFile.Save();
-                exportVisitor.ArelGlueFile.Save();
+
+                try
+                {
+                    project.Accept(exportVisitor);
+                }
+                catch (DirectoryNotFoundException de)
+                {
+                    Debug.WriteLine(de.StackTrace);
+                }
+
+                try
+                {
+                    exportVisitor.ArelProjectFile.Save();
+                }
+                catch (NullReferenceException ne)
+                {
+                    Debug.WriteLine(ne.StackTrace);
+                }
+
+                try
+                {
+                    exportVisitor.TrackingDataFile.Save();
+                }
+                catch (NullReferenceException ne)
+                {
+                    Debug.WriteLine(ne.StackTrace);
+                }
+
+                try
+                {
+                    exportVisitor.ArelConfigFile.Save();
+                }
+                catch (NullReferenceException ne)
+                {
+                    Debug.WriteLine(ne.StackTrace);
+                }
+
+                try
+                {
+                    exportVisitor.ArelGlueFile.Save();
+                }
+                catch (NullReferenceException ne)
+                {
+                    Debug.WriteLine(ne.StackTrace);
+                }
             }
             catch (ArgumentNullException ae)
             {
