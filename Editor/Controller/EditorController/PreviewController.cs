@@ -338,6 +338,7 @@ public class PreviewController
         tempBox.Tag = prev;
 
         tempBox.MouseClick += new MouseEventHandler(selectElement);
+        tempBox.MouseMove += new MouseEventHandler(controlMouseMove);
 
         this.panel.Controls.Add(tempBox);
 
@@ -381,6 +382,17 @@ public class PreviewController
         if (e.Button == MouseButtons.Left)
         {
             ew.PropertyGrid1.SelectedObject = ((Control)sender).Tag;
+        }
+    }
+
+    private void controlMouseMove(object sender, MouseEventArgs e)
+    {
+        if (e.Button == System.Windows.Forms.MouseButtons.Left)
+        {
+            Control controlToMove = (Control)sender;
+            controlToMove.BringToFront();
+            controlToMove.Location = new Point(controlToMove.Location.X + e.Location.X - 30,
+               controlToMove.Location.Y + e.Location.Y - 30);
         }
     }
  }

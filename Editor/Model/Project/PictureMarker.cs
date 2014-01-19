@@ -56,6 +56,13 @@ namespace ARdevKit.Model.Project
             set { pictureMarkerTrackingSensor = value; }
         }
 
+        public PictureMarker() : base()
+        {
+            type = "PictureMarker";
+            Fuser = new MarkerlessFuser();
+            sensorCosID = IDFactory.createNewSensorCosID(this);
+        }
+
         /// <summary>   Constructor. </summary>
         ///
         /// <param name="imagePath">    Full pathname of the image file. </param>

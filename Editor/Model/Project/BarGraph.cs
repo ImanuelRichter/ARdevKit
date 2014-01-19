@@ -22,7 +22,7 @@ namespace ARdevKit.Model.Project
         /// <value>
         /// The maximum color of the value.
         /// </value>
-        [CategoryAttribute("General")]
+        [CategoryAttribute("Color")]
         public Color MaxValueColor { get; set; }
         /// <summary>
         /// Gets or sets the minimum color of the value.
@@ -30,7 +30,7 @@ namespace ARdevKit.Model.Project
         /// <value>
         /// The minimum color of the value.
         /// </value>
-        [CategoryAttribute("General")]
+        [CategoryAttribute("Color")]
         public Color MinValueColor { get; set; }
         /// <summary>
         /// Gets or sets the optimal value.
@@ -46,7 +46,7 @@ namespace ARdevKit.Model.Project
         /// <value>
         /// The color of the optimal value.
         /// </value>
-        [CategoryAttribute("General")]
+        [CategoryAttribute("Color")]
         public Color OptimalValueColor { get; set; }
 
         /// <summary>   Default constructor. </summary>
