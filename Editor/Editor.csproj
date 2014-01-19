@@ -51,6 +51,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Project\AbstractDynamic2DAugmention.cs" />
+    <Compile Include="Model\Project\File\BarChartFile.cs" />
+    <Compile Include="Model\Project\File\JavaScriptInLine.cs" />
     <Compile Include="Model\Project\ImageAugmention.cs" />
     <Compile Include="Model\Project\MarkerFuser.cs" />
     <Compile Include="Controller\ProjectController\SaveLoadController.cs" />

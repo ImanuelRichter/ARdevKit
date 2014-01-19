@@ -16,6 +16,69 @@ namespace ARdevKit.Model.Project
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public abstract class Graph : AbstractDynamic2DAugmention 
     {
+        protected string title;
+
+        public string Title
+        {
+            get { return title; }
+            set { title = value; }
+        }
+
+        protected string subtitle;
+
+        public string Subtitle
+        {
+            get { return subtitle; }
+            set { subtitle = value; }
+        }
+
+        protected string[] categories;
+
+        public string[] Categories
+        {
+            get { return categories; }
+            set { categories = value; }
+        }
+
+        protected string yAxisTitle;
+
+        public string YAxisTitle
+        {
+            get { return yAxisTitle; }
+            set { yAxisTitle = value; }
+        }
+
+        private double pointPadding;
+
+        public double PointPadding
+        {
+            get { return pointPadding; }
+            set { pointPadding = value; }
+        }
+
+        protected int borderWidth;
+
+        public int BorderWidth
+        {
+            get { return borderWidth; }
+            set { borderWidth = value; }
+        }
+
+        protected List<string> names;
+
+        public List<string> Names
+        {
+            get { return names; }
+            set { names = value; }
+        }
+
+        protected List<double[]> data;
+
+        public List<double[]> Data
+        {
+            get { return data; }
+            set { data = value; }
+        }
         /// <summary>
         /// Gets or sets the maximum value.
         /// </summary>

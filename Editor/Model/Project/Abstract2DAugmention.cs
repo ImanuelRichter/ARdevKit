@@ -30,6 +30,8 @@ namespace ARdevKit.Model.Project
         /// The width
         /// </summary>
         private int width;
+        private int coordSystemId;
+        private Vector3D scaling;
 
         /// <summary>
         /// Gets or sets the width.
@@ -68,6 +70,16 @@ namespace ARdevKit.Model.Project
         {
             this.height = height;
             this.width = width;
+        }
+
+        public Abstract2DAugmention(int coordSystemId, bool isVisible, Vector3D translationVector, Vector3D scaling, AbstractTrackable trackable)
+        {
+            // TODO: Complete member initialization
+            this.coordSystemId = coordSystemId;
+            this.IsVisible = isVisible;
+            this.TranslationVector = translationVector;
+            this.scaling = scaling;
+            this.trackable = trackable;
         }
     }
 }
