@@ -31,18 +31,6 @@ namespace ARdevKit.Model.Project
             set { matrixID = value; }
         }
 
-        /// <summary>   The identifier marker tracking sensor. </summary>
-        private MarkerSensor idMarkerTrackingSensor;
-        /// <summary>   Gets or sets the identifier marker tracking sensor. </summary>
-        ///
-        /// <value> The identifier marker tracking sensor. </value>
-        [CategoryAttribute("General")]
-        public MarkerSensor IdMarkerTrackingSensor
-        {
-            get { return idMarkerTrackingSensor; }
-            set { idMarkerTrackingSensor = value; }
-        }
-
         /// <summary>
         /// Initializes a new instance of the <see cref="IDMarker"/> class.
         /// </summary>
@@ -52,7 +40,6 @@ namespace ARdevKit.Model.Project
             this.matrixID = matrixID;
             size = 60;
             type = "IDMarker";
-            idMarkerTrackingSensor = new MarkerSensor();
             sensorCosID = IDFactory.createNewSensorCosID(this);
             Fuser = new MarkerlessFuser();
         }

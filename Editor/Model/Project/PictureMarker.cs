@@ -51,18 +51,6 @@ namespace ARdevKit.Model.Project
             set { similarityThreshhold = value; }
         }
 
-        /// <summary>   The picture marker tracking sensor. </summary>
-        private MarkerlessSensor pictureMarkerTrackingSensor;
-        /// <summary>   Gets or sets the picture marker tracking sensor. </summary>
-        ///
-        /// <value> The picture marker tracking sensor. </value>
-        [CategoryAttribute("General")]
-        public MarkerlessSensor PictureMarkerTrackingSensor
-        {
-            get { return pictureMarkerTrackingSensor; }
-            set { pictureMarkerTrackingSensor = value; }
-        }
-
         /// <summary>   Constructor. </summary>
         ///
         /// <param name="imagePath">    Full pathname of the image file. </param>
