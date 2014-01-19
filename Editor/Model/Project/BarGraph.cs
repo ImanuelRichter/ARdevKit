@@ -9,9 +9,6 @@ using System.ComponentModel;
 
 namespace ARdevKit.Model.Project
 {
-    /// <summary>
-    /// ToDo the summary is missing.
-    /// </summary>
     [Serializable]
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public class BarGraph : Graph
@@ -52,6 +49,7 @@ namespace ARdevKit.Model.Project
         /// <summary>   Default constructor. </summary>
         public BarGraph()
         {
+            Style = new ChartStyle();
             OptimalValue = 50;
             OptimalValueColor = new Color();
             MinValueColor = new Color();

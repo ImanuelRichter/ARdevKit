@@ -19,7 +19,8 @@ namespace ARdevKit.Model.Project
     public abstract class AbstractAugmention : IPreviewable//, ISerializables
     {
         /// <summary>
-        /// ToDo Summary is missing
+        /// is used within AREL, to define which <see cref="AbstractAugmention"/> is bound to 
+        /// which <see cref="AbstractTrackable"/>s. it is set 
         /// </summary>
         private int coordinatesystemid;
         /// <summary>
@@ -33,13 +34,15 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
-        /// ToDo Summary is missing
+        /// describes if the <see cref="AbstractAugmention"/>
+        /// is seen using AREL, even if the associated <see cref="AbstractTrackable"/>
+        /// is not recognized.
         /// </summary>
         private bool isVisible;
         /// <summary>
-        /// Get or set if the augmention is visible or not.
+        /// Get or set if the augmention is visible the whole time using AREl or not.
         /// </summary>
-        [CategoryAttribute("General"), DefaultValueAttribute(true)]
+        [CategoryAttribute("General"), DefaultValueAttribute(false)]
         public bool IsVisible
         {
             get { return isVisible; }
@@ -47,7 +50,7 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
-        /// A list of all customUserEvents the current selected Element has.
+        /// A list of all customUserEvents the current <see cref="AbstractAugmention"/> has.
         /// </summary>
         private ArrayList customUserEvent;
         /// <summary>
@@ -62,11 +65,12 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
-        /// Vector to know the Position on the PreviewPanel.
+        /// Vector to describe the position on the PreviewPanel, and later
+        /// to position it on the coordinatesystem given in AREL.
         /// </summar>
         private Vector3D translationVector;
         /// <summary>
-        /// Get or set the position of the augmention.
+        /// Get or set the position of the <see cref="AbstractAugmention"/>.
         /// </summary>
         [CategoryAttribute("General")]
         public Vector3D TranslationVector
@@ -76,11 +80,13 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
-        /// ToDo Summary is missing
+        /// Vector, to describes the scaling of the Augmention in
+        /// x, y and z direction. Is used in AREL.
         /// </summary>
         private Vector3D scalingVector;
         /// <summary>
-        /// ToDo Summary is missing
+        /// gets or sets the scaling which is applied to the original 
+        /// <see cref="AbstractAugmention"/>
         /// </summary>
         [CategoryAttribute("General")]
         public Vector3D ScalingVector
@@ -90,11 +96,12 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
-        /// ToDo Summary is missing
+        /// Vector, to describes the rotation of the Augmention in
+        /// x, y and z direction. Is used in AREL.
         /// </summary>
         private Vector3Di rotationVector;
         /// <summary>
-        /// ToDo Summary is missing
+        /// gets or sets the Vector
         /// </summary>
         [CategoryAttribute("General")]
         public Vector3Di RotationVector
