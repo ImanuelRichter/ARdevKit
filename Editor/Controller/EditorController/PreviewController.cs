@@ -100,9 +100,9 @@ public class PreviewController
                     this.trackable = (AbstractTrackable)currentElement;
                     this.ew.project.Trackables[index] = (AbstractTrackable)currentElement;
                     this.addPictureBox(currentElement, v);
-                    if (this.ew.project.Trackables.Count == 1 && this.ew.project.Trackables[0] == null)
+                    if (this.ew.project.Trackables.Count == 1 && this.ew.project.Trackables[0] != null)
                     {
-                        this.elementSelectionController.setElementEnable(typeof(IDMarker), false);
+                        this.ew.ElementSelectionController.setElementEnable(typeof(IDMarker), false);
                     }
                     
                 }
@@ -113,9 +113,9 @@ public class PreviewController
                     this.trackable = (AbstractTrackable)currentElement;
                     this.ew.project.Trackables[index] = (AbstractTrackable)currentElement;
                     this.addPictureBox(currentElement, v);
-                    if (this.ew.project.Trackables.Count == 1 && this.ew.project.Trackables[0] == null)
+                    if (this.ew.project.Trackables.Count == 1 && this.ew.project.Trackables[0] != null)
                     {
-                        this.elementSelectionController.setElementEnable(typeof(PictureMarker), false);
+                        this.ew.ElementSelectionController.setElementEnable(typeof(PictureMarker), false);
                     }
                     
             }
@@ -225,10 +225,10 @@ public class PreviewController
         if (currentMetaCategory == MetaCategory.Trackable && trackable != null)
         {
             this.removeAll();
-            if (this.ew.project.Trackables.Count == 1)
+            if (!this.ew.project.isTrackable())
             {
-                this.elementSelectionController.setElementEnable(typeof(PictureMarker), true);
-                this.elementSelectionController.setElementEnable(typeof(IDMarker), true);
+                this.ew.ElementSelectionController.setElementEnable(typeof(PictureMarker), true);
+                this.ew.ElementSelectionController.setElementEnable(typeof(IDMarker), true);
             }
         }
         else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null)

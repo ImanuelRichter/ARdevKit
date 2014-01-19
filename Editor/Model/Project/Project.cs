@@ -167,6 +167,29 @@ namespace ARdevKit.Model.Project
             }
             return false;
         }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        ///     tests if all trackables in this.trackables are null. if there are one which is not null
+        ///     it's true.
+        /// </summary>
+        ///
+        /// <remarks>   Lizzard, 1/19/2014. </remarks>
+        ///
+        /// <returns>   true if trackable, false if not. </returns>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public bool isTrackable()
+        {
+            foreach (AbstractTrackable temp in this.trackables)
+            {
+                if (temp != null)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 
     
