@@ -20,11 +20,16 @@ namespace ARdevKit.Model.Project
         /// <summary>   Gets or sets the full pathname of the image file. </summary>
         ///
         /// <value> The full pathname of the image file. </value>
-        [CategoryAttribute("General")]
+        [CategoryAttribute("General"), EditorAttribute(typeof(FileSelectorTypeEditor), 
+            typeof(System.Drawing.Design.UITypeEditor))]
         public string ImagePath
         {
             get { return imagePath; }
-            set { imagePath = value; }
+            set 
+            { 
+                imagePath = value;
+                imageName = Path.GetFileNameWithoutExtension(imagePath);
+            }
         }
 
         /// <summary>   Name of the image. </summary>
@@ -32,23 +37,11 @@ namespace ARdevKit.Model.Project
         /// <summary>   Gets or sets the name of the image. </summary>
         ///
         /// <value> The name of the image. </value>
-        [CategoryAttribute("General")]
+        [CategoryAttribute("General"), ReadOnly(true)]
         public string ImageName
         {
             get { return imageName; }
-            set { imageName = value; }
-        }
-
-        /// <summary>   The similarity threshhold. </summary>
-        private double similarityThreshhold = 0.7;
-        /// <summary>   Gets or sets the similarity threshhold. </summary>
-        ///
-        /// <value> The similarity threshhold. </value>
-        [CategoryAttribute("General")]
-        public double SimilarityThreshhold
-        {
-            get { return similarityThreshhold; }
-            set { similarityThreshhold = value; }
+            //set { imageName = value; }
         }
 
         /// <summary>   The picture marker tracking sensor. </summary>
@@ -56,11 +49,18 @@ namespace ARdevKit.Model.Project
         /// <summary>   Gets or sets the picture marker tracking sensor. </summary>
         ///
         /// <value> The picture marker tracking sensor. </value>
-        [CategoryAttribute("General")]
+        [Browsable(false)/*CategoryAttribute("General")*/]
         public MarkerlessSensor PictureMarkerTrackingSensor
         {
             get { return pictureMarkerTrackingSensor; }
             set { pictureMarkerTrackingSensor = value; }
+        }
+
+        public PictureMarker() : base()
+        {
+            type = "PictureMarker";
+            Fuser = new MarkerlessFuser();
+            sensorCosID = IDFactory.createNewSensorCosID(this);
         }
 
         /// <summary>   Constructor. </summary>

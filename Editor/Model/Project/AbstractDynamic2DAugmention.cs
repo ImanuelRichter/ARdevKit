@@ -10,7 +10,7 @@ namespace ARdevKit.Model.Project
 {
     [Serializable]
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
-    public abstract class AbstractDynamic2DAugmention : AbstractAugmention
+    public abstract class AbstractDynamic2DAugmention : Abstract2DAugmention
     {
         /// <summary>
         /// New Variable which is for link a Source with this Augmentation

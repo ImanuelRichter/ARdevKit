@@ -36,7 +36,7 @@ namespace ARdevKit.Model.Project
         /// <summary>   Gets or sets the identifier marker tracking sensor. </summary>
         ///
         /// <value> The identifier marker tracking sensor. </value>
-        [CategoryAttribute("General")]
+        [Browsable(false)/*CategoryAttribute("General")*/]
         public MarkerSensor IdMarkerTrackingSensor
         {
             get { return idMarkerTrackingSensor; }
