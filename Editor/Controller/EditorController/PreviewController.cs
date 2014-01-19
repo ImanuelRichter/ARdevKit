@@ -85,7 +85,7 @@ public class PreviewController
         if (currentMetaCategory == MetaCategory.Trackable && trackable == null)
         {
 
-            Vector3D center = new Vector3D(0,0,0);
+            Vector3D center = new Vector3D(0, 0, 0);
             center.Y = panel.Size.Height / 2;
             center.X = panel.Size.Width / 2;
             //ask the user for the picture (if the trackable is a picturemarker)
@@ -110,7 +110,8 @@ public class PreviewController
                     
                 }
             }
-            else {
+            else
+            {
                 //set the vector to the trackable
                     ((AbstractTrackable)currentElement).vector = center;
                     this.trackable = (AbstractTrackable)currentElement;
@@ -233,7 +234,7 @@ public class PreviewController
             {
                 this.ew.ElementSelectionController.setElementEnable(typeof(PictureMarker), true);
                 this.ew.ElementSelectionController.setElementEnable(typeof(IDMarker), true);
-        }
+            }
         }
         else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null)
         {
@@ -316,11 +317,11 @@ public class PreviewController
             {
                 this.addAllToPanel(this.ew.project.Trackables[index]);
             }
-            if (trackable.GetType() == typeof(IDMarker))
+            if (this.trackable != null && trackable.GetType() == typeof(IDMarker))
             {
                 this.ew.ElementSelectionController.setElementEnable(typeof(PictureMarker), false);
             }
-            else if (trackable.GetType() == typeof(PictureMarker))
+            else if (this.trackable != null && trackable.GetType() == typeof(PictureMarker))
             {
                     this.ew.ElementSelectionController.setElementEnable(typeof(IDMarker), false);
             }
@@ -395,7 +396,7 @@ public class PreviewController
         tempBox.MouseClick += new MouseEventHandler(selectElement);
 
         if (tempBox.Tag is AbstractAugmention)
-            tempBox.MouseMove += new MouseEventHandler(controlMouseMove);
+        tempBox.MouseMove += new MouseEventHandler(controlMouseMove);
 
         this.panel.Controls.Add(tempBox);
 
