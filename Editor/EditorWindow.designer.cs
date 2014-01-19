@@ -481,6 +481,22 @@
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
+        /// Gets or sets the PropertyGrid1.
+        /// </summary>
+        ///
+        /// <value>
+        /// PropertyGrid.
+        /// </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public System.Windows.Forms.PropertyGrid PropertyGrid1
+        {
+            get { return propertyGrid1; }
+            set { propertyGrid1 = value; }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
         /// Gets or sets the pnl editor preview.
         /// </summary>
         ///

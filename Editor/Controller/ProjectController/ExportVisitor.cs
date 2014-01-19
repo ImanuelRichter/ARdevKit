@@ -615,7 +615,7 @@ namespace ARdevKit.Controller.ProjectController
             XMLBlock markerParametersBlock = new XMLBlock(new XMLTag("MarkerParameters"));
             parameterBlock.AddBlock(markerParametersBlock);
             markerParametersBlock.AddLine(new XMLLine(new XMLTag("referenceImage", "qualityThreshold=\"0.70\""), pictureMarker.ImageName));
-            string value = pictureMarker.SimilarityThreshhold.ToString("F1", CultureInfo.InvariantCulture);
+            string value = pictureMarker.SimilarityThreshold.ToString("F1", CultureInfo.InvariantCulture);
             parameterBlock.AddLine(new XMLLine(new XMLTag("SimilarityThreshold"), value));
         }
 
