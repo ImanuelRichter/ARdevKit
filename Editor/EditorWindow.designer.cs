@@ -397,17 +397,7 @@
             this.pnl_editor_status.Size = new System.Drawing.Size(1008, 23);
             this.pnl_editor_status.TabIndex = 3;
             // 
-            // btn_editor_scene_delete
-            // 
-            this.btn_editor_scene_delete.Location = new System.Drawing.Point(611, 34);
-            this.btn_editor_scene_delete.Name = "btn_editor_scene_delete";
-            this.btn_editor_scene_delete.Size = new System.Drawing.Size(45, 45);
-            this.btn_editor_scene_delete.TabIndex = 2;
-            this.btn_editor_scene_delete.Text = "-";
-            this.btn_editor_scene_delete.UseVisualStyleBackColor = true;
-            this.btn_editor_scene_delete.Click += new System.EventHandler(this.btn_editor_scene_scene_remove);
-            // 
-	    // propertyGrid1
+	        // propertyGrid1
             // 
             this.propertyGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.propertyGrid1.Location = new System.Drawing.Point(0, 21);
@@ -415,7 +405,6 @@
             this.propertyGrid1.Size = new System.Drawing.Size(198, 650);
             this.propertyGrid1.TabIndex = 2;
             //
-
             // EditorWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
