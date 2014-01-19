@@ -334,7 +334,7 @@ public class PreviewController
     {
         PictureBox tempBox;
         tempBox = new PictureBox();
-        tempBox.Location = new Point(vector.X, vector.Y);
+        tempBox.Location = new Point(vector.X - prev.getPreview().Height / 8, vector.Y - prev.getPreview().Width / 8);
         tempBox.Image = (Image)prev.getPreview();
         tempBox.Size = new Size(prev.getPreview().Height / 4, prev.getPreview().Width / 4);
         tempBox.SizeMode = PictureBoxSizeMode.StretchImage;
