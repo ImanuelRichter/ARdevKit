@@ -1,4 +1,5 @@
 ﻿using ARdevKit.Controller.EditorController;
+using ARdevKit.Model.Project;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -51,6 +52,18 @@ namespace ARdevKit.View
         private EditorWindow editorWindow;
 
         /**
+         * <summary>    The point where the user clicked on the control. </summary>
+         */
+
+        private Point clickPoint;
+
+        /**
+         * <summary>    true if the mouse is pressed. </summary>
+         */
+
+        private Boolean isMousePressed = false;
+
+        /**
          * <summary>    Gets the editor window. </summary>
          *
          * <value>  The editor window. </value>
@@ -75,25 +88,33 @@ namespace ARdevKit.View
             this.editorWindow = ew;
             ColumnCount = 1;
             RowCount = 2;
-            EventHandler clickHandler=new EventHandler(onClick);
             MouseEventHandler mouseDownHandler = new MouseEventHandler(onMouseDown);
-            Click += clickHandler;
+            MouseEventHandler mouseUpHandler = new MouseEventHandler(onMouseUp);
+            MouseEventHandler mouseMoveHandler = new MouseEventHandler(onMouseMove);
+            EventHandler mouseLeaveHandler = new EventHandler(onMouseLeave);
+            MouseMove += mouseMoveHandler;
             MouseDown += mouseDownHandler;
+            MouseUp += mouseUpHandler;
+            MouseLeave += mouseLeaveHandler;
 
             label = new Label();
             label.Text = element.ToString();
             label.AutoSize = true;
             label.Anchor = AnchorStyles.None;
-            label.Click += clickHandler;
+            label.MouseMove += mouseMoveHandler;
             label.MouseDown += mouseDownHandler;
+            label.MouseUp += mouseUpHandler;
+            label.MouseLeave += mouseLeaveHandler;
 
             picture = new PictureBox();
             picture.SizeMode = PictureBoxSizeMode.StretchImage;
             Bitmap MyImage = new Bitmap(element.Icon);
             picture.ClientSize = new Size(121, 121);
             picture.Image = (Image) MyImage;
-            picture.Click += clickHandler;
+            picture.MouseMove += mouseMoveHandler;
             picture.MouseDown += mouseDownHandler;
+            picture.MouseUp += mouseUpHandler;
+            picture.MouseLeave += mouseLeaveHandler;
 
             Controls.Add(picture, 0, 0);
             Controls.Add(label, 0, 1);
@@ -115,7 +136,9 @@ namespace ARdevKit.View
             {
                 int y = editorWindow.Pnl_editor_preview.Height / 2;
                 int x = editorWindow.Pnl_editor_preview.Width / 2;
-                editorWindow.PreviewController.addPreviewable(element.Dummy, new ARdevKit.Model.Project.Vector3D(x, y, 0));
+                
+                IPreviewable element = ObjectCopier.Clone(this.element.Dummy);
+                editorWindow.PreviewController.addPreviewable(element, new ARdevKit.Model.Project.Vector3D(x, y, 0));
             }
         }
 
@@ -130,7 +153,57 @@ namespace ARdevKit.View
 
         public void onMouseDown(object sender, EventArgs e)
         {
-            DoDragDrop(this,DragDropEffects.Move);
+            clickPoint = PointToClient(Cursor.Position);
+            isMousePressed = true;
+        }
+
+        /**
+         * <summary>    Raises the mouse up event. </summary>
+         *
+         * <remarks>    Robin, 19.01.2014. </remarks>
+         *
+         * <param name="sender">    Source of the event. </param>
+         * <param name="e">         Event information to send to registered event handlers. </param>
+         */
+
+        public void onMouseUp(object sender, EventArgs e)
+        {
+            isMousePressed = false;
+            Point current = PointToClient(Cursor.Position);
+            if (Math.Abs(clickPoint.X - current.X) < 10 && Math.Abs(clickPoint.Y - current.Y) < 10)
+            {
+                onClick(sender, e);
+            }
+            else
+            {
+                DoDragDrop(this, DragDropEffects.Move);
+            }
+        }
+
+        /**
+         * <summary>    Raises the mouse move event. </summary>
+         *
+         * <remarks>    Robin, 19.01.2014. </remarks>
+         *
+         * <param name="sender">    Source of the event. </param>
+         * <param name="e">         Event information to send to registered event handlers. </param>
+         */
+
+        public void onMouseMove(object sender, EventArgs e)
+        {
+            if (isMousePressed)
+            {
+                Point current = PointToClient(Cursor.Position);
+                if (Math.Abs(clickPoint.X - current.X) > 10 || Math.Abs(clickPoint.Y - current.Y) > 10)
+                {
+                    DoDragDrop(this, DragDropEffects.Move);
+                }
+            }
+        }
+
+        public void onMouseLeave(object sender, EventArgs e)
+        {
+            isMousePressed = false;
         }
     }
 }
