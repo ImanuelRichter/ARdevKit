@@ -66,7 +66,7 @@ public class PreviewController
                 + "Previewable should sit in the panel you should use addPreviewable(IPreviewable"
                 + "currentElement, Vector3d v) for Augmentions & Trackables", true)]
     public void addPreviewAble(IPreviewable p)
-    { throw new NotImplementedException(); }
+        { throw new NotImplementedException(); }
 
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -84,10 +84,7 @@ public class PreviewController
     {
         if (currentMetaCategory == MetaCategory.Trackable && trackable == null)
         {
-            //set the vector to the trackable
-            ((AbstractTrackable)currentElement).vector = v;
-            this.trackable = (AbstractTrackable)currentElement;
-            this.ew.project.Trackables[index] = (AbstractTrackable)currentElement;
+            
 
             //ask the user for the picture (if the trackable is a picturemarker)
             if (currentElement.GetType() == typeof(PictureMarker))
@@ -97,9 +94,21 @@ public class PreviewController
                 if (openTestImageDialog.ShowDialog() == DialogResult.OK)
                 {
                     ((PictureMarker)currentElement).ImagePath = openTestImageDialog.FileName;
+                    //set the vector to the trackable
+                    ((AbstractTrackable)currentElement).vector = v;
+                    this.trackable = (AbstractTrackable)currentElement;
+                    this.ew.project.Trackables[index] = (AbstractTrackable)currentElement;
+                    this.addPictureBox(currentElement, v);
                 }
             }
-            this.addPictureBox(currentElement, v);
+            else {
+                //set the vector to the trackable
+                    ((AbstractTrackable)currentElement).vector = v;
+                    this.trackable = (AbstractTrackable)currentElement;
+                    this.ew.project.Trackables[index] = (AbstractTrackable)currentElement;
+                    this.addPictureBox(currentElement, v);
+            }
+            
         }
         else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null && this.ew.project.Trackables[index].Augmentions.Count < 3)
         {
@@ -142,16 +151,17 @@ public class PreviewController
             if (this.trackable != null && trackable.existAugmention((AbstractAugmention)currentElement))
             {
                 //set reference to the augmentions in Source
-                //source.augmentions.Add((Abstract2DAugmention)currentElement);
+                source.augmentions.Add((Abstract2DAugmention)currentElement);
 
                 //add references in Augmention, Picturebox + project.sources List.
                 ((AbstractDynamic2DAugmention)currentElement).source = source;
-                //this.ew.project.Sources.Add(((AbstractDynamic2DAugmention)this.findBox((AbstractAugmention)currentElement).Tag).source);
+
+                this.currentMetaCategory = MetaCategory.Augmentation;
+                this.findBox(currentElement).ContextMenu.MenuItems.Add("show source", new EventHandler(this.show_source_by_click));
+                this.findBox(currentElement).ContextMenu.MenuItems.Add("remove source", new EventHandler(this.remove_source_by_click));
+                this.ew.project.Sources.Add(((AbstractDynamic2DAugmention)this.findBox((AbstractAugmention)currentElement).Tag).source);
+                this.currentMetaCategory = MetaCategory.Source;
             }
-        }
-        else
-        {
-            MessageBox.Show("ERROR in addSource()");
         }
     }
 
@@ -290,7 +300,6 @@ public class PreviewController
         //if the scene is new create a new empty scene
         else if (index >= this.ew.project.Trackables.Count)
         {
-            MessageBox.Show("You've choosen a new Scene! gl & hf");
             this.index = index;
             this.trackable = null;
             this.panel.Controls.Clear();
@@ -447,9 +456,18 @@ public class PreviewController
             Control controlToMove = (Control)sender;
             controlToMove.BringToFront();
             controlToMove.Location = new Point(controlToMove.Location.X + e.Location.X - 30,
-               controlToMove.Location.Y + e.Location.Y - 30);
+            controlToMove.Location.Y + e.Location.Y - 30);
         }
     }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   Event handler. removes the current object. </summary>
+    ///
+    /// <remarks>   Lizzard, 1/19/2014. </remarks>
+    ///
+    /// <param name="sender">   Source of the event. </param>
+    /// <param name="e">        Event information. </param>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
 
     private void remove_by_click(object sender, EventArgs e)
     {
@@ -465,7 +483,50 @@ public class PreviewController
         }
 
         this.removePreviewable((IPreviewable)((ContextMenu)((MenuItem)sender).Parent).Tag);
+        ew.PropertyGrid1.SelectedObject = null;
         this.currentMetaCategory = tempMeta;
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   Event handler. Shows Source in PropertyGrid when you want this. </summary>
+    ///
+    /// <remarks>   Lizzard, 1/19/2014. </remarks>
+    ///
+    /// <param name="sender">   Source of the event. </param>
+    /// <param name="e">        Event information. </param>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    private void show_source_by_click(object sender, EventArgs e)
+    {
+        ew.PropertyGrid1.SelectedObject = ((AbstractDynamic2DAugmention)((ContextMenu)((MenuItem)sender).Parent).Tag).source;
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>
+    ///     Event handler. Removes the source of the augmentation and the contextmenuentries of this
+    ///     augmentation.
+    /// </summary>
+    ///
+    /// <remarks>   Lizzard, 1/19/2014. </remarks>
+    ///
+    /// <param name="sender">   Source of the event. </param>
+    /// <param name="e">        Event information. </param>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    private void remove_source_by_click(object sender, EventArgs e)
+    {
+        AbstractDynamic2DAugmention temp = (AbstractDynamic2DAugmention)((ContextMenu)((MenuItem)sender).Parent).Tag;
+        MetaCategory tempMeta = currentMetaCategory;
+        this.currentMetaCategory = MetaCategory.Augmentation;
+        this.removeSource(temp.source, temp);
+        ew.PropertyGrid1.SelectedObject = null;
+        this.currentMetaCategory = tempMeta;
+
+        this.currentMetaCategory = MetaCategory.Augmentation;
+        this.findBox(temp).ContextMenu.MenuItems.RemoveAt(1);
+        this.findBox(temp).ContextMenu.MenuItems.RemoveAt(1);
+        this.currentMetaCategory = MetaCategory.Source;
+
     }
 }
 
