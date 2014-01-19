@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.IO;
 
 namespace ARdevKit.Controller.TestController
 {
@@ -48,7 +49,7 @@ namespace ARdevKit.Controller.TestController
         /// </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        private static string playerPath = "..\\..\\..\\ARdevKitPlayer\\Debug\\Player.exe";
+        private static string playerPath = "Player.exe";
 
         /// <summary>
         /// Starts the player with the specified settings.
@@ -61,32 +62,32 @@ namespace ARdevKit.Controller.TestController
         private static void StartPlayer(string projectPath, int mode)
         {
             player = new Process();
-            player.StartInfo.FileName = playerPath;
             player.StartInfo.Arguments = projectPath + " -" + mode;
             
             switch (mode)
             {
                 case (IMAGE):
                     OpenFileDialog openTestImageDialog = new OpenFileDialog();
+                    openTestImageDialog.Title = "Bitte ein Bild auswählen, an dem getestet werden soll";
                     openTestImageDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
                     if (openTestImageDialog.ShowDialog() == DialogResult.OK)
                     {
                         string testFilePath = openTestImageDialog.FileName;
                         player.StartInfo.Arguments += " -" + testFilePath;
-                        player.Start();
                     }
                     break;
                 case (VIDEO):
                     OpenFileDialog openTestVideoDialog = new OpenFileDialog();
+                    openTestVideoDialog.Title = "Bitte ein Video auswählen, an dem getestet werden soll";
                     if (openTestVideoDialog.ShowDialog() == DialogResult.OK)
                     {
                         string testFilePath = openTestVideoDialog.FileName;
                         player.StartInfo.Arguments += " -" + testFilePath;
-                        player.Start();
                     }
                     break;
                 case (CAMERA):
                     OpenFileDialog openVirualCameraPathDialog = new OpenFileDialog();
+                    openVirualCameraPathDialog.Title = "Bitte virtuelle Kamera auswählen";
                     if (openVirualCameraPathDialog.ShowDialog() == DialogResult.OK)
                     {
                         string virtualCameraPath = openVirualCameraPathDialog.FileName;
@@ -94,10 +95,24 @@ namespace ARdevKit.Controller.TestController
                         Process vCam = new Process();
                         vCam.StartInfo.FileName = virtualCameraPath;
                         vCam.Start();
-
-                        player.Start();
                     }
                     break;
+            }
+            if (File.Exists(playerPath))
+            {
+                player.StartInfo.FileName = playerPath;
+                player.Start();
+            }
+            else
+            {
+                OpenFileDialog openPlayerDialog = new OpenFileDialog();
+                openPlayerDialog.Title = "Bitte Player auswählen";
+                openPlayerDialog.Filter = "Programm (*.exe)|*.exe";
+                if (openPlayerDialog.ShowDialog() == DialogResult.OK)
+                {
+                    player.StartInfo.FileName = openPlayerDialog.FileName;
+                    player.Start();
+                }
             }
         }
 
