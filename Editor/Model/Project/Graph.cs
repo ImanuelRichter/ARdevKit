@@ -114,7 +114,7 @@ namespace ARdevKit.Model.Project
             set { borderWidth = value; }
         }
 
-        /// <summary>   ToDo </summary>
+        /// <summary> A list of the names </summary>
         protected List<string> names;
         /// <summary>   Gets or sets the names. </summary>
         ///
@@ -153,26 +153,26 @@ namespace ARdevKit.Model.Project
         [CategoryAttribute("Size")]
         public int Scaling { get; set; }
 
-        /// <summary>
-        /// ToDo Summary is missing
-        /// </summary>
-        private string graphPath;
-        /// <summary>
-        /// ToDo summary is missing
-        /// </summary>
-        [CategoryAttribute("General")]
-        public string GraphPath
-        {
-            get { return graphPath; }
-            set { graphPath = value; }
-        }
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Specialised default constructor for use only by derived classes. </summary>
+        ///
+        /// <remarks>   Imanuel, 20.01.2014. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        /// <summary>
-        /// ToDo summary is missing
-        /// </summary>
         protected Graph() : base()
         {
-            ; // missing initialization
+            title = "Titel";
+            subtitle = "Untertitel";
+            xAxisTitle = "Skala";
+            yAxisTitle = "Kategorien";
+            categories = new string[] {"Kategorie 1", "Kategorie 2"};
+            pointPadding = 0.2;
+            borderWidth = 0;
+            names = new List<string>();
+            names.Add("Name 1");
+            names.Add("Name 2");
+            data = new List<double[]>();
+            data.Add(new double[] {33.1, 66.9});
         }
     }
 }
