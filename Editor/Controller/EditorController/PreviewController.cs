@@ -84,8 +84,10 @@ public class PreviewController
     {
         if (currentMetaCategory == MetaCategory.Trackable && trackable == null)
         {
-            
 
+            Vector3D center = new Vector3D(0,0,0);
+            center.Y = panel.Size.Height / 2;
+            center.X = panel.Size.Width / 2;
             //ask the user for the picture (if the trackable is a picturemarker)
             if (currentElement.GetType() == typeof(PictureMarker))
             {
@@ -96,10 +98,10 @@ public class PreviewController
                     ((PictureMarker)currentElement).ImagePath = openTestImageDialog.FileName;
                     
                     //set the vector to the trackable
-                    ((AbstractTrackable)currentElement).vector = v;
+                    ((AbstractTrackable)currentElement).vector = center;
                     this.trackable = (AbstractTrackable)currentElement;
                     this.ew.project.Trackables[index] = (AbstractTrackable)currentElement;
-                    this.addPictureBox(currentElement, v);
+                    this.addPictureBox(currentElement, center);
                     if (this.ew.project.isTrackable())
                     {
                         this.ew.ElementSelectionController.setElementEnable(typeof(IDMarker), false);
@@ -109,10 +111,10 @@ public class PreviewController
             }
             else {
                 //set the vector to the trackable
-                    ((AbstractTrackable)currentElement).vector = v;
+                    ((AbstractTrackable)currentElement).vector = center;
                     this.trackable = (AbstractTrackable)currentElement;
                     this.ew.project.Trackables[index] = (AbstractTrackable)currentElement;
-                    this.addPictureBox(currentElement, v);
+                    this.addPictureBox(currentElement, center);
                     if (this.ew.project.isTrackable())
                     {
                         this.ew.ElementSelectionController.setElementEnable(typeof(PictureMarker), false);
