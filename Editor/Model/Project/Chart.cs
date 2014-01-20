@@ -185,8 +185,8 @@ namespace ARdevKit.Model.Project
         {
             title = "Titel";
             subtitle = "Untertitel";
-            xAxisTitle = "Skala";
-            yAxisTitle = "Kategorien";
+            xAxisTitle = "Kategorien";
+            yAxisTitle = "Skala";
             categories = new string[] {"Kategorie 1", "Kategorie 2"};
             pointPadding = 0.2;
             borderWidth = 0;
