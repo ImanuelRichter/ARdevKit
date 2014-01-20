@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace ARdevKit.Model.Project
 {
@@ -11,7 +12,7 @@ namespace ARdevKit.Model.Project
     ///
     /// <remarks>   Imanuel, 20.01.2014. </remarks>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-
+    [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     [Serializable]
     public class ChartStyle
     {
@@ -104,8 +105,6 @@ namespace ARdevKit.Model.Project
             bottom = -1;
             right = -1;
             position = "static";
-            top = 100;
-            left = 100;
         }
     }
 }

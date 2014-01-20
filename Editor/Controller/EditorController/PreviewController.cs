@@ -146,7 +146,7 @@ public class PreviewController
         }
     }
 
-
+    /*
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// <summary>
     ///     add Source or augmentation, this method can only be used with the element, which is the
@@ -211,6 +211,7 @@ public class PreviewController
             }
         }
     }
+    */
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// <summary>   Removes the Previewable and the Objekt, what is linked to the Previewable. </summary>
@@ -435,7 +436,7 @@ public class PreviewController
             ElementIcon icon = (ElementIcon)e.Data.GetData(typeof(ElementIcon));
             AbstractAugmentation augmentation = (AbstractAugmentation)((PictureBox)sender).Tag;
             AbstractSource source = ObjectCopier.Clone((AbstractSource)icon.Element.Dummy);
-            addSource(source, augmentation);
+            //addSource(source, augmentation);
         }
     }
 
@@ -538,6 +539,7 @@ public class PreviewController
         this.currentMetaCategory = tempMeta;
     }
 
+    /*
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// <summary>   Event handler. Shows Source in PropertyGrid when you want this. </summary>
     ///
@@ -551,6 +553,7 @@ public class PreviewController
     {
         ew.PropertyGrid1.SelectedObject = ((AbstractDynamic2DAugmentation)((ContextMenu)((MenuItem)sender).Parent).Tag).source;
     }
+    */
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// <summary>
@@ -569,7 +572,7 @@ public class PreviewController
         AbstractDynamic2DAugmentation temp = (AbstractDynamic2DAugmentation)((ContextMenu)((MenuItem)sender).Parent).Tag;
         MetaCategory tempMeta = currentMetaCategory;
         this.currentMetaCategory = MetaCategory.Augmentation;
-        this.removeSource(temp.source, temp);
+        //this.removeSource(temp.source, temp);
         ew.PropertyGrid1.SelectedObject = null;
         this.currentMetaCategory = tempMeta;
 

@@ -41,6 +41,7 @@ namespace ARdevKit.Model.Project
             set { isVisible = value; }
         }
 
+        /*
         /// <summary>
         /// A list of all customUserEvents the current <see cref="AbstractAugmentation"/> has.
         /// The user can write a javascript based code for the <see cref="AbstractAugmentation"/>.
@@ -56,6 +57,7 @@ namespace ARdevKit.Model.Project
         {
             get { return customUserEvent; }
         }
+        */
 
         /// <summary>
         /// Vector to describe the position on the PreviewPanel, and later
@@ -65,7 +67,8 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// Get or set the position of the <see cref="AbstractAugmentation"/>.
         /// </summary>
-        [CategoryAttribute("General")]
+        //[CategoryAttribute("General")]
+        [Browsable(false)]
         public Vector3D TranslationVector
         {
             get { return translationVector; }
@@ -81,7 +84,8 @@ namespace ARdevKit.Model.Project
         /// gets or sets the scaling which is applied to the original 
         /// <see cref="AbstractAugmentation"/>
         /// </summary>
-        [CategoryAttribute("General")]
+        //[CategoryAttribute("General")]
+        [Browsable(false)]
         public Vector3D ScalingVector
         {
             get { return scalingVector; }
@@ -96,7 +100,8 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// gets or sets the Vector
         /// </summary>
-        [CategoryAttribute("General")]
+        //[CategoryAttribute("General")]
+        [Browsable(false)]
         public Vector3Di RotationVector
         {
             get { return rotationVector; }
@@ -126,7 +131,7 @@ namespace ARdevKit.Model.Project
         protected AbstractAugmentation()
         {
             isVisible = true;
-            customUserEvent = new ArrayList();
+            //customUserEvent = new ArrayList();
             translationVector = new Vector3D(0, 0, 0);
             scalingVector = new Vector3D(0, 0, 0);
             rotationVector = new Vector3Di(0, 0, 0, 0);
@@ -145,7 +150,7 @@ namespace ARdevKit.Model.Project
             Vector3D translationVector, Vector3D scaling, AbstractTrackable trackable)
         {
             this.isVisible = isVisible;
-            customUserEvent = new ArrayList();
+            //customUserEvent = new ArrayList();
             this.translationVector = translationVector;
             scalingVector = scaling;
             this.trackable = trackable;

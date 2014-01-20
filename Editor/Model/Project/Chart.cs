@@ -29,6 +29,7 @@ namespace ARdevKit.Model.Project
         /// The style.
         /// </value>
         [CategoryAttribute("General"), ReadOnly(true)]
+        //[Browsable(false)]
         public ChartStyle Style
         {
             get { return style; }
@@ -63,6 +64,10 @@ namespace ARdevKit.Model.Project
         /// The subtitle.
         /// </value>
         [CategoryAttribute("General"), ReadOnly(true)]
+        /// <summary>   Gets or sets the subtitle. </summary>
+        ///
+        /// <value> The subtitle. </value>
+        [CategoryAttribute("General")]
         public string Subtitle
         {
             get { return subtitle; }

@@ -110,7 +110,9 @@ namespace ARdevKit.Controller.ProjectController
         private JavaScriptBlock ifPatternIsLostBlock;
         /// <summary>   Number of images added to the <see cref="arelGlueFile"/>. </summary>
         private int imageCount = 1;
+        /// <summary>   Number of bar charts. </summary>
         private int barChartCount = 1;
+        /// <summary>   Identifier for the coordinate system. </summary>
         private int coordinateSystemID = 0;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -230,6 +232,8 @@ namespace ARdevKit.Controller.ProjectController
 
             ifPatternIsLostBlock.AddLine(new JavaScriptLine(barChartVariable + ".hide()"));
 
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
             // Create barChart[i].js
             if (barChartCount == 1)
                 barChartFiles = new List<BarChartFile>();
@@ -249,13 +253,13 @@ namespace ARdevKit.Controller.ProjectController
             barChartFileCreateBlock.AddLine(new JavaScriptLine("var chart = document.createElement(\"div\")"));
             barChartFileCreateBlock.AddLine(new JavaScriptLine("chart.setAttribute(\"id\", id)"));
             barChartFileCreateBlock.AddLine(new JavaScriptLine("chart.style.position = \"" + barChart.Style.Position + "\""));
-            if (barChart.Style.Top >= 0)
+            if (barChart.Style.Top > 0)
                 barChartFileCreateBlock.AddLine(new JavaScriptLine("chart.style.top = \"" + barChart.Style.Top + "px\""));
-            if (barChart.Style.Left >= 0)
+            if (barChart.Style.Left > 0)
                 barChartFileCreateBlock.AddLine(new JavaScriptLine("chart.style.left = \"" + barChart.Style.Left + "px\""));
-            if (barChart.Style.Bottom >= 0)
+            if (barChart.Style.Bottom > 0)
                 barChartFileCreateBlock.AddLine(new JavaScriptLine("chart.style.bottom = \"" + barChart.Style.Bottom + "px\""));
-            if (barChart.Style.Right >= 0)
+            if (barChart.Style.Right > 0)
                 barChartFileCreateBlock.AddLine(new JavaScriptLine("chart.style.right = \"" + barChart.Style.Right + "px\""));
             barChartFileCreateBlock.AddLine(new JavaScriptLine("chart.style.width = \"" + barChart.Width + "px\""));
             barChartFileCreateBlock.AddLine(new JavaScriptLine("chart.style.height = \"" + barChart.Height + "px\""));
@@ -593,7 +597,7 @@ namespace ARdevKit.Controller.ProjectController
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         public override void Visit(PictureMarkerSensor pictureMarkerSensor)
-        {
+        {   
             // MarkerParameters
             XMLBlock markerTrackingParametersBlock = new XMLBlock(new XMLTag("MarkerTrackingParameters"));
             trackingDataFileSensorParametersBlock.AddBlock(markerTrackingParametersBlock);
@@ -613,6 +617,9 @@ namespace ARdevKit.Controller.ProjectController
 
         public override void Visit(PictureMarker pictureMarker)
         {
+            // Copy the file
+            Copy(pictureMarker.ImagePath, Path.Combine(project.ProjectPath, "Assets"));
+
             string sourcePictureMarkerFile = pictureMarker.ImagePath;
             string destPictureMarkerFile = Path.Combine(project.ProjectPath, Path.GetFileName(sourcePictureMarkerFile));
             if (Directory.Exists(Path.Combine(project.ProjectPath, "Asstes")) && !File.Exists(destPictureMarkerFile))

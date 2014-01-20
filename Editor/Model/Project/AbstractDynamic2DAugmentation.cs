@@ -17,12 +17,14 @@ namespace ARdevKit.Model.Project
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public abstract class AbstractDynamic2DAugmentation : Abstract2DAugmentation
     {
+        /* //because it is not fully implemented for this release
         /// <summary>
         /// variable which links an <see cref="AbstractSource"/> to 
         /// this <see cref="Abstract2DAugmentation"/>.
         /// </summary>
         [CategoryAttribute("General")]
-        public AbstractSource Source { get; set; }
+        public AbstractSource source { get; set; }
+        */
 
         /// <summary>
         /// Initializes no new instance of the <see cref="AbstractDynamic2DAugmentation"/> class,
@@ -31,7 +33,7 @@ namespace ARdevKit.Model.Project
         /// </summary>
         protected AbstractDynamic2DAugmentation() : base()
         {
-            Source = null;
+            //this.source = null; //because it is not fully implemented for this release
         }
 
         /// <summary>
@@ -49,7 +51,7 @@ namespace ARdevKit.Model.Project
             AbstractSource source)
             : base(isVisible, translationVector, scaling, trackable, width, height)
         {
-            this.Source = source;
+            //this.source = source; //because it is not fully implemented for this release
         }
     }
 }

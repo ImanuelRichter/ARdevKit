@@ -67,10 +67,12 @@
             this.btn_editor_scene_scene_1 = new System.Windows.Forms.Button();
             this.btn_editor_scene_new = new System.Windows.Forms.Button();
             this.pnl_editor_status = new System.Windows.Forms.Panel();
+            this.lbl_version = new System.Windows.Forms.Label();
             this.mst_editor_menu.SuspendLayout();
             this.pnl_editor_selection.SuspendLayout();
             this.pnl_editor_properties.SuspendLayout();
             this.pnl_editor_szenes.SuspendLayout();
+            this.pnl_editor_status.SuspendLayout();
             this.SuspendLayout();
             // 
             // mst_editor_menu
@@ -247,7 +249,7 @@
             // tsm_editor_menu_test_startImage
             // 
             this.tsm_editor_menu_test_startImage.Name = "tsm_editor_menu_test_startImage";
-            this.tsm_editor_menu_test_startImage.Size = new System.Drawing.Size(152, 22);
+            this.tsm_editor_menu_test_startImage.Size = new System.Drawing.Size(144, 22);
             this.tsm_editor_menu_test_startImage.Text = "Bild laden";
             this.tsm_editor_menu_test_startImage.Click += new System.EventHandler(this.tsm_editor_menu_test_startImage_Click);
             // 
@@ -255,28 +257,28 @@
             // 
             this.tsm_editor_menu_test_startVideo.Enabled = false;
             this.tsm_editor_menu_test_startVideo.Name = "tsm_editor_menu_test_startVideo";
-            this.tsm_editor_menu_test_startVideo.Size = new System.Drawing.Size(152, 22);
+            this.tsm_editor_menu_test_startVideo.Size = new System.Drawing.Size(144, 22);
             this.tsm_editor_menu_test_startVideo.Text = "Video laden";
             this.tsm_editor_menu_test_startVideo.Click += new System.EventHandler(this.tsm_editor_menu_test_startVideo_Click);
             // 
             // tsm_editor_menu_test_startWithVirtualCamera
             // 
             this.tsm_editor_menu_test_startWithVirtualCamera.Name = "tsm_editor_menu_test_startWithVirtualCamera";
-            this.tsm_editor_menu_test_startWithVirtualCamera.Size = new System.Drawing.Size(152, 22);
+            this.tsm_editor_menu_test_startWithVirtualCamera.Size = new System.Drawing.Size(144, 22);
             this.tsm_editor_menu_test_startWithVirtualCamera.Text = "vCam nutzen";
             this.tsm_editor_menu_test_startWithVirtualCamera.Click += new System.EventHandler(this.tsm_editor_menu_test_startWithVirtualCamera_Click);
             // 
             // tss_editor_meu_test_loadVideo_togleDebug
             // 
             this.tss_editor_meu_test_loadVideo_togleDebug.Name = "tss_editor_meu_test_loadVideo_togleDebug";
-            this.tss_editor_meu_test_loadVideo_togleDebug.Size = new System.Drawing.Size(149, 6);
+            this.tss_editor_meu_test_loadVideo_togleDebug.Size = new System.Drawing.Size(141, 6);
             // 
             // tsm_editor_menu_test_togleDebug
             // 
             this.tsm_editor_menu_test_togleDebug.CheckOnClick = true;
             this.tsm_editor_menu_test_togleDebug.Enabled = false;
             this.tsm_editor_menu_test_togleDebug.Name = "tsm_editor_menu_test_togleDebug";
-            this.tsm_editor_menu_test_togleDebug.Size = new System.Drawing.Size(152, 22);
+            this.tsm_editor_menu_test_togleDebug.Size = new System.Drawing.Size(144, 22);
             this.tsm_editor_menu_test_togleDebug.Text = "Debug";
             // 
             // tsm_editor_menu_help
@@ -292,13 +294,13 @@
             // 
             this.tsm_editor_menu_help_help.Enabled = false;
             this.tsm_editor_menu_help_help.Name = "tsm_editor_menu_help_help";
-            this.tsm_editor_menu_help_help.Size = new System.Drawing.Size(152, 22);
+            this.tsm_editor_menu_help_help.Size = new System.Drawing.Size(99, 22);
             this.tsm_editor_menu_help_help.Text = "Hilfe";
             // 
             // tsm_editor_menu_help_info
             // 
             this.tsm_editor_menu_help_info.Name = "tsm_editor_menu_help_info";
-            this.tsm_editor_menu_help_info.Size = new System.Drawing.Size(152, 22);
+            this.tsm_editor_menu_help_info.Size = new System.Drawing.Size(99, 22);
             this.tsm_editor_menu_help_info.Text = "Info";
             this.tsm_editor_menu_help_info.Click += new System.EventHandler(this.tsm_editor_menu_help_info_Click);
             // 
@@ -410,10 +412,21 @@
             // 
             // pnl_editor_status
             // 
+            this.pnl_editor_status.Controls.Add(this.lbl_version);
             this.pnl_editor_status.Location = new System.Drawing.Point(0, 706);
             this.pnl_editor_status.Name = "pnl_editor_status";
             this.pnl_editor_status.Size = new System.Drawing.Size(1008, 23);
             this.pnl_editor_status.TabIndex = 3;
+            // 
+            // lbl_version
+            // 
+            this.lbl_version.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_version.AutoSize = true;
+            this.lbl_version.Location = new System.Drawing.Point(931, 10);
+            this.lbl_version.Name = "lbl_version";
+            this.lbl_version.Size = new System.Drawing.Size(76, 13);
+            this.lbl_version.TabIndex = 0;
+            this.lbl_version.Text = "ARdevKit v0.1";
             // 
             // EditorWindow
             // 
@@ -426,6 +439,8 @@
             this.Controls.Add(this.pnl_editor_preview);
             this.Controls.Add(this.pnl_editor_selection);
             this.Controls.Add(this.mst_editor_menu);
+            this.MaximumSize = new System.Drawing.Size(1024, 768);
+            this.MinimumSize = new System.Drawing.Size(1024, 768);
             this.Name = "EditorWindow";
             this.Text = "ARdevKit";
             this.Load += new System.EventHandler(this.Editor_Load);
@@ -434,6 +449,8 @@
             this.pnl_editor_selection.ResumeLayout(false);
             this.pnl_editor_properties.ResumeLayout(false);
             this.pnl_editor_szenes.ResumeLayout(false);
+            this.pnl_editor_status.ResumeLayout(false);
+            this.pnl_editor_status.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -480,6 +497,7 @@
         private System.Windows.Forms.Button btn_editor_scene_scene_1;
         private System.Windows.Forms.Button btn_editor_scene_delete;
         private System.Windows.Forms.PropertyGrid propertyGrid1;
+        private System.Windows.Forms.Label lbl_version;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
