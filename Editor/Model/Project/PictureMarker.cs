@@ -60,6 +60,18 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
+        /// Default Constructor.
+        /// </summary>
+        public PictureMarker()
+            : base("PictureMarker", 0)
+        {
+            imagePath = null;
+            imageName = "";
+            Fuser = new MarkerFuser();
+            sensorCosID = IDFactory.createNewSensorCosID(this);
+        }
+
+        /// <summary>
         /// Constructor.
         /// </summary>
         /// <param name="imagePath">Full pathname of the image file.</param>
