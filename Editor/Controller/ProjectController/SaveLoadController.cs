@@ -39,6 +39,8 @@ namespace ARdevKit.Controller.ProjectController
             Stream stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read);
             Project deserializedProject = (Project)formatter.Deserialize(stream);
             stream.Close();
+            deserializedProject.ProjectPath = Path.GetDirectoryName(path);
+            deserializedProject.Name = Path.GetFileNameWithoutExtension(path);
             return deserializedProject;
         }
     }
