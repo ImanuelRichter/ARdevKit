@@ -695,7 +695,7 @@ namespace ARdevKit
             }
             else
             {
-                if (project.ProjectPath == null || project.Name.Equals("Test"))
+                if (project.ProjectPath == null || project.Name.Equals(""))
                 {
                     SaveFileDialog saveFileDialog1 = new SaveFileDialog();
                     saveFileDialog1.Filter = "ARdevkit Projektdatei|*.ardev";
@@ -931,7 +931,7 @@ namespace ARdevKit
             this.elementCategories = new List<SceneElementCategory>();
             this.allElements = new LinkedList<IPreviewable>();
             this.saveVisitor = new SaveVisitor();
-            this.exportVisitor = new ExportVisitor();
+            this.exportVisitor = new ExportVisitor(false);
             this.currentElement = null;
             registerElements();
         }
@@ -944,7 +944,7 @@ namespace ARdevKit
             this.elementCategories = new List<SceneElementCategory>();
             this.allElements = new LinkedList<IPreviewable>();
             this.saveVisitor = new SaveVisitor();
-            this.exportVisitor = new ExportVisitor();
+            this.exportVisitor = new ExportVisitor(false);
             this.currentElement = null;
             registerElements();
         }

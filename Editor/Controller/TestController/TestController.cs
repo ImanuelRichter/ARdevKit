@@ -65,9 +65,7 @@ namespace ARdevKit.Controller.TestController
         /// </param>
         private static void StartPlayer(Project project, int mode)
         {
-            ExportVisitor exporter = new ExportVisitor();
-            project.Name = "Test";
-            project.ProjectPath = System.IO.Path.Combine(System.Windows.Forms.Application.StartupPath, "currentProject");
+            ExportVisitor exporter = new ExportVisitor(true);
             project.Accept(exporter);
 
             exporter.ArelProjectFile.Save();

@@ -50,8 +50,8 @@ namespace EditorTest
             string projectPath = "..\\..\\..\\bin\\Debug\\currentProject";
             testProject = new Project("HelloPictureMarker", projectPath);
 
-            PictureMarker pictureMarker1 = new PictureMarker("pictureMarker1.png");
-            PictureMarker pictureMarker2 = new PictureMarker("pictureMarker2.png");
+            PictureMarker pictureMarker1 = new PictureMarker("res\\trackables\\pictureMarker1.png");
+            PictureMarker pictureMarker2 = new PictureMarker("res\\trackables\\pictureMarker2.png");
 
             BarChart barChart1 = new BarChart();
             barChart1.IsVisible = false;
@@ -98,7 +98,7 @@ namespace EditorTest
         {
             SetUptProjectWithPictureMarkerAndBarChart();
 
-            ExportVisitor exporter = new ExportVisitor();
+            ExportVisitor exporter = new ExportVisitor(false);
             testProject.Accept(exporter);
 
             exporter.ArelProjectFile.Save();
@@ -119,7 +119,7 @@ namespace EditorTest
         {
             SetUptProjectWithIDMarkerAndImage();
 
-            ExportVisitor exporter = new ExportVisitor();
+            ExportVisitor exporter = new ExportVisitor(false);
             testProject.Accept(exporter);
 
             exporter.ArelProjectFile.Save();
