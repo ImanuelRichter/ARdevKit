@@ -11,7 +11,7 @@ namespace ARdevKit.Model.Project
 {
     [Serializable]
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
-    public class BarGraph : Graph
+    public class BarChart : Chart
     {
         /// <summary>
         /// Gets or sets the maximum color of the value.
@@ -47,7 +47,7 @@ namespace ARdevKit.Model.Project
         public Color OptimalValueColor { get; set; }
 
         /// <summary>   Default constructor. </summary>
-        public BarGraph()
+        public BarChart()
         {
             Style = new ChartStyle();
             OptimalValue = 50;

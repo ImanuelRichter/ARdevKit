@@ -52,7 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\EditorController\ObjectCopier.cs" />
-    <Compile Include="Model\Project\AbstractDynamic2DAugmention.cs" />
+    <Compile Include="Model\Project\AbstractDynamic2DAugmentation.cs" />
     <Compile Include="Model\Project\ChartStyle.cs" />
     <Compile Include="Model\Project\File\BarChartFile.cs" />
     <Compile Include="Model\Project\File\JavaScriptInLine.cs" />
@@ -77,8 +77,8 @@
     <Compile Include="Controller\ProjectController\ExportVisitor.cs" />
     <Compile Include="Controller\ProjectController\SaveVisitor.cs" />
     <Compile Include="Controller\Connections\DatabaseConnection\DbConnection.cs" />
-    <Compile Include="Model\Project\AbstractAugmention.cs" />
-    <Compile Include="Model\Project\Abstract2DAugmention.cs" />
+    <Compile Include="Model\Project\AbstractAugmentation.cs" />
+    <Compile Include="Model\Project\Abstract2DAugmentation.cs" />
     <Compile Include="Model\Project\AbstractMarker.cs" />
     <Compile Include="Model\Project\AbstractSource.cs" />
     <Compile Include="EditorWindow.cs">
@@ -89,7 +89,7 @@
     </Compile>
     <Compile Include="Controller\EditorController\PreviewController.cs" />
     <Compile Include="Model\Project\AbstractTrackable.cs" />
-    <Compile Include="Model\Project\BarGraph.cs" />
+    <Compile Include="Model\Project\BarChart.cs" />
     <Compile Include="Model\Project\CustomUserEvent.cs" />
     <Compile Include="Model\Project\DbSource.cs" />
     <Compile Include="Model\Project\FileSource.cs" />
@@ -137,7 +137,7 @@
     </Compile>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\DataSources\EditorWindow.datasource" />
-    <Compile Include="Model\Project\Graph.cs" />
+    <Compile Include="Model\Project\Chart.cs" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

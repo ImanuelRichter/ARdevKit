@@ -16,10 +16,10 @@ namespace ARdevKit.Model.Project
 {
     [Serializable]
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
-    public abstract class AbstractAugmention : IPreviewable//, ISerializables
+    public abstract class AbstractAugmentation : IPreviewable//, ISerializables
     {
         /// <summary>
-        /// is used within AREL, to define which <see cref="AbstractAugmention"/> is bound to 
+        /// is used within AREL, to define which <see cref="AbstractAugmentation"/> is bound to 
         /// which <see cref="AbstractTrackable"/>s. it is set 
         /// </summary>
         private int coordinatesystemid;
@@ -34,7 +34,7 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
-        /// describes if the <see cref="AbstractAugmention"/>
+        /// describes if the <see cref="AbstractAugmentation"/>
         /// is seen using AREL, even if the associated <see cref="AbstractTrackable"/>
         /// is not recognized.
         /// </summary>
@@ -50,7 +50,7 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
-        /// A list of all customUserEvents the current <see cref="AbstractAugmention"/> has.
+        /// A list of all customUserEvents the current <see cref="AbstractAugmentation"/> has.
         /// The user can write a javascript based code for the augmention.
         /// </summary>
         private ArrayList customUserEvent;
@@ -71,7 +71,7 @@ namespace ARdevKit.Model.Project
         /// </summar>
         private Vector3D translationVector;
         /// <summary>
-        /// Get or set the position of the <see cref="AbstractAugmention"/>.
+        /// Get or set the position of the <see cref="AbstractAugmentation"/>.
         /// </summary>
         [CategoryAttribute("General")]
         public Vector3D TranslationVector
@@ -87,7 +87,7 @@ namespace ARdevKit.Model.Project
         private Vector3D scalingVector;
         /// <summary>
         /// gets or sets the scaling which is applied to the original 
-        /// <see cref="AbstractAugmention"/>
+        /// <see cref="AbstractAugmentation"/>
         /// </summary>
         [CategoryAttribute("General")]
         public Vector3D ScalingVector
@@ -130,7 +130,7 @@ namespace ARdevKit.Model.Project
         /// ToDo Summary is missing
         /// Body must still be implemented
         /// </summary>
-        protected AbstractAugmention()
+        protected AbstractAugmentation()
         {
             coordinatesystemid = 0;
             isVisible = true;
@@ -149,7 +149,7 @@ namespace ARdevKit.Model.Project
         /// <param name="scaling">              The scaling. </param>
         /// <param name="trackable">         The AbstractTrackable with which this AbstractAugmentation is
         ///     linked. It is visible in the same Scene as the trackable. </param>
-        protected AbstractAugmention(int coordSystemId, bool isVisible, 
+        protected AbstractAugmentation(int coordSystemId, bool isVisible, 
             Vector3D translationVector, Vector3D scaling, AbstractTrackable trackable)
         {
             coordinatesystemid = coordSystemId;

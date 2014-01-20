@@ -34,14 +34,14 @@ namespace ARdevKit.Model.Project
         /// Gets or sets the augmentions, which get their dynamic information from the <see cref="AbstractSource"/>
         /// </summary>
         [Browsable(false)]
-        public List<Abstract2DAugmention> augmentions { get; set; }
+        public List<Abstract2DAugmentation> augmentions { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AbstractSource"/> class.
         /// </summary>
         protected AbstractSource()
         {
-            this.augmentions = new List<Abstract2DAugmention>();
+            this.augmentions = new List<Abstract2DAugmentation>();
         }
 
         protected AbstractSource(string sourceId)
@@ -89,9 +89,9 @@ namespace ARdevKit.Model.Project
         /// </summary>
         /// <param name="a">the IPreviewable, which is searched for</param>
         /// <returns>the augmention which is found, otherwise null </returns>
-        public AbstractAugmention findAugmention(IPreviewable a)
+        public AbstractAugmentation findAugmention(IPreviewable a)
         {
-            return this.augmentions[this.augmentions.IndexOf((Abstract2DAugmention)a)];
+            return this.augmentions[this.augmentions.IndexOf((Abstract2DAugmentation)a)];
         }
 
         /// <summary>
@@ -102,9 +102,9 @@ namespace ARdevKit.Model.Project
         ///          false, else</returns>
         public bool existAugmention(IPreviewable a)
         {
-            foreach (Abstract2DAugmention aug in augmentions)
+            foreach (Abstract2DAugmentation aug in augmentions)
             {
-                if (aug == (Abstract2DAugmention) a)
+                if (aug == (Abstract2DAugmentation) a)
                 {
                     return true;
                 }
