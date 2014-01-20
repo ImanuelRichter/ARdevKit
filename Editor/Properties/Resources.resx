@@ -154,7 +154,7 @@
   <data name="sourcePreview_small_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sourcePreview(small).bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PreviewDummy" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PreviewDummy.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="favicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\favicon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

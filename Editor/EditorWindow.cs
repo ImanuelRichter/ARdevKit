@@ -652,7 +652,6 @@ namespace ARdevKit
 
         public void registerElements()
         {
-            Bitmap dummy = Properties.Resources.PreviewDummy; //TODO: Make preview Bitmaps for all Elements
             SceneElementCategory sources = new SceneElementCategory(MetaCategory.Source, "Sources");
             sources.addElement(new SceneElement("Database Source", new DbSource(), this));
             sources.addElement(new SceneElement("FileSource", new FileSource(""), this));
@@ -945,7 +944,7 @@ namespace ARdevKit
             this.updateElementSelectionPanel();
             this.updatePreviewPanel();
             this.updateSceneSelectionPanel();
-            this.updatePropertyPanel(currentElement);
+            //this.updatePropertyPanel(currentElement);
             this.updateStatusBar();
         }
 

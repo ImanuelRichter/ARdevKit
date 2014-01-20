@@ -157,6 +157,7 @@
     <Content Include="Controller\DebugController\foo.txt" />
     <Content Include="Controller\ProjectController\foo.txt" />
     <Content Include="Model\Project\foo.txt" />
+    <None Include="Resources\favicon.ico" />
     <None Include="Resources\ARRMarker%28small%29.bmp" />
     <None Include="Resources\ARMarker%28small%29.bmp" />
     <None Include="Resources\sourcePreview%28small%29.bmp" />
