@@ -593,7 +593,7 @@ namespace ARdevKit.Controller.ProjectController
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         public override void Visit(PictureMarkerSensor pictureMarkerSensor)
-        {
+        {   
             // MarkerParameters
             XMLBlock markerTrackingParametersBlock = new XMLBlock(new XMLTag("MarkerTrackingParameters"));
             trackingDataFileSensorParametersBlock.AddBlock(markerTrackingParametersBlock);
@@ -613,6 +613,9 @@ namespace ARdevKit.Controller.ProjectController
 
         public override void Visit(PictureMarker pictureMarker)
         {
+            // Copy the file
+            Copy(pictureMarker.ImagePath, Path.Combine(project.ProjectPath, "Assets"));
+
             string sourcePictureMarkerFile = pictureMarker.ImagePath;
             string destPictureMarkerFile = Path.Combine(project.ProjectPath, Path.GetFileName(sourcePictureMarkerFile));
             if (Directory.Exists(Path.Combine(project.ProjectPath, "Asstes")) && !File.Exists(destPictureMarkerFile))

@@ -9,7 +9,7 @@ using System.ComponentModel;
 
 namespace ARdevKit.Model.Project
 {
-    /// <summary>   An identifier marker. </summary>
+    /// <summary>   An IDMarker is an <see cref="AbstractMarker"/>. </summary>
     [Serializable]
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public class IDMarker : AbstractMarker
@@ -44,7 +44,7 @@ namespace ARdevKit.Model.Project
             Fuser = new MarkerFuser();
         }
 
-        /// <summary>   ToDo Summary is missing. </summary>
+        /// <summary>   Accepts a visitor. </summary>
         ///
         /// <param name="visitor">  . </param>
         public override void Accept(Controller.ProjectController.AbstractProjectVisitor visitor)

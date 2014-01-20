@@ -60,7 +60,7 @@ namespace ARdevKit.Model.Project
             Style = new ChartStyle();
         }
 
-        /// <summary>   ToDo Summary is missing. </summary>
+        /// <summary>   Accepts a visitor. </summary>
         ///
         /// <param name="visitor">  . </param>
         public override void Accept(Controller.ProjectController.AbstractProjectVisitor visitor)
@@ -68,7 +68,7 @@ namespace ARdevKit.Model.Project
             visitor.Visit(this);
         }
 
-        /// <summary>   ToDo Summary is missing. </summary>
+        /// <summary>   Rerutrns a preview. </summary>
         ///
         /// <returns>   The preview. </returns>
         public override Bitmap getPreview()
@@ -76,7 +76,7 @@ namespace ARdevKit.Model.Project
             return Properties.Resources.coordinationAxis_normal_;
         }
 
-        /// <summary>   ToDo Summary is missing. </summary>
+        /// <summary>   Returns an icon. </summary>
         ///
         /// <returns>   The icon. </returns>
         public override Bitmap getIcon()
@@ -84,7 +84,7 @@ namespace ARdevKit.Model.Project
             return Properties.Resources.coordinationAxis_small_;
         }
 
-        /// <summary>   ToDo Summary is missing. </summary>
+        /// <summary>   Returns a property list. </summary>
         ///
         /// <exception cref="NotImplementedException"> Thrown when the requested operation is
         ///     unimplemented. </exception>

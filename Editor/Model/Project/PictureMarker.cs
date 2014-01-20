@@ -12,6 +12,12 @@ using System.Drawing;
 
 namespace ARdevKit.Model.Project
 {
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   A picture marker is a <see cref="AbstractMarker"/>. </summary>
+    ///
+    /// <remarks>   Imanuel, 20.01.2014. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
     [Serializable]
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public class PictureMarker : AbstractMarker
@@ -57,9 +63,14 @@ namespace ARdevKit.Model.Project
             sensorCosID = IDFactory.createNewSensorCosID(this);
         }
 
-        /// <summary>   ToDo Summary is missing. </summary>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Accepts a visitor. </summary>
+        ///
+        /// <remarks>   Imanuel, 20.01.2014. </remarks>
         ///
         /// <param name="visitor">  . </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
         public override void Accept(AbstractProjectVisitor visitor)
         {
             visitor.Visit(this);
@@ -69,7 +80,7 @@ namespace ARdevKit.Model.Project
             }
         }
 
-        /// <summary>   ToDo Summary is missing. </summary>
+        /// <summary>   Returns the property list. </summary>
         ///
         /// <exception cref="NotImplementedException"> Thrown when the requested operation is
         ///     unimplemented. </exception>
@@ -80,7 +91,7 @@ namespace ARdevKit.Model.Project
             throw new NotImplementedException();
         }
 
-        /// <summary>   ToDo Summary is missing. </summary>
+        /// <summary>   Returns a preview bitmap. </summary>
         ///
         /// <returns>   The preview. </returns>
         public override Bitmap getPreview()
