@@ -95,7 +95,7 @@ public class PreviewController
                 openTestImageDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
                 if (openTestImageDialog.ShowDialog() == DialogResult.OK)
                 {
-                    ((PictureMarker)currentElement).ImagePath = openTestImageDialog.FileName;
+                    ((PictureMarker)currentElement).ImagePath = openTestImageDialog.SafeFileName;
                     
                     //set the vector to the trackable
                     ((AbstractTrackable)currentElement).vector = center;
