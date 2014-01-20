@@ -13,6 +13,7 @@ namespace ARdevKit.Model.Project
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public class BarChart : Chart
     {
+        /*
         /// <summary>
         /// Gets or sets the maximum color of the value.
         /// </summary>
@@ -45,14 +46,15 @@ namespace ARdevKit.Model.Project
         /// </value>
         [CategoryAttribute("Color")]
         public Color OptimalValueColor { get; set; }
+         */
 
         /// <summary>   Default constructor. </summary>
         public BarChart()
         {
             Style = new ChartStyle();
-            OptimalValue = 50;
-            OptimalValueColor = new Color();
-            MinValueColor = new Color();
+            //OptimalValue = 50;
+            //OptimalValueColor = new Color();
+            //MinValueColor = new Color();
             MinValue = 0;
             MaxValue = 100;
             Scaling = 0;

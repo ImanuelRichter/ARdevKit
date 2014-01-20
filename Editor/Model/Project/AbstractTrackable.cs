@@ -37,7 +37,7 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// Gets or sets the sensor cos identifier.
         /// </summary>
-        [CategoryAttribute("Expert")]
+        [CategoryAttribute("Expert"), ReadOnly(true)]
         public string SensorCosID
         {
             get { return sensorCosID; }

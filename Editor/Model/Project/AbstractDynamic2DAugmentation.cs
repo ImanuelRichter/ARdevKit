@@ -12,15 +12,17 @@ namespace ARdevKit.Model.Project
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public abstract class AbstractDynamic2DAugmentation : Abstract2DAugmentation
     {
+        /*
         /// <summary>
         /// New Variable which is for link a Source with this Augmentation
         /// </summary>
         [CategoryAttribute("General")]
         public AbstractSource source { get; set; }
+        */
 
         protected AbstractDynamic2DAugmentation() : base()
         {
-            this.source = null;
+            //this.source = null;
         }
 
         protected AbstractDynamic2DAugmentation(int coordSystemId, bool isVisible,
@@ -28,7 +30,7 @@ namespace ARdevKit.Model.Project
             AbstractSource source)
             : base(coordSystemId, isVisible, translationVector, scaling, trackable)
         {
-            this.source = source;
+            //this.source = source;
         }
     }
 }
