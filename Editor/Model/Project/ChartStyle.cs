@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace ARdevKit.Model.Project
 {
@@ -11,7 +12,7 @@ namespace ARdevKit.Model.Project
     ///
     /// <remarks>   Imanuel, 20.01.2014. </remarks>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-
+    [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     [Serializable]
     public class ChartStyle
     {
@@ -31,7 +32,7 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>   The distance to the top in pixel. </summary>
-        private int top = -1;
+        private int top;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Gets or sets the distance to the top in pixel. </summary>
@@ -44,7 +45,7 @@ namespace ARdevKit.Model.Project
             get { return top; }
             set { top = value; }
         }
-        private int left = -1;
+        private int left;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Gets or sets the distance to the left in pixel. </summary>
@@ -59,7 +60,7 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>   The distance to the bottom in pixel. </summary>
-        private int bottom = -1;
+        private int bottom;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Gets or sets the distance to the bottom in pixel. </summary>
@@ -74,7 +75,7 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>   The distance to the right in pixel. </summary>
-        private int right = -1;
+        private int right;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Gets or sets the right in pixel. </summary>

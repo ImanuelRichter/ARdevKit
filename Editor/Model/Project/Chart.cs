@@ -21,8 +21,8 @@ namespace ARdevKit.Model.Project
         /// <summary>   Gets or sets the style. </summary>
         ///
         /// <value> The style. </value>
-        //[CategoryAttribute("General"), ReadOnly(true)]
-        [Browsable(false)]
+        [CategoryAttribute("General"), ReadOnly(true)]
+        //[Browsable(false)]
         public ChartStyle Style
         {
             get { return style; }
