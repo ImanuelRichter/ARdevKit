@@ -18,27 +18,24 @@ namespace ARdevKit.Model.Project
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public class BarChart : Chart
     {
+
+        /// <summary>   The list of formated data. </summary>
+        protected List<BarChartData> data;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the data. </summary>
+        ///
+        /// <value> The data. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        [CategoryAttribute("General")]
+        public List<BarChartData> Data
+        {
+            get { return data; }
+            set { data = value; }
+        }
+
         /*
-        /// <summary>
-        /// Gets or sets the color of the maximum value,
-        /// which can be displayed.
-        /// </summary>
-        /// <value>
-        /// The color of the maximum value.
-        /// </value>
-        [CategoryAttribute("Color")]
-        public Color MaxValueColor { get; set; }
-        
-        /// <summary>
-        /// Gets or sets the color of the minimal value,
-        /// which can be displayed.
-        /// </summary>
-        /// <value>
-        /// The color of the minimum value.
-        /// </value>
-        [CategoryAttribute("Color")]
-        public Color MinValueColor { get; set; }
-       
         /// <summary>
         /// Gets or sets the optimal value.
         /// </summary>
@@ -63,8 +60,9 @@ namespace ARdevKit.Model.Project
         {
             Style = new ChartStyle();
             //OptimalValue = 50;
-            //OptimalValueColor = new Color();
-            //MinValueColor = new Color();
+            data = new List<BarChartData>();
+            data.Add(new BarChartData("Name 1", new double[] { 33.1, 66.9 }, ColorTranslator.FromHtml("0x55aa22"), ColorTranslator.FromHtml("0xdd210e")));
+            data.Add(new BarChartData("Name 2", new double[] { 41.7, 58.3 }, ColorTranslator.FromHtml("0x55aa22"), ColorTranslator.FromHtml("0xdd210e")));
             MinValue = 0;
             MaxValue = 100;
             ScalingVector = new Vector3D(0, 0, 0);
