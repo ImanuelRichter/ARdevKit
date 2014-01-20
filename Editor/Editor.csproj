@@ -76,7 +76,7 @@
     <Compile Include="Model\Project\ChartStyle.cs" />
     <Compile Include="Model\Project\File\BarChartFile.cs" />
     <Compile Include="Model\Project\File\JavaScriptInLine.cs" />
-    <Compile Include="Model\Project\ImageAugmention.cs" />
+    <Compile Include="Model\Project\ImageAugmentation.cs" />
     <Compile Include="Model\Project\MarkerFuser.cs" />
     <Compile Include="Controller\ProjectController\SaveLoadController.cs" />
     <Compile Include="Model\Project\IDFactory.cs" />
@@ -176,6 +176,7 @@
     <Content Include="Controller\Connections\DatabaseConnection\foo.txt" />
     <Content Include="Controller\Connections\DeviceConnection\foo.txt" />
     <Content Include="Controller\DebugController\foo.txt" />
+    <None Include="Resources\ImageAugmentation%28small%29.bmp" />
     <None Include="Resources\ARRMarker%28small%29.bmp" />
     <None Include="Resources\ARMarker%28small%29.bmp" />
     <None Include="Resources\sourcePreview%28small%29.bmp" />
