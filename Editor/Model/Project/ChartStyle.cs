@@ -102,8 +102,6 @@ namespace ARdevKit.Model.Project
         /// </summary>
         public ChartStyle()
         {
-            bottom = -1;
-            right = -1;
             position = "static";
         }
     }
