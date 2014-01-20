@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ARdevKit.Model.Project.File;
 using System.Globalization;
+using System.Windows.Forms;
 
 using ARdevKit.Model.Project;
 
@@ -21,6 +22,9 @@ namespace ARdevKit.Controller.ProjectController
 
     public class ExportVisitor : AbstractProjectVisitor
     {
+        /// <summary>   true if exporting for test. </summary>
+        private bool exportForTest = false;
+
         /// <summary>   The project that sould be exported. </summary>
         private Project project;
 
@@ -115,6 +119,11 @@ namespace ARdevKit.Controller.ProjectController
         /// <summary>   Identifier for the coordinate system. </summary>
         private int coordinateSystemID = 0;
 
+        public ExportVisitor(bool exportForTest)
+        {
+            this.exportForTest = exportForTest;
+        }
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Visits the given <see cref="BarChart"/>. </summary>
         ///
@@ -122,7 +131,7 @@ namespace ARdevKit.Controller.ProjectController
         ///
         /// <param name="barChart">    The bar graph. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        
+
         public override void Visit(BarChart barChart)
         {
             // TrackingData.xml
@@ -200,16 +209,30 @@ namespace ARdevKit.Controller.ProjectController
             COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("Y"), augmentationRotationY));
             COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("Z"), augmentationRotationZ));
             COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("W"), augmentationRotationW));
-            
+
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             // arel[projectName].html
-            arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("script", "src=\"Assets/jquery-2.0.3.js\"")));
-            arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("script", "src=\"Assets/highcharts.js\"")));
+            if (barChartCount == 1)
+            {
+                arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("script", "src=\"Assets/jquery-2.0.3.js\"")));
+                arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("script", "src=\"Assets/highcharts.js\"")));
+            }
+
             arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("script", "src=\"Assets/barChart" + barChartCount + ".js\"")));
 
-            Copy("res\\highcharts\\highcharts.js", Path.Combine(project.ProjectPath, "Assets"));
-            Copy("res\\jquery\\jquery-2.0.3.js", Path.Combine(project.ProjectPath, "Assets"));
+            if (exportForTest)
+            {
+                Copy("res\\highcharts\\highcharts.js", Path.Combine(Application.StartupPath, "currentProject", "Assets"));
+                Copy("res\\jquery\\jquery-2.0.3.js", Path.Combine(Application.StartupPath, "currentProject", "Assets"));
+            }
+            else
+            {
+                Copy("res\\highcharts\\highcharts.js", Path.Combine(project.ProjectPath, "Assets"));
+                Copy("res\\jquery\\jquery-2.0.3.js", Path.Combine(project.ProjectPath, "Assets"));
+            }
+
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             // arelGlue.js
             JavaScriptBlock loadContentBlock = new JavaScriptBlock();
@@ -237,21 +260,23 @@ namespace ARdevKit.Controller.ProjectController
             // Create barChart[i].js
             if (barChartCount == 1)
                 barChartFiles = new List<BarChartFile>();
-
-            BarChartFile barChartFile = new BarChartFile(project.ProjectPath, barChartCount);
+            BarChartFile barChartFile;
+            if (exportForTest)
+                barChartFile = new BarChartFile(Path.Combine(Application.StartupPath, "currentProject"), barChartCount);
+            else
+                barChartFile = new BarChartFile(project.ProjectPath, barChartCount);
             JavaScriptBlock barChartFileVariablesBlock = new JavaScriptBlock();
-
-            barChartFileVariablesBlock.AddLine(new JavaScriptLine("var id = \"" + barChartVariable + "\""));
-            barChartFileVariablesBlock.AddLine(new JavaScriptLine("var coordinateSystemID = " + coordinateSystemID));
-            barChartFile.AddBlock(barChartFileVariablesBlock);
 
             JavaScriptBlock barChartFileDefineBlock = new JavaScriptBlock("arel.Plugin.BarChart" + barChartCount.ToString() + " = ", new BlockMarker("{", "};"));
             barChartFile.AddBlock(barChartFileDefineBlock);
 
+            barChartFileDefineBlock.AddLine(new JavaScriptInLine("id : \"" + barChartVariable + "\"", true));
+            barChartFileDefineBlock.AddLine(new JavaScriptInLine("coordinateSystemID : " + coordinateSystemID, true));
+
             JavaScriptBlock barChartFileCreateBlock = new JavaScriptBlock("create : function()", new BlockMarker("{", "},"));
             barChartFileDefineBlock.AddBlock(barChartFileCreateBlock);
             barChartFileCreateBlock.AddLine(new JavaScriptLine("var chart = document.createElement(\"div\")"));
-            barChartFileCreateBlock.AddLine(new JavaScriptLine("chart.setAttribute(\"id\", id)"));
+            barChartFileCreateBlock.AddLine(new JavaScriptLine("chart.setAttribute(\"id\", this.id)"));
             barChartFileCreateBlock.AddLine(new JavaScriptLine("chart.style.position = \"" + barChart.Style.Position + "\""));
             if (barChart.Style.Top > 0)
                 barChartFileCreateBlock.AddLine(new JavaScriptLine("chart.style.top = \"" + barChart.Style.Top + "px\""));
@@ -265,7 +290,7 @@ namespace ARdevKit.Controller.ProjectController
             barChartFileCreateBlock.AddLine(new JavaScriptLine("chart.style.height = \"" + barChart.Height + "px\""));
             barChartFileCreateBlock.AddLine(new JavaScriptLine("document.documentElement.appendChild(chart)"));
 
-            JavaScriptBlock barChartFileHighchartBlock = new JavaScriptBlock("$('#' + id).highcharts", new BlockMarker("({", "});"));
+            JavaScriptBlock barChartFileHighchartBlock = new JavaScriptBlock("$('#' + this.id).highcharts", new BlockMarker("({", "});"));
             barChartFileCreateBlock.AddBlock(barChartFileHighchartBlock);
 
             JavaScriptBlock barChartFileHighchartChartBlock = new JavaScriptBlock("chart: ", new BlockMarker("{", "},"));
@@ -321,7 +346,7 @@ namespace ARdevKit.Controller.ProjectController
             // TODO make these things editable
             barChartFileHighchartTooltipBlock.AddLine(new JavaScriptInLine("headerFormat: '<span style=\"font-size:10px\">{point.key}</span><table>'", true));
             barChartFileHighchartTooltipBlock.AddLine(new JavaScriptInLine("pointFormat: '<tr><td style=\"color:{series.color};padding:0\">{series.name}: </td>' +\n" +
-					"'<td style=\"padding:0\"><b>{point.y:.1f} mm</b></td></tr>'", true));
+                    "'<td style=\"padding:0\"><b>{point.y:.1f} mm</b></td></tr>'", true));
             barChartFileHighchartTooltipBlock.AddLine(new JavaScriptInLine("footerFormat: '</table>'", true));
             barChartFileHighchartTooltipBlock.AddLine(new JavaScriptInLine("shared: true", true));
             barChartFileHighchartTooltipBlock.AddLine(new JavaScriptInLine("useHTML: true", false));
@@ -368,15 +393,15 @@ namespace ARdevKit.Controller.ProjectController
 
             JavaScriptBlock barChartShowBlock = new JavaScriptBlock("show : function()", new BlockMarker("{", "},"));
             barChartFileDefineBlock.AddBlock(barChartShowBlock);
-            barChartShowBlock.AddLine(new JavaScriptLine("$('#' + id).show()"));
+            barChartShowBlock.AddLine(new JavaScriptLine("$('#' + this.id).show()"));
 
             JavaScriptBlock barChartHideBlock = new JavaScriptBlock("hide : function()", new BlockMarker("{", "},"));
             barChartFileDefineBlock.AddBlock(barChartHideBlock);
-            barChartHideBlock.AddLine(new JavaScriptLine("$('#' + id).hide()"));
+            barChartHideBlock.AddLine(new JavaScriptLine("$('#' + this.id).hide()"));
 
             JavaScriptBlock barChartGetCoordinateSystemIDBlock = new JavaScriptBlock("getCoordinateSystemID : function()", new BlockMarker("{", "}"));
             barChartFileDefineBlock.AddBlock(barChartGetCoordinateSystemIDBlock);
-            barChartGetCoordinateSystemIDBlock.AddLine(new JavaScriptLine("return coordinateSystemID"));
+            barChartGetCoordinateSystemIDBlock.AddLine(new JavaScriptLine("return this.coordinateSystemID"));
 
             barChartFiles.Add(barChartFile);
             barChartCount++;
@@ -393,7 +418,10 @@ namespace ARdevKit.Controller.ProjectController
         public override void Visit(ImageAugmentation image)
         {
             // Copy to projectPath
-            Copy(image.ImagePath, Path.Combine(project.ProjectPath, "Assets"));
+            if (exportForTest)
+                Copy(image.ImagePath, Path.Combine(Application.StartupPath, "currentProject", "Assets"));
+            else
+                Copy(image.ImagePath, Path.Combine(project.ProjectPath, "Assets"));
 
             // Connections 
 
@@ -597,7 +625,7 @@ namespace ARdevKit.Controller.ProjectController
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         public override void Visit(PictureMarkerSensor pictureMarkerSensor)
-        {   
+        {
             // MarkerParameters
             XMLBlock markerTrackingParametersBlock = new XMLBlock(new XMLTag("MarkerTrackingParameters"));
             trackingDataFileSensorParametersBlock.AddBlock(markerTrackingParametersBlock);
@@ -618,7 +646,10 @@ namespace ARdevKit.Controller.ProjectController
         public override void Visit(PictureMarker pictureMarker)
         {
             // Copy the file
-            Copy(pictureMarker.ImagePath, Path.Combine(project.ProjectPath, "Assets"));
+            if (exportForTest)
+                Copy(pictureMarker.ImagePath, Path.Combine(Application.StartupPath, "currentProject", "Assets"));
+            else
+                Copy(pictureMarker.ImagePath, Path.Combine(project.ProjectPath, "Assets"));
 
             string sourcePictureMarkerFile = pictureMarker.ImagePath;
             string destPictureMarkerFile = Path.Combine(project.ProjectPath, Path.GetFileName(sourcePictureMarkerFile));
@@ -709,104 +740,125 @@ namespace ARdevKit.Controller.ProjectController
             project = p;
 
             // Create [projectName].html
-            arelProjectFile = new ARELProjectFile("<!DOCTYPE html>", Path.Combine(project.ProjectPath, "arel" + p.Name + ".html"));
+            if (exportForTest)
+                arelProjectFile = new ARELProjectFile("<!DOCTYPE html>", Path.Combine(Application.StartupPath, "currentProject", "arelTest.html"));
+            else
+                arelProjectFile = new ARELProjectFile("<!DOCTYPE html>", Path.Combine(project.ProjectPath, "arel" + p.Name + ".html"));
 
             // head
             arelProjectFileHeadBlock = new XMLBlock(new XMLTag("head"));
             arelProjectFile.AddBlock(arelProjectFileHeadBlock);
 
-                arelProjectFileHeadBlock.AddLine(new XMLLine(new NonTerminatingXMLTag("meta", "charset=\"UTF-8\"")));
-                arelProjectFileHeadBlock.AddLine(new XMLLine(new NonTerminatingXMLTag("meta", "name=\"viewport\" content=\"width=device-width, initial-scale=1\"")));
-                arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("script", "type=\"text/javascript\" src=\"../arel/arel.js\"")));
-                arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("script", "type=\"text/javascript\" src=\"Assets/arelGlue.js\"")));
+            arelProjectFileHeadBlock.AddLine(new XMLLine(new NonTerminatingXMLTag("meta", "charset=\"UTF-8\"")));
+            arelProjectFileHeadBlock.AddLine(new XMLLine(new NonTerminatingXMLTag("meta", "name=\"viewport\" content=\"width=device-width, initial-scale=1\"")));
+
+            if (exportForTest)
+                arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("title"), "Test"));
+            else
                 arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("title"), p.Name));
+
+            arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("script", "type=\"text/javascript\" src=\"../arel/arel.js\"")));
+            arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("script", "type=\"text/javascript\" src=\"Assets/arelGlue.js\"")));
 
             // body
             XMLBlock bodyBlock = new XMLBlock(new XMLTag("body"));
             arelProjectFile.AddBlock(bodyBlock);
 
             // Prepare TrackinData.xml
-            string trackingDataFileName = "TrackingData_";
-            if (p.Name.Equals("Test"))
-                trackingDataFileName += "Test";
-            else
-                trackingDataFileName += project.Sensor.Name;
+            string trackingDataFileName = "TrackingData_" + project.Sensor.Name;
             trackingDataFileName += p.Sensor.SensorSubType != AbstractSensor.SensorSubTypes.None ? p.Sensor.SensorSubType.ToString() : "";
             trackingDataFileName += ".xml";
-            trackingDataFile = new TrackingDataFile("<?xml version=\"1.0\" encoding=\"UTF-8\"?>", project.ProjectPath, trackingDataFileName);
+            if (exportForTest)
+                trackingDataFile = new TrackingDataFile("<?xml version=\"1.0\" encoding=\"UTF-8\"?>", Path.Combine(Application.StartupPath, "currentProject"), trackingDataFileName);
+            else
+                trackingDataFile = new TrackingDataFile("<?xml version=\"1.0\" encoding=\"UTF-8\"?>", project.ProjectPath, trackingDataFileName);
+
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             // TrackingData
             XMLBlock trackingDataBlock = new XMLBlock(new XMLTag("TrackingData"));
             trackingDataFile.AddBlock(trackingDataBlock);
 
-                // Sensors
-                XMLBlock sensorsBlock = new XMLBlock(new XMLTag("Sensors"));
-                trackingDataBlock.AddBlock(sensorsBlock);
+            // Sensors
+            XMLBlock sensorsBlock = new XMLBlock(new XMLTag("Sensors"));
+            trackingDataBlock.AddBlock(sensorsBlock);
 
-                // Sensors
-                string sensorExtension = "Type=\"" + p.Sensor.SensorType + "\"";
-                sensorExtension += p.Sensor.SensorSubType != AbstractSensor.SensorSubTypes.None ? " Subtype=\"" + p.Sensor.SensorSubType + "\"" : "";
-                trackingDataFileSensorBlock = new XMLBlock(new XMLTag("Sensor", sensorExtension));
-                sensorsBlock.AddBlock(trackingDataFileSensorBlock);
+            // Sensors
+            string sensorExtension = "Type=\"" + p.Sensor.SensorType + "\"";
+            sensorExtension += p.Sensor.SensorSubType != AbstractSensor.SensorSubTypes.None ? " Subtype=\"" + p.Sensor.SensorSubType + "\"" : "";
+            trackingDataFileSensorBlock = new XMLBlock(new XMLTag("Sensor", sensorExtension));
+            sensorsBlock.AddBlock(trackingDataFileSensorBlock);
 
-                // SensorID
-                trackingDataFileSensorBlock.AddLine(new XMLLine(new XMLTag("SensorID"), p.Sensor.SensorIDString));
+            // SensorID
+            trackingDataFileSensorBlock.AddLine(new XMLLine(new XMLTag("SensorID"), p.Sensor.SensorIDString));
 
-                // Parameters
-                trackingDataFileSensorParametersBlock = new XMLBlock(new XMLTag("Parameters"));
-                trackingDataFileSensorBlock.AddBlock(trackingDataFileSensorParametersBlock);
+            // Parameters
+            trackingDataFileSensorParametersBlock = new XMLBlock(new XMLTag("Parameters"));
+            trackingDataFileSensorBlock.AddBlock(trackingDataFileSensorParametersBlock);
 
-                // Connections
-                trackingDataFileConnectionsBlock = new XMLBlock(new XMLTag("Connections"));
-                trackingDataBlock.AddBlock(trackingDataFileConnectionsBlock);
+            // Connections
+            trackingDataFileConnectionsBlock = new XMLBlock(new XMLTag("Connections"));
+            trackingDataBlock.AddBlock(trackingDataFileConnectionsBlock);
+
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             // Create arelConfig.xml
-            arelConfigFile = new ARELConfigFile("<?xml version=\"1.0\" encoding=\"UTF-8\"?>", project.ProjectPath);
+            if (exportForTest)
+                arelConfigFile = new ARELConfigFile("<?xml version=\"1.0\" encoding=\"UTF-8\"?>", Path.Combine(Application.StartupPath, "currentProject"));
+            else
+                arelConfigFile = new ARELConfigFile("<?xml version=\"1.0\" encoding=\"UTF-8\"?>", project.ProjectPath);
 
-                // Results
-                XMLBlock resultsBlock = new XMLBlock(new XMLTag("results"));
-                arelConfigFile.AddBlock(resultsBlock);
+            // Results
+            XMLBlock resultsBlock = new XMLBlock(new XMLTag("results"));
+            arelConfigFile.AddBlock(resultsBlock);
 
-                // Trackingdata
-                string trackingdataExtension = "channel=\"0\" poiprefix=\"extpoi-124906-\" url=\"Assets/" + trackingDataFileName +"\" /";
-                resultsBlock.AddLine(new XMLLine(new NonTerminatingXMLTag("trackingdata", trackingdataExtension)));
-                resultsBlock.AddLine(new XMLLine(new XMLTag("apilevel"), "7"));
-                resultsBlock.AddLine(new XMLLine(new XMLTag("arel"), Path.GetFileName(arelProjectFile.FilePath)));
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            // Trackingdata
+            string trackingdataExtension = "channel=\"0\" poiprefix=\"extpoi-124906-\" url=\"Assets/" + trackingDataFileName + "\" /";
+            resultsBlock.AddLine(new XMLLine(new NonTerminatingXMLTag("trackingdata", trackingdataExtension)));
+            resultsBlock.AddLine(new XMLLine(new XMLTag("apilevel"), "7"));
+            resultsBlock.AddLine(new XMLLine(new XMLTag("arel"), Path.GetFileName(arelProjectFile.FilePath)));
+
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             // Create arelGlue.js
-            arelGlueFile = new ARELGlueFile(project.ProjectPath);
+            if (exportForTest)
+                arelGlueFile = new ARELGlueFile(Path.Combine(Application.StartupPath, "currentProject"));
+            else
+                arelGlueFile = new ARELGlueFile(project.ProjectPath);
             JavaScriptBlock sceneReadyBlock = new JavaScriptBlock("arel.sceneReady", new BlockMarker("(", ");"));
             arelGlueFile.AddBlock(sceneReadyBlock);
             sceneReadyFunktionBlock = new JavaScriptBlock("function()", new BlockMarker("{", "}"));
             sceneReadyBlock.AddBlock(sceneReadyFunktionBlock);
 
-                // Console log ready
-                sceneReadyFunktionBlock.AddLine(new JavaScriptLine("console.log(\"sceneReady\")"));
+            // Console log ready
+            sceneReadyFunktionBlock.AddLine(new JavaScriptLine("console.log(\"sceneReady\")"));
 
-                //set a listener to tracking to get information about when the image is tracked
-                JavaScriptBlock eventListenerBlock = new JavaScriptBlock("arel.Events.setListener", new BlockMarker("(", ");"));
-                sceneReadyFunktionBlock.AddBlock(eventListenerBlock);
-                JavaScriptBlock eventListenreFunktionBlock = new JavaScriptBlock("arel.Scene, function(type, param)", new BlockMarker("{", "}"));
-                eventListenerBlock.AddBlock(eventListenreFunktionBlock);
+            //set a listener to tracking to get information about when the image is tracked
+            JavaScriptBlock eventListenerBlock = new JavaScriptBlock("arel.Events.setListener", new BlockMarker("(", ");"));
+            sceneReadyFunktionBlock.AddBlock(eventListenerBlock);
+            JavaScriptBlock eventListenreFunktionBlock = new JavaScriptBlock("arel.Scene, function(type, param)", new BlockMarker("{", "}"));
+            eventListenerBlock.AddBlock(eventListenreFunktionBlock);
 
-                eventListenreFunktionBlock.AddLine(new JavaScriptLine("trackingHandler(type, param)"));
+            eventListenreFunktionBlock.AddLine(new JavaScriptLine("trackingHandler(type, param)"));
 
-                JavaScriptBlock trackingHandlerBlock = new JavaScriptBlock("function trackingHandler(type, param)", new BlockMarker("{", "};"));
-                arelGlueFile.AddBlock(trackingHandlerBlock);
+            JavaScriptBlock trackingHandlerBlock = new JavaScriptBlock("function trackingHandler(type, param)", new BlockMarker("{", "};"));
+            arelGlueFile.AddBlock(trackingHandlerBlock);
 
-                // Tracking information availiable
-                JavaScriptBlock ifTrackingInformationAvailiableBlock = new JavaScriptBlock("if(param[0] !== undefined)", new BlockMarker("{", "}"));
-                trackingHandlerBlock.AddBlock(ifTrackingInformationAvailiableBlock);
+            // Tracking information availiable
+            JavaScriptBlock ifTrackingInformationAvailiableBlock = new JavaScriptBlock("if(param[0] !== undefined)", new BlockMarker("{", "}"));
+            trackingHandlerBlock.AddBlock(ifTrackingInformationAvailiableBlock);
 
-                // Patternn found
-                ifPatternIsFoundBlock = new JavaScriptBlock("if(type && type == arel.Events.Scene.ONTRACKING && param[0].getState() == arel.Tracking.STATE_TRACKING)", new BlockMarker("{", "}"));
-                ifTrackingInformationAvailiableBlock.AddBlock(ifPatternIsFoundBlock);
-                ifPatternIsFoundBlock.AddLine(new JavaScriptLine("console.log(\"Tracking is active\")"));
+            // Patternn found
+            ifPatternIsFoundBlock = new JavaScriptBlock("if(type && type == arel.Events.Scene.ONTRACKING && param[0].getState() == arel.Tracking.STATE_TRACKING)", new BlockMarker("{", "}"));
+            ifTrackingInformationAvailiableBlock.AddBlock(ifPatternIsFoundBlock);
+            ifPatternIsFoundBlock.AddLine(new JavaScriptLine("console.log(\"Tracking is active\")"));
 
-                // Pattern lost
-                ifPatternIsLostBlock = new JavaScriptBlock("else if(type && type == arel.Events.Scene.ONTRACKING && param[0].getState() == arel.Tracking.STATE_NOTTRACKING)", new BlockMarker("{", "}"));
-                ifTrackingInformationAvailiableBlock.AddBlock(ifPatternIsLostBlock);
-                ifPatternIsLostBlock.AddLine(new JavaScriptLine("console.log(\"Tracking lost\")"));
+            // Pattern lost
+            ifPatternIsLostBlock = new JavaScriptBlock("else if(type && type == arel.Events.Scene.ONTRACKING && param[0].getState() == arel.Tracking.STATE_NOTTRACKING)", new BlockMarker("{", "}"));
+            ifTrackingInformationAvailiableBlock.AddBlock(ifPatternIsLostBlock);
+            ifPatternIsLostBlock.AddLine(new JavaScriptLine("console.log(\"Tracking lost\")"));
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
