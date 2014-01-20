@@ -668,7 +668,7 @@ namespace ARdevKit
             SceneElementCategory augmentations = new SceneElementCategory(MetaCategory.Augmentation, "Augmentations");
             augmentations.addElement(new SceneElement("Bar Graph", new BarChart(), this));
             SceneElementCategory trackables = new SceneElementCategory(MetaCategory.Trackable, "Trackables");
-            trackables.addElement(new SceneElement("Picture Marker", new PictureMarker(""), this));
+            trackables.addElement(new SceneElement("Picture Marker", new PictureMarker(), this));
             trackables.addElement(new SceneElement("IDMarker", new IDMarker(1), this));
             addCategory(trackables);
             addCategory(augmentations);
