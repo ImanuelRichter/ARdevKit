@@ -315,12 +315,12 @@ namespace ARdevKit
             {
                 try
                 {
-                this.saveProject();
-            }
+                    this.saveProject();
+                }
                 catch (ArgumentNullException ae)
                 {
                     Debug.WriteLine(ae.StackTrace);
-        }
+                }
             }
             createNewProject("");
         }
@@ -361,7 +361,10 @@ namespace ARdevKit
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         private void tsm_editor_menu_test_startImage_Click(object sender, EventArgs e)
         {
-            TestController.StartWithImage(project);
+            if (project.Trackables != null && project.Trackables.Count > 0 && project.Trackables[0] != null)
+                TestController.StartWithImage(project);
+            else
+                MessageBox.Show("Keine Szene zum Testen vorhanden");
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -375,7 +378,10 @@ namespace ARdevKit
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         private void tsm_editor_menu_test_startVideo_Click(object sender, EventArgs e)
         {
-            TestController.StartWithVideo(project);
+            if (project.Trackables != null && project.Trackables.Count > 0 && project.Trackables[0] != null)
+                TestController.StartWithVideo(project);
+            else
+                MessageBox.Show("Keine Szene zum Testen vorhanden");
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -390,7 +396,10 @@ namespace ARdevKit
 
         private void tsm_editor_menu_test_startWithVirtualCamera_Click(object sender, EventArgs e)
         {
-            TestController.StartWithVirtualCamera(project);
+            if (project.Trackables != null && project.Trackables.Count > 0 && project.Trackables[0] != null)
+                TestController.StartWithVirtualCamera(project);
+            else
+                MessageBox.Show("Keine Szene zum Testen vorhanden");
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -426,7 +435,7 @@ namespace ARdevKit
                 this.previewController.reloadPreviewPanel(0);
                 this.PropertyGrid1.SelectedObject = null;
             }
-            
+
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -446,18 +455,18 @@ namespace ARdevKit
         {
             if (this.project.Trackables.Count < 10)
             {
-                    Button tempButton = new Button();
-                    tempButton.Location = new System.Drawing.Point(54 + (52 * project.Trackables.Count), 34);
-                    tempButton.Name = "btn_editor_scene_scene_" + (this.project.Trackables.Count + 1);
-                    tempButton.Size = new System.Drawing.Size(46, 45);
-                    tempButton.TabIndex = 1;
-                    tempButton.Text = Convert.ToString(this.project.Trackables.Count + 1);
-                    tempButton.UseVisualStyleBackColor = true;
-                    tempButton.Click += new System.EventHandler(this.btn_editor_scene_scene_change);
+                Button tempButton = new Button();
+                tempButton.Location = new System.Drawing.Point(54 + (52 * project.Trackables.Count), 34);
+                tempButton.Name = "btn_editor_scene_scene_" + (this.project.Trackables.Count + 1);
+                tempButton.Size = new System.Drawing.Size(46, 45);
+                tempButton.TabIndex = 1;
+                tempButton.Text = Convert.ToString(this.project.Trackables.Count + 1);
+                tempButton.UseVisualStyleBackColor = true;
+                tempButton.Click += new System.EventHandler(this.btn_editor_scene_scene_change);
 
-                    this.pnl_editor_szenes.Controls.Add(tempButton);
-                    this.previewController.reloadPreviewPanel(this.project.Trackables.Count);
-                    this.PropertyGrid1.SelectedObject = null;
+                this.pnl_editor_szenes.Controls.Add(tempButton);
+                this.previewController.reloadPreviewPanel(this.project.Trackables.Count);
+                this.PropertyGrid1.SelectedObject = null;
             }
             else
             {
@@ -549,7 +558,7 @@ namespace ARdevKit
                 try
                 {
                     project.Accept(exportVisitor);
-        }
+                }
                 catch (DirectoryNotFoundException de)
                 {
                     Debug.WriteLine(de.StackTrace);
@@ -620,8 +629,8 @@ namespace ARdevKit
             }
             catch (System.ArgumentException)
             {
-                
-            }            
+
+            }
         }
 
         /// <summary>
@@ -656,9 +665,9 @@ namespace ARdevKit
             sources.addElement(new SceneElement("Database Source", new DbSource(), this));
             sources.addElement(new SceneElement("FileSource", new FileSource(""), this));
             SceneElementCategory augmentations = new SceneElementCategory(MetaCategory.Augmentation, "Augmentations");
-            augmentations.addElement(new SceneElement("Bar Graph", new BarGraph(), this));
+            augmentations.addElement(new SceneElement("Bar Graph", new BarChart(), this));
             SceneElementCategory trackables = new SceneElementCategory(MetaCategory.Trackable, "Trackables");
-            trackables.addElement(new SceneElement("Picture Marker", new PictureMarker(""), this));
+            trackables.addElement(new SceneElement("Picture Marker", new PictureMarker(), this));
             trackables.addElement(new SceneElement("IDMarker", new IDMarker(1), this));
             addCategory(trackables);
             addCategory(augmentations);
@@ -685,12 +694,12 @@ namespace ARdevKit
             }
             else
             {
-                if (project.ProjectPath == null)
-            {
-                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-                saveFileDialog1.Filter = "ARdevkit Projektdatei|*.ardev";
-                saveFileDialog1.Title = "Projekt speichern";
-                saveFileDialog1.ShowDialog();
+                if (project.ProjectPath == null || project.Name.Equals("Test"))
+                {
+                    SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                    saveFileDialog1.Filter = "ARdevkit Projektdatei|*.ardev";
+                    saveFileDialog1.Title = "Projekt speichern";
+                    saveFileDialog1.ShowDialog();
                     try
                     {
                         project.ProjectPath = Path.GetDirectoryName(saveFileDialog1.FileName);
@@ -966,8 +975,8 @@ namespace ARdevKit
         {
             try
             {
-            this.saveProject();
-        }
+                this.saveProject();
+            }
             catch (ArgumentNullException ae)
             {
                 Debug.WriteLine(ae.StackTrace);
@@ -1007,8 +1016,8 @@ namespace ARdevKit
             {
                 try
                 {
-            this.saveProject();
-        }
+                    this.saveProject();
+                }
                 catch (ArgumentNullException ae)
                 {
                     Debug.WriteLine(ae.StackTrace);

@@ -14,33 +14,25 @@ using System.Collections;
 
 namespace ARdevKit.Model.Project
 {
+
+    /// <summary>
+    /// describes an <see cref="AbstractAugmentation"/>, which is bound
+    /// to a certain <see cref="AbstractTrackable"/>.
+    /// is <see cref="IPreviewable"/> 
+    /// </summary>
     [Serializable]
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
-    public abstract class AbstractAugmention : IPreviewable//, ISerializables
+    public abstract class AbstractAugmentation : IPreviewable
     {
         /// <summary>
-        /// is used within AREL, to define which <see cref="AbstractAugmention"/> is bound to 
-        /// which <see cref="AbstractTrackable"/>s. it is set 
-        /// </summary>
-        private int coordinatesystemid;
-        /// <summary>
-        /// Get or set the CoordinateSystemId.
-        /// </summary>
-        [CategoryAttribute("General")]
-        public int Coordinatesystemid
-        {
-            get { return coordinatesystemid; }
-            set { coordinatesystemid = value; }
-        }
-
-        /// <summary>
-        /// describes if the <see cref="AbstractAugmention"/>
+        /// describes if the <see cref="AbstractAugmentation"/>
         /// is seen using AREL, even if the associated <see cref="AbstractTrackable"/>
         /// is not recognized.
         /// </summary>
         private bool isVisible;
         /// <summary>
-        /// Get or set if the augmention is visible the whole time using AREl or not.
+        /// Get or set if the <see cref="AbstractAugmentation"/> is 
+        /// visible the whole time using AREL or not.
         /// </summary>
         [CategoryAttribute("General"), DefaultValueAttribute(false)]
         public bool IsVisible
@@ -49,9 +41,10 @@ namespace ARdevKit.Model.Project
             set { isVisible = value; }
         }
 
+        /*
         /// <summary>
-        /// A list of all customUserEvents the current <see cref="AbstractAugmention"/> has.
-        /// The user can write a javascript based code for the augmention.
+        /// A list of all customUserEvents the current <see cref="AbstractAugmentation"/> has.
+        /// The user can write a javascript based code for the <see cref="AbstractAugmentation"/>.
         /// </summary>
         private ArrayList customUserEvent;
         /// <summary>
@@ -64,6 +57,7 @@ namespace ARdevKit.Model.Project
         {
             get { return customUserEvent; }
         }
+        */
 
         /// <summary>
         /// Vector to describe the position on the PreviewPanel, and later
@@ -71,9 +65,10 @@ namespace ARdevKit.Model.Project
         /// </summar>
         private Vector3D translationVector;
         /// <summary>
-        /// Get or set the position of the <see cref="AbstractAugmention"/>.
+        /// Get or set the position of the <see cref="AbstractAugmentation"/>.
         /// </summary>
-        [CategoryAttribute("General")]
+        //[CategoryAttribute("General")]
+        [Browsable(false)]
         public Vector3D TranslationVector
         {
             get { return translationVector; }
@@ -81,15 +76,16 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
-        /// Vector, to describes the scaling of the Augmention in
-        /// x, y and z direction. Is used in AREL.
+        /// Vector, to describes the scaling of the <see cref="AbstractAugmentation"/>
+        /// in x, y and z direction. Is used in AREL.
         /// </summary>
         private Vector3D scalingVector;
         /// <summary>
         /// gets or sets the scaling which is applied to the original 
-        /// <see cref="AbstractAugmention"/>
+        /// <see cref="AbstractAugmentation"/>
         /// </summary>
-        [CategoryAttribute("General")]
+        //[CategoryAttribute("General")]
+        [Browsable(false)]
         public Vector3D ScalingVector
         {
             get { return scalingVector; }
@@ -97,14 +93,15 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
-        /// Vector, to describes the rotation of the Augmention in
-        /// x, y and z direction. Is used in AREL.
+        /// Vector, to describes the rotation of the <see cref="AbstractAugmentation"/> in
+        /// x, y and z direction. w is used for TrackingFile Offset in AREL.
         /// </summary>
         private Vector3Di rotationVector;
         /// <summary>
         /// gets or sets the Vector
         /// </summary>
-        [CategoryAttribute("General")]
+        //[CategoryAttribute("General")]
+        [Browsable(false)]
         public Vector3Di RotationVector
         {
             get { return rotationVector; }
@@ -117,7 +114,7 @@ namespace ARdevKit.Model.Project
         /// </summary>
         protected AbstractTrackable trackable;
         /// <summary>
-        /// Get or set a trackable to the augmention.
+        /// Get or set a trackable to the augmentation.
         /// </summary>
         [Browsable(false)]
         public AbstractTrackable Trackable
@@ -127,73 +124,59 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
-        /// ToDo Summary is missing
-        /// Body must still be implemented
+        /// Initializes no new instance of the <see cref="AbstractAugmentation"/> class,
+        /// but can be used in inheriting classes.
+        /// Using standard values, such as emptyLists, vectors with 0 as coordinate and null.
         /// </summary>
-        protected AbstractAugmention()
+        protected AbstractAugmentation()
         {
-            coordinatesystemid = 0;
             isVisible = true;
-            customUserEvent = new ArrayList();
+            //customUserEvent = new ArrayList();
             translationVector = new Vector3D(0, 0, 0);
             scalingVector = new Vector3D(0, 0, 0);
             rotationVector = new Vector3Di(0, 0, 0, 0);
             trackable = null;
         }
 
-        /// <summary>   ToDo Summary is missing Body must still be implemented. </summary>
-        ///
-        /// <param name="coordSystemId">        Identifier for the coordinate system. </param>
-        /// <param name="isVisible">            ToDo Summary is missing. </param>
-        /// <param name="translationVector"> Vector to know the Position on the PreviewPanel.</summar> </param>
-        /// <param name="scaling">              The scaling. </param>
-        /// <param name="trackable">         The AbstractTrackable with which this AbstractAugmentation is
-        ///     linked. It is visible in the same Scene as the trackable. </param>
-        protected AbstractAugmention(int coordSystemId, bool isVisible, 
+        /// <summary>
+        /// Initializes no new instance of the <see cref="AbstractAugmentation"/> class,
+        /// but can be used in inheriting classes.
+        /// </summary>
+        /// <param name="isVisible">if set to <c>true</c> [is visible] using AREL.</param>
+        /// <param name="translationVector">The translation vector.</param>
+        /// <param name="scaling">The scaling.</param>
+        /// <param name="trackable">The trackable.</param>
+        protected AbstractAugmentation(bool isVisible, 
             Vector3D translationVector, Vector3D scaling, AbstractTrackable trackable)
         {
-            coordinatesystemid = coordSystemId;
             this.isVisible = isVisible;
-            customUserEvent = new ArrayList();
+            //customUserEvent = new ArrayList();
             this.translationVector = translationVector;
             scalingVector = scaling;
             this.trackable = trackable;
         }
 
         /// <summary>
-        /// ToDo Summary is missing
+        /// An abstract method, to accept a <see cref="AbstractProjectVisitor"/>
+        /// which must be implemented according to the visitor design pattern.
         /// </summary>
-        /// <param name="visitor"></param>
+        /// <param name="visitor">the visitor which encapsulates the action
+        ///     which is performed on this element</param>
         public abstract void Accept(AbstractProjectVisitor visitor);
 
         /// <summary>
-        /// ToDo Summary is missing
+        /// returns a <see cref="Bitmap"/> in order to be displayed
+        /// on the PreviewPanel, implements <see cref="IPreviewable"/>
         /// </summary>
-        /// <returns></returns>
+        /// <returns>a representative Bitmap</returns>
         public abstract Bitmap getPreview();
 
         /// <summary>
-        /// ToDo Summary is missing
+        /// returns a <see cref="Bitmap"/> in order to be displayed
+        /// on the ElementSelectionPanel, implements <see cref="IPreviewable"/>
         /// </summary>
-        /// <returns></returns>
+        /// <returns>a representative iconized Bitmap</returns>
         public abstract Bitmap getIcon();
-
-        /// <summary>
-        /// ToDo Summary is missing
-        /// </summary>
-        /// <returns></returns>
-        public abstract List<AbstractProperty> getPropertyList();
-
-        /// <summary>
-        ///     Is needed for Custom Serialization. And provides the Serializer with the needed information
-        /// </summary>
-        /// <param name="info">Serialization Information, which is modified to encapsulate the things to save</param>
-        /// <param name="context">describes aim and source of a serialized stream</param>
-        [Obsolete("GetObjectData is obsolete, serialization is done without customization.")]
-        public void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
 

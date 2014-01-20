@@ -19,7 +19,7 @@ public class PreviewController
     public MetaCategory currentMetaCategory { get; set; }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-    /// <summary>   The Trackable which hold the Augmentions and Sources. </summary>
+    /// <summary>   The Trackable which hold the Augmentations and Sources. </summary>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
     public AbstractTrackable trackable { get; set; }
@@ -64,7 +64,7 @@ public class PreviewController
 
     [Obsolete("addPreviewable(IPreviewable p) : eache IPreviewable needs a Vector where the new"
                 + "Previewable should sit in the panel you should use addPreviewable(IPreviewable"
-                + "currentElement, Vector3d v) for Augmentions & Trackables", true)]
+                + "currentElement, Vector3d v) for Augmentations & Trackables", true)]
     public void addPreviewAble(IPreviewable p)
         { throw new NotImplementedException(); }
 
@@ -75,7 +75,7 @@ public class PreviewController
     ///     Trackable.
     /// </summary>
     ///
-    /// <summary>   currentMetaCategory musst set to Trackable/Augmention</summary>
+    /// <summary>   currentMetaCategory musst set to Trackable/Augmentation</summary>
     ///
     /// <param name="currentTrackable"> The current Trackable, which should set in the previewPanel. </param>
     /// <param name="v">                The Vector3D to set the Trackable. </param>
@@ -126,14 +126,14 @@ public class PreviewController
             }
             
         }
-        else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null && this.ew.project.Trackables[index].Augmentions.Count < 3)
+        else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null && this.ew.project.Trackables[index].Augmentations.Count < 3)
         {
-            //set the vector and the trackable in Augmention
-            ((AbstractAugmention)currentElement).TranslationVector = v;
-            ((AbstractAugmention)currentElement).Trackable = this.trackable;
+            //set the vector and the trackable in <see cref="AbstractAugmentation"/>
+            ((AbstractAugmentation)currentElement).TranslationVector = v;
+            ((AbstractAugmentation)currentElement).Trackable = this.trackable;
 
             //set references 
-            trackable.Augmentions.Add((AbstractAugmention)currentElement);
+            trackable.Augmentations.Add((AbstractAugmentation)currentElement);
 
             this.addPictureBox(currentElement, v);
 
@@ -142,40 +142,40 @@ public class PreviewController
         }
         else
         {
-            MessageBox.Show("More than one Trackable & three Augmentions are not allowed!");
+            MessageBox.Show("More than one Trackable & three Augmentations are not allowed!");
         }
     }
 
-
+    /*
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// <summary>
-    ///     add Source or Augmention, this method can only be used with the element, which is the
-    ///     over element by Augmention the overelement is Trackable. by Source the overelement is
-    ///     Augmention.
+    ///     add Source or augmentation, this method can only be used with the element, which is the
+    ///     over element by augmentation the overelement is Trackable. by Source the overelement is
+    ///     augmentation.
     /// </summary>
     ///
-    /// <summary>   currentMetaCategory musst set to Augmention</summary>
+    /// <summary>   currentMetaCategory musst set to augmentation</summary>
     ///
     /// <param name="currentElement">   The current element. </param>
     /// <param name="overElement">      The over element. </param>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public void addSource(AbstractSource source, AbstractAugmention currentElement)
+    public void addSource(AbstractSource source, AbstractAugmentation currentElement)
     {
         if (currentMetaCategory == MetaCategory.Source)
         {
-            if (this.trackable != null && trackable.existAugmention((AbstractAugmention)currentElement))
+            if (this.trackable != null && trackable.existAugmentation((AbstractAugmentation)currentElement))
             {
-                //set reference to the augmentions in Source
-                source.augmentions.Add((Abstract2DAugmention)currentElement);
+                //set reference to the augmentations in Source
+                source.augmentations.Add((Abstract2DAugmentation)currentElement);
 
-                //add references in Augmention, Picturebox + project.sources List.
-                ((AbstractDynamic2DAugmention)currentElement).source = source;
+                //add references in Augmentation, Picturebox + project.sources List.
+                ((AbstractDynamic2DAugmentation)currentElement).source = source;
 
                 this.currentMetaCategory = MetaCategory.Augmentation;
                 this.findBox(currentElement).ContextMenu.MenuItems.Add("show source", new EventHandler(this.show_source_by_click));
                 this.findBox(currentElement).ContextMenu.MenuItems.Add("remove source", new EventHandler(this.remove_source_by_click));
-                this.ew.project.Sources.Add(((AbstractDynamic2DAugmention)this.findBox((AbstractAugmention)currentElement).Tag).source);
+                this.ew.project.Sources.Add(((AbstractDynamic2DAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).source);
                 this.currentMetaCategory = MetaCategory.Source;
             }
         }
@@ -183,11 +183,11 @@ public class PreviewController
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// <summary>
-    ///     Removes the choosen Source out of the Augmention and also out of the sourcesList in
+    ///     Removes the choosen Source out of the Augmentation and also out of the sourcesList in
     ///     Project.
     /// </summary>
     ///
-    /// <summary>   currentMetaCategory musst set to Augmention </summary>
+    /// <summary>   currentMetaCategory musst set to Augmentation </summary>
     /// 
     /// <remarks>   Lizzard, 1/15/2014. </remarks>
     ///
@@ -199,23 +199,24 @@ public class PreviewController
     {
         if (currentMetaCategory == MetaCategory.Augmentation)
         {
-            if (this.ew.project.findSource(source).augmentions.Count > 1)
+            if (this.ew.project.findSource(source).Augmentations.Count > 1)
             {
-                ((AbstractDynamic2DAugmention)currentElement).source = null;
-                this.ew.project.findSource(source).augmentions.Remove((Abstract2DAugmention)currentElement);
+                ((AbstractDynamic2DAugmentation)currentElement).source = null;
+                this.ew.project.findSource(source).Augmentations.Remove((Abstract2DAugmentation)currentElement);
             }
-            else if (this.ew.project.findSource(source).augmentions.Count == 1)
+            else if (this.ew.project.findSource(source).Augmentations.Count == 1)
             {
-                ((AbstractDynamic2DAugmention)currentElement).source = null;
+                ((AbstractDynamic2DAugmentation)currentElement).source = null;
                 this.ew.project.Sources.Remove(source);
             }
         }
     }
+    */
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// <summary>   Removes the Previewable and the Objekt, what is linked to the Previewable. </summary>
     ///
-    /// <summary>   currentMetaCategory musst set to Trackable/Augmention</summary>
+    /// <summary>   currentMetaCategory musst set to Trackable/Augmentation</summary>
     /// 
     /// <remarks>   Lizzard, 1/16/2014. </remarks>
     ///
@@ -238,8 +239,8 @@ public class PreviewController
         }
         else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null)
         {
-            this.trackable.Augmentions.Remove((AbstractAugmention)currentElement);
-            this.panel.Controls.Remove(this.findBox((AbstractAugmention)currentElement));
+            this.trackable.Augmentations.Remove((AbstractAugmentation)currentElement);
+            this.panel.Controls.Remove(this.findBox((AbstractAugmentation)currentElement));
         }
     }
 
@@ -256,11 +257,11 @@ public class PreviewController
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// <summary>
-    ///     Move the Trackable whith all connected Augmentions &amp; sources to the new vector-
+    ///     Move the Trackable whith all connected Augmentations &amp; sources to the new vector-
     ///     position.
     /// </summary>
     ///
-    /// <summary>   currentMetaCategory musst set to Trackable/Augmention</summary>
+    /// <summary>   currentMetaCategory musst set to Trackable/Augmentation</summary>
     ///
     /// <param name="currentTrackable"> The current Trackable, which should set in the previewPanel. </param>
     /// <param name="v">                The Vector3D to move the Trackable. </param>
@@ -275,7 +276,7 @@ public class PreviewController
         }
         else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null)
         {
-            ((AbstractAugmention)this.findBox(currentElement).Tag).TranslationVector = v;
+            ((AbstractAugmentation)this.findBox(currentElement).Tag).TranslationVector = v;
             this.findBox(currentElement).Location = new Point(v.X, v.Y);
         }
     }
@@ -344,14 +345,14 @@ public class PreviewController
     ///
     /// <remarks>   Lizzard, 1/15/2014. </remarks>
     ///
-    /// <param name="trackable">    The Trackable which hold the Augmentions and Sources. </param>
+    /// <param name="trackable">    The Trackable which hold the Augmentations and Sources. </param>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
     private void addAllToPanel(AbstractTrackable trackable)
     {
-        if (trackable.Augmentions.Count > 0)
+        if (trackable.Augmentations.Count > 0)
         {
-            foreach (AbstractAugmention aug in trackable.Augmentions)
+            foreach (AbstractAugmentation aug in trackable.Augmentations)
             {
                 this.addPictureBox(aug, aug.TranslationVector);
             }
@@ -395,7 +396,7 @@ public class PreviewController
         tempBox.ContextMenu = cm;
         tempBox.MouseClick += new MouseEventHandler(selectElement);
 
-        if (tempBox.Tag is AbstractAugmention)
+        if (tempBox.Tag is AbstractAugmentation)
         tempBox.MouseMove += new MouseEventHandler(controlMouseMove);
 
         this.panel.Controls.Add(tempBox);
@@ -433,9 +434,9 @@ public class PreviewController
         if (currentMetaCategory == MetaCategory.Source)
         {
             ElementIcon icon = (ElementIcon)e.Data.GetData(typeof(ElementIcon));
-            AbstractAugmention augmentation = (AbstractAugmention)((PictureBox)sender).Tag;
+            AbstractAugmentation augmentation = (AbstractAugmentation)((PictureBox)sender).Tag;
             AbstractSource source = ObjectCopier.Clone((AbstractSource)icon.Element.Dummy);
-            addSource(source, augmentation);
+            //addSource(source, augmentation);
         }
     }
 
@@ -463,7 +464,7 @@ public class PreviewController
         {
             foreach (Control comp in panel.Controls)
             {
-                if (comp.Tag == (AbstractAugmention)prev)
+                if (comp.Tag == (AbstractAugmentation)prev)
                 {
                     return (PictureBox)comp;
                 }
@@ -501,10 +502,10 @@ public class PreviewController
             controlToMove.Location = new Point(controlToMove.Location.X + e.Location.X - 60,
                controlToMove.Location.Y + e.Location.Y - 60);
 
-            if (((Control)sender).Tag is AbstractAugmention)
+            if (((Control)sender).Tag is AbstractAugmentation)
             {
-                AbstractAugmention aa;
-                aa = (AbstractAugmention)((Control)sender).Tag;
+                AbstractAugmentation aa;
+                aa = (AbstractAugmentation)((Control)sender).Tag;
                 aa.TranslationVector.X = controlToMove.Location.X + e.Location.X;
                 aa.TranslationVector.Y = controlToMove.Location.Y + e.Location.Y;
             }
@@ -538,6 +539,7 @@ public class PreviewController
         this.currentMetaCategory = tempMeta;
     }
 
+    /*
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// <summary>   Event handler. Shows Source in PropertyGrid when you want this. </summary>
     ///
@@ -549,8 +551,9 @@ public class PreviewController
 
     private void show_source_by_click(object sender, EventArgs e)
     {
-        ew.PropertyGrid1.SelectedObject = ((AbstractDynamic2DAugmention)((ContextMenu)((MenuItem)sender).Parent).Tag).source;
+        ew.PropertyGrid1.SelectedObject = ((AbstractDynamic2DAugmentation)((ContextMenu)((MenuItem)sender).Parent).Tag).source;
     }
+    */
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// <summary>
@@ -566,10 +569,10 @@ public class PreviewController
 
     private void remove_source_by_click(object sender, EventArgs e)
     {
-        AbstractDynamic2DAugmention temp = (AbstractDynamic2DAugmention)((ContextMenu)((MenuItem)sender).Parent).Tag;
+        AbstractDynamic2DAugmentation temp = (AbstractDynamic2DAugmentation)((ContextMenu)((MenuItem)sender).Parent).Tag;
         MetaCategory tempMeta = currentMetaCategory;
         this.currentMetaCategory = MetaCategory.Augmentation;
-        this.removeSource(temp.source, temp);
+        //this.removeSource(temp.source, temp);
         ew.PropertyGrid1.SelectedObject = null;
         this.currentMetaCategory = tempMeta;
 

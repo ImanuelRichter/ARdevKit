@@ -48,28 +48,13 @@ namespace ARdevKit.Model.Project
             throw new NotImplementedException();
         }
 
-        /// <summary>   ToDo Summary is missing. </summary>
-        ///
-        /// <exception cref="NotImplementedException"> Thrown when the requested operation is
-        ///     unimplemented. </exception>
-        ///
-        /// <returns>   The property list. </returns>
-        public override List<View.AbstractProperty> getPropertyList()
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>   Gets the preview. </summary>
-        ///
-        /// <returns>   The preview. </returns>
-        public override Bitmap getPreview()
-        {
-            return Properties.Resources.FileSource_normal_;
-        }
-
-        /// <summary>   Gets the icon. </summary>
-        ///
-        /// <returns>   The icon. </returns>
+        /// <summary>
+        /// returns a <see cref="Bitmap" /> in order to be displayed
+        /// on the ElementSelectionPanel, implements <see cref="IPreviewable" />
+        /// </summary>
+        /// <returns>
+        /// a representative iconized Bitmap
+        /// </returns>
         public override Bitmap getIcon()
         {
             return Properties.Resources.FileSource_small_;

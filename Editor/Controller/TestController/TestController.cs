@@ -9,6 +9,7 @@ using System.IO;
 
 using ARdevKit.Controller.ProjectController;
 using ARdevKit.Model.Project;
+using ARdevKit.Model.Project.File;
 
 namespace ARdevKit.Controller.TestController
 {
@@ -68,6 +69,19 @@ namespace ARdevKit.Controller.TestController
             project.Name = "Test";
             project.ProjectPath = System.IO.Path.Combine(System.Windows.Forms.Application.StartupPath, "currentProject");
             project.Accept(exporter);
+
+            exporter.ArelProjectFile.Save();
+            exporter.TrackingDataFile.Save();
+            exporter.ArelConfigFile.Save();
+            exporter.ArelGlueFile.Save();
+
+            if (exporter.BarChartFiles != null)
+            {
+                foreach (BarChartFile barChartFile in exporter.BarChartFiles)
+                {
+                    barChartFile.Save();
+                }
+            }
 
             player = new Process();
             player.StartInfo.Arguments = project.ProjectPath + " -" + mode;

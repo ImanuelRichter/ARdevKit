@@ -10,7 +10,9 @@ using System.ComponentModel;
 
 namespace ARdevKit.Model.Project
 {
-    /// <summary>   A database source. </summary>
+    /// <summary>
+    /// A database source 
+    /// </summary>
     [Serializable]
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public class DbSource : AbstractSource
@@ -30,9 +32,10 @@ namespace ARdevKit.Model.Project
          * */
 
         /// <summary>   Default constructor. </summary>
+        /// <remarks>   TODO                 </remarks>
         public DbSource()
         {
-            ; // missing initialization
+            ; // ToDo
         }
 
         /// <summary>   ToDo Summary is missing. </summary>
@@ -46,28 +49,13 @@ namespace ARdevKit.Model.Project
             throw new NotImplementedException();
         }
 
-        /// <summary>   ToDo Summary is missing. </summary>
-        ///
-        /// <exception cref="NotImplementedException"> Thrown when the requested operation is
-        ///     unimplemented. </exception>
-        ///
-        /// <returns>   The property list. </returns>
-        public override List<View.AbstractProperty> getPropertyList()
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>   ToDo Summary is missing. </summary>
-        ///
-        /// <returns>   The preview. </returns>
-        public override Bitmap getPreview()
-        {
-            return Properties.Resources.sourcePreview_normal_;
-        }
-
-        /// <summary>   ToDo Summary is missing. </summary>
-        ///
-        /// <returns>   The icon. </returns>
+        /// <summary>
+        /// returns a <see cref="Bitmap" /> in order to be displayed
+        /// on the ElementSelectionPanel, implements <see cref="IPreviewable" />
+        /// </summary>
+        /// <returns>
+        /// a representative iconized Bitmap
+        /// </returns>
         public override Bitmap getIcon()
         {
             return Properties.Resources.sourcePreview_small_;

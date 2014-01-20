@@ -9,13 +9,19 @@ using System.ComponentModel;
 
 namespace ARdevKit.Model.Project
 {
-    /// <summary>   An identifier marker. </summary>
+
+    /// <summary>
+    /// <see cref="IDMarker"/> is a <see cref="AbstractMarker"/>
+    /// adding an matrixID.
+    /// </summary>
     [Serializable]
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public class IDMarker : AbstractMarker
     {
         /// <summary>
-        /// The matrix identifier
+        /// The matrix identifier, describes the Markers, which
+        /// are deployed by the metaio SDK.
+        /// They reach from 1 to 255.
         /// </summary>
         private int matrixID;
         /// <summary>
@@ -35,22 +41,24 @@ namespace ARdevKit.Model.Project
         /// Initializes a new instance of the <see cref="IDMarker"/> class.
         /// </summary>
         /// <param name="matrixID">The matrix identifier.</param>
-        public IDMarker(int matrixID) : base()
+        public IDMarker(int matrixID) : base("IDMarker", 60)
         {
             this.matrixID = matrixID;
-            size = 60;
-            type = "IDMarker";
             sensorCosID = IDFactory.createNewSensorCosID(this);
             Fuser = new MarkerFuser();
         }
 
-        /// <summary>   ToDo Summary is missing. </summary>
-        ///
-        /// <param name="visitor">  . </param>
+
+        /// <summary>
+        /// An method, to accept a <see cref="AbstractProjectVisitor" />
+        /// and let the visitor visit the associated fuser.
+        /// </summary>
+        /// <param name="visitor">the visitor which encapsulates the action
+        /// which is performed on this element</param>
         public override void Accept(Controller.ProjectController.AbstractProjectVisitor visitor)
         {
             visitor.Visit(this);
-            foreach (AbstractAugmention augmentation in Augmentions)
+            foreach (AbstractAugmentation augmentation in Augmentations)
             {
                 augmentation.Accept(visitor);
             }
@@ -58,19 +66,11 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
-        /// Gets the property list.
-        /// </summary>
-        /// <returns></returns>
-        /// <exception cref="System.NotImplementedException"></exception>
-        public override List<View.AbstractProperty> getPropertyList()
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
         /// Gets the preview.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// a representative Bitmap
+        /// </returns>
         public override Bitmap getPreview()
         {
             return Properties.Resources.ARRMarker_normal_;
@@ -79,7 +79,9 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// Gets the icon.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// a representative iconized Bitmap
+        /// </returns>
         public override Bitmap getIcon()
         {
             return Properties.Resources.ARRMarker_small_;

@@ -12,15 +12,24 @@ using System.Drawing;
 
 namespace ARdevKit.Model.Project
 {
+    /// <summary>
+    /// Describes a Marker, which is very flexible, because it is also
+    /// a Picture. It is an <see cref="AbstractMarker"/>
+    /// </summary>
     [Serializable]
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public class PictureMarker : AbstractMarker
     {
-        /// <summary>   Full pathname of the image file. </summary>
+        /// <summary>
+        /// Full pathname of the image file.
+        /// </summary>
         private string imagePath;
-        /// <summary>   Gets or sets the full pathname of the image file. </summary>
-        ///
-        /// <value> The full pathname of the image file. </value>
+        /// <summary>
+        /// Gets or sets the full pathname of the image file.
+        /// </summary>
+        /// <value>
+        /// The full pathname of the image file.
+        /// </value>
         [CategoryAttribute("General"), EditorAttribute(typeof(FileSelectorTypeEditor), 
             typeof(System.Drawing.Design.UITypeEditor))]
         public string ImagePath
@@ -33,11 +42,16 @@ namespace ARdevKit.Model.Project
             }
         }
 
-        /// <summary>   Name of the image. </summary>
+        /// <summary>
+        /// Name of the image.
+        /// </summary>
         private string imageName;
-        /// <summary>   Gets or sets the name of the image. </summary>
-        ///
-        /// <value> The name of the image. </value>
+        /// <summary>
+        /// Gets or sets the name of the image.
+        /// </summary>
+        /// <value>
+        /// The name of the image.
+        /// </value>
         [CategoryAttribute("General"), ReadOnly(true)]
         public string ImageName
         {
@@ -45,52 +59,70 @@ namespace ARdevKit.Model.Project
             //set { imageName = value; }
         }
 
-        /// <summary>   Constructor. </summary>
-        ///
-        /// <param name="imagePath">    Full pathname of the image file. </param>
-        public PictureMarker(string imagePath) : base() // maye needs to redo because of base() ?
+        /// <summary>
+        /// Default Constructor.
+        /// </summary>
+        public PictureMarker()
+            : base("PictureMarker", 0)
         {
-            this.imagePath = imagePath;
-            imageName = Path.GetFileName(imagePath);
-            type = "PictureMarker";
+            imagePath = null;
+            imageName = "";
             Fuser = new MarkerFuser();
             sensorCosID = IDFactory.createNewSensorCosID(this);
         }
 
-        /// <summary>   ToDo Summary is missing. </summary>
-        ///
-        /// <param name="visitor">  . </param>
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="imagePath">Full pathname of the image file.</param>
+        public PictureMarker(string imagePath)
+            : base("PictureMarker", new Bitmap(imagePath).Height * new Bitmap(imagePath).Width)
+        {
+            this.imagePath = imagePath;
+            imageName = Path.GetFileName(imagePath);
+            Fuser = new MarkerFuser();
+            sensorCosID = IDFactory.createNewSensorCosID(this);
+        }
+
+        /// <summary>
+        /// An overwriting method, to accept a <see cref="AbstractProjectVisitor" />
+        /// which must be implemented according to the visitor design pattern.
+        /// It lets the visitor visit every augmentation associated with it.
+        /// </summary>
+        /// <param name="visitor">the visitor which encapsulates the action
+        /// which is performed on this element</param>
         public override void Accept(AbstractProjectVisitor visitor)
         {
             visitor.Visit(this);
-            foreach (AbstractAugmention augmentation in Augmentions)
+            foreach (AbstractAugmentation augmentation in Augmentations)
             {
                 augmentation.Accept(visitor);
             }
         }
 
-        /// <summary>   ToDo Summary is missing. </summary>
-        ///
-        /// <exception cref="NotImplementedException"> Thrown when the requested operation is
-        ///     unimplemented. </exception>
-        ///
-        /// <returns>   The property list. </returns>
-        public override List<AbstractProperty> getPropertyList()
-        {
-            throw new NotImplementedException();
-        }
 
-        /// <summary>   ToDo Summary is missing. </summary>
-        ///
-        /// <returns>   The preview. </returns>
+        /// <summary>
+        /// returns a <see cref="Bitmap" /> in order to be displayed
+        /// on the PreviewPanel, implements <see cref="IPreviewable" />
+        /// </summary>
+        /// <returns>
+        /// a representative Bitmap
+        /// </returns>
+        /// <exception cref="FileNotFoundException">If ImagePath is
+        ///     not correct.</exception>
         public override Bitmap getPreview()
         {
            return new Bitmap(ImagePath);
         }
 
-        /// <summary>   ToDo Summary is missing. </summary>
-        ///
-        /// <returns>   The icon. </returns>
+
+        /// <summary>
+        /// returns a <see cref="Bitmap" /> in order to be displayed
+        /// on the ElementSelectionPanel, implements <see cref="IPreviewable" />
+        /// </summary>
+        /// <returns>
+        /// a representative iconized Bitmap
+        /// </returns>
         public override System.Drawing.Bitmap getIcon()
         {
             return Properties.Resources.ARMarker_small_;

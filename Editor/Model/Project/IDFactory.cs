@@ -29,7 +29,6 @@ namespace ARdevKit.Model.Project
         ///
         /// <returns>   The new new sensorIDstring. </returns>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-
         public static string createNewSensorID(AbstractSensor sensor)
         {
             return sensor.SensorIDBase.ToString() + sensorIDcounter++;
@@ -44,7 +43,6 @@ namespace ARdevKit.Model.Project
         ///
         /// <returns>   The new new sensorCosIDstring. </returns>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-
         public static string createNewSensorCosID(AbstractMarker marker)
         {
             return marker.Type + sensorCosIDcounter++;

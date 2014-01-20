@@ -9,26 +9,36 @@ using System.ComponentModel;
 
 namespace ARdevKit.Model.Project
 {
+
+    /// <summary>
+    /// Describes a <see cref="BarChart"/> with its
+    /// Colors and OptimalValues. It is a <see cref="Chart"/>.
+    /// </summary>
     [Serializable]
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
-    public class BarGraph : Graph
+    public class BarChart : Chart
     {
+        /*
         /// <summary>
-        /// Gets or sets the maximum color of the value.
+        /// Gets or sets the color of the maximum value,
+        /// which can be displayed.
         /// </summary>
         /// <value>
-        /// The maximum color of the value.
+        /// The color of the maximum value.
         /// </value>
         [CategoryAttribute("Color")]
         public Color MaxValueColor { get; set; }
+        
         /// <summary>
-        /// Gets or sets the minimum color of the value.
+        /// Gets or sets the color of the minimal value,
+        /// which can be displayed.
         /// </summary>
         /// <value>
-        /// The minimum color of the value.
+        /// The color of the minimum value.
         /// </value>
         [CategoryAttribute("Color")]
         public Color MinValueColor { get; set; }
+       
         /// <summary>
         /// Gets or sets the optimal value.
         /// </summary>
@@ -37,6 +47,7 @@ namespace ARdevKit.Model.Project
         /// </value>
         [CategoryAttribute("General")]
         public int OptimalValue { get; set; }
+        
         /// <summary>
         /// Gets or sets the color of the optimal value.
         /// </summary>
@@ -45,54 +56,57 @@ namespace ARdevKit.Model.Project
         /// </value>
         [CategoryAttribute("Color")]
         public Color OptimalValueColor { get; set; }
+         */
 
         /// <summary>   Default constructor. </summary>
-        public BarGraph()
+        public BarChart()
         {
             Style = new ChartStyle();
-            OptimalValue = 50;
-            OptimalValueColor = new Color();
-            MinValueColor = new Color();
+            //OptimalValue = 50;
+            //OptimalValueColor = new Color();
+            //MinValueColor = new Color();
             MinValue = 0;
             MaxValue = 100;
-            Scaling = 0;
             ScalingVector = new Vector3D(0, 0, 0);
             Style = new ChartStyle();
         }
 
-        /// <summary>   ToDo Summary is missing. </summary>
-        ///
-        /// <param name="visitor">  . </param>
+
+        /// <summary>
+        /// An overwriting method, to accept a <see cref="AbstractProjectVisitor" />
+        /// which must be implemented according to the visitor design pattern.
+        /// </summary>
+        /// <param name="visitor">the visitor which encapsulates the action
+        ///     which is performed on this <see cref="BarChart"/></param>
         public override void Accept(Controller.ProjectController.AbstractProjectVisitor visitor)
         {
             visitor.Visit(this);
         }
 
-        /// <summary>   ToDo Summary is missing. </summary>
-        ///
-        /// <returns>   The preview. </returns>
+
+        /// <summary>
+        /// returns a <see cref="Bitmap" /> in order to be displayed
+        /// on the PreviewPanel, implements <see cref="IPreviewable" />
+        /// </summary>
+        /// <returns>
+        /// a representative Bitmap
+        /// </returns>
         public override Bitmap getPreview()
         {
             return Properties.Resources.coordinationAxis_normal_;
         }
 
-        /// <summary>   ToDo Summary is missing. </summary>
-        ///
-        /// <returns>   The icon. </returns>
+
+        /// <summary>
+        /// returns a <see cref="Bitmap" /> in order to be displayed
+        /// on the ElementSelectionPanel, implements <see cref="IPreviewable" />
+        /// </summary>
+        /// <returns>
+        /// a representative iconized Bitmap
+        /// </returns>
         public override Bitmap getIcon()
         {
             return Properties.Resources.coordinationAxis_small_;
-        }
-
-        /// <summary>   ToDo Summary is missing. </summary>
-        ///
-        /// <exception cref="NotImplementedException"> Thrown when the requested operation is
-        ///     unimplemented. </exception>
-        ///
-        /// <returns>   The property list. </returns>
-        public override List<View.AbstractProperty> getPropertyList()
-        {
-            throw new NotImplementedException();
         }
     }
 }

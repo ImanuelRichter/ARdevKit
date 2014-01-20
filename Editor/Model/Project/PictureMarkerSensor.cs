@@ -11,11 +11,13 @@ namespace ARdevKit.Model.Project
     public class PictureMarkerSensor : AbstractSensor
     {
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Specifies the <see cref="trackingQuality"/>. </summary>
-        ///
-        /// <remarks>   Imanuel, 15.01.2014. </remarks>
+        /// <summary>
+        /// Specifies the <see cref="trackingQuality" />.
+        /// </summary>
+        /// <remarks>
+        /// Imanuel, 15.01.2014.
+        /// </remarks>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-
         [Flags]
         public enum TrackingQualities { robust, fast };
         /// <summary>   Strategy which is used for the marker detection.
@@ -27,14 +29,13 @@ namespace ARdevKit.Model.Project
         ///             -   "fast" to use a more simple approach to detect
         ///                 the markers, which is less precise, but faster
         ///                 than robust. </summary>
-        protected TrackingQualities trackingQuality = TrackingQualities.robust;
+        protected TrackingQualities trackingQuality;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Gets or sets the tracking quality. </summary>
         ///
         /// <value> The tracking quality. </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-
         public TrackingQualities TrackingQuality
         {
             get { return trackingQuality; }
@@ -56,14 +57,13 @@ namespace ARdevKit.Model.Project
         ///			    tracking.xml. Detecting markers using a fixed
         ///				threshold can lead to failure. The value range for
         ///				the threshold is between 0 and 255. </summary>
-        protected int thresholdOffset = 128;
+        protected int thresholdOffset;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Gets or sets the threshold offset. </summary>
         ///
         /// <value> The threshold offset. </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-
         public int ThresholdOffset
         {
             get { return thresholdOffset; }
@@ -79,14 +79,13 @@ namespace ARdevKit.Model.Project
         ///             With a high number, the marker tracker is more
         ///             likely to detect a marker, but it also needs more
         ///             computational time, i.e. is slower. </summary>
-        protected int numberOfSearchIterations = 3;
+        protected int numberOfSearchIterations;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Gets or sets the number of search iterations. </summary>
         ///
         /// <value> The total number of search iterations. </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-
         public int NumberOfSearchIterations
         {
             get { return numberOfSearchIterations; }
@@ -98,18 +97,24 @@ namespace ARdevKit.Model.Project
         ///
         /// <remarks>   Imanuel, 17.01.2014. </remarks>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        public PictureMarkerSensor() : base() // maybe needs to redo because of base() ?
+        public PictureMarkerSensor() : base()
         {
             Name = "PictureMarker";
+            trackingQuality = TrackingQualities.robust;
+            thresholdOffset = 128;
+            numberOfSearchIterations = 3;
             sensorIDBase = SensorIDBases.MarkerTracking;
             SensorIDString = IDFactory.createNewSensorID(this);
             sensorType = SensorTypes.MarkerBasedSensorSource;
         }
 
-        /// <summary>   Accepts the given visitor. </summary>
-        ///
-        /// <param name="visitor">  The visitor. </param>
+        /// <summary>
+        /// Accepts the given visitor.
+        /// </summary>
+        /// <param name="visitor">The visitor.</param>
+        /// <remarks>
+        /// Imanuel, 17.01.2014.
+        /// </remarks>
         public override void Accept(AbstractProjectVisitor visitor)
         {
             visitor.Visit(this);

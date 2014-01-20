@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Model.Project
 {
+    /// <summary>
+    /// Describes an abstract twodimensional augmentation with its 
+    /// additional features height and width. It inherits from
+    /// <see cref="AbstractAugmentation"/>.
+    /// </summary>
     [Serializable]
-    public abstract class Abstract2DAugmention : AbstractAugmention
+    public abstract class Abstract2DAugmentation : AbstractAugmentation
     {
         /// <summary>
         /// The height, in mm
@@ -30,8 +35,6 @@ namespace ARdevKit.Model.Project
         /// The width, in mm
         /// </summary>
         private int width;
-        private int coordSystemId;
-        private Vector3D scaling;
 
         /// <summary>
         /// Gets or sets the width.
@@ -45,44 +48,36 @@ namespace ARdevKit.Model.Project
             set { width = value; }
         }
 
+
         /// <summary>
-        /// default constructor, 
-        /// for use from implementing classes
-        /// sets <see cref="height"/> and <see cref="width"/> = 0
+        /// Initializes no new instance of the <see cref="Abstract2DAugmentation"/> class,
+        /// but can be used in inheriting classes.
+        /// sets <see cref="height" /> and <see cref="width" /> = 0
         /// </summary>
-        protected Abstract2DAugmention() : base()
+        protected Abstract2DAugmentation() : base()
         {
             height = 0;
             width = 0;
         }
 
-        /// <summary> constructor, which sets every member of the class as specified,
-        /// for use from implementing classes</summary>
+        /// <summary> 
+        /// constructor, which sets every member of the class as specified,
+        /// for use from inheriting classes
+        /// </summary>
         ///
-        /// <param name="coordSystemId">        Identifier for the coordinate system. </param>
         /// <param name="isVisible">            true if this object is visible. </param>
         /// <param name="translationVector">    The translation vector. </param>
         /// <param name="scaling">              The scaling. </param>
         /// <param name="trackable">            The trackable. </param>
         /// <param name="width">                The width. </param>
         /// <param name="height">               The height. </param>
-        protected Abstract2DAugmention(int coordSystemId, bool isVisible,
+        protected Abstract2DAugmentation(bool isVisible,
             Vector3D translationVector, Vector3D scaling, AbstractTrackable trackable,
             int width, int height)
-            : base(coordSystemId, isVisible, translationVector, scaling, trackable)
+            : base(isVisible, translationVector, scaling, trackable)
         {
             this.height = height;
             this.width = width;
-        }
-
-        public Abstract2DAugmention(int coordSystemId, bool isVisible, Vector3D translationVector, Vector3D scaling, AbstractTrackable trackable)
-        {
-            // TODO: Complete member initialization
-            this.coordSystemId = coordSystemId;
-            this.IsVisible = isVisible;
-            this.TranslationVector = translationVector;
-            this.scaling = scaling;
-            this.trackable = trackable;
         }
     }
 }

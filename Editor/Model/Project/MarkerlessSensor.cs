@@ -9,6 +9,11 @@ using System.ComponentModel;
 
 namespace ARdevKit.Model.Project
 {
+    /// <summary>
+    /// Used to change the properties of the metaio SDK 
+    /// and how to track markerless trackables.
+    /// it is an <see cref="AbstractSensor"/>
+    /// </summary>
     [Serializable]
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public class MarkerlessSensor : AbstractSensor
@@ -39,14 +44,13 @@ namespace ARdevKit.Model.Project
         ///				  of a lower framerate during localization.
         ///				  This parameter is for expert usage only. In general it
         ///				  is advised to leave the value unchanged. </summary>
-        protected FeatureDescriptorAlignments featureDescriptorAlignment = FeatureDescriptorAlignments.regular;
+        protected FeatureDescriptorAlignments featureDescriptorAlignment;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Gets or sets the feature descriptor alignment. </summary>
         ///
         /// <value> The feature descriptor alignment. </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-
         public FeatureDescriptorAlignments FeatureDescriptorAlignment
         {
             get { return featureDescriptorAlignment; }
@@ -64,14 +68,13 @@ namespace ARdevKit.Model.Project
         ///				deprecated and should not be used any more.
         ///				This parameter is for expert usage only. In general it
         ///				is advised to leave the value unchanged. </summary>
-        protected int maxObjectsToDetectPerFrame = 5;
+        protected int maxObjectsToDetectPerFrame;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Gets or sets the maximum objects to detect per frame. </summary>
         ///
         /// <value> The maximum objects to detect per frame. </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-
         public int MaxObjectsToDetectPerFrame
         {
             get { return maxObjectsToDetectPerFrame; }
@@ -90,14 +93,13 @@ namespace ARdevKit.Model.Project
         ///				and should not be used any more.
         ///				This parameter is for expert usage only. In general it
         ///				is advised to leave the value unchanged. </summary>
-        protected int maxObjectsToTrackInParallel = 1;
+        protected int maxObjectsToTrackInParallel;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Gets or sets the maximum objects to track in parallel. </summary>
         ///
         /// <value> The maximum objects to track in parallel. </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-
         public int MaxObjectsToTrackInParallel
         {
             get { return maxObjectsToTrackInParallel; }
@@ -115,14 +117,13 @@ namespace ARdevKit.Model.Project
         ///				for each "COS" if it is defined there.
         ///				This parameter is for expert usage only. In general it
         ///				is advised to leave the value unchanged. </summary>
-        protected double similarityThreshold = 0.7;
+        protected double similarityThreshold;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Gets or sets the similarity threshold. </summary>
         ///
         /// <value> The similarity threshold. </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-
         public double SimilarityThreshold
         {
             get { return similarityThreshold; }
@@ -134,18 +135,22 @@ namespace ARdevKit.Model.Project
         ///
         /// <remarks>   Imanuel, 17.01.2014. </remarks>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-
         public MarkerlessSensor() : base() // maybe needs to redo, because of base() ?
         {
             Name = "Markerless";
+            featureDescriptorAlignment = FeatureDescriptorAlignments.regular;
+            maxObjectsToDetectPerFrame = 5;
+            maxObjectsToTrackInParallel = 1;
+            similarityThreshold = 0.7;
             SensorIDString = IDFactory.createNewSensorID(this);
             sensorType = SensorTypes.FeatureBasedSensorSource;
             sensorSubType = SensorSubTypes.Fast;
         }
 
-        /// <summary>   Accepts the given visitor. </summary>
-        ///
-        /// <param name="visitor">  The visitor. </param>
+
+        /// <summary>   Accepts the given visitor.  </summary>
+        /// <param name="visitor">  The visitor.    </param>
+        /// <remarks>   Imanuel, 17.01.2014.        </remarks>
         public override void Accept(AbstractProjectVisitor visitor)
         {
             visitor.Visit(this);

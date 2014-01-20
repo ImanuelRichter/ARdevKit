@@ -40,7 +40,7 @@ namespace Controller.EditorController
         /// </summary>
         /// <param name="selectedElement">Current selected AbstractAugmentation</param>
         /// <param name="content">Content of the customUserEvent</param>
-        public void addCustomUserEvent(AbstractAugmention selectedElement, string[] content)
+        public void addCustomUserEvent(AbstractAugmentation selectedElement, string[] content)
         {
             int counter = selectedElement.CustomUserEventList.Count;
             selectedElement.CustomUserEventList.Add(new CustomUserEvent("customUserEvent" + counter, content));
@@ -52,7 +52,7 @@ namespace Controller.EditorController
         /// <param name="selectedElement">Current selected AbstractAugmentation</param>
         /// <param name="name">Name of the customUserEvent</param>
         /// <param name="content">Content of the customUserEvent</param>
-        public void addCustomUserEvent(AbstractAugmention selectedElement, string name, string[] content)
+        public void addCustomUserEvent(AbstractAugmentation selectedElement, string name, string[] content)
         {
             selectedElement.CustomUserEventList.Add(new CustomUserEvent(name, content));
         }
@@ -62,7 +62,7 @@ namespace Controller.EditorController
         /// </summary>
         /// <param name="selectedElement">Current selected AbstractAugmentation</param>
         /// <param name="name">Name/ID of the customUserEvent</param>
-        public void deleteCustomUserEvent(AbstractAugmention selectedElement, string name)
+        public void deleteCustomUserEvent(AbstractAugmentation selectedElement, string name)
         {
             foreach(CustomUserEvent cue in selectedElement.CustomUserEventList)
             {
@@ -77,7 +77,7 @@ namespace Controller.EditorController
         /// <param name="selectedElement">Current selected AbstractAugmentation</param>
         /// <param name="oldName">Current name of the customUserEvent</param>
         /// <param name="newName">The new name of the customUserEvent</param>
-        public void setCustomUserEventName(AbstractAugmention selectedElement, string oldName, string newName)
+        public void setCustomUserEventName(AbstractAugmentation selectedElement, string oldName, string newName)
         {
             if (newName.Length == 0)
                 throw new ArgumentException("The name must have at leat one symbol.");
@@ -95,7 +95,7 @@ namespace Controller.EditorController
         /// <param name="selectedElement">Current selected element</param>
         /// <param name="name">Name/ID of the customUserEvent</param>
         /// <returns>Returns the content of the customUserEvent. Returns NULL, if the customUserEvent was not found in the list.</returns>
-        public string[] getCustomUserEventContent(AbstractAugmention selectedElement, string name)
+        public string[] getCustomUserEventContent(AbstractAugmentation selectedElement, string name)
         {
             foreach (CustomUserEvent cue in selectedElement.CustomUserEventList)
             {
@@ -112,7 +112,7 @@ namespace Controller.EditorController
         /// <param name="selectedElement">Current selected element</param>
         /// <param name="name">Name/ID of the customUserEvent</param>
         /// <param name="content">The new/edited content of the customUserEvent</param>
-        public void setCustomUserEventContent(AbstractAugmention selectedElement, string name, string[] content)
+        public void setCustomUserEventContent(AbstractAugmentation selectedElement, string name, string[] content)
         {
             foreach (CustomUserEvent cue in selectedElement.CustomUserEventList)
             {

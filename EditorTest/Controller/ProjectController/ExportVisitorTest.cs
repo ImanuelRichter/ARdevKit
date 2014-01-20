@@ -22,24 +22,22 @@ namespace EditorTest
             IDMarker idMarker1 = new IDMarker(1);
             IDMarker idMarker2 = new IDMarker(2);
 
-            ImageAugmention image1 = new ImageAugmention();
+            ImageAugmentation image1 = new ImageAugmentation();
             image1.ImagePath = Path.Combine(testProject.ProjectPath, "Assets", "frame.png");
             image1.IsVisible = false;
-            image1.Coordinatesystemid = 1;
             image1.TranslationVector = new Vector3D(0, 0, 0);
             image1.RotationVector = new Vector3Di(0, 0, 0, 1);
             image1.ScalingVector = new Vector3D(0, 0, 0);
-            idMarker1.Augmentions.Add(image1);
+            idMarker1.Augmentations.Add(image1);
             image1.Trackable = idMarker1;
 
-            ImageAugmention image2 = new ImageAugmention();
+            ImageAugmentation image2 = new ImageAugmentation();
             image2.ImagePath = Path.Combine(testProject.ProjectPath, "Assets", "frame.png");
             image2.IsVisible = false;
-            image2.Coordinatesystemid = 2;
             image2.TranslationVector = new Vector3D(0, 0, 0);
             image2.RotationVector = new Vector3Di(0, 0, 0, 1);
             image2.ScalingVector = new Vector3D(3, 3, 3);
-            idMarker2.Augmentions.Add(image2);
+            idMarker2.Augmentations.Add(image2);
             image2.Trackable = idMarker2;
 
             testProject.Sensor = new MarkerSensor();
@@ -54,9 +52,8 @@ namespace EditorTest
 
             PictureMarker pictureMarker1 = new PictureMarker("pictureMarker1.png");
             PictureMarker pictureMarker2 = new PictureMarker("pictureMarker2.png");
-            
-            BarGraph barChart1 = new BarGraph();
-            barChart1.Coordinatesystemid = 1;
+
+            BarChart barChart1 = new BarChart();
             barChart1.IsVisible = false;
             barChart1.TranslationVector = new Vector3D(0, 0, 0);
             barChart1.RotationVector = new Vector3Di(0, 0, 0, 1);
@@ -70,7 +67,7 @@ namespace EditorTest
             barChart1.Title = "Feuchtigkeitsstand";
             barChart1.Subtitle = "sensorbasiert";
             barChart1.XAxisTitle = "Wochentag";
-            barChart1.Categories = new string[] {"Mo", "Di", "Mi"};
+            barChart1.Categories = new string[] { "Mo", "Di", "Mi" };
             barChart1.MinValue = 0;
             barChart1.YAxisTitle = "Feuchtigkeit in %";
             barChart1.PointPadding = 0.2;
@@ -79,17 +76,16 @@ namespace EditorTest
             barChart1.Names.Add("Rose");
             barChart1.Data = new List<double[]>();
             barChart1.Data.Add(new double[] { 72.5, 50.3, 33.1 });
-            pictureMarker1.Augmentions.Add(barChart1);
+            pictureMarker1.Augmentations.Add(barChart1);
             barChart1.Trackable = pictureMarker1;
-            
-            ImageAugmention image1 = new ImageAugmention();
+
+            ImageAugmentation image1 = new ImageAugmentation();
             image1.ImagePath = Path.Combine(testProject.ProjectPath, "Assets", "frame.png");
             image1.IsVisible = false;
-            image1.Coordinatesystemid = 2;
             image1.TranslationVector = new Vector3D(0, 0, 0);
             image1.RotationVector = new Vector3Di(0, 0, 0, 1);
             image1.ScalingVector = new Vector3D(0, 0, 0);
-            pictureMarker2.Augmentions.Add(image1);
+            pictureMarker2.Augmentations.Add(image1);
             image1.Trackable = pictureMarker2;
 
             testProject.Sensor = new PictureMarkerSensor();
@@ -109,12 +105,12 @@ namespace EditorTest
             exporter.TrackingDataFile.Save();
             exporter.ArelConfigFile.Save();
             exporter.ArelGlueFile.Save();
-            
+
             foreach (BarChartFile barChartFile in exporter.BarChartFiles)
             {
                 barChartFile.Save();
             }
-            
+
             Assert.IsTrue(File.Exists("..\\..\\..\\bin\\Debug\\currentProject\\Assets\\imageToCopy.png"));
         }
 

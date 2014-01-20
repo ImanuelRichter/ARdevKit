@@ -23,10 +23,11 @@ namespace ARdevKit.Model.Project
         ///
         /// <remarks>   Imanuel, 17.01.2014. </remarks>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-
         [Flags]
         public enum FuserTypes { SmoothingFuser, BestQualityFuser };
-        /// <summary>   Type of the fuser. </summary>
+        /// <summary>
+        /// Type of the fuser.
+        /// </summary>
         private FuserTypes fuserType;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -34,72 +35,81 @@ namespace ARdevKit.Model.Project
         ///
         /// <value> The type of the fuser. </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-
         public FuserTypes FuserType
         {
             get { return fuserType; }
             set { fuserType = value; }
         }
 
-        /// <summary>   The alpha translation. </summary>
-        private double alphaTranslation = 0.8;
+        /// <summary>
+        /// The alpha translation.
+        /// </summary>
+        private double alphaTranslation;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Gets or sets the alpha translation. </summary>
         ///
         /// <value> The alpha translation. </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-
         public double AlphaTranslation
         {
             get { return alphaTranslation; }
             set { alphaTranslation = value; }
         }
 
-        /// <summary>   The alpha rotation. </summary>
-        private double alphaRotation = 0.5;
+        /// <summary>
+        /// The alpha rotation.
+        /// </summary>
+        private double alphaRotation;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Gets or sets the alpha rotation. </summary>
         ///
         /// <value> The alpha rotation. </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-
         public double AlphaRotation
         {
             get { return alphaRotation; }
             set { alphaRotation = value; }
         }
 
-        /// <summary>   The keep pose for number of frames value. </summary>
-        private int keepPoseForNumberOfFrames = 2;
+        /// <summary>
+        /// The keep pose for number of frames value.
+        /// </summary>
+        private int keepPoseForNumberOfFrames;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Gets or sets the keep pose for number of frames. </summary>
         ///
         /// <value> The keep pose for number of frames. </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-
         public int KeepPoseForNumberOfFrames
         {
             get { return keepPoseForNumberOfFrames; }
             set { keepPoseForNumberOfFrames = value; }
         }
 
-        /// <summary>   Specialised default constructor for use only by derived classes. </summary>
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MarkerFuser"/> class.
+        /// </summary>
         public MarkerFuser()
         {
-            ; // missing initialization
+            fuserType = FuserTypes.SmoothingFuser;
+            alphaTranslation = 0.8;
+            alphaRotation = 0.5;
+            keepPoseForNumberOfFrames = 2;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Accepts the given visitor. </summary>
-        ///
-        /// <remarks>   Imanuel, 17.01.2014. </remarks>
-        ///
-        /// <param name="visitor">  The visitor. </param>
+        /// <summary>
+        /// Accepts the given visitor.
+        /// </summary>
+        /// <param name="visitor">The visitor.</param>
+        /// <remarks>
+        /// Imanuel, 17.01.2014.
+        /// </remarks>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-
         public void Accept(AbstractProjectVisitor visitor)
         {
             visitor.Visit(this);

@@ -51,7 +51,7 @@ namespace ARdevKit.Controller.ProjectController
         /// </summary>
         /// <param name="graph">The graph.</param>
         /// <exception cref="System.NotImplementedException"></exception>
-        public override void Visit(BarGraph graph)
+        public override void Visit(BarChart graph)
         {
             //do nothing
         }
@@ -86,13 +86,13 @@ namespace ARdevKit.Controller.ProjectController
         }        
 
         /// <summary>
-        /// Visits the given <see cref="ImageAugmention" />.
+        /// Visits the given <see cref="ImageAugmentation" />.
         /// </summary>
         /// <param name="image">The image.</param>
         /// <remarks>
         /// Imanuel, 17.01.2014.
         /// </remarks>
-        public override void Visit(ImageAugmention image)
+        public override void Visit(ImageAugmentation image)
         {
             //do nothing
         }

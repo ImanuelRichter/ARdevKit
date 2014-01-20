@@ -12,17 +12,29 @@ using System.ComponentModel;
 
 namespace ARdevKit.Model.Project
 {
+    /// <summary>
+    /// Describes an <see cref="AbstractTrackable"/> with its
+    /// associated <see cref="AbstractAugmentation"/>s and 
+    /// further details used for AREL.
+    /// Is <see cref="IPreviewable"/>
+    /// </summary>
     [Serializable]
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
-    public abstract class AbstractTrackable : IPreviewable//, ISerializable 
+    public abstract class AbstractTrackable : IPreviewable
     {
         /// <summary>
-        /// ToDo Summary is missing
+        /// Describes how  different elements are
+        /// combined and connected in AREL.
         /// </summary>
         protected MarkerFuser fuser;
         /// <summary>
-        /// ToDo Summary is missing
+        /// Gets or sets the fuser.
+        /// Is not Browsable, therefore not editable in 
+        /// the PropertyPanel
         /// </summary>
+        /// <value>
+        /// The fuser.
+        /// </value>
         [Browsable(false)]
         public MarkerFuser Fuser
         {
@@ -31,13 +43,14 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
-        /// The sensor cos identifier
+        /// The sensor cos identifier, used by AREL
+        /// to specify the TrackingData
         /// </summary>
         protected string sensorCosID;
         /// <summary>
         /// Gets or sets the sensor cos identifier.
         /// </summary>
-        [CategoryAttribute("Expert")]
+        [CategoryAttribute("Expert"), ReadOnly(true)]
         public string SensorCosID
         {
             get { return sensorCosID; }
@@ -45,9 +58,17 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
-        /// ToDo Summary is missing
+        /// Describes at which similarity,
+        /// a picture recorded by the camera is recognized
+        /// to be the desired one. Only experts usage.
         /// </summary>
-        protected double similarityThreshold = 0.7;
+        protected double similarityThreshold;
+        /// <summary>
+        /// Gets or sets the similarity threshold.
+        /// </summary>
+        /// <value>
+        /// The similarity threshold.
+        /// </value>
         [CategoryAttribute("Expert"), DefaultValue(0.7)]
         public double SimilarityThreshold
         {
@@ -56,83 +77,79 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
-        /// ToDo Summary is missing
+        /// Describes the position of the Trackable
+        /// in the coordinatesystem used by metaio.
         /// </summary>
+        /// <value>
+        /// The vector.
+        /// </value>
         [CategoryAttribute("General"), Browsable(false)]
         public Vector3D vector { get; set; }
 
         /// <summary>
-        /// ToDo Summary is missing
+        /// Lists all associated <see cref="AbstractAugmentations"/>.
         /// </summary>
+        /// <value>
+        /// The augmentations.
+        /// </value>
         [Browsable(false)]
-        public List<AbstractAugmention> Augmentions { get; set; }
+        public List<AbstractAugmentation> Augmentations { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AbstractTrackable"/> class.
-        /// With no trackables associated.
+        /// Initializes no new instance of the <see cref="AbstractTrackable"/> class,
+        /// but can be used in inheriting classes
+        /// No <see cref="AbstractAugmentation"/>s are associated.
         /// </summary>
         protected AbstractTrackable()
         {
-            this.Augmentions = new List<AbstractAugmention>();
-            /* could it be here are some missing initialization? */
+            vector = new Vector3D(0, 0, 0);
+            similarityThreshold = 0.7;
+            Augmentations = new List<AbstractAugmentation>();
         }
 
         /// <summary>
-        /// ToDo Summary is missing
+        /// An abstract method, to accept a <see cref="AbstractProjectVisitor"/>
+        /// which must be implemented according to the visitor design pattern.
         /// </summary>
-        /// <param name="visitor"></param>
+        /// <param name="visitor">the visitor which encapsulates the action
+        ///     which is performed on this element</param>
         public abstract void Accept(AbstractProjectVisitor visitor);
 
         /// <summary>
-        /// ToDo Summary is missing
+        /// returns a <see cref="Bitmap"/> in order to be displayed
+        /// on the PreviewPanel, implements <see cref="IPreviewable"/>
         /// </summary>
-        /// <returns></returns>
+        /// <returns>a representative Bitmap</returns>
         public abstract Bitmap getPreview();
 
         /// <summary>
-        /// ToDo Summary is missing
+        /// returns a <see cref="Bitmap"/> in order to be displayed
+        /// on the ElementSelectionPanel, implements <see cref="IPreviewable"/>
         /// </summary>
-        /// <returns></returns>
+        /// <returns>a representative iconized Bitmap</returns>
         public abstract Bitmap getIcon();
 
         /// <summary>
-        /// ToDo Summary is missing
-        /// </summary>
-        /// <returns></returns>
-        public abstract List<AbstractProperty> getPropertyList();
-
-        /// <summary>
-        ///     Is needed for Custom Serialization. And provides the Serializer with the needed information
-        /// </summary>
-        /// <param name="info">Serialization Information, which is modified to encapsulate the things to save</param>
-        /// <param name="context">describes aim and source of a serialized stream</param>
-        [Obsolete("GetObjectData is obsolete, serialization is done without customization.")]
-        public void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Finds the augmention, which is associated with this <see cref="AbstractTrackable"/>.
+        /// Finds the augmentation, which is associated with this <see cref="AbstractTrackable"/>.
         /// </summary>
         /// <param name="a">the IPreviewable, which is searched for</param>
-        /// <returns>the augmention which is found, otherwise null </returns>
-        public AbstractAugmention FindAugmention(IPreviewable a)
+        /// <returns>the augmentation which is found, otherwise null </returns>
+        public AbstractAugmentation FindAugmentation(IPreviewable a)
         {
-            return this.Augmentions[this.Augmentions.IndexOf((AbstractAugmention)a)];
+            return this.Augmentations[this.Augmentations.IndexOf((AbstractAugmentation)a)];
         }
 
         /// <summary>
-        /// Checks if the augmention is associated with this <see cref="AbstractTrackable"/>.
+        /// Checks if the augmentation is associated with this <see cref="AbstractTrackable"/>.
         /// </summary>
         /// <param name="a">the IPreviewable, which is checked existence for</param>
         /// <returns>true, if its associated with this <see cref="AbstractTrackable"/>
         ///          false, else</returns>
-        public bool existAugmention(IPreviewable a)
+        public bool existAugmentation(IPreviewable a)
         {
-            foreach (AbstractAugmention aug in Augmentions)
+            foreach (AbstractAugmentation aug in Augmentations)
             {
-                if (aug == (AbstractAugmention)a)
+                if (aug == (AbstractAugmentation)a)
                 {
                     return true;
                 }

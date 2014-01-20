@@ -110,18 +110,20 @@ namespace ARdevKit.Controller.ProjectController
         private JavaScriptBlock ifPatternIsLostBlock;
         /// <summary>   Number of images added to the <see cref="arelGlueFile"/>. </summary>
         private int imageCount = 1;
+        /// <summary>   Number of bar charts. </summary>
         private int barChartCount = 1;
-        private int coordinateSystemID = 1;
+        /// <summary>   Identifier for the coordinate system. </summary>
+        private int coordinateSystemID = 0;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Visits the given <see cref="BarGraph"/>. </summary>
+        /// <summary>   Visits the given <see cref="BarChart"/>. </summary>
         ///
         /// <remarks>   Imanuel, 17.01.2014. </remarks>
         ///
         /// <param name="barChart">    The bar graph. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         
-        public override void Visit(BarGraph barChart)
+        public override void Visit(BarChart barChart)
         {
             // TrackingData.xml
 
@@ -178,26 +180,26 @@ namespace ARdevKit.Controller.ProjectController
             XMLBlock COSOffsetTranslationOffset = new XMLBlock(new XMLTag("TranslationOffset"));
             COSOffsetBlock.AddBlock(COSOffsetTranslationOffset);
 
-            string augmentionPositionX = barChart.TranslationVector.X.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentionPositionY = barChart.TranslationVector.Y.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentionPositionZ = barChart.TranslationVector.Z.ToString("F1", CultureInfo.InvariantCulture);
-            COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("X"), augmentionPositionX));
-            COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("Y"), augmentionPositionY));
-            COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("Z"), augmentionPositionZ));
+            string augmentationPositionX = barChart.TranslationVector.X.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationPositionY = barChart.TranslationVector.Y.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationPositionZ = barChart.TranslationVector.Z.ToString("F1", CultureInfo.InvariantCulture);
+            COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("X"), augmentationPositionX));
+            COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("Y"), augmentationPositionY));
+            COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("Z"), augmentationPositionZ));
 
             // Rotation
             XMLBlock COSOffsetRotationOffset = new XMLBlock(new XMLTag("RotationOffset"));
             COSOffsetBlock.AddBlock(COSOffsetRotationOffset);
 
             // TODO get vectors
-            string augmentionRotationX = barChart.RotationVector.X.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentionRotationY = barChart.RotationVector.Y.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentionRotationZ = barChart.RotationVector.Z.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentionRotationW = barChart.RotationVector.W.ToString("F1", CultureInfo.InvariantCulture);
-            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("X"), augmentionRotationX));
-            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("Y"), augmentionRotationY));
-            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("Z"), augmentionRotationZ));
-            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("W"), augmentionRotationW));
+            string augmentationRotationX = barChart.RotationVector.X.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationRotationY = barChart.RotationVector.Y.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationRotationZ = barChart.RotationVector.Z.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationRotationW = barChart.RotationVector.W.ToString("F1", CultureInfo.InvariantCulture);
+            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("X"), augmentationRotationX));
+            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("Y"), augmentationRotationY));
+            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("Z"), augmentationRotationZ));
+            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("W"), augmentationRotationW));
             
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -230,6 +232,8 @@ namespace ARdevKit.Controller.ProjectController
 
             ifPatternIsLostBlock.AddLine(new JavaScriptLine(barChartVariable + ".hide()"));
 
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
             // Create barChart[i].js
             if (barChartCount == 1)
                 barChartFiles = new List<BarChartFile>();
@@ -249,13 +253,13 @@ namespace ARdevKit.Controller.ProjectController
             barChartFileCreateBlock.AddLine(new JavaScriptLine("var chart = document.createElement(\"div\")"));
             barChartFileCreateBlock.AddLine(new JavaScriptLine("chart.setAttribute(\"id\", id)"));
             barChartFileCreateBlock.AddLine(new JavaScriptLine("chart.style.position = \"" + barChart.Style.Position + "\""));
-            if (barChart.Style.Top >= 0)
+            if (barChart.Style.Top > 0)
                 barChartFileCreateBlock.AddLine(new JavaScriptLine("chart.style.top = \"" + barChart.Style.Top + "px\""));
-            if (barChart.Style.Left >= 0)
+            if (barChart.Style.Left > 0)
                 barChartFileCreateBlock.AddLine(new JavaScriptLine("chart.style.left = \"" + barChart.Style.Left + "px\""));
-            if (barChart.Style.Bottom >= 0)
+            if (barChart.Style.Bottom > 0)
                 barChartFileCreateBlock.AddLine(new JavaScriptLine("chart.style.bottom = \"" + barChart.Style.Bottom + "px\""));
-            if (barChart.Style.Right >= 0)
+            if (barChart.Style.Right > 0)
                 barChartFileCreateBlock.AddLine(new JavaScriptLine("chart.style.right = \"" + barChart.Style.Right + "px\""));
             barChartFileCreateBlock.AddLine(new JavaScriptLine("chart.style.width = \"" + barChart.Width + "px\""));
             barChartFileCreateBlock.AddLine(new JavaScriptLine("chart.style.height = \"" + barChart.Height + "px\""));
@@ -379,14 +383,14 @@ namespace ARdevKit.Controller.ProjectController
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Visits the given <see cref="ImageAugmention"/>. </summary>
+        /// <summary>   Visits the given <see cref="ImageAugmentation"/>. </summary>
         ///
         /// <remarks>   Imanuel, 17.01.2014. </remarks>
         ///
         /// <param name="image">    The image. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public override void Visit(ImageAugmention image)
+        public override void Visit(ImageAugmentation image)
         {
             // Copy to projectPath
             Copy(image.ImagePath, Path.Combine(project.ProjectPath, "Assets"));
@@ -444,26 +448,26 @@ namespace ARdevKit.Controller.ProjectController
             XMLBlock COSOffsetTranslationOffset = new XMLBlock(new XMLTag("TranslationOffset"));
             COSOffsetBlock.AddBlock(COSOffsetTranslationOffset);
 
-            string augmentionPositionX = image.TranslationVector.X.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentionPositionY = image.TranslationVector.Y.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentionPositionZ = image.TranslationVector.Z.ToString("F1", CultureInfo.InvariantCulture);
-            COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("X"), augmentionPositionX));
-            COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("Y"), augmentionPositionY));
-            COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("Z"), augmentionPositionZ));
+            string augmentationPositionX = image.TranslationVector.X.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationPositionY = image.TranslationVector.Y.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationPositionZ = image.TranslationVector.Z.ToString("F1", CultureInfo.InvariantCulture);
+            COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("X"), augmentationPositionX));
+            COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("Y"), augmentationPositionY));
+            COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("Z"), augmentationPositionZ));
 
             // Rotation
             XMLBlock COSOffsetRotationOffset = new XMLBlock(new XMLTag("RotationOffset"));
             COSOffsetBlock.AddBlock(COSOffsetRotationOffset);
 
             // TODO get vectors
-            string augmentionRotationX = image.RotationVector.X.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentionRotationY = image.RotationVector.Y.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentionRotationZ = image.RotationVector.Z.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentionRotationW = image.RotationVector.W.ToString("F1", CultureInfo.InvariantCulture);
-            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("X"), augmentionRotationX));
-            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("Y"), augmentionRotationY));
-            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("Z"), augmentionRotationZ));
-            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("W"), augmentionRotationW));
+            string augmentationRotationX = image.RotationVector.X.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationRotationY = image.RotationVector.Y.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationRotationZ = image.RotationVector.Z.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationRotationW = image.RotationVector.W.ToString("F1", CultureInfo.InvariantCulture);
+            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("X"), augmentationRotationX));
+            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("Y"), augmentationRotationY));
+            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("Z"), augmentationRotationZ));
+            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("W"), augmentationRotationW));
 
             // arelGlue.js
             JavaScriptBlock loadContentBlock = new JavaScriptBlock();
@@ -473,10 +477,10 @@ namespace ARdevKit.Controller.ProjectController
             loadContentBlock.AddLine(new JavaScriptLine("var " + imageVariable + " = arel.Object.Model3D.createFromImage(\"" + imageVariable + "\",\"Assets/" + Path.GetFileName(image.ImagePath) + "\")"));
             loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setVisibility(" + image.IsVisible.ToString().ToLower() + ")"));
             loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setCoordinateSystemID(" + coordinateSystemID + ")"));
-            string augmentionScalingX = image.ScalingVector.X.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentionScalingY = image.ScalingVector.Y.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentionScalingZ = image.ScalingVector.Z.ToString("F1", CultureInfo.InvariantCulture);
-            loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setScale(new arel.Vector3D(" + augmentionScalingX + "," + augmentionScalingY + "," + augmentionScalingZ + "))"));
+            string augmentationScalingX = image.ScalingVector.X.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationScalingY = image.ScalingVector.Y.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationScalingZ = image.ScalingVector.Z.ToString("F1", CultureInfo.InvariantCulture);
+            loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setScale(new arel.Vector3D(" + augmentationScalingX + "," + augmentationScalingY + "," + augmentationScalingZ + "))"));
             loadContentBlock.AddLine(new JavaScriptLine("arel.Scene.addObject(" + imageVariable + ")"));
 
             ifPatternIsFoundBlock.AddLine(new JavaScriptLine("arel.Scene.getObject(\"" + imageVariable + "\").setVisibility(true)"));
@@ -593,7 +597,7 @@ namespace ARdevKit.Controller.ProjectController
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         public override void Visit(PictureMarkerSensor pictureMarkerSensor)
-        {
+        {   
             // MarkerParameters
             XMLBlock markerTrackingParametersBlock = new XMLBlock(new XMLTag("MarkerTrackingParameters"));
             trackingDataFileSensorParametersBlock.AddBlock(markerTrackingParametersBlock);
@@ -613,6 +617,9 @@ namespace ARdevKit.Controller.ProjectController
 
         public override void Visit(PictureMarker pictureMarker)
         {
+            // Copy the file
+            Copy(pictureMarker.ImagePath, Path.Combine(project.ProjectPath, "Assets"));
+
             string sourcePictureMarkerFile = pictureMarker.ImagePath;
             string destPictureMarkerFile = Path.Combine(project.ProjectPath, Path.GetFileName(sourcePictureMarkerFile));
             if (Directory.Exists(Path.Combine(project.ProjectPath, "Asstes")) && !File.Exists(destPictureMarkerFile))
@@ -632,7 +639,7 @@ namespace ARdevKit.Controller.ProjectController
 
             XMLBlock markerParametersBlock = new XMLBlock(new XMLTag("MarkerParameters"));
             parameterBlock.AddBlock(markerParametersBlock);
-            markerParametersBlock.AddLine(new XMLLine(new XMLTag("referenceImage", "qualityThreshold=\"0.70\""), pictureMarker.ImageName));
+            markerParametersBlock.AddLine(new XMLLine(new XMLTag("referenceImage", "qualityThreshold=\"0.70\""), Path.GetFileName(pictureMarker.ImagePath)));
             string value = pictureMarker.SimilarityThreshold.ToString("F1", CultureInfo.InvariantCulture);
             parameterBlock.AddLine(new XMLLine(new XMLTag("SimilarityThreshold"), value));
 
@@ -719,7 +726,11 @@ namespace ARdevKit.Controller.ProjectController
             arelProjectFile.AddBlock(bodyBlock);
 
             // Prepare TrackinData.xml
-            string trackingDataFileName = "TrackingData_" + project.Sensor.Name;
+            string trackingDataFileName = "TrackingData_";
+            if (p.Name.Equals("Test"))
+                trackingDataFileName += "Test";
+            else
+                trackingDataFileName += project.Sensor.Name;
             trackingDataFileName += p.Sensor.SensorSubType != AbstractSensor.SensorSubTypes.None ? p.Sensor.SensorSubType.ToString() : "";
             trackingDataFileName += ".xml";
             trackingDataFile = new TrackingDataFile("<?xml version=\"1.0\" encoding=\"UTF-8\"?>", project.ProjectPath, trackingDataFileName);
