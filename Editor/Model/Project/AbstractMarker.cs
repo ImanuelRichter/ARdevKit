@@ -8,12 +8,18 @@ using System.ComponentModel;
 
 namespace ARdevKit.Model.Project
 {
+
+    /// <summary>
+    /// Describes an <see cref="AbstractMarker"/> which is a <see cref="AbstractTrackable"/>.
+    /// specifying the type and the size.
+    /// </summary>
     [Serializable]
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public abstract class AbstractMarker : AbstractTrackable
     {
         /// <summary>
-        /// The type
+        /// The type, to differtiate between different Marker types
+        /// and their way to be tracked.
         /// </summary>
         protected string type;
         /// <summary>
@@ -27,7 +33,7 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
-        /// The size
+        /// The size of the Marker in mm
         /// </summary>
         protected int size;
         /// <summary>
@@ -40,9 +46,16 @@ namespace ARdevKit.Model.Project
             set { size = value; }
         }
 
-        protected AbstractMarker() : base()
+        /// <summary>
+        /// Initializes no new instance of the <see cref="AbstractMarker"/> class,
+        /// but can be used by inheriting classes.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <param name="size">The size.</param>
+        protected AbstractMarker(string type, int size) : base()
         {
-            ; // some missing initialization?
+            this.type = type;
+            this.size = size;            
         }
     }
 }

@@ -13,10 +13,10 @@ namespace ARdevKit.Model.Project
     ///     and so this the element, which the user saves, loads or exports
     /// </summary>
     [Serializable]
-    public class Project// : ISerializable
+    public class Project
     {
         /// <summary>
-        /// The name
+        /// The name of the project.
         /// </summary>
         private string name;
         /// <summary>
@@ -31,22 +31,33 @@ namespace ARdevKit.Model.Project
             set { name = value; }
         }
 
-        /// <summary>   Full pathname of the project file. </summary>
+        /// <summary>
+        /// Full pathname of the project file.
+        /// </summary>
         private string projectPath;
-        /// <summary>   Gets or sets the full pathname of the project file. </summary>
-        ///
-        /// <value> The full pathname of the project file. </value>
+        /// <summary>
+        /// Gets or sets the full pathname of the project file.
+        /// </summary>
+        /// <value>
+        /// The full pathname of the project file.
+        /// </value>
         public string ProjectPath
         {
             get { return projectPath; }
             set { projectPath = value; }
         }
 
-        /// <summary>   The sensor. </summary>
+        /// <summary>
+        /// The sensor, is depentend on the
+        /// used trackables.
+        /// </summary>
         protected AbstractSensor sensor;
-        /// <summary>   Gets or sets the sensor. </summary>
-        ///
-        /// <value> The sensor. </value>
+        /// <summary>
+        /// Gets or sets the sensor.
+        /// </summary>
+        /// <value>
+        /// The sensor.
+        /// </value>
         public AbstractSensor Sensor
         {
             get { return sensor; }
@@ -54,7 +65,7 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
-        /// The sources
+        /// The sources used in this <see cref="Project"/>.
         /// </summary>
         private List<AbstractSource> sources;
         /// <summary>
@@ -70,7 +81,7 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
-        /// The trackables
+        /// The trackables used in this <see cref="Project"/>.
         /// </summary>
         private List<AbstractTrackable> trackables;
         /// <summary>
@@ -86,7 +97,8 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Project"/> class.
+        /// Initializes a new instance of the <see cref="Project" /> class
+        /// with default values.
         /// </summary>
         public Project()
         {
@@ -97,18 +109,22 @@ namespace ARdevKit.Model.Project
             sources = new List<AbstractSource>();
         }
 
-        /// <summary>   Initializes a new instance of the <see cref="Project"/> class. </summary>
-        /// 
-        /// <param name="name"> The name. </param>
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Project" /> class
+        /// with specified name.
+        /// </summary>
+        /// <param name="name">The name.</param>
         public Project(string name) : this()
         {
             this.name = name;
         }
 
-        /// <summary>   Initializes a new instance of the <see cref="Project"/> class. </summary>
-        ///
-        /// <param name="name">         The name. </param>
-        /// <param name="projectPath">  Full pathname of the project file. </param>
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Project" /> class
+        /// with specified name and projectPath.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="projectPath">Full pathname of the project file.</param>
         public Project(string name, string projectPath)
             : this(name)
         {
@@ -129,22 +145,14 @@ namespace ARdevKit.Model.Project
             sensor.Accept(visitor);
         }
 
-        /// <summary>
-        ///     Is needed for Custom Serialization. Provides the Serializer with the needed information.
-        /// </summary>
-        /// <param name="info">Serialization Information, which is modified to encapsulate the things to save</param>
-        /// <param name="context">describes aim and source of a serialized stream</param>
-        [Obsolete("GetObjectData is obsolete, serialization is done without customization.")]
-        public void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            throw new NotImplementedException();
-        }
 
         /// <summary>
         /// Returns the associated source, if it is associated with the project.
         /// </summary>
         /// <param name="source">The source, which is searched.</param>
-        /// <returns>the associated source </returns>
+        /// <returns>
+        /// the associated source
+        /// </returns>
         public AbstractSource findSource(AbstractSource source)
         {
             return this.sources[this.sources.IndexOf(source)];
@@ -154,8 +162,10 @@ namespace ARdevKit.Model.Project
         /// Returns, if the specified source is associated with this project.
         /// </summary>
         /// <param name="source">The specified source.</param>
-        /// <returns>true, if the source is associated with this project
-        ///          false, else</returns>
+        /// <returns>
+        /// true, if the source is associated with this project
+        /// false, else
+        /// </returns>
         public bool existSource(AbstractSource source)
         {
             foreach (AbstractSource s in sources)
@@ -170,15 +180,16 @@ namespace ARdevKit.Model.Project
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
-        ///     tests if all trackables in this.trackables are null. if there are one which is not null
-        ///     it's true.
+        /// tests if all trackables in this.trackables are null. if there are one which is not null
+        /// it's true.
         /// </summary>
-        ///
-        /// <remarks>   Lizzard, 1/19/2014. </remarks>
-        ///
-        /// <returns>   true if trackable, false if not. </returns>
+        /// <returns>
+        /// true if trackable, false if not.
+        /// </returns>
+        /// <remarks>
+        /// Lizzard, 1/19/2014.
+        /// </remarks>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-
         public bool isTrackable()
         {
             foreach (AbstractTrackable temp in this.trackables)

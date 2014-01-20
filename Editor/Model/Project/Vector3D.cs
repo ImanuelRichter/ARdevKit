@@ -8,7 +8,9 @@ using System.ComponentModel;
 
 namespace ARdevKit.Model.Project
 {
-    /// <summary>   A 3D vektor. </summary>
+    /// <summary>
+    /// A 3D vektor.
+    /// </summary>
     [Serializable]
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public class Vector3D
@@ -39,13 +41,15 @@ namespace ARdevKit.Model.Project
         public int Z { get; set; }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Constructor. </summary>
-        ///
-        /// <remarks>   Lizzard, 1/15/2014. </remarks>
-        ///
-        /// <param name="x">    The x coordinate. </param>
-        /// <param name="y">    The y coordinate. </param>
-        /// <param name="z">    The z coordinate. </param>
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="x">The x coordinate.</param>
+        /// <param name="y">The y coordinate.</param>
+        /// <param name="z">The z coordinate.</param>
+        /// <remarks>
+        /// Lizzard, 1/15/2014.
+        /// </remarks>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         public Vector3D(int x, int y, int z)
         {

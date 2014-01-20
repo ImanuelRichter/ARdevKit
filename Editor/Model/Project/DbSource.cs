@@ -10,7 +10,9 @@ using System.ComponentModel;
 
 namespace ARdevKit.Model.Project
 {
-    /// <summary>   A database source. </summary>
+    /// <summary>
+    /// A database source 
+    /// </summary>
     [Serializable]
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public class DbSource : AbstractSource
@@ -30,9 +32,10 @@ namespace ARdevKit.Model.Project
          * */
 
         /// <summary>   Default constructor. </summary>
+        /// <remarks>   TODO                 </remarks>
         public DbSource()
         {
-            ; // missing initialization
+            ; // ToDo
         }
 
         /// <summary>   ToDo Summary is missing. </summary>

@@ -8,22 +8,26 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Model.Project
 {
-    /// <summary>   Interface for previewable. </summary>
+    /// <summary>
+    /// Interface for previewable elements from the Model.
+    /// </summary>
     public interface IPreviewable
     {
-        /// <summary>   Gets the preview. </summary>
-        ///
-        /// <returns>   The preview. </returns>
+
+        /// <summary>
+        /// Gets the preview which is displayed by
+        ///PreviewPanel.
+        /// </summary>
+        /// <returns></returns>
         Bitmap getPreview();
 
-        /// <summary>   Gets property list. </summary>
-        ///
-        /// <returns>   The property list. </returns>
-        List<AbstractProperty> getPropertyList();
-
-        /// <summary>   Gets the icon. </summary>
-        ///
-        /// <returns>   The icon. </returns>
+        /// <summary>
+        /// Gets the icon which is displayed by
+        /// ElementSelectionPanel.
+        /// </summary>
+        /// <returns>
+        /// The icon.
+        /// </returns>
         Bitmap getIcon();
     }
 }

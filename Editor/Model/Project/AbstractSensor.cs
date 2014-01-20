@@ -22,11 +22,13 @@ namespace ARdevKit.Model.Project
     {
         /// <summary>   The name. </summary>
         private string name;
-
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Gets or sets the name. </summary>
-        ///
-        /// <value> The name. </value>
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         [CategoryAttribute("General")]
         public string Name
@@ -36,20 +38,24 @@ namespace ARdevKit.Model.Project
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Flags for specifying SensorTypes. </summary>
-        ///
-        /// <remarks>   Imanuel, 17.01.2014. </remarks>
+        /// <summary>
+        /// Flags for specifying SensorTypes.
+        /// </summary>
+        /// <remarks>
+        /// Imanuel, 17.01.2014.
+        /// </remarks>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-
         [Flags]
         public enum SensorTypes { FeatureBasedSensorSource, MarkerBasedSensorSource };
         /// <summary>   Type of the sensor. </summary>
         protected SensorTypes sensorType;
-
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Gets or sets the type of the sensor. </summary>
-        ///
-        /// <value> The type of the sensor. </value>
+        /// <summary>
+        /// Gets or sets the type of the sensor.
+        /// </summary>
+        /// <value>
+        /// The type of the sensor.
+        /// </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         [CategoryAttribute("General")]
         public SensorTypes SensorType
@@ -59,20 +65,24 @@ namespace ARdevKit.Model.Project
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Flags for specifying SensorSubTypes. </summary>
-        ///
-        /// <remarks>   Imanuel, 17.01.2014. </remarks>
+        /// <summary>
+        /// Flags for specifying SensorSubTypes.
+        /// </summary>
+        /// <remarks>
+        /// Imanuel, 17.01.2014.
+        /// </remarks>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-
         [Flags]
         public enum SensorSubTypes { None, Fast, Robust };
         /// <summary>   SubType of the sensor. </summary>
         protected SensorSubTypes sensorSubType;
-
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Gets or sets the SubType of the sensor. </summary>
-        ///
-        /// <value> The type of the sensor sub. </value>
+        /// <summary>
+        /// Gets or sets the SubType of the sensor.
+        /// </summary>
+        /// <value>
+        /// The type of the sensor sub.
+        /// </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         [CategoryAttribute("General")]
         public SensorSubTypes SensorSubType
@@ -82,20 +92,25 @@ namespace ARdevKit.Model.Project
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Flags for specifying SensorIDBases. </summary>
-        ///
-        /// <remarks>   Imanuel, 17.01.2014. </remarks>
+        /// <summary>
+        /// Flags for specifying SensorIDBases.
+        /// </summary>
+        /// <remarks>
+        /// Imanuel, 17.01.2014.
+        /// </remarks>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-
         [Flags]
         public enum SensorIDBases { FeatureTracking, MarkerTracking };
         /// <summary>   The sensor identifier base. </summary>
         protected SensorIDBases sensorIDBase;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Gets or sets the sensor identifier base. </summary>
-        ///
-        /// <value> The sensor identifier base. </value>
+        /// <summary>
+        /// Gets or sets the sensor identifier base.
+        /// </summary>
+        /// <value>
+        /// The sensor identifier base.
+        /// </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         [CategoryAttribute("General")]
         public SensorIDBases SensorIDBase
@@ -108,9 +123,12 @@ namespace ARdevKit.Model.Project
         protected string sensorIDString;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Gets or sets the sensor identifier string. </summary>
-        ///
-        /// <value> The sensor identifier string. </value>
+        /// <summary>
+        /// Gets or sets the sensor identifier string.
+        /// </summary>
+        /// <value>
+        /// The sensor identifier string.
+        /// </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         [CategoryAttribute("General")]
         public string SensorIDString
@@ -119,22 +137,25 @@ namespace ARdevKit.Model.Project
             set { sensorIDString = value; }
         }
 
+
         /// <summary>
-        /// ToDo Summary is missing
+        /// Initializes no new instance of the <see cref="AbstractSensor"/> class,
+        /// but can be used in inheriting classes.
         /// </summary>
         protected AbstractSensor()
         {
-            ; // initialization missing
+            //doNothing
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Accepts the given visitor. </summary>
-        ///
-        /// <remarks>   Imanuel, 17.01.2014. </remarks>
-        ///
-        /// <param name="visitor">  The visitor. </param>
+        /// <summary>
+        /// Accepts the given visitor.
+        /// </summary>
+        /// <param name="visitor">The visitor.</param>
+        /// <remarks>
+        /// Imanuel, 17.01.2014.
+        /// </remarks>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-
         public abstract void Accept(AbstractProjectVisitor visitor);
     }
 }

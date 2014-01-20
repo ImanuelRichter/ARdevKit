@@ -11,16 +11,24 @@ using ARdevKit.View;
 
 namespace ARdevKit.Model.Project
 {
-    /// <summary>   An image augmention. </summary>
+    /// <summary>   
+    /// An augmentation only described by an ImagePath.
+    /// It is an <see cref="Abstract2DAugmentation"/>
+    /// </summary>
     [Serializable]
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
-    public class ImageAugmention : Abstract2DAugmentation
+    public class ImageAugmentation : Abstract2DAugmentation
     {
-        /// <summary>   Full pathname of the image file. </summary>
+        /// <summary>
+        /// Full pathname of the image file.
+        /// </summary>
         private string imagePath;
-        /// <summary>   Gets or sets the full pathname of the image file. </summary>
-        ///
-        /// <value> The full pathname of the image file. </value>
+        /// <summary>
+        /// Gets or sets the full pathname of the image file.
+        /// </summary>
+        /// <value>
+        /// The full pathname of the image file.
+        /// </value>
         [CategoryAttribute("General")]
         public string ImagePath
         {
@@ -28,49 +36,49 @@ namespace ARdevKit.Model.Project
             set { imagePath = value; }
         }
 
-        /// <summary>   Default constructor. </summary>
-        public ImageAugmention() : base()
+        /// <summary>
+        /// Default constructor.
+        /// </summary>
+        public ImageAugmentation() : base()
         {
             ; // missing initialization
         }
 
-        /// <summary>   ToDo Summary is missing. </summary>
-        ///
-        /// <param name="visitor">  . </param>
+        /// <summary>
+        /// An overwriting method, to accept a <see cref="AbstractProjectVisitor" />
+        /// which must be implemented according to the visitor design pattern.
+        /// </summary>
+        /// <param name="visitor">the visitor which encapsulates the action
+        /// which is performed on this element</param>
         public override void Accept(AbstractProjectVisitor visitor)
         {
             visitor.Visit(this);
         }
 
-        /// <summary>   ToDo Summary is missing. </summary>
-        ///
-        /// <exception cref="FileNotFoundException"> Thrown when the requested File is
-        ///     not found in <see cref="ImagePath"/>. </exception>
-        ///
-        /// <returns>   The preview. </returns>
+
+        /// <summary>
+        /// returns a <see cref="Bitmap" /> in order to be displayed
+        /// on the PreviewPanel, implements <see cref="IPreviewable" />
+        /// </summary>
+        /// <returns>
+        /// a representative Bitmap
+        /// </returns>
+        /// <exception cref="FileNotFoundException">Thrown when the requested File is
+        /// not found in <see cref="ImagePath" />.</exception>
         public override Bitmap getPreview()
         {
             return new Bitmap(ImagePath);
         }
-
-        /// <summary>   ToDo Summary is missing. </summary>
-        ///
-        /// <exception cref="NotImplementedException"> Thrown when the requested operation is
-        ///     unimplemented. </exception>
-        ///
-        /// <returns>   The icon. </returns>
+                
+        /// <summary>
+        /// returns a <see cref="Bitmap" /> in order to be displayed
+        /// on the ElementSelectionPanel, implements <see cref="IPreviewable" />
+        /// </summary>
+        /// <returns>
+        /// a representative iconized Bitmap
+        /// </returns>
+        /// <exception cref="System.NotImplementedException"></exception>
         public override Bitmap getIcon()
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>   ToDo Summary is missing. </summary>
-        ///
-        /// <exception cref="NotImplementedException"> Thrown when the requested operation is
-        ///     unimplemented. </exception>
-        ///
-        /// <returns>   The property list. </returns>
-        public override List<AbstractProperty> getPropertyList()
         {
             throw new NotImplementedException();
         }

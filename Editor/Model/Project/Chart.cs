@@ -9,18 +9,25 @@ using System.ComponentModel;
 
 namespace ARdevKit.Model.Project
 {
+
     /// <summary>
-    /// ToDo summary is missing
+    /// Describes a <see cref="Chart"/> with its <see cref="ChartStyle"/>
+    /// titel, subtitle, xAxisTitle. It is a <see cref="AbstractDynamic2DAugmentation"/>
     /// </summary>
     [Serializable]
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public abstract class Chart : AbstractDynamic2DAugmentation 
     {
-        /// <summary>   The style. </summary>
+        /// <summary>
+        /// The style used by HighChart.
+        /// </summary>
         protected ChartStyle style;
-        /// <summary>   Gets or sets the style. </summary>
-        ///
-        /// <value> The style. </value>
+        /// <summary>
+        /// Gets or sets the style.
+        /// </summary>
+        /// <value>
+        /// The style.
+        /// </value>
         [CategoryAttribute("General"), ReadOnly(true)]
         public ChartStyle Style
         {
@@ -28,11 +35,16 @@ namespace ARdevKit.Model.Project
             set { style = value; }
         }
 
-        /// <summary>   The title. </summary>
+        /// <summary>
+        /// The title used by HighChart.
+        /// </summary>
         protected string title;
-        /// <summary>   Gets or sets the title. </summary>
-        ///
-        /// <value> The title. </value>
+        /// <summary>
+        /// Gets or sets the title.
+        /// </summary>
+        /// <value>
+        /// The title.
+        /// </value>
         [CategoryAttribute("General")]
         public string Title
         {
@@ -40,11 +52,16 @@ namespace ARdevKit.Model.Project
             set { title = value; }
         }
 
-        /// <summary>   The subtitle. </summary>
+        /// <summary>
+        /// The subtitle used by HighChart.
+        /// </summary>
         protected string subtitle;
-        /// <summary>   Gets or sets the subtitle. </summary>
-        ///
-        /// <value> The subtitle. </value>
+        /// <summary>
+        /// Gets or sets the subtitle.
+        /// </summary>
+        /// <value>
+        /// The subtitle.
+        /// </value>
         [CategoryAttribute("General"), ReadOnly(true)]
         public string Subtitle
         {
@@ -52,25 +69,33 @@ namespace ARdevKit.Model.Project
             set { subtitle = value; }
         }
 
-        /// <summary>   The axis title. </summary>
+        /// <summary>
+        /// The axis title used by HighChart.
+        /// </summary>
         protected string xAxisTitle;
 
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Gets or sets the axis title. </summary>
-        ///
-        /// <value> The x coordinate axis title. </value>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
+        /// <summary>
+        /// Gets or sets the axis title used by HighChart.
+        /// </summary>
+        /// <value>
+        /// The x coordinate axis title.
+        /// </value>
         public string XAxisTitle
         {
             get { return xAxisTitle; }
             set { xAxisTitle = value; }
         }
 
+        /// <summary>
+        /// The categories used by HighChart.
+        /// </summary>
         protected string[] categories;
-        /// <summary>   Gets or sets the categories. </summary>
-        ///
-        /// <value> The categories. </value>
+        /// <summary>
+        /// Gets or sets the categories.
+        /// </summary>
+        /// <value>
+        /// The categories.
+        /// </value>
         [CategoryAttribute("General")]
         public string[] Categories
         {
@@ -78,11 +103,16 @@ namespace ARdevKit.Model.Project
             set { categories = value; }
         }
 
-        /// <summary>   The Y axis title. </summary>
+        /// <summary>
+        /// The Y axis title used by HighChart.
+        /// </summary>
         protected string yAxisTitle;
-        /// <summary>   Gets or sets the Y axis title. </summary>
-        ///
-        /// <value> The y coordinate axis title. </value>
+        /// <summary>
+        /// Gets or sets the Y axis title.
+        /// </summary>
+        /// <value>
+        /// The y coordinate axis title.
+        /// </value>
         [CategoryAttribute("General")]
         public string YAxisTitle
         {
@@ -90,11 +120,16 @@ namespace ARdevKit.Model.Project
             set { yAxisTitle = value; }
         }
 
-        /// <summary>   The point padding. </summary>
+        /// <summary>
+        /// The point padding used by HighChart.
+        /// </summary>
         private double pointPadding;
-        /// <summary>   Gets or sets the point padding. </summary>
-        ///
-        /// <value> The point padding. </value>
+        /// <summary>
+        /// Gets or sets the point padding.
+        /// </summary>
+        /// <value>
+        /// The point padding.
+        /// </value>
         [CategoryAttribute("Size")]
         public double PointPadding
         {
@@ -102,11 +137,16 @@ namespace ARdevKit.Model.Project
             set { pointPadding = value; }
         }
 
-        /// <summary>   Width of the border. </summary>
+        /// <summary>
+        /// Width of the border used by HighChart.
+        /// </summary>
         protected int borderWidth;
-        /// <summary>   Gets or sets the width of the border. </summary>
-        ///
-        /// <value> The width of the border. </value>
+        /// <summary>
+        /// Gets or sets the width of the border.
+        /// </summary>
+        /// <value>
+        /// The width of the border.
+        /// </value>
         [CategoryAttribute("Size")]
         public int BorderWidth
         {
@@ -114,11 +154,16 @@ namespace ARdevKit.Model.Project
             set { borderWidth = value; }
         }
 
-        /// <summary> A list of the names </summary>
+        /// <summary>
+        /// A list of the names used by HighChart
+        /// </summary>
         protected List<string> names;
-        /// <summary>   Gets or sets the names. </summary>
-        ///
-        /// <value> The names. </value>
+        /// <summary>
+        /// Gets or sets the names.
+        /// </summary>
+        /// <value>
+        /// The names.
+        /// </value>
         [CategoryAttribute("General")]
         public List<string> Names
         {
@@ -126,32 +171,42 @@ namespace ARdevKit.Model.Project
             set { names = value; }
         }
 
-        /// <summary>   The data. </summary>
+        /// <summary>
+        /// The data used by HighChart.
+        /// </summary>
         protected List<double[]> data;
-        /// <summary>   Gets or sets the data. </summary>
-        ///
-        /// <value> The data. </value>
+        /// <summary>
+        /// Gets or sets the data.
+        /// </summary>
+        /// <value>
+        /// The data.
+        /// </value>
         [CategoryAttribute("General")]
         public List<double[]> Data
         {
             get { return data; }
             set { data = value; }
         }
+
         /// <summary>
-        /// Gets or sets the maximum value.
+        /// Gets or sets the maximum value, which
+        /// can be displayed.
         /// </summary>
+        /// <value>
+        /// The maximum value.
+        /// </value>
         [CategoryAttribute("General")]
         public int MaxValue {get; set;}
+
         /// <summary>
-        /// Gets or sets the minimum value.
+        /// Gets or sets the minimum value, which
+        /// can be displayed.
         /// </summary>
+        /// <value>
+        /// The minimum value.
+        /// </value>
         [CategoryAttribute("General")]
         public int MinValue { get; set; }
-        /// <summary>
-        /// Gets or sets the scaling.
-        /// </summary>
-        [CategoryAttribute("Size")]
-        public int Scaling { get; set; }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Specialised default constructor for use only by derived classes. </summary>

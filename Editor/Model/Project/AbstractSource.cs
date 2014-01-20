@@ -14,95 +14,96 @@ namespace ARdevKit.Model.Project
 {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// <summary>
-    ///     AbstractSource is no PictureBox in the PreviewPanel, so it doesn't need an bitmap and so we
-    ///     don't need getPreview(),
+    ///     AbstractSource has no PictureBox in the PreviewPanel, so it doesn't need a getPreview() method,
     ///     though getIcon() is needed for the ElementSelectionPanel.
     /// </summary>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     [Serializable]
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
-    public abstract class AbstractSource : IPreviewable//, ISerializable
+    public abstract class AbstractSource : IPreviewable
     {
 
         /// <summary>
         /// Gets or sets the source identifier.
         /// </summary>
+        /// <value>
+        /// The source identifier.
+        /// </value>
         [ReadOnly(true), CategoryAttribute("General")]
         public String sourceID { get; set; }
 
         /// <summary>
-        /// Gets or sets the augmentions, which get their dynamic information from the <see cref="AbstractSource"/>
+        /// Gets or sets the augmentations, which get their dynamic information from the <see cref="AbstractSource" />
         /// </summary>
+        /// <value>
+        /// The augmentations.
+        /// </value>
         [Browsable(false)]
-        public List<Abstract2DAugmentation> augmentions { get; set; }
+        public List<Abstract2DAugmentation> Augmentations { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AbstractSource"/> class.
+        /// Initializes no new instance of the <see cref="AbstractSource" /> class,
+
         /// </summary>
         protected AbstractSource()
         {
-            this.augmentions = new List<Abstract2DAugmentation>();
+            Augmentations = new List<Abstract2DAugmentation>();
         }
 
+        /// <summary>
+        /// Initializes no new instance of the <see cref="AbstractSource"/> class.
+        /// but can be used from inheriting classes.
+        /// </summary>
+        /// <param name="sourceId">The source identifier.</param>
         protected AbstractSource(string sourceId)
         {
             sourceID = sourceId;
         }
 
         /// <summary>
-        /// ToDo Summary is missing
+        /// An abstract method, to accept a <see cref="AbstractProjectVisitor"/>
+        /// which must be implemented according to the visitor design pattern.
         /// </summary>
-        /// <param name="visitor"></param>
+        /// <param name="visitor">the visitor which encapsulates the action
+        ///     which is performed on this element</param>
         public abstract void accept(AbstractProjectVisitor visitor);
 
         /// <summary>
-        /// ToDo Summary is missing
+        /// returns NO <see cref="Bitmap"/> in order to be displayed
+        /// on the PreviewPanel, implements <see cref="IPreviewable"/>
         /// </summary>
-        /// <returns></returns>
-        public abstract List<AbstractProperty> getPropertyList();
+        /// <exception cref="NotSupportedException"/>
+        public Bitmap getPreview()
+        {
+            throw new NotSupportedException();
+        }
 
         /// <summary>
-        /// ToDo Summary is missing
+        /// returns a <see cref="Bitmap"/> in order to be displayed
+        /// on the ElementSelectionPanel, implements <see cref="IPreviewable"/>
         /// </summary>
-        /// <returns></returns>
-        public abstract Bitmap getPreview();
-
-        /// <summary>
-        /// ToDo Summary is missing
-        /// </summary>
-        /// <returns></returns>
+        /// <returns>a representative iconized Bitmap</returns>
         public abstract Bitmap getIcon();
 
         /// <summary>
-        ///     Is needed for Custom Serialization. And provides the Serializer with the needed information
-        /// </summary>
-        /// <param name="info">Serialization Information, which is modified to encapsulate the things to save</param>
-        /// <param name="context">describes aim and source of a serialized stream</param>
-        [Obsolete("GetObjectData is obsolete, serialization is done without customization.")]
-        public void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Finds the augmention, which gets information through this <see cref="AbstractSource"/>.
+        /// Finds the augmentation, which gets information through this <see cref="AbstractSource"/>.
         /// </summary>
         /// <param name="a">the IPreviewable, which is searched for</param>
-        /// <returns>the augmention which is found, otherwise null </returns>
-        public AbstractAugmentation findAugmention(IPreviewable a)
+        /// <returns>the augmentation which is found, otherwise null </returns>
+        public AbstractAugmentation findAugmentation(IPreviewable a)
         {
-            return this.augmentions[this.augmentions.IndexOf((Abstract2DAugmentation)a)];
+            return this.Augmentations[this.Augmentations.IndexOf((Abstract2DAugmentation)a)];
         }
 
         /// <summary>
-        /// Checks if the augmention is associated with this <see cref="AbstractSource"/>.
+        /// Checks if the augmentation is associated with this <see cref="AbstractSource"/>.
         /// </summary>
         /// <param name="a">the IPreviewable, which is checked existence for</param>
         /// <returns>true, if its associated with this <see cref="AbstractSource"/>
         ///          false, else</returns>
-        public bool existAugmention(IPreviewable a)
+        public bool existAugmentation(IPreviewable a)
         {
-            foreach (Abstract2DAugmentation aug in augmentions)
+            foreach (Abstract2DAugmentation aug in Augmentations)
             {
                 if (aug == (Abstract2DAugmentation) a)
                 {

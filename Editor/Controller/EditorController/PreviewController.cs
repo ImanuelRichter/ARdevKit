@@ -19,7 +19,7 @@ public class PreviewController
     public MetaCategory currentMetaCategory { get; set; }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-    /// <summary>   The Trackable which hold the Augmentions and Sources. </summary>
+    /// <summary>   The Trackable which hold the Augmentations and Sources. </summary>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
     public AbstractTrackable trackable { get; set; }
@@ -64,7 +64,7 @@ public class PreviewController
 
     [Obsolete("addPreviewable(IPreviewable p) : eache IPreviewable needs a Vector where the new"
                 + "Previewable should sit in the panel you should use addPreviewable(IPreviewable"
-                + "currentElement, Vector3d v) for Augmentions & Trackables", true)]
+                + "currentElement, Vector3d v) for Augmentations & Trackables", true)]
     public void addPreviewAble(IPreviewable p)
         { throw new NotImplementedException(); }
 
@@ -75,7 +75,7 @@ public class PreviewController
     ///     Trackable.
     /// </summary>
     ///
-    /// <summary>   currentMetaCategory musst set to Trackable/Augmention</summary>
+    /// <summary>   currentMetaCategory musst set to Trackable/Augmentation</summary>
     ///
     /// <param name="currentTrackable"> The current Trackable, which should set in the previewPanel. </param>
     /// <param name="v">                The Vector3D to set the Trackable. </param>
@@ -126,14 +126,14 @@ public class PreviewController
             }
             
         }
-        else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null && this.ew.project.Trackables[index].Augmentions.Count < 3)
+        else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null && this.ew.project.Trackables[index].Augmentations.Count < 3)
         {
-            //set the vector and the trackable in Augmention
+            //set the vector and the trackable in <see cref="AbstractAugmentation"/>
             ((AbstractAugmentation)currentElement).TranslationVector = v;
             ((AbstractAugmentation)currentElement).Trackable = this.trackable;
 
             //set references 
-            trackable.Augmentions.Add((AbstractAugmentation)currentElement);
+            trackable.Augmentations.Add((AbstractAugmentation)currentElement);
 
             this.addPictureBox(currentElement, v);
 
@@ -142,19 +142,19 @@ public class PreviewController
         }
         else
         {
-            MessageBox.Show("More than one Trackable & three Augmentions are not allowed!");
+            MessageBox.Show("More than one Trackable & three Augmentations are not allowed!");
         }
     }
 
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// <summary>
-    ///     add Source or Augmention, this method can only be used with the element, which is the
-    ///     over element by Augmention the overelement is Trackable. by Source the overelement is
-    ///     Augmention.
+    ///     add Source or augmentation, this method can only be used with the element, which is the
+    ///     over element by augmentation the overelement is Trackable. by Source the overelement is
+    ///     augmentation.
     /// </summary>
     ///
-    /// <summary>   currentMetaCategory musst set to Augmention</summary>
+    /// <summary>   currentMetaCategory musst set to augmentation</summary>
     ///
     /// <param name="currentElement">   The current element. </param>
     /// <param name="overElement">      The over element. </param>
@@ -164,12 +164,12 @@ public class PreviewController
     {
         if (currentMetaCategory == MetaCategory.Source)
         {
-            if (this.trackable != null && trackable.existAugmention((AbstractAugmentation)currentElement))
+            if (this.trackable != null && trackable.existAugmentation((AbstractAugmentation)currentElement))
             {
-                //set reference to the augmentions in Source
-                source.augmentions.Add((Abstract2DAugmentation)currentElement);
+                //set reference to the augmentations in Source
+                source.augmentations.Add((Abstract2DAugmentation)currentElement);
 
-                //add references in Augmention, Picturebox + project.sources List.
+                //add references in Augmentation, Picturebox + project.sources List.
                 ((AbstractDynamic2DAugmentation)currentElement).source = source;
 
                 this.currentMetaCategory = MetaCategory.Augmentation;
@@ -183,11 +183,11 @@ public class PreviewController
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// <summary>
-    ///     Removes the choosen Source out of the Augmention and also out of the sourcesList in
+    ///     Removes the choosen Source out of the Augmentation and also out of the sourcesList in
     ///     Project.
     /// </summary>
     ///
-    /// <summary>   currentMetaCategory musst set to Augmention </summary>
+    /// <summary>   currentMetaCategory musst set to Augmentation </summary>
     /// 
     /// <remarks>   Lizzard, 1/15/2014. </remarks>
     ///
@@ -199,12 +199,12 @@ public class PreviewController
     {
         if (currentMetaCategory == MetaCategory.Augmentation)
         {
-            if (this.ew.project.findSource(source).augmentions.Count > 1)
+            if (this.ew.project.findSource(source).Augmentations.Count > 1)
             {
                 ((AbstractDynamic2DAugmentation)currentElement).source = null;
-                this.ew.project.findSource(source).augmentions.Remove((Abstract2DAugmentation)currentElement);
+                this.ew.project.findSource(source).Augmentations.Remove((Abstract2DAugmentation)currentElement);
             }
-            else if (this.ew.project.findSource(source).augmentions.Count == 1)
+            else if (this.ew.project.findSource(source).Augmentations.Count == 1)
             {
                 ((AbstractDynamic2DAugmentation)currentElement).source = null;
                 this.ew.project.Sources.Remove(source);
@@ -215,7 +215,7 @@ public class PreviewController
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// <summary>   Removes the Previewable and the Objekt, what is linked to the Previewable. </summary>
     ///
-    /// <summary>   currentMetaCategory musst set to Trackable/Augmention</summary>
+    /// <summary>   currentMetaCategory musst set to Trackable/Augmentation</summary>
     /// 
     /// <remarks>   Lizzard, 1/16/2014. </remarks>
     ///
@@ -238,7 +238,7 @@ public class PreviewController
         }
         else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null)
         {
-            this.trackable.Augmentions.Remove((AbstractAugmentation)currentElement);
+            this.trackable.Augmentations.Remove((AbstractAugmentation)currentElement);
             this.panel.Controls.Remove(this.findBox((AbstractAugmentation)currentElement));
         }
     }
@@ -256,11 +256,11 @@ public class PreviewController
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// <summary>
-    ///     Move the Trackable whith all connected Augmentions &amp; sources to the new vector-
+    ///     Move the Trackable whith all connected Augmentations &amp; sources to the new vector-
     ///     position.
     /// </summary>
     ///
-    /// <summary>   currentMetaCategory musst set to Trackable/Augmention</summary>
+    /// <summary>   currentMetaCategory musst set to Trackable/Augmentation</summary>
     ///
     /// <param name="currentTrackable"> The current Trackable, which should set in the previewPanel. </param>
     /// <param name="v">                The Vector3D to move the Trackable. </param>
@@ -344,14 +344,14 @@ public class PreviewController
     ///
     /// <remarks>   Lizzard, 1/15/2014. </remarks>
     ///
-    /// <param name="trackable">    The Trackable which hold the Augmentions and Sources. </param>
+    /// <param name="trackable">    The Trackable which hold the Augmentations and Sources. </param>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
     private void addAllToPanel(AbstractTrackable trackable)
     {
-        if (trackable.Augmentions.Count > 0)
+        if (trackable.Augmentations.Count > 0)
         {
-            foreach (AbstractAugmentation aug in trackable.Augmentions)
+            foreach (AbstractAugmentation aug in trackable.Augmentations)
             {
                 this.addPictureBox(aug, aug.TranslationVector);
             }
