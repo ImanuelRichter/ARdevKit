@@ -67,7 +67,6 @@ namespace ARdevKit.Model.Project
         {
             imagePath = null;
             imageName = "";
-            Fuser = new MarkerFuser();
             sensorCosID = IDFactory.createNewSensorCosID(this);
         }
 
@@ -80,7 +79,6 @@ namespace ARdevKit.Model.Project
         {
             this.imagePath = imagePath;
             imageName = Path.GetFileName(imagePath);
-            Fuser = new MarkerFuser();
             sensorCosID = IDFactory.createNewSensorCosID(this);
         }
 
@@ -100,6 +98,21 @@ namespace ARdevKit.Model.Project
             }
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Returns a new MarkerFuser. </summary>
+        ///
+        /// <remarks>   Imanuel, 20.01.2014. </remarks>
+        ///
+        /// <exception cref="NotImplementedException">  Thrown when the requested operation is
+        ///                                             unimplemented. </exception>
+        ///
+        /// <returns>   The fuser. </returns>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public override MarkerFuser getFuser()
+        {
+            return new MarkerFuser();
+        }
 
         /// <summary>
         /// returns a <see cref="Bitmap" /> in order to be displayed

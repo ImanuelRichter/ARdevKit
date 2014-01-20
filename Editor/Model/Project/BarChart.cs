@@ -81,6 +81,7 @@ namespace ARdevKit.Model.Project
         public override void Accept(Controller.ProjectController.AbstractProjectVisitor visitor)
         {
             visitor.Visit(this);
+            fuser.Accept(visitor);
         }
 
 

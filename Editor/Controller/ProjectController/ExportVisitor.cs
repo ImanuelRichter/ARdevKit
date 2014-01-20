@@ -405,6 +405,7 @@ namespace ARdevKit.Controller.ProjectController
 
             barChartFiles.Add(barChartFile);
             barChartCount++;
+            coordinateSystemID++;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////

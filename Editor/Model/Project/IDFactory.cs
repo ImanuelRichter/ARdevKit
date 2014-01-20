@@ -18,7 +18,7 @@ namespace ARdevKit.Model.Project
         /// <summary>   The sensorID counter. </summary>
         private static int sensorIDcounter = 1;
         /// <summary>   The sensorCosID counter. </summary>
-        private static int sensorCosIDcounter = 1;
+        private static int sensorCosIDcounter = 0;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Creates a new sensorIDstring. </summary>

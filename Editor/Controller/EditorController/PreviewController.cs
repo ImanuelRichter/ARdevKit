@@ -133,7 +133,9 @@ public class PreviewController
             ((AbstractAugmentation)currentElement).Trackable = this.trackable;
 
             //set references 
-            trackable.Augmentations.Add((AbstractAugmentation)currentElement);
+            AbstractAugmentation augmentation = (AbstractAugmentation)currentElement;
+            augmentation.Fuser = trackable.getFuser();
+            trackable.Augmentations.Add(augmentation);
 
             this.addPictureBox(currentElement, v);
 

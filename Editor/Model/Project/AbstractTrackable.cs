@@ -23,26 +23,6 @@ namespace ARdevKit.Model.Project
     public abstract class AbstractTrackable : IPreviewable
     {
         /// <summary>
-        /// Describes how  different elements are
-        /// combined and connected in AREL.
-        /// </summary>
-        protected MarkerFuser fuser;
-        /// <summary>
-        /// Gets or sets the fuser.
-        /// Is not Browsable, therefore not editable in 
-        /// the PropertyPanel
-        /// </summary>
-        /// <value>
-        /// The fuser.
-        /// </value>
-        [Browsable(false)]
-        public MarkerFuser Fuser
-        {
-            get { return fuser; }
-            set { fuser = value; }
-        }
-
-        /// <summary>
         /// The sensor cos identifier, used by AREL
         /// to specify the TrackingData
         /// </summary>
@@ -106,6 +86,16 @@ namespace ARdevKit.Model.Project
             similarityThreshold = 0.7;
             Augmentations = new List<AbstractAugmentation>();
         }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Returns a new Fuser that fits to the trackable. </summary>
+        ///
+        /// <remarks>   Imanuel, 20.01.2014. </remarks>
+        ///
+        /// <returns>   The fuser. </returns>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public abstract MarkerFuser getFuser();
 
         /// <summary>
         /// An abstract method, to accept a <see cref="AbstractProjectVisitor"/>

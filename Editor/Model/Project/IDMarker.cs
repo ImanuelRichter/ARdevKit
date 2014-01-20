@@ -45,7 +45,22 @@ namespace ARdevKit.Model.Project
         {
             this.matrixID = matrixID;
             sensorCosID = IDFactory.createNewSensorCosID(this);
-            Fuser = new MarkerFuser();
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Returns a new MarkerFuser. </summary>
+        ///
+        /// <remarks>   Imanuel, 20.01.2014. </remarks>
+        ///
+        /// <exception cref="NotImplementedException">  Thrown when the requested operation is
+        ///                                             unimplemented. </exception>
+        ///
+        /// <returns>   The fuser. </returns>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public override MarkerFuser getFuser()
+        {
+            return new MarkerFuser();
         }
 
 
@@ -62,7 +77,6 @@ namespace ARdevKit.Model.Project
             {
                 augmentation.Accept(visitor);
             }
-            fuser.Accept(visitor);
         }
 
         /// <summary>
