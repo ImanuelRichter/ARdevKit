@@ -63,10 +63,6 @@ namespace ARdevKit.Model.Project
         /// <value>
         /// The subtitle.
         /// </value>
-        [CategoryAttribute("General"), ReadOnly(true)]
-        /// <summary>   Gets or sets the subtitle. </summary>
-        ///
-        /// <value> The subtitle. </value>
         [CategoryAttribute("General")]
         public string Subtitle
         {
