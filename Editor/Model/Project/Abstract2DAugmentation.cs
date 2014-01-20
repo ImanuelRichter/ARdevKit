@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ARdevKit.Model.Project
 {
     [Serializable]
-    public abstract class Abstract2DAugmention : AbstractAugmention
+    public abstract class Abstract2DAugmentation : AbstractAugmentation
     {
         /// <summary>
         /// The height, in mm
@@ -50,7 +50,7 @@ namespace ARdevKit.Model.Project
         /// for use from implementing classes
         /// sets <see cref="height"/> and <see cref="width"/> = 0
         /// </summary>
-        protected Abstract2DAugmention() : base()
+        protected Abstract2DAugmentation() : base()
         {
             height = 0;
             width = 0;
@@ -66,7 +66,7 @@ namespace ARdevKit.Model.Project
         /// <param name="trackable">            The trackable. </param>
         /// <param name="width">                The width. </param>
         /// <param name="height">               The height. </param>
-        protected Abstract2DAugmention(int coordSystemId, bool isVisible,
+        protected Abstract2DAugmentation(int coordSystemId, bool isVisible,
             Vector3D translationVector, Vector3D scaling, AbstractTrackable trackable,
             int width, int height)
             : base(coordSystemId, isVisible, translationVector, scaling, trackable)
@@ -75,7 +75,7 @@ namespace ARdevKit.Model.Project
             this.width = width;
         }
 
-        public Abstract2DAugmention(int coordSystemId, bool isVisible, Vector3D translationVector, Vector3D scaling, AbstractTrackable trackable)
+        public Abstract2DAugmentation(int coordSystemId, bool isVisible, Vector3D translationVector, Vector3D scaling, AbstractTrackable trackable)
         {
             // TODO: Complete member initialization
             this.coordSystemId = coordSystemId;

@@ -14,7 +14,7 @@ namespace ARdevKit.Model.Project
     /// </summary>
     [Serializable]
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
-    public abstract class Graph : AbstractDynamic2DAugmention 
+    public abstract class Chart : AbstractDynamic2DAugmentation 
     {
         /// <summary>   The style. </summary>
         protected ChartStyle style;
@@ -159,7 +159,7 @@ namespace ARdevKit.Model.Project
         /// <remarks>   Imanuel, 20.01.2014. </remarks>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        protected Graph() : base()
+        protected Chart() : base()
         {
             title = "Titel";
             subtitle = "Untertitel";

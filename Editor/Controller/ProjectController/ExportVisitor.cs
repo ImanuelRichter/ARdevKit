@@ -114,14 +114,14 @@ namespace ARdevKit.Controller.ProjectController
         private int coordinateSystemID = 0;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Visits the given <see cref="BarGraph"/>. </summary>
+        /// <summary>   Visits the given <see cref="BarChart"/>. </summary>
         ///
         /// <remarks>   Imanuel, 17.01.2014. </remarks>
         ///
         /// <param name="barChart">    The bar graph. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         
-        public override void Visit(BarGraph barChart)
+        public override void Visit(BarChart barChart)
         {
             // TrackingData.xml
 
@@ -632,7 +632,7 @@ namespace ARdevKit.Controller.ProjectController
 
             XMLBlock markerParametersBlock = new XMLBlock(new XMLTag("MarkerParameters"));
             parameterBlock.AddBlock(markerParametersBlock);
-            markerParametersBlock.AddLine(new XMLLine(new XMLTag("referenceImage", "qualityThreshold=\"0.70\""), pictureMarker.ImageName));
+            markerParametersBlock.AddLine(new XMLLine(new XMLTag("referenceImage", "qualityThreshold=\"0.70\""), Path.GetFileName(pictureMarker.ImagePath)));
             string value = pictureMarker.SimilarityThreshold.ToString("F1", CultureInfo.InvariantCulture);
             parameterBlock.AddLine(new XMLLine(new XMLTag("SimilarityThreshold"), value));
 

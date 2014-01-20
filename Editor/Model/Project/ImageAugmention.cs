@@ -14,7 +14,7 @@ namespace ARdevKit.Model.Project
     /// <summary>   An image augmention. </summary>
     [Serializable]
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
-    public class ImageAugmention : Abstract2DAugmention
+    public class ImageAugmention : Abstract2DAugmentation
     {
         /// <summary>   Full pathname of the image file. </summary>
         private string imagePath;

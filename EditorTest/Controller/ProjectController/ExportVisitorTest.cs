@@ -55,7 +55,7 @@ namespace EditorTest
             PictureMarker pictureMarker1 = new PictureMarker("pictureMarker1.png");
             PictureMarker pictureMarker2 = new PictureMarker("pictureMarker2.png");
             
-            BarGraph barChart1 = new BarGraph();
+            BarChart barChart1 = new BarChart();
             barChart1.Coordinatesystemid = 1;
             barChart1.IsVisible = false;
             barChart1.TranslationVector = new Vector3D(0, 0, 0);

@@ -129,11 +129,11 @@ public class PreviewController
         else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null && this.ew.project.Trackables[index].Augmentions.Count < 3)
         {
             //set the vector and the trackable in Augmention
-            ((AbstractAugmention)currentElement).TranslationVector = v;
-            ((AbstractAugmention)currentElement).Trackable = this.trackable;
+            ((AbstractAugmentation)currentElement).TranslationVector = v;
+            ((AbstractAugmentation)currentElement).Trackable = this.trackable;
 
             //set references 
-            trackable.Augmentions.Add((AbstractAugmention)currentElement);
+            trackable.Augmentions.Add((AbstractAugmentation)currentElement);
 
             this.addPictureBox(currentElement, v);
 
@@ -160,22 +160,22 @@ public class PreviewController
     /// <param name="overElement">      The over element. </param>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public void addSource(AbstractSource source, AbstractAugmention currentElement)
+    public void addSource(AbstractSource source, AbstractAugmentation currentElement)
     {
         if (currentMetaCategory == MetaCategory.Source)
         {
-            if (this.trackable != null && trackable.existAugmention((AbstractAugmention)currentElement))
+            if (this.trackable != null && trackable.existAugmention((AbstractAugmentation)currentElement))
             {
                 //set reference to the augmentions in Source
-                source.augmentions.Add((Abstract2DAugmention)currentElement);
+                source.augmentions.Add((Abstract2DAugmentation)currentElement);
 
                 //add references in Augmention, Picturebox + project.sources List.
-                ((AbstractDynamic2DAugmention)currentElement).source = source;
+                ((AbstractDynamic2DAugmentation)currentElement).source = source;
 
                 this.currentMetaCategory = MetaCategory.Augmentation;
                 this.findBox(currentElement).ContextMenu.MenuItems.Add("show source", new EventHandler(this.show_source_by_click));
                 this.findBox(currentElement).ContextMenu.MenuItems.Add("remove source", new EventHandler(this.remove_source_by_click));
-                this.ew.project.Sources.Add(((AbstractDynamic2DAugmention)this.findBox((AbstractAugmention)currentElement).Tag).source);
+                this.ew.project.Sources.Add(((AbstractDynamic2DAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).source);
                 this.currentMetaCategory = MetaCategory.Source;
             }
         }
@@ -201,12 +201,12 @@ public class PreviewController
         {
             if (this.ew.project.findSource(source).augmentions.Count > 1)
             {
-                ((AbstractDynamic2DAugmention)currentElement).source = null;
-                this.ew.project.findSource(source).augmentions.Remove((Abstract2DAugmention)currentElement);
+                ((AbstractDynamic2DAugmentation)currentElement).source = null;
+                this.ew.project.findSource(source).augmentions.Remove((Abstract2DAugmentation)currentElement);
             }
             else if (this.ew.project.findSource(source).augmentions.Count == 1)
             {
-                ((AbstractDynamic2DAugmention)currentElement).source = null;
+                ((AbstractDynamic2DAugmentation)currentElement).source = null;
                 this.ew.project.Sources.Remove(source);
             }
         }
@@ -238,8 +238,8 @@ public class PreviewController
         }
         else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null)
         {
-            this.trackable.Augmentions.Remove((AbstractAugmention)currentElement);
-            this.panel.Controls.Remove(this.findBox((AbstractAugmention)currentElement));
+            this.trackable.Augmentions.Remove((AbstractAugmentation)currentElement);
+            this.panel.Controls.Remove(this.findBox((AbstractAugmentation)currentElement));
         }
     }
 
@@ -275,7 +275,7 @@ public class PreviewController
         }
         else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null)
         {
-            ((AbstractAugmention)this.findBox(currentElement).Tag).TranslationVector = v;
+            ((AbstractAugmentation)this.findBox(currentElement).Tag).TranslationVector = v;
             this.findBox(currentElement).Location = new Point(v.X, v.Y);
         }
     }
@@ -351,7 +351,7 @@ public class PreviewController
     {
         if (trackable.Augmentions.Count > 0)
         {
-            foreach (AbstractAugmention aug in trackable.Augmentions)
+            foreach (AbstractAugmentation aug in trackable.Augmentions)
             {
                 this.addPictureBox(aug, aug.TranslationVector);
             }
@@ -395,7 +395,7 @@ public class PreviewController
         tempBox.ContextMenu = cm;
         tempBox.MouseClick += new MouseEventHandler(selectElement);
 
-        if (tempBox.Tag is AbstractAugmention)
+        if (tempBox.Tag is AbstractAugmentation)
         tempBox.MouseMove += new MouseEventHandler(controlMouseMove);
 
         this.panel.Controls.Add(tempBox);
@@ -433,7 +433,7 @@ public class PreviewController
         if (currentMetaCategory == MetaCategory.Source)
         {
             ElementIcon icon = (ElementIcon)e.Data.GetData(typeof(ElementIcon));
-            AbstractAugmention augmentation = (AbstractAugmention)((PictureBox)sender).Tag;
+            AbstractAugmentation augmentation = (AbstractAugmentation)((PictureBox)sender).Tag;
             AbstractSource source = ObjectCopier.Clone((AbstractSource)icon.Element.Dummy);
             addSource(source, augmentation);
         }
@@ -463,7 +463,7 @@ public class PreviewController
         {
             foreach (Control comp in panel.Controls)
             {
-                if (comp.Tag == (AbstractAugmention)prev)
+                if (comp.Tag == (AbstractAugmentation)prev)
                 {
                     return (PictureBox)comp;
                 }
@@ -501,10 +501,10 @@ public class PreviewController
             controlToMove.Location = new Point(controlToMove.Location.X + e.Location.X - 60,
                controlToMove.Location.Y + e.Location.Y - 60);
 
-            if (((Control)sender).Tag is AbstractAugmention)
+            if (((Control)sender).Tag is AbstractAugmentation)
             {
-                AbstractAugmention aa;
-                aa = (AbstractAugmention)((Control)sender).Tag;
+                AbstractAugmentation aa;
+                aa = (AbstractAugmentation)((Control)sender).Tag;
                 aa.TranslationVector.X = controlToMove.Location.X + e.Location.X;
                 aa.TranslationVector.Y = controlToMove.Location.Y + e.Location.Y;
             }
@@ -549,7 +549,7 @@ public class PreviewController
 
     private void show_source_by_click(object sender, EventArgs e)
     {
-        ew.PropertyGrid1.SelectedObject = ((AbstractDynamic2DAugmention)((ContextMenu)((MenuItem)sender).Parent).Tag).source;
+        ew.PropertyGrid1.SelectedObject = ((AbstractDynamic2DAugmentation)((ContextMenu)((MenuItem)sender).Parent).Tag).source;
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -566,7 +566,7 @@ public class PreviewController
 
     private void remove_source_by_click(object sender, EventArgs e)
     {
-        AbstractDynamic2DAugmention temp = (AbstractDynamic2DAugmention)((ContextMenu)((MenuItem)sender).Parent).Tag;
+        AbstractDynamic2DAugmentation temp = (AbstractDynamic2DAugmentation)((ContextMenu)((MenuItem)sender).Parent).Tag;
         MetaCategory tempMeta = currentMetaCategory;
         this.currentMetaCategory = MetaCategory.Augmentation;
         this.removeSource(temp.source, temp);

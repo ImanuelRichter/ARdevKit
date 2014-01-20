@@ -65,7 +65,7 @@ namespace ARdevKit.Model.Project
         /// ToDo Summary is missing
         /// </summary>
         [Browsable(false)]
-        public List<AbstractAugmention> Augmentions { get; set; }
+        public List<AbstractAugmentation> Augmentions { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AbstractTrackable"/> class.
@@ -73,7 +73,7 @@ namespace ARdevKit.Model.Project
         /// </summary>
         protected AbstractTrackable()
         {
-            this.Augmentions = new List<AbstractAugmention>();
+            this.Augmentions = new List<AbstractAugmentation>();
             /* could it be here are some missing initialization? */
         }
 
@@ -117,9 +117,9 @@ namespace ARdevKit.Model.Project
         /// </summary>
         /// <param name="a">the IPreviewable, which is searched for</param>
         /// <returns>the augmention which is found, otherwise null </returns>
-        public AbstractAugmention FindAugmention(IPreviewable a)
+        public AbstractAugmentation FindAugmention(IPreviewable a)
         {
-            return this.Augmentions[this.Augmentions.IndexOf((AbstractAugmention)a)];
+            return this.Augmentions[this.Augmentions.IndexOf((AbstractAugmentation)a)];
         }
 
         /// <summary>
@@ -130,9 +130,9 @@ namespace ARdevKit.Model.Project
         ///          false, else</returns>
         public bool existAugmention(IPreviewable a)
         {
-            foreach (AbstractAugmention aug in Augmentions)
+            foreach (AbstractAugmentation aug in Augmentions)
             {
-                if (aug == (AbstractAugmention)a)
+                if (aug == (AbstractAugmentation)a)
                 {
                     return true;
                 }
