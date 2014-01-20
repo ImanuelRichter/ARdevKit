@@ -172,7 +172,10 @@ namespace ARdevKit.Model.Project
             names.Add("Name 1");
             names.Add("Name 2");
             data = new List<double[]>();
-            data.Add(new double[] {33.1, 66.9});
+            data.Add(new double[] { 33.1, 66.9 });
+            data.Add(new double[] { 44.8, 56.2 });
+            Height = 200;
+            Width = 200;
         }
     }
 }

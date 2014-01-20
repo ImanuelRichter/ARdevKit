@@ -111,7 +111,7 @@ namespace ARdevKit.Controller.ProjectController
         /// <summary>   Number of images added to the <see cref="arelGlueFile"/>. </summary>
         private int imageCount = 1;
         private int barChartCount = 1;
-        private int coordinateSystemID = 1;
+        private int coordinateSystemID = 0;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Visits the given <see cref="BarGraph"/>. </summary>
@@ -719,7 +719,11 @@ namespace ARdevKit.Controller.ProjectController
             arelProjectFile.AddBlock(bodyBlock);
 
             // Prepare TrackinData.xml
-            string trackingDataFileName = "TrackingData_" + project.Sensor.Name;
+            string trackingDataFileName = "TrackingData_";
+            if (p.Name.Equals("Test"))
+                trackingDataFileName += "Test";
+            else
+                trackingDataFileName += project.Sensor.Name;
             trackingDataFileName += p.Sensor.SensorSubType != AbstractSensor.SensorSubTypes.None ? p.Sensor.SensorSubType.ToString() : "";
             trackingDataFileName += ".xml";
             trackingDataFile = new TrackingDataFile("<?xml version=\"1.0\" encoding=\"UTF-8\"?>", project.ProjectPath, trackingDataFileName);

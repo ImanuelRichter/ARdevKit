@@ -9,7 +9,7 @@ namespace ARdevKit.Model.Project
     [Serializable]
     public class ChartStyle
     {
-        private string position = "static";
+        private string position;
 
         public string Position
         {
@@ -44,6 +44,13 @@ namespace ARdevKit.Model.Project
         {
             get { return right; }
             set { right = value; }
+        }
+
+        public ChartStyle()
+        {
+            position = "static";
+            top = 100;
+            left = 100;
         }
     }
 }
