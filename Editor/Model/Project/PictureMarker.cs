@@ -67,7 +67,7 @@ namespace ARdevKit.Model.Project
         {
             imagePath = null;
             imageName = "";
-            sensorCosID = IDFactory.createNewSensorCosID(this);
+            sensorCosID = IDFactory.CreateNewSensorCosID(this);
         }
 
         /// <summary>

@@ -68,6 +68,7 @@ namespace ARdevKit.Controller.TestController
             ExportVisitor exporter = new ExportVisitor(true);
             project.Accept(exporter);
 
+            IDFactory.Reset();
             exporter.ArelProjectFile.Save();
             exporter.TrackingDataFile.Save();
             exporter.ArelConfigFile.Save();

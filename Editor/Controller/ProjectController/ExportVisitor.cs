@@ -685,7 +685,7 @@ namespace ARdevKit.Controller.ProjectController
             XMLBlock sensorCOSBlock = new XMLBlock(new XMLTag("SensorCOS"));
             trackingDataFileSensorBlock.AddBlock(sensorCOSBlock);
             
-            pictureMarker.SensorCosID = IDFactory.createNewSensorCosID(pictureMarker);
+            pictureMarker.SensorCosID = IDFactory.CreateNewSensorCosID(pictureMarker);
             sensorCOSBlock.AddLine(new XMLLine(new XMLTag("SensorCosID"), pictureMarker.SensorCosID));
 
             XMLBlock parameterBlock = new XMLBlock(new XMLTag("Parameters"));
@@ -733,7 +733,7 @@ namespace ARdevKit.Controller.ProjectController
             XMLBlock sensorCOSBlock = new XMLBlock(new XMLTag("SensorCOS"));
             trackingDataFileSensorBlock.AddBlock(sensorCOSBlock);
 
-            idMarker.SensorCosID = IDFactory.createNewSensorCosID(idMarker);
+            idMarker.SensorCosID = IDFactory.CreateNewSensorCosID(idMarker);
             sensorCOSBlock.AddLine(new XMLLine(new XMLTag("SensorCosID"), idMarker.SensorCosID));
 
             // Parameters
