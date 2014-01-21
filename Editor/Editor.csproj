@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\EditorController\ObjectCopier.cs" />
+    <Compile Include="Model\Fuser.cs" />
     <Compile Include="Model\Project\AbstractDynamic2DAugmentation.cs" />
     <Compile Include="Model\Project\BarChartData.cs" />
     <Compile Include="Model\Project\ChartData.cs" />

@@ -142,7 +142,7 @@ namespace ARdevKit.Model.Project
             maxObjectsToDetectPerFrame = 5;
             maxObjectsToTrackInParallel = 1;
             similarityThreshold = 0.7;
-            SensorIDString = IDFactory.createNewSensorID(this);
+            SensorIDString = IDFactory.CreateNewSensorID(this);
             sensorType = SensorTypes.FeatureBasedSensorSource;
             sensorSubType = SensorSubTypes.Fast;
         }

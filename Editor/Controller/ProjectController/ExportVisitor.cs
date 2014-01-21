@@ -137,80 +137,6 @@ namespace ARdevKit.Controller.ProjectController
         {
             // TrackingData.xml
 
-            // Connections 
-
-            // COS
-            XMLBlock cosBlock = new XMLBlock(new XMLTag("COS"));
-            trackingDataFileConnectionsBlock.AddBlock(cosBlock);
-
-            // Name
-            cosBlock.AddLine(new XMLLine(new XMLTag("Name"), project.Sensor.Name + "COS" + cosCounter++));
-
-            // Fuser
-            trackingDataFileFuserBlock = new XMLBlock(new XMLTag("Fuser"));
-            cosBlock.AddBlock(trackingDataFileFuserBlock);
-
-            // SensorSource
-            XMLBlock sensorSourceBlock = new XMLBlock(new XMLTag("SensorSource", "trigger=\"1\""));
-            cosBlock.AddBlock(sensorSourceBlock);
-
-            // SensorID
-            sensorSourceBlock.AddLine(new XMLLine(new XMLTag("SensorID"), project.Sensor.SensorIDString));
-            // SensorCosID
-            sensorSourceBlock.AddLine(new XMLLine(new XMLTag("SensorCosID"), barChart.Trackable.SensorCosID));
-
-            // Hand-Eye-Calibration
-            XMLBlock handEyeCalibrationBlock = new XMLBlock(new XMLTag("HandEyeCalibration"));
-            sensorSourceBlock.AddBlock(handEyeCalibrationBlock);
-
-            // Translation
-            XMLBlock hecTranslationOffset = new XMLBlock(new XMLTag("TranslationOffset"));
-            handEyeCalibrationBlock.AddBlock(hecTranslationOffset);
-
-            // TODO get vectors
-            hecTranslationOffset.AddLine(new XMLLine(new XMLTag("X"), "0"));
-            hecTranslationOffset.AddLine(new XMLLine(new XMLTag("Y"), "0"));
-            hecTranslationOffset.AddLine(new XMLLine(new XMLTag("Z"), "0"));
-
-            // Rotation
-            XMLBlock hecRotationOffset = new XMLBlock(new XMLTag("RotationOffset"));
-            handEyeCalibrationBlock.AddBlock(hecRotationOffset);
-
-            // TODO get vectors
-            hecRotationOffset.AddLine(new XMLLine(new XMLTag("X"), "0"));
-            hecRotationOffset.AddLine(new XMLLine(new XMLTag("Y"), "0"));
-            hecRotationOffset.AddLine(new XMLLine(new XMLTag("Z"), "0"));
-            hecRotationOffset.AddLine(new XMLLine(new XMLTag("W"), "1"));
-
-            // COSOffset
-            XMLBlock COSOffsetBlock = new XMLBlock(new XMLTag("COSOffset"));
-            sensorSourceBlock.AddBlock(COSOffsetBlock);
-
-            // Translation
-            XMLBlock COSOffsetTranslationOffset = new XMLBlock(new XMLTag("TranslationOffset"));
-            COSOffsetBlock.AddBlock(COSOffsetTranslationOffset);
-
-            string augmentationPositionX = barChart.TranslationVector.X.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentationPositionY = barChart.TranslationVector.Y.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentationPositionZ = barChart.TranslationVector.Z.ToString("F1", CultureInfo.InvariantCulture);
-            COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("X"), augmentationPositionX));
-            COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("Y"), augmentationPositionY));
-            COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("Z"), augmentationPositionZ));
-
-            // Rotation
-            XMLBlock COSOffsetRotationOffset = new XMLBlock(new XMLTag("RotationOffset"));
-            COSOffsetBlock.AddBlock(COSOffsetRotationOffset);
-
-            // TODO get vectors
-            string augmentationRotationX = barChart.RotationVector.X.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentationRotationY = barChart.RotationVector.Y.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentationRotationZ = barChart.RotationVector.Z.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentationRotationW = barChart.RotationVector.W.ToString("F1", CultureInfo.InvariantCulture);
-            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("X"), augmentationRotationX));
-            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("Y"), augmentationRotationY));
-            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("Z"), augmentationRotationZ));
-            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("W"), augmentationRotationW));
-
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             // arel[projectName].html
@@ -538,7 +464,6 @@ namespace ARdevKit.Controller.ProjectController
             ifPatternIsLostBlock.AddLine(new JavaScriptLine("arel.Scene.getObject(\"" + imageVariable + "\").setVisibility(false)"));
 
             imageCount++;
-            coordinateSystemID++;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -675,15 +600,26 @@ namespace ARdevKit.Controller.ProjectController
                 Copy(pictureMarker.ImagePath, Path.Combine(project.ProjectPath, "Assets"));
 
             string sourcePictureMarkerFile = pictureMarker.ImagePath;
-            string destPictureMarkerFile = Path.Combine(project.ProjectPath, Path.GetFileName(sourcePictureMarkerFile));
-            if (Directory.Exists(Path.Combine(project.ProjectPath, "Asstes")) && !File.Exists(destPictureMarkerFile))
+            string destPictureMarkerFile;
+            if (exportForTest)
             {
-                File.Copy(sourcePictureMarkerFile, destPictureMarkerFile);
+                destPictureMarkerFile = Path.Combine(Application.StartupPath, "currentProject", "Assets", Path.GetFileName(sourcePictureMarkerFile));
+                if (Directory.Exists(Path.Combine(Application.StartupPath, "currentProject", "Asstes")) && !File.Exists(destPictureMarkerFile))
+                {
+                    File.Copy(sourcePictureMarkerFile, destPictureMarkerFile);
+                }
+            }
+            else
+            {
+                destPictureMarkerFile = Path.Combine(project.ProjectPath, Path.GetFileName(sourcePictureMarkerFile));
+                if (Directory.Exists(Path.Combine(project.ProjectPath, "Asstes")) && !File.Exists(destPictureMarkerFile))
+                    File.Copy(sourcePictureMarkerFile, destPictureMarkerFile);
             }
 
             XMLBlock sensorCOSBlock = new XMLBlock(new XMLTag("SensorCOS"));
             trackingDataFileSensorBlock.AddBlock(sensorCOSBlock);
-
+            
+            pictureMarker.SensorCosID = IDFactory.CreateNewSensorCosID(pictureMarker);
             sensorCOSBlock.AddLine(new XMLLine(new XMLTag("SensorCosID"), pictureMarker.SensorCosID));
 
             XMLBlock parameterBlock = new XMLBlock(new XMLTag("Parameters"));
@@ -696,6 +632,79 @@ namespace ARdevKit.Controller.ProjectController
             markerParametersBlock.AddLine(new XMLLine(new XMLTag("referenceImage", "qualityThreshold=\"0.70\""), Path.GetFileName(pictureMarker.ImagePath)));
             string value = pictureMarker.SimilarityThreshold.ToString("F1", CultureInfo.InvariantCulture);
             parameterBlock.AddLine(new XMLLine(new XMLTag("SimilarityThreshold"), value));
+
+            // Connections 
+
+            // COS
+            XMLBlock cosBlock = new XMLBlock(new XMLTag("COS"));
+            trackingDataFileConnectionsBlock.AddBlock(cosBlock);
+
+            // Name
+            cosBlock.AddLine(new XMLLine(new XMLTag("Name"), project.Sensor.Name + "COS" + cosCounter++));
+
+            // Fuser
+            trackingDataFileFuserBlock = new XMLBlock(new XMLTag("Fuser"));
+            cosBlock.AddBlock(trackingDataFileFuserBlock);
+
+            // SensorSource
+            XMLBlock sensorSourceBlock = new XMLBlock(new XMLTag("SensorSource", "trigger=\"1\""));
+            cosBlock.AddBlock(sensorSourceBlock);
+
+            // SensorID
+            sensorSourceBlock.AddLine(new XMLLine(new XMLTag("SensorID"), project.Sensor.SensorIDString));
+            // SensorCosID
+            sensorSourceBlock.AddLine(new XMLLine(new XMLTag("SensorCosID"), pictureMarker.SensorCosID));
+
+            // Hand-Eye-Calibration
+            XMLBlock handEyeCalibrationBlock = new XMLBlock(new XMLTag("HandEyeCalibration"));
+            sensorSourceBlock.AddBlock(handEyeCalibrationBlock);
+
+            // Translation
+            XMLBlock hecTranslationOffset = new XMLBlock(new XMLTag("TranslationOffset"));
+            handEyeCalibrationBlock.AddBlock(hecTranslationOffset);
+
+            // TODO get vectors
+            hecTranslationOffset.AddLine(new XMLLine(new XMLTag("X"), "0"));
+            hecTranslationOffset.AddLine(new XMLLine(new XMLTag("Y"), "0"));
+            hecTranslationOffset.AddLine(new XMLLine(new XMLTag("Z"), "0"));
+
+            // Rotation
+            XMLBlock hecRotationOffset = new XMLBlock(new XMLTag("RotationOffset"));
+            handEyeCalibrationBlock.AddBlock(hecRotationOffset);
+
+            // TODO get vectors
+            hecRotationOffset.AddLine(new XMLLine(new XMLTag("X"), "0"));
+            hecRotationOffset.AddLine(new XMLLine(new XMLTag("Y"), "0"));
+            hecRotationOffset.AddLine(new XMLLine(new XMLTag("Z"), "0"));
+            hecRotationOffset.AddLine(new XMLLine(new XMLTag("W"), "1"));
+
+            // COSOffset
+            XMLBlock COSOffsetBlock = new XMLBlock(new XMLTag("COSOffset"));
+            sensorSourceBlock.AddBlock(COSOffsetBlock);
+
+            // Translation
+            XMLBlock COSOffsetTranslationOffset = new XMLBlock(new XMLTag("TranslationOffset"));
+            COSOffsetBlock.AddBlock(COSOffsetTranslationOffset);
+
+            string augmentationPositionX = pictureMarker.TranslationVector.X.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationPositionY = pictureMarker.TranslationVector.Y.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationPositionZ = pictureMarker.TranslationVector.Z.ToString("F1", CultureInfo.InvariantCulture);
+            COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("X"), augmentationPositionX));
+            COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("Y"), augmentationPositionY));
+            COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("Z"), augmentationPositionZ));
+
+            // Rotation
+            XMLBlock COSOffsetRotationOffset = new XMLBlock(new XMLTag("RotationOffset"));
+            COSOffsetBlock.AddBlock(COSOffsetRotationOffset);
+
+            string augmentationRotationX = pictureMarker.RotationVector.X.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationRotationY = pictureMarker.RotationVector.Y.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationRotationZ = pictureMarker.RotationVector.Z.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationRotationW = pictureMarker.RotationVector.W.ToString("F1", CultureInfo.InvariantCulture);
+            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("X"), augmentationRotationX));
+            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("Y"), augmentationRotationY));
+            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("Z"), augmentationRotationZ));
+            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("W"), augmentationRotationW));
 
             coordinateSystemID++;
         }
@@ -733,6 +742,7 @@ namespace ARdevKit.Controller.ProjectController
             XMLBlock sensorCOSBlock = new XMLBlock(new XMLTag("SensorCOS"));
             trackingDataFileSensorBlock.AddBlock(sensorCOSBlock);
 
+            idMarker.SensorCosID = IDFactory.CreateNewSensorCosID(idMarker);
             sensorCOSBlock.AddLine(new XMLLine(new XMLTag("SensorCosID"), idMarker.SensorCosID));
 
             // Parameters
@@ -743,9 +753,81 @@ namespace ARdevKit.Controller.ProjectController
             XMLBlock markerParametersBlock = new XMLBlock(new XMLTag("MarkerParameters"));
             parameterBlock.AddBlock(markerParametersBlock);
 
-            // Reaktivated when getter is implemented
             markerParametersBlock.AddLine(new XMLLine(new XMLTag("Size"), idMarker.Size.ToString()));
             markerParametersBlock.AddLine(new XMLLine(new XMLTag("MatrixID"), idMarker.MatrixID.ToString()));
+
+            // Connections 
+
+            // COS
+            XMLBlock cosBlock = new XMLBlock(new XMLTag("COS"));
+            trackingDataFileConnectionsBlock.AddBlock(cosBlock);
+
+            // Name
+            cosBlock.AddLine(new XMLLine(new XMLTag("Name"), project.Sensor.Name + "COS" + cosCounter++));
+
+            // Fuser
+            trackingDataFileFuserBlock = new XMLBlock(new XMLTag("Fuser"));
+            cosBlock.AddBlock(trackingDataFileFuserBlock);
+
+            // SensorSource
+            XMLBlock sensorSourceBlock = new XMLBlock(new XMLTag("SensorSource", "trigger=\"1\""));
+            cosBlock.AddBlock(sensorSourceBlock);
+
+            // SensorID
+            sensorSourceBlock.AddLine(new XMLLine(new XMLTag("SensorID"), project.Sensor.SensorIDString));
+            // SensorCosID
+            sensorSourceBlock.AddLine(new XMLLine(new XMLTag("SensorCosID"), idMarker.SensorCosID));
+
+            // Hand-Eye-Calibration
+            XMLBlock handEyeCalibrationBlock = new XMLBlock(new XMLTag("HandEyeCalibration"));
+            sensorSourceBlock.AddBlock(handEyeCalibrationBlock);
+
+            // Translation
+            XMLBlock hecTranslationOffset = new XMLBlock(new XMLTag("TranslationOffset"));
+            handEyeCalibrationBlock.AddBlock(hecTranslationOffset);
+
+            // TODO get vectors
+            hecTranslationOffset.AddLine(new XMLLine(new XMLTag("X"), "0"));
+            hecTranslationOffset.AddLine(new XMLLine(new XMLTag("Y"), "0"));
+            hecTranslationOffset.AddLine(new XMLLine(new XMLTag("Z"), "0"));
+
+            // Rotation
+            XMLBlock hecRotationOffset = new XMLBlock(new XMLTag("RotationOffset"));
+            handEyeCalibrationBlock.AddBlock(hecRotationOffset);
+
+            // TODO get vectors
+            hecRotationOffset.AddLine(new XMLLine(new XMLTag("X"), "0"));
+            hecRotationOffset.AddLine(new XMLLine(new XMLTag("Y"), "0"));
+            hecRotationOffset.AddLine(new XMLLine(new XMLTag("Z"), "0"));
+            hecRotationOffset.AddLine(new XMLLine(new XMLTag("W"), "1"));
+
+            // COSOffset
+            XMLBlock COSOffsetBlock = new XMLBlock(new XMLTag("COSOffset"));
+            sensorSourceBlock.AddBlock(COSOffsetBlock);
+
+            // Translation
+            XMLBlock COSOffsetTranslationOffset = new XMLBlock(new XMLTag("TranslationOffset"));
+            COSOffsetBlock.AddBlock(COSOffsetTranslationOffset);
+
+            string trackablePositionX = idMarker.TranslationVector.X.ToString("F1", CultureInfo.InvariantCulture);
+            string trackablePositionY = idMarker.TranslationVector.Y.ToString("F1", CultureInfo.InvariantCulture);
+            string trackablePositionZ = idMarker.TranslationVector.Z.ToString("F1", CultureInfo.InvariantCulture);
+            COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("X"), trackablePositionX));
+            COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("Y"), trackablePositionY));
+            COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("Z"), trackablePositionZ));
+
+            // Rotation
+            XMLBlock COSOffsetRotationOffset = new XMLBlock(new XMLTag("RotationOffset"));
+            COSOffsetBlock.AddBlock(COSOffsetRotationOffset);
+
+            string trackableRotationX = idMarker.RotationVector.X.ToString("F1", CultureInfo.InvariantCulture);
+            string trackableRotationY = idMarker.RotationVector.Y.ToString("F1", CultureInfo.InvariantCulture);
+            string trackableRotationZ = idMarker.RotationVector.Z.ToString("F1", CultureInfo.InvariantCulture);
+            string trackableRotationW = idMarker.RotationVector.W.ToString("F1", CultureInfo.InvariantCulture);
+            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("X"), trackableRotationX));
+            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("Y"), trackableRotationY));
+            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("Z"), trackableRotationZ));
+            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("W"), trackableRotationW));
 
             coordinateSystemID++;
         }

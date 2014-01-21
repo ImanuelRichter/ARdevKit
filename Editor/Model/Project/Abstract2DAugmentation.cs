@@ -48,7 +48,6 @@ namespace ARdevKit.Model.Project
             set { width = value; }
         }
 
-
         /// <summary>
         /// Initializes no new instance of the <see cref="Abstract2DAugmentation"/> class,
         /// but can be used in inheriting classes.

@@ -21,6 +21,25 @@ namespace ARdevKit.Model.Project
     public class PictureMarker : AbstractMarker
     {
         /// <summary>
+        /// Describes how  different elements are
+        /// combined and connected in AREL.
+        /// </summary>
+        protected MarkerFuser fuser;
+        /// <summary>
+        /// Gets or sets the fuser.
+        /// Is not Browsable, therefore not editable in 
+        /// the PropertyPanel
+        /// </summary>
+        /// <value>
+        /// The fuser.
+        /// </value>
+        public MarkerFuser Fuser
+        {
+            get { return fuser; }
+            set { fuser = value; }
+        }
+
+        /// <summary>
         /// Full pathname of the image file.
         /// </summary>
         private string imagePath;
@@ -67,8 +86,7 @@ namespace ARdevKit.Model.Project
         {
             imagePath = null;
             imageName = "";
-            Fuser = new MarkerFuser();
-            sensorCosID = IDFactory.createNewSensorCosID(this);
+            fuser = new MarkerFuser();
         }
 
         /// <summary>
@@ -80,8 +98,7 @@ namespace ARdevKit.Model.Project
         {
             this.imagePath = imagePath;
             imageName = Path.GetFileName(imagePath);
-            Fuser = new MarkerFuser();
-            sensorCosID = IDFactory.createNewSensorCosID(this);
+            fuser = new MarkerFuser();
         }
 
         /// <summary>
@@ -98,8 +115,8 @@ namespace ARdevKit.Model.Project
             {
                 augmentation.Accept(visitor);
             }
+            fuser.Accept(visitor);
         }
-
 
         /// <summary>
         /// returns a <see cref="Bitmap" /> in order to be displayed

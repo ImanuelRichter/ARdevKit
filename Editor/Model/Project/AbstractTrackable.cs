@@ -23,26 +23,6 @@ namespace ARdevKit.Model.Project
     public abstract class AbstractTrackable : IPreviewable
     {
         /// <summary>
-        /// Describes how  different elements are
-        /// combined and connected in AREL.
-        /// </summary>
-        protected MarkerFuser fuser;
-        /// <summary>
-        /// Gets or sets the fuser.
-        /// Is not Browsable, therefore not editable in 
-        /// the PropertyPanel
-        /// </summary>
-        /// <value>
-        /// The fuser.
-        /// </value>
-        [Browsable(false)]
-        public MarkerFuser Fuser
-        {
-            get { return fuser; }
-            set { fuser = value; }
-        }
-
-        /// <summary>
         /// The sensor cos identifier, used by AREL
         /// to specify the TrackingData
         /// </summary>
@@ -50,7 +30,6 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// Gets or sets the sensor cos identifier.
         /// </summary>
-        [CategoryAttribute("Expert"), ReadOnly(true)]
         public string SensorCosID
         {
             get { return sensorCosID; }
@@ -74,6 +53,38 @@ namespace ARdevKit.Model.Project
         {
             get { return similarityThreshold; }
             set { similarityThreshold = value; }
+        }
+
+        /// <summary>
+        /// Vector to describe the position on the PreviewPanel, and later
+        /// to position it on the coordinatesystem given in AREL.
+        /// </summar>
+        protected Vector3D translationVector;
+        /// <summary>
+        /// Get or set the position of the <see cref="AbstractAugmentation"/>.
+        /// </summary>
+        //[CategoryAttribute("General")]
+        [Browsable(false)]
+        public Vector3D TranslationVector
+        {
+            get { return translationVector; }
+            set { translationVector = value; }
+        }
+
+        /// <summary>
+        /// Vector, to describes the rotation of the <see cref="AbstractAugmentation"/> in
+        /// x, y and z direction. w is used for TrackingFile Offset in AREL.
+        /// </summary>
+        protected Vector3Di rotationVector;
+        /// <summary>
+        /// gets or sets the Vector
+        /// </summary>
+        //[CategoryAttribute("General")]
+        [Browsable(false)]
+        public Vector3Di RotationVector
+        {
+            get { return rotationVector; }
+            set { rotationVector = value; }
         }
 
         /// <summary>
@@ -104,6 +115,8 @@ namespace ARdevKit.Model.Project
         {
             vector = new Vector3D(0, 0, 0);
             similarityThreshold = 0.7;
+            translationVector = new Vector3D(0, 0, 0);
+            rotationVector = new Vector3Di(0, 0, 0, 0);
             Augmentations = new List<AbstractAugmentation>();
         }
 

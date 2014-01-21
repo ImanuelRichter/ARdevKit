@@ -26,6 +26,7 @@ using ARdevKit.Controller.Connections.DeviceConnection;
 using ARdevKit.Controller.TestController;
 using ARdevKit.View;
 using System.IO;
+using ARdevKit.Model.Project.File;
 
 namespace ARdevKit
 {
@@ -594,6 +595,20 @@ namespace ARdevKit
                 try
                 {
                     exportVisitor.ArelGlueFile.Save();
+                }
+                catch (NullReferenceException ne)
+                {
+                    Debug.WriteLine(ne.StackTrace);
+                }
+                try
+                {
+                    if (exportVisitor.BarChartFiles != null)
+                    {
+                        foreach (BarChartFile barChartFile in exportVisitor.BarChartFiles)
+                        {
+                            barChartFile.Save();
+                        }
+                    }
                 }
                 catch (NullReferenceException ne)
                 {

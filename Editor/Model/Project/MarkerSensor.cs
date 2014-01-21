@@ -103,7 +103,7 @@ namespace ARdevKit.Model.Project
             thresholdOffset = 110;
             numberOfSearchIterations = 3;
             sensorIDBase = SensorIDBases.MarkerTracking;
-            SensorIDString = IDFactory.createNewSensorID(this);
+            SensorIDString = IDFactory.CreateNewSensorID(this);
             sensorType = SensorTypes.MarkerBasedSensorSource;
         }
 

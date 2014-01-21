@@ -18,7 +18,7 @@ namespace ARdevKit.Model.Project
         /// <summary>   The sensorID counter. </summary>
         private static int sensorIDcounter = 1;
         /// <summary>   The sensorCosID counter. </summary>
-        private static int sensorCosIDcounter = 1;
+        private static int sensorCosIDcounter = 0;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Creates a new sensorIDstring. </summary>
@@ -29,7 +29,7 @@ namespace ARdevKit.Model.Project
         ///
         /// <returns>   The new new sensorIDstring. </returns>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        public static string createNewSensorID(AbstractSensor sensor)
+        public static string CreateNewSensorID(AbstractSensor sensor)
         {
             return sensor.SensorIDBase.ToString() + sensorIDcounter++;
         }
@@ -43,9 +43,15 @@ namespace ARdevKit.Model.Project
         ///
         /// <returns>   The new new sensorCosIDstring. </returns>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        public static string createNewSensorCosID(AbstractMarker marker)
+        public static string CreateNewSensorCosID(AbstractMarker marker)
         {
             return marker.Type + sensorCosIDcounter++;
+        }
+
+        public static void Reset()
+        {
+            sensorIDcounter = 1;
+            sensorCosIDcounter = 1;
         }
     }
 }
