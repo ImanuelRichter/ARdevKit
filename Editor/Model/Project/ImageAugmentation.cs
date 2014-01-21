@@ -41,7 +41,18 @@ namespace ARdevKit.Model.Project
         /// </summary>
         public ImageAugmentation() : base()
         {
-            ; // missing initialization
+            imagePath = null;
+        }
+
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ImageAugmentation"/> class.
+        /// </summary>
+        /// <param name="imagePath">The image path.</param>
+        public ImageAugmentation(string imagePath)
+            : base()
+        {
+            this.imagePath = imagePath;
         }
 
         /// <summary>
@@ -77,10 +88,10 @@ namespace ARdevKit.Model.Project
         /// <returns>
         /// a representative iconized Bitmap
         /// </returns>
-        /// <exception cref="System.NotImplementedException"></exception>
+        /// <exception cref="FileNotFoundException">If ImagePath is bad</exception>
         public override Bitmap getIcon()
         {
-            throw new NotImplementedException();
+            return Properties.Resources.ImageAugmentation_small_; 
         }
     }
 }
