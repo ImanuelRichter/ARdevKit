@@ -72,10 +72,8 @@ namespace EditorTest
             barChart1.YAxisTitle = "Feuchtigkeit in %";
             barChart1.PointPadding = 0.2;
             barChart1.BorderWidth = 0;
-            barChart1.Names = new List<string>();
-            barChart1.Names.Add("Rose");
-            barChart1.Data = new List<double[]>();
-            barChart1.Data.Add(new double[] { 72.5, 50.3, 33.1 });
+            barChart1.Data = new List<BarChartData>();
+            barChart1.Data.Add(new BarChartData("Rose", new double[] { 72.5, 50.3, 33.1 }));
             pictureMarker1.Augmentations.Add(barChart1);
             barChart1.Trackable = pictureMarker1;
 
@@ -110,8 +108,6 @@ namespace EditorTest
             {
                 barChartFile.Save();
             }
-
-            Assert.IsTrue(File.Exists("..\\..\\..\\bin\\Debug\\currentProject\\Assets\\imageToCopy.png"));
         }
 
         [TestMethod]

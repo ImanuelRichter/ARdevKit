@@ -10,8 +10,8 @@
 
 namespace ARdevKit.Properties {
     using System;
-    
-    
+
+
     /// <summary>
     ///   Eine stark typisierte Ressourcenklasse zum Suchen von lokalisierten Zeichenfolgen usw.
     /// </summary>
@@ -23,15 +23,15 @@ namespace ARdevKit.Properties {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
-        
+
         private static global::System.Resources.ResourceManager resourceMan;
-        
+
         private static global::System.Globalization.CultureInfo resourceCulture;
-        
+
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         internal Resources() {
         }
-        
+
         /// <summary>
         ///   Gibt die zwischengespeicherte ResourceManager-Instanz zurück, die von dieser Klasse verwendet wird.
         /// </summary>
@@ -45,7 +45,7 @@ namespace ARdevKit.Properties {
                 return resourceMan;
             }
         }
-        
+
         /// <summary>
         ///   Überschreibt die CurrentUICulture-Eigenschaft des aktuellen Threads für alle
         ///   Ressourcenzuordnungen, die diese stark typisierte Ressourcenklasse verwenden.
@@ -153,6 +153,16 @@ namespace ARdevKit.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ImageAugmentation_small_ {
+            get {
+                object obj = ResourceManager.GetObject("ImageAugmentation_small_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PieChart_normal_ {
             get {
                 object obj = ResourceManager.GetObject("PieChart_normal_", resourceCulture);
@@ -166,6 +176,16 @@ namespace ARdevKit.Properties {
         internal static System.Drawing.Bitmap PieChart_small_ {
             get {
                 object obj = ResourceManager.GetObject("PieChart_small_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PreviewDummy {
+            get {
+                object obj = ResourceManager.GetObject("PreviewDummy", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -4,11 +4,12 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ARdevKit.Model.Project.File;
 using System.Globalization;
 using System.Windows.Forms;
+using System.Drawing;
 
 using ARdevKit.Model.Project;
+using ARdevKit.Model.Project.File;
 
 namespace ARdevKit.Controller.ProjectController
 {
@@ -367,29 +368,51 @@ namespace ARdevKit.Controller.ProjectController
             {
                 JavaScriptBlock dataBlock = new JavaScriptBlock("", new BlockMarker("{", "},"));
                 barChartFileHighchartSeriesBlock.AddBlock(dataBlock);
-                dataBlock.AddLine(new JavaScriptInLine("name: '" + barChart.Names[i] + "'", true));
-                string data = "";
+                dataBlock.AddLine(new JavaScriptInLine("name: '" + barChart.Data[i].Name + "'", true));
 
-                int n2 = barChart.Data[i].Length - 1;
+                string data = "";
+                int n2 = barChart.Data[i].DataSet.Length - 1;
                 for (int j = 0; j < n2; j++)
                 {
-                    data += barChart.Data[i][j].ToString(CultureInfo.InvariantCulture) + ", ";
+                    data += barChart.Data[i].DataSet[j].ToString(CultureInfo.InvariantCulture) + ", ";
                 }
-                data += barChart.Data[i][n2].ToString(CultureInfo.InvariantCulture);
-                dataBlock.AddLine(new JavaScriptInLine("data: [" + data + "]", false));
+                data += barChart.Data[i].DataSet[n2].ToString(CultureInfo.InvariantCulture);
+                dataBlock.AddLine(new JavaScriptInLine("data: [" + data + "]", true));
+
+                JavaScriptBlock DataColorBlock = new JavaScriptBlock("color:", new BlockMarker("{", "}"));
+                dataBlock.AddBlock(DataColorBlock);
+                JavaScriptBlock DataColorLinearGradientBlock = new JavaScriptBlock("linearGradient: ", new BlockMarker("{", "},"));
+                DataColorBlock.AddBlock(DataColorLinearGradientBlock);
+                DataColorLinearGradientBlock.AddLine(new JavaScriptInLine("x1: 0, x2: 0, y1: 0, y2: 1", false));
+
+                JavaScriptBlock DataColorStopsBlock = new JavaScriptBlock("stops: ", new BlockMarker("[", "]"));
+                DataColorBlock.AddBlock(DataColorStopsBlock);
+                DataColorStopsBlock.AddLine(new JavaScriptInLine("0, '" + ColorTranslator.ToHtml(barChart.Data[i].MinValueColor) + "'", new BlockMarker("[", "]"), true));
+                DataColorStopsBlock.AddLine(new JavaScriptInLine("1, '" + ColorTranslator.ToHtml(barChart.Data[i].MaxValueColor) + "'", new BlockMarker("[", "]"), false));
             }
             JavaScriptBlock lastDataBlock = new JavaScriptBlock("", new BlockMarker("{", "}"));
             barChartFileHighchartSeriesBlock.AddBlock(lastDataBlock);
-            lastDataBlock.AddLine(new JavaScriptInLine("name: '" + barChart.Names[n1] + "'", true));
-            string lastData = "";
+            lastDataBlock.AddLine(new JavaScriptInLine("name: '" + barChart.Data[n1].Name + "'", true));
 
-            int lastN2 = barChart.Data[n1].Length - 1;
+            string lastData = "";
+            int lastN2 = barChart.Data[n1].DataSet.Length - 1;
             for (int j = 0; j < lastN2; j++)
             {
-                lastData += barChart.Data[n1][j].ToString(CultureInfo.InvariantCulture) + ", ";
+                lastData += barChart.Data[n1].DataSet[j].ToString(CultureInfo.InvariantCulture) + ", ";
             }
-            lastData += barChart.Data[n1][lastN2].ToString(CultureInfo.InvariantCulture);
-            lastDataBlock.AddLine(new JavaScriptInLine("data: [" + lastData + "]", false));
+            lastData += barChart.Data[n1].DataSet[lastN2].ToString(CultureInfo.InvariantCulture);
+            lastDataBlock.AddLine(new JavaScriptInLine("data: [" + lastData + "]", true));
+
+            JavaScriptBlock lastDataColorBlock = new JavaScriptBlock("color:", new BlockMarker("{", "}"));
+            lastDataBlock.AddBlock(lastDataColorBlock);
+            JavaScriptBlock lastDataColorLinearGradientBlock = new JavaScriptBlock("linearGradient: ", new BlockMarker("{", "},"));
+            lastDataColorBlock.AddBlock(lastDataColorLinearGradientBlock);
+            lastDataColorLinearGradientBlock.AddLine(new JavaScriptInLine("x1: 0, x2: 0, y1: 0, y2: 1", false));
+
+            JavaScriptBlock lastDataColorStopsBlock = new JavaScriptBlock("stops: ", new BlockMarker("[", "]"));
+            lastDataColorBlock.AddBlock(lastDataColorStopsBlock);
+            lastDataColorStopsBlock.AddLine(new JavaScriptInLine("0, '" + ColorTranslator.ToHtml(barChart.Data[n1].MinValueColor) + "'", new BlockMarker("[", "]"), true));
+            lastDataColorStopsBlock.AddLine(new JavaScriptInLine("1, '" + ColorTranslator.ToHtml(barChart.Data[n1].MaxValueColor) + "'", new BlockMarker("[", "]"), false));
 
             JavaScriptBlock barChartShowBlock = new JavaScriptBlock("show : function()", new BlockMarker("{", "},"));
             barChartFileDefineBlock.AddBlock(barChartShowBlock);

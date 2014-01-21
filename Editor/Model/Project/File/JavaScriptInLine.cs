@@ -31,7 +31,7 @@ namespace ARdevKit.Model.Project.File
         /// <param name="blockMarker">  The block marker. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public JavaScriptInLine(string content, BlockMarker blockMarker, bool useComme) : base(content, blockMarker)
+        public JavaScriptInLine(string content, BlockMarker blockMarker, bool useComma) : base(content, blockMarker)
         {
             this.useComma = useComma;
         }
