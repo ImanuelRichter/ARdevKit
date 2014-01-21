@@ -84,7 +84,8 @@ namespace ARdevKit.Controller.TestController
 
             player = new Process();
             player.StartInfo.Arguments = project.ProjectPath + " -" + mode;
-            
+
+            bool open = false;
             switch (mode)
             {
                 case (IMAGE):
@@ -95,6 +96,7 @@ namespace ARdevKit.Controller.TestController
                     {
                         string testFilePath = openTestImageDialog.FileName;
                         player.StartInfo.Arguments += " -" + testFilePath;
+                        open = true;
                     }
                     break;
                 case (VIDEO):
@@ -104,6 +106,7 @@ namespace ARdevKit.Controller.TestController
                     {
                         string testFilePath = openTestVideoDialog.FileName;
                         player.StartInfo.Arguments += " -" + testFilePath;
+                        open = true;
                     }
                     break;
                 case (CAMERA):
@@ -116,15 +119,16 @@ namespace ARdevKit.Controller.TestController
                         Process vCam = new Process();
                         vCam.StartInfo.FileName = virtualCameraPath;
                         vCam.Start();
+                        open = true;
                     }
                     break;
             }
-            if (File.Exists(playerPath))
+            if (File.Exists(playerPath) && open)
             {
                 player.StartInfo.FileName = playerPath;
                 player.Start();
             }
-            else
+            else if (open)
             {
                 OpenFileDialog openPlayerDialog = new OpenFileDialog();
                 openPlayerDialog.Title = "Bitte Player auswählen";
