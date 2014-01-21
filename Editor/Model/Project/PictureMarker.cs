@@ -98,6 +98,7 @@ namespace ARdevKit.Model.Project
         {
             this.imagePath = imagePath;
             imageName = Path.GetFileName(imagePath);
+            fuser = new MarkerFuser();
         }
 
         /// <summary>
