@@ -666,7 +666,6 @@ namespace ARdevKit
             sources.addElement(new SceneElement("FileSource", new FileSource(""), this));
             SceneElementCategory augmentations = new SceneElementCategory(MetaCategory.Augmentation, "Augmentations");
             augmentations.addElement(new SceneElement("Bar Graph", new BarChart(), this));
-            augmentations.addElement(new SceneElement("Image Augmentation", new ImageAugmentation(), this));
             SceneElementCategory trackables = new SceneElementCategory(MetaCategory.Trackable, "Trackables");
             trackables.addElement(new SceneElement("Picture Marker", new PictureMarker(), this));
             trackables.addElement(new SceneElement("IDMarker", new IDMarker(1), this));
