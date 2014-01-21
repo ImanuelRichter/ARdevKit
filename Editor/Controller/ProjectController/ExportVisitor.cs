@@ -600,10 +600,20 @@ namespace ARdevKit.Controller.ProjectController
                 Copy(pictureMarker.ImagePath, Path.Combine(project.ProjectPath, "Assets"));
 
             string sourcePictureMarkerFile = pictureMarker.ImagePath;
-            string destPictureMarkerFile = Path.Combine(project.ProjectPath, Path.GetFileName(sourcePictureMarkerFile));
-            if (Directory.Exists(Path.Combine(project.ProjectPath, "Asstes")) && !File.Exists(destPictureMarkerFile))
+            string destPictureMarkerFile;
+            if (exportForTest)
             {
-                File.Copy(sourcePictureMarkerFile, destPictureMarkerFile);
+                destPictureMarkerFile = Path.Combine(Application.StartupPath, "currentProject", "Assets", Path.GetFileName(sourcePictureMarkerFile));
+                if (Directory.Exists(Path.Combine(Application.StartupPath, "currentProject", "Asstes")) && !File.Exists(destPictureMarkerFile))
+                {
+                    File.Copy(sourcePictureMarkerFile, destPictureMarkerFile);
+                }
+            }
+            else
+            {
+                destPictureMarkerFile = Path.Combine(project.ProjectPath, Path.GetFileName(sourcePictureMarkerFile));
+                if (Directory.Exists(Path.Combine(project.ProjectPath, "Asstes")) && !File.Exists(destPictureMarkerFile))
+                    File.Copy(sourcePictureMarkerFile, destPictureMarkerFile);
             }
 
             XMLBlock sensorCOSBlock = new XMLBlock(new XMLTag("SensorCOS"));
