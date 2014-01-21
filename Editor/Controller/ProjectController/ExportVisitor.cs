@@ -118,7 +118,7 @@ namespace ARdevKit.Controller.ProjectController
         /// <summary>   Number of bar charts. </summary>
         private int barChartCount = 1;
         /// <summary>   Identifier for the coordinate system. </summary>
-        private int coordinateSystemID = 0;
+        private int coordinateSystemID = 1;
 
         public ExportVisitor(bool exportForTest)
         {
@@ -684,7 +684,8 @@ namespace ARdevKit.Controller.ProjectController
 
             XMLBlock sensorCOSBlock = new XMLBlock(new XMLTag("SensorCOS"));
             trackingDataFileSensorBlock.AddBlock(sensorCOSBlock);
-
+            
+            pictureMarker.SensorCosID = IDFactory.createNewSensorCosID(pictureMarker);
             sensorCOSBlock.AddLine(new XMLLine(new XMLTag("SensorCosID"), pictureMarker.SensorCosID));
 
             XMLBlock parameterBlock = new XMLBlock(new XMLTag("Parameters"));
@@ -697,8 +698,6 @@ namespace ARdevKit.Controller.ProjectController
             markerParametersBlock.AddLine(new XMLLine(new XMLTag("referenceImage", "qualityThreshold=\"0.70\""), Path.GetFileName(pictureMarker.ImagePath)));
             string value = pictureMarker.SimilarityThreshold.ToString("F1", CultureInfo.InvariantCulture);
             parameterBlock.AddLine(new XMLLine(new XMLTag("SimilarityThreshold"), value));
-
-            coordinateSystemID++;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -734,6 +733,7 @@ namespace ARdevKit.Controller.ProjectController
             XMLBlock sensorCOSBlock = new XMLBlock(new XMLTag("SensorCOS"));
             trackingDataFileSensorBlock.AddBlock(sensorCOSBlock);
 
+            idMarker.SensorCosID = IDFactory.createNewSensorCosID(idMarker);
             sensorCOSBlock.AddLine(new XMLLine(new XMLTag("SensorCosID"), idMarker.SensorCosID));
 
             // Parameters
@@ -747,8 +747,6 @@ namespace ARdevKit.Controller.ProjectController
             // Reaktivated when getter is implemented
             markerParametersBlock.AddLine(new XMLLine(new XMLTag("Size"), idMarker.Size.ToString()));
             markerParametersBlock.AddLine(new XMLLine(new XMLTag("MatrixID"), idMarker.MatrixID.ToString()));
-
-            coordinateSystemID++;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////

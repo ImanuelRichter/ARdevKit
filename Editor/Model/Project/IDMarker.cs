@@ -30,7 +30,7 @@ namespace ARdevKit.Model.Project
         /// <value>
         /// The matrix identifier.
         /// </value>
-        [CategoryAttribute("General"), ReadOnly(true)]
+        [CategoryAttribute("General")]
         public int MatrixID
         {
             get { return matrixID; }
@@ -44,7 +44,6 @@ namespace ARdevKit.Model.Project
         public IDMarker(int matrixID) : base("IDMarker", 60)
         {
             this.matrixID = matrixID;
-            sensorCosID = IDFactory.createNewSensorCosID(this);
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////

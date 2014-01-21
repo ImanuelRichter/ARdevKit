@@ -79,7 +79,6 @@ namespace ARdevKit.Model.Project
         {
             this.imagePath = imagePath;
             imageName = Path.GetFileName(imagePath);
-            sensorCosID = IDFactory.createNewSensorCosID(this);
         }
 
         /// <summary>
