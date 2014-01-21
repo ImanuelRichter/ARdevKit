@@ -19,6 +19,25 @@ namespace ARdevKit.Model.Project
     public class IDMarker : AbstractMarker
     {
         /// <summary>
+        /// Describes how  different elements are
+        /// combined and connected in AREL.
+        /// </summary>
+        protected MarkerFuser fuser;
+        /// <summary>
+        /// Gets or sets the fuser.
+        /// Is not Browsable, therefore not editable in 
+        /// the PropertyPanel
+        /// </summary>
+        /// <value>
+        /// The fuser.
+        /// </value>
+        public MarkerFuser Fuser
+        {
+            get { return fuser; }
+            set { fuser = value; }
+        }
+
+        /// <summary>
         /// The matrix identifier, describes the Markers, which
         /// are deployed by the metaio SDK.
         /// They reach from 1 to 255.
@@ -44,22 +63,7 @@ namespace ARdevKit.Model.Project
         public IDMarker(int matrixID) : base("IDMarker", 60)
         {
             this.matrixID = matrixID;
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Returns a new MarkerFuser. </summary>
-        ///
-        /// <remarks>   Imanuel, 20.01.2014. </remarks>
-        ///
-        /// <exception cref="NotImplementedException">  Thrown when the requested operation is
-        ///                                             unimplemented. </exception>
-        ///
-        /// <returns>   The fuser. </returns>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        public override MarkerFuser getFuser()
-        {
-            return new MarkerFuser();
+            fuser = new MarkerFuser();
         }
 
 
@@ -76,6 +80,7 @@ namespace ARdevKit.Model.Project
             {
                 augmentation.Accept(visitor);
             }
+            fuser.Accept(visitor);
         }
 
         /// <summary>

@@ -124,25 +124,6 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
-        /// Describes how  different elements are
-        /// combined and connected in AREL.
-        /// </summary>
-        protected MarkerFuser fuser;
-        /// <summary>
-        /// Gets or sets the fuser.
-        /// Is not Browsable, therefore not editable in 
-        /// the PropertyPanel
-        /// </summary>
-        /// <value>
-        /// The fuser.
-        /// </value>
-        public MarkerFuser Fuser
-        {
-            get { return fuser; }
-            set { fuser = value; }
-        }
-
-        /// <summary>
         /// Initializes no new instance of the <see cref="AbstractAugmentation"/> class,
         /// but can be used in inheriting classes.
         /// Using standard values, such as emptyLists, vectors with 0 as coordinate and null.
@@ -173,7 +154,6 @@ namespace ARdevKit.Model.Project
             this.translationVector = translationVector;
             scalingVector = scaling;
             this.trackable = trackable;
-            fuser = trackable.getFuser();
         }
 
         /// <summary>

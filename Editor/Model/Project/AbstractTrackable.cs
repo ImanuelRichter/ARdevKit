@@ -56,6 +56,38 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
+        /// Vector to describe the position on the PreviewPanel, and later
+        /// to position it on the coordinatesystem given in AREL.
+        /// </summar>
+        protected Vector3D translationVector;
+        /// <summary>
+        /// Get or set the position of the <see cref="AbstractAugmentation"/>.
+        /// </summary>
+        //[CategoryAttribute("General")]
+        [Browsable(false)]
+        public Vector3D TranslationVector
+        {
+            get { return translationVector; }
+            set { translationVector = value; }
+        }
+
+        /// <summary>
+        /// Vector, to describes the rotation of the <see cref="AbstractAugmentation"/> in
+        /// x, y and z direction. w is used for TrackingFile Offset in AREL.
+        /// </summary>
+        protected Vector3Di rotationVector;
+        /// <summary>
+        /// gets or sets the Vector
+        /// </summary>
+        //[CategoryAttribute("General")]
+        [Browsable(false)]
+        public Vector3Di RotationVector
+        {
+            get { return rotationVector; }
+            set { rotationVector = value; }
+        }
+
+        /// <summary>
         /// Describes the position of the Trackable
         /// in the coordinatesystem used by metaio.
         /// </summary>
@@ -83,18 +115,10 @@ namespace ARdevKit.Model.Project
         {
             vector = new Vector3D(0, 0, 0);
             similarityThreshold = 0.7;
+            translationVector = new Vector3D(0, 0, 0);
+            rotationVector = new Vector3Di(0, 0, 0, 0);
             Augmentations = new List<AbstractAugmentation>();
         }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Returns a new Fuser that fits to the trackable. </summary>
-        ///
-        /// <remarks>   Imanuel, 20.01.2014. </remarks>
-        ///
-        /// <returns>   The fuser. </returns>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        public abstract MarkerFuser getFuser();
 
         /// <summary>
         /// An abstract method, to accept a <see cref="AbstractProjectVisitor"/>
