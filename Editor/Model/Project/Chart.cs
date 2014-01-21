@@ -156,40 +156,6 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
-        /// A list of the names used by HighChart
-        /// </summary>
-        protected List<string> names;
-        /// <summary>
-        /// Gets or sets the names.
-        /// </summary>
-        /// <value>
-        /// The names.
-        /// </value>
-        [CategoryAttribute("General")]
-        public List<string> Names
-        {
-            get { return names; }
-            set { names = value; }
-        }
-
-        /// <summary>
-        /// The data used by HighChart.
-        /// </summary>
-        protected List<double[]> data;
-        /// <summary>
-        /// Gets or sets the data.
-        /// </summary>
-        /// <value>
-        /// The data.
-        /// </value>
-        [CategoryAttribute("General")]
-        public List<double[]> Data
-        {
-            get { return data; }
-            set { data = value; }
-        }
-
-        /// <summary>
         /// Gets or sets the maximum value, which
         /// can be displayed.
         /// </summary>
@@ -219,17 +185,11 @@ namespace ARdevKit.Model.Project
         {
             title = "Titel";
             subtitle = "Untertitel";
-            xAxisTitle = "Skala";
-            yAxisTitle = "Kategorien";
+            xAxisTitle = "Kategorien";
+            yAxisTitle = "Skala";
             categories = new string[] {"Kategorie 1", "Kategorie 2"};
             pointPadding = 0.2;
             borderWidth = 0;
-            names = new List<string>();
-            names.Add("Name 1");
-            names.Add("Name 2");
-            data = new List<double[]>();
-            data.Add(new double[] { 33.1, 66.9 });
-            data.Add(new double[] { 44.8, 56.2 });
             Height = 200;
             Width = 200;
         }

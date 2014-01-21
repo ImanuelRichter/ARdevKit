@@ -72,6 +72,8 @@
     <Compile Include="Controller\EditorController\ObjectCopier.cs" />
     <Compile Include="Model\Fuser.cs" />
     <Compile Include="Model\Project\AbstractDynamic2DAugmentation.cs" />
+    <Compile Include="Model\Project\BarChartData.cs" />
+    <Compile Include="Model\Project\ChartData.cs" />
     <Compile Include="Model\Project\ChartStyle.cs" />
     <Compile Include="Model\Project\File\BarChartFile.cs" />
     <Compile Include="Model\Project\File\JavaScriptInLine.cs" />
