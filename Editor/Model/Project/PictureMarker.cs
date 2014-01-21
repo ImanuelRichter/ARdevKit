@@ -86,6 +86,7 @@ namespace ARdevKit.Model.Project
         {
             imagePath = null;
             imageName = "";
+            this.sensorCosID = IDFactory.CreateNewSensorCosID(this);
             fuser = new MarkerFuser();
         }
 
@@ -97,6 +98,7 @@ namespace ARdevKit.Model.Project
             : base("PictureMarker", new Bitmap(imagePath).Height * new Bitmap(imagePath).Width)
         {
             this.imagePath = imagePath;
+            this.sensorCosID = IDFactory.CreateNewSensorCosID(this);
             imageName = Path.GetFileName(imagePath);
             fuser = new MarkerFuser();
         }
@@ -143,6 +145,21 @@ namespace ARdevKit.Model.Project
         public override System.Drawing.Bitmap getIcon()
         {
             return Properties.Resources.ARMarker_small_;
+        }
+
+        /**
+         * <summary>    Makes a deep copy of this object. </summary>
+         *
+         * <remarks>    Robin, 22.01.2014. </remarks>
+         *
+         * <returns>    A copy of this object. </returns>
+         */
+
+        public override object Clone()
+        {
+            PictureMarker n = new PictureMarker();
+            n.sensorCosID = IDFactory.CreateNewSensorCosID(this);
+            return n;
         }
     }
 }

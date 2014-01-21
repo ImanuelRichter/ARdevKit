@@ -106,5 +106,18 @@ namespace ARdevKit.Model.Project
         {
             return Properties.Resources.coordinationAxis_small_;
         }
+
+        /**
+         * <summary>    Makes a deep copy of this object. </summary>
+         *
+         * <remarks>    Robin, 21.01.2014. </remarks>
+         *
+         * <returns>    A copy of this object. </returns>
+         */
+
+        public override object Clone()
+        {
+            return ObjectCopier.Clone<BarChart>(this);
+        }
     }
 }

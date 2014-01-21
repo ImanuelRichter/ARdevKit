@@ -11,7 +11,7 @@ namespace ARdevKit.Model.Project
     /// <summary>
     /// Interface for previewable elements from the Model.
     /// </summary>
-    public interface IPreviewable
+    public interface IPreviewable : ICloneable
     {
 
         /// <summary>

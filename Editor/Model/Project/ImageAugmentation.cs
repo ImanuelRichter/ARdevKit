@@ -93,5 +93,18 @@ namespace ARdevKit.Model.Project
         {
             return Properties.Resources.ImageAugmentation_small_; 
         }
+
+        /**
+         * <summary>    Makes a deep copy of this object. </summary>
+         *
+         * <remarks>    Robin, 22.01.2014. </remarks>
+         *
+         * <returns>    A copy of this object. </returns>
+         */
+
+        public override object Clone()
+        {
+            return ObjectCopier.Clone<ImageAugmentation>(this);
+        }
     }
 }

@@ -436,7 +436,7 @@ public class PreviewController
         {
             ElementIcon icon = (ElementIcon)e.Data.GetData(typeof(ElementIcon));
             AbstractAugmentation augmentation = (AbstractAugmentation)((PictureBox)sender).Tag;
-            AbstractSource source = ObjectCopier.Clone((AbstractSource)icon.Element.Prototype);
+            AbstractSource source = (AbstractSource)icon.Element.Prototype.Clone();
             //addSource(source, augmentation);
         }
     }
