@@ -199,11 +199,9 @@ public class PreviewController
                 //add references in Augmentation, Picturebox + project.sources List.
                 ((AbstractDynamic2DAugmentation)currentElement).source = source;
 
-                this.currentMetaCategory = MetaCategory.Augmentation;
                 this.findBox(currentElement).ContextMenu.MenuItems.Add("Source anzeigen", new EventHandler(this.show_source_by_click));
                 this.findBox(currentElement).ContextMenu.MenuItems.Add("Source löschen", new EventHandler(this.remove_source_by_click));
                 this.ew.project.Sources.Add(((AbstractDynamic2DAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).source);
-                this.currentMetaCategory = MetaCategory.Source;
             }
         }
     }
@@ -482,7 +480,7 @@ public class PreviewController
 
     private PictureBox findBox(IPreviewable prev)
     {
-        if (currentMetaCategory == MetaCategory.Trackable)
+        if (typeof(AbstractTrackable).IsAssignableFrom(prev.GetType()))
         {
             foreach (Control comp in panel.Controls)
             {
@@ -492,7 +490,7 @@ public class PreviewController
                 }
             }
         }
-        else if (currentMetaCategory == MetaCategory.Augmentation)
+        else if (typeof(AbstractAugmentation).IsAssignableFrom(prev.GetType()))
         {
             foreach (Control comp in panel.Controls)
             {
@@ -515,7 +513,7 @@ public class PreviewController
         if (e.Button == MouseButtons.Left)
         {
             ew.PropertyGrid1.SelectedObject = ((Control)sender).Tag;
-            this.ew.CurrentElement = (IPreviewable)((Control)sender).Tag;
+            this.setCurrentElement((IPreviewable)((Control)sender).Tag);
 
             if (typeof(AbstractAugmentation).IsAssignableFrom(((Control)sender).Tag.GetType()))
             {
@@ -530,7 +528,7 @@ public class PreviewController
         }
         else if (e.Button == MouseButtons.Right)
         {
-            this.ew.CurrentElement = (IPreviewable)((Control)sender).Tag;
+            this.setCurrentElement((IPreviewable)((Control)sender).Tag);
             
             if (typeof(AbstractAugmentation).IsAssignableFrom(((Control)sender).Tag.GetType()))
             {
@@ -634,10 +632,8 @@ public class PreviewController
         ew.PropertyGrid1.SelectedObject = null;
         this.currentMetaCategory = tempMeta;
 
-        this.currentMetaCategory = MetaCategory.Augmentation;
         this.findBox(temp).ContextMenu.MenuItems.RemoveAt(3);
         this.findBox(temp).ContextMenu.MenuItems.RemoveAt(3);
-        this.currentMetaCategory = MetaCategory.Source;
 
     }
 
@@ -665,6 +661,21 @@ public class PreviewController
         this.currentMetaCategory = MetaCategory.Augmentation;
         this.addPreviewable((IPreviewable)this.copy.Clone(), new Vector3D(this.panel.Width / 2, this.panel.Height / 2, 0));
         this.currentMetaCategory = tempMeta;
+    }
+    public void setCurrentElement(IPreviewable currentElement)
+    {
+        this.ew.CurrentElement = currentElement;
+        foreach (Control comp in this.panel.Controls)
+        {
+            if (((PictureBox)comp).BorderStyle == BorderStyle.Fixed3D)
+            {
+                ((PictureBox)comp).BorderStyle = BorderStyle.None;
+            }
+        }
+
+        findBox(currentElement).BorderStyle = BorderStyle.Fixed3D;
+        findBox(currentElement).BringToFront();
+
     }
 
 
