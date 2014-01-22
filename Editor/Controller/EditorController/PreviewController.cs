@@ -253,7 +253,7 @@ public class PreviewController
 
     public void removePreviewable(IPreviewable currentElement)
     {
-        if (currentMetaCategory == MetaCategory.Trackable && trackable != null)
+        if (typeof(AbstractTrackable).IsAssignableFrom(currentElement.GetType()) && trackable != null)
         {
             this.removeAll();
             if (!this.ew.project.isTrackable())
@@ -262,7 +262,7 @@ public class PreviewController
                 this.ew.ElementSelectionController.setElementEnable(typeof(IDMarker), true);
             }
         }
-        else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null)
+        else if (typeof(AbstractAugmentation).IsAssignableFrom(currentElement.GetType()) && trackable != null)
         {
             this.trackable.Augmentations.Remove((AbstractAugmentation)currentElement);
             this.panel.Controls.Remove(this.findBox((AbstractAugmentation)currentElement));
@@ -413,7 +413,7 @@ public class PreviewController
         cm.Tag = prev;
 
         //adds drag&drop events for augmentations so that sources can be droped on them
-        if (currentMetaCategory == MetaCategory.Augmentation)
+        if (typeof(AbstractAugmentation).IsAssignableFrom(prev.GetType()))
         {
             ((Control)tempBox).AllowDrop = true;
             DragEventHandler enterHandler = new DragEventHandler(onAugmentationEnter);
@@ -526,20 +526,6 @@ public class PreviewController
             }
 
         }
-        else if (e.Button == MouseButtons.Right)
-        {
-            this.setCurrentElement((IPreviewable)((Control)sender).Tag);
-            
-            if (typeof(AbstractAugmentation).IsAssignableFrom(((Control)sender).Tag.GetType()))
-            {
-                this.ew.Tsm_editor_menu_edit_copie.Enabled = true;
-                this.ew.Tsm_editor_menu_edit_copie.Click += new System.EventHandler(this.copy_augmentation);
-            }
-            else if (typeof(AbstractTrackable).IsAssignableFrom(((Control)sender).Tag.GetType()))
-            {
-                this.ew.Tsm_editor_menu_edit_copie.Enabled = false;
-            }
-        }
     }
 
     /// <summary>   
@@ -580,19 +566,8 @@ public class PreviewController
     private void remove_by_click(object sender, EventArgs e)
     {
         IPreviewable temp = (IPreviewable)((ContextMenu)((MenuItem)sender).Parent).Tag;
-        MetaCategory tempMeta = this.currentMetaCategory;
-        if (temp.GetType() == this.trackable.GetType())
-        {
-            this.currentMetaCategory = MetaCategory.Trackable;
-        }
-        else
-        {
-            this.currentMetaCategory = MetaCategory.Augmentation;
-        }
-
         this.removePreviewable((IPreviewable)((ContextMenu)((MenuItem)sender).Parent).Tag);
         ew.PropertyGrid1.SelectedObject = null;
-        this.currentMetaCategory = tempMeta;
     }
 
 
