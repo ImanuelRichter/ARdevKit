@@ -684,6 +684,10 @@ public class PreviewController
         findBox(currentElement).BringToFront();
     }
 
+    /// <summary>
+    /// set the augmentationPreview to a augmentationPreview with source icon
+    /// </summary>
+    /// <param name="currentElement">The current element.</param>
     private void setSourcePreview(IPreviewable currentElement)
     {
         PictureBox temp = this.findBox(currentElement);
