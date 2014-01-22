@@ -559,11 +559,24 @@ namespace ARdevKit
             set { cmb_editor_selection_toolSelection = value; }
         }
 
+        /// <summary>
+        /// Gets or sets the tsm_editor_menu_edit_copie.
+        /// </summary>
+        /// <value>
+        /// The tsm_editor_menu_edit_copie.
+        /// </value>
         public System.Windows.Forms.ToolStripMenuItem Tsm_editor_menu_edit_copie
         {
             get { return tsm_editor_menu_edit_copie; }
             set {tsm_editor_menu_edit_copie = value; }
         }
+
+        /// <summary>
+        /// Gets or sets the tsm_editor_menu_edit_paste.
+        /// </summary>
+        /// <value>
+        /// The tsm_editor_menu_edit_paste.
+        /// </value>
         public System.Windows.Forms.ToolStripMenuItem Tsm_editor_menu_edit_paste
         {
             get { return tsm_editor_menu_edit_paste; }

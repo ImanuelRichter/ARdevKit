@@ -1056,6 +1056,10 @@ namespace ARdevKit
         }
 
 
+        /// <summary>
+        /// Sets the current scene button to the Color ControlDark.
+        /// </summary>
+        /// <param name="text">The text.</param>
         private void setButton(string text)
         {
             foreach (Control comp in pnl_editor_szenes.Controls)
@@ -1067,6 +1071,9 @@ namespace ARdevKit
             }
         }
 
+        /// <summary>
+        /// Resets the SceneSelectionsButtons to normal Color.
+        /// </summary>
         private void resetButton()
         {
             foreach (Control comp in pnl_editor_szenes.Controls)
@@ -1078,6 +1085,9 @@ namespace ARdevKit
             }
         }
 
+        /// <summary>
+        /// Sets the PasteButton enabled.
+        /// </summary>
         public void setPasteButtonEnabled()
         {
             this.tsm_editor_menu_edit_paste.Enabled = true;
