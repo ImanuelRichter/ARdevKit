@@ -10,6 +10,7 @@ using System.Collections;
 using ARdevKit;
 using ARdevKit.Controller.EditorController;
 using ARdevKit.View;
+using ARdevKit.Properties;
 
 public class PreviewController
 {
@@ -111,7 +112,8 @@ public class PreviewController
                         this.ew.ElementSelectionController.setElementEnable(typeof(IDMarker), false);
                         this.ew.project.Sensor = new MarkerSensor();
                     }
-
+                    setCurrentElement(currentElement);
+                    ew.PropertyGrid1.SelectedObject = currentElement;
                 }
             }
             else
@@ -126,10 +128,10 @@ public class PreviewController
                     this.ew.ElementSelectionController.setElementEnable(typeof(PictureMarker), false);
                     this.ew.project.Sensor = new MarkerSensor();
                 }
-
+                setCurrentElement(currentElement);
+                ew.PropertyGrid1.SelectedObject = currentElement;
             }
-            setCurrentElement(currentElement);
-            ew.PropertyGrid1.SelectedObject = currentElement;
+            
         }
         else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null && this.ew.project.Trackables[index].Augmentations.Count < 3)
         {
@@ -199,10 +201,21 @@ public class PreviewController
 
                 //add references in Augmentation, Picturebox + project.sources List.
                 ((AbstractDynamic2DAugmentation)currentElement).source = source;
-
-                this.findBox(currentElement).ContextMenu.MenuItems.Add("Source anzeigen", new EventHandler(this.show_source_by_click));
-                this.findBox(currentElement).ContextMenu.MenuItems.Add("Source löschen", new EventHandler(this.remove_source_by_click));
+                PictureBox temp = this.findBox(currentElement);
+                temp.ContextMenu.MenuItems.Add("Source anzeigen", new EventHandler(this.show_source_by_click));
+                temp.ContextMenu.MenuItems.Add("Source löschen", new EventHandler(this.remove_source_by_click));
+                
                 this.ew.project.Sources.Add(((AbstractDynamic2DAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).source);
+
+                Image image1 = currentElement.getPreview();
+                Image image2 = Resources.database;
+                Image newPic = new Bitmap(image1.Width, image1.Height);
+
+                Graphics graphic = Graphics.FromImage(newPic);
+                graphic.DrawImage(image1, new Rectangle(0,0, image1.Width, image1.Height));
+                graphic.DrawImage(image2, new Rectangle(20, 20, image2.Width, image2.Height));
+                temp.Image = newPic;
+                temp.Refresh();
             }
         }
     }
