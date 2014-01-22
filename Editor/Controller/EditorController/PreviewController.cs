@@ -616,7 +616,6 @@ public class PreviewController
             this.ew.setPasteButtonEnabled();
 
         }
-        }
     }
     /// <summary>
     /// EventHandler for paste function. paste the object at the current cursor position.
@@ -645,26 +644,6 @@ public class PreviewController
 
 
     }
-
-    public void setCurrentElement(IPreviewable currentElement)
-    {
-        this.ew.CurrentElement = currentElement;
-
-        if (typeof(AbstractAugmentation).IsAssignableFrom(currentElement.GetType()))
-        {
-            this.ew.Tsm_editor_menu_edit_copie.Enabled = true;
-        }
-        else if (typeof(AbstractTrackable).IsAssignableFrom(currentElement.GetType()))
-        {
-            this.ew.Tsm_editor_menu_edit_copie.Enabled = false;
-        }
-
-        foreach (Control comp in this.panel.Controls)
-        {
-            if (((PictureBox)comp).BorderStyle == BorderStyle.Fixed3D)
-            {
-                ((PictureBox)comp).BorderStyle = BorderStyle.None;
-            }
 
     /// <summary>
     /// set the current element and mark it on the panel
