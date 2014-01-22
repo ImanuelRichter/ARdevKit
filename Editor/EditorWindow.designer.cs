@@ -62,7 +62,7 @@
             this.pnl_editor_properties = new System.Windows.Forms.Panel();
             this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
             this.cmb_editor_properties_objectSelection = new System.Windows.Forms.ComboBox();
-            this.pnl_editor_szenes = new System.Windows.Forms.Panel();
+            this.pnl_editor_scenes = new System.Windows.Forms.Panel();
             this.btn_editor_scene_delete = new System.Windows.Forms.Button();
             this.btn_editor_scene_scene_1 = new System.Windows.Forms.Button();
             this.btn_editor_scene_new = new System.Windows.Forms.Button();
@@ -71,7 +71,7 @@
             this.mst_editor_menu.SuspendLayout();
             this.pnl_editor_selection.SuspendLayout();
             this.pnl_editor_properties.SuspendLayout();
-            this.pnl_editor_szenes.SuspendLayout();
+            this.pnl_editor_scenes.SuspendLayout();
             this.pnl_editor_status.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -369,16 +369,16 @@
             this.cmb_editor_properties_objectSelection.TabIndex = 1;
             this.cmb_editor_properties_objectSelection.Text = "Objekt wählen...";
             // 
-            // pnl_editor_szenes
+            // pnl_editor_scenes
             // 
-            this.pnl_editor_szenes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnl_editor_szenes.Controls.Add(this.btn_editor_scene_delete);
-            this.pnl_editor_szenes.Controls.Add(this.btn_editor_scene_scene_1);
-            this.pnl_editor_szenes.Controls.Add(this.btn_editor_scene_new);
-            this.pnl_editor_szenes.Location = new System.Drawing.Point(141, 586);
-            this.pnl_editor_szenes.Name = "pnl_editor_szenes";
-            this.pnl_editor_szenes.Size = new System.Drawing.Size(661, 114);
-            this.pnl_editor_szenes.TabIndex = 2;
+            this.pnl_editor_scenes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_editor_scenes.Controls.Add(this.btn_editor_scene_delete);
+            this.pnl_editor_scenes.Controls.Add(this.btn_editor_scene_scene_1);
+            this.pnl_editor_scenes.Controls.Add(this.btn_editor_scene_new);
+            this.pnl_editor_scenes.Location = new System.Drawing.Point(141, 586);
+            this.pnl_editor_scenes.Name = "pnl_editor_scenes";
+            this.pnl_editor_scenes.Size = new System.Drawing.Size(661, 114);
+            this.pnl_editor_scenes.TabIndex = 2;
             // 
             // btn_editor_scene_delete
             // 
@@ -434,7 +434,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 729);
             this.Controls.Add(this.pnl_editor_status);
-            this.Controls.Add(this.pnl_editor_szenes);
+            this.Controls.Add(this.pnl_editor_scenes);
             this.Controls.Add(this.pnl_editor_properties);
             this.Controls.Add(this.pnl_editor_preview);
             this.Controls.Add(this.pnl_editor_selection);
@@ -448,7 +448,7 @@
             this.mst_editor_menu.PerformLayout();
             this.pnl_editor_selection.ResumeLayout(false);
             this.pnl_editor_properties.ResumeLayout(false);
-            this.pnl_editor_szenes.ResumeLayout(false);
+            this.pnl_editor_scenes.ResumeLayout(false);
             this.pnl_editor_status.ResumeLayout(false);
             this.pnl_editor_status.PerformLayout();
             this.ResumeLayout(false);
@@ -486,7 +486,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_help_info;
         private System.Windows.Forms.Panel pnl_editor_selection;
         private System.Windows.Forms.Panel pnl_editor_preview;
-        private System.Windows.Forms.Panel pnl_editor_szenes;
+        private System.Windows.Forms.Panel pnl_editor_scenes;
         private System.Windows.Forms.Panel pnl_editor_properties;
         private System.Windows.Forms.Panel pnl_editor_status;
         private System.Windows.Forms.ComboBox cmb_editor_selection_toolSelection;

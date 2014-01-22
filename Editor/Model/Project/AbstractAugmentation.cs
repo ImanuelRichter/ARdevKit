@@ -24,6 +24,21 @@ namespace ARdevKit.Model.Project
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public abstract class AbstractAugmentation : IPreviewable
     {
+        /// <summary>   The identifier. </summary>
+        protected string id;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the identifier. </summary>
+        ///
+        /// <value> The identifier. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        [CategoryAttribute("General"), DefaultValueAttribute(false)]
+        public string ID
+        {
+            get { return id; }
+            set { id = value; }
+        }
         /// <summary>
         /// describes if the <see cref="AbstractAugmentation"/>
         /// is seen using AREL, even if the associated <see cref="AbstractTrackable"/>

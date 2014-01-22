@@ -465,7 +465,7 @@ namespace ARdevKit
                 tempButton.UseVisualStyleBackColor = true;
                 tempButton.Click += new System.EventHandler(this.btn_editor_scene_scene_change);
 
-                this.pnl_editor_szenes.Controls.Add(tempButton);
+                this.pnl_editor_scenes.Controls.Add(tempButton);
                 this.previewController.reloadPreviewPanel(this.project.Trackables.Count);
                 this.PropertyGrid1.SelectedObject = null;
             }
@@ -794,9 +794,9 @@ namespace ARdevKit
                     this.project.Trackables.Remove(this.project.Trackables[i]);
                 }
             }
-            this.pnl_editor_szenes.Controls.Clear();
-            this.pnl_editor_szenes.Controls.Add(this.btn_editor_scene_new);
-            this.pnl_editor_szenes.Controls.Add(this.btn_editor_scene_delete);
+            this.pnl_editor_scenes.Controls.Clear();
+            this.pnl_editor_scenes.Controls.Add(this.btn_editor_scene_new);
+            this.pnl_editor_scenes.Controls.Add(this.btn_editor_scene_delete);
 
             for (int i = 0; i < this.project.Trackables.Count; i++)
             {
@@ -808,7 +808,7 @@ namespace ARdevKit
                 tempButton.UseVisualStyleBackColor = true;
                 tempButton.Click += new System.EventHandler(this.btn_editor_scene_scene_change);
 
-                this.pnl_editor_szenes.Controls.Add(tempButton);
+                this.pnl_editor_scenes.Controls.Add(tempButton);
             }
         }
 
@@ -820,9 +820,9 @@ namespace ARdevKit
 
         private void reloadSelectionPanel()
         {
-            this.pnl_editor_szenes.Controls.Clear();
-            this.pnl_editor_szenes.Controls.Add(this.btn_editor_scene_new);
-            this.pnl_editor_szenes.Controls.Add(this.btn_editor_scene_delete);
+            this.pnl_editor_scenes.Controls.Clear();
+            this.pnl_editor_scenes.Controls.Add(this.btn_editor_scene_new);
+            this.pnl_editor_scenes.Controls.Add(this.btn_editor_scene_delete);
 
             for (int i = 0; i < this.project.Trackables.Count; i++)
             {
@@ -834,7 +834,7 @@ namespace ARdevKit
                 tempButton.UseVisualStyleBackColor = true;
                 tempButton.Click += new System.EventHandler(this.btn_editor_scene_scene_change);
 
-                this.pnl_editor_szenes.Controls.Add(tempButton);
+                this.pnl_editor_scenes.Controls.Add(tempButton);
             }
         }
 

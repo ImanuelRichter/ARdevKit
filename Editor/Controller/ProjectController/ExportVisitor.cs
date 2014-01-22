@@ -135,10 +135,6 @@ namespace ARdevKit.Controller.ProjectController
 
         public override void Visit(BarChart barChart)
         {
-            // TrackingData.xml
-
-            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
             // arel[projectName].html
             if (barChartCount == 1)
             {
@@ -165,22 +161,24 @@ namespace ARdevKit.Controller.ProjectController
             JavaScriptBlock loadContentBlock = new JavaScriptBlock();
             sceneReadyFunktionBlock.AddBlock(loadContentBlock);
 
-            string barChartVariable = "barChart" + barChartCount;
+            string barChartID = barChart.ID == null ? "barChart" + barChartCount : barChart.ID;
 
             JavaScriptBlock arelGlueVariablesBlock = new JavaScriptBlock();
-            arelGlueVariablesBlock.AddLine(new JavaScriptLine("var " + barChartVariable));
+            arelGlueVariablesBlock.AddLine(new JavaScriptLine("var " + barChartID));
             arelGlueFile.AddBlock(arelGlueVariablesBlock);
 
-            loadContentBlock.AddLine(new JavaScriptLine(barChartVariable + " = arel.Plugin.BarChart" + barChartCount));
+            loadContentBlock.AddLine(new JavaScriptLine(barChartID + " = arel.Plugin." + CultureInfo.CurrentCulture.TextInfo.ToTitleCase(barChartID)));
 
-            loadContentBlock.AddLine(new JavaScriptLine(barChartVariable + ".create()"));
-            loadContentBlock.AddLine(new JavaScriptLine(barChartVariable + ".hide()"));
+            loadContentBlock.AddLine(new JavaScriptLine(barChartID + ".create()"));
+            loadContentBlock.AddLine(new JavaScriptLine(barChartID + ".hide()"));
 
-            JavaScriptBlock barChartIfPatternIsFoundShowBlock = new JavaScriptBlock("if (param[0].getCoordinateSystemID() == " + barChartVariable + ".getCoordinateSystemID())", new BlockMarker("{", "}"));
+            // onTracking
+            JavaScriptBlock barChartIfPatternIsFoundShowBlock = new JavaScriptBlock("if (param[0].getCoordinateSystemID() == " + barChartID + ".getCoordinateSystemID())", new BlockMarker("{", "}"));
             ifPatternIsFoundBlock.AddBlock(barChartIfPatternIsFoundShowBlock);
-            barChartIfPatternIsFoundShowBlock.AddLine(new JavaScriptLine(barChartVariable + ".show()"));
+            barChartIfPatternIsFoundShowBlock.AddLine(new JavaScriptLine(barChartID + ".show()"));
 
-            ifPatternIsLostBlock.AddLine(new JavaScriptLine(barChartVariable + ".hide()"));
+            // onTracking lost
+            ifPatternIsLostBlock.AddLine(new JavaScriptLine(barChartID + ".hide()"));
 
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -194,10 +192,10 @@ namespace ARdevKit.Controller.ProjectController
                 barChartFile = new BarChartFile(project.ProjectPath, barChartCount);
             JavaScriptBlock barChartFileVariablesBlock = new JavaScriptBlock();
 
-            JavaScriptBlock barChartFileDefineBlock = new JavaScriptBlock("arel.Plugin.BarChart" + barChartCount.ToString() + " = ", new BlockMarker("{", "};"));
+            JavaScriptBlock barChartFileDefineBlock = new JavaScriptBlock("arel.Plugin." + CultureInfo.CurrentCulture.TextInfo.ToTitleCase(barChartID) + " = ", new BlockMarker("{", "};"));
             barChartFile.AddBlock(barChartFileDefineBlock);
 
-            barChartFileDefineBlock.AddLine(new JavaScriptInLine("id : \"" + barChartVariable + "\"", true));
+            barChartFileDefineBlock.AddLine(new JavaScriptInLine("id : \"" + barChartID + "\"", true));
             barChartFileDefineBlock.AddLine(new JavaScriptInLine("coordinateSystemID : " + coordinateSystemID, true));
 
             JavaScriptBlock barChartFileCreateBlock = new JavaScriptBlock("create : function()", new BlockMarker("{", "},"));
@@ -217,29 +215,28 @@ namespace ARdevKit.Controller.ProjectController
             barChartFileCreateBlock.AddLine(new JavaScriptLine("chart.style.height = \"" + barChart.Height + "px\""));
             barChartFileCreateBlock.AddLine(new JavaScriptLine("document.documentElement.appendChild(chart)"));
 
-            JavaScriptBlock barChartFileHighchartBlock = new JavaScriptBlock("$('#' + this.id).highcharts", new BlockMarker("({", "});"));
-            barChartFileCreateBlock.AddBlock(barChartFileHighchartBlock);
+            JavaScriptBlock barChartFileHighchartsOptionsBlock = new JavaScriptBlock("var options = ", new BlockMarker("{", "};"));
 
             JavaScriptBlock barChartFileHighchartChartBlock = new JavaScriptBlock("chart: ", new BlockMarker("{", "},"));
-            barChartFileHighchartBlock.AddBlock(barChartFileHighchartChartBlock);
+            barChartFileHighchartsOptionsBlock.AddBlock(barChartFileHighchartChartBlock);
             barChartFileHighchartChartBlock.AddLine(new JavaScriptInLine("type: 'column'", false));
 
             if (barChart.Title != "")
             {
                 JavaScriptBlock barChartFileHighchartTitleBlock = new JavaScriptBlock("title: ", new BlockMarker("{", "},"));
-                barChartFileHighchartBlock.AddBlock(barChartFileHighchartTitleBlock);
+                barChartFileHighchartsOptionsBlock.AddBlock(barChartFileHighchartTitleBlock);
                 barChartFileHighchartTitleBlock.AddLine(new JavaScriptInLine("text: '" + barChart.Title + "'", false));
             }
 
             if (barChart.Subtitle != "")
             {
                 JavaScriptBlock barChartFileHighchartSubTitleBlock = new JavaScriptBlock("subtitle: ", new BlockMarker("{", "},"));
-                barChartFileHighchartBlock.AddBlock(barChartFileHighchartSubTitleBlock);
+                barChartFileHighchartsOptionsBlock.AddBlock(barChartFileHighchartSubTitleBlock);
                 barChartFileHighchartSubTitleBlock.AddLine(new JavaScriptInLine("text: '" + barChart.Subtitle + "'", false));
             }
 
             JavaScriptBlock barChartFileHighchartXAxisBlock = new JavaScriptBlock("xAxis: ", new BlockMarker("{", "},"));
-            barChartFileHighchartBlock.AddBlock(barChartFileHighchartXAxisBlock);
+            barChartFileHighchartsOptionsBlock.AddBlock(barChartFileHighchartXAxisBlock);
 
             if (barChart.XAxisTitle != "")
             {
@@ -258,7 +255,7 @@ namespace ARdevKit.Controller.ProjectController
             barChartFileHighchartXAxisCategoriesBlock.AddLine(new JavaScriptInLine("'" + barChart.Categories[barChart.Categories.Length - 1] + "'", false));
 
             JavaScriptBlock barChartFileHighchartYAxisBlock = new JavaScriptBlock("yAxis: ", new BlockMarker("{", "},"));
-            barChartFileHighchartBlock.AddBlock(barChartFileHighchartYAxisBlock);
+            barChartFileHighchartsOptionsBlock.AddBlock(barChartFileHighchartYAxisBlock);
 
             barChartFileHighchartYAxisBlock.AddLine(new JavaScriptInLine("min: " + barChart.MinValue, true));
             if (barChart.YAxisTitle != "")
@@ -269,7 +266,7 @@ namespace ARdevKit.Controller.ProjectController
             }
 
             JavaScriptBlock barChartFileHighchartTooltipBlock = new JavaScriptBlock("tooltip: ", new BlockMarker("{", "},"));
-            barChartFileHighchartBlock.AddBlock(barChartFileHighchartTooltipBlock);
+            barChartFileHighchartsOptionsBlock.AddBlock(barChartFileHighchartTooltipBlock);
             // TODO make these things editable
             barChartFileHighchartTooltipBlock.AddLine(new JavaScriptInLine("headerFormat: '<span style=\"font-size:10px\">{point.key}</span><table>'", true));
             barChartFileHighchartTooltipBlock.AddLine(new JavaScriptInLine("pointFormat: '<tr><td style=\"color:{series.color};padding:0\">{series.name}: </td>' +\n" +
@@ -279,7 +276,7 @@ namespace ARdevKit.Controller.ProjectController
             barChartFileHighchartTooltipBlock.AddLine(new JavaScriptInLine("useHTML: true", false));
 
             JavaScriptBlock barChartFileHighchartPlotOptions = new JavaScriptBlock("plotOptions: ", new BlockMarker("{", "},"));
-            barChartFileHighchartBlock.AddBlock(barChartFileHighchartPlotOptions);
+            barChartFileHighchartsOptionsBlock.AddBlock(barChartFileHighchartPlotOptions);
 
             JavaScriptBlock barChartFileHighchartPlotOptionsColumn = new JavaScriptBlock("column: ", new BlockMarker("{", "}"));
             barChartFileHighchartPlotOptions.AddBlock(barChartFileHighchartPlotOptionsColumn);
@@ -287,7 +284,10 @@ namespace ARdevKit.Controller.ProjectController
             barChartFileHighchartPlotOptionsColumn.AddLine(new JavaScriptInLine("borderWidth: " + barChart.BorderWidth, false));
 
             JavaScriptBlock barChartFileHighchartSeriesBlock = new JavaScriptBlock("series: ", new BlockMarker("[", "]"));
-            barChartFileHighchartBlock.AddBlock(barChartFileHighchartSeriesBlock);
+            barChartFileHighchartsOptionsBlock.AddBlock(barChartFileHighchartSeriesBlock);
+
+            // TODO add options block
+            barChartFileCreateBlock.AddLine(new JavaScriptLine("var chart = $('#' + " + CultureInfo.CurrentCulture.TextInfo.ToTitleCase(barChartID) + ".id).highcharts(options)"));
 
             int n1 = barChart.Data.Count - 1;
             for (int i = 0; i < n1; i++)
