@@ -678,12 +678,12 @@ namespace ARdevKit
 
         public void registerElements()
         {
-            Bitmap dummy = Properties.Resources.PreviewDummy; //TODO: Make preview Bitmaps for all Elements
             SceneElementCategory sources = new SceneElementCategory(MetaCategory.Source, "Sources");
             sources.addElement(new SceneElement("Database Source", new DbSource(), this));
             sources.addElement(new SceneElement("FileSource", new FileSource(""), this));
             SceneElementCategory augmentations = new SceneElementCategory(MetaCategory.Augmentation, "Augmentations");
             augmentations.addElement(new SceneElement("Bar Graph", new BarChart(), this));
+            augmentations.addElement(new SceneElement("Image Augmentation", new ImageAugmentation(), this));
             SceneElementCategory trackables = new SceneElementCategory(MetaCategory.Trackable, "Trackables");
             trackables.addElement(new SceneElement("Picture Marker", new PictureMarker(), this));
             trackables.addElement(new SceneElement("IDMarker", new IDMarker(1), this));
@@ -909,7 +909,7 @@ namespace ARdevKit
             {
                 ElementIcon icon = (ElementIcon)e.Data.GetData(typeof(ElementIcon));
                 Point p = pnl_editor_preview.PointToClient(Cursor.Position);
-                IPreviewable element = ObjectCopier.Clone(icon.Element.Dummy);
+                IPreviewable element = (IPreviewable)icon.Element.Prototype.Clone();
                 icon.EditorWindow.PreviewController.addPreviewable(element, new Vector3D(p.X, p.Y, 0));
             }
         }
@@ -972,7 +972,7 @@ namespace ARdevKit
             this.updateElementSelectionPanel();
             this.updatePreviewPanel();
             this.updateSceneSelectionPanel();
-            this.updatePropertyPanel(currentElement);
+            //this.updatePropertyPanel(currentElement);
             this.updateStatusBar();
         }
 

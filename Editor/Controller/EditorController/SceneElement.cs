@@ -18,23 +18,23 @@ namespace ARdevKit.Controller.EditorController
     class SceneElement
     {
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Dummyelement. </summary>
+        /// <summary>   Prototype-Element. </summary>
         ///
-        /// <value> The dummy. </value>
+        /// <value> The prototype. </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        private IPreviewable dummy;
+        private IPreviewable prototype;
 
         /**
-         * <summary>    Gets or sets the dummy. </summary>
+         * <summary>    Gets or sets the prototype. </summary>
          *
-         * <value>  The dummy. </value>
+         * <value>  The prototype. </value>
          */
 
-        public IPreviewable Dummy
+        public IPreviewable Prototype
         {
-            get { return dummy; }
-            set { dummy = value; }
+            get { return prototype; }
+            set { prototype = value; }
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -95,22 +95,22 @@ namespace ARdevKit.Controller.EditorController
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
-        ///     Konstruktor. Erzeugt ein neues SceneElement Objekt, akzeptiert dafür ein dummy vom Typ
-        ///     IPreviewable, ein icon vom Typ Bitmap, sowie name vom Typ String.
+        ///     Konstruktor. Create a new SceneElement, takes a prototype of Type
+        ///     IPreviewable, an icon of Typ Bitmap and a name of Typ String.
         /// </summary>
         ///
         /// <remarks>   Lizzard, 1/13/2014. </remarks>
         ///
         /// <param name="name">    The name of the Element. </param>
-        /// <param name="dummy">    The dummy. </param>
+        /// <param name="prototype">    The prototype. </param>
         /// <param name="ew">     The Editor window. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public SceneElement(String name, IPreviewable dummy, EditorWindow ew)
+        public SceneElement(String name, IPreviewable prototype, EditorWindow ew)
         {
             this.name = name;
-            this.dummy = dummy;
-            this.icon = dummy.getIcon();
+            this.prototype = prototype;
+            this.icon = prototype.getIcon();
             this.elementIcon = new ElementIcon(this, ew);
         }
 

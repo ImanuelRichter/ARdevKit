@@ -63,6 +63,7 @@ namespace ARdevKit.Model.Project
         public IDMarker(int matrixID) : base("IDMarker", 60)
         {
             this.matrixID = matrixID;
+            this.sensorCosID = IDFactory.CreateNewSensorCosID(this);
             fuser = new MarkerFuser();
         }
 
@@ -103,6 +104,14 @@ namespace ARdevKit.Model.Project
         public override Bitmap getIcon()
         {
             return Properties.Resources.ARRMarker_small_;
+        }
+
+        public override object Clone()
+        {
+            IDMarker n = ObjectCopier.Clone<IDMarker>(this);
+            n.fuser = new MarkerFuser();
+            n.sensorCosID = IDFactory.CreateNewSensorCosID(this);
+            return n;
         }
     }
 }

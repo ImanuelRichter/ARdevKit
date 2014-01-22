@@ -30,6 +30,7 @@ namespace ARdevKit
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditorWindow));
             this.mst_editor_menu = new System.Windows.Forms.MenuStrip();
             this.tsm_editor_menu_file = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_editor_menu_file_new = new System.Windows.Forms.ToolStripMenuItem();

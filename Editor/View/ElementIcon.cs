@@ -136,9 +136,8 @@ namespace ARdevKit.View
             {
                 int y = editorWindow.Pnl_editor_preview.Height / 2;
                 int x = editorWindow.Pnl_editor_preview.Width / 2;
-                
-                IPreviewable element = ObjectCopier.Clone(this.element.Dummy);
-                editorWindow.PreviewController.addPreviewable(element, new ARdevKit.Model.Project.Vector3D(x, y, 0));
+
+                editorWindow.PreviewController.addPreviewable((IPreviewable)this.element.Prototype.Clone(), new ARdevKit.Model.Project.Vector3D(x, y, 0));
             }
         }
 
