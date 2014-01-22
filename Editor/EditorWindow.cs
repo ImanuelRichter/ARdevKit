@@ -419,16 +419,12 @@ namespace ARdevKit
 
         private void btn_editor_scene_scene_change(object sender, EventArgs e)
         {
-            if (this.previewController.trackable == null && this.project.Trackables.Count > 1 && this.previewController.index != Convert.ToInt32(((Button)sender).Text) - 1)
-            {
-                this.reloadSelectionPanel();
-            }
-
             int temp = Convert.ToInt32(((Button)sender).Text);
             if (this.project.Trackables.Count > 1)
             {
                 this.previewController.reloadPreviewPanel(temp - 1);
                 this.PropertyGrid1.SelectedObject = null;
+
             }
             else
             {
@@ -437,6 +433,8 @@ namespace ARdevKit
                 this.PropertyGrid1.SelectedObject = null;
             }
 
+            this.resetButton();
+            this.setButton(((Button)sender).Text);
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -468,6 +466,8 @@ namespace ARdevKit
                 this.pnl_editor_szenes.Controls.Add(tempButton);
                 this.previewController.reloadPreviewPanel(this.project.Trackables.Count);
                 this.PropertyGrid1.SelectedObject = null;
+                this.resetButton();
+                this.setButton(tempButton.Text);
             }
             else
             {
@@ -514,6 +514,8 @@ namespace ARdevKit
                     this.ElementSelectionController.setElementEnable(typeof(IDMarker), true);
                 }
             }
+            this.resetButton();
+            this.setButton(Convert.ToString("1"));
             this.PropertyGrid1.SelectedObject = null;
         }
 
@@ -810,6 +812,7 @@ namespace ARdevKit
 
                 this.pnl_editor_szenes.Controls.Add(tempButton);
             }
+            this.setButton("1");
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1050,6 +1053,29 @@ namespace ARdevKit
         private void tsm_editor_menu_help_info_Click(object sender, EventArgs e)
         {
             MessageBox.Show("ARdevKit Version 0.1 alpha \n\n Rüdiger Heres \n Jonas Lachowitzer \n Robin Lamberti \n Tuong-Vu Mai \n Imanuel Richter\n Marwin Rieger \n\n Nutzung auf eigene Gefahr! \n Das Programm könnte Ihre Kekse auffressen...", "Info");
+        }
+
+
+        private void setButton(string text)
+        {
+            foreach (Control comp in pnl_editor_szenes.Controls)
+            {
+                if (comp.Text == text)
+                {
+                    ((Button)comp).BackColor = SystemColors.ControlDark;
+                }
+            }
+        }
+
+        private void resetButton()
+        {
+            foreach (Control comp in pnl_editor_szenes.Controls)
+            {
+                if (((Button)comp).BackColor == SystemColors.ControlDark)
+                {
+                    ((Button)comp).BackColor = SystemColors.Control;
+                }
+            }
         }
     }
 }

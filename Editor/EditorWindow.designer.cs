@@ -1,4 +1,6 @@
-﻿namespace ARdevKit
+﻿using System.Drawing;
+using System.Windows.Forms;
+namespace ARdevKit
 {
     partial class EditorWindow
     {
@@ -397,11 +399,12 @@
             this.btn_editor_scene_scene_1.Size = new System.Drawing.Size(46, 45);
             this.btn_editor_scene_scene_1.TabIndex = 1;
             this.btn_editor_scene_scene_1.Text = "1";
-            this.btn_editor_scene_scene_1.UseVisualStyleBackColor = true;
+            this.btn_editor_scene_scene_1.UseVisualStyleBackColor = false;
             this.btn_editor_scene_scene_1.Click += new System.EventHandler(this.btn_editor_scene_scene_change);
             // 
             // btn_editor_scene_new
             // 
+            this.btn_editor_scene_new.BackColor = System.Drawing.Color.DarkGray;
             this.btn_editor_scene_new.Location = new System.Drawing.Point(3, 34);
             this.btn_editor_scene_new.Name = "btn_editor_scene_new";
             this.btn_editor_scene_new.Size = new System.Drawing.Size(45, 45);
@@ -432,7 +435,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.ClientSize = new System.Drawing.Size(1008, 730);
             this.Controls.Add(this.pnl_editor_status);
             this.Controls.Add(this.pnl_editor_szenes);
             this.Controls.Add(this.pnl_editor_properties);
