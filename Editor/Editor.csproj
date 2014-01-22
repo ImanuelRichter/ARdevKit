@@ -177,6 +177,8 @@
     <Content Include="Controller\Connections\DatabaseConnection\foo.txt" />
     <Content Include="Controller\Connections\DeviceConnection\foo.txt" />
     <Content Include="Controller\DebugController\foo.txt" />
+    <None Include="Resources\db_small.bmp" />
+    <None Include="Resources\database.bmp" />
     <None Include="Resources\ImageAugmentation%28small%29.bmp" />
     <None Include="Resources\ARRMarker%28small%29.bmp" />
     <None Include="Resources\ARMarker%28small%29.bmp" />

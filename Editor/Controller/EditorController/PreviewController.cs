@@ -10,6 +10,7 @@ using System.Collections;
 using ARdevKit;
 using ARdevKit.Controller.EditorController;
 using ARdevKit.View;
+using ARdevKit.Properties;
 
 public class PreviewController
 {
@@ -111,7 +112,8 @@ public class PreviewController
                         this.ew.ElementSelectionController.setElementEnable(typeof(IDMarker), false);
                         this.ew.project.Sensor = new MarkerSensor();
                     }
-
+                    setCurrentElement(currentElement);
+                    ew.PropertyGrid1.SelectedObject = currentElement;
                 }
             }
             else
@@ -126,10 +128,10 @@ public class PreviewController
                     this.ew.ElementSelectionController.setElementEnable(typeof(PictureMarker), false);
                     this.ew.project.Sensor = new MarkerSensor();
                 }
-
+                setCurrentElement(currentElement);
+                ew.PropertyGrid1.SelectedObject = currentElement;
             }
-            setCurrentElement(currentElement);
-            ew.PropertyGrid1.SelectedObject = currentElement;
+            
         }
         else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null && this.ew.project.Trackables[index].Augmentations.Count < 3)
         {
@@ -190,19 +192,22 @@ public class PreviewController
 
     public void addSource(AbstractSource source, AbstractAugmentation currentElement)
     {
-        if (currentMetaCategory == MetaCategory.Source)
+        if (currentMetaCategory == MetaCategory.Source && typeof(AbstractDynamic2DAugmentation).IsAssignableFrom(currentElement.GetType()))
         {
-            if (this.trackable != null && trackable.existAugmentation((AbstractAugmentation)currentElement))
+            if (this.trackable != null && trackable.existAugmentation((AbstractAugmentation)currentElement)
+                && ((AbstractDynamic2DAugmentation)currentElement).source == null)
             {
                 //set reference to the augmentations in Source
                 source.Augmentations.Add((Abstract2DAugmentation)currentElement);
 
                 //add references in Augmentation, Picturebox + project.sources List.
                 ((AbstractDynamic2DAugmentation)currentElement).source = source;
-
-                this.findBox(currentElement).ContextMenu.MenuItems.Add("Source anzeigen", new EventHandler(this.show_source_by_click));
-                this.findBox(currentElement).ContextMenu.MenuItems.Add("Source löschen", new EventHandler(this.remove_source_by_click));
+                PictureBox temp = this.findBox(currentElement);
+                temp.ContextMenu.MenuItems.Add("Source anzeigen", new EventHandler(this.show_source_by_click));
+                temp.ContextMenu.MenuItems.Add("Source löschen", new EventHandler(this.remove_source_by_click));
                 this.ew.project.Sources.Add(((AbstractDynamic2DAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).source);
+
+                this.setSourcePreview(currentElement);
             }
         }
     }
@@ -235,6 +240,8 @@ public class PreviewController
                 ((AbstractDynamic2DAugmentation)currentElement).source = null;
                 this.ew.project.Sources.Remove(source);
             }
+            this.findBox(currentElement).Image = currentElement.getPreview();
+            this.findBox(currentElement).Refresh();
         }
     }
 
@@ -385,6 +392,10 @@ public class PreviewController
             foreach (AbstractAugmentation aug in trackable.Augmentations)
             {
                 this.addPictureBox(aug, aug.TranslationVector);
+                if (typeof(AbstractDynamic2DAugmentation).IsAssignableFrom(aug.GetType()) && ((AbstractDynamic2DAugmentation)aug).source != null)
+                {
+                    this.setSourcePreview(aug);
+                }
             }
         }
         this.addPictureBox(trackable, trackable.vector);
@@ -597,8 +608,8 @@ public class PreviewController
         ew.PropertyGrid1.SelectedObject = null;
         this.currentMetaCategory = tempMeta;
 
-        this.findBox(temp).ContextMenu.MenuItems.RemoveAt(3);
-        this.findBox(temp).ContextMenu.MenuItems.RemoveAt(3);
+        this.findBox(temp).ContextMenu.MenuItems.RemoveAt(2);
+        this.findBox(temp).ContextMenu.MenuItems.RemoveAt(2);
 
     }
 
@@ -671,6 +682,24 @@ public class PreviewController
         }
         findBox(currentElement).BorderStyle = BorderStyle.Fixed3D;
         findBox(currentElement).BringToFront();
+    }
+
+    /// <summary>
+    /// set the augmentationPreview to a augmentationPreview with source icon
+    /// </summary>
+    /// <param name="currentElement">The current element.</param>
+    private void setSourcePreview(IPreviewable currentElement)
+    {
+        PictureBox temp = this.findBox(currentElement);
+        Image image1 = currentElement.getPreview();
+        Image image2 = new Bitmap(ARdevKit.Properties.Resources.db_small);
+        Image newPic = new Bitmap(image1.Width, image1.Height);
+
+        Graphics graphic = Graphics.FromImage(newPic);
+        graphic.DrawImage(image1, new Rectangle(0, 0, image1.Width, image1.Height));
+        graphic.DrawImage(image2, new Rectangle(0, 0, image2.Width, image2.Height));
+        temp.Image = newPic;
+        temp.Refresh();
     }
 
 
