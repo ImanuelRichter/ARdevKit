@@ -128,18 +128,42 @@ public class PreviewController
         }
         else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null && this.ew.project.Trackables[index].Augmentations.Count < 3)
         {
-            //set the vector and the trackable in <see cref="AbstractAugmentation"/>
-            ((AbstractAugmentation)currentElement).TranslationVector = v;
-            ((AbstractAugmentation)currentElement).Trackable = this.trackable;
+            if (currentElement.GetType() == typeof(ImageAugmentation))
+            {
+                OpenFileDialog openTestImageDialog = new OpenFileDialog();
+                openTestImageDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
+                if (openTestImageDialog.ShowDialog() == DialogResult.OK)
+                {
+                    ((ImageAugmentation)currentElement).ImagePath = openTestImageDialog.FileName;
+                    //set the vector and the trackable in <see cref="AbstractAugmentation"/>
+                    ((AbstractAugmentation)currentElement).TranslationVector = v;
+                    ((AbstractAugmentation)currentElement).Trackable = this.trackable;
 
-            //set references 
-            AbstractAugmentation augmentation = (AbstractAugmentation)currentElement;
-            trackable.Augmentations.Add(augmentation);
+                    //set references 
+                    AbstractAugmentation augmentation = (AbstractAugmentation)currentElement;
+                    trackable.Augmentations.Add(augmentation);
 
-            this.addPictureBox(currentElement, v);
+                    this.addPictureBox(currentElement, v);
 
-            //set the new box to the front
-            this.findBox(currentElement).BringToFront();
+                    //set the new box to the front
+                    this.findBox(currentElement).BringToFront();
+                }
+            }
+            else
+            {
+                //set the vector and the trackable in <see cref="AbstractAugmentation"/>
+                ((AbstractAugmentation)currentElement).TranslationVector = v;
+                ((AbstractAugmentation)currentElement).Trackable = this.trackable;
+
+                //set references 
+                AbstractAugmentation augmentation = (AbstractAugmentation)currentElement;
+                trackable.Augmentations.Add(augmentation);
+
+                this.addPictureBox(currentElement, v);
+
+                //set the new box to the front
+                this.findBox(currentElement).BringToFront();
+            }
         }
         else
         {
