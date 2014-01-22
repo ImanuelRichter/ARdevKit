@@ -911,8 +911,6 @@ namespace ARdevKit
                 Point p = pnl_editor_preview.PointToClient(Cursor.Position);
                 IPreviewable element = (IPreviewable)icon.Element.Prototype.Clone();
                 icon.EditorWindow.PreviewController.addPreviewable(element, new Vector3D(p.X, p.Y, 0));
-                this.previewController.setCurrentElement(element);
-                PropertyGrid1.SelectedObject = element;
             }
         }
 

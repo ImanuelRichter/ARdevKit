@@ -128,7 +128,8 @@ public class PreviewController
                 }
 
             }
-
+            setCurrentElement(currentElement);
+            ew.PropertyGrid1.SelectedObject = currentElement;
         }
         else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null && this.ew.project.Trackables[index].Augmentations.Count < 3)
         {
@@ -168,6 +169,8 @@ public class PreviewController
                 //set the new box to the front
                 this.findBox(currentElement).BringToFront();
             }
+            setCurrentElement(currentElement);
+            ew.PropertyGrid1.SelectedObject = currentElement;
         }
     }
 
@@ -611,29 +614,18 @@ public class PreviewController
     }
     public void paste_augmentation(object sender, EventArgs e)
     {
-        if (this.trackable != null && this.trackable.Augmentations.Count < 3 )
-        {
+
             MetaCategory tempMeta = this.currentMetaCategory;
             this.currentMetaCategory = MetaCategory.Augmentation;
             Point p = this.panel.PointToClient(Cursor.Position);
-            IPreviewable element = (IPreviewable)this.copy.Clone();
-            this.addPreviewable(element, new Vector3D(p.X, p.Y, 0));
-            this.currentMetaCategory = tempMeta;
-            this.setCurrentElement(element);
-        }
+            this.addPreviewable((IPreviewable)this.copy.Clone(), new Vector3D(p.X, p.Y, 0));
     }
 
     public void paste_augmentation_center(object sender, EventArgs e)
     {
-        if (this.trackable != null && this.trackable.Augmentations.Count < 3)
-        {
             MetaCategory tempMeta = this.currentMetaCategory;
             this.currentMetaCategory = MetaCategory.Augmentation;
-            IPreviewable element = (IPreviewable)this.copy.Clone();
-            this.addPreviewable(element, new Vector3D(this.panel.Width / 2, this.panel.Height / 2, 0));
-            this.currentMetaCategory = tempMeta;
-            this.setCurrentElement(element);
-        }
+            this.addPreviewable((IPreviewable)this.copy.Clone(), new Vector3D(this.panel.Width / 2, this.panel.Height / 2, 0));
 
 
     }
