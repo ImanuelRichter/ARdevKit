@@ -1,4 +1,6 @@
-﻿namespace ARdevKit
+﻿using System.Drawing;
+using System.Windows.Forms;
+namespace ARdevKit
 {
     partial class EditorWindow
     {
@@ -28,6 +30,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditorWindow));
             this.mst_editor_menu = new System.Windows.Forms.MenuStrip();
             this.tsm_editor_menu_file = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_editor_menu_file_new = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,24 +63,28 @@
             this.cmb_editor_selection_toolSelection = new System.Windows.Forms.ComboBox();
             this.pnl_editor_preview = new System.Windows.Forms.Panel();
             this.pnl_editor_properties = new System.Windows.Forms.Panel();
+            this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
             this.cmb_editor_properties_objectSelection = new System.Windows.Forms.ComboBox();
             this.pnl_editor_szenes = new System.Windows.Forms.Panel();
             this.btn_editor_scene_delete = new System.Windows.Forms.Button();
             this.btn_editor_scene_scene_1 = new System.Windows.Forms.Button();
             this.btn_editor_scene_new = new System.Windows.Forms.Button();
             this.pnl_editor_status = new System.Windows.Forms.Panel();
-<<<<<<< HEAD
-            this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
+            this.lbl_version = new System.Windows.Forms.Label();
             this.mst_editor_menu.SuspendLayout();
-=======
->>>>>>> master
             this.pnl_editor_selection.SuspendLayout();
             this.pnl_editor_properties.SuspendLayout();
             this.pnl_editor_szenes.SuspendLayout();
+            this.pnl_editor_status.SuspendLayout();
             this.SuspendLayout();
             // 
             // mst_editor_menu
             // 
+            this.mst_editor_menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsm_editor_menu_file,
+            this.tsm_editor_menu_edit,
+            this.tsm_editor_menu_test,
+            this.tsm_editor_menu_help});
             this.mst_editor_menu.Location = new System.Drawing.Point(0, 0);
             this.mst_editor_menu.Name = "mst_editor_menu";
             this.mst_editor_menu.Size = new System.Drawing.Size(1008, 24);
@@ -118,6 +125,7 @@
             this.tsm_editor_menu_file_open.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
             this.tsm_editor_menu_file_open.Size = new System.Drawing.Size(192, 22);
             this.tsm_editor_menu_file_open.Text = "Öffnen";
+            this.tsm_editor_menu_file_open.Click += new System.EventHandler(this.tsm_editor_menu_file_open_Click_1);
             // 
             // tss_editor_menu_file_opnen_save
             // 
@@ -131,18 +139,21 @@
             this.tsm_editor_menu_file_save.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.tsm_editor_menu_file_save.Size = new System.Drawing.Size(192, 22);
             this.tsm_editor_menu_file_save.Text = "Speichern";
+            this.tsm_editor_menu_file_save.Click += new System.EventHandler(this.tsm_editor_menu_file_save_Click);
             // 
             // tsm_editor_menu_file_saveAs
             // 
             this.tsm_editor_menu_file_saveAs.Name = "tsm_editor_menu_file_saveAs";
             this.tsm_editor_menu_file_saveAs.Size = new System.Drawing.Size(192, 22);
             this.tsm_editor_menu_file_saveAs.Text = "Speichern unter...";
+            this.tsm_editor_menu_file_saveAs.Click += new System.EventHandler(this.tsm_editor_menu_file_saveAs_Click);
             // 
             // tsm_editor_menu_file_export
             // 
             this.tsm_editor_menu_file_export.Name = "tsm_editor_menu_file_export";
             this.tsm_editor_menu_file_export.Size = new System.Drawing.Size(192, 22);
-            this.tsm_editor_menu_file_export.Text = "Exporieren";
+            this.tsm_editor_menu_file_export.Text = "Exportieren";
+            this.tsm_editor_menu_file_export.Click += new System.EventHandler(this.tsm_editor_menu_file_export_Click);
             // 
             // tss_editor_menu_file_export_sendTo
             // 
@@ -155,6 +166,7 @@
             this.tsm_editor_menu_sendTo_win8Device,
             this.tss_editor_menu_file_sendTo_win8Device_togleDebug,
             this.tsm_editor_menu_file_sendTo_togleDebug});
+            this.tsm_editor_menu_file_sendTo.Enabled = false;
             this.tsm_editor_menu_file_sendTo.Name = "tsm_editor_menu_file_sendTo";
             this.tsm_editor_menu_file_sendTo.Size = new System.Drawing.Size(192, 22);
             this.tsm_editor_menu_file_sendTo.Text = "Senden an...";
@@ -179,6 +191,7 @@
             // 
             // tsm_editor_menu_file_connection
             // 
+            this.tsm_editor_menu_file_connection.Enabled = false;
             this.tsm_editor_menu_file_connection.Name = "tsm_editor_menu_file_connection";
             this.tsm_editor_menu_file_connection.Size = new System.Drawing.Size(192, 22);
             this.tsm_editor_menu_file_connection.Text = "Verbindung einrichten";
@@ -208,6 +221,7 @@
             // 
             // tsm_editor_menu_edit_copie
             // 
+            this.tsm_editor_menu_edit_copie.Enabled = false;
             this.tsm_editor_menu_edit_copie.Name = "tsm_editor_menu_edit_copie";
             this.tsm_editor_menu_edit_copie.ShortcutKeyDisplayString = "STRG+C";
             this.tsm_editor_menu_edit_copie.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
@@ -216,6 +230,7 @@
             // 
             // tsm_editor_menu_edit_paste
             // 
+            this.tsm_editor_menu_edit_paste.Enabled = false;
             this.tsm_editor_menu_edit_paste.Name = "tsm_editor_menu_edit_paste";
             this.tsm_editor_menu_edit_paste.ShortcutKeyDisplayString = "STRG+V";
             this.tsm_editor_menu_edit_paste.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
@@ -243,6 +258,7 @@
             // 
             // tsm_editor_menu_test_startVideo
             // 
+            this.tsm_editor_menu_test_startVideo.Enabled = false;
             this.tsm_editor_menu_test_startVideo.Name = "tsm_editor_menu_test_startVideo";
             this.tsm_editor_menu_test_startVideo.Size = new System.Drawing.Size(144, 22);
             this.tsm_editor_menu_test_startVideo.Text = "Video laden";
@@ -263,6 +279,7 @@
             // tsm_editor_menu_test_togleDebug
             // 
             this.tsm_editor_menu_test_togleDebug.CheckOnClick = true;
+            this.tsm_editor_menu_test_togleDebug.Enabled = false;
             this.tsm_editor_menu_test_togleDebug.Name = "tsm_editor_menu_test_togleDebug";
             this.tsm_editor_menu_test_togleDebug.Size = new System.Drawing.Size(144, 22);
             this.tsm_editor_menu_test_togleDebug.Text = "Debug";
@@ -278,6 +295,7 @@
             // 
             // tsm_editor_menu_help_help
             // 
+            this.tsm_editor_menu_help_help.Enabled = false;
             this.tsm_editor_menu_help_help.Name = "tsm_editor_menu_help_help";
             this.tsm_editor_menu_help_help.Size = new System.Drawing.Size(99, 22);
             this.tsm_editor_menu_help_help.Text = "Hilfe";
@@ -287,6 +305,7 @@
             this.tsm_editor_menu_help_info.Name = "tsm_editor_menu_help_info";
             this.tsm_editor_menu_help_info.Size = new System.Drawing.Size(99, 22);
             this.tsm_editor_menu_help_info.Text = "Info";
+            this.tsm_editor_menu_help_info.Click += new System.EventHandler(this.tsm_editor_menu_help_info_Click);
             // 
             // pnl_editor_selection
             // 
@@ -332,6 +351,14 @@
             this.pnl_editor_properties.Size = new System.Drawing.Size(200, 673);
             this.pnl_editor_properties.TabIndex = 2;
             // 
+            // propertyGrid1
+            // 
+            this.propertyGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.propertyGrid1.Location = new System.Drawing.Point(0, 21);
+            this.propertyGrid1.Name = "propertyGrid1";
+            this.propertyGrid1.Size = new System.Drawing.Size(198, 650);
+            this.propertyGrid1.TabIndex = 2;
+            // 
             // cmb_editor_properties_objectSelection
             // 
             this.cmb_editor_properties_objectSelection.Dock = System.Windows.Forms.DockStyle.Top;
@@ -373,11 +400,12 @@
             this.btn_editor_scene_scene_1.Size = new System.Drawing.Size(46, 45);
             this.btn_editor_scene_scene_1.TabIndex = 1;
             this.btn_editor_scene_scene_1.Text = "1";
-            this.btn_editor_scene_scene_1.UseVisualStyleBackColor = true;
+            this.btn_editor_scene_scene_1.UseVisualStyleBackColor = false;
             this.btn_editor_scene_scene_1.Click += new System.EventHandler(this.btn_editor_scene_scene_change);
             // 
             // btn_editor_scene_new
             // 
+            this.btn_editor_scene_new.BackColor = System.Drawing.Color.DarkGray;
             this.btn_editor_scene_new.Location = new System.Drawing.Point(3, 34);
             this.btn_editor_scene_new.Name = "btn_editor_scene_new";
             this.btn_editor_scene_new.Size = new System.Drawing.Size(45, 45);
@@ -388,39 +416,45 @@
             // 
             // pnl_editor_status
             // 
+            this.pnl_editor_status.Controls.Add(this.lbl_version);
             this.pnl_editor_status.Location = new System.Drawing.Point(0, 706);
             this.pnl_editor_status.Name = "pnl_editor_status";
             this.pnl_editor_status.Size = new System.Drawing.Size(1008, 23);
             this.pnl_editor_status.TabIndex = 3;
             // 
-<<<<<<< HEAD
-            // propertyGrid1
+            // lbl_version
             // 
-            this.propertyGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.propertyGrid1.Location = new System.Drawing.Point(0, 21);
-            this.propertyGrid1.Name = "propertyGrid1";
-            this.propertyGrid1.Size = new System.Drawing.Size(198, 650);
-            this.propertyGrid1.TabIndex = 2;
+            this.lbl_version.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_version.AutoSize = true;
+            this.lbl_version.Location = new System.Drawing.Point(931, 10);
+            this.lbl_version.Name = "lbl_version";
+            this.lbl_version.Size = new System.Drawing.Size(76, 13);
+            this.lbl_version.TabIndex = 0;
+            this.lbl_version.Text = "ARdevKit v0.1";
             // 
-=======
->>>>>>> master
             // EditorWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.ClientSize = new System.Drawing.Size(1008, 730);
             this.Controls.Add(this.pnl_editor_status);
             this.Controls.Add(this.pnl_editor_szenes);
             this.Controls.Add(this.pnl_editor_properties);
             this.Controls.Add(this.pnl_editor_preview);
             this.Controls.Add(this.pnl_editor_selection);
             this.Controls.Add(this.mst_editor_menu);
+            this.MaximumSize = new System.Drawing.Size(1024, 768);
+            this.MinimumSize = new System.Drawing.Size(1024, 768);
             this.Name = "EditorWindow";
             this.Text = "ARdevKit";
             this.Load += new System.EventHandler(this.Editor_Load);
+            this.mst_editor_menu.ResumeLayout(false);
+            this.mst_editor_menu.PerformLayout();
             this.pnl_editor_selection.ResumeLayout(false);
             this.pnl_editor_properties.ResumeLayout(false);
             this.pnl_editor_szenes.ResumeLayout(false);
+            this.pnl_editor_status.ResumeLayout(false);
+            this.pnl_editor_status.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -467,6 +501,23 @@
         private System.Windows.Forms.Button btn_editor_scene_scene_1;
         private System.Windows.Forms.Button btn_editor_scene_delete;
         private System.Windows.Forms.PropertyGrid propertyGrid1;
+        private System.Windows.Forms.Label lbl_version;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// Gets or sets the PropertyGrid1.
+        /// </summary>
+        ///
+        /// <value>
+        /// PropertyGrid.
+        /// </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public System.Windows.Forms.PropertyGrid PropertyGrid1
+        {
+            get { return propertyGrid1; }
+            set { propertyGrid1 = value; }
+        }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
@@ -506,6 +557,36 @@
         {
             get { return cmb_editor_selection_toolSelection; }
             set { cmb_editor_selection_toolSelection = value; }
+        }
+
+<<<<<<< HEAD
+=======
+        /// <summary>
+        /// Gets or sets the tsm_editor_menu_edit_copie.
+        /// </summary>
+        /// <value>
+        /// The tsm_editor_menu_edit_copie.
+        /// </value>
+>>>>>>> WorkLizzard
+        public System.Windows.Forms.ToolStripMenuItem Tsm_editor_menu_edit_copie
+        {
+            get { return tsm_editor_menu_edit_copie; }
+            set {tsm_editor_menu_edit_copie = value; }
+        }
+<<<<<<< HEAD
+=======
+
+        /// <summary>
+        /// Gets or sets the tsm_editor_menu_edit_paste.
+        /// </summary>
+        /// <value>
+        /// The tsm_editor_menu_edit_paste.
+        /// </value>
+>>>>>>> WorkLizzard
+        public System.Windows.Forms.ToolStripMenuItem Tsm_editor_menu_edit_paste
+        {
+            get { return tsm_editor_menu_edit_paste; }
+            set { tsm_editor_menu_edit_paste = value; }
         }
     }
 }
