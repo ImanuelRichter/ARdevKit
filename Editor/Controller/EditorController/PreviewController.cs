@@ -514,17 +514,6 @@ public class PreviewController
         {
             ew.PropertyGrid1.SelectedObject = ((Control)sender).Tag;
             this.setCurrentElement((IPreviewable)((Control)sender).Tag);
-
-            if (typeof(AbstractAugmentation).IsAssignableFrom(((Control)sender).Tag.GetType()))
-            {
-                this.ew.Tsm_editor_menu_edit_copie.Enabled = true;
-                this.ew.Tsm_editor_menu_edit_copie.Click += new System.EventHandler(this.copy_augmentation);
-            }
-            else if(typeof(AbstractTrackable).IsAssignableFrom(((Control)sender).Tag.GetType()))
-            {
-                this.ew.Tsm_editor_menu_edit_copie.Enabled = false;
-            }
-
         }
     }
 
@@ -634,12 +623,27 @@ public class PreviewController
     {
         MetaCategory tempMeta = this.currentMetaCategory;
         this.currentMetaCategory = MetaCategory.Augmentation;
-        this.addPreviewable((IPreviewable)this.copy.Clone(), new Vector3D(this.panel.Width / 2, this.panel.Height / 2, 0));
+        IPreviewable element = (IPreviewable)this.copy.Clone();
+        this.addPreviewable(element, new Vector3D(this.panel.Width / 2, this.panel.Height / 2, 0));
         this.currentMetaCategory = tempMeta;
+        this.setCurrentElement(element);
+
     }
+
     public void setCurrentElement(IPreviewable currentElement)
     {
         this.ew.CurrentElement = currentElement;
+
+        if (typeof(AbstractAugmentation).IsAssignableFrom(currentElement.GetType()))
+        {
+            this.ew.Tsm_editor_menu_edit_copie.Enabled = true;
+            this.ew.Tsm_editor_menu_edit_copie.Click += new System.EventHandler(this.copy_augmentation);
+        }
+        else if (typeof(AbstractTrackable).IsAssignableFrom(currentElement.GetType()))
+        {
+            this.ew.Tsm_editor_menu_edit_copie.Enabled = false;
+        }
+
         foreach (Control comp in this.panel.Controls)
         {
             if (((PictureBox)comp).BorderStyle == BorderStyle.Fixed3D)
@@ -647,10 +651,8 @@ public class PreviewController
                 ((PictureBox)comp).BorderStyle = BorderStyle.None;
             }
         }
-
         findBox(currentElement).BorderStyle = BorderStyle.Fixed3D;
         findBox(currentElement).BringToFront();
-
     }
 
 
