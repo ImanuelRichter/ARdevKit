@@ -558,6 +558,12 @@ namespace ARdevKit
             get { return cmb_editor_selection_toolSelection; }
             set { cmb_editor_selection_toolSelection = value; }
         }
+
+        public System.Windows.Forms.ToolStripMenuItem Tsm_editor_menu_edit_copie
+        {
+            get { return tsm_editor_menu_edit_copie; }
+            set {tsm_editor_menu_edit_copie = value; }
+        }
     }
 }
 

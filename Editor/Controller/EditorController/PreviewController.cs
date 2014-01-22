@@ -37,6 +37,8 @@ public class PreviewController
     /// <summary>   The Index which Trackable out of Project we musst use </summary>
     public int index;
 
+    public AbstractAugmentation copy { get; set; }
+
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// <summary>   Constructor. </summary>
     ///
@@ -317,6 +319,10 @@ public class PreviewController
     {
         this.panel.Controls.Clear();
         this.ew.project.Trackables.Add(trackable);
+        ContextMenu cm = new ContextMenu();
+        cm.MenuItems.Add("einfügen", new EventHandler(this.paste_augmentation));
+        cm.MenuItems[0].Enabled = false;
+        this.panel.ContextMenu = cm;
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -417,7 +423,6 @@ public class PreviewController
             tempBox.DragEnter += enterHandler;
             tempBox.DragDrop += dropHandler;
             cm.MenuItems.Add("kopieren", new EventHandler(this.copy_augmentation));
-            cm.MenuItems.Add("einfügen", new EventHandler(this.paste_augmentation));
         }
 
         tempBox.ContextMenu = cm;
@@ -510,6 +515,32 @@ public class PreviewController
         if (e.Button == MouseButtons.Left)
         {
             ew.PropertyGrid1.SelectedObject = ((Control)sender).Tag;
+            this.ew.CurrentElement = (IPreviewable)((Control)sender).Tag;
+
+            if (typeof(AbstractAugmentation).IsAssignableFrom(((Control)sender).Tag.GetType()))
+            {
+                this.ew.Tsm_editor_menu_edit_copie.Enabled = true;
+                this.ew.Tsm_editor_menu_edit_copie.Click += new System.EventHandler(this.copy_augmentation);
+            }
+            else if(typeof(AbstractTrackable).IsAssignableFrom(((Control)sender).Tag.GetType()))
+            {
+                this.ew.Tsm_editor_menu_edit_copie.Enabled = false;
+            }
+
+        }
+        else if (e.Button == MouseButtons.Right)
+        {
+            this.ew.CurrentElement = (IPreviewable)((Control)sender).Tag;
+            
+            if (typeof(AbstractAugmentation).IsAssignableFrom(((Control)sender).Tag.GetType()))
+            {
+                this.ew.Tsm_editor_menu_edit_copie.Enabled = true;
+                this.ew.Tsm_editor_menu_edit_copie.Click += new System.EventHandler(this.copy_augmentation);
+            }
+            else if (typeof(AbstractTrackable).IsAssignableFrom(((Control)sender).Tag.GetType()))
+            {
+                this.ew.Tsm_editor_menu_edit_copie.Enabled = false;
+            }
         }
     }
 
@@ -610,14 +641,32 @@ public class PreviewController
 
     }
 
-    private void copy_augmentation(object sender, EventArgs e)
+    public void copy_augmentation(object sender, EventArgs e)
     {
-        //TODO
+        if (typeof(AbstractAugmentation).IsAssignableFrom(this.ew.CurrentElement.GetType()))
+        {
+            this.copy = (AbstractAugmentation)this.ew.CurrentElement.Clone();
+            this.panel.ContextMenu.MenuItems[0].Enabled = true;
+            this.ew.setPasteButtonEnabled();
+        }
+    }
+    public void paste_augmentation(object sender, EventArgs e)
+    {
+        MetaCategory tempMeta = this.currentMetaCategory;
+        this.currentMetaCategory = MetaCategory.Augmentation;
+        Point p = this.panel.PointToClient(Cursor.Position);
+        this.addPreviewable((IPreviewable)this.copy.Clone(), new Vector3D(p.X, p.Y, 0));
+        this.currentMetaCategory = tempMeta;
     }
 
-    private void paste_augmentation(object sender, EventArgs e)
+    public void paste_augmentation_center(object sender, EventArgs e)
     {
-        //TODO
+        MetaCategory tempMeta = this.currentMetaCategory;
+        this.currentMetaCategory = MetaCategory.Augmentation;
+        this.addPreviewable((IPreviewable)this.copy.Clone(), new Vector3D(this.panel.Width / 2, this.panel.Height / 2, 0));
+        this.currentMetaCategory = tempMeta;
     }
+
+
 }
 
