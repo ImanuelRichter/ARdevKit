@@ -53,6 +53,8 @@ public class PreviewController
         this.index = 0;
         this.trackable = null;
         this.ew.project.Trackables.Add(trackable);
+        this.ew.Tsm_editor_menu_edit_paste.Click += new System.EventHandler(this.paste_augmentation_center);
+        this.ew.Tsm_editor_menu_edit_copie.Click += new System.EventHandler(this.copy_augmentation);
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -166,10 +168,6 @@ public class PreviewController
                 //set the new box to the front
                 this.findBox(currentElement).BringToFront();
             }
-        }
-        else
-        {
-            MessageBox.Show("More than one Trackable & three Augmentations are not allowed!");
         }
     }
 
@@ -608,25 +606,35 @@ public class PreviewController
             this.copy = (AbstractAugmentation)this.ew.CurrentElement.Clone();
             this.panel.ContextMenu.MenuItems[0].Enabled = true;
             this.ew.setPasteButtonEnabled();
+
         }
     }
     public void paste_augmentation(object sender, EventArgs e)
     {
-        MetaCategory tempMeta = this.currentMetaCategory;
-        this.currentMetaCategory = MetaCategory.Augmentation;
-        Point p = this.panel.PointToClient(Cursor.Position);
-        this.addPreviewable((IPreviewable)this.copy.Clone(), new Vector3D(p.X, p.Y, 0));
-        this.currentMetaCategory = tempMeta;
+        if (this.trackable != null && this.trackable.Augmentations.Count < 3 )
+        {
+            MetaCategory tempMeta = this.currentMetaCategory;
+            this.currentMetaCategory = MetaCategory.Augmentation;
+            Point p = this.panel.PointToClient(Cursor.Position);
+            IPreviewable element = (IPreviewable)this.copy.Clone();
+            this.addPreviewable(element, new Vector3D(p.X, p.Y, 0));
+            this.currentMetaCategory = tempMeta;
+            this.setCurrentElement(element);
+        }
     }
 
     public void paste_augmentation_center(object sender, EventArgs e)
     {
-        MetaCategory tempMeta = this.currentMetaCategory;
-        this.currentMetaCategory = MetaCategory.Augmentation;
-        IPreviewable element = (IPreviewable)this.copy.Clone();
-        this.addPreviewable(element, new Vector3D(this.panel.Width / 2, this.panel.Height / 2, 0));
-        this.currentMetaCategory = tempMeta;
-        this.setCurrentElement(element);
+        if (this.trackable != null && this.trackable.Augmentations.Count < 3)
+        {
+            MetaCategory tempMeta = this.currentMetaCategory;
+            this.currentMetaCategory = MetaCategory.Augmentation;
+            IPreviewable element = (IPreviewable)this.copy.Clone();
+            this.addPreviewable(element, new Vector3D(this.panel.Width / 2, this.panel.Height / 2, 0));
+            this.currentMetaCategory = tempMeta;
+            this.setCurrentElement(element);
+        }
+
 
     }
 
@@ -637,7 +645,6 @@ public class PreviewController
         if (typeof(AbstractAugmentation).IsAssignableFrom(currentElement.GetType()))
         {
             this.ew.Tsm_editor_menu_edit_copie.Enabled = true;
-            this.ew.Tsm_editor_menu_edit_copie.Click += new System.EventHandler(this.copy_augmentation);
         }
         else if (typeof(AbstractTrackable).IsAssignableFrom(currentElement.GetType()))
         {

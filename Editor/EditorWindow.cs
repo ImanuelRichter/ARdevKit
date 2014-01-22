@@ -471,7 +471,7 @@ namespace ARdevKit
             }
             else
             {
-                MessageBox.Show("You can't add more than 10 Scenes!");
+                MessageBox.Show("Sie können nicht mehr als 10 Szenen pro Project haben.");
             }
         }
 
@@ -1084,7 +1084,6 @@ namespace ARdevKit
         {
             this.tsm_editor_menu_edit_paste.Enabled = true;
             this.pnl_editor_preview.ContextMenu.MenuItems[0].Enabled = true;
-            this.tsm_editor_menu_edit_paste.Click += new System.EventHandler(this.previewController.paste_augmentation_center);
         }
 
     }

@@ -564,6 +564,11 @@ namespace ARdevKit
             get { return tsm_editor_menu_edit_copie; }
             set {tsm_editor_menu_edit_copie = value; }
         }
+        public System.Windows.Forms.ToolStripMenuItem Tsm_editor_menu_edit_paste
+        {
+            get { return tsm_editor_menu_edit_paste; }
+            set { tsm_editor_menu_edit_paste = value; }
+        }
     }
 }
 
