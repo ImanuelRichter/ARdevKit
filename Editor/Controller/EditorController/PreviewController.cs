@@ -602,6 +602,11 @@ public class PreviewController
 
     }
 
+    /// <summary>
+    /// EventHandler for copy function. copies the currentElement
+    /// </summary>
+    /// <param name="sender">The source of the event.</param>
+    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     public void copy_augmentation(object sender, EventArgs e)
     {
         if (typeof(AbstractAugmentation).IsAssignableFrom(this.ew.CurrentElement.GetType()))
@@ -612,6 +617,11 @@ public class PreviewController
 
         }
     }
+    /// <summary>
+    /// EventHandler for paste function. paste the object at the current cursor position.
+    /// </summary>
+    /// <param name="sender">The source of the event.</param>
+    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     public void paste_augmentation(object sender, EventArgs e)
     {
 
@@ -621,6 +631,11 @@ public class PreviewController
             this.addPreviewable((IPreviewable)this.copy.Clone(), new Vector3D(p.X, p.Y, 0));
     }
 
+    /// <summary>
+    /// EventHandler for paste function. paste the object in the center of panel
+    /// </summary>
+    /// <param name="sender">The source of the event.</param>
+    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     public void paste_augmentation_center(object sender, EventArgs e)
     {
             MetaCategory tempMeta = this.currentMetaCategory;
@@ -630,6 +645,10 @@ public class PreviewController
 
     }
 
+    /// <summary>
+    /// set the current element and mark it on the panel
+    /// </summary>
+    /// <param name="currentElement">The current element.</param>
     public void setCurrentElement(IPreviewable currentElement)
     {
         this.ew.CurrentElement = currentElement;
