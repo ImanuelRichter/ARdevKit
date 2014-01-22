@@ -416,10 +416,7 @@ public class PreviewController
         tempBox.Size = new Size(prev.getPreview().Width / 4, prev.getPreview().Height / 4);
         tempBox.SizeMode = PictureBoxSizeMode.StretchImage;
         tempBox.Tag = prev;
-
         ContextMenu cm = new ContextMenu();
-        cm.MenuItems.Add("löschen", new EventHandler(this.remove_by_click));
-        cm.Tag = prev;
 
         //adds drag&drop events for augmentations so that sources can be droped on them
         if (typeof(AbstractAugmentation).IsAssignableFrom(prev.GetType()))
@@ -431,15 +428,23 @@ public class PreviewController
             tempBox.DragDrop += dropHandler;
             cm.MenuItems.Add("kopieren", new EventHandler(this.copy_augmentation));
         }
-
-        tempBox.ContextMenu = cm;
         tempBox.MouseClick += new MouseEventHandler(selectElement);
+        cm.MenuItems.Add("löschen", new EventHandler(this.remove_by_click));
+        cm.Tag = prev;
+        cm.Popup += new EventHandler(this.popupContextMenu);
+        tempBox.ContextMenu = cm;
+        
 
         if (tempBox.Tag is AbstractAugmentation)
             tempBox.MouseMove += new MouseEventHandler(controlMouseMove);
 
         this.panel.Controls.Add(tempBox);
 
+    }
+
+    private void popupContextMenu(object sender, EventArgs e)
+    {
+            this.setCurrentElement((IPreviewable)((ContextMenu)sender).Tag);
     }
 
     /**
