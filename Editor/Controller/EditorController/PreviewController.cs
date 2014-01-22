@@ -66,7 +66,7 @@ public class PreviewController
                 + "Previewable should sit in the panel you should use addPreviewable(IPreviewable"
                 + "currentElement, Vector3d v) for Augmentations & Trackables", true)]
     public void addPreviewAble(IPreviewable p)
-        { throw new NotImplementedException(); }
+    { throw new NotImplementedException(); }
 
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -96,7 +96,7 @@ public class PreviewController
                 if (openTestImageDialog.ShowDialog() == DialogResult.OK)
                 {
                     ((PictureMarker)currentElement).ImagePath = openTestImageDialog.FileName;
-                    
+
                     //set the vector to the trackable
                     ((AbstractTrackable)currentElement).vector = center;
                     this.trackable = (AbstractTrackable)currentElement;
@@ -107,24 +107,24 @@ public class PreviewController
                         this.ew.ElementSelectionController.setElementEnable(typeof(IDMarker), false);
                         this.ew.project.Sensor = new MarkerSensor();
                     }
-                    
+
                 }
             }
             else
             {
                 //set the vector to the trackable
-                    ((AbstractTrackable)currentElement).vector = center;
-                    this.trackable = (AbstractTrackable)currentElement;
-                    this.ew.project.Trackables[index] = (AbstractTrackable)currentElement;
-                    this.addPictureBox(currentElement, center);
-                    if (this.ew.project.isTrackable())
-                    {
-                        this.ew.ElementSelectionController.setElementEnable(typeof(PictureMarker), false);
-                        this.ew.project.Sensor = new MarkerSensor();
-                    }
-                    
+                ((AbstractTrackable)currentElement).vector = center;
+                this.trackable = (AbstractTrackable)currentElement;
+                this.ew.project.Trackables[index] = (AbstractTrackable)currentElement;
+                this.addPictureBox(currentElement, center);
+                if (this.ew.project.isTrackable())
+                {
+                    this.ew.ElementSelectionController.setElementEnable(typeof(PictureMarker), false);
+                    this.ew.project.Sensor = new MarkerSensor();
+                }
+
             }
-            
+
         }
         else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null && this.ew.project.Trackables[index].Augmentations.Count < 3)
         {
@@ -147,7 +147,7 @@ public class PreviewController
         }
     }
 
-    /*
+
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// <summary>
     ///     add Source or augmentation, this method can only be used with the element, which is the
@@ -168,14 +168,14 @@ public class PreviewController
             if (this.trackable != null && trackable.existAugmentation((AbstractAugmentation)currentElement))
             {
                 //set reference to the augmentations in Source
-                source.augmentations.Add((Abstract2DAugmentation)currentElement);
+                source.Augmentations.Add((Abstract2DAugmentation)currentElement);
 
                 //add references in Augmentation, Picturebox + project.sources List.
                 ((AbstractDynamic2DAugmentation)currentElement).source = source;
 
                 this.currentMetaCategory = MetaCategory.Augmentation;
-                this.findBox(currentElement).ContextMenu.MenuItems.Add("show source", new EventHandler(this.show_source_by_click));
-                this.findBox(currentElement).ContextMenu.MenuItems.Add("remove source", new EventHandler(this.remove_source_by_click));
+                this.findBox(currentElement).ContextMenu.MenuItems.Add("Source anzeigen", new EventHandler(this.show_source_by_click));
+                this.findBox(currentElement).ContextMenu.MenuItems.Add("Source löschen", new EventHandler(this.remove_source_by_click));
                 this.ew.project.Sources.Add(((AbstractDynamic2DAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).source);
                 this.currentMetaCategory = MetaCategory.Source;
             }
@@ -212,7 +212,7 @@ public class PreviewController
             }
         }
     }
-    */
+
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// <summary>   Removes the Previewable and the Objekt, what is linked to the Previewable. </summary>
@@ -325,7 +325,7 @@ public class PreviewController
             }
             else if (this.trackable != null && trackable.GetType() == typeof(PictureMarker))
             {
-                    this.ew.ElementSelectionController.setElementEnable(typeof(IDMarker), false);
+                this.ew.ElementSelectionController.setElementEnable(typeof(IDMarker), false);
             }
         }
         //if the scene is new create a new empty scene
@@ -381,7 +381,7 @@ public class PreviewController
         tempBox.Tag = prev;
 
         ContextMenu cm = new ContextMenu();
-        cm.MenuItems.Add("remove", new EventHandler(this.remove_by_click));
+        cm.MenuItems.Add("löschen", new EventHandler(this.remove_by_click));
         cm.Tag = prev;
 
         //adds drag&drop events for augmentations so that sources can be droped on them
@@ -392,13 +392,15 @@ public class PreviewController
             DragEventHandler dropHandler = new DragEventHandler(onAugmentationDrop);
             tempBox.DragEnter += enterHandler;
             tempBox.DragDrop += dropHandler;
+            cm.MenuItems.Add("kopieren", new EventHandler(this.copy_augmentation));
+            cm.MenuItems.Add("einfügen", new EventHandler(this.paste_augmentation));
         }
 
         tempBox.ContextMenu = cm;
         tempBox.MouseClick += new MouseEventHandler(selectElement);
 
         if (tempBox.Tag is AbstractAugmentation)
-        tempBox.MouseMove += new MouseEventHandler(controlMouseMove);
+            tempBox.MouseMove += new MouseEventHandler(controlMouseMove);
 
         this.panel.Controls.Add(tempBox);
 
@@ -437,7 +439,7 @@ public class PreviewController
             ElementIcon icon = (ElementIcon)e.Data.GetData(typeof(ElementIcon));
             AbstractAugmentation augmentation = (AbstractAugmentation)((PictureBox)sender).Tag;
             AbstractSource source = ObjectCopier.Clone((AbstractSource)icon.Element.Dummy);
-            //addSource(source, augmentation);
+            addSource(source, augmentation);
         }
     }
 
@@ -540,7 +542,7 @@ public class PreviewController
         this.currentMetaCategory = tempMeta;
     }
 
-    /*
+
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// <summary>   Event handler. Shows Source in PropertyGrid when you want this. </summary>
     ///
@@ -554,7 +556,7 @@ public class PreviewController
     {
         ew.PropertyGrid1.SelectedObject = ((AbstractDynamic2DAugmentation)((ContextMenu)((MenuItem)sender).Parent).Tag).source;
     }
-    */
+
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// <summary>
@@ -573,14 +575,24 @@ public class PreviewController
         AbstractDynamic2DAugmentation temp = (AbstractDynamic2DAugmentation)((ContextMenu)((MenuItem)sender).Parent).Tag;
         MetaCategory tempMeta = currentMetaCategory;
         this.currentMetaCategory = MetaCategory.Augmentation;
-        //this.removeSource(temp.source, temp);
+        this.removeSource(temp.source, temp);
         ew.PropertyGrid1.SelectedObject = null;
         this.currentMetaCategory = tempMeta;
 
         this.currentMetaCategory = MetaCategory.Augmentation;
-        this.findBox(temp).ContextMenu.MenuItems.RemoveAt(1);
-        this.findBox(temp).ContextMenu.MenuItems.RemoveAt(1);
+        this.findBox(temp).ContextMenu.MenuItems.RemoveAt(3);
+        this.findBox(temp).ContextMenu.MenuItems.RemoveAt(3);
         this.currentMetaCategory = MetaCategory.Source;
+
+    }
+
+    private void copy_augmentation(object sender, EventArgs e)
+    {
+
+    }
+
+    private void paste_augmentation(object sender, EventArgs e)
+    {
 
     }
 }

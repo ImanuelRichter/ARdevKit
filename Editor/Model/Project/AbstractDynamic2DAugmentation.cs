@@ -17,14 +17,14 @@ namespace ARdevKit.Model.Project
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public abstract class AbstractDynamic2DAugmentation : Abstract2DAugmentation
     {
-        /* //because it is not fully implemented for this release
+        //because it is not fully implemented for this release
         /// <summary>
         /// variable which links an <see cref="AbstractSource"/> to 
         /// this <see cref="Abstract2DAugmentation"/>.
         /// </summary>
         [CategoryAttribute("General")]
         public AbstractSource source { get; set; }
-        */
+        
 
         /// <summary>
         /// Initializes no new instance of the <see cref="AbstractDynamic2DAugmentation"/> class,
