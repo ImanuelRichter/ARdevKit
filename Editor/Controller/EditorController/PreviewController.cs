@@ -612,12 +612,12 @@ public class PreviewController
 
     private void copy_augmentation(object sender, EventArgs e)
     {
-
+        //TODO
     }
 
     private void paste_augmentation(object sender, EventArgs e)
     {
-
+        //TODO
     }
 }
 
