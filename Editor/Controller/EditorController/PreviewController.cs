@@ -37,6 +37,8 @@ public class PreviewController
     /// <summary>   The Index which Trackable out of Project we musst use </summary>
     public int index;
 
+    public AbstractAugmentation copy { get; set; }
+
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// <summary>   Constructor. </summary>
     ///
@@ -51,6 +53,8 @@ public class PreviewController
         this.index = 0;
         this.trackable = null;
         this.ew.project.Trackables.Add(trackable);
+        this.ew.Tsm_editor_menu_edit_paste.Click += new System.EventHandler(this.paste_augmentation_center);
+        this.ew.Tsm_editor_menu_edit_copie.Click += new System.EventHandler(this.copy_augmentation);
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -124,7 +128,8 @@ public class PreviewController
                 }
 
             }
-
+            setCurrentElement(currentElement);
+            ew.PropertyGrid1.SelectedObject = currentElement;
         }
         else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null && this.ew.project.Trackables[index].Augmentations.Count < 3)
         {
@@ -164,10 +169,8 @@ public class PreviewController
                 //set the new box to the front
                 this.findBox(currentElement).BringToFront();
             }
-        }
-        else
-        {
-            MessageBox.Show("More than one Trackable & three Augmentations are not allowed!");
+            setCurrentElement(currentElement);
+            ew.PropertyGrid1.SelectedObject = currentElement;
         }
     }
 
@@ -197,11 +200,9 @@ public class PreviewController
                 //add references in Augmentation, Picturebox + project.sources List.
                 ((AbstractDynamic2DAugmentation)currentElement).source = source;
 
-                this.currentMetaCategory = MetaCategory.Augmentation;
                 this.findBox(currentElement).ContextMenu.MenuItems.Add("Source anzeigen", new EventHandler(this.show_source_by_click));
                 this.findBox(currentElement).ContextMenu.MenuItems.Add("Source löschen", new EventHandler(this.remove_source_by_click));
                 this.ew.project.Sources.Add(((AbstractDynamic2DAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).source);
-                this.currentMetaCategory = MetaCategory.Source;
             }
         }
     }
@@ -253,7 +254,7 @@ public class PreviewController
 
     public void removePreviewable(IPreviewable currentElement)
     {
-        if (currentMetaCategory == MetaCategory.Trackable && trackable != null)
+        if (typeof(AbstractTrackable).IsAssignableFrom(currentElement.GetType()) && trackable != null)
         {
             this.removeAll();
             if (!this.ew.project.isTrackable())
@@ -262,7 +263,7 @@ public class PreviewController
                 this.ew.ElementSelectionController.setElementEnable(typeof(IDMarker), true);
             }
         }
-        else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null)
+        else if (typeof(AbstractAugmentation).IsAssignableFrom(currentElement.GetType()) && trackable != null)
         {
             this.trackable.Augmentations.Remove((AbstractAugmentation)currentElement);
             this.panel.Controls.Remove(this.findBox((AbstractAugmentation)currentElement));
@@ -317,6 +318,10 @@ public class PreviewController
     {
         this.panel.Controls.Clear();
         this.ew.project.Trackables.Add(trackable);
+        ContextMenu cm = new ContextMenu();
+        cm.MenuItems.Add("einfügen", new EventHandler(this.paste_augmentation));
+        cm.MenuItems[0].Enabled = false;
+        this.panel.ContextMenu = cm;
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -409,7 +414,7 @@ public class PreviewController
         cm.Tag = prev;
 
         //adds drag&drop events for augmentations so that sources can be droped on them
-        if (currentMetaCategory == MetaCategory.Augmentation)
+        if (typeof(AbstractAugmentation).IsAssignableFrom(prev.GetType()))
         {
             ((Control)tempBox).AllowDrop = true;
             DragEventHandler enterHandler = new DragEventHandler(onAugmentationEnter);
@@ -417,7 +422,6 @@ public class PreviewController
             tempBox.DragEnter += enterHandler;
             tempBox.DragDrop += dropHandler;
             cm.MenuItems.Add("kopieren", new EventHandler(this.copy_augmentation));
-            cm.MenuItems.Add("einfügen", new EventHandler(this.paste_augmentation));
         }
 
         tempBox.ContextMenu = cm;
@@ -477,7 +481,7 @@ public class PreviewController
 
     private PictureBox findBox(IPreviewable prev)
     {
-        if (currentMetaCategory == MetaCategory.Trackable)
+        if (typeof(AbstractTrackable).IsAssignableFrom(prev.GetType()))
         {
             foreach (Control comp in panel.Controls)
             {
@@ -487,7 +491,7 @@ public class PreviewController
                 }
             }
         }
-        else if (currentMetaCategory == MetaCategory.Augmentation)
+        else if (typeof(AbstractAugmentation).IsAssignableFrom(prev.GetType()))
         {
             foreach (Control comp in panel.Controls)
             {
@@ -510,6 +514,7 @@ public class PreviewController
         if (e.Button == MouseButtons.Left)
         {
             ew.PropertyGrid1.SelectedObject = ((Control)sender).Tag;
+            this.setCurrentElement((IPreviewable)((Control)sender).Tag);
         }
     }
 
@@ -551,19 +556,8 @@ public class PreviewController
     private void remove_by_click(object sender, EventArgs e)
     {
         IPreviewable temp = (IPreviewable)((ContextMenu)((MenuItem)sender).Parent).Tag;
-        MetaCategory tempMeta = this.currentMetaCategory;
-        if (temp.GetType() == this.trackable.GetType())
-        {
-            this.currentMetaCategory = MetaCategory.Trackable;
-        }
-        else
-        {
-            this.currentMetaCategory = MetaCategory.Augmentation;
-        }
-
         this.removePreviewable((IPreviewable)((ContextMenu)((MenuItem)sender).Parent).Tag);
         ew.PropertyGrid1.SelectedObject = null;
-        this.currentMetaCategory = tempMeta;
     }
 
 
@@ -603,21 +597,63 @@ public class PreviewController
         ew.PropertyGrid1.SelectedObject = null;
         this.currentMetaCategory = tempMeta;
 
-        this.currentMetaCategory = MetaCategory.Augmentation;
         this.findBox(temp).ContextMenu.MenuItems.RemoveAt(3);
         this.findBox(temp).ContextMenu.MenuItems.RemoveAt(3);
-        this.currentMetaCategory = MetaCategory.Source;
 
     }
 
-    private void copy_augmentation(object sender, EventArgs e)
+    public void copy_augmentation(object sender, EventArgs e)
     {
-        //TODO
+        if (typeof(AbstractAugmentation).IsAssignableFrom(this.ew.CurrentElement.GetType()))
+        {
+            this.copy = (AbstractAugmentation)this.ew.CurrentElement.Clone();
+            this.panel.ContextMenu.MenuItems[0].Enabled = true;
+            this.ew.setPasteButtonEnabled();
+
+        }
+    }
+    public void paste_augmentation(object sender, EventArgs e)
+    {
+
+            MetaCategory tempMeta = this.currentMetaCategory;
+            this.currentMetaCategory = MetaCategory.Augmentation;
+            Point p = this.panel.PointToClient(Cursor.Position);
+            this.addPreviewable((IPreviewable)this.copy.Clone(), new Vector3D(p.X, p.Y, 0));
     }
 
-    private void paste_augmentation(object sender, EventArgs e)
+    public void paste_augmentation_center(object sender, EventArgs e)
     {
-        //TODO
+            MetaCategory tempMeta = this.currentMetaCategory;
+            this.currentMetaCategory = MetaCategory.Augmentation;
+            this.addPreviewable((IPreviewable)this.copy.Clone(), new Vector3D(this.panel.Width / 2, this.panel.Height / 2, 0));
+
+
     }
+
+    public void setCurrentElement(IPreviewable currentElement)
+    {
+        this.ew.CurrentElement = currentElement;
+
+        if (typeof(AbstractAugmentation).IsAssignableFrom(currentElement.GetType()))
+        {
+            this.ew.Tsm_editor_menu_edit_copie.Enabled = true;
+        }
+        else if (typeof(AbstractTrackable).IsAssignableFrom(currentElement.GetType()))
+        {
+            this.ew.Tsm_editor_menu_edit_copie.Enabled = false;
+        }
+
+        foreach (Control comp in this.panel.Controls)
+        {
+            if (((PictureBox)comp).BorderStyle == BorderStyle.Fixed3D)
+            {
+                ((PictureBox)comp).BorderStyle = BorderStyle.None;
+            }
+        }
+        findBox(currentElement).BorderStyle = BorderStyle.Fixed3D;
+        findBox(currentElement).BringToFront();
+    }
+
+
 }
 
