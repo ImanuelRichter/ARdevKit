@@ -154,6 +154,8 @@ public class PreviewController
 
                     //set the new box to the front
                     this.findBox(currentElement).BringToFront();
+                    setCurrentElement(currentElement);
+                    ew.PropertyGrid1.SelectedObject = currentElement;
                 }
             }
             else
@@ -167,12 +169,9 @@ public class PreviewController
                 trackable.Augmentations.Add(augmentation);
 
                 this.addPictureBox(currentElement, v);
-
-                //set the new box to the front
-                this.findBox(currentElement).BringToFront();
+                setCurrentElement(currentElement);
+                ew.PropertyGrid1.SelectedObject = currentElement;
             }
-            setCurrentElement(currentElement);
-            ew.PropertyGrid1.SelectedObject = currentElement;
         }
     }
 
@@ -652,8 +651,7 @@ public class PreviewController
             MetaCategory tempMeta = this.currentMetaCategory;
             this.currentMetaCategory = MetaCategory.Augmentation;
             this.addPreviewable((IPreviewable)this.copy.Clone(), new Vector3D(this.panel.Width / 2, this.panel.Height / 2, 0));
-
-
+            currentMetaCategory = tempMeta;
     }
 
     /// <summary>
@@ -681,9 +679,11 @@ public class PreviewController
             }
         }
         findBox(currentElement).BorderStyle = BorderStyle.Fixed3D;
-        findBox(currentElement).BringToFront();
+        if (typeof(AbstractAugmentation).IsAssignableFrom(currentElement.GetType()))
+        {
+            findBox(currentElement).BringToFront();
+        }   
     }
-
     /// <summary>
     /// set the augmentationPreview to a augmentationPreview with source icon
     /// </summary>
@@ -701,7 +701,4 @@ public class PreviewController
         temp.Image = newPic;
         temp.Refresh();
     }
-
-
 }
-
