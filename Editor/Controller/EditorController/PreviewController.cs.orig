@@ -10,7 +10,6 @@ using System.Collections;
 using ARdevKit;
 using ARdevKit.Controller.EditorController;
 using ARdevKit.View;
-using ARdevKit.Properties;
 
 public class PreviewController
 {
@@ -112,8 +111,7 @@ public class PreviewController
                         this.ew.ElementSelectionController.setElementEnable(typeof(IDMarker), false);
                         this.ew.project.Sensor = new MarkerSensor();
                     }
-                    setCurrentElement(currentElement);
-                    ew.PropertyGrid1.SelectedObject = currentElement;
+
                 }
             }
             else
@@ -128,10 +126,10 @@ public class PreviewController
                     this.ew.ElementSelectionController.setElementEnable(typeof(PictureMarker), false);
                     this.ew.project.Sensor = new MarkerSensor();
                 }
-                setCurrentElement(currentElement);
-                ew.PropertyGrid1.SelectedObject = currentElement;
+
             }
-            
+            setCurrentElement(currentElement);
+            ew.PropertyGrid1.SelectedObject = currentElement;
         }
         else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null && this.ew.project.Trackables[index].Augmentations.Count < 3)
         {
@@ -192,19 +190,19 @@ public class PreviewController
 
     public void addSource(AbstractSource source, AbstractAugmentation currentElement)
     {
-        if (currentMetaCategory == MetaCategory.Source && typeof(AbstractDynamic2DAugmentation).IsAssignableFrom(currentElement.GetType()))
+        if (currentMetaCategory == MetaCategory.Source)
         {
-            if (this.trackable != null && trackable.existAugmentation((AbstractAugmentation)currentElement)
-                && ((AbstractDynamic2DAugmentation)currentElement).source == null)
+            if (this.trackable != null && trackable.existAugmentation((AbstractAugmentation)currentElement))
             {
                 //set reference to the augmentations in Source
                 source.Augmentations.Add((Abstract2DAugmentation)currentElement);
 
                 //add references in Augmentation, Picturebox + project.sources List.
                 ((AbstractDynamic2DAugmentation)currentElement).source = source;
-                this.ew.project.Sources.Add(((AbstractDynamic2DAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).source);
 
-                this.setSourcePreview(currentElement);
+                this.findBox(currentElement).ContextMenu.MenuItems.Add("Source anzeigen", new EventHandler(this.show_source_by_click));
+                this.findBox(currentElement).ContextMenu.MenuItems.Add("Source löschen", new EventHandler(this.remove_source_by_click));
+                this.ew.project.Sources.Add(((AbstractDynamic2DAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).source);
             }
         }
     }
@@ -237,8 +235,6 @@ public class PreviewController
                 ((AbstractDynamic2DAugmentation)currentElement).source = null;
                 this.ew.project.Sources.Remove(source);
             }
-            this.findBox(currentElement).Image = currentElement.getPreview();
-            this.findBox(currentElement).Refresh();
         }
     }
 
@@ -389,10 +385,6 @@ public class PreviewController
             foreach (AbstractAugmentation aug in trackable.Augmentations)
             {
                 this.addPictureBox(aug, aug.TranslationVector);
-                if (typeof(AbstractDynamic2DAugmentation).IsAssignableFrom(aug.GetType()) && ((AbstractDynamic2DAugmentation)aug).source != null)
-                {
-                    this.setSourcePreview(aug);
-                }
             }
         }
         this.addPictureBox(trackable, trackable.vector);
@@ -416,7 +408,10 @@ public class PreviewController
         tempBox.Size = new Size(prev.getPreview().Width / 4, prev.getPreview().Height / 4);
         tempBox.SizeMode = PictureBoxSizeMode.StretchImage;
         tempBox.Tag = prev;
+
         ContextMenu cm = new ContextMenu();
+        cm.MenuItems.Add("löschen", new EventHandler(this.remove_by_click));
+        cm.Tag = prev;
 
         //adds drag&drop events for augmentations so that sources can be droped on them
         if (typeof(AbstractAugmentation).IsAssignableFrom(prev.GetType()))
@@ -428,23 +423,15 @@ public class PreviewController
             tempBox.DragDrop += dropHandler;
             cm.MenuItems.Add("kopieren", new EventHandler(this.copy_augmentation));
         }
-        tempBox.MouseClick += new MouseEventHandler(selectElement);
-        cm.MenuItems.Add("löschen", new EventHandler(this.remove_by_click));
-        cm.Tag = prev;
-        cm.Popup += new EventHandler(this.popupContextMenu);
+
         tempBox.ContextMenu = cm;
-        
+        tempBox.MouseClick += new MouseEventHandler(selectElement);
 
         if (tempBox.Tag is AbstractAugmentation)
             tempBox.MouseMove += new MouseEventHandler(controlMouseMove);
 
         this.panel.Controls.Add(tempBox);
 
-    }
-
-    private void popupContextMenu(object sender, EventArgs e)
-    {
-            this.setCurrentElement((IPreviewable)((ContextMenu)sender).Tag);
     }
 
     /**
@@ -610,16 +597,19 @@ public class PreviewController
         ew.PropertyGrid1.SelectedObject = null;
         this.currentMetaCategory = tempMeta;
 
-        this.findBox(temp).ContextMenu.MenuItems.RemoveAt(2);
-        this.findBox(temp).ContextMenu.MenuItems.RemoveAt(2);
+        this.findBox(temp).ContextMenu.MenuItems.RemoveAt(3);
+        this.findBox(temp).ContextMenu.MenuItems.RemoveAt(3);
 
     }
 
+<<<<<<< HEAD
+=======
     /// <summary>
     /// EventHandler for copy function. copies the currentElement
     /// </summary>
     /// <param name="sender">The source of the event.</param>
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+>>>>>>> WorkLizzard
     public void copy_augmentation(object sender, EventArgs e)
     {
         if (typeof(AbstractAugmentation).IsAssignableFrom(this.ew.CurrentElement.GetType()))
@@ -630,33 +620,31 @@ public class PreviewController
 
         }
     }
+<<<<<<< HEAD
+=======
     /// <summary>
     /// EventHandler for paste function. paste the object at the current cursor position.
     /// </summary>
     /// <param name="sender">The source of the event.</param>
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+>>>>>>> WorkLizzard
     public void paste_augmentation(object sender, EventArgs e)
     {
+
             MetaCategory tempMeta = this.currentMetaCategory;
             this.currentMetaCategory = MetaCategory.Augmentation;
             Point p = this.panel.PointToClient(Cursor.Position);
-            IPreviewable element = (IPreviewable)this.copy.Clone();
-            this.addPreviewable(element, new Vector3D(p.X, p.Y, 0));
-            
-            if (typeof(AbstractDynamic2DAugmentation).IsAssignableFrom(element.GetType()) && ((AbstractDynamic2DAugmentation)element).source != null)
-            {
-                this.setSourcePreview(element);
-                ((AbstractDynamic2DAugmentation)element).source = (AbstractSource)((AbstractDynamic2DAugmentation)copy).source.Clone();
-            }
-
-            currentMetaCategory = tempMeta;
+            this.addPreviewable((IPreviewable)this.copy.Clone(), new Vector3D(p.X, p.Y, 0));
     }
 
+<<<<<<< HEAD
+=======
     /// <summary>
     /// EventHandler for paste function. paste the object in the center of panel
     /// </summary>
     /// <param name="sender">The source of the event.</param>
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+>>>>>>> WorkLizzard
     public void paste_augmentation_center(object sender, EventArgs e)
     {
             MetaCategory tempMeta = this.currentMetaCategory;
@@ -666,10 +654,13 @@ public class PreviewController
 
     }
 
+<<<<<<< HEAD
+=======
     /// <summary>
     /// set the current element and mark it on the panel
     /// </summary>
     /// <param name="currentElement">The current element.</param>
+>>>>>>> WorkLizzard
     public void setCurrentElement(IPreviewable currentElement)
     {
         this.ew.CurrentElement = currentElement;
@@ -692,26 +683,6 @@ public class PreviewController
         }
         findBox(currentElement).BorderStyle = BorderStyle.Fixed3D;
         findBox(currentElement).BringToFront();
-    }
-
-    /// <summary>
-    /// set the augmentationPreview to a augmentationPreview with source icon
-    /// </summary>
-    /// <param name="currentElement">The current element.</param>
-    private void setSourcePreview(IPreviewable currentElement)
-    {
-        PictureBox temp = this.findBox(currentElement);
-        Image image1 = currentElement.getPreview();
-        Image image2 = new Bitmap(ARdevKit.Properties.Resources.db_small);
-        Image newPic = new Bitmap(image1.Width, image1.Height);
-
-        Graphics graphic = Graphics.FromImage(newPic);
-        graphic.DrawImage(image1, new Rectangle(0, 0, image1.Width, image1.Height));
-        graphic.DrawImage(image2, new Rectangle(0, 0, image2.Width, image2.Height));
-        temp.Image = newPic;
-        temp.ContextMenu.MenuItems.Add("Source anzeigen", new EventHandler(this.show_source_by_click));
-        temp.ContextMenu.MenuItems.Add("Source löschen", new EventHandler(this.remove_source_by_click));
-        temp.Refresh();
     }
 
 

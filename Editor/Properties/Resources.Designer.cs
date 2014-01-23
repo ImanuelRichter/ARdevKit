@@ -123,6 +123,26 @@ namespace ARdevKit.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap db_small {
+            get {
+                object obj = ResourceManager.GetObject("db_small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
+        /// </summary>
+        internal static System.Drawing.Icon favicon {
+            get {
+                object obj = ResourceManager.GetObject("favicon", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap FileSource_normal_ {
             get {
                 object obj = ResourceManager.GetObject("FileSource_normal_", resourceCulture);
@@ -166,16 +186,6 @@ namespace ARdevKit.Properties {
         internal static System.Drawing.Bitmap PieChart_small_ {
             get {
                 object obj = ResourceManager.GetObject("PieChart_small_", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap PreviewDummy {
-            get {
-                object obj = ResourceManager.GetObject("PreviewDummy", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -192,6 +192,16 @@ namespace ARdevKit.Model.Project
         /// </summary>
         /// <returns>a representative iconized Bitmap</returns>
         public abstract Bitmap getIcon();
+
+        /**
+         * <summary>    Makes a deep copy of this object. </summary>
+         *
+         * <remarks>    Robin, 22.01.2014. </remarks>
+         *
+         * <returns>    A copy of this object. </returns>
+         */
+
+        public abstract object Clone();
     }
 }
 

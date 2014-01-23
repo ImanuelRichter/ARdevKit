@@ -24,6 +24,11 @@ namespace ARdevKit.Model.Project
         [CategoryAttribute("General")]
         public AbstractSource source { get; set; }
 
+        /// <summary>
+        /// Initializes no new instance of the <see cref="AbstractDynamic2DAugmentation"/> class,
+        /// but can be used by inheriting classes. It is
+        /// using the standard constructor from <see cref="Abstract2DAugmentation"/>.
+        /// </summary>
         protected AbstractDynamic2DAugmentation() : base() { }
 
         /// <summary>

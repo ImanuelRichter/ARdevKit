@@ -133,11 +133,11 @@ namespace ARdevKit.Controller.EditorController
             {
                 foreach (SceneElement e in p.Category.SceneElements)
                 {
-                    if (element.IsInstanceOfType(e.Dummy))
+                    if (element.IsInstanceOfType(e.Prototype))
                     {
                         foreach (Control c in p.Controls)
                         {
-                            if (((ElementIcon)c).Element.Dummy == e.Dummy)
+                            if (((ElementIcon)c).Element.Prototype == e.Prototype)
                             {
                                 c.Visible = enable;
                             }
