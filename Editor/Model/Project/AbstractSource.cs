@@ -32,7 +32,7 @@ namespace ARdevKit.Model.Project
         public String sourceID { get; set; }
 
         /// <summary>   The query to the source. </summary>
-        protected string query;
+        protected string queryFilePath;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Gets or sets the query. </summary>
@@ -40,10 +40,11 @@ namespace ARdevKit.Model.Project
         /// <value> The query. </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public string Query
+        [CategoryAttribute("General"), EditorAttribute(typeof(System.Windows.Forms.Design.FileNameEditor), typeof(System.Drawing.Design.UITypeEditor))]
+        public string QueryFilePath
         {
-            get { return query; }
-            set { query = value; }
+            get { return queryFilePath; }
+            set { queryFilePath = value; }
         }
 
         /// <summary>
@@ -53,16 +54,13 @@ namespace ARdevKit.Model.Project
         /// The augmentations.
         /// </value>
         [Browsable(false)]
-        public List<Abstract2DAugmentation> Augmentations { get; set; }
+        public AbstractDynamic2DAugmentation Augmentation { get; set; }
 
         /// <summary>
         /// Initializes no new instance of the <see cref="AbstractSource" /> class,
 
         /// </summary>
-        protected AbstractSource()
-        {
-            Augmentations = new List<Abstract2DAugmentation>();
-        }
+        protected AbstractSource() { }
 
         /// <summary>
         /// Initializes no new instance of the <see cref="AbstractSource"/> class.
@@ -80,7 +78,7 @@ namespace ARdevKit.Model.Project
         /// </summary>
         /// <param name="visitor">the visitor which encapsulates the action
         ///     which is performed on this element</param>
-        public abstract void accept(AbstractProjectVisitor visitor);
+        public abstract void Accept(AbstractProjectVisitor visitor);
 
         /// <summary>
         /// returns NO <see cref="Bitmap"/> in order to be displayed
@@ -98,34 +96,6 @@ namespace ARdevKit.Model.Project
         /// </summary>
         /// <returns>a representative iconized Bitmap</returns>
         public abstract Bitmap getIcon();
-
-        /// <summary>
-        /// Finds the augmentation, which gets information through this <see cref="AbstractSource"/>.
-        /// </summary>
-        /// <param name="a">the IPreviewable, which is searched for</param>
-        /// <returns>the augmentation which is found, otherwise null </returns>
-        public AbstractAugmentation findAugmentation(IPreviewable a)
-        {
-            return this.Augmentations[this.Augmentations.IndexOf((Abstract2DAugmentation)a)];
-        }
-
-        /// <summary>
-        /// Checks if the augmentation is associated with this <see cref="AbstractSource"/>.
-        /// </summary>
-        /// <param name="a">the IPreviewable, which is checked existence for</param>
-        /// <returns>true, if its associated with this <see cref="AbstractSource"/>
-        ///          false, else</returns>
-        public bool existAugmentation(IPreviewable a)
-        {
-            foreach (Abstract2DAugmentation aug in Augmentations)
-            {
-                if (aug == (Abstract2DAugmentation) a)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
 
         /**
          * <summary>    Makes a deep copy of this object. </summary>

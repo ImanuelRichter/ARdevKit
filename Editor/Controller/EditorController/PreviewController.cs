@@ -195,14 +195,14 @@ public class PreviewController
         if (currentMetaCategory == MetaCategory.Source && typeof(AbstractDynamic2DAugmentation).IsAssignableFrom(currentElement.GetType()))
         {
             if (this.trackable != null && trackable.existAugmentation((AbstractAugmentation)currentElement)
-                && ((AbstractDynamic2DAugmentation)currentElement).source == null)
+                && ((AbstractDynamic2DAugmentation)currentElement).Source == null)
             {
                 //set reference to the augmentations in Source
-                source.Augmentations.Add((Abstract2DAugmentation)currentElement);
+                source.Augmentation = ((AbstractDynamic2DAugmentation)currentElement);
 
                 //add references in Augmentation, Picturebox + project.sources List.
-                ((AbstractDynamic2DAugmentation)currentElement).source = source;
-                this.ew.project.Sources.Add(((AbstractDynamic2DAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).source);
+                ((AbstractDynamic2DAugmentation)currentElement).Source = source;
+                this.ew.project.Sources.Add(((AbstractDynamic2DAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).Source);
 
                 this.setSourcePreview(currentElement);
             }
@@ -227,16 +227,8 @@ public class PreviewController
     {
         if (currentMetaCategory == MetaCategory.Augmentation)
         {
-            if (this.ew.project.findSource(source).Augmentations.Count > 1)
-            {
-                ((AbstractDynamic2DAugmentation)currentElement).source = null;
-                this.ew.project.findSource(source).Augmentations.Remove((Abstract2DAugmentation)currentElement);
-            }
-            else if (this.ew.project.findSource(source).Augmentations.Count == 1)
-            {
-                ((AbstractDynamic2DAugmentation)currentElement).source = null;
-                this.ew.project.Sources.Remove(source);
-            }
+            ((AbstractDynamic2DAugmentation)currentElement).Source = null;
+            this.ew.project.Sources.Remove(source);
             this.findBox(currentElement).Image = currentElement.getPreview();
             this.findBox(currentElement).Refresh();
         }
@@ -389,7 +381,7 @@ public class PreviewController
             foreach (AbstractAugmentation aug in trackable.Augmentations)
             {
                 this.addPictureBox(aug, aug.TranslationVector);
-                if (typeof(AbstractDynamic2DAugmentation).IsAssignableFrom(aug.GetType()) && ((AbstractDynamic2DAugmentation)aug).source != null)
+                if (typeof(AbstractDynamic2DAugmentation).IsAssignableFrom(aug.GetType()) && ((AbstractDynamic2DAugmentation)aug).Source != null)
                 {
                     this.setSourcePreview(aug);
                 }
@@ -585,7 +577,7 @@ public class PreviewController
 
     private void show_source_by_click(object sender, EventArgs e)
     {
-        ew.PropertyGrid1.SelectedObject = ((AbstractDynamic2DAugmentation)((ContextMenu)((MenuItem)sender).Parent).Tag).source;
+        ew.PropertyGrid1.SelectedObject = ((AbstractDynamic2DAugmentation)((ContextMenu)((MenuItem)sender).Parent).Tag).Source;
     }
 
 
@@ -606,7 +598,7 @@ public class PreviewController
         AbstractDynamic2DAugmentation temp = (AbstractDynamic2DAugmentation)((ContextMenu)((MenuItem)sender).Parent).Tag;
         MetaCategory tempMeta = currentMetaCategory;
         this.currentMetaCategory = MetaCategory.Augmentation;
-        this.removeSource(temp.source, temp);
+        this.removeSource(temp.Source, temp);
         ew.PropertyGrid1.SelectedObject = null;
         this.currentMetaCategory = tempMeta;
 
@@ -643,10 +635,10 @@ public class PreviewController
             IPreviewable element = (IPreviewable)this.copy.Clone();
             this.addPreviewable(element, new Vector3D(p.X, p.Y, 0));
             
-            if (typeof(AbstractDynamic2DAugmentation).IsAssignableFrom(element.GetType()) && ((AbstractDynamic2DAugmentation)element).source != null)
+            if (typeof(AbstractDynamic2DAugmentation).IsAssignableFrom(element.GetType()) && ((AbstractDynamic2DAugmentation)element).Source != null)
             {
                 this.setSourcePreview(element);
-                ((AbstractDynamic2DAugmentation)element).source = (AbstractSource)((AbstractDynamic2DAugmentation)copy).source.Clone();
+                ((AbstractDynamic2DAugmentation)element).Source = (AbstractSource)((AbstractDynamic2DAugmentation)copy).Source.Clone();
             }
 
             currentMetaCategory = tempMeta;

@@ -1023,7 +1023,7 @@ namespace ARdevKit
         /// <param name="text">The text.</param>
         private void setButton(string text)
         {
-            foreach (Control comp in pnl_editor_szenes.Controls)
+            foreach (Control comp in pnl_editor_scenes.Controls)
             {
                 if (comp.Text == text)
                 {
@@ -1037,7 +1037,7 @@ namespace ARdevKit
         /// </summary>
         private void resetButton()
         {
-            foreach (Control comp in pnl_editor_szenes.Controls)
+            foreach (Control comp in pnl_editor_scenes.Controls)
             {
                 if (((Button)comp).BackColor == SystemColors.ControlDark)
                 {

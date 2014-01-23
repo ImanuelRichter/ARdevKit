@@ -19,6 +19,9 @@ namespace ARdevKit.Model.Project.File
         /// <summary>   The head. </summary>
         private string head;
 
+        /// <summary>   The lines. </summary>
+        protected List<JavaScriptLine> lines;
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Default constructor. </summary>
         ///
@@ -42,8 +45,11 @@ namespace ARdevKit.Model.Project.File
             this.blockMarker = blockMarker;
         }
 
-        /// <summary>   The lines. </summary>
-        protected List<JavaScriptLine> lines;
+        public void Update(string head, BlockMarker blockMarker)
+        {
+            this.head = head;
+            this.blockMarker = blockMarker;
+        }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Adds a line. </summary>

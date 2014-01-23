@@ -22,7 +22,7 @@ namespace ARdevKit.Model.Project
         /// this <see cref="Abstract2DAugmentation"/>.
         /// </summary>
         [CategoryAttribute("General")]
-        public AbstractSource source { get; set; }
+        public AbstractSource Source { get; set; }
 
         /// <summary>
         /// Initializes no new instance of the <see cref="AbstractDynamic2DAugmentation"/> class,
@@ -46,7 +46,7 @@ namespace ARdevKit.Model.Project
             AbstractSource source)
             : base(isVisible, translationVector, scaling, trackable, width, height)
         {
-            this.source = source;
+            this.Source = source;
         }
     }
 }

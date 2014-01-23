@@ -71,7 +71,11 @@ namespace ARdevKit.Controller.ProjectController
         private JavaScriptBlock ifPatternIsLostBlock;
 
         /// <summary>   The chart file parse block. </summary>
+        private JavaScriptBlock chartFileCreateBlock;
+        /// <summary>   The chart file parse block. </summary>
         private JavaScriptBlock chartFileParseBlock;
+        /// <summary>   The chart file parse categories block. </summary>
+        private JavaScriptBlock chartFileParseContentBlock;
 
         /// <summary>   Number of images added to the <see cref="arelGlueFile"/>. </summary>
         private int imageCount = 1;
@@ -157,7 +161,7 @@ namespace ARdevKit.Controller.ProjectController
             chartFileDefineBlock.AddBlock(chartFileDefineSetOptionsBlock);
             chartFileDefineSetOptionsBlock.AddLine(new JavaScriptLine("$.getJSON(optionsPath, function(data) { arel.Plugin." + chartObjectString + ".options = data; })"));
 
-            if (chart.source == null)
+            if (chart.Source == null)
             {
                 // Data (data.xml)
                 ChartDataFile chartDataFile = new ChartDataFile(projectPath, chartID);
@@ -283,7 +287,7 @@ namespace ARdevKit.Controller.ProjectController
 
             // Create
             // Div
-            JavaScriptBlock chartFileCreateBlock = new JavaScriptBlock("create : function()", new BlockMarker("{", "},"));
+            chartFileCreateBlock = new JavaScriptBlock("create : function()", new BlockMarker("{", "},"));
             chartFileDefineBlock.AddBlock(chartFileCreateBlock);
             chartFileCreateBlock.AddLine(new JavaScriptLine("var chartDiv = document.createElement(\"div\")"));
             chartFileCreateBlock.AddLine(new JavaScriptLine("chartDiv.setAttribute(\"id\", this.id)"));
@@ -302,14 +306,18 @@ namespace ARdevKit.Controller.ProjectController
             chartFileCreateBlock.AddLine(new JavaScriptLine("this.setOptions('Assets/" + chartID + "/options.json')"));
 
             // Parse xml
-            if (chart.source == null)
+            chartFileParseBlock = new JavaScriptBlock();
+            chartFileCreateBlock.AddBlock(chartFileParseBlock);
+            chartFileParseContentBlock = new JavaScriptBlock();
+            chartFileParseBlock.AddBlock(chartFileParseContentBlock);
+            if (chart.Source == null)
             {
-                chartFileParseBlock = new JavaScriptBlock("$.get('Assets/" + chartID + "/data.xml', function(xml)", new BlockMarker("{", "});"));
-                chartFileCreateBlock.AddBlock(chartFileParseBlock);
+                chartFileParseBlock.Update("$.get('Assets/" + chartID + "/data.xml', function(xml)", new BlockMarker("{", "});"));
                 chartFileParseBlock.AddLine(new JavaScriptLine("var $xml = $(xml)"));
 
                 // Add categories
-                JavaScriptBlock chartFileParseCategoriesBlock = new JavaScriptBlock("$xml.find('categories item').each(function(i, category)", new BlockMarker("{", "});"));
+                JavaScriptBlock chartFileParseCategoriesBlock = chartFileParseContentBlock;
+                chartFileParseCategoriesBlock.Update("$xml.find('categories item').each(function(i, category)", new BlockMarker("{", "});"));
                 chartFileParseBlock.AddBlock(chartFileParseCategoriesBlock);
                 chartFileParseCategoriesBlock.AddLine(new JavaScriptLine("arel.Plugin." + chartObjectString + ".options.xAxis.categories.push($(category).text())"));
 
@@ -491,6 +499,33 @@ namespace ARdevKit.Controller.ProjectController
 
         public override void Visit(FileSource source)
         {
+            string sourceFileName = Path.GetFileName(source.SourceFilePath);
+            string chartID = source.Augmentation.ID;
+            if (source.SourceFilePath != null && source.SourceFilePath != "")
+            {
+                Copy(source.SourceFilePath, Path.Combine(projectPath, "Assets", chartID));
+                string newSourceFilePath = Path.Combine(projectPath, "Assets", chartID, sourceFileName);
+                source.SourceFilePath = newSourceFilePath;
+
+                chartFileParseBlock.Update("$.get('Assets/" + chartID + "/" + sourceFileName + "', function(xml)", new BlockMarker("{", "});"));
+            }
+            else
+                chartFileParseBlock.AddLine(new JavaScriptLine("alert('no source file defined')"));
+            if (source.QueryFilePath != null && source.QueryFilePath != "")
+            {
+                string[] lines = File.OpenText(source.QueryFilePath).ReadToEnd().Split(new char[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+                string newQueryFilePath = Path.Combine(projectPath, "Assets", chartID, "query.js");
+                StreamWriter queryWriter = new StreamWriter(newQueryFilePath);
+                foreach (string line in lines)
+                {
+                    queryWriter.WriteLine(line);
+                    chartFileParseBlock.AddLine(new JavaScriptInLine(line, false));
+                }
+                queryWriter.Close();
+                source.QueryFilePath = newQueryFilePath;
+            }
+            else
+                chartFileParseBlock.AddLine(new JavaScriptLine("alert('no query defined')"));
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////

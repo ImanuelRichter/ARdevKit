@@ -197,7 +197,6 @@ namespace ARdevKit.Model.Project
 
         protected Chart() : base()
         {
-            UseOptions = true;
             title = "Titel";
             subtitle = "Untertitel";
             xAxisTitle = "Kategorien";
