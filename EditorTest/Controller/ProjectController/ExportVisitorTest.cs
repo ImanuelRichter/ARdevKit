@@ -16,7 +16,7 @@ namespace EditorTest
 
         private void SetUptProjectWithIDMarkerAndImage()
         {
-            string projectPath = "..\\..\\..\\bin\\Debug\\currentProject";
+            string projectPath = "currentProject";
             testProject = new Project("HelloIDMarker", projectPath);
 
             IDMarker idMarker1 = new IDMarker(1);
@@ -47,11 +47,11 @@ namespace EditorTest
 
         private void SetUptProjectWithPictureMarkerAndBarChart()
         {
-            string projectPath = "..\\..\\..\\bin\\Debug\\currentProject";
+            string projectPath = "currentProject";
             testProject = new Project("HelloPictureMarker", projectPath);
 
-            PictureMarker pictureMarker1 = new PictureMarker("res\\trackables\\pictureMarker1.png");
-            PictureMarker pictureMarker2 = new PictureMarker("res\\trackables\\pictureMarker2.png");
+            PictureMarker pictureMarker1 = new PictureMarker("res\\testFiles\\marker\\pictureMarker1.png");
+            PictureMarker pictureMarker2 = new PictureMarker("res\\testFiles\\marker\\pictureMarker2.png");
 
             BarChart barChart1 = new BarChart();
             barChart1.IsVisible = false;
@@ -99,14 +99,9 @@ namespace EditorTest
             ExportVisitor exporter = new ExportVisitor(false);
             testProject.Accept(exporter);
 
-            exporter.ArelProjectFile.Save();
-            exporter.TrackingDataFile.Save();
-            exporter.ArelConfigFile.Save();
-            exporter.ArelGlueFile.Save();
-
-            foreach (BarChartFile barChartFile in exporter.BarChartFiles)
+            foreach (AbstractFile file in exporter.Files)
             {
-                barChartFile.Save();
+                file.Save();
             }
         }
 
@@ -118,10 +113,10 @@ namespace EditorTest
             ExportVisitor exporter = new ExportVisitor(false);
             testProject.Accept(exporter);
 
-            exporter.ArelProjectFile.Save();
-            exporter.TrackingDataFile.Save();
-            exporter.ArelConfigFile.Save();
-            exporter.ArelGlueFile.Save();
+            foreach (AbstractFile file in exporter.Files)
+            {
+                file.Save();
+            }
         }
     }
 }

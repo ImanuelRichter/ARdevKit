@@ -46,6 +46,16 @@ namespace ARdevKit.Controller.ProjectController
         public abstract void Visit(DbSource source);
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Visits the given <see cref="FileSource"/>. </summary>
+        ///
+        /// <remarks>   Imanuel, 23.01.2014. </remarks>
+        ///
+        /// <param name="source">   Source for the <see cref="AbstractDynamic2DAugmentation"/>. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public abstract void Visit(FileSource source);
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Visits the given <see cref="MarkerlessFuser"/>. </summary>
         ///
         /// <remarks>   Imanuel, 17.01.2014. </remarks>

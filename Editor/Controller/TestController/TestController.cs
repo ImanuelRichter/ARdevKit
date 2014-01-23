@@ -69,17 +69,9 @@ namespace ARdevKit.Controller.TestController
             project.Accept(exporter);
 
             IDFactory.Reset();
-            exporter.ArelProjectFile.Save();
-            exporter.TrackingDataFile.Save();
-            exporter.ArelConfigFile.Save();
-            exporter.ArelGlueFile.Save();
-
-            if (exporter.BarChartFiles != null)
+            foreach (AbstractFile file in exporter.Files)
             {
-                foreach (BarChartFile barChartFile in exporter.BarChartFiles)
-                {
-                    barChartFile.Save();
-                }
+                file.Save();
             }
 
             player = new Process();

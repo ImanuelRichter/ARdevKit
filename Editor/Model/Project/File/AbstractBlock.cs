@@ -27,9 +27,9 @@ namespace ARdevKit.Model.Project.File
         /// <summary>   The <see cref="BlockMarker"/> of this <see cref="AbstractBlock"/>. </summary>
         protected BlockMarker blockMarker;
 
-        /// <summary>   The <see cref="AbstractARELFile"/> this block belongs to. </summary>
-        protected AbstractARELFile parentFile;
-        public AbstractARELFile ParentFile
+        /// <summary>   The <see cref="AbstractFile"/> this block belongs to. </summary>
+        protected AbstractFile parentFile;
+        public AbstractFile ParentFile
         {
             get { return parentFile; }
             set { parentFile = value; }

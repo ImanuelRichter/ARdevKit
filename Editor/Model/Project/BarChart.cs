@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.ComponentModel;
+using System.IO;
 
 namespace ARdevKit.Model.Project
 {
@@ -59,6 +60,8 @@ namespace ARdevKit.Model.Project
         public BarChart()
         {
             Style = new ChartStyle();
+            StreamReader optionsfile = System.IO.File.OpenText(@"res\\highcharts\\barChartColumn\\options.json");
+            options = optionsfile.ReadToEnd();
             //OptimalValue = 50;
             data = new List<BarChartData>();
             data.Add(new BarChartData("Name 1", new double[] { 33.1, 66.9 }, ColorTranslator.FromHtml("0x55aa22"), ColorTranslator.FromHtml("0xdd210e")));

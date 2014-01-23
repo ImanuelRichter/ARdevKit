@@ -564,50 +564,11 @@ namespace ARdevKit
                 {
                     Debug.WriteLine(de.StackTrace);
                 }
-
                 try
                 {
-                    exportVisitor.ArelProjectFile.Save();
-                }
-                catch (NullReferenceException ne)
-                {
-                    Debug.WriteLine(ne.StackTrace);
-                }
-
-                try
-                {
-                    exportVisitor.TrackingDataFile.Save();
-                }
-                catch (NullReferenceException ne)
-                {
-                    Debug.WriteLine(ne.StackTrace);
-                }
-
-                try
-                {
-                    exportVisitor.ArelConfigFile.Save();
-                }
-                catch (NullReferenceException ne)
-                {
-                    Debug.WriteLine(ne.StackTrace);
-                }
-
-                try
-                {
-                    exportVisitor.ArelGlueFile.Save();
-                }
-                catch (NullReferenceException ne)
-                {
-                    Debug.WriteLine(ne.StackTrace);
-                }
-                try
-                {
-                    if (exportVisitor.BarChartFiles != null)
+                    foreach (AbstractFile file in exportVisitor.Files)
                     {
-                        foreach (BarChartFile barChartFile in exportVisitor.BarChartFiles)
-                        {
-                            barChartFile.Save();
-                        }
+                        file.Save();
                     }
                 }
                 catch (NullReferenceException ne)

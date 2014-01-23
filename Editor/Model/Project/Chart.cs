@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using System.Drawing;
 
 using System.ComponentModel;
+using System.IO;
+using System.ComponentModel.Design;
+using System.Drawing.Design;
 
 namespace ARdevKit.Model.Project
 {
@@ -34,6 +37,15 @@ namespace ARdevKit.Model.Project
         {
             get { return style; }
             set { style = value; }
+        }
+
+        protected string options;
+
+        [CategoryAttribute("Expert"), Editor(typeof(MultilineStringEditor), typeof(UITypeEditor))]
+        public string Options
+        {
+            get { return options; }
+            set { options = value; }
         }
 
         /// <summary>
@@ -175,6 +187,8 @@ namespace ARdevKit.Model.Project
         [CategoryAttribute("General")]
         public int MinValue { get; set; }
 
+        public bool UseOptions { get; set; }
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Specialised default constructor for use only by derived classes. </summary>
         ///
@@ -183,6 +197,7 @@ namespace ARdevKit.Model.Project
 
         protected Chart() : base()
         {
+            UseOptions = true;
             title = "Titel";
             subtitle = "Untertitel";
             xAxisTitle = "Kategorien";

@@ -22,7 +22,6 @@ namespace ARdevKit.Model.Project
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public abstract class AbstractSource : IPreviewable
     {
-
         /// <summary>
         /// Gets or sets the source identifier.
         /// </summary>
@@ -31,6 +30,21 @@ namespace ARdevKit.Model.Project
         /// </value>
         [ReadOnly(true), CategoryAttribute("General")]
         public String sourceID { get; set; }
+
+        /// <summary>   The query to the source. </summary>
+        protected string query;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the query. </summary>
+        ///
+        /// <value> The query. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public string Query
+        {
+            get { return query; }
+            set { query = value; }
+        }
 
         /// <summary>
         /// Gets or sets the augmentations, which get their dynamic information from the <see cref="AbstractSource" />

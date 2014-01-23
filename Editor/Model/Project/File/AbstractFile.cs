@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ARdevKit.Model.Project.File
 {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-    /// <summary>   An <see cref="AbstractARELFile"/> can be an <see cref="ARELConfigFile"/>,
+    /// <summary>   An <see cref="AbstractFile"/> can be an <see cref="ARELConfigFile"/>,
     ///             an <see cref="ARELProjectFile"/>, a <see cref="TrackinDataFile"/>
     ///             or an <see cref="ARELGlueFile"/>. It must have a <see cref="filePath"/>
     ///             and can have a <see cref="header"/> and consists of <see cref="AbstractBlock"/>s. </summary>
@@ -15,7 +15,7 @@ namespace ARdevKit.Model.Project.File
     /// <remarks>   Imanuel, 15.01.2014. </remarks>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public abstract class AbstractARELFile
+    public abstract class AbstractFile
     {
         /// <summary>   Full pathname of the file. </summary>
         protected string filePath;
