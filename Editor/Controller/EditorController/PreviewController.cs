@@ -142,33 +142,35 @@ public class PreviewController
                 if (openTestImageDialog.ShowDialog() == DialogResult.OK)
                 {
                     ((ImageAugmentation)currentElement).ImagePath = openTestImageDialog.FileName;
-                    //set the vector and the trackable in <see cref="AbstractAugmentation"/>
-                    ((AbstractAugmentation)currentElement).TranslationVector = v;
-                    ((AbstractAugmentation)currentElement).Trackable = this.trackable;
-
                     //set references 
-                    AbstractAugmentation augmentation = (AbstractAugmentation)currentElement;
-                    trackable.Augmentations.Add(augmentation);
+                    trackable.Augmentations.Add((AbstractAugmentation)currentElement);
 
                     this.addPictureBox(currentElement, v);
+
+                    //set the vector and the trackable in <see cref="AbstractAugmentation"/>
+                    ((AbstractAugmentation)currentElement).TranslationVector = this.calculateVector(v);
+                    ((AbstractAugmentation)currentElement).Trackable = this.trackable;
 
                     //set the new box to the front
                     this.findBox(currentElement).BringToFront();
                     setCurrentElement(currentElement);
                     ew.PropertyGrid1.SelectedObject = currentElement;
+
+                    
                 }
             }
             else
             {
-                //set the vector and the trackable in <see cref="AbstractAugmentation"/>
-                ((AbstractAugmentation)currentElement).TranslationVector = v;
-                ((AbstractAugmentation)currentElement).Trackable = this.trackable;
 
                 //set references 
-                AbstractAugmentation augmentation = (AbstractAugmentation)currentElement;
-                trackable.Augmentations.Add(augmentation);
+                trackable.Augmentations.Add((AbstractAugmentation)currentElement);
 
                 this.addPictureBox(currentElement, v);
+
+                //set the vector and the trackable in <see cref="AbstractAugmentation"/>
+                ((AbstractAugmentation)currentElement).TranslationVector = this.calculateVector(v);
+                ((AbstractAugmentation)currentElement).Trackable = this.trackable;
+
                 setCurrentElement(currentElement);
                 ew.PropertyGrid1.SelectedObject = currentElement;
             }
@@ -340,11 +342,8 @@ public class PreviewController
 
     public void reloadPreviewPanel(int index)
     {
-        //if it's the same Scene do nothing
-        if (index == this.index)
-        { }
         //if it's a scene which exists reload scene
-        else if (index < this.ew.project.Trackables.Count)
+        if (index < this.ew.project.Trackables.Count)
         {
 
             this.index = index;
@@ -390,7 +389,7 @@ public class PreviewController
         {
             foreach (AbstractAugmentation aug in trackable.Augmentations)
             {
-                this.addPictureBox(aug, aug.TranslationVector);
+                this.addPictureBox(aug, this.recalculateVector(aug.TranslationVector));
                 if (typeof(AbstractDynamic2DAugmentation).IsAssignableFrom(aug.GetType()) && ((AbstractDynamic2DAugmentation)aug).source != null)
                 {
                     this.setSourcePreview(aug);
@@ -415,6 +414,11 @@ public class PreviewController
         tempBox = new PictureBox();
         tempBox.Location = new Point(vector.X - prev.getPreview().Width / 8, vector.Y - prev.getPreview().Height / 8);
         tempBox.Image = (Image)prev.getPreview();
+        if (prev.getPreview().Width > 200 || prev.getPreview().Height > 200)
+ /*       {
+
+        }*/
+        
         tempBox.Size = new Size(prev.getPreview().Width / 4, prev.getPreview().Height / 4);
         tempBox.SizeMode = PictureBoxSizeMode.StretchImage;
         tempBox.Tag = prev;
@@ -700,5 +704,19 @@ public class PreviewController
         graphic.DrawImage(image2, new Rectangle(0, 0, image2.Width, image2.Height));
         temp.Image = newPic;
         temp.Refresh();
+    }
+
+    private Vector3D calculateVector(Vector3D v) {
+        Vector3D result = new Vector3D(0,0,0);
+        result.X = (v.X - panel.Width / 2);
+        result.Y = (v.Y - panel.Height / 2);
+        return result;
+    }
+
+    private Vector3D recalculateVector(Vector3D v) {
+        Vector3D result = new Vector3D(0, 0, 0);
+        result.X = (v.X + panel.Width / 2);
+        result.Y = (v.Y + panel.Height / 2);
+        return result;
     }
 }
