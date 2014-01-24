@@ -59,6 +59,7 @@ namespace EditorTest
             barChart1.RotationVector = new Vector3Di(0, 0, 0, 1);
             barChart1.ScalingVector = new Vector3D(0, 0, 0);
             barChart1.Style = new ChartStyle();
+            barChart1.PositionRelativeToTrackable = true;
             barChart1.Style.Top = 100;
             barChart1.Style.Left = 100;
             barChart1.Width = 200;

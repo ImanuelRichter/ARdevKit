@@ -64,7 +64,7 @@ namespace ARdevKit.Controller.ProjectController
         private int cosCounter = 1;
 
         /// <summary>   The scene ready funktion block within the <see cref="arelGlueFile"/>. </summary>
-        private JavaScriptBlock sceneReadyFunktionBlock;
+        private JavaScriptBlock sceneReadyFunctionBlock;
         /// <summary>   if pattern is found block within the <see cref="arelGlueFile"/>. </summary>
         private JavaScriptBlock ifPatternIsFoundBlock;
         /// <summary>   if pattern is lost block within the <see cref="arelGlueFile"/>. </summary>
@@ -119,11 +119,9 @@ namespace ARdevKit.Controller.ProjectController
 
             // arelGlue.js
             JavaScriptBlock loadContentBlock = new JavaScriptBlock();
-            sceneReadyFunktionBlock.AddBlock(loadContentBlock);
+            sceneReadyFunctionBlock.AddBlock(loadContentBlock);
 
-            JavaScriptBlock arelGlueVariablesBlock = new JavaScriptBlock();
-            arelGlueVariablesBlock.AddLine(new JavaScriptLine("var " + chartID));
-            arelGlueFile.AddBlock(arelGlueVariablesBlock);
+            arelGlueFile.AddBlock(new JavaScriptLine("var " + chartID));
 
             loadContentBlock.AddLine(new JavaScriptLine(chartID + " = arel.Plugin." + chartObjectString));
 
@@ -134,6 +132,8 @@ namespace ARdevKit.Controller.ProjectController
             JavaScriptBlock chartIfPatternIsFoundShowBlock = new JavaScriptBlock("if (param[0].getCoordinateSystemID() == " + chartID + ".getCoordinateSystemID())", new BlockMarker("{", "}"));
             ifPatternIsFoundBlock.AddBlock(chartIfPatternIsFoundShowBlock);
             chartIfPatternIsFoundShowBlock.AddLine(new JavaScriptLine(chartID + ".show()"));
+            if (chart.PositionRelativeToTrackable)
+                chartIfPatternIsFoundShowBlock.AddLine(new JavaScriptLine("arel.Scene.getScreenCoordinatesFrom3DPosition(COS" + coordinateSystemID + "Anchor.getTranslation(), " + chartID + ".getCoordinateSystemID(), function(coord){move(" + chartID + ", coord);})"));
 
             // onTracking lost
             ifPatternIsLostBlock.AddLine(new JavaScriptLine(chartID + ".hide()"));
@@ -155,6 +155,13 @@ namespace ARdevKit.Controller.ProjectController
             chartFileDefineBlock.AddLine(new JavaScriptInLine("coordinateSystemID : " + coordinateSystemID, true));
             // Options
             chartFileDefineBlock.AddLine(new JavaScriptInLine("options : {}", true));
+            // Translation
+            string translationX = chart.TranslationVector.X.ToString("F1", CultureInfo.InvariantCulture);
+            string translationY = chart.TranslationVector.Y.ToString("F1", CultureInfo.InvariantCulture);
+            string translationZ = chart.TranslationVector.Z.ToString("F1", CultureInfo.InvariantCulture);
+            chartFileDefineBlock.AddBlock(new JavaScriptInLine("translation : new arel.Vector3D(" + translationX + "," + translationY + "," + translationZ + ")", true));
+            // ChartDiv
+            chartFileDefineBlock.AddBlock(new JavaScriptInLine("div : document.createElement(\"div\")", true));
 
             // setOptions
             JavaScriptBlock chartFileDefineSetOptionsBlock = new JavaScriptBlock("setOptions : function(optionsPath)", new BlockMarker("{", "},"));
@@ -197,16 +204,17 @@ namespace ARdevKit.Controller.ProjectController
 
                     XMLBlock SeriesColorStopsBlock = new XMLBlock(new XMLTag("stops"));
                     SeriesColorBlock.AddBlock(SeriesColorStopsBlock);
-                    SeriesColorStopsBlock.AddLine(new XMLLine(new XMLTag("0"), ColorTranslator.ToHtml(chart.Data[i].MinValueColor)));
-                    SeriesColorStopsBlock.AddLine(new XMLLine(new XMLTag("1"), ColorTranslator.ToHtml(chart.Data[i].MaxValueColor)));
+                    SeriesColorStopsBlock.AddLine(new XMLLine(new XMLTag("zero"), ColorTranslator.ToHtml(chart.Data[i].MaxValueColor)));
+                    SeriesColorStopsBlock.AddLine(new XMLLine(new XMLTag("one"), ColorTranslator.ToHtml(chart.Data[i].MinValueColor)));
 
                     XMLBlock dataBlock = new XMLBlock(new XMLTag("data"));
                     seriesBlock.AddBlock(dataBlock);
+                    string points = "";
                     int m = chart.Data[i].DataSet.Length;
-                    for (int j = 0; j < m; j++)
-                    {
-                        dataBlock.AddLine(new XMLLine(new XMLTag("point"), chart.Data[i].DataSet[j].ToString(CultureInfo.InvariantCulture)));
-                    }
+                    for (int j = 0; j < m - 1; j++)
+                        points += chart.Data[i].DataSet[j].ToString(CultureInfo.InvariantCulture) + ",";
+                    points += chart.Data[i].DataSet[m - 1].ToString(CultureInfo.InvariantCulture);
+                    dataBlock.AddLine(new XMLLine(new XMLTag("points"), points));
                 }
             }
 
@@ -289,20 +297,24 @@ namespace ARdevKit.Controller.ProjectController
             // Div
             chartFileCreateBlock = new JavaScriptBlock("create : function()", new BlockMarker("{", "},"));
             chartFileDefineBlock.AddBlock(chartFileCreateBlock);
-            chartFileCreateBlock.AddLine(new JavaScriptLine("var chartDiv = document.createElement(\"div\")"));
-            chartFileCreateBlock.AddLine(new JavaScriptLine("chartDiv.setAttribute(\"id\", this.id)"));
-            chartFileCreateBlock.AddLine(new JavaScriptLine("chartDiv.style.position = \"" + chart.Style.Position + "\""));
-            if (chart.Style.Top > 0)
-                chartFileCreateBlock.AddLine(new JavaScriptLine("chartDiv.style.top = \"" + chart.Style.Top + "px\""));
-            if (chart.Style.Left > 0)
-                chartFileCreateBlock.AddLine(new JavaScriptLine("chartDiv.style.left = \"" + chart.Style.Left + "px\""));
-            if (chart.Style.Bottom > 0)
-                chartFileCreateBlock.AddLine(new JavaScriptLine("chartDiv.style.bottom = \"" + chart.Style.Bottom + "px\""));
-            if (chart.Style.Right > 0)
-                chartFileCreateBlock.AddLine(new JavaScriptLine("chartDiv.style.right = \"" + chart.Style.Right + "px\""));
-            chartFileCreateBlock.AddLine(new JavaScriptLine("chartDiv.style.width = \"" + chart.Width + "px\""));
-            chartFileCreateBlock.AddLine(new JavaScriptLine("chartDiv.style.height = \"" + chart.Height + "px\""));
-            chartFileCreateBlock.AddLine(new JavaScriptLine("document.documentElement.appendChild(chartDiv)"));
+            chartFileCreateBlock.AddLine(new JavaScriptLine("this.div.setAttribute(\"id\", this.id)"));
+            chartFileCreateBlock.AddLine(new JavaScriptLine("this.div.style.position = \"" + chart.Style.Position + "\""));
+
+            if (!chart.PositionRelativeToTrackable)
+            {
+                if (chart.Style.Top > 0)
+                    chartFileCreateBlock.AddLine(new JavaScriptLine("this.div.style.top = \"" + chart.Style.Top + "px\""));
+                if (chart.Style.Left > 0)
+                    chartFileCreateBlock.AddLine(new JavaScriptLine("this.div.style.left = \"" + chart.Style.Left + "px\""));
+                if (chart.Style.Bottom > 0)
+                    chartFileCreateBlock.AddLine(new JavaScriptLine("this.div.style.bottom = \"" + chart.Style.Bottom + "px\""));
+                if (chart.Style.Right > 0)
+                    chartFileCreateBlock.AddLine(new JavaScriptLine("this.div.style.right = \"" + chart.Style.Right + "px\""));
+            }
+
+            chartFileCreateBlock.AddLine(new JavaScriptLine("this.div.style.width = \"" + chart.Width + "px\""));
+            chartFileCreateBlock.AddLine(new JavaScriptLine("this.div.style.height = \"" + chart.Height + "px\""));
+            chartFileCreateBlock.AddLine(new JavaScriptLine("document.documentElement.appendChild(this.div)"));
             chartFileCreateBlock.AddLine(new JavaScriptLine("this.setOptions('Assets/" + chartID + "/options.json')"));
 
             // Parse xml
@@ -328,15 +340,27 @@ namespace ARdevKit.Controller.ProjectController
                 // Series options
                 JavaScriptBlock chartFileParseSeriesOptionsBlock = new JavaScriptBlock("var seriesOptions =", new BlockMarker("{", "};"));
                 chartFileParseSeriesBlock.AddBlock(chartFileParseSeriesOptionsBlock);
+
+                // Name
                 chartFileParseSeriesOptionsBlock.AddLine(new JavaScriptInLine("name: $(series).find('name').text()", true));
 
-                // TODO add color options
-                chartFileParseSeriesOptionsBlock.AddLine(new JavaScriptInLine("data: []", false));
+                // Color
+                JavaScriptBlock chartFileParseSeriesOptionsColorBlock = new JavaScriptBlock("color : ", new BlockMarker("{", "},"));
+                chartFileParseSeriesOptionsBlock.AddBlock(chartFileParseSeriesOptionsColorBlock);
+                chartFileParseSeriesOptionsColorBlock.AddBlock(new JavaScriptInLine("linearGradient: { x1: $(series).find('x1').text(), x2: $(series).find('x2').text(), y1: $(series).find('y1').text(), y1: $(series).find('y2').text() }", true));
+                JavaScriptBlock chartFileParseSeriesOptionsColorStopsBlock = new JavaScriptBlock("stops: ", new BlockMarker("[", "]"));
+                chartFileParseSeriesOptionsColorBlock.AddBlock(chartFileParseSeriesOptionsColorStopsBlock);
+                chartFileParseSeriesOptionsColorStopsBlock.AddLine(new JavaScriptInLine("[0, $(series).find('stops zero').text()]", true));
+                chartFileParseSeriesOptionsColorStopsBlock.AddLine(new JavaScriptInLine("[1, $(series).find('stops one').text()]", false));
+
+                // Data
+                chartFileParseSeriesOptionsBlock.AddBlock(new JavaScriptInLine("data: []", false));
 
                 // Series data
-                JavaScriptBlock chartFileParseSeriesDataBlock = new JavaScriptBlock("$(series).find('data point').each(function(i, point)", new BlockMarker("{", "});"));
+                chartFileParseSeriesBlock.AddBlock(new JavaScriptLine("var points = $(series).find('points').text().split(',')"));
+                JavaScriptBlock chartFileParseSeriesDataBlock = new JavaScriptBlock("$.each(points, function(i, point)", new BlockMarker("{", "});"));
                 chartFileParseSeriesBlock.AddBlock(chartFileParseSeriesDataBlock);
-                chartFileParseSeriesDataBlock.AddLine(new JavaScriptLine("seriesOptions.data.push(parseInt($(point).text()))"));
+                chartFileParseSeriesDataBlock.AddLine(new JavaScriptLine("seriesOptions.data.push(parseInt(point))"));
 
                 // Add it to options
                 chartFileParseSeriesBlock.AddBlock(new JavaScriptLine("arel.Plugin." + chartObjectString + ".options.series.push(seriesOptions)"));
@@ -376,88 +400,23 @@ namespace ARdevKit.Controller.ProjectController
             // Copy to projectPath
             Copy(image.ImagePath, Path.Combine(projectPath, "Assets"));
 
-            // Connections 
-
-            // COS
-            XMLBlock cosBlock = new XMLBlock(new XMLTag("COS"));
-            trackingDataFileConnectionsBlock.AddBlock(cosBlock);
-
-            // Name
-            cosBlock.AddLine(new XMLLine(new XMLTag("Name"), project.Sensor.Name + "COS" + cosCounter++));
-
-            // Fuser
-            trackingDataFileFuserBlock = new XMLBlock(new XMLTag("Fuser"));
-            cosBlock.AddBlock(trackingDataFileFuserBlock);
-
-            // SensorSource
-            XMLBlock sensorSourceBlock = new XMLBlock(new XMLTag("SensorSource", "trigger=\"1\""));
-            cosBlock.AddBlock(sensorSourceBlock);
-
-            // SensorID
-            sensorSourceBlock.AddLine(new XMLLine(new XMLTag("SensorID"), project.Sensor.SensorIDString));
-            // SensorCosID
-            sensorSourceBlock.AddLine(new XMLLine(new XMLTag("SensorCosID"), image.Trackable.SensorCosID));
-
-            // Hand-Eye-Calibration
-            XMLBlock handEyeCalibrationBlock = new XMLBlock(new XMLTag("HandEyeCalibration"));
-            sensorSourceBlock.AddBlock(handEyeCalibrationBlock);
-
-            // Translation
-            XMLBlock hecTranslationOffset = new XMLBlock(new XMLTag("TranslationOffset"));
-            handEyeCalibrationBlock.AddBlock(hecTranslationOffset);
-
-            // TODO get vectors
-            hecTranslationOffset.AddLine(new XMLLine(new XMLTag("X"), "0"));
-            hecTranslationOffset.AddLine(new XMLLine(new XMLTag("Y"), "0"));
-            hecTranslationOffset.AddLine(new XMLLine(new XMLTag("Z"), "0"));
-
-            // Rotation
-            XMLBlock hecRotationOffset = new XMLBlock(new XMLTag("RotationOffset"));
-            handEyeCalibrationBlock.AddBlock(hecRotationOffset);
-
-            // TODO get vectors
-            hecRotationOffset.AddLine(new XMLLine(new XMLTag("X"), "0"));
-            hecRotationOffset.AddLine(new XMLLine(new XMLTag("Y"), "0"));
-            hecRotationOffset.AddLine(new XMLLine(new XMLTag("Z"), "0"));
-            hecRotationOffset.AddLine(new XMLLine(new XMLTag("W"), "1"));
-
-            // COSOffset
-            XMLBlock COSOffsetBlock = new XMLBlock(new XMLTag("COSOffset"));
-            sensorSourceBlock.AddBlock(COSOffsetBlock);
-
-            // Translation
-            XMLBlock COSOffsetTranslationOffset = new XMLBlock(new XMLTag("TranslationOffset"));
-            COSOffsetBlock.AddBlock(COSOffsetTranslationOffset);
-
-            string augmentationPositionX = image.TranslationVector.X.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentationPositionY = image.TranslationVector.Y.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentationPositionZ = image.TranslationVector.Z.ToString("F1", CultureInfo.InvariantCulture);
-            COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("X"), augmentationPositionX));
-            COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("Y"), augmentationPositionY));
-            COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("Z"), augmentationPositionZ));
-
-            // Rotation
-            XMLBlock COSOffsetRotationOffset = new XMLBlock(new XMLTag("RotationOffset"));
-            COSOffsetBlock.AddBlock(COSOffsetRotationOffset);
-
-            // TODO get vectors
-            string augmentationRotationX = image.RotationVector.X.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentationRotationY = image.RotationVector.Y.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentationRotationZ = image.RotationVector.Z.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentationRotationW = image.RotationVector.W.ToString("F1", CultureInfo.InvariantCulture);
-            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("X"), augmentationRotationX));
-            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("Y"), augmentationRotationY));
-            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("Z"), augmentationRotationZ));
-            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("W"), augmentationRotationW));
-
             // arelGlue.js
             JavaScriptBlock loadContentBlock = new JavaScriptBlock();
-            sceneReadyFunktionBlock.AddBlock(loadContentBlock);
+            sceneReadyFunctionBlock.AddBlock(loadContentBlock);
 
             string imageVariable = "image" + imageCount;
             loadContentBlock.AddLine(new JavaScriptLine("var " + imageVariable + " = arel.Object.Model3D.createFromImage(\"" + imageVariable + "\",\"Assets/" + Path.GetFileName(image.ImagePath) + "\")"));
             loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setVisibility(" + image.IsVisible.ToString().ToLower() + ")"));
             loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setCoordinateSystemID(" + coordinateSystemID + ")"));
+            string augmentationTranslationX = image.TranslationVector.X.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationTranslationY = image.TranslationVector.Y.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationTranslationZ = image.TranslationVector.Z.ToString("F1", CultureInfo.InvariantCulture);
+            loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setTranslation(new arel.Vector3D(" + augmentationTranslationX + "," + augmentationTranslationY + "," + augmentationTranslationZ + "))"));
+            string augmentationRotationX = image.RotationVector.X.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationRotationY = image.RotationVector.Y.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationRotationZ = image.RotationVector.Z.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationRotationW = image.RotationVector.W.ToString("F1", CultureInfo.InvariantCulture);
+            loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setRotation(new arel.Rotation(" + augmentationRotationX + "," + augmentationRotationY + "," + augmentationRotationZ + "," + augmentationRotationW + "))"));
             string augmentationScalingX = image.ScalingVector.X.ToString("F1", CultureInfo.InvariantCulture);
             string augmentationScalingY = image.ScalingVector.Y.ToString("F1", CultureInfo.InvariantCulture);
             string augmentationScalingZ = image.ScalingVector.Z.ToString("F1", CultureInfo.InvariantCulture);
@@ -640,17 +599,21 @@ namespace ARdevKit.Controller.ProjectController
         public override void Visit(PictureMarker pictureMarker)
         {
             // Copy the file
-           Copy(pictureMarker.ImagePath, Path.Combine(projectPath, "Assets"));
+            Copy(pictureMarker.ImagePath, Path.Combine(projectPath, "Assets"));
 
             string sourcePictureMarkerFile = pictureMarker.ImagePath;
             string destPictureMarkerFile;
             destPictureMarkerFile = Path.Combine(projectPath, Path.GetFileName(sourcePictureMarkerFile));
-                if (Directory.Exists(Path.Combine(projectPath, "Asstes")) && !File.Exists(destPictureMarkerFile))
-                    File.Copy(sourcePictureMarkerFile, destPictureMarkerFile);
+            if (Directory.Exists(Path.Combine(projectPath, "Asstes")) && !File.Exists(destPictureMarkerFile))
+                File.Copy(sourcePictureMarkerFile, destPictureMarkerFile);
+
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            // trackingData.xml
 
             XMLBlock sensorCOSBlock = new XMLBlock(new XMLTag("SensorCOS"));
             trackingDataFileSensorBlock.AddBlock(sensorCOSBlock);
-            
+
             pictureMarker.SensorCosID = IDFactory.CreateNewSensorCosID(pictureMarker);
             sensorCOSBlock.AddLine(new XMLLine(new XMLTag("SensorCosID"), pictureMarker.SensorCosID));
 
@@ -739,6 +702,28 @@ namespace ARdevKit.Controller.ProjectController
             COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("W"), augmentationRotationW));
 
             coordinateSystemID++;
+
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            // arelGlue.js
+
+            // Set anchor
+            Bitmap bmp = new Bitmap(1, 1);
+            Graphics g = Graphics.FromImage(bmp);
+            g.Clear(Color.Transparent);
+            g.Flush();
+            string anchorPath = Path.Combine(projectPath, "Assets", "anchor.png");
+            if (!File.Exists(anchorPath))
+                bmp.Save(anchorPath, System.Drawing.Imaging.ImageFormat.Png);
+
+            // Add global variable for the anchor
+            arelGlueFile.AddBlock(new JavaScriptLine("var COS" + coordinateSystemID + "Anchor"));
+
+            // Add the anchor to the scene
+            sceneReadyFunctionBlock.AddLine(new JavaScriptLine("COS" + coordinateSystemID + "Anchor = arel.Object.Model3D.createFromImage(\"COS" + coordinateSystemID + "Anchor" + "\",\"Assets/anchor.png" + "\")"));
+            sceneReadyFunctionBlock.AddLine(new JavaScriptLine("COS" + coordinateSystemID + "Anchor.setVisibility(false)"));
+            sceneReadyFunctionBlock.AddLine(new JavaScriptLine("COS" + coordinateSystemID + "Anchor.setCoordinateSystemID(" + coordinateSystemID + ")"));
+            sceneReadyFunctionBlock.AddLine(new JavaScriptLine("arel.Scene.addObject(COS" + coordinateSystemID + "Anchor)"));
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -900,6 +885,8 @@ namespace ARdevKit.Controller.ProjectController
             XMLBlock bodyBlock = new XMLBlock(new XMLTag("body"));
             arelProjectFile.AddBlock(bodyBlock);
 
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
             // Prepare TrackinData.xml
             string trackingDataFileName = "TrackingData_" + p.Sensor.Name;
             trackingDataFileName += p.Sensor.SensorSubType != AbstractSensor.SensorSubTypes.None ? p.Sensor.SensorSubType.ToString() : "";
@@ -907,8 +894,6 @@ namespace ARdevKit.Controller.ProjectController
             TrackingDataFile trackingDataFile;
             trackingDataFile = new TrackingDataFile("<?xml version=\"1.0\" encoding=\"UTF-8\"?>", projectPath, trackingDataFileName);
             files.Add(trackingDataFile);
-
-            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             // TrackingData
             XMLBlock trackingDataBlock = new XMLBlock(new XMLTag("TrackingData"));
@@ -945,8 +930,6 @@ namespace ARdevKit.Controller.ProjectController
             XMLBlock resultsBlock = new XMLBlock(new XMLTag("results"));
             arelConfigFile.AddBlock(resultsBlock);
 
-            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
             // Trackingdata
             string trackingdataExtension = "channel=\"0\" poiprefix=\"extpoi-124906-\" url=\"Assets/" + trackingDataFileName + "\" /";
             resultsBlock.AddLine(new XMLLine(new NonTerminatingXMLTag("trackingdata", trackingdataExtension)));
@@ -956,20 +939,20 @@ namespace ARdevKit.Controller.ProjectController
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             // Create arelGlue.js
-            arelGlueFile  = new ARELGlueFile(projectPath);
+            arelGlueFile = new ARELGlueFile(projectPath);
             files.Add(arelGlueFile);
 
             JavaScriptBlock sceneReadyBlock = new JavaScriptBlock("arel.sceneReady", new BlockMarker("(", ");"));
             arelGlueFile.AddBlock(sceneReadyBlock);
-            sceneReadyFunktionBlock = new JavaScriptBlock("function()", new BlockMarker("{", "}"));
-            sceneReadyBlock.AddBlock(sceneReadyFunktionBlock);
+            sceneReadyFunctionBlock = new JavaScriptBlock("function()", new BlockMarker("{", "}"));
+            sceneReadyBlock.AddBlock(sceneReadyFunctionBlock);
 
             // Console log ready
-            sceneReadyFunktionBlock.AddLine(new JavaScriptLine("console.log(\"sceneReady\")"));
+            sceneReadyFunctionBlock.AddLine(new JavaScriptLine("console.log(\"sceneReady\")"));
 
-            //set a listener to tracking to get information about when the image is tracked
+            // Set a listener to tracking to get information about when the image is tracked
             JavaScriptBlock eventListenerBlock = new JavaScriptBlock("arel.Events.setListener", new BlockMarker("(", ");"));
-            sceneReadyFunktionBlock.AddBlock(eventListenerBlock);
+            sceneReadyFunctionBlock.AddBlock(eventListenerBlock);
             JavaScriptBlock eventListenreFunktionBlock = new JavaScriptBlock("arel.Scene, function(type, param)", new BlockMarker("{", "}"));
             eventListenerBlock.AddBlock(eventListenreFunktionBlock);
 
@@ -991,6 +974,14 @@ namespace ARdevKit.Controller.ProjectController
             ifPatternIsLostBlock = new JavaScriptBlock("else if(type && type == arel.Events.Scene.ONTRACKING && param[0].getState() == arel.Tracking.STATE_NOTTRACKING)", new BlockMarker("{", "}"));
             ifTrackingInformationAvailiableBlock.AddBlock(ifPatternIsLostBlock);
             ifPatternIsLostBlock.AddLine(new JavaScriptLine("console.log(\"Tracking lost\")"));
+
+            // Move
+            JavaScriptBlock arelGlueMoveBlock = new JavaScriptBlock("function move(object, coord)", new BlockMarker("{", "};"));
+            arelGlueFile.AddBlock(arelGlueMoveBlock);
+            arelGlueMoveBlock.AddLine(new JavaScriptLine("var left = (coord.getX() - parseInt(object.div.style.width) / 2) + object.translation.getX()"));
+            arelGlueMoveBlock.AddLine(new JavaScriptLine("var top = (coord.getY() - parseInt(object.div.style.height) / 2) + object.translation.getY()"));
+            arelGlueMoveBlock.AddLine(new JavaScriptLine("object.div.style.left = left + 'px'"));
+            arelGlueMoveBlock.AddLine(new JavaScriptLine("object.div.style.top = top + 'px'"));
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
