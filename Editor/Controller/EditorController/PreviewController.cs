@@ -552,8 +552,8 @@ public class PreviewController
             {
                 AbstractAugmentation aa;
                 aa = (AbstractAugmentation)((Control)sender).Tag;
-                aa.TranslationVector.X = controlToMove.Location.X + e.Location.X;
-                aa.TranslationVector.Y = controlToMove.Location.Y + e.Location.Y;
+                aa.TranslationVector.X = controlToMove.Location.X + e.Location.X - (panel.Width /2) ;
+                aa.TranslationVector.Y = controlToMove.Location.Y + e.Location.Y - (panel.Height / 2);
             }
         }
     }
