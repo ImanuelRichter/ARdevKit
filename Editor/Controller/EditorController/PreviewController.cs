@@ -131,7 +131,6 @@ public class PreviewController
                 setCurrentElement(currentElement);
                 ew.PropertyGrid1.SelectedObject = currentElement;
             }
-            
         }
         else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null && this.ew.project.Trackables[index].Augmentations.Count < 3)
         {
@@ -142,37 +141,39 @@ public class PreviewController
                 if (openTestImageDialog.ShowDialog() == DialogResult.OK)
                 {
                     ((ImageAugmentation)currentElement).ImagePath = openTestImageDialog.FileName;
-                    //set the vector and the trackable in <see cref="AbstractAugmentation"/>
-                    ((AbstractAugmentation)currentElement).TranslationVector = v;
-                    ((AbstractAugmentation)currentElement).Trackable = this.trackable;
-
                     //set references 
-                    AbstractAugmentation augmentation = (AbstractAugmentation)currentElement;
-                    trackable.Augmentations.Add(augmentation);
+                    trackable.Augmentations.Add((AbstractAugmentation)currentElement);
 
                     this.addPictureBox(currentElement, v);
 
+                    //set the vector and the trackable in <see cref="AbstractAugmentation"/>
+                    ((AbstractAugmentation)currentElement).TranslationVector = this.calculateVector(v);
+                    ((AbstractAugmentation)currentElement).Trackable = this.trackable;
+
                     //set the new box to the front
                     this.findBox(currentElement).BringToFront();
+                    setCurrentElement(currentElement);
+                    ew.PropertyGrid1.SelectedObject = currentElement;
+
+
                 }
             }
             else
             {
-                //set the vector and the trackable in <see cref="AbstractAugmentation"/>
-                ((AbstractAugmentation)currentElement).TranslationVector = v;
-                ((AbstractAugmentation)currentElement).Trackable = this.trackable;
-
                 //set references 
-                AbstractAugmentation augmentation = (AbstractAugmentation)currentElement;
-                trackable.Augmentations.Add(augmentation);
+                trackable.Augmentations.Add((AbstractAugmentation)currentElement);
 
                 this.addPictureBox(currentElement, v);
 
-                //set the new box to the front
-                this.findBox(currentElement).BringToFront();
+                //set the vector and the trackable in <see cref="AbstractAugmentation"/>
+                ((AbstractAugmentation)currentElement).TranslationVector = this.calculateVector(v);
+                ((Chart)currentElement).Style.Left = (int)v.X;
+                ((Chart)currentElement).Style.Top = (int)v.Y;
+                ((AbstractAugmentation)currentElement).Trackable = this.trackable;
+
+                setCurrentElement(currentElement);
+                ew.PropertyGrid1.SelectedObject = currentElement;
             }
-            setCurrentElement(currentElement);
-            ew.PropertyGrid1.SelectedObject = currentElement;
         }
     }
 
@@ -278,32 +279,6 @@ public class PreviewController
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-    /// <summary>
-    ///     Move the Trackable whith all connected Augmentations &amp; sources to the new vector-
-    ///     position.
-    /// </summary>
-    ///
-    /// <summary>   currentMetaCategory musst set to Trackable/Augmentation</summary>
-    ///
-    /// <param name="currentTrackable"> The current Trackable, which should set in the previewPanel. </param>
-    /// <param name="v">                The Vector3D to move the Trackable. </param>
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    public void moveElement(IPreviewable currentElement, Vector3D v)
-    {
-        if (currentMetaCategory == MetaCategory.Trackable && trackable != null)
-        {
-            ((AbstractTrackable)this.findBox(currentElement).Tag).vector = v;
-            this.findBox(currentElement).Location = new Point(v.X, v.Y);
-        }
-        else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null)
-        {
-            ((AbstractAugmentation)this.findBox(currentElement).Tag).TranslationVector = v;
-            this.findBox(currentElement).Location = new Point(v.X, v.Y);
-        }
-    }
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// <summary>    (This method is obsolete) updates the preview panel. </summary>
     ///
     /// <exception cref="NotImplementedException"> Thrown when the requested operation is
@@ -330,11 +305,8 @@ public class PreviewController
 
     public void reloadPreviewPanel(int index)
     {
-        //if it's the same Scene do nothing
-        if (index == this.index)
-        { }
         //if it's a scene which exists reload scene
-        else if (index < this.ew.project.Trackables.Count)
+        if (index < this.ew.project.Trackables.Count)
         {
 
             this.index = index;
@@ -380,7 +352,7 @@ public class PreviewController
         {
             foreach (AbstractAugmentation aug in trackable.Augmentations)
             {
-                this.addPictureBox(aug, aug.TranslationVector);
+                this.addPictureBox(aug, this.recalculateVector(aug.TranslationVector));
                 if (typeof(AbstractDynamic2DAugmentation).IsAssignableFrom(aug.GetType()) && ((AbstractDynamic2DAugmentation)aug).Source != null)
                 {
                     this.setSourcePreview(aug);
@@ -403,9 +375,10 @@ public class PreviewController
     {
         PictureBox tempBox;
         tempBox = new PictureBox();
-        tempBox.Location = new Point(vector.X - prev.getPreview().Width / 8, vector.Y - prev.getPreview().Height / 8);
+        this.scaleIPreviewable(tempBox, prev);
+        tempBox.Location = new Point((int)(vector.X - tempBox.Size.Width/2), (int)(vector.Y - tempBox.Size.Height/2));
         tempBox.Image = (Image)prev.getPreview();
-        tempBox.Size = new Size(prev.getPreview().Width / 4, prev.getPreview().Height / 4);
+        
         tempBox.SizeMode = PictureBoxSizeMode.StretchImage;
         tempBox.Tag = prev;
         ContextMenu cm = new ContextMenu();
@@ -543,8 +516,13 @@ public class PreviewController
             {
                 AbstractAugmentation aa;
                 aa = (AbstractAugmentation)((Control)sender).Tag;
-                aa.TranslationVector.X = controlToMove.Location.X + e.Location.X;
-                aa.TranslationVector.Y = controlToMove.Location.Y + e.Location.Y;
+                aa.TranslationVector.X = controlToMove.Location.X + e.Location.X - (panel.Width / 2);
+                aa.TranslationVector.Y = controlToMove.Location.Y + e.Location.Y - (panel.Height / 2);
+                if (((Control)sender).Tag is Chart)
+                {
+                    ((Chart)aa).Style.Left = controlToMove.Location.X + e.Location.X;
+                    ((Chart)aa).Style.Top = controlToMove.Location.Y + e.Location.Y;
+                }
             }
         }
     }
@@ -629,9 +607,9 @@ public class PreviewController
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     public void paste_augmentation(object sender, EventArgs e)
     {
-            MetaCategory tempMeta = this.currentMetaCategory;
-            this.currentMetaCategory = MetaCategory.Augmentation;
-            Point p = this.panel.PointToClient(Cursor.Position);
+        MetaCategory tempMeta = this.currentMetaCategory;
+        this.currentMetaCategory = MetaCategory.Augmentation;
+        Point p = this.panel.PointToClient(Cursor.Position);
             IPreviewable element = (IPreviewable)this.copy.Clone();
             this.addPreviewable(element, new Vector3D(p.X, p.Y, 0));
             
@@ -651,11 +629,10 @@ public class PreviewController
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     public void paste_augmentation_center(object sender, EventArgs e)
     {
-            MetaCategory tempMeta = this.currentMetaCategory;
-            this.currentMetaCategory = MetaCategory.Augmentation;
-            this.addPreviewable((IPreviewable)this.copy.Clone(), new Vector3D(this.panel.Width / 2, this.panel.Height / 2, 0));
-
-
+        MetaCategory tempMeta = this.currentMetaCategory;
+        this.currentMetaCategory = MetaCategory.Augmentation;
+        this.addPreviewable((IPreviewable)this.copy.Clone(), new Vector3D(this.panel.Width / 2, this.panel.Height / 2, 0));
+        currentMetaCategory = tempMeta;
     }
 
     /// <summary>
@@ -683,9 +660,11 @@ public class PreviewController
             }
         }
         findBox(currentElement).BorderStyle = BorderStyle.Fixed3D;
-        findBox(currentElement).BringToFront();
+        if (typeof(AbstractAugmentation).IsAssignableFrom(currentElement.GetType()))
+        {
+            findBox(currentElement).BringToFront();
+        }
     }
-
     /// <summary>
     /// set the augmentationPreview to a augmentationPreview with source icon
     /// </summary>
@@ -706,6 +685,126 @@ public class PreviewController
         temp.Refresh();
     }
 
+    /// <summary>
+    /// Calculates the vector in relation to trackable.
+    /// </summary>
+    /// <param name="v">The v.</param>
+    /// <returns></returns>
+    private Vector3D calculateVector(Vector3D v)
+    {
+        Vector3D result = new Vector3D(0, 0, 0);
+        result.X = (v.X - panel.Width / 2);
+        result.Y = (v.Y - panel.Height / 2);
+        return result;
+    }
 
+    /// <summary>
+    /// Recalculates the vector in relation to panel.
+    /// </summary>
+    /// <param name="v">The v.</param>
+    /// <returns></returns>
+    private Vector3D recalculateVector(Vector3D v)
+    {
+        Vector3D result = new Vector3D(0, 0, 0);
+        result.X = (v.X + panel.Width / 2);
+        result.Y = (v.Y + panel.Height / 2);
+        return result;
+    }
+
+    /// <summary>
+    /// Scales the picturebox to maximum 200px and sets the vectors.
+    /// </summary>
+    /// <param name="box">The box.</param>
+    /// <param name="prev">The previous.</param>
+    private void scaleIPreviewable(PictureBox box, IPreviewable prev)
+    {
+        double width = prev.getPreview().Width;
+        double height = prev.getPreview().Height;
+        double scale;
+        if (width > 200 || height > 200)
+        {
+            if (width > height)
+            {
+                scale = -(width / 200);
+                box.Size = new Size((int)(width / (scale * -1)), (int)(height / (scale * -1)));
+            }
+            else if (height > width)
+            {
+                scale = -(height / 200);
+                box.Size = new Size((int)(width / (scale * -1)), (int)(height / (scale * -1)));
+            }
+            else
+            {
+                scale = -(width / 200);
+                box.Size = new Size((int)(width / (scale * -1)), (int)(height / (scale * -1)));
+            }
+
+            if (prev is AbstractAugmentation)
+            {
+                ((AbstractAugmentation)prev).ScalingVector.X = scale;
+                ((AbstractAugmentation)prev).ScalingVector.Y = scale;
+            }
+            else if (prev is AbstractMarker)
+            {
+                ((AbstractMarker)prev).Size = box.Size.Width;
+            }
+
+        }
+        else
+        {
+            box.Size = new Size((int)width, (int)height);
+
+            if (prev is AbstractAugmentation)
+            {
+                ((AbstractAugmentation)prev).ScalingVector.X = 0;
+                ((AbstractAugmentation)prev).ScalingVector.Y = 0;
+            }
+            else if (prev is AbstractMarker)
+            {
+                ((AbstractMarker)prev).Size = box.Size.Width;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Updates the scale.
+    /// </summary>
+    private void updateScale()
+    {
+        IPreviewable prev = this.ew.CurrentElement;
+        PictureBox box = this.findBox(prev);
+        double width = prev.getPreview().Width;
+        double height = prev.getPreview().Height;
+        double scale;
+        Vector3D scaleVector;
+
+        if(prev is AbstractMarker) {
+            scale = ((AbstractMarker)prev).Size;
+            if(scale < -1) {
+                 box.Size = new Size((int)(width / (scale * -1)), (int)(height / (scale * -1)));
+            }
+            else if(scale > 1) {
+                 box.Size = new Size((int)(width * scale), (int)(height * scale));
+            }
+        }
+        else if (prev is AbstractAugmentation) {
+            scaleVector = ((AbstractAugmentation)prev).ScalingVector;
+            if(scaleVector.X < -1) {
+                width = width / (scaleVector.X * -1);
+            }
+            else if(scaleVector.X > 1) {
+                 width = width * scaleVector.X;
+            }
+            
+            if(scaleVector.Y < -1) {
+                height = height / (scaleVector.Y * -1);
+            }
+            else if(scaleVector.Y > 1) {
+                 height = height * scaleVector.Y;
+            }
+
+            box.Size = new Size((int) width, (int) height);
+        }
+        box.Refresh();
+    }
 }
-
