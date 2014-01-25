@@ -847,6 +847,28 @@ namespace ARdevKit.Controller.ProjectController
             COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("W"), trackableRotationW));
 
             coordinateSystemID++;
+
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            // arelGlue.js
+
+            // Set anchor
+            Bitmap bmp = new Bitmap(1, 1);
+            Graphics g = Graphics.FromImage(bmp);
+            g.Clear(Color.Transparent);
+            g.Flush();
+            string anchorPath = Path.Combine(projectPath, "Assets", "anchor.png");
+            if (!File.Exists(anchorPath))
+                bmp.Save(anchorPath, System.Drawing.Imaging.ImageFormat.Png);
+
+            // Add global variable for the anchor
+            arelGlueFile.AddBlock(new JavaScriptLine("var COS" + coordinateSystemID + "Anchor"));
+
+            // Add the anchor to the scene
+            sceneReadyFunctionBlock.AddLine(new JavaScriptLine("COS" + coordinateSystemID + "Anchor = arel.Object.Model3D.createFromImage(\"COS" + coordinateSystemID + "Anchor" + "\",\"Assets/anchor.png" + "\")"));
+            sceneReadyFunctionBlock.AddLine(new JavaScriptLine("COS" + coordinateSystemID + "Anchor.setVisibility(false)"));
+            sceneReadyFunctionBlock.AddLine(new JavaScriptLine("COS" + coordinateSystemID + "Anchor.setCoordinateSystemID(" + coordinateSystemID + ")"));
+            sceneReadyFunctionBlock.AddLine(new JavaScriptLine("arel.Scene.addObject(COS" + coordinateSystemID + "Anchor)"));
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
