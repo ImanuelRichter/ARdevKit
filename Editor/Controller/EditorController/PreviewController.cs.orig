@@ -160,7 +160,6 @@ public class PreviewController
             }
             else
             {
-
                 //set references 
                 trackable.Augmentations.Add((AbstractAugmentation)currentElement);
 
@@ -168,6 +167,8 @@ public class PreviewController
 
                 //set the vector and the trackable in <see cref="AbstractAugmentation"/>
                 ((AbstractAugmentation)currentElement).TranslationVector = this.calculateVector(v);
+                ((Chart)currentElement).Style.Left = (int)v.X;
+                ((Chart)currentElement).Style.Top = (int)v.Y;
                 ((AbstractAugmentation)currentElement).Trackable = this.trackable;
 
                 setCurrentElement(currentElement);
@@ -351,13 +352,8 @@ public class PreviewController
         {
             foreach (AbstractAugmentation aug in trackable.Augmentations)
             {
-<<<<<<< HEAD
                 this.addPictureBox(aug, this.recalculateVector(aug.TranslationVector));
-                if (typeof(AbstractDynamic2DAugmentation).IsAssignableFrom(aug.GetType()) && ((AbstractDynamic2DAugmentation)aug).source != null)
-=======
-                this.addPictureBox(aug, aug.TranslationVector);
                 if (typeof(AbstractDynamic2DAugmentation).IsAssignableFrom(aug.GetType()) && ((AbstractDynamic2DAugmentation)aug).Source != null)
->>>>>>> master
                 {
                     this.setSourcePreview(aug);
                 }
@@ -522,6 +518,11 @@ public class PreviewController
                 aa = (AbstractAugmentation)((Control)sender).Tag;
                 aa.TranslationVector.X = controlToMove.Location.X + e.Location.X - (panel.Width / 2);
                 aa.TranslationVector.Y = controlToMove.Location.Y + e.Location.Y - (panel.Height / 2);
+                if (((Control)sender).Tag is Chart)
+                {
+                    ((Chart)aa).Style.Left = controlToMove.Location.X + e.Location.X;
+                    ((Chart)aa).Style.Top = controlToMove.Location.Y + e.Location.Y;
+                }
             }
         }
     }
@@ -606,16 +607,9 @@ public class PreviewController
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     public void paste_augmentation(object sender, EventArgs e)
     {
-<<<<<<< HEAD
-
         MetaCategory tempMeta = this.currentMetaCategory;
         this.currentMetaCategory = MetaCategory.Augmentation;
         Point p = this.panel.PointToClient(Cursor.Position);
-        this.addPreviewable((IPreviewable)this.copy.Clone(), new Vector3D(p.X, p.Y, 0));
-=======
-            MetaCategory tempMeta = this.currentMetaCategory;
-            this.currentMetaCategory = MetaCategory.Augmentation;
-            Point p = this.panel.PointToClient(Cursor.Position);
             IPreviewable element = (IPreviewable)this.copy.Clone();
             this.addPreviewable(element, new Vector3D(p.X, p.Y, 0));
             
@@ -626,7 +620,6 @@ public class PreviewController
             }
 
             currentMetaCategory = tempMeta;
->>>>>>> master
     }
 
     /// <summary>
@@ -774,7 +767,11 @@ public class PreviewController
     }
 
     /// <summary>
+<<<<<<< HEAD
     /// Updates the scale.
+=======
+    /// Refreshs the Augmentation with the new Scale.
+>>>>>>> WorkLizzard
     /// </summary>
     private void updateScale()
     {
