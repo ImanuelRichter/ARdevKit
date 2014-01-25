@@ -1,0 +1,17 @@
+{
+	"chart": {
+		"defaultSeriesType": "column"
+	},
+	"title": {
+		"text": "Fruit Consumption"
+	},
+	"xAxis": {
+		"categories": []
+	},
+	"yAxis": {
+		"title": {
+			"text": "Units"
+		}
+	},
+	"series": []
+}
