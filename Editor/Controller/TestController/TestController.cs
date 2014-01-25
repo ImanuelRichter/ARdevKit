@@ -21,7 +21,7 @@ namespace ARdevKit.Controller.TestController
         /// </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        private const int IMAGE = 0;
+        public const int IMAGE = 0;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
@@ -29,7 +29,7 @@ namespace ARdevKit.Controller.TestController
         /// </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        private const int VIDEO = 1;
+        public const int VIDEO = 1;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
@@ -37,7 +37,7 @@ namespace ARdevKit.Controller.TestController
         /// </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        private const int CAMERA = 2;
+        public const int CAMERA = 2;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
@@ -45,7 +45,7 @@ namespace ARdevKit.Controller.TestController
         /// </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        private static Process player;
+        public static Process player;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
@@ -55,6 +55,11 @@ namespace ARdevKit.Controller.TestController
 
         private static string playerPath = "Player.exe";
 
+        public static void StartPlayer(Project p, int mode)
+        {
+            StartPlayer(p, mode, 1024, 768);
+        }
+
         /// <summary>
         /// Starts the player with the specified settings.
         /// </summary>
@@ -63,7 +68,7 @@ namespace ARdevKit.Controller.TestController
         /// Tells if an image<see cref="IMAGE"/> or video<see cref="VIDEO"/>
         /// should be loaded or if a virtual camera<see cref="CAMERA"/> should be started
         /// </param>
-        private static void StartPlayer(Project project, int mode)
+        public static void StartPlayer(Project project, int mode, int width, int height)
         {
             ExportVisitor exporter = new ExportVisitor(true);
             project.Accept(exporter);
@@ -75,7 +80,7 @@ namespace ARdevKit.Controller.TestController
             }
 
             player = new Process();
-            player.StartInfo.Arguments = project.ProjectPath + " -" + mode;
+            player.StartInfo.Arguments = "-" + width + " -" + height + " -" + (project.ProjectPath == null ? "currentProject" : project.ProjectPath) + " -" + mode;
 
             bool open = false;
             switch (mode)
@@ -131,43 +136,6 @@ namespace ARdevKit.Controller.TestController
                     player.Start();
                 }
             }
-        }
-        
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Starts the player passing the passed projectPath and a testFilePath which is the result of an
-        /// opened FileDialog.
-        /// </summary>
-        /// <param name="projectPath">The location of the project</param>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        public static void StartWithImage(Project project)
-        {
-            StartPlayer(project, IMAGE);
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Starts the player passing the passed projectPath and a testFilePath which is the result of an
-        /// opened FileDialog.
-        /// </summary>
-        /// <param name="projectPath">The location of the project</param>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        public static void StartWithVideo(Project project)
-        {
-            StartPlayer(project, VIDEO);
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Starts the player passing the passed projectPath and an extern virtualCamera which
-        /// is used to load test content.
-        /// FileDialog.
-        /// </summary>
-        /// <param name="projectPath">The location of the project</param>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        public static void StartWithVirtualCamera(Project project)
-        {
-            StartPlayer(project, CAMERA);
         }
     }
 }

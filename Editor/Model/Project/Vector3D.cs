@@ -22,7 +22,7 @@ namespace ARdevKit.Model.Project
         /// The x.
         /// </value>
         [CategoryAttribute("General")]
-        public int X { get; set; }
+        public double X { get; set; }
         /// <summary>
         /// Gets or sets the y.
         /// </summary>
@@ -30,7 +30,7 @@ namespace ARdevKit.Model.Project
         /// The y.
         /// </value>
         [CategoryAttribute("General")]
-        public int Y { get; set; }
+        public double Y { get; set; }
         /// <summary>
         /// Gets or sets the z.
         /// </summary>
@@ -38,7 +38,7 @@ namespace ARdevKit.Model.Project
         /// The z.
         /// </value>
         [CategoryAttribute("General")]
-        public int Z { get; set; }
+        public double Z { get; set; }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
@@ -51,7 +51,7 @@ namespace ARdevKit.Model.Project
         /// Lizzard, 1/15/2014.
         /// </remarks>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        public Vector3D(int x, int y, int z)
+        public Vector3D(double x, double y, double z)
         {
             this.X = x;
             this.Y = y;

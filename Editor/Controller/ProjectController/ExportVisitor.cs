@@ -890,12 +890,14 @@ namespace ARdevKit.Controller.ProjectController
             Copy(Path.Combine(Application.StartupPath, "res", "arel", "arel.js"), projectPath);
 
             // Create [projectName].html
-            ARELProjectFile arelProjectFile = new ARELProjectFile("<!DOCTYPE html>", Path.Combine(projectPath, "arel" + (p.Name != null ? p.Name : "Test") + ".html"));
+            ARELProjectFile arelProjectFile = new ARELProjectFile("<!DOCTYPE html>", Path.Combine(projectPath, "arel" + (p.Name != "" ? p.Name : "Test") + ".html"));
             files.Add(arelProjectFile);
 
             // head
             arelProjectFileHeadBlock = new XMLBlock(new XMLTag("head"));
             arelProjectFile.AddBlock(arelProjectFileHeadBlock);
+
+            arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("title"), p.Name != "" ? p.Name : "Test"));
 
             arelProjectFileHeadBlock.AddLine(new XMLLine(new NonTerminatingXMLTag("meta", "charset=\"UTF-8\"")));
             arelProjectFileHeadBlock.AddLine(new XMLLine(new NonTerminatingXMLTag("meta", "name=\"viewport\" content=\"width=device-width, initial-scale=1\"")));

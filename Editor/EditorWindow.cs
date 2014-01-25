@@ -363,7 +363,7 @@ namespace ARdevKit
         private void tsm_editor_menu_test_startImage_Click(object sender, EventArgs e)
         {
             if (project.Trackables != null && project.Trackables.Count > 0 && project.Trackables[0] != null)
-                TestController.StartWithImage(project);
+                TestController.StartPlayer(project, TestController.IMAGE);
             else
                 MessageBox.Show("Keine Szene zum Testen vorhanden");
         }
@@ -380,7 +380,7 @@ namespace ARdevKit
         private void tsm_editor_menu_test_startVideo_Click(object sender, EventArgs e)
         {
             if (project.Trackables != null && project.Trackables.Count > 0 && project.Trackables[0] != null)
-                TestController.StartWithVideo(project);
+                TestController.StartPlayer(project, TestController.VIDEO);
             else
                 MessageBox.Show("Keine Szene zum Testen vorhanden");
         }
@@ -398,7 +398,7 @@ namespace ARdevKit
         private void tsm_editor_menu_test_startWithVirtualCamera_Click(object sender, EventArgs e)
         {
             if (project.Trackables != null && project.Trackables.Count > 0 && project.Trackables[0] != null)
-                TestController.StartWithVirtualCamera(project);
+                TestController.StartPlayer(project, TestController.CAMERA);
             else
                 MessageBox.Show("Keine Szene zum Testen vorhanden");
         }
