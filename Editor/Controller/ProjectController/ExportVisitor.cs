@@ -887,6 +887,8 @@ namespace ARdevKit.Controller.ProjectController
             else
                 projectPath = p.ProjectPath;
 
+            Copy(Path.Combine(Application.StartupPath, "res", "arel", "arel.js"), projectPath);
+
             // Create [projectName].html
             ARELProjectFile arelProjectFile = new ARELProjectFile("<!DOCTYPE html>", Path.Combine(projectPath, "arel" + (p.Name != null ? p.Name : "Test") + ".html"));
             files.Add(arelProjectFile);
@@ -900,7 +902,7 @@ namespace ARdevKit.Controller.ProjectController
 
             arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("title"), p.Name != null ? p.Name : "Test"));
 
-            arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("script", "type=\"text/javascript\" src=\"../arel/arel.js\"")));
+            arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("script", "type=\"text/javascript\" src=\"arel.js\"")));
             arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("script", "type=\"text/javascript\" src=\"Assets/arelGlue.js\"")));
 
             // body
@@ -970,7 +972,7 @@ namespace ARdevKit.Controller.ProjectController
             sceneReadyBlock.AddBlock(sceneReadyFunctionBlock);
 
             // Console log ready
-            sceneReadyFunctionBlock.AddLine(new JavaScriptLine("console.log(\"sceneReady\")"));
+            sceneReadyFunctionBlock.AddLine(new JavaScriptLine("console.log(\"Scene ready\")"));
 
             // Set a listener to tracking to get information about when the image is tracked
             JavaScriptBlock eventListenerBlock = new JavaScriptBlock("arel.Events.setListener", new BlockMarker("(", ");"));
