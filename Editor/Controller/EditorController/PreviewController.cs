@@ -767,7 +767,7 @@ public class PreviewController
     }
 
     /// <summary>
-    /// Updates the scale.
+    /// Refreshs the Augmentation with the new Scale.
     /// </summary>
     private void updateScale()
     {
