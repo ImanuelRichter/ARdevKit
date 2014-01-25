@@ -70,12 +70,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\EditorController\ObjectCopier.cs" />
-    <Compile Include="Model\Fuser.cs" />
     <Compile Include="Model\Project\AbstractDynamic2DAugmentation.cs" />
     <Compile Include="Model\Project\BarChartData.cs" />
     <Compile Include="Model\Project\ChartData.cs" />
     <Compile Include="Model\Project\ChartStyle.cs" />
-    <Compile Include="Model\Project\File\BarChartFile.cs" />
+    <Compile Include="Model\Project\File\ChartFile.cs" />
+    <Compile Include="Model\Project\File\ChartDataFile.cs" />
+    <Compile Include="Model\Project\File\ChartOptionsFile.cs" />
+    <Compile Include="Model\Project\File\ChartQueryFile.cs" />
     <Compile Include="Model\Project\File\JavaScriptInLine.cs" />
     <Compile Include="Model\Project\ImageAugmentation.cs" />
     <Compile Include="Model\Project\MarkerFuser.cs" />
@@ -114,7 +116,7 @@
     <Compile Include="Model\Project\CustomUserEvent.cs" />
     <Compile Include="Model\Project\DbSource.cs" />
     <Compile Include="Model\Project\FileSource.cs" />
-    <Compile Include="Model\Project\File\AbstractARELFile.cs" />
+    <Compile Include="Model\Project\File\AbstractFile.cs" />
     <Compile Include="Model\Project\File\BlockMarker.cs" />
     <Compile Include="Model\Project\File\JavaScriptBlock.cs" />
     <Compile Include="Model\Project\File\XMLLine.cs" />

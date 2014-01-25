@@ -7,34 +7,33 @@ using System.IO;
 
 namespace ARdevKit.Model.Project.File
 {
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-    /// <summary>   An arelGlue.js. </summary>
-    ///
-    /// <remarks>   Imanuel, 17.01.2014. </remarks>
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    public class ARELGlueFile : AbstractFile
+    public class ChartFile : AbstractFile
     {
+        /// <summary>   Identifier for the chart. </summary>
+        private string chartID;
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Constructor. </summary>
         ///
-        /// <remarks>   Imanuel, 17.01.2014. </remarks>
+        /// <remarks>   Imanuel, 23.01.2014. </remarks>
         ///
-        /// <param name="projectPath">  Full pathname of the project file. </param>
+        /// <param name="projectPath">  The project path to write. </param>
+        /// <param name="chartID">      Identifier for the chart. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public ARELGlueFile(string projectPath)
+        public ChartFile(string projectPath, string chartID)
         {
-            string assetsPath = Path.Combine(projectPath, "Assets");
-            if (!Directory.Exists(assetsPath))
-                Directory.CreateDirectory(assetsPath);
-            filePath = Path.Combine(assetsPath, "arelGlue.js");
+            this.chartID = chartID;
+            string chartPath = Path.Combine(projectPath, "Assets", chartID);
+            if (!Directory.Exists(chartPath))
+                Directory.CreateDirectory(chartPath);
+            filePath = Path.Combine(chartPath, "chart.js");
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Saves the file to its <see cref="filePath"/>. </summary>
         ///
-        /// <remarks>   Imanuel, 17.01.2014. </remarks>
+        /// <remarks>   Imanuel, 23.01.2014. </remarks>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         public override void Save()
@@ -53,17 +52,17 @@ namespace ARdevKit.Model.Project.File
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Saves the file to the using the passed <see cref="projectPath"/>. </summary>
         ///
-        /// <remarks>   Imanuel, 17.01.2014. </remarks>
+        /// <remarks>   Imanuel, 23.01.2014. </remarks>
         ///
         /// <param name="projectPath">  The project path to write. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         public override void Save(string projectPath)
         {
-            string assetsPath = Path.Combine(projectPath, "Assets");
-            if (!Directory.Exists(assetsPath))
-                Directory.CreateDirectory(assetsPath);
-            filePath = Path.Combine(assetsPath, "arelGlue.js");
+            string chartPath = Path.Combine(projectPath, "Assets", chartID);
+            if (!Directory.Exists(chartPath))
+                Directory.CreateDirectory(chartPath);
+            filePath = Path.Combine(chartPath, "chart.js");
             Save();
         }
     }

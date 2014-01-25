@@ -463,7 +463,7 @@ namespace ARdevKit
                 tempButton.UseVisualStyleBackColor = true;
                 tempButton.Click += new System.EventHandler(this.btn_editor_scene_scene_change);
 
-                this.pnl_editor_szenes.Controls.Add(tempButton);
+                this.pnl_editor_scenes.Controls.Add(tempButton);
                 this.previewController.reloadPreviewPanel(this.project.Trackables.Count);
                 this.PropertyGrid1.SelectedObject = null;
                 this.resetButton();
@@ -566,50 +566,11 @@ namespace ARdevKit
                 {
                     Debug.WriteLine(de.StackTrace);
                 }
-
                 try
                 {
-                    exportVisitor.ArelProjectFile.Save();
-                }
-                catch (NullReferenceException ne)
-                {
-                    Debug.WriteLine(ne.StackTrace);
-                }
-
-                try
-                {
-                    exportVisitor.TrackingDataFile.Save();
-                }
-                catch (NullReferenceException ne)
-                {
-                    Debug.WriteLine(ne.StackTrace);
-                }
-
-                try
-                {
-                    exportVisitor.ArelConfigFile.Save();
-                }
-                catch (NullReferenceException ne)
-                {
-                    Debug.WriteLine(ne.StackTrace);
-                }
-
-                try
-                {
-                    exportVisitor.ArelGlueFile.Save();
-                }
-                catch (NullReferenceException ne)
-                {
-                    Debug.WriteLine(ne.StackTrace);
-                }
-                try
-                {
-                    if (exportVisitor.BarChartFiles != null)
+                    foreach (AbstractFile file in exportVisitor.Files)
                     {
-                        foreach (BarChartFile barChartFile in exportVisitor.BarChartFiles)
-                        {
-                            barChartFile.Save();
-                        }
+                        file.Save();
                     }
                 }
                 catch (NullReferenceException ne)
@@ -796,9 +757,9 @@ namespace ARdevKit
                     this.project.Trackables.Remove(this.project.Trackables[i]);
                 }
             }
-            this.pnl_editor_szenes.Controls.Clear();
-            this.pnl_editor_szenes.Controls.Add(this.btn_editor_scene_new);
-            this.pnl_editor_szenes.Controls.Add(this.btn_editor_scene_delete);
+            this.pnl_editor_scenes.Controls.Clear();
+            this.pnl_editor_scenes.Controls.Add(this.btn_editor_scene_new);
+            this.pnl_editor_scenes.Controls.Add(this.btn_editor_scene_delete);
 
             for (int i = 0; i < this.project.Trackables.Count; i++)
             {
@@ -810,7 +771,7 @@ namespace ARdevKit
                 tempButton.UseVisualStyleBackColor = true;
                 tempButton.Click += new System.EventHandler(this.btn_editor_scene_scene_change);
 
-                this.pnl_editor_szenes.Controls.Add(tempButton);
+                this.pnl_editor_scenes.Controls.Add(tempButton);
             }
             this.setButton("1");
         }
@@ -823,9 +784,9 @@ namespace ARdevKit
 
         private void reloadSelectionPanel()
         {
-            this.pnl_editor_szenes.Controls.Clear();
-            this.pnl_editor_szenes.Controls.Add(this.btn_editor_scene_new);
-            this.pnl_editor_szenes.Controls.Add(this.btn_editor_scene_delete);
+            this.pnl_editor_scenes.Controls.Clear();
+            this.pnl_editor_scenes.Controls.Add(this.btn_editor_scene_new);
+            this.pnl_editor_scenes.Controls.Add(this.btn_editor_scene_delete);
 
             for (int i = 0; i < this.project.Trackables.Count; i++)
             {
@@ -837,7 +798,7 @@ namespace ARdevKit
                 tempButton.UseVisualStyleBackColor = true;
                 tempButton.Click += new System.EventHandler(this.btn_editor_scene_scene_change);
 
-                this.pnl_editor_szenes.Controls.Add(tempButton);
+                this.pnl_editor_scenes.Controls.Add(tempButton);
             }
         }
 
@@ -1062,7 +1023,7 @@ namespace ARdevKit
         /// <param name="text">The text.</param>
         private void setButton(string text)
         {
-            foreach (Control comp in pnl_editor_szenes.Controls)
+            foreach (Control comp in pnl_editor_scenes.Controls)
             {
                 if (comp.Text == text)
                 {
@@ -1076,7 +1037,7 @@ namespace ARdevKit
         /// </summary>
         private void resetButton()
         {
-            foreach (Control comp in pnl_editor_szenes.Controls)
+            foreach (Control comp in pnl_editor_scenes.Controls)
             {
                 if (((Button)comp).BackColor == SystemColors.ControlDark)
                 {

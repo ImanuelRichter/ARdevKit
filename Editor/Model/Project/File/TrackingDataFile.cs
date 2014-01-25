@@ -13,7 +13,7 @@ namespace ARdevKit.Model.Project.File
     /// <remarks>   Imanuel, 17.01.2014. </remarks>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public class TrackingDataFile : AbstractARELFile
+    public class TrackingDataFile : AbstractFile
     {
         /// <summary>   The header. </summary>
         protected string header;

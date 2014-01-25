@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using System.Drawing;
 
 using System.ComponentModel;
+using System.IO;
+using System.ComponentModel.Design;
+using System.Drawing.Design;
 
 namespace ARdevKit.Model.Project
 {
@@ -18,6 +21,23 @@ namespace ARdevKit.Model.Project
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public abstract class Chart : AbstractDynamic2DAugmentation 
     {
+        /// <summary>   true if position sould be relative to trackable. </summary>
+        protected bool positionRelativeToTrackable;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// Gets or sets <see cref="positionRelativeToTrackable"/>.
+        /// </summary>
+        ///
+        /// <value> true if position sould be relative to trackable, false if not. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        [CategoryAttribute("General")]
+        public bool PositionRelativeToTrackable
+        {
+            get { return positionRelativeToTrackable; }
+            set { positionRelativeToTrackable = value; }
+        }
         /// <summary>
         /// The style used by HighChart.
         /// </summary>
@@ -29,12 +49,36 @@ namespace ARdevKit.Model.Project
         /// The style.
         /// </value>
         [CategoryAttribute("General"), ReadOnly(true)]
-        //[Browsable(false)]
         public ChartStyle Style
         {
             get { return style; }
             set { style = value; }
         }
+
+        /// <summary>   Options loaded from a *.json file. </summary>
+        protected string options;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets <see cref="options"/>. </summary>
+        ///
+        /// <value> The options. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        [CategoryAttribute("Expert"), Editor(typeof(MultilineStringEditor), typeof(UITypeEditor))]
+        public string Options
+        {
+            get { return options; }
+            set { options = value; }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets a value indicating whether this object uses the <see cref="options"/>. </summary>
+        ///
+        /// <value> true if use options, false if not. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        [CategoryAttribute("General")]
+        public bool UseOptions { get; set; }
 
         /// <summary>
         /// The title used by HighChart.

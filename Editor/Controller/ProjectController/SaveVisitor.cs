@@ -156,5 +156,10 @@ namespace ARdevKit.Controller.ProjectController
         {
             //do nothing
         }
+
+        public override void Visit(FileSource source)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

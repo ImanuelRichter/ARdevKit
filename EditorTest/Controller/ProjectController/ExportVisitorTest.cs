@@ -16,7 +16,7 @@ namespace EditorTest
 
         private void SetUptProjectWithIDMarkerAndImage()
         {
-            string projectPath = "..\\..\\..\\bin\\Debug\\currentProject";
+            string projectPath = "currentProject";
             testProject = new Project("HelloIDMarker", projectPath);
 
             IDMarker idMarker1 = new IDMarker(1);
@@ -47,11 +47,11 @@ namespace EditorTest
 
         private void SetUptProjectWithPictureMarkerAndBarChart()
         {
-            string projectPath = "..\\..\\..\\bin\\Debug\\currentProject";
+            string projectPath = "currentProject";
             testProject = new Project("HelloPictureMarker", projectPath);
 
-            PictureMarker pictureMarker1 = new PictureMarker("res\\trackables\\pictureMarker1.png");
-            PictureMarker pictureMarker2 = new PictureMarker("res\\trackables\\pictureMarker2.png");
+            PictureMarker pictureMarker1 = new PictureMarker("res\\testFiles\\marker\\pictureMarker1.png");
+            PictureMarker pictureMarker2 = new PictureMarker("res\\testFiles\\marker\\pictureMarker2.png");
 
             BarChart barChart1 = new BarChart();
             barChart1.IsVisible = false;
@@ -59,6 +59,7 @@ namespace EditorTest
             barChart1.RotationVector = new Vector3Di(0, 0, 0, 1);
             barChart1.ScalingVector = new Vector3D(0, 0, 0);
             barChart1.Style = new ChartStyle();
+            barChart1.PositionRelativeToTrackable = true;
             barChart1.Style.Top = 100;
             barChart1.Style.Left = 100;
             barChart1.Width = 200;
@@ -74,6 +75,9 @@ namespace EditorTest
             barChart1.BorderWidth = 0;
             barChart1.Data = new List<BarChartData>();
             barChart1.Data.Add(new BarChartData("Rose", new double[] { 72.5, 50.3, 33.1 }));
+            barChart1.Source = new FileSource("res\\highcharts\\barChartColumn\\data.xml");
+            barChart1.Source.QueryFilePath = "res\\highcharts\\barChartColumn\\XMLQuery.js";
+            barChart1.Source.Augmentation = barChart1;
             pictureMarker1.Augmentations.Add(barChart1);
             barChart1.Trackable = pictureMarker1;
 
@@ -99,14 +103,9 @@ namespace EditorTest
             ExportVisitor exporter = new ExportVisitor(false);
             testProject.Accept(exporter);
 
-            exporter.ArelProjectFile.Save();
-            exporter.TrackingDataFile.Save();
-            exporter.ArelConfigFile.Save();
-            exporter.ArelGlueFile.Save();
-
-            foreach (BarChartFile barChartFile in exporter.BarChartFiles)
+            foreach (AbstractFile file in exporter.Files)
             {
-                barChartFile.Save();
+                file.Save();
             }
         }
 
@@ -118,10 +117,10 @@ namespace EditorTest
             ExportVisitor exporter = new ExportVisitor(false);
             testProject.Accept(exporter);
 
-            exporter.ArelProjectFile.Save();
-            exporter.TrackingDataFile.Save();
-            exporter.ArelConfigFile.Save();
-            exporter.ArelGlueFile.Save();
+            foreach (AbstractFile file in exporter.Files)
+            {
+                file.Save();
+            }
         }
     }
 }

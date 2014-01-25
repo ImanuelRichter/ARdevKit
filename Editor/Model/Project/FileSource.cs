@@ -21,6 +21,7 @@ namespace ARdevKit.Model.Project
         ///
         /// <value> The file source. </value>
         [CategoryAttribute("General")]
+        [EditorAttribute(typeof(System.Windows.Forms.Design.FileNameEditor), typeof(System.Drawing.Design.UITypeEditor))]
         public string SourceFilePath
         {
             get { return sourceFilePath; }
@@ -43,9 +44,9 @@ namespace ARdevKit.Model.Project
         ///     unimplemented. </exception>
         ///
         /// <param name="visitor">  . </param>
-        public override void accept(Controller.ProjectController.AbstractProjectVisitor visitor)
+        public override void Accept(Controller.ProjectController.AbstractProjectVisitor visitor)
         {
-            throw new NotImplementedException();
+            visitor.Visit(this);
         }
 
         /// <summary>

@@ -102,7 +102,7 @@ namespace ARdevKit.Model.Project
         /// </summary>
         public ChartStyle()
         {
-            position = "static";
+            position = "absolute";
         }
     }
 }

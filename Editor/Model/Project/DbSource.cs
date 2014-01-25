@@ -44,7 +44,7 @@ namespace ARdevKit.Model.Project
         ///     unimplemented. </exception>
         ///
         /// <param name="visitor">  . </param>
-        public override void accept(Controller.ProjectController.AbstractProjectVisitor visitor)
+        public override void Accept(Controller.ProjectController.AbstractProjectVisitor visitor)
         {
             throw new NotImplementedException();
         }
