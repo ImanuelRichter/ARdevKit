@@ -160,7 +160,6 @@ public class PreviewController
             }
             else
             {
-
                 //set references 
                 trackable.Augmentations.Add((AbstractAugmentation)currentElement);
 
@@ -168,6 +167,8 @@ public class PreviewController
 
                 //set the vector and the trackable in <see cref="AbstractAugmentation"/>
                 ((AbstractAugmentation)currentElement).TranslationVector = this.calculateVector(v);
+                ((Chart)currentElement).Style.Left = (int)v.X;
+                ((Chart)currentElement).Style.Top = (int)v.Y;
                 ((AbstractAugmentation)currentElement).Trackable = this.trackable;
 
                 setCurrentElement(currentElement);
@@ -517,6 +518,11 @@ public class PreviewController
                 aa = (AbstractAugmentation)((Control)sender).Tag;
                 aa.TranslationVector.X = controlToMove.Location.X + e.Location.X - (panel.Width / 2);
                 aa.TranslationVector.Y = controlToMove.Location.Y + e.Location.Y - (panel.Height / 2);
+                if (((Control)sender).Tag is Chart)
+                {
+                    ((Chart)aa).Style.Left = controlToMove.Location.X + e.Location.X;
+                    ((Chart)aa).Style.Top = controlToMove.Location.Y + e.Location.Y;
+                }
             }
         }
     }
