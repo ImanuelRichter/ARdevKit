@@ -100,7 +100,7 @@ namespace ARdevKit.Model.Project
         /// <see cref="AbstractAugmentation"/>
         /// </summary>
         //[CategoryAttribute("General")]
-        [Browsable(false)]
+        [CategoryAttribute("General")]
         public Vector3D ScalingVector
         {
             get { return scalingVector; }
