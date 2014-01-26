@@ -830,4 +830,26 @@ public class PreviewController
         }
         box.Refresh();
     }
+
+    /// <summary>
+    /// Rescales the preview panel if the size was changed.
+    /// </summary>
+    public void rescalePreviewPanel()
+    {
+        int width = this.panel.Width;
+        int height = this.panel.Height;
+
+        foreach (AbstractTrackable trackable in this.ew.project.Trackables)
+        {
+            trackable.vector = new Vector3D(width / 2, height / 2, 0);
+            foreach (AbstractAugmentation aug in trackable.Augmentations)
+            {
+                if (aug is Chart)
+                {
+                    ((Chart)aug).Style.Left = (int)(aug.TranslationVector.X + panel.Width / 2);
+                    ((Chart)aug).Style.Top = (int)(aug.TranslationVector.Y + panel.Width / 2);
+                }
+            }
+        }
+    }
 }
