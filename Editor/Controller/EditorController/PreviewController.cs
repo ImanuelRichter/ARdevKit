@@ -204,6 +204,7 @@ public class PreviewController
                     OpenFileDialog openTestImageDialog = new OpenFileDialog();
                     if (openTestImageDialog.ShowDialog() == DialogResult.OK)
                     {
+                        ((FileSource)source).SourceFilePath = openTestImageDialog.FileName;
                         //set reference to the augmentations in Source
                         source.Augmentation = ((AbstractDynamic2DAugmentation)currentElement);
 
