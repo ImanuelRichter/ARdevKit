@@ -376,9 +376,9 @@ public class PreviewController
         PictureBox tempBox;
         tempBox = new PictureBox();
         this.scaleIPreviewable(tempBox, prev);
-        tempBox.Location = new Point((int)(vector.X - tempBox.Size.Width/2), (int)(vector.Y - tempBox.Size.Height/2));
+        tempBox.Location = new Point((int)(vector.X - tempBox.Size.Width / 2), (int)(vector.Y - tempBox.Size.Height / 2));
         tempBox.Image = (Image)prev.getPreview();
-        
+
         tempBox.SizeMode = PictureBoxSizeMode.StretchImage;
         tempBox.Tag = prev;
         ContextMenu cm = new ContextMenu();
@@ -398,7 +398,7 @@ public class PreviewController
         cm.Tag = prev;
         cm.Popup += new EventHandler(this.popupContextMenu);
         tempBox.ContextMenu = cm;
-        
+
 
         if (tempBox.Tag is AbstractAugmentation)
             tempBox.MouseMove += new MouseEventHandler(controlMouseMove);
@@ -409,7 +409,7 @@ public class PreviewController
 
     private void popupContextMenu(object sender, EventArgs e)
     {
-            this.setCurrentElement((IPreviewable)((ContextMenu)sender).Tag);
+        this.setCurrentElement((IPreviewable)((ContextMenu)sender).Tag);
     }
 
     /**
@@ -610,16 +610,16 @@ public class PreviewController
         MetaCategory tempMeta = this.currentMetaCategory;
         this.currentMetaCategory = MetaCategory.Augmentation;
         Point p = this.panel.PointToClient(Cursor.Position);
-            IPreviewable element = (IPreviewable)this.copy.Clone();
-            this.addPreviewable(element, new Vector3D(p.X, p.Y, 0));
-            
-            if (typeof(AbstractDynamic2DAugmentation).IsAssignableFrom(element.GetType()) && ((AbstractDynamic2DAugmentation)element).Source != null)
-            {
-                this.setSourcePreview(element);
-                ((AbstractDynamic2DAugmentation)element).Source = (AbstractSource)((AbstractDynamic2DAugmentation)copy).Source.Clone();
-            }
+        IPreviewable element = (IPreviewable)this.copy.Clone();
+        this.addPreviewable(element, new Vector3D(p.X, p.Y, 0));
 
-            currentMetaCategory = tempMeta;
+        if (typeof(AbstractDynamic2DAugmentation).IsAssignableFrom(element.GetType()) && ((AbstractDynamic2DAugmentation)element).Source != null)
+        {
+            this.setSourcePreview(element);
+            ((AbstractDynamic2DAugmentation)element).Source = (AbstractSource)((AbstractDynamic2DAugmentation)copy).Source.Clone();
+        }
+
+        currentMetaCategory = tempMeta;
     }
 
     /// <summary>
@@ -725,18 +725,18 @@ public class PreviewController
         {
             if (width > height)
             {
-                scale = -(width / 200);
-                box.Size = new Size((int)(width / (scale * -1)), (int)(height / (scale * -1)));
+                scale = 200 / width;
+                box.Size = new Size((int)(width * scale), (int)(height * scale));
             }
             else if (height > width)
             {
-                scale = -(height / 200);
-                box.Size = new Size((int)(width / (scale * -1)), (int)(height / (scale * -1)));
+                scale = 200 / height;
+                box.Size = new Size((int)(width * scale), (int)(height * scale));
             }
             else
             {
-                scale = -(width / 200);
-                box.Size = new Size((int)(width / (scale * -1)), (int)(height / (scale * -1)));
+                scale = 200 / width;
+                box.Size = new Size((int)(width * scale), (int)(height * scale));
             }
 
             if (prev is AbstractAugmentation)
@@ -756,8 +756,8 @@ public class PreviewController
 
             if (prev is AbstractAugmentation)
             {
-                ((AbstractAugmentation)prev).ScalingVector.X = 0;
-                ((AbstractAugmentation)prev).ScalingVector.Y = 0;
+                ((AbstractAugmentation)prev).ScalingVector.X = 1;
+                ((AbstractAugmentation)prev).ScalingVector.Y = 1;
             }
             else if (prev is Abstract2DTrackable)
             {
@@ -780,31 +780,15 @@ public class PreviewController
 
         if (prev is Abstract2DTrackable)
         {
-            scale = ((Abstract2DTrackable)prev).Size;
-            if(scale < -1) {
-                 box.Size = new Size((int)(width / (scale * -1)), (int)(height / (scale * -1)));
-            }
-            else if(scale > 1) {
-                 box.Size = new Size((int)(width * scale), (int)(height * scale));
-            }
+            scale = ((Abstract2DTrackable)prev).Size / prev.getPreview().Width; ;
+            box.Size = new Size((int)(width * scale), (int)(height * scale));
         }
-        else if (prev is AbstractAugmentation) {
+        else if (prev is AbstractAugmentation)
+        {
             scaleVector = ((AbstractAugmentation)prev).ScalingVector;
-            if(scaleVector.X < -1) {
-                width = width / (scaleVector.X * -1);
-            }
-            else if(scaleVector.X > 1) {
-                 width = width * scaleVector.X;
-            }
-            
-            if(scaleVector.Y < -1) {
-                height = height / (scaleVector.Y * -1);
-            }
-            else if(scaleVector.Y > 1) {
-                 height = height * scaleVector.Y;
-            }
-
-            box.Size = new Size((int) width, (int) height);
+            width = width * scaleVector.X;
+            height = height * scaleVector.Y;
+            box.Size = new Size((int)width, (int)height);
         }
         box.Refresh();
     }
