@@ -195,17 +195,39 @@ public class PreviewController
     {
         if (currentMetaCategory == MetaCategory.Source && typeof(AbstractDynamic2DAugmentation).IsAssignableFrom(currentElement.GetType()))
         {
+
             if (this.trackable != null && trackable.existAugmentation((AbstractAugmentation)currentElement)
                 && ((AbstractDynamic2DAugmentation)currentElement).Source == null)
             {
-                //set reference to the augmentations in Source
-                source.Augmentation = ((AbstractDynamic2DAugmentation)currentElement);
+                if (source is FileSource)
+                {
+                    OpenFileDialog openTestImageDialog = new OpenFileDialog();
+                    if (openTestImageDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        //set reference to the augmentations in Source
+                        source.Augmentation = ((AbstractDynamic2DAugmentation)currentElement);
 
-                //add references in Augmentation, Picturebox + project.sources List.
-                ((AbstractDynamic2DAugmentation)currentElement).Source = source;
-                this.ew.project.Sources.Add(((AbstractDynamic2DAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).Source);
+                        //add references in Augmentation, Picturebox + project.sources List.
+                        ((AbstractDynamic2DAugmentation)currentElement).Source = source;
+                        this.ew.project.Sources.Add(((AbstractDynamic2DAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).Source);
 
-                this.setSourcePreview(currentElement);
+                        this.setSourcePreview(currentElement);
+
+                    }
+                }
+                else
+                {
+                    //set reference to the augmentations in Source
+                    source.Augmentation = ((AbstractDynamic2DAugmentation)currentElement);
+
+                    //add references in Augmentation, Picturebox + project.sources List.
+                    ((AbstractDynamic2DAugmentation)currentElement).Source = source;
+                    this.ew.project.Sources.Add(((AbstractDynamic2DAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).Source);
+
+                    this.setSourcePreview(currentElement);
+
+                }
+                
             }
         }
     }
