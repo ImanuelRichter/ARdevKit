@@ -1,0 +1,28 @@
+{
+	"chart": {
+		"defaultSeriesType": "column"
+	},
+	"title": {
+		"text": "Fruit Consumption"
+	},
+	"xAxis": {
+		"type": "datetime"
+	},
+	"yAxis": {
+		"title": {
+			"text": "Units"
+		},
+		"max": "100"
+	},
+	"series": [{
+		"name": "Random data",
+		"color": {
+			"linearGradient": { "x1": "0", "x2": "0", "y1": "0", "y1": "1" },
+			"stops": [
+				["0", "#DD210E"],
+				["1", "#55AA22"]
+			]
+		},
+        "data": []
+	}]
+}

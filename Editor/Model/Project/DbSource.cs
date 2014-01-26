@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 
 using System.ComponentModel;
+using ARdevKit.Controller.ProjectController;
 
 namespace ARdevKit.Model.Project
 {
@@ -16,36 +17,57 @@ namespace ARdevKit.Model.Project
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public class DbSource : AbstractSource
     {
-        /*
-        /// <summary>   The connection. </summary>
-        private DbConnection connection;
-        /// <summary>   Gets or sets the connection. </summary>
-        ///
-        /// <value> The connection. </value>
-        [CategoryAttribute("General")]
-        public DbConnection Connection
-        {
-            get { return connection; }
-            set { connection = value; }
-        }
-         * */
+        /// <summary>   URL of the source. </summary>
+        protected string url;
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets URL of the source. </summary>
+        ///
+        /// <value> The URL. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public string Url
+        {
+            get { return url; }
+            set { url = value; }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Default constructor. </summary>
-        /// <remarks>   TODO                 </remarks>
-        public DbSource()
+        ///
+        /// <remarks>   Imanuel, 26.01.2014. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public DbSource() { }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Constructor. </summary>
+        ///
+        /// <remarks>   Imanuel, 26.01.2014. </remarks>
+        ///
+        /// <param name="url">  URL of the source. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public DbSource(string url)
         {
-            ; // ToDo
+            this.url = url;
         }
 
-        /// <summary>   ToDo Summary is missing. </summary>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// An abstract method, to accept a <see cref="AbstractProjectVisitor"/>which must be implemented
+        /// according to the visitor design pattern.
+        /// </summary>
         ///
-        /// <exception cref="NotImplementedException"> Thrown when the requested operation is
-        ///     unimplemented. </exception>
+        /// <remarks>   Imanuel, 26.01.2014. </remarks>
         ///
-        /// <param name="visitor">  . </param>
-        public override void Accept(Controller.ProjectController.AbstractProjectVisitor visitor)
+        /// <param name="visitor">  the visitor which encapsulates the action which is performed on this
+        ///                         element. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public override void Accept(AbstractProjectVisitor visitor)
         {
-            throw new NotImplementedException();
+            visitor.Visit(this);
         }
 
         /// <summary>

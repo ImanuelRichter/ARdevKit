@@ -83,6 +83,7 @@
     <Compile Include="Model\Project\File\ChartQueryFile.cs" />
     <Compile Include="Model\Project\File\JavaScriptInLine.cs" />
     <Compile Include="Model\Project\ImageAugmentation.cs" />
+    <Compile Include="Model\Project\LiveSource.cs" />
     <Compile Include="Model\Project\MarkerFuser.cs" />
     <Compile Include="Controller\ProjectController\SaveLoadController.cs" />
     <Compile Include="Model\Project\IDFactory.cs" />
@@ -101,7 +102,6 @@
     <Compile Include="Controller\ProjectController\AbstractProjectVisitor.cs" />
     <Compile Include="ARdevKitEditor.cs" />
     <Compile Include="Controller\ProjectController\ExportVisitor.cs" />
-    <Compile Include="Controller\ProjectController\SaveVisitor.cs" />
     <Compile Include="Model\Project\AbstractAugmentation.cs" />
     <Compile Include="Model\Project\Abstract2DAugmentation.cs" />
     <Compile Include="Model\Project\AbstractSource.cs" />

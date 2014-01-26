@@ -204,6 +204,7 @@ public class PreviewController
                     OpenFileDialog openTestImageDialog = new OpenFileDialog();
                     if (openTestImageDialog.ShowDialog() == DialogResult.OK)
                     {
+                        ((FileSource)source).SourceFilePath = openTestImageDialog.FileName;
                         //set reference to the augmentations in Source
                         source.Augmentation = ((AbstractDynamic2DAugmentation)currentElement);
 
@@ -212,7 +213,15 @@ public class PreviewController
                         this.ew.project.Sources.Add(((AbstractDynamic2DAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).Source);
 
                         this.setSourcePreview(currentElement);
-
+                        DialogResult dialogResult = MessageBox.Show("Möchten sie ein Query zu der Source öffnen?", "Titel", MessageBoxButtons.YesNo);
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            openTestImageDialog = new OpenFileDialog();
+                            if (openTestImageDialog.ShowDialog() == DialogResult.OK)
+                            {
+                                ((FileSource)source).QueryFilePath = openTestImageDialog.FileName;
+                            }
+                        }
                     }
                 }
                 else
@@ -227,6 +236,7 @@ public class PreviewController
                     this.setSourcePreview(currentElement);
 
                 }
+                ew.PropertyGrid1.SelectedObject = source;
                 
             }
         }
@@ -819,5 +829,30 @@ public class PreviewController
             box.Size = new Size((int)width, (int)height);
         }
         box.Refresh();
+    }
+
+    /// <summary>
+    /// Rescales the preview panel if the size was changed.
+    /// </summary>
+    public void rescalePreviewPanel()
+    {
+        int width = this.panel.Width;
+        int height = this.panel.Height;
+
+        foreach (AbstractTrackable trackable in this.ew.project.Trackables)
+        {
+            trackable.vector = new Vector3D(width / 2, height / 2, 0);
+            foreach (AbstractAugmentation aug in trackable.Augmentations)
+            {
+                if (aug is Chart)
+                {
+                    ((Chart)aug).Style.Left = (int)(aug.TranslationVector.X + panel.Width / 2);
+                    ((Chart)aug).Style.Top = (int)(aug.TranslationVector.Y + panel.Width / 2);
+                }
+            }
+        }
+        int i = this.index;
+        this.index = -1;
+        this.reloadPreviewPanel(i);
     }
 }

@@ -66,7 +66,7 @@ namespace EditorTest
             testProject.Trackables.Add(pictureMarker1);
         }
 
-        private void SetUptProject_pictureMarker_barChart_source()
+        private void SetUptProject_pictureMarker_barChart_fileSource()
         {
             string projectPath = "currentProject";
             testProject = new Project("HelloPictureMarker", projectPath);
@@ -82,7 +82,33 @@ namespace EditorTest
             barChart1.Height = 200;
 
             barChart1.Source = new FileSource("res\\highcharts\\barChartColumn\\data.xml");
-            barChart1.Source.QueryFilePath = "res\\highcharts\\barChartColumn\\XMLQuery.js";
+            barChart1.Source.QueryFilePath = "res\\highcharts\\barChartColumn\\xmlQuery.js";
+            barChart1.Source.Augmentation = barChart1;
+            pictureMarker1.Augmentations.Add(barChart1);
+            barChart1.Trackable = pictureMarker1;
+
+            testProject.Sensor = new MarkerSensor();
+            testProject.Trackables.Add(pictureMarker1);
+        }
+
+        private void SetUptProject_pictureMarker_barChart_liveSource()
+        {
+            string projectPath = "currentProject";
+            testProject = new Project("HelloPictureMarker", projectPath);
+
+            PictureMarker pictureMarker1 = new PictureMarker("res\\testFiles\\trackables\\pictureMarker1.png");
+
+            BarChart barChart1 = new BarChart();
+            barChart1.IsVisible = false;
+            barChart1.TranslationVector = new Vector3D(100, -100, 0);
+            barChart1.Style = new ChartStyle();
+            barChart1.PositionRelativeToTrackable = true;
+            barChart1.Width = 200;
+            barChart1.Height = 200;
+
+            barChart1.Options = File.OpenText("res\\highcharts\\barChartColumn\\liveOptions.json").ReadToEnd();
+            barChart1.Source = new LiveSource("http://localhost/highcharts/server.php?callback=?");
+            barChart1.Source.QueryFilePath = "res\\highcharts\\barChartColumn\\liveQuery.js";
             barChart1.Source.Augmentation = barChart1;
             pictureMarker1.Augmentations.Add(barChart1);
             barChart1.Trackable = pictureMarker1;
@@ -108,11 +134,8 @@ namespace EditorTest
             testProject.Trackables.Add(imageTrackable);
         }
 
-        [TestMethod]
-        public void Export_IDMarker_WithValidPath_ResultingFile()
+        private void export()
         {
-            SetUptProjectWithIDMarkerAndImage();
-
             ExportVisitor exporter = new ExportVisitor(false);
             testProject.Accept(exporter);
 
@@ -123,45 +146,38 @@ namespace EditorTest
         }
 
         [TestMethod]
-        public void Export_PictureMarker_barChart_source()
+        public void Export_IDMarker_WithValidPath_ResultingFile()
         {
-            SetUptProject_pictureMarker_barChart_source();
+            SetUptProjectWithIDMarkerAndImage();
+            export();
+        }
 
-            ExportVisitor exporter = new ExportVisitor(false);
-            testProject.Accept(exporter);
+        [TestMethod]
+        public void Export_PictureMarker_barChart_fileSource()
+        {
+            SetUptProject_pictureMarker_barChart_fileSource();
+            export();
+        }
 
-            foreach (AbstractFile file in exporter.Files)
-            {
-                file.Save();
-            }
+        [TestMethod]
+        public void Export_PictureMarker_barChart_liveSource()
+        {
+            SetUptProject_pictureMarker_barChart_liveSource();
+            export();
         }
 
         [TestMethod]
         public void Export_PictureMarker_WithValidPath_ResultingFile()
         {
             SetUptProject_pictureMarker_barChart_noSource();
-
-            ExportVisitor exporter = new ExportVisitor(false);
-            testProject.Accept(exporter);
-
-            foreach (AbstractFile file in exporter.Files)
-            {
-                file.Save();
-            }
+            export();
         }
 
         [TestMethod]
         public void Export_ImageTrackable_WithValidPath_ResultingFile()
         {
             SetUptProjectWithImageTrackableAndImageAugmentation();
-
-            ExportVisitor exporter = new ExportVisitor(false);
-            testProject.Accept(exporter);
-
-            foreach (AbstractFile file in exporter.Files)
-            {
-                file.Save();
-            }
+            export();
         }
     }
 }
