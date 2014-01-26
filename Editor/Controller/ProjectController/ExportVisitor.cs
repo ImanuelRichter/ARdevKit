@@ -442,6 +442,30 @@ namespace ARdevKit.Controller.ProjectController
             imageCount++;
         }
 
+        public override void Visit(LiveSource source)
+        {
+            string chartID = source.Augmentation.ID;
+            string chartPluginID = "arel.Plugin." + CultureInfo.CurrentCulture.TextInfo.ToTitleCase(chartID);
+
+            if (source.QueryFilePath != null && source.QueryFilePath != "")
+            {
+                string newQueryFilePath = Path.Combine(projectPath, "Assets", chartID);
+                Copy(source.QueryFilePath, newQueryFilePath);
+
+                chartFileQueryBlock = new JavaScriptBlock("$.getScript(\"Assets/" + chartID + "/" + Path.GetFileName(source.QueryFilePath) + "\", function(xml)", new BlockMarker("{", "})"));
+                chartFileCreateBlock.AddBlock(chartFileQueryBlock);
+                chartFileCreateBlock.AddBlock(new JavaScriptInLine(".fail(function() { console.log(\"Failed to load query\")})", false));
+                chartFileCreateBlock.AddBlock(new JavaScriptLine(".done(function() { console.log(\"Loaded query successfully\")})"));
+                chartFileQueryBlock.AddLine(new JavaScriptLine("var dataPath = \"" + source.Url + "\""));
+                chartFileQueryBlock.AddLine(new JavaScriptLine(chartPluginID + ".chart = $('#' + " + chartPluginID + ".id).highcharts(" + chartPluginID + ".options)"));
+                chartFileQueryBlock.AddLine(new JavaScriptLine("update(dataPath, " + chartPluginID + ".id)"));
+
+                source.QueryFilePath = newQueryFilePath;
+            }
+            else
+                chartFileCreateBlock.AddLine(new JavaScriptLine("alert('No query defined')"));
+        }
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Visits the given <see cref="DbSource"/>. </summary>
         ///
@@ -455,7 +479,25 @@ namespace ARdevKit.Controller.ProjectController
 
         public override void Visit(DbSource source)
         {
-            throw new NotImplementedException();
+            string chartID = source.Augmentation.ID;
+            string chartPluginID = "arel.Plugin." + CultureInfo.CurrentCulture.TextInfo.ToTitleCase(chartID);
+
+            if (source.QueryFilePath != null && source.QueryFilePath != "")
+            {
+                string newQueryFilePath = Path.Combine(projectPath, "Assets", chartID);
+                Copy(source.QueryFilePath, newQueryFilePath);
+
+                chartFileQueryBlock = new JavaScriptBlock("$.getScript(\"Assets/" + chartID + "/" + Path.GetFileName(source.QueryFilePath) + "\", function(xml)", new BlockMarker("{", "})"));
+                chartFileCreateBlock.AddBlock(chartFileQueryBlock);
+                chartFileCreateBlock.AddBlock(new JavaScriptInLine(".fail(function() { console.log(\"Failed to load query\")})", false));
+                chartFileCreateBlock.AddBlock(new JavaScriptLine(".done(function() { console.log(\"Loaded query successfully\")})"));
+                chartFileQueryBlock.AddLine(new JavaScriptLine("var dataPath = \"" + source.Url + "\""));
+                chartFileQueryBlock.AddLine(new JavaScriptLine(chartPluginID + ".chart = query(dataPath, " + chartPluginID + ".id, " + chartPluginID + ".options)"));
+
+                source.QueryFilePath = newQueryFilePath;
+            }
+            else
+                chartFileCreateBlock.AddLine(new JavaScriptLine("alert('No query defined')"));
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -492,13 +534,15 @@ namespace ARdevKit.Controller.ProjectController
                     chartFileQueryBlock.AddLine(new JavaScriptLine("var dataPath = \"Assets/" + chartID + "/data.xml\""));
                     chartFileQueryBlock.AddLine(new JavaScriptLine(chartPluginID + ".chart = query(dataPath, " + chartPluginID + ".id, " + chartPluginID + ".options)"));
 
-                    source.QueryFilePath = newQueryFilePath;
+                    source.QueryFilePath = Path.Combine(newQueryFilePath, Path.GetFileName(source.QueryFilePath));
                 }
                 else
                     chartFileCreateBlock.AddLine(new JavaScriptLine("alert('No query defined')"));
+
+                source.QueryFilePath = newSourceFilePath;
             }
             else
-                chartFileQueryBlock.AddLine(new JavaScriptLine("alert('No source file defined')"));
+                chartFileCreateBlock.AddLine(new JavaScriptLine("alert('No source file defined')"));
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1176,7 +1220,13 @@ namespace ARdevKit.Controller.ProjectController
             string destFile = Path.Combine(destDirectory, Path.GetFileName(srcFile));
             if (!File.Exists(destFile))
             {
-                File.Copy(srcFile, Path.Combine(destDirectory, Path.GetFileName(srcFile)));
+                try
+                {
+                    File.Copy(srcFile, Path.Combine(destDirectory, Path.GetFileName(srcFile)));
+                } catch (Exception e)
+                {
+                    MessageBox.Show(e.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }

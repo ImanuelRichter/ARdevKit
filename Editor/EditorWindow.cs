@@ -202,30 +202,6 @@ namespace ARdevKit
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
-        /// The save visitor.
-        /// </summary>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        private SaveVisitor saveVisitor;
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Gets or sets the save visitor.
-        /// </summary>
-        ///
-        /// <value>
-        /// The save visitor.
-        /// </value>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        internal SaveVisitor SaveVisitor
-        {
-            get { return saveVisitor; }
-            set { saveVisitor = value; }
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
         /// The export visitor.
         /// </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -909,7 +885,6 @@ namespace ARdevKit
             this.startDebugModeLocal = false;
             this.elementCategories = new List<SceneElementCategory>();
             this.allElements = new LinkedList<IPreviewable>();
-            this.saveVisitor = new SaveVisitor();
             this.exportVisitor = new ExportVisitor(false);
             this.currentElement = null;
             registerElements();
@@ -922,7 +897,6 @@ namespace ARdevKit
             this.startDebugModeLocal = false;
             this.elementCategories = new List<SceneElementCategory>();
             this.allElements = new LinkedList<IPreviewable>();
-            this.saveVisitor = new SaveVisitor();
             this.exportVisitor = new ExportVisitor(false);
             this.currentElement = null;
             registerElements();

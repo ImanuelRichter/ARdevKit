@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 
 using System.ComponentModel;
+using ARdevKit.Controller.ProjectController;
 
 namespace ARdevKit.Model.Project
 {
@@ -17,7 +18,7 @@ namespace ARdevKit.Model.Project
     public class DbSource : AbstractSource
     {
         /// <summary>   URL of the source. </summary>
-        private string url;
+        protected string url;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Gets or sets URL of the source. </summary>
@@ -31,8 +32,22 @@ namespace ARdevKit.Model.Project
             set { url = value; }
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Default constructor. </summary>
-        /// <remarks>   TODO                 </remarks>
+        ///
+        /// <remarks>   Imanuel, 26.01.2014. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public DbSource() { }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Constructor. </summary>
+        ///
+        /// <remarks>   Imanuel, 26.01.2014. </remarks>
+        ///
+        /// <param name="url">  URL of the source. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
         public DbSource(string url)
         {
             this.url = url;
@@ -50,7 +65,7 @@ namespace ARdevKit.Model.Project
         ///                         element. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public override void Accept(Controller.ProjectController.AbstractProjectVisitor visitor)
+        public override void Accept(AbstractProjectVisitor visitor)
         {
             visitor.Visit(this);
         }
