@@ -81,7 +81,6 @@ namespace ARdevKit
             // 
             // panel1
             // 
-            this.panel1.AllowDrop = true;
             this.panel1.AutoScroll = true;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.pnl_editor_preview);
@@ -96,11 +95,12 @@ namespace ARdevKit
             // 
             this.pnl_editor_preview.AllowDrop = true;
             this.pnl_editor_preview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnl_editor_preview.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_editor_preview.Location = new System.Drawing.Point(0, 0);
+            this.pnl_editor_preview.Location = new System.Drawing.Point(3, 3);
             this.pnl_editor_preview.Name = "pnl_editor_preview";
-            this.pnl_editor_preview.Size = new System.Drawing.Size(659, 551);
+            this.pnl_editor_preview.Size = new System.Drawing.Size(653, 545);
             this.pnl_editor_preview.TabIndex = 3;
+            this.pnl_editor_preview.SizeChanged += new System.EventHandler(this.pnl_editor_preview_SizeChanged);
+            this.pnl_editor_preview.Click += new System.EventHandler(this.pnl_editor_preview_Click);
             this.pnl_editor_preview.DragDrop += new System.Windows.Forms.DragEventHandler(this.pnl_editor_preview_DragDrop);
             this.pnl_editor_preview.DragEnter += new System.Windows.Forms.DragEventHandler(this.pnl_editor_preview_DragEnter);
             // 
@@ -479,7 +479,6 @@ namespace ARdevKit
 
         #endregion
 
-        private Panel pnl_editor_preview;
         private Panel pnl_editor_selection;
         private ComboBox cmb_editor_selection_toolSelection;
         private Panel pnl_editor_status;
@@ -520,6 +519,7 @@ namespace ARdevKit
         private ToolStripMenuItem tsm_editor_menu_help_info;
         private MenuStrip mst_editor_menu;
         private Panel panel1;
+        private Panel pnl_editor_preview;
 
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////

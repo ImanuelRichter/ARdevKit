@@ -912,6 +912,10 @@ namespace ARdevKit
             this.saveVisitor = new SaveVisitor();
             this.exportVisitor = new ExportVisitor(false);
             this.currentElement = null;
+            this.screensize = new ScreenSize();
+            this.screensize.Height = pnl_editor_preview.Size.Height;
+            this.screensize.Width = pnl_editor_preview.Size.Width;
+            this.screensize.SizeChanged += new System.EventHandler(this.pnl_editor_preview_SizeChanged);
             registerElements();
         }
 
@@ -1055,5 +1059,22 @@ namespace ARdevKit
             this.pnl_editor_preview.ContextMenu.MenuItems[0].Enabled = true;
         }
 
+        private void pnl_editor_preview_Click(object sender, EventArgs e)
+        {
+            propertyGrid1.SelectedObject = screensize;
+        }
+
+        private void pnl_editor_preview_SizeChanged(object sender, EventArgs e)
+        {
+            Debug.WriteLine("ScreenSize has been changed!");
+            this.updateScreenSize();
+        }
+
+        private ScreenSize screensize;
+
+        private void updateScreenSize()
+        {
+            this.pnl_editor_preview.Size = new Size(screensize.Height, screensize.Width);
+        }
     }
 }
