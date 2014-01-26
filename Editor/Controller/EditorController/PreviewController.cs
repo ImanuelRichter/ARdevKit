@@ -851,5 +851,6 @@ public class PreviewController
                 }
             }
         }
+        this.reloadPreviewPanel(index);
     }
 }
