@@ -236,6 +236,7 @@ public class PreviewController
                     this.setSourcePreview(currentElement);
 
                 }
+                ew.PropertyGrid1.SelectedObject = source;
                 
             }
         }
