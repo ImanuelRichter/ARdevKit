@@ -17,7 +17,7 @@ namespace ARdevKit.Model.Project.File
             string chartPath = Path.Combine(projectPath, "Assets", chartID);
             if (!Directory.Exists(chartPath))
                 Directory.CreateDirectory(chartPath);
-            filePath = Path.Combine(chartPath, "XMLQuery.js");
+            filePath = Path.Combine(chartPath, "query.js");
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -33,7 +33,7 @@ namespace ARdevKit.Model.Project.File
             string chartPath = Path.Combine(projectPath, "Assets", chartID);
             if (!Directory.Exists(chartPath))
                 Directory.CreateDirectory(chartPath);
-            filePath = Path.Combine(chartPath, "XMLQuery.js");
+            filePath = Path.Combine(chartPath, "query.js");
             Save();
         }
 
@@ -48,9 +48,9 @@ namespace ARdevKit.Model.Project.File
             StreamWriter writer = new StreamWriter(filePath);
             if (blocks != null)
             {
-                foreach (XMLBlock htmlBlock in blocks)
+                foreach (JavaScriptBlock jsBlock in blocks)
                 {
-                    htmlBlock.Write(writer);
+                    jsBlock.Write(writer);
                 }
             }
             writer.Close();

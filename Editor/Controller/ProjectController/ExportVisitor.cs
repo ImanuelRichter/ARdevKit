@@ -73,9 +73,7 @@ namespace ARdevKit.Controller.ProjectController
         /// <summary>   The chart file parse block. </summary>
         private JavaScriptBlock chartFileCreateBlock;
         /// <summary>   The chart file parse block. </summary>
-        private JavaScriptBlock chartFileParseBlock;
-        /// <summary>   The chart file parse categories block. </summary>
-        private JavaScriptBlock chartFileParseContentBlock;
+        private JavaScriptBlock chartFileQueryBlock;
 
         /// <summary>   Number of images added to the <see cref="arelGlueFile"/>. </summary>
         private int imageCount = 1;
@@ -101,7 +99,7 @@ namespace ARdevKit.Controller.ProjectController
         {
             chart.ID = chart.ID == null ? "chart" + chartCount : chart.ID;
             string chartID = chart.ID;
-            string chartObjectString = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(chartID);
+            string chartPluginID = "arel.Plugin." + CultureInfo.CurrentCulture.TextInfo.ToTitleCase(chartID);
 
             // arel[projectName].html
             if (chartCount == 1)
@@ -123,7 +121,7 @@ namespace ARdevKit.Controller.ProjectController
 
             arelGlueFile.AddBlock(new JavaScriptLine("var " + chartID));
 
-            loadContentBlock.AddLine(new JavaScriptLine(chartID + " = arel.Plugin." + chartObjectString));
+            loadContentBlock.AddLine(new JavaScriptLine(chartID + " = " + chartPluginID));
 
             loadContentBlock.AddLine(new JavaScriptLine(chartID + ".create()"));
             loadContentBlock.AddLine(new JavaScriptLine(chartID + ".hide()"));
@@ -146,13 +144,15 @@ namespace ARdevKit.Controller.ProjectController
 
             JavaScriptBlock chartFileVariablesBlock = new JavaScriptBlock();
 
-            JavaScriptBlock chartFileDefineBlock = new JavaScriptBlock("arel.Plugin." + chartObjectString + " = ", new BlockMarker("{", "};"));
+            JavaScriptBlock chartFileDefineBlock = new JavaScriptBlock(chartPluginID + " = ", new BlockMarker("{", "};"));
             chartFile.AddBlock(chartFileDefineBlock);
 
             // ID
             chartFileDefineBlock.AddLine(new JavaScriptInLine("id : \"" + chartID + "\"", true));
             // CoordinateSystemID
             chartFileDefineBlock.AddLine(new JavaScriptInLine("coordinateSystemID : " + coordinateSystemID, true));
+            // The chart
+            chartFileDefineBlock.AddLine(new JavaScriptInLine("chart : {}", true));
             // Options
             chartFileDefineBlock.AddLine(new JavaScriptInLine("options : {}", true));
             // Translation
@@ -166,7 +166,9 @@ namespace ARdevKit.Controller.ProjectController
             // setOptions
             JavaScriptBlock chartFileDefineSetOptionsBlock = new JavaScriptBlock("setOptions : function(optionsPath)", new BlockMarker("{", "},"));
             chartFileDefineBlock.AddBlock(chartFileDefineSetOptionsBlock);
-            chartFileDefineSetOptionsBlock.AddLine(new JavaScriptLine("$.getJSON(optionsPath, function(data) { arel.Plugin." + chartObjectString + ".options = data; })"));
+            chartFileDefineSetOptionsBlock.AddLine(new JavaScriptInLine("$.getJSON(optionsPath, function(data) { " + chartPluginID + ".options = data; })", false));
+            chartFileDefineSetOptionsBlock.AddLine(new JavaScriptInLine(".fail(function() { console.log(\"Failed to load options\")})", false));
+            chartFileDefineSetOptionsBlock.AddLine(new JavaScriptLine(".done(function() { console.log(\"Loaded options successfully\")})"));
 
             if (chart.Source == null)
             {
@@ -306,10 +308,6 @@ namespace ARdevKit.Controller.ProjectController
                     chartFileCreateBlock.AddLine(new JavaScriptLine("this.div.style.top = \"" + chart.Style.Top + "px\""));
                 if (chart.Style.Left > 0)
                     chartFileCreateBlock.AddLine(new JavaScriptLine("this.div.style.left = \"" + chart.Style.Left + "px\""));
-                if (chart.Style.Bottom > 0)
-                    chartFileCreateBlock.AddLine(new JavaScriptLine("this.div.style.bottom = \"" + chart.Style.Bottom + "px\""));
-                if (chart.Style.Right > 0)
-                    chartFileCreateBlock.AddLine(new JavaScriptLine("this.div.style.right = \"" + chart.Style.Right + "px\""));
             }
 
             chartFileCreateBlock.AddLine(new JavaScriptLine("this.div.style.width = \"" + chart.Width + "px\""));
@@ -317,57 +315,72 @@ namespace ARdevKit.Controller.ProjectController
             chartFileCreateBlock.AddLine(new JavaScriptLine("document.documentElement.appendChild(this.div)"));
             chartFileCreateBlock.AddLine(new JavaScriptLine("this.setOptions('Assets/" + chartID + "/options.json')"));
 
-            // Parse xml
-            chartFileParseBlock = new JavaScriptBlock();
-            chartFileCreateBlock.AddBlock(chartFileParseBlock);
-            chartFileParseContentBlock = new JavaScriptBlock();
-            chartFileParseBlock.AddBlock(chartFileParseContentBlock);
             if (chart.Source == null)
             {
-                chartFileParseBlock.Update("$.get('Assets/" + chartID + "/data.xml', function(xml)", new BlockMarker("{", "});"));
-                chartFileParseBlock.AddLine(new JavaScriptLine("var $xml = $(xml)"));
+                // Create query.js
+                ChartQueryFile queryFile = new ChartQueryFile(projectPath, chartID);
+                files.Add(queryFile);
+
+                JavaScriptBlock queryFunctionBlock = new JavaScriptBlock("function query(dataPath, id, options)", new BlockMarker("{", "};"));
+                queryFile.AddBlock(queryFunctionBlock);
+
+                // Parse xml
+                JavaScriptBlock queryFunctionParseBlock = new JavaScriptBlock("$.get(dataPath, function(xml)", new BlockMarker("{", "})"));
+                queryFunctionBlock.AddBlock(queryFunctionParseBlock);
+                queryFunctionBlock.AddBlock(new JavaScriptInLine(".fail(function() { console.log(\"Failed to load data\")})", false));
+                queryFunctionBlock.AddBlock(new JavaScriptLine(".done(function() { console.log(\"Loaded data successfully\")})"));
+                queryFunctionParseBlock.AddLine(new JavaScriptLine("var $xml = $(xml)"));
 
                 // Add categories
-                JavaScriptBlock chartFileParseCategoriesBlock = chartFileParseContentBlock;
-                chartFileParseCategoriesBlock.Update("$xml.find('categories item').each(function(i, category)", new BlockMarker("{", "});"));
-                chartFileParseBlock.AddBlock(chartFileParseCategoriesBlock);
-                chartFileParseCategoriesBlock.AddLine(new JavaScriptLine("arel.Plugin." + chartObjectString + ".options.xAxis.categories.push($(category).text())"));
+                JavaScriptBlock queryCategoriesBlock = new JavaScriptBlock("$xml.find('categories item').each(function(i, category)", new BlockMarker("{", "});"));
+                queryFunctionParseBlock.AddBlock(queryCategoriesBlock);
+                queryCategoriesBlock.AddLine(new JavaScriptLine("options.xAxis.categories.push($(category).text())"));
 
                 // Add series
-                JavaScriptBlock chartFileParseSeriesBlock = new JavaScriptBlock("$xml.find('series').each(function(i, series)", new BlockMarker("{", "});"));
-                chartFileParseBlock.AddBlock(chartFileParseSeriesBlock);
+                JavaScriptBlock querySeriesBlock = new JavaScriptBlock("$xml.find('series').each(function(i, series)", new BlockMarker("{", "});"));
+                queryFunctionParseBlock.AddBlock(querySeriesBlock);
 
                 // Series options
-                JavaScriptBlock chartFileParseSeriesOptionsBlock = new JavaScriptBlock("var seriesOptions =", new BlockMarker("{", "};"));
-                chartFileParseSeriesBlock.AddBlock(chartFileParseSeriesOptionsBlock);
+                JavaScriptBlock querySeriesOptionsBlock = new JavaScriptBlock("var seriesOptions =", new BlockMarker("{", "};"));
+                querySeriesBlock.AddBlock(querySeriesOptionsBlock);
 
                 // Name
-                chartFileParseSeriesOptionsBlock.AddLine(new JavaScriptInLine("name: $(series).find('name').text()", true));
+                querySeriesOptionsBlock.AddLine(new JavaScriptInLine("name: $(series).find('name').text()", true));
 
                 // Color
-                JavaScriptBlock chartFileParseSeriesOptionsColorBlock = new JavaScriptBlock("color : ", new BlockMarker("{", "},"));
-                chartFileParseSeriesOptionsBlock.AddBlock(chartFileParseSeriesOptionsColorBlock);
-                chartFileParseSeriesOptionsColorBlock.AddBlock(new JavaScriptInLine("linearGradient: { x1: $(series).find('x1').text(), x2: $(series).find('x2').text(), y1: $(series).find('y1').text(), y1: $(series).find('y2').text() }", true));
-                JavaScriptBlock chartFileParseSeriesOptionsColorStopsBlock = new JavaScriptBlock("stops: ", new BlockMarker("[", "]"));
-                chartFileParseSeriesOptionsColorBlock.AddBlock(chartFileParseSeriesOptionsColorStopsBlock);
-                chartFileParseSeriesOptionsColorStopsBlock.AddLine(new JavaScriptInLine("[0, $(series).find('stops zero').text()]", true));
-                chartFileParseSeriesOptionsColorStopsBlock.AddLine(new JavaScriptInLine("[1, $(series).find('stops one').text()]", false));
+                JavaScriptBlock querySeriesOptionsColorBlock = new JavaScriptBlock("color: ", new BlockMarker("{", "},"));
+                querySeriesOptionsBlock.AddBlock(querySeriesOptionsColorBlock);
+                querySeriesOptionsColorBlock.AddBlock(new JavaScriptInLine("linearGradient: { x1: $(series).find('x1').text(), x2: $(series).find('x2').text(), y1: $(series).find('y1').text(), y1: $(series).find('y2').text() }", true));
+                JavaScriptBlock queryOptionsColorStopsBlock = new JavaScriptBlock("stops: ", new BlockMarker("[", "]"));
+                querySeriesOptionsColorBlock.AddBlock(queryOptionsColorStopsBlock);
+                queryOptionsColorStopsBlock.AddLine(new JavaScriptInLine("[0, $(series).find('stops zero').text()]", true));
+                queryOptionsColorStopsBlock.AddLine(new JavaScriptInLine("[1, $(series).find('stops one').text()]", false));
 
                 // Data
-                chartFileParseSeriesOptionsBlock.AddBlock(new JavaScriptInLine("data: []", false));
+                querySeriesOptionsBlock.AddBlock(new JavaScriptInLine("data: []", false));
 
                 // Series data
-                chartFileParseSeriesBlock.AddBlock(new JavaScriptLine("var points = $(series).find('points').text().split(',')"));
-                JavaScriptBlock chartFileParseSeriesDataBlock = new JavaScriptBlock("$.each(points, function(i, point)", new BlockMarker("{", "});"));
-                chartFileParseSeriesBlock.AddBlock(chartFileParseSeriesDataBlock);
-                chartFileParseSeriesDataBlock.AddLine(new JavaScriptLine("seriesOptions.data.push(parseInt(point))"));
+                querySeriesBlock.AddBlock(new JavaScriptLine("var points = $(series).find('points').text().split(',')"));
+                JavaScriptBlock querySeriesDataBlock = new JavaScriptBlock("$.each(points, function(i, point)", new BlockMarker("{", "});"));
+                querySeriesBlock.AddBlock(querySeriesDataBlock);
+                querySeriesDataBlock.AddLine(new JavaScriptLine("seriesOptions.data.push(parseInt(point))"));
 
                 // Add it to options
-                chartFileParseSeriesBlock.AddBlock(new JavaScriptLine("arel.Plugin." + chartObjectString + ".options.series.push(seriesOptions)"));
-            }
+                querySeriesBlock.AddBlock(new JavaScriptLine("options.series.push(seriesOptions)"));
 
-            // Create the chart
-            chartFileParseBlock.AddBlock(new JavaScriptLine("var chart = $('#' + arel.Plugin." + chartObjectString + ".id).highcharts(arel.Plugin." + chartObjectString + ".options)"));
+                // Return the chart
+                queryFunctionParseBlock.AddBlock(new JavaScriptLine("return $('#' + id).highcharts(options)"));
+
+
+
+                // Start the query in chart.js
+                chartFileQueryBlock = new JavaScriptBlock("$.getScript(\"Assets/" + chartID + "/query.js\", function()", new BlockMarker("{", "})"));
+                chartFileCreateBlock.AddBlock(chartFileQueryBlock);
+                chartFileCreateBlock.AddBlock(new JavaScriptInLine(".fail(function() { console.log(\"Failed to load query\")})", false));
+                chartFileCreateBlock.AddBlock(new JavaScriptLine(".done(function() { console.log(\"Loaded query successfully\")})"));
+                chartFileQueryBlock.AddLine(new JavaScriptLine("var dataPath = \"Assets/" + chartID + "/data.xml\""));
+                chartFileQueryBlock.AddLine(new JavaScriptLine(chartPluginID + ".chart = query(dataPath, " + chartPluginID + ".id, " + chartPluginID + ".options)"));
+            }
 
             // Show            
             JavaScriptBlock chartShowBlock = new JavaScriptBlock("show : function()", new BlockMarker("{", "},"));
@@ -460,31 +473,32 @@ namespace ARdevKit.Controller.ProjectController
         {
             string sourceFileName = Path.GetFileName(source.SourceFilePath);
             string chartID = source.Augmentation.ID;
+            string chartPluginID = "arel.Plugin." + CultureInfo.CurrentCulture.TextInfo.ToTitleCase(chartID);
             if (source.SourceFilePath != null && source.SourceFilePath != "")
             {
                 Copy(source.SourceFilePath, Path.Combine(projectPath, "Assets", chartID));
                 string newSourceFilePath = Path.Combine(projectPath, "Assets", chartID, sourceFileName);
                 source.SourceFilePath = newSourceFilePath;
 
-                chartFileParseBlock.Update("$.get('Assets/" + chartID + "/" + sourceFileName + "', function(xml)", new BlockMarker("{", "});"));
-            }
-            else
-                chartFileParseBlock.AddLine(new JavaScriptLine("alert('no source file defined')"));
-            if (source.QueryFilePath != null && source.QueryFilePath != "")
-            {
-                string[] lines = File.OpenText(source.QueryFilePath).ReadToEnd().Split(new char[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
-                string newQueryFilePath = Path.Combine(projectPath, "Assets", chartID, "query.js");
-                StreamWriter queryWriter = new StreamWriter(newQueryFilePath);
-                foreach (string line in lines)
+                if (source.QueryFilePath != null && source.QueryFilePath != "")
                 {
-                    queryWriter.WriteLine(line);
-                    chartFileParseBlock.AddLine(new JavaScriptInLine(line, false));
+                    string newQueryFilePath = Path.Combine(projectPath, "Assets", chartID);
+                    Copy(source.QueryFilePath, newQueryFilePath);
+
+                    chartFileQueryBlock = new JavaScriptBlock("$.getScript(\"Assets/" + chartID + "/" + Path.GetFileName(source.QueryFilePath) + "\", function(xml)", new BlockMarker("{", "})"));
+                    chartFileCreateBlock.AddBlock(chartFileQueryBlock);
+                    chartFileCreateBlock.AddBlock(new JavaScriptInLine(".fail(function() { console.log(\"Failed to load query\")})", false));
+                    chartFileCreateBlock.AddBlock(new JavaScriptLine(".done(function() { console.log(\"Loaded query successfully\")})"));
+                    chartFileQueryBlock.AddLine(new JavaScriptLine("var dataPath = \"Assets/" + chartID + "/data.xml\""));
+                    chartFileQueryBlock.AddLine(new JavaScriptLine(chartPluginID + ".chart = query(dataPath, " + chartPluginID + ".id, " + chartPluginID + ".options)"));
+
+                    source.QueryFilePath = newQueryFilePath;
                 }
-                queryWriter.Close();
-                source.QueryFilePath = newQueryFilePath;
+                else
+                    chartFileCreateBlock.AddLine(new JavaScriptLine("alert('No query defined')"));
             }
             else
-                chartFileParseBlock.AddLine(new JavaScriptLine("alert('no query defined')"));
+                chartFileQueryBlock.AddLine(new JavaScriptLine("alert('No source file defined')"));
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1127,7 +1141,7 @@ namespace ARdevKit.Controller.ProjectController
             // Patternn found
             ifPatternIsFoundBlock = new JavaScriptBlock("if(type && type == arel.Events.Scene.ONTRACKING && param[0].getState() == arel.Tracking.STATE_TRACKING)", new BlockMarker("{", "}"));
             ifTrackingInformationAvailiableBlock.AddBlock(ifPatternIsFoundBlock);
-            ifPatternIsFoundBlock.AddLine(new JavaScriptLine("console.log(\"Tracking is active\")"));
+            ifPatternIsFoundBlock.AddLine(new JavaScriptLine("console.log(\"Tracked coordinateSystemID: \" + param[0].getCoordinateSystemID())"));
 
             // Pattern lost
             ifPatternIsLostBlock = new JavaScriptBlock("else if(type && type == arel.Events.Scene.ONTRACKING && param[0].getState() == arel.Tracking.STATE_NOTTRACKING)", new BlockMarker("{", "}"));
@@ -1141,6 +1155,7 @@ namespace ARdevKit.Controller.ProjectController
             arelGlueMoveBlock.AddLine(new JavaScriptLine("var top = (coord.getY() - parseInt(object.div.style.height) / 2) + object.translation.getY()"));
             arelGlueMoveBlock.AddLine(new JavaScriptLine("object.div.style.left = left + 'px'"));
             arelGlueMoveBlock.AddLine(new JavaScriptLine("object.div.style.top = top + 'px'"));
+            arelGlueMoveBlock.AddLine(new JavaScriptLine("console.log(\"Moved \" + object.id + \" to \" + left + \", \" + top)"));
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -34,42 +34,60 @@ namespace EditorTest
             testProject.Trackables.Add(idMarker1);
         }
 
-        private void SetUptProjectWithPictureMarkerAndBarChart()
+        private void SetUptProject_pictureMarker_barChart_noSource()
         {
             string projectPath = "currentProject";
             testProject = new Project("HelloPictureMarker", projectPath);
 
-            PictureMarker pictureMarker1 = new PictureMarker("res\\testFiles\\marker\\pictureMarker1.png");
+            PictureMarker pictureMarker1 = new PictureMarker("res\\testFiles\\trackables\\pictureMarker1.png");
 
             BarChart barChart1 = new BarChart();
             barChart1.IsVisible = false;
-            barChart1.TranslationVector = new Vector3D(0, 0, 0);
-            barChart1.RotationVector = new Vector3Di(0, 0, 0, 1);
-            barChart1.ScalingVector = new Vector3D(0, 0, 0);
+            barChart1.TranslationVector = new Vector3D(100, -100, 0);
             barChart1.Style = new ChartStyle();
             barChart1.PositionRelativeToTrackable = true;
-            barChart1.Style.Top = 100;
-            barChart1.Style.Left = 100;
             barChart1.Width = 200;
             barChart1.Height = 200;
 
             barChart1.Title = "Feuchtigkeitsstand";
             barChart1.Subtitle = "sensorbasiert";
             barChart1.XAxisTitle = "Wochentag";
-            barChart1.Categories = new string[] { "Mo", "Di", "Mi" };
+            barChart1.Categories = new string[] { "Mo", "Di", "Mi", "Do", "Fr", "Sa", "So" };
             barChart1.MinValue = 0;
             barChart1.YAxisTitle = "Feuchtigkeit in %";
             barChart1.PointPadding = 0.2;
             barChart1.BorderWidth = 0;
             barChart1.Data = new List<BarChartData>();
             barChart1.Data.Add(new BarChartData("Rose", new double[] { 72.5, 50.3, 33.1 }));
+            pictureMarker1.Augmentations.Add(barChart1);
+            barChart1.Trackable = pictureMarker1;
+
+            testProject.Sensor = new MarkerSensor();
+            testProject.Trackables.Add(pictureMarker1);
+        }
+
+        private void SetUptProject_pictureMarker_barChart_source()
+        {
+            string projectPath = "currentProject";
+            testProject = new Project("HelloPictureMarker", projectPath);
+
+            PictureMarker pictureMarker1 = new PictureMarker("res\\testFiles\\trackables\\pictureMarker1.png");
+
+            BarChart barChart1 = new BarChart();
+            barChart1.IsVisible = false;
+            barChart1.TranslationVector = new Vector3D(100, -100, 0);
+            barChart1.Style = new ChartStyle();
+            barChart1.PositionRelativeToTrackable = true;
+            barChart1.Width = 200;
+            barChart1.Height = 200;
+
             barChart1.Source = new FileSource("res\\highcharts\\barChartColumn\\data.xml");
             barChart1.Source.QueryFilePath = "res\\highcharts\\barChartColumn\\xmlQuery.js";
             barChart1.Source.Augmentation = barChart1;
             pictureMarker1.Augmentations.Add(barChart1);
             barChart1.Trackable = pictureMarker1;
 
-            testProject.Sensor = new MarkerlessSensor();
+            testProject.Sensor = new MarkerSensor();
             testProject.Trackables.Add(pictureMarker1);
         }
 
@@ -105,9 +123,23 @@ namespace EditorTest
         }
 
         [TestMethod]
+        public void Export_PictureMarker_barChart_source()
+        {
+            SetUptProject_pictureMarker_barChart_source();
+
+            ExportVisitor exporter = new ExportVisitor(false);
+            testProject.Accept(exporter);
+
+            foreach (AbstractFile file in exporter.Files)
+            {
+                file.Save();
+            }
+        }
+
+        [TestMethod]
         public void Export_PictureMarker_WithValidPath_ResultingFile()
         {
-            SetUptProjectWithPictureMarkerAndBarChart();
+            SetUptProject_pictureMarker_barChart_noSource();
 
             ExportVisitor exporter = new ExportVisitor(false);
             testProject.Accept(exporter);
