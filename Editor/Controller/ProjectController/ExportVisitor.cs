@@ -596,9 +596,129 @@ namespace ARdevKit.Controller.ProjectController
         /// <param name="image">    The image. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public override void Visit(ARdevKit.Model.Project.ImageTrackable image)
+        public override void Visit(ImageTrackable image)
         {
+            // Copy the file
+            Copy(image.ImagePath, Path.Combine(projectPath, "Assets"));
 
+            string sourceImageFile = image.ImagePath;
+            string destImageFile;
+            destImageFile = Path.Combine(projectPath, Path.GetFileName(sourceImageFile));
+            if (Directory.Exists(Path.Combine(projectPath, "Asstes")) && !File.Exists(destImageFile))
+                File.Copy(sourceImageFile, destImageFile);
+
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            // trackingData.xml
+
+            XMLBlock sensorCOSBlock = new XMLBlock(new XMLTag("SensorCOS"));
+            trackingDataFileSensorBlock.AddBlock(sensorCOSBlock);
+
+            image.SensorCosID = IDFactory.CreateNewSensorCosID(image);
+            sensorCOSBlock.AddLine(new XMLLine(new XMLTag("SensorCosID"), image.SensorCosID));
+
+            XMLBlock parameterBlock = new XMLBlock(new XMLTag("Parameters"));
+            sensorCOSBlock.AddBlock(parameterBlock);
+            parameterBlock.AddLine(new XMLLine(new XMLTag("referenceImage"), Path.GetFileName(image.ImagePath)));
+            string value = image.SimilarityThreshold.ToString("F1", CultureInfo.InvariantCulture);
+            parameterBlock.AddLine(new XMLLine(new XMLTag("SimilarityThreshold"), value));
+
+            // Connections 
+
+            // COS
+            XMLBlock cosBlock = new XMLBlock(new XMLTag("COS"));
+            trackingDataFileConnectionsBlock.AddBlock(cosBlock);
+
+            // Name
+            cosBlock.AddLine(new XMLLine(new XMLTag("Name"), project.Sensor.Name + "COS" + cosCounter++));
+
+            // Fuser
+            trackingDataFileFuserBlock = new XMLBlock(new XMLTag("Fuser"));
+            cosBlock.AddBlock(trackingDataFileFuserBlock);
+
+            // SensorSource
+            XMLBlock sensorSourceBlock = new XMLBlock(new XMLTag("SensorSource"));
+            cosBlock.AddBlock(sensorSourceBlock);
+
+            // SensorID
+            sensorSourceBlock.AddLine(new XMLLine(new XMLTag("SensorID"), project.Sensor.SensorIDString));
+            // SensorCosID
+            sensorSourceBlock.AddLine(new XMLLine(new XMLTag("SensorCosID"), image.SensorCosID));
+
+            // Hand-Eye-Calibration
+            XMLBlock handEyeCalibrationBlock = new XMLBlock(new XMLTag("HandEyeCalibration"));
+            sensorSourceBlock.AddBlock(handEyeCalibrationBlock);
+
+            // Translation
+            XMLBlock hecTranslationOffset = new XMLBlock(new XMLTag("TranslationOffset"));
+            handEyeCalibrationBlock.AddBlock(hecTranslationOffset);
+
+            // TODO get vectors
+            hecTranslationOffset.AddLine(new XMLLine(new XMLTag("X"), "0"));
+            hecTranslationOffset.AddLine(new XMLLine(new XMLTag("Y"), "0"));
+            hecTranslationOffset.AddLine(new XMLLine(new XMLTag("Z"), "0"));
+
+            // Rotation
+            XMLBlock hecRotationOffset = new XMLBlock(new XMLTag("RotationOffset"));
+            handEyeCalibrationBlock.AddBlock(hecRotationOffset);
+
+            // TODO get vectors
+            hecRotationOffset.AddLine(new XMLLine(new XMLTag("X"), "0"));
+            hecRotationOffset.AddLine(new XMLLine(new XMLTag("Y"), "0"));
+            hecRotationOffset.AddLine(new XMLLine(new XMLTag("Z"), "0"));
+            hecRotationOffset.AddLine(new XMLLine(new XMLTag("W"), "1"));
+
+            // COSOffset
+            XMLBlock COSOffsetBlock = new XMLBlock(new XMLTag("COSOffset"));
+            sensorSourceBlock.AddBlock(COSOffsetBlock);
+
+            // Translation
+            XMLBlock COSOffsetTranslationOffset = new XMLBlock(new XMLTag("TranslationOffset"));
+            COSOffsetBlock.AddBlock(COSOffsetTranslationOffset);
+
+            string augmentationPositionX = image.TranslationVector.X.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationPositionY = image.TranslationVector.Y.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationPositionZ = image.TranslationVector.Z.ToString("F1", CultureInfo.InvariantCulture);
+            COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("X"), augmentationPositionX));
+            COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("Y"), augmentationPositionY));
+            COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("Z"), augmentationPositionZ));
+
+            // Rotation
+            XMLBlock COSOffsetRotationOffset = new XMLBlock(new XMLTag("RotationOffset"));
+            COSOffsetBlock.AddBlock(COSOffsetRotationOffset);
+
+            string augmentationRotationX = image.RotationVector.X.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationRotationY = image.RotationVector.Y.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationRotationZ = image.RotationVector.Z.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationRotationW = image.RotationVector.W.ToString("F1", CultureInfo.InvariantCulture);
+            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("X"), augmentationRotationX));
+            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("Y"), augmentationRotationY));
+            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("Z"), augmentationRotationZ));
+            COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("W"), augmentationRotationW));
+
+            coordinateSystemID++;
+
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            // arelGlue.js
+
+            // Set anchor
+            Bitmap bmp = new Bitmap(1, 1);
+            Graphics g = Graphics.FromImage(bmp);
+            g.Clear(Color.Transparent);
+            g.Flush();
+            string anchorPath = Path.Combine(projectPath, "Assets", "anchor.png");
+            if (!File.Exists(anchorPath))
+                bmp.Save(anchorPath, System.Drawing.Imaging.ImageFormat.Png);
+
+            // Add global variable for the anchor
+            arelGlueFile.AddBlock(new JavaScriptLine("var COS" + coordinateSystemID + "Anchor"));
+
+            // Add the anchor to the scene
+            sceneReadyFunctionBlock.AddLine(new JavaScriptLine("COS" + coordinateSystemID + "Anchor = arel.Object.Model3D.createFromImage(\"COS" + coordinateSystemID + "Anchor" + "\",\"Assets/anchor.png" + "\")"));
+            sceneReadyFunctionBlock.AddLine(new JavaScriptLine("COS" + coordinateSystemID + "Anchor.setVisibility(false)"));
+            sceneReadyFunctionBlock.AddLine(new JavaScriptLine("COS" + coordinateSystemID + "Anchor.setCoordinateSystemID(" + coordinateSystemID + ")"));
+            sceneReadyFunctionBlock.AddLine(new JavaScriptLine("arel.Scene.addObject(COS" + coordinateSystemID + "Anchor)"));
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////

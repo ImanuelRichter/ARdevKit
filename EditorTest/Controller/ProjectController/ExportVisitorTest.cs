@@ -50,9 +50,10 @@ namespace EditorTest
             string projectPath = "currentProject";
             testProject = new Project("HelloPictureMarker", projectPath);
 
-            PictureMarker pictureMarker1 = new PictureMarker("res\\testFiles\\marker\\pictureMarker1.png");
-            PictureMarker pictureMarker2 = new PictureMarker("res\\testFiles\\marker\\pictureMarker2.png");
+            //PictureMarker pictureMarker1 = new PictureMarker("res\\testFiles\\marker\\pictureMarker1.png");
+            ImageTrackable imageTrackable = new ImageTrackable("res\\testFiles\\marker\\metaioman_target.png");
 
+            /*
             BarChart barChart1 = new BarChart();
             barChart1.IsVisible = false;
             barChart1.TranslationVector = new Vector3D(0, 0, 0);
@@ -80,19 +81,19 @@ namespace EditorTest
             barChart1.Source.Augmentation = barChart1;
             pictureMarker1.Augmentations.Add(barChart1);
             barChart1.Trackable = pictureMarker1;
-
+            */
             ImageAugmentation image1 = new ImageAugmentation();
             image1.ImagePath = Path.Combine(testProject.ProjectPath, "Assets", "frame.png");
             image1.IsVisible = false;
             image1.TranslationVector = new Vector3D(0, 0, 0);
             image1.RotationVector = new Vector3Di(0, 0, 0, 1);
             image1.ScalingVector = new Vector3D(0, 0, 0);
-            pictureMarker2.Augmentations.Add(image1);
-            image1.Trackable = pictureMarker2;
+            imageTrackable.Augmentations.Add(image1);
+            image1.Trackable = imageTrackable;
 
-            testProject.Sensor = new PictureMarkerSensor();
-            testProject.Trackables.Add(pictureMarker1);
-            testProject.Trackables.Add(pictureMarker2);
+            testProject.Sensor = new MarkerlessSensor();
+            //testProject.Trackables.Add(pictureMarker1);
+            testProject.Trackables.Add(imageTrackable);
         }
 
         [TestMethod]

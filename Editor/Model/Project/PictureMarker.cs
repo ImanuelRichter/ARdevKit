@@ -83,6 +83,7 @@ namespace ARdevKit.Model.Project
         public PictureMarker(string picturePath) : this()
         {
             size = new Bitmap(picturePath).Height * new Bitmap(picturePath).Width;
+            this.picturePath = picturePath;
             pictureName = Path.GetFileName(picturePath);
         }
 

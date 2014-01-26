@@ -68,7 +68,7 @@ namespace ARdevKit.Model.Project
         /// </summary>
         public ImageTrackable()
         {
-            type = "PictureMarker";
+            type = "Markerless";
             similarityThreshold = 0.7;
             vector = new Vector3D(0, 0, 0);
             translationVector = new Vector3D(0, 0, 0);
@@ -88,6 +88,7 @@ namespace ARdevKit.Model.Project
         public ImageTrackable(string imagePath) : this()
         {
             size = new Bitmap(imagePath).Height * new Bitmap(imagePath).Width;
+            this.imagePath = imagePath;
             imageName = Path.GetFileName(imagePath);
         }
 

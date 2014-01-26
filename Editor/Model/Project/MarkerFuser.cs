@@ -110,7 +110,7 @@ namespace ARdevKit.Model.Project
         /// Imanuel, 17.01.2014.
         /// </remarks>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        public void Accept(AbstractProjectVisitor visitor)
+        public virtual void Accept(AbstractProjectVisitor visitor)
         {
             visitor.Visit(this);
         }

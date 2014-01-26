@@ -94,5 +94,10 @@ namespace ARdevKit.Model.Project
             gammaRotation = 0.5;
             continueLostTrackingWithOrientationSensor = false;
         }
+
+        public override void Accept(AbstractProjectVisitor visitor)
+        {
+            visitor.Visit(this);
+        }
     }
 }
