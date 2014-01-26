@@ -479,7 +479,7 @@ public class PreviewController
     /// <returns>   The found box. </returns>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    private PictureBox findBox(IPreviewable prev)
+    public PictureBox findBox(IPreviewable prev)
     {
         if (typeof(AbstractTrackable).IsAssignableFrom(prev.GetType()))
         {

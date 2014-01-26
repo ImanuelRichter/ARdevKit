@@ -39,7 +39,21 @@ namespace Controller.EditorController
 
         private void changedProperty(object sender, PropertyValueChangedEventArgs e)
         {
-            ew.PreviewController.updateScale();
+            if (String.Equals(e.ChangedItem.Label.ToString(), "X", StringComparison.Ordinal)
+                || String.Equals(e.ChangedItem.Label.ToString(), "Y", StringComparison.Ordinal))
+            {
+                ew.PreviewController.updateScale();
+            }
+
+            if (String.Equals(e.ChangedItem.Label.ToString(), "PicturePath", StringComparison.Ordinal))
+            {
+                ew.PreviewController.findBox(ew.CurrentElement).Load(e.ChangedItem.Value.ToString());
+            }
+
+            if (String.Equals(e.ChangedItem.Label.ToString(), "ImagePath", StringComparison.Ordinal))
+            {
+                ew.PreviewController.findBox(ew.CurrentElement).Load(e.ChangedItem.Value.ToString());
+            }
         }
 
         /*
