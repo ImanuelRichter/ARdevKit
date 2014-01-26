@@ -272,6 +272,12 @@ namespace ARdevKit
             set { currentElement = value; }
         }
 
+        /// <summary>
+        /// The screensize
+        /// </summary>
+        /// <remarks>geht 26.01.2014 20:20</remarks>
+        private ScreenSize screensize;
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
         /// Default constructor. initializes components on startup.
@@ -363,7 +369,7 @@ namespace ARdevKit
         private void tsm_editor_menu_test_startImage_Click(object sender, EventArgs e)
         {
             if (project.Trackables != null && project.Trackables.Count > 0 && project.Trackables[0] != null)
-                TestController.StartPlayer(project, TestController.IMAGE);
+                TestController.StartPlayer(project, TestController.IMAGE, screensize.Width, screensize.Height);
             else
                 MessageBox.Show("Keine Szene zum Testen vorhanden");
         }
@@ -380,7 +386,7 @@ namespace ARdevKit
         private void tsm_editor_menu_test_startVideo_Click(object sender, EventArgs e)
         {
             if (project.Trackables != null && project.Trackables.Count > 0 && project.Trackables[0] != null)
-                TestController.StartPlayer(project, TestController.VIDEO);
+                TestController.StartPlayer(project, TestController.VIDEO, screensize.Width, screensize.Height);
             else
                 MessageBox.Show("Keine Szene zum Testen vorhanden");
         }
@@ -398,7 +404,7 @@ namespace ARdevKit
         private void tsm_editor_menu_test_startWithVirtualCamera_Click(object sender, EventArgs e)
         {
             if (project.Trackables != null && project.Trackables.Count > 0 && project.Trackables[0] != null)
-                TestController.StartPlayer(project, TestController.CAMERA);
+                TestController.StartPlayer(project, TestController.CAMERA, screensize.Width, screensize.Height);
             else
                 MessageBox.Show("Keine Szene zum Testen vorhanden");
         }
@@ -941,6 +947,15 @@ namespace ARdevKit
             this.updateStatusBar();
         }
 
+        /// <summary>
+        /// Updates the size of the screen.
+        /// </summary>
+        /// <remarks>geht 26.01.2014 20:20</remarks>
+        private void updateScreenSize()
+        {
+            this.pnl_editor_preview.Size = new Size(screensize.Width, screensize.Height);
+        }
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
         /// Event handler. Called by tsm_editor_menu_file_save for click events.
@@ -1059,22 +1074,30 @@ namespace ARdevKit
             this.pnl_editor_preview.ContextMenu.MenuItems[0].Enabled = true;
         }
 
+        /// <summary>
+        /// Handles the Click event of the pnl_editor_preview control.
+        /// Used for changing the screensize.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// <remarks>geht 26.01.2014 20:21</remarks>
         private void pnl_editor_preview_Click(object sender, EventArgs e)
         {
             propertyGrid1.SelectedObject = screensize;
+            propertyGrid1.PropertySort = PropertySort.NoSort;
         }
 
+        /// <summary>
+        /// Handles the SizeChanged event of the pnl_editor_preview control.
+        /// Is called when the screensize has been changed.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// <remarks>geht 26.01.2014 20:21</remarks>
         private void pnl_editor_preview_SizeChanged(object sender, EventArgs e)
         {
             Debug.WriteLine("ScreenSize has been changed!");
             this.updateScreenSize();
-        }
-
-        private ScreenSize screensize;
-
-        private void updateScreenSize()
-        {
-            this.pnl_editor_preview.Size = new Size(screensize.Height, screensize.Width);
         }
     }
 }
