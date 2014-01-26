@@ -928,6 +928,7 @@ namespace ARdevKit
         private void updateScreenSize()
         {
             this.pnl_editor_preview.Size = new Size(screensize.Width, screensize.Height);
+            this.previewController.rescalePreviewPanel();
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
