@@ -659,9 +659,11 @@ public class PreviewController
                 if (((PictureBox)comp).BorderStyle == BorderStyle.Fixed3D)
                 {
                     ((PictureBox)comp).BorderStyle = BorderStyle.None;
+                    ((PictureBox)comp).Refresh();
                 }
             }
             findBox(currentElement).BorderStyle = BorderStyle.Fixed3D;
+            findBox(currentElement).Refresh();
             if (typeof(AbstractAugmentation).IsAssignableFrom(currentElement.GetType()))
             {
                 findBox(currentElement).BringToFront();
