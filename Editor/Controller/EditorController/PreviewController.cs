@@ -641,29 +641,33 @@ public class PreviewController
     /// <param name="currentElement">The current element.</param>
     public void setCurrentElement(IPreviewable currentElement)
     {
-        this.ew.CurrentElement = currentElement;
+        if (this.ew.CurrentElement != currentElement)
+        {
+            this.ew.CurrentElement = currentElement;
 
-        if (typeof(AbstractAugmentation).IsAssignableFrom(currentElement.GetType()))
-        {
-            this.ew.Tsm_editor_menu_edit_copie.Enabled = true;
-        }
-        else if (typeof(AbstractTrackable).IsAssignableFrom(currentElement.GetType()))
-        {
-            this.ew.Tsm_editor_menu_edit_copie.Enabled = false;
-        }
-
-        foreach (Control comp in this.panel.Controls)
-        {
-            if (((PictureBox)comp).BorderStyle == BorderStyle.Fixed3D)
+            if (typeof(AbstractAugmentation).IsAssignableFrom(currentElement.GetType()))
             {
-                ((PictureBox)comp).BorderStyle = BorderStyle.None;
+                this.ew.Tsm_editor_menu_edit_copie.Enabled = true;
+            }
+            else if (typeof(AbstractTrackable).IsAssignableFrom(currentElement.GetType()))
+            {
+                this.ew.Tsm_editor_menu_edit_copie.Enabled = false;
+            }
+
+            foreach (Control comp in this.panel.Controls)
+            {
+                if (((PictureBox)comp).BorderStyle == BorderStyle.Fixed3D)
+                {
+                    ((PictureBox)comp).BorderStyle = BorderStyle.None;
+                }
+            }
+            findBox(currentElement).BorderStyle = BorderStyle.Fixed3D;
+            if (typeof(AbstractAugmentation).IsAssignableFrom(currentElement.GetType()))
+            {
+                findBox(currentElement).BringToFront();
             }
         }
-        findBox(currentElement).BorderStyle = BorderStyle.Fixed3D;
-        if (typeof(AbstractAugmentation).IsAssignableFrom(currentElement.GetType()))
-        {
-            findBox(currentElement).BringToFront();
-        }
+        
     }
     /// <summary>
     /// set the augmentationPreview to a augmentationPreview with source icon
