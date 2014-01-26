@@ -213,7 +213,15 @@ public class PreviewController
                         this.ew.project.Sources.Add(((AbstractDynamic2DAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).Source);
 
                         this.setSourcePreview(currentElement);
-
+                        DialogResult dialogResult = MessageBox.Show("Möchten sie ein Query zu der Source öffnen?", "Titel", MessageBoxButtons.YesNo);
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            openTestImageDialog = new OpenFileDialog();
+                            if (openTestImageDialog.ShowDialog() == DialogResult.OK)
+                            {
+                                ((FileSource)source).QueryFilePath = openTestImageDialog.FileName;
+                            }
+                        }
                     }
                 }
                 else
