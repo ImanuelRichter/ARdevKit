@@ -51,7 +51,7 @@ namespace EditorTest
             testProject = new Project("HelloPictureMarker", projectPath);
 
             //PictureMarker pictureMarker1 = new PictureMarker("res\\testFiles\\marker\\pictureMarker1.png");
-            ImageTrackable imageTrackable = new ImageTrackable("res\\testFiles\\marker\\metaioman_target.png");
+            ImageTrackable imageTrackable = new ImageTrackable("res\\testFiles\\trackables\\metaioman_target.png");
 
             /*
             BarChart barChart1 = new BarChart();
