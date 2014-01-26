@@ -851,6 +851,8 @@ public class PreviewController
                 }
             }
         }
-        this.reloadPreviewPanel(index);
+        int i = this.index;
+        this.index = -1;
+        this.reloadPreviewPanel(i);
     }
 }
