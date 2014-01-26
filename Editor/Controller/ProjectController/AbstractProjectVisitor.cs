@@ -86,6 +86,16 @@ namespace ARdevKit.Controller.ProjectController
         public abstract void Visit(MarkerlessSensor MarkerlessSensor);
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Visits the given <see cref="ImageTrackable"/>. </summary>
+        ///
+        /// <remarks>   Imanuel, 26.01.2014. </remarks>
+        ///
+        /// <param name="image">    The image. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public abstract void Visit(ImageTrackable image);
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Visits the given <see cref="PictureMarkerSensor"/>. </summary>
         ///
         /// <remarks>   Imanuel, 17.01.2014. </remarks>

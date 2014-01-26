@@ -18,89 +18,72 @@ namespace ARdevKit.Model.Project
     /// </summary>
     [Serializable]
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
-    public class PictureMarker : AbstractMarker
+    public class PictureMarker : Abstract2DTrackable
     {
         /// <summary>
-        /// Describes how  different elements are
-        /// combined and connected in AREL.
+        /// Full pathname of the picture file.
         /// </summary>
-        protected MarkerFuser fuser;
+        protected string picturePath;
         /// <summary>
-        /// Gets or sets the fuser.
-        /// Is not Browsable, therefore not editable in 
-        /// the PropertyPanel
+        /// Gets or sets the full pathname of the picture file.
         /// </summary>
         /// <value>
-        /// The fuser.
-        /// </value>
-        public MarkerFuser Fuser
-        {
-            get { return fuser; }
-            set { fuser = value; }
-        }
-
-        /// <summary>
-        /// Full pathname of the image file.
-        /// </summary>
-        private string imagePath;
-        /// <summary>
-        /// Gets or sets the full pathname of the image file.
-        /// </summary>
-        /// <value>
-        /// The full pathname of the image file.
+        /// The full pathname of the picture file.
         /// </value>
         [CategoryAttribute("General"), EditorAttribute(typeof(FileSelectorTypeEditor), 
             typeof(System.Drawing.Design.UITypeEditor))]
-        public string ImagePath
+        public string PicturePath
         {
-            get { return imagePath; }
+            get { return picturePath; }
             set 
             { 
-                imagePath = value;
-                imageName = Path.GetFileNameWithoutExtension(imagePath);
+                picturePath = value;
+                pictureName = Path.GetFileNameWithoutExtension(picturePath);
             }
         }
 
         /// <summary>
-        /// Name of the image.
+        /// Name of the picture.
         /// </summary>
-        private string imageName;
+        protected string pictureName;
         /// <summary>
-        /// Gets or sets the name of the image.
+        /// Gets or sets the name of the picture.
         /// </summary>
         /// <value>
-        /// The name of the image.
+        /// The name of the picture.
         /// </value>
         [CategoryAttribute("General"), ReadOnly(true)]
-        public string ImageName
+        public string PictureName
         {
-            get { return imageName; }
-            //set { imageName = value; }
+            get { return pictureName; }
         }
 
         /// <summary>
         /// Default Constructor.
         /// </summary>
         public PictureMarker()
-            : base("PictureMarker", 0)
         {
-            imagePath = null;
-            imageName = "";
-            this.sensorCosID = IDFactory.CreateNewSensorCosID(this);
+            type = "PictureMarker";
+            similarityThreshold = 0.7;
+            vector = new Vector3D(0, 0, 0);
+            translationVector = new Vector3D(0, 0, 0);
+            rotationVector = new Vector3Di(0, 0, 0, 0);
+            Augmentations = new List<AbstractAugmentation>();
+            sensorCosID = IDFactory.CreateNewSensorCosID(this);
             fuser = new MarkerFuser();
+            picturePath = null;
+            pictureName = "";
+            size = 0;
         }
 
         /// <summary>
         /// Constructor.
         /// </summary>
         /// <param name="imagePath">Full pathname of the image file.</param>
-        public PictureMarker(string imagePath)
-            : base("PictureMarker", new Bitmap(imagePath).Height * new Bitmap(imagePath).Width)
+        public PictureMarker(string picturePath) : this()
         {
-            this.imagePath = imagePath;
-            this.sensorCosID = IDFactory.CreateNewSensorCosID(this);
-            imageName = Path.GetFileName(imagePath);
-            fuser = new MarkerFuser();
+            size = new Bitmap(picturePath).Height * new Bitmap(picturePath).Width;
+            pictureName = Path.GetFileName(picturePath);
         }
 
         /// <summary>
@@ -131,7 +114,7 @@ namespace ARdevKit.Model.Project
         ///     not correct.</exception>
         public override Bitmap getPreview()
         {
-           return new Bitmap(ImagePath);
+           return new Bitmap(PicturePath);
         }
 
 

@@ -110,7 +110,7 @@ namespace ARdevKit.View
             picture.SizeMode = PictureBoxSizeMode.StretchImage;
             Bitmap MyImage = new Bitmap(element.Icon);
             picture.ClientSize = new Size(121, 121);
-            picture.Image = (Image) MyImage;
+            picture.Image = (System.Drawing.Image) MyImage;
             picture.MouseMove += mouseMoveHandler;
             picture.MouseDown += mouseDownHandler;
             picture.MouseUp += mouseUpHandler;

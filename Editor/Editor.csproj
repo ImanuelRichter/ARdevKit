@@ -70,6 +70,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\EditorController\ObjectCopier.cs" />
+    <Compile Include="Model\Project\Abstract2DTrackable.cs" />
+    <Compile Include="Model\Project\ImageTrackable.cs" />
     <Compile Include="Model\Project\AbstractDynamic2DAugmentation.cs" />
     <Compile Include="Model\Project\BarChartData.cs" />
     <Compile Include="Model\Project\ChartData.cs" />
@@ -99,10 +101,8 @@
     <Compile Include="ARdevKitEditor.cs" />
     <Compile Include="Controller\ProjectController\ExportVisitor.cs" />
     <Compile Include="Controller\ProjectController\SaveVisitor.cs" />
-    <Compile Include="Controller\Connections\DatabaseConnection\DbConnection.cs" />
     <Compile Include="Model\Project\AbstractAugmentation.cs" />
     <Compile Include="Model\Project\Abstract2DAugmentation.cs" />
-    <Compile Include="Model\Project\AbstractMarker.cs" />
     <Compile Include="Model\Project\AbstractSource.cs" />
     <Compile Include="EditorWindow.cs">
       <SubType>Form</SubType>
@@ -176,7 +176,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ARdevKit.ico" />
-    <Content Include="Controller\Connections\DatabaseConnection\foo.txt" />
     <Content Include="Controller\Connections\DeviceConnection\foo.txt" />
     <Content Include="Controller\DebugController\foo.txt" />
     <None Include="Resources\db_small.bmp" />

@@ -39,13 +39,13 @@ namespace ARdevKit.Model.Project
         ///
         /// <remarks>   Imanuel, 17.01.2014. </remarks>
         ///
-        /// <param name="marker">   The marker. </param>
+        /// <param name="trackable">   The marker. </param>
         ///
         /// <returns>   The new new sensorCosIDstring. </returns>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        public static string CreateNewSensorCosID(AbstractMarker marker)
+        public static string CreateNewSensorCosID(AbstractTrackable trackable)
         {
-            return marker.Type + sensorCosIDcounter++;
+            return trackable.Type + sensorCosIDcounter++;
         }
 
         public static void Reset()

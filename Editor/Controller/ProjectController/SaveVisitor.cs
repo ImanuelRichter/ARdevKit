@@ -161,5 +161,10 @@ namespace ARdevKit.Controller.ProjectController
         {
             throw new NotImplementedException();
         }
+
+        public override void Visit(ImageTrackable image)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

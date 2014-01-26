@@ -100,7 +100,7 @@ public class PreviewController
                 openTestImageDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
                 if (openTestImageDialog.ShowDialog() == DialogResult.OK)
                 {
-                    ((PictureMarker)currentElement).ImagePath = openTestImageDialog.FileName;
+                    ((PictureMarker)currentElement).PicturePath = openTestImageDialog.FileName;
 
                     //set the vector to the trackable
                     ((AbstractTrackable)currentElement).vector = center;
@@ -744,9 +744,9 @@ public class PreviewController
                 ((AbstractAugmentation)prev).ScalingVector.X = scale;
                 ((AbstractAugmentation)prev).ScalingVector.Y = scale;
             }
-            else if (prev is AbstractMarker)
+            else if (prev is Abstract2DTrackable)
             {
-                ((AbstractMarker)prev).Size = box.Size.Width;
+                ((Abstract2DTrackable)prev).Size = box.Size.Width;
             }
 
         }
@@ -759,9 +759,9 @@ public class PreviewController
                 ((AbstractAugmentation)prev).ScalingVector.X = 0;
                 ((AbstractAugmentation)prev).ScalingVector.Y = 0;
             }
-            else if (prev is AbstractMarker)
+            else if (prev is Abstract2DTrackable)
             {
-                ((AbstractMarker)prev).Size = box.Size.Width;
+                ((Abstract2DTrackable)prev).Size = box.Size.Width;
             }
         }
     }
@@ -778,8 +778,9 @@ public class PreviewController
         double scale;
         Vector3D scaleVector;
 
-        if(prev is AbstractMarker) {
-            scale = ((AbstractMarker)prev).Size;
+        if (prev is Abstract2DTrackable)
+        {
+            scale = ((Abstract2DTrackable)prev).Size;
             if(scale < -1) {
                  box.Size = new Size((int)(width / (scale * -1)), (int)(height / (scale * -1)));
             }

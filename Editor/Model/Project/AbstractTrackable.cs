@@ -23,17 +23,18 @@ namespace ARdevKit.Model.Project
     public abstract class AbstractTrackable : IPreviewable
     {
         /// <summary>
-        /// The sensor cos identifier, used by AREL
-        /// to specify the TrackingData
+        /// The type, to differtiate between different Marker types
+        /// and their way to be tracked.
         /// </summary>
-        protected string sensorCosID;
+        protected string type;
         /// <summary>
-        /// Gets or sets the sensor cos identifier.
+        /// Gets or sets the type.
         /// </summary>
-        public string SensorCosID
+        [CategoryAttribute("General"), ReadOnly(true)]
+        public string Type
         {
-            get { return sensorCosID; }
-            set { sensorCosID = value; }
+            get { return type; }
+            set { type = value; }
         }
 
         /// <summary>
@@ -56,38 +57,6 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
-        /// Vector to describe the position on the PreviewPanel, and later
-        /// to position it on the coordinatesystem given in AREL.
-        /// </summar>
-        protected Vector3D translationVector;
-        /// <summary>
-        /// Get or set the position of the <see cref="AbstractAugmentation"/>.
-        /// </summary>
-        //[CategoryAttribute("General")]
-        [Browsable(false)]
-        public Vector3D TranslationVector
-        {
-            get { return translationVector; }
-            set { translationVector = value; }
-        }
-
-        /// <summary>
-        /// Vector, to describes the rotation of the <see cref="AbstractAugmentation"/> in
-        /// x, y and z direction. w is used for TrackingFile Offset in AREL.
-        /// </summary>
-        protected Vector3Di rotationVector;
-        /// <summary>
-        /// gets or sets the Vector
-        /// </summary>
-        //[CategoryAttribute("General")]
-        [Browsable(false)]
-        public Vector3Di RotationVector
-        {
-            get { return rotationVector; }
-            set { rotationVector = value; }
-        }
-
-        /// <summary>
         /// Describes the position of the Trackable
         /// in the coordinatesystem used by metaio.
         /// </summary>
@@ -105,20 +74,6 @@ namespace ARdevKit.Model.Project
         /// </value>
         [Browsable(false)]
         public List<AbstractAugmentation> Augmentations { get; set; }
-
-        /// <summary>
-        /// Initializes no new instance of the <see cref="AbstractTrackable"/> class,
-        /// but can be used in inheriting classes
-        /// No <see cref="AbstractAugmentation"/>s are associated.
-        /// </summary>
-        protected AbstractTrackable()
-        {
-            vector = new Vector3D(0, 0, 0);
-            similarityThreshold = 0.7;
-            translationVector = new Vector3D(0, 0, 0);
-            rotationVector = new Vector3Di(0, 0, 0, 0);
-            Augmentations = new List<AbstractAugmentation>();
-        }
 
         /// <summary>
         /// An abstract method, to accept a <see cref="AbstractProjectVisitor"/>
@@ -141,16 +96,6 @@ namespace ARdevKit.Model.Project
         /// </summary>
         /// <returns>a representative iconized Bitmap</returns>
         public abstract Bitmap getIcon();
-
-        /// <summary>
-        /// Finds the augmentation, which is associated with this <see cref="AbstractTrackable"/>.
-        /// </summary>
-        /// <param name="a">the IPreviewable, which is searched for</param>
-        /// <returns>the augmentation which is found, otherwise null </returns>
-        public AbstractAugmentation FindAugmentation(IPreviewable a)
-        {
-            return this.Augmentations[this.Augmentations.IndexOf((AbstractAugmentation)a)];
-        }
 
         /// <summary>
         /// Checks if the augmentation is associated with this <see cref="AbstractTrackable"/>.

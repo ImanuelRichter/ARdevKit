@@ -589,6 +589,19 @@ namespace ARdevKit.Controller.ProjectController
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Visits the given <see cref="Image"/>. </summary>
+        ///
+        /// <remarks>   Imanuel, 26.01.2014. </remarks>
+        ///
+        /// <param name="image">    The image. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public override void Visit(ARdevKit.Model.Project.ImageTrackable image)
+        {
+
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Visits the given <see cref="PictureMarker"/>. </summary>
         ///
         /// <remarks>   Imanuel, 17.01.2014. </remarks>
@@ -599,9 +612,9 @@ namespace ARdevKit.Controller.ProjectController
         public override void Visit(PictureMarker pictureMarker)
         {
             // Copy the file
-            Copy(pictureMarker.ImagePath, Path.Combine(projectPath, "Assets"));
+            Copy(pictureMarker.PicturePath, Path.Combine(projectPath, "Assets"));
 
-            string sourcePictureMarkerFile = pictureMarker.ImagePath;
+            string sourcePictureMarkerFile = pictureMarker.PicturePath;
             string destPictureMarkerFile;
             destPictureMarkerFile = Path.Combine(projectPath, Path.GetFileName(sourcePictureMarkerFile));
             if (Directory.Exists(Path.Combine(projectPath, "Asstes")) && !File.Exists(destPictureMarkerFile))
@@ -624,7 +637,7 @@ namespace ARdevKit.Controller.ProjectController
 
             XMLBlock markerParametersBlock = new XMLBlock(new XMLTag("MarkerParameters"));
             parameterBlock.AddBlock(markerParametersBlock);
-            markerParametersBlock.AddLine(new XMLLine(new XMLTag("referenceImage", "qualityThreshold=\"0.70\""), Path.GetFileName(pictureMarker.ImagePath)));
+            markerParametersBlock.AddLine(new XMLLine(new XMLTag("referenceImage", "qualityThreshold=\"0.70\""), Path.GetFileName(pictureMarker.PicturePath)));
             string value = pictureMarker.SimilarityThreshold.ToString("F1", CultureInfo.InvariantCulture);
             parameterBlock.AddLine(new XMLLine(new XMLTag("SimilarityThreshold"), value));
 

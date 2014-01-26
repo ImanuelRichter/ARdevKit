@@ -16,27 +16,8 @@ namespace ARdevKit.Model.Project
     /// </summary>
     [Serializable]
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
-    public class IDMarker : AbstractMarker
+    public class IDMarker : Abstract2DTrackable
     {
-        /// <summary>
-        /// Describes how  different elements are
-        /// combined and connected in AREL.
-        /// </summary>
-        protected MarkerFuser fuser;
-        /// <summary>
-        /// Gets or sets the fuser.
-        /// Is not Browsable, therefore not editable in 
-        /// the PropertyPanel
-        /// </summary>
-        /// <value>
-        /// The fuser.
-        /// </value>
-        public MarkerFuser Fuser
-        {
-            get { return fuser; }
-            set { fuser = value; }
-        }
-
         /// <summary>
         /// The matrix identifier, describes the Markers, which
         /// are deployed by the metaio SDK.
@@ -60,11 +41,17 @@ namespace ARdevKit.Model.Project
         /// Initializes a new instance of the <see cref="IDMarker"/> class.
         /// </summary>
         /// <param name="matrixID">The matrix identifier.</param>
-        public IDMarker(int matrixID) : base("IDMarker", 60)
+        public IDMarker(int matrixID)
         {
+            type = "IDMarker";
+            similarityThreshold = 0.7;
+            translationVector = new Vector3D(0, 0, 0);
+            rotationVector = new Vector3Di(0, 0, 0, 0);
+            Augmentations = new List<AbstractAugmentation>();
             this.matrixID = matrixID;
             this.sensorCosID = IDFactory.CreateNewSensorCosID(this);
             fuser = new MarkerFuser();
+            size = 60;
         }
 
 
