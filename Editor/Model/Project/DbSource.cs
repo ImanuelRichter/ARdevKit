@@ -16,36 +16,43 @@ namespace ARdevKit.Model.Project
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public class DbSource : AbstractSource
     {
-        /*
-        /// <summary>   The connection. </summary>
-        private DbConnection connection;
-        /// <summary>   Gets or sets the connection. </summary>
+        /// <summary>   URL of the source. </summary>
+        private string url;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets URL of the source. </summary>
         ///
-        /// <value> The connection. </value>
-        [CategoryAttribute("General")]
-        public DbConnection Connection
+        /// <value> The URL. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public string Url
         {
-            get { return connection; }
-            set { connection = value; }
+            get { return url; }
+            set { url = value; }
         }
-         * */
 
         /// <summary>   Default constructor. </summary>
         /// <remarks>   TODO                 </remarks>
-        public DbSource()
+        public DbSource(string url)
         {
-            ; // ToDo
+            this.url = url;
         }
 
-        /// <summary>   ToDo Summary is missing. </summary>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// An abstract method, to accept a <see cref="AbstractProjectVisitor"/>which must be implemented
+        /// according to the visitor design pattern.
+        /// </summary>
         ///
-        /// <exception cref="NotImplementedException"> Thrown when the requested operation is
-        ///     unimplemented. </exception>
+        /// <remarks>   Imanuel, 26.01.2014. </remarks>
         ///
-        /// <param name="visitor">  . </param>
+        /// <param name="visitor">  the visitor which encapsulates the action which is performed on this
+        ///                         element. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
         public override void Accept(Controller.ProjectController.AbstractProjectVisitor visitor)
         {
-            throw new NotImplementedException();
+            visitor.Visit(this);
         }
 
         /// <summary>
