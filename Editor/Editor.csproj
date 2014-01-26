@@ -145,6 +145,13 @@
     <Compile Include="View\SceneElementCategoryPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="View\Slider.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Slider.Designer.cs">
+      <DependentUpon>Slider.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\TypeEditoren.cs" />
     <EmbeddedResource Include="EditorWindow.resx">
       <DependentUpon>EditorWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,6 +165,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\Slider.resx">
+      <DependentUpon>Slider.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\DataSources\EditorWindow.datasource" />
     <Compile Include="Model\Project\Chart.cs" />

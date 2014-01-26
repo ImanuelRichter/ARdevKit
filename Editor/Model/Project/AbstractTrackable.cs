@@ -49,7 +49,7 @@ namespace ARdevKit.Model.Project
         /// <value>
         /// The similarity threshold.
         /// </value>
-        [CategoryAttribute("Expert"), DefaultValue(0.7)]
+        [CategoryAttribute("Expert"), DefaultValue(0.7), Editor(typeof(SliderEditor), typeof(System.Drawing.Design.UITypeEditor))]
         public double SimilarityThreshold
         {
             get { return similarityThreshold; }
