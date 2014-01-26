@@ -204,6 +204,7 @@ public class PreviewController
                     OpenFileDialog openTestImageDialog = new OpenFileDialog();
                     if (openTestImageDialog.ShowDialog() == DialogResult.OK)
                     {
+                        ((FileSource)source).SourceFilePath = openTestImageDialog.FileName;
                         //set reference to the augmentations in Source
                         source.Augmentation = ((AbstractDynamic2DAugmentation)currentElement);
 
@@ -212,7 +213,15 @@ public class PreviewController
                         this.ew.project.Sources.Add(((AbstractDynamic2DAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).Source);
 
                         this.setSourcePreview(currentElement);
-
+                        DialogResult dialogResult = MessageBox.Show("Möchten sie ein Query zu der Source öffnen?", "Titel", MessageBoxButtons.YesNo);
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            openTestImageDialog = new OpenFileDialog();
+                            if (openTestImageDialog.ShowDialog() == DialogResult.OK)
+                            {
+                                ((FileSource)source).QueryFilePath = openTestImageDialog.FileName;
+                            }
+                        }
                     }
                 }
                 else
@@ -227,6 +236,7 @@ public class PreviewController
                     this.setSourcePreview(currentElement);
 
                 }
+                ew.PropertyGrid1.SelectedObject = source;
                 
             }
         }
