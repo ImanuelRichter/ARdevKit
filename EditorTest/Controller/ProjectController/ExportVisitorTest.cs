@@ -24,9 +24,9 @@ namespace EditorTest
             ImageAugmentation image1 = new ImageAugmentation();
             image1.ImagePath = Path.Combine(testProject.ProjectPath, "Assets", "frame.png");
             image1.IsVisible = false;
-            image1.TranslationVector = new Vector3D(0, 0, 0);
-            image1.RotationVector = new Vector3Di(0, 0, 0, 1);
-            image1.ScalingVector = new Vector3D(0, 0, 0);
+            image1.Translation = new Vector3D(0, 0, 0);
+            image1.Rotation = new Vector3Di(0, 0, 0, 1);
+            image1.Scaling = new Vector3D(0, 0, 0);
             idMarker1.Augmentations.Add(image1);
             image1.Trackable = idMarker1;
 
@@ -43,7 +43,7 @@ namespace EditorTest
 
             Chart barChart1 = new Chart();
             barChart1.IsVisible = false;
-            barChart1.TranslationVector = new Vector3D(100, -100, 0);
+            barChart1.Translation = new Vector3D(100, -100, 0);
             barChart1.Width = 200;
             barChart1.Height = 200;
 
@@ -63,7 +63,7 @@ namespace EditorTest
 
             Chart barChart1 = new Chart();
             barChart1.IsVisible = false;
-            barChart1.TranslationVector = new Vector3D(100, -100, 0);
+            barChart1.Translation = new Vector3D(100, -100, 0);
             barChart1.Width = 200;
             barChart1.Height = 200;
 
@@ -86,7 +86,7 @@ namespace EditorTest
 
             Chart barChart1 = new Chart();
             barChart1.IsVisible = false;
-            barChart1.TranslationVector = new Vector3D(100, -100, 0);
+            barChart1.Translation = new Vector3D(100, -100, 0);
             barChart1.Width = 200;
             barChart1.Height = 200;
 

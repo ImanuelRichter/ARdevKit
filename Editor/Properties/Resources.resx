@@ -130,23 +130,11 @@
   <data name="ARRMarker_small_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ARRMarker(small).bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="coordinationAxis_normal_" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\coordinationAxis(normal).bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="coordinationAxis_small_" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\coordinationAxis(small).bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="FileSource_normal_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FileSource(normal).bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FileSource_small_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FileSource(small).bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PieChart_normal_" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PieChart(normal).bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PieChart_small_" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PieChart(small).bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="sourcePreview_normal_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sourcePreview(normal).bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -162,5 +150,8 @@
   </data>
   <data name="db_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\db_small.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="highcharts_normal_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\highcharts(normal).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
