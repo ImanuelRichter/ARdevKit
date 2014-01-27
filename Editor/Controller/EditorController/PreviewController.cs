@@ -149,7 +149,7 @@ public class PreviewController
                 this.addPictureBox(currentElement, v);
 
                 //set the vector and the trackable in <see cref="AbstractAugmentation"/>
-                    ((AbstractAugmentation)currentElement).Translation = this.calculateVector(v);
+                ((AbstractAugmentation)currentElement).Translation = this.calculateVector(v);
                 ((AbstractAugmentation)currentElement).Trackable = this.trackable;
 
                 //set the new box to the front
@@ -173,7 +173,7 @@ public class PreviewController
                 this.addPictureBox(currentElement, v);
 
                 //set the vector and the trackable in <see cref="AbstractAugmentation"/>
-                    ((AbstractAugmentation)currentElement).Translation = this.calculateVector(v);
+                ((AbstractAugmentation)currentElement).Translation = this.calculateVector(v);
                 ((Chart)currentElement).Positioning.Left = (int)v.X;
                 ((Chart)currentElement).Positioning.Top = (int)v.Y;
                 ((AbstractAugmentation)currentElement).Trackable = this.trackable;
@@ -515,7 +515,7 @@ public class PreviewController
 
         Graphics graphic = Graphics.FromImage(newPic);
         graphic.DrawImage(image1, new Rectangle(0, 0, image1.Width, image1.Height));
-        graphic.DrawImage(image2, new Rectangle(0, 0, image2.Width, image2.Height));
+        graphic.DrawImage(image2, new Rectangle(0, 0, 50, 50));
         temp.Image = newPic;
         temp.ContextMenu.MenuItems.Add("Source anzeigen", new EventHandler(this.show_source_by_click));
         temp.ContextMenu.MenuItems.Add("Source löschen", new EventHandler(this.remove_source_by_click));
