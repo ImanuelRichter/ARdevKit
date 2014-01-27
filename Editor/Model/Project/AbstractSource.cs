@@ -41,7 +41,7 @@ namespace ARdevKit.Model.Project
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         [CategoryAttribute("General"), EditorAttribute(typeof(System.Windows.Forms.Design.FileNameEditor), typeof(System.Drawing.Design.UITypeEditor))]
-        public string QueryFilePath
+        public string Query
         {
             get { return queryFilePath; }
             set { queryFilePath = value; }
@@ -73,8 +73,8 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
-        /// An abstract method, to accept a <see cref="AbstractProjectVisitor"/>
-        /// which must be implemented according to the visitor design pattern.
+        /// An abstract method, to accept an <see cref="AbstractProjectVisitor"/>
+        ///  which must be implemented according to the visitor design pattern.
         /// </summary>
         /// <param name="visitor">the visitor which encapsulates the action
         ///     which is performed on this element</param>

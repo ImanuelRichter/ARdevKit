@@ -55,9 +55,8 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// Get or set the position of the <see cref="AbstractAugmentation"/>.
         /// </summary>
-        //[CategoryAttribute("General")]
-        [Browsable(false)]
-        public Vector3D TranslationVector
+        [CategoryAttribute("Expert"), ReadOnly(true)]
+        public Vector3D Translation
         {
             get { return translationVector; }
             set { translationVector = value; }
@@ -71,9 +70,8 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// gets or sets the Vector
         /// </summary>
-        //[CategoryAttribute("General")]
-        [Browsable(false)]
-        public Vector3Di RotationVector
+        [CategoryAttribute("Expert"), ReadOnly(true)]
+        public Vector3Di Rotation
         {
             get { return rotationVector; }
             set { rotationVector = value; }

@@ -98,8 +98,14 @@ namespace ARdevKit.Model.Project
         /// gets or sets the scaling which is applied to the original 
         /// <see cref="AbstractAugmentation"/>
         /// </summary>
+<<<<<<< HEAD
+        //[CategoryAttribute("General")]
+        [CategoryAttribute("General")]
+        public Vector3D ScalingVector
+=======
         [CategoryAttribute("General"), ReadOnly(true)]
         public Vector3D Scaling
+>>>>>>> origin/Export
         {
             get { return scalingVector; }
             set { scalingVector = value; }

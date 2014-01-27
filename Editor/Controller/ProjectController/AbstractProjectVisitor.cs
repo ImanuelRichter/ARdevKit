@@ -16,14 +16,14 @@ namespace ARdevKit.Controller.ProjectController
     public abstract class AbstractProjectVisitor
     {
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Visits the given <see cref="BarChart"/>. </summary>
+        /// <summary>   Visits the given <see cref="Chart"/>. </summary>
         ///
         /// <remarks>   Imanuel, 17.01.2014. </remarks>
         ///
         /// <param name="barGraph">    The bar graph. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public abstract void Visit(BarChart barGraph);
+        public abstract void Visit(Chart barGraph);
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Visits the given <see cref="ImageAugmentation"/>. </summary>
@@ -34,6 +34,16 @@ namespace ARdevKit.Controller.ProjectController
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         public abstract void Visit(ImageAugmentation image);
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Visits the given <see cref="LiveSource"/>. </summary>
+        ///
+        /// <remarks>   Imanuel, 26.01.2014. </remarks>
+        ///
+        /// <param name="source">   Source for the. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public abstract void Visit(LiveSource source);
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Visits the given <see cref="DbSource"/>. </summary>

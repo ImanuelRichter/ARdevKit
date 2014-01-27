@@ -12,7 +12,7 @@
 	},
 	"xAxis": {
 		"text": "Kategorien",
-		"categories": ["Kategorie 1", "Kategorie 2"]
+		"categories": ["Kategorie 1"]
 	},
 	"yAxis": {
 		"title": {
@@ -46,10 +46,6 @@
 			]
 		},
 		"name": "Serie 1",
-		"data": [68, 95]
-	}, {
-		"type": "line",
-		"name": "Serie 2",
-		"data": [55, 87]
+		"data": []
 	}]
 }
