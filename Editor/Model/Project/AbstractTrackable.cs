@@ -30,7 +30,7 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// Gets or sets the type.
         /// </summary>
-        [CategoryAttribute("General"), ReadOnly(true)]
+        [CategoryAttribute("General"), Description("Type of the marker"), ReadOnly(true)]
         public string Type
         {
             get { return type; }
@@ -50,6 +50,7 @@ namespace ARdevKit.Model.Project
         /// The similarity threshold.
         /// </value>
         [CategoryAttribute("Expert"), DefaultValue(0.7), Editor(typeof(SliderEditor), typeof(System.Drawing.Design.UITypeEditor))]
+        [Description("Descibes at which similarty a picture recorded by the camera is recognized.")]
         public double SimilarityThreshold
         {
             get { return similarityThreshold; }

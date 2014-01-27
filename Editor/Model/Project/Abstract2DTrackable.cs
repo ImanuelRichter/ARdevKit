@@ -20,6 +20,7 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// Gets or sets the sensor cos identifier.
         /// </summary>
+        [CategoryAttribute("Expert"), Description("The sensor cos identifier, used by AREL to specify the tracking data.")]
         public string SensorCosID
         {
             get { return sensorCosID; }
@@ -33,7 +34,7 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// Gets or sets the size.
         /// </summary>
-        [CategoryAttribute("General")]
+        [CategoryAttribute("General"), Description("Size of the actual marker in mm")]
         public int Size
         {
             get { return size; }
@@ -85,6 +86,7 @@ namespace ARdevKit.Model.Project
         /// <value>
         /// The fuser.
         /// </value>
+        [Browsable(false)]
         public MarkerFuser Fuser
         {
             get { return fuser; }
