@@ -14,23 +14,25 @@ namespace ARdevKit.Model.Project
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     [Serializable]
-    public class ChartStyle
+    public class ChartPositioning
     {
+        public enum PositioningMode { STATIC, ABSOLUTE, RELATIVE };
+
         /// <summary>
         /// The position, describes
         /// in which way the chart is positioned.
         /// </summary>
-        private string position;
+        private PositioningMode mode;
         /// <summary>
         /// Gets or sets the position.
         /// </summary>
         /// <value>
         /// The position.
         /// </value>
-        public string Position
+        public PositioningMode Mode
         {
-            get { return position; }
-            set { position = value; }
+            get { return mode; }
+            set { mode = value; }
         }
 
         /// <summary>
@@ -66,43 +68,11 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
-        /// The bottom padding
+        /// Initializes a new instance of the <see cref="ChartPositioning"/> class.
         /// </summary>
-        private int bottom;
-        /// <summary>
-        /// Gets or sets the bottom.
-        /// </summary>
-        /// <value>
-        /// The bottom.
-        /// </value>
-        public int Bottom
+        public ChartPositioning(PositioningMode position)
         {
-            get { return bottom; }
-            set { bottom = value; }
-        }
-
-        /// <summary>
-        /// The right padding
-        /// </summary>
-        private int right;
-        /// <summary>
-        /// Gets or sets the right.
-        /// </summary>
-        /// <value>
-        /// The right.
-        /// </value>
-        public int Right
-        {
-            get { return right; }
-            set { right = value; }
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ChartStyle"/> class.
-        /// </summary>
-        public ChartStyle()
-        {
-            position = "absolute";
+            this.mode = position;
         }
     }
 }

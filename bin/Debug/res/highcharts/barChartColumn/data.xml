@@ -4,7 +4,7 @@
 		<item>Kategorie 2</item>
 	</categories>
 	<series>
-		<name>Name 1</name>
+		<name>Serie 1</name>
 		<color>
 			<linearGradient>
 				<x1>0</x1>
@@ -22,7 +22,7 @@
 		</data>
 	</series>
 	<series>
-		<name>Name 2</name>
+		<name>Serie 2</name>
 		<color>
 			<linearGradient>
 				<x1>0</x1>
