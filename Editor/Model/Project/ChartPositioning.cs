@@ -16,23 +16,27 @@ namespace ARdevKit.Model.Project
     [Serializable]
     public class ChartPositioning
     {
-        public enum PositioningMode { STATIC, ABSOLUTE, RELATIVE };
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Values that represent positioning modes. </summary>
+        ///
+        /// <remarks>   Imanuel, 27.01.2014. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        /// <summary>
-        /// The position, describes
-        /// in which way the chart is positioned.
-        /// </summary>
-        private PositioningMode mode;
-        /// <summary>
-        /// Gets or sets the position.
-        /// </summary>
-        /// <value>
-        /// The position.
-        /// </value>
-        public PositioningMode Mode
+        public enum PositioningModes { STATIC, ABSOLUTE, RELATIVE };
+
+        /// <summary>   The positioning mode. </summary>
+        private PositioningModes positioningMode;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets or sets the positioning mode. </summary>
+        ///
+        /// <value> The positioning mode. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public PositioningModes PositioningMode
         {
-            get { return mode; }
-            set { mode = value; }
+            get { return positioningMode; }
+            set { positioningMode = value; }
         }
 
         /// <summary>
@@ -67,12 +71,17 @@ namespace ARdevKit.Model.Project
             set { left = value; }
         }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ChartPositioning"/> class.
-        /// </summary>
-        public ChartPositioning(PositioningMode position)
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Constructor. </summary>
+        ///
+        /// <remarks>   Imanuel, 27.01.2014. </remarks>
+        ///
+        /// <param name="positioningMode"> The position. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public ChartPositioning(PositioningModes positioningMode)
         {
-            this.mode = position;
+            this.positioningMode = positioningMode;
         }
     }
 }

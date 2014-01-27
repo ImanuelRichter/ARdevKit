@@ -204,7 +204,7 @@ public class PreviewController
                     OpenFileDialog openTestImageDialog = new OpenFileDialog();
                     if (openTestImageDialog.ShowDialog() == DialogResult.OK)
                     {
-                        ((FileSource)source).SourceFilePath = openTestImageDialog.FileName;
+                        ((FileSource)source).Data = openTestImageDialog.FileName;
                         //set reference to the augmentations in Source
                         source.Augmentation = ((AbstractDynamic2DAugmentation)currentElement);
 
@@ -219,7 +219,7 @@ public class PreviewController
                             openTestImageDialog = new OpenFileDialog();
                             if (openTestImageDialog.ShowDialog() == DialogResult.OK)
                             {
-                                ((FileSource)source).QueryFilePath = openTestImageDialog.FileName;
+                                ((FileSource)source).Query = openTestImageDialog.FileName;
                             }
                         }
                     }

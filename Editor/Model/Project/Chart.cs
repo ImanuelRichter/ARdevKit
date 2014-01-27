@@ -47,7 +47,7 @@ namespace ARdevKit.Model.Project
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         [CategoryAttribute("General"), EditorAttribute(typeof(System.Windows.Forms.Design.FileNameEditor), typeof(System.Drawing.Design.UITypeEditor))]
-        public string OptionsFilePath
+        public string Options
         {
             get { return optionsFilePath; }
             set { optionsFilePath = value; }
@@ -56,7 +56,7 @@ namespace ARdevKit.Model.Project
         /// <summary>   Default constructor. </summary>
         public Chart()
         {
-            Positioning = new ChartPositioning(ChartPositioning.PositioningMode.RELATIVE);
+            Positioning = new ChartPositioning(ChartPositioning.PositioningModes.RELATIVE);
             optionsFilePath = "res\\highcharts\\barChartColumn\\options.json";
             Width = 200;
             Height = 200;

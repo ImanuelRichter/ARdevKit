@@ -38,6 +38,18 @@ namespace ARdevKit.Model.Project
             this.url = url;
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// An abstract method, to accept an <see cref="AbstractProjectVisitor"/> which must be
+        /// implemented according to the visitor design pattern.
+        /// </summary>
+        ///
+        /// <remarks>   Imanuel, 27.01.2014. </remarks>
+        ///
+        /// <param name="visitor">  the visitor which encapsulates the action which is performed on this
+        ///                         element. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
         public override void Accept(AbstractProjectVisitor visitor)
         {
             visitor.Visit(this);
