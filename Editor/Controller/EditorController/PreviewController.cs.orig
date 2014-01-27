@@ -156,12 +156,12 @@ public class PreviewController
                     //set the vector and the trackable in <see cref="AbstractAugmentation"/>
                     ((AbstractAugmentation)currentElement).Translation = this.calculateVector(v);
                     ((AbstractAugmentation)currentElement).Trackable = this.trackable;
->>>>>>> origin/master
+>>>>>>> b2b174a1b3bd77400e5fcf13095888460f5bb2cf
 
                 this.addPictureBox(currentElement, v);
 
                 //set the vector and the trackable in <see cref="AbstractAugmentation"/>
-                ((AbstractAugmentation)currentElement).TranslationVector = this.calculateVector(v);
+                    ((AbstractAugmentation)currentElement).Translation = this.calculateVector(v);
                 ((AbstractAugmentation)currentElement).Trackable = this.trackable;
 
                 //set the new box to the front
@@ -186,7 +186,7 @@ public class PreviewController
 
 <<<<<<< HEAD
                 //set the vector and the trackable in <see cref="AbstractAugmentation"/>
-                ((AbstractAugmentation)currentElement).TranslationVector = this.calculateVector(v);
+                    ((AbstractAugmentation)currentElement).Translation = this.calculateVector(v);
                 ((Chart)currentElement).Positioning.Left = (int)v.X;
                 ((Chart)currentElement).Positioning.Top = (int)v.Y;
                 ((AbstractAugmentation)currentElement).Trackable = this.trackable;
@@ -196,7 +196,7 @@ public class PreviewController
                     ((Chart)currentElement).Positioning.Left = (int)v.X;
                     ((Chart)currentElement).Positioning.Top = (int)v.Y;
                     ((AbstractAugmentation)currentElement).Trackable = this.trackable;
->>>>>>> origin/master
+>>>>>>> b2b174a1b3bd77400e5fcf13095888460f5bb2cf
 
                 setCurrentElement(currentElement);
             }
