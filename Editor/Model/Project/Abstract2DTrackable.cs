@@ -38,7 +38,13 @@ namespace ARdevKit.Model.Project
         public int Size
         {
             get { return size; }
-            set { size = value; }
+            set 
+            {
+                if (value < 0)
+                    size = 0;
+                else
+                    size = value; 
+            }
         }
 
         /// <summary>

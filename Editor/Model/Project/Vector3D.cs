@@ -37,7 +37,7 @@ namespace ARdevKit.Model.Project
         /// <value>
         /// The z.
         /// </value>
-        [Browsable(false)]
+        [CategoryAttribute("General")]
         public double Z { get; set; }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////

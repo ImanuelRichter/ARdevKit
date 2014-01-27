@@ -32,7 +32,8 @@ namespace ARdevKit.Model.Project
         /// <value> true if position sould be relative to trackable, false if not. </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        [CategoryAttribute("General")]
+        [CategoryAttribute("Size and Position"), DefaultValueAttribute(false)]
+        [Description("If true the position will be positioned relatively to the trackable.")]
         public bool PositionRelativeToTrackable
         {
             get { return positionRelativeToTrackable; }
@@ -48,7 +49,8 @@ namespace ARdevKit.Model.Project
         /// <value>
         /// The style.
         /// </value>
-        [CategoryAttribute("General"), ReadOnly(true)]
+        [CategoryAttribute("Chart"), ReadOnly(true)]
+        [Description("The style used by HighChart.")]
         public ChartStyle Style
         {
             get { return style; }
@@ -90,7 +92,7 @@ namespace ARdevKit.Model.Project
         /// <value>
         /// The title.
         /// </value>
-        [CategoryAttribute("General")]
+        [CategoryAttribute("Chart")]
         public string Title
         {
             get { return title; }
@@ -107,7 +109,7 @@ namespace ARdevKit.Model.Project
         /// <value>
         /// The subtitle.
         /// </value>
-        [CategoryAttribute("General")]
+        [CategoryAttribute("Chart")]
         public string Subtitle
         {
             get { return subtitle; }
@@ -125,6 +127,7 @@ namespace ARdevKit.Model.Project
         /// <value>
         /// The x coordinate axis title.
         /// </value>
+        [CategoryAttribute("Chart")]
         public string XAxisTitle
         {
             get { return xAxisTitle; }
@@ -158,7 +161,7 @@ namespace ARdevKit.Model.Project
         /// <value>
         /// The y coordinate axis title.
         /// </value>
-        [CategoryAttribute("General")]
+        [CategoryAttribute("Chart")]
         public string YAxisTitle
         {
             get { return yAxisTitle; }
@@ -175,7 +178,7 @@ namespace ARdevKit.Model.Project
         /// <value>
         /// The point padding.
         /// </value>
-        [CategoryAttribute("Size")]
+        [CategoryAttribute("Size and Position")]
         public double PointPadding
         {
             get { return pointPadding; }
@@ -192,7 +195,7 @@ namespace ARdevKit.Model.Project
         /// <value>
         /// The width of the border.
         /// </value>
-        [CategoryAttribute("Size")]
+        [CategoryAttribute("Size and Position")]
         public int BorderWidth
         {
             get { return borderWidth; }
@@ -206,7 +209,7 @@ namespace ARdevKit.Model.Project
         /// <value>
         /// The maximum value.
         /// </value>
-        [CategoryAttribute("General")]
+        [CategoryAttribute("Chart")]
         public int MaxValue {get; set;}
 
         /// <summary>
@@ -216,7 +219,7 @@ namespace ARdevKit.Model.Project
         /// <value>
         /// The minimum value.
         /// </value>
-        [CategoryAttribute("General")]
+        [CategoryAttribute("Chart")]
         public int MinValue { get; set; }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////

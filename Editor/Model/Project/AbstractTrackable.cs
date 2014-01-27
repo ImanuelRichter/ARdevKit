@@ -54,7 +54,15 @@ namespace ARdevKit.Model.Project
         public double SimilarityThreshold
         {
             get { return similarityThreshold; }
-            set { similarityThreshold = value; }
+            set 
+            {
+                if (value < (double)0)
+                    similarityThreshold = (double)0;
+                else if (value > (double)1)
+                    similarityThreshold = (double)1;
+                else
+                    similarityThreshold = value; 
+            }
         }
 
         /// <summary>

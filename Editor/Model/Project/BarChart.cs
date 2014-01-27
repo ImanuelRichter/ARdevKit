@@ -29,7 +29,7 @@ namespace ARdevKit.Model.Project
         /// <value> The data. </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        [CategoryAttribute("General")]
+        [CategoryAttribute("Chart")]
         public List<BarChartData> Data
         {
             get { return data; }
