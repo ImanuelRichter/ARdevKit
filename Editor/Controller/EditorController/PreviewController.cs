@@ -94,40 +94,40 @@ public class PreviewController
             center.Y = panel.Size.Height / 2;
             center.X = panel.Size.Width / 2;
             //ask the user for the picture (if the trackable is a picturemarker)
-            if (currentElement.GetType() == typeof(PictureMarker))
+            bool isInitOk = true;
+            if (currentElement.GetType() == typeof(PictureMarker) || currentElement.GetType() == typeof(ImageTrackable))
             {
                 OpenFileDialog openTestImageDialog = new OpenFileDialog();
                 openTestImageDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
-                if (openTestImageDialog.ShowDialog() == DialogResult.OK)
+                isInitOk = openTestImageDialog.ShowDialog() == DialogResult.OK;
+                if (isInitOk)
                 {
-                    ((PictureMarker)currentElement).PicturePath = openTestImageDialog.FileName;
-
-                    //set the vector to the trackable
-                    ((AbstractTrackable)currentElement).vector = center;
-                    this.trackable = (AbstractTrackable)currentElement;
-                    this.ew.project.Trackables[index] = (AbstractTrackable)currentElement;
-                    this.addPictureBox(currentElement, center);
-                    if (this.ew.project.isTrackable())
+                    string path = openTestImageDialog.FileName;
+                    if (currentElement.GetType() == typeof(PictureMarker))
                     {
-                        this.ew.ElementSelectionController.setElementEnable(typeof(IDMarker), false);
-                        this.ew.project.Sensor = new MarkerSensor();
+                        ((PictureMarker)currentElement).PicturePath = path;
                     }
-                    setCurrentElement(currentElement);
-                    ew.PropertyGrid1.SelectedObject = currentElement;
+                    if (currentElement.GetType() == typeof(ImageTrackable))
+                    {
+                        ((ImageTrackable)currentElement).ImagePath = path;
+                    }
                 }
             }
-            else
+            if (isInitOk)
             {
                 //set the vector to the trackable
                 ((AbstractTrackable)currentElement).vector = center;
                 this.trackable = (AbstractTrackable)currentElement;
                 this.ew.project.Trackables[index] = (AbstractTrackable)currentElement;
-                this.addPictureBox(currentElement, center);
                 if (this.ew.project.isTrackable())
                 {
                     this.ew.ElementSelectionController.setElementEnable(typeof(PictureMarker), false);
+                    this.ew.ElementSelectionController.setElementEnable(typeof(ImageTrackable), false);
+                    this.ew.ElementSelectionController.setElementEnable(typeof(IDMarker), false);
+                    this.ew.ElementSelectionController.setElementEnable(currentElement.GetType(), true);
                     this.ew.project.Sensor = new MarkerSensor();
                 }
+                this.addPictureBox(currentElement, center);
                 setCurrentElement(currentElement);
                 ew.PropertyGrid1.SelectedObject = currentElement;
             }

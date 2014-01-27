@@ -625,6 +625,7 @@ namespace ARdevKit
             SceneElementCategory trackables = new SceneElementCategory(MetaCategory.Trackable, "Trackables");
             trackables.addElement(new SceneElement("Picture Marker", new PictureMarker(), this));
             trackables.addElement(new SceneElement("IDMarker", new IDMarker(1), this));
+            trackables.addElement(new SceneElement("Image Trackable", new ImageTrackable(),this));
             addCategory(trackables);
             addCategory(augmentations);
             addCategory(sources);
