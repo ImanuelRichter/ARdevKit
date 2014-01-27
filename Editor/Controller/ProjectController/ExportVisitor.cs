@@ -133,7 +133,7 @@ namespace ARdevKit.Controller.ProjectController
             JavaScriptBlock chartIfPatternIsFoundShowBlock = new JavaScriptBlock("if (param[0].getCoordinateSystemID() == " + chartID + ".getCoordinateSystemID())", new BlockMarker("{", "}"));
             ifPatternIsFoundBlock.AddBlock(chartIfPatternIsFoundShowBlock);
             chartIfPatternIsFoundShowBlock.AddLine(new JavaScriptLine(chartID + ".show()"));
-            if (chart.Positioning.Mode == ChartPositioning.PositioningMode.RELATIVE)
+            if (chart.Positioning.PositioningMode == ChartPositioning.PositioningModes.RELATIVE)
                 chartIfPatternIsFoundShowBlock.AddLine(new JavaScriptLine("arel.Scene.getScreenCoordinatesFrom3DPosition(COS" + coordinateSystemID + "Anchor.getTranslation(), " + chartID + ".getCoordinateSystemID(), function(coord){move(" + chartID + ", coord);})"));
 
             // onTracking lost
@@ -168,11 +168,9 @@ namespace ARdevKit.Controller.ProjectController
 
 
             // Copy options.json
-            string chartFilesPath = Path.Combine(projectPath, "Assets", chartID);
-            Copy(chart.OptionsFilePath, chartFilesPath);
-            string optionsFileName = Path.GetFileName(chart.OptionsFilePath);
-            string newOptionsFilePath = Path.Combine(chartFilesPath, optionsFileName);
-            chart.OptionsFilePath = newOptionsFilePath;
+            string chartFilesDirectory = Path.Combine(projectPath, "Assets", chartID);
+            Copy(chart.Options, chartFilesDirectory, "options.json");
+            chart.Options = Path.Combine(chartFilesDirectory, "options.json");
 
             // setOptions
             JavaScriptBlock chartFileDefineSetOptionsBlock = new JavaScriptBlock("setOptions : function(optionsPath)", new BlockMarker("{", "},"));
@@ -198,18 +196,18 @@ namespace ARdevKit.Controller.ProjectController
             chartFileCreateBlock = new JavaScriptBlock("create : function()", new BlockMarker("{", "},"));
             chartFileDefineBlock.AddBlock(chartFileCreateBlock);
             chartFileCreateBlock.AddLine(new JavaScriptLine("this.div.setAttribute(\"id\", this.id)"));
-            switch (chart.Positioning.Mode)
+            switch (chart.Positioning.PositioningMode)
             {
-                case (ChartPositioning.PositioningMode.STATIC):
+                case (ChartPositioning.PositioningModes.STATIC):
                     chartFileCreateBlock.AddLine(new JavaScriptLine("this.div.style.position = \"static\""));
                     break;
-                case (ChartPositioning.PositioningMode.ABSOLUTE):
-                case (ChartPositioning.PositioningMode.RELATIVE):
+                case (ChartPositioning.PositioningModes.ABSOLUTE):
+                case (ChartPositioning.PositioningModes.RELATIVE):
                     chartFileCreateBlock.AddLine(new JavaScriptLine("this.div.style.position = \"absolute\""));
                     break;
             }
 
-            if (chart.Positioning.Mode == ChartPositioning.PositioningMode.ABSOLUTE)
+            if (chart.Positioning.PositioningMode == ChartPositioning.PositioningModes.ABSOLUTE)
             {
                 if (chart.Positioning.Top > 0)
                     chartFileCreateBlock.AddLine(new JavaScriptLine("this.div.style.top = \"" + chart.Positioning.Top + "px\""));
@@ -286,24 +284,20 @@ namespace ARdevKit.Controller.ProjectController
         {
             string chartID = source.Augmentation.ID;
             string chartPluginID = "arel.Plugin." + CultureInfo.CurrentCulture.TextInfo.ToTitleCase(chartID);
-            string chartFilesPath = Path.Combine(projectPath, "Assets", chartID);
+            string chartFilesDirectory = Path.Combine(projectPath, "Assets", chartID);
 
-            if (source.QueryFilePath != null && source.QueryFilePath != "")
+            if (source.Query != null && source.Query != "")
             {
-                Copy(source.QueryFilePath, chartFilesPath);
-                string queryFileName = Path.GetFileName(source.QueryFilePath);
-                string newQueryFilePath = Path.Combine(chartFilesPath, queryFileName);
-                source.QueryFilePath = newQueryFilePath;
+                Copy(source.Query, chartFilesDirectory, "query.js");
+                source.Query = Path.Combine(chartFilesDirectory, "query.js");
 
-                chartFileQueryBlock = new JavaScriptBlock("$.getScript(\"Assets/" + chartID + "/" + Path.GetFileName(source.QueryFilePath) + "\", function(xml)", new BlockMarker("{", "})"));
+                chartFileQueryBlock = new JavaScriptBlock("$.getScript(\"Assets/" + chartID + "/" + Path.GetFileName(source.Query) + "\", function(xml)", new BlockMarker("{", "})"));
                 chartFileCreateBlock.AddBlock(chartFileQueryBlock);
                 chartFileCreateBlock.AddBlock(new JavaScriptInLine(".fail(function() { console.log(\"Failed to load query\")})", false));
                 chartFileCreateBlock.AddBlock(new JavaScriptLine(".done(function() { console.log(\"Loaded query successfully\")})"));
                 chartFileQueryBlock.AddLine(new JavaScriptLine("var dataPath = \"" + source.Url + "\""));
                 chartFileQueryBlock.AddLine(new JavaScriptLine(chartPluginID + ".chart = $('#' + " + chartPluginID + ".id).highcharts(" + chartPluginID + ".options)"));
                 chartFileQueryBlock.AddLine(new JavaScriptLine("update(dataPath, " + chartPluginID + ".id)"));
-
-                source.QueryFilePath = newQueryFilePath;
             }
             else
                 chartFileCreateBlock.AddLine(new JavaScriptLine("alert('No query defined')"));
@@ -324,16 +318,14 @@ namespace ARdevKit.Controller.ProjectController
         {
             string chartID = source.Augmentation.ID;
             string chartPluginID = "arel.Plugin." + CultureInfo.CurrentCulture.TextInfo.ToTitleCase(chartID);
-            string chartFilesPath = Path.Combine(projectPath, "Assets", chartID);
+            string chartFilesDirectory = Path.Combine(projectPath, "Assets", chartID);
 
-            if (source.QueryFilePath != null && source.QueryFilePath != "")
+            if (source.Query != null && source.Query != "")
             {
-                Copy(source.QueryFilePath, chartFilesPath);
-                string queryFileName = Path.GetFileName(source.QueryFilePath);
-                string newQueryFilePath = Path.Combine(chartFilesPath, queryFileName);
-                source.QueryFilePath = newQueryFilePath;
+                Copy(source.Query, chartFilesDirectory, "query.js");
+                source.Query = Path.Combine(chartFilesDirectory, "query.js");
 
-                chartFileQueryBlock = new JavaScriptBlock("$.getScript(\"Assets/" + chartID + "/" + Path.GetFileName(source.QueryFilePath) + "\", function(xml)", new BlockMarker("{", "})"));
+                chartFileQueryBlock = new JavaScriptBlock("$.getScript(\"Assets/" + chartID + "/" + Path.GetFileName(source.Query) + "\", function(xml)", new BlockMarker("{", "})"));
                 chartFileCreateBlock.AddBlock(chartFileQueryBlock);
                 chartFileCreateBlock.AddBlock(new JavaScriptInLine(".fail(function() { console.log(\"Failed to load query\")})", false));
                 chartFileCreateBlock.AddBlock(new JavaScriptLine(".done(function() { console.log(\"Loaded query successfully\")})"));
@@ -359,22 +351,19 @@ namespace ARdevKit.Controller.ProjectController
         {
             string chartID = source.Augmentation.ID;
             string chartPluginID = "arel.Plugin." + CultureInfo.CurrentCulture.TextInfo.ToTitleCase(chartID);
-            string chartFilesPath = Path.Combine(projectPath, "Assets", chartID);
-            if (source.SourceFilePath != null && source.SourceFilePath != "")
+            string chartFilesDirectory = Path.Combine(projectPath, "Assets", chartID);
+
+            if (source.Data != null && source.Data != "")
             {
-                Copy(source.SourceFilePath, chartFilesPath);
-                string sourceFileName = Path.GetFileName(source.SourceFilePath);
-                string newSourceFilePath = Path.Combine(chartFilesPath, sourceFileName);
-                source.SourceFilePath = newSourceFilePath;
+                Copy(source.Data, chartFilesDirectory, "data" + Path.GetExtension(source.Data));
+                source.Data = Path.Combine(chartFilesDirectory, "data" + Path.GetExtension(source.Data));
 
-                if (source.QueryFilePath != null && source.QueryFilePath != "")
+                if (source.Query != null && source.Query != "")
                 {
-                    Copy(source.QueryFilePath, chartFilesPath);
-                    string queryFileName = Path.GetFileName(source.QueryFilePath);
-                    string newQueryFilePath = Path.Combine(chartFilesPath, queryFileName);
-                    source.QueryFilePath = newQueryFilePath;
+                    Copy(source.Query, chartFilesDirectory, "query.js");
+                    source.Query = Path.Combine(chartFilesDirectory, "query.js");
 
-                    chartFileQueryBlock = new JavaScriptBlock("$.getScript(\"Assets/" + chartID + "/" + Path.GetFileName(source.QueryFilePath) + "\", function(xml)", new BlockMarker("{", "})"));
+                    chartFileQueryBlock = new JavaScriptBlock("$.getScript(\"Assets/" + chartID + "/" + Path.GetFileName(source.Query) + "\", function(xml)", new BlockMarker("{", "})"));
                     chartFileCreateBlock.AddBlock(chartFileQueryBlock);
                     chartFileCreateBlock.AddBlock(new JavaScriptInLine(".fail(function() { console.log(\"Failed to load query\")})", false));
                     chartFileCreateBlock.AddBlock(new JavaScriptLine(".done(function() { console.log(\"Loaded query successfully\")})"));
@@ -1056,17 +1045,33 @@ namespace ARdevKit.Controller.ProjectController
 
         private void Copy(string srcFile, string destDirectory)
         {
+            Copy(srcFile, destDirectory, Path.GetFileName(srcFile));
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Copies a passed file to the passed directory with the passed name. </summary>
+        ///
+        /// <remarks>   Imanuel, 27.01.2014. </remarks>
+        ///
+        /// <param name="srcFile">          Source file. </param>
+        /// <param name="destDirectory">    Pathname of the destination directory. </param>
+        /// <param name="newFileName">          Name of the new file. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private void Copy(string srcFile, string destDirectory, string newFileName)
+        {
             if (!Directory.Exists(destDirectory))
             {
                 Directory.CreateDirectory(destDirectory);
             }
-            string destFile = Path.Combine(destDirectory, Path.GetFileName(srcFile));
+            string destFile = Path.Combine(destDirectory, newFileName);
             if (!File.Exists(destFile))
             {
                 try
                 {
-                    File.Copy(srcFile, Path.Combine(destDirectory, Path.GetFileName(srcFile)));
-                } catch (Exception e)
+                    File.Copy(srcFile, Path.Combine(destDirectory, newFileName));
+                }
+                catch (Exception e)
                 {
                     MessageBox.Show(e.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }

@@ -68,7 +68,7 @@ namespace EditorTest
             barChart1.Height = 200;
 
             barChart1.Source = new FileSource("res\\highcharts\\barChartColumn\\data.xml");
-            barChart1.Source.QueryFilePath = "res\\highcharts\\barChartColumn\\xmlQuery.js";
+            barChart1.Source.Query = "res\\highcharts\\barChartColumn\\xmlQuery.js";
             barChart1.Source.Augmentation = barChart1;
             pictureMarker1.Augmentations.Add(barChart1);
             barChart1.Trackable = pictureMarker1;
@@ -90,9 +90,9 @@ namespace EditorTest
             barChart1.Width = 200;
             barChart1.Height = 200;
 
-            barChart1.OptionsFilePath = File.OpenText("res\\highcharts\\barChartColumn\\liveOptions.json").ReadToEnd();
+            barChart1.Options = File.OpenText("res\\highcharts\\barChartColumn\\liveOptions.json").ReadToEnd();
             barChart1.Source = new LiveSource("http://localhost/highcharts/server.php?callback=?");
-            barChart1.Source.QueryFilePath = "res\\highcharts\\barChartColumn\\liveQuery.js";
+            barChart1.Source.Query = "res\\highcharts\\barChartColumn\\liveQuery.js";
             barChart1.Source.Augmentation = barChart1;
             pictureMarker1.Augmentations.Add(barChart1);
             barChart1.Trackable = pictureMarker1;

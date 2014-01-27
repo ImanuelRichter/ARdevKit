@@ -22,7 +22,7 @@ namespace ARdevKit.Model.Project
         /// <value> The file source. </value>
         [CategoryAttribute("General")]
         [EditorAttribute(typeof(System.Windows.Forms.Design.FileNameEditor), typeof(System.Drawing.Design.UITypeEditor))]
-        public string SourceFilePath
+        public string Data
         {
             get { return sourceFilePath; }
             set { sourceFilePath = value; }
@@ -38,12 +38,18 @@ namespace ARdevKit.Model.Project
             this.sourceFilePath = sourceFilePath;
         }
 
-        /// <summary>   ToDo Summary is missing. </summary>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// An abstract method, to accept an <see cref="AbstractProjectVisitor"/> which must be
+        /// implemented according to the visitor design pattern.
+        /// </summary>
         ///
-        /// <exception cref="NotImplementedException"> Thrown when the requested operation is
-        ///     unimplemented. </exception>
+        /// <remarks>   Imanuel, 27.01.2014. </remarks>
         ///
-        /// <param name="visitor">  . </param>
+        /// <param name="visitor">  the visitor which encapsulates the action which is performed on this
+        ///                         element. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
         public override void Accept(Controller.ProjectController.AbstractProjectVisitor visitor)
         {
             visitor.Visit(this);
