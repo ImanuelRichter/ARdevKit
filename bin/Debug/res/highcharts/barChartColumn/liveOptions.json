@@ -1,21 +1,43 @@
 {
 	"chart": {
-		"defaultSeriesType": "column"
+		"type": "column",
+		"width": 300,
+		"height": 200
 	},
 	"title": {
-		"text": "Fruit Consumption"
+		"text": "Titel"
+	},
+	"subtitle": {
+		"text": "Untertitel"
 	},
 	"xAxis": {
-		"type": "datetime"
+		"text": "Kategorien",
+		"categories": ["Kategorie 1"]
 	},
 	"yAxis": {
 		"title": {
-			"text": "Units"
-		},
-		"max": "100"
+			"text": "Einheiten"
+		}
+	},
+	"plotOptions": {
+		"bar": {
+			"dataLabels": {
+				"enabled": "true"
+			}
+		}
+	},
+	"legend": {
+		"layout": "vertical",
+		"align": "right",
+		"verticalAlign": "top",
+		"x": 0,
+		"y": 50,
+		"floating": "true",
+		"borderWidth": 1,
+		"backgroundColor": "#FFFFFF",
+		"shadow": "true"
 	},
 	"series": [{
-		"name": "Random data",
 		"color": {
 			"linearGradient": { "x1": "0", "x2": "0", "y1": "0", "y1": "1" },
 			"stops": [
@@ -23,6 +45,7 @@
 				["1", "#55AA22"]
 			]
 		},
-        "data": []
+		"name": "Serie 1",
+		"data": []
 	}]
 }
