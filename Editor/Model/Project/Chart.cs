@@ -30,7 +30,7 @@ namespace ARdevKit.Model.Project
         /// <value>
         /// The style.
         /// </value>
-        [CategoryAttribute("General"), ReadOnly(true)]
+        [CategoryAttribute("Position"), ReadOnly(true)]
         public ChartPositioning Positioning
         {
             get { return positioning; }
@@ -57,10 +57,10 @@ namespace ARdevKit.Model.Project
         public Chart()
         {
             Positioning = new ChartPositioning(ChartPositioning.PositioningModes.RELATIVE);
-            optionsFilePath = "res\\highcharts\\barChartColumn\\options.json";
+            optionsFilePath = null;
             Width = 200;
             Height = 200;
-            ScalingVector = new Vector3D(0, 0, 0);
+            Scaling = new Vector3D(0, 0, 0);
         }
 
 
@@ -87,7 +87,7 @@ namespace ARdevKit.Model.Project
         /// </returns>
         public override Bitmap getPreview()
         {
-            return Properties.Resources.coordinationAxis_normal_;
+            return Properties.Resources.highcharts_normal_;
         }
 
 
@@ -100,7 +100,7 @@ namespace ARdevKit.Model.Project
         /// </returns>
         public override Bitmap getIcon()
         {
-            return Properties.Resources.coordinationAxis_small_;
+            return Properties.Resources.highcharts_normal_;
         }
 
         /**

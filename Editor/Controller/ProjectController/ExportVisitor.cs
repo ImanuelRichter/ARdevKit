@@ -159,9 +159,9 @@ namespace ARdevKit.Controller.ProjectController
             // Options
             chartFileDefineBlock.AddLine(new JavaScriptInLine("options : {}", true));
             // Translation
-            string translationX = chart.TranslationVector.X.ToString("F1", CultureInfo.InvariantCulture);
-            string translationY = chart.TranslationVector.Y.ToString("F1", CultureInfo.InvariantCulture);
-            string translationZ = chart.TranslationVector.Z.ToString("F1", CultureInfo.InvariantCulture);
+            string translationX = chart.Translation.X.ToString("F1", CultureInfo.InvariantCulture);
+            string translationY = chart.Translation.Y.ToString("F1", CultureInfo.InvariantCulture);
+            string translationZ = chart.Translation.Z.ToString("F1", CultureInfo.InvariantCulture);
             chartFileDefineBlock.AddBlock(new JavaScriptInLine("translation : new arel.Vector3D(" + translationX + "," + translationY + "," + translationZ + ")", true));
             // ChartDiv
             chartFileDefineBlock.AddBlock(new JavaScriptInLine("div : document.createElement(\"div\")", true));
@@ -259,18 +259,18 @@ namespace ARdevKit.Controller.ProjectController
             loadContentBlock.AddLine(new JavaScriptLine("var " + imageVariable + " = arel.Object.Model3D.createFromImage(\"" + imageVariable + "\",\"Assets/" + Path.GetFileName(image.ImagePath) + "\")"));
             loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setVisibility(" + image.IsVisible.ToString().ToLower() + ")"));
             loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setCoordinateSystemID(" + coordinateSystemID + ")"));
-            string augmentationTranslationX = image.TranslationVector.X.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentationTranslationY = image.TranslationVector.Y.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentationTranslationZ = image.TranslationVector.Z.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationTranslationX = image.Translation.X.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationTranslationY = image.Translation.Y.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationTranslationZ = image.Translation.Z.ToString("F1", CultureInfo.InvariantCulture);
             loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setTranslation(new arel.Vector3D(" + augmentationTranslationX + "," + augmentationTranslationY + "," + augmentationTranslationZ + "))"));
-            string augmentationRotationX = image.RotationVector.X.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentationRotationY = image.RotationVector.Y.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentationRotationZ = image.RotationVector.Z.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentationRotationW = image.RotationVector.W.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationRotationX = image.Rotation.X.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationRotationY = image.Rotation.Y.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationRotationZ = image.Rotation.Z.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationRotationW = image.Rotation.W.ToString("F1", CultureInfo.InvariantCulture);
             loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setRotation(new arel.Rotation(" + augmentationRotationX + "," + augmentationRotationY + "," + augmentationRotationZ + "," + augmentationRotationW + "))"));
-            string augmentationScalingX = image.ScalingVector.X.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentationScalingY = image.ScalingVector.Y.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentationScalingZ = image.ScalingVector.Z.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationScalingX = image.Scaling.X.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationScalingY = image.Scaling.Y.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationScalingZ = image.Scaling.Z.ToString("F1", CultureInfo.InvariantCulture);
             loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setScale(new arel.Vector3D(" + augmentationScalingX + "," + augmentationScalingY + "," + augmentationScalingZ + "))"));
             loadContentBlock.AddLine(new JavaScriptLine("arel.Scene.addObject(" + imageVariable + ")"));
 
@@ -566,9 +566,9 @@ namespace ARdevKit.Controller.ProjectController
             XMLBlock COSOffsetTranslationOffset = new XMLBlock(new XMLTag("TranslationOffset"));
             COSOffsetBlock.AddBlock(COSOffsetTranslationOffset);
 
-            string augmentationPositionX = image.TranslationVector.X.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentationPositionY = image.TranslationVector.Y.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentationPositionZ = image.TranslationVector.Z.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationPositionX = image.Translation.X.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationPositionY = image.Translation.Y.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationPositionZ = image.Translation.Z.ToString("F1", CultureInfo.InvariantCulture);
             COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("X"), augmentationPositionX));
             COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("Y"), augmentationPositionY));
             COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("Z"), augmentationPositionZ));
@@ -577,10 +577,10 @@ namespace ARdevKit.Controller.ProjectController
             XMLBlock COSOffsetRotationOffset = new XMLBlock(new XMLTag("RotationOffset"));
             COSOffsetBlock.AddBlock(COSOffsetRotationOffset);
 
-            string augmentationRotationX = image.RotationVector.X.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentationRotationY = image.RotationVector.Y.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentationRotationZ = image.RotationVector.Z.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentationRotationW = image.RotationVector.W.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationRotationX = image.Rotation.X.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationRotationY = image.Rotation.Y.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationRotationZ = image.Rotation.Z.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationRotationW = image.Rotation.W.ToString("F1", CultureInfo.InvariantCulture);
             COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("X"), augmentationRotationX));
             COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("Y"), augmentationRotationY));
             COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("Z"), augmentationRotationZ));
@@ -704,9 +704,9 @@ namespace ARdevKit.Controller.ProjectController
             XMLBlock COSOffsetTranslationOffset = new XMLBlock(new XMLTag("TranslationOffset"));
             COSOffsetBlock.AddBlock(COSOffsetTranslationOffset);
 
-            string augmentationPositionX = pictureMarker.TranslationVector.X.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentationPositionY = pictureMarker.TranslationVector.Y.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentationPositionZ = pictureMarker.TranslationVector.Z.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationPositionX = pictureMarker.Translation.X.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationPositionY = pictureMarker.Translation.Y.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationPositionZ = pictureMarker.Translation.Z.ToString("F1", CultureInfo.InvariantCulture);
             COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("X"), augmentationPositionX));
             COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("Y"), augmentationPositionY));
             COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("Z"), augmentationPositionZ));
@@ -715,10 +715,10 @@ namespace ARdevKit.Controller.ProjectController
             XMLBlock COSOffsetRotationOffset = new XMLBlock(new XMLTag("RotationOffset"));
             COSOffsetBlock.AddBlock(COSOffsetRotationOffset);
 
-            string augmentationRotationX = pictureMarker.RotationVector.X.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentationRotationY = pictureMarker.RotationVector.Y.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentationRotationZ = pictureMarker.RotationVector.Z.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentationRotationW = pictureMarker.RotationVector.W.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationRotationX = pictureMarker.Rotation.X.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationRotationY = pictureMarker.Rotation.Y.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationRotationZ = pictureMarker.Rotation.Z.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationRotationW = pictureMarker.Rotation.W.ToString("F1", CultureInfo.InvariantCulture);
             COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("X"), augmentationRotationX));
             COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("Y"), augmentationRotationY));
             COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("Z"), augmentationRotationZ));
@@ -849,9 +849,9 @@ namespace ARdevKit.Controller.ProjectController
             XMLBlock COSOffsetTranslationOffset = new XMLBlock(new XMLTag("TranslationOffset"));
             COSOffsetBlock.AddBlock(COSOffsetTranslationOffset);
 
-            string trackablePositionX = idMarker.TranslationVector.X.ToString("F1", CultureInfo.InvariantCulture);
-            string trackablePositionY = idMarker.TranslationVector.Y.ToString("F1", CultureInfo.InvariantCulture);
-            string trackablePositionZ = idMarker.TranslationVector.Z.ToString("F1", CultureInfo.InvariantCulture);
+            string trackablePositionX = idMarker.Translation.X.ToString("F1", CultureInfo.InvariantCulture);
+            string trackablePositionY = idMarker.Translation.Y.ToString("F1", CultureInfo.InvariantCulture);
+            string trackablePositionZ = idMarker.Translation.Z.ToString("F1", CultureInfo.InvariantCulture);
             COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("X"), trackablePositionX));
             COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("Y"), trackablePositionY));
             COSOffsetTranslationOffset.AddLine(new XMLLine(new XMLTag("Z"), trackablePositionZ));
@@ -860,10 +860,10 @@ namespace ARdevKit.Controller.ProjectController
             XMLBlock COSOffsetRotationOffset = new XMLBlock(new XMLTag("RotationOffset"));
             COSOffsetBlock.AddBlock(COSOffsetRotationOffset);
 
-            string trackableRotationX = idMarker.RotationVector.X.ToString("F1", CultureInfo.InvariantCulture);
-            string trackableRotationY = idMarker.RotationVector.Y.ToString("F1", CultureInfo.InvariantCulture);
-            string trackableRotationZ = idMarker.RotationVector.Z.ToString("F1", CultureInfo.InvariantCulture);
-            string trackableRotationW = idMarker.RotationVector.W.ToString("F1", CultureInfo.InvariantCulture);
+            string trackableRotationX = idMarker.Rotation.X.ToString("F1", CultureInfo.InvariantCulture);
+            string trackableRotationY = idMarker.Rotation.Y.ToString("F1", CultureInfo.InvariantCulture);
+            string trackableRotationZ = idMarker.Rotation.Z.ToString("F1", CultureInfo.InvariantCulture);
+            string trackableRotationW = idMarker.Rotation.W.ToString("F1", CultureInfo.InvariantCulture);
             COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("X"), trackableRotationX));
             COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("Y"), trackableRotationY));
             COSOffsetRotationOffset.AddLine(new XMLLine(new XMLTag("Z"), trackableRotationZ));
