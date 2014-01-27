@@ -243,10 +243,6 @@ public class PreviewController
                                 ((FileSource)source).Query = openFileDialog.FileName;
                             }
                         }
-                        else
-                        {
-                            this.findBox(currentElement).ContextMenu.MenuItems[6].Enabled = false;
-                        }
                     }
                 }
                 else
@@ -521,8 +517,14 @@ public class PreviewController
         temp.ContextMenu.MenuItems.Add("Source löschen", new EventHandler(this.remove_source_by_click));
         if (((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source is FileSource)
         {
-            temp.ContextMenu.MenuItems.Add("QueryFile öffnen", new EventHandler(this.openQueryFile));
+           
             temp.ContextMenu.MenuItems.Add("SourceFile öffnen", new EventHandler(this.openSourceFile));
+            temp.ContextMenu.MenuItems.Add("QueryFile öffnen", new EventHandler(this.openQueryFile));
+            if (((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source.Query == null)
+            {
+                temp.ContextMenu.MenuItems[6].Enabled = false;
+            }
+            
         }
         temp.Refresh();
     }
