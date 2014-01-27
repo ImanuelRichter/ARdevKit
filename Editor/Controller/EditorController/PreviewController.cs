@@ -627,7 +627,6 @@ public class PreviewController
             {
                 ((Abstract2DTrackable)prev).Size = box.Size.Width;
             }
-
         }
         else
         {
@@ -697,6 +696,11 @@ public class PreviewController
         this.index = -1;
         this.reloadPreviewPanel(i);
     }
+
+
+
+
+    //////////////////////////////////////////////////////////////////////////////////EVENTS/////////////////////////////////////////////////////////////////////////////////////////////
 
 
     /// <summary>   Select element (Event). </summary>
