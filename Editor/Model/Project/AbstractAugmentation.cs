@@ -33,7 +33,7 @@ namespace ARdevKit.Model.Project
         /// <value> The identifier. </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        [CategoryAttribute("General"), DefaultValueAttribute(false)]
+        [CategoryAttribute("General")]
         public string ID
         {
             get { return id; }
@@ -82,9 +82,8 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// Get or set the position of the <see cref="AbstractAugmentation"/>.
         /// </summary>
-        //[CategoryAttribute("General")]
-        [Browsable(false)]
-        public Vector3D TranslationVector
+        [CategoryAttribute("Position"), ReadOnly(true)]
+        public Vector3D Translation
         {
             get { return translationVector; }
             set { translationVector = value; }
@@ -99,9 +98,8 @@ namespace ARdevKit.Model.Project
         /// gets or sets the scaling which is applied to the original 
         /// <see cref="AbstractAugmentation"/>
         /// </summary>
-        //[CategoryAttribute("General")]
-        [Browsable(false)]
-        public Vector3D ScalingVector
+        [CategoryAttribute("General"), ReadOnly(true)]
+        public Vector3D Scaling
         {
             get { return scalingVector; }
             set { scalingVector = value; }
@@ -115,9 +113,8 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// gets or sets the Vector
         /// </summary>
-        //[CategoryAttribute("General")]
-        [Browsable(false)]
-        public Vector3Di RotationVector
+        [CategoryAttribute("General"), ReadOnly(true)]
+        public Vector3Di Rotation
         {
             get { return rotationVector; }
             set { rotationVector = value; }

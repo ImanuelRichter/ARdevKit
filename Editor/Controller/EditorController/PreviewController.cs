@@ -147,7 +147,7 @@ public class PreviewController
                     this.addPictureBox(currentElement, v);
 
                     //set the vector and the trackable in <see cref="AbstractAugmentation"/>
-                    ((AbstractAugmentation)currentElement).TranslationVector = this.calculateVector(v);
+                    ((AbstractAugmentation)currentElement).Translation = this.calculateVector(v);
                     ((AbstractAugmentation)currentElement).Trackable = this.trackable;
 
                     //set the new box to the front
@@ -166,7 +166,7 @@ public class PreviewController
                 this.addPictureBox(currentElement, v);
 
                 //set the vector and the trackable in <see cref="AbstractAugmentation"/>
-                ((AbstractAugmentation)currentElement).TranslationVector = this.calculateVector(v);
+                ((AbstractAugmentation)currentElement).Translation = this.calculateVector(v);
                 ((Chart)currentElement).Positioning.Left = (int)v.X;
                 ((Chart)currentElement).Positioning.Top = (int)v.Y;
                 ((AbstractAugmentation)currentElement).Trackable = this.trackable;
@@ -384,7 +384,7 @@ public class PreviewController
         {
             foreach (AbstractAugmentation aug in trackable.Augmentations)
             {
-                this.addPictureBox(aug, this.recalculateVector(aug.TranslationVector));
+                this.addPictureBox(aug, this.recalculateVector(aug.Translation));
                 if (typeof(AbstractDynamic2DAugmentation).IsAssignableFrom(aug.GetType()) && ((AbstractDynamic2DAugmentation)aug).Source != null)
                 {
                     this.setSourcePreview(aug);
@@ -548,8 +548,8 @@ public class PreviewController
             {
                 AbstractAugmentation aa;
                 aa = (AbstractAugmentation)((Control)sender).Tag;
-                aa.TranslationVector.X = controlToMove.Location.X + e.Location.X - (panel.Width / 2);
-                aa.TranslationVector.Y = controlToMove.Location.Y + e.Location.Y - (panel.Height / 2);
+                aa.Translation.X = controlToMove.Location.X + e.Location.X - (panel.Width / 2);
+                aa.Translation.Y = controlToMove.Location.Y + e.Location.Y - (panel.Height / 2);
                 if (((Control)sender).Tag is Chart)
                 {
                     ((Chart)aa).Positioning.Left = controlToMove.Location.X + e.Location.X;
@@ -779,8 +779,8 @@ public class PreviewController
 
             if (prev is AbstractAugmentation)
             {
-                ((AbstractAugmentation)prev).ScalingVector.X = scale;
-                ((AbstractAugmentation)prev).ScalingVector.Y = scale;
+                ((AbstractAugmentation)prev).Scaling.X = scale;
+                ((AbstractAugmentation)prev).Scaling.Y = scale;
             }
             else if (prev is Abstract2DTrackable)
             {
@@ -794,8 +794,8 @@ public class PreviewController
 
             if (prev is AbstractAugmentation)
             {
-                ((AbstractAugmentation)prev).ScalingVector.X = 1;
-                ((AbstractAugmentation)prev).ScalingVector.Y = 1;
+                ((AbstractAugmentation)prev).Scaling.X = 1;
+                ((AbstractAugmentation)prev).Scaling.Y = 1;
             }
             else if (prev is Abstract2DTrackable)
             {
@@ -823,7 +823,7 @@ public class PreviewController
         }
         else if (prev is AbstractAugmentation)
         {
-            scaleVector = ((AbstractAugmentation)prev).ScalingVector;
+            scaleVector = ((AbstractAugmentation)prev).Scaling;
             width = width * scaleVector.X;
             height = height * scaleVector.Y;
             box.Size = new Size((int)width, (int)height);

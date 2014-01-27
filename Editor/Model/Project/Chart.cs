@@ -30,7 +30,7 @@ namespace ARdevKit.Model.Project
         /// <value>
         /// The style.
         /// </value>
-        [CategoryAttribute("General"), ReadOnly(true)]
+        [CategoryAttribute("Position"), ReadOnly(true)]
         public ChartPositioning Positioning
         {
             get { return positioning; }
@@ -60,7 +60,7 @@ namespace ARdevKit.Model.Project
             optionsFilePath = "res\\highcharts\\barChartColumn\\options.json";
             Width = 200;
             Height = 200;
-            ScalingVector = new Vector3D(0, 0, 0);
+            Scaling = new Vector3D(0, 0, 0);
         }
 
 
