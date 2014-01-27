@@ -637,6 +637,7 @@ public class PreviewController
             {
                 ((AbstractAugmentation)prev).ScalingVector.X = 1;
                 ((AbstractAugmentation)prev).ScalingVector.Y = 1;
+                ((AbstractAugmentation)prev).ScalingVector.Z = 1;
             }
             else if (prev is Abstract2DTrackable)
             {
