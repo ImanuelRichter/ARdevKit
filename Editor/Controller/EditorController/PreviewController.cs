@@ -96,11 +96,11 @@ public class PreviewController
             //ask the user for the picture (if the trackable is a picturemarker)
             if (currentElement.GetType() == typeof(PictureMarker))
             {
-                OpenFileDialog openTestImageDialog = new OpenFileDialog();
-                openTestImageDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
-                if (openTestImageDialog.ShowDialog() == DialogResult.OK)
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    ((PictureMarker)currentElement).PicturePath = openTestImageDialog.FileName;
+                    ((PictureMarker)currentElement).PicturePath = openFileDialog.FileName;
 
                     //set the vector to the trackable
                     ((AbstractTrackable)currentElement).vector = center;
@@ -113,7 +113,6 @@ public class PreviewController
                         this.ew.project.Sensor = new MarkerSensor();
                     }
                     setCurrentElement(currentElement);
-                    ew.PropertyGrid1.SelectedObject = currentElement;
                 }
             }
             else
@@ -129,18 +128,19 @@ public class PreviewController
                     this.ew.project.Sensor = new MarkerSensor();
                 }
                 setCurrentElement(currentElement);
-                ew.PropertyGrid1.SelectedObject = currentElement;
             }
         }
         else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null && this.ew.project.Trackables[index].Augmentations.Count < 3)
         {
-            if (currentElement.GetType() == typeof(ImageAugmentation))
+            OpenFileDialog openFileDialog = null;
+                
+            if (currentElement is ImageAugmentation)
             {
-                OpenFileDialog openTestImageDialog = new OpenFileDialog();
-                openTestImageDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
-                if (openTestImageDialog.ShowDialog() == DialogResult.OK)
+                openFileDialog = new OpenFileDialog();
+                openFileDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    ((ImageAugmentation)currentElement).ImagePath = openTestImageDialog.FileName;
+                    ((ImageAugmentation)currentElement).ImagePath = openFileDialog.FileName;
                     //set references 
                     trackable.Augmentations.Add((AbstractAugmentation)currentElement);
 
@@ -153,9 +153,29 @@ public class PreviewController
                     //set the new box to the front
                     this.findBox(currentElement).BringToFront();
                     setCurrentElement(currentElement);
-                    ew.PropertyGrid1.SelectedObject = currentElement;
 
 
+                }
+            }
+            else if (currentElement is Chart)
+            {
+                openFileDialog = new OpenFileDialog();
+                openFileDialog.Filter = "json (*.json)|*.json";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    ((Chart)currentElement).Options = openFileDialog.FileName;
+                    //set references 
+                    trackable.Augmentations.Add((AbstractAugmentation)currentElement);
+
+                    this.addPictureBox(currentElement, v);
+
+                    //set the vector and the trackable in <see cref="AbstractAugmentation"/>
+                    ((AbstractAugmentation)currentElement).TranslationVector = this.calculateVector(v);
+                    ((Chart)currentElement).Positioning.Left = (int)v.X;
+                    ((Chart)currentElement).Positioning.Top = (int)v.Y;
+                    ((AbstractAugmentation)currentElement).Trackable = this.trackable;
+
+                    setCurrentElement(currentElement);
                 }
             }
             else
@@ -172,7 +192,6 @@ public class PreviewController
                 ((AbstractAugmentation)currentElement).Trackable = this.trackable;
 
                 setCurrentElement(currentElement);
-                ew.PropertyGrid1.SelectedObject = currentElement;
             }
         }
     }
@@ -201,10 +220,10 @@ public class PreviewController
             {
                 if (source is FileSource)
                 {
-                    OpenFileDialog openTestImageDialog = new OpenFileDialog();
-                    if (openTestImageDialog.ShowDialog() == DialogResult.OK)
+                    OpenFileDialog openFileDialog = new OpenFileDialog();
+                    if (openFileDialog.ShowDialog() == DialogResult.OK)
                     {
-                        ((FileSource)source).Data = openTestImageDialog.FileName;
+                        ((FileSource)source).Data = openFileDialog.FileName;
                         //set reference to the augmentations in Source
                         source.Augmentation = ((AbstractDynamic2DAugmentation)currentElement);
 
@@ -214,13 +233,19 @@ public class PreviewController
 
                         this.setSourcePreview(currentElement);
                         DialogResult dialogResult = MessageBox.Show("Möchten sie ein Query zu der Source öffnen?", "Titel", MessageBoxButtons.YesNo);
+                        
                         if (dialogResult == DialogResult.Yes)
                         {
-                            openTestImageDialog = new OpenFileDialog();
-                            if (openTestImageDialog.ShowDialog() == DialogResult.OK)
+                            openFileDialog = new OpenFileDialog();
+                            openFileDialog.Filter = "JavaFile (*.js)|*.js";
+                            if (openFileDialog.ShowDialog() == DialogResult.OK)
                             {
-                                ((FileSource)source).Query = openTestImageDialog.FileName;
+                                ((FileSource)source).Query = openFileDialog.FileName;
                             }
+                        }
+                        else
+                        {
+                            this.findBox(currentElement).ContextMenu.MenuItems[6].Enabled = false;
                         }
                     }
                 }
@@ -416,7 +441,7 @@ public class PreviewController
         ContextMenu cm = new ContextMenu();
 
         //adds drag&drop events for augmentations so that sources can be droped on them
-        if (typeof(AbstractAugmentation).IsAssignableFrom(prev.GetType()))
+        if (prev is AbstractAugmentation)
         {
             ((Control)tempBox).AllowDrop = true;
             DragEventHandler enterHandler = new DragEventHandler(onAugmentationEnter);
@@ -424,6 +449,10 @@ public class PreviewController
             tempBox.DragEnter += enterHandler;
             tempBox.DragDrop += dropHandler;
             cm.MenuItems.Add("kopieren", new EventHandler(this.copy_augmentation));
+            if (prev is Chart)
+            {
+                cm.MenuItems.Add("Optionen öffnen", new EventHandler(this.openOptionsFile));
+            }
         }
         tempBox.MouseClick += new MouseEventHandler(selectElement);
         cm.MenuItems.Add("löschen", new EventHandler(this.remove_by_click));
@@ -437,48 +466,6 @@ public class PreviewController
 
         this.panel.Controls.Add(tempBox);
 
-    }
-
-    private void popupContextMenu(object sender, EventArgs e)
-    {
-        this.setCurrentElement((IPreviewable)((ContextMenu)sender).Tag);
-    }
-
-    /**
-     * <summary>    Raises the drag event when a source enters a augmentation. </summary>
-     *
-     * <remarks>    Robin, 19.01.2014. </remarks>
-     *
-     * <param name="sender">    Source of the event. </param>
-     * <param name="e">         Event information to send to registered event handlers. </param>
-     */
-
-    public void onAugmentationEnter(object sender, DragEventArgs e)
-    {
-        if (currentMetaCategory == MetaCategory.Source)
-        {
-            e.Effect = DragDropEffects.Move;
-        }
-    }
-
-    /**
-     * <summary>    Raises the drag event when a source is droped on an augmentation. </summary>
-     *
-     * <remarks>    Robin, 19.01.2014. </remarks>
-     *
-     * <param name="sender">    Source of the event. </param>
-     * <param name="e">         Event information to send to registered event handlers. </param>
-     */
-
-    public void onAugmentationDrop(object sender, DragEventArgs e)
-    {
-        if (currentMetaCategory == MetaCategory.Source)
-        {
-            ElementIcon icon = (ElementIcon)e.Data.GetData(typeof(ElementIcon));
-            AbstractAugmentation augmentation = (AbstractAugmentation)((PictureBox)sender).Tag;
-            AbstractSource source = (AbstractSource)icon.Element.Prototype.Clone();
-            addSource(source, augmentation);
-        }
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -514,159 +501,6 @@ public class PreviewController
         return null;
     }
 
-    /// <summary>   Select element (Event). </summary>
-    ///
-    /// <param name="sender">   Source of the event. </param>
-    /// <param name="e">        Mouse event information. </param>
-
-    private void selectElement(object sender, MouseEventArgs e)
-    {
-        if (e.Button == MouseButtons.Left)
-        {
-            ew.PropertyGrid1.SelectedObject = ((Control)sender).Tag;
-            this.setCurrentElement((IPreviewable)((Control)sender).Tag);
-        }
-    }
-
-    /// <summary>   
-    /// Event to move a object of type Control. 
-    /// Also updates x/y coord in the Tag of the control.            
-    /// </summary>
-    ///
-    /// <param name="sender">   Source of the event. </param>
-    /// <param name="e">        Mouse event information. </param>
-    private void controlMouseMove(object sender, MouseEventArgs e)
-    {
-        if (e.Button == System.Windows.Forms.MouseButtons.Left)
-        {
-            Control controlToMove = (Control)sender;
-            controlToMove.BringToFront();
-            controlToMove.Location = new Point(controlToMove.Location.X + e.Location.X - 60,
-               controlToMove.Location.Y + e.Location.Y - 60);
-
-            if (((Control)sender).Tag is AbstractAugmentation)
-            {
-                AbstractAugmentation aa;
-                aa = (AbstractAugmentation)((Control)sender).Tag;
-                aa.TranslationVector.X = controlToMove.Location.X + e.Location.X - (panel.Width / 2);
-                aa.TranslationVector.Y = controlToMove.Location.Y + e.Location.Y - (panel.Height / 2);
-                if (((Control)sender).Tag is Chart)
-                {
-                    ((Chart)aa).Positioning.Left = controlToMove.Location.X + e.Location.X;
-                    ((Chart)aa).Positioning.Top = controlToMove.Location.Y + e.Location.Y;
-                }
-            }
-        }
-    }
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-    /// <summary>   Event handler. removes the current object. </summary>
-    ///
-    /// <remarks>   Lizzard, 1/19/2014. </remarks>
-    ///
-    /// <param name="sender">   Source of the event. </param>
-    /// <param name="e">        Event information. </param>
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    private void remove_by_click(object sender, EventArgs e)
-    {
-        IPreviewable temp = (IPreviewable)((ContextMenu)((MenuItem)sender).Parent).Tag;
-        this.removePreviewable((IPreviewable)((ContextMenu)((MenuItem)sender).Parent).Tag);
-        ew.PropertyGrid1.SelectedObject = null;
-    }
-
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-    /// <summary>   Event handler. Shows Source in PropertyGrid when you want this. </summary>
-    ///
-    /// <remarks>   Lizzard, 1/19/2014. </remarks>
-    ///
-    /// <param name="sender">   Source of the event. </param>
-    /// <param name="e">        Event information. </param>
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    private void show_source_by_click(object sender, EventArgs e)
-    {
-        ew.PropertyGrid1.SelectedObject = ((AbstractDynamic2DAugmentation)((ContextMenu)((MenuItem)sender).Parent).Tag).Source;
-    }
-
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-    /// <summary>
-    ///     Event handler. Removes the source of the augmentation and the contextmenuentries of this
-    ///     augmentation.
-    /// </summary>
-    ///
-    /// <remarks>   Lizzard, 1/19/2014. </remarks>
-    ///
-    /// <param name="sender">   Source of the event. </param>
-    /// <param name="e">        Event information. </param>
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    private void remove_source_by_click(object sender, EventArgs e)
-    {
-        AbstractDynamic2DAugmentation temp = (AbstractDynamic2DAugmentation)((ContextMenu)((MenuItem)sender).Parent).Tag;
-        MetaCategory tempMeta = currentMetaCategory;
-        this.currentMetaCategory = MetaCategory.Augmentation;
-        this.removeSource(temp.Source, temp);
-        ew.PropertyGrid1.SelectedObject = null;
-        this.currentMetaCategory = tempMeta;
-
-        this.findBox(temp).ContextMenu.MenuItems.RemoveAt(2);
-        this.findBox(temp).ContextMenu.MenuItems.RemoveAt(2);
-
-    }
-
-    /// <summary>
-    /// EventHandler for copy function. copies the currentElement
-    /// </summary>
-    /// <param name="sender">The source of the event.</param>
-    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
-    public void copy_augmentation(object sender, EventArgs e)
-    {
-        if (typeof(AbstractAugmentation).IsAssignableFrom(this.ew.CurrentElement.GetType()))
-        {
-            this.copy = (AbstractAugmentation)this.ew.CurrentElement.Clone();
-            this.panel.ContextMenu.MenuItems[0].Enabled = true;
-            this.ew.setPasteButtonEnabled();
-
-        }
-    }
-    /// <summary>
-    /// EventHandler for paste function. paste the object at the current cursor position.
-    /// </summary>
-    /// <param name="sender">The source of the event.</param>
-    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
-    public void paste_augmentation(object sender, EventArgs e)
-    {
-        MetaCategory tempMeta = this.currentMetaCategory;
-        this.currentMetaCategory = MetaCategory.Augmentation;
-        Point p = this.panel.PointToClient(Cursor.Position);
-        IPreviewable element = (IPreviewable)this.copy.Clone();
-        this.addPreviewable(element, new Vector3D(p.X, p.Y, 0));
-
-        if (typeof(AbstractDynamic2DAugmentation).IsAssignableFrom(element.GetType()) && ((AbstractDynamic2DAugmentation)element).Source != null)
-        {
-            this.setSourcePreview(element);
-            ((AbstractDynamic2DAugmentation)element).Source = (AbstractSource)((AbstractDynamic2DAugmentation)copy).Source.Clone();
-        }
-
-        currentMetaCategory = tempMeta;
-    }
-
-    /// <summary>
-    /// EventHandler for paste function. paste the object in the center of panel
-    /// </summary>
-    /// <param name="sender">The source of the event.</param>
-    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
-    public void paste_augmentation_center(object sender, EventArgs e)
-    {
-        MetaCategory tempMeta = this.currentMetaCategory;
-        this.currentMetaCategory = MetaCategory.Augmentation;
-        this.addPreviewable((IPreviewable)this.copy.Clone(), new Vector3D(this.panel.Width / 2, this.panel.Height / 2, 0));
-        currentMetaCategory = tempMeta;
-    }
-
     /// <summary>
     /// set the current element and mark it on the panel
     /// </summary>
@@ -700,6 +534,7 @@ public class PreviewController
             {
                 findBox(currentElement).BringToFront();
             }
+            ew.PropertyGrid1.SelectedObject = currentElement;
         }
         
     }
@@ -720,6 +555,11 @@ public class PreviewController
         temp.Image = newPic;
         temp.ContextMenu.MenuItems.Add("Source anzeigen", new EventHandler(this.show_source_by_click));
         temp.ContextMenu.MenuItems.Add("Source löschen", new EventHandler(this.remove_source_by_click));
+        if (((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source is FileSource)
+        {
+            temp.ContextMenu.MenuItems.Add("QueryFile öffnen", new EventHandler(this.openQueryFile));
+            temp.ContextMenu.MenuItems.Add("SourceFile öffnen", new EventHandler(this.openSourceFile));
+        }
         temp.Refresh();
     }
 
@@ -854,5 +694,229 @@ public class PreviewController
         int i = this.index;
         this.index = -1;
         this.reloadPreviewPanel(i);
+    }
+
+
+    /// <summary>   Select element (Event). </summary>
+    ///
+    /// <param name="sender">   Source of the event. </param>
+    /// <param name="e">        Mouse event information. </param>
+
+    private void selectElement(object sender, MouseEventArgs e)
+    {
+        if (e.Button == MouseButtons.Left)
+        {
+            ew.PropertyGrid1.SelectedObject = ((Control)sender).Tag;
+            this.setCurrentElement((IPreviewable)((Control)sender).Tag);
+        }
+    }
+
+    /// <summary>   
+    /// Event to move a object of type Control. 
+    /// Also updates x/y coord in the Tag of the control.            
+    /// </summary>
+    ///
+    /// <param name="sender">   Source of the event. </param>
+    /// <param name="e">        Mouse event information. </param>
+    private void controlMouseMove(object sender, MouseEventArgs e)
+    {
+        if (e.Button == System.Windows.Forms.MouseButtons.Left)
+        {
+            Control controlToMove = (Control)sender;
+            controlToMove.BringToFront();
+            controlToMove.Location = new Point(controlToMove.Location.X + e.Location.X - 60,
+               controlToMove.Location.Y + e.Location.Y - 60);
+
+            if (((Control)sender).Tag is AbstractAugmentation)
+            {
+                AbstractAugmentation aa;
+                aa = (AbstractAugmentation)((Control)sender).Tag;
+                aa.TranslationVector.X = controlToMove.Location.X + e.Location.X - (panel.Width / 2);
+                aa.TranslationVector.Y = controlToMove.Location.Y + e.Location.Y - (panel.Height / 2);
+                if (((Control)sender).Tag is Chart)
+                {
+                    ((Chart)aa).Positioning.Left = controlToMove.Location.X + e.Location.X;
+                    ((Chart)aa).Positioning.Top = controlToMove.Location.Y + e.Location.Y;
+                }
+            }
+        }
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   Event handler. removes the current object. </summary>
+    ///
+    /// <remarks>   Lizzard, 1/19/2014. </remarks>
+    ///
+    /// <param name="sender">   Source of the event. </param>
+    /// <param name="e">        Event information. </param>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    private void remove_by_click(object sender, EventArgs e)
+    {
+        IPreviewable temp = (IPreviewable)((ContextMenu)((MenuItem)sender).Parent).Tag;
+        this.removePreviewable((IPreviewable)((ContextMenu)((MenuItem)sender).Parent).Tag);
+        ew.PropertyGrid1.SelectedObject = null;
+    }
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   Event handler. Shows Source in PropertyGrid when you want this. </summary>
+    ///
+    /// <remarks>   Lizzard, 1/19/2014. </remarks>
+    ///
+    /// <param name="sender">   Source of the event. </param>
+    /// <param name="e">        Event information. </param>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    private void show_source_by_click(object sender, EventArgs e)
+    {
+        ew.PropertyGrid1.SelectedObject = ((AbstractDynamic2DAugmentation)((ContextMenu)((MenuItem)sender).Parent).Tag).Source;
+    }
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>
+    ///     Event handler. Removes the source of the augmentation and the contextmenuentries of this
+    ///     augmentation.
+    /// </summary>
+    ///
+    /// <remarks>   Lizzard, 1/19/2014. </remarks>
+    ///
+    /// <param name="sender">   Source of the event. </param>
+    /// <param name="e">        Event information. </param>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    private void remove_source_by_click(object sender, EventArgs e)
+    {
+        AbstractDynamic2DAugmentation temp = (AbstractDynamic2DAugmentation)((ContextMenu)((MenuItem)sender).Parent).Tag;
+        MetaCategory tempMeta = currentMetaCategory;
+        this.currentMetaCategory = MetaCategory.Augmentation;
+
+        this.findBox(temp).ContextMenu.MenuItems.RemoveAt(3);
+        this.findBox(temp).ContextMenu.MenuItems.RemoveAt(3);
+        if (((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source is FileSource)
+        {
+            this.findBox(temp).ContextMenu.MenuItems.RemoveAt(3);
+            this.findBox(temp).ContextMenu.MenuItems.RemoveAt(3);
+        }
+
+        this.removeSource(temp.Source, temp);
+        ew.PropertyGrid1.SelectedObject = null;
+        this.currentMetaCategory = tempMeta;
+
+
+    }
+
+    /// <summary>
+    /// EventHandler for copy function. copies the currentElement
+    /// </summary>
+    /// <param name="sender">The source of the event.</param>
+    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+    public void copy_augmentation(object sender, EventArgs e)
+    {
+        if (typeof(AbstractAugmentation).IsAssignableFrom(this.ew.CurrentElement.GetType()))
+        {
+            this.copy = (AbstractAugmentation)this.ew.CurrentElement.Clone();
+            this.panel.ContextMenu.MenuItems[0].Enabled = true;
+            this.ew.setPasteButtonEnabled();
+
+        }
+    }
+    /// <summary>
+    /// EventHandler for paste function. paste the object at the current cursor position.
+    /// </summary>
+    /// <param name="sender">The source of the event.</param>
+    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+    public void paste_augmentation(object sender, EventArgs e)
+    {
+        MetaCategory tempMeta = this.currentMetaCategory;
+        this.currentMetaCategory = MetaCategory.Augmentation;
+        Point p = this.panel.PointToClient(Cursor.Position);
+        IPreviewable element = (IPreviewable)this.copy.Clone();
+        this.addPreviewable(element, new Vector3D(p.X, p.Y, 0));
+
+        if (typeof(AbstractDynamic2DAugmentation).IsAssignableFrom(element.GetType()) && ((AbstractDynamic2DAugmentation)element).Source != null)
+        {
+            this.setSourcePreview(element);
+            ((AbstractDynamic2DAugmentation)element).Source = (AbstractSource)((AbstractDynamic2DAugmentation)copy).Source.Clone();
+        }
+
+        currentMetaCategory = tempMeta;
+    }
+
+    /// <summary>
+    /// EventHandler for paste function. paste the object in the center of panel
+    /// </summary>
+    /// <param name="sender">The source of the event.</param>
+    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+    public void paste_augmentation_center(object sender, EventArgs e)
+    {
+        MetaCategory tempMeta = this.currentMetaCategory;
+        this.currentMetaCategory = MetaCategory.Augmentation;
+        this.addPreviewable((IPreviewable)this.copy.Clone(), new Vector3D(this.panel.Width / 2, this.panel.Height / 2, 0));
+        currentMetaCategory = tempMeta;
+    }
+
+
+    /**
+     * <summary>    Raises the drag event when a source enters a augmentation. </summary>
+     *
+     * <remarks>    Robin, 19.01.2014. </remarks>
+     *
+     * <param name="sender">    Source of the event. </param>
+     * <param name="e">         Event information to send to registered event handlers. </param>
+     */
+
+    public void onAugmentationEnter(object sender, DragEventArgs e)
+    {
+        if (currentMetaCategory == MetaCategory.Source)
+        {
+            e.Effect = DragDropEffects.Move;
+        }
+    }
+
+    /**
+     * <summary>    Raises the drag event when a source is droped on an augmentation. </summary>
+     *
+     * <remarks>    Robin, 19.01.2014. </remarks>
+     *
+     * <param name="sender">    Source of the event. </param>
+     * <param name="e">         Event information to send to registered event handlers. </param>
+     */
+
+    public void onAugmentationDrop(object sender, DragEventArgs e)
+    {
+        if (currentMetaCategory == MetaCategory.Source)
+        {
+            ElementIcon icon = (ElementIcon)e.Data.GetData(typeof(ElementIcon));
+            AbstractAugmentation augmentation = (AbstractAugmentation)((PictureBox)sender).Tag;
+            AbstractSource source = (AbstractSource)icon.Element.Prototype.Clone();
+            addSource(source, augmentation);
+        }
+    }
+
+    /// <summary>
+    /// EventHandler for Action before the ContextMenu is open.
+    /// </summary>
+    /// <param name="sender">The sender.</param>
+    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+    private void popupContextMenu(object sender, EventArgs e)
+    {
+        this.setCurrentElement((IPreviewable)((ContextMenu)sender).Tag);
+        ew.PropertyGrid1.SelectedObject = (IPreviewable)((ContextMenu)sender).Tag;
+    }
+
+    private void openQueryFile(object sender, EventArgs e)
+    {
+        System.Diagnostics.Process.Start("notepad", ((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source.Query);
+    }
+
+    private void openSourceFile(object sender, EventArgs e)
+    {
+        System.Diagnostics.Process.Start("notepad", ((FileSource)((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source).Data);
+    }
+    private void openOptionsFile(object sender, EventArgs e)
+    {
+        System.Diagnostics.Process.Start("notepad", ((Chart)this.ew.CurrentElement).Options);
     }
 }
