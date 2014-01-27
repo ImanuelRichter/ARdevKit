@@ -73,13 +73,8 @@
     <Compile Include="Model\Project\Abstract2DTrackable.cs" />
     <Compile Include="Model\Project\ImageTrackable.cs" />
     <Compile Include="Model\Project\AbstractDynamic2DAugmentation.cs" />
-    <Compile Include="Model\Project\BarChartData.cs" />
-    <Compile Include="Model\Project\ChartData.cs" />
-    <Compile Include="Model\Project\ChartStyle.cs" />
+    <Compile Include="Model\Project\ChartPositioning.cs" />
     <Compile Include="Model\Project\File\ChartFile.cs" />
-    <Compile Include="Model\Project\File\ChartDataFile.cs" />
-    <Compile Include="Model\Project\File\ChartOptionsFile.cs" />
-    <Compile Include="Model\Project\File\ChartQueryFile.cs" />
     <Compile Include="Model\Project\File\JavaScriptInLine.cs" />
     <Compile Include="Model\Project\ImageAugmentation.cs" />
     <Compile Include="Model\Project\LiveSource.cs" />
@@ -112,7 +107,7 @@
     </Compile>
     <Compile Include="Controller\EditorController\PreviewController.cs" />
     <Compile Include="Model\Project\AbstractTrackable.cs" />
-    <Compile Include="Model\Project\BarChart.cs" />
+    <Compile Include="Model\Project\Chart.cs" />
     <Compile Include="Model\Project\CustomUserEvent.cs" />
     <Compile Include="Model\Project\DbSource.cs" />
     <Compile Include="Model\Project\FileSource.cs" />
@@ -160,7 +155,6 @@
     </Compile>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\DataSources\EditorWindow.datasource" />
-    <Compile Include="Model\Project\Chart.cs" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
