@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,6 +10,11 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
 {
     class DeviceConnectionController
     {
+        private HttpListener registerListener;
+        private ARdevKit.Model.Project.Project project;
+        private List<IPEndPoint> reportedDevices;
+        private IPEndPoint connectedDevice;
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
         ///     Stellt eine Verbindung mit dem im View ausgewählten Listenelement aus der Liste der
@@ -25,12 +32,44 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
 
         public DeviceConnectionController(EditorWindow ew)
         {
-            throw new NotImplementedException();
+            project = ew.project;
+            registerListener = new HttpListener();
+            registerListener.Prefixes.Add("http://localhost:15400/register/");
+            runRegisterListener();
+        }
+
+        private void runRefreshListener()
+        {
+            foreach (IPEndPoint item in reportedDevices)
+            {
+                HttpWebRequest refreshRequest = (HttpWebRequest) WebRequest.Create("http://" + item.Address + ":" + item.Port + "/refresh/");
+                if(!refreshRequest.HaveResponse)
+                {
+                    reportedDevices.Remove(item);
+                }
+            }
+        }
+
+        private void runRegisterListener()
+        {
+            while(true)
+            {
+                HttpListenerContext registerContext = registerListener.GetContext();
+                if (!reportedDevices.Contains(registerContext.Request.RemoteEndPoint))
+                {
+                    reportedDevices.Add(registerContext.Request.RemoteEndPoint);
+                }
+            }
         }
 
         public void connectToDevice(int index)
         {
-            throw new NotImplementedException();
+            HttpWebRequest refreshRequest = (HttpWebRequest)WebRequest.Create("http://" + reportedDevices[index].Address + ":" + reportedDevices[index].Port + "/refresh/");
+            if (!refreshRequest.HaveResponse)
+            {
+                throw new Exception();
+            }
+            connectedDevice = reportedDevices[index];
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -47,7 +86,13 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
 
         public List<String> getPossibleClients()
         {
-            throw new NotImplementedException();
+            runRefreshListener();
+            List<string> result = new List<string>();
+            foreach (IPEndPoint item in reportedDevices)
+            {
+                result.Add(item.ToString());
+            }
+            return result;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -63,7 +108,15 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
 
         public void sendProject()
         {
-            throw new NotImplementedException();
+            HttpWebRequest refreshRequest = (HttpWebRequest)WebRequest.Create("http://" + connectedDevice.Address + ":" + connectedDevice.Port + "/refresh/");
+            if (!refreshRequest.HaveResponse)
+            {
+                throw new Exception();
+            }
+            HttpWebRequest SendRequest = (HttpWebRequest)WebRequest.Create("http://" + connectedDevice.Address + ":" + connectedDevice.Port + "/sendProject/")
+            Stream sendStream = SendRequest.GetRequestStream();
+            System.Runtime.Serialization.Formatters.Binary.BinaryFormatter binFor = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+            binFor.Serialize(sendStream, project);
         }
     }
 }

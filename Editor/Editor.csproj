@@ -69,6 +69,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\Connections\DeviceConnection\EditorConnectionController.cs" />
     <Compile Include="Controller\EditorController\ObjectCopier.cs" />
     <Compile Include="Model\Project\Abstract2DTrackable.cs" />
     <Compile Include="Model\Project\ImageTrackable.cs" />
