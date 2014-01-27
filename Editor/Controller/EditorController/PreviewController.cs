@@ -96,11 +96,11 @@ public class PreviewController
             //ask the user for the picture (if the trackable is a picturemarker)
             if (currentElement.GetType() == typeof(PictureMarker))
             {
-                OpenFileDialog openTestImageDialog = new OpenFileDialog();
-                openTestImageDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
-                if (openTestImageDialog.ShowDialog() == DialogResult.OK)
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    ((PictureMarker)currentElement).PicturePath = openTestImageDialog.FileName;
+                    ((PictureMarker)currentElement).PicturePath = openFileDialog.FileName;
 
                     //set the vector to the trackable
                     ((AbstractTrackable)currentElement).vector = center;
@@ -113,7 +113,6 @@ public class PreviewController
                         this.ew.project.Sensor = new MarkerSensor();
                     }
                     setCurrentElement(currentElement);
-                    ew.PropertyGrid1.SelectedObject = currentElement;
                 }
             }
             else
@@ -129,18 +128,19 @@ public class PreviewController
                     this.ew.project.Sensor = new MarkerSensor();
                 }
                 setCurrentElement(currentElement);
-                ew.PropertyGrid1.SelectedObject = currentElement;
             }
         }
         else if (currentMetaCategory == MetaCategory.Augmentation && trackable != null && this.ew.project.Trackables[index].Augmentations.Count < 3)
         {
-            if (currentElement.GetType() == typeof(ImageAugmentation))
+            OpenFileDialog openFileDialog = null;
+                
+            if (currentElement is ImageAugmentation)
             {
-                OpenFileDialog openTestImageDialog = new OpenFileDialog();
-                openTestImageDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
-                if (openTestImageDialog.ShowDialog() == DialogResult.OK)
+                openFileDialog = new OpenFileDialog();
+                openFileDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    ((ImageAugmentation)currentElement).ImagePath = openTestImageDialog.FileName;
+                    ((ImageAugmentation)currentElement).ImagePath = openFileDialog.FileName;
                     //set references 
                     trackable.Augmentations.Add((AbstractAugmentation)currentElement);
 
@@ -153,9 +153,29 @@ public class PreviewController
                     //set the new box to the front
                     this.findBox(currentElement).BringToFront();
                     setCurrentElement(currentElement);
-                    ew.PropertyGrid1.SelectedObject = currentElement;
 
 
+                }
+            }
+            else if (currentElement is Chart)
+            {
+                openFileDialog = new OpenFileDialog();
+                openFileDialog.Filter = "json (*.json)|*.json";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    ((Chart)currentElement).Options = openFileDialog.FileName;
+                    //set references 
+                    trackable.Augmentations.Add((AbstractAugmentation)currentElement);
+
+                    this.addPictureBox(currentElement, v);
+
+                    //set the vector and the trackable in <see cref="AbstractAugmentation"/>
+                    ((AbstractAugmentation)currentElement).TranslationVector = this.calculateVector(v);
+                    ((Chart)currentElement).Positioning.Left = (int)v.X;
+                    ((Chart)currentElement).Positioning.Top = (int)v.Y;
+                    ((AbstractAugmentation)currentElement).Trackable = this.trackable;
+
+                    setCurrentElement(currentElement);
                 }
             }
             else
@@ -172,7 +192,6 @@ public class PreviewController
                 ((AbstractAugmentation)currentElement).Trackable = this.trackable;
 
                 setCurrentElement(currentElement);
-                ew.PropertyGrid1.SelectedObject = currentElement;
             }
         }
     }
@@ -201,10 +220,10 @@ public class PreviewController
             {
                 if (source is FileSource)
                 {
-                    OpenFileDialog openTestImageDialog = new OpenFileDialog();
-                    if (openTestImageDialog.ShowDialog() == DialogResult.OK)
+                    OpenFileDialog openFileDialog = new OpenFileDialog();
+                    if (openFileDialog.ShowDialog() == DialogResult.OK)
                     {
-                        ((FileSource)source).Data = openTestImageDialog.FileName;
+                        ((FileSource)source).Data = openFileDialog.FileName;
                         //set reference to the augmentations in Source
                         source.Augmentation = ((AbstractDynamic2DAugmentation)currentElement);
 
@@ -214,13 +233,19 @@ public class PreviewController
 
                         this.setSourcePreview(currentElement);
                         DialogResult dialogResult = MessageBox.Show("Möchten sie ein Query zu der Source öffnen?", "Titel", MessageBoxButtons.YesNo);
+                        
                         if (dialogResult == DialogResult.Yes)
                         {
-                            openTestImageDialog = new OpenFileDialog();
-                            if (openTestImageDialog.ShowDialog() == DialogResult.OK)
+                            openFileDialog = new OpenFileDialog();
+                            openFileDialog.Filter = "JavaFile (*.js)|*.js";
+                            if (openFileDialog.ShowDialog() == DialogResult.OK)
                             {
-                                ((FileSource)source).Query = openTestImageDialog.FileName;
+                                ((FileSource)source).Query = openFileDialog.FileName;
                             }
+                        }
+                        else
+                        {
+                            this.findBox(currentElement).ContextMenu.MenuItems[6].Enabled = false;
                         }
                     }
                 }
@@ -416,7 +441,7 @@ public class PreviewController
         ContextMenu cm = new ContextMenu();
 
         //adds drag&drop events for augmentations so that sources can be droped on them
-        if (typeof(AbstractAugmentation).IsAssignableFrom(prev.GetType()))
+        if (prev is AbstractAugmentation)
         {
             ((Control)tempBox).AllowDrop = true;
             DragEventHandler enterHandler = new DragEventHandler(onAugmentationEnter);
@@ -424,6 +449,10 @@ public class PreviewController
             tempBox.DragEnter += enterHandler;
             tempBox.DragDrop += dropHandler;
             cm.MenuItems.Add("kopieren", new EventHandler(this.copy_augmentation));
+            if (prev is Chart)
+            {
+                cm.MenuItems.Add("Optionen öffnen", new EventHandler(this.openOptionsFile));
+            }
         }
         tempBox.MouseClick += new MouseEventHandler(selectElement);
         cm.MenuItems.Add("löschen", new EventHandler(this.remove_by_click));
@@ -437,48 +466,6 @@ public class PreviewController
 
         this.panel.Controls.Add(tempBox);
 
-    }
-
-    private void popupContextMenu(object sender, EventArgs e)
-    {
-        this.setCurrentElement((IPreviewable)((ContextMenu)sender).Tag);
-    }
-
-    /**
-     * <summary>    Raises the drag event when a source enters a augmentation. </summary>
-     *
-     * <remarks>    Robin, 19.01.2014. </remarks>
-     *
-     * <param name="sender">    Source of the event. </param>
-     * <param name="e">         Event information to send to registered event handlers. </param>
-     */
-
-    public void onAugmentationEnter(object sender, DragEventArgs e)
-    {
-        if (currentMetaCategory == MetaCategory.Source)
-        {
-            e.Effect = DragDropEffects.Move;
-        }
-    }
-
-    /**
-     * <summary>    Raises the drag event when a source is droped on an augmentation. </summary>
-     *
-     * <remarks>    Robin, 19.01.2014. </remarks>
-     *
-     * <param name="sender">    Source of the event. </param>
-     * <param name="e">         Event information to send to registered event handlers. </param>
-     */
-
-    public void onAugmentationDrop(object sender, DragEventArgs e)
-    {
-        if (currentMetaCategory == MetaCategory.Source)
-        {
-            ElementIcon icon = (ElementIcon)e.Data.GetData(typeof(ElementIcon));
-            AbstractAugmentation augmentation = (AbstractAugmentation)((PictureBox)sender).Tag;
-            AbstractSource source = (AbstractSource)icon.Element.Prototype.Clone();
-            addSource(source, augmentation);
-        }
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -513,6 +500,208 @@ public class PreviewController
         }
         return null;
     }
+
+    /// <summary>
+    /// set the current element and mark it on the panel
+    /// </summary>
+    /// <param name="currentElement">The current element.</param>
+    public void setCurrentElement(IPreviewable currentElement)
+    {
+        if (this.ew.CurrentElement != currentElement)
+        {
+            this.ew.CurrentElement = currentElement;
+
+            if (typeof(AbstractAugmentation).IsAssignableFrom(currentElement.GetType()))
+            {
+                this.ew.Tsm_editor_menu_edit_copie.Enabled = true;
+            }
+            else if (typeof(AbstractTrackable).IsAssignableFrom(currentElement.GetType()))
+            {
+                this.ew.Tsm_editor_menu_edit_copie.Enabled = false;
+            }
+
+            foreach (Control comp in this.panel.Controls)
+            {
+                if (((PictureBox)comp).BorderStyle == BorderStyle.Fixed3D)
+                {
+                    ((PictureBox)comp).BorderStyle = BorderStyle.None;
+                    ((PictureBox)comp).Refresh();
+                }
+            }
+            findBox(currentElement).BorderStyle = BorderStyle.Fixed3D;
+            findBox(currentElement).Refresh();
+            if (typeof(AbstractAugmentation).IsAssignableFrom(currentElement.GetType()))
+            {
+                findBox(currentElement).BringToFront();
+            }
+            ew.PropertyGrid1.SelectedObject = currentElement;
+        }
+        
+    }
+    /// <summary>
+    /// set the augmentationPreview to a augmentationPreview with source icon
+    /// </summary>
+    /// <param name="currentElement">The current element.</param>
+    private void setSourcePreview(IPreviewable currentElement)
+    {
+        PictureBox temp = this.findBox(currentElement);
+        Image image1 = currentElement.getPreview();
+        Image image2 = new Bitmap(ARdevKit.Properties.Resources.db_small);
+        Image newPic = new Bitmap(image1.Width, image1.Height);
+
+        Graphics graphic = Graphics.FromImage(newPic);
+        graphic.DrawImage(image1, new Rectangle(0, 0, image1.Width, image1.Height));
+        graphic.DrawImage(image2, new Rectangle(0, 0, image2.Width, image2.Height));
+        temp.Image = newPic;
+        temp.ContextMenu.MenuItems.Add("Source anzeigen", new EventHandler(this.show_source_by_click));
+        temp.ContextMenu.MenuItems.Add("Source löschen", new EventHandler(this.remove_source_by_click));
+        if (((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source is FileSource)
+        {
+            temp.ContextMenu.MenuItems.Add("QueryFile öffnen", new EventHandler(this.openQueryFile));
+            temp.ContextMenu.MenuItems.Add("SourceFile öffnen", new EventHandler(this.openSourceFile));
+        }
+        temp.Refresh();
+    }
+
+    /// <summary>
+    /// Calculates the vector in relation to trackable.
+    /// </summary>
+    /// <param name="v">The v.</param>
+    /// <returns></returns>
+    private Vector3D calculateVector(Vector3D v)
+    {
+        Vector3D result = new Vector3D(0, 0, 0);
+        result.X = (v.X - panel.Width / 2);
+        result.Y = (v.Y - panel.Height / 2);
+        return result;
+    }
+
+    /// <summary>
+    /// Recalculates the vector in relation to panel.
+    /// </summary>
+    /// <param name="v">The v.</param>
+    /// <returns></returns>
+    private Vector3D recalculateVector(Vector3D v)
+    {
+        Vector3D result = new Vector3D(0, 0, 0);
+        result.X = (v.X + panel.Width / 2);
+        result.Y = (v.Y + panel.Height / 2);
+        return result;
+    }
+
+    /// <summary>
+    /// Scales the picturebox to maximum 200px and sets the vectors.
+    /// </summary>
+    /// <param name="box">The box.</param>
+    /// <param name="prev">The previous.</param>
+    private void scaleIPreviewable(PictureBox box, IPreviewable prev)
+    {
+        double width = prev.getPreview().Width;
+        double height = prev.getPreview().Height;
+        double scale;
+        if (width > 200 || height > 200)
+        {
+            if (width > height)
+            {
+                scale = 200 / width;
+                box.Size = new Size((int)(width * scale), (int)(height * scale));
+            }
+            else if (height > width)
+            {
+                scale = 200 / height;
+                box.Size = new Size((int)(width * scale), (int)(height * scale));
+            }
+            else
+            {
+                scale = 200 / width;
+                box.Size = new Size((int)(width * scale), (int)(height * scale));
+            }
+
+            if (prev is AbstractAugmentation)
+            {
+                ((AbstractAugmentation)prev).ScalingVector.X = scale;
+                ((AbstractAugmentation)prev).ScalingVector.Y = scale;
+                ((AbstractAugmentation)prev).ScalingVector.Z = scale;
+            }
+            else if (prev is Abstract2DTrackable)
+            {
+                ((Abstract2DTrackable)prev).Size = box.Size.Width;
+            }
+        }
+        else
+        {
+            box.Size = new Size((int)width, (int)height);
+
+            if (prev is AbstractAugmentation)
+            {
+                ((AbstractAugmentation)prev).ScalingVector.X = 1;
+                ((AbstractAugmentation)prev).ScalingVector.Y = 1;
+                ((AbstractAugmentation)prev).ScalingVector.Z = 1;
+            }
+            else if (prev is Abstract2DTrackable)
+            {
+                ((Abstract2DTrackable)prev).Size = box.Size.Width;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Refreshs the Augmentation with the new Scale.
+    /// </summary>
+    private void updateScale()
+    {
+        IPreviewable prev = this.ew.CurrentElement;
+        PictureBox box = this.findBox(prev);
+        double width = prev.getPreview().Width;
+        double height = prev.getPreview().Height;
+        double scale;
+        Vector3D scaleVector;
+
+        if (prev is Abstract2DTrackable)
+        {
+            scale = ((Abstract2DTrackable)prev).Size / prev.getPreview().Width; ;
+            box.Size = new Size((int)(width * scale), (int)(height * scale));
+        }
+        else if (prev is AbstractAugmentation)
+        {
+            scaleVector = ((AbstractAugmentation)prev).ScalingVector;
+            width = width * scaleVector.X;
+            height = height * scaleVector.Y;
+            box.Size = new Size((int)width, (int)height);
+        }
+        box.Refresh();
+    }
+
+    /// <summary>
+    /// Rescales the preview panel if the size was changed.
+    /// </summary>
+    public void rescalePreviewPanel()
+    {
+        int width = this.panel.Width;
+        int height = this.panel.Height;
+
+        foreach (AbstractTrackable trackable in this.ew.project.Trackables)
+        {
+            trackable.vector = new Vector3D(width / 2, height / 2, 0);
+            foreach (AbstractAugmentation aug in trackable.Augmentations)
+            {
+                if (aug is Chart)
+                {
+                    ((Chart)aug).Positioning.Left = (int)(aug.TranslationVector.X + panel.Width / 2);
+                    ((Chart)aug).Positioning.Top = (int)(aug.TranslationVector.Y + panel.Width / 2);
+                }
+            }
+        }
+        int i = this.index;
+        this.index = -1;
+        this.reloadPreviewPanel(i);
+    }
+
+
+
+
+    //////////////////////////////////////////////////////////////////////////////////EVENTS/////////////////////////////////////////////////////////////////////////////////////////////
+
 
     /// <summary>   Select element (Event). </summary>
     ///
@@ -608,12 +797,19 @@ public class PreviewController
         AbstractDynamic2DAugmentation temp = (AbstractDynamic2DAugmentation)((ContextMenu)((MenuItem)sender).Parent).Tag;
         MetaCategory tempMeta = currentMetaCategory;
         this.currentMetaCategory = MetaCategory.Augmentation;
+
+        this.findBox(temp).ContextMenu.MenuItems.RemoveAt(3);
+        this.findBox(temp).ContextMenu.MenuItems.RemoveAt(3);
+        if (((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source is FileSource)
+        {
+            this.findBox(temp).ContextMenu.MenuItems.RemoveAt(3);
+            this.findBox(temp).ContextMenu.MenuItems.RemoveAt(3);
+        }
+
         this.removeSource(temp.Source, temp);
         ew.PropertyGrid1.SelectedObject = null;
         this.currentMetaCategory = tempMeta;
 
-        this.findBox(temp).ContextMenu.MenuItems.RemoveAt(2);
-        this.findBox(temp).ContextMenu.MenuItems.RemoveAt(2);
 
     }
 
@@ -667,192 +863,66 @@ public class PreviewController
         currentMetaCategory = tempMeta;
     }
 
-    /// <summary>
-    /// set the current element and mark it on the panel
-    /// </summary>
-    /// <param name="currentElement">The current element.</param>
-    public void setCurrentElement(IPreviewable currentElement)
+
+    /**
+     * <summary>    Raises the drag event when a source enters a augmentation. </summary>
+     *
+     * <remarks>    Robin, 19.01.2014. </remarks>
+     *
+     * <param name="sender">    Source of the event. </param>
+     * <param name="e">         Event information to send to registered event handlers. </param>
+     */
+
+    public void onAugmentationEnter(object sender, DragEventArgs e)
     {
-        if (this.ew.CurrentElement != currentElement)
+        if (currentMetaCategory == MetaCategory.Source)
         {
-            this.ew.CurrentElement = currentElement;
-
-            if (typeof(AbstractAugmentation).IsAssignableFrom(currentElement.GetType()))
-            {
-                this.ew.Tsm_editor_menu_edit_copie.Enabled = true;
-            }
-            else if (typeof(AbstractTrackable).IsAssignableFrom(currentElement.GetType()))
-            {
-                this.ew.Tsm_editor_menu_edit_copie.Enabled = false;
-            }
-
-            foreach (Control comp in this.panel.Controls)
-            {
-                if (((PictureBox)comp).BorderStyle == BorderStyle.Fixed3D)
-                {
-                    ((PictureBox)comp).BorderStyle = BorderStyle.None;
-                    ((PictureBox)comp).Refresh();
-                }
-            }
-            findBox(currentElement).BorderStyle = BorderStyle.Fixed3D;
-            findBox(currentElement).Refresh();
-            if (typeof(AbstractAugmentation).IsAssignableFrom(currentElement.GetType()))
-            {
-                findBox(currentElement).BringToFront();
-            }
+            e.Effect = DragDropEffects.Move;
         }
-        
-    }
-    /// <summary>
-    /// set the augmentationPreview to a augmentationPreview with source icon
-    /// </summary>
-    /// <param name="currentElement">The current element.</param>
-    private void setSourcePreview(IPreviewable currentElement)
-    {
-        PictureBox temp = this.findBox(currentElement);
-        Image image1 = currentElement.getPreview();
-        Image image2 = new Bitmap(ARdevKit.Properties.Resources.db_small);
-        Image newPic = new Bitmap(image1.Width, image1.Height);
-
-        Graphics graphic = Graphics.FromImage(newPic);
-        graphic.DrawImage(image1, new Rectangle(0, 0, image1.Width, image1.Height));
-        graphic.DrawImage(image2, new Rectangle(0, 0, image2.Width, image2.Height));
-        temp.Image = newPic;
-        temp.ContextMenu.MenuItems.Add("Source anzeigen", new EventHandler(this.show_source_by_click));
-        temp.ContextMenu.MenuItems.Add("Source löschen", new EventHandler(this.remove_source_by_click));
-        temp.Refresh();
     }
 
-    /// <summary>
-    /// Calculates the vector in relation to trackable.
-    /// </summary>
-    /// <param name="v">The v.</param>
-    /// <returns></returns>
-    private Vector3D calculateVector(Vector3D v)
-    {
-        Vector3D result = new Vector3D(0, 0, 0);
-        result.X = (v.X - panel.Width / 2);
-        result.Y = (v.Y - panel.Height / 2);
-        return result;
-    }
+    /**
+     * <summary>    Raises the drag event when a source is droped on an augmentation. </summary>
+     *
+     * <remarks>    Robin, 19.01.2014. </remarks>
+     *
+     * <param name="sender">    Source of the event. </param>
+     * <param name="e">         Event information to send to registered event handlers. </param>
+     */
 
-    /// <summary>
-    /// Recalculates the vector in relation to panel.
-    /// </summary>
-    /// <param name="v">The v.</param>
-    /// <returns></returns>
-    private Vector3D recalculateVector(Vector3D v)
+    public void onAugmentationDrop(object sender, DragEventArgs e)
     {
-        Vector3D result = new Vector3D(0, 0, 0);
-        result.X = (v.X + panel.Width / 2);
-        result.Y = (v.Y + panel.Height / 2);
-        return result;
-    }
-
-    /// <summary>
-    /// Scales the picturebox to maximum 200px and sets the vectors.
-    /// </summary>
-    /// <param name="box">The box.</param>
-    /// <param name="prev">The previous.</param>
-    private void scaleIPreviewable(PictureBox box, IPreviewable prev)
-    {
-        double width = prev.getPreview().Width;
-        double height = prev.getPreview().Height;
-        double scale;
-        if (width > 200 || height > 200)
+        if (currentMetaCategory == MetaCategory.Source)
         {
-            if (width > height)
-            {
-                scale = 200 / width;
-                box.Size = new Size((int)(width * scale), (int)(height * scale));
-            }
-            else if (height > width)
-            {
-                scale = 200 / height;
-                box.Size = new Size((int)(width * scale), (int)(height * scale));
-            }
-            else
-            {
-                scale = 200 / width;
-                box.Size = new Size((int)(width * scale), (int)(height * scale));
-            }
-
-            if (prev is AbstractAugmentation)
-            {
-                ((AbstractAugmentation)prev).ScalingVector.X = scale;
-                ((AbstractAugmentation)prev).ScalingVector.Y = scale;
-            }
-            else if (prev is Abstract2DTrackable)
-            {
-                ((Abstract2DTrackable)prev).Size = box.Size.Width;
-            }
-
-        }
-        else
-        {
-            box.Size = new Size((int)width, (int)height);
-
-            if (prev is AbstractAugmentation)
-            {
-                ((AbstractAugmentation)prev).ScalingVector.X = 1;
-                ((AbstractAugmentation)prev).ScalingVector.Y = 1;
-            }
-            else if (prev is Abstract2DTrackable)
-            {
-                ((Abstract2DTrackable)prev).Size = box.Size.Width;
-            }
+            ElementIcon icon = (ElementIcon)e.Data.GetData(typeof(ElementIcon));
+            AbstractAugmentation augmentation = (AbstractAugmentation)((PictureBox)sender).Tag;
+            AbstractSource source = (AbstractSource)icon.Element.Prototype.Clone();
+            addSource(source, augmentation);
         }
     }
 
     /// <summary>
-    /// Refreshs the Augmentation with the new Scale.
+    /// EventHandler for Action before the ContextMenu is open.
     /// </summary>
-    private void updateScale()
+    /// <param name="sender">The sender.</param>
+    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+    private void popupContextMenu(object sender, EventArgs e)
     {
-        IPreviewable prev = this.ew.CurrentElement;
-        PictureBox box = this.findBox(prev);
-        double width = prev.getPreview().Width;
-        double height = prev.getPreview().Height;
-        double scale;
-        Vector3D scaleVector;
-
-        if (prev is Abstract2DTrackable)
-        {
-            scale = ((Abstract2DTrackable)prev).Size / prev.getPreview().Width; ;
-            box.Size = new Size((int)(width * scale), (int)(height * scale));
-        }
-        else if (prev is AbstractAugmentation)
-        {
-            scaleVector = ((AbstractAugmentation)prev).ScalingVector;
-            width = width * scaleVector.X;
-            height = height * scaleVector.Y;
-            box.Size = new Size((int)width, (int)height);
-        }
-        box.Refresh();
+        this.setCurrentElement((IPreviewable)((ContextMenu)sender).Tag);
+        ew.PropertyGrid1.SelectedObject = (IPreviewable)((ContextMenu)sender).Tag;
     }
 
-    /// <summary>
-    /// Rescales the preview panel if the size was changed.
-    /// </summary>
-    public void rescalePreviewPanel()
+    private void openQueryFile(object sender, EventArgs e)
     {
-        int width = this.panel.Width;
-        int height = this.panel.Height;
+        System.Diagnostics.Process.Start("notepad", ((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source.Query);
+    }
 
-        foreach (AbstractTrackable trackable in this.ew.project.Trackables)
-        {
-            trackable.vector = new Vector3D(width / 2, height / 2, 0);
-            foreach (AbstractAugmentation aug in trackable.Augmentations)
-            {
-                if (aug is Chart)
-                {
-                    ((Chart)aug).Positioning.Left = (int)(aug.TranslationVector.X + panel.Width / 2);
-                    ((Chart)aug).Positioning.Top = (int)(aug.TranslationVector.Y + panel.Width / 2);
-                }
-            }
-        }
-        int i = this.index;
-        this.index = -1;
-        this.reloadPreviewPanel(i);
+    private void openSourceFile(object sender, EventArgs e)
+    {
+        System.Diagnostics.Process.Start("notepad", ((FileSource)((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source).Data);
+    }
+    private void openOptionsFile(object sender, EventArgs e)
+    {
+        System.Diagnostics.Process.Start("notepad", ((Chart)this.ew.CurrentElement).Options);
     }
 }
