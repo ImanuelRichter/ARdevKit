@@ -88,7 +88,7 @@ public class PreviewController
         if (currentElement is AbstractTrackable && trackable == null)
         {
 
-            Vector3D center = new Vector3D(0, 0, 0);
+            Vector3D center = new Vector3D(0, 0, 1);
             center.Y = panel.Size.Height / 2;
             center.X = panel.Size.Width / 2;
             //ask the user for the picture (if the trackable is a picturemarker)
@@ -141,20 +141,35 @@ public class PreviewController
                     if (openFileDialog.ShowDialog() == DialogResult.OK)
                     {
                         ((ImageAugmentation)currentElement).ImagePath = openFileDialog.FileName;
+                        //set references 
+                        trackable.Augmentations.Add((AbstractAugmentation)currentElement);
+
+                        this.addPictureBox(currentElement, v);
+
+                        //set the vector and the trackable in <see cref="AbstractAugmentation"/>
+                        ((AbstractAugmentation)currentElement).Translation = this.calculateVector(v);
+                        ((AbstractAugmentation)currentElement).Trackable = this.trackable;
+
+                        //set the new box to the front
+                        this.findBox(currentElement).BringToFront();
+                        setCurrentElement(currentElement);
                     }
                 }
-                //set references 
-                trackable.Augmentations.Add((AbstractAugmentation)currentElement);
+                else
+                {
+                    //set references 
+                    trackable.Augmentations.Add((AbstractAugmentation)currentElement);
 
-                this.addPictureBox(currentElement, v);
+                    this.addPictureBox(currentElement, v);
 
-                //set the vector and the trackable in <see cref="AbstractAugmentation"/>
-                ((AbstractAugmentation)currentElement).Translation = this.calculateVector(v);
-                ((AbstractAugmentation)currentElement).Trackable = this.trackable;
+                    //set the vector and the trackable in <see cref="AbstractAugmentation"/>
+                    ((AbstractAugmentation)currentElement).Translation = this.calculateVector(v);
+                    ((AbstractAugmentation)currentElement).Trackable = this.trackable;
 
-                //set the new box to the front
-                this.findBox(currentElement).BringToFront();
-                setCurrentElement(currentElement);
+                    //set the new box to the front
+                    this.findBox(currentElement).BringToFront();
+                    setCurrentElement(currentElement);
+                }
             }
             else if (currentElement is Chart)
             {
@@ -165,20 +180,36 @@ public class PreviewController
                     if (openFileDialog.ShowDialog() == DialogResult.OK)
                     {
                         ((Chart)currentElement).Options = openFileDialog.FileName;
+                        //set references 
+                        trackable.Augmentations.Add((AbstractAugmentation)currentElement);
+
+                        this.addPictureBox(currentElement, v);
+
+                        //set the vector and the trackable in <see cref="AbstractAugmentation"/>
+                        ((AbstractAugmentation)currentElement).Translation = this.calculateVector(v);
+                        ((Chart)currentElement).Positioning.Left = (int)v.X;
+                        ((Chart)currentElement).Positioning.Top = (int)v.Y;
+                        ((AbstractAugmentation)currentElement).Trackable = this.trackable;
+
+                        setCurrentElement(currentElement);
                     }
                 }
-                //set references 
-                trackable.Augmentations.Add((AbstractAugmentation)currentElement);
+                else
+                {
+                    //set references 
+                    trackable.Augmentations.Add((AbstractAugmentation)currentElement);
 
-                this.addPictureBox(currentElement, v);
+                    this.addPictureBox(currentElement, v);
 
-                //set the vector and the trackable in <see cref="AbstractAugmentation"/>
-                ((AbstractAugmentation)currentElement).Translation = this.calculateVector(v);
-                ((Chart)currentElement).Positioning.Left = (int)v.X;
-                ((Chart)currentElement).Positioning.Top = (int)v.Y;
-                ((AbstractAugmentation)currentElement).Trackable = this.trackable;
+                    //set the vector and the trackable in <see cref="AbstractAugmentation"/>
+                    ((AbstractAugmentation)currentElement).Translation = this.calculateVector(v);
+                    ((Chart)currentElement).Positioning.Left = (int)v.X;
+                    ((Chart)currentElement).Positioning.Top = (int)v.Y;
+                    ((AbstractAugmentation)currentElement).Trackable = this.trackable;
 
-                setCurrentElement(currentElement);
+                    setCurrentElement(currentElement);
+                }
+                
             }
             else
             {
@@ -536,7 +567,7 @@ public class PreviewController
     /// <returns></returns>
     private Vector3D calculateVector(Vector3D v)
     {
-        Vector3D result = new Vector3D(0, 0, 0);
+        Vector3D result = new Vector3D(0, 0, 1);
         result.X = (v.X - panel.Width / 2);
         result.Y = (v.Y - panel.Height / 2);
         return result;
@@ -549,7 +580,7 @@ public class PreviewController
     /// <returns></returns>
     private Vector3D recalculateVector(Vector3D v)
     {
-        Vector3D result = new Vector3D(0, 0, 0);
+        Vector3D result = new Vector3D(0, 0, 1);
         result.X = (v.X + panel.Width / 2);
         result.Y = (v.Y + panel.Height / 2);
         return result;
@@ -648,7 +679,7 @@ public class PreviewController
 
         foreach (AbstractTrackable trackable in this.ew.project.Trackables)
         {
-            trackable.vector = new Vector3D(width / 2, height / 2, 0);
+            trackable.vector = new Vector3D(width / 2, height / 2, 1);
             foreach (AbstractAugmentation aug in trackable.Augmentations)
             {
                 if (aug is Chart)
@@ -784,7 +815,7 @@ public class PreviewController
     {
         Point p = this.panel.PointToClient(Cursor.Position);
         IPreviewable element = (IPreviewable)this.copy.Clone();
-        this.addPreviewable(element, new Vector3D(p.X, p.Y, 0));
+        this.addPreviewable(element, new Vector3D(p.X, p.Y, 1));
 
         if (typeof(AbstractDynamic2DAugmentation).IsAssignableFrom(element.GetType()) && ((AbstractDynamic2DAugmentation)element).Source != null)
         {
@@ -800,7 +831,7 @@ public class PreviewController
     /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
     public void paste_augmentation_center(object sender, EventArgs e)
     {
-        this.addPreviewable((IPreviewable)this.copy.Clone(), new Vector3D(this.panel.Width / 2, this.panel.Height / 2, 0));
+        this.addPreviewable((IPreviewable)this.copy.Clone(), new Vector3D(this.panel.Width / 2, this.panel.Height / 2, 1));
     }
 
 
