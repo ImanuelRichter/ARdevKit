@@ -12,9 +12,14 @@ namespace ARdevKit.Model.Project
     /// This class models the ScreenSize.
     /// </summary>
     /// <remarks>geht 26.01.2014 20:15</remarks>
-    class ScreenSize
+    [Serializable]
+    public class ScreenSize
     {
-
+        /// <summary>
+        /// The width
+        /// </summary>
+        /// <remarks>geht 26.01.2014 20:16</remarks>
+        private int width;
 
         /// <summary>
         /// Gets or sets the width.
@@ -59,15 +64,10 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
-        /// The width
-        /// </summary>
-        /// <remarks>geht 26.01.2014 20:16</remarks>
-        private int width;
-
-        /// <summary>
         /// event handler for changed size
         /// </summary>
         /// <remarks>geht 26.01.2014 20:16</remarks>
+        [field: NonSerializedAttribute]
         private EventHandler sizeChanged;
 
         /// <summary>

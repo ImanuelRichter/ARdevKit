@@ -248,12 +248,6 @@ namespace ARdevKit
             set { currentElement = value; }
         }
 
-        /// <summary>
-        /// The screensize
-        /// </summary>
-        /// <remarks>geht 26.01.2014 20:20</remarks>
-        private ScreenSize screensize;
-
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
         /// Default constructor. initializes components on startup.
@@ -345,7 +339,7 @@ namespace ARdevKit
         private void tsm_editor_menu_test_startImage_Click(object sender, EventArgs e)
         {
             if (project.Trackables != null && project.Trackables.Count > 0 && project.Trackables[0] != null)
-                TestController.StartPlayer(project, TestController.IMAGE, screensize.Width, screensize.Height);
+                TestController.StartPlayer(project, TestController.IMAGE, project.Screensize.Width, project.Screensize.Height);
             else
                 MessageBox.Show("Keine Szene zum Testen vorhanden");
         }
@@ -362,7 +356,7 @@ namespace ARdevKit
         private void tsm_editor_menu_test_startVideo_Click(object sender, EventArgs e)
         {
             if (project.Trackables != null && project.Trackables.Count > 0 && project.Trackables[0] != null)
-                TestController.StartPlayer(project, TestController.VIDEO, screensize.Width, screensize.Height);
+                TestController.StartPlayer(project, TestController.VIDEO, project.Screensize.Width, project.Screensize.Height);
             else
                 MessageBox.Show("Keine Szene zum Testen vorhanden");
         }
@@ -380,7 +374,7 @@ namespace ARdevKit
         private void tsm_editor_menu_test_startWithVirtualCamera_Click(object sender, EventArgs e)
         {
             if (project.Trackables != null && project.Trackables.Count > 0 && project.Trackables[0] != null)
-                TestController.StartPlayer(project, TestController.CAMERA, screensize.Width, screensize.Height);
+                TestController.StartPlayer(project, TestController.CAMERA, project.Screensize.Width, project.Screensize.Height);
             else
                 MessageBox.Show("Keine Szene zum Testen vorhanden");
         }
@@ -587,6 +581,7 @@ namespace ARdevKit
                 previewController.index = -1;
                 previewController.reloadPreviewPanel(0);
                 this.updateSceneSelectionPanel();
+                this.updateScreenSize();
             }
             catch (System.ArgumentException)
             {
@@ -894,10 +889,10 @@ namespace ARdevKit
             this.allElements = new LinkedList<IPreviewable>();
             this.exportVisitor = new ExportVisitor(false);
             this.currentElement = null;
-            this.screensize = new ScreenSize();
-            this.screensize.Height = pnl_editor_preview.Size.Height;
-            this.screensize.Width = pnl_editor_preview.Size.Width;
-            this.screensize.SizeChanged += new System.EventHandler(this.pnl_editor_preview_SizeChanged);
+            this.project.Screensize = new ScreenSize();
+            this.project.Screensize.Height = pnl_editor_preview.Size.Height;
+            this.project.Screensize.Width = pnl_editor_preview.Size.Width;
+            this.project.Screensize.SizeChanged += new System.EventHandler(this.pnl_editor_preview_SizeChanged);
             registerElements();
         }
 
@@ -928,7 +923,7 @@ namespace ARdevKit
         /// <remarks>geht 26.01.2014 20:20</remarks>
         private void updateScreenSize()
         {
-            this.pnl_editor_preview.Size = new Size(screensize.Width, screensize.Height);
+            this.pnl_editor_preview.Size = new Size(project.Screensize.Width, project.Screensize.Height);
             this.previewController.rescalePreviewPanel();
         }
 
@@ -1059,7 +1054,7 @@ namespace ARdevKit
         /// <remarks>geht 26.01.2014 20:21</remarks>
         private void pnl_editor_preview_Click(object sender, EventArgs e)
         {
-            propertyGrid1.SelectedObject = screensize;
+            propertyGrid1.SelectedObject = project.Screensize;
             propertyGrid1.PropertySort = PropertySort.NoSort;
         }
 
