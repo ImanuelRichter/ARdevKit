@@ -699,6 +699,20 @@ public class PreviewController
         this.reloadPreviewPanel(i);
     }
 
+    public void updateTranslation()
+    {
+        AbstractAugmentation current;
+
+        if (ew.CurrentElement is AbstractAugmentation)
+            current = (AbstractAugmentation)ew.CurrentElement;
+        else
+            return;
+        
+        Vector3D tmp = recalculateVector(current.Translation);
+        
+        PictureBox box = findBox(current);
+        box.Location = new Point((int)tmp.X, (int)tmp.Y);
+    }
 
     //////////////////////////////////////////////////////////////////////////////////EVENTS/////////////////////////////////////////////////////////////////////////////////////////////
 

@@ -42,17 +42,24 @@ namespace Controller.EditorController
             if (String.Equals(e.ChangedItem.Label.ToString(), "X", StringComparison.Ordinal)
                 || String.Equals(e.ChangedItem.Label.ToString(), "Y", StringComparison.Ordinal))
             {
+                ew.PreviewController.updateTranslation();
                 ew.PreviewController.updateScale();
+
+                return;
             }
 
             if (String.Equals(e.ChangedItem.Label.ToString(), "PicturePath", StringComparison.Ordinal))
             {
                 ew.PreviewController.findBox(ew.CurrentElement).Load(e.ChangedItem.Value.ToString());
+
+                return;
             }
 
             if (String.Equals(e.ChangedItem.Label.ToString(), "ImagePath", StringComparison.Ordinal))
             {
                 ew.PreviewController.findBox(ew.CurrentElement).Load(e.ChangedItem.Value.ToString());
+
+                return;
             }
         }
 
