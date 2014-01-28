@@ -508,19 +508,41 @@ public class PreviewController
     /// <param name="currentElement">The current element.</param>
     public void setCurrentElement(IPreviewable currentElement)
     {
-        if (this.ew.CurrentElement != currentElement)
+        if (currentElement != null)
         {
-            this.ew.CurrentElement = currentElement;
-
-            if (typeof(AbstractAugmentation).IsAssignableFrom(currentElement.GetType()))
+            if (this.ew.CurrentElement != currentElement)
             {
-                this.ew.Tsm_editor_menu_edit_copie.Enabled = true;
-            }
-            else if (typeof(AbstractTrackable).IsAssignableFrom(currentElement.GetType()))
-            {
-                this.ew.Tsm_editor_menu_edit_copie.Enabled = false;
-            }
+                this.ew.CurrentElement = currentElement;
 
+                if (typeof(AbstractAugmentation).IsAssignableFrom(currentElement.GetType()))
+                {
+                    this.ew.Tsm_editor_menu_edit_copie.Enabled = true;
+                }
+                else if (typeof(AbstractTrackable).IsAssignableFrom(currentElement.GetType()))
+                {
+                    this.ew.Tsm_editor_menu_edit_copie.Enabled = false;
+                }
+
+                foreach (Control comp in this.panel.Controls)
+                {
+                    if (((PictureBox)comp).BorderStyle == BorderStyle.Fixed3D)
+                    {
+                        ((PictureBox)comp).BorderStyle = BorderStyle.None;
+                        ((PictureBox)comp).Refresh();
+                    }
+                }
+                findBox(currentElement).BorderStyle = BorderStyle.Fixed3D;
+                findBox(currentElement).Refresh();
+                if (typeof(AbstractAugmentation).IsAssignableFrom(currentElement.GetType()))
+                {
+                    findBox(currentElement).BringToFront();
+                }
+                ew.PropertyGrid1.SelectedObject = currentElement;
+            }
+        }
+        else
+        {
+            this.ew.CurrentElement = null;
             foreach (Control comp in this.panel.Controls)
             {
                 if (((PictureBox)comp).BorderStyle == BorderStyle.Fixed3D)
@@ -529,15 +551,9 @@ public class PreviewController
                     ((PictureBox)comp).Refresh();
                 }
             }
-            findBox(currentElement).BorderStyle = BorderStyle.Fixed3D;
-            findBox(currentElement).Refresh();
-            if (typeof(AbstractAugmentation).IsAssignableFrom(currentElement.GetType()))
-            {
-                findBox(currentElement).BringToFront();
-            }
-            ew.PropertyGrid1.SelectedObject = currentElement;
+            this.ew.Tsm_editor_menu_edit_copie.Enabled = false;
         }
-
+        
     }
     /// <summary>
     /// set the augmentationPreview to a augmentationPreview with source icon
