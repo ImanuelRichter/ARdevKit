@@ -735,7 +735,7 @@ public class PreviewController
         Vector3D tmp = recalculateVector(current.Translation);
         
         PictureBox box = findBox(current);
-        box.Location = new Point((int)tmp.X, (int)tmp.Y);
+        box.Location = new Point((int)tmp.X - (box.Size.Width / 2), (int)tmp.Y - (box.Size.Height / 2));
     }
 
     //////////////////////////////////////////////////////////////////////////////////EVENTS/////////////////////////////////////////////////////////////////////////////////////////////
