@@ -96,6 +96,7 @@ namespace ARdevKit
             this.pnl_editor_preview.AllowDrop = true;
             this.pnl_editor_preview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_editor_preview.Location = new System.Drawing.Point(3, 3);
+            this.pnl_editor_preview.MinimumSize = new System.Drawing.Size(320, 240);
             this.pnl_editor_preview.Name = "pnl_editor_preview";
             this.pnl_editor_preview.Size = new System.Drawing.Size(653, 545);
             this.pnl_editor_preview.TabIndex = 3;

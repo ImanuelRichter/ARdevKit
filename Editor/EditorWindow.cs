@@ -38,6 +38,18 @@ namespace ARdevKit
 
     public partial class EditorWindow : Form
     {
+        /// <summary>
+        /// The minscreenwidht
+        /// </summary>
+        /// <remarks>geht 28.01.2014 15:12</remarks>
+        private const uint MINSCREENWIDHT = 320;
+       
+        /// <summary>
+        /// The minscreenheight
+        /// </summary>
+        /// <remarks>geht 28.01.2014 15:12</remarks>
+        private const uint MINSCREENHEIGHT = 240;
+       
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
         /// if true the debug window will be opened when starting the test mode on the device.
@@ -923,8 +935,23 @@ namespace ARdevKit
         /// <remarks>geht 26.01.2014 20:20</remarks>
         private void updateScreenSize()
         {
-            this.pnl_editor_preview.Size = new Size((int) project.Screensize.Width, (int) project.Screensize.Height);
-            this.previewController.rescalePreviewPanel();
+            if (project.Screensize.Width < MINSCREENWIDHT)
+            {
+                this.project.Screensize.Width = MINSCREENWIDHT;
+                this.pnl_editor_preview.Size = new Size((int)project.Screensize.Width, (int)project.Screensize.Height);
+                this.previewController.rescalePreviewPanel();
+            }
+            else if (project.Screensize.Height < MINSCREENHEIGHT)
+            {
+                this.project.Screensize.Height = MINSCREENHEIGHT;
+                this.pnl_editor_preview.Size = new Size((int)project.Screensize.Width, (int)project.Screensize.Height);
+                this.previewController.rescalePreviewPanel();
+            }
+            else
+            {
+                this.pnl_editor_preview.Size = new Size((int)project.Screensize.Width, (int)project.Screensize.Height);
+                this.previewController.rescalePreviewPanel();
+            }
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
