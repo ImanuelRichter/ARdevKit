@@ -132,6 +132,11 @@
     <Compile Include="Model\Project\Vector3Di.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controller\TestController\TestController.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="View\AbstractProperty.cs" />
     <Compile Include="View\ElementIcon.cs">
       <SubType>Component</SubType>
@@ -152,14 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="View\Slider.resx">
       <DependentUpon>Slider.cs</DependentUpon>
     </EmbeddedResource>
@@ -182,19 +182,16 @@
     <Content Include="ARdevKit.ico" />
     <Content Include="Controller\Connections\DeviceConnection\foo.txt" />
     <Content Include="Controller\DebugController\foo.txt" />
+    <None Include="Resources\highcharts%28normal%29.png" />
     <None Include="Resources\db_small.bmp" />
     <None Include="Resources\database.bmp" />
     <None Include="Resources\ImageAugmentation%28small%29.bmp" />
     <None Include="Resources\ARRMarker%28small%29.bmp" />
     <None Include="Resources\ARMarker%28small%29.bmp" />
     <None Include="Resources\sourcePreview%28small%29.bmp" />
-    <None Include="Resources\PieChart%28small%29.bmp" />
     <None Include="Resources\FileSource%28small%29.bmp" />
     <None Include="Resources\FileSource%28normal%29.bmp" />
-    <None Include="Resources\coordinationAxis%28small%29.bmp" />
     <None Include="Resources\sourcePreview%28normal%29.bmp" />
-    <None Include="Resources\coordinationAxis%28normal%29.bmp" />
-    <None Include="Resources\PieChart%28normal%29.bmp" />
     <None Include="Resources\ARRMarker%28normal%29.bmp" />
     <None Include="Resources\ARMarker%28normal%29.bmp" />
   </ItemGroup>
