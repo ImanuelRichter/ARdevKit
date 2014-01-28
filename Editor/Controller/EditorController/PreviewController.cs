@@ -101,12 +101,12 @@ public class PreviewController
                 if (isInitOk)
                 {
                     string path = openTestImageDialog.FileName;
-            if (currentElement.GetType() == typeof(PictureMarker))
-            {
+                    if (currentElement.GetType() == typeof(PictureMarker))
+                    {
                         ((PictureMarker)currentElement).PicturePath = path;
                     }
                     if (currentElement.GetType() == typeof(ImageTrackable))
-                {
+                    {
                         ((ImageTrackable)currentElement).ImagePath = path;
                     }
                 }
@@ -159,19 +159,19 @@ public class PreviewController
                 }
                 else
                 {
-                //set references 
-                trackable.Augmentations.Add((AbstractAugmentation)currentElement);
+                    //set references 
+                    trackable.Augmentations.Add((AbstractAugmentation)currentElement);
 
-                this.addPictureBox(currentElement, v);
+                    this.addPictureBox(currentElement, v);
 
-                //set the vector and the trackable in <see cref="AbstractAugmentation"/>
-                ((AbstractAugmentation)currentElement).Translation = this.calculateVector(v);
-                ((AbstractAugmentation)currentElement).Trackable = this.trackable;
+                    //set the vector and the trackable in <see cref="AbstractAugmentation"/>
+                    ((AbstractAugmentation)currentElement).Translation = this.calculateVector(v);
+                    ((AbstractAugmentation)currentElement).Trackable = this.trackable;
 
-                //set the new box to the front
-                this.findBox(currentElement).BringToFront();
-                setCurrentElement(currentElement);
-            }
+                    //set the new box to the front
+                    this.findBox(currentElement).BringToFront();
+                    setCurrentElement(currentElement);
+                }
             }
             else if (currentElement is Chart)
             {
@@ -198,19 +198,19 @@ public class PreviewController
                 }
                 else
                 {
-                //set references 
-                trackable.Augmentations.Add((AbstractAugmentation)currentElement);
+                    //set references 
+                    trackable.Augmentations.Add((AbstractAugmentation)currentElement);
 
-                this.addPictureBox(currentElement, v);
+                    this.addPictureBox(currentElement, v);
 
-                //set the vector and the trackable in <see cref="AbstractAugmentation"/>
-                ((AbstractAugmentation)currentElement).Translation = this.calculateVector(v);
-                ((Chart)currentElement).Positioning.Left = (int)v.X;
-                ((Chart)currentElement).Positioning.Top = (int)v.Y;
-                ((AbstractAugmentation)currentElement).Trackable = this.trackable;
+                    //set the vector and the trackable in <see cref="AbstractAugmentation"/>
+                    ((AbstractAugmentation)currentElement).Translation = this.calculateVector(v);
+                    ((Chart)currentElement).Positioning.Left = (int)v.X;
+                    ((Chart)currentElement).Positioning.Top = (int)v.Y;
+                    ((AbstractAugmentation)currentElement).Trackable = this.trackable;
 
-                setCurrentElement(currentElement);
-            }
+                    setCurrentElement(currentElement);
+                }
 
             }
             else
@@ -265,7 +265,7 @@ public class PreviewController
                         this.ew.project.Sources.Add(((AbstractDynamic2DAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).Source);
 
                         this.setSourcePreview(currentElement);
-                        DialogResult dialogResult = MessageBox.Show("Möchten sie ein Query zu der Source öffnen?", "Titel", MessageBoxButtons.YesNo);
+                        DialogResult dialogResult = MessageBox.Show("Möchten sie ein Query zu der Source öffnen?", "Query?", MessageBoxButtons.YesNo);
 
                         if (dialogResult == DialogResult.Yes)
                         {
@@ -327,6 +327,7 @@ public class PreviewController
             {
                 this.ew.ElementSelectionController.setElementEnable(typeof(PictureMarker), true);
                 this.ew.ElementSelectionController.setElementEnable(typeof(IDMarker), true);
+                this.ew.ElementSelectionController.setElementEnable(typeof(ImageTrackable), true);
             }
         }
         else if (currentElement is AbstractAugmentation && trackable != null)
@@ -378,13 +379,20 @@ public class PreviewController
             {
                 this.addAllToPanel(this.ew.project.Trackables[index]);
             }
-            if (this.trackable != null && trackable.GetType() == typeof(IDMarker))
+            if (this.trackable != null && trackable is IDMarker)
             {
                 this.ew.ElementSelectionController.setElementEnable(typeof(PictureMarker), false);
+                this.ew.ElementSelectionController.setElementEnable(typeof(ImageAugmentation), false);
             }
-            else if (this.trackable != null && trackable.GetType() == typeof(PictureMarker))
+            else if (this.trackable != null && trackable is PictureMarker)
             {
                 this.ew.ElementSelectionController.setElementEnable(typeof(IDMarker), false);
+                this.ew.ElementSelectionController.setElementEnable(typeof(ImageAugmentation), false);
+            }
+            else if (this.trackable != null && this.trackable is ImageTrackable)
+            {
+                this.ew.ElementSelectionController.setElementEnable(typeof(IDMarker), false);
+                this.ew.ElementSelectionController.setElementEnable(typeof(PictureMarker), false);
             }
         }
         //if the scene is new create a new empty scene
@@ -550,14 +558,14 @@ public class PreviewController
         temp.ContextMenu.MenuItems.Add("Source löschen", new EventHandler(this.remove_source_by_click));
         if (((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source is FileSource)
         {
-           
+
             temp.ContextMenu.MenuItems.Add("SourceFile öffnen", new EventHandler(this.openSourceFile));
             temp.ContextMenu.MenuItems.Add("QueryFile öffnen", new EventHandler(this.openQueryFile));
             if (((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source.Query == null)
             {
                 temp.ContextMenu.MenuItems[6].Enabled = false;
             }
-            
+
         }
         temp.Refresh();
     }
@@ -684,15 +692,15 @@ public class PreviewController
             if (trackable != null)
             {
                 trackable.vector = new Vector3D(width / 2, height / 2, 1);
-            foreach (AbstractAugmentation aug in trackable.Augmentations)
-            {
-                if (aug is Chart)
+                foreach (AbstractAugmentation aug in trackable.Augmentations)
                 {
-                    ((Chart)aug).Positioning.Left = (int)(aug.Translation.X + panel.Width / 2);
-                    ((Chart)aug).Positioning.Top = (int)(aug.Translation.Y + panel.Width / 2);
+                    if (aug is Chart)
+                    {
+                        ((Chart)aug).Positioning.Left = (int)(aug.Translation.X + panel.Width / 2);
+                        ((Chart)aug).Positioning.Top = (int)(aug.Translation.Y + panel.Width / 2);
+                    }
                 }
             }
-        }
         }
         int i = this.index;
         this.index = -1;
