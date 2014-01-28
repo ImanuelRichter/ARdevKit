@@ -1,0 +1,21 @@
+{
+	"chart": {
+		"type": "column"
+	},
+	"title": {
+		"text": "Titel"
+	},
+	"subtitle": {
+		"text": "Untertitel"
+	},
+	"xAxis": {
+		"text": "Kategorien",
+		"categories": []
+	},
+	"yAxis": {
+		"title": {
+			"text": "Einheiten"
+		}
+	},
+	"series": []
+}

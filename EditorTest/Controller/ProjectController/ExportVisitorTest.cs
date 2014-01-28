@@ -24,9 +24,9 @@ namespace EditorTest
             ImageAugmentation image1 = new ImageAugmentation();
             image1.ImagePath = Path.Combine(testProject.ProjectPath, "Assets", "frame.png");
             image1.IsVisible = false;
-            image1.TranslationVector = new Vector3D(0, 0, 0);
-            image1.RotationVector = new Vector3Di(0, 0, 0, 1);
-            image1.ScalingVector = new Vector3D(0, 0, 0);
+            image1.Translation = new Vector3D(0, 0, 0);
+            image1.Rotation = new Vector3Di(0, 0, 0, 1);
+            image1.Scaling = new Vector3D(0, 0, 0);
             idMarker1.Augmentations.Add(image1);
             image1.Trackable = idMarker1;
 
@@ -41,24 +41,12 @@ namespace EditorTest
 
             PictureMarker pictureMarker1 = new PictureMarker("res\\testFiles\\trackables\\pictureMarker1.png");
 
-            BarChart barChart1 = new BarChart();
+            Chart barChart1 = new Chart();
             barChart1.IsVisible = false;
-            barChart1.TranslationVector = new Vector3D(100, -100, 0);
-            barChart1.Style = new ChartStyle();
-            barChart1.PositionRelativeToTrackable = true;
+            barChart1.Translation = new Vector3D(100, -100, 0);
             barChart1.Width = 200;
             barChart1.Height = 200;
 
-            barChart1.Title = "Feuchtigkeitsstand";
-            barChart1.Subtitle = "sensorbasiert";
-            barChart1.XAxisTitle = "Wochentag";
-            barChart1.Categories = new string[] { "Mo", "Di", "Mi", "Do", "Fr", "Sa", "So" };
-            barChart1.MinValue = 0;
-            barChart1.YAxisTitle = "Feuchtigkeit in %";
-            barChart1.PointPadding = 0.2;
-            barChart1.BorderWidth = 0;
-            barChart1.Data = new List<BarChartData>();
-            barChart1.Data.Add(new BarChartData("Rose", new double[] { 72.5, 50.3, 33.1 }));
             pictureMarker1.Augmentations.Add(barChart1);
             barChart1.Trackable = pictureMarker1;
 
@@ -73,16 +61,14 @@ namespace EditorTest
 
             PictureMarker pictureMarker1 = new PictureMarker("res\\testFiles\\trackables\\pictureMarker1.png");
 
-            BarChart barChart1 = new BarChart();
+            Chart barChart1 = new Chart();
             barChart1.IsVisible = false;
-            barChart1.TranslationVector = new Vector3D(100, -100, 0);
-            barChart1.Style = new ChartStyle();
-            barChart1.PositionRelativeToTrackable = true;
+            barChart1.Translation = new Vector3D(100, -100, 0);
             barChart1.Width = 200;
             barChart1.Height = 200;
 
             barChart1.Source = new FileSource("res\\highcharts\\barChartColumn\\data.xml");
-            barChart1.Source.QueryFilePath = "res\\highcharts\\barChartColumn\\xmlQuery.js";
+            barChart1.Source.Query = "res\\highcharts\\barChartColumn\\xmlQuery.js";
             barChart1.Source.Augmentation = barChart1;
             pictureMarker1.Augmentations.Add(barChart1);
             barChart1.Trackable = pictureMarker1;
@@ -98,17 +84,15 @@ namespace EditorTest
 
             PictureMarker pictureMarker1 = new PictureMarker("res\\testFiles\\trackables\\pictureMarker1.png");
 
-            BarChart barChart1 = new BarChart();
+            Chart barChart1 = new Chart();
             barChart1.IsVisible = false;
-            barChart1.TranslationVector = new Vector3D(100, -100, 0);
-            barChart1.Style = new ChartStyle();
-            barChart1.PositionRelativeToTrackable = true;
+            barChart1.Translation = new Vector3D(100, -100, 0);
             barChart1.Width = 200;
             barChart1.Height = 200;
 
             barChart1.Options = File.OpenText("res\\highcharts\\barChartColumn\\liveOptions.json").ReadToEnd();
             barChart1.Source = new LiveSource("http://localhost/highcharts/server.php?callback=?");
-            barChart1.Source.QueryFilePath = "res\\highcharts\\barChartColumn\\liveQuery.js";
+            barChart1.Source.Query = "res\\highcharts\\barChartColumn\\liveQuery.js";
             barChart1.Source.Augmentation = barChart1;
             pictureMarker1.Augmentations.Add(barChart1);
             barChart1.Trackable = pictureMarker1;

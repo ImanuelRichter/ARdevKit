@@ -20,6 +20,7 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// Gets or sets the sensor cos identifier.
         /// </summary>
+        [CategoryAttribute("Expert"), Description("The sensor cos identifier, used by AREL to specify the tracking data.")]
         public string SensorCosID
         {
             get { return sensorCosID; }
@@ -33,11 +34,17 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// Gets or sets the size.
         /// </summary>
-        [CategoryAttribute("General")]
+        [CategoryAttribute("General"), Description("Size of the actual marker in mm")]
         public int Size
         {
             get { return size; }
-            set { size = value; }
+            set 
+            {
+                if (value < 1)
+                    size = 1;
+                else
+                    size = value; 
+            }
         }
 
         /// <summary>
@@ -48,9 +55,8 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// Get or set the position of the <see cref="AbstractAugmentation"/>.
         /// </summary>
-        //[CategoryAttribute("General")]
         [Browsable(false)]
-        public Vector3D TranslationVector
+        public Vector3D Translation
         {
             get { return translationVector; }
             set { translationVector = value; }
@@ -64,9 +70,9 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// gets or sets the Vector
         /// </summary>
-        //[CategoryAttribute("General")]
         [Browsable(false)]
-        public Vector3Di RotationVector
+        [Description("Vector which describes the rotation of the augmentation.")]
+        public Vector3Di Rotation
         {
             get { return rotationVector; }
             set { rotationVector = value; }
@@ -85,6 +91,7 @@ namespace ARdevKit.Model.Project
         /// <value>
         /// The fuser.
         /// </value>
+        [Browsable(false)]
         public MarkerFuser Fuser
         {
             get { return fuser; }

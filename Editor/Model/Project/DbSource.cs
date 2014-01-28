@@ -55,7 +55,7 @@ namespace ARdevKit.Model.Project
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
-        /// An abstract method, to accept a <see cref="AbstractProjectVisitor"/>which must be implemented
+        /// An abstract method, to accept a <see cref="AbstractProjectVisitor"/> which must be implemented
         /// according to the visitor design pattern.
         /// </summary>
         ///

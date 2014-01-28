@@ -74,13 +74,8 @@
     <Compile Include="Model\Project\ScreenSize.cs" />
     <Compile Include="Model\Project\ImageTrackable.cs" />
     <Compile Include="Model\Project\AbstractDynamic2DAugmentation.cs" />
-    <Compile Include="Model\Project\BarChartData.cs" />
-    <Compile Include="Model\Project\ChartData.cs" />
-    <Compile Include="Model\Project\ChartStyle.cs" />
+    <Compile Include="Model\Project\ChartPositioning.cs" />
     <Compile Include="Model\Project\File\ChartFile.cs" />
-    <Compile Include="Model\Project\File\ChartDataFile.cs" />
-    <Compile Include="Model\Project\File\ChartOptionsFile.cs" />
-    <Compile Include="Model\Project\File\ChartQueryFile.cs" />
     <Compile Include="Model\Project\File\JavaScriptInLine.cs" />
     <Compile Include="Model\Project\ImageAugmentation.cs" />
     <Compile Include="Model\Project\LiveSource.cs" />
@@ -113,7 +108,7 @@
     </Compile>
     <Compile Include="Controller\EditorController\PreviewController.cs" />
     <Compile Include="Model\Project\AbstractTrackable.cs" />
-    <Compile Include="Model\Project\BarChart.cs" />
+    <Compile Include="Model\Project\Chart.cs" />
     <Compile Include="Model\Project\CustomUserEvent.cs" />
     <Compile Include="Model\Project\DbSource.cs" />
     <Compile Include="Model\Project\FileSource.cs" />
@@ -138,6 +133,11 @@
     <Compile Include="Model\Project\Vector3Di.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controller\TestController\TestController.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="View\AbstractProperty.cs" />
     <Compile Include="View\ElementIcon.cs">
       <SubType>Component</SubType>
@@ -146,22 +146,26 @@
     <Compile Include="View\SceneElementCategoryPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="View\Slider.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Slider.Designer.cs">
+      <DependentUpon>Slider.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\TypeEditoren.cs" />
     <EmbeddedResource Include="EditorWindow.resx">
       <DependentUpon>EditorWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
+    <EmbeddedResource Include="View\Slider.resx">
+      <DependentUpon>Slider.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\DataSources\EditorWindow.datasource" />
-    <Compile Include="Model\Project\Chart.cs" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -179,19 +183,16 @@
     <Content Include="ARdevKit.ico" />
     <Content Include="Controller\Connections\DeviceConnection\foo.txt" />
     <Content Include="Controller\DebugController\foo.txt" />
+    <None Include="Resources\highcharts%28normal%29.png" />
     <None Include="Resources\db_small.bmp" />
     <None Include="Resources\database.bmp" />
     <None Include="Resources\ImageAugmentation%28small%29.bmp" />
     <None Include="Resources\ARRMarker%28small%29.bmp" />
     <None Include="Resources\ARMarker%28small%29.bmp" />
     <None Include="Resources\sourcePreview%28small%29.bmp" />
-    <None Include="Resources\PieChart%28small%29.bmp" />
     <None Include="Resources\FileSource%28small%29.bmp" />
     <None Include="Resources\FileSource%28normal%29.bmp" />
-    <None Include="Resources\coordinationAxis%28small%29.bmp" />
     <None Include="Resources\sourcePreview%28normal%29.bmp" />
-    <None Include="Resources\coordinationAxis%28normal%29.bmp" />
-    <None Include="Resources\PieChart%28normal%29.bmp" />
     <None Include="Resources\ARRMarker%28normal%29.bmp" />
     <None Include="Resources\ARMarker%28normal%29.bmp" />
   </ItemGroup>
