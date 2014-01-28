@@ -679,13 +679,16 @@ public class PreviewController
 
         foreach (AbstractTrackable trackable in this.ew.project.Trackables)
         {
-            trackable.vector = new Vector3D(width / 2, height / 2, 1);
-            foreach (AbstractAugmentation aug in trackable.Augmentations)
+            if (trackable != null)
             {
-                if (aug is Chart)
+                trackable.vector = new Vector3D(width / 2, height / 2, 1);
+                foreach (AbstractAugmentation aug in trackable.Augmentations)
                 {
-                    ((Chart)aug).Positioning.Left = (int)(aug.Translation.X + panel.Width / 2);
-                    ((Chart)aug).Positioning.Top = (int)(aug.Translation.Y + panel.Width / 2);
+                    if (aug is Chart)
+                    {
+                        ((Chart)aug).Positioning.Left = (int)(aug.Translation.X + panel.Width / 2);
+                        ((Chart)aug).Positioning.Top = (int)(aug.Translation.Y + panel.Width / 2);
+                    }
                 }
             }
         }
