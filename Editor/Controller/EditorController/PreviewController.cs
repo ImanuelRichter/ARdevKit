@@ -88,7 +88,7 @@ public class PreviewController
         if (currentElement is AbstractTrackable && trackable == null)
         {
 
-            Vector3D center = new Vector3D(0, 0, 1);
+            Vector3D center = new Vector3D(0, 0, 0);
             center.Y = panel.Size.Height / 2;
             center.X = panel.Size.Width / 2;
             //ask the user for the picture (if the trackable is a picturemarker)
@@ -101,12 +101,12 @@ public class PreviewController
                 if (isInitOk)
                 {
                     string path = openTestImageDialog.FileName;
-            if (currentElement.GetType() == typeof(PictureMarker))
-            {
+                    if (currentElement.GetType() == typeof(PictureMarker))
+                    {
                         ((PictureMarker)currentElement).PicturePath = path;
                     }
                     if (currentElement.GetType() == typeof(ImageTrackable))
-                {
+                    {
                         ((ImageTrackable)currentElement).ImagePath = path;
                     }
                 }
@@ -159,19 +159,19 @@ public class PreviewController
                 }
                 else
                 {
-                //set references 
-                trackable.Augmentations.Add((AbstractAugmentation)currentElement);
+                    //set references 
+                    trackable.Augmentations.Add((AbstractAugmentation)currentElement);
 
-                this.addPictureBox(currentElement, v);
+                    this.addPictureBox(currentElement, v);
 
-                //set the vector and the trackable in <see cref="AbstractAugmentation"/>
-                ((AbstractAugmentation)currentElement).Translation = this.calculateVector(v);
-                ((AbstractAugmentation)currentElement).Trackable = this.trackable;
+                    //set the vector and the trackable in <see cref="AbstractAugmentation"/>
+                    ((AbstractAugmentation)currentElement).Translation = this.calculateVector(v);
+                    ((AbstractAugmentation)currentElement).Trackable = this.trackable;
 
-                //set the new box to the front
-                this.findBox(currentElement).BringToFront();
-                setCurrentElement(currentElement);
-            }
+                    //set the new box to the front
+                    this.findBox(currentElement).BringToFront();
+                    setCurrentElement(currentElement);
+                }
             }
             else if (currentElement is Chart)
             {
@@ -198,19 +198,19 @@ public class PreviewController
                 }
                 else
                 {
-                //set references 
-                trackable.Augmentations.Add((AbstractAugmentation)currentElement);
+                    //set references 
+                    trackable.Augmentations.Add((AbstractAugmentation)currentElement);
 
-                this.addPictureBox(currentElement, v);
+                    this.addPictureBox(currentElement, v);
 
-                //set the vector and the trackable in <see cref="AbstractAugmentation"/>
-                ((AbstractAugmentation)currentElement).Translation = this.calculateVector(v);
-                ((Chart)currentElement).Positioning.Left = (int)v.X;
-                ((Chart)currentElement).Positioning.Top = (int)v.Y;
-                ((AbstractAugmentation)currentElement).Trackable = this.trackable;
+                    //set the vector and the trackable in <see cref="AbstractAugmentation"/>
+                    ((AbstractAugmentation)currentElement).Translation = this.calculateVector(v);
+                    ((Chart)currentElement).Positioning.Left = (int)v.X;
+                    ((Chart)currentElement).Positioning.Top = (int)v.Y;
+                    ((AbstractAugmentation)currentElement).Trackable = this.trackable;
 
-                setCurrentElement(currentElement);
-            }
+                    setCurrentElement(currentElement);
+                }
 
             }
             else
@@ -264,8 +264,8 @@ public class PreviewController
                         ((AbstractDynamic2DAugmentation)currentElement).Source = source;
                         this.ew.project.Sources.Add(((AbstractDynamic2DAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).Source);
 
-                        this.setSourcePreview(currentElement);
-                        DialogResult dialogResult = MessageBox.Show("Möchten sie ein Query zu der Source öffnen?", "Titel", MessageBoxButtons.YesNo);
+                        
+                        DialogResult dialogResult = MessageBox.Show("Möchten sie ein Query zu der Source öffnen?", "Query?", MessageBoxButtons.YesNo);
 
                         if (dialogResult == DialogResult.Yes)
                         {
@@ -276,6 +276,7 @@ public class PreviewController
                                 ((FileSource)source).Query = openFileDialog.FileName;
                             }
                         }
+                        this.setSourcePreview(currentElement);
                     }
                 }
                 else
@@ -327,6 +328,7 @@ public class PreviewController
             {
                 this.ew.ElementSelectionController.setElementEnable(typeof(PictureMarker), true);
                 this.ew.ElementSelectionController.setElementEnable(typeof(IDMarker), true);
+                this.ew.ElementSelectionController.setElementEnable(typeof(ImageTrackable), true);
             }
         }
         else if (currentElement is AbstractAugmentation && trackable != null)
@@ -378,13 +380,20 @@ public class PreviewController
             {
                 this.addAllToPanel(this.ew.project.Trackables[index]);
             }
-            if (this.trackable != null && trackable.GetType() == typeof(IDMarker))
+            if (this.trackable != null && trackable is IDMarker)
             {
                 this.ew.ElementSelectionController.setElementEnable(typeof(PictureMarker), false);
+                this.ew.ElementSelectionController.setElementEnable(typeof(ImageAugmentation), false);
             }
-            else if (this.trackable != null && trackable.GetType() == typeof(PictureMarker))
+            else if (this.trackable != null && trackable is PictureMarker)
             {
                 this.ew.ElementSelectionController.setElementEnable(typeof(IDMarker), false);
+                this.ew.ElementSelectionController.setElementEnable(typeof(ImageAugmentation), false);
+            }
+            else if (this.trackable != null && this.trackable is ImageTrackable)
+            {
+                this.ew.ElementSelectionController.setElementEnable(typeof(IDMarker), false);
+                this.ew.ElementSelectionController.setElementEnable(typeof(PictureMarker), false);
             }
         }
         //if the scene is new create a new empty scene
@@ -500,19 +509,41 @@ public class PreviewController
     /// <param name="currentElement">The current element.</param>
     public void setCurrentElement(IPreviewable currentElement)
     {
-        if (this.ew.CurrentElement != currentElement)
+        if (currentElement != null)
         {
-            this.ew.CurrentElement = currentElement;
-
-            if (typeof(AbstractAugmentation).IsAssignableFrom(currentElement.GetType()))
+            if (this.ew.CurrentElement != currentElement)
             {
-                this.ew.Tsm_editor_menu_edit_copie.Enabled = true;
-            }
-            else if (typeof(AbstractTrackable).IsAssignableFrom(currentElement.GetType()))
-            {
-                this.ew.Tsm_editor_menu_edit_copie.Enabled = false;
-            }
+                this.ew.CurrentElement = currentElement;
 
+                if (typeof(AbstractAugmentation).IsAssignableFrom(currentElement.GetType()))
+                {
+                    this.ew.Tsm_editor_menu_edit_copie.Enabled = true;
+                }
+                else if (typeof(AbstractTrackable).IsAssignableFrom(currentElement.GetType()))
+                {
+                    this.ew.Tsm_editor_menu_edit_copie.Enabled = false;
+                }
+
+                foreach (Control comp in this.panel.Controls)
+                {
+                    if (((PictureBox)comp).BorderStyle == BorderStyle.Fixed3D)
+                    {
+                        ((PictureBox)comp).BorderStyle = BorderStyle.None;
+                        ((PictureBox)comp).Refresh();
+                    }
+                }
+                findBox(currentElement).BorderStyle = BorderStyle.Fixed3D;
+                findBox(currentElement).Refresh();
+                if (typeof(AbstractAugmentation).IsAssignableFrom(currentElement.GetType()))
+                {
+                    findBox(currentElement).BringToFront();
+                }
+                ew.PropertyGrid1.SelectedObject = currentElement;
+            }
+        }
+        else
+        {
+            this.ew.CurrentElement = null;
             foreach (Control comp in this.panel.Controls)
             {
                 if (((PictureBox)comp).BorderStyle == BorderStyle.Fixed3D)
@@ -521,15 +552,9 @@ public class PreviewController
                     ((PictureBox)comp).Refresh();
                 }
             }
-            findBox(currentElement).BorderStyle = BorderStyle.Fixed3D;
-            findBox(currentElement).Refresh();
-            if (typeof(AbstractAugmentation).IsAssignableFrom(currentElement.GetType()))
-            {
-                findBox(currentElement).BringToFront();
-            }
-            ew.PropertyGrid1.SelectedObject = currentElement;
+            this.ew.Tsm_editor_menu_edit_copie.Enabled = false;
         }
-
+        
     }
     /// <summary>
     /// set the augmentationPreview to a augmentationPreview with source icon
@@ -550,14 +575,13 @@ public class PreviewController
         temp.ContextMenu.MenuItems.Add("Source löschen", new EventHandler(this.remove_source_by_click));
         if (((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source is FileSource)
         {
-           
+
             temp.ContextMenu.MenuItems.Add("SourceFile öffnen", new EventHandler(this.openSourceFile));
             temp.ContextMenu.MenuItems.Add("QueryFile öffnen", new EventHandler(this.openQueryFile));
             if (((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source.Query == null)
             {
                 temp.ContextMenu.MenuItems[6].Enabled = false;
             }
-            
         }
         temp.Refresh();
     }
@@ -569,7 +593,7 @@ public class PreviewController
     /// <returns></returns>
     private Vector3D calculateVector(Vector3D v)
     {
-        Vector3D result = new Vector3D(0, 0, 1);
+        Vector3D result = new Vector3D(0, 0, 0);
         result.X = (v.X - panel.Width / 2);
         result.Y = (v.Y - panel.Height / 2);
         return result;
@@ -582,7 +606,7 @@ public class PreviewController
     /// <returns></returns>
     private Vector3D recalculateVector(Vector3D v)
     {
-        Vector3D result = new Vector3D(0, 0, 1);
+        Vector3D result = new Vector3D(0, 0, 0);
         result.X = (v.X + panel.Width / 2);
         result.Y = (v.Y + panel.Height / 2);
         return result;
@@ -683,16 +707,16 @@ public class PreviewController
         {
             if (trackable != null)
             {
-                trackable.vector = new Vector3D(width / 2, height / 2, 1);
-            foreach (AbstractAugmentation aug in trackable.Augmentations)
-            {
-                if (aug is Chart)
+                trackable.vector = new Vector3D(width / 2, height / 2, 0);
+                foreach (AbstractAugmentation aug in trackable.Augmentations)
                 {
-                    ((Chart)aug).Positioning.Left = (int)(aug.Translation.X + panel.Width / 2);
-                    ((Chart)aug).Positioning.Top = (int)(aug.Translation.Y + panel.Width / 2);
+                    if (aug is Chart)
+                    {
+                        ((Chart)aug).Positioning.Left = (int)(aug.Translation.X + panel.Width / 2);
+                        ((Chart)aug).Positioning.Top = (int)(aug.Translation.Y + panel.Width / 2);
+                    }
                 }
             }
-        }
         }
         int i = this.index;
         this.index = -1;
@@ -834,7 +858,7 @@ public class PreviewController
     {
         Point p = this.panel.PointToClient(Cursor.Position);
         IPreviewable element = (IPreviewable)this.copy.Clone();
-        this.addPreviewable(element, new Vector3D(p.X, p.Y, 1));
+        this.addPreviewable(element, new Vector3D(p.X, p.Y, 0));
 
         if (typeof(AbstractDynamic2DAugmentation).IsAssignableFrom(element.GetType()) && ((AbstractDynamic2DAugmentation)element).Source != null)
         {
@@ -850,7 +874,7 @@ public class PreviewController
     /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
     public void paste_augmentation_center(object sender, EventArgs e)
     {
-        this.addPreviewable((IPreviewable)this.copy.Clone(), new Vector3D(this.panel.Width / 2, this.panel.Height / 2, 1));
+        this.addPreviewable((IPreviewable)this.copy.Clone(), new Vector3D(this.panel.Width / 2, this.panel.Height / 2, 0));
     }
 
 
