@@ -95,12 +95,13 @@ public class PreviewController
             bool isInitOk = true;
             if (currentElement.GetType() == typeof(PictureMarker) || currentElement.GetType() == typeof(ImageTrackable))
             {
-                OpenFileDialog openTestImageDialog = new OpenFileDialog();
-                openTestImageDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
-                isInitOk = openTestImageDialog.ShowDialog() == DialogResult.OK;
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+                openFileDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
+                isInitOk = openFileDialog.ShowDialog() == DialogResult.OK;
                 if (isInitOk)
                 {
-                    string path = openTestImageDialog.FileName;
+                    string path = openFileDialog.FileName;
                     if (currentElement.GetType() == typeof(PictureMarker))
                     {
                         ((PictureMarker)currentElement).PicturePath = path;
@@ -139,6 +140,7 @@ public class PreviewController
                 if (((ImageAugmentation)currentElement).ImagePath == null)
                 {
                     openFileDialog = new OpenFileDialog();
+                    openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
                     openFileDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
                     if (openFileDialog.ShowDialog() == DialogResult.OK)
                     {
@@ -178,6 +180,7 @@ public class PreviewController
                 if (((Chart)currentElement).Options == null)
                 {
                     openFileDialog = new OpenFileDialog();
+                    openFileDialog.InitialDirectory = Application.StartupPath + "\\res\\highcharts\\barChartColumn";
                     openFileDialog.Filter = "json (*.json)|*.json";
                     if (openFileDialog.ShowDialog() == DialogResult.OK)
                     {
@@ -254,6 +257,7 @@ public class PreviewController
                 if (source is FileSource)
                 {
                     OpenFileDialog openFileDialog = new OpenFileDialog();
+                    openFileDialog.InitialDirectory = Application.StartupPath + "\\res\\highcharts\\barChartColumn";
                     if (openFileDialog.ShowDialog() == DialogResult.OK)
                     {
                         ((FileSource)source).Data = openFileDialog.FileName;
@@ -270,6 +274,7 @@ public class PreviewController
                         if (dialogResult == DialogResult.Yes)
                         {
                             openFileDialog = new OpenFileDialog();
+                            openFileDialog.InitialDirectory = Application.StartupPath + "\\res\\highcharts\\barChartColumn";
                             openFileDialog.Filter = "JavaFile (*.js)|*.js";
                             if (openFileDialog.ShowDialog() == DialogResult.OK)
                             {
@@ -383,12 +388,12 @@ public class PreviewController
             if (this.trackable != null && trackable is IDMarker)
             {
                 this.ew.ElementSelectionController.setElementEnable(typeof(PictureMarker), false);
-                this.ew.ElementSelectionController.setElementEnable(typeof(ImageAugmentation), false);
+                this.ew.ElementSelectionController.setElementEnable(typeof(ImageTrackable), false);
             }
             else if (this.trackable != null && trackable is PictureMarker)
             {
                 this.ew.ElementSelectionController.setElementEnable(typeof(IDMarker), false);
-                this.ew.ElementSelectionController.setElementEnable(typeof(ImageAugmentation), false);
+                this.ew.ElementSelectionController.setElementEnable(typeof(ImageTrackable), false);
             }
             else if (this.trackable != null && this.trackable is ImageTrackable)
             {
