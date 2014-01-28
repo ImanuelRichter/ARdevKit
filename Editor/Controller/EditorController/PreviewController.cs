@@ -264,7 +264,7 @@ public class PreviewController
                         ((AbstractDynamic2DAugmentation)currentElement).Source = source;
                         this.ew.project.Sources.Add(((AbstractDynamic2DAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).Source);
 
-                        this.setSourcePreview(currentElement);
+                        
                         DialogResult dialogResult = MessageBox.Show("Möchten sie ein Query zu der Source öffnen?", "Query?", MessageBoxButtons.YesNo);
 
                         if (dialogResult == DialogResult.Yes)
@@ -276,6 +276,7 @@ public class PreviewController
                                 ((FileSource)source).Query = openFileDialog.FileName;
                             }
                         }
+                        this.setSourcePreview(currentElement);
                     }
                 }
                 else
@@ -581,7 +582,6 @@ public class PreviewController
             {
                 temp.ContextMenu.MenuItems[6].Enabled = false;
             }
-
         }
         temp.Refresh();
     }
