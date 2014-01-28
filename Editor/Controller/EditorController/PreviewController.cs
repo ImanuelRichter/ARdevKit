@@ -703,6 +703,7 @@ public class PreviewController
     /// <summary>
     /// Rescales the preview panel if the size was changed.
     /// </summary>
+
     public void rescalePreviewPanel()
     {
         int width = this.panel.Width;
