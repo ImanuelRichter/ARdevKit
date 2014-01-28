@@ -37,7 +37,7 @@
             // 
             // trackBar1
             // 
-            this.trackBar1.Location = new System.Drawing.Point(0, 0);
+            this.trackBar1.Location = new System.Drawing.Point(5, 0);
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(240, 45);
             this.trackBar1.TabIndex = 0;
@@ -48,14 +48,14 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(7, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(13, 13);
+            this.label1.Size = new System.Drawing.Size(22, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "0";
+            this.label1.Text = "0,0";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(111, 32);
+            this.label2.Location = new System.Drawing.Point(114, 32);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(22, 13);
             this.label2.TabIndex = 2;
@@ -66,9 +66,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(220, 32);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(13, 13);
+            this.label3.Size = new System.Drawing.Size(22, 13);
             this.label3.TabIndex = 3;
-            this.label3.Text = "1";
+            this.label3.Text = "1,0";
             // 
             // Slider
             // 
@@ -79,7 +79,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.trackBar1);
             this.Name = "Slider";
-            this.Size = new System.Drawing.Size(240, 50);
+            this.Size = new System.Drawing.Size(250, 50);
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

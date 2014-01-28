@@ -12,12 +12,21 @@ namespace ARdevKit.View
 {
     public partial class Slider : UserControl
     {
-        private double sliderValue;
+        private bool isDouble;
 
-        public double SliderValue
+        private double sliderValueDouble;
+        public double SliderValueDouble
         {
-            get { return sliderValue; }
-            set { sliderValue = value; }
+            get { return sliderValueDouble; }
+            set { sliderValueDouble = value; }
+        }
+
+
+        private int sliderValueInt;
+        public int SliderValueInt
+        {
+            get { return sliderValueInt; }
+            set { sliderValueInt = value; }
         }
 
         public Slider()
@@ -25,14 +34,28 @@ namespace ARdevKit.View
             InitializeComponent();
         }
 
+        public Slider(int initValue, int maxValue) : this()
+        {
+            trackBar1.Maximum = maxValue;
+            trackBar1.Value = initValue;
+            isDouble = false;
+
+            label2.Text = "500";
+            label3.Text = "1000";
+        }
+
         public Slider(double initValue) : this()
         {
             trackBar1.Value = (int)(initValue * 10);
+            isDouble = true;
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-            sliderValue = (double)trackBar1.Value / 10.0;
+            if (isDouble)
+                sliderValueDouble = (double)trackBar1.Value / 10.0;
+            else
+                sliderValueInt = trackBar1.Value;
         }
     }
 }

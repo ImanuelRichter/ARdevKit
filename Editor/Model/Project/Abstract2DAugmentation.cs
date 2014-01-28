@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.ComponentModel;
+using ARdevKit.View;
 
 namespace ARdevKit.Model.Project
 {
@@ -28,6 +29,7 @@ namespace ARdevKit.Model.Project
         /// The height, in mm.
         /// </value>
         [CategoryAttribute("General")]
+        [Editor(typeof(SliderEditor), typeof(System.Drawing.Design.UITypeEditor))]
         public int Height
         {
             get { return height; }
@@ -46,6 +48,7 @@ namespace ARdevKit.Model.Project
         /// The width, in mm.
         /// </value>
         [CategoryAttribute("General")]
+        [Editor(typeof(SliderEditor), typeof(System.Drawing.Design.UITypeEditor))]
         public int Width
         {
             get { return width; }

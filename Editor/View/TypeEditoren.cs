@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using System.Drawing.Design;
 using System.ComponentModel;
 using System.Windows.Forms.Design;
+using ARdevKit.Model.Project;
+using System.Windows.Forms;
 
 namespace ARdevKit.View
 {
@@ -21,10 +23,18 @@ namespace ARdevKit.View
             IWindowsFormsEditorService svc = (IWindowsFormsEditorService)provider.GetService(typeof(IWindowsFormsEditorService));
             if (svc != null)
             {
-                Slider sd = new Slider((double)value);
-                sd.SliderValue = (double)value;
-                svc.DropDownControl(sd);
-                return (object)sd.SliderValue;
+                if (context.Instance is AbstractTrackable)
+                {
+                    Slider sd = new Slider((double)value);
+                    svc.DropDownControl(sd);
+                    return (object)sd.SliderValueDouble;
+                }
+                if (context.Instance is Abstract2DAugmentation)
+                {
+                    Slider sd = new Slider((int)value, 1000);
+                    svc.DropDownControl(sd);
+                    return (object)sd.SliderValueInt;
+                }
             }
             return value;
         }
