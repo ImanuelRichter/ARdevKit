@@ -339,7 +339,7 @@ namespace ARdevKit
         private void tsm_editor_menu_test_startImage_Click(object sender, EventArgs e)
         {
             if (project.Trackables != null && project.Trackables.Count > 0 && project.Trackables[0] != null)
-                TestController.StartPlayer(project, TestController.IMAGE, project.Screensize.Width, project.Screensize.Height);
+                TestController.StartPlayer(project, TestController.IMAGE, (int) project.Screensize.Width, (int) project.Screensize.Height);
             else
                 MessageBox.Show("Keine Szene zum Testen vorhanden");
         }
@@ -356,7 +356,7 @@ namespace ARdevKit
         private void tsm_editor_menu_test_startVideo_Click(object sender, EventArgs e)
         {
             if (project.Trackables != null && project.Trackables.Count > 0 && project.Trackables[0] != null)
-                TestController.StartPlayer(project, TestController.VIDEO, project.Screensize.Width, project.Screensize.Height);
+                TestController.StartPlayer(project, TestController.VIDEO, (int)project.Screensize.Width, (int)project.Screensize.Height);
             else
                 MessageBox.Show("Keine Szene zum Testen vorhanden");
         }
@@ -374,7 +374,7 @@ namespace ARdevKit
         private void tsm_editor_menu_test_startWithVirtualCamera_Click(object sender, EventArgs e)
         {
             if (project.Trackables != null && project.Trackables.Count > 0 && project.Trackables[0] != null)
-                TestController.StartPlayer(project, TestController.CAMERA, project.Screensize.Width, project.Screensize.Height);
+                TestController.StartPlayer(project, TestController.CAMERA, (int)project.Screensize.Width, (int)project.Screensize.Height);
             else
                 MessageBox.Show("Keine Szene zum Testen vorhanden");
         }
@@ -890,8 +890,8 @@ namespace ARdevKit
             this.exportVisitor = new ExportVisitor(false);
             this.currentElement = null;
             this.project.Screensize = new ScreenSize();
-            this.project.Screensize.Height = pnl_editor_preview.Size.Height;
-            this.project.Screensize.Width = pnl_editor_preview.Size.Width;
+            this.project.Screensize.Height = Convert.ToUInt32(pnl_editor_preview.Size.Height);
+            this.project.Screensize.Width = Convert.ToUInt32(pnl_editor_preview.Size.Width);
             this.project.Screensize.SizeChanged += new System.EventHandler(this.pnl_editor_preview_SizeChanged);
             registerElements();
         }
@@ -923,7 +923,7 @@ namespace ARdevKit
         /// <remarks>geht 26.01.2014 20:20</remarks>
         private void updateScreenSize()
         {
-            this.pnl_editor_preview.Size = new Size(project.Screensize.Width, project.Screensize.Height);
+            this.pnl_editor_preview.Size = new Size((int) project.Screensize.Width, (int) project.Screensize.Height);
             this.previewController.rescalePreviewPanel();
         }
 

@@ -19,7 +19,7 @@ namespace ARdevKit.Model.Project
         /// The width
         /// </summary>
         /// <remarks>geht 26.01.2014 20:16</remarks>
-        private int width;
+        private uint width;
 
         /// <summary>
         /// Gets or sets the width.
@@ -29,7 +29,7 @@ namespace ARdevKit.Model.Project
         /// </value>
         /// <remarks>geht 26.01.2014 20:16</remarks>
         [Category("Screengröße"), Browsable(true)]
-        public int Width
+        public uint Width
         {
             get { return width; }
             set
@@ -43,7 +43,7 @@ namespace ARdevKit.Model.Project
         /// The height
         /// </summary>
         /// <remarks>geht 26.01.2014 20:16</remarks>
-        private int height;
+        private uint height;
 
         /// <summary>
         /// Gets or sets the height.
@@ -53,7 +53,7 @@ namespace ARdevKit.Model.Project
         /// </value>
         /// <remarks>geht 26.01.2014 20:16</remarks>
         [Category("Screengröße"), Browsable(true)]
-        public int Height
+        public uint Height
         {
             get { return height; }
             set
