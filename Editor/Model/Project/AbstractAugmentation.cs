@@ -98,7 +98,7 @@ namespace ARdevKit.Model.Project
         /// gets or sets the scaling which is applied to the original 
         /// <see cref="AbstractAugmentation"/>
         /// </summary>
-        [CategoryAttribute("General"), ReadOnly(true)]
+        [CategoryAttribute("Position"), ReadOnly(true)]
         public Vector3D Scaling
         {
             get { return scalingVector; }
@@ -113,7 +113,7 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// gets or sets the Vector
         /// </summary>
-        [CategoryAttribute("General"), ReadOnly(true)]
+        [CategoryAttribute("Position"), ReadOnly(true)]
         public Vector3Di Rotation
         {
             get { return rotationVector; }

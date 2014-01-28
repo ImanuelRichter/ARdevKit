@@ -846,8 +846,8 @@ public class PreviewController
             {
                 if (aug is Chart)
                 {
-                    ((Chart)aug).Style.Left = (int)(aug.TranslationVector.X + panel.Width / 2);
-                    ((Chart)aug).Style.Top = (int)(aug.TranslationVector.Y + panel.Width / 2);
+                    ((Chart)aug).Positioning.Left = (int)(aug.Translation.X + panel.Width / 2);
+                    ((Chart)aug).Positioning.Top = (int)(aug.Translation.Y + panel.Width / 2);
                 }
             }
         }
