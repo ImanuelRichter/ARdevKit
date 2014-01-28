@@ -40,8 +40,8 @@ namespace ARdevKit.Model.Project
             get { return size; }
             set 
             {
-                if (value < 0)
-                    size = 0;
+                if (value < 1)
+                    size = 1;
                 else
                     size = value; 
             }
@@ -55,8 +55,7 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// Get or set the position of the <see cref="AbstractAugmentation"/>.
         /// </summary>
-        [CategoryAttribute("Position"), ReadOnly(true)]
-        [Description("Vector which describe the position of the augmentation.")]
+        [Browsable(false)]
         public Vector3D Translation
         {
             get { return translationVector; }
@@ -71,7 +70,7 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// gets or sets the Vector
         /// </summary>
-        [CategoryAttribute("Position"), ReadOnly(true)]
+        [Browsable(false)]
         [Description("Vector which describes the rotation of the augmentation.")]
         public Vector3Di Rotation
         {

@@ -49,7 +49,7 @@ namespace ARdevKit.Model.Project
         /// Get or set if the <see cref="AbstractAugmentation"/> is 
         /// visible the whole time using AREL or not.
         /// </summary>
-        [CategoryAttribute("General"), DefaultValueAttribute(false)]
+        [CategoryAttribute("General"), DefaultValueAttribute(true)]
         public bool IsVisible
         {
             get { return isVisible; }
