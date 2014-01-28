@@ -388,12 +388,12 @@ public class PreviewController
             if (this.trackable != null && trackable is IDMarker)
             {
                 this.ew.ElementSelectionController.setElementEnable(typeof(PictureMarker), false);
-                this.ew.ElementSelectionController.setElementEnable(typeof(ImageAugmentation), false);
+                this.ew.ElementSelectionController.setElementEnable(typeof(ImageTrackable), false);
             }
             else if (this.trackable != null && trackable is PictureMarker)
             {
                 this.ew.ElementSelectionController.setElementEnable(typeof(IDMarker), false);
-                this.ew.ElementSelectionController.setElementEnable(typeof(ImageAugmentation), false);
+                this.ew.ElementSelectionController.setElementEnable(typeof(ImageTrackable), false);
             }
             else if (this.trackable != null && this.trackable is ImageTrackable)
             {
