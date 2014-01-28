@@ -209,7 +209,7 @@ public class PreviewController
 
                     setCurrentElement(currentElement);
                 }
-                
+
             }
             else
             {
@@ -542,20 +542,20 @@ public class PreviewController
 
         Graphics graphic = Graphics.FromImage(newPic);
         graphic.DrawImage(image1, new Rectangle(0, 0, image1.Width, image1.Height));
-        graphic.DrawImage(image2, new Rectangle(0, 0, 50, 50));
+        graphic.DrawImage(image2, new Rectangle(0, 0, image1.Width / 4, image1.Height / 4));
         temp.Image = newPic;
         temp.ContextMenu.MenuItems.Add("Source anzeigen", new EventHandler(this.show_source_by_click));
         temp.ContextMenu.MenuItems.Add("Source löschen", new EventHandler(this.remove_source_by_click));
         if (((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source is FileSource)
         {
-           
+
             temp.ContextMenu.MenuItems.Add("SourceFile öffnen", new EventHandler(this.openSourceFile));
             temp.ContextMenu.MenuItems.Add("QueryFile öffnen", new EventHandler(this.openQueryFile));
             if (((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source.Query == null)
             {
                 temp.ContextMenu.MenuItems[6].Enabled = false;
             }
-            
+
         }
         temp.Refresh();
     }
