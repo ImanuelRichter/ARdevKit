@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.ComponentModel;
+
 namespace ARdevKit.Model.Project
 {
     /// <summary>
@@ -25,6 +27,7 @@ namespace ARdevKit.Model.Project
         /// <value>
         /// The height, in mm.
         /// </value>
+        [CategoryAttribute("General")]
         public int Height
         {
             get { return height; }
@@ -42,6 +45,7 @@ namespace ARdevKit.Model.Project
         /// <value>
         /// The width, in mm.
         /// </value>
+        [CategoryAttribute("General")]
         public int Width
         {
             get { return width; }

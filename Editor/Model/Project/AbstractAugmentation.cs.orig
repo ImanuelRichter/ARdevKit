@@ -49,7 +49,7 @@ namespace ARdevKit.Model.Project
         /// Get or set if the <see cref="AbstractAugmentation"/> is 
         /// visible the whole time using AREL or not.
         /// </summary>
-        [CategoryAttribute("General"), DefaultValueAttribute(true)]
+        [CategoryAttribute("General"), DefaultValueAttribute(false)]
         public bool IsVisible
         {
             get { return isVisible; }
@@ -98,8 +98,14 @@ namespace ARdevKit.Model.Project
         /// gets or sets the scaling which is applied to the original 
         /// <see cref="AbstractAugmentation"/>
         /// </summary>
-        [CategoryAttribute("Position"), ReadOnly(true)]
+<<<<<<< HEAD
+        //[CategoryAttribute("General")]
+        [CategoryAttribute("General")]
+        public Vector3D ScalingVector
+=======
+        [CategoryAttribute("General"), ReadOnly(true)]
         public Vector3D Scaling
+>>>>>>> origin/Export
         {
             get { return scalingVector; }
             set { scalingVector = value; }
@@ -113,7 +119,7 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// gets or sets the Vector
         /// </summary>
-        [CategoryAttribute("Position"), ReadOnly(true)]
+        [CategoryAttribute("General"), ReadOnly(true)]
         public Vector3Di Rotation
         {
             get { return rotationVector; }

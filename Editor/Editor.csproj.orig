@@ -71,7 +71,6 @@
   <ItemGroup>
     <Compile Include="Controller\EditorController\ObjectCopier.cs" />
     <Compile Include="Model\Project\Abstract2DTrackable.cs" />
-    <Compile Include="Model\Project\ScreenSize.cs" />
     <Compile Include="Model\Project\ImageTrackable.cs" />
     <Compile Include="Model\Project\AbstractDynamic2DAugmentation.cs" />
     <Compile Include="Model\Project\ChartPositioning.cs" />
@@ -161,9 +160,17 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+<<<<<<< HEAD
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <EmbeddedResource Include="View\Slider.resx">
       <DependentUpon>Slider.cs</DependentUpon>
     </EmbeddedResource>
+=======
+>>>>>>> origin/master
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\DataSources\EditorWindow.datasource" />
     <None Include="Properties\Settings.settings">

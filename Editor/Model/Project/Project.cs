@@ -16,6 +16,26 @@ namespace ARdevKit.Model.Project
     public class Project
     {
         /// <summary>
+        /// The screensize
+        /// </summary>
+        /// <remarks>geht 26.01.2014 20:20</remarks>
+        private ScreenSize screensize;
+
+        /// <summary>
+        /// Gets or sets the screensize.
+        /// </summary>
+        /// <value>
+        /// The screensize.
+        /// </value>
+        /// <remarks>geht 28.01.2014 14:43</remarks>
+        public ScreenSize Screensize
+        {
+            get { return screensize; }
+            set { screensize = value; }
+        }
+
+
+        /// <summary>
         /// The name of the project.
         /// </summary>
         private string name;
