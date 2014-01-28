@@ -88,7 +88,7 @@ public class PreviewController
         if (currentElement is AbstractTrackable && trackable == null)
         {
 
-            Vector3D center = new Vector3D(0, 0, 1);
+            Vector3D center = new Vector3D(0, 0, 0);
             center.Y = panel.Size.Height / 2;
             center.X = panel.Size.Width / 2;
             //ask the user for the picture (if the trackable is a picturemarker)
@@ -593,7 +593,7 @@ public class PreviewController
     /// <returns></returns>
     private Vector3D calculateVector(Vector3D v)
     {
-        Vector3D result = new Vector3D(0, 0, 1);
+        Vector3D result = new Vector3D(0, 0, 0);
         result.X = (v.X - panel.Width / 2);
         result.Y = (v.Y - panel.Height / 2);
         return result;
@@ -606,7 +606,7 @@ public class PreviewController
     /// <returns></returns>
     private Vector3D recalculateVector(Vector3D v)
     {
-        Vector3D result = new Vector3D(0, 0, 1);
+        Vector3D result = new Vector3D(0, 0, 0);
         result.X = (v.X + panel.Width / 2);
         result.Y = (v.Y + panel.Height / 2);
         return result;
@@ -707,7 +707,7 @@ public class PreviewController
         {
             if (trackable != null)
             {
-                trackable.vector = new Vector3D(width / 2, height / 2, 1);
+                trackable.vector = new Vector3D(width / 2, height / 2, 0);
                 foreach (AbstractAugmentation aug in trackable.Augmentations)
                 {
                     if (aug is Chart)
@@ -844,7 +844,7 @@ public class PreviewController
     {
         Point p = this.panel.PointToClient(Cursor.Position);
         IPreviewable element = (IPreviewable)this.copy.Clone();
-        this.addPreviewable(element, new Vector3D(p.X, p.Y, 1));
+        this.addPreviewable(element, new Vector3D(p.X, p.Y, 0));
 
         if (typeof(AbstractDynamic2DAugmentation).IsAssignableFrom(element.GetType()) && ((AbstractDynamic2DAugmentation)element).Source != null)
         {
@@ -860,7 +860,7 @@ public class PreviewController
     /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
     public void paste_augmentation_center(object sender, EventArgs e)
     {
-        this.addPreviewable((IPreviewable)this.copy.Clone(), new Vector3D(this.panel.Width / 2, this.panel.Height / 2, 1));
+        this.addPreviewable((IPreviewable)this.copy.Clone(), new Vector3D(this.panel.Width / 2, this.panel.Height / 2, 0));
     }
 
 
