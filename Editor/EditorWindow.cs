@@ -1084,6 +1084,7 @@ namespace ARdevKit
         {
             propertyGrid1.SelectedObject = project.Screensize;
             propertyGrid1.PropertySort = PropertySort.NoSort;
+            this.previewController.setCurrentElement(null);
         }
 
         /// <summary>
