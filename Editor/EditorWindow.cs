@@ -1140,6 +1140,10 @@ namespace ARdevKit
                         {
                             ((ImageTrackable)tempTrack).ImagePath = openFileDialog.FileName;
                         }
+                        else
+                        {
+                            break;
+                        }
                     }
                 }
                 else if (tempTrack is PictureMarker)
@@ -1153,11 +1157,18 @@ namespace ARdevKit
                         {
                             ((PictureMarker)tempTrack).PicturePath = openFileDialog.FileName;
                         }
+                        else
+                        {
+                            break;
+                        }
                     }
                 }
-                tempTrack.vector = new Vector3D(this.pnl_editor_preview.Size.Width / 2, this.pnl_editor_preview.Size.Height / 2, 0);
-                this.project.Trackables.Add(tempTrack);
-                this.updateSceneSelectionPanel();
+                if(!this.project.existTrackable(tempTrack))
+                {
+                    tempTrack.vector = new Vector3D(this.pnl_editor_preview.Size.Width / 2, this.pnl_editor_preview.Size.Height / 2, 0);
+                    this.project.Trackables.Add(tempTrack);
+                    this.updateSceneSelectionPanel();
+                }     
             }
         }
     }
