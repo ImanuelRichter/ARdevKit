@@ -1118,58 +1118,19 @@ namespace ARdevKit
             if (this.project.Trackables[temp - 1] != null)
             {
                 tempTrack = (AbstractTrackable)this.project.Trackables[temp - 1].Clone();
-                for(int i = 0; i < tempTrack.Augmentations.Count; i++) 
+                if (tempTrack.initElement(this))
                 {
-                    tempTrack.Augmentations[i] = (AbstractAugmentation)tempTrack.Augmentations[i].Clone();
-                    if (tempTrack.Augmentations[i] is AbstractDynamic2DAugmentation && ((AbstractDynamic2DAugmentation)tempTrack.Augmentations[i]).Source != null)
+                    for (int i = 0; i < tempTrack.Augmentations.Count; i++)
                     {
-                        ((AbstractDynamic2DAugmentation)tempTrack.Augmentations[i]).Source = (AbstractSource)((AbstractDynamic2DAugmentation)tempTrack.Augmentations[i]).Source.Clone();
+                        tempTrack.Augmentations[i] = (AbstractAugmentation)tempTrack.Augmentations[i].Clone();
+                    }
+                    if (!this.project.existTrackable(tempTrack))
+                    {
+                        tempTrack.vector = new Vector3D(this.pnl_editor_preview.Size.Width / 2, this.pnl_editor_preview.Size.Height / 2, 0);
+                        this.project.Trackables.Add(tempTrack);
+                        this.updateSceneSelectionPanel();
                     }
                 }
-                if (tempTrack is IDMarker)
-                {
-                    ((IDMarker)tempTrack).MatrixID = this.project.nextID();
-                }
-                else if (tempTrack is ImageTrackable)
-                {
-                    while (this.project.existTrackable(tempTrack))
-                    {
-                        OpenFileDialog openFileDialog = new OpenFileDialog();
-                        openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
-                        openFileDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
-                        if (openFileDialog.ShowDialog() == DialogResult.OK)
-                        {
-                            ((ImageTrackable)tempTrack).ImagePath = openFileDialog.FileName;
-                        }
-                        else
-                        {
-                            break;
-                        }
-                    }
-                }
-                else if (tempTrack is PictureMarker)
-                {
-                    while (this.project.existTrackable(tempTrack))
-                    {
-                        OpenFileDialog openFileDialog = new OpenFileDialog();
-                        openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
-                        openFileDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
-                        if (openFileDialog.ShowDialog() == DialogResult.OK)
-                        {
-                            ((PictureMarker)tempTrack).PicturePath = openFileDialog.FileName;
-                        }
-                        else
-                        {
-                            break;
-                        }
-                    }
-                }
-                if(!this.project.existTrackable(tempTrack))
-                {
-                    tempTrack.vector = new Vector3D(this.pnl_editor_preview.Size.Width / 2, this.pnl_editor_preview.Size.Height / 2, 0);
-                    this.project.Trackables.Add(tempTrack);
-                    this.updateSceneSelectionPanel();
-                }     
             }
         }
     }

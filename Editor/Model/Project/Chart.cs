@@ -114,7 +114,7 @@ namespace ARdevKit.Model.Project
 
         public override object Clone()
         {
-            return ObjectCopier.Clone<Chart>(this);
+            return base.Clone();
         }
 
         public override bool initElement(EditorWindow ew)

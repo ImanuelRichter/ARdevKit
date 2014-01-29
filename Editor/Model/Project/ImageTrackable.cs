@@ -132,12 +132,24 @@ namespace ARdevKit.Model.Project
                 if (isInitOk)
                 {
                     string path = openFileDialog.FileName;
+                    bool isClonedMarker = ImagePath != null;
                     ImagePath = path;
-                }
 
-                if (!ew.project.existTrackable(this))
-                {
-                    ew.project.Sensor = new MarkerlessSensor();
+
+                    if (!ew.project.existTrackable(this))
+                    {
+                        ew.project.Sensor = new MarkerlessSensor();
+                    }
+                    else
+                    {
+                        if (!isClonedMarker)
+                        {
+                            MessageBox.Show("You can't use the same marker in different Scenes.");
+                            ImagePath = null;
+                        }
+                        return initElement(ew);
+                    }
+                    
                 }
                 return isInitOk;
             }
