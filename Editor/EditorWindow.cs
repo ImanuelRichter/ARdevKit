@@ -351,7 +351,7 @@ namespace ARdevKit
         private void tsm_editor_menu_test_startImage_Click(object sender, EventArgs e)
         {
             if (project.Trackables != null && project.Trackables.Count > 0 && project.Trackables[0] != null)
-                TestController.StartPlayer(project, TestController.IMAGE, (int)project.Screensize.Width, (int)project.Screensize.Height);
+                TestController.StartPlayer(project, TestController.IMAGE, (int)project.Screensize.Width, (int)project.Screensize.Height, tsm_editor_menu_test_togleDebug.Checked);
             else
                 MessageBox.Show("Keine Szene zum Testen vorhanden");
         }
@@ -368,7 +368,7 @@ namespace ARdevKit
         private void tsm_editor_menu_test_startVideo_Click(object sender, EventArgs e)
         {
             if (project.Trackables != null && project.Trackables.Count > 0 && project.Trackables[0] != null)
-                TestController.StartPlayer(project, TestController.VIDEO, (int)project.Screensize.Width, (int)project.Screensize.Height);
+                TestController.StartPlayer(project, TestController.VIDEO, (int)project.Screensize.Width, (int)project.Screensize.Height, tsm_editor_menu_test_togleDebug.Checked);
             else
                 MessageBox.Show("Keine Szene zum Testen vorhanden");
         }
@@ -386,7 +386,7 @@ namespace ARdevKit
         private void tsm_editor_menu_test_startWithVirtualCamera_Click(object sender, EventArgs e)
         {
             if (project.Trackables != null && project.Trackables.Count > 0 && project.Trackables[0] != null)
-                TestController.StartPlayer(project, TestController.CAMERA, (int)project.Screensize.Width, (int)project.Screensize.Height);
+                TestController.StartPlayer(project, TestController.CAMERA, (int)project.Screensize.Width, (int)project.Screensize.Height, tsm_editor_menu_test_togleDebug.Checked);
             else
                 MessageBox.Show("Keine Szene zum Testen vorhanden");
         }

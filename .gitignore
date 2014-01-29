@@ -160,6 +160,10 @@ bin/*
 
 !bin/Debug/
 bin/Debug/*
+!bin/Debug/*.dll
+!bin/Debug/*.lib
+!bin/Debug/Player.exe
+!bin/Debug/DebugPlayer.exe
 
 !bin/Debug/res/
 !bin/Debug/res/*
