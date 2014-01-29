@@ -110,7 +110,14 @@ namespace ARdevKit.Controller.TestController
                     if (openTestVideoDialog.ShowDialog() == DialogResult.OK)
                     {
                         string testFilePath = openTestVideoDialog.FileName;
-                        string tmpPath = Path.Combine(Application.StartupPath, "tmp");
+                        string tmpPath = Path.Combine(Application.StartupPath, "tmp", "video");
+
+                        if (!Directory.Exists(tmpPath))
+                            Directory.CreateDirectory(tmpPath);
+
+                        foreach (string path in Directory.GetFiles(@tmpPath))
+                            File.Delete(path);
+
                         player.StartInfo.Arguments += " -" + tmpPath;
 
                         progressVideoWindow = new ProcessVideoWindow();
