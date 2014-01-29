@@ -166,7 +166,7 @@ bin/Debug/*
 !bin/Debug/AForge.Video.FFMPEG.dll
 !bin/Debug/avcodec-53.dll
 !bin/Debug/avformat-53.dll
-!bin/Debug/avutil-53.dll
+!bin/Debug/avutil-51.dll
 !bin/Debug/swresample-0.dll
 !bin/Debug/swscale-2.dll
 

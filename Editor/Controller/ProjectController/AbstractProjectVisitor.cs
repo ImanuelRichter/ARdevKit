@@ -36,6 +36,16 @@ namespace ARdevKit.Controller.ProjectController
         public abstract void Visit(ImageAugmentation image);
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Visits the given <see cref="VideoAugmentation"/>. </summary>
+        ///
+        /// <remarks>   Imanuel, 29.01.2014. </remarks>
+        ///
+        /// <param name="video">    The video. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public abstract void Visit(VideoAugmentation video);
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Visits the given <see cref="LiveSource"/>. </summary>
         ///
         /// <remarks>   Imanuel, 26.01.2014. </remarks>

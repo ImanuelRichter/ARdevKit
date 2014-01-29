@@ -153,6 +153,7 @@
     <Compile Include="Model\Project\Vector3D.cs" />
     <Compile Include="Model\Project\File\ARELProjectFile.cs" />
     <Compile Include="Model\Project\Vector3Di.cs" />
+    <Compile Include="Model\Project\VideoAugmentation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controller\TestController\TestController.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -175,7 +176,7 @@
       <DependentUpon>Slider.cs</DependentUpon>
     </Compile>
     <Compile Include="View\TypeEditoren.cs" />
-	<EmbeddedResource Include="Controller\TestController\ProcessVideoWindow.resx">
+    <EmbeddedResource Include="Controller\TestController\ProcessVideoWindow.resx">
       <DependentUpon>ProcessVideoWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditorWindow.resx">
