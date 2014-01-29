@@ -115,13 +115,6 @@ namespace ARdevKit.Model.Project
 
         public override object Clone()
         {
-            ImageTrackable n = new ImageTrackable();
-            n.sensorCosID = IDFactory.CreateNewSensorCosID(this);
-            return n;
-        }
-
-        public override object Duplicate()
-        {
             ImageTrackable n = ObjectCopier.Clone<ImageTrackable>(this);
             n.sensorCosID = IDFactory.CreateNewSensorCosID(this);
             return n;

@@ -142,13 +142,6 @@ namespace ARdevKit.Model.Project
 
         public override object Clone()
         {
-            PictureMarker n = new PictureMarker();
-            n.sensorCosID = IDFactory.CreateNewSensorCosID(this);
-            return n;
-        }
-
-        public override object Duplicate()
-        {
             PictureMarker n = ObjectCopier.Clone<PictureMarker>(this);
             n.sensorCosID = IDFactory.CreateNewSensorCosID(this);
             return n;

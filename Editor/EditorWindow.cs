@@ -1117,7 +1117,7 @@ namespace ARdevKit
 
             if (this.project.Trackables[temp - 1] != null)
             {
-                tempTrack = (AbstractTrackable)this.project.Trackables[temp - 1].Duplicate();
+                tempTrack = (AbstractTrackable)this.project.Trackables[temp - 1].Clone();
                 for(int i = 0; i < tempTrack.Augmentations.Count; i++) 
                 {
                     tempTrack.Augmentations[i] = (AbstractAugmentation)tempTrack.Augmentations[i].Clone();

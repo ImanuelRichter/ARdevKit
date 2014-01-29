@@ -134,8 +134,6 @@ namespace ARdevKit.Model.Project
 
         public abstract object Clone();
 
-        public abstract object Duplicate();
-
         public virtual bool initElement(EditorWindow ew)
         {
             //do nothing if not overwritten.
