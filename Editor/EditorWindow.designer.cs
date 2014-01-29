@@ -37,7 +37,6 @@ namespace ARdevKit
             this.pnl_editor_status = new System.Windows.Forms.Panel();
             this.lbl_version = new System.Windows.Forms.Label();
             this.btn_editor_scene_new = new System.Windows.Forms.Button();
-            this.btn_editor_scene_scene_1 = new System.Windows.Forms.Button();
             this.btn_editor_scene_delete = new System.Windows.Forms.Button();
             this.pnl_editor_scenes = new System.Windows.Forms.Panel();
             this.pnl_editor_properties = new System.Windows.Forms.Panel();
@@ -157,16 +156,6 @@ namespace ARdevKit
             this.btn_editor_scene_new.UseVisualStyleBackColor = true;
             this.btn_editor_scene_new.Click += new System.EventHandler(this.btn_editor_scene_scene_new);
             // 
-            // btn_editor_scene_scene_1
-            // 
-            this.btn_editor_scene_scene_1.Location = new System.Drawing.Point(54, 34);
-            this.btn_editor_scene_scene_1.Name = "btn_editor_scene_scene_1";
-            this.btn_editor_scene_scene_1.Size = new System.Drawing.Size(46, 45);
-            this.btn_editor_scene_scene_1.TabIndex = 1;
-            this.btn_editor_scene_scene_1.Text = "1";
-            this.btn_editor_scene_scene_1.UseVisualStyleBackColor = false;
-            this.btn_editor_scene_scene_1.Click += new System.EventHandler(this.btn_editor_scene_scene_change);
-            // 
             // btn_editor_scene_delete
             // 
             this.btn_editor_scene_delete.Location = new System.Drawing.Point(611, 34);
@@ -181,7 +170,6 @@ namespace ARdevKit
             // 
             this.pnl_editor_scenes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_editor_scenes.Controls.Add(this.btn_editor_scene_delete);
-            this.pnl_editor_scenes.Controls.Add(this.btn_editor_scene_scene_1);
             this.pnl_editor_scenes.Controls.Add(this.btn_editor_scene_new);
             this.pnl_editor_scenes.Location = new System.Drawing.Point(141, 586);
             this.pnl_editor_scenes.Name = "pnl_editor_scenes";
@@ -386,7 +374,6 @@ namespace ARdevKit
             // 
             // tsm_editor_menu_test_startVideo
             // 
-            this.tsm_editor_menu_test_startVideo.Enabled = false;
             this.tsm_editor_menu_test_startVideo.Name = "tsm_editor_menu_test_startVideo";
             this.tsm_editor_menu_test_startVideo.Size = new System.Drawing.Size(144, 22);
             this.tsm_editor_menu_test_startVideo.Text = "Video laden";
@@ -485,7 +472,6 @@ namespace ARdevKit
         private Panel pnl_editor_status;
         private Label lbl_version;
         private Button btn_editor_scene_new;
-        private Button btn_editor_scene_scene_1;
         private Button btn_editor_scene_delete;
         private Panel pnl_editor_scenes;
         private Panel pnl_editor_properties;

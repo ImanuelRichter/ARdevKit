@@ -7,9 +7,15 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
 
+using AForge;
+using AForge.Video;
+using AForge.Video.FFMPEG;
+
 using ARdevKit.Controller.ProjectController;
 using ARdevKit.Model.Project;
 using ARdevKit.Model.Project.File;
+using System.Drawing;
+using System.Drawing.Imaging;
 
 namespace ARdevKit.Controller.TestController
 {
@@ -46,6 +52,8 @@ namespace ARdevKit.Controller.TestController
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         public static Process player;
+
+        private static ProcessVideoWindow progressVideoWindow;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
@@ -93,7 +101,7 @@ namespace ARdevKit.Controller.TestController
                     {
                         string testFilePath = openTestImageDialog.FileName;
                         player.StartInfo.Arguments += " -" + testFilePath;
-                        open = true;
+                        OpenPlayer();
                     }
                     break;
                 case (VIDEO):
@@ -102,8 +110,20 @@ namespace ARdevKit.Controller.TestController
                     if (openTestVideoDialog.ShowDialog() == DialogResult.OK)
                     {
                         string testFilePath = openTestVideoDialog.FileName;
-                        player.StartInfo.Arguments += " -" + testFilePath;
-                        open = true;
+                        string tmpPath = Path.Combine(Application.StartupPath, "tmp", "video");
+
+                        if (!Directory.Exists(tmpPath))
+                            Directory.CreateDirectory(tmpPath);
+
+                        foreach (string path in Directory.GetFiles(@tmpPath))
+                            File.Delete(path);
+
+                        player.StartInfo.Arguments += " -" + tmpPath;
+
+                        progressVideoWindow = new ProcessVideoWindow();
+                        progressVideoWindow.FormClosed += progressVideoWindow_FormClosed;
+                        progressVideoWindow.Show();
+                        progressVideoWindow.extractFrames(testFilePath, tmpPath);
                     }
                     break;
                 case (CAMERA):
@@ -116,16 +136,20 @@ namespace ARdevKit.Controller.TestController
                         Process vCam = new Process();
                         vCam.StartInfo.FileName = virtualCameraPath;
                         vCam.Start();
-                        open = true;
+                        OpenPlayer();
                     }
                     break;
             }
-            if (File.Exists(playerPath) && open)
+        }
+
+        private static void OpenPlayer()
+        {
+            if (File.Exists(playerPath) )
             {
                 player.StartInfo.FileName = playerPath;
                 player.Start();
             }
-            else if (open)
+            else
             {
                 OpenFileDialog openPlayerDialog = new OpenFileDialog();
                 openPlayerDialog.Title = "Bitte Player auswählen";
@@ -136,6 +160,12 @@ namespace ARdevKit.Controller.TestController
                     player.Start();
                 }
             }
+        }
+
+        static void progressVideoWindow_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            player.StartInfo.Arguments += " -" + progressVideoWindow.FPS;
+            OpenPlayer();
         }
     }
 }
