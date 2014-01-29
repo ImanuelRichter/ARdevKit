@@ -119,7 +119,6 @@ namespace ARdevKit.Controller.ProjectController
             string augmentationRotationX = video.Rotation.X.ToString("F1", CultureInfo.InvariantCulture);
             string augmentationRotationY = video.Rotation.Y.ToString("F1", CultureInfo.InvariantCulture);
             string augmentationRotationZ = video.Rotation.Z.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentationRotationW = video.Rotation.W.ToString("F1", CultureInfo.InvariantCulture);
             loadContentBlock.AddLine(new JavaScriptLine("var " + videoVariable + "Rotation = new arel.Rotation()"));
             loadContentBlock.AddLine(new JavaScriptLine(videoVariable + "Rotation.setFromEulerAngleDegrees(new arel.Vector3D(" + augmentationRotationX + "," + augmentationRotationY + "," + augmentationRotationZ + "))"));
             loadContentBlock.AddLine(new JavaScriptLine(videoVariable + ".setRotation(" + videoVariable + "Rotation)"));
@@ -155,6 +154,11 @@ namespace ARdevKit.Controller.ProjectController
             loadContentBlock.AddLine(new JavaScriptLine("var " + imageVariable + " = arel.Object.Model3D.createFromImage(\"" + imageVariable + "\",\"Assets/" + Path.GetFileName(image.ImagePath) + "\")"));
             loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setVisibility(" + image.IsVisible.ToString().ToLower() + ")"));
             loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setCoordinateSystemID(" + coordinateSystemID + ")"));
+            string augmentationScalingX = image.Scaling.X.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationScalingY = image.Scaling.Y.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationScalingZ = image.Scaling.Z.ToString("F1", CultureInfo.InvariantCulture);
+            loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setScale(new arel.Vector3D(" + augmentationScalingX + "," + augmentationScalingY + "," + augmentationScalingZ + "))"));
+            loadContentBlock.AddLine(new JavaScriptLine("arel.Scene.addObject(" + imageVariable + ")"));
             string augmentationTranslationX = image.Translation.X.ToString("F1", CultureInfo.InvariantCulture);
             string augmentationTranslationY = image.Translation.Y.ToString("F1", CultureInfo.InvariantCulture);
             string augmentationTranslationZ = image.Translation.Z.ToString("F1", CultureInfo.InvariantCulture);
@@ -162,12 +166,9 @@ namespace ARdevKit.Controller.ProjectController
             string augmentationRotationX = image.Rotation.X.ToString("F1", CultureInfo.InvariantCulture);
             string augmentationRotationY = image.Rotation.Y.ToString("F1", CultureInfo.InvariantCulture);
             string augmentationRotationZ = image.Rotation.Z.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentationRotationW = image.Rotation.W.ToString("F1", CultureInfo.InvariantCulture);
-            loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setRotation(new arel.Rotation(" + augmentationRotationX + "," + augmentationRotationY + "," + augmentationRotationZ + "," + augmentationRotationW + "))"));
-            string augmentationScalingX = image.Scaling.X.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentationScalingY = image.Scaling.Y.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentationScalingZ = image.Scaling.Z.ToString("F1", CultureInfo.InvariantCulture);
-            loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setScale(new arel.Vector3D(" + augmentationScalingX + "," + augmentationScalingY + "," + augmentationScalingZ + "))"));
+            loadContentBlock.AddLine(new JavaScriptLine("var " + imageVariable + "Rotation = new arel.Rotation()"));
+            loadContentBlock.AddLine(new JavaScriptLine(imageVariable + "Rotation.setFromEulerAngleDegrees(new arel.Vector3D(" + augmentationRotationX + "," + augmentationRotationY + "," + augmentationRotationZ + "))"));
+            loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setRotation(" + imageVariable + "Rotation)"));
             loadContentBlock.AddLine(new JavaScriptLine("arel.Scene.addObject(" + imageVariable + ")"));
 
             ifPatternIsFoundBlock.AddLine(new JavaScriptLine("arel.Scene.getObject(\"" + imageVariable + "\").setVisibility(true)"));
