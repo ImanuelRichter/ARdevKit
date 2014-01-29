@@ -33,7 +33,15 @@ namespace ARdevKit.Model.Project
         public int Height
         {
             get { return height; }
-            set { height = value; }
+            set 
+            {
+                if (value < 1)
+                    height = 1;
+                else if (value > 1000)
+                    height = 1000;
+                else
+                    height = value; 
+            }
         }
 
         /// <summary>
@@ -52,7 +60,15 @@ namespace ARdevKit.Model.Project
         public int Width
         {
             get { return width; }
-            set { width = value; }
+            set 
+            {
+                if (value < 1)
+                    width = 1;
+                else if (value > 1000)
+                    width = 1000;
+                else 
+                    width = value; 
+            }
         }
 
         /// <summary>

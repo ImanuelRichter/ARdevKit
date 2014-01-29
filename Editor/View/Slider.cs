@@ -40,6 +40,7 @@ namespace ARdevKit.View
             trackBar1.Value = initValue;
             isDouble = false;
 
+            label1.Text = "1";
             label2.Text = "500";
             label3.Text = "1000";
         }
