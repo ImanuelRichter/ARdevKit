@@ -101,7 +101,7 @@ namespace EditorTest
             testProject.Trackables.Add(pictureMarker1);
         }
 
-        private void SetUptProjectWithImageTrackableAndImageAugmentation()
+        private void SetUptProject_imageTrackable_imageAugmentation()
         {
             string projectPath = "currentProject";
             testProject = new Project("HelloImageTrackable", projectPath);
@@ -113,6 +113,23 @@ namespace EditorTest
             image1.IsVisible = false;
             imageTrackable.Augmentations.Add(image1);
             image1.Trackable = imageTrackable;
+
+            testProject.Sensor = new MarkerlessSensor();
+            testProject.Trackables.Add(imageTrackable);
+        }
+
+        private void SetUptProject_imageTrackable_videoAugmentation()
+        {
+            string projectPath = "currentProject";
+            testProject = new Project("HelloVideo", projectPath);
+
+            ImageTrackable imageTrackable = new ImageTrackable("res\\testFiles\\trackables\\metaioman_target.png");
+
+            VideoAugmentation video = new VideoAugmentation();
+            video.VideoPath = "res\\testFiles\\augmentations\\video.3g2";
+            video.IsVisible = false;
+            imageTrackable.Augmentations.Add(video);
+            video.Trackable = imageTrackable;
 
             testProject.Sensor = new MarkerlessSensor();
             testProject.Trackables.Add(imageTrackable);
@@ -160,7 +177,14 @@ namespace EditorTest
         [TestMethod]
         public void Export_ImageTrackable_WithValidPath_ResultingFile()
         {
-            SetUptProjectWithImageTrackableAndImageAugmentation();
+            SetUptProject_imageTrackable_imageAugmentation();
+            export();
+        }
+
+        [TestMethod]
+        public void Export_ImageTrackable_WithVideo()
+        {
+            SetUptProject_imageTrackable_videoAugmentation();
             export();
         }
     }

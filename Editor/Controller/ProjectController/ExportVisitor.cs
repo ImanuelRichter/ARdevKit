@@ -75,6 +75,8 @@ namespace ARdevKit.Controller.ProjectController
         /// <summary>   The chart file parse block. </summary>
         private JavaScriptBlock chartFileQueryBlock;
 
+        /// <summary>   Number of videoes. </summary>
+        private int videoCount;
         /// <summary>   Number of images added to the <see cref="arelGlueFile"/>. </summary>
         private int imageCount;
         /// <summary>   Number of bar charts. </summary>
@@ -85,9 +87,93 @@ namespace ARdevKit.Controller.ProjectController
         public ExportVisitor(bool exportForTest)
         {
             this.exportForTest = exportForTest;
+            videoCount = 1;
             imageCount = 1;
             chartCount = 1;
             coordinateSystemID = 0;
+        }
+
+        public override void Visit(VideoAugmentation video)
+        {
+            // Copy to projectPath
+            Copy(video.VideoPath, Path.Combine(projectPath, "Assets"));
+
+            // arelGlue.js
+            JavaScriptBlock loadContentBlock = new JavaScriptBlock();
+            sceneReadyFunctionBlock.AddBlock(loadContentBlock);
+
+            string videoVariable = "video" + videoCount;
+            string videoPath = Path.GetFileNameWithoutExtension(video.VideoPath) + Path.GetExtension(video.VideoPath);
+            //string videoPath = Path.GetFileNameWithoutExtension(video.VideoPath) + ".alpha" + Path.GetExtension(video.VideoPath);
+            loadContentBlock.AddLine(new JavaScriptLine("var " + videoVariable + " = arel.Object.Model3D.createFromMovie(\"" + videoVariable + "\",\"Assets/" + videoPath + "\")"));
+            loadContentBlock.AddLine(new JavaScriptLine(videoVariable + ".setVisibility(" + video.IsVisible.ToString().ToLower() + ")"));
+            loadContentBlock.AddLine(new JavaScriptLine(videoVariable + ".setCoordinateSystemID(" + coordinateSystemID + ")"));
+            string augmentationScalingX = video.Scaling.X.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationScalingY = video.Scaling.Y.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationScalingZ = video.Scaling.Z.ToString("F1", CultureInfo.InvariantCulture);
+            loadContentBlock.AddLine(new JavaScriptLine(videoVariable + ".setScale(new arel.Vector3D(" + augmentationScalingX + "," + augmentationScalingY + "," + augmentationScalingZ + "))"));
+            string augmentationTranslationX = video.Translation.X.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationTranslationY = video.Translation.Y.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationTranslationZ = video.Translation.Z.ToString("F1", CultureInfo.InvariantCulture);
+            loadContentBlock.AddLine(new JavaScriptLine(videoVariable + ".setTranslation(new arel.Vector3D(" + augmentationTranslationX + "," + augmentationTranslationY + "," + augmentationTranslationZ + "))"));
+            string augmentationRotationX = video.Rotation.X.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationRotationY = video.Rotation.Y.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationRotationZ = video.Rotation.Z.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationRotationW = video.Rotation.W.ToString("F1", CultureInfo.InvariantCulture);
+            loadContentBlock.AddLine(new JavaScriptLine("var " + videoVariable + "Rotation = new arel.Rotation()"));
+            loadContentBlock.AddLine(new JavaScriptLine(videoVariable + "Rotation.setFromEulerAngleDegrees(new arel.Vector3D(" + augmentationRotationX + "," + augmentationRotationY + "," + augmentationRotationZ + "))"));
+            loadContentBlock.AddLine(new JavaScriptLine(videoVariable + ".setRotation(" + videoVariable + "Rotation)"));
+            loadContentBlock.AddLine(new JavaScriptLine("arel.Scene.addObject(" + videoVariable + ")"));
+
+            ifPatternIsFoundBlock.AddLine(new JavaScriptLine("arel.Scene.getObject(\"" + videoVariable + "\").setVisibility(true)"));
+            ifPatternIsFoundBlock.AddLine(new JavaScriptLine("arel.Scene.getObject(\"" + videoVariable + "\").startMovieTexture()"));
+
+            ifPatternIsLostBlock.AddLine(new JavaScriptLine("arel.Scene.getObject(\"" + videoVariable + "\").setVisibility(false)"));
+            ifPatternIsLostBlock.AddLine(new JavaScriptLine("arel.Scene.getObject(\"" + videoVariable + "\").pauseMovieTexture()"));
+
+            videoCount++;
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Visits the given <see cref="ImageAugmentation"/>. </summary>
+        ///
+        /// <remarks>   Imanuel, 17.01.2014. </remarks>
+        ///
+        /// <param name="image">    The image. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public override void Visit(ImageAugmentation image)
+        {
+            // Copy to projectPath
+            Copy(image.ImagePath, Path.Combine(projectPath, "Assets"));
+
+            // arelGlue.js
+            JavaScriptBlock loadContentBlock = new JavaScriptBlock();
+            sceneReadyFunctionBlock.AddBlock(loadContentBlock);
+
+            string imageVariable = "image" + imageCount;
+            loadContentBlock.AddLine(new JavaScriptLine("var " + imageVariable + " = arel.Object.Model3D.createFromImage(\"" + imageVariable + "\",\"Assets/" + Path.GetFileName(image.ImagePath) + "\")"));
+            loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setVisibility(" + image.IsVisible.ToString().ToLower() + ")"));
+            loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setCoordinateSystemID(" + coordinateSystemID + ")"));
+            string augmentationTranslationX = image.Translation.X.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationTranslationY = image.Translation.Y.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationTranslationZ = image.Translation.Z.ToString("F1", CultureInfo.InvariantCulture);
+            loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setTranslation(new arel.Vector3D(" + augmentationTranslationX + "," + augmentationTranslationY + "," + augmentationTranslationZ + "))"));
+            string augmentationRotationX = image.Rotation.X.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationRotationY = image.Rotation.Y.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationRotationZ = image.Rotation.Z.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationRotationW = image.Rotation.W.ToString("F1", CultureInfo.InvariantCulture);
+            loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setRotation(new arel.Rotation(" + augmentationRotationX + "," + augmentationRotationY + "," + augmentationRotationZ + "," + augmentationRotationW + "))"));
+            string augmentationScalingX = image.Scaling.X.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationScalingY = image.Scaling.Y.ToString("F1", CultureInfo.InvariantCulture);
+            string augmentationScalingZ = image.Scaling.Z.ToString("F1", CultureInfo.InvariantCulture);
+            loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setScale(new arel.Vector3D(" + augmentationScalingX + "," + augmentationScalingY + "," + augmentationScalingZ + "))"));
+            loadContentBlock.AddLine(new JavaScriptLine("arel.Scene.addObject(" + imageVariable + ")"));
+
+            ifPatternIsFoundBlock.AddLine(new JavaScriptLine("arel.Scene.getObject(\"" + imageVariable + "\").setVisibility(true)"));
+            ifPatternIsLostBlock.AddLine(new JavaScriptLine("arel.Scene.getObject(\"" + imageVariable + "\").setVisibility(false)"));
+
+            imageCount++;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -236,48 +322,6 @@ namespace ARdevKit.Controller.ProjectController
             chartGetCoordinateSystemIDBlock.AddLine(new JavaScriptLine("return this.coordinateSystemID"));
 
             chartCount++;
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Visits the given <see cref="ImageAugmentation"/>. </summary>
-        ///
-        /// <remarks>   Imanuel, 17.01.2014. </remarks>
-        ///
-        /// <param name="image">    The image. </param>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        public override void Visit(ImageAugmentation image)
-        {
-            // Copy to projectPath
-            Copy(image.ImagePath, Path.Combine(projectPath, "Assets"));
-
-            // arelGlue.js
-            JavaScriptBlock loadContentBlock = new JavaScriptBlock();
-            sceneReadyFunctionBlock.AddBlock(loadContentBlock);
-
-            string imageVariable = "image" + imageCount;
-            loadContentBlock.AddLine(new JavaScriptLine("var " + imageVariable + " = arel.Object.Model3D.createFromImage(\"" + imageVariable + "\",\"Assets/" + Path.GetFileName(image.ImagePath) + "\")"));
-            loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setVisibility(" + image.IsVisible.ToString().ToLower() + ")"));
-            loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setCoordinateSystemID(" + coordinateSystemID + ")"));
-            string augmentationTranslationX = image.Translation.X.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentationTranslationY = image.Translation.Y.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentationTranslationZ = image.Translation.Z.ToString("F1", CultureInfo.InvariantCulture);
-            loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setTranslation(new arel.Vector3D(" + augmentationTranslationX + "," + augmentationTranslationY + "," + augmentationTranslationZ + "))"));
-            string augmentationRotationX = image.Rotation.X.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentationRotationY = image.Rotation.Y.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentationRotationZ = image.Rotation.Z.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentationRotationW = image.Rotation.W.ToString("F1", CultureInfo.InvariantCulture);
-            loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setRotation(new arel.Rotation(" + augmentationRotationX + "," + augmentationRotationY + "," + augmentationRotationZ + "," + augmentationRotationW + "))"));
-            string augmentationScalingX = image.Scaling.X.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentationScalingY = image.Scaling.Y.ToString("F1", CultureInfo.InvariantCulture);
-            string augmentationScalingZ = image.Scaling.Z.ToString("F1", CultureInfo.InvariantCulture);
-            loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setScale(new arel.Vector3D(" + augmentationScalingX + "," + augmentationScalingY + "," + augmentationScalingZ + "))"));
-            loadContentBlock.AddLine(new JavaScriptLine("arel.Scene.addObject(" + imageVariable + ")"));
-
-            ifPatternIsFoundBlock.AddLine(new JavaScriptLine("arel.Scene.getObject(\"" + imageVariable + "\").setVisibility(true)"));
-            ifPatternIsLostBlock.AddLine(new JavaScriptLine("arel.Scene.getObject(\"" + imageVariable + "\").setVisibility(false)"));
-
-            imageCount++;
         }
 
         public override void Visit(LiveSource source)

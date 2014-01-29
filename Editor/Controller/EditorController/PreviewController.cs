@@ -134,7 +134,11 @@ public class PreviewController
                         this.ew.ElementSelectionController.setElementEnable(typeof(ImageTrackable), false);
                         this.ew.ElementSelectionController.setElementEnable(typeof(IDMarker), false);
                         this.ew.ElementSelectionController.setElementEnable(currentElement.GetType(), true);
-                        this.ew.project.Sensor = new MarkerSensor();
+
+                        if (currentElement is ImageTrackable)
+                            this.ew.project.Sensor = new MarkerlessSensor();
+                        else
+                            this.ew.project.Sensor = new MarkerSensor();
 
                         this.trackable = (AbstractTrackable)currentElement;
                         this.ew.project.Trackables[index] = (AbstractTrackable)currentElement;
