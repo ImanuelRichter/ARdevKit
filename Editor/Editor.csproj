@@ -35,7 +35,7 @@
     <OutputPath>..\bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <WarningLevel>0</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -51,7 +51,23 @@
   <PropertyGroup>
     <ApplicationIcon>ARdevKit.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\Debug\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\Debug\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.FFMPEG, Version=2.2.5.0, Culture=neutral, PublicKeyToken=03563089b1be05dd, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\Debug\AForge.Video.FFMPEG.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -70,6 +86,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\EditorController\ObjectCopier.cs" />
+    <Compile Include="Controller\TestController\ProcessVideoWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controller\TestController\ProcessVideoWindow.Designer.cs">
+      <DependentUpon>ProcessVideoWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\Project\Abstract2DTrackable.cs" />
     <Compile Include="Model\Project\ImageTrackable.cs" />
     <Compile Include="Model\Project\AbstractDynamic2DAugmentation.cs" />
@@ -145,6 +167,9 @@
     <Compile Include="View\SceneElementCategoryPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="Controller\TestController\ProcessVideoWindow.resx">
+      <DependentUpon>ProcessVideoWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditorWindow.resx">
       <DependentUpon>EditorWindow.cs</DependentUpon>
     </EmbeddedResource>
