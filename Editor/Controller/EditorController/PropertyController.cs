@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.IO;
+using System.Windows.Forms;
 using ARdevKit;
 using ARdevKit.Model.Project;
 
@@ -15,11 +16,12 @@ namespace Controller.EditorController
     /// </summary>
     class PropertyController
     {
-        private EditorWindow editorWindowController;
+        private EditorWindow ew;
         
         public PropertyController(EditorWindow ew)
         {
-            editorWindowController = ew;
+            this.ew = ew;
+            ew.PropertyGrid1.PropertyValueChanged += new PropertyValueChangedEventHandler(changedProperty);
         }
 
         /// <summary>
@@ -34,6 +36,26 @@ namespace Controller.EditorController
             + "Please use the method setCustomUserEventContent(selectedElement : AbstractAugmentation, name : string, content : string[]) instead.", true)]
         public void editCustomUserEvent(/*File customUserEvent*/)
         { throw new NotImplementedException(); }
+
+        private void changedProperty(object sender, PropertyValueChangedEventArgs e)
+        {
+            if (String.Equals(e.ChangedItem.Label.ToString(), "X", StringComparison.Ordinal)
+                || String.Equals(e.ChangedItem.Label.ToString(), "Y", StringComparison.Ordinal))
+            {
+                ew.PreviewController.updateScale();
+            }
+
+            if (String.Equals(e.ChangedItem.Label.ToString(), "PicturePath", StringComparison.Ordinal))
+            {
+                ew.PreviewController.findBox(ew.CurrentElement).Load(e.ChangedItem.Value.ToString());
+            }
+
+            if (String.Equals(e.ChangedItem.Label.ToString(), "ImagePath", StringComparison.Ordinal))
+            {
+                ew.PreviewController.findBox(ew.CurrentElement).Load(e.ChangedItem.Value.ToString());
+            }
+        }
+
         /*
         /// <summary>
         /// Adds a customUserEvent to a selected element.

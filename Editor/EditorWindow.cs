@@ -38,6 +38,18 @@ namespace ARdevKit
 
     public partial class EditorWindow : Form
     {
+        /// <summary>
+        /// The minscreenwidht
+        /// </summary>
+        /// <remarks>geht 28.01.2014 15:12</remarks>
+        private const uint MINSCREENWIDHT = 320;
+
+        /// <summary>
+        /// The minscreenheight
+        /// </summary>
+        /// <remarks>geht 28.01.2014 15:12</remarks>
+        private const uint MINSCREENHEIGHT = 240;
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
         /// if true the debug window will be opened when starting the test mode on the device.
@@ -339,7 +351,7 @@ namespace ARdevKit
         private void tsm_editor_menu_test_startImage_Click(object sender, EventArgs e)
         {
             if (project.Trackables != null && project.Trackables.Count > 0 && project.Trackables[0] != null)
-                TestController.StartPlayer(project, TestController.IMAGE);
+                TestController.StartPlayer(project, TestController.IMAGE, (int)project.Screensize.Width, (int)project.Screensize.Height);
             else
                 MessageBox.Show("Keine Szene zum Testen vorhanden");
         }
@@ -356,7 +368,7 @@ namespace ARdevKit
         private void tsm_editor_menu_test_startVideo_Click(object sender, EventArgs e)
         {
             if (project.Trackables != null && project.Trackables.Count > 0 && project.Trackables[0] != null)
-                TestController.StartPlayer(project, TestController.VIDEO);
+                TestController.StartPlayer(project, TestController.VIDEO, (int)project.Screensize.Width, (int)project.Screensize.Height);
             else
                 MessageBox.Show("Keine Szene zum Testen vorhanden");
         }
@@ -374,7 +386,7 @@ namespace ARdevKit
         private void tsm_editor_menu_test_startWithVirtualCamera_Click(object sender, EventArgs e)
         {
             if (project.Trackables != null && project.Trackables.Count > 0 && project.Trackables[0] != null)
-                TestController.StartPlayer(project, TestController.CAMERA);
+                TestController.StartPlayer(project, TestController.CAMERA, (int)project.Screensize.Width, (int)project.Screensize.Height);
             else
                 MessageBox.Show("Keine Szene zum Testen vorhanden");
         }
@@ -438,6 +450,9 @@ namespace ARdevKit
                 tempButton.Text = Convert.ToString(this.project.Trackables.Count + 1);
                 tempButton.UseVisualStyleBackColor = true;
                 tempButton.Click += new System.EventHandler(this.btn_editor_scene_scene_change);
+                tempButton.ContextMenu = new ContextMenu();
+                tempButton.ContextMenu.Tag = tempButton;
+                tempButton.ContextMenu.MenuItems.Add("Duplicate", new EventHandler(this.pnl_editor_scene_duplicate));
 
                 this.pnl_editor_scenes.Controls.Add(tempButton);
                 this.previewController.reloadPreviewPanel(this.project.Trackables.Count);
@@ -581,6 +596,7 @@ namespace ARdevKit
                 previewController.index = -1;
                 previewController.reloadPreviewPanel(0);
                 this.updateSceneSelectionPanel();
+                this.updateScreenSize();
             }
             catch (System.ArgumentException)
             {
@@ -625,6 +641,7 @@ namespace ARdevKit
             SceneElementCategory trackables = new SceneElementCategory(MetaCategory.Trackable, "Trackables");
             trackables.addElement(new SceneElement("Picture Marker", new PictureMarker(), this));
             trackables.addElement(new SceneElement("IDMarker", new IDMarker(1), this));
+            trackables.addElement(new SceneElement("Image Trackable", new ImageTrackable(), this));
             addCategory(trackables);
             addCategory(augmentations);
             addCategory(sources);
@@ -747,6 +764,9 @@ namespace ARdevKit
                 tempButton.Text = Convert.ToString(i + 1);
                 tempButton.UseVisualStyleBackColor = true;
                 tempButton.Click += new System.EventHandler(this.btn_editor_scene_scene_change);
+                tempButton.ContextMenu = new ContextMenu();
+                tempButton.ContextMenu.Tag = tempButton;
+                tempButton.ContextMenu.MenuItems.Add("Duplicate", new EventHandler(this.pnl_editor_scene_duplicate));
 
                 this.pnl_editor_scenes.Controls.Add(tempButton);
             }
@@ -774,6 +794,9 @@ namespace ARdevKit
                 tempButton.Text = Convert.ToString(i + 1);
                 tempButton.UseVisualStyleBackColor = true;
                 tempButton.Click += new System.EventHandler(this.btn_editor_scene_scene_change);
+                tempButton.ContextMenu = new ContextMenu();
+                tempButton.ContextMenu.Tag = tempButton;
+                tempButton.ContextMenu.MenuItems.Add("Duplicate", new EventHandler(this.pnl_editor_scene_duplicate));
 
                 this.pnl_editor_scenes.Controls.Add(tempButton);
             }
@@ -888,6 +911,10 @@ namespace ARdevKit
             this.allElements = new LinkedList<IPreviewable>();
             this.exportVisitor = new ExportVisitor(false);
             this.currentElement = null;
+            this.project.Screensize = new ScreenSize();
+            this.project.Screensize.Height = Convert.ToUInt32(pnl_editor_preview.Size.Height);
+            this.project.Screensize.Width = Convert.ToUInt32(pnl_editor_preview.Size.Width);
+            this.project.Screensize.SizeChanged += new System.EventHandler(this.pnl_editor_preview_SizeChanged);
             registerElements();
         }
 
@@ -910,6 +937,31 @@ namespace ARdevKit
             this.updateSceneSelectionPanel();
             //this.updatePropertyPanel(currentElement);
             this.updateStatusBar();
+        }
+
+        /// <summary>
+        /// Updates the size of the screen.
+        /// </summary>
+        /// <remarks>geht 26.01.2014 20:20</remarks>
+        private void updateScreenSize()
+        {
+            if (project.Screensize.Width < MINSCREENWIDHT)
+            {
+                this.project.Screensize.Width = MINSCREENWIDHT;
+                this.pnl_editor_preview.Size = new Size((int)project.Screensize.Width, (int)project.Screensize.Height);
+                this.previewController.rescalePreviewPanel();
+            }
+            else if (project.Screensize.Height < MINSCREENHEIGHT)
+            {
+                this.project.Screensize.Height = MINSCREENHEIGHT;
+                this.pnl_editor_preview.Size = new Size((int)project.Screensize.Width, (int)project.Screensize.Height);
+                this.previewController.rescalePreviewPanel();
+            }
+            else
+            {
+                this.pnl_editor_preview.Size = new Size((int)project.Screensize.Width, (int)project.Screensize.Height);
+                this.previewController.rescalePreviewPanel();
+            }
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1030,5 +1082,83 @@ namespace ARdevKit
             this.pnl_editor_preview.ContextMenu.MenuItems[0].Enabled = true;
         }
 
+        /// <summary>
+        /// Handles the Click event of the pnl_editor_preview control.
+        /// Used for changing the screensize.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// <remarks>geht 26.01.2014 20:21</remarks>
+        private void pnl_editor_preview_Click(object sender, EventArgs e)
+        {
+            propertyGrid1.SelectedObject = project.Screensize;
+            propertyGrid1.PropertySort = PropertySort.NoSort;
+            this.previewController.setCurrentElement(null);
+        }
+
+        /// <summary>
+        /// Handles the SizeChanged event of the pnl_editor_preview control.
+        /// Is called when the screensize has been changed.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// <remarks>geht 26.01.2014 20:21</remarks>
+        private void pnl_editor_preview_SizeChanged(object sender, EventArgs e)
+        {
+            Debug.WriteLine("ScreenSize has been changed!");
+            this.updateScreenSize();
+        }
+
+        private void pnl_editor_scene_duplicate(object sender, EventArgs e)
+        {
+            int temp = Convert.ToInt32(((Button)((ContextMenu)((MenuItem)sender).Parent).Tag).Text);
+            AbstractTrackable tempTrack;
+
+            if (this.project.Trackables[temp - 1] != null)
+            {
+                tempTrack = (AbstractTrackable)this.project.Trackables[temp - 1].Duplicate();
+                for(int i = 0; i < tempTrack.Augmentations.Count; i++) 
+                {
+                    tempTrack.Augmentations[i] = (AbstractAugmentation)tempTrack.Augmentations[i].Clone();
+                    if (tempTrack.Augmentations[i] is AbstractDynamic2DAugmentation && ((AbstractDynamic2DAugmentation)tempTrack.Augmentations[i]).Source != null)
+                    {
+                        ((AbstractDynamic2DAugmentation)tempTrack.Augmentations[i]).Source = (AbstractSource)((AbstractDynamic2DAugmentation)tempTrack.Augmentations[i]).Source.Clone();
+                    }
+                }
+                if (tempTrack is IDMarker)
+                {
+                    ((IDMarker)tempTrack).MatrixID = this.project.nextID();
+                }
+                else if (tempTrack is ImageTrackable)
+                {
+                    while (this.project.existTrackable(tempTrack))
+                    {
+                        OpenFileDialog openFileDialog = new OpenFileDialog();
+                        openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+                        openFileDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
+                        if (openFileDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            ((ImageTrackable)tempTrack).ImagePath = openFileDialog.FileName;
+                        }
+                    }
+                }
+                else if (tempTrack is PictureMarker)
+                {
+                    while (this.project.existTrackable(tempTrack))
+                    {
+                        OpenFileDialog openFileDialog = new OpenFileDialog();
+                        openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+                        openFileDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
+                        if (openFileDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            ((PictureMarker)tempTrack).PicturePath = openFileDialog.FileName;
+                        }
+                    }
+                }
+                tempTrack.vector = new Vector3D(this.pnl_editor_preview.Size.Width / 2, this.pnl_editor_preview.Size.Height / 2, 0);
+                this.project.Trackables.Add(tempTrack);
+                this.updateSceneSelectionPanel();
+            }
+        }
     }
 }

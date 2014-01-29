@@ -31,10 +31,19 @@ namespace ARdevKit.Model.Project
         /// The matrix identifier.
         /// </value>
         [CategoryAttribute("General")]
+        [ Description("The matrix identifies describes the marker, which are deployed by the metaio SDK. The range is from 1 to 512.")]
         public int MatrixID
         {
             get { return matrixID; }
-            set { matrixID = value; }
+            set 
+            {
+                if (value < 1)
+                    matrixID = 1;
+                else if (value > 512)
+                    matrixID = 512;
+                else
+                    matrixID = value; 
+            }
         }
 
         /// <summary>
@@ -94,6 +103,14 @@ namespace ARdevKit.Model.Project
         }
 
         public override object Clone()
+        {
+            IDMarker n = ObjectCopier.Clone<IDMarker>(this);
+            n.fuser = new MarkerFuser();
+            n.sensorCosID = IDFactory.CreateNewSensorCosID(this);
+            return n;
+        }
+
+        public override object Duplicate()
         {
             IDMarker n = ObjectCopier.Clone<IDMarker>(this);
             n.fuser = new MarkerFuser();

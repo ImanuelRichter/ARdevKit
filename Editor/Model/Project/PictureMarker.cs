@@ -30,7 +30,7 @@ namespace ARdevKit.Model.Project
         /// <value>
         /// The full pathname of the picture file.
         /// </value>
-        [CategoryAttribute("General"), EditorAttribute(typeof(FileSelectorTypeEditor), 
+        [CategoryAttribute("General"), Description("Full pathname of the image file"), EditorAttribute(typeof(FileSelectorTypeEditor), 
             typeof(System.Drawing.Design.UITypeEditor))]
         public string PicturePath
         {
@@ -38,7 +38,7 @@ namespace ARdevKit.Model.Project
             set 
             { 
                 picturePath = value;
-                pictureName = Path.GetFileNameWithoutExtension(picturePath);
+                pictureName = Path.GetFileName(value); ;
             }
         }
 
@@ -52,7 +52,7 @@ namespace ARdevKit.Model.Project
         /// <value>
         /// The name of the picture.
         /// </value>
-        [CategoryAttribute("General"), ReadOnly(true)]
+        [CategoryAttribute("General"), Description("Name of the image"), ReadOnly(true)]
         public string PictureName
         {
             get { return pictureName; }
@@ -142,6 +142,13 @@ namespace ARdevKit.Model.Project
         public override object Clone()
         {
             PictureMarker n = new PictureMarker();
+            n.sensorCosID = IDFactory.CreateNewSensorCosID(this);
+            return n;
+        }
+
+        public override object Duplicate()
+        {
+            PictureMarker n = ObjectCopier.Clone<PictureMarker>(this);
             n.sensorCosID = IDFactory.CreateNewSensorCosID(this);
             return n;
         }

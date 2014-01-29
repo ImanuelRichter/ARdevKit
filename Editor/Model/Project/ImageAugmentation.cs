@@ -29,7 +29,8 @@ namespace ARdevKit.Model.Project
         /// <value>
         /// The full pathname of the image file.
         /// </value>
-        [CategoryAttribute("General")]
+        [CategoryAttribute("General"), EditorAttribute(typeof(FileSelectorTypeEditor),
+            typeof(System.Drawing.Design.UITypeEditor))]
         public string ImagePath
         {
             get { return imagePath; }
