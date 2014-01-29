@@ -117,5 +117,18 @@ namespace ARdevKit.Model.Project
             n.sensorCosID = IDFactory.CreateNewSensorCosID(this);
             return n;
         }
+
+        public override bool initElement(EditorWindow ew)
+        {
+            if (ew.project.existTrackable(this))
+            {
+                MatrixID = ew.project.nextID();
+            }
+            else
+            {
+                ew.project.Sensor = new MarkerSensor();
+            }
+            return base.initElement(ew);
+        }
     }
 }

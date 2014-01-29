@@ -8,6 +8,7 @@ using System.Drawing;
 using System.ComponentModel;
 using ARdevKit.Controller.ProjectController;
 using ARdevKit.View;
+using System.Windows.Forms;
 
 namespace ARdevKit.Model.Project
 {
@@ -106,6 +107,26 @@ namespace ARdevKit.Model.Project
         public override object Clone()
         {
             return ObjectCopier.Clone<ImageAugmentation>(this);
+        }
+
+        public override bool initElement(EditorWindow ew)
+        {
+            if (ImagePath == null)
+            {
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+                openFileDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    ImagePath = openFileDialog.FileName;
+                    return base.initElement(ew);
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            return base.initElement(ew);
         }
     }
 }

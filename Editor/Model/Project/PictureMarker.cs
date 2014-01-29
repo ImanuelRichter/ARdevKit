@@ -9,6 +9,7 @@ using System.ComponentModel;
 using ARdevKit.Controller.ProjectController;
 using ARdevKit.View;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace ARdevKit.Model.Project
 {
@@ -151,6 +152,33 @@ namespace ARdevKit.Model.Project
             PictureMarker n = ObjectCopier.Clone<PictureMarker>(this);
             n.sensorCosID = IDFactory.CreateNewSensorCosID(this);
             return n;
+        }
+
+        public override bool initElement(EditorWindow ew)
+        {
+            if (base.initElement(ew))
+            {
+                bool isInitOk = true;
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+                openFileDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
+                isInitOk = openFileDialog.ShowDialog() == DialogResult.OK;
+                if (isInitOk)
+                {
+                    string path = openFileDialog.FileName;
+                    PicturePath = path;
+                }
+
+                if (!ew.project.existTrackable(this))
+                {
+                    ew.project.Sensor = new MarkerSensor();
+                }
+                return isInitOk;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

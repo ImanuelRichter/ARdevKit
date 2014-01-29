@@ -94,51 +94,30 @@ public class PreviewController
                 center.X = panel.Size.Width / 2;
 
                 //ask the user for the picture (if the trackable is a picturemarker)
-                bool isInitOk = true;
-                if (currentElement is PictureMarker || currentElement is ImageTrackable)
+                bool isInitOk = currentElement.initElement(ew);
+                if (!isInitOk)
                 {
-                    OpenFileDialog openFileDialog = new OpenFileDialog();
-                    openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
-                    openFileDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
-                    isInitOk = openFileDialog.ShowDialog() == DialogResult.OK;
-                    if (isInitOk)
-                    {
-                        string path = openFileDialog.FileName;
-                        if (currentElement is PictureMarker)
-                        {
-                            ((PictureMarker)currentElement).PicturePath = path;
-                        }
-                        if (currentElement is ImageTrackable)
-                        {
-                            ((ImageTrackable)currentElement).ImagePath = path;
-                        }
-                    }
-                    else
-                    {
-                        break;
-                    }
+                    break;
                 }
                 if (isInitOk)
                 {
                     //set the vector to the trackable
                     ((AbstractTrackable)currentElement).vector = center;
 
-                    if (this.ew.project.existTrackable(currentElement) && currentElement is IDMarker)
-                    {
-                        ((IDMarker)currentElement).MatrixID = this.ew.project.nextID();
-                    }
-
                     if (!this.ew.project.existTrackable(currentElement))
                     {
-                        this.ew.ElementSelectionController.setElementEnable(typeof(PictureMarker), false);
-                        this.ew.ElementSelectionController.setElementEnable(typeof(ImageTrackable), false);
-                        this.ew.ElementSelectionController.setElementEnable(typeof(IDMarker), false);
+                        //diables all trackable elements excepted the on that was added.
+                        foreach (SceneElementCategory c in this.ew.ElementCategories)
+                        {
+                            if (c.Name == "Trackables")
+                            {
+                                foreach (SceneElement e in c.SceneElements)
+                                {
+                                    this.ew.ElementSelectionController.setElementEnable(e.Prototype.GetType(), false);
+                                }
+                            }
+                        }
                         this.ew.ElementSelectionController.setElementEnable(currentElement.GetType(), true);
-
-                        if (currentElement is ImageTrackable)
-                            this.ew.project.Sensor = new MarkerlessSensor();
-                        else
-                            this.ew.project.Sensor = new MarkerSensor();
 
                         this.trackable = (AbstractTrackable)currentElement;
                         this.ew.project.Trackables[index] = (AbstractTrackable)currentElement;
@@ -148,93 +127,13 @@ public class PreviewController
                         ew.PropertyGrid1.SelectedObject = currentElement;
                         break;
                     }
-                    
-
                 }
-            } 
+            }
         }
         else if (currentElement is AbstractAugmentation && trackable != null && this.ew.project.Trackables[index].Augmentations.Count < 3)
         {
-            OpenFileDialog openFileDialog = null;
-
-            if (currentElement is ImageAugmentation)
-            {
-                if (((ImageAugmentation)currentElement).ImagePath == null)
-                {
-                    openFileDialog = new OpenFileDialog();
-                    openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
-                    openFileDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
-                    if (openFileDialog.ShowDialog() == DialogResult.OK)
-                    {
-                        ((ImageAugmentation)currentElement).ImagePath = openFileDialog.FileName;
-                        //set references 
-                        trackable.Augmentations.Add((AbstractAugmentation)currentElement);
-
-                        this.addPictureBox(currentElement, v);
-
-                        //set the vector and the trackable in <see cref="AbstractAugmentation"/>
-                        this.setCoordinates(currentElement, v);
-                        ((AbstractAugmentation)currentElement).Trackable = this.trackable;
-
-                        //set the new box to the front
-                        this.findBox(currentElement).BringToFront();
-                        setCurrentElement(currentElement);
-                    }
-                }
-                else
-                {
-                    //set references 
-                    trackable.Augmentations.Add((AbstractAugmentation)currentElement);
-
-                    this.addPictureBox(currentElement, v);
-
-                    //set the vector and the trackable in <see cref="AbstractAugmentation"/>
-                    this.setCoordinates(currentElement, v);
-                    ((AbstractAugmentation)currentElement).Trackable = this.trackable;
-
-                    //set the new box to the front
-                    this.findBox(currentElement).BringToFront();
-                    setCurrentElement(currentElement);
-                }
-            }
-            else if (currentElement is Chart)
-            {
-                if (((Chart)currentElement).Options == null)
-                {
-                    openFileDialog = new OpenFileDialog();
-                    openFileDialog.InitialDirectory = Application.StartupPath + "\\res\\highcharts\\barChartColumn";
-                    openFileDialog.Filter = "json (*.json)|*.json";
-                    if (openFileDialog.ShowDialog() == DialogResult.OK)
-                    {
-                        ((Chart)currentElement).Options = openFileDialog.FileName;
-                        //set references 
-                        trackable.Augmentations.Add((AbstractAugmentation)currentElement);
-
-                        this.addPictureBox(currentElement, v);
-
-                        //set the vector and the trackable in <see cref="AbstractAugmentation"/>
-                        this.setCoordinates(currentElement, v);
-                        ((AbstractAugmentation)currentElement).Trackable = this.trackable;
-
-                        setCurrentElement(currentElement);
-                    }
-                }
-                else
-                {
-                    //set references 
-                    trackable.Augmentations.Add((AbstractAugmentation)currentElement);
-
-                    this.addPictureBox(currentElement, v);
-
-                    //set the vector and the trackable in <see cref="AbstractAugmentation"/>
-                    this.setCoordinates(currentElement, v);
-                    ((AbstractAugmentation)currentElement).Trackable = this.trackable;
-
-                    setCurrentElement(currentElement);
-                }
-
-            }
-            else
+            bool isInitOk = currentElement.initElement(ew);
+            if (isInitOk)
             {
                 //set references 
                 trackable.Augmentations.Add((AbstractAugmentation)currentElement);
@@ -245,6 +144,8 @@ public class PreviewController
                 this.setCoordinates(currentElement, v);
                 ((AbstractAugmentation)currentElement).Trackable = this.trackable;
 
+                //set the new box to the front
+                this.findBox(currentElement).BringToFront();
                 setCurrentElement(currentElement);
             }
         }
