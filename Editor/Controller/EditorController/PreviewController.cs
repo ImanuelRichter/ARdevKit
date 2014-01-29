@@ -113,6 +113,10 @@ public class PreviewController
                             ((ImageTrackable)currentElement).ImagePath = path;
                         }
                     }
+                    else
+                    {
+                        break;
+                    }
                 }
                 if (isInitOk)
                 {
