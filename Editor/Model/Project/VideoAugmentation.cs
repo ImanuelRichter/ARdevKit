@@ -109,7 +109,7 @@ namespace ARdevKit.Model.Project
             if (VideoPath == null)
             {
                 OpenFileDialog openFileDialog = new OpenFileDialog();
-                openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+                openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyVideos);
                 openFileDialog.Filter = "Video Files (*.3G2)|*.3g2";
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
