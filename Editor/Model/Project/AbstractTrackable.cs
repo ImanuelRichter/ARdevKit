@@ -133,5 +133,7 @@ namespace ARdevKit.Model.Project
          */
 
         public abstract object Clone();
+
+        public abstract object Duplicate();
     }
 }

@@ -222,6 +222,10 @@ namespace ARdevKit.Model.Project
             return false;
         }
 
+        /// <summary>
+        /// Returns the next bigger Matrix ID.
+        /// </summary>
+        /// <returns></returns>
         public int nextID()
         {
             int i = 0;
@@ -237,6 +241,11 @@ namespace ARdevKit.Model.Project
             return i + 1;
         }
 
+        /// <summary>
+        /// true if an Trackable with the same Path/ID exists, false if not.
+        /// </summary>
+        /// <param name="prev">The previous.</param>
+        /// <returns></returns>
         public bool existTrackable(IPreviewable prev)
         {
             foreach (AbstractTrackable track in this.trackables)

@@ -43,13 +43,13 @@ namespace ARdevKit
         /// </summary>
         /// <remarks>geht 28.01.2014 15:12</remarks>
         private const uint MINSCREENWIDHT = 320;
-       
+
         /// <summary>
         /// The minscreenheight
         /// </summary>
         /// <remarks>geht 28.01.2014 15:12</remarks>
         private const uint MINSCREENHEIGHT = 240;
-       
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
         /// if true the debug window will be opened when starting the test mode on the device.
@@ -351,7 +351,7 @@ namespace ARdevKit
         private void tsm_editor_menu_test_startImage_Click(object sender, EventArgs e)
         {
             if (project.Trackables != null && project.Trackables.Count > 0 && project.Trackables[0] != null)
-                TestController.StartPlayer(project, TestController.IMAGE, (int) project.Screensize.Width, (int) project.Screensize.Height);
+                TestController.StartPlayer(project, TestController.IMAGE, (int)project.Screensize.Width, (int)project.Screensize.Height);
             else
                 MessageBox.Show("Keine Szene zum Testen vorhanden");
         }
@@ -450,7 +450,10 @@ namespace ARdevKit
                 tempButton.Text = Convert.ToString(this.project.Trackables.Count + 1);
                 tempButton.UseVisualStyleBackColor = true;
                 tempButton.Click += new System.EventHandler(this.btn_editor_scene_scene_change);
-                
+                tempButton.ContextMenu = new ContextMenu();
+                tempButton.ContextMenu.Tag = tempButton;
+                tempButton.ContextMenu.MenuItems.Add("Duplicate", new EventHandler(this.pnl_editor_scene_duplicate));
+
                 this.pnl_editor_scenes.Controls.Add(tempButton);
                 this.previewController.reloadPreviewPanel(this.project.Trackables.Count);
                 this.PropertyGrid1.SelectedObject = null;
@@ -638,7 +641,7 @@ namespace ARdevKit
             SceneElementCategory trackables = new SceneElementCategory(MetaCategory.Trackable, "Trackables");
             trackables.addElement(new SceneElement("Picture Marker", new PictureMarker(), this));
             trackables.addElement(new SceneElement("IDMarker", new IDMarker(1), this));
-            trackables.addElement(new SceneElement("Image Trackable", new ImageTrackable(),this));
+            trackables.addElement(new SceneElement("Image Trackable", new ImageTrackable(), this));
             addCategory(trackables);
             addCategory(augmentations);
             addCategory(sources);
@@ -761,6 +764,9 @@ namespace ARdevKit
                 tempButton.Text = Convert.ToString(i + 1);
                 tempButton.UseVisualStyleBackColor = true;
                 tempButton.Click += new System.EventHandler(this.btn_editor_scene_scene_change);
+                tempButton.ContextMenu = new ContextMenu();
+                tempButton.ContextMenu.Tag = tempButton;
+                tempButton.ContextMenu.MenuItems.Add("Duplicate", new EventHandler(this.pnl_editor_scene_duplicate));
 
                 this.pnl_editor_scenes.Controls.Add(tempButton);
             }
@@ -788,6 +794,9 @@ namespace ARdevKit
                 tempButton.Text = Convert.ToString(i + 1);
                 tempButton.UseVisualStyleBackColor = true;
                 tempButton.Click += new System.EventHandler(this.btn_editor_scene_scene_change);
+                tempButton.ContextMenu = new ContextMenu();
+                tempButton.ContextMenu.Tag = tempButton;
+                tempButton.ContextMenu.MenuItems.Add("Duplicate", new EventHandler(this.pnl_editor_scene_duplicate));
 
                 this.pnl_editor_scenes.Controls.Add(tempButton);
             }
@@ -1098,6 +1107,58 @@ namespace ARdevKit
         {
             Debug.WriteLine("ScreenSize has been changed!");
             this.updateScreenSize();
+        }
+
+        private void pnl_editor_scene_duplicate(object sender, EventArgs e)
+        {
+            int temp = Convert.ToInt32(((Button)((ContextMenu)((MenuItem)sender).Parent).Tag).Text);
+            AbstractTrackable tempTrack;
+
+            if (this.project.Trackables[temp - 1] != null)
+            {
+                tempTrack = (AbstractTrackable)this.project.Trackables[temp - 1].Duplicate();
+                for(int i = 0; i < tempTrack.Augmentations.Count; i++) 
+                {
+                    tempTrack.Augmentations[i] = (AbstractAugmentation)tempTrack.Augmentations[i].Clone();
+                    if (tempTrack.Augmentations[i] is AbstractDynamic2DAugmentation && ((AbstractDynamic2DAugmentation)tempTrack.Augmentations[i]).Source != null)
+                    {
+                        ((AbstractDynamic2DAugmentation)tempTrack.Augmentations[i]).Source = (AbstractSource)((AbstractDynamic2DAugmentation)tempTrack.Augmentations[i]).Source.Clone();
+                    }
+                }
+                if (tempTrack is IDMarker)
+                {
+                    ((IDMarker)tempTrack).MatrixID = this.project.nextID();
+                }
+                else if (tempTrack is ImageTrackable)
+                {
+                    while (this.project.existTrackable(tempTrack))
+                    {
+                        OpenFileDialog openFileDialog = new OpenFileDialog();
+                        openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+                        openFileDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
+                        if (openFileDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            ((ImageTrackable)tempTrack).ImagePath = openFileDialog.FileName;
+                        }
+                    }
+                }
+                else if (tempTrack is PictureMarker)
+                {
+                    while (this.project.existTrackable(tempTrack))
+                    {
+                        OpenFileDialog openFileDialog = new OpenFileDialog();
+                        openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+                        openFileDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
+                        if (openFileDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            ((PictureMarker)tempTrack).PicturePath = openFileDialog.FileName;
+                        }
+                    }
+                }
+                tempTrack.vector = new Vector3D(this.pnl_editor_preview.Size.Width / 2, this.pnl_editor_preview.Size.Height / 2, 0);
+                this.project.Trackables.Add(tempTrack);
+                this.updateSceneSelectionPanel();
+            }
         }
     }
 }
