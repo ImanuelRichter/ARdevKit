@@ -109,12 +109,12 @@ namespace ARdevKit.Model.Project
         /// Vector, to describes the rotation of the <see cref="AbstractAugmentation"/> in
         /// x, y and z direction. w is used for TrackingFile Offset in AREL.
         /// </summary>
-        private Vector3Di rotationVector;
+        private Vector3D rotationVector;
         /// <summary>
         /// gets or sets the Vector
         /// </summary>
         [CategoryAttribute("Position"), ReadOnly(true)]
-        public Vector3Di Rotation
+        public Vector3D Rotation
         {
             get { return rotationVector; }
             set { rotationVector = value; }

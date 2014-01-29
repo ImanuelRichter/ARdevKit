@@ -126,8 +126,10 @@ namespace EditorTest
             ImageTrackable imageTrackable = new ImageTrackable("res\\testFiles\\trackables\\metaioman_target.png");
 
             VideoAugmentation video = new VideoAugmentation();
-            video.VideoPath = "res\\testFiles\\augmentations\\video.3g2";
+            video.VideoPath = "res\\testFiles\\augmentations\\video.alpha.3g2";
             video.IsVisible = false;
+            video.Rotation = new Vector3D(0, 0, -90);
+            video.Scaling = new Vector3D(2, 2, 1);
             imageTrackable.Augmentations.Add(video);
             video.Trackable = imageTrackable;
 
