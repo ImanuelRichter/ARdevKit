@@ -87,49 +87,63 @@ public class PreviewController
     {
         if (currentElement is AbstractTrackable && trackable == null)
         {
-
-            Vector3D center = new Vector3D(0, 0, 0);
-            center.Y = panel.Size.Height / 2;
-            center.X = panel.Size.Width / 2;
-            //ask the user for the picture (if the trackable is a picturemarker)
-            bool isInitOk = true;
-            if (currentElement.GetType() == typeof(PictureMarker) || currentElement.GetType() == typeof(ImageTrackable))
+            while (true)
             {
-                OpenFileDialog openFileDialog = new OpenFileDialog();
-                openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
-                openFileDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
-                isInitOk = openFileDialog.ShowDialog() == DialogResult.OK;
+                Vector3D center = new Vector3D(0, 0, 0);
+                center.Y = panel.Size.Height / 2;
+                center.X = panel.Size.Width / 2;
+
+                //ask the user for the picture (if the trackable is a picturemarker)
+                bool isInitOk = true;
+                if (currentElement is PictureMarker || currentElement is ImageTrackable)
+                {
+                    OpenFileDialog openFileDialog = new OpenFileDialog();
+                    openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+                    openFileDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
+                    isInitOk = openFileDialog.ShowDialog() == DialogResult.OK;
+                    if (isInitOk)
+                    {
+                        string path = openFileDialog.FileName;
+                        if (currentElement is PictureMarker)
+                        {
+                            ((PictureMarker)currentElement).PicturePath = path;
+                        }
+                        if (currentElement is ImageTrackable)
+                        {
+                            ((ImageTrackable)currentElement).ImagePath = path;
+                        }
+                    }
+                }
                 if (isInitOk)
                 {
-                    string path = openFileDialog.FileName;
-                    if (currentElement.GetType() == typeof(PictureMarker))
+                    //set the vector to the trackable
+                    ((AbstractTrackable)currentElement).vector = center;
+
+                    if (this.ew.project.existTrackable(currentElement) && currentElement is IDMarker)
                     {
-                        ((PictureMarker)currentElement).PicturePath = path;
+                        ((IDMarker)currentElement).MatrixID = this.ew.project.nextID();
                     }
-                    if (currentElement.GetType() == typeof(ImageTrackable))
+
+                    if (!this.ew.project.existTrackable(currentElement))
                     {
-                        ((ImageTrackable)currentElement).ImagePath = path;
+                        this.ew.ElementSelectionController.setElementEnable(typeof(PictureMarker), false);
+                        this.ew.ElementSelectionController.setElementEnable(typeof(ImageTrackable), false);
+                        this.ew.ElementSelectionController.setElementEnable(typeof(IDMarker), false);
+                        this.ew.ElementSelectionController.setElementEnable(currentElement.GetType(), true);
+                        this.ew.project.Sensor = new MarkerSensor();
+
+                        this.trackable = (AbstractTrackable)currentElement;
+                        this.ew.project.Trackables[index] = (AbstractTrackable)currentElement;
+
+                        this.addPictureBox(currentElement, center);
+                        setCurrentElement(currentElement);
+                        ew.PropertyGrid1.SelectedObject = currentElement;
+                        break;
                     }
+                    
+
                 }
-            }
-            if (isInitOk)
-            {
-                //set the vector to the trackable
-                ((AbstractTrackable)currentElement).vector = center;
-                this.trackable = (AbstractTrackable)currentElement;
-                this.ew.project.Trackables[index] = (AbstractTrackable)currentElement;
-                if (this.ew.project.isTrackable())
-                {
-                    this.ew.ElementSelectionController.setElementEnable(typeof(PictureMarker), false);
-                    this.ew.ElementSelectionController.setElementEnable(typeof(ImageTrackable), false);
-                    this.ew.ElementSelectionController.setElementEnable(typeof(IDMarker), false);
-                    this.ew.ElementSelectionController.setElementEnable(currentElement.GetType(), true);
-                    this.ew.project.Sensor = new MarkerSensor();
-                }
-                this.addPictureBox(currentElement, center);
-                setCurrentElement(currentElement);
-                ew.PropertyGrid1.SelectedObject = currentElement;
-            }
+            } 
         }
         else if (currentElement is AbstractAugmentation && trackable != null && this.ew.project.Trackables[index].Augmentations.Count < 3)
         {
@@ -151,7 +165,7 @@ public class PreviewController
                         this.addPictureBox(currentElement, v);
 
                         //set the vector and the trackable in <see cref="AbstractAugmentation"/>
-                        ((AbstractAugmentation)currentElement).Translation = this.calculateVector(v);
+                        this.setCoordinates(currentElement, v);
                         ((AbstractAugmentation)currentElement).Trackable = this.trackable;
 
                         //set the new box to the front
@@ -167,7 +181,7 @@ public class PreviewController
                     this.addPictureBox(currentElement, v);
 
                     //set the vector and the trackable in <see cref="AbstractAugmentation"/>
-                    ((AbstractAugmentation)currentElement).Translation = this.calculateVector(v);
+                    this.setCoordinates(currentElement, v);
                     ((AbstractAugmentation)currentElement).Trackable = this.trackable;
 
                     //set the new box to the front
@@ -191,9 +205,7 @@ public class PreviewController
                         this.addPictureBox(currentElement, v);
 
                         //set the vector and the trackable in <see cref="AbstractAugmentation"/>
-                        ((AbstractAugmentation)currentElement).Translation = this.calculateVector(v);
-                        ((Chart)currentElement).Positioning.Left = (int)v.X;
-                        ((Chart)currentElement).Positioning.Top = (int)v.Y;
+                        this.setCoordinates(currentElement, v);
                         ((AbstractAugmentation)currentElement).Trackable = this.trackable;
 
                         setCurrentElement(currentElement);
@@ -207,9 +219,7 @@ public class PreviewController
                     this.addPictureBox(currentElement, v);
 
                     //set the vector and the trackable in <see cref="AbstractAugmentation"/>
-                    ((AbstractAugmentation)currentElement).Translation = this.calculateVector(v);
-                    ((Chart)currentElement).Positioning.Left = (int)v.X;
-                    ((Chart)currentElement).Positioning.Top = (int)v.Y;
+                    this.setCoordinates(currentElement, v);
                     ((AbstractAugmentation)currentElement).Trackable = this.trackable;
 
                     setCurrentElement(currentElement);
@@ -224,9 +234,7 @@ public class PreviewController
                 this.addPictureBox(currentElement, v);
 
                 //set the vector and the trackable in <see cref="AbstractAugmentation"/>
-                ((AbstractAugmentation)currentElement).Translation = this.calculateVector(v);
-                ((Chart)currentElement).Positioning.Left = (int)v.X;
-                ((Chart)currentElement).Positioning.Top = (int)v.Y;
+                this.setCoordinates(currentElement, v);
                 ((AbstractAugmentation)currentElement).Trackable = this.trackable;
 
                 setCurrentElement(currentElement);
@@ -729,6 +737,25 @@ public class PreviewController
         this.reloadPreviewPanel(i);
     }
 
+    /// <summary>
+    /// Set all needed Coordinates for the augmentation.
+    /// </summary>
+    /// <param name="prev">The previous.</param>
+    /// <param name="newV">The new v.</param>
+    public void setCoordinates(IPreviewable prev, Vector3D newV)
+    {
+        if (prev is Chart)
+        {
+            ((Chart)prev).Positioning.Left = (int)newV.X;
+            ((Chart)prev).Positioning.Top = (int)newV.Y;
+            ((AbstractAugmentation)prev).Translation = this.calculateVector(newV);
+        }
+        else if (prev is ImageAugmentation)
+        {
+            ((AbstractAugmentation)prev).Translation = this.calculateVector(newV);
+        }
+    }
+
 
     //////////////////////////////////////////////////////////////////////////////////EVENTS/////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -767,13 +794,8 @@ public class PreviewController
             {
                 AbstractAugmentation aa;
                 aa = (AbstractAugmentation)((Control)sender).Tag;
-                aa.Translation.X = controlToMove.Location.X + e.Location.X - (panel.Width / 2);
-                aa.Translation.Y = controlToMove.Location.Y + e.Location.Y - (panel.Height / 2);
-                if (((Control)sender).Tag is Chart)
-                {
-                    ((Chart)aa).Positioning.Left = controlToMove.Location.X + e.Location.X;
-                    ((Chart)aa).Positioning.Top = controlToMove.Location.Y + e.Location.Y;
-                }
+                this.setCoordinates(this.ew.CurrentElement, new Vector3D(controlToMove.Location.X + e.Location.X,
+                    controlToMove.Location.Y + e.Location.Y, 0));
             }
         }
     }
@@ -947,4 +969,6 @@ public class PreviewController
     {
         System.Diagnostics.Process.Start("notepad", ((Chart)this.ew.CurrentElement).Options);
     }
+
+
 }

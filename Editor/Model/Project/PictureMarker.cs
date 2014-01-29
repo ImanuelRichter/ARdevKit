@@ -145,5 +145,12 @@ namespace ARdevKit.Model.Project
             n.sensorCosID = IDFactory.CreateNewSensorCosID(this);
             return n;
         }
+
+        public override object Duplicate()
+        {
+            PictureMarker n = ObjectCopier.Clone<PictureMarker>(this);
+            n.sensorCosID = IDFactory.CreateNewSensorCosID(this);
+            return n;
+        }
     }
 }
