@@ -221,6 +221,50 @@ namespace ARdevKit.Model.Project
             }
             return false;
         }
+
+        public int nextID()
+        {
+            int i = 0;
+            foreach(AbstractTrackable track in this.trackables) {
+                if (track != null && track is IDMarker)
+                {
+                    if (((IDMarker)track).MatrixID > i)
+                    {
+                        i = ((IDMarker)track).MatrixID; 
+                    }
+                }
+            }
+            return i + 1;
+        }
+
+        public bool existTrackable(IPreviewable prev)
+        {
+            foreach (AbstractTrackable track in this.trackables)
+            {
+                if (track != null && track is IDMarker && prev is IDMarker)
+                {
+                    if (((IDMarker)track).MatrixID == ((IDMarker)prev).MatrixID)
+                    {
+                        return true;
+                    }
+                }
+                else if (track != null && track is PictureMarker && prev is PictureMarker)
+                {
+                    if (((PictureMarker)track).PicturePath == ((PictureMarker)prev).PicturePath)
+                    {
+                        return true;
+                    }
+                }
+                else if (track != null && track is ImageTrackable && prev is ImageTrackable)
+                {
+                    if (((ImageTrackable)track).ImagePath == ((ImageTrackable)prev).ImagePath)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
     }
 
     

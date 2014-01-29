@@ -450,7 +450,7 @@ namespace ARdevKit
                 tempButton.Text = Convert.ToString(this.project.Trackables.Count + 1);
                 tempButton.UseVisualStyleBackColor = true;
                 tempButton.Click += new System.EventHandler(this.btn_editor_scene_scene_change);
-
+                
                 this.pnl_editor_scenes.Controls.Add(tempButton);
                 this.previewController.reloadPreviewPanel(this.project.Trackables.Count);
                 this.PropertyGrid1.SelectedObject = null;
