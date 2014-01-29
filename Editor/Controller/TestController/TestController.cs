@@ -61,11 +61,11 @@ namespace ARdevKit.Controller.TestController
         /// </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        private static string playerPath = "Player.exe";
+        private static string playerPath;
 
-        public static void StartPlayer(Project p, int mode)
+        public static void StartPlayer(Project p, int mode, bool showDebug)
         {
-            StartPlayer(p, mode, 1024, 768);
+            StartPlayer(p, mode, 1024, 768, showDebug);
         }
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace ARdevKit.Controller.TestController
         /// Tells if an image<see cref="IMAGE"/> or video<see cref="VIDEO"/>
         /// should be loaded or if a virtual camera<see cref="CAMERA"/> should be started
         /// </param>
-        public static void StartPlayer(Project project, int mode, int width, int height)
+        public static void StartPlayer(Project project, int mode, int width, int height, bool showDebug)
         {
             ExportVisitor exporter = new ExportVisitor(true);
             project.Accept(exporter);
@@ -88,6 +88,7 @@ namespace ARdevKit.Controller.TestController
             }
 
             player = new Process();
+            playerPath = showDebug ? "DebugPlayer.exe" : "Player.exe";
             player.StartInfo.Arguments = "-" + width + " -" + height + " -" + (project.ProjectPath == null ? "currentProject" : project.ProjectPath) + " -" + mode;
 
             bool open = false;
@@ -153,7 +154,7 @@ namespace ARdevKit.Controller.TestController
             {
                 OpenFileDialog openPlayerDialog = new OpenFileDialog();
                 openPlayerDialog.Title = "Bitte Player auswählen";
-                openPlayerDialog.Filter = "Programm (*.exe)|*.exe";
+                openPlayerDialog.Filter = "Programm (" + playerPath + ")|" + playerPath;
                 if (openPlayerDialog.ShowDialog() == DialogResult.OK)
                 {
                     player.StartInfo.FileName = openPlayerDialog.FileName;
