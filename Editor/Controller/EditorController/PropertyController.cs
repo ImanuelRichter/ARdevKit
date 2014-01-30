@@ -61,6 +61,17 @@ namespace Controller.EditorController
 
                 return;
             }
+
+            if (string.Equals(e.ChangedItem.Label.ToString(), "MatrixID", StringComparison.Ordinal))
+            {
+                if (ew.project.existTrackable((int)e.ChangedItem.Value))
+                {
+                    IDMarker marker = (IDMarker)ew.CurrentElement;
+                    marker.MatrixID = ew.project.nextID();
+                }
+
+                return;
+            }
         }
 
         /*
