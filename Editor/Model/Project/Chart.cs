@@ -63,6 +63,9 @@ namespace ARdevKit.Model.Project
             Scaling = new Vector3D(0, 0, 0);
         }
 
+        /// <summary>   Gets or sets the scaling. </summary>
+        ///
+        /// <value> The scaling. </value>
         [Browsable(false)]
         public new Vector3D Scaling
         {
