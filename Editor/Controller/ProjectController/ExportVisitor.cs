@@ -158,7 +158,6 @@ namespace ARdevKit.Controller.ProjectController
             string augmentationScalingY = image.Scaling.Y.ToString("F1", CultureInfo.InvariantCulture);
             string augmentationScalingZ = image.Scaling.Z.ToString("F1", CultureInfo.InvariantCulture);
             loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setScale(new arel.Vector3D(" + augmentationScalingX + "," + augmentationScalingY + "," + augmentationScalingZ + "))"));
-            loadContentBlock.AddLine(new JavaScriptLine("arel.Scene.addObject(" + imageVariable + ")"));
             string augmentationTranslationX = image.Translation.X.ToString("F1", CultureInfo.InvariantCulture);
             string augmentationTranslationY = image.Translation.Y.ToString("F1", CultureInfo.InvariantCulture);
             string augmentationTranslationZ = image.Translation.Z.ToString("F1", CultureInfo.InvariantCulture);
