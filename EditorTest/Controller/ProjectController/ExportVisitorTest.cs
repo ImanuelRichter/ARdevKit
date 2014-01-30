@@ -120,8 +120,7 @@ namespace EditorTest
 
         private void SetUptProject_imageTrackable_videoAugmentation()
         {
-            string projectPath = "currentProject";
-            testProject = new Project("HelloVideo", projectPath);
+            testProject = new Project("HelloVideo");
 
             ImageTrackable imageTrackable = new ImageTrackable("res\\testFiles\\trackables\\metaioman_target.png");
 
@@ -137,9 +136,9 @@ namespace EditorTest
             testProject.Trackables.Add(imageTrackable);
         }
 
-        private void export()
+        private void export(bool exportToTestFolder)
         {
-            ExportVisitor exporter = new ExportVisitor(false);
+            ExportVisitor exporter = new ExportVisitor(exportToTestFolder);
             testProject.Accept(exporter);
 
             foreach (AbstractFile file in exporter.Files)
@@ -149,45 +148,45 @@ namespace EditorTest
         }
 
         [TestMethod]
-        public void Export_IDMarker_WithValidPath_ResultingFile()
+        public void Export_idMarker_validPath_resultingFiles()
         {
             SetUptProjectWithIDMarkerAndImage();
-            export();
+            export(false);
         }
 
         [TestMethod]
-        public void Export_PictureMarker_barChart_fileSource()
+        public void Export_pictureMarker_barChart_fileSource()
         {
             SetUptProject_pictureMarker_barChart_fileSource();
-            export();
+            export(true);
         }
 
         [TestMethod]
-        public void Export_PictureMarker_barChart_liveSource()
+        public void Export_pictureMarker_barChart_liveSource()
         {
             SetUptProject_pictureMarker_barChart_liveSource();
-            export();
+            export(true);
         }
 
         [TestMethod]
-        public void Export_PictureMarker_WithValidPath_ResultingFile()
+        public void Export_pictureMarker_validPath_resultingFile()
         {
             SetUptProject_pictureMarker_barChart_noSource();
-            export();
+            export(false);
         }
 
         [TestMethod]
-        public void Export_ImageTrackable_WithValidPath_ResultingFile()
+        public void Export_imageTrackable_validPath_resultingFile()
         {
             SetUptProject_imageTrackable_imageAugmentation();
-            export();
+            export(false);
         }
 
         [TestMethod]
-        public void Export_ImageTrackable_WithVideo()
+        public void Export_imageTrackable_videoAugmentation()
         {
             SetUptProject_imageTrackable_videoAugmentation();
-            export();
+            export(true);
         }
     }
 }

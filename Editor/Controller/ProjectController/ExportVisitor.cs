@@ -158,7 +158,6 @@ namespace ARdevKit.Controller.ProjectController
             string augmentationScalingY = image.Scaling.Y.ToString("F1", CultureInfo.InvariantCulture);
             string augmentationScalingZ = image.Scaling.Z.ToString("F1", CultureInfo.InvariantCulture);
             loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setScale(new arel.Vector3D(" + augmentationScalingX + "," + augmentationScalingY + "," + augmentationScalingZ + "))"));
-            loadContentBlock.AddLine(new JavaScriptLine("arel.Scene.addObject(" + imageVariable + ")"));
             string augmentationTranslationX = image.Translation.X.ToString("F1", CultureInfo.InvariantCulture);
             string augmentationTranslationY = image.Translation.Y.ToString("F1", CultureInfo.InvariantCulture);
             string augmentationTranslationZ = image.Translation.Z.ToString("F1", CultureInfo.InvariantCulture);
@@ -949,13 +948,22 @@ namespace ARdevKit.Controller.ProjectController
 
         public override void Visit(Project p)
         {
+            // Get project path
             project = p;
             if (exportForTest)
-                projectPath = Path.Combine(Application.StartupPath, "currentProject");
+                projectPath = "currentProject";
             else
                 projectPath = p.ProjectPath;
 
-            Copy(Path.Combine(Application.StartupPath, "res", "arel", "arel.js"), projectPath);
+            // Clean up
+            if (Directory.Exists(projectPath))
+            {
+                foreach (string path in Directory.GetFiles(projectPath))
+                    File.Delete(path);
+            }
+
+            // Copy arel file
+            Copy(Path.Combine("res", "arel", "arel.js"), projectPath);
 
             // Create [projectName].html
             ARELProjectFile arelProjectFile = new ARELProjectFile("<!DOCTYPE html>", Path.Combine(projectPath, "arel" + (p.Name != "" ? p.Name : "Test") + ".html"));
