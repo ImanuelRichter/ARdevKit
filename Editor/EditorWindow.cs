@@ -416,7 +416,6 @@ namespace ARdevKit
             }
             else
             {
-                this.previewController.index = -1;
                 this.previewController.reloadPreviewPanel(0);
                 this.PropertyGrid1.SelectedObject = null;
             }
