@@ -949,13 +949,22 @@ namespace ARdevKit.Controller.ProjectController
 
         public override void Visit(Project p)
         {
+            // Get project path
             project = p;
             if (exportForTest)
-                projectPath = Path.Combine(Application.StartupPath, "currentProject");
+                projectPath = "currentProject";
             else
                 projectPath = p.ProjectPath;
 
-            Copy(Path.Combine(Application.StartupPath, "res", "arel", "arel.js"), projectPath);
+            // Clean up
+            if (Directory.Exists(projectPath))
+            {
+                foreach (string path in Directory.GetFiles(projectPath))
+                    File.Delete(path);
+            }
+
+            // Copy arel file
+            Copy(Path.Combine("res", "arel", "arel.js"), projectPath);
 
             // Create [projectName].html
             ARELProjectFile arelProjectFile = new ARELProjectFile("<!DOCTYPE html>", Path.Combine(projectPath, "arel" + (p.Name != "" ? p.Name : "Test") + ".html"));
