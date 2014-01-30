@@ -425,6 +425,7 @@ public class PreviewController
             this.panel.Controls.Clear();
             this.ew.project.Trackables.Add(trackable);
         }
+        this.ew.CurrentElement = null;
     }
 
 
@@ -640,31 +641,59 @@ public class PreviewController
     /// <param name="prev">The previous.</param>
     private void scaleIPreviewable(PictureBox box, IPreviewable prev)
     {
-        double scale = 100 / (double)((Abstract2DTrackable)this.trackable).Size;
+        int height = prev.getPreview().Height;
+        int width = prev.getPreview().Width;
+        double sideScale;
+        double scale;
+        if (((Abstract2DTrackable)this.trackable).Size == null)
+        {
+            scale = 100;
+        }
+        else
+        {
+            scale = 100 / (double)((Abstract2DTrackable)this.trackable).Size;
+        }
+        double scalex = width / scale;
+        double scaley = height / scale;
 
         if (prev is AbstractTrackable)
         {
+            if (width > height)
+            {
+                sideScale = scalex / scaley;
+                box.Size = new Size((int)(100 * sideScale), 100);
+            }
+            else if (width <= height)
+            {
+                sideScale = scaley / scalex;
+                box.Size = new Size(100, (int)(100 * sideScale));
+            }
             if (((Abstract2DTrackable)prev).Size == 0)
             {
-                box.Size = new Size(100, 100);
                 ((Abstract2DTrackable)prev).Size = 60;
             }
-            else
-            {
-                box.Size = new Size(100, 100);
-            }
-
         }
+
         else if (prev is AbstractAugmentation)
         {
             if (((AbstractAugmentation)prev).Scaling.X != 0)
             {
-                box.Size = new Size((int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale), (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale));
+                box.Size = new Size((int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.Y));
             }
             else
             {
-                box.Size = new Size((int)(100 * scale), (int)(100 * scale));
-                ((AbstractAugmentation)prev).Scaling = new Vector3D(1, 1, 1);
+                if (width > height)
+                {
+                    sideScale = scalex / scaley;
+                    box.Size = new Size((int)(scale * 100 * sideScale), (int)(scale * 100));
+                    ((AbstractAugmentation)prev).Scaling = new Vector3D(sideScale, 1, 1);
+                }
+                else if (width <= height)
+                {
+                    sideScale = scaley / scalex;
+                    box.Size = new Size((int)(scale * 100), (int)(scale * 100 * sideScale));
+                    ((AbstractAugmentation)prev).Scaling = new Vector3D(1, sideScale, 1);
+                }
             }
         }
     }
@@ -681,7 +710,7 @@ public class PreviewController
 
         if (prev is AbstractAugmentation)
         {
-                box.Size = new Size((int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale), (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale));
+            box.Size = new Size((int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale), (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale));
         }
         box.Refresh();
     }
