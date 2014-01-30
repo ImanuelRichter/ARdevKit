@@ -663,13 +663,13 @@ public class PreviewController
 
             if (prev is AbstractAugmentation)
             {
-                ((AbstractAugmentation)prev).Scaling.X = scale;
-                ((AbstractAugmentation)prev).Scaling.Y = scale;
-                ((AbstractAugmentation)prev).Scaling.Z = scale;
+                ((AbstractAugmentation)prev).Scaling.X = 1;
+                ((AbstractAugmentation)prev).Scaling.Y = 1;
+                ((AbstractAugmentation)prev).Scaling.Z = 1;
             }
             else if (prev is Abstract2DTrackable)
             {
-                ((Abstract2DTrackable)prev).Size = box.Size.Width;
+                ((Abstract2DTrackable)prev).Size = 60;
             }
         }
         else
@@ -684,7 +684,7 @@ public class PreviewController
             }
             else if (prev is Abstract2DTrackable)
             {
-                ((Abstract2DTrackable)prev).Size = box.Size.Width;
+                ((Abstract2DTrackable)prev).Size = 60;
             }
         }
     }
