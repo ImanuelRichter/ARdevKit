@@ -63,6 +63,13 @@ namespace ARdevKit.Model.Project
             Scaling = new Vector3D(0, 0, 0);
         }
 
+        [Browsable(false)]
+        public new Vector3D Scaling
+        {
+            get { return base.Scaling; }
+            set { base.Scaling = value; }
+        }
+
 
         /// <summary>
         /// An overwriting method, to accept a <see cref="AbstractProjectVisitor" />
