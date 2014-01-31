@@ -613,7 +613,7 @@ public class PreviewController
     /// </summary>
     /// <param name="v">The v.</param>
     /// <returns></returns>
-    private Vector3D calculateVector(Vector3D v, int width, int height)
+    private Vector3D calculateVector(Vector3D v)
     {
         Vector3D result = new Vector3D(0, 0, 0);
         result.X = v.X - panel.Width / 2;
@@ -676,25 +676,33 @@ public class PreviewController
 
         else if (prev is AbstractAugmentation)
         {
-            if (((AbstractAugmentation)prev).Scaling.X != 0)
+            if (prev is ImageAugmentation)
             {
-                box.Size = new Size((int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.Y));
+                if (((AbstractAugmentation)prev).Scaling.X != 0)
+                {
+                    box.Size = new Size((int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.Y));
+                }
+                else
+                {
+                    if (width > height)
+                    {
+                        sideScale = scalex / scaley;
+                        box.Size = new Size((int)(scale * 100 * sideScale), (int)(scale * 100));
+                        ((AbstractAugmentation)prev).Scaling = new Vector3D(sideScale, 1, 1);
+                    }
+                    else if (width <= height)
+                    {
+                        sideScale = scaley / scalex;
+                        box.Size = new Size((int)(scale * 100), (int)(scale * 100 * sideScale));
+                        ((AbstractAugmentation)prev).Scaling = new Vector3D(1, sideScale, 1);
+                    }
+                }
             }
-            else
+            else if (prev is Chart)
             {
-                if (width > height)
-                {
-                    sideScale = scalex / scaley;
-                    box.Size = new Size((int)(scale * 100 * sideScale), (int)(scale * 100));
-                    ((AbstractAugmentation)prev).Scaling = new Vector3D(sideScale, 1, 1);
-                }
-                else if (width <= height)
-                {
-                    sideScale = scaley / scalex;
-                    box.Size = new Size((int)(scale * 100), (int)(scale * 100 * sideScale));
-                    ((AbstractAugmentation)prev).Scaling = new Vector3D(1, sideScale, 1);
-                }
+                box.Size = new Size((int)(((Chart)prev).Width * scale), (int)(((Chart)prev).Height * scale));
             }
+           
         }
     }
 
@@ -710,7 +718,14 @@ public class PreviewController
 
         if (prev is AbstractAugmentation)
         {
-            box.Size = new Size((int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale), (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale));
+            if (prev is ImageAugmentation)
+            {
+                box.Size = new Size((int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale), (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale));
+            }
+            else if (prev is Chart)
+            {
+                box.Size = new Size((int)(((Chart)prev).Width * scale), (int)(((Chart)prev).Height * scale));
+            }
         }
         box.Refresh();
     }
@@ -755,11 +770,11 @@ public class PreviewController
         {
             ((Chart)prev).Positioning.Left = (int)newV.X;
             ((Chart)prev).Positioning.Top = (int)newV.Y;
-            ((AbstractAugmentation)prev).Translation = this.calculateVector(newV, ((Chart)prev).Width, ((Chart)prev).Height);
+            ((AbstractAugmentation)prev).Translation = this.calculateVector(newV);
         }
         else if (prev is ImageAugmentation)
         {
-            ((ImageAugmentation)prev).Translation = this.calculateVector(newV, ((ImageAugmentation)prev).Width, ((ImageAugmentation)prev).Height);
+            ((ImageAugmentation)prev).Translation = this.calculateVector(newV);
         }
     }
 
