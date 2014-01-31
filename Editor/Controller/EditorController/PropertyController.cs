@@ -72,6 +72,17 @@ namespace Controller.EditorController
 
                 return;
             }
+
+            if (ew.CurrentElement is Chart)
+            {
+                if (string.Equals(e.ChangedItem.Label.ToString(), "Height", StringComparison.Ordinal)
+                    || string.Equals(e.ChangedItem.Label.ToString(), "Width", StringComparison.Ordinal))
+                {
+                    ew.PreviewController.updateScale();
+
+                    return;
+                }
+            }
         }
 
         /*
