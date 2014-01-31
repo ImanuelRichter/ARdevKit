@@ -645,7 +645,7 @@ public class PreviewController
         int width = prev.getPreview().Width;
         double sideScale;
         double scale;
-        if (((Abstract2DTrackable)this.trackable).Size == null)
+        if (((Abstract2DTrackable)this.trackable).Size == 0)
         {
             scale = 100;
         }
