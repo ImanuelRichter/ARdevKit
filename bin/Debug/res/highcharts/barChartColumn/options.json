@@ -1,8 +1,6 @@
 {
 	"chart": {
-		"type": "column",
-		"width": 300,
-		"height": 200
+		"type": "column"
 	},
 	"title": {
 		"text": "Titel"

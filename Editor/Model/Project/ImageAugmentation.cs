@@ -8,6 +8,7 @@ using System.Drawing;
 using System.ComponentModel;
 using ARdevKit.Controller.ProjectController;
 using ARdevKit.View;
+using System.IO;
 
 namespace ARdevKit.Model.Project
 {
@@ -93,6 +94,19 @@ namespace ARdevKit.Model.Project
         public override Bitmap getIcon()
         {
             return Properties.Resources.ImageAugmentation_small_; 
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Clean up (remove created/copied files and directories). </summary>
+        ///
+        /// <remarks>   Imanuel, 31.01.2014. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public override void CleanUp()
+        {
+            string dir = Path.GetDirectoryName(imagePath);
+            if (Directory.Exists(dir) && dir.Contains("Assets"))
+                System.IO.File.Delete(imagePath);
         }
 
         /**

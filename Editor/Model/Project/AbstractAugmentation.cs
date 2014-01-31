@@ -190,6 +190,14 @@ namespace ARdevKit.Model.Project
         /// <returns>a representative iconized Bitmap</returns>
         public abstract Bitmap getIcon();
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Clean up (remove created/copied files and directories). </summary>
+        ///
+        /// <remarks>   Imanuel, 31.01.2014. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public abstract void CleanUp();
+
         /**
          * <summary>    Makes a deep copy of this object. </summary>
          *

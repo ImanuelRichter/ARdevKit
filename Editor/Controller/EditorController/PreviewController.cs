@@ -345,7 +345,7 @@ public class PreviewController
         if (currentElement is AbstractTrackable && trackable != null)
         {
             this.removeAll();
-            if (!this.ew.project.isTrackable())
+            if (!this.ew.project.hasTrackable())
             {
                 this.ew.ElementSelectionController.setElementEnable(typeof(PictureMarker), true);
                 this.ew.ElementSelectionController.setElementEnable(typeof(IDMarker), true);
@@ -354,7 +354,7 @@ public class PreviewController
         }
         else if (currentElement is AbstractAugmentation && trackable != null)
         {
-            this.trackable.Augmentations.Remove((AbstractAugmentation)currentElement);
+            this.trackable.RemoveAugmentation((AbstractAugmentation)currentElement);
             this.panel.Controls.Remove(this.findBox((AbstractAugmentation)currentElement));
         }
     }
