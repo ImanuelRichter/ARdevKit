@@ -211,7 +211,7 @@ namespace ARdevKit.Model.Project
         /// Lizzard, 1/19/2014.
         /// </remarks>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        public bool isTrackable()
+        public bool hasTrackable()
         {
             foreach (AbstractTrackable temp in this.trackables)
             {

@@ -345,7 +345,7 @@ public class PreviewController
         if (currentElement is AbstractTrackable && trackable != null)
         {
             this.removeAll();
-            if (!this.ew.project.isTrackable())
+            if (!this.ew.project.hasTrackable())
             {
                 this.ew.ElementSelectionController.setElementEnable(typeof(PictureMarker), true);
                 this.ew.ElementSelectionController.setElementEnable(typeof(IDMarker), true);
@@ -354,7 +354,7 @@ public class PreviewController
         }
         else if (currentElement is AbstractAugmentation && trackable != null)
         {
-            this.trackable.Augmentations.Remove((AbstractAugmentation)currentElement);
+            this.trackable.RemoveAugmentation((AbstractAugmentation)currentElement);
             this.panel.Controls.Remove(this.findBox((AbstractAugmentation)currentElement));
         }
     }
@@ -613,11 +613,11 @@ public class PreviewController
     /// </summary>
     /// <param name="v">The v.</param>
     /// <returns></returns>
-    private Vector3D calculateVector(Vector3D v)
+    private Vector3D calculateVector(Vector3D v, int width, int height)
     {
         Vector3D result = new Vector3D(0, 0, 0);
-        result.X = (v.X - panel.Width / 2);
-        result.Y = (v.Y - panel.Height / 2);
+        result.X = v.X - panel.Width / 2;
+        result.Y = panel.Height / 2 - v.Y;
         return result;
     }
 
@@ -629,8 +629,8 @@ public class PreviewController
     private Vector3D recalculateVector(Vector3D v)
     {
         Vector3D result = new Vector3D(0, 0, 0);
-        result.X = (v.X + panel.Width / 2);
-        result.Y = (v.Y + panel.Height / 2);
+        result.X = (panel.Width / 2 + v.X);
+        result.Y = (panel.Height / 2 - v.Y);
         return result;
     }
 
@@ -645,7 +645,7 @@ public class PreviewController
         int width = prev.getPreview().Width;
         double sideScale;
         double scale;
-        if (((Abstract2DTrackable)this.trackable).Size == null)
+        if (((Abstract2DTrackable)this.trackable).Size == 0)
         {
             scale = 100;
         }
@@ -755,11 +755,11 @@ public class PreviewController
         {
             ((Chart)prev).Positioning.Left = (int)newV.X;
             ((Chart)prev).Positioning.Top = (int)newV.Y;
-            ((AbstractAugmentation)prev).Translation = this.calculateVector(newV);
+            ((AbstractAugmentation)prev).Translation = this.calculateVector(newV, ((Chart)prev).Width, ((Chart)prev).Height);
         }
         else if (prev is ImageAugmentation)
         {
-            ((AbstractAugmentation)prev).Translation = this.calculateVector(newV);
+            ((ImageAugmentation)prev).Translation = this.calculateVector(newV, ((ImageAugmentation)prev).Width, ((ImageAugmentation)prev).Height);
         }
     }
 

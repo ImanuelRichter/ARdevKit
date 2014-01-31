@@ -351,7 +351,16 @@ namespace ARdevKit
         private void tsm_editor_menu_test_startImage_Click(object sender, EventArgs e)
         {
             if (project.Trackables != null && project.Trackables.Count > 0 && project.Trackables[0] != null)
-                TestController.StartPlayer(project, TestController.IMAGE, (int)project.Screensize.Width, (int)project.Screensize.Height, tsm_editor_menu_test_togleDebug.Checked);
+            {
+                try
+                {
+                    TestController.StartPlayer(project, TestController.IMAGE, (int)project.Screensize.Width, (int)project.Screensize.Height, tsm_editor_menu_test_togleDebug.Checked);
+                }
+                catch (OperationCanceledException oae)
+                {
+                    MessageBox.Show("Vorgang wurde abgebrochen");
+                }
+            }
             else
                 MessageBox.Show("Keine Szene zum Testen vorhanden");
         }
@@ -487,7 +496,7 @@ namespace ARdevKit
                 this.reloadSelectionPanel();
                 this.previewController.index = -1;
                 this.previewController.reloadPreviewPanel(0);
-                if (!this.project.isTrackable())
+                if (!this.project.hasTrackable())
                 {
                     this.ElementSelectionController.setElementEnable(typeof(PictureMarker), true);
                     this.ElementSelectionController.setElementEnable(typeof(IDMarker), true);
@@ -498,7 +507,7 @@ namespace ARdevKit
                 this.project.Trackables[0] = null;
                 this.previewController.currentMetaCategory = MetaCategory.Trackable;
                 this.previewController.removePreviewable(this.previewController.trackable);
-                if (!this.project.isTrackable())
+                if (!this.project.hasTrackable())
                 {
                     this.ElementSelectionController.setElementEnable(typeof(PictureMarker), true);
                     this.ElementSelectionController.setElementEnable(typeof(IDMarker), true);
@@ -556,6 +565,10 @@ namespace ARdevKit
                 catch (DirectoryNotFoundException de)
                 {
                     Debug.WriteLine(de.StackTrace);
+                }
+                catch (OperationCanceledException oce)
+                {
+                    MessageBox.Show("Exportvorgang abgebrochen");
                 }
                 try
                 {

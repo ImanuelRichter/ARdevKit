@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -88,6 +89,19 @@ namespace ARdevKit.Model.Project
         public override Bitmap getIcon()
         {
             return Properties.Resources.ImageAugmentation_small_; 
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Clean up (remove created/copied files and directories). </summary>
+        ///
+        /// <remarks>   Imanuel, 31.01.2014. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public override void CleanUp()
+        {
+            string dir = Path.GetDirectoryName(videoPath);
+            if (Directory.Exists(dir) && dir.Contains("Assets"))
+                System.IO.File.Delete(videoPath);
         }
 
         /**

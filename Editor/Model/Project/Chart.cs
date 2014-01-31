@@ -113,6 +113,19 @@ namespace ARdevKit.Model.Project
             return Properties.Resources.highcharts_normal_;
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Clean up (remove created/copied files and directories). </summary>
+        ///
+        /// <remarks>   Imanuel, 31.01.2014. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public override void CleanUp()
+        {
+            string dir = Path.GetDirectoryName(optionsFilePath);
+            if (Directory.Exists(dir) && System.IO.File.Exists(Path.Combine(dir, "chart.js")))
+                Directory.Delete(dir, true);
+        }
+
         /**
          * <summary>    Makes a deep copy of this object. </summary>
          *
