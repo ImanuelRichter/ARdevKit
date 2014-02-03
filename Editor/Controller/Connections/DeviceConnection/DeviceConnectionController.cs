@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Net;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,113 +12,135 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
 {
     class DeviceConnectionController
     {
-        private HttpListener registerListener;
-        private ARdevKit.Model.Project.Project project;
         private List<IPEndPoint> reportedDevices;
         private IPEndPoint connectedDevice;
+        private bool isListening;
 
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
         /// <summary>
-        ///     Stellt eine Verbindung mit dem im View ausgewählten Listenelement aus der Liste der
-        ///     möglichen Player her, das über den Listenindex spezifiziert wird. Hierzu wird die +
-        ///     connect(IP : IPAdress) des TCPServers verwendet.
+        /// Initializes a new instance of the <see cref="DeviceConnectionController"/> class. Uses UDPListener to 
+        /// get information about devices. Communicating via HTTP order to secure currency of connections and sending the zipped project.
         /// </summary>
-        ///
-        /// <remarks>   Lizzard, 1/13/2014. </remarks>
-        ///
-        /// <exception cref="NotImplementedException"> Thrown when the requested operation is
-        /// unimplemented. </exception>
-        ///
-        /// <param name="index">    Zero-based index of the. </param>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
+        /// <param name="ew">The ew.</param>
         public DeviceConnectionController(EditorWindow ew)
         {
-            project = ew.project;
-            registerListener = new HttpListener();
-            registerListener.Prefixes.Add("http://localhost:15400/register/");
-            runRegisterListener();
+            //System.Net.NetworkInformation.IPGlobalProperties network = System.Net.NetworkInformation.IPGlobalProperties.GetIPGlobalProperties();
+            //System.Net.NetworkInformation.TcpConnectionInformation[] connections = network.GetActiveTcpConnections();
+            reportedDevices = new List<IPEndPoint>();
+            isListening = true;
+            Task listenToDevices = Task.Factory.StartNew(runRegisterListener, System.Threading.Tasks.TaskCreationOptions.LongRunning);
         }
 
+        /// <summary>
+        /// Runs the refresh listener.
+        /// </summary>
         private void runRefreshListener()
         {
-            foreach (IPEndPoint item in reportedDevices)
+            lock (reportedDevices)
             {
-                HttpWebRequest refreshRequest = (HttpWebRequest) WebRequest.Create("http://" + item.Address + ":" + item.Port + "/refresh/");
-                if(!refreshRequest.HaveResponse)
+                foreach (IPEndPoint item in reportedDevices)
                 {
-                    reportedDevices.Remove(item);
+                    HttpWebRequest refreshRequest = (HttpWebRequest)WebRequest.Create("http://" + item.Address + ":" + item.Port + "/");
+                    refreshRequest.Method = "GET";
+                    if (!refreshRequest.HaveResponse)
+                    {
+                        reportedDevices.Remove(item);
+                    }
                 }
-            }
+            }           
         }
 
+        /// <summary>
+        /// Runs the register listener, should be executed in seperate thread, or task.
+        /// </summary>
         private void runRegisterListener()
         {
-            while(true)
+            UdpClient udpListener = new UdpClient();
+            IPEndPoint any = new IPEndPoint(IPAddress.Any, 15000);
+            while(isListening)
             {
-                HttpListenerContext registerContext = registerListener.GetContext();
-                if (!reportedDevices.Contains(registerContext.Request.RemoteEndPoint))
+                byte[] result = udpListener.Receive(ref any);
+                string resultText = Encoding.ASCII.GetString(result);
+                string[] resultTextArray = resultText.Split(':');
+                IPEndPoint candidate = new IPEndPoint(IPAddress.Parse(resultTextArray[0]), Int16.Parse(resultTextArray[1]));
+                lock (reportedDevices)
                 {
-                    reportedDevices.Add(registerContext.Request.RemoteEndPoint);
-                }
+                    if (!reportedDevices.Contains(candidate))
+                    {
+                        reportedDevices.Add(candidate);
+                        HttpWebRequest stopRegisterRequest = (HttpWebRequest)WebRequest.Create("http://" + candidate.Address + ":" + candidate.Port + "/");
+                        stopRegisterRequest.Method = "PUSH";
+                    }
+                }               
             }
         }
 
+        /// <summary>
+        /// Connects to device. sets the device as connected. Is momentary depreciated, because HTTP connections do not require
+        /// active connection making. However if Problems occure during File transfer or for Debug functionality this method might be reintruduced.
+        /// </summary>
+        /// <param name="index">The index.</param>
+        /// <exception cref="System.Exception"></exception>
         public void connectToDevice(int index)
         {
-            HttpWebRequest refreshRequest = (HttpWebRequest)WebRequest.Create("http://" + reportedDevices[index].Address + ":" + reportedDevices[index].Port + "/refresh/");
-            if (!refreshRequest.HaveResponse)
+            lock (reportedDevices)
             {
-                throw new Exception();
+                HttpWebRequest refreshRequest = (HttpWebRequest)WebRequest.Create("http://" + reportedDevices[index].Address + ":" + reportedDevices[index].Port + "/");
+                refreshRequest.Method = "GET";
+                if (!refreshRequest.HaveResponse)
+                {
+                    throw new Exception();
+                }
+                connectedDevice = reportedDevices[index];
             }
-            connectedDevice = reportedDevices[index];
         }
 
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        ///     Gibt eine Liste der möglichen Clients zurück, diese ist identisch mit der von der
-        ///     UDPServer Klasse aufbereitet für den View und die Darstellung in einem ListPanel.
-        /// </summary>
-        ///
-        /// <exception cref="NotImplementedException"> Thrown when the requested operation is
-        /// unimplemented. </exception>
-        ///
-        /// <returns>   The possible clients. </returns>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+        /// <summary>
+        /// Gets an actualized list containing the IPs and Ports of the possible Devices, to which the Project might be send.
+        /// </summary>
+        /// <returns>a list containing the IPs and Ports of the possible Devices</returns>
         public List<String> getPossibleClients()
         {
             runRefreshListener();
             List<string> result = new List<string>();
-            foreach (IPEndPoint item in reportedDevices)
+            lock (reportedDevices)
             {
-                result.Add(item.ToString());
+                foreach (IPEndPoint item in reportedDevices)
+                {
+                    result.Add(item.ToString());
+                }
+                return result;
             }
-            return result;
         }
 
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        ///     Verwendet die sendFile() Methode des TCPServers um das aktuelle Projekt zu senden. Hierzu
-        ///     wird mithilfe dem Editor::Controller::ProjectController::ExportVisitor ein ARELfile
-        ///     erstellt und mithilfe der sendFile() Methode des TCPServer verschickt.
-        /// </summary>
-        ///
-        /// <exception cref="NotImplementedException"> Thrown when the requested operation is
-        /// unimplemented. </exception>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+        /// <summary>
+        /// Sends the project to the Device, which is chosen through connectToDevice() method, but could be easily changed to send to 
+        /// any chosen Device in the List.
+        /// </summary>
+        /// <exception cref="System.Exception">
+        /// </exception>
         public void sendProject()
         {
-            HttpWebRequest refreshRequest = (HttpWebRequest)WebRequest.Create("http://" + connectedDevice.Address + ":" + connectedDevice.Port + "/refresh/");
+            HttpWebRequest refreshRequest = (HttpWebRequest)WebRequest.Create("http://" + connectedDevice.Address + ":" + connectedDevice.Port + "/");
+            refreshRequest.Method = "GET";
             if (!refreshRequest.HaveResponse)
             {
                 throw new Exception();
             }
-            HttpWebRequest SendRequest = (HttpWebRequest)WebRequest.Create("http://" + connectedDevice.Address + ":" + connectedDevice.Port + "/sendProject/")
-            Stream sendStream = SendRequest.GetRequestStream();
-            System.Runtime.Serialization.Formatters.Binary.BinaryFormatter binFor = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
-            binFor.Serialize(sendStream, project);
+            //HttpWebRequest SendRequest = (HttpWebRequest)WebRequest.Create("http://" + connectedDevice.Address + ":" + connectedDevice.Port + "/");
+            //SendRequest.Method = "PUT";
+            //Stream sendStream = SendRequest.GetRequestStream();
+            ZipFile.CreateFromDirectory("currentProject","currentProject.zip");
+            WebClient client = new WebClient();
+            byte[] file = File.ReadAllBytes("currentProject.zip");
+            byte[] response = client.UploadData("http://" + connectedDevice.Address + ":" + connectedDevice.Port + "/", "PUT", file);
+            if(!Encoding.Default.GetString(response).Contains("OK"))
+            {
+                throw new Exception();
+            }
         }
     }
 }
