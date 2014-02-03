@@ -27,6 +27,7 @@ using ARdevKit.Controller.TestController;
 using ARdevKit.View;
 using System.IO;
 using ARdevKit.Model.Project.File;
+using System.Drawing.Printing;
 
 namespace ARdevKit
 {
@@ -1181,6 +1182,47 @@ namespace ARdevKit
                     this.project.Trackables.Add(tempTrack);
                     this.updateSceneSelectionPanel();
                 }     
+            }
+        }
+
+        int trackablePCounter = 0;
+
+        private void trackableDruckenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (project.hasTrackable())
+            {
+                Debug.WriteLine("printing out trackables");
+
+                trackablePCounter = 0;
+                PrintDocument pd = new PrintDocument();
+                pd.PrintPage += new PrintPageEventHandler(Print_Page);
+
+                PrintPreviewDialog dlg = new PrintPreviewDialog();
+                dlg.Document = pd;
+
+                if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    pd.Print();
+                }
+            }
+            else
+            {
+                Debug.WriteLine("there are no trackables to print out...");
+            }
+        }
+
+        private void Print_Page(object o, PrintPageEventArgs e)
+        {
+            float x = e.MarginBounds.Left;
+            float y = e.MarginBounds.Top;
+
+            e.Graphics.DrawImage(project.Trackables[trackablePCounter].getPreview(), x, y);
+
+            if (project.Trackables[trackablePCounter] != project.Trackables.Last())
+            {
+                trackablePCounter++;
+                e.HasMorePages = true;
+                return;
             }
         }
     }
