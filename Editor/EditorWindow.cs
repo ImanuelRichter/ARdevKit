@@ -1176,6 +1176,12 @@ namespace ARdevKit
 
         int trackablePCounter = 0;
 
+        /// <summary>
+        /// Handles the Click event of the trackableDruckenToolStripMenuItem control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// <remarks>geht 04.02.2014 15:14</remarks>
         private void trackableDruckenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (project.hasTrackable())
@@ -1200,6 +1206,13 @@ namespace ARdevKit
             }
         }
 
+        /// <summary>
+        /// Handles the Page event of the Print control.
+        /// prints one page for each trackable.
+        /// </summary>
+        /// <param name="o">The source of the event.</param>
+        /// <param name="e">The <see cref="PrintPageEventArgs"/> instance containing the event data.</param>
+        /// <remarks>geht 04.02.2014 15:14</remarks>
         private void Print_Page(object o, PrintPageEventArgs e)
         {
             float x = e.MarginBounds.Left;
@@ -1215,6 +1228,13 @@ namespace ARdevKit
             }
         }
 
+        /// <summary>
+        /// Handles the FormClosing event of the EditorWindow control.
+        /// Displays a save dialog.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="FormClosingEventArgs"/> instance containing the event data.</param>
+        /// <remarks>geht 04.02.2014 15:15</remarks>
         private void EditorWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult dlg = MessageBox.Show("Möchten Sie das aktuelle Projekt abspeichern, bevor ARdevKit beendet wird?", "Projekt speichern?", MessageBoxButtons.YesNoCancel);
