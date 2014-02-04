@@ -30,7 +30,6 @@ namespace ARdevKit
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditorWindow));
             this.mst_editor_menu = new System.Windows.Forms.MenuStrip();
             this.tsm_editor_menu_file = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_editor_menu_file_new = new System.Windows.Forms.ToolStripMenuItem();
@@ -108,6 +107,7 @@ namespace ARdevKit
             this.tsm_editor_menu_file.Name = "tsm_editor_menu_file";
             this.tsm_editor_menu_file.Size = new System.Drawing.Size(46, 20);
             this.tsm_editor_menu_file.Text = "Datei";
+            this.tsm_editor_menu_file.Click += new System.EventHandler(this.tsm_editor_menu_file_Click);
             // 
             // tsm_editor_menu_file_new
             // 
@@ -170,6 +170,7 @@ namespace ARdevKit
             this.tsm_editor_menu_file_sendTo.Name = "tsm_editor_menu_file_sendTo";
             this.tsm_editor_menu_file_sendTo.Size = new System.Drawing.Size(192, 22);
             this.tsm_editor_menu_file_sendTo.Text = "Senden an...";
+            this.tsm_editor_menu_file_sendTo.Click += new System.EventHandler(this.tsm_editor_menu_file_sendTo_Click);
             // 
             // tsm_editor_menu_sendTo_win8Device
             // 
@@ -191,10 +192,10 @@ namespace ARdevKit
             // 
             // tsm_editor_menu_file_connection
             // 
-            this.tsm_editor_menu_file_connection.Enabled = false;
             this.tsm_editor_menu_file_connection.Name = "tsm_editor_menu_file_connection";
             this.tsm_editor_menu_file_connection.Size = new System.Drawing.Size(192, 22);
             this.tsm_editor_menu_file_connection.Text = "Verbindung einrichten";
+            this.tsm_editor_menu_file_connection.Click += new System.EventHandler(this.tsm_editor_menu_file_connection_Click);
             // 
             // tss_editor_menu_file_connection_exit
             // 

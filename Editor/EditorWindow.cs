@@ -200,6 +200,14 @@ namespace ARdevKit
 
         private DeviceConnectionController deviceConnectionController;
 
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// The device selection window.
+        /// </summary>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        private DeviceSelectionWindow deviceSelectionDialog;
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
         /// The save visitor.
@@ -281,6 +289,8 @@ namespace ARdevKit
         public EditorWindow()
         {
             InitializeComponent();
+            deviceSelectionDialog = new DeviceSelectionWindow();
+            deviceSelectionDialog.Hide();
             createNewProject("");
         }
 
@@ -538,7 +548,7 @@ namespace ARdevKit
 
         public void addDevice()
         {
-            //TODO: implement addDevice()
+            
         }
 
         public void createNewProject(String name)
@@ -1053,6 +1063,21 @@ namespace ARdevKit
         {
             this.tsm_editor_menu_edit_paste.Enabled = true;
             this.pnl_editor_preview.ContextMenu.MenuItems[0].Enabled = true;
+        }
+
+        private void tsm_editor_menu_file_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsm_editor_menu_file_sendTo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsm_editor_menu_file_connection_Click(object sender, EventArgs e)
+        {
+            deviceSelectionDialog.ShowDialog();
         }
 
     }

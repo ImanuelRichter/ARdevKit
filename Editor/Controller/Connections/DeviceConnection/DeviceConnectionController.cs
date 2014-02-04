@@ -7,6 +7,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ARdevKit.Controller.Connections.DeviceConnection
 {
@@ -15,7 +16,7 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
         private List<IPEndPoint> reportedDevices;
         private IPEndPoint connectedDevice;
         private bool isListening;
-
+        private ListView deviceList;
 
 
         /// <summary>
@@ -23,7 +24,7 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
         /// get information about devices. Communicating via HTTP order to secure currency of connections and sending the zipped project.
         /// </summary>
         /// <param name="ew">The ew.</param>
-        public DeviceConnectionController(EditorWindow ew)
+        public DeviceConnectionController(Form window)
         {
             //System.Net.NetworkInformation.IPGlobalProperties network = System.Net.NetworkInformation.IPGlobalProperties.GetIPGlobalProperties();
             //System.Net.NetworkInformation.TcpConnectionInformation[] connections = network.GetActiveTcpConnections();
@@ -33,7 +34,7 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
         }
 
         /// <summary>
-        /// Runs the refresh listener.
+        /// Runs the refresh listener and therefore locks the reportedDevicesList.
         /// </summary>
         private void runRefreshListener()
         {
@@ -61,7 +62,7 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
             while(isListening)
             {
                 byte[] result = udpListener.Receive(ref any);
-                string resultText = Encoding.ASCII.GetString(result);
+                string resultText = Encoding.UTF8.GetString(result);
                 string[] resultTextArray = resultText.Split(':');
                 IPEndPoint candidate = new IPEndPoint(IPAddress.Parse(resultTextArray[0]), Int16.Parse(resultTextArray[1]));
                 lock (reportedDevices)
