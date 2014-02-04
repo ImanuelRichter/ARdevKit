@@ -459,6 +459,7 @@ namespace ARdevKit
             this.MinimumSize = new System.Drawing.Size(1024, 726);
             this.Name = "EditorWindow";
             this.Text = "ARdevKit";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditorWindow_FormClosing);
             this.Load += new System.EventHandler(this.Editor_Load);
             this.panel1.ResumeLayout(false);
             this.pnl_editor_selection.ResumeLayout(false);

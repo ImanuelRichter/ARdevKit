@@ -326,17 +326,6 @@ namespace ARdevKit
 
         private void tsm_editor_menu_file_exit_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Möchten Sie das aktuelle Projekt abspeichern, bevor ARdevKit beendet wird?", "Projekt speichern?", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                try
-                {
-                    this.saveProject();
-                }
-                catch (ArgumentNullException ae)
-                {
-                    Debug.WriteLine(ae.StackTrace);
-                }
-            }
             System.Windows.Forms.Application.Exit();
         }
 
@@ -1222,6 +1211,33 @@ namespace ARdevKit
             {
                 trackablePCounter++;
                 e.HasMorePages = true;
+                return;
+            }
+        }
+
+        private void EditorWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dlg = MessageBox.Show("Möchten Sie das aktuelle Projekt abspeichern, bevor ARdevKit beendet wird?", "Projekt speichern?", MessageBoxButtons.YesNoCancel);
+            if (dlg == DialogResult.Yes)
+            {
+                e.Cancel = true;
+                try
+                {
+                    this.saveProject();
+                    e.Cancel = false;
+                }
+                catch (ArgumentNullException ae)
+                {
+                    Debug.WriteLine(ae.StackTrace);
+                }
+            }
+            else if (dlg == DialogResult.No)
+            {
+                e.Cancel = false;
+            }
+            else
+            {
+                e.Cancel = true;
                 return;
             }
         }
