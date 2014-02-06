@@ -198,7 +198,7 @@ namespace ARdevKit
         /// </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        private DeviceConnectionController deviceConnectionController;
+        //private DeviceConnectionController deviceConnectionController;
 
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -902,7 +902,7 @@ namespace ARdevKit
 
             try
             {
-                this.deviceConnectionController = new DeviceConnectionController(this);
+                //this.deviceConnectionController = new DeviceConnectionController(this);
             }
             catch (Exception)
             {

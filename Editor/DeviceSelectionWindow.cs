@@ -25,7 +25,7 @@ namespace ARdevKit
         public DeviceSelectionWindow()
         {
             deviceConnectionController = new DeviceConnectionController(this);
-            index = 0;
+            index = -1;
             InitializeComponent();
             List<string> devices = deviceConnectionController.getPossibleClients();
             foreach (string device in devices)
@@ -46,7 +46,10 @@ namespace ARdevKit
 
         private void connectTo_Click(object sender, EventArgs e)
         {
+            if(deviceList.Items.Count != 0)
             deviceConnectionController.connectToDevice(index);
+            else
+            MessageBox.Show("Es ist kein Gerät verfügbar, nutzen sie die Aktualisierungsfunktion und stellen sie sicher, dass die Geräte mit dem netzwerk verbunden sind");
         }
 
         private void refresh_Click(object sender, EventArgs e)

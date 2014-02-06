@@ -16,7 +16,6 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
         private List<IPEndPoint> reportedDevices;
         private IPEndPoint connectedDevice;
         private bool isListening;
-        private ListView deviceList;
 
 
         /// <summary>
@@ -57,24 +56,34 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
         /// </summary>
         private void runRegisterListener()
         {
-            UdpClient udpListener = new UdpClient();
-            IPEndPoint any = new IPEndPoint(IPAddress.Any, 15000);
-            while(isListening)
+            try
             {
-                byte[] result = udpListener.Receive(ref any);
-                string resultText = Encoding.UTF8.GetString(result);
-                string[] resultTextArray = resultText.Split(':');
-                IPEndPoint candidate = new IPEndPoint(IPAddress.Parse(resultTextArray[0]), Int16.Parse(resultTextArray[1]));
-                lock (reportedDevices)
+                IPEndPoint any = new IPEndPoint(IPAddress.Any, 15001);
+                UdpClient udpListener = new UdpClient(0);
+                while (true)
                 {
-                    if (!reportedDevices.Contains(candidate))
+                    byte[] result = udpListener.Receive(ref any);
+                    string resultText = Encoding.UTF8.GetString(result);
+                    string[] resultTextArray = resultText.Split(':');
+                    IPEndPoint candidate = new IPEndPoint(IPAddress.Parse(resultTextArray[0]), Int16.Parse(resultTextArray[1]));
+                    lock (reportedDevices)
                     {
-                        reportedDevices.Add(candidate);
-                        HttpWebRequest stopRegisterRequest = (HttpWebRequest)WebRequest.Create("http://" + candidate.Address + ":" + candidate.Port + "/");
-                        stopRegisterRequest.Method = "PUSH";
+                        if (!reportedDevices.Contains(candidate))
+                        {
+                            reportedDevices.Add(candidate);
+                            HttpWebRequest stopRegisterRequest = (HttpWebRequest)WebRequest.Create("http://" + candidate.Address + ":" + candidate.Port + "/");
+                            stopRegisterRequest.Method = "PUSH";
+                        }
                     }
-                }               
+                }
+
             }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e.ToString());
+            }
+            
         }
 
         /// <summary>
