@@ -56,23 +56,23 @@ namespace ARdevKit.Model.Project
             set { isVisible = value; }
         }
 
-        /*
+        
         /// <summary>
         /// A list of all customUserEvents the current <see cref="AbstractAugmentation"/> has.
         /// The user can write a javascript based code for the <see cref="AbstractAugmentation"/>.
         /// </summary>
-        private ArrayList customUserEvent;
+        private string[] customUserEvent;
         /// <summary>
         /// Get the content of the customUserEvent. Each element in the List represents a line of the code.
         /// </summary>
         [CategoryAttribute("Expert")]
-        [Editor(@"System.Windows.Forms.Design.StringCollectionEditor, System.Design, Version=2.0.0.0, Culture=neutral, 
-            PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))]
-        public ArrayList CustomUserEventList
+        [Editor(typeof(TextEditor), typeof(System.Drawing.Design.UITypeEditor))]
+        public string[] CustomUserEventList
         {
             get { return customUserEvent; }
+            set { customUserEvent = value; }
         }
-        */
+        
 
         /// <summary>
         /// Vector to describe the position on the PreviewPanel, and later
