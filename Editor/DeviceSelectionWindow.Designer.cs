@@ -19,7 +19,6 @@
             }
             base.Dispose(disposing);
         }
-
         public System.Windows.Forms.ListView DeviceList
         {
             get { return deviceList; }
@@ -54,7 +53,6 @@
             this.deviceList.TabIndex = 0;
             this.deviceList.UseCompatibleStateImageBehavior = false;
             this.deviceList.View = System.Windows.Forms.View.List;
-            this.deviceList.SelectedIndexChanged += new System.EventHandler(this.deviceList_SelectedIndexChanged);
             // 
             // detectedDevices
             // 

@@ -20,14 +20,13 @@ namespace ARdevKit
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         private DeviceConnectionController deviceConnectionController;
-        private int index;
 
         public DeviceSelectionWindow()
         {
             deviceConnectionController = new DeviceConnectionController(this);
-            index = -1;
             InitializeComponent();
-            List<string> devices = deviceConnectionController.getPossibleClients();
+            deviceConnectionController.refresh();
+            List<string> devices = deviceConnectionController.getReportedDevices();
             foreach (string device in devices)
             {
                 deviceList.Items.Add(new ListViewItem(device));                
@@ -46,25 +45,32 @@ namespace ARdevKit
 
         private void connectTo_Click(object sender, EventArgs e)
         {
-            if(deviceList.Items.Count != 0)
-            deviceConnectionController.connectToDevice(index);
+            if (deviceList.Items.Count != 0)
+            {
+                if (deviceList.FocusedItem.Index > 0)
+                {
+                    deviceConnectionController.connectTo(0/*deviceList.FocusedItem.Index*/);
+                }
+                else
+                {
+                    MessageBox.Show("Es ist kein Gerät ausgewählt, wählen sie es in der Liste aus");
+                }
+            }
             else
-            MessageBox.Show("Es ist kein Gerät verfügbar, nutzen sie die Aktualisierungsfunktion und stellen sie sicher, dass die Geräte mit dem netzwerk verbunden sind");
+            {
+                MessageBox.Show("Es ist kein Gerät verfügbar, nutzen sie die Aktualisierungsfunktion und stellen sie sicher, dass die Geräte mit dem netzwerk verbunden sind");
+            }
         }
 
         private void refresh_Click(object sender, EventArgs e)
         {
             deviceList.Items.Clear();
-            List<string> devices = deviceConnectionController.getPossibleClients();
+            deviceConnectionController.refresh();
+            List<string> devices = deviceConnectionController.getReportedDevices();
             foreach (string device in devices)
             {
                 deviceList.Items.Add(new ListViewItem(device));                
             }
-        }
-
-        private void deviceList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            index = deviceList.FocusedItem.Index;
         }
     }
 }

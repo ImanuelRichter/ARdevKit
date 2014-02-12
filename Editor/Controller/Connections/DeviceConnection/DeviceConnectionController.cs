@@ -8,14 +8,15 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace ARdevKit.Controller.Connections.DeviceConnection
 {
     class DeviceConnectionController
     {
         private List<IPEndPoint> reportedDevices;
-        private IPEndPoint connectedDevice;
-        private bool isListening;
+        private UdpClient udpClient;
+        private TcpClient tcpClient;
 
 
         /// <summary>
@@ -28,103 +29,71 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
             //System.Net.NetworkInformation.IPGlobalProperties network = System.Net.NetworkInformation.IPGlobalProperties.GetIPGlobalProperties();
             //System.Net.NetworkInformation.TcpConnectionInformation[] connections = network.GetActiveTcpConnections();
             reportedDevices = new List<IPEndPoint>();
-            isListening = true;
-            Task listenToDevices = Task.Factory.StartNew(runRegisterListener, System.Threading.Tasks.TaskCreationOptions.LongRunning);
+            udpClient = new UdpClient(12345);
+            tcpClient = new TcpClient();
+            refresh();
+            List<string> devices = getReportedDevices();
+            foreach (string device in devices)
+            {
+                ((DeviceSelectionWindow)window).DeviceList.Items.Add(new ListViewItem(device));
+            }
+        }
+
+        private void sendBroadcast()
+        {
+            IPEndPoint broadcastAddress = new IPEndPoint(IPAddress.Broadcast, 12345);
+            byte[] broadcastmsg = UTF8Encoding.UTF8.GetBytes("respond if you want to be listed by ARDevKit");
+            udpClient.Send(broadcastmsg, broadcastmsg.Length, broadcastAddress);
+        }
+
+        private void receiveAllQueuedResponses()
+        {
+            IPEndPoint anyAddress = new IPEndPoint(IPAddress.Any, 12345);
+            while(udpClient.Available > 0)
+            {
+                byte[] recData = udpClient.Receive(ref anyAddress);
+                if(!Dns.GetHostEntry(Dns.GetHostName()).AddressList.Contains(anyAddress.Address))
+                {
+                    lock (reportedDevices)
+                    {
+                        if(!reportedDevices.Contains(anyAddress))
+                        {
+                            reportedDevices.Add(anyAddress);
+                        }
+                    }
+                }
+            }
         }
 
         /// <summary>
         /// Runs the refresh listener and therefore locks the reportedDevicesList.
         /// </summary>
-        private void runRefreshListener()
+        public void refresh()
         {
-            lock (reportedDevices)
-            {
-                foreach (IPEndPoint item in reportedDevices)
-                {
-                    HttpWebRequest refreshRequest = (HttpWebRequest)WebRequest.Create("http://" + item.Address + ":" + item.Port + "/");
-                    refreshRequest.Method = "GET";
-                    if (!refreshRequest.HaveResponse)
-                    {
-                        reportedDevices.Remove(item);
-                    }
-                }
-            }           
+            reportedDevices = new List<IPEndPoint>();
+            sendBroadcast();
+            Thread.Sleep(500);
+            receiveAllQueuedResponses();
         }
 
-        /// <summary>
-        /// Runs the register listener, should be executed in seperate thread, or task.
-        /// </summary>
-        private void runRegisterListener()
+        public List<string> getReportedDevices()
         {
-            try
-            {
-                IPEndPoint any = new IPEndPoint(IPAddress.Any, 15001);
-                UdpClient udpListener = new UdpClient(0);
-                while (true)
-                {
-                    byte[] result = udpListener.Receive(ref any);
-                    string resultText = Encoding.UTF8.GetString(result);
-                    string[] resultTextArray = resultText.Split(':');
-                    IPEndPoint candidate = new IPEndPoint(IPAddress.Parse(resultTextArray[0]), Int16.Parse(resultTextArray[1]));
-                    lock (reportedDevices)
-                    {
-                        if (!reportedDevices.Contains(candidate))
-                        {
-                            reportedDevices.Add(candidate);
-                            HttpWebRequest stopRegisterRequest = (HttpWebRequest)WebRequest.Create("http://" + candidate.Address + ":" + candidate.Port + "/");
-                            stopRegisterRequest.Method = "PUSH";
-                        }
-                    }
-                }
-
-            }
-            catch (Exception e)
-            {
-
-                Console.WriteLine(e.ToString());
-            }
-            
-        }
-
-        /// <summary>
-        /// Connects to device. sets the device as connected. Is momentary depreciated, because HTTP connections do not require
-        /// active connection making. However if Problems occure during File transfer or for Debug functionality this method might be reintruduced.
-        /// </summary>
-        /// <param name="index">The index.</param>
-        /// <exception cref="System.Exception"></exception>
-        public void connectToDevice(int index)
-        {
-            lock (reportedDevices)
-            {
-                HttpWebRequest refreshRequest = (HttpWebRequest)WebRequest.Create("http://" + reportedDevices[index].Address + ":" + reportedDevices[index].Port + "/");
-                refreshRequest.Method = "GET";
-                if (!refreshRequest.HaveResponse)
-                {
-                    throw new Exception();
-                }
-                connectedDevice = reportedDevices[index];
-            }
-        }
-
-
-        /// <summary>
-        /// Gets an actualized list containing the IPs and Ports of the possible Devices, to which the Project might be send.
-        /// </summary>
-        /// <returns>a list containing the IPs and Ports of the possible Devices</returns>
-        public List<String> getPossibleClients()
-        {
-            runRefreshListener();
             List<string> result = new List<string>();
-            lock (reportedDevices)
+            foreach(var reportedDevice in reportedDevices)
             {
-                foreach (IPEndPoint item in reportedDevices)
-                {
-                    result.Add(item.ToString());
-                }
-                return result;
+                result.Add(reportedDevice.ToString());
             }
+            return result;
         }
 
+        public bool connectTo(int index)
+        {
+            tcpClient.Connect(reportedDevices[index]);
+            tcpClient.GetStream().Write(UTF8Encoding.UTF8.GetBytes("test"),0 , UTF8Encoding.UTF8.GetByteCount("test"));
+            byte[] response = new byte[1024];
+            tcpClient.GetStream().Read(response, 0, response.Length);
+            return UTF8Encoding.UTF8.GetString(response).Equals("OK");
+        }
 
         /// <summary>
         /// Sends the project to the Device, which is chosen through connectToDevice() method, but could be easily changed to send to 
@@ -132,25 +101,123 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
         /// </summary>
         /// <exception cref="System.Exception">
         /// </exception>
-        public void sendProject()
+        public bool sendProject()
         {
-            HttpWebRequest refreshRequest = (HttpWebRequest)WebRequest.Create("http://" + connectedDevice.Address + ":" + connectedDevice.Port + "/");
-            refreshRequest.Method = "GET";
-            if (!refreshRequest.HaveResponse)
+            if(!tcpClient.Connected)
             {
-                throw new Exception();
+                throw new Exception("you have to connect to a device first");
             }
-            //HttpWebRequest SendRequest = (HttpWebRequest)WebRequest.Create("http://" + connectedDevice.Address + ":" + connectedDevice.Port + "/");
-            //SendRequest.Method = "PUT";
-            //Stream sendStream = SendRequest.GetRequestStream();
-            ZipFile.CreateFromDirectory("currentProject","currentProject.zip");
-            WebClient client = new WebClient();
+            ZipFile.CreateFromDirectory("currentProject", "currentProject.zip");
             byte[] file = File.ReadAllBytes("currentProject.zip");
-            byte[] response = client.UploadData("http://" + connectedDevice.Address + ":" + connectedDevice.Port + "/", "PUT", file);
-            if(!Encoding.Default.GetString(response).Contains("OK"))
-            {
-                throw new Exception();
-            }
+            byte[] response = new byte[1024];
+            tcpClient.GetStream().Write(file, 0, file.Length);
+            tcpClient.GetStream().Read(response, 0, response.Length);
+            return UTF8Encoding.UTF8.GetString(response).Equals("OK");
         }
+
+//public void StartListen()
+//{
+//    SendFind();
+//    try {
+//        IPEndPoint localEp = new IPEndPoint(IPAddress.Any, 0);
+//        UdpClient listenClient = new UdpClient(5001);
+
+//        UdpState s = new UdpState();
+//        s.endpoint = localEp;
+//        s.client = listenClient;
+//        //allow time for the find to work - aka clutching at straws
+//        Thread.Sleep(500);
+
+//        while (listenClient.Available > 0)
+//        {
+//            listenClient.BeginReceive(ReceiveCallback, s);
+//            Thread.Sleep(500);
+//        }
+//    }
+
+//    catch (SocketException e)
+//    {
+//        Trace.WriteLine("Could not bind to socket on " + _localPort);
+//    }
+//    finally
+//    {
+//        listenClient.Close();
+//    }    
+//}
+
+//private void ReceiveCallback(IAsyncResult ar)
+//{
+//    UdpClient u = (UdpClient)((UdpState)(ar.AsyncState)).client;
+//    IPEndPoint e = (IPEndPoint)((UdpState)(ar.AsyncState)).endpoint;
+//    Byte[] receiveBytes = u.EndReceive(ar, ref e);
+    
+//}
+
+//        /// <summary>
+//        /// Connects to device. sets the device as connected. Is momentary depreciated, because HTTP connections do not require
+//        /// active connection making. However if Problems occure during File transfer or for Debug functionality this method might be reintruduced.
+//        /// </summary>
+//        /// <param name="index">The index.</param>
+//        /// <exception cref="System.Exception"></exception>
+//        public void connectToDevice(int index)
+//        {
+//            lock (reportedDevices)
+//            {
+//                HttpWebRequest refreshRequest = (HttpWebRequest)WebRequest.Create("http://" + reportedDevices[index].Address + ":" + reportedDevices[index].Port + "/");
+//                refreshRequest.Method = "GET";
+//                if (!refreshRequest.HaveResponse)
+//                {
+//                    throw new Exception();
+//                }
+//                connectedDevice = reportedDevices[index];
+//            }
+//        }
+
+
+//        /// <summary>
+//        /// Gets an actualized list containing the IPs and Ports of the possible Devices, to which the Project might be send.
+//        /// </summary>
+//        /// <returns>a list containing the IPs and Ports of the possible Devices</returns>
+//        public List<String> getPossibleClients()
+//        {
+//            runRefreshListener();
+//            List<string> result = new List<string>();
+//            lock (reportedDevices)
+//            {
+//                foreach (IPEndPoint item in reportedDevices)
+//                {
+//                    result.Add(item.ToString());
+//                }
+//                return result;
+//            }
+//        }
+
+
+//        /// <summary>
+//        /// Sends the project to the Device, which is chosen through connectToDevice() method, but could be easily changed to send to 
+//        /// any chosen Device in the List.
+//        /// </summary>
+//        /// <exception cref="System.Exception">
+//        /// </exception>
+//        public void sendProject()
+//        {
+//            HttpWebRequest refreshRequest = (HttpWebRequest)WebRequest.Create("http://" + connectedDevice.Address + ":" + connectedDevice.Port + "/");
+//            refreshRequest.Method = "GET";
+//            if (!refreshRequest.HaveResponse)
+//            {
+//                throw new Exception();
+//            }
+//            //HttpWebRequest SendRequest = (HttpWebRequest)WebRequest.Create("http://" + connectedDevice.Address + ":" + connectedDevice.Port + "/");
+//            //SendRequest.Method = "PUT";
+//            //Stream sendStream = SendRequest.GetRequestStream();
+//            ZipFile.CreateFromDirectory("currentProject","currentProject.zip");
+//            WebClient client = new WebClient();
+//            byte[] file = File.ReadAllBytes("currentProject.zip");
+//            byte[] response = client.UploadData("http://" + connectedDevice.Address + ":" + connectedDevice.Port + "/", "PUT", file);
+//            if(!Encoding.Default.GetString(response).Contains("OK"))
+//            {
+//                throw new Exception();
+//            }
+//        }
     }
 }
