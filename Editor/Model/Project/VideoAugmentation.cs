@@ -76,7 +76,8 @@ namespace ARdevKit.Model.Project
         /// not found in <see cref="ImagePath" />.</exception>
         public override Bitmap getPreview()
         {
-            return Properties.Resources.ImageAugmentation_small_;
+            //return Properties.Resources.ImageAugmentation_small_;
+            return Controller.EditorController.ThumbCreator.CreateThumb(videoPath, 0.5);
         }
                 
         /// <summary>
