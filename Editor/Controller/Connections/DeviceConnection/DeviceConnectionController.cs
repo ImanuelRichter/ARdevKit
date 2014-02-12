@@ -12,7 +12,7 @@ using System.Threading;
 
 namespace ARdevKit.Controller.Connections.DeviceConnection
 {
-    class DeviceConnectionController
+    public class DeviceConnectionController
     {
         private List<IPEndPoint> reportedDevices;
         private UdpClient udpClient;

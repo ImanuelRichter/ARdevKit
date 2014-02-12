@@ -305,7 +305,7 @@ namespace ARdevKit
 
         private void Editor_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -714,7 +714,42 @@ namespace ARdevKit
 
         public void sendToDevice()
         {
-            //TODO: implement sendToDevice()
+            try
+            {
+                saveProject();
+
+                try
+                {
+                    project.Accept(exportVisitor);
+                }
+                catch (DirectoryNotFoundException de)
+                {
+                    Debug.WriteLine(de.StackTrace);
+                }
+                try
+                {
+                    foreach (AbstractFile file in exportVisitor.Files)
+                    {
+                        file.Save();
+                    }
+                }
+                catch (NullReferenceException ne)
+                {
+                    Debug.WriteLine(ne.StackTrace);
+                }
+            }
+            catch (ArgumentNullException ae)
+            {
+                Debug.WriteLine(ae.StackTrace);
+            }
+            try
+            {
+                deviceSelectionDialog.DeviceConnectionController.sendProject();
+            }
+            catch (Exception)
+            {                
+                throw;
+            }
         }
 
         public void updateElementSelectionPanel()

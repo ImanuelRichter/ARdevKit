@@ -21,16 +21,16 @@ namespace ARdevKit
 
         private DeviceConnectionController deviceConnectionController;
 
+        public DeviceConnectionController DeviceConnectionController
+        {
+            get { return deviceConnectionController; }
+            set { deviceConnectionController = value; }
+        }
+
         public DeviceSelectionWindow()
         {
             deviceConnectionController = new DeviceConnectionController(this);
             InitializeComponent();
-            deviceConnectionController.refresh();
-            List<string> devices = deviceConnectionController.getReportedDevices();
-            foreach (string device in devices)
-            {
-                deviceList.Items.Add(new ListViewItem(device));                
-            }
         }
 
         private void DeviceSelectionWindow_Load(object sender, EventArgs e)
