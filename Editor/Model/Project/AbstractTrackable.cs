@@ -124,6 +124,20 @@ namespace ARdevKit.Model.Project
             return false;
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Removes the augmentation described by augmentation. </summary>
+        ///
+        /// <remarks>   Imanuel, 31.01.2014. </remarks>
+        ///
+        /// <param name="augmentation"> The augmentation. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public void RemoveAugmentation(AbstractAugmentation augmentation)
+        {
+            augmentation.CleanUp();
+            Augmentations.Remove(augmentation);
+        }
+
         /**
          * <summary>    Makes a deep copy of this object. </summary>
          *

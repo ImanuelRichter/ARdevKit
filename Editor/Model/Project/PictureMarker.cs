@@ -39,7 +39,7 @@ namespace ARdevKit.Model.Project
             set 
             { 
                 picturePath = value;
-                pictureName = Path.GetFileName(value); ;
+                pictureName = Path.GetFileName(value);
             }
         }
 

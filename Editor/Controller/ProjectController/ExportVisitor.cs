@@ -958,8 +958,25 @@ namespace ARdevKit.Controller.ProjectController
             // Clean up
             if (Directory.Exists(projectPath))
             {
-                foreach (string path in Directory.GetFiles(projectPath))
-                    File.Delete(path);
+                bool cleanedUp = false;
+                DialogResult abortRetryIgnore = DialogResult.Cancel;
+                do
+                    try
+                    {
+                        foreach (string path in Directory.GetFiles(projectPath))
+                            if (!Path.GetExtension(path).Equals(".ardev"))
+                                File.Delete(path);
+                        foreach (string path in Directory.GetFiles(Path.Combine(projectPath, "Assets")))
+                            File.Delete(path);
+                        cleanedUp = true;
+                    }
+                    catch (Exception e)
+                    {
+                        abortRetryIgnore = MessageBox.Show(e.Message, "Error!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
+                        if (abortRetryIgnore == DialogResult.Abort)
+                            throw new OperationCanceledException();
+                    }
+                while (!cleanedUp && abortRetryIgnore == DialogResult.Retry);
             }
 
             // Copy arel file
@@ -1081,7 +1098,7 @@ namespace ARdevKit.Controller.ProjectController
             JavaScriptBlock arelGlueMoveBlock = new JavaScriptBlock("function move(object, coord)", new BlockMarker("{", "};"));
             arelGlueFile.AddBlock(arelGlueMoveBlock);
             arelGlueMoveBlock.AddLine(new JavaScriptLine("var left = (coord.getX() - parseInt(object.div.style.width) / 2) + object.translation.getX()"));
-            arelGlueMoveBlock.AddLine(new JavaScriptLine("var top = (coord.getY() - parseInt(object.div.style.height) / 2) + object.translation.getY()"));
+            arelGlueMoveBlock.AddLine(new JavaScriptLine("var top = (coord.getY() - parseInt(object.div.style.height) / 2) - object.translation.getY()"));
             arelGlueMoveBlock.AddLine(new JavaScriptLine("object.div.style.left = left + 'px'"));
             arelGlueMoveBlock.AddLine(new JavaScriptLine("object.div.style.top = top + 'px'"));
             arelGlueMoveBlock.AddLine(new JavaScriptLine("console.log(\"Moved \" + object.id + \" to \" + left + \", \" + top)"));
@@ -1118,16 +1135,13 @@ namespace ARdevKit.Controller.ProjectController
                 Directory.CreateDirectory(destDirectory);
             }
             string destFile = Path.Combine(destDirectory, newFileName);
-            if (!File.Exists(destFile))
+            try
             {
-                try
-                {
-                    File.Copy(srcFile, Path.Combine(destDirectory, newFileName));
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show(e.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                File.Copy(srcFile, Path.Combine(destDirectory, newFileName), true);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

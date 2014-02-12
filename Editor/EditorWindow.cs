@@ -27,6 +27,7 @@ using ARdevKit.Controller.TestController;
 using ARdevKit.View;
 using System.IO;
 using ARdevKit.Model.Project.File;
+using System.Drawing.Printing;
 
 namespace ARdevKit
 {
@@ -325,17 +326,6 @@ namespace ARdevKit
 
         private void tsm_editor_menu_file_exit_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Möchten Sie das aktuelle Projekt abspeichern, bevor ARdevKit beendet wird?", "Projekt speichern?", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                try
-                {
-                    this.saveProject();
-                }
-                catch (ArgumentNullException ae)
-                {
-                    Debug.WriteLine(ae.StackTrace);
-                }
-            }
             System.Windows.Forms.Application.Exit();
         }
 
@@ -351,7 +341,16 @@ namespace ARdevKit
         private void tsm_editor_menu_test_startImage_Click(object sender, EventArgs e)
         {
             if (project.Trackables != null && project.Trackables.Count > 0 && project.Trackables[0] != null)
-                TestController.StartPlayer(project, TestController.IMAGE, (int)project.Screensize.Width, (int)project.Screensize.Height, tsm_editor_menu_test_togleDebug.Checked);
+            {
+                try
+                {
+                    TestController.StartPlayer(project, TestController.IMAGE, (int)project.Screensize.Width, (int)project.Screensize.Height, tsm_editor_menu_test_togleDebug.Checked);
+                }
+                catch (OperationCanceledException oae)
+                {
+                    MessageBox.Show("Vorgang wurde abgebrochen");
+                }
+            }
             else
                 MessageBox.Show("Keine Szene zum Testen vorhanden");
         }
@@ -487,7 +486,7 @@ namespace ARdevKit
                 this.reloadSelectionPanel();
                 this.previewController.index = -1;
                 this.previewController.reloadPreviewPanel(0);
-                if (!this.project.isTrackable())
+                if (!this.project.hasTrackable())
                 {
                     this.ElementSelectionController.setElementEnable(typeof(PictureMarker), true);
                     this.ElementSelectionController.setElementEnable(typeof(IDMarker), true);
@@ -498,7 +497,7 @@ namespace ARdevKit
                 this.project.Trackables[0] = null;
                 this.previewController.currentMetaCategory = MetaCategory.Trackable;
                 this.previewController.removePreviewable(this.previewController.trackable);
-                if (!this.project.isTrackable())
+                if (!this.project.hasTrackable())
                 {
                     this.ElementSelectionController.setElementEnable(typeof(PictureMarker), true);
                     this.ElementSelectionController.setElementEnable(typeof(IDMarker), true);
@@ -556,6 +555,10 @@ namespace ARdevKit
                 catch (DirectoryNotFoundException de)
                 {
                     Debug.WriteLine(de.StackTrace);
+                }
+                catch (OperationCanceledException oce)
+                {
+                    MessageBox.Show("Exportvorgang abgebrochen");
                 }
                 try
                 {
@@ -1130,6 +1133,94 @@ namespace ARdevKit
                         this.updateSceneSelectionPanel();
                     }
                 }
+            }
+        }
+
+        int trackablePCounter = 0;
+
+        /// <summary>
+        /// Handles the Click event of the trackableDruckenToolStripMenuItem control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// <remarks>geht 04.02.2014 15:14</remarks>
+        private void trackableDruckenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (project.hasTrackable())
+            {
+                Debug.WriteLine("printing out trackables");
+
+                trackablePCounter = 0;
+                PrintDocument pd = new PrintDocument();
+                pd.PrintPage += new PrintPageEventHandler(Print_Page);
+
+                PrintPreviewDialog dlg = new PrintPreviewDialog();
+                dlg.Document = pd;
+
+                if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    pd.Print();
+                }
+            }
+            else
+            {
+                Debug.WriteLine("there are no trackables to print out...");
+            }
+        }
+
+        /// <summary>
+        /// Handles the Page event of the Print control.
+        /// prints one page for each trackable.
+        /// </summary>
+        /// <param name="o">The source of the event.</param>
+        /// <param name="e">The <see cref="PrintPageEventArgs"/> instance containing the event data.</param>
+        /// <remarks>geht 04.02.2014 15:14</remarks>
+        private void Print_Page(object o, PrintPageEventArgs e)
+        {
+            float x = e.MarginBounds.Left;
+            float y = e.MarginBounds.Top;
+
+            e.Graphics.DrawImage(project.Trackables[trackablePCounter].getPreview(), x, y);
+
+            if (project.Trackables[trackablePCounter] != project.Trackables.Last())
+            {
+                trackablePCounter++;
+                e.HasMorePages = true;
+                return;
+            }
+        }
+
+        /// <summary>
+        /// Handles the FormClosing event of the EditorWindow control.
+        /// Displays a save dialog.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="FormClosingEventArgs"/> instance containing the event data.</param>
+        /// <remarks>geht 04.02.2014 15:15</remarks>
+        private void EditorWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dlg = MessageBox.Show("Möchten Sie das aktuelle Projekt abspeichern, bevor ARdevKit beendet wird?", "Projekt speichern?", MessageBoxButtons.YesNoCancel);
+            if (dlg == DialogResult.Yes)
+            {
+                e.Cancel = true;
+                try
+                {
+                    this.saveProject();
+                    e.Cancel = false;
+                }
+                catch (ArgumentNullException ae)
+                {
+                    Debug.WriteLine(ae.StackTrace);
+                }
+            }
+            else if (dlg == DialogResult.No)
+            {
+                e.Cancel = false;
+            }
+            else
+            {
+                e.Cancel = true;
+                return;
             }
         }
     }

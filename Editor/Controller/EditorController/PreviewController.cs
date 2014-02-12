@@ -128,7 +128,7 @@ public class PreviewController
                         break;
                     }
                 }
-            } 
+            }
         }
         else if (currentElement is AbstractAugmentation && trackable != null && this.ew.project.Trackables[index].Augmentations.Count < 3)
         {
@@ -185,7 +185,7 @@ public class PreviewController
                         ((AbstractDynamic2DAugmentation)currentElement).Source = source;
                         this.ew.project.Sources.Add(((AbstractDynamic2DAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).Source);
 
-                        
+
                         DialogResult dialogResult = MessageBox.Show("Möchten sie ein Query zu der Source öffnen?", "Query?", MessageBoxButtons.YesNo);
 
                         if (dialogResult == DialogResult.Yes)
@@ -246,7 +246,7 @@ public class PreviewController
         if (currentElement is AbstractTrackable && trackable != null)
         {
             this.removeAll();
-            if (!this.ew.project.isTrackable())
+            if (!this.ew.project.hasTrackable())
             {
                 this.ew.ElementSelectionController.setElementEnable(typeof(PictureMarker), true);
                 this.ew.ElementSelectionController.setElementEnable(typeof(IDMarker), true);
@@ -255,7 +255,7 @@ public class PreviewController
         }
         else if (currentElement is AbstractAugmentation && trackable != null)
         {
-            this.trackable.Augmentations.Remove((AbstractAugmentation)currentElement);
+            this.trackable.RemoveAugmentation((AbstractAugmentation)currentElement);
             this.panel.Controls.Remove(this.findBox((AbstractAugmentation)currentElement));
         }
     }
@@ -477,7 +477,7 @@ public class PreviewController
             }
             this.ew.Tsm_editor_menu_edit_copie.Enabled = false;
         }
-        
+
     }
     /// <summary>
     /// set the augmentationPreview to a augmentationPreview with source icon
@@ -517,8 +517,8 @@ public class PreviewController
     private Vector3D calculateVector(Vector3D v)
     {
         Vector3D result = new Vector3D(0, 0, 0);
-        result.X = (v.X - panel.Width / 2);
-        result.Y = (v.Y - panel.Height / 2);
+        result.X = v.X - panel.Width / 2;
+        result.Y = panel.Height / 2 - v.Y;
         return result;
     }
 
@@ -530,8 +530,8 @@ public class PreviewController
     private Vector3D recalculateVector(Vector3D v)
     {
         Vector3D result = new Vector3D(0, 0, 0);
-        result.X = (v.X + panel.Width / 2);
-        result.Y = (v.Y + panel.Height / 2);
+        result.X = (panel.Width / 2 + v.X);
+        result.Y = (panel.Height / 2 - v.Y);
         return result;
     }
 
@@ -546,7 +546,7 @@ public class PreviewController
         int width = prev.getPreview().Width;
         double sideScale;
         double scale;
-        if (((Abstract2DTrackable)this.trackable).Size == null)
+        if (((Abstract2DTrackable)this.trackable).Size == 0)
         {
             scale = 100;
         }
@@ -576,27 +576,35 @@ public class PreviewController
         }
 
         else if (prev is AbstractAugmentation)
+        {
+            if (prev is ImageAugmentation)
             {
             if (((AbstractAugmentation)prev).Scaling.X != 0)
             {
                 box.Size = new Size((int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.Y));
-        }
-        else
-        {
-                if (width > height)
+            }
+            else
             {
+                if (width > height)
+                {
                     sideScale = scalex / scaley;
                     box.Size = new Size((int)(scale * 100 * sideScale), (int)(scale * 100));
                     ((AbstractAugmentation)prev).Scaling = new Vector3D(sideScale, 1, 1);
-            }
+                }
                 else if (width <= height)
-            {
+                {
                     sideScale = scaley / scalex;
                     box.Size = new Size((int)(scale * 100), (int)(scale * 100 * sideScale));
                     ((AbstractAugmentation)prev).Scaling = new Vector3D(1, sideScale, 1);
                 }
             }
         }
+            else if (prev is Chart)
+            {
+                box.Size = new Size((int)(((Chart)prev).Width * scale), (int)(((Chart)prev).Height * scale));
+            }
+           
+    }
     }
 
     /// <summary>
@@ -611,7 +619,14 @@ public class PreviewController
 
         if (prev is AbstractAugmentation)
         {
+            if (prev is ImageAugmentation)
+            {
             box.Size = new Size((int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale), (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale));
+        }
+            else if (prev is Chart)
+            {
+                box.Size = new Size((int)(((Chart)prev).Width * scale), (int)(((Chart)prev).Height * scale));
+            }
         }
         box.Refresh();
     }
@@ -660,10 +675,10 @@ public class PreviewController
         }
         else if (prev is ImageAugmentation)
         {
-            ((AbstractAugmentation)prev).Translation = this.calculateVector(newV);
+            ((ImageAugmentation)prev).Translation = this.calculateVector(newV);
         }
     }
-    
+
     public void updateTranslation()
     {
         AbstractAugmentation current;
@@ -672,9 +687,9 @@ public class PreviewController
             current = (AbstractAugmentation)ew.CurrentElement;
         else
             return;
-        
+
         Vector3D tmp = recalculateVector(current.Translation);
-        
+
         PictureBox box = findBox(current);
         box.Location = new Point((int)tmp.X - (box.Size.Width / 2), (int)tmp.Y - (box.Size.Height / 2));
     }

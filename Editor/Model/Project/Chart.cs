@@ -64,6 +64,16 @@ namespace ARdevKit.Model.Project
             Scaling = new Vector3D(0, 0, 0);
         }
 
+        /// <summary>   Gets or sets the scaling. </summary>
+        ///
+        /// <value> The scaling. </value>
+        [Browsable(false)]
+        public new Vector3D Scaling
+        {
+            get { return base.Scaling; }
+            set { base.Scaling = value; }
+        }
+
 
         /// <summary>
         /// An overwriting method, to accept a <see cref="AbstractProjectVisitor" />
@@ -102,6 +112,19 @@ namespace ARdevKit.Model.Project
         public override Bitmap getIcon()
         {
             return Properties.Resources.highcharts_normal_;
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Clean up (remove created/copied files and directories). </summary>
+        ///
+        /// <remarks>   Imanuel, 31.01.2014. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public override void CleanUp()
+        {
+            string dir = Path.GetDirectoryName(optionsFilePath);
+            if (Directory.Exists(dir) && System.IO.File.Exists(Path.Combine(dir, "chart.js")))
+                Directory.Delete(dir, true);
         }
 
         /**

@@ -66,6 +66,7 @@ namespace ARdevKit
             this.tsm_editor_menu_test_startWithVirtualCamera = new System.Windows.Forms.ToolStripMenuItem();
             this.tss_editor_meu_test_loadVideo_togleDebug = new System.Windows.Forms.ToolStripSeparator();
             this.tsm_editor_menu_test_togleDebug = new System.Windows.Forms.ToolStripMenuItem();
+            this.trackableDruckenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_editor_menu_help = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_editor_menu_help_help = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_editor_menu_help_info = new System.Windows.Forms.ToolStripMenuItem();
@@ -360,7 +361,8 @@ namespace ARdevKit
             this.tsm_editor_menu_test_startVideo,
             this.tsm_editor_menu_test_startWithVirtualCamera,
             this.tss_editor_meu_test_loadVideo_togleDebug,
-            this.tsm_editor_menu_test_togleDebug});
+            this.tsm_editor_menu_test_togleDebug,
+            this.trackableDruckenToolStripMenuItem});
             this.tsm_editor_menu_test.Name = "tsm_editor_menu_test";
             this.tsm_editor_menu_test.Size = new System.Drawing.Size(41, 20);
             this.tsm_editor_menu_test.Text = "Test";
@@ -368,35 +370,42 @@ namespace ARdevKit
             // tsm_editor_menu_test_startImage
             // 
             this.tsm_editor_menu_test_startImage.Name = "tsm_editor_menu_test_startImage";
-            this.tsm_editor_menu_test_startImage.Size = new System.Drawing.Size(152, 22);
+            this.tsm_editor_menu_test_startImage.Size = new System.Drawing.Size(176, 22);
             this.tsm_editor_menu_test_startImage.Text = "Bild laden";
             this.tsm_editor_menu_test_startImage.Click += new System.EventHandler(this.tsm_editor_menu_test_startImage_Click);
             // 
             // tsm_editor_menu_test_startVideo
             // 
             this.tsm_editor_menu_test_startVideo.Name = "tsm_editor_menu_test_startVideo";
-            this.tsm_editor_menu_test_startVideo.Size = new System.Drawing.Size(152, 22);
+            this.tsm_editor_menu_test_startVideo.Size = new System.Drawing.Size(176, 22);
             this.tsm_editor_menu_test_startVideo.Text = "Video laden";
             this.tsm_editor_menu_test_startVideo.Click += new System.EventHandler(this.tsm_editor_menu_test_startVideo_Click);
             // 
             // tsm_editor_menu_test_startWithVirtualCamera
             // 
             this.tsm_editor_menu_test_startWithVirtualCamera.Name = "tsm_editor_menu_test_startWithVirtualCamera";
-            this.tsm_editor_menu_test_startWithVirtualCamera.Size = new System.Drawing.Size(152, 22);
+            this.tsm_editor_menu_test_startWithVirtualCamera.Size = new System.Drawing.Size(176, 22);
             this.tsm_editor_menu_test_startWithVirtualCamera.Text = "vCam nutzen";
             this.tsm_editor_menu_test_startWithVirtualCamera.Click += new System.EventHandler(this.tsm_editor_menu_test_startWithVirtualCamera_Click);
             // 
             // tss_editor_meu_test_loadVideo_togleDebug
             // 
             this.tss_editor_meu_test_loadVideo_togleDebug.Name = "tss_editor_meu_test_loadVideo_togleDebug";
-            this.tss_editor_meu_test_loadVideo_togleDebug.Size = new System.Drawing.Size(149, 6);
+            this.tss_editor_meu_test_loadVideo_togleDebug.Size = new System.Drawing.Size(173, 6);
             // 
             // tsm_editor_menu_test_togleDebug
             // 
             this.tsm_editor_menu_test_togleDebug.CheckOnClick = true;
             this.tsm_editor_menu_test_togleDebug.Name = "tsm_editor_menu_test_togleDebug";
-            this.tsm_editor_menu_test_togleDebug.Size = new System.Drawing.Size(152, 22);
+            this.tsm_editor_menu_test_togleDebug.Size = new System.Drawing.Size(176, 22);
             this.tsm_editor_menu_test_togleDebug.Text = "Debug";
+            // 
+            // trackableDruckenToolStripMenuItem
+            // 
+            this.trackableDruckenToolStripMenuItem.Name = "trackableDruckenToolStripMenuItem";
+            this.trackableDruckenToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.trackableDruckenToolStripMenuItem.Text = "Trackables drucken";
+            this.trackableDruckenToolStripMenuItem.Click += new System.EventHandler(this.trackableDruckenToolStripMenuItem_Click);
             // 
             // tsm_editor_menu_help
             // 
@@ -450,6 +459,7 @@ namespace ARdevKit
             this.MinimumSize = new System.Drawing.Size(1024, 726);
             this.Name = "EditorWindow";
             this.Text = "ARdevKit";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditorWindow_FormClosing);
             this.Load += new System.EventHandler(this.Editor_Load);
             this.panel1.ResumeLayout(false);
             this.pnl_editor_selection.ResumeLayout(false);
@@ -506,6 +516,7 @@ namespace ARdevKit
         private MenuStrip mst_editor_menu;
         private Panel panel1;
         private Panel pnl_editor_preview;
+        private ToolStripMenuItem trackableDruckenToolStripMenuItem;
 
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////

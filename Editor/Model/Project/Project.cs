@@ -124,7 +124,7 @@ namespace ARdevKit.Model.Project
         {
             name = "";
             projectPath = "";
-            sensor = null; 
+            sensor = null;
             trackables = new List<AbstractTrackable>();
             sources = new List<AbstractSource>();
         }
@@ -134,7 +134,8 @@ namespace ARdevKit.Model.Project
         /// with specified name.
         /// </summary>
         /// <param name="name">The name.</param>
-        public Project(string name) : this()
+        public Project(string name)
+            : this()
         {
             this.name = name;
         }
@@ -210,7 +211,7 @@ namespace ARdevKit.Model.Project
         /// Lizzard, 1/19/2014.
         /// </remarks>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        public bool isTrackable()
+        public bool hasTrackable()
         {
             foreach (AbstractTrackable temp in this.trackables)
             {
@@ -229,12 +230,13 @@ namespace ARdevKit.Model.Project
         public int nextID()
         {
             int i = 0;
-            foreach(AbstractTrackable track in this.trackables) {
+            foreach (AbstractTrackable track in this.trackables)
+            {
                 if (track != null && track is IDMarker)
                 {
                     if (((IDMarker)track).MatrixID > i)
                     {
-                        i = ((IDMarker)track).MatrixID; 
+                        i = ((IDMarker)track).MatrixID;
                     }
                 }
             }
@@ -274,7 +276,27 @@ namespace ARdevKit.Model.Project
             }
             return false;
         }
+
+        /// <summary>   true if an Trackable with the same Path/ID exists, false if not. </summary>
+        ///
+        /// <param name="matrixID"> Identifier for the matrix. </param>
+        ///
+        /// <returns>   true if it succeeds, false if it fails. </returns>
+        public bool existTrackable(int matrixID)
+        {
+            int counter = 0;
+            foreach (AbstractTrackable track in trackables)
+            {
+                if (((IDMarker)track).MatrixID == matrixID)
+                {
+                    counter++;
+                    if (counter == 2)
+                        return true;
+                }
+            }
+
+            return false;
+        }
     }
 
-    
 }
