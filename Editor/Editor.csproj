@@ -218,6 +218,8 @@
     <Content Include="ARdevKit.ico" />
     <Content Include="Controller\Connections\DeviceConnection\foo.txt" />
     <Content Include="Controller\DebugController\foo.txt" />
+    <None Include="Resources\customUserEventTemplate.txt" />
+    <None Include="Resources\Image1.bmp" />
     <None Include="Resources\highcharts%28normal%29.png" />
     <None Include="Resources\db_small.bmp" />
     <None Include="Resources\database.bmp" />

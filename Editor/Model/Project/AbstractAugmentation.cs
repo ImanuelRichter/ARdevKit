@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 
 using System.ComponentModel;
 using System.Collections;
+using System.IO;
 
 namespace ARdevKit.Model.Project
 {
@@ -67,9 +68,16 @@ namespace ARdevKit.Model.Project
         /// </summary>
         [CategoryAttribute("Expert")]
         [Editor(typeof(TextEditor), typeof(System.Drawing.Design.UITypeEditor))]
-        public string[] CustomUserEventList
+        public string[] CustomUserEvent
         {
-            get { return customUserEvent; }
+            get 
+            { 
+                if (customUserEvent.Length == 0)
+                {
+                    customUserEvent = System.IO.File.ReadAllLines((System.Windows.Forms.Application.StartupPath + "/res/templates/customUserEventTemplate.txt"));
+                }
+                return customUserEvent; 
+            }
             set { customUserEvent = value; }
         }
         
@@ -148,6 +156,7 @@ namespace ARdevKit.Model.Project
             scalingVector = new Vector3D(0, 0, 0);
             rotationVector = new Vector3Di(0, 0, 0, 0);
             trackable = null;
+            customUserEvent = new string[0];
         }
 
         /// <summary>
