@@ -37,6 +37,12 @@ namespace ARdevKit
             backUp = new string[0];
         }
 
+        public TextEditorForm(string filePath)
+        {
+            InitializeComponent();
+            richTextBox1.LoadFile(filePath, RichTextBoxStreamType.PlainText);
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             richTextBox1.Lines = backUp;
