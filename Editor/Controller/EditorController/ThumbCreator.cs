@@ -20,8 +20,9 @@ namespace ARdevKit.Controller.EditorController
         {
             Stream ms = new FileStream("tempthump.bmp",FileMode.Create);
             (new NReco.VideoConverter.FFMpegConverter()).GetVideoThumbnail(videoFilename, ms);
-            Bitmap b=(Bitmap)Image.FromStream(ms);
+            Bitmap b = (Bitmap)Image.FromStream(ms);
             ms.Close();
+            File.Delete("tempthump.bmp");
             return b;
         }
     }

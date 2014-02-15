@@ -90,7 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\EditorController\ObjectCopier.cs" />
-    <Compile Include="Controller\EditorController\ThumpCreator.cs" />
+    <Compile Include="Controller\EditorController\ThumbCreator.cs" />
     <Compile Include="Controller\TestController\ProcessVideoWindow.cs">
       <SubType>Form</SubType>
     </Compile>
