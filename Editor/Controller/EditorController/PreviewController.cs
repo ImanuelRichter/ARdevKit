@@ -1006,7 +1006,9 @@ public class PreviewController
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     private void openOptionsFile(object sender, EventArgs e)
     {
-        System.Diagnostics.Process.Start("notepad", ((Chart)this.ew.CurrentElement).Options);
+        //System.Diagnostics.Process.Start("notepad", ((Chart)this.ew.CurrentElement).Options);
+        TextEditorForm tef = new TextEditorForm(((Chart)this.ew.CurrentElement).Options);
+        tef.Show();
     }
 
 
