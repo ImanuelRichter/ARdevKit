@@ -44,4 +44,30 @@ namespace ARdevKit.View
             return UITypeEditorEditStyle.DropDown;
         }
     }
+
+    public class TextEditor : UITypeEditor
+    {
+        public TextEditor()
+        {
+        }
+
+        public override UITypeEditorEditStyle GetEditStyle(ITypeDescriptorContext context)
+        {
+            return UITypeEditorEditStyle.Modal;
+        }
+
+        public override object EditValue(ITypeDescriptorContext context, IServiceProvider provider, object value)
+        {
+            IWindowsFormsEditorService svc = (IWindowsFormsEditorService)provider.GetService(typeof(IWindowsFormsEditorService));
+            if (svc != null)
+                using (TextEditorForm form = new TextEditorForm())
+                {
+                    form.Value = (string[])value;
+                    svc.ShowDialog(form);
+                    return (object)form.Value;
+                }
+            return value;
+        }
+
+    }
 }

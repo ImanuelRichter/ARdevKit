@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 
 using System.ComponentModel;
 using System.Collections;
+using System.IO;
 
 namespace ARdevKit.Model.Project
 {
@@ -56,23 +57,30 @@ namespace ARdevKit.Model.Project
             set { isVisible = value; }
         }
 
-        /*
+        
         /// <summary>
         /// A list of all customUserEvents the current <see cref="AbstractAugmentation"/> has.
         /// The user can write a javascript based code for the <see cref="AbstractAugmentation"/>.
         /// </summary>
-        private ArrayList customUserEvent;
+        private string[] customUserEvent;
         /// <summary>
         /// Get the content of the customUserEvent. Each element in the List represents a line of the code.
         /// </summary>
         [CategoryAttribute("Expert")]
-        [Editor(@"System.Windows.Forms.Design.StringCollectionEditor, System.Design, Version=2.0.0.0, Culture=neutral, 
-            PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))]
-        public ArrayList CustomUserEventList
+        [Editor(typeof(TextEditor), typeof(System.Drawing.Design.UITypeEditor))]
+        public string[] CustomUserEvent
         {
-            get { return customUserEvent; }
+            get 
+            { 
+                if (customUserEvent.Length == 0)
+                {
+                    customUserEvent = System.IO.File.ReadAllLines((System.Windows.Forms.Application.StartupPath + "/res/templates/customUserEventTemplate.txt"));
+                }
+                return customUserEvent; 
+            }
+            set { customUserEvent = value; }
         }
-        */
+        
 
         /// <summary>
         /// Vector to describe the position on the PreviewPanel, and later
@@ -148,6 +156,7 @@ namespace ARdevKit.Model.Project
             scalingVector = new Vector3D(0, 0, 0);
             rotationVector = new Vector3Di(0, 0, 0, 0);
             trackable = null;
+            customUserEvent = new string[0];
         }
 
         /// <summary>
