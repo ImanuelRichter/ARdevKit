@@ -478,8 +478,9 @@ public class PreviewController
             cm.MenuItems.Add("kopieren", new EventHandler(this.copy_augmentation));
             if (prev is Chart)
             {
-                cm.MenuItems.Add("Optionen öffnen", new EventHandler(this.openOptionsFile));
+                cm.MenuItems.Add("Öffne Optionen", new EventHandler(this.openOptionsFile));
             }
+            cm.MenuItems.Add("Öffne AREL Script", new EventHandler(this.openArelScript));
         }
         tempBox.MouseClick += new MouseEventHandler(selectElement);
         cm.MenuItems.Add("löschen", new EventHandler(this.remove_by_click));
@@ -1009,6 +1010,11 @@ public class PreviewController
         //System.Diagnostics.Process.Start("notepad", ((Chart)this.ew.CurrentElement).Options);
         TextEditorForm tef = new TextEditorForm(((Chart)this.ew.CurrentElement).Options);
         tef.Show();
+    }
+
+    private void openArelScript(object sender, EventArgs e)
+    {
+
     }
 
 
