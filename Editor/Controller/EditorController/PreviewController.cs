@@ -1012,9 +1012,16 @@ public class PreviewController
         tef.Show();
     }
 
+    /// <summary>
+    /// EventHandle to open the AREL (customUserEvent) Script in the TextEditor
+    /// </summary>
+    /// <param name="sender">The sender</param>
+    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     private void openArelScript(object sender, EventArgs e)
     {
-
+        TextEditorForm tef = new TextEditorForm();
+        tef.Value = ((AbstractAugmentation)ew.CurrentElement).CustomUserEvent;
+        tef.Show();
     }
 
 
