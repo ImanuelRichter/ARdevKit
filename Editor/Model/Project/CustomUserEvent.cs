@@ -44,6 +44,14 @@ namespace ARdevKit.Model.Project
             set { content = value; }
         }
 
+        private string filePath;
+
+        public string FilePath
+        {
+            get { return filePath; }
+            set { filePath = value; }
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomUserEvent"/> class.
         /// </summary>
