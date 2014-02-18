@@ -97,8 +97,8 @@ public class PreviewController
                 bool isInitOk = currentElement.initElement(ew);
                 if (!isInitOk)
                 {
-                        break;
-                    }
+                    break;
+                }
                 if (isInitOk)
                 {
                     //set the vector to the trackable
@@ -116,7 +116,7 @@ public class PreviewController
                                     this.ew.ElementSelectionController.setElementEnable(e.Prototype.GetType(), false);
                                 }
                             }
-                    }
+                        }
                         this.ew.ElementSelectionController.setElementEnable(currentElement.GetType(), true);
 
                         this.trackable = (AbstractTrackable)currentElement;
@@ -134,21 +134,21 @@ public class PreviewController
         {
             bool isInitOk = currentElement.initElement(ew);
             if (isInitOk)
-                    {
-                        //set references 
-                        trackable.Augmentations.Add((AbstractAugmentation)currentElement);
+            {
+                //set references 
+                trackable.Augmentations.Add((AbstractAugmentation)currentElement);
 
-                        this.addPictureBox(currentElement, v);
+                this.addPictureBox(currentElement, v);
 
-                        //set the vector and the trackable in <see cref="AbstractAugmentation"/>
-                        this.setCoordinates(currentElement, v);
-                        ((AbstractAugmentation)currentElement).Trackable = this.trackable;
+                //set the vector and the trackable in <see cref="AbstractAugmentation"/>
+                this.setCoordinates(currentElement, v);
+                ((AbstractAugmentation)currentElement).Trackable = this.trackable;
 
-                        //set the new box to the front
-                        this.findBox(currentElement).BringToFront();
-                        setCurrentElement(currentElement);
-                    }
-                }
+                //set the new box to the front
+                this.findBox(currentElement).BringToFront();
+                setCurrentElement(currentElement);
+            }
+        }
     }
 
 
@@ -580,32 +580,42 @@ public class PreviewController
         {
             if (prev is ImageAugmentation)
             {
-            if (((AbstractAugmentation)prev).Scaling.X != 0)
-            {
-                box.Size = new Size((int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.Y));
-            }
-            else
-            {
-                if (width > height)
+                if (((AbstractAugmentation)prev).Scaling.X != 0)
                 {
-                    sideScale = scalex / scaley;
-                    box.Size = new Size((int)(scale * 100 * sideScale), (int)(scale * 100));
-                    ((AbstractAugmentation)prev).Scaling = new Vector3D(sideScale, 1, 1);
+                    if (width > height)
+                    {
+                        sideScale = scalex / scaley;
+                        box.Size = new Size((int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X * sideScale), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.Y));
+                    }
+                    else if (width <= height)
+                    {
+                        sideScale = scaley / scalex;
+                        box.Size = new Size((int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.Y * sideScale));
+                    }
                 }
-                else if (width <= height)
+                else
                 {
-                    sideScale = scaley / scalex;
-                    box.Size = new Size((int)(scale * 100), (int)(scale * 100 * sideScale));
-                    ((AbstractAugmentation)prev).Scaling = new Vector3D(1, sideScale, 1);
+                    if (width > height)
+                    {
+                        sideScale = scalex / scaley;
+                        box.Size = new Size((int)(scale * 100 * sideScale), (int)(scale * 100));
+                        ((AbstractAugmentation)prev).Scaling = new Vector3D(1, 1, 1);
+                    }
+                    else if (width <= height)
+                    {
+                        sideScale = scaley / scalex;
+                        box.Size = new Size((int)(scale * 100), (int)(scale * 100 * sideScale));
+                        ((AbstractAugmentation)prev).Scaling = new Vector3D(1, 1, 1);
+                    }
                 }
             }
-        }
             else if (prev is Chart)
             {
                 box.Size = new Size((int)(((Chart)prev).Width * scale), (int)(((Chart)prev).Height * scale));
             }
-           
-    }
+
+        }
+        box.SizeMode = PictureBoxSizeMode.StretchImage;
     }
 
     /// <summary>
@@ -615,6 +625,7 @@ public class PreviewController
     {
         IPreviewable prev = this.ew.CurrentElement;
         PictureBox box = this.findBox(prev);
+        
 
         double scale = 100 / (double)((Abstract2DTrackable)this.trackable).Size;
 
@@ -622,13 +633,24 @@ public class PreviewController
         {
             if (prev is ImageAugmentation)
             {
-            box.Size = new Size((int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale), (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale));
+                if (prev.getPreview().Width > prev.getPreview().Height)
+                {
+                    double sideScale = (double)prev.getPreview().Width / (double)prev.getPreview().Height;
+                    box.Size = new Size((int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale * sideScale), (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale));
+                }
+                else if (prev.getPreview().Width < prev.getPreview().Height)
+                {
+                    double sideScale = (double)prev.getPreview().Height / (double)prev.getPreview().Width;
+                    box.Size = new Size((int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale), (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale * sideScale));
+                }
+            
         }
             else if (prev is Chart)
             {
                 box.Size = new Size((int)(((Chart)prev).Width * scale), (int)(((Chart)prev).Height * scale));
             }
         }
+        box.SizeMode = PictureBoxSizeMode.StretchImage;
         box.Refresh();
     }
 
@@ -917,6 +939,4 @@ public class PreviewController
     {
 
     }
-
-
 }
