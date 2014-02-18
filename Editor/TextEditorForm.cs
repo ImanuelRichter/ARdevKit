@@ -17,41 +17,33 @@ namespace ARdevKit
 {
     public partial class TextEditorForm : Form
     {
-        private string[] backUp;
-        
+        private string filePath;
+
         public string[] Value
         {
             get { return richTextBox1.Lines; }
-            set 
-            {
-                if (backUp.Length == 0)
-                    backUp = value;
-                richTextBox1.Lines = value; 
-            
-            }
+            set { richTextBox1.Lines = value; }
         }
 
         public TextEditorForm()
         {
             InitializeComponent();
-            backUp = new string[0];
         }
 
-        public TextEditorForm(string filePath)
+        public TextEditorForm(string filePath) : this()
         {
-            InitializeComponent();
-            richTextBox1.LoadFile(filePath, RichTextBoxStreamType.PlainText);
+            this.filePath = filePath;
+            richTextBox1.LoadFile(this.filePath, RichTextBoxStreamType.PlainText);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            richTextBox1.Lines = backUp;
             this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            richTextBox1.SaveFile(this.filePath, RichTextBoxStreamType.PlainText);
         }
     }
 }

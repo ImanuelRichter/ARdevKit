@@ -62,23 +62,24 @@ namespace ARdevKit.Model.Project
         /// A list of all customUserEvents the current <see cref="AbstractAugmentation"/> has.
         /// The user can write a javascript based code for the <see cref="AbstractAugmentation"/>.
         /// </summary>
-        private string[] customUserEvent;
+        private string customUserEventPath;
         /// <summary>
         /// Get the content of the customUserEvent. Each element in the List represents a line of the code.
         /// </summary>
-        [CategoryAttribute("Expert")]
-        [Editor(typeof(TextEditor), typeof(System.Drawing.Design.UITypeEditor))]
-        public string[] CustomUserEvent
+        [Browsable(false)]
+        //[CategoryAttribute("Expert")]
+        //[Editor(typeof(TextEditor), typeof(System.Drawing.Design.UITypeEditor))]
+        public string CustomUserEventFilePath
         {
             get 
-            { 
-                if (customUserEvent.Length == 0)
+            {
+                if (String.Compare(customUserEventPath, "NULL") == 0)
                 {
-                    customUserEvent = System.IO.File.ReadAllLines((System.Windows.Forms.Application.StartupPath + "/res/templates/customUserEventTemplate.txt"));
+                    customUserEventPath = getCustomUserFile();
                 }
-                return customUserEvent; 
+                return customUserEventPath; 
             }
-            set { customUserEvent = value; }
+            set { ; }
         }
         
 
@@ -151,12 +152,12 @@ namespace ARdevKit.Model.Project
         protected AbstractAugmentation()
         {
             isVisible = true;
-            //customUserEvent = new ArrayList();
             translationVector = new Vector3D(0, 0, 0);
             scalingVector = new Vector3D(0, 0, 0);
             rotationVector = new Vector3Di(0, 0, 0, 0);
             trackable = null;
-            customUserEvent = new string[0];
+            customUserEventPath = "NULL";
+            
         }
 
         /// <summary>
@@ -171,10 +172,10 @@ namespace ARdevKit.Model.Project
             Vector3D translationVector, Vector3D scaling, AbstractTrackable trackable)
         {
             this.isVisible = isVisible;
-            //customUserEvent = new ArrayList();
             this.translationVector = translationVector;
             scalingVector = scaling;
             this.trackable = trackable;
+            customUserEventPath = "NULL";
         }
 
         /// <summary>
@@ -216,6 +217,20 @@ namespace ARdevKit.Model.Project
          */
 
         public abstract object Clone();
+    
+        private string getCustomUserFile()
+        {
+            var fileName = "customUserEventTemplate.txt";
+            var endFileName = ID + "customUserEvent.txt";
+
+            if (System.IO.File.Exists(@"currentProject\" + endFileName))
+                System.IO.File.Delete(@"currentProject\" + endFileName);
+
+            System.IO.File.Copy(@"res\templates\" + fileName, @"currentProject\" + endFileName);
+
+            return System.IO.Path.GetFullPath("currentProject\\" + endFileName);
+        }
+    
     }
 }
 
