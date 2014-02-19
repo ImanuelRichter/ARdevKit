@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ARdevKit.Model.Project
 {
@@ -114,16 +115,48 @@ namespace ARdevKit.Model.Project
 
         public override object Clone()
         {
-            ImageTrackable n = new ImageTrackable();
+            ImageTrackable n = ObjectCopier.Clone<ImageTrackable>(this);
             n.sensorCosID = IDFactory.CreateNewSensorCosID(this);
             return n;
         }
 
-        public override object Duplicate()
+        public override bool initElement(EditorWindow ew)
         {
-            ImageTrackable n = ObjectCopier.Clone<ImageTrackable>(this);
-            n.sensorCosID = IDFactory.CreateNewSensorCosID(this);
-            return n;
+            if (base.initElement(ew))
+            {
+                bool isInitOk = true;
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+                openFileDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
+                isInitOk = openFileDialog.ShowDialog() == DialogResult.OK;
+                if (isInitOk)
+                {
+                    string path = openFileDialog.FileName;
+                    bool isClonedMarker = ImagePath != null;
+                    ImagePath = path;
+
+
+                    if (!ew.project.existTrackable(this))
+                    {
+                        ew.project.Sensor = new MarkerlessSensor();
+                    }
+                    else
+                    {
+                        if (!isClonedMarker)
+                        {
+                            MessageBox.Show("You can't use the same marker in different Scenes.");
+                            ImagePath = null;
+                        }
+                        return initElement(ew);
+                    }
+                    
+                }
+                return isInitOk;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

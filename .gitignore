@@ -172,6 +172,7 @@ bin/Debug/*
 
 !bin/Debug/Player.exe
 !bin/Debug/DebugPlayer.exe
+!bin/Debug/ARdevKit.exe.config
 
 !bin/Debug/res/
 !bin/Debug/res/*

@@ -15,15 +15,21 @@ namespace ARdevKit.Controller.ProjectController
 
     public abstract class AbstractProjectVisitor
     {
+        /// <summary>
+        /// Visits the given <see cref="CustomUserEvent"/>.
+        /// </summary>
+        /// <param name="cue"> The custom user event. </param>
+        public abstract void Visit(CustomUserEvent cue);
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Visits the given <see cref="Chart"/>. </summary>
         ///
         /// <remarks>   Imanuel, 17.01.2014. </remarks>
         ///
-        /// <param name="barGraph">    The bar graph. </param>
+        /// <param name="chart">    The chart. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public abstract void Visit(Chart barGraph);
+        public abstract void Visit(Chart chart);
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Visits the given <see cref="ImageAugmentation"/>. </summary>

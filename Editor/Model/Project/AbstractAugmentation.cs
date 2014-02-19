@@ -210,6 +210,12 @@ namespace ARdevKit.Model.Project
          */
 
         public abstract object Clone();
+
+        public virtual bool initElement(EditorWindow ew)
+        {
+            //do nothing if not overwritten.
+            return true;
+        }
     }
 }
 

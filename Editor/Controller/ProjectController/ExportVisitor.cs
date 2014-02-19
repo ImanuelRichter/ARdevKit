@@ -93,6 +93,11 @@ namespace ARdevKit.Controller.ProjectController
             coordinateSystemID = 0;
         }
 
+        public override void Visit(CustomUserEvent cue)
+        {
+            //arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("script", "type=\"text/javascript\" src=\"" + Path.GetFileName(cue.FilePath) + "\"")));
+        }
+
         public override void Visit(VideoAugmentation video)
         {
             // Copy to projectPath
