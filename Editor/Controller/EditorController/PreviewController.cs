@@ -985,7 +985,8 @@ public class PreviewController
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     private void openQueryFile(object sender, EventArgs e)
     {
-        System.Diagnostics.Process.Start("notepad", ((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source.Query);
+        TextEditorForm tef = new TextEditorForm(((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source.Query);
+        tef.Show();
     }
 
     /// <summary>
@@ -995,7 +996,6 @@ public class PreviewController
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     private void openSourceFile(object sender, EventArgs e)
     {
-        //System.Diagnostics.Process.Start("notepad", ((FileSource)((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source).Data);
         TextEditorForm tef = new TextEditorForm(((FileSource)((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source).Data);
         tef.Show();
     }
@@ -1007,7 +1007,6 @@ public class PreviewController
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     private void openOptionsFile(object sender, EventArgs e)
     {
-        //System.Diagnostics.Process.Start("notepad", ((Chart)this.ew.CurrentElement).Options);
         TextEditorForm tef = new TextEditorForm(((Chart)this.ew.CurrentElement).Options);
         tef.Show();
     }
@@ -1019,7 +1018,7 @@ public class PreviewController
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     private void openArelScript(object sender, EventArgs e)
     {
-        TextEditorForm tef = new TextEditorForm(((AbstractAugmentation)ew.CurrentElement).CustomUserEventFilePath);
+        TextEditorForm tef = new TextEditorForm(((AbstractAugmentation)ew.CurrentElement).CustomUserEventReference.FilePath);
         tef.Show();
     }
 
