@@ -9,17 +9,27 @@ using System.ComponentModel;
 namespace ARdevKit.Model.Project
 {
     /// <summary>
-    /// Just a class for AbstractAugmentations. With this we are able to List all the customUserEvents. 
-    /// See issue #13 for reason of this class.
+    /// The class CustomUserEvent mainly contains a reference to a
+    /// file, which is in the /currentProject/ Folder. This file has ALL
+    /// Events the user creates (inclusive the template events we provide)
+    /// for ONE augmentation.
     /// </summary>
     [Serializable]
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public class CustomUserEvent
     {
+        /// <summary>
+        /// ID of the augmentation
+        /// </summary>
         private string augmentationID;
         
+        /// <summary>
+        /// File path of the customUserEvents
+        /// </summary>
         private string filePath;
-
+        /// <summary>
+        /// Get the file path for the customUserEvents-File.
+        /// </summary>
         public string FilePath
         {
             get 
@@ -34,16 +44,20 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CustomUserEvent"/> class.
+        /// Constructor of the CustomUserEvent.
         /// </summary>
-        /// <param name="name">The name.</param>
-        /// <param name="content">The content.</param>
+        /// <param name="augmentationID">ID of the augmentation</param>
         public CustomUserEvent(string augmentationID)
         {
             this.augmentationID = augmentationID;
             filePath = "NULL";
         }
 
+        /// <summary>
+        /// Copies the template to the /currentProject/ - Folder
+        /// and renames it.
+        /// </summary>
+        /// <returns>File path of the newly generated customUserEvent.</returns>
         private string getCustomUserFile()
         {
             var fileName = "customUserEventTemplate.txt";

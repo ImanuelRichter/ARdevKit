@@ -59,16 +59,14 @@ namespace ARdevKit.Model.Project
 
         
         /// <summary>
-        /// A list of all customUserEvents the current <see cref="AbstractAugmentation"/> has.
-        /// The user can write a javascript based code for the <see cref="AbstractAugmentation"/>.
+        /// The customUserEvents contains a path to a file, which has
+        /// all user-generated events of this augmentation.
         /// </summary>
         private CustomUserEvent cue;
         /// <summary>
-        /// Get the content of the customUserEvent. Each element in the List represents a line of the code.
+        /// Get the CustomUserEvent.
         /// </summary>
         [Browsable(false)]
-        //[CategoryAttribute("Expert")]
-        //[Editor(typeof(TextEditor), typeof(System.Drawing.Design.UITypeEditor))]
         public CustomUserEvent CustomUserEventReference
         {
             get { return cue; }
