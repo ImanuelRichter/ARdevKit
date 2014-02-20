@@ -20,7 +20,6 @@ namespace ARdevKit
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         private DeviceConnectionController deviceConnectionController;
-
         public DeviceConnectionController DeviceConnectionController
         {
             get { return deviceConnectionController; }
@@ -29,8 +28,8 @@ namespace ARdevKit
 
         public DeviceSelectionWindow()
         {
-            deviceConnectionController = new DeviceConnectionController(this);
             InitializeComponent();
+            deviceConnectionController = new DeviceConnectionController(this);
         }
 
         private void DeviceSelectionWindow_Load(object sender, EventArgs e)
@@ -43,13 +42,35 @@ namespace ARdevKit
 
         }
 
-        private void connectTo_Click(object sender, EventArgs e)
+        private void sendTo_Click(object sender, EventArgs e)
         {
             if (deviceList.Items.Count != 0)
             {
-                if (deviceList.FocusedItem.Index > 0)
+                if ( deviceList.FocusedItem != null && deviceList.FocusedItem.Index >= 0)
                 {
-                    deviceConnectionController.connectTo(0/*deviceList.FocusedItem.Index*/);
+                    try
+                    {
+                            //if (deviceConnectionController.checkAvailability(deviceList.FocusedItem.Index))
+                            //{
+                                if (deviceConnectionController.sendProject(deviceList.FocusedItem.Index))
+                                {
+                                    MessageBox.Show("Das Projekt wurde versand.");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Das Projekt wurde nicht versand.");
+                                }    
+                            //}
+                            //else
+                            //{
+                            //    MessageBox.Show("Es konnte keine Verbindung hergestellt werden");
+                            //}
+                    }
+                    catch (System.Net.Sockets.SocketException)
+                    {
+                        MessageBox.Show("Es wurde keine Verbindung hergestellt, stellen sie sicher, dass kein anderer Prozess diesen Port verwendet.");
+                    }
+
                 }
                 else
                 {
@@ -71,6 +92,11 @@ namespace ARdevKit
             {
                 deviceList.Items.Add(new ListViewItem(device));                
             }
+        }
+
+        private void deviceList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -714,42 +714,43 @@ namespace ARdevKit
 
         public void sendToDevice()
         {
-            try
-            {
-                saveProject();
+            //Controller.ProjectController.ExportVisitor exportToSend = new Controller.ProjectController.ExportVisitor(true);
+            //try
+            //{
+            //    saveProject();
 
-                try
-                {
-                    project.Accept(exportVisitor);
-                }
-                catch (DirectoryNotFoundException de)
-                {
-                    Debug.WriteLine(de.StackTrace);
-                }
-                try
-                {
-                    foreach (AbstractFile file in exportVisitor.Files)
-                    {
-                        file.Save();
-                    }
-                }
-                catch (NullReferenceException ne)
-                {
-                    Debug.WriteLine(ne.StackTrace);
-                }
-            }
-            catch (ArgumentNullException ae)
-            {
-                Debug.WriteLine(ae.StackTrace);
-            }
-            try
-            {
-                deviceSelectionDialog.DeviceConnectionController.sendProject();
-            }
-            catch (Exception)
-            {                
-                throw;
-            }
+            //    try
+            //    {
+            //        project.Accept(exportToSend);
+            //    }
+            //    catch (DirectoryNotFoundException de)
+            //    {
+            //        Debug.WriteLine(de.StackTrace);
+            //    }
+            //    try
+            //    {
+            //        foreach (AbstractFile file in exportToSend.Files)
+            //        {
+            //            file.Save();
+            //        }
+            //        try
+            //        {
+            //            deviceSelectionDialog.DeviceConnectionController.sendProject(index);
+            //        }
+            //        catch (Exception e)
+            //        {
+            //            Debug.WriteLine(e.Message);
+            //        }
+            //    }
+            //    catch (NullReferenceException ne)
+            //    {
+            //        Debug.WriteLine(ne.StackTrace);
+            //    }
+            //}
+            //catch (ArgumentNullException ae)
+            //{
+            //    Debug.WriteLine(ae.StackTrace);
+            //}
         }
 
         public void updateElementSelectionPanel()
@@ -1113,6 +1114,10 @@ namespace ARdevKit
         private void tsm_editor_menu_file_connection_Click(object sender, EventArgs e)
         {
             deviceSelectionDialog.ShowDialog();
+        }
+
+        private void tsm_editor_menu_sendTo_win8Device_Click(object sender, EventArgs e)
+        {
         }
 
     }

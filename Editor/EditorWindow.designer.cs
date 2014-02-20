@@ -70,6 +70,7 @@ namespace ARdevKit
             this.btn_editor_scene_new = new System.Windows.Forms.Button();
             this.pnl_editor_status = new System.Windows.Forms.Panel();
             this.lbl_version = new System.Windows.Forms.Label();
+            this.deviceSelectionComboBox = new System.Windows.Forms.ToolStripComboBox();
             this.mst_editor_menu.SuspendLayout();
             this.pnl_editor_selection.SuspendLayout();
             this.pnl_editor_properties.SuspendLayout();
@@ -105,7 +106,7 @@ namespace ARdevKit
             this.tss_editor_menu_file_connection_exit,
             this.tsm_editor_menu_file_exit});
             this.tsm_editor_menu_file.Name = "tsm_editor_menu_file";
-            this.tsm_editor_menu_file.Size = new System.Drawing.Size(46, 20);
+            this.tsm_editor_menu_file.Size = new System.Drawing.Size(94, 20);
             this.tsm_editor_menu_file.Text = "Datei";
             this.tsm_editor_menu_file.Click += new System.EventHandler(this.tsm_editor_menu_file_Click);
             // 
@@ -166,7 +167,6 @@ namespace ARdevKit
             this.tsm_editor_menu_sendTo_win8Device,
             this.tss_editor_menu_file_sendTo_win8Device_togleDebug,
             this.tsm_editor_menu_file_sendTo_togleDebug});
-            this.tsm_editor_menu_file_sendTo.Enabled = false;
             this.tsm_editor_menu_file_sendTo.Name = "tsm_editor_menu_file_sendTo";
             this.tsm_editor_menu_file_sendTo.Size = new System.Drawing.Size(192, 22);
             this.tsm_editor_menu_file_sendTo.Text = "Senden an...";
@@ -174,9 +174,12 @@ namespace ARdevKit
             // 
             // tsm_editor_menu_sendTo_win8Device
             // 
+            this.tsm_editor_menu_sendTo_win8Device.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deviceSelectionComboBox});
             this.tsm_editor_menu_sendTo_win8Device.Name = "tsm_editor_menu_sendTo_win8Device";
             this.tsm_editor_menu_sendTo_win8Device.Size = new System.Drawing.Size(171, 22);
             this.tsm_editor_menu_sendTo_win8Device.Text = "Windows 8 - Gerät";
+            this.tsm_editor_menu_sendTo_win8Device.Click += new System.EventHandler(this.tsm_editor_menu_sendTo_win8Device_Click);
             // 
             // tss_editor_menu_file_sendTo_win8Device_togleDebug
             // 
@@ -433,6 +436,11 @@ namespace ARdevKit
             this.lbl_version.TabIndex = 0;
             this.lbl_version.Text = "ARdevKit v0.1";
             // 
+            // deviceSelectionComboBox
+            // 
+            this.deviceSelectionComboBox.Name = "deviceSelectionComboBox";
+            this.deviceSelectionComboBox.Size = new System.Drawing.Size(121, 23);
+            // 
             // EditorWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -503,6 +511,7 @@ namespace ARdevKit
         private System.Windows.Forms.Button btn_editor_scene_delete;
         private System.Windows.Forms.PropertyGrid propertyGrid1;
         private System.Windows.Forms.Label lbl_version;
+        private ToolStripComboBox deviceSelectionComboBox;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>

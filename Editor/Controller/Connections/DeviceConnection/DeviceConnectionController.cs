@@ -26,8 +26,6 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
         /// <param name="ew">The ew.</param>
         public DeviceConnectionController(Form window)
         {
-            //System.Net.NetworkInformation.IPGlobalProperties network = System.Net.NetworkInformation.IPGlobalProperties.GetIPGlobalProperties();
-            //System.Net.NetworkInformation.TcpConnectionInformation[] connections = network.GetActiveTcpConnections();
             reportedDevices = new List<IPEndPoint>();
             udpClient = new UdpClient(12345);
             tcpClient = new TcpClient();
@@ -37,7 +35,7 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
             {
                 ((DeviceSelectionWindow)window).DeviceList.Items.Add(new ListViewItem(device));
             }
-        }
+        } 
 
         private void sendBroadcast()
         {
@@ -86,34 +84,203 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
             return result;
         }
 
-        public bool connectTo(int index)
+        public bool checkAvailability(int index)
         {
-            tcpClient.Connect(reportedDevices[index]);
-            tcpClient.GetStream().Write(UTF8Encoding.UTF8.GetBytes("test"),0 , UTF8Encoding.UTF8.GetByteCount("test"));
-            byte[] response = new byte[1024];
-            tcpClient.GetStream().Read(response, 0, response.Length);
-            return UTF8Encoding.UTF8.GetString(response).Equals("OK");
+            try
+            {
+                if (tcpClient.Connected)
+                {
+                    tcpClient.Close();
+                    tcpClient = new TcpClient();
+                }
+                tcpClient.Connect(reportedDevices[index]);
+                tcpClient.GetStream().Write(UTF8Encoding.UTF8.GetBytes("connect"), 0, UTF8Encoding.UTF8.GetByteCount("connect"));
+                while (!tcpClient.GetStream().DataAvailable)
+                {
+                    Thread.Sleep(20);
+                }
+                byte[] response = new byte[tcpClient.Available];
+                tcpClient.GetStream().Read(response, 0, response.Length);
+                return UTF8Encoding.UTF8.GetString(response).Equals("OK");
+            }
+            catch (SocketException se)
+            {
+                throw se;
+            }
+            finally
+            {
+                tcpClient.Close();
+                tcpClient = new TcpClient();
+            }
         }
 
-        /// <summary>
-        /// Sends the project to the Device, which is chosen through connectToDevice() method, but could be easily changed to send to 
-        /// any chosen Device in the List.
-        /// </summary>
-        /// <exception cref="System.Exception">
-        /// </exception>
-        public bool sendProject()
+        public bool sendProject(int index)
         {
-            if(!tcpClient.Connected)
+            try
             {
-                throw new Exception("you have to connect to a device first");
+                TcpClient sender = new TcpClient(reportedDevices[index].Address.ToString(), 12345);
+                FileInfo project = new FileInfo("currentProject.zip");
+                byte[] size = new byte[4];
+                size = BitConverter.GetBytes(project.Length);
+                if (!BitConverter.IsLittleEndian)
+                {
+                    size.Reverse();
+                }
+
+                NetworkStream sendStream = sender.GetStream();
+                sendStream.Write(size, 0, 4);
+                //int i;
+                //for (i = 0; i < project.Length; i += 1024)
+                //{
+                //    sendStream.Write(project, i, 1024);
+                //}
+                //i -= 1024;
+                //sendStream.Write(project, i, project.Length - i);
+                byte[] buffer = new byte[64000];
+                FileStream stream = File.OpenRead(project.FullName);
+                int current = 0, all = 0;
+                sender.SendBufferSize = (int)project.Length;
+                while (all < project.Length)
+                {
+                    current = stream.Read(buffer, 0, buffer.Length);
+                    sendStream.Write(buffer, 0, current);
+                    all += current;
+                }
+                sendStream.ReadTimeout = 10000;
+                byte[] response = new byte[2];
+                if (sendStream.Read(response, 0, response.Length) == 2)
+                {
+                    if (ASCIIEncoding.ASCII.GetString(response).Contains("OK"))
+                    {
+                        return true;
+                    }
+                }
             }
-            ZipFile.CreateFromDirectory("currentProject", "currentProject.zip");
-            byte[] file = File.ReadAllBytes("currentProject.zip");
-            byte[] response = new byte[1024];
-            tcpClient.GetStream().Write(file, 0, file.Length);
-            tcpClient.GetStream().Read(response, 0, response.Length);
-            return UTF8Encoding.UTF8.GetString(response).Equals("OK");
+            catch (Exception ex)
+            {
+                Console.WriteLine("Fehler: {0}, mit Meldung: {1}", ex.StackTrace, ex.Message);
+                return false;
+            }
+            return false;
+            //if (tcpClient.Connected)
+            //{
+            //    tcpClient.Close();
+            //    tcpClient = new TcpClient(); 
+            //}
+            //if (File.Exists("currentProject.zip"))
+            //{
+            //    File.Delete("currentProject.zip");
+            //}
+            //ZipFile.CreateFromDirectory("currentProject", "currentProject.zip");
+            //byte[] file = File.ReadAllBytes("currentProject.zip");
+            //byte[] fileSize = BitConverter.GetBytes(file.Length);
+            //byte[] response = new byte[2];
+            //byte[] expected = ASCIIEncoding.ASCII.GetBytes("OK");
+
+            //tcpClient.Connect(reportedDevices[index]);
+            //tcpClient.Client.SendFile("currentProject.zip");
+            //NetworkStream sendProjectStream = tcpClient.GetStream();
+
+            // send Project message as a header
+            //sendProjectStream.Write(ASCIIEncoding.ASCII.GetBytes("project/n"), 0, ASCIIEncoding.ASCII.GetByteCount("project/n"));
+            
+            //while(tcpClient.Available < 2 && tcpClient.Connected)
+            //{
+            //    Thread.Sleep(3000);
+            //}
+            //sendProjectStream.Read(response, 0, 2);
+            //if (response[0] != expected[0] || response[1] != expected[1])
+            //{
+            //    throw new TimeoutException("Command could not be send.");
+            //}
+
+            //send Filesize in the header
+            //sendProjectStream.Write(fileSize, 0, 4);
+            
+            //while (tcpClient.Available < 2 && tcpClient.Connected)
+            //{
+            //    Thread.Sleep(3000);
+            //}
+            //sendProjectStream.Read(response, 0, 2);
+            //if (response[0] != expected[0] || response[1] != expected[1])
+            //{
+            //    throw new TimeoutException("Filesize could not be send.");
+            //}
+
+            //tcpClient.SendBufferSize = file.Length;
+            //send File
+            //sendProjectStream.Write(file, 0, file.Length);
+
+            //while (tcpClient.Available < 2 && tcpClient.Connected)
+            //{
+            //    Thread.Sleep(3000);
+            //}
+            //sendProjectStream.Read(response, 0, 2);
+            //if (response[0] != expected[0] || response[1] != expected[1])
+            //{
+            //    throw new TimeoutException("File could not be send.");
+            //}
+
+            //tcpClient.GetStream().Flush();
+            //return true;
         }
+
+        //public bool connectTo(int index)
+        //{
+        //    try
+        //    {
+        //        if(tcpClient.Connected)
+        //        {
+        //            tcpClient.Close();
+        //            tcpClient = new TcpClient();
+        //        }
+        //        tcpClient.Connect(reportedDevices[index]);
+        //        tcpClient.GetStream().Write(UTF8Encoding.UTF8.GetBytes("connect"), 0, UTF8Encoding.UTF8.GetByteCount("connect"));
+        //        while(!tcpClient.GetStream().DataAvailable)
+        //        {
+        //            Thread.Sleep(20);
+        //        }
+        //        byte[] response = new byte[tcpClient.Available];
+        //        tcpClient.GetStream().Read(response, 0, response.Length);
+        //        return UTF8Encoding.UTF8.GetString(response).Equals("OK");
+        //    }
+        //    catch (SocketException se)
+        //    {
+        //        throw se;
+        //    }
+            
+        //}
+
+        ///// <summary>
+        ///// Sends the project to the Device, which is chosen through connectToDevice() method, but could be easily changed to send to 
+        ///// any chosen Device in the List.
+        ///// </summary>
+        ///// <exception cref="System.Exception">
+        ///// </exception>
+        //public bool sendProject()
+        //{
+        //    if(!tcpClient.Connected)
+        //    {
+        //        throw new Exception("you have to connect to a device first");
+        //    }
+        //    if(File.Exists("currentProject.zip"))
+        //    {
+        //        File.Delete("currentProject.zip");
+        //    }
+        //    ZipFile.CreateFromDirectory("currentProject", "currentProject.zip");
+        //    byte[] file = File.ReadAllBytes("currentProject.zip");
+        //    tcpClient.GetStream().Write(UTF8Encoding.UTF8.GetBytes("project"), 0, UTF8Encoding.UTF8.GetByteCount("project"));
+        //    byte[] fileSize = BitConverter.GetBytes(file.Length);
+        //    tcpClient.GetStream().Write(fileSize, 0, 4);
+        //    tcpClient.GetStream().Write(file, 0, file.Length);
+        //    while (!tcpClient.GetStream().DataAvailable)
+        //    {
+        //        Thread.Sleep(20);
+        //    }
+        //    byte[] response = new byte[tcpClient.Available];
+        //    tcpClient.GetStream().Read(response, 0, response.Length);
+        //    return UTF8Encoding.UTF8.GetString(response).Equals("OK");
+        //}
 
 //public void StartListen()
 //{

@@ -37,7 +37,7 @@
             this.detectedDevices = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.connectTo = new System.Windows.Forms.Button();
+            this.sendTo = new System.Windows.Forms.Button();
             this.refresh = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -53,10 +53,12 @@
             this.deviceList.TabIndex = 0;
             this.deviceList.UseCompatibleStateImageBehavior = false;
             this.deviceList.View = System.Windows.Forms.View.List;
+            this.deviceList.SelectedIndexChanged += new System.EventHandler(this.deviceList_SelectedIndexChanged);
             // 
             // detectedDevices
             // 
             this.detectedDevices.Text = "erkannte Geräte";
+            this.detectedDevices.Width = -2;
             // 
             // tableLayoutPanel1
             // 
@@ -78,7 +80,7 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 93.38422F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.615776F));
-            this.tableLayoutPanel2.Controls.Add(this.connectTo, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.sendTo, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.refresh, 1, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 377);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -87,15 +89,15 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(786, 48);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
-            // connectTo
+            // sendTo
             // 
-            this.connectTo.Location = new System.Drawing.Point(3, 3);
-            this.connectTo.Name = "connectTo";
-            this.connectTo.Size = new System.Drawing.Size(201, 42);
-            this.connectTo.TabIndex = 0;
-            this.connectTo.Text = "mit Gerät verbinden";
-            this.connectTo.UseVisualStyleBackColor = true;
-            this.connectTo.Click += new System.EventHandler(this.connectTo_Click);
+            this.sendTo.Location = new System.Drawing.Point(3, 3);
+            this.sendTo.Name = "sendTo";
+            this.sendTo.Size = new System.Drawing.Size(201, 42);
+            this.sendTo.TabIndex = 0;
+            this.sendTo.Text = "an Gerät senden";
+            this.sendTo.UseVisualStyleBackColor = true;
+            this.sendTo.Click += new System.EventHandler(this.sendTo_Click);
             // 
             // refresh
             // 
@@ -129,7 +131,7 @@
         private System.Windows.Forms.ColumnHeader detectedDevices;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Button connectTo;
+        private System.Windows.Forms.Button sendTo;
         private System.Windows.Forms.Button refresh;
     }
 }
