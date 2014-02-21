@@ -1,8 +1,12 @@
 ﻿using ARdevKit.Controller.ProjectController;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -296,6 +300,76 @@ namespace ARdevKit.Model.Project
             }
 
             return false;
+        }
+
+
+        /// <summary>
+        /// Gets the checksum of the project lying at the project path.
+        /// </summary>
+        /// <returns></returns>
+        /// <remarks>geht 20.02.2014 13:36</remarks>
+        public string getChecksum()
+        {
+           try
+            {
+                using (MD5 md5 = MD5.Create())
+                {
+                        // Create a new Stringbuilder to collect the bytes 
+                        // and create a string.
+                        StringBuilder sBuilder = new StringBuilder();
+
+                        byte[] data = md5.ComputeHash(ObjectToByteArray(this));
+
+                        // Loop through each byte of the hashed data  
+                        // and format each one as a hexadecimal string. 
+                        for (int i = 0; i < data.Length; i++)
+                        {
+                            sBuilder.Append(data[i].ToString("x2"));
+                        }
+
+                        // Return the hexadecimal string. 
+                        return sBuilder.ToString();
+                }
+            }
+            catch (FileNotFoundException e)
+            {
+                Debug.WriteLine(ProjectPath + "\\" + Name + ".ardev" + " not found");
+                Debug.WriteLine(e.StackTrace);
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// The locker. A little helper needed for the checksum creation.
+        /// </summary>
+        /// <remarks>geht 20.02.2014 14:10</remarks>
+        private static readonly Object locker = new Object();
+
+        private static byte[] ObjectToByteArray(Object objectToSerialize)
+        {
+            MemoryStream fs = new MemoryStream();
+            BinaryFormatter formatter = new BinaryFormatter();
+            try
+            {
+                //Here's the core functionality! One Line!
+                //To be thread-safe we lock the object
+                lock (locker)
+                {
+                    formatter.Serialize(fs, objectToSerialize);
+                }
+                return fs.ToArray();
+            }
+            catch (SerializationException se)
+            {
+                Console.WriteLine("Error occurred during serialization. Message: " +
+                se.Message);
+                return null;
+            }
+            finally
+            {
+                fs.Close();
+            }
         }
     }
 
