@@ -198,15 +198,7 @@ namespace ARdevKit
         /// </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        //private DeviceConnectionController deviceConnectionController;
-
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// The device selection window.
-        /// </summary>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        private DeviceSelectionWindow deviceSelectionDialog;
+        private DeviceConnectionController deviceConnectionController;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
@@ -289,8 +281,6 @@ namespace ARdevKit
         public EditorWindow()
         {
             InitializeComponent();
-            deviceSelectionDialog = new DeviceSelectionWindow();
-            deviceSelectionDialog.Hide();
             createNewProject("");
         }
 
@@ -544,11 +534,6 @@ namespace ARdevKit
         private void tsm_editor_menu_file_open_Click(object sender, System.EventArgs e)
         {
             throw new System.NotImplementedException();
-        }
-
-        public void addDevice()
-        {
-            
         }
 
         public void createNewProject(String name)
@@ -935,16 +920,7 @@ namespace ARdevKit
 
             this.previewController = new PreviewController(this);
             this.propertyController = new PropertyController(this);
-
-            try
-            {
-                //this.deviceConnectionController = new DeviceConnectionController(this);
-            }
-            catch (Exception)
-            {
-
-                Debug.WriteLine("DeviceConnectionController is not implemented yet...");
-            }
+            this.deviceConnectionController = new DeviceConnectionController(this);
         }
 
         private void initializeEmptyProject(String projectname)
@@ -1106,18 +1082,20 @@ namespace ARdevKit
 
         }
 
-        private void tsm_editor_menu_file_sendTo_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void tsm_editor_menu_file_connection_Click(object sender, EventArgs e)
         {
-            deviceSelectionDialog.ShowDialog();
+            
         }
 
-        private void tsm_editor_menu_sendTo_win8Device_Click(object sender, EventArgs e)
+        private void refreshDeviceList_Click(object sender, EventArgs e)
         {
+            DeviceList.Items.Clear();
+            deviceConnectionController.refresh();
+            List<string> devices = deviceConnectionController.getReportedDevices();
+            foreach (string device in devices)
+            {
+                DeviceList.Items.Add(new ListViewItem(device));
+            }
         }
 
     }

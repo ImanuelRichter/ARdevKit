@@ -50,21 +50,14 @@ namespace ARdevKit
                 {
                     try
                     {
-                            //if (deviceConnectionController.checkAvailability(deviceList.FocusedItem.Index))
-                            //{
-                                if (deviceConnectionController.sendProject(deviceList.FocusedItem.Index))
-                                {
-                                    MessageBox.Show("Das Projekt wurde versand.");
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Das Projekt wurde nicht versand.");
-                                }    
-                            //}
-                            //else
-                            //{
-                            //    MessageBox.Show("Es konnte keine Verbindung hergestellt werden");
-                            //}
+                            if (deviceConnectionController.sendProject(deviceList.FocusedItem.Index))
+                            {
+                                MessageBox.Show("Das Projekt wurde versand.");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Das Projekt wurde nicht versand.");
+                            }    
                     }
                     catch (System.Net.Sockets.SocketException)
                     {

@@ -39,10 +39,6 @@ namespace ARdevKit
             this.tsm_editor_menu_file_saveAs = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_editor_menu_file_export = new System.Windows.Forms.ToolStripMenuItem();
             this.tss_editor_menu_file_export_sendTo = new System.Windows.Forms.ToolStripSeparator();
-            this.tsm_editor_menu_file_sendTo = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsm_editor_menu_sendTo_win8Device = new System.Windows.Forms.ToolStripMenuItem();
-            this.tss_editor_menu_file_sendTo_win8Device_togleDebug = new System.Windows.Forms.ToolStripSeparator();
-            this.tsm_editor_menu_file_sendTo_togleDebug = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_editor_menu_file_connection = new System.Windows.Forms.ToolStripMenuItem();
             this.tss_editor_menu_file_connection_exit = new System.Windows.Forms.ToolStripSeparator();
             this.tsm_editor_menu_file_exit = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,7 +66,12 @@ namespace ARdevKit
             this.btn_editor_scene_new = new System.Windows.Forms.Button();
             this.pnl_editor_status = new System.Windows.Forms.Panel();
             this.lbl_version = new System.Windows.Forms.Label();
-            this.deviceSelectionComboBox = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.DeviceList = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.sendProject = new System.Windows.Forms.ToolStripMenuItem();
+            this.refreshDeviceList = new System.Windows.Forms.ToolStripMenuItem();
+            this.DeviceDebug = new System.Windows.Forms.ToolStripMenuItem();
             this.mst_editor_menu.SuspendLayout();
             this.pnl_editor_selection.SuspendLayout();
             this.pnl_editor_properties.SuspendLayout();
@@ -101,12 +102,12 @@ namespace ARdevKit
             this.tsm_editor_menu_file_saveAs,
             this.tsm_editor_menu_file_export,
             this.tss_editor_menu_file_export_sendTo,
-            this.tsm_editor_menu_file_sendTo,
+            this.toolStripMenuItem1,
             this.tsm_editor_menu_file_connection,
             this.tss_editor_menu_file_connection_exit,
             this.tsm_editor_menu_file_exit});
             this.tsm_editor_menu_file.Name = "tsm_editor_menu_file";
-            this.tsm_editor_menu_file.Size = new System.Drawing.Size(94, 20);
+            this.tsm_editor_menu_file.Size = new System.Drawing.Size(46, 20);
             this.tsm_editor_menu_file.Text = "Datei";
             this.tsm_editor_menu_file.Click += new System.EventHandler(this.tsm_editor_menu_file_Click);
             // 
@@ -160,38 +161,6 @@ namespace ARdevKit
             // 
             this.tss_editor_menu_file_export_sendTo.Name = "tss_editor_menu_file_export_sendTo";
             this.tss_editor_menu_file_export_sendTo.Size = new System.Drawing.Size(189, 6);
-            // 
-            // tsm_editor_menu_file_sendTo
-            // 
-            this.tsm_editor_menu_file_sendTo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsm_editor_menu_sendTo_win8Device,
-            this.tss_editor_menu_file_sendTo_win8Device_togleDebug,
-            this.tsm_editor_menu_file_sendTo_togleDebug});
-            this.tsm_editor_menu_file_sendTo.Name = "tsm_editor_menu_file_sendTo";
-            this.tsm_editor_menu_file_sendTo.Size = new System.Drawing.Size(192, 22);
-            this.tsm_editor_menu_file_sendTo.Text = "Senden an...";
-            this.tsm_editor_menu_file_sendTo.Click += new System.EventHandler(this.tsm_editor_menu_file_sendTo_Click);
-            // 
-            // tsm_editor_menu_sendTo_win8Device
-            // 
-            this.tsm_editor_menu_sendTo_win8Device.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.deviceSelectionComboBox});
-            this.tsm_editor_menu_sendTo_win8Device.Name = "tsm_editor_menu_sendTo_win8Device";
-            this.tsm_editor_menu_sendTo_win8Device.Size = new System.Drawing.Size(171, 22);
-            this.tsm_editor_menu_sendTo_win8Device.Text = "Windows 8 - Gerät";
-            this.tsm_editor_menu_sendTo_win8Device.Click += new System.EventHandler(this.tsm_editor_menu_sendTo_win8Device_Click);
-            // 
-            // tss_editor_menu_file_sendTo_win8Device_togleDebug
-            // 
-            this.tss_editor_menu_file_sendTo_win8Device_togleDebug.Name = "tss_editor_menu_file_sendTo_win8Device_togleDebug";
-            this.tss_editor_menu_file_sendTo_win8Device_togleDebug.Size = new System.Drawing.Size(168, 6);
-            // 
-            // tsm_editor_menu_file_sendTo_togleDebug
-            // 
-            this.tsm_editor_menu_file_sendTo_togleDebug.CheckOnClick = true;
-            this.tsm_editor_menu_file_sendTo_togleDebug.Name = "tsm_editor_menu_file_sendTo_togleDebug";
-            this.tsm_editor_menu_file_sendTo_togleDebug.Size = new System.Drawing.Size(171, 22);
-            this.tsm_editor_menu_file_sendTo_togleDebug.Text = "Debug";
             // 
             // tsm_editor_menu_file_connection
             // 
@@ -436,10 +405,46 @@ namespace ARdevKit
             this.lbl_version.TabIndex = 0;
             this.lbl_version.Text = "ARdevKit v0.1";
             // 
-            // deviceSelectionComboBox
+            // toolStripMenuItem1
             // 
-            this.deviceSelectionComboBox.Name = "deviceSelectionComboBox";
-            this.deviceSelectionComboBox.Size = new System.Drawing.Size(121, 23);
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.DeviceList,
+            this.refreshDeviceList,
+            this.toolStripSeparator2,
+            this.sendProject,
+            this.DeviceDebug});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(192, 22);
+            this.toolStripMenuItem1.Text = "Projekt versenden";
+            // 
+            // DeviceList
+            // 
+            this.DeviceList.Name = "DeviceList";
+            this.DeviceList.Size = new System.Drawing.Size(150, 23);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(215, 6);
+            // 
+            // sendProject
+            // 
+            this.sendProject.Name = "sendProject";
+            this.sendProject.Size = new System.Drawing.Size(218, 22);
+            this.sendProject.Text = "Projekt an Gerät senden";
+            // 
+            // refreshDeviceList
+            // 
+            this.refreshDeviceList.Name = "refreshDeviceList";
+            this.refreshDeviceList.Size = new System.Drawing.Size(218, 22);
+            this.refreshDeviceList.Text = "Liste akualisieren";
+            this.refreshDeviceList.Click += new System.EventHandler(this.refreshDeviceList_Click);
+            // 
+            // DeviceDebug
+            // 
+            this.DeviceDebug.Name = "DeviceDebug";
+            this.DeviceDebug.Size = new System.Drawing.Size(218, 22);
+            this.DeviceDebug.Text = "Gerätedebugmodus starten";
             // 
             // EditorWindow
             // 
@@ -477,7 +482,6 @@ namespace ARdevKit
         private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_file_open;
         private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_file_save;
         private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_file_saveAs;
-        private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_file_sendTo;
         private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_file_export;
         private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_file_connection;
         private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_file_exit;
@@ -488,9 +492,6 @@ namespace ARdevKit
         private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_help;
         private System.Windows.Forms.ToolStripSeparator tss_editor_menu_file_opnen_save;
         private System.Windows.Forms.ToolStripSeparator tss_editor_menu_file_export_sendTo;
-        private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_sendTo_win8Device;
-        private System.Windows.Forms.ToolStripSeparator tss_editor_menu_file_sendTo_win8Device_togleDebug;
-        private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_file_sendTo_togleDebug;
         private System.Windows.Forms.ToolStripSeparator tss_editor_menu_file_connection_exit;
         private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_edit_copie;
         private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_edit_paste;
@@ -511,7 +512,12 @@ namespace ARdevKit
         private System.Windows.Forms.Button btn_editor_scene_delete;
         private System.Windows.Forms.PropertyGrid propertyGrid1;
         private System.Windows.Forms.Label lbl_version;
-        private ToolStripComboBox deviceSelectionComboBox;
+        private ToolStripMenuItem toolStripMenuItem1;
+        private ToolStripComboBox DeviceList;
+        private ToolStripMenuItem refreshDeviceList;
+        private ToolStripSeparator toolStripSeparator2;
+        private ToolStripMenuItem sendProject;
+        private ToolStripMenuItem DeviceDebug;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>

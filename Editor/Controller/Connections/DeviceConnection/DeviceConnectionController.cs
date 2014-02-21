@@ -15,6 +15,13 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
     public class DeviceConnectionController
     {
         private List<IPEndPoint> reportedDevices;
+
+        public List<IPEndPoint> ReportedDevices
+        {
+            get { return reportedDevices;}
+            set {reportedDevices = value;}
+        }
+
         private UdpClient udpClient;
         private TcpClient tcpClient;
 
@@ -101,7 +108,7 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
                 }
                 byte[] response = new byte[tcpClient.Available];
                 tcpClient.GetStream().Read(response, 0, response.Length);
-                return UTF8Encoding.UTF8.GetString(response).Equals("OK");
+                return ASCIIEncoding.ASCII.GetString(response).Equals("OK");
             }
             catch (SocketException se)
             {
@@ -128,6 +135,9 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
                 }
 
                 NetworkStream sendStream = sender.GetStream();
+
+                sendStream.Write(ASCIIEncoding.ASCII.GetBytes("project\n"), 0,  ASCIIEncoding.ASCII.GetByteCount("project\n"));
+                
                 sendStream.Write(size, 0, 4);
                 //int i;
                 //for (i = 0; i < project.Length; i += 1024)
