@@ -61,7 +61,7 @@ namespace ARdevKit.Model.Project
         private string getCustomUserFile()
         {
             var fileName = "customUserEventTemplate.txt";
-            var endFileName = augmentationID + "customUserEvent.txt";
+            var endFileName = augmentationID + "customUserEvent.js";
 
             if (System.IO.File.Exists(@"currentProject\" + endFileName))
                 System.IO.File.Delete(@"currentProject\" + endFileName);
