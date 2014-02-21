@@ -69,6 +69,10 @@
       <HintPath>..\bin\Debug\AForge.Video.FFMPEG.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="NReco.VideoConverter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\Debug\NReco.VideoConverter.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
@@ -86,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\EditorController\ObjectCopier.cs" />
+    <Compile Include="Controller\EditorController\ThumbCreator.cs" />
     <Compile Include="Controller\TestController\ProcessVideoWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +166,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="TextEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TextEditorForm.Designer.cs">
+      <DependentUpon>TextEditorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\AbstractProperty.cs" />
     <Compile Include="View\ElementIcon.cs">
       <SubType>Component</SubType>
@@ -187,6 +198,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="TextEditorForm.resx">
+      <DependentUpon>TextEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Slider.resx">
       <DependentUpon>Slider.cs</DependentUpon>
     </EmbeddedResource>
@@ -209,6 +223,8 @@
     <Content Include="ARdevKit.ico" />
     <Content Include="Controller\Connections\DeviceConnection\foo.txt" />
     <Content Include="Controller\DebugController\foo.txt" />
+    <None Include="Resources\customUserEventTemplate.txt" />
+    <None Include="Resources\Image1.bmp" />
     <None Include="Resources\highcharts%28normal%29.png" />
     <None Include="Resources\db_small.bmp" />
     <None Include="Resources\database.bmp" />

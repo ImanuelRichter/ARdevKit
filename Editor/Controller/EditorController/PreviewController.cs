@@ -94,51 +94,30 @@ public class PreviewController
                 center.X = panel.Size.Width / 2;
 
                 //ask the user for the picture (if the trackable is a picturemarker)
-                bool isInitOk = true;
-                if (currentElement is PictureMarker || currentElement is ImageTrackable)
+                bool isInitOk = currentElement.initElement(ew);
+                if (!isInitOk)
                 {
-                    OpenFileDialog openFileDialog = new OpenFileDialog();
-                    openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
-                    openFileDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
-                    isInitOk = openFileDialog.ShowDialog() == DialogResult.OK;
-                    if (isInitOk)
-                    {
-                        string path = openFileDialog.FileName;
-                        if (currentElement is PictureMarker)
-                        {
-                            ((PictureMarker)currentElement).PicturePath = path;
-                        }
-                        if (currentElement is ImageTrackable)
-                        {
-                            ((ImageTrackable)currentElement).ImagePath = path;
-                        }
-                    }
-                    else
-                    {
-                        break;
-                    }
+                    break;
                 }
                 if (isInitOk)
                 {
                     //set the vector to the trackable
                     ((AbstractTrackable)currentElement).vector = center;
 
-                    if (this.ew.project.existTrackable(currentElement) && currentElement is IDMarker)
-                    {
-                        ((IDMarker)currentElement).MatrixID = this.ew.project.nextID();
-                    }
-
                     if (!this.ew.project.existTrackable(currentElement))
                     {
-                        this.ew.ElementSelectionController.setElementEnable(typeof(PictureMarker), false);
-                        this.ew.ElementSelectionController.setElementEnable(typeof(ImageTrackable), false);
-                        this.ew.ElementSelectionController.setElementEnable(typeof(IDMarker), false);
+                        //diables all trackable elements excepted the on that was added.
+                        foreach (SceneElementCategory c in this.ew.ElementCategories)
+                        {
+                            if (c.Name == "Trackables")
+                            {
+                                foreach (SceneElement e in c.SceneElements)
+                                {
+                                    this.ew.ElementSelectionController.setElementEnable(e.Prototype.GetType(), false);
+                                }
+                            }
+                        }
                         this.ew.ElementSelectionController.setElementEnable(currentElement.GetType(), true);
-
-                        if (currentElement is ImageTrackable)
-                            this.ew.project.Sensor = new MarkerlessSensor();
-                        else
-                            this.ew.project.Sensor = new MarkerSensor();
 
                         this.trackable = (AbstractTrackable)currentElement;
                         this.ew.project.Trackables[index] = (AbstractTrackable)currentElement;
@@ -148,93 +127,13 @@ public class PreviewController
                         ew.PropertyGrid1.SelectedObject = currentElement;
                         break;
                     }
-
-
                 }
             }
         }
         else if (currentElement is AbstractAugmentation && trackable != null && this.ew.project.Trackables[index].Augmentations.Count < 3)
         {
-            OpenFileDialog openFileDialog = null;
-
-            if (currentElement is ImageAugmentation)
-            {
-                if (((ImageAugmentation)currentElement).ImagePath == null)
-                {
-                    openFileDialog = new OpenFileDialog();
-                    openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
-                    openFileDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
-                    if (openFileDialog.ShowDialog() == DialogResult.OK)
-                    {
-                        ((ImageAugmentation)currentElement).ImagePath = openFileDialog.FileName;
-                        //set references 
-                        trackable.Augmentations.Add((AbstractAugmentation)currentElement);
-
-                        this.addPictureBox(currentElement, v);
-
-                        //set the vector and the trackable in <see cref="AbstractAugmentation"/>
-                        this.setCoordinates(currentElement, v);
-                        ((AbstractAugmentation)currentElement).Trackable = this.trackable;
-
-                        //set the new box to the front
-                        this.findBox(currentElement).BringToFront();
-                        setCurrentElement(currentElement);
-                    }
-                }
-                else
-                {
-                    //set references 
-                    trackable.Augmentations.Add((AbstractAugmentation)currentElement);
-
-                    this.addPictureBox(currentElement, v);
-
-                    //set the vector and the trackable in <see cref="AbstractAugmentation"/>
-                    this.setCoordinates(currentElement, v);
-                    ((AbstractAugmentation)currentElement).Trackable = this.trackable;
-
-                    //set the new box to the front
-                    this.findBox(currentElement).BringToFront();
-                    setCurrentElement(currentElement);
-                }
-            }
-            else if (currentElement is Chart)
-            {
-                if (((Chart)currentElement).Options == null)
-                {
-                    openFileDialog = new OpenFileDialog();
-                    openFileDialog.InitialDirectory = Application.StartupPath + "\\res\\highcharts\\barChartColumn";
-                    openFileDialog.Filter = "json (*.json)|*.json";
-                    if (openFileDialog.ShowDialog() == DialogResult.OK)
-                    {
-                        ((Chart)currentElement).Options = openFileDialog.FileName;
-                        //set references 
-                        trackable.Augmentations.Add((AbstractAugmentation)currentElement);
-
-                        this.addPictureBox(currentElement, v);
-
-                        //set the vector and the trackable in <see cref="AbstractAugmentation"/>
-                        this.setCoordinates(currentElement, v);
-                        ((AbstractAugmentation)currentElement).Trackable = this.trackable;
-
-                        setCurrentElement(currentElement);
-                    }
-                }
-                else
-                {
-                    //set references 
-                    trackable.Augmentations.Add((AbstractAugmentation)currentElement);
-
-                    this.addPictureBox(currentElement, v);
-
-                    //set the vector and the trackable in <see cref="AbstractAugmentation"/>
-                    this.setCoordinates(currentElement, v);
-                    ((AbstractAugmentation)currentElement).Trackable = this.trackable;
-
-                    setCurrentElement(currentElement);
-                }
-
-            }
-            else
+            bool isInitOk = currentElement.initElement(ew);
+            if (isInitOk)
             {
                 //set references 
                 trackable.Augmentations.Add((AbstractAugmentation)currentElement);
@@ -245,6 +144,8 @@ public class PreviewController
                 this.setCoordinates(currentElement, v);
                 ((AbstractAugmentation)currentElement).Trackable = this.trackable;
 
+                //set the new box to the front
+                this.findBox(currentElement).BringToFront();
                 setCurrentElement(currentElement);
             }
         }
@@ -478,8 +379,9 @@ public class PreviewController
             cm.MenuItems.Add("kopieren", new EventHandler(this.copy_augmentation));
             if (prev is Chart)
             {
-                cm.MenuItems.Add("Optionen öffnen", new EventHandler(this.openOptionsFile));
+                cm.MenuItems.Add("Öffne Optionen", new EventHandler(this.openOptionsFile));
             }
+            cm.MenuItems.Add("Öffne AREL Script", new EventHandler(this.openArelScript));
         }
         tempBox.MouseClick += new MouseEventHandler(selectElement);
         cm.MenuItems.Add("löschen", new EventHandler(this.remove_by_click));
@@ -680,7 +582,16 @@ public class PreviewController
             {
                 if (((AbstractAugmentation)prev).Scaling.X != 0)
                 {
-                    box.Size = new Size((int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.Y));
+                    if (width > height)
+                    {
+                        sideScale = scalex / scaley;
+                        box.Size = new Size((int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X * sideScale), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.Y));
+                    }
+                    else if (width <= height)
+                    {
+                        sideScale = scaley / scalex;
+                        box.Size = new Size((int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.Y * sideScale));
+                    }
                 }
                 else
                 {
@@ -688,13 +599,13 @@ public class PreviewController
                     {
                         sideScale = scalex / scaley;
                         box.Size = new Size((int)(scale * 100 * sideScale), (int)(scale * 100));
-                        ((AbstractAugmentation)prev).Scaling = new Vector3D(sideScale, 1, 1);
+                        ((AbstractAugmentation)prev).Scaling = new Vector3D(1, 1, 1);
                     }
                     else if (width <= height)
                     {
                         sideScale = scaley / scalex;
                         box.Size = new Size((int)(scale * 100), (int)(scale * 100 * sideScale));
-                        ((AbstractAugmentation)prev).Scaling = new Vector3D(1, sideScale, 1);
+                        ((AbstractAugmentation)prev).Scaling = new Vector3D(1, 1, 1);
                     }
                 }
             }
@@ -702,8 +613,9 @@ public class PreviewController
             {
                 box.Size = new Size((int)(((Chart)prev).Width * scale), (int)(((Chart)prev).Height * scale));
             }
-           
+
         }
+        box.SizeMode = PictureBoxSizeMode.StretchImage;
     }
 
     /// <summary>
@@ -713,6 +625,7 @@ public class PreviewController
     {
         IPreviewable prev = this.ew.CurrentElement;
         PictureBox box = this.findBox(prev);
+        
 
         double scale = 100 / (double)((Abstract2DTrackable)this.trackable).Size;
 
@@ -720,13 +633,24 @@ public class PreviewController
         {
             if (prev is ImageAugmentation)
             {
-                box.Size = new Size((int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale), (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale));
-            }
+                if (prev.getPreview().Width > prev.getPreview().Height)
+                {
+                    double sideScale = (double)prev.getPreview().Width / (double)prev.getPreview().Height;
+                    box.Size = new Size((int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale * sideScale), (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale));
+                }
+                else if (prev.getPreview().Width < prev.getPreview().Height)
+                {
+                    double sideScale = (double)prev.getPreview().Height / (double)prev.getPreview().Width;
+                    box.Size = new Size((int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale), (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale * sideScale));
+                }
+            
+        }
             else if (prev is Chart)
             {
                 box.Size = new Size((int)(((Chart)prev).Width * scale), (int)(((Chart)prev).Height * scale));
             }
         }
+        box.SizeMode = PictureBoxSizeMode.StretchImage;
         box.Refresh();
     }
 
@@ -984,7 +908,8 @@ public class PreviewController
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     private void openQueryFile(object sender, EventArgs e)
     {
-        System.Diagnostics.Process.Start("notepad", ((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source.Query);
+        TextEditorForm tef = new TextEditorForm(((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source.Query);
+        tef.Show();
     }
 
     /// <summary>
@@ -994,7 +919,8 @@ public class PreviewController
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     private void openSourceFile(object sender, EventArgs e)
     {
-        System.Diagnostics.Process.Start("notepad", ((FileSource)((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source).Data);
+        TextEditorForm tef = new TextEditorForm(((FileSource)((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source).Data);
+        tef.Show();
     }
 
     /// <summary>
@@ -1004,8 +930,18 @@ public class PreviewController
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     private void openOptionsFile(object sender, EventArgs e)
     {
-        System.Diagnostics.Process.Start("notepad", ((Chart)this.ew.CurrentElement).Options);
+        TextEditorForm tef = new TextEditorForm(((Chart)this.ew.CurrentElement).Options);
+        tef.Show();
     }
 
-
+    /// <summary>
+    /// EventHandle to open the AREL (customUserEvent) Script in the TextEditor
+    /// </summary>
+    /// <param name="sender">The sender</param>
+    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+    private void openArelScript(object sender, EventArgs e)
+    {
+        TextEditorForm tef = new TextEditorForm(((AbstractAugmentation)ew.CurrentElement).CustomUserEventReference.FilePath);
+        tef.Show();
+    }
 }

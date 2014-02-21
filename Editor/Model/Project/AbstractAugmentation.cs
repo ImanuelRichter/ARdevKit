@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 
 using System.ComponentModel;
 using System.Collections;
+using System.IO;
 
 namespace ARdevKit.Model.Project
 {
@@ -56,23 +57,24 @@ namespace ARdevKit.Model.Project
             set { isVisible = value; }
         }
 
-        /*
+        
         /// <summary>
         /// A list of all customUserEvents the current <see cref="AbstractAugmentation"/> has.
         /// The user can write a javascript based code for the <see cref="AbstractAugmentation"/>.
         /// </summary>
-        private ArrayList customUserEvent;
+        private CustomUserEvent cue;
         /// <summary>
         /// Get the content of the customUserEvent. Each element in the List represents a line of the code.
         /// </summary>
-        [CategoryAttribute("Expert")]
-        [Editor(@"System.Windows.Forms.Design.StringCollectionEditor, System.Design, Version=2.0.0.0, Culture=neutral, 
-            PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))]
-        public ArrayList CustomUserEventList
+        [Browsable(false)]
+        //[CategoryAttribute("Expert")]
+        //[Editor(typeof(TextEditor), typeof(System.Drawing.Design.UITypeEditor))]
+        public CustomUserEvent CustomUserEventReference
         {
-            get { return customUserEvent; }
+            get { return cue; }
+            set { cue = value; }
         }
-        */
+        
 
         /// <summary>
         /// Vector to describe the position on the PreviewPanel, and later
@@ -143,11 +145,12 @@ namespace ARdevKit.Model.Project
         protected AbstractAugmentation()
         {
             isVisible = true;
-            //customUserEvent = new ArrayList();
             translationVector = new Vector3D(0, 0, 0);
             scalingVector = new Vector3D(0, 0, 0);
             rotationVector = new Vector3Di(0, 0, 0, 0);
             trackable = null;
+            cue = new CustomUserEvent(id);
+            
         }
 
         /// <summary>
@@ -162,10 +165,10 @@ namespace ARdevKit.Model.Project
             Vector3D translationVector, Vector3D scaling, AbstractTrackable trackable)
         {
             this.isVisible = isVisible;
-            //customUserEvent = new ArrayList();
             this.translationVector = translationVector;
             scalingVector = scaling;
             this.trackable = trackable;
+            cue = new CustomUserEvent(id);
         }
 
         /// <summary>
@@ -207,6 +210,12 @@ namespace ARdevKit.Model.Project
          */
 
         public abstract object Clone();
+
+        public virtual bool initElement(EditorWindow ew)
+        {
+            //do nothing if not overwritten.
+            return true;
+        }
     }
 }
 

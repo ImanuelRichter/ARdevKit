@@ -16,32 +16,21 @@ namespace ARdevKit.Model.Project
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public class CustomUserEvent
     {
-        /// <summary>
-        /// The name of the event
-        /// </summary>
-        private string name;
-        /// <summary>
-        /// Get or set the name of the event
-        /// </summary>
-        [CategoryAttribute("General")]
-        public string Name
-        {
-            get { return name; }
-            set { name = value; }
-        }
+        private string augmentationID;
+        
+        private string filePath;
 
-        /// <summary>
-        /// The content of the event
-        /// </summary>
-        private string[] content;
-        /// <summary>
-        /// Get or set the content of the event
-        /// </summary>
-        [CategoryAttribute("General")]
-        public string[] Content
+        public string FilePath
         {
-            get { return content; }
-            set { content = value; }
+            get 
+            { 
+                if (String.Compare(filePath, "NULL") == 0)
+                {
+                    filePath = getCustomUserFile();
+                }
+                
+                return filePath; 
+            }
         }
 
         /// <summary>
@@ -49,10 +38,23 @@ namespace ARdevKit.Model.Project
         /// </summary>
         /// <param name="name">The name.</param>
         /// <param name="content">The content.</param>
-        public CustomUserEvent(string name, string[] content)
+        public CustomUserEvent(string augmentationID)
         {
-            this.name = name;
-            this.content = content;
+            this.augmentationID = augmentationID;
+            filePath = "NULL";
+        }
+
+        private string getCustomUserFile()
+        {
+            var fileName = "customUserEventTemplate.txt";
+            var endFileName = augmentationID + "customUserEvent.txt";
+
+            if (System.IO.File.Exists(@"currentProject\" + endFileName))
+                System.IO.File.Delete(@"currentProject\" + endFileName);
+
+            System.IO.File.Copy(@"res\templates\" + fileName, @"currentProject\" + endFileName);
+
+            return System.IO.Path.GetFullPath("currentProject\\" + endFileName);
         }
     }
 }

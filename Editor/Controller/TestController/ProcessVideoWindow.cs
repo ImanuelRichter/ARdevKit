@@ -32,7 +32,7 @@ namespace ARdevKit.Controller.TestController
 
             progressBar.Maximum = 100;
             progressBar.Step = 1;
-            progressBar.Value = 0;
+            progressBar.Value = 1;
 
             extractor.RunWorkerAsync();
         }

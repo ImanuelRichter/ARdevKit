@@ -110,12 +110,17 @@ namespace ARdevKit.Model.Project
             return n;
         }
 
-        public override object Duplicate()
+        public override bool initElement(EditorWindow ew)
         {
-            IDMarker n = ObjectCopier.Clone<IDMarker>(this);
-            n.fuser = new MarkerFuser();
-            n.sensorCosID = IDFactory.CreateNewSensorCosID(this);
-            return n;
+            if (ew.project.existTrackable(this))
+            {
+                MatrixID = ew.project.nextID();
+            }
+            else
+            {
+                ew.project.Sensor = new MarkerSensor();
+            }
+            return base.initElement(ew);
         }
     }
 }

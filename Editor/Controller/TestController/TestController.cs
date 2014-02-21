@@ -111,7 +111,7 @@ namespace ARdevKit.Controller.TestController
                     if (openTestVideoDialog.ShowDialog() == DialogResult.OK)
                     {
                         string testFilePath = openTestVideoDialog.FileName;
-                        string tmpPath = Path.Combine(Application.StartupPath, "tmp", "video");
+                        string tmpPath = Path.Combine("tmp", "video");
 
                         if (Directory.Exists(tmpPath))
                         {

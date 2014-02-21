@@ -83,6 +83,14 @@ namespace Controller.EditorController
                     return;
                 }
             }
+
+            if (string.Equals(e.ChangedItem.Label.ToString(), "Size", StringComparison.Ordinal))
+            {
+                ew.PreviewController.updatePreviewPanel();
+
+                return;
+            }
+
         }
 
         /*

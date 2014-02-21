@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.ComponentModel;
 using System.IO;
 using System.Drawing.Design;
+using System.Windows.Forms;
 
 namespace ARdevKit.Model.Project
 {
@@ -136,7 +137,26 @@ namespace ARdevKit.Model.Project
 
         public override object Clone()
         {
-            return ObjectCopier.Clone<Chart>(this);
+            return base.Clone();
+        }
+
+        public override bool initElement(EditorWindow ew)
+        {
+            if (Options == null)
+            {
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.InitialDirectory = Application.StartupPath + "\\res\\highcharts\\barChartColumn";
+                openFileDialog.Filter = "json (*.json)|*.json";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    Options = openFileDialog.FileName;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            return base.initElement(ew);
         }
     }
 }

@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ARdevKit.Model.Project
 {
@@ -75,7 +76,8 @@ namespace ARdevKit.Model.Project
         /// not found in <see cref="ImagePath" />.</exception>
         public override Bitmap getPreview()
         {
-            return new Bitmap(videoPath);
+            //return Properties.Resources.ImageAugmentation_small_;
+            return Controller.EditorController.ThumbCreator.CreateThumb(videoPath, 0.5);
         }
                 
         /// <summary>
@@ -115,6 +117,26 @@ namespace ARdevKit.Model.Project
         public override object Clone()
         {
             return ObjectCopier.Clone<VideoAugmentation>(this);
+        }
+
+        public override bool initElement(EditorWindow ew)
+        {
+            if (VideoPath == null)
+            {
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyVideos);
+                openFileDialog.Filter = "Video Files (*.3G2)|*.3g2";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    VideoPath = openFileDialog.FileName;
+                    return base.initElement(ew);
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            return base.initElement(ew);
         }
     }
 }

@@ -48,5 +48,23 @@ namespace ARdevKit.Model.Project
         {
             this.Source = source;
         }
+
+        /**
+         * <summary>    Makes a deep copy of this object. </summary>
+         *
+         * <remarks>    Robin, 30.01.2014. </remarks>
+         *
+         * <returns>    A copy of this object. </returns>
+         */
+
+        public override object Clone()
+        {
+            AbstractDynamic2DAugmentation n = ObjectCopier.Clone<AbstractDynamic2DAugmentation>(this);
+            if (Source != null)
+            {
+                n.Source = (AbstractSource)Source.Clone();
+            }
+            return n;
+        }
     }
 }
