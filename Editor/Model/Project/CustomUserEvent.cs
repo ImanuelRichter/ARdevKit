@@ -54,8 +54,8 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
-        /// Copies the template to the /currentProject/ - Folder
-        /// and renames it.
+        /// Creates the file from a template. The #element in the template
+        /// will be replaced with the id of the augmentation
         /// </summary>
         /// <returns>File path of the newly generated customUserEvent.</returns>
         private string getCustomUserFile()
@@ -63,12 +63,18 @@ namespace ARdevKit.Model.Project
             var fileName = "customUserEventTemplate.txt";
             var endFileName = augmentationID + "customUserEvent.js";
 
+            string content = System.IO.File.ReadAllText(@"res\templates\" + fileName);
+            content = content.Replace("#element", augmentationID);
+
             if (System.IO.File.Exists(@"currentProject\" + endFileName))
                 System.IO.File.Delete(@"currentProject\" + endFileName);
 
-            System.IO.File.Copy(@"res\templates\" + fileName, @"currentProject\" + endFileName);
+            using (System.IO.StreamWriter outfile = new System.IO.StreamWriter(@"currentProject\" + endFileName))
+            {
+                outfile.Write(content);
+            }
 
-            return System.IO.Path.GetFullPath("currentProject\\" + endFileName);
+            return System.IO.Path.GetFullPath(@"currentProject\" + endFileName);
         }
     }
 }
