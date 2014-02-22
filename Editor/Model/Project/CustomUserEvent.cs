@@ -28,7 +28,7 @@ namespace ARdevKit.Model.Project
         /// </summary>
         private string filePath;
         /// <summary>
-        /// Get the file path for the customUserEvents-File.
+        /// Get or set the file path for the customUserEvents-File.
         /// </summary>
         public string FilePath
         {
@@ -41,6 +41,7 @@ namespace ARdevKit.Model.Project
                 
                 return filePath; 
             }
+            set { filePath = value; }
         }
 
         /// <summary>
@@ -66,15 +67,17 @@ namespace ARdevKit.Model.Project
             string content = System.IO.File.ReadAllText(@"res\templates\" + fileName);
             content = content.Replace("#element", augmentationID);
 
-            if (System.IO.File.Exists(@"currentProject\" + endFileName))
-                System.IO.File.Delete(@"currentProject\" + endFileName);
+            System.IO.Directory.CreateDirectory(@"tmp\UserEvents");
 
-            using (System.IO.StreamWriter outfile = new System.IO.StreamWriter(@"currentProject\" + endFileName))
+            if (System.IO.File.Exists(@"tmp\UserEvents" + endFileName))
+                System.IO.File.Delete(@"tmp\UserEvents" + endFileName);
+
+            using (System.IO.StreamWriter outfile = new System.IO.StreamWriter(@"tmp\UserEvents\" + endFileName))
             {
                 outfile.Write(content);
             }
 
-            return System.IO.Path.GetFullPath(@"currentProject\" + endFileName);
+            return System.IO.Path.GetFullPath(@"tmp\UserEvents\" + endFileName);
         }
     }
 }
