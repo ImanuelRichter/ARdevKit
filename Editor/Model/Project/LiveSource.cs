@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Model.Project
 {
+    [Serializable]
     public class LiveSource : AbstractSource
     {
         /// <summary>   URL of the source. </summary>
