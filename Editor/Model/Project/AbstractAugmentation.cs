@@ -213,20 +213,32 @@ namespace ARdevKit.Model.Project
 
         public virtual bool initElement(EditorWindow ew)
         {
-            int count = 1;
-            for (int i = 0; i < ew.project.Trackables.Count; i++)
+            int count = 0;
+            bool found = true;
+            String newID = "";
+            while (found)
             {
-                foreach (AbstractAugmentation a in ew.project.Trackables[i].Augmentations)
+                found = false;
+                count++;
+                foreach (AbstractTrackable t in ew.project.Trackables)
                 {
-                    if (this.GetType().Equals(a.GetType()))
+                    newID = this.GetType().Name + count;
+                    //make first letter lowercase
+                    newID = newID[0].ToString().ToLower() + newID.Substring(1);
+                    foreach (AbstractAugmentation a in t.Augmentations)
                     {
-                        count++;
+                        if (this.GetType().Equals(a.GetType()))
+                        {
+                            if (a.ID == newID)
+                            {
+                                found = true;
+                                break;
+                            }
+                        }
                     }
                 }
             }
-            id = this.GetType().Name + count;
-            //make first letter lowercase
-            id = id[0].ToString().ToLower() + id.Substring(1);
+            id = newID;
             return true;
         }
     }
