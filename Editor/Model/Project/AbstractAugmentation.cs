@@ -57,7 +57,7 @@ namespace ARdevKit.Model.Project
             set { isVisible = value; }
         }
 
-        
+
         /// <summary>
         /// The customUserEvents contains a path to a file, which has
         /// all user-generated events of this augmentation.
@@ -72,7 +72,7 @@ namespace ARdevKit.Model.Project
             get { return cue; }
             set { cue = value; }
         }
-        
+
 
         /// <summary>
         /// Vector to describe the position on the PreviewPanel, and later
@@ -148,7 +148,7 @@ namespace ARdevKit.Model.Project
             rotationVector = new Vector3D(0, 0, 0);
             trackable = null;
             cue = new CustomUserEvent(id);
-            
+
         }
 
         /// <summary>
@@ -159,7 +159,7 @@ namespace ARdevKit.Model.Project
         /// <param name="translationVector">The translation vector.</param>
         /// <param name="scaling">The scaling.</param>
         /// <param name="trackable">The trackable.</param>
-        protected AbstractAugmentation(bool isVisible, 
+        protected AbstractAugmentation(bool isVisible,
             Vector3D translationVector, Vector3D scaling, AbstractTrackable trackable)
         {
             this.isVisible = isVisible;
@@ -211,7 +211,20 @@ namespace ARdevKit.Model.Project
 
         public virtual bool initElement(EditorWindow ew)
         {
-            //do nothing if not overwritten.
+            int count = 1;
+            for (int i = 0; i < ew.project.Trackables.Count; i++)
+            {
+                foreach (AbstractAugmentation a in ew.project.Trackables[i].Augmentations)
+                {
+                    if (this.GetType().Equals(a.GetType()))
+                    {
+                        count++;
+                    }
+                }
+            }
+            id = this.GetType().Name + count;
+            //make first letter lowercase
+            id = id[0].ToString().ToLower() + id.Substring(1);
             return true;
         }
     }
