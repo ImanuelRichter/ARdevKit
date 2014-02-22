@@ -39,7 +39,12 @@ namespace ARdevKit
             this.tsm_editor_menu_file_saveAs = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_editor_menu_file_export = new System.Windows.Forms.ToolStripMenuItem();
             this.tss_editor_menu_file_export_sendTo = new System.Windows.Forms.ToolStripSeparator();
-            this.tsm_editor_menu_file_connection = new System.Windows.Forms.ToolStripMenuItem();
+            this.sendProjectMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.DeviceList = new System.Windows.Forms.ToolStripComboBox();
+            this.refreshDeviceList = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.sendProject = new System.Windows.Forms.ToolStripMenuItem();
+            this.DeviceDebug = new System.Windows.Forms.ToolStripMenuItem();
             this.tss_editor_menu_file_connection_exit = new System.Windows.Forms.ToolStripSeparator();
             this.tsm_editor_menu_file_exit = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_editor_menu_edit = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,12 +71,6 @@ namespace ARdevKit
             this.btn_editor_scene_new = new System.Windows.Forms.Button();
             this.pnl_editor_status = new System.Windows.Forms.Panel();
             this.lbl_version = new System.Windows.Forms.Label();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.DeviceList = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.sendProject = new System.Windows.Forms.ToolStripMenuItem();
-            this.refreshDeviceList = new System.Windows.Forms.ToolStripMenuItem();
-            this.DeviceDebug = new System.Windows.Forms.ToolStripMenuItem();
             this.mst_editor_menu.SuspendLayout();
             this.pnl_editor_selection.SuspendLayout();
             this.pnl_editor_properties.SuspendLayout();
@@ -102,8 +101,7 @@ namespace ARdevKit
             this.tsm_editor_menu_file_saveAs,
             this.tsm_editor_menu_file_export,
             this.tss_editor_menu_file_export_sendTo,
-            this.toolStripMenuItem1,
-            this.tsm_editor_menu_file_connection,
+            this.sendProjectMenu,
             this.tss_editor_menu_file_connection_exit,
             this.tsm_editor_menu_file_exit});
             this.tsm_editor_menu_file.Name = "tsm_editor_menu_file";
@@ -116,7 +114,7 @@ namespace ARdevKit
             this.tsm_editor_menu_file_new.Name = "tsm_editor_menu_file_new";
             this.tsm_editor_menu_file_new.ShortcutKeyDisplayString = "STRG+N";
             this.tsm_editor_menu_file_new.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.tsm_editor_menu_file_new.Size = new System.Drawing.Size(192, 22);
+            this.tsm_editor_menu_file_new.Size = new System.Drawing.Size(175, 22);
             this.tsm_editor_menu_file_new.Text = "Neu";
             this.tsm_editor_menu_file_new.Click += new System.EventHandler(this.tsm_editor_menu_file_new_Click);
             // 
@@ -125,61 +123,97 @@ namespace ARdevKit
             this.tsm_editor_menu_file_open.Name = "tsm_editor_menu_file_open";
             this.tsm_editor_menu_file_open.ShortcutKeyDisplayString = "STRG+O";
             this.tsm_editor_menu_file_open.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.tsm_editor_menu_file_open.Size = new System.Drawing.Size(192, 22);
+            this.tsm_editor_menu_file_open.Size = new System.Drawing.Size(175, 22);
             this.tsm_editor_menu_file_open.Text = "Öffnen";
             this.tsm_editor_menu_file_open.Click += new System.EventHandler(this.tsm_editor_menu_file_open_Click_1);
             // 
             // tss_editor_menu_file_opnen_save
             // 
             this.tss_editor_menu_file_opnen_save.Name = "tss_editor_menu_file_opnen_save";
-            this.tss_editor_menu_file_opnen_save.Size = new System.Drawing.Size(189, 6);
+            this.tss_editor_menu_file_opnen_save.Size = new System.Drawing.Size(172, 6);
             // 
             // tsm_editor_menu_file_save
             // 
             this.tsm_editor_menu_file_save.Name = "tsm_editor_menu_file_save";
             this.tsm_editor_menu_file_save.ShortcutKeyDisplayString = "STRG+S";
             this.tsm_editor_menu_file_save.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.tsm_editor_menu_file_save.Size = new System.Drawing.Size(192, 22);
+            this.tsm_editor_menu_file_save.Size = new System.Drawing.Size(175, 22);
             this.tsm_editor_menu_file_save.Text = "Speichern";
             this.tsm_editor_menu_file_save.Click += new System.EventHandler(this.tsm_editor_menu_file_save_Click);
             // 
             // tsm_editor_menu_file_saveAs
             // 
             this.tsm_editor_menu_file_saveAs.Name = "tsm_editor_menu_file_saveAs";
-            this.tsm_editor_menu_file_saveAs.Size = new System.Drawing.Size(192, 22);
+            this.tsm_editor_menu_file_saveAs.Size = new System.Drawing.Size(175, 22);
             this.tsm_editor_menu_file_saveAs.Text = "Speichern unter...";
             this.tsm_editor_menu_file_saveAs.Click += new System.EventHandler(this.tsm_editor_menu_file_saveAs_Click);
             // 
             // tsm_editor_menu_file_export
             // 
             this.tsm_editor_menu_file_export.Name = "tsm_editor_menu_file_export";
-            this.tsm_editor_menu_file_export.Size = new System.Drawing.Size(192, 22);
+            this.tsm_editor_menu_file_export.Size = new System.Drawing.Size(175, 22);
             this.tsm_editor_menu_file_export.Text = "Exportieren";
             this.tsm_editor_menu_file_export.Click += new System.EventHandler(this.tsm_editor_menu_file_export_Click);
             // 
             // tss_editor_menu_file_export_sendTo
             // 
             this.tss_editor_menu_file_export_sendTo.Name = "tss_editor_menu_file_export_sendTo";
-            this.tss_editor_menu_file_export_sendTo.Size = new System.Drawing.Size(189, 6);
+            this.tss_editor_menu_file_export_sendTo.Size = new System.Drawing.Size(172, 6);
             // 
-            // tsm_editor_menu_file_connection
+            // sendProjectMenu
             // 
-            this.tsm_editor_menu_file_connection.Name = "tsm_editor_menu_file_connection";
-            this.tsm_editor_menu_file_connection.Size = new System.Drawing.Size(192, 22);
-            this.tsm_editor_menu_file_connection.Text = "Verbindung einrichten";
-            this.tsm_editor_menu_file_connection.Click += new System.EventHandler(this.tsm_editor_menu_file_connection_Click);
+            this.sendProjectMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.DeviceList,
+            this.refreshDeviceList,
+            this.toolStripSeparator2,
+            this.sendProject,
+            this.DeviceDebug});
+            this.sendProjectMenu.Name = "sendProjectMenu";
+            this.sendProjectMenu.Size = new System.Drawing.Size(175, 22);
+            this.sendProjectMenu.Text = "Projekt versenden";
+            // 
+            // DeviceList
+            // 
+            this.DeviceList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.DeviceList.Name = "DeviceList";
+            this.DeviceList.Size = new System.Drawing.Size(150, 23);
+            // 
+            // refreshDeviceList
+            // 
+            this.refreshDeviceList.Name = "refreshDeviceList";
+            this.refreshDeviceList.Size = new System.Drawing.Size(218, 22);
+            this.refreshDeviceList.Text = "Liste akualisieren";
+            this.refreshDeviceList.Click += new System.EventHandler(this.refreshDeviceList_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(215, 6);
+            // 
+            // sendProject
+            // 
+            this.sendProject.Name = "sendProject";
+            this.sendProject.Size = new System.Drawing.Size(218, 22);
+            this.sendProject.Text = "Projekt an Gerät senden";
+            this.sendProject.Click += new System.EventHandler(this.sendProject_Click);
+            // 
+            // DeviceDebug
+            // 
+            this.DeviceDebug.Name = "DeviceDebug";
+            this.DeviceDebug.Size = new System.Drawing.Size(218, 22);
+            this.DeviceDebug.Text = "Gerätedebugmodus starten";
             // 
             // tss_editor_menu_file_connection_exit
             // 
             this.tss_editor_menu_file_connection_exit.Name = "tss_editor_menu_file_connection_exit";
-            this.tss_editor_menu_file_connection_exit.Size = new System.Drawing.Size(189, 6);
+            this.tss_editor_menu_file_connection_exit.Size = new System.Drawing.Size(172, 6);
             // 
             // tsm_editor_menu_file_exit
             // 
             this.tsm_editor_menu_file_exit.Name = "tsm_editor_menu_file_exit";
             this.tsm_editor_menu_file_exit.ShortcutKeyDisplayString = "STRG+Q";
             this.tsm_editor_menu_file_exit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.tsm_editor_menu_file_exit.Size = new System.Drawing.Size(192, 22);
+            this.tsm_editor_menu_file_exit.Size = new System.Drawing.Size(175, 22);
             this.tsm_editor_menu_file_exit.Text = "Beenden";
             this.tsm_editor_menu_file_exit.Click += new System.EventHandler(this.tsm_editor_menu_file_exit_Click);
             // 
@@ -405,47 +439,6 @@ namespace ARdevKit
             this.lbl_version.TabIndex = 0;
             this.lbl_version.Text = "ARdevKit v0.1";
             // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.DeviceList,
-            this.refreshDeviceList,
-            this.toolStripSeparator2,
-            this.sendProject,
-            this.DeviceDebug});
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(192, 22);
-            this.toolStripMenuItem1.Text = "Projekt versenden";
-            // 
-            // DeviceList
-            // 
-            this.DeviceList.Name = "DeviceList";
-            this.DeviceList.Size = new System.Drawing.Size(150, 23);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(215, 6);
-            // 
-            // sendProject
-            // 
-            this.sendProject.Name = "sendProject";
-            this.sendProject.Size = new System.Drawing.Size(218, 22);
-            this.sendProject.Text = "Projekt an Gerät senden";
-            // 
-            // refreshDeviceList
-            // 
-            this.refreshDeviceList.Name = "refreshDeviceList";
-            this.refreshDeviceList.Size = new System.Drawing.Size(218, 22);
-            this.refreshDeviceList.Text = "Liste akualisieren";
-            this.refreshDeviceList.Click += new System.EventHandler(this.refreshDeviceList_Click);
-            // 
-            // DeviceDebug
-            // 
-            this.DeviceDebug.Name = "DeviceDebug";
-            this.DeviceDebug.Size = new System.Drawing.Size(218, 22);
-            this.DeviceDebug.Text = "Gerätedebugmodus starten";
-            // 
             // EditorWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -483,7 +476,6 @@ namespace ARdevKit
         private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_file_save;
         private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_file_saveAs;
         private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_file_export;
-        private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_file_connection;
         private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_file_exit;
         private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_edit;
         private System.Windows.Forms.ToolStripMenuItem tsm_editor_menu_test;
@@ -512,7 +504,7 @@ namespace ARdevKit
         private System.Windows.Forms.Button btn_editor_scene_delete;
         private System.Windows.Forms.PropertyGrid propertyGrid1;
         private System.Windows.Forms.Label lbl_version;
-        private ToolStripMenuItem toolStripMenuItem1;
+        private ToolStripMenuItem sendProjectMenu;
         private ToolStripComboBox DeviceList;
         private ToolStripMenuItem refreshDeviceList;
         private ToolStripSeparator toolStripSeparator2;

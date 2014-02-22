@@ -71,12 +71,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\EditorController\ObjectCopier.cs" />
-    <Compile Include="DeviceSelectionWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DeviceSelectionWindow.Designer.cs">
-      <DependentUpon>DeviceSelectionWindow.cs</DependentUpon>
-    </Compile>
     <Compile Include="Model\Project\Abstract2DTrackable.cs" />
     <Compile Include="Model\Project\ImageTrackable.cs" />
     <Compile Include="Model\Project\AbstractDynamic2DAugmentation.cs" />
@@ -152,9 +146,6 @@
     <Compile Include="View\SceneElementCategoryPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="DeviceSelectionWindow.resx">
-      <DependentUpon>DeviceSelectionWindow.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="EditorWindow.resx">
       <DependentUpon>EditorWindow.cs</DependentUpon>
     </EmbeddedResource>

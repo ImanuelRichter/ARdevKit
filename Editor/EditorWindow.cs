@@ -1077,24 +1077,62 @@ namespace ARdevKit
             this.pnl_editor_preview.ContextMenu.MenuItems[0].Enabled = true;
         }
 
-        private void tsm_editor_menu_file_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tsm_editor_menu_file_connection_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void refreshDeviceList_Click(object sender, EventArgs e)
+        private void reloadDeviceList()
         {
             DeviceList.Items.Clear();
             deviceConnectionController.refresh();
             List<string> devices = deviceConnectionController.getReportedDevices();
             foreach (string device in devices)
             {
-                DeviceList.Items.Add(new ListViewItem(device));
+                DeviceList.Items.Add(device);
+            }
+            if (DeviceList.Items.Count > 0)
+            {
+                DeviceList.SelectedItem = devices[0];
+            } 
+        }
+
+        private void tsm_editor_menu_file_Click(object sender, EventArgs e)
+        {
+            reloadDeviceList();
+        }
+
+        private void refreshDeviceList_Click(object sender, EventArgs e)
+        {
+            reloadDeviceList();
+        }
+
+        private void sendProject_Click(object sender, EventArgs e)
+        {
+            if (DeviceList.Items.Count != 0)
+            {
+                if (DeviceList.SelectedItem != null && DeviceList.SelectedIndex >= 0)
+                {
+                    try
+                    {
+                        if (deviceConnectionController.sendProject(DeviceList.SelectedIndex))
+                        {
+                            MessageBox.Show("Das Projekt wurde versand.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Das Projekt wurde nicht versand.");
+                        }
+                    }
+                    catch (System.Net.Sockets.SocketException)
+                    {
+                        MessageBox.Show("Es wurde keine Verbindung hergestellt, stellen sie sicher, dass kein anderer Prozess diesen Port verwendet.");
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Es ist kein Gerät ausgewählt, wählen sie es in der Liste aus");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Es ist kein Gerät verfügbar, nutzen sie die Aktualisierungsfunktion und stellen sie sicher, dass die Geräte mit dem netzwerk verbunden sind");
             }
         }
 
