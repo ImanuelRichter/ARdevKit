@@ -108,8 +108,8 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
-        /// Vector, to describes the rotation of the <see cref="AbstractAugmentation"/> in
-        /// x, y and z direction. w is used for TrackingFile Offset in AREL.
+        /// Vector, to describes the rotation (euler) of the <see cref="AbstractAugmentation"/> in
+        /// x, y and z direction.
         /// </summary>
         private Vector3D rotationVector;
         /// <summary>
@@ -147,7 +147,7 @@ namespace ARdevKit.Model.Project
             isVisible = true;
             translationVector = new Vector3D(0, 0, 0);
             scalingVector = new Vector3D(0, 0, 0);
-            rotationVector = new Vector3Di(0, 0, 0, 0);
+            rotationVector = new Vector3D(0, 0, 0);
             trackable = null;
             cue = new CustomUserEvent(id);
             
