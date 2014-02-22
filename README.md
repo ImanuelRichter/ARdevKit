@@ -17,6 +17,4 @@ and I'm not very confident in my german -> english translation skills ;P)
 2. In "General Properties" -> "Startproject" -> "Single startproject" open the Dropdown menu, choose "Editor" and 
 then press OK.
 
-Also you need the following dll in your debug folder to compile: http://www.nrecosite.com/downloads/video_converter_1.0_free.zip
-
 With this you should be able to debug the project.
