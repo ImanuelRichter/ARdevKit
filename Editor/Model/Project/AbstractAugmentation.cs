@@ -69,7 +69,12 @@ namespace ARdevKit.Model.Project
         [Browsable(false)]
         public CustomUserEvent CustomUserEventReference
         {
-            get { return cue; }
+            get 
+            {
+                if (cue == null)
+                    cue = new CustomUserEvent(id);
+                return cue; 
+            }
             set { cue = value; }
         }
 
@@ -147,7 +152,6 @@ namespace ARdevKit.Model.Project
             scalingVector = new Vector3D(0, 0, 0);
             rotationVector = new Vector3D(0, 0, 0);
             trackable = null;
-            cue = new CustomUserEvent(id);
 
         }
 
@@ -166,7 +170,6 @@ namespace ARdevKit.Model.Project
             this.translationVector = translationVector;
             scalingVector = scaling;
             this.trackable = trackable;
-            cue = new CustomUserEvent(id);
         }
 
         /// <summary>

@@ -62,7 +62,7 @@ namespace ARdevKit.Model.Project
         private string getCustomUserFile()
         {
             var fileName = "customUserEventTemplate.txt";
-            var endFileName = augmentationID + "customUserEvent.js";
+            var endFileName = augmentationID + "_UserEvent.js";
 
             string content = System.IO.File.ReadAllText(@"res\templates\" + fileName);
             content = content.Replace("#element", augmentationID);
