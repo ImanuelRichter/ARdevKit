@@ -63,7 +63,7 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
-        /// Vector, to describes the rotation of the <see cref="AbstractAugmentation"/> in
+        /// Vector, to describe the rotation of the <see cref="AbstractAugmentation"/> in
         /// x, y and z direction. w is used for TrackingFile Offset in AREL.
         /// </summary>
         protected Vector3Di rotationVector;

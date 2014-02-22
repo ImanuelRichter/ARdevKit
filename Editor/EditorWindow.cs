@@ -28,6 +28,7 @@ using ARdevKit.View;
 using System.IO;
 using ARdevKit.Model.Project.File;
 using System.Drawing.Printing;
+using System.Security.Cryptography;
 
 namespace ARdevKit
 {
@@ -39,6 +40,12 @@ namespace ARdevKit
 
     public partial class EditorWindow : Form
     {
+        /// <summary>
+        /// The checksum of the project. Is needed to determine whether there has been made changes to the project.
+        /// </summary>
+        /// <remarks>geht 20.02.2014 13:06</remarks>
+        private string checksum;
+
         /// <summary>
         /// The minscreenwidht
         /// </summary>
@@ -301,18 +308,22 @@ namespace ARdevKit
 
         private void tsm_editor_menu_file_new_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Möchten Sie das aktuelle Projekt abspeichern, bevor ein neues angelegt wird?", "Projekt speichern?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (projectChanged())
             {
-                try
+                if (MessageBox.Show("Möchten Sie das aktuelle Projekt abspeichern, bevor ein neues angelegt wird?", "Projekt speichern?", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    this.saveProject();
-                }
-                catch (ArgumentNullException ae)
-                {
-                    Debug.WriteLine(ae.StackTrace);
+                    try
+                    {
+                        this.saveProject();
+                    }
+                    catch (ArgumentNullException ae)
+                    {
+                        Debug.WriteLine(ae.StackTrace);
+                    }
                 }
             }
-            createNewProject("");
+
+                createNewProject("");
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -535,6 +546,7 @@ namespace ARdevKit
             this.initializeEmptyProject(name);
             this.initializeControllers();
             this.updatePanels();
+            this.checksum = project.getChecksum();
         }
 
         /// <summary>
@@ -599,6 +611,7 @@ namespace ARdevKit
                 previewController.reloadPreviewPanel(0);
                 this.updateSceneSelectionPanel();
                 this.updateScreenSize();
+                this.checksum = project.getChecksum();
             }
             catch (System.ArgumentException)
             {
@@ -697,6 +710,7 @@ namespace ARdevKit
         private void save(String path)
         {
             SaveLoadController.saveProject(this.project);
+            checksum = this.project.getChecksum();
         }
 
         public void sendToDevice()
@@ -917,7 +931,7 @@ namespace ARdevKit
             this.project.Screensize = new ScreenSize();
             this.project.Screensize.Height = Convert.ToUInt32(pnl_editor_preview.Size.Height);
             this.project.Screensize.Width = Convert.ToUInt32(pnl_editor_preview.Size.Width);
-            this.project.Screensize.SizeChanged += new System.EventHandler(this.pnl_editor_preview_SizeChanged);
+            this.project.Screensize.SizeChanged += new System.EventHandler(this.pnl_editor_preview_SizeChanged); 
             registerElements();
         }
 
@@ -1022,17 +1036,21 @@ namespace ARdevKit
 
         private void tsm_editor_menu_file_open_Click_1(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Möchten Sie das aktuelle Projekt abspeichern, bevor ein anderes geöffnet wird?", "Projekt speichern?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (projectChanged())
             {
-                try
+                if (MessageBox.Show("Möchten Sie das aktuelle Projekt abspeichern, bevor ein anderes geöffnet wird?", "Projekt speichern?", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    this.saveProject();
-                }
-                catch (ArgumentNullException ae)
-                {
-                    Debug.WriteLine(ae.StackTrace);
+                    try
+                    {
+                        this.saveProject();
+                    }
+                    catch (ArgumentNullException ae)
+                    {
+                        Debug.WriteLine(ae.StackTrace);
+                    }
                 }
             }
+            
             this.loadProject();
         }
 
@@ -1199,6 +1217,9 @@ namespace ARdevKit
         /// <remarks>geht 04.02.2014 15:15</remarks>
         private void EditorWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
+            if (!projectChanged())
+                return;
+
             DialogResult dlg = MessageBox.Show("Möchten Sie das aktuelle Projekt abspeichern, bevor ARdevKit beendet wird?", "Projekt speichern?", MessageBoxButtons.YesNoCancel);
             if (dlg == DialogResult.Yes)
             {
@@ -1222,6 +1243,21 @@ namespace ARdevKit
                 e.Cancel = true;
                 return;
             }
+        }
+
+        /// <summary>
+        /// reports whether the project has been changed or not after the last saving.
+        /// returns false when the project hasn't been changed.
+        /// returns true when the project has been changed.
+        /// </summary>
+        /// <returns></returns>
+        /// <remarks>geht 20.02.2014 14:15</remarks>
+        private bool projectChanged()
+        {
+            if (checksum.Equals(this.project.getChecksum()))
+                return false;
+            else
+                return true;
         }
     }
 }
