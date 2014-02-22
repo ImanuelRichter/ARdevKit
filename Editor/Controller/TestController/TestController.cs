@@ -21,6 +21,16 @@ namespace ARdevKit.Controller.TestController
 {
     static class TestController
     {
+        /// <summary>
+        /// The location where the temporary project is exported to.
+        /// </summary>
+        private const string TMP_PROJECT_PATH = "tmp\\project";
+
+        /// <summary>
+        /// The location where the temporary frames where extracted to.
+        /// </summary>
+        private const string TMP_VIDEO_PATH = "tmp\\video";
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
         /// Used in <see cref="StartPlayer(string, int)"/> to load an image
@@ -78,7 +88,9 @@ namespace ARdevKit.Controller.TestController
         /// </param>
         public static void StartPlayer(Project project, int mode, int width, int height, bool showDebug)
         {
-            ExportVisitor exporter = new ExportVisitor(true);
+            string originalProjectPath = project.ProjectPath;
+            project.ProjectPath = TMP_PROJECT_PATH;
+            ExportVisitor exporter = new ExportVisitor();
             project.Accept(exporter);
 
             IDFactory.Reset();
@@ -88,8 +100,10 @@ namespace ARdevKit.Controller.TestController
             }
 
             player = new Process();
+            player.EnableRaisingEvents = true;
+            player.Exited += player_Exited;
             playerPath = showDebug ? "DebugPlayer.exe" : "Player.exe";
-            player.StartInfo.Arguments = "-" + width + " -" + height + " -" + (project.ProjectPath == null ? "currentProject" : project.ProjectPath) + " -" + mode;
+            player.StartInfo.Arguments = "-" + width + " -" + height + " -" + project.ProjectPath + " -" + mode;
 
             bool open = false;
             switch (mode)
@@ -111,22 +125,21 @@ namespace ARdevKit.Controller.TestController
                     if (openTestVideoDialog.ShowDialog() == DialogResult.OK)
                     {
                         string testFilePath = openTestVideoDialog.FileName;
-                        string tmpPath = Path.Combine("tmp", "video");
 
-                        if (Directory.Exists(tmpPath))
+                        if (Directory.Exists(TMP_VIDEO_PATH))
                         {
-                            foreach (string path in Directory.GetFiles(tmpPath))
+                            foreach (string path in Directory.GetFiles(TMP_VIDEO_PATH))
                                 File.Delete(path);
                         }
                         else
-                            Directory.CreateDirectory(tmpPath);
+                            Directory.CreateDirectory(TMP_VIDEO_PATH);
 
-                        player.StartInfo.Arguments += " -" + tmpPath;
+                        player.StartInfo.Arguments += " -" + TMP_VIDEO_PATH;
 
                         progressVideoWindow = new ProcessVideoWindow();
                         progressVideoWindow.FormClosed += progressVideoWindow_FormClosed;
                         progressVideoWindow.Show();
-                        progressVideoWindow.extractFrames(testFilePath, tmpPath);
+                        progressVideoWindow.extractFrames(testFilePath, TMP_VIDEO_PATH);
                     }
                     break;
                 case (CAMERA):
@@ -143,6 +156,15 @@ namespace ARdevKit.Controller.TestController
                     }
                     break;
             }
+            project.ProjectPath = originalProjectPath;
+        }
+
+        private static void player_Exited(object sender, EventArgs e)
+        {
+            if (Directory.Exists(TMP_PROJECT_PATH))
+                Directory.Delete(TMP_PROJECT_PATH, true);
+            if (Directory.Exists(TMP_VIDEO_PATH))
+                Directory.Delete(TMP_VIDEO_PATH, true);
         }
 
         private static void OpenPlayer()

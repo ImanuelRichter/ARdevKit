@@ -29,6 +29,8 @@ namespace ARdevKit.Controller.TestController
         {
             this.testFilePath = testFilePath;
             this.tmpPath = tmpPath;
+            if (!Directory.Exists(tmpPath))
+                Directory.CreateDirectory(tmpPath);
 
             progressBar.Maximum = 100;
             progressBar.Step = 1;

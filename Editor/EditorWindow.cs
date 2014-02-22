@@ -561,7 +561,7 @@ namespace ARdevKit
 
                 try
                 {
-                    exportVisitor = new ExportVisitor(false);
+                    exportVisitor = new ExportVisitor();
                     project.Accept(exportVisitor);
                 }
                 catch (DirectoryNotFoundException de)
@@ -926,7 +926,7 @@ namespace ARdevKit
             this.startDebugModeLocal = false;
             this.elementCategories = new List<SceneElementCategory>();
             this.allElements = new LinkedList<IPreviewable>();
-            this.exportVisitor = new ExportVisitor(false);
+            this.exportVisitor = new ExportVisitor();
             this.currentElement = null;
             this.project.Screensize = new ScreenSize();
             this.project.Screensize.Height = Convert.ToUInt32(pnl_editor_preview.Size.Height);
@@ -942,7 +942,7 @@ namespace ARdevKit
             this.startDebugModeLocal = false;
             this.elementCategories = new List<SceneElementCategory>();
             this.allElements = new LinkedList<IPreviewable>();
-            this.exportVisitor = new ExportVisitor(false);
+            this.exportVisitor = new ExportVisitor();
             this.currentElement = null;
             registerElements();
         }
