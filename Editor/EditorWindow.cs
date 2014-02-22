@@ -661,6 +661,7 @@ namespace ARdevKit
             addCategory(trackables);
             addCategory(augmentations);
             addCategory(sources);
+            IDFactory.Reset();
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
