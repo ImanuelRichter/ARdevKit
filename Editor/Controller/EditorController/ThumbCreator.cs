@@ -6,18 +6,16 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
- 
+
 namespace ARdevKit.Controller.EditorController
 {
-    class ThumbCreator {
+    class ThumbCreator
+    {
         public static Bitmap CreateThumb(string videoFilename, double positionPercent)
         {
-            Stream ms = new FileStream("tempthump.bmp",FileMode.Create);
-            (new NReco.VideoConverter.FFMpegConverter()).GetVideoThumbnail(videoFilename, ms);
-            Bitmap b = (Bitmap)Image.FromStream(ms);
-            ms.Close();
-            File.Delete("tempthump.bmp");
-            return b;
+            AForge.Video.FFMPEG.VideoFileReader v = new AForge.Video.FFMPEG.VideoFileReader();
+            v.Open(videoFilename);
+            return v.ReadVideoFrame();
         }
     }
 }

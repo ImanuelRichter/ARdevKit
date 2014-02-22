@@ -1260,5 +1260,10 @@ namespace ARdevKit
             else
                 return true;
         }
+
+        private void tsm_editor_menu_help_help_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, Application.StartupPath + "\\Documentation.chm", HelpNavigator.TableOfContents);
+        }
     }
 }
