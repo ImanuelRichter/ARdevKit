@@ -32,6 +32,7 @@ namespace ARdevKit
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnl_editor_preview = new System.Windows.Forms.Panel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.pnl_editor_selection = new System.Windows.Forms.Panel();
             this.cmb_editor_selection_toolSelection = new System.Windows.Forms.ComboBox();
             this.pnl_editor_status = new System.Windows.Forms.Panel();
@@ -60,6 +61,7 @@ namespace ARdevKit
             this.tsm_editor_menu_edit = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_editor_menu_edit_copie = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_editor_menu_edit_paste = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_editor_menu_edit_delete = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_editor_menu_test = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_editor_menu_test_startImage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_editor_menu_test_startVideo = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,8 +73,6 @@ namespace ARdevKit
             this.tsm_editor_menu_help_help = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_editor_menu_help_info = new System.Windows.Forms.ToolStripMenuItem();
             this.mst_editor_menu = new System.Windows.Forms.MenuStrip();
-            this.tsm_editor_menu_edit_delete = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel1.SuspendLayout();
             this.pnl_editor_preview.SuspendLayout();
             this.pnl_editor_selection.SuspendLayout();
@@ -108,6 +108,14 @@ namespace ARdevKit
             this.pnl_editor_preview.Click += new System.EventHandler(this.pnl_editor_preview_Click);
             this.pnl_editor_preview.DragDrop += new System.Windows.Forms.DragEventHandler(this.pnl_editor_preview_DragDrop);
             this.pnl_editor_preview.DragEnter += new System.Windows.Forms.DragEventHandler(this.pnl_editor_preview_DragEnter);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(651, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
             // 
             // pnl_editor_selection
             // 
@@ -347,7 +355,7 @@ namespace ARdevKit
             this.tsm_editor_menu_edit_copie.Name = "tsm_editor_menu_edit_copie";
             this.tsm_editor_menu_edit_copie.ShortcutKeyDisplayString = "STRG+C";
             this.tsm_editor_menu_edit_copie.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.tsm_editor_menu_edit_copie.Size = new System.Drawing.Size(175, 22);
+            this.tsm_editor_menu_edit_copie.Size = new System.Drawing.Size(181, 22);
             this.tsm_editor_menu_edit_copie.Text = "Kopieren";
             // 
             // tsm_editor_menu_edit_paste
@@ -356,7 +364,7 @@ namespace ARdevKit
             this.tsm_editor_menu_edit_paste.Name = "tsm_editor_menu_edit_paste";
             this.tsm_editor_menu_edit_paste.ShortcutKeyDisplayString = "STRG+V";
             this.tsm_editor_menu_edit_paste.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.tsm_editor_menu_edit_paste.Size = new System.Drawing.Size(175, 22);
+            this.tsm_editor_menu_edit_paste.Size = new System.Drawing.Size(181, 22);
             this.tsm_editor_menu_edit_paste.Text = "Einfügen";
             // 
             // tsm_editor_menu_edit_delete
@@ -364,8 +372,8 @@ namespace ARdevKit
             this.tsm_editor_menu_edit_delete.Enabled = false;
             this.tsm_editor_menu_edit_delete.Name = "tsm_editor_menu_edit_delete";
             this.tsm_editor_menu_edit_delete.ShortcutKeyDisplayString = "STRG+DEL";
-            this.tsm_editor_menu_edit_delete.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Delete)));
-            this.tsm_editor_menu_edit_delete.Size = new System.Drawing.Size(175, 22);
+            this.tsm_editor_menu_edit_delete.ShortcutKeys = System.Windows.Forms.Keys.Delete;
+            this.tsm_editor_menu_edit_delete.Size = new System.Drawing.Size(181, 22);
             this.tsm_editor_menu_edit_delete.Text = "Löschen";
             // 
             // tsm_editor_menu_test
@@ -457,15 +465,6 @@ namespace ARdevKit
             this.mst_editor_menu.Size = new System.Drawing.Size(1008, 24);
             this.mst_editor_menu.TabIndex = 0;
             this.mst_editor_menu.Text = "menuStrip1";
-
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(651, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
             // 
             // EditorWindow
             // 
