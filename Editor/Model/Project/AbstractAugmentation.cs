@@ -34,7 +34,7 @@ namespace ARdevKit.Model.Project
         /// <value> The identifier. </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        [CategoryAttribute("General")]
+        [CategoryAttribute("General"), ReadOnly(true)]
         public string ID
         {
             get { return id; }
@@ -59,19 +59,22 @@ namespace ARdevKit.Model.Project
 
 
         /// <summary>
-        /// A list of all customUserEvents the current <see cref="AbstractAugmentation"/> has.
-        /// The user can write a javascript based code for the <see cref="AbstractAugmentation"/>.
+        /// The customUserEvents contains a path to a file, which has
+        /// all user-generated events of this augmentation.
         /// </summary>
         private CustomUserEvent cue;
         /// <summary>
-        /// Get the content of the customUserEvent. Each element in the List represents a line of the code.
+        /// Get the CustomUserEvent.
         /// </summary>
         [Browsable(false)]
-        //[CategoryAttribute("Expert")]
-        //[Editor(typeof(TextEditor), typeof(System.Drawing.Design.UITypeEditor))]
         public CustomUserEvent CustomUserEventReference
         {
-            get { return cue; }
+            get 
+            {
+                if (cue == null)
+                    cue = new CustomUserEvent(id);
+                return cue; 
+            }
             set { cue = value; }
         }
 
@@ -149,7 +152,6 @@ namespace ARdevKit.Model.Project
             scalingVector = new Vector3D(0, 0, 0);
             rotationVector = new Vector3D(0, 0, 0);
             trackable = null;
-            cue = new CustomUserEvent(id);
 
         }
 
@@ -168,7 +170,6 @@ namespace ARdevKit.Model.Project
             this.translationVector = translationVector;
             scalingVector = scaling;
             this.trackable = trackable;
-            cue = new CustomUserEvent(id);
         }
 
         /// <summary>
