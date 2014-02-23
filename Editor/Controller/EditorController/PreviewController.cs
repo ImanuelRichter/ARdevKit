@@ -786,7 +786,7 @@ public class PreviewController
     public void rotateAugmentation()
     {
         IPreviewable prev = this.ew.CurrentElement;
-        int grad = (int)((AbstractAugmentation)prev).Rotation.Z;
+        int grad = -(int)((AbstractAugmentation)prev).Rotation.Z;
         PictureBox box = this.findBox(prev);
         double scale = 100 / (double)((Abstract2DTrackable)this.trackable).Size;
         Bitmap imgOriginal = this.getSizedBitmap();
