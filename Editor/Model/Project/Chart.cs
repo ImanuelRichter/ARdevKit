@@ -51,7 +51,16 @@ namespace ARdevKit.Model.Project
         public string Options
         {
             get { return optionsFilePath; }
-            set { optionsFilePath = value; }
+            set 
+            {
+                if (File.Helper.FileExists(@"res\", Path.GetFileName(value)))
+                {
+                    File.Helper.Copy(value, @"tmp\" + ID + "\\");
+                    optionsFilePath = Path.GetFullPath(@"tmp\" + ID + "\\" + Path.GetFileName(value));
+                }
+                else
+                    optionsFilePath = value; 
+            }
         }
 
         /// <summary>   Default constructor. </summary>
@@ -143,6 +152,7 @@ namespace ARdevKit.Model.Project
 
         public override bool initElement(EditorWindow ew)
         {
+            bool result = base.initElement(ew);
             if (Options == null)
             {
                 OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -157,7 +167,7 @@ namespace ARdevKit.Model.Project
                     return false;
                 }
             }
-            return base.initElement(ew);
+            return result;
         }
     }
 }
