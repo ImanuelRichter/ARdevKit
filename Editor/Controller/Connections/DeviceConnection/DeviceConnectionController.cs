@@ -20,7 +20,6 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
     {
         private List<IPEndPoint> reportedDevices;
         private UdpClient udpClient;
-        private TcpClient tcpClient;
         private EditorWindow editorWindow;
 
 
@@ -34,7 +33,6 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
             editorWindow = (EditorWindow) window;
             reportedDevices = new List<IPEndPoint>();
             udpClient = new UdpClient(12345);
-            tcpClient = new TcpClient();
             refresh();
         } 
 
@@ -168,6 +166,26 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
             {
                 file.Save();
             }
+        }
+
+
+        public bool sendDebug(int index)
+        {
+            bool successfullySent = false;
+            TcpListener receiver = null;
+            FileStream project = null;
+            NetworkStream sendStream = null;
+            try
+            {
+                receiver = new TcpListener(IPAddress.Any, 12346);
+                receiver.Start(10);
+                               
+            }
+            catch(Exception ex)
+            {
+
+            }
+            return false;
         }
     }
 }
