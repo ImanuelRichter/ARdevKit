@@ -22,6 +22,9 @@ namespace ARdevKit.Model.Project
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public abstract class AbstractSource : IPreviewable
     {
+        /// <summary>   The source identifier. </summary>
+        private String sourceID;
+
         /// <summary>
         /// Gets or sets the source identifier.
         /// </summary>
@@ -29,7 +32,11 @@ namespace ARdevKit.Model.Project
         /// The source identifier.
         /// </value>
         [ReadOnly(true), CategoryAttribute("General")]
-        public String sourceID { get; set; }
+        public String SourceID 
+        {
+            get { return sourceID; }
+            set { sourceID = value; } 
+        }
 
         /// <summary>   The query to the source. </summary>
         protected string queryFilePath;
@@ -109,8 +116,42 @@ namespace ARdevKit.Model.Project
 
         public virtual bool initElement(EditorWindow ew)
         {
-            //do nothing if not overwritten.
+            int count = 0;
+            bool found = true;
+            String newID = "";
+            while (found)
+            {
+                found = false;
+                count++;
+                newID = this.GetType().Name + count;
+                //make first letter lowercase
+                newID = newID[0].ToString().ToLower() + newID.Substring(1);
+                foreach (AbstractSource s in ew.project.Sources)
+                {
+                    if (this.GetType().Equals(s.GetType()))
+                    {
+                        if (s.sourceID == newID)
+                        {
+                            found = true;
+                            break;
+                        }
+                    }
+                }
+            }
+            sourceID = newID;
             return true;
+        }
+
+        /**
+         * <summary>    Gibt eine Zeichenfolge zurück, die das aktuelle Objekt darstellt. </summary>
+         *
+         * <remarks>    Robin, 14.01.2014. </remarks>
+         *
+         * <returns>    Eine Zeichenfolge, die das aktuelle Objekt darstellt. </returns>
+         */
+        public override string ToString()
+        {
+            return sourceID;
         }
     }
 }

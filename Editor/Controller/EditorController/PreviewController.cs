@@ -183,6 +183,7 @@ public class PreviewController
                     {
                         ((FileSource)source).Data = openFileDialog.FileName;
                         //set reference to the augmentations in Source
+                        source.initElement(ew);
                         source.Augmentation = ((AbstractDynamic2DAugmentation)currentElement);
 
                         //add references in Augmentation, Picturebox + project.sources List.
@@ -208,6 +209,7 @@ public class PreviewController
                 else
                 {
                     //set reference to the augmentations in Source
+                    source.initElement(ew);
                     source.Augmentation = ((AbstractDynamic2DAugmentation)currentElement);
 
                     //add references in Augmentation, Picturebox + project.sources List.
