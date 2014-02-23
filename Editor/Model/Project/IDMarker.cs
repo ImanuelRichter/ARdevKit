@@ -88,7 +88,17 @@ namespace ARdevKit.Model.Project
         /// </returns>
         public override Bitmap getPreview()
         {
-            return Properties.Resources.ARRMarker_normal_;
+            StringBuilder markerName = new StringBuilder("IDMarker");
+            if(matrixID < 100)
+            {
+                 markerName.Append("0");
+            }
+            if(matrixID < 10)
+            {
+                markerName.Append("0");
+            }
+            markerName.Append(matrixID);
+            return (Bitmap)Properties.Resources.ResourceManager.GetObject(markerName.ToString());
         }
 
         /// <summary>
