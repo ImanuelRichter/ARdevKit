@@ -11,8 +11,12 @@ using ARdevKit;
 using ARdevKit.Controller.EditorController;
 using ARdevKit.View;
 using ARdevKit.Properties;
+<<<<<<< HEAD
 using System.Drawing.Drawing2D;
+=======
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
+>>>>>>> origin/master
 
 public class PreviewController
 {
@@ -227,14 +231,25 @@ public class PreviewController
                         this.setSourcePreview(currentElement);
                     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 
 
                     source.Augmentation = ((AbstractDynamic2DAugmentation)currentElement);
                 }
+<<<<<<< HEAD
+
+
+=======
                 ew.PropertyGrid1.SelectedObject = source;
                 updateElementCombobox(trackable);
                 ew.Cmb_editor_properties_objectSelection.SelectedItem = source;
+>>>>>>> origin/master
             }
+            ew.PropertyGrid1.SelectedObject = source;
+
         }
     }
 
@@ -665,7 +680,11 @@ public class PreviewController
     {
         IPreviewable prev = this.ew.CurrentElement;
         PictureBox box = this.findBox(prev);
+<<<<<<< HEAD
         Image bit = box.Image;
+=======
+
+>>>>>>> origin/master
 
         double scale = 100 / (double)((Abstract2DTrackable)this.trackable).Size;
 
@@ -683,7 +702,10 @@ public class PreviewController
                     double sideScale = (double)prev.getPreview().Height / (double)prev.getPreview().Width;
                     return this.scaleBitmap((Bitmap)bit, (int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale), (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale * sideScale));
                 }
+<<<<<<< HEAD
                 else { return null; }
+=======
+>>>>>>> origin/master
 
             }
             else if (prev is Chart)
@@ -758,31 +780,7 @@ public class PreviewController
         box.Location = new Point((int)tmp.X - (box.Size.Width / 2), (int)tmp.Y - (box.Size.Height / 2));
     }
 
-    [MethodImpl(MethodImplOptions.Synchronized)]
-    public void updateElementCombobox(AbstractTrackable t)
-    {
-        if (t != null)
-        {
-            if (ew.Cmb_editor_properties_objectSelection.Items.Count != 1 + t.Augmentations.Count + ew.project.Sources.Count)
-            {
-                ew.Cmb_editor_properties_objectSelection.Items.Clear();
-                ew.Cmb_editor_properties_objectSelection.Items.Add(t);
-                foreach (AbstractAugmentation a in t.Augmentations)
-                {
-                    ew.Cmb_editor_properties_objectSelection.Items.Add(a);
-                }
-                foreach (AbstractSource s in ew.project.Sources)
-                {
-                    ew.Cmb_editor_properties_objectSelection.Items.Add(s);
-                }
-            }
-        }
-        else
-        {
-            ew.Cmb_editor_properties_objectSelection.Items.Clear();
-        }
-    }
-
+<<<<<<< HEAD
     public void rotateAugmentation()
     {
         IPreviewable prev = this.ew.CurrentElement;
@@ -838,6 +836,31 @@ public class PreviewController
             else { return null; }
         }
         else { return null; }
+=======
+    [MethodImpl(MethodImplOptions.Synchronized)]
+    public void updateElementCombobox(AbstractTrackable t)
+    {
+        if (t != null)
+        {
+            if (ew.Cmb_editor_properties_objectSelection.Items.Count != 1 + t.Augmentations.Count + ew.project.Sources.Count)
+            {
+                ew.Cmb_editor_properties_objectSelection.Items.Clear();
+                ew.Cmb_editor_properties_objectSelection.Items.Add(t);
+                foreach (AbstractAugmentation a in t.Augmentations)
+                {
+                    ew.Cmb_editor_properties_objectSelection.Items.Add(a);
+                }
+                foreach (AbstractSource s in ew.project.Sources)
+                {
+                    ew.Cmb_editor_properties_objectSelection.Items.Add(s);
+                }
+            }
+        }
+        else
+        {
+            ew.Cmb_editor_properties_objectSelection.Items.Clear();
+        }
+>>>>>>> origin/master
     }
 
 

@@ -125,17 +125,16 @@ namespace Controller.EditorController
                 && !(String.Equals(e.ChangedItem.Parent.Label.ToString(), "Rotation", StringComparison.Ordinal)))
             {
                 ew.PreviewController.updateTranslation();
-                ew.PreviewController.updateScale();
+                ew.PreviewController.findBox(ew.CurrentElement).Image = ew.PreviewController.updateScale();
 
                 return;
             }
 
-            // Checks if Z has been changed (for Lizzard :D)
+            // Checks if Z has been changed
             if (String.Equals(e.ChangedItem.Label.ToString(), "Z", StringComparison.Ordinal)
                 && String.Equals(e.ChangedItem.Parent.Label.ToString(), "Rotation", StringComparison.Ordinal))
             {
-                /* Here comes your code */
-                MessageBox.Show("foo");
+                ew.PreviewController.rotateAugmentation();
 
                 return;
             }
@@ -146,7 +145,7 @@ namespace Controller.EditorController
                 if (string.Equals(e.ChangedItem.Label.ToString(), "Height", StringComparison.Ordinal)
                     || string.Equals(e.ChangedItem.Label.ToString(), "Width", StringComparison.Ordinal))
                 {
-                    ew.PreviewController.updateScale();
+                    ew.PreviewController.findBox(ew.CurrentElement).Image = ew.PreviewController.updateScale();
 
                     return;
                 }
