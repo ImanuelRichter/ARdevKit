@@ -34,6 +34,9 @@ namespace ARdevKit.Model.Project
             set { videoPath = value; }
         }
 
+        //a cached preview to prevent access problems.
+        private Bitmap cachePreview = null;
+
         /// <summary>
         /// Default constructor.
         /// </summary>
@@ -77,8 +80,11 @@ namespace ARdevKit.Model.Project
         /// not found in <see cref="ImagePath" />.</exception>
         public override Bitmap getPreview()
         {
-            //return Properties.Resources.ImageAugmentation_small_;
-            return Controller.EditorController.ThumbCreator.CreateThumb(videoPath, 0.5);
+            if (cachePreview == null)
+            {
+                cachePreview = Controller.EditorController.ThumbCreator.CreateThumb(videoPath, 0.5);
+            }
+            return cachePreview;
         }
                 
         /// <summary>

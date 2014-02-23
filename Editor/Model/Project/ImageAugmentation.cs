@@ -25,6 +25,10 @@ namespace ARdevKit.Model.Project
         /// Full pathname of the image file.
         /// </summary>
         private string imagePath;
+
+        //an instance of the preview to prevent access complications.
+        private Bitmap cachePreview = null;
+
         /// <summary>
         /// Gets or sets the full pathname of the image file.
         /// </summary>
@@ -82,7 +86,11 @@ namespace ARdevKit.Model.Project
         /// not found in <see cref="ImagePath" />.</exception>
         public override Bitmap getPreview()
         {
-            return new Bitmap(ImagePath);
+            if (cachePreview == null)
+            {
+                cachePreview = new Bitmap(ImagePath);
+            }
+            return cachePreview;
         }
                 
         /// <summary>
