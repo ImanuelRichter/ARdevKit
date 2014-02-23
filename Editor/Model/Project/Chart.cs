@@ -83,6 +83,7 @@ namespace ARdevKit.Model.Project
         ///     which is performed on this <see cref="Chart"/></param>
         public override void Accept(Controller.ProjectController.AbstractProjectVisitor visitor)
         {
+            base.Accept(visitor);
             visitor.Visit(this);
             if (Source != null)
                 Source.Accept(visitor);

@@ -12,6 +12,7 @@ using ARdevKit.Controller.EditorController;
 using ARdevKit.View;
 using ARdevKit.Properties;
 using System.Drawing.Drawing2D;
+using System.Runtime.CompilerServices;
 
 public class PreviewController
 {
@@ -92,12 +93,11 @@ public class PreviewController
         if (currentElement is AbstractTrackable && trackable == null)
         {
             this.ew.Tsm_editor_menu_edit_delete.Enabled = true;
+            Vector3D center = new Vector3D(0, 0, 0);
+            center.Y = panel.Size.Height / 2;
+            center.X = panel.Size.Width / 2;
             while (true)
             {
-                Vector3D center = new Vector3D(0, 0, 0);
-                center.Y = panel.Size.Height / 2;
-                center.X = panel.Size.Width / 2;
-
                 //ask the user for the picture (if the trackable is a picturemarker)
                 bool isInitOk = currentElement.initElement(ew);
                 if (!isInitOk)
@@ -126,7 +126,6 @@ public class PreviewController
 
                         this.trackable = (AbstractTrackable)currentElement;
                         this.ew.project.Trackables[index] = (AbstractTrackable)currentElement;
-
                         this.addPictureBox(currentElement, center);
                         setCurrentElement(currentElement);
                         ew.PropertyGrid1.SelectedObject = currentElement;
@@ -134,6 +133,7 @@ public class PreviewController
                     }
                 }
             }
+
         }
         else if (currentElement is AbstractAugmentation && trackable != null && this.ew.project.Trackables[index].Augmentations.Count < 3)
         {
@@ -184,6 +184,7 @@ public class PreviewController
                     {
                         ((FileSource)source).Data = openFileDialog.FileName;
                         //set reference to the augmentations in Source
+                        source.initElement(ew);
                         source.Augmentation = ((AbstractDynamic2DAugmentation)currentElement);
 
                         //add references in Augmentation, Picturebox + project.sources List.
@@ -216,6 +217,9 @@ public class PreviewController
                     if (openFileDialog.ShowDialog() == DialogResult.OK)
                     {
                         ((DbSource)source).Query = openFileDialog.FileName;
+                        source.initElement(ew);
+                        source.Augmentation = ((AbstractDynamic2DAugmentation)currentElement);
+
                         //add references in Augmentation, Picturebox + project.sources List.
                         ((AbstractDynamic2DAugmentation)currentElement).Source = source;
                         this.ew.project.Sources.Add(((AbstractDynamic2DAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).Source);
@@ -227,11 +231,10 @@ public class PreviewController
 
                     source.Augmentation = ((AbstractDynamic2DAugmentation)currentElement);
                 }
-
-
+                ew.PropertyGrid1.SelectedObject = source;
+                updateElementCombobox(trackable);
+                ew.Cmb_editor_properties_objectSelection.SelectedItem = source;
             }
-            ew.PropertyGrid1.SelectedObject = source;
-
         }
     }
 
@@ -250,6 +253,7 @@ public class PreviewController
             this.findBox(currentElement).Image = currentElement.getPreview();
             this.findBox(currentElement).Refresh();
         }
+        updateElementCombobox(trackable);
     }
 
 
@@ -275,6 +279,7 @@ public class PreviewController
             this.trackable.RemoveAugmentation((AbstractAugmentation)currentElement);
             this.panel.Controls.Remove(this.findBox((AbstractAugmentation)currentElement));
         }
+        updateElementCombobox(trackable);
     }
 
 
@@ -286,6 +291,7 @@ public class PreviewController
         this.panel.Controls.Clear();
         this.trackable = null;
         this.ew.project.Trackables[index] = null;
+        updateElementCombobox(trackable);
     }
 
 
@@ -296,6 +302,7 @@ public class PreviewController
     {
         this.panel.Controls.Clear();
         this.ew.project.Trackables.Add(trackable);
+        updateElementCombobox(trackable);
         ContextMenu cm = new ContextMenu();
         cm.MenuItems.Add("einfügen", new EventHandler(this.paste_augmentation));
         cm.MenuItems[0].Enabled = false;
@@ -346,6 +353,8 @@ public class PreviewController
         this.ew.CurrentElement = null;
         this.ew.Tsm_editor_menu_edit_delete.Enabled = false;
         this.ew.Tsm_editor_menu_edit_copie.Enabled = false;
+        ew.Cmb_editor_properties_objectSelection.Items.Clear();
+        updateElementCombobox(trackable);
     }
 
 
@@ -497,7 +506,8 @@ public class PreviewController
             }
             this.ew.Tsm_editor_menu_edit_copie.Enabled = false;
         }
-
+        updateElementCombobox(trackable);
+        ew.Cmb_editor_properties_objectSelection.SelectedItem = currentElement;
     }
     /// <summary>
     /// set the augmentationPreview to a augmentationPreview with source icon
@@ -746,6 +756,31 @@ public class PreviewController
 
         PictureBox box = findBox(current);
         box.Location = new Point((int)tmp.X - (box.Size.Width / 2), (int)tmp.Y - (box.Size.Height / 2));
+    }
+
+    [MethodImpl(MethodImplOptions.Synchronized)]
+    public void updateElementCombobox(AbstractTrackable t)
+    {
+        if (t != null)
+        {
+            if (ew.Cmb_editor_properties_objectSelection.Items.Count != 1 + t.Augmentations.Count + ew.project.Sources.Count)
+            {
+                ew.Cmb_editor_properties_objectSelection.Items.Clear();
+                ew.Cmb_editor_properties_objectSelection.Items.Add(t);
+                foreach (AbstractAugmentation a in t.Augmentations)
+                {
+                    ew.Cmb_editor_properties_objectSelection.Items.Add(a);
+                }
+                foreach (AbstractSource s in ew.project.Sources)
+                {
+                    ew.Cmb_editor_properties_objectSelection.Items.Add(s);
+                }
+            }
+        }
+        else
+        {
+            ew.Cmb_editor_properties_objectSelection.Items.Clear();
+        }
     }
 
     public void rotateAugmentation()
