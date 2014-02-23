@@ -1357,5 +1357,27 @@ namespace ARdevKit
             }
         }
 
+        private void DeviceDebug_Click(object sender, EventArgs e)
+        {
+            if (DeviceList.Items.Count != 0)
+            {
+                if (DeviceList.SelectedItem != null && DeviceList.SelectedIndex >= 0)
+                {
+                    if (!deviceConnectionController.sendDebug(DeviceList.SelectedIndex))
+                    {
+                        MessageBox.Show("Die Debuganfrage wurde nicht korrekt versand.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Es ist kein Gerät ausgewählt, wählen sie es in der Liste aus");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Es ist kein Gerät verfügbar, nutzen sie die Aktualisierungsfunktion und stellen sie sicher, dass die Geräte mit dem netzwerk verbunden sind");
+            }
+        }
+
     }
 }

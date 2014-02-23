@@ -21,7 +21,13 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
         private List<IPEndPoint> reportedDevices;
         private UdpClient udpClient;
         private EditorWindow editorWindow;
+        private bool debugConnected;
 
+        public bool DebugConnected
+        {
+            get { return debugConnected; }
+            set { debugConnected = value; }
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DeviceConnectionController"/> class. Uses UDPListener to 
@@ -30,6 +36,7 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
         /// <param name="ew">The ew.</param>
         public DeviceConnectionController(Form window)
         {
+            debugConnected = false;
             editorWindow = (EditorWindow) window;
             reportedDevices = new List<IPEndPoint>();
             udpClient = new UdpClient();
@@ -139,14 +146,14 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
             }
             catch (Exception ex)
             {
-                if(new FileInfo("connectionDebugLog.txt").Length > 400000)
-                {
-                    File.Delete("connectionDebugLog.txt");
-                }
                 FileStream log = File.Open("connectionDebugLog.txt", FileMode.Append | FileMode.OpenOrCreate, FileAccess.Write);
                 byte [] logLine = UTF8Encoding.UTF8.GetBytes(DateTime.Now.ToString() + " - Exception from: " + ex.Source + " Message: " + ex.Message + " StackTrace: " + ex.StackTrace + "\n\r");
                 log.Write(logLine, 0, logLine.Length);
                 log.Close();
+                if (new FileInfo("connectionDebugLog.txt").Length > 400000)
+                {
+                    File.Delete("connectionDebugLog.txt");
+                }
             }
             finally
             {
@@ -172,22 +179,48 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
             editorWindow.project.ProjectPath = originalProjectPath;
         }
 
-
+        /// <summary>
+        ///     Sends a Debugrequest to the selected Device and shows its DebugOutput on a PopupWindow with a RichTextbox
+        /// </summary>
+        /// <param name="index">index of the chosen Device</param>
+        /// <returns> true if</returns>
         public bool sendDebug(int index)
         {
-            bool successfullySent = false;
-            TcpListener receiver = null;
-            FileStream project = null;
+            TcpClient sender = null;
             NetworkStream sendStream = null;
+            StreamReader reader = null;
+            View.DebugWindow debugPrompt = new View.DebugWindow(this);
             try
             {
-                receiver = new TcpListener(IPAddress.Any, 12346);
-                receiver.Start(10);
-                               
+                sender = new TcpClient(reportedDevices[index].Address.ToString(), 12345);
+                debugConnected = true;
+                sendStream = sender.GetStream();
+                sendStream.Write(ASCIIEncoding.ASCII.GetBytes("debug\n"), 0, ASCIIEncoding.ASCII.GetByteCount("debug\n"));
+                reader = new StreamReader(sendStream);
+                while(debugConnected)
+                {
+                    if(debugPrompt != null && sendStream.DataAvailable)
+                    {
+                        debugPrompt.Rtb_out.AppendText(reader.ReadLine() + "\n");
+                    }
+                }      
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-
+                FileStream log = File.Open("connectionDebugLog.txt", FileMode.Append | FileMode.OpenOrCreate, FileAccess.Write);
+                byte[] logLine = UTF8Encoding.UTF8.GetBytes(DateTime.Now.ToString() + " - Exception from: " + ex.Source + " Message: " + ex.Message + " StackTrace: " + ex.StackTrace + "\n\r");
+                log.Write(logLine, 0, logLine.Length);
+                log.Close();
+                if (new FileInfo("connectionDebugLog.txt").Length > 400000)
+                {
+                    File.Delete("connectionDebugLog.txt");
+                }
+            }
+            finally
+            {
+                reader.Close();
+                sendStream.Close();
+                sender.Close();
             }
             return false;
         }
