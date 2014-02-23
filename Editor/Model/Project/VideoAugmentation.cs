@@ -61,6 +61,7 @@ namespace ARdevKit.Model.Project
         /// which is performed on this element</param>
         public override void Accept(AbstractProjectVisitor visitor)
         {
+            base.Accept(visitor);
             visitor.Visit(this);
         }
 

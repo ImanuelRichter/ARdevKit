@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 using System.ComponentModel;
 
+using ARdevKit.Controller.ProjectController;
+
 namespace ARdevKit.Model.Project
 {
     /// <summary>
@@ -79,6 +81,17 @@ namespace ARdevKit.Model.Project
             }
 
             return System.IO.Path.GetFullPath(dest + endFileName);
+        }
+
+        /// <summary>
+        /// A method, to accept a <see cref="AbstractProjectVisitor" />
+        /// which must be implemented according to the visitor design pattern.
+        /// </summary>
+        /// <param name="visitor">the visitor which encapsulates the action
+        ///     which is performed on this <see cref="CustomUserEvent"/></param>
+        public void Accept(AbstractProjectVisitor visitor)
+        {
+            visitor.Visit(this);
         }
     }
 }

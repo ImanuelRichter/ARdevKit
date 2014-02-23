@@ -179,7 +179,11 @@ namespace ARdevKit.Model.Project
         /// </summary>
         /// <param name="visitor">the visitor which encapsulates the action
         ///     which is performed on this element</param>
-        public abstract void Accept(AbstractProjectVisitor visitor);
+        public virtual void Accept(AbstractProjectVisitor visitor)
+        {
+            if (cue != null && !Equals(cue.FilePath, "NULL"))
+                cue.Accept(visitor);
+        }
 
         /// <summary>
         /// returns a <see cref="Bitmap"/> in order to be displayed

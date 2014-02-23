@@ -82,6 +82,9 @@ namespace ARdevKit.Controller.ProjectController
         /// <summary>   Identifier for the coordinate system. </summary>
         private int coordinateSystemID;
 
+        /// <summary>
+        /// Default constructor
+        /// </summary>
         public ExportVisitor()
         {
             videoCount = 1;
@@ -90,20 +93,28 @@ namespace ARdevKit.Controller.ProjectController
             coordinateSystemID = 0;
         }
 
+        /// <summary>
+        /// Visits the given <see cref="CustomUserEvent"/>
+        /// </summary>
+        /// <param name="cue">The customUserEvent</param>
         public override void Visit(CustomUserEvent cue)
         {
             string newPath = Path.Combine(project.ProjectPath, "Events");
             Copy(cue.FilePath, newPath);
-            cue.FilePath = newPath;
-            //arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("script", "type=\"text/javascript\" src=\"Events/" + Path.GetFileName(cue.FilePath) + "\"")));
+            cue.FilePath = Path.Combine(newPath, Path.GetFileName(cue.FilePath));
+            arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("script", "type=\"text/javascript\" src=\"Events/" + Path.GetFileName(cue.FilePath) + "\"")));
         }
 
+        /// <summary>
+        /// Visits the given <see cref="VideoAugmentation"/>
+        /// </summary>
+        /// <param name="video">The video</param>
         public override void Visit(VideoAugmentation video)
         {
             // Copy to projectPath
             string newPath = Path.Combine(project.ProjectPath, "Assets");
             Copy(video.VideoPath, newPath);
-            video.VideoPath = newPath;
+            video.VideoPath = Path.Combine(newPath, Path.GetFileName(video.VideoPath));
 
             // arelGlue.js
             JavaScriptBlock loadContentBlock = new JavaScriptBlock();
@@ -153,7 +164,7 @@ namespace ARdevKit.Controller.ProjectController
             // Copy to projectPath
             string newPath = Path.Combine(project.ProjectPath, "Assets");
             Copy(image.ImagePath, newPath);
-            image.ImagePath = newPath;
+            image.ImagePath = Path.Combine(newPath, Path.GetFileName(image.ImagePath));
 
             // arelGlue.js
             JavaScriptBlock loadContentBlock = new JavaScriptBlock();
