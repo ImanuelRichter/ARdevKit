@@ -246,6 +246,18 @@ namespace ARdevKit.Model.Project
             id = newID;
             return true;
         }
+
+        /**
+         * <summary>    Gibt eine Zeichenfolge zurück, die das aktuelle Objekt darstellt. </summary>
+         *
+         * <remarks>    Robin, 14.01.2014. </remarks>
+         *
+         * <returns>    Eine Zeichenfolge, die das aktuelle Objekt darstellt. </returns>
+         */
+        public override string ToString()
+        {
+            return id;
+        }
     }
 }
 

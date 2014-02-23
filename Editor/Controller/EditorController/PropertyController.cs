@@ -121,10 +121,21 @@ namespace Controller.EditorController
 
             // Checks if X/Y position has been changed
             if (String.Equals(e.ChangedItem.Label.ToString(), "X", StringComparison.Ordinal)
-                || String.Equals(e.ChangedItem.Label.ToString(), "Y", StringComparison.Ordinal))
+                || String.Equals(e.ChangedItem.Label.ToString(), "Y", StringComparison.Ordinal)
+                && !(String.Equals(e.ChangedItem.Parent.Label.ToString(), "Rotation", StringComparison.Ordinal)))
             {
                 ew.PreviewController.updateTranslation();
                 ew.PreviewController.updateScale();
+
+                return;
+            }
+
+            // Checks if Z has been changed (for Lizzard :D)
+            if (String.Equals(e.ChangedItem.Label.ToString(), "Z", StringComparison.Ordinal)
+                && String.Equals(e.ChangedItem.Parent.Label.ToString(), "Rotation", StringComparison.Ordinal))
+            {
+                /* Here comes your code */
+                MessageBox.Show("foo");
 
                 return;
             }

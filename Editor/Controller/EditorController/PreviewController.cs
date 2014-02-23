@@ -183,6 +183,7 @@ public class PreviewController
                     {
                         ((FileSource)source).Data = openFileDialog.FileName;
                         //set reference to the augmentations in Source
+                        source.initElement(ew);
                         source.Augmentation = ((AbstractDynamic2DAugmentation)currentElement);
 
                         //add references in Augmentation, Picturebox + project.sources List.
@@ -215,6 +216,9 @@ public class PreviewController
                     if (openFileDialog.ShowDialog() == DialogResult.OK)
                     {
                         ((DbSource)source).Query = openFileDialog.FileName;
+                        source.initElement(ew);
+                        source.Augmentation = ((AbstractDynamic2DAugmentation)currentElement);
+
                         //add references in Augmentation, Picturebox + project.sources List.
                         ((AbstractDynamic2DAugmentation)currentElement).Source = source;
                         this.ew.project.Sources.Add(((AbstractDynamic2DAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).Source);
@@ -222,7 +226,7 @@ public class PreviewController
                         this.setSourcePreview(currentElement);
                     }
 
-                    
+
 
                 }
                 ew.PropertyGrid1.SelectedObject = source;
@@ -522,8 +526,8 @@ public class PreviewController
                 temp.ContextMenu.MenuItems[6].Enabled = false;
             }
         }
-        
-        
+
+
         temp.Refresh();
     }
 
@@ -642,7 +646,7 @@ public class PreviewController
     {
         IPreviewable prev = this.ew.CurrentElement;
         PictureBox box = this.findBox(prev);
-        
+
 
         double scale = 100 / (double)((Abstract2DTrackable)this.trackable).Size;
 
@@ -660,8 +664,8 @@ public class PreviewController
                     double sideScale = (double)prev.getPreview().Height / (double)prev.getPreview().Width;
                     box.Size = new Size((int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale), (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale * sideScale));
                 }
-            
-        }
+
+            }
             else if (prev is Chart)
             {
                 box.Size = new Size((int)(((Chart)prev).Width * scale), (int)(((Chart)prev).Height * scale));
@@ -964,6 +968,6 @@ public class PreviewController
 
     private void delete_current_element(object sender, EventArgs e)
     {
-            this.removePreviewable(this.ew.CurrentElement);
+        this.removePreviewable(this.ew.CurrentElement);
     }
 }
