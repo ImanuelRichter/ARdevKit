@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Collections;
 using System.IO;
+using System.Runtime.CompilerServices;
 
 namespace ARdevKit.Model.Project
 {
@@ -212,6 +213,7 @@ namespace ARdevKit.Model.Project
 
         public abstract object Clone();
 
+        [MethodImpl(MethodImplOptions.Synchronized)]
         public virtual bool initElement(EditorWindow ew)
         {
             int count = 0;

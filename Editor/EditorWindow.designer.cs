@@ -210,15 +210,15 @@ namespace ARdevKit
             // cmb_editor_properties_objectSelection
             // 
             this.cmb_editor_properties_objectSelection.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cmb_editor_properties_objectSelection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_editor_properties_objectSelection.FormattingEnabled = true;
-            this.cmb_editor_properties_objectSelection.Items.AddRange(new object[] {
-            "Objekt wählen..."});
             this.cmb_editor_properties_objectSelection.Location = new System.Drawing.Point(0, 0);
             this.cmb_editor_properties_objectSelection.MaxDropDownItems = 1;
             this.cmb_editor_properties_objectSelection.Name = "cmb_editor_properties_objectSelection";
             this.cmb_editor_properties_objectSelection.Size = new System.Drawing.Size(198, 21);
+            this.cmb_editor_properties_objectSelection.Sorted = true;
             this.cmb_editor_properties_objectSelection.TabIndex = 1;
-            this.cmb_editor_properties_objectSelection.Text = "Objekt wählen...";
+            this.cmb_editor_properties_objectSelection.SelectedIndexChanged += new System.EventHandler(this.cmb_editor_properties_objectSelection_SelectedIndexChanged);
             // 
             // tsm_editor_menu_file
             // 
@@ -600,6 +600,18 @@ namespace ARdevKit
         {
             get { return cmb_editor_selection_toolSelection; }
             set { cmb_editor_selection_toolSelection = value; }
+        }
+
+        /**
+         * <summary>    Gets or sets the cmb editor properties object selection. </summary>
+         *
+         * <value>  The cmb editor properties object selection. </value>
+         */
+
+        public System.Windows.Forms.ComboBox Cmb_editor_properties_objectSelection
+        {
+            get { return cmb_editor_properties_objectSelection; }
+            set { cmb_editor_properties_objectSelection = value; }
         }
 
         /// <summary>

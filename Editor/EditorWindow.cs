@@ -1149,6 +1149,10 @@ namespace ARdevKit
                     {
                         tempTrack.vector = new Vector3D(this.pnl_editor_preview.Size.Width / 2, this.pnl_editor_preview.Size.Height / 2, 0);
                         this.project.Trackables.Add(tempTrack);
+                        foreach (AbstractAugmentation a in tempTrack.Augmentations)
+                        {
+                            a.initElement(this);
+                        }
                         this.updateSceneSelectionPanel();
                     }
                 }
@@ -1265,6 +1269,16 @@ namespace ARdevKit
         private void tsm_editor_menu_help_help_Click(object sender, EventArgs e)
         {
             Help.ShowHelp(this, Application.StartupPath + "\\Documentation.chm", HelpNavigator.TableOfContents);
+        }
+
+        private void cmb_editor_properties_objectSelection_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            PropertyGrid1.SelectedObject = cmb_editor_properties_objectSelection.SelectedItem;
+            if (!(cmb_editor_properties_objectSelection.SelectedItem is AbstractSource))
+            {
+                previewController.setCurrentElement((IPreviewable) cmb_editor_properties_objectSelection.SelectedItem);
+            }
+            
         }
     }
 }
