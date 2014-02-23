@@ -91,7 +91,7 @@ namespace EditorTest
             barChart1.Height = 200;
 
             barChart1.Options = File.OpenText("res\\highcharts\\barChartColumn\\liveOptions.json").ReadToEnd();
-            barChart1.Source = new LiveSource("http://localhost/highcharts/server.php?callback=?");
+            barChart1.Source = new DbSource("http://localhost/highcharts/server.php?callback=?");
             barChart1.Source.Query = "res\\highcharts\\barChartColumn\\liveQuery.js";
             barChart1.Source.Augmentation = barChart1;
             pictureMarker1.Augmentations.Add(barChart1);
@@ -138,7 +138,7 @@ namespace EditorTest
 
         private void export(bool exportToTestFolder)
         {
-            ExportVisitor exporter = new ExportVisitor(exportToTestFolder);
+            ExportVisitor exporter = new ExportVisitor();
             testProject.Accept(exporter);
 
             foreach (AbstractFile file in exporter.Files)

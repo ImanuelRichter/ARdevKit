@@ -254,25 +254,6 @@ namespace ARdevKit.Controller.ProjectController
             // ChartDiv
             chartFileDefineBlock.AddBlock(new JavaScriptInLine("div : document.createElement(\"div\")", true));
 
-
-            // Copy options.json
-            string chartFilesDirectory = Path.Combine(project.ProjectPath, "Assets", chartID);
-            Copy(chart.Options, chartFilesDirectory, "options.json");
-            chart.Options = Path.Combine(chartFilesDirectory, "options.json");
-
-            // setOptions
-            JavaScriptBlock chartFileDefineSetOptionsBlock = new JavaScriptBlock("setOptions : function(optionsPath)", new BlockMarker("{", "},"));
-            chartFileDefineBlock.AddBlock(chartFileDefineSetOptionsBlock);
-
-            JavaScriptBlock chartFileDefineSetOptionsLoadFileBlock = new JavaScriptBlock("$.getJSON(optionsPath, function(data)", new BlockMarker("{", "})"));
-            chartFileDefineSetOptionsBlock.AddBlock(chartFileDefineSetOptionsLoadFileBlock);
-            chartFileDefineSetOptionsBlock.AddBlock(new JavaScriptInLine(".fail(function() { console.log(\"Failed to load options\")})", false));
-            chartFileDefineSetOptionsBlock.AddBlock(new JavaScriptLine(".done(function() { console.log(\"Loaded options successfully\")})"));
-
-            chartFileDefineSetOptionsLoadFileBlock.AddLine(new JavaScriptLine(chartPluginID + ".options = data"));
-            if (chart.Source == null)
-                chartFileDefineSetOptionsLoadFileBlock.AddLine(new JavaScriptLine(chartPluginID + ".chart = $('#' + " + chartPluginID + ".id).highcharts(" + chartPluginID + ".options)"));
-            
             // This is for "realtime" preview
             /*
             if (exportForTest)
@@ -306,7 +287,21 @@ namespace ARdevKit.Controller.ProjectController
             chartFileCreateBlock.AddLine(new JavaScriptLine("this.div.style.width = \"" + chart.Width + "px\""));
             chartFileCreateBlock.AddLine(new JavaScriptLine("this.div.style.height = \"" + chart.Height + "px\""));
             chartFileCreateBlock.AddLine(new JavaScriptLine("document.documentElement.appendChild(this.div)"));
-            chartFileCreateBlock.AddLine(new JavaScriptLine("this.setOptions('Assets/" + chartID + "/options.json')"));
+
+            // Copy options.js
+            string chartFilesDirectory = Path.Combine(project.ProjectPath, "Assets", chartID);
+            Copy(chart.Options, chartFilesDirectory, "options.js");
+            chart.Options = Path.Combine(chartFilesDirectory, "options.js");
+
+            // setOptions
+            JavaScriptBlock chartFileDefineLoadOptionsBlock = new JavaScriptBlock("$.getScript(\"Assets/" + chartID + "/options.js\", function()", new BlockMarker("{", "})"));
+            chartFileCreateBlock.AddBlock(chartFileDefineLoadOptionsBlock);
+            chartFileCreateBlock.AddBlock(new JavaScriptInLine(".fail(function() { console.log(\"Failed to load options\")})", false));
+            chartFileCreateBlock.AddBlock(new JavaScriptLine(".done(function() { console.log(\"Loaded options successfully\")})"));
+
+            chartFileDefineLoadOptionsBlock.AddLine(new JavaScriptLine(chartPluginID + ".options = init()"));
+            if (chart.Source == null)
+                chartFileDefineLoadOptionsBlock.AddLine(new JavaScriptLine(chartPluginID + ".chart = $('#' + " + chartPluginID + ".id).highcharts(" + chartPluginID + ".options)"));
 
             // Show            
             JavaScriptBlock chartShowBlock = new JavaScriptBlock("show : function()", new BlockMarker("{", "},"));
@@ -324,29 +319,6 @@ namespace ARdevKit.Controller.ProjectController
             chartGetCoordinateSystemIDBlock.AddLine(new JavaScriptLine("return this.coordinateSystemID"));
 
             chartCount++;
-        }
-
-        public override void Visit(LiveSource source)
-        {
-            string chartID = source.Augmentation.ID;
-            string chartPluginID = "arel.Plugin." + CultureInfo.CurrentCulture.TextInfo.ToTitleCase(chartID);
-            string chartFilesDirectory = Path.Combine(project.ProjectPath, "Assets", chartID);
-
-            if (source.Query != null && source.Query != "")
-            {
-                Copy(source.Query, chartFilesDirectory, "query.js");
-                source.Query = Path.Combine(chartFilesDirectory, "query.js");
-
-                chartFileQueryBlock = new JavaScriptBlock("$.getScript(\"Assets/" + chartID + "/" + Path.GetFileName(source.Query) + "\", function(xml)", new BlockMarker("{", "})"));
-                chartFileCreateBlock.AddBlock(chartFileQueryBlock);
-                chartFileCreateBlock.AddBlock(new JavaScriptInLine(".fail(function() { console.log(\"Failed to load query\")})", false));
-                chartFileCreateBlock.AddBlock(new JavaScriptLine(".done(function() { console.log(\"Loaded query successfully\")})"));
-                chartFileQueryBlock.AddLine(new JavaScriptLine("var dataPath = \"" + source.Url + "\""));
-                chartFileQueryBlock.AddLine(new JavaScriptLine(chartPluginID + ".chart = $('#' + " + chartPluginID + ".id).highcharts(" + chartPluginID + ".options)"));
-                chartFileQueryBlock.AddLine(new JavaScriptLine("update(dataPath, " + chartPluginID + ".id)"));
-            }
-            else
-                chartFileCreateBlock.AddLine(new JavaScriptLine("alert('No query defined')"));
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -371,12 +343,12 @@ namespace ARdevKit.Controller.ProjectController
                 Copy(source.Query, chartFilesDirectory, "query.js");
                 source.Query = Path.Combine(chartFilesDirectory, "query.js");
 
-                chartFileQueryBlock = new JavaScriptBlock("$.getScript(\"Assets/" + chartID + "/" + Path.GetFileName(source.Query) + "\", function(xml)", new BlockMarker("{", "})"));
+                chartFileQueryBlock = new JavaScriptBlock("$.getScript(\"Assets/" + chartID + "/" + Path.GetFileName(source.Query) + "\", function()", new BlockMarker("{", "})"));
                 chartFileCreateBlock.AddBlock(chartFileQueryBlock);
                 chartFileCreateBlock.AddBlock(new JavaScriptInLine(".fail(function() { console.log(\"Failed to load query\")})", false));
                 chartFileCreateBlock.AddBlock(new JavaScriptLine(".done(function() { console.log(\"Loaded query successfully\")})"));
                 chartFileQueryBlock.AddLine(new JavaScriptLine("var dataPath = \"" + source.Url + "\""));
-                chartFileQueryBlock.AddLine(new JavaScriptLine(chartPluginID + ".chart = query(dataPath, " + chartPluginID + ".id, " + chartPluginID + ".options)"));
+                chartFileQueryBlock.AddLine(new JavaScriptLine("query(dataPath, " + chartPluginID + ".id, " + chartPluginID + ".options)"));
             }
             else
                 chartFileCreateBlock.AddLine(new JavaScriptLine("alert('No query defined')"));
@@ -409,7 +381,7 @@ namespace ARdevKit.Controller.ProjectController
                     Copy(source.Query, chartFilesDirectory, "query.js");
                     source.Query = Path.Combine(chartFilesDirectory, "query.js");
 
-                    chartFileQueryBlock = new JavaScriptBlock("$.getScript(\"Assets/" + chartID + "/" + Path.GetFileName(source.Query) + "\", function(xml)", new BlockMarker("{", "})"));
+                    chartFileQueryBlock = new JavaScriptBlock("$.getScript(\"Assets/" + chartID + "/" + Path.GetFileName(source.Query) + "\", function()", new BlockMarker("{", "})"));
                     chartFileCreateBlock.AddBlock(chartFileQueryBlock);
                     chartFileCreateBlock.AddBlock(new JavaScriptInLine(".fail(function() { console.log(\"Failed to load query\")})", false));
                     chartFileCreateBlock.AddBlock(new JavaScriptLine(".done(function() { console.log(\"Loaded query successfully\")})"));
@@ -963,8 +935,12 @@ namespace ARdevKit.Controller.ProjectController
                         foreach (string path in Directory.GetFiles(project.ProjectPath))
                             if (!Path.GetExtension(path).Equals(".ardev"))
                                 File.Delete(path);
-                        foreach (string path in Directory.GetFiles(Path.Combine(project.ProjectPath, "Assets")))
-                            File.Delete(path);
+                        string assetsPath = Path.Combine(project.ProjectPath, "Assets");
+                        if (Directory.Exists(assetsPath))
+                        {
+                            foreach (string path in Directory.GetFiles(assetsPath))
+                                File.Delete(path);
+                        }
                         cleanedUp = true;
                     }
                     catch (Exception e)
