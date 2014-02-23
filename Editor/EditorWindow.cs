@@ -561,7 +561,7 @@ namespace ARdevKit
 
                 try
                 {
-                    exportVisitor = new ExportVisitor(false);
+                    exportVisitor = new ExportVisitor();
                     project.Accept(exportVisitor);
                 }
                 catch (DirectoryNotFoundException de)
@@ -649,7 +649,8 @@ namespace ARdevKit
         {
             SceneElementCategory sources = new SceneElementCategory(MetaCategory.Source, "Sources");
             sources.addElement(new SceneElement("Database Source", new DbSource(), this));
-            sources.addElement(new SceneElement("FileSource", new FileSource(""), this));
+            sources.addElement(new SceneElement("File Source", new FileSource(""), this));
+            sources.addElement(new SceneElement("Live Source", new LiveSource(""), this));
             SceneElementCategory augmentations = new SceneElementCategory(MetaCategory.Augmentation, "Augmentations");
             augmentations.addElement(new SceneElement("Chart", new Chart(), this));
             augmentations.addElement(new SceneElement("Image Augmentation", new ImageAugmentation(), this));
@@ -661,6 +662,7 @@ namespace ARdevKit
             addCategory(trackables);
             addCategory(augmentations);
             addCategory(sources);
+            IDFactory.Reset();
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -926,7 +928,7 @@ namespace ARdevKit
             this.startDebugModeLocal = false;
             this.elementCategories = new List<SceneElementCategory>();
             this.allElements = new LinkedList<IPreviewable>();
-            this.exportVisitor = new ExportVisitor(false);
+            this.exportVisitor = new ExportVisitor();
             this.currentElement = null;
             this.project.Screensize = new ScreenSize();
             this.project.Screensize.Height = Convert.ToUInt32(pnl_editor_preview.Size.Height);
@@ -942,7 +944,7 @@ namespace ARdevKit
             this.startDebugModeLocal = false;
             this.elementCategories = new List<SceneElementCategory>();
             this.allElements = new LinkedList<IPreviewable>();
-            this.exportVisitor = new ExportVisitor(false);
+            this.exportVisitor = new ExportVisitor();
             this.currentElement = null;
             registerElements();
         }
@@ -1198,6 +1200,7 @@ namespace ARdevKit
             float x = e.MarginBounds.Left;
             float y = e.MarginBounds.Top;
 
+            if (project.Trackables[trackablePCounter] != null)
             e.Graphics.DrawImage(project.Trackables[trackablePCounter].getPreview(), x, y);
 
             if (project.Trackables[trackablePCounter] != project.Trackables.Last())
@@ -1258,6 +1261,11 @@ namespace ARdevKit
                 return false;
             else
                 return true;
+        }
+
+        private void tsm_editor_menu_help_help_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, Application.StartupPath + "\\Documentation.chm", HelpNavigator.TableOfContents);
         }
     }
 }

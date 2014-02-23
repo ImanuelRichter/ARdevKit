@@ -23,12 +23,10 @@ namespace ARdevKit.Controller.ProjectController
 
     public class ExportVisitor : AbstractProjectVisitor
     {
-        /// <summary>   true if exporting for test. </summary>
-        private bool exportForTest = false;
-
+        /// <summary>
+        /// The exported <see cref="Project"/>
+        /// </summary>
         private Project project;
-        /// <summary>   Full pathname of the project file. </summary>
-        private string projectPath;
 
         /// <summary>   The <see cref="AbstractFile"/>s created by the export visitor. </summary>
         private List<AbstractFile> files = new List<AbstractFile>();
@@ -84,9 +82,8 @@ namespace ARdevKit.Controller.ProjectController
         /// <summary>   Identifier for the coordinate system. </summary>
         private int coordinateSystemID;
 
-        public ExportVisitor(bool exportForTest)
+        public ExportVisitor()
         {
-            this.exportForTest = exportForTest;
             videoCount = 1;
             imageCount = 1;
             chartCount = 1;
@@ -101,7 +98,7 @@ namespace ARdevKit.Controller.ProjectController
         public override void Visit(VideoAugmentation video)
         {
             // Copy to projectPath
-            Copy(video.VideoPath, Path.Combine(projectPath, "Assets"));
+            Copy(video.VideoPath, Path.Combine(project.ProjectPath, "Assets"));
 
             // arelGlue.js
             JavaScriptBlock loadContentBlock = new JavaScriptBlock();
@@ -149,7 +146,7 @@ namespace ARdevKit.Controller.ProjectController
         public override void Visit(ImageAugmentation image)
         {
             // Copy to projectPath
-            Copy(image.ImagePath, Path.Combine(projectPath, "Assets"));
+            Copy(image.ImagePath, Path.Combine(project.ProjectPath, "Assets"));
 
             // arelGlue.js
             JavaScriptBlock loadContentBlock = new JavaScriptBlock();
@@ -204,8 +201,8 @@ namespace ARdevKit.Controller.ProjectController
 
             arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("script", "src=\"Assets/" + chartID + "/chart.js\"")));
 
-            Copy("res\\highcharts\\highcharts.js", Path.Combine(projectPath, "Assets"));
-            Copy("res\\jquery\\jquery-2.0.3.js", Path.Combine(projectPath, "Assets"));
+            Copy("res\\highcharts\\highcharts.js", Path.Combine(project.ProjectPath, "Assets"));
+            Copy("res\\jquery\\jquery-2.0.3.js", Path.Combine(project.ProjectPath, "Assets"));
 
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -233,7 +230,7 @@ namespace ARdevKit.Controller.ProjectController
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             // Create chart.js
-            ChartFile chartFile = new ChartFile(projectPath, chartID);
+            ChartFile chartFile = new ChartFile(project.ProjectPath, chartID);
             files.Add(chartFile);
 
             JavaScriptBlock chartFileVariablesBlock = new JavaScriptBlock();
@@ -259,7 +256,7 @@ namespace ARdevKit.Controller.ProjectController
 
 
             // Copy options.json
-            string chartFilesDirectory = Path.Combine(projectPath, "Assets", chartID);
+            string chartFilesDirectory = Path.Combine(project.ProjectPath, "Assets", chartID);
             Copy(chart.Options, chartFilesDirectory, "options.json");
             chart.Options = Path.Combine(chartFilesDirectory, "options.json");
 
@@ -333,7 +330,7 @@ namespace ARdevKit.Controller.ProjectController
         {
             string chartID = source.Augmentation.ID;
             string chartPluginID = "arel.Plugin." + CultureInfo.CurrentCulture.TextInfo.ToTitleCase(chartID);
-            string chartFilesDirectory = Path.Combine(projectPath, "Assets", chartID);
+            string chartFilesDirectory = Path.Combine(project.ProjectPath, "Assets", chartID);
 
             if (source.Query != null && source.Query != "")
             {
@@ -367,7 +364,7 @@ namespace ARdevKit.Controller.ProjectController
         {
             string chartID = source.Augmentation.ID;
             string chartPluginID = "arel.Plugin." + CultureInfo.CurrentCulture.TextInfo.ToTitleCase(chartID);
-            string chartFilesDirectory = Path.Combine(projectPath, "Assets", chartID);
+            string chartFilesDirectory = Path.Combine(project.ProjectPath, "Assets", chartID);
 
             if (source.Query != null && source.Query != "")
             {
@@ -400,7 +397,7 @@ namespace ARdevKit.Controller.ProjectController
         {
             string chartID = source.Augmentation.ID;
             string chartPluginID = "arel.Plugin." + CultureInfo.CurrentCulture.TextInfo.ToTitleCase(chartID);
-            string chartFilesDirectory = Path.Combine(projectPath, "Assets", chartID);
+            string chartFilesDirectory = Path.Combine(project.ProjectPath, "Assets", chartID);
 
             if (source.Data != null && source.Data != "")
             {
@@ -538,12 +535,12 @@ namespace ARdevKit.Controller.ProjectController
         public override void Visit(ImageTrackable image)
         {
             // Copy the file
-            Copy(image.ImagePath, Path.Combine(projectPath, "Assets"));
+            Copy(image.ImagePath, Path.Combine(project.ProjectPath, "Assets"));
 
             string sourceImageFile = image.ImagePath;
             string destImageFile;
-            destImageFile = Path.Combine(projectPath, Path.GetFileName(sourceImageFile));
-            if (Directory.Exists(Path.Combine(projectPath, "Asstes")) && !File.Exists(destImageFile))
+            destImageFile = Path.Combine(project.ProjectPath, Path.GetFileName(sourceImageFile));
+            if (Directory.Exists(Path.Combine(project.ProjectPath, "Asstes")) && !File.Exists(destImageFile))
                 File.Copy(sourceImageFile, destImageFile);
 
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -646,7 +643,7 @@ namespace ARdevKit.Controller.ProjectController
             Graphics g = Graphics.FromImage(bmp);
             g.Clear(Color.Transparent);
             g.Flush();
-            string anchorPath = Path.Combine(projectPath, "Assets", "anchor.png");
+            string anchorPath = Path.Combine(project.ProjectPath, "Assets", "anchor.png");
             if (!File.Exists(anchorPath))
                 bmp.Save(anchorPath, System.Drawing.Imaging.ImageFormat.Png);
 
@@ -671,12 +668,12 @@ namespace ARdevKit.Controller.ProjectController
         public override void Visit(PictureMarker pictureMarker)
         {
             // Copy the file
-            Copy(pictureMarker.PicturePath, Path.Combine(projectPath, "Assets"));
+            Copy(pictureMarker.PicturePath, Path.Combine(project.ProjectPath, "Assets"));
 
             string sourcePictureMarkerFile = pictureMarker.PicturePath;
             string destPictureMarkerFile;
-            destPictureMarkerFile = Path.Combine(projectPath, Path.GetFileName(sourcePictureMarkerFile));
-            if (Directory.Exists(Path.Combine(projectPath, "Asstes")) && !File.Exists(destPictureMarkerFile))
+            destPictureMarkerFile = Path.Combine(project.ProjectPath, Path.GetFileName(sourcePictureMarkerFile));
+            if (Directory.Exists(Path.Combine(project.ProjectPath, "Asstes")) && !File.Exists(destPictureMarkerFile))
                 File.Copy(sourcePictureMarkerFile, destPictureMarkerFile);
 
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -784,7 +781,7 @@ namespace ARdevKit.Controller.ProjectController
             Graphics g = Graphics.FromImage(bmp);
             g.Clear(Color.Transparent);
             g.Flush();
-            string anchorPath = Path.Combine(projectPath, "Assets", "anchor.png");
+            string anchorPath = Path.Combine(project.ProjectPath, "Assets", "anchor.png");
             if (!File.Exists(anchorPath))
                 bmp.Save(anchorPath, System.Drawing.Imaging.ImageFormat.Png);
 
@@ -929,7 +926,7 @@ namespace ARdevKit.Controller.ProjectController
             Graphics g = Graphics.FromImage(bmp);
             g.Clear(Color.Transparent);
             g.Flush();
-            string anchorPath = Path.Combine(projectPath, "Assets", "anchor.png");
+            string anchorPath = Path.Combine(project.ProjectPath, "Assets", "anchor.png");
             if (!File.Exists(anchorPath))
                 bmp.Save(anchorPath, System.Drawing.Imaging.ImageFormat.Png);
 
@@ -953,25 +950,20 @@ namespace ARdevKit.Controller.ProjectController
 
         public override void Visit(Project p)
         {
-            // Get project path
             project = p;
-            if (exportForTest)
-                projectPath = "currentProject";
-            else
-                projectPath = p.ProjectPath;
 
             // Clean up
-            if (Directory.Exists(projectPath))
+            if (Directory.Exists(project.ProjectPath))
             {
                 bool cleanedUp = false;
                 DialogResult abortRetryIgnore = DialogResult.Cancel;
                 do
                     try
                     {
-                        foreach (string path in Directory.GetFiles(projectPath))
+                        foreach (string path in Directory.GetFiles(project.ProjectPath))
                             if (!Path.GetExtension(path).Equals(".ardev"))
                                 File.Delete(path);
-                        foreach (string path in Directory.GetFiles(Path.Combine(projectPath, "Assets")))
+                        foreach (string path in Directory.GetFiles(Path.Combine(project.ProjectPath, "Assets")))
                             File.Delete(path);
                         cleanedUp = true;
                     }
@@ -985,10 +977,10 @@ namespace ARdevKit.Controller.ProjectController
             }
 
             // Copy arel file
-            Copy(Path.Combine("res", "arel", "arel.js"), projectPath);
+            Copy(Path.Combine("res", "arel", "arel.js"), project.ProjectPath);
 
             // Create [projectName].html
-            ARELProjectFile arelProjectFile = new ARELProjectFile("<!DOCTYPE html>", Path.Combine(projectPath, "arel" + (p.Name != "" ? p.Name : "Test") + ".html"));
+            ARELProjectFile arelProjectFile = new ARELProjectFile("<!DOCTYPE html>", Path.Combine(project.ProjectPath, "arel" + (p.Name != "" ? p.Name : "Test") + ".html"));
             files.Add(arelProjectFile);
 
             // head
@@ -1016,7 +1008,7 @@ namespace ARdevKit.Controller.ProjectController
             trackingDataFileName += p.Sensor.SensorSubType != AbstractSensor.SensorSubTypes.None ? p.Sensor.SensorSubType.ToString() : "";
             trackingDataFileName += ".xml";
             TrackingDataFile trackingDataFile;
-            trackingDataFile = new TrackingDataFile("<?xml version=\"1.0\" encoding=\"UTF-8\"?>", projectPath, trackingDataFileName);
+            trackingDataFile = new TrackingDataFile("<?xml version=\"1.0\" encoding=\"UTF-8\"?>", project.ProjectPath, trackingDataFileName);
             files.Add(trackingDataFile);
 
             // TrackingData
@@ -1047,7 +1039,7 @@ namespace ARdevKit.Controller.ProjectController
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             // Create arelConfig.xml
-            ARELConfigFile arelConfigFile = new ARELConfigFile("<?xml version=\"1.0\" encoding=\"UTF-8\"?>", projectPath);
+            ARELConfigFile arelConfigFile = new ARELConfigFile("<?xml version=\"1.0\" encoding=\"UTF-8\"?>", project.ProjectPath);
             files.Add(arelConfigFile);
 
             // Results
@@ -1063,7 +1055,7 @@ namespace ARdevKit.Controller.ProjectController
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             // Create arelGlue.js
-            arelGlueFile = new ARELGlueFile(projectPath);
+            arelGlueFile = new ARELGlueFile(project.ProjectPath);
             files.Add(arelGlueFile);
 
             JavaScriptBlock sceneReadyBlock = new JavaScriptBlock("arel.sceneReady", new BlockMarker("(", ");"));
