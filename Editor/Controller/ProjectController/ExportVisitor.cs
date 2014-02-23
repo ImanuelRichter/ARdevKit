@@ -92,13 +92,18 @@ namespace ARdevKit.Controller.ProjectController
 
         public override void Visit(CustomUserEvent cue)
         {
-            //arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("script", "type=\"text/javascript\" src=\"" + Path.GetFileName(cue.FilePath) + "\"")));
+            string newPath = Path.Combine(project.ProjectPath, "Events");
+            Copy(cue.FilePath, newPath);
+            cue.FilePath = newPath;
+            //arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("script", "type=\"text/javascript\" src=\"Events/" + Path.GetFileName(cue.FilePath) + "\"")));
         }
 
         public override void Visit(VideoAugmentation video)
         {
             // Copy to projectPath
-            Copy(video.VideoPath, Path.Combine(project.ProjectPath, "Assets"));
+            string newPath = Path.Combine(project.ProjectPath, "Assets");
+            Copy(video.VideoPath, newPath);
+            video.VideoPath = newPath;
 
             // arelGlue.js
             JavaScriptBlock loadContentBlock = new JavaScriptBlock();
@@ -146,7 +151,9 @@ namespace ARdevKit.Controller.ProjectController
         public override void Visit(ImageAugmentation image)
         {
             // Copy to projectPath
-            Copy(image.ImagePath, Path.Combine(project.ProjectPath, "Assets"));
+            string newPath = Path.Combine(project.ProjectPath, "Assets");
+            Copy(image.ImagePath, newPath);
+            image.ImagePath = newPath;
 
             // arelGlue.js
             JavaScriptBlock loadContentBlock = new JavaScriptBlock();
@@ -1092,7 +1099,7 @@ namespace ARdevKit.Controller.ProjectController
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Copies a passed file to the passed directory with the passed name. </summary>
+        /// <summary>   Copies a passed file to the passed directory and renames it to the passed name. </summary>
         ///
         /// <remarks>   Imanuel, 27.01.2014. </remarks>
         ///
@@ -1108,13 +1115,16 @@ namespace ARdevKit.Controller.ProjectController
                 Directory.CreateDirectory(destDirectory);
             }
             string destFile = Path.Combine(destDirectory, newFileName);
-            try
+            if (!File.Equals(srcFile, destFile))
             {
-                File.Copy(srcFile, Path.Combine(destDirectory, newFileName), true);
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                try
+                {
+                    File.Copy(srcFile, destFile, true);
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }
