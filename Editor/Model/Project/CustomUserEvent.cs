@@ -38,7 +38,7 @@ namespace ARdevKit.Model.Project
                 {
                     filePath = getCustomUserFile();
                 }
-                
+
                 return filePath; 
             }
             set { filePath = value; }
@@ -63,9 +63,10 @@ namespace ARdevKit.Model.Project
         {
             var fileName = "customUserEventTemplate.txt";
             var endFileName = augmentationID + "_Event.js";
-            var dest = @"tmp\Events\";
+            var dest = @"tmp\" + augmentationID + "\\";
+            var source = @"res\templates\";
 
-            string content = System.IO.File.ReadAllText(@"res\templates\" + fileName);
+            string content = System.IO.File.ReadAllText(source + fileName);
             content = content.Replace("#element", augmentationID);
 
             System.IO.Directory.CreateDirectory(dest);
