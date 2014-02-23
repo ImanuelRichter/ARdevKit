@@ -146,7 +146,7 @@ namespace ARdevKit.Model.Project
             {
                 OpenFileDialog openFileDialog = new OpenFileDialog();
                 openFileDialog.InitialDirectory = Application.StartupPath + "\\res\\highcharts\\barChartColumn";
-                openFileDialog.Filter = "json (*.json)|*.json";
+                openFileDialog.Filter = "js (*.js)|*.js";
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     Options = openFileDialog.FileName;
