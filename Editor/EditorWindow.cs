@@ -1329,31 +1329,34 @@ namespace ARdevKit
 
         private void sendProject_Click(object sender, EventArgs e)
         {
-            if (project.Trackables == null || project.Trackables.Count <= 0 || project.Trackables[0] == null)
+            if (project.Trackables != null && project.Trackables.Count > 0 && project.Trackables[0] != null)
             {
-                MessageBox.Show("Es ist kein Projekt zum versenden erstellt worden");
-            }
-            if (DeviceList.Items.Count != 0)
-            {
-                if (DeviceList.SelectedItem != null && DeviceList.SelectedIndex >= 0)
+                if (DeviceList.Items.Count != 0)
                 {
-                    if (deviceConnectionController.sendProject(DeviceList.SelectedIndex))
+                    if (DeviceList.SelectedItem != null && DeviceList.SelectedIndex >= 0)
                     {
-                        MessageBox.Show("Das Projekt wurde versand.");
+                        if (deviceConnectionController.sendProject(DeviceList.SelectedIndex))
+                        {
+                            MessageBox.Show("Das Projekt wurde versand.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Das Projekt wurde nicht versand.");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Das Projekt wurde nicht versand.");
+                        MessageBox.Show("Es ist kein Gerät ausgewählt, wählen sie es in der Liste aus");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Es ist kein Gerät ausgewählt, wählen sie es in der Liste aus");
+                    MessageBox.Show("Es ist kein Gerät verfügbar, nutzen sie die Aktualisierungsfunktion und stellen sie sicher, dass die Geräte mit dem netzwerk verbunden sind");
                 }
             }
             else
             {
-                MessageBox.Show("Es ist kein Gerät verfügbar, nutzen sie die Aktualisierungsfunktion und stellen sie sicher, dass die Geräte mit dem netzwerk verbunden sind");
+                MessageBox.Show("Es ist kein Projekt zum versenden erstellt worden");
             }
         }
 

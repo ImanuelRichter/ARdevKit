@@ -157,9 +157,18 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
             }
             finally
             {
-                sendStream.Close();
-                sender.Close();
-                project.Close();
+                if(!(sendStream == null))
+                {
+                    sendStream.Close();
+                }
+                if (!(sender == null))
+                {
+                    sender.Close();
+                }
+                if (!(project == null))
+                {
+                    project.Close();
+                }
             }
             return successfullySent;
         }
@@ -186,6 +195,7 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
         /// <returns> true if</returns>
         public bool sendDebug(int index)
         {
+            bool success = false;
             TcpClient sender = null;
             NetworkStream sendStream = null;
             StreamReader reader = null;
@@ -203,7 +213,8 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
                     {
                         debugPrompt.Rtb_out.AppendText(reader.ReadLine() + "\n");
                     }
-                }      
+                }
+                success = true;
             }
             catch (Exception ex)
             {
@@ -218,11 +229,20 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
             }
             finally
             {
-                reader.Close();
-                sendStream.Close();
-                sender.Close();
+                if (!(reader == null))
+                {
+                    reader.Close();
+                }
+                if (!(sendStream == null))
+                {
+                    sendStream.Close();
+                }
+                if (!(sender == null))
+                {
+                    sender.Close();
+                }
             }
-            return false;
+            return success;
         }
     }
 }
