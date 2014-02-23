@@ -935,6 +935,7 @@ namespace ARdevKit.Controller.ProjectController
         {
             project = p;
 
+            /*
             // Clean up
             if (Directory.Exists(project.ProjectPath))
             {
@@ -962,6 +963,7 @@ namespace ARdevKit.Controller.ProjectController
                     }
                 while (!cleanedUp && abortRetryIgnore == DialogResult.Retry);
             }
+             */
 
             // Copy arel file
             Helper.Copy(Path.Combine("res", "arel", "arel.js"), project.ProjectPath);
