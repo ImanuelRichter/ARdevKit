@@ -371,7 +371,7 @@ public class PreviewController
         tempBox.Location = new Point((int)(vector.X - tempBox.Size.Width / 2), (int)(vector.Y - tempBox.Size.Height / 2));
         tempBox.Image = (Image)prev.getPreview();
 
-        tempBox.SizeMode = PictureBoxSizeMode.StretchImage;
+ //       tempBox.SizeMode = PictureBoxSizeMode.StretchImage;
         tempBox.Tag = prev;
         ContextMenu cm = new ContextMenu();
 
@@ -504,14 +504,14 @@ public class PreviewController
         temp.Image = newPic;
         temp.ContextMenu.MenuItems.Add("Source anzeigen", new EventHandler(this.show_source_by_click));
         temp.ContextMenu.MenuItems.Add("Source löschen", new EventHandler(this.remove_source_by_click));
-        if (((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source is FileSource)
+        if (((AbstractDynamic2DAugmentation)currentElement).Source is FileSource)
         {
 
             temp.ContextMenu.MenuItems.Add("SourceFile öffnen", new EventHandler(this.openSourceFile));
             temp.ContextMenu.MenuItems.Add("QueryFile öffnen", new EventHandler(this.openQueryFile));
-            if (((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source.Query == null)
+            if (((AbstractDynamic2DAugmentation)currentElement).Source.Query == null)
             {
-                temp.ContextMenu.MenuItems[6].Enabled = false;
+                temp.ContextMenu.MenuItems[7].Enabled = false;
             }
         }
         temp.Refresh();
@@ -802,12 +802,12 @@ public class PreviewController
     {
         AbstractDynamic2DAugmentation temp = (AbstractDynamic2DAugmentation)((ContextMenu)((MenuItem)sender).Parent).Tag;
 
-        this.findBox(temp).ContextMenu.MenuItems.RemoveAt(3);
-        this.findBox(temp).ContextMenu.MenuItems.RemoveAt(3);
+        this.findBox(temp).ContextMenu.MenuItems.RemoveAt(4);
+        this.findBox(temp).ContextMenu.MenuItems.RemoveAt(4);
         if (((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source is FileSource)
         {
-            this.findBox(temp).ContextMenu.MenuItems.RemoveAt(3);
-            this.findBox(temp).ContextMenu.MenuItems.RemoveAt(3);
+            this.findBox(temp).ContextMenu.MenuItems.RemoveAt(4);
+            this.findBox(temp).ContextMenu.MenuItems.RemoveAt(4);
         }
 
         this.removeSource(temp.Source, temp);
