@@ -232,12 +232,12 @@ namespace ARdevKit.Controller.ProjectController
 
             loadContentBlock.AddLine(new JavaScriptLine(chartID + " = " + chartPluginID));
 
-            loadContentBlock.AddLine(new JavaScriptLine(chartID + ".create()"));
             loadContentBlock.AddLine(new JavaScriptLine(chartID + ".hide()"));
 
             // onTracking
             JavaScriptBlock chartIfPatternIsFoundShowBlock = new JavaScriptBlock("if (param[0].getCoordinateSystemID() == " + chartID + ".getCoordinateSystemID())", new BlockMarker("{", "}"));
             ifPatternIsFoundBlock.AddBlock(chartIfPatternIsFoundShowBlock);
+            chartIfPatternIsFoundShowBlock.AddLine(new JavaScriptLine(chartID + ".create()"));
             chartIfPatternIsFoundShowBlock.AddLine(new JavaScriptLine(chartID + ".show()"));
             if (chart.Positioning.PositioningMode == ChartPositioning.PositioningModes.RELATIVE)
                 chartIfPatternIsFoundShowBlock.AddLine(new JavaScriptLine("arel.Scene.getScreenCoordinatesFrom3DPosition(COS" + coordinateSystemID + "Anchor.getTranslation(), " + chartID + ".getCoordinateSystemID(), function(coord){move(" + chartID + ", coord);})"));
@@ -257,11 +257,10 @@ namespace ARdevKit.Controller.ProjectController
             chartFile.AddBlock(chartFileDefineBlock);
 
             // ID
+            chartFileDefineBlock.AddLine(new JavaScriptInLine("visible : false", true));
             chartFileDefineBlock.AddLine(new JavaScriptInLine("id : \"" + chartID + "\"", true));
             // CoordinateSystemID
             chartFileDefineBlock.AddLine(new JavaScriptInLine("coordinateSystemID : " + coordinateSystemID, true));
-            // The chart
-            chartFileDefineBlock.AddLine(new JavaScriptInLine("chart : {}", true));
             // Options
             chartFileDefineBlock.AddLine(new JavaScriptInLine("options : {}", true));
             // Translation
@@ -325,11 +324,13 @@ namespace ARdevKit.Controller.ProjectController
             JavaScriptBlock chartShowBlock = new JavaScriptBlock("show : function()", new BlockMarker("{", "},"));
             chartFileDefineBlock.AddBlock(chartShowBlock);
             chartShowBlock.AddLine(new JavaScriptLine("$('#' + this.id).show()"));
+            chartShowBlock.AddLine(new JavaScriptLine("this.visible = true"));
 
             // Hide
             JavaScriptBlock chartHideBlock = new JavaScriptBlock("hide : function()", new BlockMarker("{", "},"));
             chartFileDefineBlock.AddBlock(chartHideBlock);
             chartHideBlock.AddLine(new JavaScriptLine("$('#' + this.id).hide()"));
+            chartHideBlock.AddLine(new JavaScriptLine("this.visible = false"));
 
             // Get coordinateSystemID
             JavaScriptBlock chartGetCoordinateSystemIDBlock = new JavaScriptBlock("getCoordinateSystemID : function()", new BlockMarker("{", "}"));
@@ -366,7 +367,7 @@ namespace ARdevKit.Controller.ProjectController
                 chartFileCreateBlock.AddBlock(new JavaScriptInLine(".fail(function() { console.log(\"Failed to load query\")})", false));
                 chartFileCreateBlock.AddBlock(new JavaScriptLine(".done(function() { console.log(\"Loaded query successfully\")})"));
                 chartFileQueryBlock.AddLine(new JavaScriptLine("var dataPath = \"" + source.Url + "\""));
-                chartFileQueryBlock.AddLine(new JavaScriptLine("query(dataPath, " + chartPluginID + ".id, " + chartPluginID + ".options)"));
+                chartFileQueryBlock.AddLine(new JavaScriptLine("query(dataPath, " + chartPluginID + ")"));
             }
             else
                 chartFileCreateBlock.AddLine(new JavaScriptLine("alert('No query defined')"));
@@ -404,7 +405,7 @@ namespace ARdevKit.Controller.ProjectController
                     chartFileCreateBlock.AddBlock(new JavaScriptInLine(".fail(function() { console.log(\"Failed to load query\")})", false));
                     chartFileCreateBlock.AddBlock(new JavaScriptLine(".done(function() { console.log(\"Loaded query successfully\")})"));
                     chartFileQueryBlock.AddLine(new JavaScriptLine("var dataPath = \"Assets/" + chartID + "/data.xml\""));
-                    chartFileQueryBlock.AddLine(new JavaScriptLine(chartPluginID + ".chart = query(dataPath, " + chartPluginID + ".id, " + chartPluginID + ".options)"));
+                    chartFileQueryBlock.AddLine(new JavaScriptLine("query(dataPath, " + chartPluginID + ")"));
                 }
                 else
                     chartFileCreateBlock.AddLine(new JavaScriptLine("alert('No query defined')"));
