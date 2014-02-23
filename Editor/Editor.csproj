@@ -94,6 +94,7 @@
       <DependentUpon>ProcessVideoWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Project\Abstract2DTrackable.cs" />
+    <Compile Include="Model\Project\File\Helper.cs" />
     <Compile Include="Model\Project\ScreenSize.cs" />
     <Compile Include="Model\Project\ImageTrackable.cs" />
     <Compile Include="Model\Project\AbstractDynamic2DAugmentation.cs" />
