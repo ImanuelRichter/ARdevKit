@@ -42,6 +42,9 @@ namespace Controller.EditorController
         /// <param name="e">Event argument</param>
         private void changedProperty(object sender, PropertyValueChangedEventArgs e)
         {
+            /*==============================================================================*/
+            // Changes which should be undone if set to null
+
             // Checks if a image/option path is set to null
             if (string.Equals(e.ChangedItem.Label.ToString(), "Options", StringComparison.Ordinal))
             {
@@ -79,25 +82,42 @@ namespace Controller.EditorController
 
                 return;
             }
-            
-            /*=================================================================================*/
 
-
-
-            // Checks if the MatrixID has been changed. If changed, it checks, if the id is equal to another id in
-            // the project to generate a new id. This should prevent having two identical id's. 
-            if (string.Equals(e.ChangedItem.Label.ToString(), "MatrixID", StringComparison.Ordinal))
+            // Checks if Data has been changed (only for FileSource for now)
+            if (string.Equals(e.ChangedItem.Label.ToString(), "Data", StringComparison.Ordinal))
             {
-                if (ew.project.existTrackable((int)e.ChangedItem.Value))
+                if (string.Equals((string)e.ChangedItem.Value, "", StringComparison.Ordinal))
                 {
-                    IDMarker marker = (IDMarker)ew.CurrentElement;
-                    marker.MatrixID = ew.project.nextID();
-                }
+                    if (((Chart)ew.CurrentElement).Source is FileSource)
+                        ((FileSource)((Chart)ew.CurrentElement).Source).Data = e.OldValue.ToString();
 
-                return;
+                    return;
+                }
             }
 
             /*=================================================================================*/
+            // Changes which enable/disables button if set to null or was null before the change
+
+            // Checks if Query has been changed
+            if (String.Equals(e.ChangedItem.Label.ToString(), "Query", StringComparison.Ordinal))
+            {
+                if (string.Equals((string)e.ChangedItem.Value, "", StringComparison.Ordinal))
+                {
+                    (ew.PreviewController.findBox(ew.CurrentElement).ContextMenu).MenuItems[7].Enabled = false;
+
+                    return;
+                }
+
+                if (string.Equals(e.OldValue.ToString(), "", StringComparison.Ordinal))
+                {
+                    (ew.PreviewController.findBox(ew.CurrentElement).ContextMenu).MenuItems[7].Enabled = true;
+
+                    return;
+                }
+            }
+
+            /*=================================================================================*/
+            // Changes which changes things in the previewPanel
 
             // Checks if X/Y position has been changed
             if (String.Equals(e.ChangedItem.Label.ToString(), "X", StringComparison.Ordinal)
@@ -125,6 +145,23 @@ namespace Controller.EditorController
             if (string.Equals(e.ChangedItem.Label.ToString(), "Size", StringComparison.Ordinal))
             {
                 ew.PreviewController.reloadPreviewPanel(ew.PreviewController.index);
+
+                return;
+            }
+
+            /*=================================================================================*/
+            // Miscellaneous changes
+
+
+            // Checks if the MatrixID has been changed. If changed, it checks, if the id is equal to another id in
+            // the project to generate a new id. This should prevent having two identical id's. 
+            if (string.Equals(e.ChangedItem.Label.ToString(), "MatrixID", StringComparison.Ordinal))
+            {
+                if (ew.project.existTrackable((int)e.ChangedItem.Value))
+                {
+                    IDMarker marker = (IDMarker)ew.CurrentElement;
+                    marker.MatrixID = ew.project.nextID();
+                }
 
                 return;
             }
