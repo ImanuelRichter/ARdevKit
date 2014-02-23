@@ -169,6 +169,12 @@
       <DependentUpon>TextEditorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\AbstractProperty.cs" />
+    <Compile Include="View\DebugWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DebugWindow.Designer.cs">
+      <DependentUpon>DebugWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ElementIcon.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -196,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TextEditorForm.resx">
       <DependentUpon>TextEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DebugWindow.resx">
+      <DependentUpon>DebugWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Slider.resx">
       <DependentUpon>Slider.cs</DependentUpon>
