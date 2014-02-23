@@ -36,7 +36,6 @@ namespace ARdevKit.Model.Project.File
 
         public static void Copy(string srcFile, string destDirectory, string newFileName)
         {
-            // Checks on it's owen, if a directory already exists.
             Directory.CreateDirectory(destDirectory);
 
             string destFile = Path.Combine(destDirectory, newFileName);
