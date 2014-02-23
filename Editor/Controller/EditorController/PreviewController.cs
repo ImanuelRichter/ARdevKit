@@ -208,7 +208,14 @@ public class PreviewController
                 else
                 {
                     //set reference to the augmentations in Source
-                    source.Augmentation = ((AbstractDynamic2DAugmentation)currentElement);
+                    OpenFileDialog openFileDialog;
+                    openFileDialog = new OpenFileDialog();
+                    openFileDialog.InitialDirectory = Application.StartupPath + "\\res\\highcharts\\barChartColumn";
+                    openFileDialog.Filter = "JavaFile (*.js)|*.js";
+                    if (openFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        ((DbSource)source).Query = openFileDialog.FileName;
+                    }
 
                     //add references in Augmentation, Picturebox + project.sources List.
                     ((AbstractDynamic2DAugmentation)currentElement).Source = source;
@@ -371,7 +378,7 @@ public class PreviewController
         tempBox.Location = new Point((int)(vector.X - tempBox.Size.Width / 2), (int)(vector.Y - tempBox.Size.Height / 2));
         tempBox.Image = (Image)prev.getPreview();
 
- //       tempBox.SizeMode = PictureBoxSizeMode.StretchImage;
+        tempBox.SizeMode = PictureBoxSizeMode.StretchImage;
         tempBox.Tag = prev;
         ContextMenu cm = new ContextMenu();
 
@@ -504,16 +511,18 @@ public class PreviewController
         temp.Image = newPic;
         temp.ContextMenu.MenuItems.Add("Source anzeigen", new EventHandler(this.show_source_by_click));
         temp.ContextMenu.MenuItems.Add("Source löschen", new EventHandler(this.remove_source_by_click));
+        temp.ContextMenu.MenuItems.Add("QueryFile öffnen", new EventHandler(this.openQueryFile));
         if (((AbstractDynamic2DAugmentation)currentElement).Source is FileSource)
         {
-
             temp.ContextMenu.MenuItems.Add("SourceFile öffnen", new EventHandler(this.openSourceFile));
-            temp.ContextMenu.MenuItems.Add("QueryFile öffnen", new EventHandler(this.openQueryFile));
+
             if (((AbstractDynamic2DAugmentation)currentElement).Source.Query == null)
             {
-                temp.ContextMenu.MenuItems[7].Enabled = false;
+                temp.ContextMenu.MenuItems[6].Enabled = false;
             }
         }
+        
+        
         temp.Refresh();
     }
 
@@ -804,9 +813,9 @@ public class PreviewController
 
         this.findBox(temp).ContextMenu.MenuItems.RemoveAt(4);
         this.findBox(temp).ContextMenu.MenuItems.RemoveAt(4);
+        this.findBox(temp).ContextMenu.MenuItems.RemoveAt(4);
         if (((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source is FileSource)
         {
-            this.findBox(temp).ContextMenu.MenuItems.RemoveAt(4);
             this.findBox(temp).ContextMenu.MenuItems.RemoveAt(4);
         }
 
