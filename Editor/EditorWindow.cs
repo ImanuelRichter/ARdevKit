@@ -1104,26 +1104,22 @@ namespace ARdevKit
 
         private void sendProject_Click(object sender, EventArgs e)
         {
+            if (project.Trackables == null || project.Trackables.Count <= 0 || project.Trackables[0] == null)
+            {
+                MessageBox.Show("Es ist kein Projekt zum versenden erstellt worden");
+            }
             if (DeviceList.Items.Count != 0)
             {
                 if (DeviceList.SelectedItem != null && DeviceList.SelectedIndex >= 0)
                 {
-                    try
+                    if (deviceConnectionController.sendProject(DeviceList.SelectedIndex))
                     {
-                        if (deviceConnectionController.sendProject(DeviceList.SelectedIndex))
-                        {
-                            MessageBox.Show("Das Projekt wurde versand.");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Das Projekt wurde nicht versand.");
-                        }
+                        MessageBox.Show("Das Projekt wurde versand.");
                     }
-                    catch (System.Net.Sockets.SocketException)
+                    else
                     {
-                        MessageBox.Show("Es wurde keine Verbindung hergestellt, stellen sie sicher, dass kein anderer Prozess diesen Port verwendet.");
+                        MessageBox.Show("Das Projekt wurde nicht versand.");
                     }
-
                 }
                 else
                 {

@@ -21,7 +21,7 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
         private List<IPEndPoint> reportedDevices;
         private UdpClient udpClient;
         private TcpClient tcpClient;
-        private TcpClient debugClient;
+        private EditorWindow editorWindow;
 
 
         /// <summary>
@@ -31,6 +31,7 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
         /// <param name="ew">The ew.</param>
         public DeviceConnectionController(Form window)
         {
+            editorWindow = (EditorWindow) window;
             reportedDevices = new List<IPEndPoint>();
             udpClient = new UdpClient(12345);
             tcpClient = new TcpClient();
@@ -98,6 +99,7 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
             NetworkStream sendStream = null;
             try
             {
+                exportRecentProject();
                 sender = new TcpClient(reportedDevices[index].Address.ToString(), 12345);
                 if (File.Exists("currentProject.zip"))
                 {
@@ -155,6 +157,17 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
                 project.Close();
             }
             return successfullySent;
+        }
+        private void exportRecentProject()
+        {
+            ARdevKit.Controller.ProjectController.ExportVisitor exporter = new ARdevKit.Controller.ProjectController.ExportVisitor(true);
+            editorWindow.project.Accept(exporter);
+
+            ARdevKit.Model.Project.IDFactory.Reset();
+            foreach (ARdevKit.Model.Project.File.AbstractFile file in exporter.Files)
+            {
+                file.Save();
+            }
         }
     }
 }
