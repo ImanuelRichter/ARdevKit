@@ -100,7 +100,7 @@ namespace ARdevKit.Controller.ProjectController
         public override void Visit(CustomUserEvent cue)
         {
             string newPath = Path.Combine(project.ProjectPath, "Events");
-            Copy(cue.FilePath, newPath);
+            Helper.Copy(cue.FilePath, newPath);
             cue.FilePath = Path.Combine(newPath, Path.GetFileName(cue.FilePath));
             arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("script", "type=\"text/javascript\" src=\"Events/" + Path.GetFileName(cue.FilePath) + "\"")));
         }
@@ -113,7 +113,7 @@ namespace ARdevKit.Controller.ProjectController
         {
             // Copy to projectPath
             string newPath = Path.Combine(project.ProjectPath, "Assets");
-            Copy(video.VideoPath, newPath);
+            Helper.Copy(video.VideoPath, newPath);
             video.VideoPath = Path.Combine(newPath, Path.GetFileName(video.VideoPath));
 
             // arelGlue.js
@@ -163,7 +163,7 @@ namespace ARdevKit.Controller.ProjectController
         {
             // Copy to projectPath
             string newPath = Path.Combine(project.ProjectPath, "Assets");
-            Copy(image.ImagePath, newPath);
+            Helper.Copy(image.ImagePath, newPath);
             image.ImagePath = Path.Combine(newPath, Path.GetFileName(image.ImagePath));
 
             // arelGlue.js
@@ -219,8 +219,8 @@ namespace ARdevKit.Controller.ProjectController
 
             arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("script", "src=\"Assets/" + chartID + "/chart.js\"")));
 
-            Copy("res\\highcharts\\highcharts.js", Path.Combine(project.ProjectPath, "Assets"));
-            Copy("res\\jquery\\jquery-2.0.3.js", Path.Combine(project.ProjectPath, "Assets"));
+            Helper.Copy("res\\highcharts\\highcharts.js", Path.Combine(project.ProjectPath, "Assets"));
+            Helper.Copy("res\\jquery\\jquery-2.0.3.js", Path.Combine(project.ProjectPath, "Assets"));
 
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -308,7 +308,7 @@ namespace ARdevKit.Controller.ProjectController
 
             // Copy options.js
             string chartFilesDirectory = Path.Combine(project.ProjectPath, "Assets", chartID);
-            Copy(chart.Options, chartFilesDirectory, "options.js");
+            Helper.Copy(chart.Options, chartFilesDirectory, "options.js");
             chart.Options = Path.Combine(chartFilesDirectory, "options.js");
 
             // setOptions
@@ -358,7 +358,7 @@ namespace ARdevKit.Controller.ProjectController
 
             if (source.Query != null && source.Query != "")
             {
-                Copy(source.Query, chartFilesDirectory, "query.js");
+                Helper.Copy(source.Query, chartFilesDirectory, "query.js");
                 source.Query = Path.Combine(chartFilesDirectory, "query.js");
 
                 chartFileQueryBlock = new JavaScriptBlock("$.getScript(\"Assets/" + chartID + "/" + Path.GetFileName(source.Query) + "\", function()", new BlockMarker("{", "})"));
@@ -391,12 +391,12 @@ namespace ARdevKit.Controller.ProjectController
 
             if (source.Data != null && source.Data != "")
             {
-                Copy(source.Data, chartFilesDirectory, "data" + Path.GetExtension(source.Data));
+                Helper.Copy(source.Data, chartFilesDirectory, "data" + Path.GetExtension(source.Data));
                 source.Data = Path.Combine(chartFilesDirectory, "data" + Path.GetExtension(source.Data));
 
                 if (source.Query != null && source.Query != "")
                 {
-                    Copy(source.Query, chartFilesDirectory, "query.js");
+                    Helper.Copy(source.Query, chartFilesDirectory, "query.js");
                     source.Query = Path.Combine(chartFilesDirectory, "query.js");
 
                     chartFileQueryBlock = new JavaScriptBlock("$.getScript(\"Assets/" + chartID + "/" + Path.GetFileName(source.Query) + "\", function()", new BlockMarker("{", "})"));
@@ -525,13 +525,9 @@ namespace ARdevKit.Controller.ProjectController
         public override void Visit(ImageTrackable image)
         {
             // Copy the file
-            Copy(image.ImagePath, Path.Combine(project.ProjectPath, "Assets"));
-
-            string sourceImageFile = image.ImagePath;
-            string destImageFile;
-            destImageFile = Path.Combine(project.ProjectPath, Path.GetFileName(sourceImageFile));
-            if (Directory.Exists(Path.Combine(project.ProjectPath, "Asstes")) && !File.Exists(destImageFile))
-                File.Copy(sourceImageFile, destImageFile);
+            string newPath = Path.Combine(project.ProjectPath, "Assets");
+            Helper.Copy(image.ImagePath, newPath);
+            image.ImagePath = Path.Combine(newPath, Path.GetFileName(image.ImagePath));
 
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -658,13 +654,9 @@ namespace ARdevKit.Controller.ProjectController
         public override void Visit(PictureMarker pictureMarker)
         {
             // Copy the file
-            Copy(pictureMarker.PicturePath, Path.Combine(project.ProjectPath, "Assets"));
-
-            string sourcePictureMarkerFile = pictureMarker.PicturePath;
-            string destPictureMarkerFile;
-            destPictureMarkerFile = Path.Combine(project.ProjectPath, Path.GetFileName(sourcePictureMarkerFile));
-            if (Directory.Exists(Path.Combine(project.ProjectPath, "Asstes")) && !File.Exists(destPictureMarkerFile))
-                File.Copy(sourcePictureMarkerFile, destPictureMarkerFile);
+            string newPath = Path.Combine(project.ProjectPath, "Assets");
+            Helper.Copy(pictureMarker.PicturePath, newPath);
+            pictureMarker.PicturePath = Path.Combine(newPath, Path.GetFileName(pictureMarker.PicturePath));
 
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -971,7 +963,7 @@ namespace ARdevKit.Controller.ProjectController
             }
 
             // Copy arel file
-            Copy(Path.Combine("res", "arel", "arel.js"), project.ProjectPath);
+            Helper.Copy(Path.Combine("res", "arel", "arel.js"), project.ProjectPath);
 
             // Create [projectName].html
             ARELProjectFile arelProjectFile = new ARELProjectFile("<!DOCTYPE html>", Path.Combine(project.ProjectPath, "arel" + (p.Name != "" ? p.Name : "Test") + ".html"));
@@ -1093,50 +1085,6 @@ namespace ARdevKit.Controller.ProjectController
             arelGlueMoveBlock.AddLine(new JavaScriptLine("object.div.style.left = left + 'px'"));
             arelGlueMoveBlock.AddLine(new JavaScriptLine("object.div.style.top = top + 'px'"));
             arelGlueMoveBlock.AddLine(new JavaScriptLine("console.log(\"Moved \" + object.id + \" to \" + left + \", \" + top)"));
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Copies a passed file to the passed directory. </summary>
-        ///
-        /// <remarks>   Imanuel, 19.01.2014. </remarks>
-        ///
-        /// <param name="srcFile">          Source file. </param>
-        /// <param name="destDirectory">    Pathname of the destination directory. </param>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        private void Copy(string srcFile, string destDirectory)
-        {
-            Copy(srcFile, destDirectory, Path.GetFileName(srcFile));
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Copies a passed file to the passed directory and renames it to the passed name. </summary>
-        ///
-        /// <remarks>   Imanuel, 27.01.2014. </remarks>
-        ///
-        /// <param name="srcFile">          Source file. </param>
-        /// <param name="destDirectory">    Pathname of the destination directory. </param>
-        /// <param name="newFileName">          Name of the new file. </param>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        private void Copy(string srcFile, string destDirectory, string newFileName)
-        {
-            if (!Directory.Exists(destDirectory))
-            {
-                Directory.CreateDirectory(destDirectory);
-            }
-            string destFile = Path.Combine(destDirectory, newFileName);
-            if (!File.Equals(srcFile, destFile))
-            {
-                try
-                {
-                    File.Copy(srcFile, destFile, true);
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show(e.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
         }
     }
 }
