@@ -17,7 +17,7 @@ namespace Controller.EditorController
     class PropertyController
     {
         private EditorWindow ew;
-        
+
         public PropertyController(EditorWindow ew)
         {
             this.ew = ew;
@@ -27,18 +27,99 @@ namespace Controller.EditorController
         /// <summary>
         /// See issue #13 for reason of these invalid methods etc.
         /// </summary>
-        [Obsolete("addCustomUserEvent() : File is completly invalid, because with the original method signature it is impossible to implement."
-            + "Please use the method addCustomUserEvent(selectedElement : AbstractAugmentation, content : string[]) instead.", true)]
+        [Obsolete("addCustomUserEvent() : File is completly invalid, because with the original method signature it is impossible to implement.", true)]
         public /*File*/void addCustomUserEvent()
         { throw new NotImplementedException(); }
 
-        [Obsolete("editCustomUserEvent(customUserEvent : File) is completly invalid, because with the original method signature it is impossible to implement."
-            + "Please use the method setCustomUserEventContent(selectedElement : AbstractAugmentation, name : string, content : string[]) instead.", true)]
+        [Obsolete("editCustomUserEvent(customUserEvent : File) is completly invalid, because with the original method signature it is impossible to implement.", true)]
         public void editCustomUserEvent(/*File customUserEvent*/)
         { throw new NotImplementedException(); }
 
+        /// <summary>
+        /// Event which catches all changes of the propertyGrid, which should have an impact of the elements on the preview panel.
+        /// </summary>
+        /// <param name="sender">Sender ~...</param>
+        /// <param name="e">Event argument</param>
         private void changedProperty(object sender, PropertyValueChangedEventArgs e)
         {
+            /*==============================================================================*/
+            // Changes which should be undone if set to null
+
+            // Checks if a image/option path is set to null
+            if (string.Equals(e.ChangedItem.Label.ToString(), "Options", StringComparison.Ordinal))
+            {
+                if (string.Equals((string)e.ChangedItem.Value, "", StringComparison.Ordinal))
+                {
+                    ((Chart)ew.CurrentElement).Options = e.OldValue.ToString();
+
+                    return;
+                }
+            }
+
+            // Checks if picturePath has been changed
+            if (String.Equals(e.ChangedItem.Label.ToString(), "PicturePath", StringComparison.Ordinal))
+            {
+                if (string.Equals((string)e.ChangedItem.Value, "", StringComparison.Ordinal))
+                    ((PictureMarker)ew.CurrentElement).PicturePath = e.OldValue.ToString();
+                else
+                    ew.PreviewController.findBox(ew.CurrentElement).Load(e.ChangedItem.Value.ToString());
+
+                return;
+            }
+
+            // Checks if imagePath has been changed (it's indifferent if it's an augmentation or trackable)
+            if (String.Equals(e.ChangedItem.Label.ToString(), "ImagePath", StringComparison.Ordinal))
+            {
+                if (string.Equals((string)e.ChangedItem.Value, "", StringComparison.Ordinal))
+                {
+                    if (ew.CurrentElement is ImageAugmentation)
+                        ((ImageAugmentation)ew.CurrentElement).ImagePath = e.OldValue.ToString();
+                    if (ew.CurrentElement is ImageTrackable)
+                        ((ImageTrackable)ew.CurrentElement).ImagePath = e.OldValue.ToString();
+                }
+                else
+                    ew.PreviewController.findBox(ew.CurrentElement).Load(e.ChangedItem.Value.ToString());
+
+                return;
+            }
+
+            // Checks if Data has been changed (only for FileSource for now)
+            if (string.Equals(e.ChangedItem.Label.ToString(), "Data", StringComparison.Ordinal))
+            {
+                if (string.Equals((string)e.ChangedItem.Value, "", StringComparison.Ordinal))
+                {
+                    if (((Chart)ew.CurrentElement).Source is FileSource)
+                        ((FileSource)((Chart)ew.CurrentElement).Source).Data = e.OldValue.ToString();
+
+                    return;
+                }
+            }
+
+            /*=================================================================================*/
+            // Changes which enable/disables button if set to null or was null before the change
+
+            // Checks if Query has been changed
+            if (String.Equals(e.ChangedItem.Label.ToString(), "Query", StringComparison.Ordinal))
+            {
+                if (string.Equals((string)e.ChangedItem.Value, "", StringComparison.Ordinal))
+                {
+                    (ew.PreviewController.findBox(ew.CurrentElement).ContextMenu).MenuItems[7].Enabled = false;
+
+                    return;
+                }
+
+                if (string.Equals(e.OldValue.ToString(), "", StringComparison.Ordinal))
+                {
+                    (ew.PreviewController.findBox(ew.CurrentElement).ContextMenu).MenuItems[7].Enabled = true;
+
+                    return;
+                }
+            }
+
+            /*=================================================================================*/
+            // Changes which changes things in the previewPanel
+
+            // Checks if X/Y position has been changed
             if (String.Equals(e.ChangedItem.Label.ToString(), "X", StringComparison.Ordinal)
                 || String.Equals(e.ChangedItem.Label.ToString(), "Y", StringComparison.Ordinal))
             {
@@ -48,31 +129,7 @@ namespace Controller.EditorController
                 return;
             }
 
-            if (String.Equals(e.ChangedItem.Label.ToString(), "PicturePath", StringComparison.Ordinal))
-            {
-                ew.PreviewController.findBox(ew.CurrentElement).Load(e.ChangedItem.Value.ToString());
-
-                return;
-            }
-
-            if (String.Equals(e.ChangedItem.Label.ToString(), "ImagePath", StringComparison.Ordinal))
-            {
-                ew.PreviewController.findBox(ew.CurrentElement).Load(e.ChangedItem.Value.ToString());
-
-                return;
-            }
-
-            if (string.Equals(e.ChangedItem.Label.ToString(), "MatrixID", StringComparison.Ordinal))
-            {
-                if (ew.project.existTrackable((int)e.ChangedItem.Value))
-                {
-                    IDMarker marker = (IDMarker)ew.CurrentElement;
-                    marker.MatrixID = ew.project.nextID();
-                }
-
-                return;
-            }
-
+            // Checks if height/width has been changed
             if (ew.CurrentElement is Abstract2DAugmentation)
             {
                 if (string.Equals(e.ChangedItem.Label.ToString(), "Height", StringComparison.Ordinal)
@@ -84,108 +141,30 @@ namespace Controller.EditorController
                 }
             }
 
+            // Checks if the size of a trackable has been changed.
             if (string.Equals(e.ChangedItem.Label.ToString(), "Size", StringComparison.Ordinal))
             {
                 ew.PreviewController.reloadPreviewPanel(ew.PreviewController.index);
-                // ew.PreviewController.rescalePreviewPanel();
 
                 return;
             }
 
-        }
+            /*=================================================================================*/
+            // Miscellaneous changes
 
-        /*
-        /// <summary>
-        /// Adds a customUserEvent to a selected element.
-        /// </summary>
-        /// <param name="selectedElement">Current selected AbstractAugmentation</param>
-        /// <param name="content">Content of the customUserEvent</param>
-        public void addCustomUserEvent(AbstractAugmentation selectedElement, string[] content)
-        {
-            int counter = selectedElement.CustomUserEventList.Count;
-            selectedElement.CustomUserEventList.Add(new CustomUserEvent("customUserEvent" + counter, content));
-        }
 
-        /// <summary>
-        /// Adds a customUserEvent to a selected element. 
-        /// </summary>
-        /// <param name="selectedElement">Current selected AbstractAugmentation</param>
-        /// <param name="name">Name of the customUserEvent</param>
-        /// <param name="content">Content of the customUserEvent</param>
-        public void addCustomUserEvent(AbstractAugmentation selectedElement, string name, string[] content)
-        {
-            selectedElement.CustomUserEventList.Add(new CustomUserEvent(name, content));
-        }
-
-        /// <summary>
-        /// Deletes a customUserEvent from a selected element.
-        /// </summary>
-        /// <param name="selectedElement">Current selected AbstractAugmentation</param>
-        /// <param name="name">Name/ID of the customUserEvent</param>
-        public void deleteCustomUserEvent(AbstractAugmentation selectedElement, string name)
-        {
-            foreach(CustomUserEvent cue in selectedElement.CustomUserEventList)
+            // Checks if the MatrixID has been changed. If changed, it checks, if the id is equal to another id in
+            // the project to generate a new id. This should prevent having two identical id's. 
+            if (string.Equals(e.ChangedItem.Label.ToString(), "MatrixID", StringComparison.Ordinal))
             {
-                if (String.Equals(cue.Name, name, StringComparison.Ordinal))
-                    selectedElement.CustomUserEventList.Remove(cue);
+                if (ew.project.existTrackable((int)e.ChangedItem.Value))
+                {
+                    IDMarker marker = (IDMarker)ew.CurrentElement;
+                    marker.MatrixID = ew.project.nextID();
+                }
+
+                return;
             }
         }
-
-        /// <summary>
-        /// Sets (or change, whatever you want to call it) the name of the customUserEvent.
-        /// </summary>
-        /// <param name="selectedElement">Current selected AbstractAugmentation</param>
-        /// <param name="oldName">Current name of the customUserEvent</param>
-        /// <param name="newName">The new name of the customUserEvent</param>
-        public void setCustomUserEventName(AbstractAugmentation selectedElement, string oldName, string newName)
-        {
-            if (newName.Length == 0)
-                throw new ArgumentException("The name must have at leat one symbol.");
-
-            foreach (CustomUserEvent cue in selectedElement.CustomUserEventList)
-            {
-                if (String.Equals(cue.Name, oldName, StringComparison.Ordinal))
-                    cue.Name = newName;
-            }
-        }
-
-        /// <summary>
-        /// Gets the content of a customUserEvent from a selected element.
-        /// </summary>
-        /// <param name="selectedElement">Current selected element</param>
-        /// <param name="name">Name/ID of the customUserEvent</param>
-        /// <returns>Returns the content of the customUserEvent. Returns NULL, if the customUserEvent was not found in the list.</returns>
-        public string[] getCustomUserEventContent(AbstractAugmentation selectedElement, string name)
-        {
-            foreach (CustomUserEvent cue in selectedElement.CustomUserEventList)
-            {
-                if (string.Equals(cue.Name, name, StringComparison.Ordinal))
-                    return cue.Content;
-            }
-
-            return null;
-        }
-
-        /// <summary>
-        /// Sets (or edit, whatever you want to call it) the content of a customUserEvent from the selected Element.
-        /// </summary>
-        /// <param name="selectedElement">Current selected element</param>
-        /// <param name="name">Name/ID of the customUserEvent</param>
-        /// <param name="content">The new/edited content of the customUserEvent</param>
-        public void setCustomUserEventContent(AbstractAugmentation selectedElement, string name, string[] content)
-        {
-            foreach (CustomUserEvent cue in selectedElement.CustomUserEventList)
-            {
-                if (string.Equals(cue.Name, name, StringComparison.Ordinal))
-                    cue.Content = content;
-            }
-        }
-
-        /* possible unnecessary method. see issue #13 for reason of it.
-        public void updatePropertyPanel(IPreviewable selectedElement)
-        {
-            throw new NotImplementedException();
-        }
-         * */
     }
 }
