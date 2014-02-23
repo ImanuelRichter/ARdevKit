@@ -105,7 +105,6 @@
     <Compile Include="Model\Project\File\ChartFile.cs" />
     <Compile Include="Model\Project\File\JavaScriptInLine.cs" />
     <Compile Include="Model\Project\ImageAugmentation.cs" />
-    <Compile Include="Model\Project\LiveSource.cs" />
     <Compile Include="Model\Project\MarkerFuser.cs" />
     <Compile Include="Controller\ProjectController\SaveLoadController.cs" />
     <Compile Include="Model\Project\IDFactory.cs" />
