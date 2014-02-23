@@ -32,7 +32,7 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
         {
             editorWindow = (EditorWindow) window;
             reportedDevices = new List<IPEndPoint>();
-            udpClient = new UdpClient(12345);
+            udpClient = new UdpClient();
             refresh();
         } 
 
