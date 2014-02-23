@@ -388,7 +388,7 @@ public class PreviewController
     {
         PictureBox tempBox;
         tempBox = new PictureBox();
-        tempBox.Image = this.scaleIPreviewable(tempBox, prev);
+        tempBox.Image = this.scaleIPreviewable(prev);
         tempBox.SizeMode = PictureBoxSizeMode.AutoSize;
         tempBox.Location = new Point((int)(vector.X - tempBox.Size.Width / 2), (int)(vector.Y - tempBox.Size.Height / 2));
 
@@ -572,7 +572,7 @@ public class PreviewController
     /// </summary>
     /// <param name="box">The box.</param>
     /// <param name="prev">The previous.</param>
-    private Bitmap scaleIPreviewable(PictureBox box, IPreviewable prev)
+    public Bitmap scaleIPreviewable(IPreviewable prev)
     {
         int height = prev.getPreview().Height;
         int width = prev.getPreview().Width;

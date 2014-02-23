@@ -172,7 +172,7 @@ namespace Controller.EditorController
                     IDMarker marker = (IDMarker)ew.CurrentElement;
                     marker.MatrixID = ew.project.nextID();
                 }
-
+                this.ew.PreviewController.findBox(this.ew.CurrentElement).Image = this.ew.PreviewController.scaleIPreviewable(this.ew.CurrentElement);
                 return;
             }
         }
