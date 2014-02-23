@@ -216,12 +216,14 @@ public class PreviewController
                     if (openFileDialog.ShowDialog() == DialogResult.OK)
                     {
                         ((DbSource)source).Query = openFileDialog.FileName;
-
                         //add references in Augmentation, Picturebox + project.sources List.
                         ((AbstractDynamic2DAugmentation)currentElement).Source = source;
                         this.ew.project.Sources.Add(((AbstractDynamic2DAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).Source);
 
                         this.setSourcePreview(currentElement);
+                    }
+
+                    
 
                         source.Augmentation = ((AbstractDynamic2DAugmentation)currentElement);
                     }

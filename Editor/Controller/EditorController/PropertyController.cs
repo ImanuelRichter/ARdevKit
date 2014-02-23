@@ -129,6 +129,16 @@ namespace Controller.EditorController
                 return;
             }
 
+            // Checks if Z has been changed (for Lizzard :D)
+            if (String.Equals(e.ChangedItem.Label.ToString(), "Z", StringComparison.Ordinal)
+                && String.Equals(e.ChangedItem.Parent.Label.ToString(), "Rotation", StringComparison.Ordinal))
+            {
+                /* Here comes your code */
+                MessageBox.Show("foo");
+
+                return;
+            }
+
             // Checks if height/width has been changed
             if (ew.CurrentElement is Abstract2DAugmentation)
             {
