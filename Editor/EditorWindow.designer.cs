@@ -372,7 +372,7 @@ namespace ARdevKit
             this.tsm_editor_menu_edit_delete.Enabled = false;
             this.tsm_editor_menu_edit_delete.Name = "tsm_editor_menu_edit_delete";
             this.tsm_editor_menu_edit_delete.ShortcutKeyDisplayString = "STRG+DEL";
-            this.tsm_editor_menu_edit_delete.ShortcutKeys = System.Windows.Forms.Keys.Delete;
+            this.tsm_editor_menu_edit_delete.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Delete)));
             this.tsm_editor_menu_edit_delete.Size = new System.Drawing.Size(181, 22);
             this.tsm_editor_menu_edit_delete.Text = "Löschen";
             // 
@@ -441,14 +441,14 @@ namespace ARdevKit
             // tsm_editor_menu_help_help
             // 
             this.tsm_editor_menu_help_help.Name = "tsm_editor_menu_help_help";
-            this.tsm_editor_menu_help_help.Size = new System.Drawing.Size(152, 22);
+            this.tsm_editor_menu_help_help.Size = new System.Drawing.Size(99, 22);
             this.tsm_editor_menu_help_help.Text = "Hilfe";
             this.tsm_editor_menu_help_help.Click += new System.EventHandler(this.tsm_editor_menu_help_help_Click);
             // 
             // tsm_editor_menu_help_info
             // 
             this.tsm_editor_menu_help_info.Name = "tsm_editor_menu_help_info";
-            this.tsm_editor_menu_help_info.Size = new System.Drawing.Size(152, 22);
+            this.tsm_editor_menu_help_info.Size = new System.Drawing.Size(99, 22);
             this.tsm_editor_menu_help_info.Text = "Info";
             this.tsm_editor_menu_help_info.Click += new System.EventHandler(this.tsm_editor_menu_help_info_Click);
             // 
