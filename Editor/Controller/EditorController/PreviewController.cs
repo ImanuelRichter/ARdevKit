@@ -209,14 +209,24 @@ public class PreviewController
                 else
                 {
                     //set reference to the augmentations in Source
-                    source.initElement(ew);
-                    source.Augmentation = ((AbstractDynamic2DAugmentation)currentElement);
+                    OpenFileDialog openFileDialog;
+                    openFileDialog = new OpenFileDialog();
+                    openFileDialog.InitialDirectory = Application.StartupPath + "\\res\\highcharts\\barChartColumn";
+                    openFileDialog.Filter = "JavaFile (*.js)|*.js";
+                    if (openFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        ((DbSource)source).Query = openFileDialog.FileName;
+                        source.initElement(ew);
+                        source.Augmentation = ((AbstractDynamic2DAugmentation)currentElement);
 
-                    //add references in Augmentation, Picturebox + project.sources List.
-                    ((AbstractDynamic2DAugmentation)currentElement).Source = source;
-                    this.ew.project.Sources.Add(((AbstractDynamic2DAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).Source);
+                        //add references in Augmentation, Picturebox + project.sources List.
+                        ((AbstractDynamic2DAugmentation)currentElement).Source = source;
+                        this.ew.project.Sources.Add(((AbstractDynamic2DAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).Source);
 
-                    this.setSourcePreview(currentElement);
+                        this.setSourcePreview(currentElement);
+                    }
+
+
 
                 }
                 ew.PropertyGrid1.SelectedObject = source;
@@ -373,7 +383,7 @@ public class PreviewController
         tempBox.Location = new Point((int)(vector.X - tempBox.Size.Width / 2), (int)(vector.Y - tempBox.Size.Height / 2));
         tempBox.Image = (Image)prev.getPreview();
 
- //       tempBox.SizeMode = PictureBoxSizeMode.StretchImage;
+        tempBox.SizeMode = PictureBoxSizeMode.StretchImage;
         tempBox.Tag = prev;
         ContextMenu cm = new ContextMenu();
 
@@ -506,16 +516,18 @@ public class PreviewController
         temp.Image = newPic;
         temp.ContextMenu.MenuItems.Add("Source anzeigen", new EventHandler(this.show_source_by_click));
         temp.ContextMenu.MenuItems.Add("Source löschen", new EventHandler(this.remove_source_by_click));
+        temp.ContextMenu.MenuItems.Add("QueryFile öffnen", new EventHandler(this.openQueryFile));
         if (((AbstractDynamic2DAugmentation)currentElement).Source is FileSource)
         {
-
             temp.ContextMenu.MenuItems.Add("SourceFile öffnen", new EventHandler(this.openSourceFile));
-            temp.ContextMenu.MenuItems.Add("QueryFile öffnen", new EventHandler(this.openQueryFile));
+
             if (((AbstractDynamic2DAugmentation)currentElement).Source.Query == null)
             {
-                temp.ContextMenu.MenuItems[7].Enabled = false;
+                temp.ContextMenu.MenuItems[6].Enabled = false;
             }
         }
+
+
         temp.Refresh();
     }
 
@@ -634,7 +646,7 @@ public class PreviewController
     {
         IPreviewable prev = this.ew.CurrentElement;
         PictureBox box = this.findBox(prev);
-        
+
 
         double scale = 100 / (double)((Abstract2DTrackable)this.trackable).Size;
 
@@ -652,8 +664,8 @@ public class PreviewController
                     double sideScale = (double)prev.getPreview().Height / (double)prev.getPreview().Width;
                     box.Size = new Size((int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale), (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale * sideScale));
                 }
-            
-        }
+
+            }
             else if (prev is Chart)
             {
                 box.Size = new Size((int)(((Chart)prev).Width * scale), (int)(((Chart)prev).Height * scale));
@@ -806,9 +818,9 @@ public class PreviewController
 
         this.findBox(temp).ContextMenu.MenuItems.RemoveAt(4);
         this.findBox(temp).ContextMenu.MenuItems.RemoveAt(4);
+        this.findBox(temp).ContextMenu.MenuItems.RemoveAt(4);
         if (((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source is FileSource)
         {
-            this.findBox(temp).ContextMenu.MenuItems.RemoveAt(4);
             this.findBox(temp).ContextMenu.MenuItems.RemoveAt(4);
         }
 
@@ -956,6 +968,6 @@ public class PreviewController
 
     private void delete_current_element(object sender, EventArgs e)
     {
-            this.removePreviewable(this.ew.CurrentElement);
+        this.removePreviewable(this.ew.CurrentElement);
     }
 }
