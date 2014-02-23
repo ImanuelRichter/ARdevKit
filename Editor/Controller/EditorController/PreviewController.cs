@@ -11,6 +11,7 @@ using ARdevKit;
 using ARdevKit.Controller.EditorController;
 using ARdevKit.View;
 using ARdevKit.Properties;
+using System.Drawing.Drawing2D;
 
 public class PreviewController
 {
@@ -215,13 +216,16 @@ public class PreviewController
                     if (openFileDialog.ShowDialog() == DialogResult.OK)
                     {
                         ((DbSource)source).Query = openFileDialog.FileName;
+
+                        //add references in Augmentation, Picturebox + project.sources List.
+                        ((AbstractDynamic2DAugmentation)currentElement).Source = source;
+                        this.ew.project.Sources.Add(((AbstractDynamic2DAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).Source);
+
+                        this.setSourcePreview(currentElement);
+
+                        source.Augmentation = ((AbstractDynamic2DAugmentation)currentElement);
                     }
 
-                    //add references in Augmentation, Picturebox + project.sources List.
-                    ((AbstractDynamic2DAugmentation)currentElement).Source = source;
-                    this.ew.project.Sources.Add(((AbstractDynamic2DAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).Source);
-
-                    this.setSourcePreview(currentElement);
 
                 }
                 ew.PropertyGrid1.SelectedObject = source;
@@ -731,6 +735,17 @@ public class PreviewController
 
         PictureBox box = findBox(current);
         box.Location = new Point((int)tmp.X - (box.Size.Width / 2), (int)tmp.Y - (box.Size.Height / 2));
+    }
+
+    public void rotateAugmentation()
+    {
+        IPreviewable prev = this.ew.CurrentElement;
+        int grad = (int)((AbstractAugmentation)prev).Rotation.Z;
+        PictureBox box = this.findBox(prev);
+        Graphics graph = Graphics.FromImage(box.Image);
+        Matrix X = new Matrix();
+        X.RotateAt(grad, new Point((box.Image.Width), (box.Image.Height)));
+
     }
 
 
