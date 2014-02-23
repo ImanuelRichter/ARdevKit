@@ -504,12 +504,12 @@ public class PreviewController
         temp.Image = newPic;
         temp.ContextMenu.MenuItems.Add("Source anzeigen", new EventHandler(this.show_source_by_click));
         temp.ContextMenu.MenuItems.Add("Source löschen", new EventHandler(this.remove_source_by_click));
-        if (((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source is FileSource)
+        if (((AbstractDynamic2DAugmentation)currentElement).Source is FileSource)
         {
 
             temp.ContextMenu.MenuItems.Add("SourceFile öffnen", new EventHandler(this.openSourceFile));
             temp.ContextMenu.MenuItems.Add("QueryFile öffnen", new EventHandler(this.openQueryFile));
-            if (((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source.Query == null)
+            if (((AbstractDynamic2DAugmentation)currentElement).Source.Query == null)
             {
                 temp.ContextMenu.MenuItems[6].Enabled = false;
             }
