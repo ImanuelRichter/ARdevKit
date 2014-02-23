@@ -1,10 +1,10 @@
 var count = 1;
-function query(dataPath, id, options)
+function query(dataPath, plugin)
 {
 	$.getJSON(dataPath, function(data)
 	{
-		options.yAxis.title.text = data[0].metric + " in " + data[0].tags.unit;
-		options.series[0].name = data[0].tags.resource_id;
+		plugin.options.yAxis.title.text = data[0].metric + " in " + data[0].tags.unit;
+		plugin.options.series[0].name = data[0].tags.resource_id;
 		var values = new Array();
 		var i = 0;
 		var last = 0;
@@ -18,24 +18,25 @@ function query(dataPath, id, options)
 				last = key;
 			}
         });
-		options.series[0].data = values;
-		$('#' + id).highcharts(options);
+		plugin.options.series[0].data = values;
+		$('#' + plugin.id).highcharts(plugin.options);
 	})
 	.fail(function() { console.log("Failed to load data")})
 	.done(function() { console.log("Loaded data successfully")});
-	update(dataPath, id);
+	update(dataPath, plugin);
 };
-function update(dataPath, id)
+function update(dataPath, plugin)
 {
 	$.getJSON(dataPath, function(data)
 	{
-		var chart = $('#' + id).highcharts();
+		var chart = $('#' + plugin.id).highcharts();
 		var point = [1392742877000 + count * 3600 * 1000, 21.42];
 		count++;
 		var series = chart.series[0],
             shift = series.data.length > 24;
         chart.series[0].addPoint(point, true, shift);
-		setTimeout(function() { update(dataPath, id); }, 1000);
+		if (plugin.visible)
+			setTimeout(function() { update(dataPath, plugin); }, 1000);
 	})
 	.fail(function() { console.log("Failed to load data")})
 	.done(function() { console.log("Loaded data successfully")});

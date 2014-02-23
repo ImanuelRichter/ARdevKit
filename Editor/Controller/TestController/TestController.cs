@@ -162,8 +162,6 @@ namespace ARdevKit.Controller.TestController
 
         private static void player_Exited(object sender, EventArgs e)
         {
-            if (Directory.Exists(TMP_PROJECT_PATH))
-                Directory.Delete(TMP_PROJECT_PATH, true);
             if (Directory.Exists(TMP_VIDEO_PATH))
                 Directory.Delete(TMP_VIDEO_PATH, true);
         }

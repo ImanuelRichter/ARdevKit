@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Collections;
 using System.IO;
+using System.Runtime.CompilerServices;
 
 namespace ARdevKit.Model.Project
 {
@@ -178,7 +179,11 @@ namespace ARdevKit.Model.Project
         /// </summary>
         /// <param name="visitor">the visitor which encapsulates the action
         ///     which is performed on this element</param>
-        public abstract void Accept(AbstractProjectVisitor visitor);
+        public virtual void Accept(AbstractProjectVisitor visitor)
+        {
+            if (cue != null && !Equals(cue.FilePath, "NULL"))
+                cue.Accept(visitor);
+        }
 
         /// <summary>
         /// returns a <see cref="Bitmap"/> in order to be displayed
@@ -212,6 +217,7 @@ namespace ARdevKit.Model.Project
 
         public abstract object Clone();
 
+        [MethodImpl(MethodImplOptions.Synchronized)]
         public virtual bool initElement(EditorWindow ew)
         {
             int count = 0;
@@ -241,6 +247,18 @@ namespace ARdevKit.Model.Project
             }
             id = newID;
             return true;
+        }
+
+        /**
+         * <summary>    Gibt eine Zeichenfolge zurück, die das aktuelle Objekt darstellt. </summary>
+         *
+         * <remarks>    Robin, 14.01.2014. </remarks>
+         *
+         * <returns>    Eine Zeichenfolge, die das aktuelle Objekt darstellt. </returns>
+         */
+        public override string ToString()
+        {
+            return id;
         }
     }
 }

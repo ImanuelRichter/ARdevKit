@@ -310,20 +310,20 @@ namespace ARdevKit
         {
             if (projectChanged())
             {
-                if (MessageBox.Show("Möchten Sie das aktuelle Projekt abspeichern, bevor ein neues angelegt wird?", "Projekt speichern?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Möchten Sie das aktuelle Projekt abspeichern, bevor ein neues angelegt wird?", "Projekt speichern?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
                 {
-                    try
-                    {
-                        this.saveProject();
-                    }
-                    catch (ArgumentNullException ae)
-                    {
-                        Debug.WriteLine(ae.StackTrace);
-                    }
+                    this.saveProject();
+                }
+                catch (ArgumentNullException ae)
+                {
+                    Debug.WriteLine(ae.StackTrace);
                 }
             }
+            }
 
-                createNewProject("");
+            createNewProject("");
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -536,11 +536,6 @@ namespace ARdevKit
             throw new System.NotImplementedException();
         }
 
-        public void addDevice()
-        {
-            //TODO: implement addDevice()
-        }
-
         public void createNewProject(String name)
         {
             this.initializeEmptyProject(name);
@@ -716,7 +711,43 @@ namespace ARdevKit
 
         public void sendToDevice()
         {
-            //TODO: implement sendToDevice()
+            //Controller.ProjectController.ExportVisitor exportToSend = new Controller.ProjectController.ExportVisitor(true);
+            //try
+            //{
+            //    saveProject();
+
+            //    try
+            //    {
+            //        project.Accept(exportToSend);
+            //    }
+            //    catch (DirectoryNotFoundException de)
+            //    {
+            //        Debug.WriteLine(de.StackTrace);
+            //    }
+            //    try
+            //    {
+            //        foreach (AbstractFile file in exportToSend.Files)
+            //        {
+            //            file.Save();
+            //        }
+            //        try
+            //        {
+            //            deviceSelectionDialog.DeviceConnectionController.sendProject(index);
+            //        }
+            //        catch (Exception e)
+            //        {
+            //            Debug.WriteLine(e.Message);
+            //        }
+            //    }
+            //    catch (NullReferenceException ne)
+            //    {
+            //        Debug.WriteLine(ne.StackTrace);
+            //    }
+            //}
+            //catch (ArgumentNullException ae)
+            //{
+            //    Debug.WriteLine(ae.StackTrace);
+            //}
         }
 
         public void updateElementSelectionPanel()
@@ -907,17 +938,8 @@ namespace ARdevKit
 
             this.previewController = new PreviewController(this);
             this.propertyController = new PropertyController(this);
-
-            try
-            {
                 this.deviceConnectionController = new DeviceConnectionController(this);
             }
-            catch (Exception)
-            {
-
-                Debug.WriteLine("DeviceConnectionController is not implemented yet...");
-            }
-        }
 
         private void initializeEmptyProject(String projectname)
         {
@@ -1039,17 +1061,17 @@ namespace ARdevKit
         {
             if (projectChanged())
             {
-                if (MessageBox.Show("Möchten Sie das aktuelle Projekt abspeichern, bevor ein anderes geöffnet wird?", "Projekt speichern?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Möchten Sie das aktuelle Projekt abspeichern, bevor ein anderes geöffnet wird?", "Projekt speichern?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
                 {
-                    try
-                    {
-                        this.saveProject();
-                    }
-                    catch (ArgumentNullException ae)
-                    {
-                        Debug.WriteLine(ae.StackTrace);
-                    }
+                    this.saveProject();
                 }
+                catch (ArgumentNullException ae)
+                {
+                    Debug.WriteLine(ae.StackTrace);
+                }
+            }
             }
             
             this.loadProject();
@@ -1149,6 +1171,10 @@ namespace ARdevKit
                     {
                         tempTrack.vector = new Vector3D(this.pnl_editor_preview.Size.Width / 2, this.pnl_editor_preview.Size.Height / 2, 0);
                         this.project.Trackables.Add(tempTrack);
+                        foreach (AbstractAugmentation a in tempTrack.Augmentations)
+                        {
+                            a.initElement(this);
+                        }
                         this.updateSceneSelectionPanel();
                     }
                 }
@@ -1266,5 +1292,70 @@ namespace ARdevKit
         {
             Help.ShowHelp(this, Application.StartupPath + "\\Documentation.chm", HelpNavigator.TableOfContents);
         }
+
+        private void cmb_editor_properties_objectSelection_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            PropertyGrid1.SelectedObject = cmb_editor_properties_objectSelection.SelectedItem;
+            if (!(cmb_editor_properties_objectSelection.SelectedItem is AbstractSource))
+            {
+                previewController.setCurrentElement((IPreviewable) cmb_editor_properties_objectSelection.SelectedItem);
+            }
+            
+        }
+        private void reloadDeviceList()
+        {
+            DeviceList.Items.Clear();
+            deviceConnectionController.refresh();
+            List<string> devices = deviceConnectionController.getReportedDevices();
+            foreach (string device in devices)
+            {
+                DeviceList.Items.Add(device);
+            }
+            if (DeviceList.Items.Count > 0)
+            {
+                DeviceList.SelectedItem = devices[0];
+            } 
+        }
+
+        private void tsm_editor_menu_file_Click(object sender, EventArgs e)
+        {
+            reloadDeviceList();
+        }
+
+        private void refreshDeviceList_Click(object sender, EventArgs e)
+        {
+            reloadDeviceList();
+        }
+
+        private void sendProject_Click(object sender, EventArgs e)
+        {
+            if (project.Trackables == null || project.Trackables.Count <= 0 || project.Trackables[0] == null)
+            {
+                MessageBox.Show("Es ist kein Projekt zum versenden erstellt worden");
+            }
+            if (DeviceList.Items.Count != 0)
+            {
+                if (DeviceList.SelectedItem != null && DeviceList.SelectedIndex >= 0)
+                {
+                    if (deviceConnectionController.sendProject(DeviceList.SelectedIndex))
+                    {
+                        MessageBox.Show("Das Projekt wurde versand.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Das Projekt wurde nicht versand.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Es ist kein Gerät ausgewählt, wählen sie es in der Liste aus");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Es ist kein Gerät verfügbar, nutzen sie die Aktualisierungsfunktion und stellen sie sicher, dass die Geräte mit dem netzwerk verbunden sind");
+            }
+        }
+
     }
 }

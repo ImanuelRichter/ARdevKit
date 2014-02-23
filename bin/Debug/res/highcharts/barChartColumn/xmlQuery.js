@@ -1,11 +1,11 @@
-function query(dataPath, id, options)
+function query(dataPath, plugin)
 {
 	$.get(dataPath, function(xml)
 	{
 		var $xml = $(xml);
 		$xml.find('categories item').each(function(i, category)
 		{
-			options.xAxis.categories.push($(category).text());
+			plugin.options.xAxis.categories.push($(category).text());
 		});
 		$xml.find('series').each(function(i, series)
 		{
@@ -25,9 +25,9 @@ function query(dataPath, id, options)
 			$.each(points, function(i, point) {
 				seriesOptions.data.push(parseInt(point));
 			});
-			options.series.push(seriesOptions);
+			plugin.options.series.push(seriesOptions);
 		});
-		return $('#' + id).highcharts(options);
+		$('#' + plugin.id).highcharts(plugin.options);
 	})
 	.fail(function() { console.log("Failed to load data")})
 	.done(function() { console.log("Loaded data successfully")});
