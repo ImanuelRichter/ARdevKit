@@ -62,22 +62,23 @@ namespace ARdevKit.Model.Project
         private string getCustomUserFile()
         {
             var fileName = "customUserEventTemplate.txt";
-            var endFileName = augmentationID + "_UserEvent.js";
+            var endFileName = augmentationID + "_Event.js";
+            var dest = @"tmp\Events\";
 
             string content = System.IO.File.ReadAllText(@"res\templates\" + fileName);
             content = content.Replace("#element", augmentationID);
 
-            System.IO.Directory.CreateDirectory(@"tmp\UserEvents");
+            System.IO.Directory.CreateDirectory(dest);
 
-            if (System.IO.File.Exists(@"tmp\UserEvents" + endFileName))
-                System.IO.File.Delete(@"tmp\UserEvents" + endFileName);
+            if (System.IO.File.Exists(dest + endFileName))
+                System.IO.File.Delete(dest + endFileName);
 
-            using (System.IO.StreamWriter outfile = new System.IO.StreamWriter(@"tmp\UserEvents\" + endFileName))
+            using (System.IO.StreamWriter outfile = new System.IO.StreamWriter(dest + endFileName))
             {
                 outfile.Write(content);
             }
 
-            return System.IO.Path.GetFullPath(@"tmp\UserEvents\" + endFileName);
+            return System.IO.Path.GetFullPath(dest + endFileName);
         }
     }
 }
