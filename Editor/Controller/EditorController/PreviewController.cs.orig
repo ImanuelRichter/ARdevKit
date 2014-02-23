@@ -216,6 +216,18 @@ public class PreviewController
                     if (openFileDialog.ShowDialog() == DialogResult.OK)
                     {
                         ((DbSource)source).Query = openFileDialog.FileName;
+<<<<<<< HEAD
+
+                        //add references in Augmentation, Picturebox + project.sources List.
+                        ((AbstractDynamic2DAugmentation)currentElement).Source = source;
+                        this.ew.project.Sources.Add(((AbstractDynamic2DAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).Source);
+
+                        this.setSourcePreview(currentElement);
+
+                        source.Augmentation = ((AbstractDynamic2DAugmentation)currentElement);
+                    }
+
+=======
                         //add references in Augmentation, Picturebox + project.sources List.
                         ((AbstractDynamic2DAugmentation)currentElement).Source = source;
                         this.ew.project.Sources.Add(((AbstractDynamic2DAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).Source);
@@ -223,15 +235,13 @@ public class PreviewController
                         this.setSourcePreview(currentElement);
                     }
 
+                    
+>>>>>>> origin/master
 
-
-                    source.Augmentation = ((AbstractDynamic2DAugmentation)currentElement);
                 }
-
+                ew.PropertyGrid1.SelectedObject = source;
 
             }
-            ew.PropertyGrid1.SelectedObject = source;
-
         }
     }
 
@@ -379,11 +389,11 @@ public class PreviewController
     {
         PictureBox tempBox;
         tempBox = new PictureBox();
-        tempBox.Image = this.scaleIPreviewable(tempBox, prev);
-        tempBox.SizeMode = PictureBoxSizeMode.AutoSize;
+        this.scaleIPreviewable(tempBox, prev);
         tempBox.Location = new Point((int)(vector.X - tempBox.Size.Width / 2), (int)(vector.Y - tempBox.Size.Height / 2));
+        tempBox.Image = (Image)prev.getPreview();
 
-        
+        tempBox.SizeMode = PictureBoxSizeMode.StretchImage;
         tempBox.Tag = prev;
         ContextMenu cm = new ContextMenu();
 
@@ -526,8 +536,8 @@ public class PreviewController
                 temp.ContextMenu.MenuItems[6].Enabled = false;
             }
         }
-
-
+        
+        
         temp.Refresh();
     }
 
@@ -562,13 +572,12 @@ public class PreviewController
     /// </summary>
     /// <param name="box">The box.</param>
     /// <param name="prev">The previous.</param>
-    private Bitmap scaleIPreviewable(PictureBox box, IPreviewable prev)
+    private void scaleIPreviewable(PictureBox box, IPreviewable prev)
     {
         int height = prev.getPreview().Height;
         int width = prev.getPreview().Width;
         double sideScale;
         double scale;
-
         if (((Abstract2DTrackable)this.trackable).Size == 0)
         {
             scale = 100;
@@ -585,15 +594,19 @@ public class PreviewController
             if (width > height)
             {
                 sideScale = scalex / scaley;
-                return this.scaleBitmap(prev.getPreview(), (int)(100 * sideScale), 100);
+                box.Size = new Size((int)(100 * sideScale), 100);
             }
             else if (width <= height)
             {
                 sideScale = scaley / scalex;
-                return this.scaleBitmap(prev.getPreview(), 100, (int)(100 * sideScale));
+                box.Size = new Size(100, (int)(100 * sideScale));
             }
-            else { return null; }
+            if (((Abstract2DTrackable)prev).Size == 0)
+            {
+                ((Abstract2DTrackable)prev).Size = 60;
+            }
         }
+
         else if (prev is AbstractAugmentation)
         {
             if (prev is ImageAugmentation)
@@ -603,59 +616,47 @@ public class PreviewController
                     if (width > height)
                     {
                         sideScale = scalex / scaley;
-                        return this.scaleBitmap(prev.getPreview(), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X * sideScale), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.Y));
+                        box.Size = new Size((int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X * sideScale), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.Y));
                     }
                     else if (width <= height)
                     {
                         sideScale = scaley / scalex;
-                        return this.scaleBitmap(prev.getPreview(), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.Y * sideScale));
+                        box.Size = new Size((int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.Y * sideScale));
                     }
-                    else { return null; }
                 }
                 else
                 {
                     if (width > height)
                     {
                         sideScale = scalex / scaley;
+                        box.Size = new Size((int)(scale * 100 * sideScale), (int)(scale * 100));
                         ((AbstractAugmentation)prev).Scaling = new Vector3D(1, 1, 1);
-                        return this.scaleBitmap(prev.getPreview(), (int)(scale * 100 * sideScale), (int)(scale * 100));
                     }
                     else if (width <= height)
                     {
                         sideScale = scaley / scalex;
+                        box.Size = new Size((int)(scale * 100), (int)(scale * 100 * sideScale));
                         ((AbstractAugmentation)prev).Scaling = new Vector3D(1, 1, 1);
-                        return this.scaleBitmap(prev.getPreview(), (int)(scale * 100), (int)(scale * 100 * sideScale));
                     }
-                    else { return null; }
                 }
             }
             else if (prev is Chart)
             {
-                return this.scaleBitmap(prev.getPreview(), (int)(((Chart)prev).Width * scale), (int)(((Chart)prev).Height * scale));
+                box.Size = new Size((int)(((Chart)prev).Width * scale), (int)(((Chart)prev).Height * scale));
             }
-            else { return null; }
+
         }
-        else { return null; }
+        box.SizeMode = PictureBoxSizeMode.StretchImage;
     }
 
-    private Bitmap scaleBitmap(Bitmap bit, int width, int height)
-    {
-
-        Bitmap resizedImg = new Bitmap(width, height);
-        Bitmap img = bit;
-
-        using (Graphics gNew = Graphics.FromImage(resizedImg))
-        {
-            gNew.InterpolationMode = InterpolationMode.HighQualityBicubic;
-            gNew.DrawImage(img, new Rectangle(0, 0, width, height));
-        }
-        return resizedImg;
-    }
-    public Bitmap updateScale()
+    /// <summary>
+    /// Refreshs the Augmentation with the new Scale.
+    /// </summary>
+    public void updateScale()
     {
         IPreviewable prev = this.ew.CurrentElement;
         PictureBox box = this.findBox(prev);
-        Image bit = box.Image;
+        
 
         double scale = 100 / (double)((Abstract2DTrackable)this.trackable).Size;
 
@@ -663,26 +664,25 @@ public class PreviewController
         {
             if (prev is ImageAugmentation)
             {
-                if (bit.Width > bit.Height)
+                if (prev.getPreview().Width > prev.getPreview().Height)
                 {
                     double sideScale = (double)prev.getPreview().Width / (double)prev.getPreview().Height;
-                    return this.scaleBitmap((Bitmap)bit, (int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale * sideScale), (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale));
+                    box.Size = new Size((int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale * sideScale), (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale));
                 }
-                else if (bit.Width < bit.Height)
+                else if (prev.getPreview().Width < prev.getPreview().Height)
                 {
                     double sideScale = (double)prev.getPreview().Height / (double)prev.getPreview().Width;
-                    return this.scaleBitmap((Bitmap)bit, (int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale), (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale * sideScale));
+                    box.Size = new Size((int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale), (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale * sideScale));
                 }
-                else { return null; }
-
-            }
+            
+        }
             else if (prev is Chart)
             {
-                return this.scaleBitmap((Bitmap)bit, (int)(((Chart)prev).Width * scale), (int)(((Chart)prev).Height * scale));
+                box.Size = new Size((int)(((Chart)prev).Width * scale), (int)(((Chart)prev).Height * scale));
             }
-            else { return null; }
         }
-        else { return null; }
+        box.SizeMode = PictureBoxSizeMode.StretchImage;
+        box.Refresh();
     }
 
     /// <summary>
@@ -753,56 +753,10 @@ public class PreviewController
         IPreviewable prev = this.ew.CurrentElement;
         int grad = (int)((AbstractAugmentation)prev).Rotation.Z;
         PictureBox box = this.findBox(prev);
-        double scale = 100 / (double)((Abstract2DTrackable)this.trackable).Size;
-        Bitmap imgOriginal = this.getSizedBitmap();
-
-        Bitmap tempBitmap = new Bitmap(imgOriginal.Width, imgOriginal.Height);
-        tempBitmap.SetResolution(imgOriginal.HorizontalResolution, imgOriginal.HorizontalResolution);
-        System.Drawing.Graphics Graph = Graphics.FromImage(tempBitmap);
+        Graphics graph = Graphics.FromImage(box.Image);
         Matrix X = new Matrix();
-        X.RotateAt(grad, new Point((imgOriginal.Width / 2), (imgOriginal.Height / 2)));
-        Graph.Transform = X;
-        Graph.DrawImageUnscaled(imgOriginal, new Point(0, 0));
+        X.RotateAt(grad, new Point((box.Image.Width), (box.Image.Height)));
 
-        X.Dispose();
-        box.Image = tempBitmap;
-        X.Dispose();
-    }
-
-    /// <summary>
-    /// Refreshs the Augmentation with the new Scale.
-    /// </summary>
-    public Bitmap getSizedBitmap()
-    {
-        IPreviewable prev = this.ew.CurrentElement;
-        PictureBox box = this.findBox(prev);
-
-        double scale = 100 / (double)((Abstract2DTrackable)this.trackable).Size;
-
-        if (prev is AbstractAugmentation)
-        {
-            if (prev is ImageAugmentation)
-            {
-                if (prev.getPreview().Width > prev.getPreview().Height)
-                {
-                    double sideScale = (double)prev.getPreview().Width / (double)prev.getPreview().Height;
-                    return this.scaleBitmap(prev.getPreview(), (int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale * sideScale), (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale));
-                }
-                else if (prev.getPreview().Width < prev.getPreview().Height)
-                {
-                    double sideScale = (double)prev.getPreview().Height / (double)prev.getPreview().Width;
-                    return this.scaleBitmap(prev.getPreview(), (int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale), (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale * sideScale));
-                }
-                else { return null; }
-
-            }
-            else if (prev is Chart)
-            {
-                return this.scaleBitmap(prev.getPreview(), (int)(((Chart)prev).Width * scale), (int)(((Chart)prev).Height * scale));
-            }
-            else { return null; }
-        }
-        else { return null; }
     }
 
 
@@ -834,17 +788,13 @@ public class PreviewController
     {
         if (e.Button == System.Windows.Forms.MouseButtons.Left)
         {
-            IPreviewable prev = (IPreviewable)((Control)sender).Tag;
-            PictureBox box = this.findBox(prev);
-            this.setCurrentElement(prev);
             Control controlToMove = (Control)sender;
             controlToMove.BringToFront();
-            controlToMove.Location = new Point(controlToMove.Location.X + e.Location.X - (box.Width / 2),
-                   controlToMove.Location.Y + e.Location.Y - (box.Height / 2));
+            controlToMove.Location = new Point(controlToMove.Location.X + e.Location.X - 60,
+               controlToMove.Location.Y + e.Location.Y - 60);
 
             if (((Control)sender).Tag is AbstractAugmentation)
             {
-
                 AbstractAugmentation aa;
                 aa = (AbstractAugmentation)((Control)sender).Tag;
                 this.setCoordinates(this.ew.CurrentElement, new Vector3D(controlToMove.Location.X + e.Location.X,
@@ -1039,6 +989,6 @@ public class PreviewController
 
     private void delete_current_element(object sender, EventArgs e)
     {
-        this.removePreviewable(this.ew.CurrentElement);
+            this.removePreviewable(this.ew.CurrentElement);
     }
 }
