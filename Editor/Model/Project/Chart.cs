@@ -57,7 +57,6 @@ namespace ARdevKit.Model.Project
                 {
                     File.Helper.Copy(value, @"tmp\" + ID + "\\");
                     optionsFilePath = Path.GetFullPath(@"tmp\" + ID + "\\" + Path.GetFileName(value));
-                    //System.Windows.Forms.MessageBox.Show("foo");
                 }
                 else
                     optionsFilePath = value; 

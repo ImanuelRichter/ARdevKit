@@ -25,7 +25,17 @@ namespace ARdevKit.Model.Project
         public string Data
         {
             get { return sourceFilePath; }
-            set { sourceFilePath = value; }
+            set
+            {
+                if (File.Helper.FileExists(@"res\", System.IO.Path.GetFileName(value)))
+                {
+                    var endFileName = SourceID + "_" + System.IO.Path.GetFileName(value);
+                    File.Helper.Copy(value, @"tmp\source\", endFileName);
+                    sourceFilePath = System.IO.Path.GetFullPath(@"tmp\source\" + endFileName);
+                }
+                else
+                    sourceFilePath = value;
+            }
         }
 
         public FileSource(string sourceFilePath) : base()

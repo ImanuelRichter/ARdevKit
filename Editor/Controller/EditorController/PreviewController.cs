@@ -182,10 +182,11 @@ public class PreviewController
                     openFileDialog.InitialDirectory = Application.StartupPath + "\\res\\highcharts\\barChartColumn";
                     if (openFileDialog.ShowDialog() == DialogResult.OK)
                     {
-                        ((FileSource)source).Data = openFileDialog.FileName;
                         //set reference to the augmentations in Source
                         source.initElement(ew);
                         source.Augmentation = ((AbstractDynamic2DAugmentation)currentElement);
+
+                        ((FileSource)source).Data = openFileDialog.FileName;
 
                         //add references in Augmentation, Picturebox + project.sources List.
                         ((AbstractDynamic2DAugmentation)currentElement).Source = source;
@@ -216,9 +217,10 @@ public class PreviewController
                     openFileDialog.Filter = "JavaFile (*.js)|*.js";
                     if (openFileDialog.ShowDialog() == DialogResult.OK)
                     {
-                        ((DbSource)source).Query = openFileDialog.FileName;
                         source.initElement(ew);
                         source.Augmentation = ((AbstractDynamic2DAugmentation)currentElement);
+                        
+                        ((DbSource)source).Query = openFileDialog.FileName;
 
                         //add references in Augmentation, Picturebox + project.sources List.
                         ((AbstractDynamic2DAugmentation)currentElement).Source = source;
