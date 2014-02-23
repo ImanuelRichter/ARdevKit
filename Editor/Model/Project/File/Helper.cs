@@ -53,5 +53,19 @@ namespace ARdevKit.Model.Project.File
 
             }
         }
+
+        public static bool FileExists(string rootPath, string filename)
+        {
+            if (System.IO.File.Exists(Path.Combine(rootPath, filename)))
+                return true;
+
+            foreach (string subDir in Directory.GetDirectories(rootPath))
+            {
+                if (FileExists(subDir, filename))
+                    return true;
+            }
+
+            return false;
+        }
     }
 }
