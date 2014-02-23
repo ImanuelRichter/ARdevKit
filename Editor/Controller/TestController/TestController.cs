@@ -89,7 +89,8 @@ namespace ARdevKit.Controller.TestController
         public static void StartPlayer(Project project, int mode, int width, int height, bool showDebug)
         {
             string originalProjectPath = project.ProjectPath;
-            project.ProjectPath = TMP_PROJECT_PATH;
+            if (project.ProjectPath == null || project.ProjectPath.Length <= 0)
+                project.ProjectPath = TMP_PROJECT_PATH;
             ExportVisitor exporter = new ExportVisitor();
             project.Accept(exporter);
 
