@@ -106,12 +106,12 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
             {
                 exportRecentProject();
                 sender = new TcpClient(reportedDevices[index].Address.ToString(), 12345);
-                if (File.Exists("currentProject.zip"))
+                if (File.Exists("tmp\\currentProject.zip"))
                 {
-                    File.Delete("currentProject.zip");
+                    File.Delete("tmp\\currentProject.zip");
                 }
-                ZipFile.CreateFromDirectory("currentProject", "currentProject.zip");
-                project = File.OpenRead("currentProject.zip");
+                ZipFile.CreateFromDirectory("tmp\\project", "tmp\\currentProject.zip");
+                project = File.OpenRead("tmp\\currentProject.zip");
                 byte[] size = new byte[8];
                 size = BitConverter.GetBytes(project.Length);
                 if (!BitConverter.IsLittleEndian)

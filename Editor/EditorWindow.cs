@@ -1366,10 +1366,7 @@ namespace ARdevKit
             {
                 if (DeviceList.SelectedItem != null && DeviceList.SelectedIndex >= 0)
                 {
-                    if (!deviceConnectionController.sendDebug(DeviceList.SelectedIndex))
-                    {
-                        MessageBox.Show("Die Debuganfrage wurde nicht korrekt versand.");
-                    }
+                    Task.Factory.StartNew(() => deviceConnectionController.sendDebug(DeviceList.SelectedIndex));
                 }
                 else
                 {
