@@ -9,17 +9,27 @@ using System.ComponentModel;
 namespace ARdevKit.Model.Project
 {
     /// <summary>
-    /// Just a class for AbstractAugmentations. With this we are able to List all the customUserEvents. 
-    /// See issue #13 for reason of this class.
+    /// The class CustomUserEvent mainly contains a reference to a
+    /// file, which is in the /currentProject/ Folder. This file has ALL
+    /// Events the user creates (inclusive the template events we provide)
+    /// for ONE augmentation.
     /// </summary>
     [Serializable]
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public class CustomUserEvent
     {
+        /// <summary>
+        /// ID of the augmentation
+        /// </summary>
         private string augmentationID;
         
+        /// <summary>
+        /// File path of the customUserEvents
+        /// </summary>
         private string filePath;
-
+        /// <summary>
+        /// Get or set the file path for the customUserEvents-File.
+        /// </summary>
         public string FilePath
         {
             get 
@@ -31,30 +41,43 @@ namespace ARdevKit.Model.Project
                 
                 return filePath; 
             }
+            set { filePath = value; }
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CustomUserEvent"/> class.
+        /// Constructor of the CustomUserEvent.
         /// </summary>
-        /// <param name="name">The name.</param>
-        /// <param name="content">The content.</param>
+        /// <param name="augmentationID">ID of the augmentation</param>
         public CustomUserEvent(string augmentationID)
         {
             this.augmentationID = augmentationID;
             filePath = "NULL";
         }
 
+        /// <summary>
+        /// Creates the file from a template. The #element in the template
+        /// will be replaced with the id of the augmentation
+        /// </summary>
+        /// <returns>File path of the newly generated customUserEvent.</returns>
         private string getCustomUserFile()
         {
             var fileName = "customUserEventTemplate.txt";
-            var endFileName = augmentationID + "customUserEvent.txt";
+            var endFileName = augmentationID + "_UserEvent.js";
 
-            if (System.IO.File.Exists(@"currentProject\" + endFileName))
-                System.IO.File.Delete(@"currentProject\" + endFileName);
+            string content = System.IO.File.ReadAllText(@"res\templates\" + fileName);
+            content = content.Replace("#element", augmentationID);
 
-            System.IO.File.Copy(@"res\templates\" + fileName, @"currentProject\" + endFileName);
+            System.IO.Directory.CreateDirectory(@"tmp\UserEvents");
 
-            return System.IO.Path.GetFullPath("currentProject\\" + endFileName);
+            if (System.IO.File.Exists(@"tmp\UserEvents" + endFileName))
+                System.IO.File.Delete(@"tmp\UserEvents" + endFileName);
+
+            using (System.IO.StreamWriter outfile = new System.IO.StreamWriter(@"tmp\UserEvents\" + endFileName))
+            {
+                outfile.Write(content);
+            }
+
+            return System.IO.Path.GetFullPath(@"tmp\UserEvents\" + endFileName);
         }
     }
 }

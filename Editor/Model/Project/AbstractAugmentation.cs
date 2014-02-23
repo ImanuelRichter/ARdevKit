@@ -34,7 +34,7 @@ namespace ARdevKit.Model.Project
         /// <value> The identifier. </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        [CategoryAttribute("General")]
+        [CategoryAttribute("General"), ReadOnly(true)]
         public string ID
         {
             get { return id; }
@@ -57,24 +57,27 @@ namespace ARdevKit.Model.Project
             set { isVisible = value; }
         }
 
-        
+
         /// <summary>
-        /// A list of all customUserEvents the current <see cref="AbstractAugmentation"/> has.
-        /// The user can write a javascript based code for the <see cref="AbstractAugmentation"/>.
+        /// The customUserEvents contains a path to a file, which has
+        /// all user-generated events of this augmentation.
         /// </summary>
         private CustomUserEvent cue;
         /// <summary>
-        /// Get the content of the customUserEvent. Each element in the List represents a line of the code.
+        /// Get the CustomUserEvent.
         /// </summary>
         [Browsable(false)]
-        //[CategoryAttribute("Expert")]
-        //[Editor(typeof(TextEditor), typeof(System.Drawing.Design.UITypeEditor))]
         public CustomUserEvent CustomUserEventReference
         {
-            get { return cue; }
+            get 
+            {
+                if (cue == null)
+                    cue = new CustomUserEvent(id);
+                return cue; 
+            }
             set { cue = value; }
         }
-        
+
 
         /// <summary>
         /// Vector to describe the position on the PreviewPanel, and later
@@ -149,8 +152,7 @@ namespace ARdevKit.Model.Project
             scalingVector = new Vector3D(0, 0, 0);
             rotationVector = new Vector3D(0, 0, 0);
             trackable = null;
-            cue = new CustomUserEvent(id);
-            
+
         }
 
         /// <summary>
@@ -161,14 +163,13 @@ namespace ARdevKit.Model.Project
         /// <param name="translationVector">The translation vector.</param>
         /// <param name="scaling">The scaling.</param>
         /// <param name="trackable">The trackable.</param>
-        protected AbstractAugmentation(bool isVisible, 
+        protected AbstractAugmentation(bool isVisible,
             Vector3D translationVector, Vector3D scaling, AbstractTrackable trackable)
         {
             this.isVisible = isVisible;
             this.translationVector = translationVector;
             scalingVector = scaling;
             this.trackable = trackable;
-            cue = new CustomUserEvent(id);
         }
 
         /// <summary>
@@ -213,7 +214,32 @@ namespace ARdevKit.Model.Project
 
         public virtual bool initElement(EditorWindow ew)
         {
-            //do nothing if not overwritten.
+            int count = 0;
+            bool found = true;
+            String newID = "";
+            while (found)
+            {
+                found = false;
+                count++;
+                foreach (AbstractTrackable t in ew.project.Trackables)
+                {
+                    newID = this.GetType().Name + count;
+                    //make first letter lowercase
+                    newID = newID[0].ToString().ToLower() + newID.Substring(1);
+                    foreach (AbstractAugmentation a in t.Augmentations)
+                    {
+                        if (this.GetType().Equals(a.GetType()))
+                        {
+                            if (a.ID == newID)
+                            {
+                                found = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            id = newID;
             return true;
         }
     }

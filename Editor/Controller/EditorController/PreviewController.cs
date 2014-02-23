@@ -56,7 +56,10 @@ public class PreviewController
         this.ew.project.Trackables.Add(trackable);
         this.ew.Tsm_editor_menu_edit_paste.Click += new System.EventHandler(this.paste_augmentation_center);
         this.ew.Tsm_editor_menu_edit_copie.Click += new System.EventHandler(this.copy_augmentation);
+        this.ew.Tsm_editor_menu_edit_delete.Click += new System.EventHandler(this.delete_current_element);
     }
+
+
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// <summary>   (This method is obsolete) adds a preview able. </summary>
@@ -87,6 +90,7 @@ public class PreviewController
     {
         if (currentElement is AbstractTrackable && trackable == null)
         {
+            this.ew.Tsm_editor_menu_edit_delete.Enabled = true;
             while (true)
             {
                 Vector3D center = new Vector3D(0, 0, 0);
@@ -252,6 +256,7 @@ public class PreviewController
                 this.ew.ElementSelectionController.setElementEnable(typeof(IDMarker), true);
                 this.ew.ElementSelectionController.setElementEnable(typeof(ImageTrackable), true);
             }
+            this.ew.Tsm_editor_menu_edit_delete.Enabled = false;
         }
         else if (currentElement is AbstractAugmentation && trackable != null)
         {
@@ -327,6 +332,8 @@ public class PreviewController
             this.ew.project.Trackables.Add(trackable);
         }
         this.ew.CurrentElement = null;
+        this.ew.Tsm_editor_menu_edit_delete.Enabled = false;
+        this.ew.Tsm_editor_menu_edit_copie.Enabled = false;
     }
 
 
@@ -439,11 +446,11 @@ public class PreviewController
             {
                 this.ew.CurrentElement = currentElement;
 
-                if (typeof(AbstractAugmentation).IsAssignableFrom(currentElement.GetType()))
+                if (currentElement is AbstractAugmentation)
                 {
                     this.ew.Tsm_editor_menu_edit_copie.Enabled = true;
                 }
-                else if (typeof(AbstractTrackable).IsAssignableFrom(currentElement.GetType()))
+                else if (currentElement is AbstractTrackable)
                 {
                     this.ew.Tsm_editor_menu_edit_copie.Enabled = false;
                 }
@@ -943,5 +950,10 @@ public class PreviewController
     {
         TextEditorForm tef = new TextEditorForm(((AbstractAugmentation)ew.CurrentElement).CustomUserEventReference.FilePath);
         tef.Show();
+    }
+
+    private void delete_current_element(object sender, EventArgs e)
+    {
+            this.removePreviewable(this.ew.CurrentElement);
     }
 }

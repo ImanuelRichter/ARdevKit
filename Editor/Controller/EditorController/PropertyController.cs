@@ -73,7 +73,7 @@ namespace Controller.EditorController
                 return;
             }
 
-            if (ew.CurrentElement is Chart)
+            if (ew.CurrentElement is Abstract2DAugmentation)
             {
                 if (string.Equals(e.ChangedItem.Label.ToString(), "Height", StringComparison.Ordinal)
                     || string.Equals(e.ChangedItem.Label.ToString(), "Width", StringComparison.Ordinal))
@@ -86,7 +86,8 @@ namespace Controller.EditorController
 
             if (string.Equals(e.ChangedItem.Label.ToString(), "Size", StringComparison.Ordinal))
             {
-                ew.PreviewController.updatePreviewPanel();
+                ew.PreviewController.reloadPreviewPanel(ew.PreviewController.index);
+                // ew.PreviewController.rescalePreviewPanel();
 
                 return;
             }
