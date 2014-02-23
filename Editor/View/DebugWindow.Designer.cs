@@ -66,6 +66,7 @@
             this.Controls.Add(this.tlp_debugWindow_main);
             this.Name = "DebugWindow";
             this.Text = "Debug";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DebugWindow_FormClosing);
             this.tlp_debugWindow_main.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -74,6 +75,10 @@
         #endregion
 
         private System.Windows.Forms.RichTextBox rtb_out;
+        public System.Windows.Forms.RichTextBox Rtb_out
+        {
+            get { return rtb_out; }
+        }
         private System.Windows.Forms.TableLayoutPanel tlp_debugWindow_main;
     }
 }

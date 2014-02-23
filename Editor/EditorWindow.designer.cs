@@ -221,6 +221,20 @@ namespace ARdevKit
             this.cmb_editor_properties_objectSelection.TabIndex = 1;
             this.cmb_editor_properties_objectSelection.SelectedIndexChanged += new System.EventHandler(this.cmb_editor_properties_objectSelection_SelectedIndexChanged);
             // 
+            // mst_editor_menu
+            // 
+            this.mst_editor_menu.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
+            this.mst_editor_menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsm_editor_menu_file,
+            this.tsm_editor_menu_edit,
+            this.tsm_editor_menu_test,
+            this.tsm_editor_menu_help});
+            this.mst_editor_menu.Location = new System.Drawing.Point(0, 0);
+            this.mst_editor_menu.Name = "mst_editor_menu";
+            this.mst_editor_menu.Size = new System.Drawing.Size(1008, 24);
+            this.mst_editor_menu.TabIndex = 0;
+            this.mst_editor_menu.Text = "menuStrip1";
+            // 
             // tsm_editor_menu_file
             // 
             this.tsm_editor_menu_file.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -332,6 +346,7 @@ namespace ARdevKit
             this.DeviceDebug.Name = "DeviceDebug";
             this.DeviceDebug.Size = new System.Drawing.Size(218, 22);
             this.DeviceDebug.Text = "Gerätedebugmodus starten";
+            this.DeviceDebug.Click += new System.EventHandler(this.DeviceDebug_Click);
             // 
             // tss_editor_menu_file_connection_exit
             // 
@@ -459,20 +474,6 @@ namespace ARdevKit
             this.tsm_editor_menu_help_info.Size = new System.Drawing.Size(99, 22);
             this.tsm_editor_menu_help_info.Text = "Info";
             this.tsm_editor_menu_help_info.Click += new System.EventHandler(this.tsm_editor_menu_help_info_Click);
-            // 
-            // mst_editor_menu
-            // 
-            this.mst_editor_menu.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
-            this.mst_editor_menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsm_editor_menu_file,
-            this.tsm_editor_menu_edit,
-            this.tsm_editor_menu_test,
-            this.tsm_editor_menu_help});
-            this.mst_editor_menu.Location = new System.Drawing.Point(0, 0);
-            this.mst_editor_menu.Name = "mst_editor_menu";
-            this.mst_editor_menu.Size = new System.Drawing.Size(1008, 24);
-            this.mst_editor_menu.TabIndex = 0;
-            this.mst_editor_menu.Text = "menuStrip1";
             // 
             // EditorWindow
             // 
