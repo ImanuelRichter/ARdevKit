@@ -1200,6 +1200,7 @@ namespace ARdevKit
             float x = e.MarginBounds.Left;
             float y = e.MarginBounds.Top;
 
+            if (project.Trackables[trackablePCounter] != null)
             e.Graphics.DrawImage(project.Trackables[trackablePCounter].getPreview(), x, y);
 
             if (project.Trackables[trackablePCounter] != project.Trackables.Last())
