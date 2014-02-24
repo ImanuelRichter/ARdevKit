@@ -219,7 +219,7 @@ public class PreviewController
                     {
                         source.initElement(ew);
                         source.Augmentation = ((AbstractDynamic2DAugmentation)currentElement);
-                        
+
                         ((DbSource)source).Query = openFileDialog.FileName;
 
                         //add references in Augmentation, Picturebox + project.sources List.
@@ -394,7 +394,7 @@ public class PreviewController
         tempBox.SizeMode = PictureBoxSizeMode.AutoSize;
         tempBox.Location = new Point((int)(vector.X - tempBox.Size.Width / 2), (int)(vector.Y - tempBox.Size.Height / 2));
 
-        
+
         tempBox.Tag = prev;
         ContextMenu cm = new ContextMenu();
 
@@ -643,7 +643,7 @@ public class PreviewController
             }
             else if (prev is Chart)
             {
-                return this.scaleBitmap(prev.getPreview(), (int)(((Chart)prev).Width * scale), (int)(((Chart)prev).Height * scale));
+                return this.scaleBitmap(prev.getPreview(), 170, 170);
             }
             else { return null; }
         }
@@ -690,7 +690,7 @@ public class PreviewController
             }
             else if (prev is Chart)
             {
-                return this.scaleBitmap((Bitmap)bit, (int)(((Chart)prev).Width * scale), (int)(((Chart)prev).Height * scale));
+                return this.scaleBitmap((Bitmap)bit, 170, 170);
             }
             else { return null; }
         }
@@ -835,7 +835,7 @@ public class PreviewController
             }
             else if (prev is Chart)
             {
-                return this.scaleBitmap(prev.getPreview(), (int)(((Chart)prev).Width * scale), (int)(((Chart)prev).Height * scale));
+                return this.scaleBitmap(prev.getPreview(), 175, 175);
             }
             else { return null; }
         }
