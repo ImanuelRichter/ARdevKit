@@ -1366,7 +1366,9 @@ namespace ARdevKit
             {
                 if (DeviceList.SelectedItem != null && DeviceList.SelectedIndex >= 0)
                 {
-                    Task.Factory.StartNew(() => deviceConnectionController.sendDebug(DeviceList.SelectedIndex));
+                    int index = DeviceList.SelectedIndex;
+                    deviceConnectionController.DebugWindow.Show();
+                    Task.Factory.StartNew(() => deviceConnectionController.sendDebug(index));
                 }
                 else
                 {

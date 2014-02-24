@@ -22,6 +22,11 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
         private UdpClient udpClient;
         private EditorWindow editorWindow;
         private bool debugConnected;
+        private View.DebugWindow debugWindow;
+        public View.DebugWindow DebugWindow
+        {
+            get { return debugWindow; }
+        }
 
         public bool DebugConnected
         {
@@ -36,6 +41,7 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
         /// <param name="ew">The ew.</param>
         public DeviceConnectionController(Form window)
         {
+            debugWindow = new View.DebugWindow(this);
             debugConnected = false;
             editorWindow = (EditorWindow) window;
             reportedDevices = new List<IPEndPoint>();
@@ -199,7 +205,6 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
             TcpClient sender = null;
             NetworkStream sendStream = null;
             StreamReader reader = null;
-            View.DebugWindow debugPrompt = new View.DebugWindow(this);
             try
             {
                 sender = new TcpClient(reportedDevices[index].Address.ToString(), 12345);
@@ -209,10 +214,7 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
                 reader = new StreamReader(sendStream);
                 while(debugConnected)
                 {
-                    if(debugPrompt != null && sendStream.DataAvailable)
-                    {
-                        debugPrompt.Rtb_out.AppendText(reader.ReadLine() + "\n");
-                    }
+                        debugWindow.AppendText(reader.ReadLine() + "\n");
                 }
                 success = true;
             }
