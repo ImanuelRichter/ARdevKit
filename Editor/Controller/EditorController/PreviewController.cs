@@ -40,6 +40,8 @@ public class PreviewController
     /// <summary>   The Index which Trackable out of Project we musst use </summary>
     public int index;
 
+    private double scale;
+
     public AbstractAugmentation copy { get; set; }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -370,6 +372,7 @@ public class PreviewController
         {
             foreach (AbstractAugmentation aug in trackable.Augmentations)
             {
+                this.scale = 100 / (double)((Abstract2DTrackable)this.trackable).Size / 1.666666666;
                 this.addPictureBox(aug, this.recalculateVector(aug.Translation));
                 if (typeof(AbstractDynamic2DAugmentation).IsAssignableFrom(aug.GetType()) && ((AbstractDynamic2DAugmentation)aug).Source != null)
                 {
@@ -392,8 +395,15 @@ public class PreviewController
         tempBox = new PictureBox();
         tempBox.Image = this.scaleIPreviewable(prev);
         tempBox.SizeMode = PictureBoxSizeMode.AutoSize;
-        tempBox.Location = new Point((int)(vector.X - tempBox.Size.Width / 2), (int)(vector.Y - tempBox.Size.Height / 2));
-
+        if (prev is AbstractTrackable)
+        {
+            tempBox.Location = new Point((int)(vector.X - tempBox.Size.Width / 2), (int)(vector.Y - tempBox.Size.Height / 2));
+        }
+        else if (prev is AbstractAugmentation)
+        {
+            tempBox.Location = new Point((int)(vector.X - tempBox.Size.Width / 2), 
+                (int)(vector.Y - tempBox.Size.Height / 2));
+        }
 
         tempBox.Tag = prev;
         ContextMenu cm = new ContextMenu();
@@ -551,8 +561,8 @@ public class PreviewController
     private Vector3D calculateVector(Vector3D v)
     {
         Vector3D result = new Vector3D(0, 0, 0);
-        result.X = v.X - panel.Width / 2;
-        result.Y = panel.Height / 2 - v.Y;
+        result.X = (int)((v.X - panel.Width / 2)*scale/1.6666666);
+        result.Y = (int)((panel.Height / 2 - v.Y)*scale/1.666666);
         return result;
     }
 
@@ -564,8 +574,8 @@ public class PreviewController
     private Vector3D recalculateVector(Vector3D v)
     {
         Vector3D result = new Vector3D(0, 0, 0);
-        result.X = (panel.Width / 2 + v.X);
-        result.Y = (panel.Height / 2 - v.Y);
+        result.X = (panel.Width / 2 + v.X*1.66666 * scale);
+        result.Y = (panel.Height / 2 - v.Y*1.66666 * scale);
         return result;
     }
 
@@ -579,15 +589,14 @@ public class PreviewController
         int height = prev.getPreview().Height;
         int width = prev.getPreview().Width;
         double sideScale;
-        double scale;
 
         if (((Abstract2DTrackable)this.trackable).Size == 0)
         {
-            scale = 100;
+            this.scale = 100;
         }
         else
         {
-            scale = 100 / (double)((Abstract2DTrackable)this.trackable).Size / 1.666666666;
+            this.scale = 100 / (double)((Abstract2DTrackable)this.trackable).Size / 1.666666666;
         }
         double scalex = width / scale;
         double scaley = height / scale;
@@ -669,7 +678,7 @@ public class PreviewController
         PictureBox box = this.findBox(prev);
         Image bit = box.Image;
 
-        double scale = 100 / (double)((Abstract2DTrackable)this.trackable).Size / 1.666666666;
+        this.scale = 100 / (double)((Abstract2DTrackable)this.trackable).Size / 1.666666666;
 
         if (prev is AbstractAugmentation)
         {
@@ -790,7 +799,6 @@ public class PreviewController
         IPreviewable prev = this.ew.CurrentElement;
         int grad = -(int)((AbstractAugmentation)prev).Rotation.Z;
         PictureBox box = this.findBox(prev);
-        double scale = 100 / (double)((Abstract2DTrackable)this.trackable).Size;
         Bitmap imgOriginal = this.getSizedBitmap();
 
         Bitmap tempBitmap = new Bitmap(imgOriginal.Width, imgOriginal.Height);
@@ -814,7 +822,7 @@ public class PreviewController
         IPreviewable prev = this.ew.CurrentElement;
         PictureBox box = this.findBox(prev);
 
-        double scale = 100 / (double)((Abstract2DTrackable)this.trackable).Size;
+        this.scale = 100 / (double)((Abstract2DTrackable)this.trackable).Size / 1.6666666666;
 
         if (prev is AbstractAugmentation)
         {
@@ -884,7 +892,7 @@ public class PreviewController
 
                 AbstractAugmentation aa;
                 aa = (AbstractAugmentation)((Control)sender).Tag;
-                this.setCoordinates(this.ew.CurrentElement, new Vector3D(controlToMove.Location.X + e.Location.X,
+                this.setCoordinates(this.ew.CurrentElement, new Vector3D((int)((controlToMove.Location.X + e.Location.X)) ,
                     controlToMove.Location.Y + e.Location.Y, 0));
             }
         }
