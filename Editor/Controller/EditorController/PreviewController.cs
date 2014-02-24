@@ -587,7 +587,7 @@ public class PreviewController
         }
         else
         {
-            scale = 100 / (double)((Abstract2DTrackable)this.trackable).Size;
+            scale = 100 / (double)((Abstract2DTrackable)this.trackable).Size / 1.666666666;
         }
         double scalex = width / scale;
         double scaley = height / scale;
@@ -669,7 +669,7 @@ public class PreviewController
         PictureBox box = this.findBox(prev);
         Image bit = box.Image;
 
-        double scale = 100 / (double)((Abstract2DTrackable)this.trackable).Size;
+        double scale = 100 / (double)((Abstract2DTrackable)this.trackable).Size / 1.666666666;
 
         if (prev is AbstractAugmentation)
         {
