@@ -28,7 +28,7 @@ namespace ARdevKit.Model.Project
         /// <value>
         /// The height, in mm.
         /// </value>
-        [CategoryAttribute("General")]
+        [Browsable(false)]
         [Editor(typeof(SliderEditor), typeof(System.Drawing.Design.UITypeEditor))]
         public int Height
         {
@@ -55,7 +55,7 @@ namespace ARdevKit.Model.Project
         /// <value>
         /// The width, in mm.
         /// </value>
-        [CategoryAttribute("General")]
+        [Browsable(false)]
         [Editor(typeof(SliderEditor), typeof(System.Drawing.Design.UITypeEditor))]
         public int Width
         {
