@@ -63,6 +63,13 @@ namespace ARdevKit.Model.Project
             }
         }
 
+        [Browsable(false)]
+        public new Vector3D Rotation
+        {
+            get { return base.Rotation; }
+            set { base.Rotation = value; }
+        }
+
         /// <summary>   Default constructor. </summary>
         public Chart()
         {
