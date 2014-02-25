@@ -40,6 +40,9 @@ public class PreviewController
     /// <summary>   The Index which Trackable out of Project we musst use </summary>
     public int index;
 
+    /// <summary>
+    /// The scale of the previewPanel. we need this to scale the distance and the size of the elements.
+    /// </summary>
     private double scale;
 
     public AbstractAugmentation copy { get; set; }
@@ -135,7 +138,6 @@ public class PreviewController
                     }
                 }
             }
-
         }
         else if (currentElement is AbstractAugmentation && trackable != null && this.ew.project.Trackables[index].Augmentations.Count < 3)
         {
@@ -158,18 +160,13 @@ public class PreviewController
         }
     }
 
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// <summary>
     ///     add Source or augmentation, this method can only be used with the element, which is the
     ///     over element by augmentation the overelement is Trackable. by Source the overelement is
     ///     augmentation.
     /// </summary>
-    ///
-    /// <param name="currentElement">   The current element. </param>
-    /// <param name="overElement">      The over element. </param>
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-
+    /// <param name="source">The source.</param>
+    /// <param name="currentElement">The current element.</param>
     public void addSource(AbstractSource source, AbstractAugmentation currentElement)
     {
         if (source != null && currentElement is AbstractDynamic2DAugmentation)
@@ -195,6 +192,7 @@ public class PreviewController
                         this.ew.project.Sources.Add(((AbstractDynamic2DAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).Source);
 
 
+                        //make it possible to add a query to the source.
                         DialogResult dialogResult = MessageBox.Show("Möchten sie ein Query zu der Source öffnen?", "Query?", MessageBoxButtons.YesNo);
 
                         if (dialogResult == DialogResult.Yes)
@@ -314,7 +312,8 @@ public class PreviewController
     }
 
     /// <summary>
-    /// This Reload funktion is here to load a other Trackable out of the Project.
+    /// load the project with the identical index to the previewPanel 
+    /// (the index is the index of the trackable list in project)
     /// </summary>
     /// <param name="index">The index.</param>
     public void reloadPreviewPanel(int index)
@@ -326,6 +325,7 @@ public class PreviewController
             this.index = index;
             this.trackable = this.ew.project.Trackables[index];
             this.panel.Controls.Clear();
+            //makes differences between the kind of trackables
             if (trackable != null)
             {
                 this.addAllToPanel(this.ew.project.Trackables[index]);
@@ -346,7 +346,7 @@ public class PreviewController
                 this.ew.ElementSelectionController.setElementEnable(typeof(PictureMarker), false);
             }
         }
-        //if the scene is new create a new empty scene
+        //if the scene is empty create a new empty scene
         else if (index >= this.ew.project.Trackables.Count)
         {
             this.index = index;
@@ -354,6 +354,7 @@ public class PreviewController
             this.panel.Controls.Clear();
             this.ew.project.Trackables.Add(trackable);
         }
+        //set currentElement, copyButton, deleteButton & property grid to null
         this.ew.CurrentElement = null;
         this.ew.Tsm_editor_menu_edit_delete.Enabled = false;
         this.ew.Tsm_editor_menu_edit_copie.Enabled = false;
@@ -391,6 +392,7 @@ public class PreviewController
     /// <param name="vector">The vector.</param>
     private void addPictureBox(IPreviewable prev, Vector3D vector)
     {
+        //creates the temporateBox with all variables, which'll be add than to the panel.
         PictureBox tempBox;
         tempBox = new PictureBox();
         tempBox.Image = this.scaleIPreviewable(prev);
@@ -416,6 +418,7 @@ public class PreviewController
             DragEventHandler dropHandler = new DragEventHandler(onAugmentationDrop);
             tempBox.DragEnter += enterHandler;
             tempBox.DragDrop += dropHandler;
+            //adds menuItems for the contextmenue
             cm.MenuItems.Add("kopieren", new EventHandler(this.copy_augmentation));
             if (prev is Chart)
             {
@@ -444,7 +447,7 @@ public class PreviewController
     /// <returns></returns>
     public PictureBox findBox(IPreviewable prev)
     {
-        if (typeof(AbstractTrackable).IsAssignableFrom(prev.GetType()))
+        if (prev is AbstractTrackable)
         {
             foreach (Control comp in panel.Controls)
             {
@@ -454,7 +457,7 @@ public class PreviewController
                 }
             }
         }
-        else if (typeof(AbstractAugmentation).IsAssignableFrom(prev.GetType()))
+        else if (prev is AbstractAugmentation)
         {
             foreach (Control comp in panel.Controls)
             {
@@ -468,11 +471,13 @@ public class PreviewController
     }
 
     /// <summary>
-    /// set the current element and mark it on the panel
+    /// sets the currentElement in EditorWindow an marks the PictureBox in the PreviewPanel.
     /// </summary>
     /// <param name="currentElement">The current element.</param>
     public void setCurrentElement(IPreviewable currentElement)
     {
+        //if there is a currentElement we musst set the box of the actual currentElement to normal
+        //the box of the new currentElement will be set to the new Borderstyle.
         if (currentElement != null)
         {
             if (this.ew.CurrentElement != currentElement)
@@ -505,6 +510,7 @@ public class PreviewController
                 ew.PropertyGrid1.SelectedObject = currentElement;
             }
         }
+        //if there is no currentElement we'll mark the box and set the currentElement in EditorWindow.
         else
         {
             this.ew.CurrentElement = null;
@@ -522,7 +528,8 @@ public class PreviewController
         ew.Cmb_editor_properties_objectSelection.SelectedItem = currentElement;
     }
     /// <summary>
-    /// set the augmentationPreview to a augmentationPreview with source icon
+    /// set the PictureBox of the Augmentation to a augmentationPreview with source icon
+    /// this is only able when the Augmentation is a Chart (all other Augmentations accepts no Source)
     /// </summary>
     /// <param name="currentElement">The current element.</param>
     private void setSourcePreview(IPreviewable currentElement)
@@ -536,41 +543,41 @@ public class PreviewController
         graphic.DrawImage(image1, new Rectangle(0, 0, image1.Width, image1.Height));
         graphic.DrawImage(image2, new Rectangle(0, 0, image1.Width / 4, image1.Height / 4));
         temp.Image = newPic;
+        //adds the new ContextMenuItems for Source
         temp.ContextMenu.MenuItems.Add("Source anzeigen", new EventHandler(this.show_source_by_click));
         temp.ContextMenu.MenuItems.Add("Source löschen", new EventHandler(this.remove_source_by_click));
         temp.ContextMenu.MenuItems.Add("QueryFile öffnen", new EventHandler(this.openQueryFile));
         if (((AbstractDynamic2DAugmentation)currentElement).Source is FileSource)
         {
             temp.ContextMenu.MenuItems.Add("SourceFile öffnen", new EventHandler(this.openSourceFile));
-
+            //if there is no Query added the QueryButton'll be disabled.
             if (((AbstractDynamic2DAugmentation)currentElement).Source.Query == null)
             {
                 temp.ContextMenu.MenuItems[6].Enabled = false;
             }
         }
-
-
         temp.Refresh();
     }
 
     /// <summary>
-    /// Calculates the vector in relation to trackable.
+    /// Calculates the new vectors in dependency to the trackable.
+    /// the scale has also effects on the distance between the Picturebox and the trackable.
     /// </summary>
     /// <param name="v">The v.</param>
-    /// <returns></returns>
+    /// <returns>the new Vector in dependency to the trackable</returns>
     private Vector3D calculateVector(Vector3D v)
     {
         Vector3D result = new Vector3D(0, 0, 0);
-        result.X = (int)((v.X - panel.Width / 2) * scale / 1.6);
-        result.Y = (int)((panel.Height / 2 - v.Y) * scale / 1.6);
+        result.X = (int)((v.X - panel.Width / 2) / scale / 1.6);
+        result.Y = (int)((panel.Height / 2 - v.Y) / scale / 1.6);
         return result;
     }
 
     /// <summary>
-    /// Recalculates the vector in relation to panel.
+    /// Recalculates the vector in dependency to panel.
     /// </summary>
     /// <param name="v">The v.</param>
-    /// <returns></returns>
+    /// <returns>the new Vector in dependency to the panel</returns>
     private Vector3D recalculateVector(Vector3D v)
     {
         Vector3D result = new Vector3D(0, 0, 0);
@@ -580,7 +587,8 @@ public class PreviewController
     }
 
     /// <summary>
-    /// Scales the picturebox to maximum 200px and sets the vectors.
+    /// scales the Pictureboxes to their own scale size
+    /// the size is in dependency to the scale, the sideScale of the images and and the scale of the augmentation.
     /// </summary>
     /// <param name="box">The box.</param>
     /// <param name="prev">The previous.</param>
@@ -598,9 +606,11 @@ public class PreviewController
         {
             this.scale = 100 / (double)((Abstract2DTrackable)this.trackable).Size / 1.6;
         }
+
         double scalex = width / scale;
         double scaley = height / scale;
 
+        //scales the trackable to its standartsize in dependency to the sideScale
         if (prev is AbstractTrackable)
         {
             if (width > height)
@@ -615,10 +625,12 @@ public class PreviewController
             }
             else { return null; }
         }
+        //scales the augmentations in relation to the trackable, exception charts, these has a standartSize
         else if (prev is AbstractAugmentation)
         {
             if (prev is ImageAugmentation)
             {
+                //if there is an existing scalingvector choose this calculation
                 if (((AbstractAugmentation)prev).Scaling.X != 0)
                 {
                     if (width > height)
@@ -635,6 +647,7 @@ public class PreviewController
                     }
                     else { return null; }
                 }
+                //if there is no scalingvector choose this calculation
                 else
                 {
                     if (width > height)
@@ -652,6 +665,7 @@ public class PreviewController
                     else { return null; }
                 }
             }
+            //if the currentElement is a chart chosse this. The chart Scaling is an exception in the calculation
             else if (prev is Chart)
             {
                 return this.scaleBitmap(prev.getPreview(), 300, 300);
@@ -753,7 +767,7 @@ public class PreviewController
         }
         else if (prev is ImageAugmentation)
         {
-            ((ImageAugmentation)prev).Translation = this.calculateVector(newV);
+            ((ImageAugmentation)prev).Translation = calculateVector(newV);
         }
     }
 
@@ -887,8 +901,6 @@ public class PreviewController
             this.setCurrentElement(prev);
             Control controlToMove = (Control)sender;
             controlToMove.BringToFront();
-            controlToMove.Location = new Point(controlToMove.Location.X + e.Location.X - (box.Width / 2),
-                   controlToMove.Location.Y + e.Location.Y - (box.Height / 2));
 
             if (((Control)sender).Tag is AbstractAugmentation)
             {
@@ -896,8 +908,10 @@ public class PreviewController
                 AbstractAugmentation aa;
                 aa = (AbstractAugmentation)((Control)sender).Tag;
                 this.setCoordinates(this.ew.CurrentElement, new Vector3D((int)((controlToMove.Location.X + e.Location.X)),
-                    controlToMove.Location.Y + e.Location.Y, 0));
+                    (int)((controlToMove.Location.Y + e.Location.Y)), 0));
             }
+            controlToMove.Location = new Point(controlToMove.Location.X + e.Location.X - (box.Width / 2),
+                   controlToMove.Location.Y + e.Location.Y - (box.Height / 2));
         }
     }
 
