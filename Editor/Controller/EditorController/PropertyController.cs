@@ -103,14 +103,14 @@ namespace Controller.EditorController
             {
                 if (string.Equals((string)e.ChangedItem.Value, "", StringComparison.Ordinal))
                 {
-                    (ew.PreviewController.findBox(ew.CurrentElement).ContextMenu).MenuItems[7].Enabled = false;
+                    (ew.PreviewController.findBox(ew.CurrentElement).ContextMenu).MenuItems[6].Enabled = false;
 
                     return;
                 }
 
                 if (string.Equals(e.OldValue.ToString(), "", StringComparison.Ordinal))
                 {
-                    (ew.PreviewController.findBox(ew.CurrentElement).ContextMenu).MenuItems[7].Enabled = true;
+                    (ew.PreviewController.findBox(ew.CurrentElement).ContextMenu).MenuItems[6].Enabled = true;
 
                     return;
                 }

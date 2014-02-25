@@ -254,7 +254,7 @@ public class PreviewController
         {
             ((AbstractDynamic2DAugmentation)currentElement).Source = null;
             this.ew.project.Sources.Remove(source);
-            this.findBox(currentElement).Image = currentElement.getPreview();
+            this.findBox(currentElement).Image = this.getSizedBitmap(currentElement);
             this.findBox(currentElement).Refresh();
         }
         updateElementCombobox(trackable);
@@ -528,7 +528,7 @@ public class PreviewController
     private void setSourcePreview(IPreviewable currentElement)
     {
         PictureBox temp = this.findBox(currentElement);
-        Image image1 = currentElement.getPreview();
+        Image image1 = this.getSizedBitmap(currentElement);
         Image image2 = new Bitmap(ARdevKit.Properties.Resources.db_small);
         Image newPic = new Bitmap(image1.Width, image1.Height);
 
@@ -654,7 +654,7 @@ public class PreviewController
             }
             else if (prev is Chart)
             {
-                return this.scaleBitmap(prev.getPreview(), 170, 170);
+                return this.scaleBitmap(prev.getPreview(), 300, 300);
             }
             else { return null; }
         }
@@ -702,7 +702,7 @@ public class PreviewController
             }
             else if (prev is Chart)
             {
-                return this.scaleBitmap((Bitmap)bit, 170, 170);
+                return this.scaleBitmap((Bitmap)bit, 300, 300);
             }
             else { return null; }
         }
@@ -802,7 +802,7 @@ public class PreviewController
         IPreviewable prev = this.ew.CurrentElement;
         int grad = -(int)((AbstractAugmentation)prev).Rotation.Z;
         PictureBox box = this.findBox(prev);
-        Bitmap imgOriginal = this.getSizedBitmap();
+        Bitmap imgOriginal = this.getSizedBitmap(prev);
 
         Bitmap tempBitmap = new Bitmap(imgOriginal.Width, imgOriginal.Height);
         tempBitmap.SetResolution(imgOriginal.HorizontalResolution, imgOriginal.HorizontalResolution);
@@ -820,9 +820,9 @@ public class PreviewController
     /// <summary>
     /// Refreshs the Augmentation with the new Scale.
     /// </summary>
-    public Bitmap getSizedBitmap()
+    public Bitmap getSizedBitmap(IPreviewable currentElement)
     {
-        IPreviewable prev = this.ew.CurrentElement;
+        IPreviewable prev = currentElement;
         PictureBox box = this.findBox(prev);
 
         this.scale = 100 / (double)((Abstract2DTrackable)this.trackable).Size / 1.6;
@@ -846,7 +846,7 @@ public class PreviewController
             }
             else if (prev is Chart)
             {
-                return this.scaleBitmap(prev.getPreview(), 175, 175);
+                return this.scaleBitmap(prev.getPreview(), 300, 300);
             }
             else { return null; }
         }
