@@ -642,8 +642,8 @@ public class PreviewController
                     else if (width <= height)
                     {
                         sideScale = scaley / scalex;
-                        return this.scaleBitmap(prev.getPreview(), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X),
-                            (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.Y * sideScale));
+                        return this.scaleBitmap(prev.getPreview(), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X * 1.15),
+                            (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.Y * sideScale * 1.15));
                     }
                     else { return null; }
                 }
@@ -660,7 +660,7 @@ public class PreviewController
                     {
                         sideScale = scaley / scalex;
                         ((AbstractAugmentation)prev).Scaling = new Vector3D(1, 1, 1);
-                        return this.scaleBitmap(prev.getPreview(), (int)(scale * 100), (int)(scale * 100 * sideScale));
+                        return this.scaleBitmap(prev.getPreview(), (int)(scale * 100 * 1.15), (int)(scale * 100 * sideScale * 1.15));
                     }
                     else { return null; }
                 }
@@ -675,6 +675,13 @@ public class PreviewController
         else { return null; }
     }
 
+    /// <summary>
+    /// scales the bitmap to the width & height which you want
+    /// </summary>
+    /// <param name="bit">The bit.</param>
+    /// <param name="width">The width.</param>
+    /// <param name="height">The height.</param>
+    /// <returns>scaled bitmap</returns>
     private Bitmap scaleBitmap(Bitmap bit, int width, int height)
     {
 
@@ -688,6 +695,10 @@ public class PreviewController
         }
         return resizedImg;
     }
+    /// <summary>
+    /// gives the new Bitmap back, after you changed the scaleVector.
+    /// </summary>
+    /// <returns></returns>
     public Bitmap updateScale()
     {
         IPreviewable prev = this.ew.CurrentElement;
@@ -811,6 +822,9 @@ public class PreviewController
         }
     }
 
+    /// <summary>
+    /// Rotates the augmentation, after you've changed the Rotation.Z Vector.
+    /// </summary>
     public void rotateAugmentation()
     {
         IPreviewable prev = this.ew.CurrentElement;
@@ -1099,6 +1113,11 @@ public class PreviewController
         tef.Show();
     }
 
+    /// <summary>
+    /// EventHandler to delete the PictureBox of the currentElement from the Panel.
+    /// </summary>
+    /// <param name="sender">The source of the event.</param>
+    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     private void delete_current_element(object sender, EventArgs e)
     {
         this.removePreviewable(this.ew.CurrentElement);
