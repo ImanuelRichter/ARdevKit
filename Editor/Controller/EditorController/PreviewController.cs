@@ -662,7 +662,8 @@ public class PreviewController
             //if the currentElement is a chart chosse this. The chart Scaling is an exception in the calculation
             else if (prev is Chart)
             {
-                return this.scaleBitmap(prev.getPreview(), 200, 200);
+                return this.scaleBitmap(prev.getPreview(), ((Chart)prev).Width, ((Chart)prev).Height);
+                
             }
             else { return null; }
         }
@@ -721,7 +722,7 @@ public class PreviewController
             }
             else if (prev is Chart)
             {
-                return this.scaleBitmap((Bitmap)bit, 200, 200);
+                return this.scaleBitmap((Bitmap)bit, ((Chart)prev).Width, ((Chart)prev).Height);
             }
             else { return null; }
         }
@@ -882,7 +883,7 @@ public class PreviewController
             }
             else if (prev is Chart)
             {
-                return this.scaleBitmap(prev.getPreview(), 200, 200);
+                return this.scaleBitmap(prev.getPreview(), ((Chart)prev).Width, ((Chart)prev).Height);
             }
             else { return null; }
         }

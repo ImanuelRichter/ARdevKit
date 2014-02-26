@@ -163,7 +163,7 @@ namespace ARdevKit.Model.Project
             if (Options == null)
             {
                 OpenFileDialog openFileDialog = new OpenFileDialog();
-                openFileDialog.InitialDirectory = Application.StartupPath + "\\res\\highcharts\\barChartColumn";
+                openFileDialog.InitialDirectory = Application.StartupPath + "\\res\\highcharts";
                 openFileDialog.Filter = "js (*.js)|*.js";
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
