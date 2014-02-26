@@ -108,17 +108,7 @@ namespace ARdevKit.Model.Project
         public Vector3D Scaling
         {
             get { return scalingVector; }
-            set 
-            { 
-                if (value.X <= (double)0)
-                    value.X = 0.01;
-                if (value.Y <= (double)0)
-                    value.Y = 0.01;
-                if (value.Z <= (double)0)
-                    value.Z = 0.01;
-                
-                scalingVector = value; 
-            }
+            set { scalingVector = value; }
         }
 
         /// <summary>
