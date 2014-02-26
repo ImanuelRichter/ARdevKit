@@ -38,6 +38,32 @@ namespace ARdevKit.Model.Project
         private Bitmap cachePreview = null;
 
         /// <summary>
+        /// Gets or sets the width.
+        /// </summary>
+        /// <value>
+        /// The width, in mm.
+        /// </value>
+        [Browsable(false)]
+        public new int Width
+        {
+            get { return base.Width; }
+            set { base.Width = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets the height.
+        /// </summary>
+        /// <value>
+        /// The height, in mm.
+        /// </value>
+        [Browsable(false)]
+        public new int Height
+        {
+            get { return base.Height; }
+            set { base.Height = value; }
+        }
+
+        /// <summary>
         /// Default constructor.
         /// </summary>
         public VideoAugmentation() : base()
@@ -82,7 +108,7 @@ namespace ARdevKit.Model.Project
         {
             if (cachePreview == null)
             {
-                cachePreview = Controller.EditorController.ThumbCreator.CreateThumb(videoPath, 0.5);
+                cachePreview = Controller.EditorController.ThumbCreator.CreateThumb(videoPath);
             }
             return cachePreview;
         }

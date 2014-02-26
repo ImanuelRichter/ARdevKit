@@ -382,7 +382,7 @@ public class PreviewController
                 {
                     this.addPictureBox(aug, this.recalculateVector(aug.Translation));
                 }
-               
+
                 if (typeof(AbstractDynamic2DAugmentation).IsAssignableFrom(aug.GetType()) && ((AbstractDynamic2DAugmentation)aug).Source != null)
                 {
                     this.setSourcePreview(aug);
@@ -390,6 +390,28 @@ public class PreviewController
             }
         }
         this.addPictureBox(trackable, trackable.vector);
+    }
+
+    /// <summary>
+    /// Reloads a single previewable.
+    /// </summary>
+    /// <param name="prev">The previous.</param>
+    public void reloadPreviewable(AbstractAugmentation prev)
+    {
+        this.panel.Controls.Remove(this.findBox(prev));
+        if (prev is Chart)
+        {
+            this.addPictureBox(prev, this.recalculateChartVector(prev.Translation));
+        }
+        else
+        {
+            this.addPictureBox(prev, this.recalculateVector(prev.Translation));
+        }
+
+        if (typeof(AbstractDynamic2DAugmentation).IsAssignableFrom(prev.GetType()) && ((AbstractDynamic2DAugmentation)prev).Source != null)
+        {
+            this.setSourcePreview(prev);
+        }
     }
 
 
@@ -405,7 +427,7 @@ public class PreviewController
         tempBox = new PictureBox();
         tempBox.Image = this.scaleIPreviewable(prev);
         tempBox.SizeMode = PictureBoxSizeMode.AutoSize;
-        
+
         tempBox.Location = new Point((int)(vector.X - tempBox.Size.Width / 2), (int)(vector.Y - tempBox.Size.Height / 2));
 
         tempBox.Tag = prev;
@@ -438,7 +460,14 @@ public class PreviewController
             tempBox.MouseMove += new MouseEventHandler(controlMouseMove);
 
         this.panel.Controls.Add(tempBox);
-
+        
+        if (prev is ImageAugmentation)
+        {
+            if (((ImageAugmentation)prev).Rotation.Z != 0)
+            {
+                this.rotateAugmentation(prev);
+            }
+        }
     }
 
     /// <summary>
@@ -622,43 +651,47 @@ public class PreviewController
         //scales the augmentations in relation to the trackable, exception charts, these has a standartSize
         else if (prev is AbstractAugmentation)
         {
-            if (prev is ImageAugmentation)
+            if (prev is ImageAugmentation || prev is VideoAugmentation)
             {
-                //if there is an existing scalingvector choose this calculation
-                if (((AbstractAugmentation)prev).Scaling.X != 0)
+                if (((AbstractAugmentation)prev).Scaling.X == 0 && ((AbstractAugmentation)prev).Scaling.Y == 0
+                        && ((AbstractAugmentation)prev).Scaling.Z == 0)
                 {
-                    if (width > height)
-                    {
-                        sideScale = scalex / scaley;
-                        return this.scaleBitmap(prev.getPreview(), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X * sideScale * sideScale),
-                            (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.Y * sideScale));
-                    }
-                    else if (width <= height)
-                    {
-                        sideScale = scaley / scalex;
-                        return this.scaleBitmap(prev.getPreview(), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X * 1.15),
+                    ((AbstractAugmentation)prev).Scaling = new Vector3D(1, 1, 1);
+                }
+                else if (((AbstractAugmentation)prev).Scaling.X <= 0 && ((AbstractAugmentation)prev).Scaling.Y != 0
+                    && ((AbstractAugmentation)prev).Scaling.Z != 0)
+                {
+                    ((AbstractAugmentation)prev).Scaling = new Vector3D(0.01,
+                        ((AbstractAugmentation)prev).Scaling.Y, ((AbstractAugmentation)prev).Scaling.Z);
+                }
+                else if (((AbstractAugmentation)prev).Scaling.X != 0 && ((AbstractAugmentation)prev).Scaling.Y <= 0
+                    && ((AbstractAugmentation)prev).Scaling.Z != 0)
+                {
+                    ((AbstractAugmentation)prev).Scaling = new Vector3D(((AbstractAugmentation)prev).Scaling.X,
+                        0.01, ((AbstractAugmentation)prev).Scaling.Z);
+                }
+                else if (((AbstractAugmentation)prev).Scaling.X != 0 && ((AbstractAugmentation)prev).Scaling.Y != 0
+                    && ((AbstractAugmentation)prev).Scaling.Z <= 0)
+                {
+                    ((AbstractAugmentation)prev).Scaling = new Vector3D(((AbstractAugmentation)prev).Scaling.X,
+                        ((AbstractAugmentation)prev).Scaling.Y, 0.01);
+                }
+
+                if (width > height)
+                {
+                    sideScale = scalex / scaley;
+                    return this.scaleBitmap(prev.getPreview(), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X * sideScale * sideScale * 1.15),
                             (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.Y * sideScale * 1.15));
-                    }
-                    else { return null; }
                 }
-                //if there is no scalingvector choose this calculation
-                else
+                else if (width <= height)
                 {
-                    if (width > height)
-                    {
-                        sideScale = scalex / scaley;
-                        ((AbstractAugmentation)prev).Scaling = new Vector3D(1, 1, 1);
-                        return this.scaleBitmap(prev.getPreview(), (int)(scale * 100 * sideScale * sideScale), (int)(scale * 100 * sideScale));
-                    }
-                    else if (width <= height)
-                    {
-                        sideScale = scaley / scalex;
-                        ((AbstractAugmentation)prev).Scaling = new Vector3D(1, 1, 1);
-                        return this.scaleBitmap(prev.getPreview(), (int)(scale * 100 * 1.15), (int)(scale * 100 * sideScale * 1.15));
-                    }
-                    else { return null; }
+                    sideScale = scaley / scalex;
+                    return this.scaleBitmap(prev.getPreview(), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X * 1.15),
+                            (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.Y * sideScale * 1.15));
                 }
+                else { return null; }
             }
+
             //if the currentElement is a chart chosse this. The chart Scaling is an exception in the calculation
             else if (prev is Chart)
             {
@@ -688,44 +721,6 @@ public class PreviewController
             gNew.DrawImage(img, new Rectangle(0, 0, width, height));
         }
         return resizedImg;
-    }
-    /// <summary>
-    /// gives the new Bitmap back, after you changed the scaleVector.
-    /// </summary>
-    /// <returns></returns>
-    public Bitmap updateScale()
-    {
-        IPreviewable prev = this.ew.CurrentElement;
-        PictureBox box = this.findBox(prev);
-        Image bit = box.Image;
-
-        this.scale = 100 / (double)((Abstract2DTrackable)this.trackable).Size / 1.6;
-
-        if (prev is AbstractAugmentation)
-        {
-            if (prev is ImageAugmentation)
-            {
-                if (bit.Width > bit.Height)
-                {
-                    double sideScale = (double)prev.getPreview().Width / (double)prev.getPreview().Height;
-                    return this.scaleBitmap((Bitmap)bit, (int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale * sideScale * sideScale),
-                        (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale * sideScale));
-                }
-                else if (bit.Width < bit.Height)
-                {
-                    double sideScale = (double)prev.getPreview().Height / (double)prev.getPreview().Width;
-                    return this.scaleBitmap((Bitmap)bit, (int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale), (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale * sideScale));
-                }
-                else { return null; }
-
-            }
-            else if (prev is Chart)
-            {
-                return this.scaleBitmap((Bitmap)bit, ((Chart)prev).Width, ((Chart)prev).Height);
-            }
-            else { return null; }
-        }
-        else { return null; }
     }
 
     /// <summary>
@@ -833,14 +828,14 @@ public class PreviewController
     /// <summary>
     /// Rotates the augmentation, after you've changed the Rotation.Z Vector.
     /// </summary>
-    public void rotateAugmentation()
+    public void rotateAugmentation(IPreviewable currentElement)
     {
-        IPreviewable prev = this.ew.CurrentElement;
+        IPreviewable prev = currentElement;
         int grad = -(int)((AbstractAugmentation)prev).Rotation.Z;
         PictureBox box = this.findBox(prev);
         Bitmap imgOriginal = this.getSizedBitmap(prev);
 
-        Bitmap tempBitmap = new Bitmap(imgOriginal.Width, imgOriginal.Height);
+        Bitmap tempBitmap = new Bitmap((int)(imgOriginal.Width), (int)(imgOriginal.Height));
         tempBitmap.SetResolution(imgOriginal.HorizontalResolution, imgOriginal.HorizontalResolution);
         System.Drawing.Graphics Graph = Graphics.FromImage(tempBitmap);
         Matrix X = new Matrix();
@@ -865,17 +860,19 @@ public class PreviewController
 
         if (prev is AbstractAugmentation)
         {
-            if (prev is ImageAugmentation)
+            if (prev is ImageAugmentation || prev is VideoAugmentation)
             {
                 if (prev.getPreview().Width > prev.getPreview().Height)
                 {
                     double sideScale = (double)prev.getPreview().Width / (double)prev.getPreview().Height;
-                    return this.scaleBitmap(prev.getPreview(), (int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale * sideScale), (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale));
+                    return this.scaleBitmap(prev.getPreview(), (int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale * sideScale * sideScale * 1.15), 
+                        (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale * sideScale * 1.15));
                 }
                 else if (prev.getPreview().Width < prev.getPreview().Height)
                 {
                     double sideScale = (double)prev.getPreview().Height / (double)prev.getPreview().Width;
-                    return this.scaleBitmap(prev.getPreview(), (int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale), (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale * sideScale));
+                    return this.scaleBitmap(prev.getPreview(), (int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale * 1.15), 
+                        (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale * sideScale * 1.15));
                 }
                 else { return null; }
 
@@ -1117,6 +1114,8 @@ public class PreviewController
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     private void openArelScript(object sender, EventArgs e)
     {
+        if (((AbstractAugmentation)ew.CurrentElement).CustomUserEventReference == null)
+            ((AbstractAugmentation)ew.CurrentElement).createUserEvent();
         TextEditorForm tef = new TextEditorForm(((AbstractAugmentation)ew.CurrentElement).CustomUserEventReference.FilePath);
         tef.Show();
     }

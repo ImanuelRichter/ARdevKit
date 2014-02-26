@@ -30,6 +30,10 @@ namespace ARdevKit.Model.Project
         /// Full pathname of the image file.
         /// </summary>
         protected string imagePath;
+
+        //a cached preview to prevent access problems.
+        private Bitmap cachePreview = null;
+
         /// <summary>
         /// Gets or sets the full pathname of the image file.
         /// </summary>
@@ -86,7 +90,8 @@ namespace ARdevKit.Model.Project
         /// Constructor.
         /// </summary>
         /// <param name="imagePath">Full pathname of the image file.</param>
-        public ImageTrackable(string imagePath) : this()
+        public ImageTrackable(string imagePath)
+            : this()
         {
             size = new Bitmap(imagePath).Height * new Bitmap(imagePath).Width;
             this.imagePath = imagePath;
@@ -105,7 +110,11 @@ namespace ARdevKit.Model.Project
 
         public override System.Drawing.Bitmap getPreview()
         {
-            return new Bitmap(ImagePath);
+            if (cachePreview == null)
+            {
+                cachePreview = new Bitmap(ImagePath);
+            }
+            return cachePreview;
         }
 
         public override System.Drawing.Bitmap getIcon()
@@ -149,7 +158,7 @@ namespace ARdevKit.Model.Project
                         }
                         return initElement(ew);
                     }
-                    
+
                 }
                 return isInitOk;
             }

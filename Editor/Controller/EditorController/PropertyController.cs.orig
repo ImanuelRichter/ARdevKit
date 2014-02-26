@@ -120,14 +120,27 @@ namespace Controller.EditorController
             // Changes which changes things in the previewPanel
 
             // Checks if X/Y position has been changed
-            if ((String.Equals(e.ChangedItem.Label.ToString(), "X", StringComparison.Ordinal)
-                || String.Equals(e.ChangedItem.Label.ToString(), "Y", StringComparison.Ordinal))
-                && !(String.Equals(e.ChangedItem.Parent.Label.ToString(), "Rotating", StringComparison.Ordinal)))
+            if (String.Equals(e.ChangedItem.Label.ToString(), "X", StringComparison.Ordinal)
+                || String.Equals(e.ChangedItem.Label.ToString(), "Y", StringComparison.Ordinal)
+                && (String.Equals(e.ChangedItem.Parent.Label.ToString(), "Translation", StringComparison.Ordinal)))
             {
+<<<<<<< HEAD
+                ew.PreviewController.updateTranslation();
+
+                return;
+            }
+
+            if (String.Equals(e.ChangedItem.Label.ToString(), "X", StringComparison.Ordinal)
+                || String.Equals(e.ChangedItem.Label.ToString(), "Y", StringComparison.Ordinal)
+                && (String.Equals(e.ChangedItem.Parent.Label.ToString(), "Scaling", StringComparison.Ordinal)))
+            {
+                ew.PreviewController.findBox(ew.CurrentElement).Image = ew.PreviewController.updateScale();
+=======
                 this.ew.PreviewController.reloadPreviewable((AbstractAugmentation)this.ew.CurrentElement);
                 PictureBox temp = this.ew.PreviewController.findBox(this.ew.CurrentElement);
                         temp.BorderStyle = BorderStyle.Fixed3D;
                         temp.BringToFront();
+>>>>>>> origin/master
 
                 return;
             }
@@ -136,7 +149,7 @@ namespace Controller.EditorController
             if (String.Equals(e.ChangedItem.Label.ToString(), "Z", StringComparison.Ordinal)
                 && String.Equals(e.ChangedItem.Parent.Label.ToString(), "Rotation", StringComparison.Ordinal))
             {
-                ew.PreviewController.rotateAugmentation(this.ew.CurrentElement);
+                ew.PreviewController.rotateAugmentation();
 
                 return;
             }

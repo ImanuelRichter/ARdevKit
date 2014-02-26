@@ -11,7 +11,7 @@ namespace ARdevKit.Controller.EditorController
 {
     class ThumbCreator
     {
-        public static Bitmap CreateThumb(string videoFilename, double positionPercent)
+        public static Bitmap CreateThumb(string videoFilename)
         {
             AForge.Video.FFMPEG.VideoFileReader v = new AForge.Video.FFMPEG.VideoFileReader();
             v.Open(videoFilename);
