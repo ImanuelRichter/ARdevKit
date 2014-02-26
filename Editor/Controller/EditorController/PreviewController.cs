@@ -374,7 +374,15 @@ public class PreviewController
             foreach (AbstractAugmentation aug in trackable.Augmentations)
             {
                 this.scale = 100 / (double)((Abstract2DTrackable)this.trackable).Size / 1.6;
-                this.addPictureBox(aug, this.recalculateVector(aug.Translation));
+                if (aug is Chart)
+                {
+                    this.addPictureBox(aug, this.recalculateChartVector(aug.Translation));
+                }
+                else
+                {
+                    this.addPictureBox(aug, this.recalculateVector(aug.Translation));
+                }
+               
                 if (typeof(AbstractDynamic2DAugmentation).IsAssignableFrom(aug.GetType()) && ((AbstractDynamic2DAugmentation)aug).Source != null)
                 {
                     this.setSourcePreview(aug);
@@ -397,15 +405,8 @@ public class PreviewController
         tempBox = new PictureBox();
         tempBox.Image = this.scaleIPreviewable(prev);
         tempBox.SizeMode = PictureBoxSizeMode.AutoSize;
-        if (prev is AbstractTrackable)
-        {
-            tempBox.Location = new Point((int)(vector.X - tempBox.Size.Width / 2), (int)(vector.Y - tempBox.Size.Height / 2));
-        }
-        else if (prev is AbstractAugmentation)
-        {
-            tempBox.Location = new Point((int)(vector.X - tempBox.Size.Width / 2),
-                (int)(vector.Y - tempBox.Size.Height / 2));
-        }
+        
+        tempBox.Location = new Point((int)(vector.X - tempBox.Size.Width / 2), (int)(vector.Y - tempBox.Size.Height / 2));
 
         tempBox.Tag = prev;
         ContextMenu cm = new ContextMenu();
@@ -558,21 +559,6 @@ public class PreviewController
         }
         temp.Refresh();
     }
-
-    /// <summary>
-    /// Calculates the new vectors in dependency to the trackable.
-    /// the scale has also effects on the distance between the Picturebox and the trackable.
-    /// </summary>
-    /// <param name="v">The v.</param>
-    /// <returns>the new Vector in dependency to the trackable</returns>
-    private Vector3D calculateVector(Vector3D v)
-    {
-        Vector3D result = new Vector3D(0, 0, 0);
-        result.X = (int)((v.X - panel.Width / 2) / scale / 1.6);
-        result.Y = (int)((panel.Height / 2 - v.Y) / scale / 1.6);
-        return result;
-    }
-
     /// <summary>
     /// Recalculates the vector in dependency to panel.
     /// </summary>
@@ -583,6 +569,14 @@ public class PreviewController
         Vector3D result = new Vector3D(0, 0, 0);
         result.X = (panel.Width / 2 + v.X * 1.6 * scale);
         result.Y = (panel.Height / 2 - v.Y * 1.6 * scale);
+        return result;
+    }
+
+    private Vector3D recalculateChartVector(Vector3D v)
+    {
+        Vector3D result = new Vector3D(0, 0, 0);
+        result.X = (panel.Width / 2 + v.X);
+        result.Y = (panel.Height / 2 - v.Y);
         return result;
     }
 
@@ -668,7 +662,7 @@ public class PreviewController
             //if the currentElement is a chart chosse this. The chart Scaling is an exception in the calculation
             else if (prev is Chart)
             {
-                return this.scaleBitmap(prev.getPreview(), 300, 300);
+                return this.scaleBitmap(prev.getPreview(), 200, 200);
             }
             else { return null; }
         }
@@ -727,7 +721,7 @@ public class PreviewController
             }
             else if (prev is Chart)
             {
-                return this.scaleBitmap((Bitmap)bit, 300, 300);
+                return this.scaleBitmap((Bitmap)bit, 200, 200);
             }
             else { return null; }
         }
@@ -752,8 +746,8 @@ public class PreviewController
                 {
                     if (aug is Chart)
                     {
-                        ((Chart)aug).Positioning.Left = (int)(aug.Translation.X + panel.Width / 2);
-                        ((Chart)aug).Positioning.Top = (int)(aug.Translation.Y + panel.Width / 2);
+                        ((Chart)aug).Positioning.Left = (int)((aug.Translation.X + panel.Width / 2));
+                        ((Chart)aug).Positioning.Top = (int)((aug.Translation.Y + panel.Width / 2));
                     }
                 }
             }
@@ -774,14 +768,24 @@ public class PreviewController
         {
             ((Chart)prev).Positioning.Left = (int)newV.X;
             ((Chart)prev).Positioning.Top = (int)newV.Y;
-            ((AbstractAugmentation)prev).Translation = this.calculateVector(newV);
+
+            Vector3D result = new Vector3D(0, 0, 0);
+            result.X = (int)((newV.X - panel.Width / 2));
+            result.Y = (int)((panel.Height / 2 - newV.Y));
+            ((AbstractAugmentation)prev).Translation = result;
         }
         else if (prev is ImageAugmentation)
         {
-            ((ImageAugmentation)prev).Translation = calculateVector(newV);
+            Vector3D result = new Vector3D(0, 0, 0);
+            result.X = (int)((newV.X - panel.Width / 2) / scale / 1.6);
+            result.Y = (int)((panel.Height / 2 - newV.Y) / scale / 1.6);
+            ((ImageAugmentation)prev).Translation = result;
         }
     }
 
+    /// <summary>
+    /// Updates the translation.
+    /// </summary>
     public void updateTranslation()
     {
         AbstractAugmentation current;
@@ -797,6 +801,10 @@ public class PreviewController
         box.Location = new Point((int)tmp.X - (box.Size.Width / 2), (int)tmp.Y - (box.Size.Height / 2));
     }
 
+    /// <summary>
+    /// Updates the element combobox.
+    /// </summary>
+    /// <param name="t">The t.</param>
     [MethodImpl(MethodImplOptions.Synchronized)]
     public void updateElementCombobox(AbstractTrackable t)
     {
@@ -874,7 +882,7 @@ public class PreviewController
             }
             else if (prev is Chart)
             {
-                return this.scaleBitmap(prev.getPreview(), 300, 300);
+                return this.scaleBitmap(prev.getPreview(), 200, 200);
             }
             else { return null; }
         }
