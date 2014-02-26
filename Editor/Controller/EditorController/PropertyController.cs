@@ -120,9 +120,9 @@ namespace Controller.EditorController
             // Changes which changes things in the previewPanel
 
             // Checks if X/Y position has been changed
-            if (String.Equals(e.ChangedItem.Label.ToString(), "X", StringComparison.Ordinal)
-                || String.Equals(e.ChangedItem.Label.ToString(), "Y", StringComparison.Ordinal)
-                && !(String.Equals(e.ChangedItem.Parent.Label.ToString(), "Scaling", StringComparison.Ordinal)))
+            if ((String.Equals(e.ChangedItem.Label.ToString(), "X", StringComparison.Ordinal)
+                || String.Equals(e.ChangedItem.Label.ToString(), "Y", StringComparison.Ordinal))
+                && !(String.Equals(e.ChangedItem.Parent.Label.ToString(), "Rotating", StringComparison.Ordinal)))
             {
                 this.ew.PreviewController.reloadPreviewable((AbstractAugmentation)this.ew.CurrentElement);
                 PictureBox temp = this.ew.PreviewController.findBox(this.ew.CurrentElement);

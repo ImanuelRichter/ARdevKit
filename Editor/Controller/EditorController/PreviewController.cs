@@ -382,7 +382,7 @@ public class PreviewController
                 {
                     this.addPictureBox(aug, this.recalculateVector(aug.Translation));
                 }
-               
+
                 if (typeof(AbstractDynamic2DAugmentation).IsAssignableFrom(aug.GetType()) && ((AbstractDynamic2DAugmentation)aug).Source != null)
                 {
                     this.setSourcePreview(aug);
@@ -398,20 +398,20 @@ public class PreviewController
     /// <param name="prev">The previous.</param>
     public void reloadPreviewable(AbstractAugmentation prev)
     {
-            this.panel.Controls.Remove(this.findBox(prev));
-            if (prev is Chart)
-            {
-                this.addPictureBox(prev, this.recalculateChartVector(prev.Translation));
-            }
-            else
-            {
-                this.addPictureBox(prev, this.recalculateVector(prev.Translation));
-            }
+        this.panel.Controls.Remove(this.findBox(prev));
+        if (prev is Chart)
+        {
+            this.addPictureBox(prev, this.recalculateChartVector(prev.Translation));
+        }
+        else
+        {
+            this.addPictureBox(prev, this.recalculateVector(prev.Translation));
+        }
 
-            if (typeof(AbstractDynamic2DAugmentation).IsAssignableFrom(prev.GetType()) && ((AbstractDynamic2DAugmentation)prev).Source != null)
-            {
-                this.setSourcePreview(prev);
-            }
+        if (typeof(AbstractDynamic2DAugmentation).IsAssignableFrom(prev.GetType()) && ((AbstractDynamic2DAugmentation)prev).Source != null)
+        {
+            this.setSourcePreview(prev);
+        }
     }
 
 
@@ -427,7 +427,7 @@ public class PreviewController
         tempBox = new PictureBox();
         tempBox.Image = this.scaleIPreviewable(prev);
         tempBox.SizeMode = PictureBoxSizeMode.AutoSize;
-        
+
         tempBox.Location = new Point((int)(vector.X - tempBox.Size.Width / 2), (int)(vector.Y - tempBox.Size.Height / 2));
 
         tempBox.Tag = prev;
@@ -646,46 +646,49 @@ public class PreviewController
         {
             if (prev is ImageAugmentation)
             {
-                //if there is an existing scalingvector choose this calculation
-                if (((AbstractAugmentation)prev).Scaling.X != 0)
+                if (((AbstractAugmentation)prev).Scaling.X == 0 && ((AbstractAugmentation)prev).Scaling.Y == 0
+                        && ((AbstractAugmentation)prev).Scaling.Z == 0)
                 {
-                    if (width > height)
-                    {
-                        sideScale = scalex / scaley;
-                        return this.scaleBitmap(prev.getPreview(), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X * sideScale * sideScale),
+                    ((AbstractAugmentation)prev).Scaling = new Vector3D(1, 1, 1);
+                }
+                else if (((AbstractAugmentation)prev).Scaling.X <= 0 && ((AbstractAugmentation)prev).Scaling.Y != 0
+                    && ((AbstractAugmentation)prev).Scaling.Z != 0)
+                {
+                    ((AbstractAugmentation)prev).Scaling = new Vector3D(0.01,
+                        ((AbstractAugmentation)prev).Scaling.Y, ((AbstractAugmentation)prev).Scaling.Z);
+                }
+                else if (((AbstractAugmentation)prev).Scaling.X != 0 && ((AbstractAugmentation)prev).Scaling.Y <= 0
+                    && ((AbstractAugmentation)prev).Scaling.Z != 0)
+                {
+                    ((AbstractAugmentation)prev).Scaling = new Vector3D(((AbstractAugmentation)prev).Scaling.X,
+                        0.01, ((AbstractAugmentation)prev).Scaling.Z);
+                }
+                else if (((AbstractAugmentation)prev).Scaling.X != 0 && ((AbstractAugmentation)prev).Scaling.Y != 0
+                    && ((AbstractAugmentation)prev).Scaling.Z <= 0)
+                {
+                    ((AbstractAugmentation)prev).Scaling = new Vector3D(((AbstractAugmentation)prev).Scaling.X,
+                        ((AbstractAugmentation)prev).Scaling.Y, 0.01);
+                }
+
+                if (width > height)
+                {
+                    sideScale = scalex / scaley;
+                    return this.scaleBitmap(prev.getPreview(), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X * sideScale * sideScale),
                             (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.Y * sideScale));
-                    }
-                    else if (width <= height)
-                    {
-                        sideScale = scaley / scalex;
-                        return this.scaleBitmap(prev.getPreview(), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X * 1.15),
-                            (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.Y * sideScale * 1.15));
-                    }
-                    else { return null; }
                 }
-                //if there is no scalingvector choose this calculation
-                else
+                else if (width <= height)
                 {
-                    if (width > height)
-                    {
-                        sideScale = scalex / scaley;
-                        ((AbstractAugmentation)prev).Scaling = new Vector3D(1, 1, 1);
-                        return this.scaleBitmap(prev.getPreview(), (int)(scale * 100 * sideScale * sideScale), (int)(scale * 100 * sideScale));
-                    }
-                    else if (width <= height)
-                    {
-                        sideScale = scaley / scalex;
-                        ((AbstractAugmentation)prev).Scaling = new Vector3D(1, 1, 1);
-                        return this.scaleBitmap(prev.getPreview(), (int)(scale * 100 * 1.15), (int)(scale * 100 * sideScale * 1.15));
-                    }
-                    else { return null; }
+                    sideScale = scaley / scalex;
+                    return this.scaleBitmap(prev.getPreview(), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X * 1.15),
+                            (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.Y * sideScale * 1.15));
                 }
+                else { return null; }
             }
+
             //if the currentElement is a chart chosse this. The chart Scaling is an exception in the calculation
             else if (prev is Chart)
             {
                 return this.scaleBitmap(prev.getPreview(), ((Chart)prev).Width, ((Chart)prev).Height);
-                
             }
             else { return null; }
         }
