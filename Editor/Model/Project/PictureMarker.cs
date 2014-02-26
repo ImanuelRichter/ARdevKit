@@ -25,19 +25,23 @@ namespace ARdevKit.Model.Project
         /// Full pathname of the picture file.
         /// </summary>
         protected string picturePath;
+
+        //a cached preview to prevent access problems.
+        private Bitmap cachePreview = null;
+
         /// <summary>
         /// Gets or sets the full pathname of the picture file.
         /// </summary>
         /// <value>
         /// The full pathname of the picture file.
         /// </value>
-        [CategoryAttribute("General"), Description("Full pathname of the image file"), EditorAttribute(typeof(FileSelectorTypeEditor), 
+        [CategoryAttribute("General"), Description("Full pathname of the image file"), EditorAttribute(typeof(FileSelectorTypeEditor),
             typeof(System.Drawing.Design.UITypeEditor))]
         public string PicturePath
         {
             get { return picturePath; }
-            set 
-            { 
+            set
+            {
                 picturePath = value;
                 pictureName = Path.GetFileName(value);
             }
@@ -81,7 +85,8 @@ namespace ARdevKit.Model.Project
         /// Constructor.
         /// </summary>
         /// <param name="imagePath">Full pathname of the image file.</param>
-        public PictureMarker(string picturePath) : this()
+        public PictureMarker(string picturePath)
+            : this()
         {
             size = new Bitmap(picturePath).Height * new Bitmap(picturePath).Width;
             this.picturePath = picturePath;
@@ -116,7 +121,11 @@ namespace ARdevKit.Model.Project
         ///     not correct.</exception>
         public override Bitmap getPreview()
         {
-           return new Bitmap(PicturePath);
+            if (cachePreview == null)
+            {
+                cachePreview = new Bitmap(PicturePath);
+            }
+            return cachePreview;
         }
 
 
