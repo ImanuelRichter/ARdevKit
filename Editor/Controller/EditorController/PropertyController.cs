@@ -122,9 +122,17 @@ namespace Controller.EditorController
             // Checks if X/Y position has been changed
             if (String.Equals(e.ChangedItem.Label.ToString(), "X", StringComparison.Ordinal)
                 || String.Equals(e.ChangedItem.Label.ToString(), "Y", StringComparison.Ordinal)
-                && !(String.Equals(e.ChangedItem.Parent.Label.ToString(), "Rotation", StringComparison.Ordinal)))
+                && (String.Equals(e.ChangedItem.Parent.Label.ToString(), "Translation", StringComparison.Ordinal)))
             {
                 ew.PreviewController.updateTranslation();
+
+                return;
+            }
+
+            if (String.Equals(e.ChangedItem.Label.ToString(), "X", StringComparison.Ordinal)
+                || String.Equals(e.ChangedItem.Label.ToString(), "Y", StringComparison.Ordinal)
+                && (String.Equals(e.ChangedItem.Parent.Label.ToString(), "Scaling", StringComparison.Ordinal)))
+            {
                 ew.PreviewController.findBox(ew.CurrentElement).Image = ew.PreviewController.updateScale();
 
                 return;

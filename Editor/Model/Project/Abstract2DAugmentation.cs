@@ -29,7 +29,7 @@ namespace ARdevKit.Model.Project
         /// The height, in mm.
         /// </value>
         //[Browsable(false)]
-        [Editor(typeof(SliderEditor), typeof(System.Drawing.Design.UITypeEditor))]
+        //[Editor(typeof(SliderEditor), typeof(System.Drawing.Design.UITypeEditor))]
         public int Height
         {
             get { return height; }
@@ -56,7 +56,7 @@ namespace ARdevKit.Model.Project
         /// The width, in mm.
         /// </value>
         //[Browsable(false)]
-        [Editor(typeof(SliderEditor), typeof(System.Drawing.Design.UITypeEditor))]
+        //[Editor(typeof(SliderEditor), typeof(System.Drawing.Design.UITypeEditor))]
         public int Width
         {
             get { return width; }
