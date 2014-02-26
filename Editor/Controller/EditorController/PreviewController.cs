@@ -782,6 +782,9 @@ public class PreviewController
         }
     }
 
+    /// <summary>
+    /// This updates the position of the currentElement-Picturebox.
+    /// </summary>
     public void updateTranslation()
     {
         AbstractAugmentation current;
