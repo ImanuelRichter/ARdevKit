@@ -53,7 +53,7 @@ namespace ARdevKit.Model.Project
             get { return optionsFilePath; }
             set 
             {
-                if (File.Helper.FileExists(@"res\", Path.GetFileName(value)))
+                if (File.Helper.FileExists(@"res\", value))
                 {
                     File.Helper.Copy(value, @"tmp\" + ID + "\\");
                     optionsFilePath = Path.GetFullPath(@"tmp\" + ID + "\\" + Path.GetFileName(value));
@@ -61,6 +61,13 @@ namespace ARdevKit.Model.Project
                 else
                     optionsFilePath = value; 
             }
+        }
+
+        [Browsable(false)]
+        public new Vector3D Rotation
+        {
+            get { return base.Rotation; }
+            set { base.Rotation = value; }
         }
 
         /// <summary>   Default constructor. </summary>
@@ -156,7 +163,7 @@ namespace ARdevKit.Model.Project
             if (Options == null)
             {
                 OpenFileDialog openFileDialog = new OpenFileDialog();
-                openFileDialog.InitialDirectory = Application.StartupPath + "\\res\\highcharts\\barChartColumn";
+                openFileDialog.InitialDirectory = Application.StartupPath + "\\res\\highcharts";
                 openFileDialog.Filter = "js (*.js)|*.js";
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {

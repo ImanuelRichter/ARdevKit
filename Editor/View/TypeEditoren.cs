@@ -31,7 +31,7 @@ namespace ARdevKit.View
                 }
                 if (context.Instance is Abstract2DAugmentation)
                 {
-                    Slider sd = new Slider((int)value, 1000);
+                    Slider sd = new Slider((int)value, 1000, context);
                     svc.DropDownControl(sd);
                     return (object)sd.SliderValueInt;
                 }
