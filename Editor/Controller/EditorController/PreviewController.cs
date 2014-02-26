@@ -1114,6 +1114,8 @@ public class PreviewController
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     private void openArelScript(object sender, EventArgs e)
     {
+        if (((AbstractAugmentation)ew.CurrentElement).CustomUserEventReference == null)
+            ((AbstractAugmentation)ew.CurrentElement).createUserEvent();
         TextEditorForm tef = new TextEditorForm(((AbstractAugmentation)ew.CurrentElement).CustomUserEventReference.FilePath);
         tef.Show();
     }

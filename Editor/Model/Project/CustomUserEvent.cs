@@ -34,15 +34,7 @@ namespace ARdevKit.Model.Project
         /// </summary>
         public string FilePath
         {
-            get 
-            { 
-                if (String.Compare(filePath, "NULL") == 0)
-                {
-                    filePath = getCustomUserFile();
-                }
-
-                return filePath; 
-            }
+            get { return filePath; }
             set { filePath = value; }
         }
 
@@ -53,7 +45,7 @@ namespace ARdevKit.Model.Project
         public CustomUserEvent(string augmentationID)
         {
             this.augmentationID = augmentationID;
-            filePath = "NULL";
+            filePath = getCustomUserFile();
         }
 
         /// <summary>
