@@ -82,7 +82,7 @@ namespace ARdevKit.Model.Project
         {
             if (cachePreview == null)
             {
-                cachePreview = Controller.EditorController.ThumbCreator.CreateThumb(videoPath, 0.5);
+                cachePreview = Controller.EditorController.ThumbCreator.CreateThumb(videoPath);
             }
             return cachePreview;
         }

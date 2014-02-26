@@ -659,7 +659,7 @@ public class PreviewController
         //scales the augmentations in relation to the trackable, exception charts, these has a standartSize
         else if (prev is AbstractAugmentation)
         {
-            if (prev is ImageAugmentation)
+            if (prev is ImageAugmentation || prev is VideoAugmentation)
             {
                 //if there is an existing scalingvector choose this calculation
                 if (((AbstractAugmentation)prev).Scaling.X != 0)
