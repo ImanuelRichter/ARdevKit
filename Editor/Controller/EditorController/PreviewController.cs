@@ -412,14 +412,6 @@ public class PreviewController
         {
             this.setSourcePreview(prev);
         }
-
-        if (prev is ImageAugmentation)
-        {
-            if (((ImageAugmentation)prev).Rotation.Z != 0)
-            {
-                this.rotateAugmentation(prev);
-            }
-        }
     }
 
 
@@ -468,14 +460,7 @@ public class PreviewController
             tempBox.MouseMove += new MouseEventHandler(controlMouseMove);
 
         this.panel.Controls.Add(tempBox);
-        
-        if (prev is ImageAugmentation)
-        {
-            if (((ImageAugmentation)prev).Rotation.Z != 0)
-            {
-                this.rotateAugmentation(prev);
-            }
-        }
+
     }
 
     /// <summary>
@@ -665,8 +650,6 @@ public class PreviewController
                         && ((AbstractAugmentation)prev).Scaling.Z == 0)
                 {
                     ((AbstractAugmentation)prev).Scaling = new Vector3D(1, 1, 1);
-                        return this.scaleBitmap(prev.getPreview(), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X * sideScale * sideScale),
-                            (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.Y * sideScale));
                 }
                 else if (((AbstractAugmentation)prev).Scaling.X <= 0 && ((AbstractAugmentation)prev).Scaling.Y != 0
                     && ((AbstractAugmentation)prev).Scaling.Z != 0)
@@ -728,7 +711,7 @@ public class PreviewController
         using (Graphics gNew = Graphics.FromImage(resizedImg))
         {
             gNew.InterpolationMode = InterpolationMode.HighQualityBicubic;
-            gNew.DrawImage(img, new Rectangle(0, 0, (int)(width), (int)(height)));
+            gNew.DrawImage(img, new Rectangle(0, 0, width, height));
         }
         return resizedImg;
     }
@@ -838,14 +821,14 @@ public class PreviewController
     /// <summary>
     /// Rotates the augmentation, after you've changed the Rotation.Z Vector.
     /// </summary>
-    public void rotateAugmentation(IPreviewable currentElement)
+    public void rotateAugmentation()
     {
-        IPreviewable prev = currentElement;
+        IPreviewable prev = this.ew.CurrentElement;
         int grad = -(int)((AbstractAugmentation)prev).Rotation.Z;
         PictureBox box = this.findBox(prev);
         Bitmap imgOriginal = this.getSizedBitmap(prev);
 
-        Bitmap tempBitmap = new Bitmap((int)(imgOriginal.Width), (int)(imgOriginal.Height));
+        Bitmap tempBitmap = new Bitmap(imgOriginal.Width, imgOriginal.Height);
         tempBitmap.SetResolution(imgOriginal.HorizontalResolution, imgOriginal.HorizontalResolution);
         System.Drawing.Graphics Graph = Graphics.FromImage(tempBitmap);
         Matrix X = new Matrix();
@@ -875,14 +858,12 @@ public class PreviewController
                 if (prev.getPreview().Width > prev.getPreview().Height)
                 {
                     double sideScale = (double)prev.getPreview().Width / (double)prev.getPreview().Height;
-                    return this.scaleBitmap(prev.getPreview(), (int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale * sideScale * sideScale * 1.15),
-                        (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale * sideScale * 1.15));
+                    return this.scaleBitmap(prev.getPreview(), (int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale * sideScale), (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale));
                 }
                 else if (prev.getPreview().Width < prev.getPreview().Height)
                 {
                     double sideScale = (double)prev.getPreview().Height / (double)prev.getPreview().Width;
-                    return this.scaleBitmap(prev.getPreview(), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X * 1.15),
-                            (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.Y * sideScale * 1.15));
+                    return this.scaleBitmap(prev.getPreview(), (int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale), (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale * sideScale));
                 }
                 else { return null; }
 

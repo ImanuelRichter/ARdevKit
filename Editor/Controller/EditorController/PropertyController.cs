@@ -136,7 +136,7 @@ namespace Controller.EditorController
             if (String.Equals(e.ChangedItem.Label.ToString(), "Z", StringComparison.Ordinal)
                 && String.Equals(e.ChangedItem.Parent.Label.ToString(), "Rotation", StringComparison.Ordinal))
             {
-                ew.PreviewController.rotateAugmentation(this.ew.CurrentElement);
+                ew.PreviewController.rotateAugmentation(/*this.ew.CurrentElement*/);
 
                 return;
             }
