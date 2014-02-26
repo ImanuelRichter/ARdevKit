@@ -27,7 +27,7 @@ namespace ARdevKit.Model.Project
             get { return sourceFilePath; }
             set
             {
-                if (File.Helper.FileExists(@"res\", System.IO.Path.GetFileName(value)))
+                if (File.Helper.FileExists(@"res\", value))
                 {
                     var endFileName = SourceID + "_" + System.IO.Path.GetFileName(value);
                     File.Helper.Copy(value, @"tmp\source\", endFileName);

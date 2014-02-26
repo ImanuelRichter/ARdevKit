@@ -53,7 +53,7 @@ namespace ARdevKit.Model.Project
             get { return optionsFilePath; }
             set 
             {
-                if (File.Helper.FileExists(@"res\", Path.GetFileName(value)))
+                if (File.Helper.FileExists(@"res\", value))
                 {
                     File.Helper.Copy(value, @"tmp\" + ID + "\\");
                     optionsFilePath = Path.GetFullPath(@"tmp\" + ID + "\\" + Path.GetFileName(value));

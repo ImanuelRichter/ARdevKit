@@ -784,7 +784,7 @@ public class PreviewController
     }
 
     /// <summary>
-    /// Updates the translation.
+    /// This updates the position of the currentElement-Picturebox.
     /// </summary>
     public void updateTranslation()
     {
