@@ -774,12 +774,12 @@ public class PreviewController
             result.Y = (int)((panel.Height / 2 - newV.Y));
             ((AbstractAugmentation)prev).Translation = result;
         }
-        else if (prev is ImageAugmentation)
+        else
         {
             Vector3D result = new Vector3D(0, 0, 0);
             result.X = (int)((newV.X - panel.Width / 2) / scale / 1.6);
             result.Y = (int)((panel.Height / 2 - newV.Y) / scale / 1.6);
-            ((ImageAugmentation)prev).Translation = result;
+            ((AbstractAugmentation)prev).Translation = result;
         }
     }
 
