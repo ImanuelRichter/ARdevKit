@@ -124,8 +124,10 @@ namespace Controller.EditorController
                 || String.Equals(e.ChangedItem.Label.ToString(), "Y", StringComparison.Ordinal)
                 && !(String.Equals(e.ChangedItem.Parent.Label.ToString(), "Rotation", StringComparison.Ordinal)))
             {
-                ew.PreviewController.updateTranslation();
-                ew.PreviewController.findBox(ew.CurrentElement).Image = ew.PreviewController.updateScale();
+                this.ew.PreviewController.reloadPreviewable((AbstractAugmentation)this.ew.CurrentElement);
+                PictureBox temp = this.ew.PreviewController.findBox(this.ew.CurrentElement);
+                        temp.BorderStyle = BorderStyle.Fixed3D;
+                        temp.BringToFront();
 
                 return;
             }
@@ -145,8 +147,10 @@ namespace Controller.EditorController
                 if (string.Equals(e.ChangedItem.Label.ToString(), "Height", StringComparison.Ordinal)
                     || string.Equals(e.ChangedItem.Label.ToString(), "Width", StringComparison.Ordinal))
                 {
-                    ew.PreviewController.findBox(ew.CurrentElement).Image = ew.PreviewController.updateScale();
-
+                    this.ew.PreviewController.reloadPreviewable((AbstractAugmentation)this.ew.CurrentElement);
+                    PictureBox temp = this.ew.PreviewController.findBox(this.ew.CurrentElement);
+                        temp.BorderStyle = BorderStyle.Fixed3D;
+                        temp.BringToFront();
                     return;
                 }
             }
