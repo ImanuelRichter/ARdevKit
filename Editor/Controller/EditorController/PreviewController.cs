@@ -392,6 +392,28 @@ public class PreviewController
         this.addPictureBox(trackable, trackable.vector);
     }
 
+    /// <summary>
+    /// Reloads a single previewable.
+    /// </summary>
+    /// <param name="prev">The previous.</param>
+    public void reloadPreviewable(AbstractAugmentation prev)
+    {
+            this.panel.Controls.Remove(this.findBox(prev));
+            if (prev is Chart)
+            {
+                this.addPictureBox(prev, this.recalculateChartVector(prev.Translation));
+            }
+            else
+            {
+                this.addPictureBox(prev, this.recalculateVector(prev.Translation));
+            }
+
+            if (typeof(AbstractDynamic2DAugmentation).IsAssignableFrom(prev.GetType()) && ((AbstractDynamic2DAugmentation)prev).Source != null)
+            {
+                this.setSourcePreview(prev);
+            }
+    }
+
 
     /// <summary>
     /// Adds a PictureBox with for the currentElement to the aktuell Scene.
@@ -689,44 +711,6 @@ public class PreviewController
             gNew.DrawImage(img, new Rectangle(0, 0, width, height));
         }
         return resizedImg;
-    }
-    /// <summary>
-    /// gives the new Bitmap back, after you changed the scaleVector.
-    /// </summary>
-    /// <returns></returns>
-    public Bitmap updateScale()
-    {
-        IPreviewable prev = this.ew.CurrentElement;
-        PictureBox box = this.findBox(prev);
-        Image bit = box.Image;
-
-        this.scale = 100 / (double)((Abstract2DTrackable)this.trackable).Size / 1.6;
-
-        if (prev is AbstractAugmentation)
-        {
-            if (prev is ImageAugmentation)
-            {
-                if (bit.Width > bit.Height)
-                {
-                    double sideScale = (double)prev.getPreview().Width / (double)prev.getPreview().Height;
-                    return this.scaleBitmap((Bitmap)bit, (int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale * sideScale * sideScale),
-                        (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale * sideScale));
-                }
-                else if (bit.Width < bit.Height)
-                {
-                    double sideScale = (double)prev.getPreview().Height / (double)prev.getPreview().Width;
-                    return this.scaleBitmap((Bitmap)bit, (int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale), (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale * sideScale));
-                }
-                else { return null; }
-
-            }
-            else if (prev is Chart)
-            {
-                return this.scaleBitmap((Bitmap)bit, ((Chart)prev).Width, ((Chart)prev).Height);
-            }
-            else { return null; }
-        }
-        else { return null; }
     }
 
     /// <summary>
