@@ -108,7 +108,7 @@ namespace Controller.EditorController
                     return;
                 }
 
-                if (string.Equals(e.OldValue.ToString(), "", StringComparison.Ordinal))
+                if (e.OldValue == null || string.Equals(e.OldValue.ToString(), "", StringComparison.Ordinal))
                 {
                     (ew.PreviewController.findBox(ew.CurrentElement).ContextMenu).MenuItems[6].Enabled = true;
 
