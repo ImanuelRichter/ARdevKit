@@ -102,7 +102,8 @@ namespace ARdevKit.Controller.ProjectController
             string newPath = Path.Combine(project.ProjectPath, "Events");
             Helper.Copy(cue.FilePath, newPath);
             cue.FilePath = Path.Combine(newPath, Path.GetFileName(cue.FilePath));
-            arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("script", "type=\"text/javascript\" src=\"Events/" + Path.GetFileName(cue.FilePath) + "\"")));
+            Helper.Copy("res\\jquery\\jquery-2.0.3.js", Path.Combine(project.ProjectPath, "Assets"));
+            arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("script", "src=\"Assets/jquery-2.0.3.js\"")));
         }
 
         /// <summary>
@@ -117,36 +118,47 @@ namespace ARdevKit.Controller.ProjectController
             video.VideoPath = Path.Combine(newPath, Path.GetFileName(video.VideoPath));
 
             // arelGlue.js
+            string videoID = video.ID = video.ID == null ? "video" + videoCount : video.ID;
+
+            arelGlueFile.AddBlock(new JavaScriptLine("var " + videoID));
+
             JavaScriptBlock loadContentBlock = new JavaScriptBlock();
             sceneReadyFunctionBlock.AddBlock(loadContentBlock);
 
-            string videoVariable = "video" + videoCount;
             string videoPath = Path.GetFileNameWithoutExtension(video.VideoPath) + Path.GetExtension(video.VideoPath);
-            //string videoPath = Path.GetFileNameWithoutExtension(video.VideoPath) + ".alpha" + Path.GetExtension(video.VideoPath);
-            loadContentBlock.AddLine(new JavaScriptLine("var " + videoVariable + " = arel.Object.Model3D.createFromMovie(\"" + videoVariable + "\",\"Assets/" + videoPath + "\")"));
-            loadContentBlock.AddLine(new JavaScriptLine(videoVariable + ".setVisibility(" + video.IsVisible.ToString().ToLower() + ")"));
-            loadContentBlock.AddLine(new JavaScriptLine(videoVariable + ".setCoordinateSystemID(" + coordinateSystemID + ")"));
+            loadContentBlock.AddLine(new JavaScriptLine(videoID + " = arel.Object.Model3D.createFromMovie(\"" + videoID + "\",\"Assets/" + videoPath + "\")"));
+            loadContentBlock.AddLine(new JavaScriptLine(videoID + ".setVisibility(" + video.IsVisible.ToString().ToLower() + ")"));
+            loadContentBlock.AddLine(new JavaScriptLine(videoID + ".setCoordinateSystemID(" + coordinateSystemID + ")"));
             string augmentationScalingX = video.Scaling.X.ToString("F1", CultureInfo.InvariantCulture);
             string augmentationScalingY = video.Scaling.Y.ToString("F1", CultureInfo.InvariantCulture);
             string augmentationScalingZ = video.Scaling.Z.ToString("F1", CultureInfo.InvariantCulture);
-            loadContentBlock.AddLine(new JavaScriptLine(videoVariable + ".setScale(new arel.Vector3D(" + augmentationScalingX + "," + augmentationScalingY + "," + augmentationScalingZ + "))"));
+            loadContentBlock.AddLine(new JavaScriptLine(videoID + ".setScale(new arel.Vector3D(" + augmentationScalingX + "," + augmentationScalingY + "," + augmentationScalingZ + "))"));
             string augmentationTranslationX = video.Translation.X.ToString("F1", CultureInfo.InvariantCulture);
             string augmentationTranslationY = video.Translation.Y.ToString("F1", CultureInfo.InvariantCulture);
             string augmentationTranslationZ = video.Translation.Z.ToString("F1", CultureInfo.InvariantCulture);
-            loadContentBlock.AddLine(new JavaScriptLine(videoVariable + ".setTranslation(new arel.Vector3D(" + augmentationTranslationX + "," + augmentationTranslationY + "," + augmentationTranslationZ + "))"));
+            loadContentBlock.AddLine(new JavaScriptLine(videoID + ".setTranslation(new arel.Vector3D(" + augmentationTranslationX + "," + augmentationTranslationY + "," + augmentationTranslationZ + "))"));
             string augmentationRotationX = video.Rotation.X.ToString("F1", CultureInfo.InvariantCulture);
             string augmentationRotationY = video.Rotation.Y.ToString("F1", CultureInfo.InvariantCulture);
             string augmentationRotationZ = video.Rotation.Z.ToString("F1", CultureInfo.InvariantCulture);
-            loadContentBlock.AddLine(new JavaScriptLine("var " + videoVariable + "Rotation = new arel.Rotation()"));
-            loadContentBlock.AddLine(new JavaScriptLine(videoVariable + "Rotation.setFromEulerAngleDegrees(new arel.Vector3D(" + augmentationRotationX + "," + augmentationRotationY + "," + augmentationRotationZ + "))"));
-            loadContentBlock.AddLine(new JavaScriptLine(videoVariable + ".setRotation(" + videoVariable + "Rotation)"));
-            loadContentBlock.AddLine(new JavaScriptLine("arel.Scene.addObject(" + videoVariable + ")"));
+            loadContentBlock.AddLine(new JavaScriptLine("var " + videoID + "Rotation = new arel.Rotation()"));
+            loadContentBlock.AddLine(new JavaScriptLine(videoID + "Rotation.setFromEulerAngleDegrees(new arel.Vector3D(" + augmentationRotationX + "," + augmentationRotationY + "," + augmentationRotationZ + "))"));
+            loadContentBlock.AddLine(new JavaScriptLine(videoID + ".setRotation(" + videoID + "Rotation)"));
 
-            ifPatternIsFoundBlock.AddLine(new JavaScriptLine("arel.Scene.getObject(\"" + videoVariable + "\").setVisibility(true)"));
-            ifPatternIsFoundBlock.AddLine(new JavaScriptLine("arel.Scene.getObject(\"" + videoVariable + "\").startMovieTexture()"));
+            if (video.CustomUserEventReference != null)
+            {
+                JavaScriptBlock loadEventsBlock = new JavaScriptBlock("$.getScript(\"Events/" +videoID + "_Event.js\", function()", new BlockMarker("{", "})"));
+                loadContentBlock.AddBlock(loadEventsBlock);
+                loadContentBlock.AddBlock(new JavaScriptInLine(".fail(function() { console.log(\"Failed to load events\")})", false));
+                loadContentBlock.AddBlock(new JavaScriptLine(".done(function() { console.log(\"Loaded events successfully\")})"));
+            }
 
-            ifPatternIsLostBlock.AddLine(new JavaScriptLine("arel.Scene.getObject(\"" + videoVariable + "\").setVisibility(false)"));
-            ifPatternIsLostBlock.AddLine(new JavaScriptLine("arel.Scene.getObject(\"" + videoVariable + "\").pauseMovieTexture()"));
+            loadContentBlock.AddLine(new JavaScriptLine("arel.Scene.addObject(" + videoID + ")"));
+
+            ifPatternIsFoundBlock.AddLine(new JavaScriptLine("arel.Scene.getObject(\"" + videoID + "\").setVisibility(true)"));
+            ifPatternIsFoundBlock.AddLine(new JavaScriptLine("arel.Scene.getObject(\"" + videoID + "\").startMovieTexture()"));
+
+            ifPatternIsLostBlock.AddLine(new JavaScriptLine("arel.Scene.getObject(\"" + videoID + "\").setVisibility(false)"));
+            ifPatternIsLostBlock.AddLine(new JavaScriptLine("arel.Scene.getObject(\"" + videoID + "\").pauseMovieTexture()"));
 
             videoCount++;
         }
@@ -167,31 +179,43 @@ namespace ARdevKit.Controller.ProjectController
             image.ImagePath = Path.Combine(newPath, Path.GetFileName(image.ImagePath));
 
             // arelGlue.js
+            string imageID = image.ID = image.ID == null ? "image" + imageCount : image.ID;
+
+            arelGlueFile.AddBlock(new JavaScriptLine("var " + imageID));
+
             JavaScriptBlock loadContentBlock = new JavaScriptBlock();
             sceneReadyFunctionBlock.AddBlock(loadContentBlock);
 
-            string imageVariable = "image" + imageCount;
-            loadContentBlock.AddLine(new JavaScriptLine("var " + imageVariable + " = arel.Object.Model3D.createFromImage(\"" + imageVariable + "\",\"Assets/" + Path.GetFileName(image.ImagePath) + "\")"));
-            loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setVisibility(" + image.IsVisible.ToString().ToLower() + ")"));
-            loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setCoordinateSystemID(" + coordinateSystemID + ")"));
+            loadContentBlock.AddLine(new JavaScriptLine(imageID + " = arel.Object.Model3D.createFromImage(\"" + imageID + "\",\"Assets/" + Path.GetFileName(image.ImagePath) + "\")"));
+            loadContentBlock.AddLine(new JavaScriptLine(imageID + ".setVisibility(" + image.IsVisible.ToString().ToLower() + ")"));
+            loadContentBlock.AddLine(new JavaScriptLine(imageID + ".setCoordinateSystemID(" + coordinateSystemID + ")"));
             string augmentationScalingX = image.Scaling.X.ToString("F1", CultureInfo.InvariantCulture);
             string augmentationScalingY = image.Scaling.Y.ToString("F1", CultureInfo.InvariantCulture);
             string augmentationScalingZ = image.Scaling.Z.ToString("F1", CultureInfo.InvariantCulture);
-            loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setScale(new arel.Vector3D(" + augmentationScalingX + "," + augmentationScalingY + "," + augmentationScalingZ + "))"));
+            loadContentBlock.AddLine(new JavaScriptLine(imageID + ".setScale(new arel.Vector3D(" + augmentationScalingX + "," + augmentationScalingY + "," + augmentationScalingZ + "))"));
             string augmentationTranslationX = image.Translation.X.ToString("F1", CultureInfo.InvariantCulture);
             string augmentationTranslationY = image.Translation.Y.ToString("F1", CultureInfo.InvariantCulture);
             string augmentationTranslationZ = image.Translation.Z.ToString("F1", CultureInfo.InvariantCulture);
-            loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setTranslation(new arel.Vector3D(" + augmentationTranslationX + "," + augmentationTranslationY + "," + augmentationTranslationZ + "))"));
+            loadContentBlock.AddLine(new JavaScriptLine(imageID + ".setTranslation(new arel.Vector3D(" + augmentationTranslationX + "," + augmentationTranslationY + "," + augmentationTranslationZ + "))"));
             string augmentationRotationX = image.Rotation.X.ToString("F1", CultureInfo.InvariantCulture);
             string augmentationRotationY = image.Rotation.Y.ToString("F1", CultureInfo.InvariantCulture);
             string augmentationRotationZ = image.Rotation.Z.ToString("F1", CultureInfo.InvariantCulture);
-            loadContentBlock.AddLine(new JavaScriptLine("var " + imageVariable + "Rotation = new arel.Rotation()"));
-            loadContentBlock.AddLine(new JavaScriptLine(imageVariable + "Rotation.setFromEulerAngleDegrees(new arel.Vector3D(" + augmentationRotationX + "," + augmentationRotationY + "," + augmentationRotationZ + "))"));
-            loadContentBlock.AddLine(new JavaScriptLine(imageVariable + ".setRotation(" + imageVariable + "Rotation)"));
-            loadContentBlock.AddLine(new JavaScriptLine("arel.Scene.addObject(" + imageVariable + ")"));
+            loadContentBlock.AddLine(new JavaScriptLine("var " + imageID + "Rotation = new arel.Rotation()"));
+            loadContentBlock.AddLine(new JavaScriptLine(imageID + "Rotation.setFromEulerAngleDegrees(new arel.Vector3D(" + augmentationRotationX + "," + augmentationRotationY + "," + augmentationRotationZ + "))"));
+            loadContentBlock.AddLine(new JavaScriptLine(imageID + ".setRotation(" + imageID + "Rotation)"));
 
-            ifPatternIsFoundBlock.AddLine(new JavaScriptLine("arel.Scene.getObject(\"" + imageVariable + "\").setVisibility(true)"));
-            ifPatternIsLostBlock.AddLine(new JavaScriptLine("arel.Scene.getObject(\"" + imageVariable + "\").setVisibility(false)"));
+            if (image.CustomUserEventReference != null)
+            {
+                JavaScriptBlock loadEventsBlock = new JavaScriptBlock("$.getScript(\"Events/" + imageID + "_Event.js\", function()", new BlockMarker("{", "})"));
+                loadContentBlock.AddBlock(loadEventsBlock);
+                loadContentBlock.AddBlock(new JavaScriptInLine(".fail(function() { console.log(\"Failed to load events\")})", false));
+                loadContentBlock.AddBlock(new JavaScriptLine(".done(function() { console.log(\"Loaded events successfully\")})"));
+            }
+
+            loadContentBlock.AddLine(new JavaScriptLine("arel.Scene.addObject(" + imageID + ")"));
+
+            ifPatternIsFoundBlock.AddLine(new JavaScriptLine("arel.Scene.getObject(\"" + imageID + "\").setVisibility(true)"));
+            ifPatternIsLostBlock.AddLine(new JavaScriptLine("arel.Scene.getObject(\"" + imageID + "\").setVisibility(false)"));
 
             imageCount++;
         }
@@ -206,8 +230,8 @@ namespace ARdevKit.Controller.ProjectController
 
         public override void Visit(Chart chart)
         {
-            chart.ID = chart.ID == null ? "chart" + chartCount : chart.ID;
-            string chartID = chart.ID;
+
+            string chartID = chart.ID = chart.ID == null ? "chart" + chartCount : chart.ID;
             string chartPluginID = "arel.Plugin." + CultureInfo.CurrentCulture.TextInfo.ToTitleCase(chartID);
 
             // arel[projectName].html
@@ -231,6 +255,14 @@ namespace ARdevKit.Controller.ProjectController
             arelGlueFile.AddBlock(new JavaScriptLine("var " + chartID));
 
             loadContentBlock.AddLine(new JavaScriptLine(chartID + " = " + chartPluginID));
+
+            if (chart.CustomUserEventReference != null)
+            {
+                JavaScriptBlock loadEventsBlock = new JavaScriptBlock("$.getScript(\"Events/" + chartID + "_Event.js\", function()", new BlockMarker("{", "})"));
+                loadContentBlock.AddBlock(loadEventsBlock);
+                loadContentBlock.AddBlock(new JavaScriptInLine(".fail(function() { console.log(\"Failed to load events\")})", false));
+                loadContentBlock.AddBlock(new JavaScriptLine(".done(function() { console.log(\"Loaded events successfully\")})"));
+            }
 
             loadContentBlock.AddLine(new JavaScriptLine(chartID + ".hide()"));
 
