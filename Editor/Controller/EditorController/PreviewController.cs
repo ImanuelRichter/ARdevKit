@@ -663,6 +663,7 @@ public class PreviewController
             else if (prev is Chart)
             {
                 return this.scaleBitmap(prev.getPreview(), ((Chart)prev).Width, ((Chart)prev).Height);
+                
             }
             else { return null; }
         }

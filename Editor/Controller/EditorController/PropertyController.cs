@@ -173,6 +173,7 @@ namespace Controller.EditorController
                     marker.MatrixID = ew.project.nextID();
                 }
                 this.ew.PreviewController.findBox(this.ew.CurrentElement).Image = this.ew.PreviewController.scaleIPreviewable(this.ew.CurrentElement);
+                this.ew.PreviewController.reloadPreviewPanel(this.ew.PreviewController.index);
                 return;
             }
         }
