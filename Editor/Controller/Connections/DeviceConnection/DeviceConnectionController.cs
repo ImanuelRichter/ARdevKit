@@ -23,11 +23,24 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
         private EditorWindow editorWindow;
         private bool debugConnected;
         private View.DebugWindow debugWindow;
+        
+        /// <summary>
+        /// Gets the debug window.
+        /// </summary>
+        /// <value>
+        /// The debug window.
+        /// </value>
         public View.DebugWindow DebugWindow
         {
             get { return debugWindow; }
         }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether [debug connected].
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if [debug connected]; otherwise, <c>false</c>.
+        /// </value>
         public bool DebugConnected
         {
             get { return debugConnected; }
@@ -47,8 +60,11 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
             reportedDevices = new List<IPEndPoint>();
             udpClient = new UdpClient();
             refresh();
-        } 
+        }
 
+        /// <summary>
+        /// Sends the broadcast.
+        /// </summary>
         private void sendBroadcast()
         {
             IPEndPoint broadcastAddress = new IPEndPoint(IPAddress.Broadcast, 12345);
@@ -56,6 +72,9 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
             udpClient.Send(broadcastmsg, broadcastmsg.Length, broadcastAddress);
         }
 
+        /// <summary>
+        /// Receives all queued responses.
+        /// </summary>
         private void receiveAllQueuedResponses()
         {
             IPEndPoint anyAddress = new IPEndPoint(IPAddress.Any, 12345);
@@ -86,6 +105,10 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
             receiveAllQueuedResponses();
         }
 
+        /// <summary>
+        /// Gets the reported devices.
+        /// </summary>
+        /// <returns></returns>
         public List<string> getReportedDevices()
         {
             List<string> result = new List<string>();
@@ -234,6 +257,10 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
             return success;
         }
 
+        /// <summary>
+        /// Writes the exception to log.
+        /// </summary>
+        /// <param name="ex">The ex.</param>
         private void writeExceptionToLog(Exception ex)
         {
             FileStream log = File.Open("connectionDebugLog.txt", FileMode.Append | FileMode.OpenOrCreate, FileAccess.Write);

@@ -95,6 +95,13 @@ namespace ARdevKit.Model.Project
             continueLostTrackingWithOrientationSensor = false;
         }
 
+        /// <summary>
+        /// Accepts the given visitor.
+        /// </summary>
+        /// <param name="visitor">The visitor.</param>
+        /// <remarks>
+        /// Imanuel, 17.01.2014.
+        /// </remarks>
         public override void Accept(AbstractProjectVisitor visitor)
         {
             visitor.Visit(this);
