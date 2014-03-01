@@ -81,6 +81,8 @@ namespace ARdevKit.Controller.ProjectController
         private int chartCount;
         /// <summary>   Identifier for the coordinate system. </summary>
         private int coordinateSystemID;
+        /// <summary>   True if jquery was already imported.    </summary>
+        private bool importedJQuery;
 
         /// <summary>
         /// Default constructor
@@ -102,8 +104,13 @@ namespace ARdevKit.Controller.ProjectController
             string newPath = Path.Combine(project.ProjectPath, "Events");
             Helper.Copy(cue.FilePath, newPath);
             cue.FilePath = Path.Combine(newPath, Path.GetFileName(cue.FilePath));
-            Helper.Copy("res\\jquery\\jquery-2.0.3.js", Path.Combine(project.ProjectPath, "Assets"));
-            arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("script", "src=\"Assets/jquery-2.0.3.js\"")));
+
+            if (!importedJQuery)
+            {
+                Helper.Copy("res\\jquery\\jquery-2.0.3.js", Path.Combine(project.ProjectPath, "Assets"));
+                arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("script", "src=\"Assets/jquery-2.0.3.js\"")));
+                importedJQuery = true;
+            }
         }
 
         /// <summary>
@@ -237,14 +244,18 @@ namespace ARdevKit.Controller.ProjectController
             // arel[projectName].html
             if (chartCount == 1)
             {
-                arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("script", "src=\"Assets/jquery-2.0.3.js\"")));
+                if (!importedJQuery)
+                {
+                    Helper.Copy("res\\jquery\\jquery-2.0.3.js", Path.Combine(project.ProjectPath, "Assets"));
+                    arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("script", "src=\"Assets/jquery-2.0.3.js\"")));
+                    importedJQuery = true;
+                }
+
+                Helper.Copy("res\\highcharts\\highcharts.js", Path.Combine(project.ProjectPath, "Assets"));
                 arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("script", "src=\"Assets/highcharts.js\"")));
             }
 
             arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("script", "src=\"Assets/" + chartID + "/chart.js\"")));
-
-            Helper.Copy("res\\highcharts\\highcharts.js", Path.Combine(project.ProjectPath, "Assets"));
-            Helper.Copy("res\\jquery\\jquery-2.0.3.js", Path.Combine(project.ProjectPath, "Assets"));
 
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -345,12 +356,11 @@ namespace ARdevKit.Controller.ProjectController
             // setOptions
             JavaScriptBlock chartFileDefineLoadOptionsBlock = new JavaScriptBlock("$.getScript(\"Assets/" + chartID + "/options.js\", function()", new BlockMarker("{", "})"));
             chartFileCreateBlock.AddBlock(chartFileDefineLoadOptionsBlock);
-            chartFileCreateBlock.AddBlock(new JavaScriptInLine(".fail(function() { console.log(\"Failed to load options\")})", false));
-            chartFileCreateBlock.AddBlock(new JavaScriptLine(".done(function() { console.log(\"Loaded options successfully\")})"));
+            chartFileCreateBlock.AddBlock(new JavaScriptInLine(".fail(function() { console.log(\"Failed to load options for " + chartID + "\")})", false));
+            chartFileCreateBlock.AddBlock(new JavaScriptLine(".done(function() { console.log(\"Loaded options for " + chartID + " successfully\")})"));
 
             chartFileDefineLoadOptionsBlock.AddLine(new JavaScriptLine(chartPluginID + ".options = init()"));
-            if (chart.Source == null)
-                chartFileDefineLoadOptionsBlock.AddLine(new JavaScriptLine(chartPluginID + ".chart = $('#' + " + chartPluginID + ".id).highcharts(" + chartPluginID + ".options)"));
+            chartFileDefineLoadOptionsBlock.AddLine(new JavaScriptLine("$('#' + " + chartPluginID + ".id).highcharts(" + chartPluginID + ".options)"));
 
             // Show            
             JavaScriptBlock chartShowBlock = new JavaScriptBlock("show : function()", new BlockMarker("{", "},"));
@@ -966,36 +976,6 @@ namespace ARdevKit.Controller.ProjectController
         public override void Visit(Project p)
         {
             project = p;
-
-            /*
-            // Clean up
-            if (Directory.Exists(project.ProjectPath))
-            {
-                bool cleanedUp = false;
-                DialogResult abortRetryIgnore = DialogResult.Cancel;
-                do
-                    try
-                    {
-                        foreach (string path in Directory.GetFiles(project.ProjectPath))
-                            if (!Path.GetExtension(path).Equals(".ardev"))
-                                File.Delete(path);
-                        string assetsPath = Path.Combine(project.ProjectPath, "Assets");
-                        if (Directory.Exists(assetsPath))
-                        {
-                            foreach (string path in Directory.GetFiles(assetsPath))
-                                File.Delete(path);
-                        }
-                        cleanedUp = true;
-                    }
-                    catch (Exception e)
-                    {
-                        abortRetryIgnore = MessageBox.Show(e.Message, "Error!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
-                        if (abortRetryIgnore == DialogResult.Abort)
-                            throw new OperationCanceledException();
-                    }
-                while (!cleanedUp && abortRetryIgnore == DialogResult.Retry);
-            }
-             */
 
             // Copy arel file
             Helper.Copy(Path.Combine("res", "arel", "arel.js"), project.ProjectPath);

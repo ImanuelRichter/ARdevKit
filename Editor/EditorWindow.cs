@@ -40,6 +40,9 @@ namespace ARdevKit
 
     public partial class EditorWindow : Form
     {
+        /// <summary>
+        /// A callback function used to enable a menu item
+        /// </summary>
         private delegate void SetEnabledCallback();
 
         /// <summary>
