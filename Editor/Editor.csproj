@@ -113,8 +113,6 @@
     <Compile Include="Model\Project\MarkerSensor.cs" />
     <Compile Include="Model\Project\File\ARELConfigFile.cs" />
     <Compile Include="Controller\Connections\DeviceConnection\DeviceConnectionController.cs" />
-    <Compile Include="Controller\Connections\DeviceConnection\TCPServer.cs" />
-    <Compile Include="Controller\Connections\DeviceConnection\UDPServer.cs" />
     <Compile Include="Controller\EditorController\ElementSelectionController.cs" />
     <Compile Include="Controller\EditorController\PropertyController.cs" />
     <Compile Include="Controller\EditorController\SceneElement.cs" />
@@ -170,7 +168,6 @@
     <Compile Include="TextEditorForm.Designer.cs">
       <DependentUpon>TextEditorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\AbstractProperty.cs" />
     <Compile Include="View\DebugWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,7 +225,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ARdevKit.ico" />
-    <Content Include="Controller\Connections\DeviceConnection\foo.txt" />
     <Content Include="Controller\DebugController\foo.txt" />
     <Content Include="Resources\IDMarker\IDMarker001.jpg" />
     <Content Include="Resources\IDMarker\IDMarker002.jpg" />
