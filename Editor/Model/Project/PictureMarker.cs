@@ -186,7 +186,7 @@ namespace ARdevKit.Model.Project
 
                     if (!ew.project.existTrackable(this))
                     {
-                        ew.project.Sensor = new MarkerlessSensor();
+                        ew.project.Sensor = new MarkerSensor();
                     }
                     else
                     {
