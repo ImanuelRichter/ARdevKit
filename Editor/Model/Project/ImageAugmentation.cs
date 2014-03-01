@@ -112,10 +112,7 @@ namespace ARdevKit.Model.Project
         /// not found in <see cref="ImagePath" />.</exception>
         public override Bitmap getPreview()
         {
-            if (cachePreview == null)
-            {
                 cachePreview = new Bitmap(ImagePath);
-            }
             return cachePreview;
         }
                 
