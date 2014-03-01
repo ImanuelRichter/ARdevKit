@@ -11,8 +11,7 @@ function init() {
 		},
 		xAxis: {
 			type: 'datetime',
-			text: 'Kategorien',
-			categories: ['Kategorie 1', 'Kategorie 2']
+			text: 'Zeit'
 		},
 		yAxis: {
 			title: {

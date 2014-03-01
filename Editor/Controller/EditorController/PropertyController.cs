@@ -83,13 +83,13 @@ namespace Controller.EditorController
                 if (string.Equals((string)e.ChangedItem.Value, "", StringComparison.Ordinal))
                 {
                     if (ew.CurrentElement is ImageAugmentation)
-                        ((ImageAugmentation)ew.CurrentElement).ImagePath = e.OldValue.ToString();
+                        ((ImageAugmentation)ew.CurrentElement).SourceFilePath = e.OldValue.ToString();
                     if (ew.CurrentElement is ImageTrackable)
                         ((ImageTrackable)ew.CurrentElement).ImagePath = e.OldValue.ToString();
                 }
                 else
                 {
-                    ((ImageAugmentation)ew.CurrentElement).ImagePath = e.ChangedItem.Value.ToString();
+                    ((ImageAugmentation)ew.CurrentElement).SourceFilePath = e.ChangedItem.Value.ToString();
                     this.ew.PreviewController.reloadPreviewable((AbstractAugmentation)this.ew.CurrentElement);
                     PictureBox temp = this.ew.PreviewController.findBox(this.ew.CurrentElement);
                     temp.BorderStyle = BorderStyle.Fixed3D;

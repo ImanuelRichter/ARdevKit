@@ -22,7 +22,7 @@ namespace EditorTest
             IDMarker idMarker1 = new IDMarker(1);
 
             ImageAugmentation image1 = new ImageAugmentation();
-            image1.ImagePath = Path.Combine(testProject.ProjectPath, "Assets", "frame.png");
+            image1.SourceFilePath = Path.Combine(testProject.ProjectPath, "Assets", "frame.png");
             image1.IsVisible = false;
             image1.Translation = new Vector3D(0, 0, 0);
             image1.Rotation = new Vector3Di(0, 0, 0, 1);
@@ -109,7 +109,7 @@ namespace EditorTest
             ImageTrackable imageTrackable = new ImageTrackable("res\\testFiles\\trackables\\metaioman_target.png");
 
             ImageAugmentation image1 = new ImageAugmentation();
-            image1.ImagePath = Path.Combine(testProject.ProjectPath, "Assets", "frame.png");
+            image1.SourceFilePath = Path.Combine(testProject.ProjectPath, "Assets", "frame.png");
             image1.IsVisible = false;
             imageTrackable.Augmentations.Add(image1);
             image1.Trackable = imageTrackable;
@@ -125,7 +125,7 @@ namespace EditorTest
             ImageTrackable imageTrackable = new ImageTrackable("res\\testFiles\\trackables\\metaioman_target.png");
 
             VideoAugmentation video = new VideoAugmentation();
-            video.VideoPath = "res\\testFiles\\augmentations\\video.alpha.3g2";
+            video.SourceFilePath = "res\\testFiles\\augmentations\\video.alpha.3g2";
             video.IsVisible = false;
             video.Rotation = new Vector3D(0, 0, -90);
             video.Scaling = new Vector3D(2, 2, 1);
