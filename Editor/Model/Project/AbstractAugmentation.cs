@@ -254,7 +254,6 @@ namespace ARdevKit.Model.Project
             id = newID;
             return true;
         }
-
         /**
          * <summary>    Gibt eine Zeichenfolge zurück, die das aktuelle Objekt darstellt. </summary>
          *

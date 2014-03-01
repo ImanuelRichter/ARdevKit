@@ -225,7 +225,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ARdevKit.ico" />
-    <Content Include="Controller\DebugController\foo.txt" />
     <Content Include="Resources\IDMarker\IDMarker001.jpg" />
     <Content Include="Resources\IDMarker\IDMarker002.jpg" />
     <Content Include="Resources\IDMarker\IDMarker003.jpg" />

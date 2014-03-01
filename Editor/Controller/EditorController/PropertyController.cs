@@ -88,7 +88,15 @@ namespace Controller.EditorController
                         ((ImageTrackable)ew.CurrentElement).ImagePath = e.OldValue.ToString();
                 }
                 else
-                    ew.PreviewController.findBox(ew.CurrentElement).Load(e.ChangedItem.Value.ToString());
+                {
+                    ((ImageAugmentation)ew.CurrentElement).ImagePath = e.ChangedItem.Value.ToString();
+                    this.ew.PreviewController.reloadPreviewable((AbstractAugmentation)this.ew.CurrentElement);
+                    PictureBox temp = this.ew.PreviewController.findBox(this.ew.CurrentElement);
+                    temp.BorderStyle = BorderStyle.Fixed3D;
+                    temp.BringToFront();
+                }
+                    
+                    
 
                 return;
             }
