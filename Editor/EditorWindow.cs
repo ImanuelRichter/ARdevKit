@@ -315,17 +315,17 @@ namespace ARdevKit
         {
             if (projectChanged())
             {
-            if (MessageBox.Show("Möchten Sie das aktuelle Projekt abspeichern, bevor ein neues angelegt wird?", "Projekt speichern?", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                try
+                if (MessageBox.Show("Möchten Sie das aktuelle Projekt abspeichern, bevor ein neues angelegt wird?", "Projekt speichern?", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    this.saveProject();
+                    try
+                    {
+                        this.saveProject();
+                    }
+                    catch (ArgumentNullException ae)
+                    {
+                        Debug.WriteLine(ae.StackTrace);
+                    }
                 }
-                catch (ArgumentNullException ae)
-                {
-                    Debug.WriteLine(ae.StackTrace);
-                }
-            }
             }
 
             createNewProject("");
@@ -965,8 +965,8 @@ namespace ARdevKit
 
             this.previewController = new PreviewController(this);
             this.propertyController = new PropertyController(this);
-                this.deviceConnectionController = new DeviceConnectionController(this);
-            }
+            this.deviceConnectionController = new DeviceConnectionController(this);
+        }
 
         private void initializeEmptyProject(String projectname)
         {
@@ -981,7 +981,7 @@ namespace ARdevKit
             this.project.Screensize = new ScreenSize();
             this.project.Screensize.Height = Convert.ToUInt32(pnl_editor_preview.Size.Height);
             this.project.Screensize.Width = Convert.ToUInt32(pnl_editor_preview.Size.Width);
-            this.project.Screensize.SizeChanged += new System.EventHandler(this.pnl_editor_preview_SizeChanged); 
+            this.project.Screensize.SizeChanged += new System.EventHandler(this.pnl_editor_preview_SizeChanged);
             registerElements();
         }
 
@@ -1088,19 +1088,19 @@ namespace ARdevKit
         {
             if (projectChanged())
             {
-            if (MessageBox.Show("Möchten Sie das aktuelle Projekt abspeichern, bevor ein anderes geöffnet wird?", "Projekt speichern?", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                try
+                if (MessageBox.Show("Möchten Sie das aktuelle Projekt abspeichern, bevor ein anderes geöffnet wird?", "Projekt speichern?", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    this.saveProject();
-                }
-                catch (ArgumentNullException ae)
-                {
-                    Debug.WriteLine(ae.StackTrace);
+                    try
+                    {
+                        this.saveProject();
+                    }
+                    catch (ArgumentNullException ae)
+                    {
+                        Debug.WriteLine(ae.StackTrace);
+                    }
                 }
             }
-            }
-            
+
             this.loadProject();
         }
 
@@ -1229,12 +1229,12 @@ namespace ARdevKit
 
                 PrintDialog printd = new PrintDialog();
                 printd.Document = pd;
-                
+
                 if (printd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     PrintPreviewDialog dlg = new PrintPreviewDialog();
                     dlg.Document = printd.Document;
-                    
+
                     if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                         pd.Print();
                 }
@@ -1262,7 +1262,7 @@ namespace ARdevKit
                 if (project.Trackables[trackablePCounter] is IDMarker)
                 {
                     IDMarker temp = (IDMarker)project.Trackables[trackablePCounter];
-                    int dpi = (int)(Math.Sqrt(Math.Pow(e.PageSettings.PrinterResolution.X , 2) + Math.Pow(e.PageSettings.PrinterResolution.Y , 2)));
+                    int dpi = (int)(Math.Sqrt(Math.Pow(e.PageSettings.PrinterResolution.X, 2) + Math.Pow(e.PageSettings.PrinterResolution.Y, 2)));
                     e.Graphics.DrawImage(previewController.scaleBitmap(temp.getPreview(), (int)((dpi * temp.Size) / 254), (int)((dpi * temp.Size) / 254)), x, y);
                 }
                 else
@@ -1332,19 +1332,31 @@ namespace ARdevKit
                 return true;
         }
 
+        /// <summary>
+        /// Is fired when the user clicks the Help menu entry.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// <remarks>Robin</remarks>
         private void tsm_editor_menu_help_help_Click(object sender, EventArgs e)
         {
             Help.ShowHelp(this, Application.StartupPath + "\\Documentation.chm", HelpNavigator.TableOfContents);
         }
 
+        /// <summary>
+        /// is fired when the element selection combobox has a new selected item.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// <remarks>Robin</remarks>
         private void cmb_editor_properties_objectSelection_SelectedIndexChanged(object sender, EventArgs e)
         {
             PropertyGrid1.SelectedObject = cmb_editor_properties_objectSelection.SelectedItem;
             if (!(cmb_editor_properties_objectSelection.SelectedItem is AbstractSource))
             {
-                previewController.setCurrentElement((IPreviewable) cmb_editor_properties_objectSelection.SelectedItem);
+                previewController.setCurrentElement((IPreviewable)cmb_editor_properties_objectSelection.SelectedItem);
             }
-            
+
         }
         private void reloadDeviceList()
         {
@@ -1358,7 +1370,7 @@ namespace ARdevKit
             if (DeviceList.Items.Count > 0)
             {
                 DeviceList.SelectedItem = devices[0];
-            } 
+            }
         }
 
         private void tsm_editor_menu_file_Click(object sender, EventArgs e)
