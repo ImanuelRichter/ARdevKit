@@ -62,55 +62,6 @@ namespace ARdevKit
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
-        /// if true the debug window will be opened when starting the test mode on the device.
-        /// </summary>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        private bool startDebugModeDevice;
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Gets or sets a value indicating whether to start debug mode if test mode is started on the
-        /// device.
-        /// </summary>
-        ///
-        /// <value>
-        /// if true the debug window will be opened when starting the test mode on the device.
-        /// </value>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        public bool StartDebugModeDevice
-        {
-            get { return startDebugModeDevice; }
-            set { startDebugModeDevice = value; }
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// if true the debug window will be opened when starting the test mode locally.
-        /// </summary>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        private bool startDebugModeLocal;
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Gets or sets a value indicating whether to start debug mode locally.
-        /// </summary>
-        ///
-        /// <value>
-        /// if true the debug window will be opened when starting the test mode locally.
-        /// </value>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        internal bool StartDebugModeLocal
-        {
-            get { return startDebugModeLocal; }
-            set { startDebugModeLocal = value; }
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
         /// Categories the element belongs to.
         /// List of scene element categories. 
         /// </summary>
@@ -136,30 +87,6 @@ namespace ARdevKit
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
-        /// Linked list containing all IPreviewables.
-        /// </summary>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        private LinkedList<IPreviewable> allElements;
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Gets or sets allElements.
-        /// </summary>
-        ///
-        /// <value>
-        /// Linked list containing elements.
-        /// </value>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        internal LinkedList<IPreviewable> AllElements
-        {
-            get { return allElements; }
-            set { allElements = value; }
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
         /// The element selection controller.
         /// </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -173,6 +100,7 @@ namespace ARdevKit
         /// The element selection controller.
         /// </value>
         /// <remarks>geht 19.01.2014 23:06</remarks>
+        
         internal ElementSelectionController ElementSelectionController
         {
             get { return elementSelectionController; }
@@ -232,22 +160,6 @@ namespace ARdevKit
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
-        /// Gets or sets the export visitor.
-        /// </summary>
-        ///
-        /// <value>
-        /// The export visitor.
-        /// </value>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        internal ExportVisitor ExportVisitor
-        {
-            get { return exportVisitor; }
-            set { exportVisitor = value; }
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
         /// The current element.
         /// </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -280,20 +192,6 @@ namespace ARdevKit
         {
             InitializeComponent();
             createNewProject("");
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Event handler. Called by Editor for load events. actions to do when the editor is loaded.
-        /// </summary>
-        ///
-        /// <param name="sender">   Source of the event. </param>
-        /// <param name="e">        Event information. </param>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        private void Editor_Load(object sender, EventArgs e)
-        {
-
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -543,23 +441,10 @@ namespace ARdevKit
             this.PropertyGrid1.SelectedObject = null;
         }
 
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
-        /// Event handler. Called by tsm_editor_menu_file_open for click events.
+        /// Creates the new project. Initialized with the given name.
         /// </summary>
-        ///
-        /// <exception cref="NotImplementedException">  Thrown when the requested operation is
-        ///                                             unimplemented. </exception>
-        ///
-        /// <param name="sender">   Source of the event. </param>
-        /// <param name="e">        Event information. </param>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        private void tsm_editor_menu_file_open_Click(object sender, System.EventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
-
+        /// <param name="name">Name of the new project.</param>
         public void createNewProject(String name)
         {
             this.initializeEmptyProject(name);
@@ -638,26 +523,6 @@ namespace ARdevKit
             }
         }
 
-        /// <summary>
-        /// Should open the DebugWindow, but isn't used...
-        /// </summary>
-        /// <remarks>geht 19.01.2014 22:38</remarks>
-        [System.Obsolete("this method is not used...", false)]
-        public void openDebugWindow()
-        {
-            //TODO: implement openDebugWindow()
-        }
-
-        /// <summary>
-        /// Should open the TestWindow, but isn't used...
-        /// </summary>
-        /// <remarks>geht 19.01.2014 22:38</remarks>
-        [System.Obsolete("this method is not used...", false)]
-        public void openTestWindow()
-        {
-            //TODO: implement openTestWindow()
-        }
-
         /**
          * <summary>    Registers all SceneElements that are available. </summary>
          *
@@ -727,53 +592,20 @@ namespace ARdevKit
             }
         }
 
+        /// <summary>
+        /// Saves project at the specified path.
+        /// </summary>
+        /// <param name="path">The path.</param>
         private void save(String path)
         {
             SaveLoadController.saveProject(this.project);
             checksum = this.project.getChecksum();
         }
 
-        public void sendToDevice()
-        {
-            //Controller.ProjectController.ExportVisitor exportToSend = new Controller.ProjectController.ExportVisitor(true);
-            //try
-            //{
-            //    saveProject();
-
-            //    try
-            //    {
-            //        project.Accept(exportToSend);
-            //    }
-            //    catch (DirectoryNotFoundException de)
-            //    {
-            //        Debug.WriteLine(de.StackTrace);
-            //    }
-            //    try
-            //    {
-            //        foreach (AbstractFile file in exportToSend.Files)
-            //        {
-            //            file.Save();
-            //        }
-            //        try
-            //        {
-            //            deviceSelectionDialog.DeviceConnectionController.sendProject(index);
-            //        }
-            //        catch (Exception e)
-            //        {
-            //            Debug.WriteLine(e.Message);
-            //        }
-            //    }
-            //    catch (NullReferenceException ne)
-            //    {
-            //        Debug.WriteLine(ne.StackTrace);
-            //    }
-            //}
-            //catch (ArgumentNullException ae)
-            //{
-            //    Debug.WriteLine(ae.StackTrace);
-            //}
-        }
-
+        /// <summary>
+        /// Updates the element selection panel.
+        /// (Refreshes the View)
+        /// </summary>
         public void updateElementSelectionPanel()
         {
             this.Cmb_editor_selection_toolSelection.Items.Clear();
@@ -793,17 +625,6 @@ namespace ARdevKit
         public void updatePreviewPanel()
         {
             this.previewController.updatePreviewPanel();
-        }
-
-        /// <summary>
-        /// Should update the PropertyPanel, but isn't used anyways...
-        /// </summary>
-        /// <param name="selectedElement">The selected element.</param>
-        /// <remarks>geht 19.01.2014 22:37</remarks>
-        [System.Obsolete("this method is not used...", false)]
-        internal void updatePropertyPanel(IPreviewable selectedElement)
-        {
-            //TODO: implement updatePropertyPanel(IPreviewable selectedElement)
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -875,11 +696,6 @@ namespace ARdevKit
             }
         }
 
-        public void updateStatusBar()
-        {
-            //TODO: implement updateStatusBar()
-        }
-
         /**
          * <summary>    Adds a category to the element categories. </summary>
          *
@@ -948,31 +764,26 @@ namespace ARdevKit
             }
         }
 
+        /// <summary>
+        /// Initializes the controllers.
+        /// </summary>
         private void initializeControllers()
         {
-            try
-            {
-                this.elementSelectionController = new ElementSelectionController(this);
-            }
-            catch (Exception)
-            {
-
-                Debug.WriteLine("ElementSelectionController is not implemented yet...");
-            }
-
+            this.elementSelectionController = new ElementSelectionController(this);
             this.previewController = new PreviewController(this);
             this.propertyController = new PropertyController(this);
-                this.deviceConnectionController = new DeviceConnectionController(this);
-            }
+            this.deviceConnectionController = new DeviceConnectionController(this);
+        }
 
+        /// <summary>
+        /// Initializes the empty project.
+        /// </summary>
+        /// <param name="projectname">The projectname.</param>
         private void initializeEmptyProject(String projectname)
         {
             this.project = new Project(projectname);
             this.project.ProjectPath = null;
-            this.startDebugModeDevice = false;
-            this.startDebugModeLocal = false;
             this.elementCategories = new List<SceneElementCategory>();
-            this.allElements = new LinkedList<IPreviewable>();
             this.exportVisitor = new ExportVisitor();
             this.currentElement = null;
             this.project.Screensize = new ScreenSize();
@@ -982,25 +793,27 @@ namespace ARdevKit
             registerElements();
         }
 
+        /// <summary>
+        /// Initializes the loaded project.
+        /// </summary>
+        /// <param name="p">The p.</param>
         private void initializeLoadedProject(Project p)
         {
             this.project = p;
-            this.startDebugModeDevice = false;
-            this.startDebugModeLocal = false;
             this.elementCategories = new List<SceneElementCategory>();
-            this.allElements = new LinkedList<IPreviewable>();
             this.exportVisitor = new ExportVisitor();
             this.currentElement = null;
             registerElements();
         }
 
+        /// <summary>
+        /// Updates the panels.
+        /// </summary>
         private void updatePanels()
         {
             this.updateElementSelectionPanel();
             this.updatePreviewPanel();
             this.updateSceneSelectionPanel();
-            //this.updatePropertyPanel(currentElement);
-            this.updateStatusBar();
         }
 
         /// <summary>
@@ -1081,6 +894,12 @@ namespace ARdevKit
             }
         }
 
+        /// <summary>
+        /// Handles the open Click event of the tsm_editor_menu_file_open_Click control.
+        /// Gets called when the save button is clicked.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void tsm_editor_menu_file_open_Click_1(object sender, EventArgs e)
         {
             if (projectChanged())
@@ -1101,14 +920,26 @@ namespace ARdevKit
             this.loadProject();
         }
 
+        /// <summary>
+        /// Handles the Click event of the tsm_editor_menu_file_export control.
+        /// Gets called when the export button is clicked.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void tsm_editor_menu_file_export_Click(object sender, EventArgs e)
         {
             this.exportProject();
         }
 
+        /// <summary>
+        /// Handles the Click event of the tsm_editor_menu_help_info control.
+        /// Gets called when the info button is clicked
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void tsm_editor_menu_help_info_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("ARdevKit Version 0.1 alpha \n\n Rüdiger Heres \n Jonas Lachowitzer \n Robin Lamberti \n Tuong-Vu Mai \n Imanuel Richter\n Marwin Rieger \n\n Nutzung auf eigene Gefahr! \n Das Programm könnte Ihre Kekse auffressen...", "Info");
+            MessageBox.Show("ARdevKit Version 0.2 alpha \n\n Rüdiger Heres \n Jonas Lachowitzer \n Robin Lamberti \n Tuong-Vu Mai \n Imanuel Richter\n Marwin Rieger \n\n Nutzung auf eigene Gefahr! \n Das Programm könnte Ihre Kekse auffressen...", "Info");
         }
 
 
@@ -1178,6 +1009,11 @@ namespace ARdevKit
             this.updateScreenSize();
         }
 
+        /// <summary>
+        /// Handles the duplicate event of the pnl_editor_scene control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void pnl_editor_scene_duplicate(object sender, EventArgs e)
         {
             int temp = Convert.ToInt32(((Button)((ContextMenu)((MenuItem)sender).Parent).Tag).Text);
@@ -1206,10 +1042,15 @@ namespace ARdevKit
             }
         }
 
-        int trackablePCounter = 0;
+        /// <summary>
+        /// counts the trackables for printing purposes.
+        /// </summary>
+        /// <remarks>geht 01.03.2014 16:33</remarks>
+        private int trackablePCounter = 0;
 
         /// <summary>
         /// Handles the Click event of the trackableDruckenToolStripMenuItem control.
+        /// Gets called when the trackable Drucken button is clicked.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
@@ -1329,11 +1170,22 @@ namespace ARdevKit
                 return true;
         }
 
+        /// <summary>
+        /// Handles the Click event of the tsm_editor_menu_help_help control.
+        /// Gets called when the help button is clicked
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void tsm_editor_menu_help_help_Click(object sender, EventArgs e)
         {
             Help.ShowHelp(this, Application.StartupPath + "\\Documentation.chm", HelpNavigator.TableOfContents);
         }
 
+        /// <summary>
+        /// Handles the SelectedIndexChanged event of the cmb_editor_properties_objectSelection control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void cmb_editor_properties_objectSelection_SelectedIndexChanged(object sender, EventArgs e)
         {
             PropertyGrid1.SelectedObject = cmb_editor_properties_objectSelection.SelectedItem;
@@ -1343,6 +1195,10 @@ namespace ARdevKit
             }
             
         }
+
+        /// <summary>
+        /// Reloads the device list.
+        /// </summary>
         private void reloadDeviceList()
         {
             DeviceList.Items.Clear();
@@ -1358,16 +1214,34 @@ namespace ARdevKit
             } 
         }
 
+        /// <summary>
+        /// Handles the Click event of the tsm_editor_menu_file control.
+        /// Gets called when the refresh devices button is pushed.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void tsm_editor_menu_file_Click(object sender, EventArgs e)
         {
             reloadDeviceList();
         }
 
+        /// <summary>
+        /// Handles the Click event of the refreshDeviceList control.
+        /// Gets called when the refresh devices button is pushed.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void refreshDeviceList_Click(object sender, EventArgs e)
         {
             reloadDeviceList();
         }
 
+        /// <summary>
+        /// Handles the Click event of the sendProject control.
+        /// Gets called when the send Project button is clicked.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void sendProject_Click(object sender, EventArgs e)
         {
             if (project.Trackables != null && project.Trackables.Count > 0 && project.Trackables[0] != null)
@@ -1401,6 +1275,11 @@ namespace ARdevKit
             }
         }
 
+        /// <summary>
+        /// Handles the Click event of the DeviceDebug control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void DeviceDebug_Click(object sender, EventArgs e)
         {
             if (DeviceList.Items.Count != 0)
