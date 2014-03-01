@@ -31,7 +31,14 @@ namespace ARdevKit.Model.Project
         public string VideoPath
         {
             get { return videoPath; }
-            set { videoPath = value; }
+            set 
+            {
+                if (System.IO.File.Exists(value))
+                {
+                    videoPath = value; 
+                }
+                
+            }
         }
 
         //a cached preview to prevent access problems.

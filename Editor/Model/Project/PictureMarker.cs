@@ -42,8 +42,12 @@ namespace ARdevKit.Model.Project
             get { return picturePath; }
             set
             {
-                picturePath = value;
-                pictureName = Path.GetFileName(value);
+                if (System.IO.File.Exists(value))
+                {
+                    picturePath = value;
+                    pictureName = Path.GetFileName(value);
+                }
+                
             }
         }
 
