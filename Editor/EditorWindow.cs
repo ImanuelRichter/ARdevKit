@@ -772,11 +772,11 @@ namespace ARdevKit
         /// </summary>
         private void initializeControllers()
         {
-            this.elementSelectionController = new ElementSelectionController(this);
+                this.elementSelectionController = new ElementSelectionController(this);
             this.previewController = new PreviewController(this);
             this.propertyController = new PropertyController(this);
-            this.deviceConnectionController = new DeviceConnectionController(this);
-        }
+                this.deviceConnectionController = new DeviceConnectionController(this);
+            }
 
         /// <summary>
         /// Initializes the empty project.
@@ -1103,7 +1103,7 @@ namespace ARdevKit
                 if (project.Trackables[trackablePCounter] is IDMarker)
                 {
                     IDMarker temp = (IDMarker)project.Trackables[trackablePCounter];
-                    int dpi = (int)(Math.Sqrt(Math.Pow(e.PageSettings.PrinterResolution.X , 2) + Math.Pow(e.PageSettings.PrinterResolution.Y , 2)));
+                    int dpi = (int)(Math.Sqrt(Math.Pow(e.PageSettings.PrinterResolution.X, 2) + Math.Pow(e.PageSettings.PrinterResolution.Y, 2)));
                     e.Graphics.DrawImage(previewController.scaleBitmap(temp.getPreview(), (int)((dpi * temp.Size) / 254), (int)((dpi * temp.Size) / 254)), x, y);
                 }
                 else
@@ -1194,7 +1194,7 @@ namespace ARdevKit
             PropertyGrid1.SelectedObject = cmb_editor_properties_objectSelection.SelectedItem;
             if (!(cmb_editor_properties_objectSelection.SelectedItem is AbstractSource))
             {
-                previewController.setCurrentElement((IPreviewable) cmb_editor_properties_objectSelection.SelectedItem);
+                previewController.setCurrentElement((IPreviewable)cmb_editor_properties_objectSelection.SelectedItem);
             }
             
         }
