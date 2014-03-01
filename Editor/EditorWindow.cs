@@ -1205,7 +1205,14 @@ namespace ARdevKit
         private void reloadDeviceList()
         {
             DeviceList.Items.Clear();
-            deviceConnectionController.refresh();
+            try
+            {
+                deviceConnectionController.refresh();
+            }
+            catch(System.Net.Sockets.SocketException)
+            {
+                MessageBox.Show("Es gab ein Problem mit der Netzwerkverbindung, stellen sie sicher, dass kein anderes Programm den benötigten Port belegt");
+            }           
             List<string> devices = deviceConnectionController.getReportedDevices();
             foreach (string device in devices)
             {
@@ -1253,13 +1260,20 @@ namespace ARdevKit
                 {
                     if (DeviceList.SelectedItem != null && DeviceList.SelectedIndex >= 0)
                     {
-                        if (deviceConnectionController.sendProject(DeviceList.SelectedIndex))
+                        try
                         {
-                            MessageBox.Show("Das Projekt wurde versand.");
+                            if (deviceConnectionController.sendProject(DeviceList.SelectedIndex))
+                            {
+                                MessageBox.Show("Das Projekt wurde versand.");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Das Projekt wurde nicht versand.");
+                            }
                         }
-                        else
+                        catch(System.Net.Sockets.SocketException)
                         {
-                            MessageBox.Show("Das Projekt wurde nicht versand.");
+                            MessageBox.Show("Es gab ein Verbindungsproblem. Bitte überprüfen sie ihre Netzwerkeinstellungen.");
                         }
                     }
                     else
@@ -1291,7 +1305,14 @@ namespace ARdevKit
                 {
                     int index = DeviceList.SelectedIndex;
                     deviceConnectionController.DebugWindow.Show();
-                    Task.Factory.StartNew(() => deviceConnectionController.sendDebug(index));
+                    try
+                    {
+                        Task.Factory.StartNew(() => deviceConnectionController.sendDebug(index));
+                    }
+                    catch(System.Net.Sockets.SocketException)
+                    {
+                        MessageBox.Show("Es gab ein Verbindungsproblem. Bitte überprüfen sie ihre Netzwerkeinstellungen.");
+                    }
                 }
                 else
                 {
