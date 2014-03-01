@@ -1268,8 +1268,12 @@ namespace ARdevKit
             {
                 trackablePCounter++;
                 e.HasMorePages = true;
+                e.PageSettings.PrinterSettings.PrintRange = PrintRange.AllPages;
                 return;
             }
+
+            e.HasMorePages = false;
+            trackablePCounter = 0;
         }
 
         /// <summary>
