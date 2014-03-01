@@ -1,12 +1,11 @@
 var NAVTREE =
 [
-  [ "ARdevkit", "index.html", [
+  [ "ARdevKit", "index.html", [
     [ "Packages", null, [
       [ "Packages", "namespaces.html", "namespaces" ],
       [ "Package Functions", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
-        [ "Enumerations", "namespacemembers_enum.html", null ],
-        [ "Enumerator", "namespacemembers_eval.html", null ]
+        [ "Enumerations", "namespacemembers_enum.html", null ]
       ] ]
     ] ],
     [ "Classes", null, [
@@ -14,22 +13,21 @@ var NAVTREE =
       [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
-        [ "All", "functions.html", null ],
-        [ "Functions", "functions_func.html", null ],
+        [ "All", "functions.html", "functions_dup" ],
+        [ "Functions", "functions_func.html", "functions_func" ],
+        [ "Variables", "functions_vars.html", null ],
+        [ "Enumerations", "functions_enum.html", null ],
         [ "Properties", "functions_prop.html", null ]
       ] ]
-    ] ],
-    [ "Files", null, [
-      [ "File List", "files.html", "files" ]
     ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"_a_rdev_kit_8cs_source.html",
-"class_editor_1_1_model_1_1_project_1_1_abstract_augmentation.html#ab5cb535c877204d06d763618751ccdba",
-"namespace_editor_1_1_view_1_1_debug_window.html"
+"annotated.html",
+"class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file.html#ac55b0e087f42f7ab5ce36fa3bce111ab",
+"class_preview_controller.html#a0013a78d729579e06c50551e87350091"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

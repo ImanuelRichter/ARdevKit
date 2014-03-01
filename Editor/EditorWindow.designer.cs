@@ -652,6 +652,12 @@ namespace ARdevKit
             set { tsm_editor_menu_edit_paste = value; }
         }
 
+        /// <summary>
+        /// Gets or sets the tsm_editor_menu_edit_delete.
+        /// </summary>
+        /// <value>
+        /// The tsm_editor_menu_edit_delete.
+        /// </value>
         public System.Windows.Forms.ToolStripMenuItem Tsm_editor_menu_edit_delete
         {
             get { return tsm_editor_menu_edit_delete; }

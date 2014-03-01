@@ -80,9 +80,9 @@ namespace ARdevKit.Model.Project
 
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ImageAugmentation"/> class.
+        /// Initializes a new instance of the <see cref="ImageAugmentation" /> class.
         /// </summary>
-        /// <param name="imagePath">The image path.</param>
+        /// <param name="videoPath">The video path.</param>
         public VideoAugmentation(string videoPath)
             : base()
         {

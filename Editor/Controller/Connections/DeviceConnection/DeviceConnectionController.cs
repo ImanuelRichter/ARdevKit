@@ -48,10 +48,10 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceConnectionController"/> class. Uses UDPListener to 
+        /// Initializes a new instance of the <see cref="DeviceConnectionController" /> class. Uses UDPListener to
         /// get information about devices. Communicating via HTTP order to secure currency of connections and sending the zipped project.
         /// </summary>
-        /// <param name="ew">The ew.</param>
+        /// <param name="window">The window.</param>
         public DeviceConnectionController(Form window)
         {
             debugWindow = new View.DebugWindow(this);

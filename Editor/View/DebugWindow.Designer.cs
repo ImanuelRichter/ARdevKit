@@ -75,6 +75,12 @@
         #endregion
 
         private System.Windows.Forms.RichTextBox rtb_out;
+        /// <summary>
+        /// Gets the rtb_out.
+        /// </summary>
+        /// <value>
+        /// The rtb_out.
+        /// </value>
         public System.Windows.Forms.RichTextBox Rtb_out
         {
             get { return rtb_out; }

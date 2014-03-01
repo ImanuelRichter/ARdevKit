@@ -18,8 +18,6 @@ namespace ARdevKit.Model.Project
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public class MarkerlessSensor : AbstractSensor
     {
-        [Flags]
-        public enum FeatureDescriptorAlignments { regular, upright, gravity, rectified };
         /// <summary>   The following feature descriptor types are available:
         ///				"regular", "upright", "gravity", "rectified".
         ///				- The "regular" feature descriptor type is the most
@@ -44,6 +42,12 @@ namespace ARdevKit.Model.Project
         ///				  of a lower framerate during localization.
         ///				  This parameter is for expert usage only. In general it
         ///				  is advised to leave the value unchanged. </summary>
+        [Flags]
+        public enum FeatureDescriptorAlignments { regular, upright, gravity, rectified };
+
+        /// <summary>
+        /// The feature descriptor alignment
+        /// </summary>
         protected FeatureDescriptorAlignments featureDescriptorAlignment;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////

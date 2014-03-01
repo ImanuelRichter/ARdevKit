@@ -101,10 +101,12 @@ namespace ARdevKit.Model.Project
         public abstract void Accept(AbstractProjectVisitor visitor);
 
         /// <summary>
-        /// returns NO <see cref="Bitmap"/> in order to be displayed
-        /// on the PreviewPanel, implements <see cref="IPreviewable"/>
+        /// returns NO <see cref="Bitmap" /> in order to be displayed
+        /// on the PreviewPanel, implements <see cref="IPreviewable" />
         /// </summary>
-        /// <exception cref="NotSupportedException"/>
+        /// <returns></returns>
+        /// <exception cref="System.NotSupportedException"></exception>
+        /// <exception cref="NotSupportedException"></exception>
         public Bitmap getPreview()
         {
             throw new NotSupportedException();
