@@ -138,12 +138,15 @@ namespace ARdevKit.Model.Project
                 newID = newID[0].ToString().ToLower() + newID.Substring(1);
                 foreach (AbstractSource s in ew.project.Sources)
                 {
-                    if (this.GetType().Equals(s.GetType()))
+                    if (s != null)
                     {
-                        if (s.sourceID == newID)
+                        if (this.GetType().Equals(s.GetType()))
                         {
-                            found = true;
-                            break;
+                            if (s.sourceID == newID)
+                            {
+                                found = true;
+                                break;
+                            }
                         }
                     }
                 }

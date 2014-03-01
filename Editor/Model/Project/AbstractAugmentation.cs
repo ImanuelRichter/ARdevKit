@@ -232,14 +232,17 @@ namespace ARdevKit.Model.Project
                     newID = this.GetType().Name + count;
                     //make first letter lowercase
                     newID = newID[0].ToString().ToLower() + newID.Substring(1);
-                    foreach (AbstractAugmentation a in t.Augmentations)
+                    if (t != null)
                     {
-                        if (this.GetType().Equals(a.GetType()))
+                        foreach (AbstractAugmentation a in t.Augmentations)
                         {
-                            if (a.ID == newID)
+                            if (this.GetType().Equals(a.GetType()))
                             {
-                                found = true;
-                                break;
+                                if (a.ID == newID)
+                                {
+                                    found = true;
+                                    break;
+                                }
                             }
                         }
                     }
