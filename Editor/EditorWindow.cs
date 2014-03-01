@@ -1224,14 +1224,16 @@ namespace ARdevKit
                 PrintDocument pd = new PrintDocument();
                 pd.PrintPage += new PrintPageEventHandler(Print_Page);
 
-                PrintPreviewDialog dlg = new PrintPreviewDialog();
-                dlg.Document = pd;
-
-                dlg.Document.PrinterSettings.PrintRange = PrintRange.AllPages;
-
-                if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                PrintDialog printd = new PrintDialog();
+                printd.Document = pd;
+                
+                if (printd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    pd.Print();
+                    PrintPreviewDialog dlg = new PrintPreviewDialog();
+                    dlg.Document = printd.Document;
+                    
+                    if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                        pd.Print();
                 }
             }
             else
@@ -1268,7 +1270,6 @@ namespace ARdevKit
             {
                 trackablePCounter++;
                 e.HasMorePages = true;
-                e.PageSettings.PrinterSettings.PrintRange = PrintRange.AllPages;
                 return;
             }
 
