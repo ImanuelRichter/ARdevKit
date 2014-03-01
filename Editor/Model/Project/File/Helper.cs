@@ -8,6 +8,9 @@ using System.IO;
 
 namespace ARdevKit.Model.Project.File
 {
+    /// <summary>
+    /// A static Helper class which contains some I/O methods.
+    /// </summary>
     static class Helper
     {
         ////////////////////////////////////////////////////////////////////////////////////////////////////
