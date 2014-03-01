@@ -78,7 +78,7 @@ namespace ARdevKit.Model.Project
             fuser = new MarkerFuser();
             picturePath = null;
             pictureName = "";
-            size = 0;
+            size = 60;
         }
 
         /// <summary>
