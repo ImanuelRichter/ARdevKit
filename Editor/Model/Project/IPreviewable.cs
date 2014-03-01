@@ -37,7 +37,6 @@ namespace ARdevKit.Model.Project
          *
          * <returns>    true if it succeeds, false if it fails. </returns>
          */
-
         bool initElement(EditorWindow ew);
     }
 }

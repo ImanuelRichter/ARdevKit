@@ -40,7 +40,13 @@ namespace ARdevKit.Model.Project
         public string ImagePath
         {
             get { return imagePath; }
-            set { imagePath = value; }
+            set
+            {
+                if (System.IO.File.Exists(value))
+                {
+                    imagePath = value;
+                }
+            }
         }
 
         /// <summary>
@@ -72,7 +78,8 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// Default constructor.
         /// </summary>
-        public ImageAugmentation() : base()
+        public ImageAugmentation()
+            : base()
         {
             imagePath = null;
         }
@@ -115,7 +122,7 @@ namespace ARdevKit.Model.Project
                 cachePreview = new Bitmap(ImagePath);
             return cachePreview;
         }
-                
+
         /// <summary>
         /// returns a <see cref="Bitmap" /> in order to be displayed
         /// on the ElementSelectionPanel, implements <see cref="IPreviewable" />
@@ -126,7 +133,7 @@ namespace ARdevKit.Model.Project
         /// <exception cref="FileNotFoundException">If ImagePath is bad</exception>
         public override Bitmap getIcon()
         {
-            return Properties.Resources.ImageAugmentation_small_; 
+            return Properties.Resources.ImageAugmentation_small_;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -161,6 +168,7 @@ namespace ARdevKit.Model.Project
             {
                 OpenFileDialog openFileDialog = new OpenFileDialog();
                 openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+                openFileDialog.Title = "Wählen sie ein Bild";
                 openFileDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
