@@ -42,8 +42,12 @@ namespace ARdevKit.Model.Project
             get { return picturePath; }
             set
             {
-                picturePath = value;
-                pictureName = Path.GetFileName(value);
+                if (System.IO.File.Exists(value))
+                {
+                    picturePath = value;
+                    pictureName = Path.GetFileName(value);
+                }
+                
             }
         }
 
@@ -78,7 +82,7 @@ namespace ARdevKit.Model.Project
             fuser = new MarkerFuser();
             picturePath = null;
             pictureName = "";
-            size = 0;
+            size = 60;
         }
 
         /// <summary>
@@ -163,6 +167,7 @@ namespace ARdevKit.Model.Project
                 bool isInitOk = true;
                 OpenFileDialog openFileDialog = new OpenFileDialog();
                 openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+                openFileDialog.Title = "Wählen sie einen Marker";
                 openFileDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
                 isInitOk = openFileDialog.ShowDialog() == DialogResult.OK;
                 if (isInitOk)

@@ -51,15 +51,18 @@ namespace ARdevKit.Model.Project
         public string Options
         {
             get { return optionsFilePath; }
-            set 
+            set
             {
-                if (File.Helper.FileExists(@"res\", value))
+                if (System.IO.File.Exists(value))
                 {
-                    File.Helper.Copy(value, @"tmp\" + ID + "\\");
-                    optionsFilePath = Path.GetFullPath(@"tmp\" + ID + "\\" + Path.GetFileName(value));
+                    if (File.Helper.FileExists(@"res\", value))
+                    {
+                        File.Helper.Copy(value, @"tmp\" + ID + "\\");
+                        optionsFilePath = Path.GetFullPath(@"tmp\" + ID + "\\" + Path.GetFileName(value));
+                    }
+                    else
+                        optionsFilePath = value;
                 }
-                else
-                    optionsFilePath = value; 
             }
         }
 
@@ -165,6 +168,7 @@ namespace ARdevKit.Model.Project
                 OpenFileDialog openFileDialog = new OpenFileDialog();
                 openFileDialog.InitialDirectory = Application.StartupPath + "\\res\\highcharts";
                 openFileDialog.Filter = "js (*.js)|*.js";
+                openFileDialog.Title = "Wählen sie eine Options Datei";
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     Options = openFileDialog.FileName;

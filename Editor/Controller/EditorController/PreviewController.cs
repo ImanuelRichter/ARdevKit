@@ -178,7 +178,8 @@ public class PreviewController
                 if (source is FileSource)
                 {
                     OpenFileDialog openFileDialog = new OpenFileDialog();
-                    openFileDialog.InitialDirectory = Application.StartupPath + "\\res\\highcharts\\barChartColumn";
+                    openFileDialog.InitialDirectory = Application.StartupPath + "\\res\\highcharts";
+                    openFileDialog.Title = "Daten auswählen";
                     if (openFileDialog.ShowDialog() == DialogResult.OK)
                     {
                         //set reference to the augmentations in Source
@@ -199,6 +200,7 @@ public class PreviewController
                         {
                             openFileDialog = new OpenFileDialog();
                             openFileDialog.InitialDirectory = Application.StartupPath + "\\res\\highcharts\\barChartColumn";
+                            openFileDialog.Title = "Query File auswählen";
                             openFileDialog.Filter = "JavaFile (*.js)|*.js";
                             if (openFileDialog.ShowDialog() == DialogResult.OK)
                             {
@@ -213,7 +215,8 @@ public class PreviewController
                     //set reference to the augmentations in Source
                     OpenFileDialog openFileDialog;
                     openFileDialog = new OpenFileDialog();
-                    openFileDialog.InitialDirectory = Application.StartupPath + "\\res\\highcharts\\barChartColumn";
+                    openFileDialog.InitialDirectory = Application.StartupPath + "\\res\\highchartsn";
+                    openFileDialog.Title = "Query File auswählen";
                     openFileDialog.Filter = "JavaFile (*.js)|*.js";
                     if (openFileDialog.ShowDialog() == DialogResult.OK)
                     {
@@ -282,6 +285,7 @@ public class PreviewController
             this.panel.Controls.Remove(this.findBox((AbstractAugmentation)currentElement));
         }
         updateElementCombobox(trackable);
+        this.ew.Tsm_editor_menu_edit_delete.Enabled = false;
     }
 
 
@@ -556,6 +560,10 @@ public class PreviewController
         }
         updateElementCombobox(trackable);
         ew.Cmb_editor_properties_objectSelection.SelectedItem = currentElement;
+        if (this.ew.CurrentElement != null)
+        {
+            this.ew.Tsm_editor_menu_edit_delete.Enabled = true;
+        }
     }
     /// <summary>
     /// set the PictureBox of the Augmentation to a augmentationPreview with source icon
@@ -709,7 +717,7 @@ public class PreviewController
     /// <param name="width">The width.</param>
     /// <param name="height">The height.</param>
     /// <returns>scaled bitmap</returns>
-    private Bitmap scaleBitmap(Bitmap bit, int width, int height)
+    public Bitmap scaleBitmap(Bitmap bit, int width, int height)
     {
 
         Bitmap resizedImg = new Bitmap(width, height);

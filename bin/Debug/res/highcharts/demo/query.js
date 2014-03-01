@@ -23,7 +23,7 @@ function query(dataPath, plugin)
 	})
 	.fail(function() { console.log("Failed to load data")})
 	.done(function() { console.log("Loaded data successfully")});
-	update(dataPath, plugin);
+	//update(dataPath, plugin);
 };
 function update(dataPath, plugin)
 {

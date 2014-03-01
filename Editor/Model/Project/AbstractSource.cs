@@ -32,10 +32,10 @@ namespace ARdevKit.Model.Project
         /// The source identifier.
         /// </value>
         [ReadOnly(true), CategoryAttribute("General")]
-        public String SourceID 
+        public String SourceID
         {
             get { return sourceID; }
-            set { sourceID = value; } 
+            set { sourceID = value; }
         }
 
         /// <summary>   The query to the source. </summary>
@@ -53,14 +53,17 @@ namespace ARdevKit.Model.Project
             get { return queryFilePath; }
             set
             {
-                if (File.Helper.FileExists(@"res\", value))
+                if (System.IO.File.Exists(value))
                 {
-                    var endFileName = sourceID + "_" + System.IO.Path.GetFileName(value);
-                    File.Helper.Copy(value, @"tmp\source\", endFileName);
-                    queryFilePath = System.IO.Path.GetFullPath(@"tmp\source\" + endFileName);
+                    if (File.Helper.FileExists(@"res\", value))
+                    {
+                        var endFileName = sourceID + "_" + System.IO.Path.GetFileName(value);
+                        File.Helper.Copy(value, @"tmp\source\", endFileName);
+                        queryFilePath = System.IO.Path.GetFullPath(@"tmp\source\" + endFileName);
+                    }
+                    else
+                        queryFilePath = value;
                 }
-                else
-                    queryFilePath = value;
             }
         }
 
@@ -138,12 +141,15 @@ namespace ARdevKit.Model.Project
                 newID = newID[0].ToString().ToLower() + newID.Substring(1);
                 foreach (AbstractSource s in ew.project.Sources)
                 {
-                    if (this.GetType().Equals(s.GetType()))
+                    if (s != null)
                     {
-                        if (s.sourceID == newID)
+                        if (this.GetType().Equals(s.GetType()))
                         {
-                            found = true;
-                            break;
+                            if (s.sourceID == newID)
+                            {
+                                found = true;
+                                break;
+                            }
                         }
                     }
                 }

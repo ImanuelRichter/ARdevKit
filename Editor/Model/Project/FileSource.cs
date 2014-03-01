@@ -27,14 +27,17 @@ namespace ARdevKit.Model.Project
             get { return sourceFilePath; }
             set
             {
-                if (File.Helper.FileExists(@"res\", value))
+                if (System.IO.File.Exists(value))
                 {
-                    var endFileName = SourceID + "_" + System.IO.Path.GetFileName(value);
-                    File.Helper.Copy(value, @"tmp\source\", endFileName);
-                    sourceFilePath = System.IO.Path.GetFullPath(@"tmp\source\" + endFileName);
+                    if (File.Helper.FileExists(@"res\", value))
+                    {
+                        var endFileName = SourceID + "_" + System.IO.Path.GetFileName(value);
+                        File.Helper.Copy(value, @"tmp\source\", endFileName);
+                        sourceFilePath = System.IO.Path.GetFullPath(@"tmp\source\" + endFileName);
+                    }
+                    else
+                        sourceFilePath = value;
                 }
-                else
-                    sourceFilePath = value;
             }
         }
 

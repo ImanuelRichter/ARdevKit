@@ -168,6 +168,9 @@ namespace ARdevKit.Model.Project
             this.trackable = trackable;
         }
 
+        /// <summary>
+        /// Method to create an instance of the CustomUserEvent.
+        /// </summary>
         public void createUserEvent()
         {
             cue = new CustomUserEvent(id);
@@ -232,14 +235,17 @@ namespace ARdevKit.Model.Project
                     newID = this.GetType().Name + count;
                     //make first letter lowercase
                     newID = newID[0].ToString().ToLower() + newID.Substring(1);
-                    foreach (AbstractAugmentation a in t.Augmentations)
+                    if (t != null)
                     {
-                        if (this.GetType().Equals(a.GetType()))
+                        foreach (AbstractAugmentation a in t.Augmentations)
                         {
-                            if (a.ID == newID)
+                            if (this.GetType().Equals(a.GetType()))
                             {
-                                found = true;
-                                break;
+                                if (a.ID == newID)
+                                {
+                                    found = true;
+                                    break;
+                                }
                             }
                         }
                     }
@@ -248,7 +254,6 @@ namespace ARdevKit.Model.Project
             id = newID;
             return true;
         }
-
         /**
          * <summary>    Gibt eine Zeichenfolge zurück, die das aktuelle Objekt darstellt. </summary>
          *
