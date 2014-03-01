@@ -175,8 +175,7 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
         private void exportRecentProject()
         {
             string originalProjectPath = editorWindow.project.ProjectPath;
-            if (editorWindow.project.ProjectPath == null || editorWindow.project.ProjectPath.Length <= 0)
-                editorWindow.project.ProjectPath = "tmp\\project";
+            editorWindow.project.ProjectPath = "tmp\\project";
             ARdevKit.Controller.ProjectController.ExportVisitor exporter = new ARdevKit.Controller.ProjectController.ExportVisitor();
             editorWindow.project.Accept(exporter);
 
