@@ -1227,12 +1227,16 @@ namespace ARdevKit
                 PrintDocument pd = new PrintDocument();
                 pd.PrintPage += new PrintPageEventHandler(Print_Page);
 
-                PrintPreviewDialog dlg = new PrintPreviewDialog();
-                dlg.Document = pd;
-
-                if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                PrintDialog printd = new PrintDialog();
+                printd.Document = pd;
+                
+                if (printd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    pd.Print();
+                    PrintPreviewDialog dlg = new PrintPreviewDialog();
+                    dlg.Document = printd.Document;
+                    
+                    if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                        pd.Print();
                 }
             }
             else
@@ -1254,7 +1258,16 @@ namespace ARdevKit
             float y = e.MarginBounds.Top;
 
             if (project.Trackables[trackablePCounter] != null)
-            e.Graphics.DrawImage(project.Trackables[trackablePCounter].getPreview(), x, y);
+            {
+                if (project.Trackables[trackablePCounter] is IDMarker)
+                {
+                    IDMarker temp = (IDMarker)project.Trackables[trackablePCounter];
+                    int dpi = (int)(Math.Sqrt(Math.Pow(e.PageSettings.PrinterResolution.X , 2) + Math.Pow(e.PageSettings.PrinterResolution.Y , 2)));
+                    e.Graphics.DrawImage(previewController.scaleBitmap(temp.getPreview(), (int)((dpi * temp.Size) / 254), (int)((dpi * temp.Size) / 254)), x, y);
+                }
+                else
+                    e.Graphics.DrawImage(project.Trackables[trackablePCounter].getPreview(), x, y);
+            }
 
             if (project.Trackables[trackablePCounter] != project.Trackables.Last())
             {
@@ -1262,6 +1275,9 @@ namespace ARdevKit
                 e.HasMorePages = true;
                 return;
             }
+
+            e.HasMorePages = false;
+            trackablePCounter = 0;
         }
 
         /// <summary>

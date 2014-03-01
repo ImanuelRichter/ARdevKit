@@ -168,6 +168,9 @@ namespace ARdevKit.Model.Project
             this.trackable = trackable;
         }
 
+        /// <summary>
+        /// Method to create an instance of the CustomUserEvent.
+        /// </summary>
         public void createUserEvent()
         {
             cue = new CustomUserEvent(id);

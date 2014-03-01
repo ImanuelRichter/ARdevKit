@@ -714,7 +714,7 @@ public class PreviewController
     /// <param name="width">The width.</param>
     /// <param name="height">The height.</param>
     /// <returns>scaled bitmap</returns>
-    private Bitmap scaleBitmap(Bitmap bit, int width, int height)
+    public Bitmap scaleBitmap(Bitmap bit, int width, int height)
     {
 
         Bitmap resizedImg = new Bitmap(width, height);

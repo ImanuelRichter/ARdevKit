@@ -12,12 +12,19 @@ using ARdevKit.Model.Project;
 namespace Controller.EditorController
 {
     /// <summary>
-    /// The PropertyController contains static methods to add and edit customUserEvents.
+    /// The PropertyController contains events for the propertyGrid
     /// </summary>
     class PropertyController
     {
+        /// <summary>
+        /// Instance of the EditorWindow(Controller)
+        /// </summary>
         private EditorWindow ew;
 
+        /// <summary>
+        /// Constructor of the class. It adds automatically all events which belongs to the propertyGrid.
+        /// </summary>
+        /// <param name="ew"></param>
         public PropertyController(EditorWindow ew)
         {
             this.ew = ew;
@@ -31,6 +38,9 @@ namespace Controller.EditorController
         public /*File*/void addCustomUserEvent()
         { throw new NotImplementedException(); }
 
+        /// <summary>
+        /// See issue #13 for reason of these invalid methods etc.
+        /// </summary>
         [Obsolete("editCustomUserEvent(customUserEvent : File) is completly invalid, because with the original method signature it is impossible to implement.", true)]
         public void editCustomUserEvent(/*File customUserEvent*/)
         { throw new NotImplementedException(); }
