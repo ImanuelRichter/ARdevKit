@@ -12,6 +12,9 @@ using System.Windows.Forms;
 
 namespace ARdevKit.View
 {
+    /// <summary>
+    /// Class which acts as "bridge" for the .net propertyGrid and an custome ControlForm.
+    /// </summary>
     public class SliderEditor : UITypeEditor
     {
         public SliderEditor()
@@ -31,7 +34,7 @@ namespace ARdevKit.View
                 }
                 if (context.Instance is Abstract2DAugmentation)
                 {
-                    Slider sd = new Slider((int)value, 1000, context);
+                    Slider sd = new Slider((int)value, 1000);
                     svc.DropDownControl(sd);
                     return (object)sd.SliderValueInt;
                 }
@@ -45,6 +48,9 @@ namespace ARdevKit.View
         }
     }
 
+    /// <summary>
+    /// Class which acts as "bridge" for the .net propertyGrid and an custome Form.
+    /// </summary>
     public class TextEditor : UITypeEditor
     {
         public TextEditor()
