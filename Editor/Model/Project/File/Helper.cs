@@ -54,6 +54,12 @@ namespace ARdevKit.Model.Project.File
             }
         }
 
+        /// <summary>
+        /// Checks if a file is in a specific directory or its subdirectory
+        /// </summary>
+        /// <param name="rootPath">Path of the directory which should be checked</param>
+        /// <param name="filePath">Path of the file</param>
+        /// <returns>Returns true if the file is in the directory of the rootPath or its subdirectory</returns>
         public static bool FileExists(string rootPath, string filePath)
         {
             if (System.IO.File.Exists(Path.Combine(rootPath, Path.GetFileName(filePath))))
