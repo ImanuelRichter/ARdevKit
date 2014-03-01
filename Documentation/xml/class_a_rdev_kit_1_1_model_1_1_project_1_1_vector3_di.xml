@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_di" kind="class" prot="public">
+    <compoundname>ARdevKit::Model::Project::Vector3Di</compoundname>
+    <basecompoundref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d" prot="public" virt="non-virtual">ARdevKit.Model.Project.Vector3D</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_di_1a8323119640c7d561d59905310604d05e" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ARdevKit.Model.Project.Vector3Di.w</definition>
+        <argsstring></argsstring>
+        <name>w</name>
+        <briefdescription>
+<para>Used by TrackingConfig from metaioSDK </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Vector3Di.cs" line="22" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Vector3Di.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_di_1a3e95130b6fadeca994900bf12632a9bd" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>int</type>
+        <definition>int ARdevKit.Model.Project.Vector3Di.W</definition>
+        <argsstring></argsstring>
+        <name>W</name>
+        <briefdescription>
+<para>Gets or sets the w. </para>        </briefdescription>
+        <detaileddescription>
+<para>The w. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Vector3Di.cs" line="30" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Vector3Di.cs" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_di_1aa98218f5103fd2f935676f4cd4bf00d0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.Model.Project.Vector3Di.Vector3Di</definition>
+        <argsstring>(int x, int y, int z, int w)</argsstring>
+        <name>Vector3Di</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>z</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>w</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The x coordinate.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The y coordinate.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>z</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The z coordinate.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>w</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Used by TrackingConfig from metaioSDK</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Vector3Di.cs" line="43" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Vector3Di.cs" bodystart="43" bodyend="46"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A vector 3 di. Is a <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d" kindref="compound">Vector3D</ref> with an extra int variable. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="743">
+        <label>ARdevKit.Model.Project.Vector3Di</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_di"/>
+        <childnode refid="744" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="744">
+        <label>Vector3D</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="745">
+        <label>ARdevKit.Model.Project.Vector3Di</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_di"/>
+        <childnode refid="746" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="746">
+        <label>Vector3D</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Vector3Di.cs" line="18" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Vector3Di.cs" bodystart="17" bodyend="47"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d_1a5ea9d8ecfcfaefa8b7283febc2a94d4a" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Vector3Di</scope><name>Vector3D</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_di_1aa98218f5103fd2f935676f4cd4bf00d0" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Vector3Di</scope><name>Vector3Di</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_di_1a3e95130b6fadeca994900bf12632a9bd" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Vector3Di</scope><name>W</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_di_1a8323119640c7d561d59905310604d05e" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::Vector3Di</scope><name>w</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d_1a06336e90ebe41a0d704d7fb968c3eab8" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Vector3Di</scope><name>X</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d_1aaa8679d7364c8f6ba03e89bd00f5b991" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Vector3Di</scope><name>Y</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d_1a75ca41666b67f93861f074e13964e946" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Vector3Di</scope><name>Z</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

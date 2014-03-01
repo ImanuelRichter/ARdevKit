@@ -15,6 +15,10 @@ namespace ARdevKit.View
         private Controller.Connections.DeviceConnection.DeviceConnectionController controller;
         private delegate void AppendTextCallback(string text);
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DebugWindow"/> class.
+        /// </summary>
+        /// <param name="controller">The controller.</param>
         public DebugWindow(Controller.Connections.DeviceConnection.DeviceConnectionController controller)
         {
             InitializeComponent();
@@ -25,6 +29,11 @@ namespace ARdevKit.View
         {
             controller.DebugConnected = false;
         }
+
+        /// <summary>
+        /// Appends the text.
+        /// </summary>
+        /// <param name="text">The text.</param>
         public void AppendText(string text)
         {
             if (this.rtb_out.InvokeRequired)

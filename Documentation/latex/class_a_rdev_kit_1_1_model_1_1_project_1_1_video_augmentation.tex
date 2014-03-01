@@ -1,0 +1,234 @@
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation}{\section{A\-Rdev\-Kit.\-Model.\-Project.\-Video\-Augmentation Class Reference}
+\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation}\index{A\-Rdev\-Kit.\-Model.\-Project.\-Video\-Augmentation@{A\-Rdev\-Kit.\-Model.\-Project.\-Video\-Augmentation}}
+}
+
+
+Inheritance diagram for A\-Rdev\-Kit.\-Model.\-Project.\-Video\-Augmentation\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\-Rdev\-Kit.\-Model.\-Project.\-Video\-Augmentation\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_a7f447fcc225f68f6b17ac7365cd9b33f}{Video\-Augmentation} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_a38e4d291c9003b29aa5c94dff8fd9c3f}{Video\-Augmentation} (string video\-Path)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation}{Image\-Augmentation} class. \end{DoxyCompactList}\item 
+override void \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_a7f23dea6de8cd95e5500e5000245d118}{Accept} (\hyperlink{class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor}{Abstract\-Project\-Visitor} visitor)
+\begin{DoxyCompactList}\small\item\em An overwriting method, to accept a Abstract\-Project\-Visitor which must be implemented according to the visitor design pattern. \end{DoxyCompactList}\item 
+override Bitmap \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_a3d5968ace1fe7b6becfc10b60f573631}{get\-Preview} ()
+\begin{DoxyCompactList}\small\item\em returns a Bitmap in order to be displayed on the Preview\-Panel, implements \hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} \end{DoxyCompactList}\item 
+override Bitmap \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_ae41611da8c40607d32ab62d29c78a8ae}{get\-Icon} ()
+\begin{DoxyCompactList}\small\item\em returns a Bitmap in order to be displayed on the Element\-Selection\-Panel, implements \hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} \end{DoxyCompactList}\item 
+override void \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_a83390b8765641d1626b23a06c54490af}{Clean\-Up} ()
+\begin{DoxyCompactList}\small\item\em Clean up (remove created/copied files and directories). \end{DoxyCompactList}\item 
+override object \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_a1c99b0002e89662c75ae59031f1f7ec5}{Clone} ()
+\begin{DoxyCompactList}\small\item\em Makes a deep copy of this object. \end{DoxyCompactList}\item 
+override bool \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_afb33f9a8ac2591973d29ebd56bd75da5}{init\-Element} (\hyperlink{class_a_rdev_kit_1_1_editor_window}{Editor\-Window} ew)
+\begin{DoxyCompactList}\small\item\em This method is called by the preview\-Controller when a new instance of the element is added to the Scene. It sets \char`\"{}must-\/have\char`\"{} properties. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_adf603b3ae112358e8cae761e94003de1}{Video\-Path}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the full pathname of the image file. \end{DoxyCompactList}\item 
+new int \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_aad5c2b8555dfe2fd18f2c67c7f34bbda}{Width}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the width. \end{DoxyCompactList}\item 
+new int \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_accd9c0cc7875d689b73306a38892b4fe}{Height}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the height. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_a7f447fcc225f68f6b17ac7365cd9b33f}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Video\-Augmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Video\-Augmentation}!Video\-Augmentation@{Video\-Augmentation}}
+\index{Video\-Augmentation@{Video\-Augmentation}!ARdevKit::Model::Project::VideoAugmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Video\-Augmentation}}
+\subsubsection[{Video\-Augmentation}]{\setlength{\rightskip}{0pt plus 5cm}A\-Rdev\-Kit.\-Model.\-Project.\-Video\-Augmentation.\-Video\-Augmentation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_a7f447fcc225f68f6b17ac7365cd9b33f}
+
+
+Default constructor. 
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_a38e4d291c9003b29aa5c94dff8fd9c3f}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Video\-Augmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Video\-Augmentation}!Video\-Augmentation@{Video\-Augmentation}}
+\index{Video\-Augmentation@{Video\-Augmentation}!ARdevKit::Model::Project::VideoAugmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Video\-Augmentation}}
+\subsubsection[{Video\-Augmentation}]{\setlength{\rightskip}{0pt plus 5cm}A\-Rdev\-Kit.\-Model.\-Project.\-Video\-Augmentation.\-Video\-Augmentation (
+\begin{DoxyParamCaption}
+\item[{string}]{video\-Path}
+\end{DoxyParamCaption}
+)}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_a38e4d291c9003b29aa5c94dff8fd9c3f}
+
+
+Initializes a new instance of the \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation}{Image\-Augmentation} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em video\-Path} & The video path.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_a7f23dea6de8cd95e5500e5000245d118}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Video\-Augmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Video\-Augmentation}!Accept@{Accept}}
+\index{Accept@{Accept}!ARdevKit::Model::Project::VideoAugmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Video\-Augmentation}}
+\subsubsection[{Accept}]{\setlength{\rightskip}{0pt plus 5cm}override void A\-Rdev\-Kit.\-Model.\-Project.\-Video\-Augmentation.\-Accept (
+\begin{DoxyParamCaption}
+\item[{{\bf Abstract\-Project\-Visitor}}]{visitor}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_a7f23dea6de8cd95e5500e5000245d118}
+
+
+An overwriting method, to accept a Abstract\-Project\-Visitor which must be implemented according to the visitor design pattern. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em visitor} & the visitor which encapsulates the action which is performed on this element\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_a2b3fa5e94428fab7f2d94842211a7cc9}{A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Augmentation}.
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_a83390b8765641d1626b23a06c54490af}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Video\-Augmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Video\-Augmentation}!Clean\-Up@{Clean\-Up}}
+\index{Clean\-Up@{Clean\-Up}!ARdevKit::Model::Project::VideoAugmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Video\-Augmentation}}
+\subsubsection[{Clean\-Up}]{\setlength{\rightskip}{0pt plus 5cm}override void A\-Rdev\-Kit.\-Model.\-Project.\-Video\-Augmentation.\-Clean\-Up (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_a83390b8765641d1626b23a06c54490af}
+
+
+Clean up (remove created/copied files and directories). 
+
+Imanuel, 31.\-01.\-2014. 
+
+Implements \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_a29b5dcf0bea3da72b75707e09f42124f}{A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Augmentation}.
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_a1c99b0002e89662c75ae59031f1f7ec5}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Video\-Augmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Video\-Augmentation}!Clone@{Clone}}
+\index{Clone@{Clone}!ARdevKit::Model::Project::VideoAugmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Video\-Augmentation}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}override object A\-Rdev\-Kit.\-Model.\-Project.\-Video\-Augmentation.\-Clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_a1c99b0002e89662c75ae59031f1f7ec5}
+
+
+Makes a deep copy of this object. 
+
+Robin, 22.\-01.\-2014. 
+
+\begin{DoxyReturn}{Returns}
+A copy of this object. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_a184416a3d47e35d58bb7f5bb6ce2e269}{A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Augmentation}.
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_ae41611da8c40607d32ab62d29c78a8ae}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Video\-Augmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Video\-Augmentation}!get\-Icon@{get\-Icon}}
+\index{get\-Icon@{get\-Icon}!ARdevKit::Model::Project::VideoAugmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Video\-Augmentation}}
+\subsubsection[{get\-Icon}]{\setlength{\rightskip}{0pt plus 5cm}override Bitmap A\-Rdev\-Kit.\-Model.\-Project.\-Video\-Augmentation.\-get\-Icon (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_ae41611da8c40607d32ab62d29c78a8ae}
+
+
+returns a Bitmap in order to be displayed on the Element\-Selection\-Panel, implements \hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} 
+
+\begin{DoxyReturn}{Returns}
+a representative iconized Bitmap 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em File\-Not\-Found\-Exception} & If Image\-Path is bad\\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_a703566211752c4c4e08ceb5b6c528918}{A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Augmentation}.
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_a3d5968ace1fe7b6becfc10b60f573631}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Video\-Augmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Video\-Augmentation}!get\-Preview@{get\-Preview}}
+\index{get\-Preview@{get\-Preview}!ARdevKit::Model::Project::VideoAugmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Video\-Augmentation}}
+\subsubsection[{get\-Preview}]{\setlength{\rightskip}{0pt plus 5cm}override Bitmap A\-Rdev\-Kit.\-Model.\-Project.\-Video\-Augmentation.\-get\-Preview (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_a3d5968ace1fe7b6becfc10b60f573631}
+
+
+returns a Bitmap in order to be displayed on the Preview\-Panel, implements \hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} 
+
+\begin{DoxyReturn}{Returns}
+a representative Bitmap 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em File\-Not\-Found\-Exception} & Thrown when the requested \hyperlink{namespace_a_rdev_kit_1_1_model_1_1_project_1_1_file}{File} is not found in Image\-Path.\\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_a627330061b5df53ece5646e1cf83ff0f}{A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Augmentation}.
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_afb33f9a8ac2591973d29ebd56bd75da5}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Video\-Augmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Video\-Augmentation}!init\-Element@{init\-Element}}
+\index{init\-Element@{init\-Element}!ARdevKit::Model::Project::VideoAugmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Video\-Augmentation}}
+\subsubsection[{init\-Element}]{\setlength{\rightskip}{0pt plus 5cm}override bool A\-Rdev\-Kit.\-Model.\-Project.\-Video\-Augmentation.\-init\-Element (
+\begin{DoxyParamCaption}
+\item[{{\bf Editor\-Window}}]{ew}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_afb33f9a8ac2591973d29ebd56bd75da5}
+
+
+This method is called by the preview\-Controller when a new instance of the element is added to the Scene. It sets \char`\"{}must-\/have\char`\"{} properties. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ew} & The ew.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if it succeeds, false if it fails. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_a8b02a2eb775b8147e71575694ce8a38f}{A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Augmentation}.
+
+
+
+\subsection{Property Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_accd9c0cc7875d689b73306a38892b4fe}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Video\-Augmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Video\-Augmentation}!Height@{Height}}
+\index{Height@{Height}!ARdevKit::Model::Project::VideoAugmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Video\-Augmentation}}
+\subsubsection[{Height}]{\setlength{\rightskip}{0pt plus 5cm}new int A\-Rdev\-Kit.\-Model.\-Project.\-Video\-Augmentation.\-Height\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_accd9c0cc7875d689b73306a38892b4fe}
+
+
+Gets or sets the height. 
+
+The height, in mm. \hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_adf603b3ae112358e8cae761e94003de1}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Video\-Augmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Video\-Augmentation}!Video\-Path@{Video\-Path}}
+\index{Video\-Path@{Video\-Path}!ARdevKit::Model::Project::VideoAugmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Video\-Augmentation}}
+\subsubsection[{Video\-Path}]{\setlength{\rightskip}{0pt plus 5cm}string A\-Rdev\-Kit.\-Model.\-Project.\-Video\-Augmentation.\-Video\-Path\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_adf603b3ae112358e8cae761e94003de1}
+
+
+Gets or sets the full pathname of the image file. 
+
+The full pathname of the image file. \hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_aad5c2b8555dfe2fd18f2c67c7f34bbda}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Video\-Augmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Video\-Augmentation}!Width@{Width}}
+\index{Width@{Width}!ARdevKit::Model::Project::VideoAugmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Video\-Augmentation}}
+\subsubsection[{Width}]{\setlength{\rightskip}{0pt plus 5cm}new int A\-Rdev\-Kit.\-Model.\-Project.\-Video\-Augmentation.\-Width\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_aad5c2b8555dfe2fd18f2c67c7f34bbda}
+
+
+Gets or sets the width. 
+
+The width, in mm. 

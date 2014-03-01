@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="namespace_a_rdev_kit_1_1_controller_1_1_project_controller" kind="namespace">
+    <compoundname>ARdevKit::Controller::ProjectController</compoundname>
+    <innerclass refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor" prot="public">ARdevKit::Controller::ProjectController::AbstractProjectVisitor</innerclass>
+    <innerclass refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor" prot="public">ARdevKit::Controller::ProjectController::ExportVisitor</innerclass>
+    <innerclass refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_save_load_controller" prot="public">ARdevKit::Controller::ProjectController::SaveLoadController</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/ProjectController/AbstractProjectVisitor.cs" line="9" column="1"/>
+  </compounddef>
+</doxygen>

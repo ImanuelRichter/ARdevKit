@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_chart_file" kind="class" prot="public">
+    <compoundname>ARdevKit::Model::Project::File::ChartFile</compoundname>
+    <basecompoundref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file" prot="public" virt="non-virtual">ARdevKit.Model.Project.File.AbstractFile</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_chart_file_1a05d55ebaa6df3fe9e2b237255cd8e876" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string ARdevKit.Model.Project.File.ChartFile.chartID</definition>
+        <argsstring></argsstring>
+        <name>chartID</name>
+        <briefdescription>
+<para>Identifier for the chart. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ChartFile.cs" line="13" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ChartFile.cs" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_chart_file_1a92735bc01ffce6880f8d0f0e2cf499fb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.Model.Project.File.ChartFile.ChartFile</definition>
+        <argsstring>(string projectPath, string chartID)</argsstring>
+        <name>ChartFile</name>
+        <param>
+          <type>string</type>
+          <declname>projectPath</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>chartID</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 23.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>projectPath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The project path to write. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>chartID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Identifier for the chart. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ChartFile.cs" line="24" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ChartFile.cs" bodystart="24" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_chart_file_1aa19af3145e3bbcb28683e7c77571d06f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override void</type>
+        <definition>override void ARdevKit.Model.Project.File.ChartFile.Save</definition>
+        <argsstring>()</argsstring>
+        <name>Save</name>
+        <reimplements refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1a095ebaeca96a6d285d9caff1ad726d5b">Save</reimplements>
+        <briefdescription>
+<para>Saves the file to its <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1ad879e3a81860da8b72f2d9f61a18ab3b" kindref="member">filePath</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 23.01.2014. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ChartFile.cs" line="39" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ChartFile.cs" bodystart="39" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_chart_file_1a8a52e5730191b832eb8664016e7bda7f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override void</type>
+        <definition>override void ARdevKit.Model.Project.File.ChartFile.Save</definition>
+        <argsstring>(string projectPath)</argsstring>
+        <name>Save</name>
+        <reimplements refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1ae49c3262c59642e8f519d0655bbbbbab">Save</reimplements>
+        <param>
+          <type>string</type>
+          <declname>projectPath</declname>
+        </param>
+        <briefdescription>
+<para>Saves the file to the using the passed projectPath. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 23.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>projectPath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The project path to write. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ChartFile.cs" line="60" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ChartFile.cs" bodystart="60" bodyend="67"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="508">
+        <label>AbstractFile</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file"/>
+      </node>
+      <node id="507">
+        <label>ARdevKit.Model.Project.File.ChartFile</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_chart_file"/>
+        <childnode refid="508" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="510">
+        <label>AbstractFile</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file"/>
+      </node>
+      <node id="509">
+        <label>ARdevKit.Model.Project.File.ChartFile</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_chart_file"/>
+        <childnode refid="510" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ChartFile.cs" line="11" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ChartFile.cs" bodystart="10" bodyend="68"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1a02b61dbebfbd57f5fd44c7a972c79b50" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::File::ChartFile</scope><name>AddBlock</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1a21e0333fb9d8eab8ebb039bd56ccabc9" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::File::ChartFile</scope><name>blocks</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_chart_file_1a92735bc01ffce6880f8d0f0e2cf499fb" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::ChartFile</scope><name>ChartFile</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_chart_file_1a05d55ebaa6df3fe9e2b237255cd8e876" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::File::ChartFile</scope><name>chartID</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1ad879e3a81860da8b72f2d9f61a18ab3b" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::File::ChartFile</scope><name>filePath</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1ac55b0e087f42f7ab5ce36fa3bce111ab" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::ChartFile</scope><name>FilePath</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_chart_file_1aa19af3145e3bbcb28683e7c77571d06f" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::File::ChartFile</scope><name>Save</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_chart_file_1a8a52e5730191b832eb8664016e7bda7f" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::File::ChartFile</scope><name>Save</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

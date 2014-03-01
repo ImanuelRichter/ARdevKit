@@ -1,0 +1,130 @@
+.TH "ARdevKit.Model.Project" 3 "Sat Mar 1 2014" "Version 0.2" "ARdevKit" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ARdevKit.Model.Project \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "package \fBFile\fP"
+.br
+.in -1c
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBAbstract2DAugmentation\fP"
+.br
+.RI "\fIDescribes an abstract twodimensional augmentation with its additional features height and width\&. It inherits from \fBAbstractAugmentation\fP\&. \fP"
+.ti -1c
+.RI "class \fBAbstract2DTrackable\fP"
+.br
+.ti -1c
+.RI "class \fBAbstractAugmentation\fP"
+.br
+.RI "\fIdescribes an \fBAbstractAugmentation\fP, which is bound to a certain \fBAbstractTrackable\fP\&. is \fBIPreviewable\fP \fP"
+.ti -1c
+.RI "class \fBAbstractDynamic2DAugmentation\fP"
+.br
+.RI "\fIInherits from \fBAbstract2DAugmentation\fP and adds \fBAbstractSource\fP, in order to show dynamic content\&. \fP"
+.ti -1c
+.RI "class \fBAbstractSensor\fP"
+.br
+.RI "\fIAn \fBAbstractSensor\fP has a name, a \fBsensorType\fP, and can have a \fBsensorSubType\fP\&. Moreover it has a \fBsensorIDBase\fP which is used to create the \fBsensorIDString\fP\&. \fP"
+.ti -1c
+.RI "class \fBAbstractSource\fP"
+.br
+.RI "\fI\fBAbstractSource\fP has no PictureBox in the PreviewPanel, so it doesn't need a \fBgetPreview()\fP method, though \fBgetIcon()\fP is needed for the ElementSelectionPanel\&. \fP"
+.ti -1c
+.RI "class \fBAbstractTrackable\fP"
+.br
+.RI "\fIDescribes an \fBAbstractTrackable\fP with its associated \fBAbstractAugmentation\fPs and further details used for AREL\&. Is \fBIPreviewable\fP \fP"
+.ti -1c
+.RI "class \fBChart\fP"
+.br
+.RI "\fIDescribes a \fBChart\fP with its Colors and OptimalValues\&. It is a \fBChart\fP\&. \fP"
+.ti -1c
+.RI "class \fBChartPositioning\fP"
+.br
+.RI "\fIUsed to set the position of a chart used by HighChart\&. \fP"
+.ti -1c
+.RI "class \fBCustomUserEvent\fP"
+.br
+.RI "\fIThe class \fBCustomUserEvent\fP mainly contains a reference to a file, which is in the /currentProject/ Folder\&. This file has ALL Events the user creates (inclusive the template events we provide) for ONE augmentation\&. \fP"
+.ti -1c
+.RI "class \fBDbSource\fP"
+.br
+.RI "\fIA database source \fP"
+.ti -1c
+.RI "class \fBFileSource\fP"
+.br
+.RI "\fIA file source\&. \fP"
+.ti -1c
+.RI "class \fBIDFactory\fP"
+.br
+.RI "\fIAn IDFactory produces the ids for \fBAbstractSensor\fPs and AbstractMarkers\&. \fP"
+.ti -1c
+.RI "class \fBIDMarker\fP"
+.br
+.RI "\fI\fBIDMarker\fP is a AbstractMarker adding an matrixID\&. \fP"
+.ti -1c
+.RI "class \fBImageAugmentation\fP"
+.br
+.RI "\fIAn augmentation only described by an ImagePath\&. It is an \fBAbstract2DAugmentation\fP \fP"
+.ti -1c
+.RI "class \fBImageTrackable\fP"
+.br
+.RI "\fIDescribes a Marker, which is very flexible, because it is also a Picture\&. It is an AbstractMarker \fP"
+.ti -1c
+.RI "interface \fBIPreviewable\fP"
+.br
+.RI "\fIInterface for previewable elements from the \fBModel\fP\&. \fP"
+.ti -1c
+.RI "class \fBMarkerFuser\fP"
+.br
+.RI "\fIA \fBMarkerFuser\fP has a fuserType, an alphaTranslation, an alphaRotation and a keepPoseForNumberOfFrames value\&. \fP"
+.ti -1c
+.RI "class \fBMarkerlessFuser\fP"
+.br
+.RI "\fIThe \fBMarkerlessFuser\fP is a \fBMarkerFuser\fP that additionally has, gravityAssistance, gammaTranslation, gammaRotation and continueLostTrackingWithOrientationSensor value\&. \fP"
+.ti -1c
+.RI "class \fBMarkerlessSensor\fP"
+.br
+.RI "\fIUsed to change the properties of the metaio SDK and how to track markerless trackables\&. it is an \fBAbstractSensor\fP \fP"
+.ti -1c
+.RI "class \fBMarkerSensor\fP"
+.br
+.ti -1c
+.RI "class \fBPictureMarker\fP"
+.br
+.RI "\fIDescribes a Marker, which is very flexible, because it is also a Picture\&. It is an AbstractMarker \fP"
+.ti -1c
+.RI "class \fBPictureMarkerSensor\fP"
+.br
+.ti -1c
+.RI "class \fBProject\fP"
+.br
+.RI "\fIEncapsulates everything, that is needed for an AR-Application and so this the element, which the user saves, loads or exports \fP"
+.ti -1c
+.RI "class \fBScreenSize\fP"
+.br
+.RI "\fIThis class models the \fBScreenSize\fP\&. \fP"
+.ti -1c
+.RI "class \fBVector3D\fP"
+.br
+.RI "\fIA 3D vektor\&. \fP"
+.ti -1c
+.RI "class \fBVector3Di\fP"
+.br
+.RI "\fIA vector 3 di\&. Is a \fBVector3D\fP with an extra int variable\&. \fP"
+.ti -1c
+.RI "class \fBVideoAugmentation\fP"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ARdevKit from the source code\&.

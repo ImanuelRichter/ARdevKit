@@ -1,0 +1,86 @@
+.TH "ARdevKit.Model.Project.Abstract2DAugmentation" 3 "Sat Mar 1 2014" "Version 0.2" "ARdevKit" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ARdevKit.Model.Project.Abstract2DAugmentation \- 
+.PP
+Describes an abstract twodimensional augmentation with its additional features height and width\&. It inherits from \fBAbstractAugmentation\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBARdevKit\&.Model\&.Project\&.AbstractAugmentation\fP\&.
+.PP
+Inherited by \fBARdevKit\&.Model\&.Project\&.AbstractDynamic2DAugmentation\fP, \fBARdevKit\&.Model\&.Project\&.ImageAugmentation\fP, and \fBARdevKit\&.Model\&.Project\&.VideoAugmentation\fP\&.
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAbstract2DAugmentation\fP ()"
+.br
+.RI "\fIInitializes no new instance of the \fBAbstract2DAugmentation\fP class, but can be used in inheriting classes\&. sets height and width = 0 \fP"
+.ti -1c
+.RI "\fBAbstract2DAugmentation\fP (bool isVisible, \fBVector3D\fP translationVector, \fBVector3D\fP scaling, \fBAbstractTrackable\fP \fBtrackable\fP, int width, int height)"
+.br
+.RI "\fIconstructor, which sets every member of the class as specified, for use from inheriting classes \fP"
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "int \fBHeight\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the height\&. \fP"
+.ti -1c
+.RI "int \fBWidth\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the width\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Describes an abstract twodimensional augmentation with its additional features height and width\&. It inherits from \fBAbstractAugmentation\fP\&. 
+
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ARdevKit\&.Model\&.Project\&.Abstract2DAugmentation\&.Abstract2DAugmentation ()\fC [protected]\fP"
+
+.PP
+Initializes no new instance of the \fBAbstract2DAugmentation\fP class, but can be used in inheriting classes\&. sets height and width = 0 
+.SS "ARdevKit\&.Model\&.Project\&.Abstract2DAugmentation\&.Abstract2DAugmentation (boolisVisible, \fBVector3D\fPtranslationVector, \fBVector3D\fPscaling, \fBAbstractTrackable\fPtrackable, intwidth, intheight)\fC [protected]\fP"
+
+.PP
+constructor, which sets every member of the class as specified, for use from inheriting classes 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIisVisible\fP true if this object is visible\&. 
+.br
+\fItranslationVector\fP The translation vector\&. 
+.br
+\fIscaling\fP The scaling\&. 
+.br
+\fItrackable\fP The trackable\&. 
+.br
+\fIwidth\fP The width\&. 
+.br
+\fIheight\fP The height\&. 
+.RE
+.PP
+
+.SH "Property Documentation"
+.PP 
+.SS "int ARdevKit\&.Model\&.Project\&.Abstract2DAugmentation\&.Height\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the height\&. The height, in mm\&. 
+.SS "int ARdevKit\&.Model\&.Project\&.Abstract2DAugmentation\&.Width\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the width\&. The width, in mm\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ARdevKit from the source code\&.

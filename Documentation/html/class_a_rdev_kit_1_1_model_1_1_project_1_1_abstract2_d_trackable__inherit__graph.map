@@ -1,0 +1,7 @@
+<map id="ARdevKit.Model.Project.Abstract2DTrackable" name="ARdevKit.Model.Project.Abstract2DTrackable">
+<area shape="rect" id="node5" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_marker.html" title="IDMarker is a AbstractMarker adding an matrixID. " alt="" coords="5,890,219,1041"/>
+<area shape="rect" id="node6" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable.html" title="Describes a Marker, which is very flexible, because it is also a Picture. It is an AbstractMarker ..." alt="" coords="243,846,441,1085"/>
+<area shape="rect" id="node7" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker.html" title="Describes a Marker, which is very flexible, because it is also a Picture. It is an AbstractMarker ..." alt="" coords="466,853,669,1077"/>
+<area shape="rect" id="node2" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable.html" title="Describes an AbstractTrackable with its associated AbstractAugmentations and further details used for..." alt="" coords="259,286,427,525"/>
+<area shape="rect" id="node3" href="$interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable.html" title="Interface for previewable elements from the Model. " alt="" coords="289,131,396,237"/>
+</map>

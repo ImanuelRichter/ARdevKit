@@ -1,0 +1,4 @@
+var namespace_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection =
+[
+    [ "DeviceConnectionController", "class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller.html", "class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller" ]
+];

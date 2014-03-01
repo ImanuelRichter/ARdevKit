@@ -1,0 +1,236 @@
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker}{\section{A\-Rdev\-Kit.\-Model.\-Project.\-Picture\-Marker Class Reference}
+\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker}\index{A\-Rdev\-Kit.\-Model.\-Project.\-Picture\-Marker@{A\-Rdev\-Kit.\-Model.\-Project.\-Picture\-Marker}}
+}
+
+
+Describes a Marker, which is very flexible, because it is also a Picture. It is an Abstract\-Marker  
+
+
+
+
+Inheritance diagram for A\-Rdev\-Kit.\-Model.\-Project.\-Picture\-Marker\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\-Rdev\-Kit.\-Model.\-Project.\-Picture\-Marker\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_a68c1a2ce39397fd12cacbf0a06674788}{Picture\-Marker} ()
+\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_a19f536df00d7c49aa7ec2c612e5b2cca}{Picture\-Marker} (string \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_a35143cb6b2a6724b1fce695cdeac06e9}{picture\-Path})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+override void \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_a9f06478c438150cd695dc8db8140b913}{Accept} (\hyperlink{class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor}{Abstract\-Project\-Visitor} visitor)
+\begin{DoxyCompactList}\small\item\em An overwriting method, to accept a Abstract\-Project\-Visitor which must be implemented according to the visitor design pattern. It lets the visitor visit every augmentation associated with it. \end{DoxyCompactList}\item 
+override Bitmap \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_a9d608a1d9abb84c8109b7f34efffc658}{get\-Preview} ()
+\begin{DoxyCompactList}\small\item\em returns a Bitmap in order to be displayed on the Preview\-Panel, implements \hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} \end{DoxyCompactList}\item 
+override System.\-Drawing.\-Bitmap \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_acf5e1189f44cc8e1d42964e3842d3769}{get\-Icon} ()
+\begin{DoxyCompactList}\small\item\em returns a Bitmap in order to be displayed on the Element\-Selection\-Panel, implements \hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} \end{DoxyCompactList}\item 
+override object \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_a090e0af9c7cdd270248516fe645b345d}{Clone} ()
+\begin{DoxyCompactList}\small\item\em Makes a deep copy of this object. \end{DoxyCompactList}\item 
+override bool \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_a4563d08f550a2bde05cc86ba49a30756}{init\-Element} (\hyperlink{class_a_rdev_kit_1_1_editor_window}{Editor\-Window} ew)
+\begin{DoxyCompactList}\small\item\em This method is called by the preview\-Controller when a new instance of the element is added to the Scene. It sets \char`\"{}must-\/have\char`\"{} properties. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_a35143cb6b2a6724b1fce695cdeac06e9}{picture\-Path}
+\begin{DoxyCompactList}\small\item\em Full pathname of the picture file. \end{DoxyCompactList}\item 
+string \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_a1f697f11716f6f14539bb3b368c38742}{picture\-Name}
+\begin{DoxyCompactList}\small\item\em Name of the picture. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_a60a31045ce2dcc1a3a97b3e3956b1b7f}{Picture\-Path}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the full pathname of the picture file. \end{DoxyCompactList}\item 
+string \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_a1fcd8793ea1432d536bd08c856adf862}{Picture\-Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the name of the picture. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Describes a Marker, which is very flexible, because it is also a Picture. It is an Abstract\-Marker 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_a68c1a2ce39397fd12cacbf0a06674788}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Picture\-Marker@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Picture\-Marker}!Picture\-Marker@{Picture\-Marker}}
+\index{Picture\-Marker@{Picture\-Marker}!ARdevKit::Model::Project::PictureMarker@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Picture\-Marker}}
+\subsubsection[{Picture\-Marker}]{\setlength{\rightskip}{0pt plus 5cm}A\-Rdev\-Kit.\-Model.\-Project.\-Picture\-Marker.\-Picture\-Marker (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_a68c1a2ce39397fd12cacbf0a06674788}
+
+
+Default Constructor. 
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_a19f536df00d7c49aa7ec2c612e5b2cca}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Picture\-Marker@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Picture\-Marker}!Picture\-Marker@{Picture\-Marker}}
+\index{Picture\-Marker@{Picture\-Marker}!ARdevKit::Model::Project::PictureMarker@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Picture\-Marker}}
+\subsubsection[{Picture\-Marker}]{\setlength{\rightskip}{0pt plus 5cm}A\-Rdev\-Kit.\-Model.\-Project.\-Picture\-Marker.\-Picture\-Marker (
+\begin{DoxyParamCaption}
+\item[{string}]{picture\-Path}
+\end{DoxyParamCaption}
+)}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_a19f536df00d7c49aa7ec2c612e5b2cca}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em picture\-Path} & The picture path.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_a9f06478c438150cd695dc8db8140b913}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Picture\-Marker@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Picture\-Marker}!Accept@{Accept}}
+\index{Accept@{Accept}!ARdevKit::Model::Project::PictureMarker@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Picture\-Marker}}
+\subsubsection[{Accept}]{\setlength{\rightskip}{0pt plus 5cm}override void A\-Rdev\-Kit.\-Model.\-Project.\-Picture\-Marker.\-Accept (
+\begin{DoxyParamCaption}
+\item[{{\bf Abstract\-Project\-Visitor}}]{visitor}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_a9f06478c438150cd695dc8db8140b913}
+
+
+An overwriting method, to accept a Abstract\-Project\-Visitor which must be implemented according to the visitor design pattern. It lets the visitor visit every augmentation associated with it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em visitor} & the visitor which encapsulates the action which is performed on this element\\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_a76f6ad0ed8f615b8f5b7738411abb54f}{A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Trackable}.
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_a090e0af9c7cdd270248516fe645b345d}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Picture\-Marker@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Picture\-Marker}!Clone@{Clone}}
+\index{Clone@{Clone}!ARdevKit::Model::Project::PictureMarker@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Picture\-Marker}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}override object A\-Rdev\-Kit.\-Model.\-Project.\-Picture\-Marker.\-Clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_a090e0af9c7cdd270248516fe645b345d}
+
+
+Makes a deep copy of this object. 
+
+Robin, 22.\-01.\-2014. 
+
+\begin{DoxyReturn}{Returns}
+A copy of this object. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_a166fc03dc00911591baca14a3341ef29}{A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Trackable}.
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_acf5e1189f44cc8e1d42964e3842d3769}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Picture\-Marker@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Picture\-Marker}!get\-Icon@{get\-Icon}}
+\index{get\-Icon@{get\-Icon}!ARdevKit::Model::Project::PictureMarker@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Picture\-Marker}}
+\subsubsection[{get\-Icon}]{\setlength{\rightskip}{0pt plus 5cm}override System.\-Drawing.\-Bitmap A\-Rdev\-Kit.\-Model.\-Project.\-Picture\-Marker.\-get\-Icon (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_acf5e1189f44cc8e1d42964e3842d3769}
+
+
+returns a Bitmap in order to be displayed on the Element\-Selection\-Panel, implements \hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} 
+
+\begin{DoxyReturn}{Returns}
+a representative iconized Bitmap 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_abee7e96dac48f6fa7fc424c0f9139dff}{A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Trackable}.
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_a9d608a1d9abb84c8109b7f34efffc658}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Picture\-Marker@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Picture\-Marker}!get\-Preview@{get\-Preview}}
+\index{get\-Preview@{get\-Preview}!ARdevKit::Model::Project::PictureMarker@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Picture\-Marker}}
+\subsubsection[{get\-Preview}]{\setlength{\rightskip}{0pt plus 5cm}override Bitmap A\-Rdev\-Kit.\-Model.\-Project.\-Picture\-Marker.\-get\-Preview (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_a9d608a1d9abb84c8109b7f34efffc658}
+
+
+returns a Bitmap in order to be displayed on the Preview\-Panel, implements \hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} 
+
+\begin{DoxyReturn}{Returns}
+a representative Bitmap 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em File\-Not\-Found\-Exception} & If Image\-Path is not correct.\\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_ab4d8a1902c82fe7a1d385d5688f92bd8}{A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Trackable}.
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_a4563d08f550a2bde05cc86ba49a30756}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Picture\-Marker@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Picture\-Marker}!init\-Element@{init\-Element}}
+\index{init\-Element@{init\-Element}!ARdevKit::Model::Project::PictureMarker@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Picture\-Marker}}
+\subsubsection[{init\-Element}]{\setlength{\rightskip}{0pt plus 5cm}override bool A\-Rdev\-Kit.\-Model.\-Project.\-Picture\-Marker.\-init\-Element (
+\begin{DoxyParamCaption}
+\item[{{\bf Editor\-Window}}]{ew}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_a4563d08f550a2bde05cc86ba49a30756}
+
+
+This method is called by the preview\-Controller when a new instance of the element is added to the Scene. It sets \char`\"{}must-\/have\char`\"{} properties. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ew} & The ew.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if it succeeds, false if it fails. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_aff50ed9cb95973d56d6a65bd1ef96c0a}{A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Trackable}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_a1f697f11716f6f14539bb3b368c38742}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Picture\-Marker@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Picture\-Marker}!picture\-Name@{picture\-Name}}
+\index{picture\-Name@{picture\-Name}!ARdevKit::Model::Project::PictureMarker@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Picture\-Marker}}
+\subsubsection[{picture\-Name}]{\setlength{\rightskip}{0pt plus 5cm}string A\-Rdev\-Kit.\-Model.\-Project.\-Picture\-Marker.\-picture\-Name\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_a1f697f11716f6f14539bb3b368c38742}
+
+
+Name of the picture. 
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_a35143cb6b2a6724b1fce695cdeac06e9}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Picture\-Marker@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Picture\-Marker}!picture\-Path@{picture\-Path}}
+\index{picture\-Path@{picture\-Path}!ARdevKit::Model::Project::PictureMarker@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Picture\-Marker}}
+\subsubsection[{picture\-Path}]{\setlength{\rightskip}{0pt plus 5cm}string A\-Rdev\-Kit.\-Model.\-Project.\-Picture\-Marker.\-picture\-Path\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_a35143cb6b2a6724b1fce695cdeac06e9}
+
+
+Full pathname of the picture file. 
+
+
+
+\subsection{Property Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_a1fcd8793ea1432d536bd08c856adf862}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Picture\-Marker@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Picture\-Marker}!Picture\-Name@{Picture\-Name}}
+\index{Picture\-Name@{Picture\-Name}!ARdevKit::Model::Project::PictureMarker@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Picture\-Marker}}
+\subsubsection[{Picture\-Name}]{\setlength{\rightskip}{0pt plus 5cm}string A\-Rdev\-Kit.\-Model.\-Project.\-Picture\-Marker.\-Picture\-Name\hspace{0.3cm}{\ttfamily [get]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_a1fcd8793ea1432d536bd08c856adf862}
+
+
+Gets or sets the name of the picture. 
+
+The name of the picture. \hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_a60a31045ce2dcc1a3a97b3e3956b1b7f}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Picture\-Marker@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Picture\-Marker}!Picture\-Path@{Picture\-Path}}
+\index{Picture\-Path@{Picture\-Path}!ARdevKit::Model::Project::PictureMarker@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Picture\-Marker}}
+\subsubsection[{Picture\-Path}]{\setlength{\rightskip}{0pt plus 5cm}string A\-Rdev\-Kit.\-Model.\-Project.\-Picture\-Marker.\-Picture\-Path\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_a60a31045ce2dcc1a3a97b3e3956b1b7f}
+
+
+Gets or sets the full pathname of the picture file. 
+
+The full pathname of the picture file. 

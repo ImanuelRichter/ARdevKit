@@ -18,8 +18,7 @@ namespace ARdevKit.Controller.ProjectController
         /// <summary>
         /// Saves the project.
         /// </summary>
-        /// <param name="project">The <see cref="Project"/>, which need to be serialized</param>
-        /// <param name="path">The path to which it should be serialized</param>
+        /// <param name="project">The <see cref="Project" />, which need to be serialized</param>
         public static void saveProject(Project project)
         {
             BinaryFormatter formatter = new BinaryFormatter();

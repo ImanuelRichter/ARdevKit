@@ -1,0 +1,216 @@
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor}{\section{A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Sensor Class Reference}
+\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor}\index{A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Sensor@{A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Sensor}}
+}
+
+
+An \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor}{Abstract\-Sensor} has a name, a \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a01251db96ea5e0fb0abe1df0a129e751}{sensor\-Type}, and can have a \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a29b9e916f374e31196689e9d7ac73123}{sensor\-Sub\-Type}. Moreover it has a \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a2f9524a6aba4331373c0c1968b2f6f4d}{sensor\-I\-D\-Base} which is used to create the \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_ae12a6c3bfe5686d888d7e36c9b19df47}{sensor\-I\-D\-String}.  
+
+
+
+
+Inheritance diagram for A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Sensor\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Sensor\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a1954adedcf2a2f61256c9b11fe0c8386}{Sensor\-Types} \{ {\bfseries Feature\-Based\-Sensor\-Source}, 
+{\bfseries Marker\-Based\-Sensor\-Source}
+ \}
+\begin{DoxyCompactList}\small\item\em Flags for specifying Sensor\-Types. \end{DoxyCompactList}\item 
+enum \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_af7b41fc81d926ed779ca02ef894fcddf}{Sensor\-Sub\-Types} \{ {\bfseries None}, 
+{\bfseries Fast}, 
+{\bfseries Robust}
+ \}
+\begin{DoxyCompactList}\small\item\em Flags for specifying Sensor\-Sub\-Types. \end{DoxyCompactList}\item 
+enum \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a8eecc60106e6a54a3e096c63a7d4d012}{Sensor\-I\-D\-Bases} \{ {\bfseries Feature\-Tracking}, 
+{\bfseries Marker\-Tracking}
+ \}
+\begin{DoxyCompactList}\small\item\em Flags for specifying Sensor\-I\-D\-Bases. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+abstract void \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a4ff825b76bdd9f01a93ca670d02c219c}{Accept} (\hyperlink{class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor}{Abstract\-Project\-Visitor} visitor)
+\begin{DoxyCompactList}\small\item\em Accepts the given visitor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_ac267c5a8c7792a6c0ba07108102c0706}{Abstract\-Sensor} ()
+\begin{DoxyCompactList}\small\item\em Initializes no new instance of the \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor}{Abstract\-Sensor} class, but can be used in inheriting classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a1954adedcf2a2f61256c9b11fe0c8386}{Sensor\-Types} \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a01251db96ea5e0fb0abe1df0a129e751}{sensor\-Type}
+\begin{DoxyCompactList}\small\item\em Type of the sensor. \end{DoxyCompactList}\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_af7b41fc81d926ed779ca02ef894fcddf}{Sensor\-Sub\-Types} \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a29b9e916f374e31196689e9d7ac73123}{sensor\-Sub\-Type}
+\begin{DoxyCompactList}\small\item\em Sub\-Type of the sensor. \end{DoxyCompactList}\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a8eecc60106e6a54a3e096c63a7d4d012}{Sensor\-I\-D\-Bases} \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a2f9524a6aba4331373c0c1968b2f6f4d}{sensor\-I\-D\-Base}
+\begin{DoxyCompactList}\small\item\em The sensor identifier base. \end{DoxyCompactList}\item 
+string \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_ae12a6c3bfe5686d888d7e36c9b19df47}{sensor\-I\-D\-String}
+\begin{DoxyCompactList}\small\item\em The sensor identifier string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_ae9ff3a8ab9d8d8a357173cfa55a7030f}{Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the name. \end{DoxyCompactList}\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a1954adedcf2a2f61256c9b11fe0c8386}{Sensor\-Types} \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a66bde8348688b03400befc56c6ce8384}{Sensor\-Type}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the type of the sensor. \end{DoxyCompactList}\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_af7b41fc81d926ed779ca02ef894fcddf}{Sensor\-Sub\-Types} \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a092d1bd99165833488f9ce744a1bf65d}{Sensor\-Sub\-Type}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the Sub\-Type of the sensor. \end{DoxyCompactList}\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a8eecc60106e6a54a3e096c63a7d4d012}{Sensor\-I\-D\-Bases} \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a51a87ecf568c53df079db7af4a553bc6}{Sensor\-I\-D\-Base}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the sensor identifier base. \end{DoxyCompactList}\item 
+string \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a054724aa9c411a5f813d977c7c1f620c}{Sensor\-I\-D\-String}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the sensor identifier string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor}{Abstract\-Sensor} has a name, a \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a01251db96ea5e0fb0abe1df0a129e751}{sensor\-Type}, and can have a \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a29b9e916f374e31196689e9d7ac73123}{sensor\-Sub\-Type}. Moreover it has a \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a2f9524a6aba4331373c0c1968b2f6f4d}{sensor\-I\-D\-Base} which is used to create the \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_ae12a6c3bfe5686d888d7e36c9b19df47}{sensor\-I\-D\-String}. 
+
+Imanuel, 17.\-01.\-2014. 
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a8eecc60106e6a54a3e096c63a7d4d012}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor}!Sensor\-I\-D\-Bases@{Sensor\-I\-D\-Bases}}
+\index{Sensor\-I\-D\-Bases@{Sensor\-I\-D\-Bases}!ARdevKit::Model::Project::AbstractSensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor}}
+\subsubsection[{Sensor\-I\-D\-Bases}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Sensor.\-Sensor\-I\-D\-Bases}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a8eecc60106e6a54a3e096c63a7d4d012}
+
+
+Flags for specifying Sensor\-I\-D\-Bases. 
+
+Imanuel, 17.\-01.\-2014. \hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_af7b41fc81d926ed779ca02ef894fcddf}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor}!Sensor\-Sub\-Types@{Sensor\-Sub\-Types}}
+\index{Sensor\-Sub\-Types@{Sensor\-Sub\-Types}!ARdevKit::Model::Project::AbstractSensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor}}
+\subsubsection[{Sensor\-Sub\-Types}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Sensor.\-Sensor\-Sub\-Types}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_af7b41fc81d926ed779ca02ef894fcddf}
+
+
+Flags for specifying Sensor\-Sub\-Types. 
+
+Imanuel, 17.\-01.\-2014. \hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a1954adedcf2a2f61256c9b11fe0c8386}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor}!Sensor\-Types@{Sensor\-Types}}
+\index{Sensor\-Types@{Sensor\-Types}!ARdevKit::Model::Project::AbstractSensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor}}
+\subsubsection[{Sensor\-Types}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Sensor.\-Sensor\-Types}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a1954adedcf2a2f61256c9b11fe0c8386}
+
+
+Flags for specifying Sensor\-Types. 
+
+Imanuel, 17.\-01.\-2014. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_ac267c5a8c7792a6c0ba07108102c0706}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor}!Abstract\-Sensor@{Abstract\-Sensor}}
+\index{Abstract\-Sensor@{Abstract\-Sensor}!ARdevKit::Model::Project::AbstractSensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor}}
+\subsubsection[{Abstract\-Sensor}]{\setlength{\rightskip}{0pt plus 5cm}A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Sensor.\-Abstract\-Sensor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_ac267c5a8c7792a6c0ba07108102c0706}
+
+
+Initializes no new instance of the \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor}{Abstract\-Sensor} class, but can be used in inheriting classes. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a4ff825b76bdd9f01a93ca670d02c219c}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor}!Accept@{Accept}}
+\index{Accept@{Accept}!ARdevKit::Model::Project::AbstractSensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor}}
+\subsubsection[{Accept}]{\setlength{\rightskip}{0pt plus 5cm}abstract void A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Sensor.\-Accept (
+\begin{DoxyParamCaption}
+\item[{{\bf Abstract\-Project\-Visitor}}]{visitor}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a4ff825b76bdd9f01a93ca670d02c219c}
+
+
+Accepts the given visitor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em visitor} & The visitor.\\
+\hline
+\end{DoxyParams}
+
+
+Imanuel, 17.\-01.\-2014. 
+
+Implemented in \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_a28dd4f8d16e0112ae1f1bfd948c90c59}{A\-Rdev\-Kit.\-Model.\-Project.\-Markerless\-Sensor}, \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_sensor_a4c36ac6cf5bd103a418b5ae21492b70a}{A\-Rdev\-Kit.\-Model.\-Project.\-Picture\-Marker\-Sensor}, and \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_a21f889bd4916cb1ee7f455a9f644b72a}{A\-Rdev\-Kit.\-Model.\-Project.\-Marker\-Sensor}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a2f9524a6aba4331373c0c1968b2f6f4d}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor}!sensor\-I\-D\-Base@{sensor\-I\-D\-Base}}
+\index{sensor\-I\-D\-Base@{sensor\-I\-D\-Base}!ARdevKit::Model::Project::AbstractSensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor}}
+\subsubsection[{sensor\-I\-D\-Base}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sensor\-I\-D\-Bases} A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Sensor.\-sensor\-I\-D\-Base\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a2f9524a6aba4331373c0c1968b2f6f4d}
+
+
+The sensor identifier base. 
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_ae12a6c3bfe5686d888d7e36c9b19df47}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor}!sensor\-I\-D\-String@{sensor\-I\-D\-String}}
+\index{sensor\-I\-D\-String@{sensor\-I\-D\-String}!ARdevKit::Model::Project::AbstractSensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor}}
+\subsubsection[{sensor\-I\-D\-String}]{\setlength{\rightskip}{0pt plus 5cm}string A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Sensor.\-sensor\-I\-D\-String\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_ae12a6c3bfe5686d888d7e36c9b19df47}
+
+
+The sensor identifier string. 
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a29b9e916f374e31196689e9d7ac73123}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor}!sensor\-Sub\-Type@{sensor\-Sub\-Type}}
+\index{sensor\-Sub\-Type@{sensor\-Sub\-Type}!ARdevKit::Model::Project::AbstractSensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor}}
+\subsubsection[{sensor\-Sub\-Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sensor\-Sub\-Types} A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Sensor.\-sensor\-Sub\-Type\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a29b9e916f374e31196689e9d7ac73123}
+
+
+Sub\-Type of the sensor. 
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a01251db96ea5e0fb0abe1df0a129e751}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor}!sensor\-Type@{sensor\-Type}}
+\index{sensor\-Type@{sensor\-Type}!ARdevKit::Model::Project::AbstractSensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor}}
+\subsubsection[{sensor\-Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sensor\-Types} A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Sensor.\-sensor\-Type\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a01251db96ea5e0fb0abe1df0a129e751}
+
+
+Type of the sensor. 
+
+
+
+\subsection{Property Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_ae9ff3a8ab9d8d8a357173cfa55a7030f}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor}!Name@{Name}}
+\index{Name@{Name}!ARdevKit::Model::Project::AbstractSensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor}}
+\subsubsection[{Name}]{\setlength{\rightskip}{0pt plus 5cm}string A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Sensor.\-Name\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_ae9ff3a8ab9d8d8a357173cfa55a7030f}
+
+
+Gets or sets the name. 
+
+The name. \hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a51a87ecf568c53df079db7af4a553bc6}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor}!Sensor\-I\-D\-Base@{Sensor\-I\-D\-Base}}
+\index{Sensor\-I\-D\-Base@{Sensor\-I\-D\-Base}!ARdevKit::Model::Project::AbstractSensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor}}
+\subsubsection[{Sensor\-I\-D\-Base}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sensor\-I\-D\-Bases} A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Sensor.\-Sensor\-I\-D\-Base\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a51a87ecf568c53df079db7af4a553bc6}
+
+
+Gets or sets the sensor identifier base. 
+
+The sensor identifier base. \hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a054724aa9c411a5f813d977c7c1f620c}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor}!Sensor\-I\-D\-String@{Sensor\-I\-D\-String}}
+\index{Sensor\-I\-D\-String@{Sensor\-I\-D\-String}!ARdevKit::Model::Project::AbstractSensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor}}
+\subsubsection[{Sensor\-I\-D\-String}]{\setlength{\rightskip}{0pt plus 5cm}string A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Sensor.\-Sensor\-I\-D\-String\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a054724aa9c411a5f813d977c7c1f620c}
+
+
+Gets or sets the sensor identifier string. 
+
+The sensor identifier string. \hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a092d1bd99165833488f9ce744a1bf65d}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor}!Sensor\-Sub\-Type@{Sensor\-Sub\-Type}}
+\index{Sensor\-Sub\-Type@{Sensor\-Sub\-Type}!ARdevKit::Model::Project::AbstractSensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor}}
+\subsubsection[{Sensor\-Sub\-Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sensor\-Sub\-Types} A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Sensor.\-Sensor\-Sub\-Type\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a092d1bd99165833488f9ce744a1bf65d}
+
+
+Gets or sets the Sub\-Type of the sensor. 
+
+The type of the sensor sub. \hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a66bde8348688b03400befc56c6ce8384}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor}!Sensor\-Type@{Sensor\-Type}}
+\index{Sensor\-Type@{Sensor\-Type}!ARdevKit::Model::Project::AbstractSensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Sensor}}
+\subsubsection[{Sensor\-Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sensor\-Types} A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Sensor.\-Sensor\-Type\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a66bde8348688b03400befc56c6ce8384}
+
+
+Gets or sets the type of the sensor. 
+
+The type of the sensor. 

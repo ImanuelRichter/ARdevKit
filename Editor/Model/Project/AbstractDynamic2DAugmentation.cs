@@ -32,14 +32,16 @@ namespace ARdevKit.Model.Project
         protected AbstractDynamic2DAugmentation() : base() { }
 
         /// <summary>
-        /// Initializes no new instance of the <see cref="AbstractDynamic2DAugmentation"/> class,
+        /// Initializes no new instance of the <see cref="AbstractDynamic2DAugmentation" /> class,
         /// but can be used by inheriting classes. It is
-        /// using the constructor from <see cref="Abstract2DAugmentation"/>.
+        /// using the constructor from <see cref="Abstract2DAugmentation" />.
         /// </summary>
         /// <param name="isVisible">if set to <c>true</c> [is visible] using AREL.</param>
         /// <param name="translationVector">The translation vector.</param>
         /// <param name="scaling">The scaling.</param>
         /// <param name="trackable">The trackable.</param>
+        /// <param name="width">The width.</param>
+        /// <param name="height">The height.</param>
         /// <param name="source">The source.</param>
         protected AbstractDynamic2DAugmentation(bool isVisible,
             Vector3D translationVector, Vector3D scaling, AbstractTrackable trackable, int width, int height,

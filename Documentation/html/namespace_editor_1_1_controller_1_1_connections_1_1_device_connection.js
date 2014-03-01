@@ -1,6 +1,0 @@
-var namespace_editor_1_1_controller_1_1_connections_1_1_device_connection =
-[
-    [ "DeviceConnectionController", "class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller.html", "class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller" ],
-    [ "TCPServer", "class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_t_c_p_server.html", "class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_t_c_p_server" ],
-    [ "UDPServer", "class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_u_d_p_server.html", "class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_u_d_p_server" ]
-];

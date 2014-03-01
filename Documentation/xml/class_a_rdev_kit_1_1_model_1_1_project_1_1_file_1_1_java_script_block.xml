@@ -1,0 +1,266 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_block" kind="class" prot="public">
+    <compoundname>ARdevKit::Model::Project::File::JavaScriptBlock</compoundname>
+    <basecompoundref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block" prot="public" virt="non-virtual">ARdevKit.Model.Project.File.AbstractBlock</basecompoundref>
+    <derivedcompoundref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_line" prot="public" virt="non-virtual">ARdevKit.Model.Project.File.JavaScriptLine</derivedcompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_block_1a9d155a4e64d22005c56219d0e3144e47" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string ARdevKit.Model.Project.File.JavaScriptBlock.head</definition>
+        <argsstring></argsstring>
+        <name>head</name>
+        <briefdescription>
+<para>The head. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/JavaScriptBlock.cs" line="20" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/JavaScriptBlock.cs" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_block_1ab457f6d9da4273e687f70bbef48e80cc" prot="protected" static="no" mutable="no">
+        <type>List&lt; <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_line" kindref="compound">JavaScriptLine</ref> &gt;</type>
+        <definition>List&lt;JavaScriptLine&gt; ARdevKit.Model.Project.File.JavaScriptBlock.lines</definition>
+        <argsstring></argsstring>
+        <name>lines</name>
+        <briefdescription>
+<para>The lines. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/JavaScriptBlock.cs" line="23" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/JavaScriptBlock.cs" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_block_1a18fb115fee2f2c0306ed9c8ac094f402" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.Model.Project.File.JavaScriptBlock.JavaScriptBlock</definition>
+        <argsstring>()</argsstring>
+        <name>JavaScriptBlock</name>
+        <briefdescription>
+<para>Default constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 17.01.2014. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/JavaScriptBlock.cs" line="31" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/JavaScriptBlock.cs" bodystart="31" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_block_1a919e16cc030b89f0cbc43e5631cd5704" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.Model.Project.File.JavaScriptBlock.JavaScriptBlock</definition>
+        <argsstring>(string head, BlockMarker blockMarker)</argsstring>
+        <name>JavaScriptBlock</name>
+        <param>
+          <type>string</type>
+          <declname>head</declname>
+        </param>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker" kindref="compound">BlockMarker</ref></type>
+          <declname>blockMarker</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 17.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>head</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The head. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>blockMarker</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The block marker. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/JavaScriptBlock.cs" line="42" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/JavaScriptBlock.cs" bodystart="42" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_block_1ab4b6c393041f5000aa7756966e9fdbac" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ARdevKit.Model.Project.File.JavaScriptBlock.Update</definition>
+        <argsstring>(string head, BlockMarker blockMarker)</argsstring>
+        <name>Update</name>
+        <param>
+          <type>string</type>
+          <declname>head</declname>
+        </param>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker" kindref="compound">BlockMarker</ref></type>
+          <declname>blockMarker</declname>
+        </param>
+        <briefdescription>
+<para>Updates the specified head. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>head</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The head.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>blockMarker</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The block marker.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/JavaScriptBlock.cs" line="53" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/JavaScriptBlock.cs" bodystart="53" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_block_1a1cbaad8763bacb2f87a5cd8b9d075955" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ARdevKit.Model.Project.File.JavaScriptBlock.AddLine</definition>
+        <argsstring>(JavaScriptLine line)</argsstring>
+        <name>AddLine</name>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_line" kindref="compound">JavaScriptLine</ref></type>
+          <declname>line</declname>
+        </param>
+        <briefdescription>
+<para>Adds a line. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 15.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>line</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The cln. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/JavaScriptBlock.cs" line="67" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/JavaScriptBlock.cs" bodystart="67" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_block_1afe7251c8168c8d6062c7054bf0c21bf1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override void</type>
+        <definition>override void ARdevKit.Model.Project.File.JavaScriptBlock.Write</definition>
+        <argsstring>(System.IO.StreamWriter writer)</argsstring>
+        <name>Write</name>
+        <reimplements refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_1a0b27a217de18a766c6647b71c41cc0ea">Write</reimplements>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_in_line_1a49f0664d2621cc8d5e0589c202c19b10">Write</reimplementedby>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_line_1a9a1d47796fc64a50ccd602df70d1d562">Write</reimplementedby>
+        <param>
+          <type>System.IO.StreamWriter</type>
+          <declname>writer</declname>
+        </param>
+        <briefdescription>
+<para>Writes with the given writer. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 15.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>writer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The writer to write. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/JavaScriptBlock.cs" line="83" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/JavaScriptBlock.cs" bodystart="83" bodyend="105"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_block" kindref="compound">JavaScriptBlock</ref> block is an <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block" kindref="compound">AbstractBlock</ref>. It has a head and constits of other <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_block" kindref="compound">JavaScriptBlock</ref>s and <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_line" kindref="compound">JavaScriptLine</ref>s. </para>    </briefdescription>
+    <detaileddescription>
+<para>Imanuel, 17.01.2014. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="617">
+        <label>AbstractBlock</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block"/>
+      </node>
+      <node id="619">
+        <label>ARdevKit.Model.Project.File.JavaScriptInLine</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_in_line"/>
+        <childnode refid="618" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="618">
+        <label>ARdevKit.Model.Project.File.JavaScriptLine</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_line"/>
+        <childnode refid="616" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="616">
+        <label>ARdevKit.Model.Project.File.JavaScriptBlock</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_block"/>
+        <childnode refid="617" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="622">
+        <label>ARdevKit.Model.Project.File.AbstractFile</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file"/>
+      </node>
+      <node id="624">
+        <label>ARdevKit.Model.Project.File.AbstractBlock</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block"/>
+        <childnode refid="622" relation="usage">
+          <edgelabel>#parentFile</edgelabel>
+        </childnode>
+        <childnode refid="623" relation="usage">
+          <edgelabel>#blockMarker</edgelabel>
+        </childnode>
+        <childnode refid="624" relation="usage">
+          <edgelabel>#parentBlock</edgelabel>
+        </childnode>
+      </node>
+      <node id="623">
+        <label>ARdevKit.Model.Project.File.BlockMarker</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker"/>
+      </node>
+      <node id="621">
+        <label>AbstractBlock</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block"/>
+        <childnode refid="622" relation="usage">
+          <edgelabel>#parentFile</edgelabel>
+        </childnode>
+        <childnode refid="623" relation="usage">
+          <edgelabel>#blockMarker</edgelabel>
+        </childnode>
+        <childnode refid="624" relation="usage">
+          <edgelabel>#parentBlock</edgelabel>
+        </childnode>
+      </node>
+      <node id="620">
+        <label>ARdevKit.Model.Project.File.JavaScriptBlock</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_block"/>
+        <childnode refid="621" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/JavaScriptBlock.cs" line="18" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/JavaScriptBlock.cs" bodystart="17" bodyend="106"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_1aa238e4f3ad33fc75ab3741048ed4dc6b" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::JavaScriptBlock</scope><name>AddBlock</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_block_1a1cbaad8763bacb2f87a5cd8b9d075955" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::JavaScriptBlock</scope><name>AddLine</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_1a0975ceb65947c7370dcb6565677e9d0e" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::File::JavaScriptBlock</scope><name>blockMarker</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_1ae48e43536b76e45e5c84b837cc9bc093" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::File::JavaScriptBlock</scope><name>blocks</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_1a851f696a88ce274c5f20e1c4bcbdef4c" prot="protected" virt="virtual"><scope>ARdevKit::Model::Project::File::JavaScriptBlock</scope><name>getTabs</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_block_1a9d155a4e64d22005c56219d0e3144e47" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::File::JavaScriptBlock</scope><name>head</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_block_1a18fb115fee2f2c0306ed9c8ac094f402" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::JavaScriptBlock</scope><name>JavaScriptBlock</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_block_1a919e16cc030b89f0cbc43e5631cd5704" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::JavaScriptBlock</scope><name>JavaScriptBlock</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_1a7c07abfe27f2f9104fe7c3d23c7333a5" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::File::JavaScriptBlock</scope><name>level</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_block_1ab457f6d9da4273e687f70bbef48e80cc" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::File::JavaScriptBlock</scope><name>lines</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_1aaa3372dadcd8d2b6ff2356ec984551c9" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::File::JavaScriptBlock</scope><name>parentBlock</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_1a77fdd4b938d3f9d6d1f63e04018b4410" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::JavaScriptBlock</scope><name>ParentFile</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_1a7dd07d5a865359c764a8cdab272a0662" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::File::JavaScriptBlock</scope><name>parentFile</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_block_1ab4b6c393041f5000aa7756966e9fdbac" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::JavaScriptBlock</scope><name>Update</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_block_1afe7251c8168c8d6062c7054bf0c21bf1" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::File::JavaScriptBlock</scope><name>Write</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

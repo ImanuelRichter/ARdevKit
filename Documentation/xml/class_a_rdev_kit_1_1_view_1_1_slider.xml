@@ -1,0 +1,341 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_view_1_1_slider" kind="class" prot="public">
+    <compoundname>ARdevKit::View::Slider</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_view_1_1_slider_1a7d3810e2bd33719dd81f62cb3122604a" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ARdevKit.View.Slider.isDouble</definition>
+        <argsstring></argsstring>
+        <name>isDouble</name>
+        <briefdescription>
+<para>Variable to check if the return value should be an int or double </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" line="18" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_view_1_1_slider_1a7a3ec903f49503e4976e062896e171cd" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ARdevKit.View.Slider.sliderValueDouble</definition>
+        <argsstring></argsstring>
+        <name>sliderValueDouble</name>
+        <briefdescription>
+<para>Variable of the slider value in double </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" line="23" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_view_1_1_slider_1a103009d3e8755d44e9df918f3973944d" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ARdevKit.View.Slider.sliderValueInt</definition>
+        <argsstring></argsstring>
+        <name>sliderValueInt</name>
+        <briefdescription>
+<para>Variable of the slider value in int </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" line="36" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_view_1_1_slider_1ac3c020895fc3a2037d6b649c61695300" prot="private" static="no" mutable="no">
+        <type>System.ComponentModel.IContainer</type>
+        <definition>System.ComponentModel.IContainer ARdevKit.View.Slider.components</definition>
+        <argsstring></argsstring>
+        <name>components</name>
+        <initializer>= null</initializer>
+        <briefdescription>
+<para>Erforderliche Designervariable. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.Designer.cs" line="8" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.Designer.cs" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_view_1_1_slider_1afd8a669d84fe943d1a4b37c7ee96a041" prot="private" static="no" mutable="no">
+        <type>System.Windows.Forms.TrackBar</type>
+        <definition>System.Windows.Forms.TrackBar ARdevKit.View.Slider.trackBar1</definition>
+        <argsstring></argsstring>
+        <name>trackBar1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.Designer.cs" line="91" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.Designer.cs" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_view_1_1_slider_1afa054b61db2af97d6d752da104cd2896" prot="private" static="no" mutable="no">
+        <type>System.Windows.Forms.Label</type>
+        <definition>System.Windows.Forms.Label ARdevKit.View.Slider.label1</definition>
+        <argsstring></argsstring>
+        <name>label1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.Designer.cs" line="92" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.Designer.cs" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_view_1_1_slider_1af3605f31bb059d04b8bac11cd2e7c121" prot="private" static="no" mutable="no">
+        <type>System.Windows.Forms.Label</type>
+        <definition>System.Windows.Forms.Label ARdevKit.View.Slider.label2</definition>
+        <argsstring></argsstring>
+        <name>label2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.Designer.cs" line="93" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.Designer.cs" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_view_1_1_slider_1afdb6c02a769bf8917cbde0d71903795e" prot="private" static="no" mutable="no">
+        <type>System.Windows.Forms.Label</type>
+        <definition>System.Windows.Forms.Label ARdevKit.View.Slider.label3</definition>
+        <argsstring></argsstring>
+        <name>label3</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.Designer.cs" line="94" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.Designer.cs" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_view_1_1_slider_1a4992b4f44df519d4490004030c720d8f" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>double</type>
+        <definition>double ARdevKit.View.Slider.SliderValueDouble</definition>
+        <argsstring></argsstring>
+        <name>SliderValueDouble</name>
+        <briefdescription>
+<para>Get and set the sliderValueDouble </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" line="27" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_view_1_1_slider_1a3405af3a2d8c39d5e018899859768da5" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>int</type>
+        <definition>int ARdevKit.View.Slider.SliderValueInt</definition>
+        <argsstring></argsstring>
+        <name>SliderValueInt</name>
+        <briefdescription>
+<para>Get and set the sliderValueInt </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" line="40" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_view_1_1_slider_1a50b3b525c32f01fcf6ff34d61fb393f1" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.View.Slider.Slider</definition>
+        <argsstring>()</argsstring>
+        <name>Slider</name>
+        <briefdescription>
+<para>Init the <ref refid="class_a_rdev_kit_1_1_view_1_1_slider" kindref="compound">Slider</ref> Form </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" line="49" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" bodystart="49" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_view_1_1_slider_1a5e87245712bef9c3b9e89765d04eb38d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ARdevKit.View.Slider.trackBar1_Scroll</definition>
+        <argsstring>(object sender, EventArgs e)</argsstring>
+        <name>trackBar1_Scroll</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>EventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Event of the trackBar. Checks the value of the trackbar and converts it appropriate return value. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" line="85" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" bodystart="85" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_view_1_1_slider_1a0abb22f3918798a19961bb2209dbb739" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ARdevKit.View.Slider.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>Erforderliche Methode für die Designerunterstützung. Der Inhalt der Methode darf nicht mit dem Code-Editor geändert werden. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.Designer.cs" line="29" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.Designer.cs" bodystart="29" bodyend="87"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_view_1_1_slider_1a9bb16b6a8e70e9e8530d7df8991afcd5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.View.Slider.Slider</definition>
+        <argsstring>(int initValue, int maxValue)</argsstring>
+        <name>Slider</name>
+        <param>
+          <type>int</type>
+          <declname>initValue</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>maxValue</declname>
+        </param>
+        <briefdescription>
+<para>Init the SliderForm for an integer return value. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>initValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Initial value</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>maxValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximum value of the trackbar</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" line="59" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" bodystart="59" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_view_1_1_slider_1af40e3fca8a9d64029b5cd9b94077eb11" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.View.Slider.Slider</definition>
+        <argsstring>(double initValue)</argsstring>
+        <name>Slider</name>
+        <param>
+          <type>double</type>
+          <declname>initValue</declname>
+        </param>
+        <briefdescription>
+<para>Init the SliderForm for a double return value. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>initValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Initial value</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" line="74" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" bodystart="74" bodyend="78"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_view_1_1_slider_1ac051ee212a71f40c9e313d46f4d1f209" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override void</type>
+        <definition>override void ARdevKit.View.Slider.Dispose</definition>
+        <argsstring>(bool disposing)</argsstring>
+        <name>Dispose</name>
+        <param>
+          <type>bool</type>
+          <declname>disposing</declname>
+        </param>
+        <briefdescription>
+<para>Verwendete Ressourcen bereinigen. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>disposing</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>True, wenn verwaltete Ressourcen gelöscht werden sollen; andernfalls False.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.Designer.cs" line="14" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.Designer.cs" bodystart="14" bodyend="21"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="716">
+        <label>ARdevKit.View.Slider</label>
+        <link refid="class_a_rdev_kit_1_1_view_1_1_slider"/>
+        <childnode refid="717" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="717">
+        <label>UserControl</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="718">
+        <label>ARdevKit.View.Slider</label>
+        <link refid="class_a_rdev_kit_1_1_view_1_1_slider"/>
+        <childnode refid="719" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="719">
+        <label>UserControl</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" line="14" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" bodystart="13" bodyend="94"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_view_1_1_slider_1ac3c020895fc3a2037d6b649c61695300" prot="private" virt="non-virtual"><scope>ARdevKit::View::Slider</scope><name>components</name></member>
+      <member refid="class_a_rdev_kit_1_1_view_1_1_slider_1ac051ee212a71f40c9e313d46f4d1f209" prot="protected" virt="non-virtual"><scope>ARdevKit::View::Slider</scope><name>Dispose</name></member>
+      <member refid="class_a_rdev_kit_1_1_view_1_1_slider_1a0abb22f3918798a19961bb2209dbb739" prot="private" virt="non-virtual"><scope>ARdevKit::View::Slider</scope><name>InitializeComponent</name></member>
+      <member refid="class_a_rdev_kit_1_1_view_1_1_slider_1a7d3810e2bd33719dd81f62cb3122604a" prot="private" virt="non-virtual"><scope>ARdevKit::View::Slider</scope><name>isDouble</name></member>
+      <member refid="class_a_rdev_kit_1_1_view_1_1_slider_1afa054b61db2af97d6d752da104cd2896" prot="private" virt="non-virtual"><scope>ARdevKit::View::Slider</scope><name>label1</name></member>
+      <member refid="class_a_rdev_kit_1_1_view_1_1_slider_1af3605f31bb059d04b8bac11cd2e7c121" prot="private" virt="non-virtual"><scope>ARdevKit::View::Slider</scope><name>label2</name></member>
+      <member refid="class_a_rdev_kit_1_1_view_1_1_slider_1afdb6c02a769bf8917cbde0d71903795e" prot="private" virt="non-virtual"><scope>ARdevKit::View::Slider</scope><name>label3</name></member>
+      <member refid="class_a_rdev_kit_1_1_view_1_1_slider_1a50b3b525c32f01fcf6ff34d61fb393f1" prot="private" virt="non-virtual"><scope>ARdevKit::View::Slider</scope><name>Slider</name></member>
+      <member refid="class_a_rdev_kit_1_1_view_1_1_slider_1a9bb16b6a8e70e9e8530d7df8991afcd5" prot="public" virt="non-virtual"><scope>ARdevKit::View::Slider</scope><name>Slider</name></member>
+      <member refid="class_a_rdev_kit_1_1_view_1_1_slider_1af40e3fca8a9d64029b5cd9b94077eb11" prot="public" virt="non-virtual"><scope>ARdevKit::View::Slider</scope><name>Slider</name></member>
+      <member refid="class_a_rdev_kit_1_1_view_1_1_slider_1a7a3ec903f49503e4976e062896e171cd" prot="private" virt="non-virtual"><scope>ARdevKit::View::Slider</scope><name>sliderValueDouble</name></member>
+      <member refid="class_a_rdev_kit_1_1_view_1_1_slider_1a4992b4f44df519d4490004030c720d8f" prot="public" virt="non-virtual"><scope>ARdevKit::View::Slider</scope><name>SliderValueDouble</name></member>
+      <member refid="class_a_rdev_kit_1_1_view_1_1_slider_1a3405af3a2d8c39d5e018899859768da5" prot="public" virt="non-virtual"><scope>ARdevKit::View::Slider</scope><name>SliderValueInt</name></member>
+      <member refid="class_a_rdev_kit_1_1_view_1_1_slider_1a103009d3e8755d44e9df918f3973944d" prot="private" virt="non-virtual"><scope>ARdevKit::View::Slider</scope><name>sliderValueInt</name></member>
+      <member refid="class_a_rdev_kit_1_1_view_1_1_slider_1afd8a669d84fe943d1a4b37c7ee96a041" prot="private" virt="non-virtual"><scope>ARdevKit::View::Slider</scope><name>trackBar1</name></member>
+      <member refid="class_a_rdev_kit_1_1_view_1_1_slider_1a5e87245712bef9c3b9e89765d04eb38d" prot="private" virt="non-virtual"><scope>ARdevKit::View::Slider</scope><name>trackBar1_Scroll</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

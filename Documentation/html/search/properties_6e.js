@@ -1,0 +1,5 @@
+var searchData=
+[
+  ['name',['Name',['../class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element.html#a815f4b956410f110fa82889e863e6800',1,'ARdevKit.Controller.EditorController.SceneElement.Name()'],['../class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_category.html#a0f33148739c409a2fe2210c4e3ece165',1,'ARdevKit.Controller.EditorController.SceneElementCategory.Name()'],['../class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor.html#ae9ff3a8ab9d8d8a357173cfa55a7030f',1,'ARdevKit.Model.Project.AbstractSensor.Name()'],['../class_a_rdev_kit_1_1_model_1_1_project_1_1_project.html#ae52006b6ebb8293ff034e8e00fdc4e77',1,'ARdevKit.Model.Project.Project.Name()']]],
+  ['numberofsearchiterations',['NumberOfSearchIterations',['../class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor.html#a106f06e0fb75947b4748a392e7a520b7',1,'ARdevKit.Model.Project.MarkerSensor.NumberOfSearchIterations()'],['../class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_sensor.html#abdebe622c6ef02494e50d0caa2b142cb',1,'ARdevKit.Model.Project.PictureMarkerSensor.NumberOfSearchIterations()']]]
+];

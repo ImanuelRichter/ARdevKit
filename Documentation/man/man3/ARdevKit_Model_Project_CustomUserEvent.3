@@ -1,0 +1,72 @@
+.TH "ARdevKit.Model.Project.CustomUserEvent" 3 "Sat Mar 1 2014" "Version 0.2" "ARdevKit" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ARdevKit.Model.Project.CustomUserEvent \- 
+.PP
+The class \fBCustomUserEvent\fP mainly contains a reference to a file, which is in the /currentProject/ Folder\&. This file has ALL Events the user creates (inclusive the template events we provide) for ONE augmentation\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCustomUserEvent\fP (string augmentationID)"
+.br
+.RI "\fIConstructor of the \fBCustomUserEvent\fP\&. \fP"
+.ti -1c
+.RI "void \fBAccept\fP (\fBAbstractProjectVisitor\fP visitor)"
+.br
+.RI "\fIA method, to accept a AbstractProjectVisitor which must be implemented according to the visitor design pattern\&. \fP"
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "string \fBFilePath\fP\fC [get, set]\fP"
+.br
+.RI "\fIGet or set the file path for the customUserEvents-File\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The class \fBCustomUserEvent\fP mainly contains a reference to a file, which is in the /currentProject/ Folder\&. This file has ALL Events the user creates (inclusive the template events we provide) for ONE augmentation\&. 
+
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ARdevKit\&.Model\&.Project\&.CustomUserEvent\&.CustomUserEvent (stringaugmentationID)"
+
+.PP
+Constructor of the \fBCustomUserEvent\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIaugmentationID\fP ID of the augmentation
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void ARdevKit\&.Model\&.Project\&.CustomUserEvent\&.Accept (\fBAbstractProjectVisitor\fPvisitor)"
+
+.PP
+A method, to accept a AbstractProjectVisitor which must be implemented according to the visitor design pattern\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvisitor\fP the visitor which encapsulates the action which is performed on this \fBCustomUserEvent\fP
+.RE
+.PP
+
+.SH "Property Documentation"
+.PP 
+.SS "string ARdevKit\&.Model\&.Project\&.CustomUserEvent\&.FilePath\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Get or set the file path for the customUserEvents-File\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ARdevKit from the source code\&.

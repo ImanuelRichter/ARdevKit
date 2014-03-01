@@ -78,7 +78,7 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// Vector to describe the position on the PreviewPanel, and later
         /// to position it on the coordinatesystem given in AREL.
-        /// </summar>
+        /// </summary>
         private Vector3D translationVector;
         /// <summary>
         /// Get or set the position of the <see cref="AbstractAugmentation"/>.

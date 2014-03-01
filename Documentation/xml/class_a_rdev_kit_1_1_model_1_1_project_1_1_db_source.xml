@@ -1,0 +1,203 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_model_1_1_project_1_1_db_source" kind="class" prot="public">
+    <compoundname>ARdevKit::Model::Project::DbSource</compoundname>
+    <basecompoundref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source" prot="public" virt="non-virtual">ARdevKit.Model.Project.AbstractSource</basecompoundref>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_db_source_1ac6b9cc43f2dee23b83d8783c81a07407" prot="protected" static="no" mutable="no">
+        <type>string</type>
+        <definition>string ARdevKit.Model.Project.DbSource.url</definition>
+        <argsstring></argsstring>
+        <name>url</name>
+        <briefdescription>
+<para>URL of the source. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/DbSource.cs" line="21" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/DbSource.cs" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_db_source_1a3a58d6e8914c028e06dbd9ebfef1f4bd" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>string</type>
+        <definition>string ARdevKit.Model.Project.DbSource.Url</definition>
+        <argsstring></argsstring>
+        <name>Url</name>
+        <briefdescription>
+<para>Gets or sets URL of the source. </para>        </briefdescription>
+        <detaileddescription>
+<para>The URL. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/DbSource.cs" line="29" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/DbSource.cs" bodystart="30" bodyend="-1"/>
+        <referencedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1a54481877bd367164a17916ff32f8da09" compoundref="_export_visitor_8cs" startline="396" endline="416">ARdevKit.Controller.ProjectController.ExportVisitor.Visit</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_db_source_1a44cad2325f3fcee5ed95c0a57ada9a1d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.Model.Project.DbSource.DbSource</definition>
+        <argsstring>()</argsstring>
+        <name>DbSource</name>
+        <briefdescription>
+<para>Default constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 26.01.2014. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/DbSource.cs" line="41" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/DbSource.cs" bodystart="41" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_db_source_1a80e5da6929dee8cf0ecb51b4da394df2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.Model.Project.DbSource.DbSource</definition>
+        <argsstring>(string url)</argsstring>
+        <name>DbSource</name>
+        <param>
+          <type>string</type>
+          <declname>url</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 26.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>url</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>URL of the source. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/DbSource.cs" line="51" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/DbSource.cs" bodystart="51" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_db_source_1aaa7e395578b8e983de0392dd37c55c93" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override void</type>
+        <definition>override void ARdevKit.Model.Project.DbSource.Accept</definition>
+        <argsstring>(AbstractProjectVisitor visitor)</argsstring>
+        <name>Accept</name>
+        <reimplements refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_1ad45fa69ac940512f91457ca7c7661882">Accept</reimplements>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor" kindref="compound">AbstractProjectVisitor</ref></type>
+          <declname>visitor</declname>
+        </param>
+        <briefdescription>
+<para>An abstract method, to accept a AbstractProjectVisitor which must be implemented according to the visitor design pattern. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 26.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>visitor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the visitor which encapsulates the action which is performed on this element. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/DbSource.cs" line="68" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/DbSource.cs" bodystart="68" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_db_source_1a0890127d66db4ce9c3daa6fe6f44f157" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override Bitmap</type>
+        <definition>override Bitmap ARdevKit.Model.Project.DbSource.getIcon</definition>
+        <argsstring>()</argsstring>
+        <name>getIcon</name>
+        <reimplements refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_1ae698f1c9d55cc0603931bd2804d0c35d">getIcon</reimplements>
+        <briefdescription>
+<para>returns a Bitmap in order to be displayed on the ElementSelectionPanel, implements <ref refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable" kindref="compound">IPreviewable</ref> </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>a representative iconized Bitmap </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/DbSource.cs" line="80" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/DbSource.cs" bodystart="80" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_db_source_1a9c58ffefa3fd6d23d58392273be07d17" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override object</type>
+        <definition>override object ARdevKit.Model.Project.DbSource.Clone</definition>
+        <argsstring>()</argsstring>
+        <name>Clone</name>
+        <reimplements refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_1a17fb18629481715303c5c55a867bb023">Clone</reimplements>
+        <briefdescription>
+<para>Makes a deep copy of this object. </para>        </briefdescription>
+        <detaileddescription>
+<para>Robin, 21.01.2014. </para><para><simplesect kind="return"><para>A copy of this object. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/DbSource.cs" line="93" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/DbSource.cs" bodystart="93" bodyend="96"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A database source </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="516">
+        <label>AbstractSource</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source"/>
+        <childnode refid="517" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="517">
+        <label>IPreviewable</label>
+        <link refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable"/>
+        <childnode refid="518" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="515">
+        <label>ARdevKit.Model.Project.DbSource</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_db_source"/>
+        <childnode refid="516" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="518">
+        <label>ICloneable</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="520">
+        <label>AbstractSource</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source"/>
+        <childnode refid="521" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="521">
+        <label>IPreviewable</label>
+        <link refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable"/>
+        <childnode refid="522" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="519">
+        <label>ARdevKit.Model.Project.DbSource</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_db_source"/>
+        <childnode refid="520" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="522">
+        <label>ICloneable</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/DbSource.cs" line="19" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/DbSource.cs" bodystart="18" bodyend="97"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_1afbfcad1056b3776f35bdd1b09541ae28" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::DbSource</scope><name>AbstractSource</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_1a675e2b01328010a1c6d690e07ba04593" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::DbSource</scope><name>AbstractSource</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_db_source_1aaa7e395578b8e983de0392dd37c55c93" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::DbSource</scope><name>Accept</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_1a97697e9bd1d99e0c8a35f47a19568016" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::DbSource</scope><name>Augmentation</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_db_source_1a9c58ffefa3fd6d23d58392273be07d17" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::DbSource</scope><name>Clone</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_db_source_1a44cad2325f3fcee5ed95c0a57ada9a1d" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::DbSource</scope><name>DbSource</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_db_source_1a80e5da6929dee8cf0ecb51b4da394df2" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::DbSource</scope><name>DbSource</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_db_source_1a0890127d66db4ce9c3daa6fe6f44f157" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::DbSource</scope><name>getIcon</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_1abd9f742efb27a1fca992f6627c0421e4" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::DbSource</scope><name>getPreview</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_1ae0ad810da02d289ddcbb28bb2aabec43" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::DbSource</scope><name>initElement</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_1a77b9039615be2c2792e6f6792f0d32bc" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::DbSource</scope><name>Query</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_1abc3b4344725b8e3ae380f1922b59cf53" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::DbSource</scope><name>queryFilePath</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_1ad17fdcfdfb0b52e0a2780e7117fd9ffc" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::DbSource</scope><name>SourceID</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_1a74cf779ccb9c125ff5202864414f2078" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::DbSource</scope><name>ToString</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_db_source_1ac6b9cc43f2dee23b83d8783c81a07407" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::DbSource</scope><name>url</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_db_source_1a3a58d6e8914c028e06dbd9ebfef1f4bd" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::DbSource</scope><name>Url</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

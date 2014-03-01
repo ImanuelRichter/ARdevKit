@@ -1,0 +1,111 @@
+.TH "ARdevKit.Model.Project.File.XMLBlock" 3 "Sat Mar 1 2014" "Version 0.2" "ARdevKit" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ARdevKit.Model.Project.File.XMLBlock \- 
+.PP
+A \fBXMLBlock\fP is an \fBAbstractBlock\fP which can have \fBXMLTag\fPs\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBARdevKit\&.Model\&.Project\&.File\&.AbstractBlock\fP\&.
+.PP
+Inherited by \fBARdevKit\&.Model\&.Project\&.File\&.XMLLine\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBXMLBlock\fP (\fBXMLTag\fP tag)"
+.br
+.RI "\fIConstructor\&. \fP"
+.ti -1c
+.RI "void \fBUpdate\fP (\fBXMLTag\fP tag)"
+.br
+.RI "\fIUpdates the \fBBlockMarker\fP\&. \fP"
+.ti -1c
+.RI "void \fBAddLine\fP (\fBXMLLine\fP line)"
+.br
+.RI "\fIAdds a line\&. \fP"
+.ti -1c
+.RI "override void \fBWrite\fP (System\&.IO\&.StreamWriter writer)"
+.br
+.RI "\fIWrites the given writer\&. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "List< \fBXMLLine\fP > \fBlines\fP"
+.br
+.RI "\fIThe lines\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+A \fBXMLBlock\fP is an \fBAbstractBlock\fP which can have \fBXMLTag\fPs\&. 
+
+Imanuel, 15\&.01\&.2014\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ARdevKit\&.Model\&.Project\&.File\&.XMLBlock\&.XMLBlock (\fBXMLTag\fPtag)"
+
+.PP
+Constructor\&. Imanuel, 17\&.01\&.2014\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItag\fP The tag\&. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void ARdevKit\&.Model\&.Project\&.File\&.XMLBlock\&.AddLine (\fBXMLLine\fPline)"
+
+.PP
+Adds a line\&. Imanuel, 15\&.01\&.2014\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIline\fP The cln\&. 
+.RE
+.PP
+
+.SS "void ARdevKit\&.Model\&.Project\&.File\&.XMLBlock\&.Update (\fBXMLTag\fPtag)"
+
+.PP
+Updates the \fBBlockMarker\fP\&. Imanuel, 17\&.01\&.2014\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItag\fP The tag\&. 
+.RE
+.PP
+
+.SS "override void ARdevKit\&.Model\&.Project\&.File\&.XMLBlock\&.Write (System\&.IO\&.StreamWriterwriter)\fC [virtual]\fP"
+
+.PP
+Writes the given writer\&. Imanuel, 17\&.01\&.2014\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIwriter\fP The writer to write\&. 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBARdevKit\&.Model\&.Project\&.File\&.AbstractBlock\fP\&.
+.PP
+Reimplemented in \fBARdevKit\&.Model\&.Project\&.File\&.XMLLine\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "List<\fBXMLLine\fP> ARdevKit\&.Model\&.Project\&.File\&.XMLBlock\&.lines\fC [protected]\fP"
+
+.PP
+The lines\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ARdevKit from the source code\&.

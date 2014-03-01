@@ -1,0 +1,284 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable" kind="class" prot="public">
+    <compoundname>ARdevKit::Model::Project::Abstract2DTrackable</compoundname>
+    <basecompoundref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable" prot="public" virt="non-virtual">ARdevKit.Model.Project.AbstractTrackable</basecompoundref>
+    <derivedcompoundref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_marker" prot="public" virt="non-virtual">ARdevKit.Model.Project.IDMarker</derivedcompoundref>
+    <derivedcompoundref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable" prot="public" virt="non-virtual">ARdevKit.Model.Project.ImageTrackable</derivedcompoundref>
+    <derivedcompoundref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker" prot="public" virt="non-virtual">ARdevKit.Model.Project.PictureMarker</derivedcompoundref>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1ac965f78edc7135b60377d14acbe6d358" prot="protected" static="no" mutable="no">
+        <type>string</type>
+        <definition>string ARdevKit.Model.Project.Abstract2DTrackable.sensorCosID</definition>
+        <argsstring></argsstring>
+        <name>sensorCosID</name>
+        <briefdescription>
+<para>The sensor cos identifier, used by AREL to specify the TrackingData </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" line="19" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a3ef9116db48c612d3428126786516e81" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ARdevKit.Model.Project.Abstract2DTrackable.size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <briefdescription>
+<para>The size of the Marker in mm </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" line="33" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a5d6e8cbc9efc6da689e3537d334fec37" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d" kindref="compound">Vector3D</ref></type>
+        <definition>Vector3D ARdevKit.Model.Project.Abstract2DTrackable.translationVector</definition>
+        <argsstring></argsstring>
+        <name>translationVector</name>
+        <briefdescription>
+<para>Vector to describe the position on the PreviewPanel, and later to position it on the coordinatesystem given in AREL. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" line="54" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a85997ab052b01f3680d47d199b4551a0" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_di" kindref="compound">Vector3Di</ref></type>
+        <definition>Vector3Di ARdevKit.Model.Project.Abstract2DTrackable.rotationVector</definition>
+        <argsstring></argsstring>
+        <name>rotationVector</name>
+        <briefdescription>
+<para>Vector, to describe the rotation of the <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation" kindref="compound">AbstractAugmentation</ref> in x, y and z direction. w is used for TrackingFile Offset in AREL. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" line="69" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a8ebdec7d02359310504e15f3a9852c04" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser" kindref="compound">MarkerFuser</ref></type>
+        <definition>MarkerFuser ARdevKit.Model.Project.Abstract2DTrackable.fuser</definition>
+        <argsstring></argsstring>
+        <name>fuser</name>
+        <briefdescription>
+<para>Describes how different elements are combined and connected in AREL. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" line="85" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a9578380939f19267cc7372ca19ff936f" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>string</type>
+        <definition>string ARdevKit.Model.Project.Abstract2DTrackable.SensorCosID</definition>
+        <argsstring></argsstring>
+        <name>SensorCosID</name>
+        <briefdescription>
+<para>Gets or sets the sensor cos identifier. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" line="24" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" bodystart="25" bodyend="-1"/>
+        <referencedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1a6ba67134957206067b97c6ebba5a9c8a" compoundref="_export_visitor_8cs" startline="568" endline="687">ARdevKit.Controller.ProjectController.ExportVisitor.Visit</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a0c9a459cf25e74c8173564d476021c9a" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>int</type>
+        <definition>int ARdevKit.Model.Project.Abstract2DTrackable.Size</definition>
+        <argsstring></argsstring>
+        <name>Size</name>
+        <briefdescription>
+<para>Gets or sets the size. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" line="38" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" bodystart="39" bodyend="-1"/>
+        <referencedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1a384b6fc84602fd29bedff296b083b3a0" compoundref="_export_visitor_8cs" startline="697" endline="821">ARdevKit.Controller.ProjectController.ExportVisitor.Visit</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1acbb38387d30cb1239814606b54099bb3" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d" kindref="compound">Vector3D</ref></type>
+        <definition>Vector3D ARdevKit.Model.Project.Abstract2DTrackable.Translation</definition>
+        <argsstring></argsstring>
+        <name>Translation</name>
+        <briefdescription>
+<para>Get or set the position of the <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation" kindref="compound">AbstractAugmentation</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" line="59" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a12ba493972e7d277e8f67294beb70355" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_di" kindref="compound">Vector3Di</ref></type>
+        <definition>Vector3Di ARdevKit.Model.Project.Abstract2DTrackable.Rotation</definition>
+        <argsstring></argsstring>
+        <name>Rotation</name>
+        <briefdescription>
+<para>gets or sets the Vector </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" line="75" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a98e3270dac234f5acd6054707f4c1964" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser" kindref="compound">MarkerFuser</ref></type>
+        <definition>MarkerFuser ARdevKit.Model.Project.Abstract2DTrackable.Fuser</definition>
+        <argsstring></argsstring>
+        <name>Fuser</name>
+        <briefdescription>
+<para>Gets or sets the fuser. Is not Browsable, therefore not editable in the PropertyPanel </para>        </briefdescription>
+        <detaileddescription>
+<para>The fuser. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" line="95" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1ac836d823c247762a615f432375d943c2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override string</type>
+        <definition>override string ARdevKit.Model.Project.Abstract2DTrackable.ToString</definition>
+        <argsstring>()</argsstring>
+        <name>ToString</name>
+        <briefdescription>
+<para>Gibt eine Zeichenfolge zurück, die das aktuelle Objekt darstellt. </para>        </briefdescription>
+        <detaileddescription>
+<para>Robin, 14.01.2014. </para><para><simplesect kind="return"><para>Eine Zeichenfolge, die das aktuelle Objekt darstellt. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" line="108" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" bodystart="108" bodyend="111"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="399">
+        <label>ARdevKit.Model.Project.ImageTrackable</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable"/>
+        <childnode refid="394" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="394">
+        <label>ARdevKit.Model.Project.Abstract2DTrackable</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable"/>
+        <childnode refid="395" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="395">
+        <label>AbstractTrackable</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable"/>
+        <childnode refid="396" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="396">
+        <label>IPreviewable</label>
+        <link refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable"/>
+        <childnode refid="397" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="397">
+        <label>ICloneable</label>
+      </node>
+      <node id="398">
+        <label>ARdevKit.Model.Project.IDMarker</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_marker"/>
+        <childnode refid="394" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="400">
+        <label>ARdevKit.Model.Project.PictureMarker</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker"/>
+        <childnode refid="394" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="407">
+        <label>ARdevKit.Model.Project.Vector3D</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d"/>
+      </node>
+      <node id="405">
+        <label>ARdevKit.Model.Project.Vector3Di</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_di"/>
+        <childnode refid="406" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="401">
+        <label>ARdevKit.Model.Project.Abstract2DTrackable</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable"/>
+        <childnode refid="402" relation="public-inheritance">
+        </childnode>
+        <childnode refid="405" relation="usage">
+          <edgelabel>#rotationVector</edgelabel>
+        </childnode>
+        <childnode refid="407" relation="usage">
+          <edgelabel>#translationVector</edgelabel>
+        </childnode>
+        <childnode refid="408" relation="usage">
+          <edgelabel>#fuser</edgelabel>
+        </childnode>
+      </node>
+      <node id="408">
+        <label>ARdevKit.Model.Project.MarkerFuser</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser"/>
+      </node>
+      <node id="402">
+        <label>AbstractTrackable</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable"/>
+        <childnode refid="403" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="406">
+        <label>Vector3D</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d"/>
+      </node>
+      <node id="403">
+        <label>IPreviewable</label>
+        <link refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable"/>
+        <childnode refid="404" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="404">
+        <label>ICloneable</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" line="13" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" bodystart="12" bodyend="112"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a76f6ad0ed8f615b8f5b7738411abb54f" prot="public" virt="pure-virtual"><scope>ARdevKit::Model::Project::Abstract2DTrackable</scope><name>Accept</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a999faeee63dee9445e8617d539c5b8d9" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Abstract2DTrackable</scope><name>Augmentations</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a166fc03dc00911591baca14a3341ef29" prot="public" virt="pure-virtual"><scope>ARdevKit::Model::Project::Abstract2DTrackable</scope><name>Clone</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1ac5dfdc39c3e7ad91ca9156208278b108" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Abstract2DTrackable</scope><name>existAugmentation</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a8ebdec7d02359310504e15f3a9852c04" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::Abstract2DTrackable</scope><name>fuser</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a98e3270dac234f5acd6054707f4c1964" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Abstract2DTrackable</scope><name>Fuser</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1abee7e96dac48f6fa7fc424c0f9139dff" prot="public" virt="pure-virtual"><scope>ARdevKit::Model::Project::Abstract2DTrackable</scope><name>getIcon</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1ab4d8a1902c82fe7a1d385d5688f92bd8" prot="public" virt="pure-virtual"><scope>ARdevKit::Model::Project::Abstract2DTrackable</scope><name>getPreview</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1aff50ed9cb95973d56d6a65bd1ef96c0a" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::Abstract2DTrackable</scope><name>initElement</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1ae14b72d85d610bcda17d93255bce45f7" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Abstract2DTrackable</scope><name>RemoveAugmentation</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a12ba493972e7d277e8f67294beb70355" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Abstract2DTrackable</scope><name>Rotation</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a85997ab052b01f3680d47d199b4551a0" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::Abstract2DTrackable</scope><name>rotationVector</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a9578380939f19267cc7372ca19ff936f" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Abstract2DTrackable</scope><name>SensorCosID</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1ac965f78edc7135b60377d14acbe6d358" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::Abstract2DTrackable</scope><name>sensorCosID</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1af77b1f7a449ef9150e22c684894213b1" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Abstract2DTrackable</scope><name>SimilarityThreshold</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a5a74b70a54b9bb1f4fbad46e08a2e0cd" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::Abstract2DTrackable</scope><name>similarityThreshold</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a0c9a459cf25e74c8173564d476021c9a" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Abstract2DTrackable</scope><name>Size</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a3ef9116db48c612d3428126786516e81" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::Abstract2DTrackable</scope><name>size</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1ac836d823c247762a615f432375d943c2" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Abstract2DTrackable</scope><name>ToString</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1acbb38387d30cb1239814606b54099bb3" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Abstract2DTrackable</scope><name>Translation</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a5d6e8cbc9efc6da689e3537d334fec37" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::Abstract2DTrackable</scope><name>translationVector</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1ab55c05790e5ffbefc7351a91167427bc" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Abstract2DTrackable</scope><name>Type</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1ab6faf8843d1e9a61b353286a8d583231" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::Abstract2DTrackable</scope><name>type</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a1a8b6d43d95fad1720fc5af98b7e42b4" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Abstract2DTrackable</scope><name>vector</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

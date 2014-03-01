@@ -74,14 +74,10 @@ namespace ARdevKit.View
             get { return editorWindow; }
         }
 
-        /**
-         * <summary>    Constructor. Creates the text label and the pictureBox and adds them to the Panel. Adds event handlers. </summary>
-         *
-         * <remarks>    Robin, 14.01.2014. </remarks>
-         *
-         * <param name="element">   The SceneElement that this Element Icon represents. </param>
-         */
-
+        /// <summary>    Constructor. Creates the text label and the pictureBox and adds them to the Panel. Adds event handlers. </summary>
+        /// <param name="element">The element.</param>
+        /// <param name="ew">The ew.</param>
+        /// <remarks>    Robin, 14.01.2014. </remarks>
         public ElementIcon(SceneElement element, EditorWindow ew) : base()
         {
             this.element = element;

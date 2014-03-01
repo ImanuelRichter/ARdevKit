@@ -19,11 +19,14 @@ namespace ARdevKit.Model.Project.File
         protected string header;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Constructor. </summary>
-        ///
-        /// <remarks>   Imanuel, 15.01.2014. </remarks>
-        ///
-        /// <param name="tag">  The tag. </param>
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="header">The header.</param>
+        /// <param name="filePath">The file path.</param>
+        /// <remarks>
+        /// Imanuel, 15.01.2014.
+        /// </remarks>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         public ARELProjectFile(string header, string filePath)

@@ -101,10 +101,12 @@ namespace ARdevKit.Model.Project
         public abstract void Accept(AbstractProjectVisitor visitor);
 
         /// <summary>
-        /// returns NO <see cref="Bitmap"/> in order to be displayed
-        /// on the PreviewPanel, implements <see cref="IPreviewable"/>
+        /// returns NO <see cref="Bitmap" /> in order to be displayed
+        /// on the PreviewPanel, implements <see cref="IPreviewable" />
         /// </summary>
-        /// <exception cref="NotSupportedException"/>
+        /// <returns></returns>
+        /// <exception cref="System.NotSupportedException"></exception>
+        /// <exception cref="NotSupportedException"></exception>
         public Bitmap getPreview()
         {
             throw new NotSupportedException();
@@ -165,13 +167,12 @@ namespace ARdevKit.Model.Project
             return true;
         }
 
-        /**
-         * <summary>    Gibt eine Zeichenfolge zurück, die das aktuelle Objekt darstellt. </summary>
-         *
-         * <remarks>    Robin, 14.01.2014. </remarks>
-         *
-         * <returns>    Eine Zeichenfolge, die das aktuelle Objekt darstellt. </returns>
-         */
+        /// <summary>
+        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="System.String" /> that represents this instance.
+        /// </returns>
         public override string ToString()
         {
             return sourceID;

@@ -49,10 +49,12 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
-        /// Creates the file from a template. The #element in the template
+        /// Creates the file from a template. The element in the template
         /// will be replaced with the id of the augmentation
         /// </summary>
-        /// <returns>File path of the newly generated customUserEvent.</returns>
+        /// <returns>
+        /// File path of the newly generated customUserEvent.
+        /// </returns>
         private string getCustomUserFile()
         {
             var fileName = "customUserEventTemplate.txt";

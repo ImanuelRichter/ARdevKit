@@ -10,11 +10,14 @@ namespace ARdevKit.Model.Project.File
     {
         private bool useComma;
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Constructor. </summary>
-        ///
-        /// <remarks>   Imanuel, 17.01.2014. </remarks>
-        ///
-        /// <param name="content">  The content. </param>
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="content">The content.</param>
+        /// <param name="useComma">if set to <c>true</c> [use comma].</param>
+        /// <remarks>
+        /// Imanuel, 17.01.2014.
+        /// </remarks>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         public JavaScriptInLine(string content, bool useComma) : base(content)
@@ -23,12 +26,15 @@ namespace ARdevKit.Model.Project.File
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Constructor. </summary>
-        ///
-        /// <remarks>   Imanuel, 17.01.2014. </remarks>
-        ///
-        /// <param name="content">      The content. </param>
-        /// <param name="blockMarker">  The block marker. </param>
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="content">The content.</param>
+        /// <param name="blockMarker">The block marker.</param>
+        /// <param name="useComma">if set to <c>true</c> [use comma].</param>
+        /// <remarks>
+        /// Imanuel, 17.01.2014.
+        /// </remarks>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         public JavaScriptInLine(string content, BlockMarker blockMarker, bool useComma) : base(content, blockMarker)

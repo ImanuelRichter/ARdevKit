@@ -1,0 +1,280 @@
+.TH "ARdevKit.Model.Project.Project" 3 "Sat Mar 1 2014" "Version 0.2" "ARdevKit" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ARdevKit.Model.Project.Project \- 
+.PP
+Encapsulates everything, that is needed for an AR-Application and so this the element, which the user saves, loads or exports  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBProject\fP ()"
+.br
+.RI "\fIInitializes a new instance of the \fBProject\fP class with default values\&. \fP"
+.ti -1c
+.RI "\fBProject\fP (string name)"
+.br
+.RI "\fIInitializes a new instance of the \fBProject\fP class with specified name\&. \fP"
+.ti -1c
+.RI "\fBProject\fP (string name, string projectPath)"
+.br
+.RI "\fIInitializes a new instance of the \fBProject\fP class with specified name and projectPath\&. \fP"
+.ti -1c
+.RI "void \fBAccept\fP (\fBAbstractProjectVisitor\fP visitor)"
+.br
+.RI "\fIAccepts the specified visitor\&. \fP"
+.ti -1c
+.RI "\fBAbstractSource\fP \fBfindSource\fP (\fBAbstractSource\fP source)"
+.br
+.RI "\fIReturns the associated source, if it is associated with the project\&. \fP"
+.ti -1c
+.RI "bool \fBexistSource\fP (\fBAbstractSource\fP source)"
+.br
+.RI "\fIReturns, if the specified source is associated with this project\&. \fP"
+.ti -1c
+.RI "bool \fBhasTrackable\fP ()"
+.br
+.RI "\fItests if all trackables in this\&.trackables are null\&. if there are one which is not null it's true\&. \fP"
+.ti -1c
+.RI "int \fBnextID\fP ()"
+.br
+.RI "\fIReturns the next bigger Matrix ID\&. \fP"
+.ti -1c
+.RI "bool \fBexistTrackable\fP (\fBIPreviewable\fP prev)"
+.br
+.RI "\fItrue if an Trackable with the same Path/ID exists, false if not\&. \fP"
+.ti -1c
+.RI "bool \fBexistTrackable\fP (int matrixID)"
+.br
+.RI "\fItrue if an Trackable with the same Path/ID exists, false if not\&. \fP"
+.ti -1c
+.RI "string \fBgetChecksum\fP ()"
+.br
+.RI "\fIGets the checksum of the project lying at the project path\&. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBAbstractSensor\fP \fBsensor\fP"
+.br
+.RI "\fIThe sensor, is depentend on the used trackables\&. \fP"
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "\fBScreenSize\fP \fBScreensize\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the screensize\&. \fP"
+.ti -1c
+.RI "string \fBName\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the name\&. \fP"
+.ti -1c
+.RI "string \fBProjectPath\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the full pathname of the project file\&. \fP"
+.ti -1c
+.RI "\fBAbstractSensor\fP \fBSensor\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the sensor\&. \fP"
+.ti -1c
+.RI "List< \fBAbstractSource\fP > \fBSources\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the sources\&. \fP"
+.ti -1c
+.RI "List< \fBAbstractTrackable\fP > \fBTrackables\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the trackables\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Encapsulates everything, that is needed for an AR-Application and so this the element, which the user saves, loads or exports 
+
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ARdevKit\&.Model\&.Project\&.Project\&.Project ()"
+
+.PP
+Initializes a new instance of the \fBProject\fP class with default values\&. 
+.SS "ARdevKit\&.Model\&.Project\&.Project\&.Project (stringname)"
+
+.PP
+Initializes a new instance of the \fBProject\fP class with specified name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP The name\&.
+.RE
+.PP
+
+.SS "ARdevKit\&.Model\&.Project\&.Project\&.Project (stringname, stringprojectPath)"
+
+.PP
+Initializes a new instance of the \fBProject\fP class with specified name and projectPath\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP The name\&.
+.br
+\fIprojectPath\fP Full pathname of the project file\&.
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void ARdevKit\&.Model\&.Project\&.Project\&.Accept (\fBAbstractProjectVisitor\fPvisitor)"
+
+.PP
+Accepts the specified visitor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvisitor\fP The visitor\&.
+.RE
+.PP
+
+.SS "bool ARdevKit\&.Model\&.Project\&.Project\&.existSource (\fBAbstractSource\fPsource)"
+
+.PP
+Returns, if the specified source is associated with this project\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsource\fP The specified source\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true, if the source is associated with this project false, else 
+.RE
+.PP
+
+.SS "bool ARdevKit\&.Model\&.Project\&.Project\&.existTrackable (\fBIPreviewable\fPprev)"
+
+.PP
+true if an Trackable with the same Path/ID exists, false if not\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIprev\fP The previous\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+.RE
+.PP
+
+.SS "bool ARdevKit\&.Model\&.Project\&.Project\&.existTrackable (intmatrixID)"
+
+.PP
+true if an Trackable with the same Path/ID exists, false if not\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImatrixID\fP Identifier for the matrix\&. 
+.RE
+.PP
+.PP
+\fBReturns:\fP
+.RS 4
+true if it succeeds, false if it fails\&. 
+.RE
+.PP
+
+.SS "\fBAbstractSource\fP ARdevKit\&.Model\&.Project\&.Project\&.findSource (\fBAbstractSource\fPsource)"
+
+.PP
+Returns the associated source, if it is associated with the project\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsource\fP The source, which is searched\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the associated source 
+.RE
+.PP
+
+.SS "string ARdevKit\&.Model\&.Project\&.Project\&.getChecksum ()"
+
+.PP
+Gets the checksum of the project lying at the project path\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+
+.RE
+.PP
+.PP
+geht 20\&.02\&.2014 13:36
+.SS "bool ARdevKit\&.Model\&.Project\&.Project\&.hasTrackable ()"
+
+.PP
+tests if all trackables in this\&.trackables are null\&. if there are one which is not null it's true\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+true if trackable, false if not\&. 
+.RE
+.PP
+.PP
+Lizzard, 1/19/2014\&. 
+.SS "int ARdevKit\&.Model\&.Project\&.Project\&.nextID ()"
+
+.PP
+Returns the next bigger Matrix ID\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBAbstractSensor\fP ARdevKit\&.Model\&.Project\&.Project\&.sensor\fC [protected]\fP"
+
+.PP
+The sensor, is depentend on the used trackables\&. 
+.SH "Property Documentation"
+.PP 
+.SS "string ARdevKit\&.Model\&.Project\&.Project\&.Name\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the name\&. The name\&. 
+.SS "string ARdevKit\&.Model\&.Project\&.Project\&.ProjectPath\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the full pathname of the project file\&. The full pathname of the project file\&. 
+.SS "\fBScreenSize\fP ARdevKit\&.Model\&.Project\&.Project\&.Screensize\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the screensize\&. The screensize\&. 
+.PP
+geht 28\&.01\&.2014 14:43
+.SS "\fBAbstractSensor\fP ARdevKit\&.Model\&.Project\&.Project\&.Sensor\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the sensor\&. The sensor\&. 
+.SS "List<\fBAbstractSource\fP> ARdevKit\&.Model\&.Project\&.Project\&.Sources\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the sources\&. The sources\&. 
+.SS "List<\fBAbstractTrackable\fP> ARdevKit\&.Model\&.Project\&.Project\&.Trackables\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the trackables\&. The trackables\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ARdevKit from the source code\&.

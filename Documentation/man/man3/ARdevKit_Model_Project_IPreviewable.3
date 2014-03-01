@@ -1,0 +1,87 @@
+.TH "ARdevKit.Model.Project.IPreviewable" 3 "Sat Mar 1 2014" "Version 0.2" "ARdevKit" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ARdevKit.Model.Project.IPreviewable \- 
+.PP
+Interface for previewable elements from the \fBModel\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits ICloneable\&.
+.PP
+Inherited by \fBARdevKit\&.Model\&.Project\&.AbstractAugmentation\fP, \fBARdevKit\&.Model\&.Project\&.AbstractSource\fP, and \fBARdevKit\&.Model\&.Project\&.AbstractTrackable\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "Bitmap \fBgetPreview\fP ()"
+.br
+.RI "\fIGets the preview which is displayed by PreviewPanel\&. \fP"
+.ti -1c
+.RI "Bitmap \fBgetIcon\fP ()"
+.br
+.RI "\fIGets the icon which is displayed by ElementSelectionPanel\&. \fP"
+.ti -1c
+.RI "bool \fBinitElement\fP (\fBEditorWindow\fP ew)"
+.br
+.RI "\fIThis method is called by the previewController when a new instance of the element is added to the Scene\&. It sets 'must-have' properties\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Interface for previewable elements from the \fBModel\fP\&. 
+
+
+.SH "Member Function Documentation"
+.PP 
+.SS "Bitmap ARdevKit\&.Model\&.Project\&.IPreviewable\&.getIcon ()"
+
+.PP
+Gets the icon which is displayed by ElementSelectionPanel\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+The icon\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBARdevKit\&.Model\&.Project\&.AbstractAugmentation\fP, \fBARdevKit\&.Model\&.Project\&.PictureMarker\fP, \fBARdevKit\&.Model\&.Project\&.ImageTrackable\fP, \fBARdevKit\&.Model\&.Project\&.Chart\fP, \fBARdevKit\&.Model\&.Project\&.ImageAugmentation\fP, \fBARdevKit\&.Model\&.Project\&.VideoAugmentation\fP, \fBARdevKit\&.Model\&.Project\&.AbstractSource\fP, \fBARdevKit\&.Model\&.Project\&.IDMarker\fP, \fBARdevKit\&.Model\&.Project\&.AbstractTrackable\fP, \fBARdevKit\&.Model\&.Project\&.DbSource\fP, and \fBARdevKit\&.Model\&.Project\&.FileSource\fP\&.
+.SS "Bitmap ARdevKit\&.Model\&.Project\&.IPreviewable\&.getPreview ()"
+
+.PP
+Gets the preview which is displayed by PreviewPanel\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+
+.RE
+.PP
+
+.PP
+Implemented in \fBARdevKit\&.Model\&.Project\&.AbstractAugmentation\fP, \fBARdevKit\&.Model\&.Project\&.ImageTrackable\fP, \fBARdevKit\&.Model\&.Project\&.PictureMarker\fP, \fBARdevKit\&.Model\&.Project\&.Chart\fP, \fBARdevKit\&.Model\&.Project\&.ImageAugmentation\fP, \fBARdevKit\&.Model\&.Project\&.VideoAugmentation\fP, \fBARdevKit\&.Model\&.Project\&.AbstractSource\fP, \fBARdevKit\&.Model\&.Project\&.AbstractTrackable\fP, and \fBARdevKit\&.Model\&.Project\&.IDMarker\fP\&.
+.SS "bool ARdevKit\&.Model\&.Project\&.IPreviewable\&.initElement (\fBEditorWindow\fPew)"
+
+.PP
+This method is called by the previewController when a new instance of the element is added to the Scene\&. It sets 'must-have' properties\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIew\fP The ew\&. 
+.RE
+.PP
+.PP
+\fBReturns:\fP
+.RS 4
+true if it succeeds, false if it fails\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBARdevKit\&.Model\&.Project\&.AbstractAugmentation\fP, \fBARdevKit\&.Model\&.Project\&.Chart\fP, \fBARdevKit\&.Model\&.Project\&.ImageAugmentation\fP, \fBARdevKit\&.Model\&.Project\&.PictureMarker\fP, \fBARdevKit\&.Model\&.Project\&.VideoAugmentation\fP, \fBARdevKit\&.Model\&.Project\&.AbstractTrackable\fP, \fBARdevKit\&.Model\&.Project\&.ImageTrackable\fP, \fBARdevKit\&.Model\&.Project\&.AbstractSource\fP, and \fBARdevKit\&.Model\&.Project\&.IDMarker\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ARdevKit from the source code\&.

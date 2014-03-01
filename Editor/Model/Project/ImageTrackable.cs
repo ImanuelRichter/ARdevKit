@@ -20,6 +20,14 @@ namespace ARdevKit.Model.Project
     public class ImageTrackable : Abstract2DTrackable
     {
         private MarkerlessFuser fuser;
+        /// <summary>
+        /// Gets or sets the fuser.
+        /// Is not Browsable, therefore not editable in
+        /// the PropertyPanel
+        /// </summary>
+        /// <value>
+        /// The fuser.
+        /// </value>
         public MarkerlessFuser Fuser
         {
             get { return fuser; }
@@ -101,6 +109,12 @@ namespace ARdevKit.Model.Project
             imageName = Path.GetFileName(imagePath);
         }
 
+        /// <summary>
+        /// An abstract method, to accept a <see cref="AbstractProjectVisitor" />
+        /// which must be implemented according to the visitor design pattern.
+        /// </summary>
+        /// <param name="visitor">the visitor which encapsulates the action
+        /// which is performed on this element</param>
         public override void Accept(Controller.ProjectController.AbstractProjectVisitor visitor)
         {
             visitor.Visit(this);

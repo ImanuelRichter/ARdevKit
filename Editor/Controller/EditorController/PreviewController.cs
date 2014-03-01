@@ -45,6 +45,12 @@ public class PreviewController
     /// </summary>
     private double scale;
 
+    /// <summary>
+    /// Gets or sets the copy.
+    /// </summary>
+    /// <value>
+    /// The copy.
+    /// </value>
     public AbstractAugmentation copy { get; set; }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -86,12 +92,11 @@ public class PreviewController
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// <summary>
-    ///     add Trackable is the method for adding the trackable, each PreviewPanel can holding one
-    ///     Trackable.
+    /// add Trackable is the method for adding the trackable, each PreviewPanel can holding one
+    /// Trackable.
     /// </summary>
-    ///
-    /// <param name="currentTrackable"> The current Trackable, which should set in the previewPanel. </param>
-    /// <param name="v">                The Vector3D to set the Trackable. </param>
+    /// <param name="currentElement">The current element.</param>
+    /// <param name="v">The Vector3D to set the Trackable.</param>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     public void addPreviewable(IPreviewable currentElement, Vector3D v)
     {
@@ -621,8 +626,8 @@ public class PreviewController
     /// scales the Pictureboxes to their own scale size
     /// the size is in dependency to the scale, the sideScale of the images and and the scale of the augmentation.
     /// </summary>
-    /// <param name="box">The box.</param>
     /// <param name="prev">The previous.</param>
+    /// <returns></returns>
     public Bitmap scaleIPreviewable(IPreviewable prev)
     {
         int height = prev.getPreview().Height;

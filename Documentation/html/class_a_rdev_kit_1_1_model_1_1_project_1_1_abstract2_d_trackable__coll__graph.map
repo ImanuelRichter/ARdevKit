@@ -1,0 +1,8 @@
+<map id="ARdevKit.Model.Project.Abstract2DTrackable" name="ARdevKit.Model.Project.Abstract2DTrackable">
+<area shape="rect" id="node2" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable.html" title="Describes an AbstractTrackable with its associated AbstractAugmentations and further details used for..." alt="" coords="5,291,173,530"/>
+<area shape="rect" id="node3" href="$interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable.html" title="Interface for previewable elements from the Model. " alt="" coords="36,133,143,240"/>
+<area shape="rect" id="node5" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_di.html" title="A vector 3 di. Is a Vector3D with an extra int variable. " alt="" coords="198,372,417,449"/>
+<area shape="rect" id="node6" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d.html" title="A 3D vektor. " alt="" coords="260,133,356,240"/>
+<area shape="rect" id="node7" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d.html" title="A 3D vektor. " alt="" coords="442,357,659,464"/>
+<area shape="rect" id="node8" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser.html" title="A MarkerFuser has a fuserType, an alphaTranslation, an alphaRotation and a keepPoseForNumberOfFrames ..." alt="" coords="683,335,897,486"/>
+</map>

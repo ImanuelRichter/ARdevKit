@@ -1,0 +1,6 @@
+<map id="PreviewController.addPreviewable" name="PreviewController.addPreviewable">
+<area shape="rect" id="node2" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_project.html#abb0710a1f1cd83bda71a0c988e9b6d72" title="true if an Trackable with the same Path/ID exists, false if not. " alt="" coords="270,5,506,46"/>
+<area shape="rect" id="node3" href="$class_preview_controller.html#ae5cb0828e43829a516a998407d6f8a1a" title="sets the currentElement in EditorWindow an marks the PictureBox in the PreviewPanel. " alt="" coords="295,70,481,111"/>
+<area shape="rect" id="node4" href="$class_preview_controller.html#a4ab1b4464e39eeb347554fc69f0dd38b" title="Searchs in the Panel for the important PictureBox and gives this box back. " alt="" coords="555,48,723,75"/>
+<area shape="rect" id="node5" href="$class_preview_controller.html#ae33fd4d13286e22a819f5a6cd5de292f" title="Updates the element combobox. " alt="" coords="557,99,721,141"/>
+</map>

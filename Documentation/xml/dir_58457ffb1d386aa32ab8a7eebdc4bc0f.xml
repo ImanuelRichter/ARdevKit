@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="dir_58457ffb1d386aa32ab8a7eebdc4bc0f" kind="dir">
+    <compoundname>C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project</compoundname>
+    <innerdir refid="dir_d24d2bc9ba296cc7c29789df05de8dd5">C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File</innerdir>
+    <innerfile refid="_abstract2_d_augmentation_8cs">Abstract2DAugmentation.cs</innerfile>
+    <innerfile refid="_abstract2_d_trackable_8cs">Abstract2DTrackable.cs</innerfile>
+    <innerfile refid="_abstract_augmentation_8cs">AbstractAugmentation.cs</innerfile>
+    <innerfile refid="_abstract_dynamic2_d_augmentation_8cs">AbstractDynamic2DAugmentation.cs</innerfile>
+    <innerfile refid="_abstract_sensor_8cs">AbstractSensor.cs</innerfile>
+    <innerfile refid="_abstract_source_8cs">AbstractSource.cs</innerfile>
+    <innerfile refid="_abstract_trackable_8cs">AbstractTrackable.cs</innerfile>
+    <innerfile refid="_chart_8cs">Chart.cs</innerfile>
+    <innerfile refid="_chart_positioning_8cs">ChartPositioning.cs</innerfile>
+    <innerfile refid="_custom_user_event_8cs">CustomUserEvent.cs</innerfile>
+    <innerfile refid="_db_source_8cs">DbSource.cs</innerfile>
+    <innerfile refid="_file_source_8cs">FileSource.cs</innerfile>
+    <innerfile refid="_i_d_factory_8cs">IDFactory.cs</innerfile>
+    <innerfile refid="_i_d_marker_8cs">IDMarker.cs</innerfile>
+    <innerfile refid="_image_augmentation_8cs">ImageAugmentation.cs</innerfile>
+    <innerfile refid="_image_trackable_8cs">ImageTrackable.cs</innerfile>
+    <innerfile refid="_i_previewable_8cs">IPreviewable.cs</innerfile>
+    <innerfile refid="_marker_fuser_8cs">MarkerFuser.cs</innerfile>
+    <innerfile refid="_markerless_fuser_8cs">MarkerlessFuser.cs</innerfile>
+    <innerfile refid="_markerless_sensor_8cs">MarkerlessSensor.cs</innerfile>
+    <innerfile refid="_marker_sensor_8cs">MarkerSensor.cs</innerfile>
+    <innerfile refid="_picture_marker_8cs">PictureMarker.cs</innerfile>
+    <innerfile refid="_picture_marker_sensor_8cs">PictureMarkerSensor.cs</innerfile>
+    <innerfile refid="_project_8cs">Project.cs</innerfile>
+    <innerfile refid="_screen_size_8cs">ScreenSize.cs</innerfile>
+    <innerfile refid="_vector3_d_8cs">Vector3D.cs</innerfile>
+    <innerfile refid="_vector3_di_8cs">Vector3Di.cs</innerfile>
+    <innerfile refid="_video_augmentation_8cs">VideoAugmentation.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/"/>
+  </compounddef>
+</doxygen>

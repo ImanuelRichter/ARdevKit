@@ -81,11 +81,13 @@ namespace ARdevKit.Controller.TestController
         /// <summary>
         /// Starts the player with the specified settings.
         /// </summary>
-        /// <param name="projectPath">The location of the project</param>
-        /// <param name="mode">
-        /// Tells if an image<see cref="IMAGE"/> or video<see cref="VIDEO"/>
-        /// should be loaded or if a virtual camera<see cref="CAMERA"/> should be started
-        /// </param>
+        /// <param name="ew">The EditorWindow.</param>
+        /// <param name="project">The project.</param>
+        /// <param name="mode">Tells if an image<see cref="IMAGE" /> or video<see cref="VIDEO" />
+        /// should be loaded or if a virtual camera<see cref="CAMERA" /> should be started</param>
+        /// <param name="width">The width.</param>
+        /// <param name="height">The height.</param>
+        /// <param name="showDebug">if set to <c>true</c> [show debug].</param>
         public static void StartPlayer(EditorWindow ew, Project project, int mode, int width, int height, bool showDebug)
         {
             editorWindow = ew;

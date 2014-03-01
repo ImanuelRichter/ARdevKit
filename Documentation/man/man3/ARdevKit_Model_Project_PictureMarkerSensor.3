@@ -1,0 +1,129 @@
+.TH "ARdevKit.Model.Project.PictureMarkerSensor" 3 "Sat Mar 1 2014" "Version 0.2" "ARdevKit" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ARdevKit.Model.Project.PictureMarkerSensor \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBARdevKit\&.Model\&.Project\&.AbstractSensor\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBTrackingQualities\fP { \fBrobust\fP, \fBfast\fP }"
+.br
+.RI "\fISpecifies the \fBtrackingQuality\fP\&. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPictureMarkerSensor\fP ()"
+.br
+.RI "\fIDefault constructor\&. \fP"
+.ti -1c
+.RI "override void \fBAccept\fP (\fBAbstractProjectVisitor\fP visitor)"
+.br
+.RI "\fIAccepts the given visitor\&. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBTrackingQualities\fP \fBtrackingQuality\fP"
+.br
+.RI "\fIStrategy which is used for the marker detection\&. There are two types available: \fP"
+.ti -1c
+.RI "int \fBthresholdOffset\fP"
+.br
+.RI "\fIThe threshold which is used to binarize the camera image\&. Binarizing is the process where each pixel is converted to a grayscale value (between 0 and 255) and then is set to 0 when the value is below the threshold and to 1 when the value is above\&. This helps to clearly identify the marker and is therefore important for the detection process\&. When the tracking quality is set to 'fast', then this value is fixed and will not change during the tracking process\&. When the tracking quality is set to 'robust', then the value is only the starting value in the very first frame after loading the tracking\&.xml\&. Detecting markers using a fixed threshold can lead to failure\&. The value range for the threshold is between 0 and 255\&. \fP"
+.ti -1c
+.RI "int \fBnumberOfSearchIterations\fP"
+.br
+.RI "\fINumber of search iterations which controls the number of attempts to find a marker with a new ThresholdOffset\&. This parameter matters when 'robust' is set as 'TrackingQuality', but is ignored for 'fast'\&. The ThresholdOffset is adapted when no marker was detected\&. With a high number, the marker tracker is more likely to detect a marker, but it also needs more computational time, i\&.e\&. is slower\&. \fP"
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "\fBTrackingQualities\fP \fBTrackingQuality\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the tracking quality\&. \fP"
+.ti -1c
+.RI "int \fBThresholdOffset\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the threshold offset\&. \fP"
+.ti -1c
+.RI "int \fBNumberOfSearchIterations\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the number of search iterations\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBARdevKit\&.Model\&.Project\&.PictureMarkerSensor\&.TrackingQualities\fP"
+
+.PP
+Specifies the \fBtrackingQuality\fP\&. Imanuel, 15\&.01\&.2014\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ARdevKit\&.Model\&.Project\&.PictureMarkerSensor\&.PictureMarkerSensor ()"
+
+.PP
+Default constructor\&. Imanuel, 17\&.01\&.2014\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "override void ARdevKit\&.Model\&.Project\&.PictureMarkerSensor\&.Accept (\fBAbstractProjectVisitor\fPvisitor)\fC [virtual]\fP"
+
+.PP
+Accepts the given visitor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvisitor\fP The visitor\&.
+.RE
+.PP
+.PP
+Imanuel, 17\&.01\&.2014\&. 
+.PP
+Implements \fBARdevKit\&.Model\&.Project\&.AbstractSensor\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int ARdevKit\&.Model\&.Project\&.PictureMarkerSensor\&.numberOfSearchIterations\fC [protected]\fP"
+
+.PP
+Number of search iterations which controls the number of attempts to find a marker with a new ThresholdOffset\&. This parameter matters when 'robust' is set as 'TrackingQuality', but is ignored for 'fast'\&. The ThresholdOffset is adapted when no marker was detected\&. With a high number, the marker tracker is more likely to detect a marker, but it also needs more computational time, i\&.e\&. is slower\&. 
+.SS "int ARdevKit\&.Model\&.Project\&.PictureMarkerSensor\&.thresholdOffset\fC [protected]\fP"
+
+.PP
+The threshold which is used to binarize the camera image\&. Binarizing is the process where each pixel is converted to a grayscale value (between 0 and 255) and then is set to 0 when the value is below the threshold and to 1 when the value is above\&. This helps to clearly identify the marker and is therefore important for the detection process\&. When the tracking quality is set to 'fast', then this value is fixed and will not change during the tracking process\&. When the tracking quality is set to 'robust', then the value is only the starting value in the very first frame after loading the tracking\&.xml\&. Detecting markers using a fixed threshold can lead to failure\&. The value range for the threshold is between 0 and 255\&. 
+.SS "\fBTrackingQualities\fP ARdevKit\&.Model\&.Project\&.PictureMarkerSensor\&.trackingQuality\fC [protected]\fP"
+
+.PP
+Strategy which is used for the marker detection\&. There are two types available: 
+.IP "\(bu" 2
+'robust' to use a robust approach to detect the markers, which usually gives the best results, but consumes more computational time, i\&.e\&. is slower\&.
+.IP "\(bu" 2
+'fast' to use a more simple approach to detect the markers, which is less precise, but faster than robust\&. 
+.PP
+
+.SH "Property Documentation"
+.PP 
+.SS "int ARdevKit\&.Model\&.Project\&.PictureMarkerSensor\&.NumberOfSearchIterations\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the number of search iterations\&. The total number of search iterations\&. 
+.SS "int ARdevKit\&.Model\&.Project\&.PictureMarkerSensor\&.ThresholdOffset\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the threshold offset\&. The threshold offset\&. 
+.SS "\fBTrackingQualities\fP ARdevKit\&.Model\&.Project\&.PictureMarkerSensor\&.TrackingQuality\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the tracking quality\&. The tracking quality\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ARdevKit from the source code\&.

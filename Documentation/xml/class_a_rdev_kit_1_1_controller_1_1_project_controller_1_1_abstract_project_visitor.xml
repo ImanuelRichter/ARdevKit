@@ -1,0 +1,439 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor" kind="class" prot="public" abstract="yes">
+    <compoundname>ARdevKit::Controller::ProjectController::AbstractProjectVisitor</compoundname>
+    <derivedcompoundref refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor" prot="public" virt="non-virtual">ARdevKit.Controller.ProjectController.ExportVisitor</derivedcompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor_1aafdd79d5f00d223cb7a5269344b55e8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>abstract void</type>
+        <definition>abstract void ARdevKit.Controller.ProjectController.AbstractProjectVisitor.Visit</definition>
+        <argsstring>(CustomUserEvent cue)</argsstring>
+        <name>Visit</name>
+        <reimplementedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1a4d2802913e6ccb1a24e53c642d1b1cff">Visit</reimplementedby>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_custom_user_event" kindref="compound">CustomUserEvent</ref></type>
+          <declname>cue</declname>
+        </param>
+        <briefdescription>
+<para>Visits the given CustomUserEvent. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The custom user event. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/ProjectController/AbstractProjectVisitor.cs" line="22" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor_1afc567731ac7e98ef86c2d26c5f22b4d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>abstract void</type>
+        <definition>abstract void ARdevKit.Controller.ProjectController.AbstractProjectVisitor.Visit</definition>
+        <argsstring>(Chart chart)</argsstring>
+        <name>Visit</name>
+        <reimplementedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1a0e04a0743609a16eb7c872427755249e">Visit</reimplementedby>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart" kindref="compound">Chart</ref></type>
+          <declname>chart</declname>
+        </param>
+        <briefdescription>
+<para>Visits the given Chart. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 17.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>chart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The chart. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/ProjectController/AbstractProjectVisitor.cs" line="32" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor_1a9f0a4ed7ac360a201255c1ed37759bee" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>abstract void</type>
+        <definition>abstract void ARdevKit.Controller.ProjectController.AbstractProjectVisitor.Visit</definition>
+        <argsstring>(ImageAugmentation image)</argsstring>
+        <name>Visit</name>
+        <reimplementedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1a68256626e59d84b43153e95697ed1e3a">Visit</reimplementedby>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation" kindref="compound">ImageAugmentation</ref></type>
+          <declname>image</declname>
+        </param>
+        <briefdescription>
+<para>Visits the given ImageAugmentation. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 17.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>image</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The image. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/ProjectController/AbstractProjectVisitor.cs" line="42" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor_1afd227a5cdb38cbfe2bb88ca22a5adf56" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>abstract void</type>
+        <definition>abstract void ARdevKit.Controller.ProjectController.AbstractProjectVisitor.Visit</definition>
+        <argsstring>(VideoAugmentation video)</argsstring>
+        <name>Visit</name>
+        <reimplementedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1a190039e5dd86df278c99cfacedac3b63">Visit</reimplementedby>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation" kindref="compound">VideoAugmentation</ref></type>
+          <declname>video</declname>
+        </param>
+        <briefdescription>
+<para>Visits the given VideoAugmentation. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 29.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>video</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The video. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/ProjectController/AbstractProjectVisitor.cs" line="52" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor_1ae89191e9e36e1de0ca8b2a68aa20c13f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>abstract void</type>
+        <definition>abstract void ARdevKit.Controller.ProjectController.AbstractProjectVisitor.Visit</definition>
+        <argsstring>(DbSource source)</argsstring>
+        <name>Visit</name>
+        <reimplementedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1a54481877bd367164a17916ff32f8da09">Visit</reimplementedby>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_db_source" kindref="compound">DbSource</ref></type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+<para>Visits the given DbSource. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 17.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>source</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Source for the. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/ProjectController/AbstractProjectVisitor.cs" line="62" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor_1a57f6cd714839140a46e4d68a29c65287" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>abstract void</type>
+        <definition>abstract void ARdevKit.Controller.ProjectController.AbstractProjectVisitor.Visit</definition>
+        <argsstring>(FileSource source)</argsstring>
+        <name>Visit</name>
+        <reimplementedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1a078a2d0fef2fa5db4b6adcf4be50debe">Visit</reimplementedby>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_source" kindref="compound">FileSource</ref></type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+<para>Visits the given FileSource. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 23.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>source</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Source for the AbstractDynamic2DAugmentation. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/ProjectController/AbstractProjectVisitor.cs" line="72" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor_1a81cd1e82508e62b748421a2e3f128fa2" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>abstract void</type>
+        <definition>abstract void ARdevKit.Controller.ProjectController.AbstractProjectVisitor.Visit</definition>
+        <argsstring>(MarkerlessFuser markerlessFuser)</argsstring>
+        <name>Visit</name>
+        <reimplementedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1aae0293dd695393b0037fb62f0f5a1d28">Visit</reimplementedby>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_fuser" kindref="compound">MarkerlessFuser</ref></type>
+          <declname>markerlessFuser</declname>
+        </param>
+        <briefdescription>
+<para>Visits the given MarkerlessFuser. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 17.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>markerlessFuser</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The markerless fuser. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/ProjectController/AbstractProjectVisitor.cs" line="82" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor_1a162cb32ccf792db44d5cb92604d1f799" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>abstract void</type>
+        <definition>abstract void ARdevKit.Controller.ProjectController.AbstractProjectVisitor.Visit</definition>
+        <argsstring>(MarkerFuser markerFuser)</argsstring>
+        <name>Visit</name>
+        <reimplementedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1a315b092cbd6a936b67d3ea690920bd95">Visit</reimplementedby>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser" kindref="compound">MarkerFuser</ref></type>
+          <declname>markerFuser</declname>
+        </param>
+        <briefdescription>
+<para>Visits the given MarkerFuser. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 17.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>markerFuser</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The marker fuser. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/ProjectController/AbstractProjectVisitor.cs" line="92" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor_1ab954e7db5de1aafc57e082020eba3f3b" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>abstract void</type>
+        <definition>abstract void ARdevKit.Controller.ProjectController.AbstractProjectVisitor.Visit</definition>
+        <argsstring>(MarkerlessSensor MarkerlessSensor)</argsstring>
+        <name>Visit</name>
+        <reimplementedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1abf7c8bbff198ee8af664232c2fa394cb">Visit</reimplementedby>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor" kindref="compound">MarkerlessSensor</ref></type>
+          <declname>MarkerlessSensor</declname>
+        </param>
+        <briefdescription>
+<para>Visits the given MarkerlessSensor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 17.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>MarkerlessSensor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The markerless sensor. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/ProjectController/AbstractProjectVisitor.cs" line="102" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor_1a70f8dcc9540bfd0a0d49ac4638898e7a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>abstract void</type>
+        <definition>abstract void ARdevKit.Controller.ProjectController.AbstractProjectVisitor.Visit</definition>
+        <argsstring>(ImageTrackable image)</argsstring>
+        <name>Visit</name>
+        <reimplementedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1a6ba67134957206067b97c6ebba5a9c8a">Visit</reimplementedby>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable" kindref="compound">ImageTrackable</ref></type>
+          <declname>image</declname>
+        </param>
+        <briefdescription>
+<para>Visits the given ImageTrackable. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 26.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>image</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The image. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/ProjectController/AbstractProjectVisitor.cs" line="112" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor_1a2f87bcb8c5df6e3aeb5fca33d43e5fd8" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>abstract void</type>
+        <definition>abstract void ARdevKit.Controller.ProjectController.AbstractProjectVisitor.Visit</definition>
+        <argsstring>(PictureMarkerSensor pictureMarkerSensor)</argsstring>
+        <name>Visit</name>
+        <reimplementedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1a567d0ff197539453cc2c34b11f12ad59">Visit</reimplementedby>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_sensor" kindref="compound">PictureMarkerSensor</ref></type>
+          <declname>pictureMarkerSensor</declname>
+        </param>
+        <briefdescription>
+<para>Visits the given PictureMarkerSensor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 17.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pictureMarkerSensor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The picture marker sensor. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/ProjectController/AbstractProjectVisitor.cs" line="122" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor_1a07ea2f0ff782d6d5c3c122575c2acc51" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>abstract void</type>
+        <definition>abstract void ARdevKit.Controller.ProjectController.AbstractProjectVisitor.Visit</definition>
+        <argsstring>(PictureMarker pictureMarker)</argsstring>
+        <name>Visit</name>
+        <reimplementedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1a384b6fc84602fd29bedff296b083b3a0">Visit</reimplementedby>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker" kindref="compound">PictureMarker</ref></type>
+          <declname>pictureMarker</declname>
+        </param>
+        <briefdescription>
+<para>Visits the given PictureMarker. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 17.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pictureMarker</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The picture marker. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/ProjectController/AbstractProjectVisitor.cs" line="132" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor_1afce8054c78342330b871b0acc0bcdfad" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>abstract void</type>
+        <definition>abstract void ARdevKit.Controller.ProjectController.AbstractProjectVisitor.Visit</definition>
+        <argsstring>(MarkerSensor idMarkerSensor)</argsstring>
+        <name>Visit</name>
+        <reimplementedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1a0e82718aa35b9bff19cd6db0b33f3d5c">Visit</reimplementedby>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor" kindref="compound">MarkerSensor</ref></type>
+          <declname>idMarkerSensor</declname>
+        </param>
+        <briefdescription>
+<para>Visits the given MarkerSensor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 17.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>idMarkerSensor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The identifier marker sensor. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/ProjectController/AbstractProjectVisitor.cs" line="142" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor_1a8f6463762a4fee7bab0e1bad63836abf" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>abstract void</type>
+        <definition>abstract void ARdevKit.Controller.ProjectController.AbstractProjectVisitor.Visit</definition>
+        <argsstring>(IDMarker idMarker)</argsstring>
+        <name>Visit</name>
+        <reimplementedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1aa4ad67b0cb408d8ec6aaf48906f1e5b3">Visit</reimplementedby>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_marker" kindref="compound">IDMarker</ref></type>
+          <declname>idMarker</declname>
+        </param>
+        <briefdescription>
+<para>Visits the given IDMarker. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 17.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>idMarker</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The identifier marker. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/ProjectController/AbstractProjectVisitor.cs" line="152" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor_1a6f3a8879b50f53e1d25fc87c588a59fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>abstract void</type>
+        <definition>abstract void ARdevKit.Controller.ProjectController.AbstractProjectVisitor.Visit</definition>
+        <argsstring>(Project project)</argsstring>
+        <name>Visit</name>
+        <reimplementedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1ad58774c6778421b6bf85a6c70029a3d9">Visit</reimplementedby>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project" kindref="compound">Project</ref></type>
+          <declname>project</declname>
+        </param>
+        <briefdescription>
+<para>Visits the given Project. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 17.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>project</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The project. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/ProjectController/AbstractProjectVisitor.cs" line="162" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>An abstract project visitor. </para>    </briefdescription>
+    <detaileddescription>
+<para>Imanuel, 17.01.2014. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="449">
+        <label>ARdevKit.Controller.ProjectController.AbstractProjectVisitor</label>
+        <link refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor"/>
+      </node>
+      <node id="450">
+        <label>ARdevKit.Controller.ProjectController.ExportVisitor</label>
+        <link refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor"/>
+        <childnode refid="449" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="451">
+        <label>ARdevKit.Controller.ProjectController.AbstractProjectVisitor</label>
+        <link refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/ProjectController/AbstractProjectVisitor.cs" line="17" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/ProjectController/AbstractProjectVisitor.cs" bodystart="16" bodyend="163"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor_1aafdd79d5f00d223cb7a5269344b55e8d" prot="public" virt="pure-virtual"><scope>ARdevKit::Controller::ProjectController::AbstractProjectVisitor</scope><name>Visit</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor_1afc567731ac7e98ef86c2d26c5f22b4d8" prot="public" virt="pure-virtual"><scope>ARdevKit::Controller::ProjectController::AbstractProjectVisitor</scope><name>Visit</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor_1a9f0a4ed7ac360a201255c1ed37759bee" prot="public" virt="pure-virtual"><scope>ARdevKit::Controller::ProjectController::AbstractProjectVisitor</scope><name>Visit</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor_1afd227a5cdb38cbfe2bb88ca22a5adf56" prot="public" virt="pure-virtual"><scope>ARdevKit::Controller::ProjectController::AbstractProjectVisitor</scope><name>Visit</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor_1ae89191e9e36e1de0ca8b2a68aa20c13f" prot="public" virt="pure-virtual"><scope>ARdevKit::Controller::ProjectController::AbstractProjectVisitor</scope><name>Visit</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor_1a57f6cd714839140a46e4d68a29c65287" prot="public" virt="pure-virtual"><scope>ARdevKit::Controller::ProjectController::AbstractProjectVisitor</scope><name>Visit</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor_1a81cd1e82508e62b748421a2e3f128fa2" prot="public" virt="pure-virtual"><scope>ARdevKit::Controller::ProjectController::AbstractProjectVisitor</scope><name>Visit</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor_1a162cb32ccf792db44d5cb92604d1f799" prot="public" virt="pure-virtual"><scope>ARdevKit::Controller::ProjectController::AbstractProjectVisitor</scope><name>Visit</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor_1ab954e7db5de1aafc57e082020eba3f3b" prot="public" virt="pure-virtual"><scope>ARdevKit::Controller::ProjectController::AbstractProjectVisitor</scope><name>Visit</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor_1a70f8dcc9540bfd0a0d49ac4638898e7a" prot="public" virt="pure-virtual"><scope>ARdevKit::Controller::ProjectController::AbstractProjectVisitor</scope><name>Visit</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor_1a2f87bcb8c5df6e3aeb5fca33d43e5fd8" prot="public" virt="pure-virtual"><scope>ARdevKit::Controller::ProjectController::AbstractProjectVisitor</scope><name>Visit</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor_1a07ea2f0ff782d6d5c3c122575c2acc51" prot="public" virt="pure-virtual"><scope>ARdevKit::Controller::ProjectController::AbstractProjectVisitor</scope><name>Visit</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor_1afce8054c78342330b871b0acc0bcdfad" prot="public" virt="pure-virtual"><scope>ARdevKit::Controller::ProjectController::AbstractProjectVisitor</scope><name>Visit</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor_1a8f6463762a4fee7bab0e1bad63836abf" prot="public" virt="pure-virtual"><scope>ARdevKit::Controller::ProjectController::AbstractProjectVisitor</scope><name>Visit</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor_1a6f3a8879b50f53e1d25fc87c588a59fa" prot="public" virt="pure-virtual"><scope>ARdevKit::Controller::ProjectController::AbstractProjectVisitor</scope><name>Visit</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

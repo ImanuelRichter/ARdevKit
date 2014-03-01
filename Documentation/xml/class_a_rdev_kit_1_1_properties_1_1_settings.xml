@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_properties_1_1_settings" kind="class" prot="package">
+    <compoundname>ARdevKit::Properties::Settings</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">ApplicationSettingsBase</basecompoundref>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_properties_1_1_settings_1a0c67686ad2440f11d246172b2878a513" prot="private" static="yes" mutable="no">
+        <type>Settings</type>
+        <definition>Settings ARdevKit.Properties.Settings.defaultInstance</definition>
+        <argsstring></argsstring>
+        <name>defaultInstance</name>
+        <initializer>= ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Properties/Settings.Designer.cs" line="20" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Properties/Settings.Designer.cs" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_properties_1_1_settings_1a3c3e24283eb098b3e0a6ecbf31a1ecce" prot="public" static="yes" readable="no" writable="no" gettable="yes" settable="no">
+        <type>Settings</type>
+        <definition>Settings ARdevKit.Properties.Settings.Default</definition>
+        <argsstring></argsstring>
+        <name>Default</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Properties/Settings.Designer.cs" line="22" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Properties/Settings.Designer.cs" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="713">
+        <label>global::SystemConfiguration::ApplicationSettingsBase</label>
+      </node>
+      <node id="712">
+        <label>ARdevKit.Properties.Settings</label>
+        <childnode refid="713" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="715">
+        <label>global::SystemConfiguration::ApplicationSettingsBase</label>
+      </node>
+      <node id="714">
+        <label>ARdevKit.Properties.Settings</label>
+        <childnode refid="715" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Properties/Settings.Designer.cs" line="18" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Properties/Settings.Designer.cs" bodystart="17" bodyend="29"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_properties_1_1_settings_1a3c3e24283eb098b3e0a6ecbf31a1ecce" prot="public" virt="non-virtual"><scope>ARdevKit::Properties::Settings</scope><name>Default</name></member>
+      <member refid="class_a_rdev_kit_1_1_properties_1_1_settings_1a0c67686ad2440f11d246172b2878a513" prot="private" virt="non-virtual"><scope>ARdevKit::Properties::Settings</scope><name>defaultInstance</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

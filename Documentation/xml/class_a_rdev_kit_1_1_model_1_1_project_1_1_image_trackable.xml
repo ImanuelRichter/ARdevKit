@@ -1,0 +1,368 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable" kind="class" prot="public">
+    <compoundname>ARdevKit::Model::Project::ImageTrackable</compoundname>
+    <basecompoundref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable" prot="public" virt="non-virtual">ARdevKit.Model.Project.Abstract2DTrackable</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_1aefdd57fa103483ee6ae65587689854a6" prot="private" static="no" mutable="no">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_fuser" kindref="compound">MarkerlessFuser</ref></type>
+        <definition>MarkerlessFuser ARdevKit.Model.Project.ImageTrackable.fuser</definition>
+        <argsstring></argsstring>
+        <name>fuser</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageTrackable.cs" line="22" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageTrackable.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_1a9b3c93281481b132081f0c3e63723472" prot="private" static="no" mutable="no">
+        <type>Bitmap</type>
+        <definition>Bitmap ARdevKit.Model.Project.ImageTrackable.cachePreview</definition>
+        <argsstring></argsstring>
+        <name>cachePreview</name>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageTrackable.cs" line="43" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageTrackable.cs" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_1a34677234d0cd36ad12af730d87f1a211" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_fuser" kindref="compound">MarkerlessFuser</ref></type>
+        <definition>MarkerlessFuser ARdevKit.Model.Project.ImageTrackable.Fuser</definition>
+        <argsstring></argsstring>
+        <name>Fuser</name>
+        <briefdescription>
+<para>Gets or sets the fuser. Is not Browsable, therefore not editable in the PropertyPanel </para>        </briefdescription>
+        <detaileddescription>
+<para>The fuser. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageTrackable.cs" line="31" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageTrackable.cs" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_1abf66216adfd7fcd5f94a6bdf55f30a36" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>string</type>
+        <definition>string ARdevKit.Model.Project.ImageTrackable.ImagePath</definition>
+        <argsstring></argsstring>
+        <name>ImagePath</name>
+        <briefdescription>
+<para>Gets or sets the full pathname of the image file. </para>        </briefdescription>
+        <detaileddescription>
+<para>The full pathname of the image file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageTrackable.cs" line="53" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageTrackable.cs" bodystart="54" bodyend="-1"/>
+        <referencedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1a6ba67134957206067b97c6ebba5a9c8a" compoundref="_export_visitor_8cs" startline="568" endline="687">ARdevKit.Controller.ProjectController.ExportVisitor.Visit</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_1ade2bba8d745b4c9f758bb22f7e82a946" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="no">
+        <type>string</type>
+        <definition>string ARdevKit.Model.Project.ImageTrackable.ImageName</definition>
+        <argsstring></argsstring>
+        <name>ImageName</name>
+        <briefdescription>
+<para>Gets or sets the name of the image. </para>        </briefdescription>
+        <detaileddescription>
+<para>The name of the image. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageTrackable.cs" line="77" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageTrackable.cs" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_1a1da6761ca1dd74ff7981d0b19774de99" prot="protected" static="no" mutable="no">
+        <type>string</type>
+        <definition>string ARdevKit.Model.Project.ImageTrackable.imagePath</definition>
+        <argsstring></argsstring>
+        <name>imagePath</name>
+        <briefdescription>
+<para>Full pathname of the image file. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageTrackable.cs" line="40" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageTrackable.cs" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_1a5395f501dfd3575778147f1cfc4b4e39" prot="protected" static="no" mutable="no">
+        <type>string</type>
+        <definition>string ARdevKit.Model.Project.ImageTrackable.imageName</definition>
+        <argsstring></argsstring>
+        <name>imageName</name>
+        <briefdescription>
+<para>Name of the image. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageTrackable.cs" line="69" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageTrackable.cs" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_1a2a0ee33f17a65ba9107fb30871c0e36d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.Model.Project.ImageTrackable.ImageTrackable</definition>
+        <argsstring>()</argsstring>
+        <name>ImageTrackable</name>
+        <briefdescription>
+<para>Default Constructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageTrackable.cs" line="85" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageTrackable.cs" bodystart="85" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_1ab325e30ad03ff3ac68ce3f71592e42d5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.Model.Project.ImageTrackable.ImageTrackable</definition>
+        <argsstring>(string imagePath)</argsstring>
+        <name>ImageTrackable</name>
+        <param>
+          <type>string</type>
+          <declname>imagePath</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>imagePath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Full pathname of the image file.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageTrackable.cs" line="104" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageTrackable.cs" bodystart="104" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_1af225ee2673ffa037cd88a00feb77e890" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override void</type>
+        <definition>override void ARdevKit.Model.Project.ImageTrackable.Accept</definition>
+        <argsstring>(Controller.ProjectController.AbstractProjectVisitor visitor)</argsstring>
+        <name>Accept</name>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor" kindref="compound">Controller.ProjectController.AbstractProjectVisitor</ref></type>
+          <declname>visitor</declname>
+        </param>
+        <briefdescription>
+<para>An abstract method, to accept a AbstractProjectVisitor which must be implemented according to the visitor design pattern. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>visitor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the visitor which encapsulates the action which is performed on this element</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageTrackable.cs" line="118" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageTrackable.cs" bodystart="118" bodyend="126"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_1a96e42ce5c75d50a49b617d8eb8f87b99" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override System.Drawing.Bitmap</type>
+        <definition>override System.Drawing.Bitmap ARdevKit.Model.Project.ImageTrackable.getPreview</definition>
+        <argsstring>()</argsstring>
+        <name>getPreview</name>
+        <reimplements refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1ab4d8a1902c82fe7a1d385d5688f92bd8">getPreview</reimplements>
+        <briefdescription>
+<para>returns a Bitmap in order to be displayed on the PreviewPanel, implements <ref refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable" kindref="compound">IPreviewable</ref> </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>a representative Bitmap</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageTrackable.cs" line="128" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageTrackable.cs" bodystart="128" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_1af11655160fd026f62dca5948cdf630cd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override System.Drawing.Bitmap</type>
+        <definition>override System.Drawing.Bitmap ARdevKit.Model.Project.ImageTrackable.getIcon</definition>
+        <argsstring>()</argsstring>
+        <name>getIcon</name>
+        <reimplements refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1abee7e96dac48f6fa7fc424c0f9139dff">getIcon</reimplements>
+        <briefdescription>
+<para>returns a Bitmap in order to be displayed on the ElementSelectionPanel, implements <ref refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable" kindref="compound">IPreviewable</ref> </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>a representative iconized Bitmap</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageTrackable.cs" line="137" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageTrackable.cs" bodystart="137" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_1a9f0502ccb4306c88c4b15793b0d1c0ba" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override object</type>
+        <definition>override object ARdevKit.Model.Project.ImageTrackable.Clone</definition>
+        <argsstring>()</argsstring>
+        <name>Clone</name>
+        <reimplements refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a166fc03dc00911591baca14a3341ef29">Clone</reimplements>
+        <briefdescription>
+<para>Makes a deep copy of this object. </para>        </briefdescription>
+        <detaileddescription>
+<para>Robin, 22.01.2014. </para><para><simplesect kind="return"><para>A copy of this object. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageTrackable.cs" line="142" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageTrackable.cs" bodystart="142" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_1a90714d32f49a982fdbe39a84abd41704" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override bool</type>
+        <definition>override bool ARdevKit.Model.Project.ImageTrackable.initElement</definition>
+        <argsstring>(EditorWindow ew)</argsstring>
+        <name>initElement</name>
+        <reimplements refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1aff50ed9cb95973d56d6a65bd1ef96c0a">initElement</reimplements>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_editor_window" kindref="compound">EditorWindow</ref></type>
+          <declname>ew</declname>
+        </param>
+        <briefdescription>
+<para>This method is called by the previewController when a new instance of the element is added to the Scene. It sets &quot;must-have&quot; properties. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ew</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ew.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if it succeeds, false if it fails. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageTrackable.cs" line="156" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageTrackable.cs" bodystart="156" bodyend="194"/>
+        <references refid="class_a_rdev_kit_1_1_editor_window_1aa7e64c912e3d904fae0ec52588be0baa" compoundref="_editor_window_8cs" startline="138">ARdevKit.EditorWindow.project</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Describes a Marker, which is very flexible, because it is also a Picture. It is an AbstractMarker </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="584">
+        <label>ARdevKit.Model.Project.ImageTrackable</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable"/>
+        <childnode refid="585" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="585">
+        <label>Abstract2DTrackable</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable"/>
+        <childnode refid="586" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="586">
+        <label>AbstractTrackable</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable"/>
+        <childnode refid="587" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="587">
+        <label>IPreviewable</label>
+        <link refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable"/>
+        <childnode refid="588" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="588">
+        <label>ICloneable</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="589">
+        <label>ARdevKit.Model.Project.ImageTrackable</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable"/>
+        <childnode refid="590" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="596">
+        <label>ARdevKit.Model.Project.Vector3D</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d"/>
+      </node>
+      <node id="594">
+        <label>ARdevKit.Model.Project.Vector3Di</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_di"/>
+        <childnode refid="595" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="597">
+        <label>ARdevKit.Model.Project.MarkerFuser</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser"/>
+      </node>
+      <node id="590">
+        <label>Abstract2DTrackable</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable"/>
+        <childnode refid="591" relation="public-inheritance">
+        </childnode>
+        <childnode refid="594" relation="usage">
+          <edgelabel>#rotationVector</edgelabel>
+        </childnode>
+        <childnode refid="596" relation="usage">
+          <edgelabel>#translationVector</edgelabel>
+        </childnode>
+        <childnode refid="597" relation="usage">
+          <edgelabel>#fuser</edgelabel>
+        </childnode>
+      </node>
+      <node id="591">
+        <label>AbstractTrackable</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable"/>
+        <childnode refid="592" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="595">
+        <label>Vector3D</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d"/>
+      </node>
+      <node id="592">
+        <label>IPreviewable</label>
+        <link refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable"/>
+        <childnode refid="593" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="593">
+        <label>ICloneable</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageTrackable.cs" line="21" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageTrackable.cs" bodystart="20" bodyend="195"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_1af225ee2673ffa037cd88a00feb77e890" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageTrackable</scope><name>Accept</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a76f6ad0ed8f615b8f5b7738411abb54f" prot="public" virt="pure-virtual" ambiguityscope="ARdevKit::Model::Project::Abstract2DTrackable."><scope>ARdevKit::Model::Project::ImageTrackable</scope><name>Accept</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a999faeee63dee9445e8617d539c5b8d9" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageTrackable</scope><name>Augmentations</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_1a9b3c93281481b132081f0c3e63723472" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageTrackable</scope><name>cachePreview</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_1a9f0502ccb4306c88c4b15793b0d1c0ba" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::ImageTrackable</scope><name>Clone</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1ac5dfdc39c3e7ad91ca9156208278b108" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageTrackable</scope><name>existAugmentation</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_1aefdd57fa103483ee6ae65587689854a6" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageTrackable</scope><name>fuser</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_1a34677234d0cd36ad12af730d87f1a211" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageTrackable</scope><name>Fuser</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_1af11655160fd026f62dca5948cdf630cd" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::ImageTrackable</scope><name>getIcon</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_1a96e42ce5c75d50a49b617d8eb8f87b99" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::ImageTrackable</scope><name>getPreview</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_1a5395f501dfd3575778147f1cfc4b4e39" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageTrackable</scope><name>imageName</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_1ade2bba8d745b4c9f758bb22f7e82a946" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageTrackable</scope><name>ImageName</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_1abf66216adfd7fcd5f94a6bdf55f30a36" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageTrackable</scope><name>ImagePath</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_1a1da6761ca1dd74ff7981d0b19774de99" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageTrackable</scope><name>imagePath</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_1a2a0ee33f17a65ba9107fb30871c0e36d" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageTrackable</scope><name>ImageTrackable</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_1ab325e30ad03ff3ac68ce3f71592e42d5" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageTrackable</scope><name>ImageTrackable</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_1a90714d32f49a982fdbe39a84abd41704" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::ImageTrackable</scope><name>initElement</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1ae14b72d85d610bcda17d93255bce45f7" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageTrackable</scope><name>RemoveAugmentation</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a12ba493972e7d277e8f67294beb70355" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageTrackable</scope><name>Rotation</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a85997ab052b01f3680d47d199b4551a0" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageTrackable</scope><name>rotationVector</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a9578380939f19267cc7372ca19ff936f" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageTrackable</scope><name>SensorCosID</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1ac965f78edc7135b60377d14acbe6d358" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageTrackable</scope><name>sensorCosID</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1af77b1f7a449ef9150e22c684894213b1" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageTrackable</scope><name>SimilarityThreshold</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a5a74b70a54b9bb1f4fbad46e08a2e0cd" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageTrackable</scope><name>similarityThreshold</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a0c9a459cf25e74c8173564d476021c9a" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageTrackable</scope><name>Size</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a3ef9116db48c612d3428126786516e81" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageTrackable</scope><name>size</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1ac836d823c247762a615f432375d943c2" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageTrackable</scope><name>ToString</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1acbb38387d30cb1239814606b54099bb3" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageTrackable</scope><name>Translation</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a5d6e8cbc9efc6da689e3537d334fec37" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageTrackable</scope><name>translationVector</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1ab55c05790e5ffbefc7351a91167427bc" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageTrackable</scope><name>Type</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1ab6faf8843d1e9a61b353286a8d583231" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageTrackable</scope><name>type</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a1a8b6d43d95fad1720fc5af98b7e42b4" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageTrackable</scope><name>vector</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d" kind="class" prot="public">
+    <compoundname>ARdevKit::Model::Project::Vector3D</compoundname>
+    <derivedcompoundref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_di" prot="public" virt="non-virtual">ARdevKit.Model.Project.Vector3Di</derivedcompoundref>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d_1a06336e90ebe41a0d704d7fb968c3eab8" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>double</type>
+        <definition>double ARdevKit.Model.Project.Vector3D.X</definition>
+        <argsstring></argsstring>
+        <name>X</name>
+        <briefdescription>
+<para>Gets or sets the x. </para>        </briefdescription>
+        <detaileddescription>
+<para>The x. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Vector3D.cs" line="25" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Vector3D.cs" bodystart="25" bodyend="-1"/>
+        <referencedby refid="class_preview_controller_1a3b909b7f753ee543cbf42dfdb9a0316f" compoundref="_preview_controller_8cs" startline="773" endline="792">PreviewController.setCoordinates</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d_1aaa8679d7364c8f6ba03e89bd00f5b991" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>double</type>
+        <definition>double ARdevKit.Model.Project.Vector3D.Y</definition>
+        <argsstring></argsstring>
+        <name>Y</name>
+        <briefdescription>
+<para>Gets or sets the y. </para>        </briefdescription>
+        <detaileddescription>
+<para>The y. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Vector3D.cs" line="33" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Vector3D.cs" bodystart="33" bodyend="-1"/>
+        <referencedby refid="class_preview_controller_1a3b909b7f753ee543cbf42dfdb9a0316f" compoundref="_preview_controller_8cs" startline="773" endline="792">PreviewController.setCoordinates</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d_1a75ca41666b67f93861f074e13964e946" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>double</type>
+        <definition>double ARdevKit.Model.Project.Vector3D.Z</definition>
+        <argsstring></argsstring>
+        <name>Z</name>
+        <briefdescription>
+<para>Gets or sets the z. </para>        </briefdescription>
+        <detaileddescription>
+<para>The z. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Vector3D.cs" line="41" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Vector3D.cs" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d_1a5ea9d8ecfcfaefa8b7283febc2a94d4a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.Model.Project.Vector3D.Vector3D</definition>
+        <argsstring>(double x, double y, double z)</argsstring>
+        <name>Vector3D</name>
+        <param>
+          <type>double</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The x coordinate.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The y coordinate.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>z</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The z coordinate.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para><para>Lizzard, 1/15/2014. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Vector3D.cs" line="54" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Vector3D.cs" bodystart="54" bodyend="59"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A 3D vektor. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="740">
+        <label>ARdevKit.Model.Project.Vector3D</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d"/>
+      </node>
+      <node id="741">
+        <label>ARdevKit.Model.Project.Vector3Di</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_di"/>
+        <childnode refid="740" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="742">
+        <label>ARdevKit.Model.Project.Vector3D</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Vector3D.cs" line="17" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Vector3D.cs" bodystart="16" bodyend="60"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d_1a5ea9d8ecfcfaefa8b7283febc2a94d4a" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Vector3D</scope><name>Vector3D</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d_1a06336e90ebe41a0d704d7fb968c3eab8" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Vector3D</scope><name>X</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d_1aaa8679d7364c8f6ba03e89bd00f5b991" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Vector3D</scope><name>Y</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d_1a75ca41666b67f93861f074e13964e946" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Vector3D</scope><name>Z</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

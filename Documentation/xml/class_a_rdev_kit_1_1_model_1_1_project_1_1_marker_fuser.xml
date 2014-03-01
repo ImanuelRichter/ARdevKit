@@ -1,0 +1,219 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser" kind="class" prot="public">
+    <compoundname>ARdevKit::Model::Project::MarkerFuser</compoundname>
+    <derivedcompoundref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_fuser" prot="public" virt="non-virtual">ARdevKit.Model.Project.MarkerlessFuser</derivedcompoundref>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser_1a27640545baec2d64d0cc55af7818a6eb" prot="public" static="no">
+        <name>FuserTypes</name>
+        <enumvalue id="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser_1a27640545baec2d64d0cc55af7818a6eba28d751d56c7635cb9352c60c1a588f46" prot="public">
+          <name>SmoothingFuser</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser_1a27640545baec2d64d0cc55af7818a6ebabb9c30e20cbc6964ff8b6373bc448327" prot="public">
+          <name>BestQualityFuser</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Values that represent FuserTypes. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 17.01.2014. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerFuser.cs" line="27" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerFuser.cs" bodystart="27" bodyend="27"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser_1aee73c061c1aba8b2eb2fcd7349de15af" prot="private" static="no" mutable="no">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser_1a27640545baec2d64d0cc55af7818a6eb" kindref="member">FuserTypes</ref></type>
+        <definition>FuserTypes ARdevKit.Model.Project.MarkerFuser.fuserType</definition>
+        <argsstring></argsstring>
+        <name>fuserType</name>
+        <briefdescription>
+<para>Type of the fuser. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerFuser.cs" line="31" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerFuser.cs" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser_1ab3454992e851a6ea2bd270ca07f2d9dc" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ARdevKit.Model.Project.MarkerFuser.alphaTranslation</definition>
+        <argsstring></argsstring>
+        <name>alphaTranslation</name>
+        <briefdescription>
+<para>The alpha translation. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerFuser.cs" line="47" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerFuser.cs" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser_1ac846bce07259c94e4251dcdf214c00f4" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ARdevKit.Model.Project.MarkerFuser.alphaRotation</definition>
+        <argsstring></argsstring>
+        <name>alphaRotation</name>
+        <briefdescription>
+<para>The alpha rotation. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerFuser.cs" line="63" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerFuser.cs" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser_1a65b8919364841a50c024e58655cc4a13" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ARdevKit.Model.Project.MarkerFuser.keepPoseForNumberOfFrames</definition>
+        <argsstring></argsstring>
+        <name>keepPoseForNumberOfFrames</name>
+        <briefdescription>
+<para>The keep pose for number of frames value. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerFuser.cs" line="79" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerFuser.cs" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser_1af2d47a34650e67792191c3d2553aae3f" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser_1a27640545baec2d64d0cc55af7818a6eb" kindref="member">FuserTypes</ref></type>
+        <definition>FuserTypes ARdevKit.Model.Project.MarkerFuser.FuserType</definition>
+        <argsstring></argsstring>
+        <name>FuserType</name>
+        <briefdescription>
+<para>Gets or sets the type of the fuser. </para>        </briefdescription>
+        <detaileddescription>
+<para>The type of the fuser. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerFuser.cs" line="38" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerFuser.cs" bodystart="39" bodyend="-1"/>
+        <referencedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1aae0293dd695393b0037fb62f0f5a1d28" compoundref="_export_visitor_8cs" startline="467" endline="496">ARdevKit.Controller.ProjectController.ExportVisitor.Visit</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser_1ac5342436a234bcd887fc29684e771228" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>double</type>
+        <definition>double ARdevKit.Model.Project.MarkerFuser.AlphaTranslation</definition>
+        <argsstring></argsstring>
+        <name>AlphaTranslation</name>
+        <briefdescription>
+<para>Gets or sets the alpha translation. </para>        </briefdescription>
+        <detaileddescription>
+<para>The alpha translation. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerFuser.cs" line="54" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerFuser.cs" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser_1a7d1706b92cf1407de2b40183057642d3" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>double</type>
+        <definition>double ARdevKit.Model.Project.MarkerFuser.AlphaRotation</definition>
+        <argsstring></argsstring>
+        <name>AlphaRotation</name>
+        <briefdescription>
+<para>Gets or sets the alpha rotation. </para>        </briefdescription>
+        <detaileddescription>
+<para>The alpha rotation. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerFuser.cs" line="70" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerFuser.cs" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser_1abe44b1d8d25a194883d2d676ab020f23" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>int</type>
+        <definition>int ARdevKit.Model.Project.MarkerFuser.KeepPoseForNumberOfFrames</definition>
+        <argsstring></argsstring>
+        <name>KeepPoseForNumberOfFrames</name>
+        <briefdescription>
+<para>Gets or sets the keep pose for number of frames. </para>        </briefdescription>
+        <detaileddescription>
+<para>The keep pose for number of frames. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerFuser.cs" line="86" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerFuser.cs" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser_1abaac50c9d575b535bc25c4ff98f7992d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.Model.Project.MarkerFuser.MarkerFuser</definition>
+        <argsstring>()</argsstring>
+        <name>MarkerFuser</name>
+        <briefdescription>
+<para>Initializes a new instance of the <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser" kindref="compound">MarkerFuser</ref> class. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerFuser.cs" line="96" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerFuser.cs" bodystart="96" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser_1af578e1415404a6b16c67607e3e5ea059" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void ARdevKit.Model.Project.MarkerFuser.Accept</definition>
+        <argsstring>(AbstractProjectVisitor visitor)</argsstring>
+        <name>Accept</name>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_fuser_1af601b4bb51486b616355ba1ffeda4159">Accept</reimplementedby>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor" kindref="compound">AbstractProjectVisitor</ref></type>
+          <declname>visitor</declname>
+        </param>
+        <briefdescription>
+<para>Accepts the given visitor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>visitor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The visitor.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para><para>Imanuel, 17.01.2014. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerFuser.cs" line="113" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerFuser.cs" bodystart="113" bodyend="116"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser" kindref="compound">MarkerFuser</ref> has a fuserType, an alphaTranslation, an alphaRotation and a keepPoseForNumberOfFrames value. </para>    </briefdescription>
+    <detaileddescription>
+<para>Imanuel, 17.01.2014. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="647">
+        <label>ARdevKit.Model.Project.MarkerlessFuser</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_fuser"/>
+        <childnode refid="646" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="646">
+        <label>ARdevKit.Model.Project.MarkerFuser</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="648">
+        <label>ARdevKit.Model.Project.MarkerFuser</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerFuser.cs" line="20" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerFuser.cs" bodystart="19" bodyend="117"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser_1af578e1415404a6b16c67607e3e5ea059" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::MarkerFuser</scope><name>Accept</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser_1ac846bce07259c94e4251dcdf214c00f4" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerFuser</scope><name>alphaRotation</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser_1a7d1706b92cf1407de2b40183057642d3" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerFuser</scope><name>AlphaRotation</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser_1ac5342436a234bcd887fc29684e771228" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerFuser</scope><name>AlphaTranslation</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser_1ab3454992e851a6ea2bd270ca07f2d9dc" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerFuser</scope><name>alphaTranslation</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser_1aee73c061c1aba8b2eb2fcd7349de15af" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerFuser</scope><name>fuserType</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser_1af2d47a34650e67792191c3d2553aae3f" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerFuser</scope><name>FuserType</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser_1a27640545baec2d64d0cc55af7818a6eb" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerFuser</scope><name>FuserTypes</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser_1abe44b1d8d25a194883d2d676ab020f23" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerFuser</scope><name>KeepPoseForNumberOfFrames</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser_1a65b8919364841a50c024e58655cc4a13" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerFuser</scope><name>keepPoseForNumberOfFrames</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser_1abaac50c9d575b535bc25c4ff98f7992d" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerFuser</scope><name>MarkerFuser</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

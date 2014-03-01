@@ -1,0 +1,139 @@
+.TH "ARdevKit.Model.Project.File.AbstractBlock" 3 "Sat Mar 1 2014" "Version 0.2" "ARdevKit" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ARdevKit.Model.Project.File.AbstractBlock \- 
+.PP
+An \fBAbstractBlock\fP has a \fBlevel\fP and can contain other \fBAbstractBlock\fPs\&. It can have a \fBBlockMarker\fP and a \fBparentFile\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBARdevKit\&.Model\&.Project\&.File\&.JavaScriptBlock\fP, and \fBARdevKit\&.Model\&.Project\&.File\&.XMLBlock\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBAddBlock\fP (\fBAbstractBlock\fP block)"
+.br
+.RI "\fIAdds an \fBAbstractBlock\fP\&. \fP"
+.ti -1c
+.RI "virtual void \fBWrite\fP (System\&.IO\&.StreamWriter writer)"
+.br
+.RI "\fIWrites the \fBAbstractBlock\fP with the given writer\&. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual string \fBgetTabs\fP ()"
+.br
+.RI "\fIReturns a string containing [\fBlevel\fP] tabs\&. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBlevel\fP"
+.br
+.RI "\fIThe level of the \fBAbstractBlock\fP\&. \fP"
+.ti -1c
+.RI "\fBBlockMarker\fP \fBblockMarker\fP"
+.br
+.RI "\fIThe \fBBlockMarker\fP of this \fBAbstractBlock\fP\&. \fP"
+.ti -1c
+.RI "\fBAbstractFile\fP \fBparentFile\fP"
+.br
+.RI "\fIThe \fBAbstractFile\fP this block belongs to\&. \fP"
+.ti -1c
+.RI "\fBAbstractBlock\fP \fBparentBlock\fP"
+.br
+.RI "\fIA \fBAbstractBlock\fP this \fBAbstractBlock\fP belongs to\&. \fP"
+.ti -1c
+.RI "List< \fBAbstractBlock\fP > \fBblocks\fP"
+.br
+.RI "\fIThe \fBAbstractBlock\fPs that belong to this \fBAbstractBlock\fP\&. \fP"
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "\fBAbstractFile\fP \fBParentFile\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the parent file\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+An \fBAbstractBlock\fP has a \fBlevel\fP and can contain other \fBAbstractBlock\fPs\&. It can have a \fBBlockMarker\fP and a \fBparentFile\fP\&. 
+
+Imanuel, 17\&.01\&.2014\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void ARdevKit\&.Model\&.Project\&.File\&.AbstractBlock\&.AddBlock (\fBAbstractBlock\fPblock)"
+
+.PP
+Adds an \fBAbstractBlock\fP\&. Imanuel, 17\&.01\&.2014\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIblock\fP The \fBAbstractBlock\fP\&. 
+.RE
+.PP
+
+.SS "virtual string ARdevKit\&.Model\&.Project\&.File\&.AbstractBlock\&.getTabs ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Returns a string containing [\fBlevel\fP] tabs\&. Imanuel, 17\&.01\&.2014\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+The tabs\&. 
+.RE
+.PP
+
+.SS "virtual void ARdevKit\&.Model\&.Project\&.File\&.AbstractBlock\&.Write (System\&.IO\&.StreamWriterwriter)\fC [virtual]\fP"
+
+.PP
+Writes the \fBAbstractBlock\fP with the given writer\&. Imanuel, 15\&.01\&.2014\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIwriter\fP The writer to write\&. 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBARdevKit\&.Model\&.Project\&.File\&.JavaScriptBlock\fP, \fBARdevKit\&.Model\&.Project\&.File\&.XMLBlock\fP, \fBARdevKit\&.Model\&.Project\&.File\&.JavaScriptLine\fP, \fBARdevKit\&.Model\&.Project\&.File\&.JavaScriptInLine\fP, and \fBARdevKit\&.Model\&.Project\&.File\&.XMLLine\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBBlockMarker\fP ARdevKit\&.Model\&.Project\&.File\&.AbstractBlock\&.blockMarker\fC [protected]\fP"
+
+.PP
+The \fBBlockMarker\fP of this \fBAbstractBlock\fP\&. 
+.SS "List<\fBAbstractBlock\fP> ARdevKit\&.Model\&.Project\&.File\&.AbstractBlock\&.blocks\fC [protected]\fP"
+
+.PP
+The \fBAbstractBlock\fPs that belong to this \fBAbstractBlock\fP\&. 
+.SS "int ARdevKit\&.Model\&.Project\&.File\&.AbstractBlock\&.level\fC [protected]\fP"
+
+.PP
+The level of the \fBAbstractBlock\fP\&. The level\&. 
+.SS "\fBAbstractBlock\fP ARdevKit\&.Model\&.Project\&.File\&.AbstractBlock\&.parentBlock\fC [protected]\fP"
+
+.PP
+A \fBAbstractBlock\fP this \fBAbstractBlock\fP belongs to\&. 
+.SS "\fBAbstractFile\fP ARdevKit\&.Model\&.Project\&.File\&.AbstractBlock\&.parentFile\fC [protected]\fP"
+
+.PP
+The \fBAbstractFile\fP this block belongs to\&. 
+.SH "Property Documentation"
+.PP 
+.SS "\fBAbstractFile\fP ARdevKit\&.Model\&.Project\&.File\&.AbstractBlock\&.ParentFile\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the parent file\&. The parent file\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ARdevKit from the source code\&.

@@ -3,8 +3,6 @@
   <compounddef id="_assembly_info_8cs" kind="file">
     <compoundname>AssemblyInfo.cs</compoundname>
     <innernamespace refid="namespace_system_1_1_reflection">System::Reflection</innernamespace>
-    <innernamespace refid="namespace_system_1_1_runtime_1_1_compiler_services">System::Runtime::CompilerServices</innernamespace>
-    <innernamespace refid="namespace_system_1_1_runtime_1_1_interop_services">System::Runtime::InteropServices</innernamespace>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -32,7 +30,7 @@
 <codeline lineno="20"><highlight class="normal">[assembly:<sp/>ComVisible(</highlight><highlight class="keyword">false</highlight><highlight class="normal">)]</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Die<sp/>folgende<sp/>GUID<sp/>bestimmt<sp/>die<sp/>ID<sp/>der<sp/>Typbibliothek,<sp/>wenn<sp/>dieses<sp/>Projekt<sp/>für<sp/>COM<sp/>verfügbar<sp/>gemacht<sp/>wird</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal">[assembly:<sp/>Guid(</highlight><highlight class="stringliteral">&quot;29645df4-af72-4f0a-a36d-eb4c40f39f18&quot;</highlight><highlight class="normal">)]</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">[assembly:<sp/>Guid(</highlight><highlight class="stringliteral">&quot;759ec55d-c683-424f-ac07-ea268ec665f0&quot;</highlight><highlight class="normal">)]</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Versionsinformationen<sp/>für<sp/>eine<sp/>Assembly<sp/>bestehen<sp/>aus<sp/>den<sp/>folgenden<sp/>vier<sp/>Werten:</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
@@ -47,6 +45,6 @@
 <codeline lineno="35"><highlight class="normal">[assembly:<sp/>AssemblyVersion(</highlight><highlight class="stringliteral">&quot;1.0.0.0&quot;</highlight><highlight class="normal">)]</highlight></codeline>
 <codeline lineno="36"><highlight class="normal">[assembly:<sp/>AssemblyFileVersion(</highlight><highlight class="stringliteral">&quot;1.0.0.0&quot;</highlight><highlight class="normal">)]</highlight></codeline>
     </programlisting>
-    <location file="C:/Users/geht/Source/Repos/ARdevKit/ARdevKit/Properties/AssemblyInfo.cs"/>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Properties/AssemblyInfo.cs"/>
   </compounddef>
 </doxygen>

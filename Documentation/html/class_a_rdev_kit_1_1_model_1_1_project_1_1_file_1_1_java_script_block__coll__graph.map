@@ -1,0 +1,6 @@
+<map id="ARdevKit.Model.Project.File.JavaScriptBlock" name="ARdevKit.Model.Project.File.JavaScriptBlock">
+<area shape="rect" id="node2" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block.html" title="An AbstractBlock has a level and can contain other AbstractBlocks. It can have a BlockMarker and a pa..." alt="" coords="196,437,300,573"/>
+<area shape="rect" id="node3" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file.html" title="An AbstractFile can be an ARELConfigFile, an ARELProjectFile, a TrackinDataFile or an ARELGlueFile..." alt="" coords="5,6,192,157"/>
+<area shape="rect" id="node5" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block.html" title="An AbstractBlock has a level and can contain other AbstractBlocks. It can have a BlockMarker and a pa..." alt="" coords="154,222,341,373"/>
+<area shape="rect" id="node4" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker.html" title="A BlockMarker marks an AbstractBlock. It has a Start string and an End string and can be open or clos..." alt="" coords="309,6,496,157"/>
+</map>

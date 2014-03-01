@@ -1,0 +1,155 @@
+.TH "ARdevKit.View.ElementIcon" 3 "Sat Mar 1 2014" "Version 0.2" "ARdevKit" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ARdevKit.View.ElementIcon \- 
+.PP
+An element icon is used to display a registered SceneElement in the SceneSelectionPanel\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits TableLayoutPanel\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBElementIcon\fP (\fBSceneElement\fP element, \fBEditorWindow\fP ew)"
+.br
+.RI "\fIConstructor\&. Creates the text label and the pictureBox and adds them to the Panel\&. Adds event handlers\&. \fP"
+.ti -1c
+.RI "void \fBonClick\fP (object sender, EventArgs e)"
+.br
+.RI "\fIRaises the click event of the panel, label and picturebox\&. \fP"
+.ti -1c
+.RI "void \fBonMouseDown\fP (object sender, EventArgs e)"
+.br
+.RI "\fIRaises the mouse down event\&. Initiates drag&drop\&. \fP"
+.ti -1c
+.RI "void \fBonMouseUp\fP (object sender, EventArgs e)"
+.br
+.RI "\fIRaises the mouse up event\&. \fP"
+.ti -1c
+.RI "void \fBonMouseMove\fP (object sender, EventArgs e)"
+.br
+.RI "\fIRaises the mouse move event\&. \fP"
+.ti -1c
+.RI "void \fBonMouseLeave\fP (object sender, EventArgs e)"
+.br
+.RI "\fIRaises the mouse leave event\&. \fP"
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "\fBSceneElement\fP \fBElement\fP\fC [get]\fP"
+.br
+.RI "\fIGets the element\&. \fP"
+.ti -1c
+.RI "\fBEditorWindow\fP \fBEditorWindow\fP\fC [get]\fP"
+.br
+.RI "\fIGets the editor window\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+An element icon is used to display a registered SceneElement in the SceneSelectionPanel\&. 
+
+Robin, 14\&.01\&.2014\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ARdevKit\&.View\&.ElementIcon\&.ElementIcon (\fBSceneElement\fPelement, \fBEditorWindow\fPew)"
+
+.PP
+Constructor\&. Creates the text label and the pictureBox and adds them to the Panel\&. Adds event handlers\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIelement\fP The element\&.
+.br
+\fIew\fP The ew\&.
+.RE
+.PP
+.PP
+Robin, 14\&.01\&.2014\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void ARdevKit\&.View\&.ElementIcon\&.onClick (objectsender, EventArgse)"
+
+.PP
+Raises the click event of the panel, label and picturebox\&. Robin, 14\&.01\&.2014\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsender\fP Source of the event\&. 
+.br
+\fIe\fP Event information to send to registered event handlers\&. 
+.RE
+.PP
+
+.SS "void ARdevKit\&.View\&.ElementIcon\&.onMouseDown (objectsender, EventArgse)"
+
+.PP
+Raises the mouse down event\&. Initiates drag&drop\&. Robin, 18\&.01\&.2014\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsender\fP Source of the event\&. 
+.br
+\fIe\fP Event information to send to registered event handlers\&. 
+.RE
+.PP
+
+.SS "void ARdevKit\&.View\&.ElementIcon\&.onMouseLeave (objectsender, EventArgse)"
+
+.PP
+Raises the mouse leave event\&. Robin, 19\&.01\&.2014\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsender\fP Source of the event\&. 
+.br
+\fIe\fP Event information to send to registered event handlers\&. 
+.RE
+.PP
+
+.SS "void ARdevKit\&.View\&.ElementIcon\&.onMouseMove (objectsender, EventArgse)"
+
+.PP
+Raises the mouse move event\&. Robin, 19\&.01\&.2014\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsender\fP Source of the event\&. 
+.br
+\fIe\fP Event information to send to registered event handlers\&. 
+.RE
+.PP
+
+.SS "void ARdevKit\&.View\&.ElementIcon\&.onMouseUp (objectsender, EventArgse)"
+
+.PP
+Raises the mouse up event\&. Robin, 19\&.01\&.2014\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsender\fP Source of the event\&. 
+.br
+\fIe\fP Event information to send to registered event handlers\&. 
+.RE
+.PP
+
+.SH "Property Documentation"
+.PP 
+.SS "\fBEditorWindow\fP ARdevKit\&.View\&.ElementIcon\&.EditorWindow\fC [get]\fP"
+
+.PP
+Gets the editor window\&. The editor window\&. 
+.SS "\fBSceneElement\fP ARdevKit\&.View\&.ElementIcon\&.Element\fC [get]\fP"
+
+.PP
+Gets the element\&. The element\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ARdevKit from the source code\&.

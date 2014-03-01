@@ -19,17 +19,30 @@ namespace ARdevKit
     {
         private string filePath;
 
+        /// <summary>
+        /// Gets or sets the value.
+        /// </summary>
+        /// <value>
+        /// The value.
+        /// </value>
         public string[] Value
         {
             get { return richTextBox1.Lines; }
             set { richTextBox1.Lines = value; }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TextEditorForm"/> class.
+        /// </summary>
         public TextEditorForm()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TextEditorForm"/> class.
+        /// </summary>
+        /// <param name="filePath">The file path.</param>
         public TextEditorForm(string filePath) : this()
         {
             this.filePath = filePath;

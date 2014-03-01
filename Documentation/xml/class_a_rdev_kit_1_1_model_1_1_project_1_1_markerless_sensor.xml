@@ -1,0 +1,257 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor" kind="class" prot="public">
+    <compoundname>ARdevKit::Model::Project::MarkerlessSensor</compoundname>
+    <basecompoundref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor" prot="public" virt="non-virtual">ARdevKit.Model.Project.AbstractSensor</basecompoundref>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_1a1c0b341ee16aa03d68b67714f1cfca53" prot="public" static="no">
+        <name>FeatureDescriptorAlignments</name>
+        <enumvalue id="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_1a1c0b341ee16aa03d68b67714f1cfca53aaf37d08ae228a87dc6b265fd1019c97d" prot="public">
+          <name>regular</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_1a1c0b341ee16aa03d68b67714f1cfca53a1d0c06e2a17f59492b83f5200f8a9533" prot="public">
+          <name>upright</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_1a1c0b341ee16aa03d68b67714f1cfca53a67f2a835697e7c9c2c5146c76eca6038" prot="public">
+          <name>gravity</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_1a1c0b341ee16aa03d68b67714f1cfca53a8714cd0fa53a5376ba66b0406599eb20" prot="public">
+          <name>rectified</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>The following feature descriptor types are available: &quot;regular&quot;, &quot;upright&quot;, &quot;gravity&quot;, &quot;rectified&quot;. </para>        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>The &quot;regular&quot; feature descriptor type is the most general feature descriptor type and is used as default if the tag is not specified.</para></listitem><listitem><para>The &quot;upright&quot; feature descriptor type assumes that the camera is not rotated with respect to the optical axis, i.e. is turned upside down, during the tracking process.</para></listitem><listitem><para>The &quot;gravity&quot; feature descriptor type can only be used with devices with inertial sensors which measures gravity. It is used for localizing static objects that provide (close to) vertical surfaces, e.g. buildings or posters on a wall. The orientation of the features will then be aligned with gravity.</para></listitem><listitem><para>The &quot;rectified&quot; feature descriptor type can only be used with devices with inertial sensors which measures gravity. It is used for planar objects on a horizontal surface, e.g. a magazine on a table. This will improve the result of the localization of planar objects under steep camera angles at the cost of a lower framerate during localization. This parameter is for expert usage only. In general it is advised to leave the value unchanged. </para></listitem></itemizedlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerlessSensor.cs" line="46" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerlessSensor.cs" bodystart="46" bodyend="46"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_1aa6e040afed0bb46eb2c0fcda8954c1e1" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_1a1c0b341ee16aa03d68b67714f1cfca53" kindref="member">FeatureDescriptorAlignments</ref></type>
+        <definition>FeatureDescriptorAlignments ARdevKit.Model.Project.MarkerlessSensor.featureDescriptorAlignment</definition>
+        <argsstring></argsstring>
+        <name>featureDescriptorAlignment</name>
+        <briefdescription>
+<para>The feature descriptor alignment </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerlessSensor.cs" line="51" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerlessSensor.cs" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_1a49898575f95f56a267a82cca2b258134" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ARdevKit.Model.Project.MarkerlessSensor.maxObjectsToDetectPerFrame</definition>
+        <argsstring></argsstring>
+        <name>maxObjectsToDetectPerFrame</name>
+        <briefdescription>
+<para>A restriction on the number of reference planar objects to be localized per frame. Localization takes longer than interframe tracking, and if the system tries to localize too many objects at the same time, it might cause a lower framerate. The default value for this is 5 and is used if the tag is not specified. Another name that can be used for this parameter is &lt;MultipleReferenceImagesFast&gt;. This name is however deprecated and should not be used any more. This parameter is for expert usage only. In general it is advised to leave the value unchanged. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerlessSensor.cs" line="75" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerlessSensor.cs" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_1a8c9de52d508a5cb8adf1920438c5f6cb" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ARdevKit.Model.Project.MarkerlessSensor.maxObjectsToTrackInParallel</definition>
+        <argsstring></argsstring>
+        <name>maxObjectsToTrackInParallel</name>
+        <briefdescription>
+<para>The maximum number of objects that should be tracked in parallel. Tracking many objects in parallel is quite expensive and might lead to a lower framerate. As soon as the maximum number of tracked objects is reached, the system will no longer try to localize new objects. The default value for this is 1 and is used if the tag is not specified. Another name that can be used for this parameter is &lt;MaxNumCosesForInit&gt;. This name is however deprecated and should not be used any more. This parameter is for expert usage only. In general it is advised to leave the value unchanged. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerlessSensor.cs" line="100" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerlessSensor.cs" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_1aacf707617c0782991ff6f490aabcf37d" prot="protected" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ARdevKit.Model.Project.MarkerlessSensor.similarityThreshold</definition>
+        <argsstring></argsstring>
+        <name>similarityThreshold</name>
+        <briefdescription>
+<para>Default similarity threshold for specifying whether template tracking was successful or failed. The tracking quality measure is defined between -1 and 1, where 1 is the best possible value. If the tracking quality is reported to be below the threshold, the tracker will treat the corresponding frame as lost. The default value for this is 0.7 and is used if the tag is not specified. This setting can be overridden for each &quot;COS&quot; if it is defined there. This parameter is for expert usage only. In general it is advised to leave the value unchanged. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerlessSensor.cs" line="124" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerlessSensor.cs" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_1a16b0d056f8ce0a6e79bdb23df1222fd4" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_1a1c0b341ee16aa03d68b67714f1cfca53" kindref="member">FeatureDescriptorAlignments</ref></type>
+        <definition>FeatureDescriptorAlignments ARdevKit.Model.Project.MarkerlessSensor.FeatureDescriptorAlignment</definition>
+        <argsstring></argsstring>
+        <name>FeatureDescriptorAlignment</name>
+        <briefdescription>
+<para>Gets or sets the feature descriptor alignment. </para>        </briefdescription>
+        <detaileddescription>
+<para>The feature descriptor alignment. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerlessSensor.cs" line="58" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerlessSensor.cs" bodystart="59" bodyend="-1"/>
+        <referencedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1abf7c8bbff198ee8af664232c2fa394cb" compoundref="_export_visitor_8cs" startline="506" endline="512">ARdevKit.Controller.ProjectController.ExportVisitor.Visit</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_1ae9ea2cf4d222d4ac0277562b25b6619a" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>int</type>
+        <definition>int ARdevKit.Model.Project.MarkerlessSensor.MaxObjectsToDetectPerFrame</definition>
+        <argsstring></argsstring>
+        <name>MaxObjectsToDetectPerFrame</name>
+        <briefdescription>
+<para>Gets or sets the maximum objects to detect per frame. </para>        </briefdescription>
+        <detaileddescription>
+<para>The maximum objects to detect per frame. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerlessSensor.cs" line="82" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerlessSensor.cs" bodystart="83" bodyend="-1"/>
+        <referencedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1abf7c8bbff198ee8af664232c2fa394cb" compoundref="_export_visitor_8cs" startline="506" endline="512">ARdevKit.Controller.ProjectController.ExportVisitor.Visit</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_1ac88579a60d45b1d6df015f5e7fd39520" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>int</type>
+        <definition>int ARdevKit.Model.Project.MarkerlessSensor.MaxObjectsToTrackInParallel</definition>
+        <argsstring></argsstring>
+        <name>MaxObjectsToTrackInParallel</name>
+        <briefdescription>
+<para>Gets or sets the maximum objects to track in parallel. </para>        </briefdescription>
+        <detaileddescription>
+<para>The maximum objects to track in parallel. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerlessSensor.cs" line="107" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerlessSensor.cs" bodystart="108" bodyend="-1"/>
+        <referencedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1abf7c8bbff198ee8af664232c2fa394cb" compoundref="_export_visitor_8cs" startline="506" endline="512">ARdevKit.Controller.ProjectController.ExportVisitor.Visit</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_1ae4442307a3d64a66c605624a2341aaa2" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>double</type>
+        <definition>double ARdevKit.Model.Project.MarkerlessSensor.SimilarityThreshold</definition>
+        <argsstring></argsstring>
+        <name>SimilarityThreshold</name>
+        <briefdescription>
+<para>Gets or sets the similarity threshold. </para>        </briefdescription>
+        <detaileddescription>
+<para>The similarity threshold. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerlessSensor.cs" line="131" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerlessSensor.cs" bodystart="132" bodyend="-1"/>
+        <referencedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1abf7c8bbff198ee8af664232c2fa394cb" compoundref="_export_visitor_8cs" startline="506" endline="512">ARdevKit.Controller.ProjectController.ExportVisitor.Visit</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_1ad1c6ab110245698ad3e0a8adff8857d1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.Model.Project.MarkerlessSensor.MarkerlessSensor</definition>
+        <argsstring>()</argsstring>
+        <name>MarkerlessSensor</name>
+        <briefdescription>
+<para>Default constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 17.01.2014. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerlessSensor.cs" line="142" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerlessSensor.cs" bodystart="142" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_1a28dd4f8d16e0112ae1f1bfd948c90c59" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override void</type>
+        <definition>override void ARdevKit.Model.Project.MarkerlessSensor.Accept</definition>
+        <argsstring>(AbstractProjectVisitor visitor)</argsstring>
+        <name>Accept</name>
+        <reimplements refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a4ff825b76bdd9f01a93ca670d02c219c">Accept</reimplements>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor" kindref="compound">AbstractProjectVisitor</ref></type>
+          <declname>visitor</declname>
+        </param>
+        <briefdescription>
+<para>Accepts the given visitor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>visitor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The visitor. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para><para>Imanuel, 17.01.2014. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerlessSensor.cs" line="158" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerlessSensor.cs" bodystart="158" bodyend="161"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Used to change the properties of the metaio SDK and how to track markerless trackables. it is an <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor" kindref="compound">AbstractSensor</ref> </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="653">
+        <label>ARdevKit.Model.Project.MarkerlessSensor</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor"/>
+        <childnode refid="654" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="654">
+        <label>AbstractSensor</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="655">
+        <label>ARdevKit.Model.Project.MarkerlessSensor</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor"/>
+        <childnode refid="656" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="656">
+        <label>AbstractSensor</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerlessSensor.cs" line="20" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerlessSensor.cs" bodystart="19" bodyend="162"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1ac267c5a8c7792a6c0ba07108102c0706" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerlessSensor</scope><name>AbstractSensor</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_1a28dd4f8d16e0112ae1f1bfd948c90c59" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::MarkerlessSensor</scope><name>Accept</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_1aa6e040afed0bb46eb2c0fcda8954c1e1" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerlessSensor</scope><name>featureDescriptorAlignment</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_1a16b0d056f8ce0a6e79bdb23df1222fd4" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerlessSensor</scope><name>FeatureDescriptorAlignment</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_1a1c0b341ee16aa03d68b67714f1cfca53" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerlessSensor</scope><name>FeatureDescriptorAlignments</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_1ad1c6ab110245698ad3e0a8adff8857d1" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerlessSensor</scope><name>MarkerlessSensor</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_1a49898575f95f56a267a82cca2b258134" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerlessSensor</scope><name>maxObjectsToDetectPerFrame</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_1ae9ea2cf4d222d4ac0277562b25b6619a" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerlessSensor</scope><name>MaxObjectsToDetectPerFrame</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_1a8c9de52d508a5cb8adf1920438c5f6cb" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerlessSensor</scope><name>maxObjectsToTrackInParallel</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_1ac88579a60d45b1d6df015f5e7fd39520" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerlessSensor</scope><name>MaxObjectsToTrackInParallel</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1ae9ff3a8ab9d8d8a357173cfa55a7030f" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerlessSensor</scope><name>Name</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a2f9524a6aba4331373c0c1968b2f6f4d" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerlessSensor</scope><name>sensorIDBase</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a51a87ecf568c53df079db7af4a553bc6" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerlessSensor</scope><name>SensorIDBase</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a8eecc60106e6a54a3e096c63a7d4d012" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerlessSensor</scope><name>SensorIDBases</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a054724aa9c411a5f813d977c7c1f620c" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerlessSensor</scope><name>SensorIDString</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1ae12a6c3bfe5686d888d7e36c9b19df47" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerlessSensor</scope><name>sensorIDString</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a29b9e916f374e31196689e9d7ac73123" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerlessSensor</scope><name>sensorSubType</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a092d1bd99165833488f9ce744a1bf65d" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerlessSensor</scope><name>SensorSubType</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1af7b41fc81d926ed779ca02ef894fcddf" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerlessSensor</scope><name>SensorSubTypes</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a01251db96ea5e0fb0abe1df0a129e751" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerlessSensor</scope><name>sensorType</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a66bde8348688b03400befc56c6ce8384" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerlessSensor</scope><name>SensorType</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a1954adedcf2a2f61256c9b11fe0c8386" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerlessSensor</scope><name>SensorTypes</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_1ae4442307a3d64a66c605624a2341aaa2" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerlessSensor</scope><name>SimilarityThreshold</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_1aacf707617c0782991ff6f490aabcf37d" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerlessSensor</scope><name>similarityThreshold</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

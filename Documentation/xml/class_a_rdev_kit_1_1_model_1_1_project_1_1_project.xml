@@ -1,0 +1,507 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_model_1_1_project_1_1_project" kind="class" prot="public">
+    <compoundname>ARdevKit::Model::Project::Project</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a4c03fab85709cf9087b38120c2ef9e3d" prot="private" static="no" mutable="no">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_screen_size" kindref="compound">ScreenSize</ref></type>
+        <definition>ScreenSize ARdevKit.Model.Project.Project.screensize</definition>
+        <argsstring></argsstring>
+        <name>screensize</name>
+        <briefdescription>
+<para>The screensize </para>        </briefdescription>
+        <detaileddescription>
+<para>geht 26.01.2014 20:20</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="26" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1ae930cf1f72c2cedf192567cd73a707f2" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string ARdevKit.Model.Project.Project.name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+<para>The name of the project. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="45" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a625b641f48b689657566c3b22d1985de" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string ARdevKit.Model.Project.Project.projectPath</definition>
+        <argsstring></argsstring>
+        <name>projectPath</name>
+        <briefdescription>
+<para>Full pathname of the project file. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="61" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a3c0d72dbec2c395ed8ee1c952f4b8811" prot="private" static="no" mutable="no">
+        <type>List&lt; <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source" kindref="compound">AbstractSource</ref> &gt;</type>
+        <definition>List&lt;AbstractSource&gt; ARdevKit.Model.Project.Project.sources</definition>
+        <argsstring></argsstring>
+        <name>sources</name>
+        <briefdescription>
+<para>The sources used in this <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project" kindref="compound">Project</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="94" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a6328ac547d5a2a54d0d574d9d816751c" prot="private" static="no" mutable="no">
+        <type>List&lt; <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable" kindref="compound">AbstractTrackable</ref> &gt;</type>
+        <definition>List&lt;AbstractTrackable&gt; ARdevKit.Model.Project.Project.trackables</definition>
+        <argsstring></argsstring>
+        <name>trackables</name>
+        <briefdescription>
+<para>The trackables used in this <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project" kindref="compound">Project</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="110" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1afe6b2e85505c01075fbc52a0cc851ce9" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_screen_size" kindref="compound">ScreenSize</ref></type>
+        <definition>ScreenSize ARdevKit.Model.Project.Project.Screensize</definition>
+        <argsstring></argsstring>
+        <name>Screensize</name>
+        <briefdescription>
+<para>Gets or sets the screensize. </para>        </briefdescription>
+        <detaileddescription>
+<para>The screensize. </para><para>geht 28.01.2014 14:43</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="35" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1ae52006b6ebb8293ff034e8e00fdc4e77" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>string</type>
+        <definition>string ARdevKit.Model.Project.Project.Name</definition>
+        <argsstring></argsstring>
+        <name>Name</name>
+        <briefdescription>
+<para>Gets or sets the name. </para>        </briefdescription>
+        <detaileddescription>
+<para>The name. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="52" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="53" bodyend="-1"/>
+        <referencedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1ad58774c6778421b6bf85a6c70029a3d9" compoundref="_export_visitor_8cs" startline="976" endline="1107">ARdevKit.Controller.ProjectController.ExportVisitor.Visit</referencedby>
+        <referencedby refid="class_a_rdev_kit_1_1_editor_window_1a7ef9b2d88c9155f213bcc1b0476c4bb2" compoundref="_editor_window_8cs" startline="564" endline="596">ARdevKit.EditorWindow.saveProject</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1ad1061c35bc3ffb4caefebce4f22c365c" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>string</type>
+        <definition>string ARdevKit.Model.Project.Project.ProjectPath</definition>
+        <argsstring></argsstring>
+        <name>ProjectPath</name>
+        <briefdescription>
+<para>Gets or sets the full pathname of the project file. </para>        </briefdescription>
+        <detaileddescription>
+<para>The full pathname of the project file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="68" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="69" bodyend="-1"/>
+        <referencedby refid="class_a_rdev_kit_1_1_editor_window_1a7ef9b2d88c9155f213bcc1b0476c4bb2" compoundref="_editor_window_8cs" startline="564" endline="596">ARdevKit.EditorWindow.saveProject</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1ac22f350013113d1e85605346d824cbc1" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor" kindref="compound">AbstractSensor</ref></type>
+        <definition>AbstractSensor ARdevKit.Model.Project.Project.Sensor</definition>
+        <argsstring></argsstring>
+        <name>Sensor</name>
+        <briefdescription>
+<para>Gets or sets the sensor. </para>        </briefdescription>
+        <detaileddescription>
+<para>The sensor. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="85" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="86" bodyend="-1"/>
+        <referencedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1ad58774c6778421b6bf85a6c70029a3d9" compoundref="_export_visitor_8cs" startline="976" endline="1107">ARdevKit.Controller.ProjectController.ExportVisitor.Visit</referencedby>
+        <referencedby refid="class_a_rdev_kit_1_1_editor_window_1a7ef9b2d88c9155f213bcc1b0476c4bb2" compoundref="_editor_window_8cs" startline="564" endline="596">ARdevKit.EditorWindow.saveProject</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1ade6d1eebeab2acee826e2ddf22724fb5" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>List&lt; <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source" kindref="compound">AbstractSource</ref> &gt;</type>
+        <definition>List&lt;AbstractSource&gt; ARdevKit.Model.Project.Project.Sources</definition>
+        <argsstring></argsstring>
+        <name>Sources</name>
+        <briefdescription>
+<para>Gets or sets the sources. </para>        </briefdescription>
+        <detaileddescription>
+<para>The sources. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="101" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="102" bodyend="-1"/>
+        <referencedby refid="class_preview_controller_1ae33fd4d13286e22a819f5a6cd5de292f" compoundref="_preview_controller_8cs" startline="817" endline="839">PreviewController.updateElementCombobox</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1af3d7540cfeabb22ce7290378d7039a76" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>List&lt; <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable" kindref="compound">AbstractTrackable</ref> &gt;</type>
+        <definition>List&lt;AbstractTrackable&gt; ARdevKit.Model.Project.Project.Trackables</definition>
+        <argsstring></argsstring>
+        <name>Trackables</name>
+        <briefdescription>
+<para>Gets or sets the trackables. </para>        </briefdescription>
+        <detaileddescription>
+<para>The trackables. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="117" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="118" bodyend="-1"/>
+        <referencedby refid="class_preview_controller_1ae3d0ace09aed4464a7dd91764d1bb03e" compoundref="_preview_controller_8cs" startline="101" endline="166">PreviewController.addPreviewable</referencedby>
+        <referencedby refid="class_preview_controller_1ab68e5dc968561b4a115576d84e363cb0" compoundref="_preview_controller_8cs" startline="328" endline="372">PreviewController.reloadPreviewPanel</referencedby>
+        <referencedby refid="class_preview_controller_1a03acb2816496e20b416346aeff126b04" compoundref="_preview_controller_8cs" startline="743" endline="766">PreviewController.rescalePreviewPanel</referencedby>
+        <referencedby refid="class_a_rdev_kit_1_1_editor_window_1abb065a00022ebb57eeb967d319554fc3" compoundref="_editor_window_8cs" startline="642" endline="671">ARdevKit.EditorWindow.updateSceneSelectionPanel</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a835cbe6aaacc0f7b0a60a1dd5745667e" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor" kindref="compound">AbstractSensor</ref></type>
+        <definition>AbstractSensor ARdevKit.Model.Project.Project.sensor</definition>
+        <argsstring></argsstring>
+        <name>sensor</name>
+        <briefdescription>
+<para>The sensor, is depentend on the used trackables. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="78" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a52a5cf651d0d7ecc8fdf4795acb750a4" prot="private" static="yes" mutable="no">
+        <type>readonly Object</type>
+        <definition>readonly Object ARdevKit.Model.Project.Project.locker</definition>
+        <argsstring></argsstring>
+        <name>locker</name>
+        <initializer>= new Object()</initializer>
+        <briefdescription>
+<para>The locker. A little helper needed for the checksum creation. </para>        </briefdescription>
+        <detaileddescription>
+<para>geht 20.02.2014 14:10</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="347" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="347" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a6bed8b5642e71c32a6e055f49ce4b186" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.Model.Project.Project.Project</definition>
+        <argsstring>()</argsstring>
+        <name>Project</name>
+        <briefdescription>
+<para>Initializes a new instance of the <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project" kindref="compound">Project</ref> class with default values. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="127" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="127" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a27791a5b014dcb7d732f6527a6f4f03a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.Model.Project.Project.Project</definition>
+        <argsstring>(string name)</argsstring>
+        <name>Project</name>
+        <param>
+          <type>string</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Initializes a new instance of the <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project" kindref="compound">Project</ref> class with specified name. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="141" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="141" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a8024daa2d023f14769c154148a0c1528" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.Model.Project.Project.Project</definition>
+        <argsstring>(string name, string projectPath)</argsstring>
+        <name>Project</name>
+        <param>
+          <type>string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>projectPath</declname>
+        </param>
+        <briefdescription>
+<para>Initializes a new instance of the <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project" kindref="compound">Project</ref> class with specified name and projectPath. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>projectPath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Full pathname of the project file.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="153" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="153" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a2615d1d448f2db69a77b602391b2a91d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ARdevKit.Model.Project.Project.Accept</definition>
+        <argsstring>(AbstractProjectVisitor visitor)</argsstring>
+        <name>Accept</name>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor" kindref="compound">AbstractProjectVisitor</ref></type>
+          <declname>visitor</declname>
+        </param>
+        <briefdescription>
+<para>Accepts the specified visitor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>visitor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The visitor.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="163" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="163" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1aa03e2b5300ac356aaf2dfa4e587eb411" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source" kindref="compound">AbstractSource</ref></type>
+        <definition>AbstractSource ARdevKit.Model.Project.Project.findSource</definition>
+        <argsstring>(AbstractSource source)</argsstring>
+        <name>findSource</name>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source" kindref="compound">AbstractSource</ref></type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+<para>Returns the associated source, if it is associated with the project. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>source</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The source, which is searched.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the associated source </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="181" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="181" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a0efd066f58d552481f075879015e3652" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ARdevKit.Model.Project.Project.existSource</definition>
+        <argsstring>(AbstractSource source)</argsstring>
+        <name>existSource</name>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source" kindref="compound">AbstractSource</ref></type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+<para>Returns, if the specified source is associated with this project. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>source</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The specified source.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true, if the source is associated with this project false, else </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="194" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="194" bodyend="204"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a97efde65dc462b98448edd6967f9e777" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ARdevKit.Model.Project.Project.hasTrackable</definition>
+        <argsstring>()</argsstring>
+        <name>hasTrackable</name>
+        <briefdescription>
+<para>tests if all trackables in this.trackables are null. if there are one which is not null it&apos;s true. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if trackable, false if not. </para></simplesect>
+</para><para>Lizzard, 1/19/2014. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="218" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="218" bodyend="228"/>
+        <referencedby refid="class_preview_controller_1a73d864a5cea6519a889d70bffbfef8f9" compoundref="_preview_controller_8cs" startline="274" endline="294">PreviewController.removePreviewable</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a3176ea13afc802bbb0ac63fe838823e8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int ARdevKit.Model.Project.Project.nextID</definition>
+        <argsstring>()</argsstring>
+        <name>nextID</name>
+        <briefdescription>
+<para>Returns the next bigger Matrix ID. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="234" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="234" bodyend="248"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1abb0710a1f1cd83bda71a0c988e9b6d72" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ARdevKit.Model.Project.Project.existTrackable</definition>
+        <argsstring>(IPreviewable prev)</argsstring>
+        <name>existTrackable</name>
+        <param>
+          <type><ref refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable" kindref="compound">IPreviewable</ref></type>
+          <declname>prev</declname>
+        </param>
+        <briefdescription>
+<para>true if an Trackable with the same Path/ID exists, false if not. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>prev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The previous.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="255" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="255" bodyend="282"/>
+        <referencedby refid="class_preview_controller_1ae3d0ace09aed4464a7dd91764d1bb03e" compoundref="_preview_controller_8cs" startline="101" endline="166">PreviewController.addPreviewable</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a4bdc5fa718a8a54711dd659d8edc1ea0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ARdevKit.Model.Project.Project.existTrackable</definition>
+        <argsstring>(int matrixID)</argsstring>
+        <name>existTrackable</name>
+        <param>
+          <type>int</type>
+          <declname>matrixID</declname>
+        </param>
+        <briefdescription>
+<para>true if an Trackable with the same Path/ID exists, false if not. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>matrixID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Identifier for the matrix. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para><para><simplesect kind="return"><para>true if it succeeds, false if it fails. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="289" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="289" bodyend="303"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a222ab9abcfa20e2637300bbc94a8f3c2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>string ARdevKit.Model.Project.Project.getChecksum</definition>
+        <argsstring>()</argsstring>
+        <name>getChecksum</name>
+        <briefdescription>
+<para>Gets the checksum of the project lying at the project path. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para></para></simplesect>
+</para><para>geht 20.02.2014 13:36</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="311" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="311" bodyend="341"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a2b009652210fed6623806dec3dd59193" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>byte[]</type>
+        <definition>static byte [] ARdevKit.Model.Project.Project.ObjectToByteArray</definition>
+        <argsstring>(Object objectToSerialize)</argsstring>
+        <name>ObjectToByteArray</name>
+        <param>
+          <type>Object</type>
+          <declname>objectToSerialize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="349" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="349" bodyend="373"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Encapsulates everything, that is needed for an AR-Application and so this the element, which the user saves, loads or exports </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="695">
+        <label>ARdevKit.Model.Project.AbstractSensor</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor"/>
+      </node>
+      <node id="694">
+        <label>ARdevKit.Model.Project.Project</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project"/>
+        <childnode refid="695" relation="usage">
+          <edgelabel>#sensor</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="21" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="20" bodyend="374"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a2615d1d448f2db69a77b602391b2a91d" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Project</scope><name>Accept</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a0efd066f58d552481f075879015e3652" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Project</scope><name>existSource</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1abb0710a1f1cd83bda71a0c988e9b6d72" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Project</scope><name>existTrackable</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a4bdc5fa718a8a54711dd659d8edc1ea0" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Project</scope><name>existTrackable</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1aa03e2b5300ac356aaf2dfa4e587eb411" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Project</scope><name>findSource</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a222ab9abcfa20e2637300bbc94a8f3c2" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Project</scope><name>getChecksum</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a97efde65dc462b98448edd6967f9e777" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Project</scope><name>hasTrackable</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a52a5cf651d0d7ecc8fdf4795acb750a4" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::Project</scope><name>locker</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1ae52006b6ebb8293ff034e8e00fdc4e77" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Project</scope><name>Name</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1ae930cf1f72c2cedf192567cd73a707f2" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::Project</scope><name>name</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a3176ea13afc802bbb0ac63fe838823e8" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Project</scope><name>nextID</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a2b009652210fed6623806dec3dd59193" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::Project</scope><name>ObjectToByteArray</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a6bed8b5642e71c32a6e055f49ce4b186" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Project</scope><name>Project</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a27791a5b014dcb7d732f6527a6f4f03a" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Project</scope><name>Project</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a8024daa2d023f14769c154148a0c1528" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Project</scope><name>Project</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a625b641f48b689657566c3b22d1985de" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::Project</scope><name>projectPath</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1ad1061c35bc3ffb4caefebce4f22c365c" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Project</scope><name>ProjectPath</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1afe6b2e85505c01075fbc52a0cc851ce9" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Project</scope><name>Screensize</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a4c03fab85709cf9087b38120c2ef9e3d" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::Project</scope><name>screensize</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1ac22f350013113d1e85605346d824cbc1" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Project</scope><name>Sensor</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a835cbe6aaacc0f7b0a60a1dd5745667e" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::Project</scope><name>sensor</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a3c0d72dbec2c395ed8ee1c952f4b8811" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::Project</scope><name>sources</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1ade6d1eebeab2acee826e2ddf22724fb5" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Project</scope><name>Sources</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1af3d7540cfeabb22ce7290378d7039a76" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Project</scope><name>Trackables</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a6328ac547d5a2a54d0d574d9d816751c" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::Project</scope><name>trackables</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

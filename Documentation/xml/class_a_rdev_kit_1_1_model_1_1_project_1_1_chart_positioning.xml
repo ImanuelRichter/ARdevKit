@@ -1,0 +1,172 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_positioning" kind="class" prot="public">
+    <compoundname>ARdevKit::Model::Project::ChartPositioning</compoundname>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_positioning_1ab74042f3d8ce77f994987c15831d76a2" prot="public" static="no">
+        <name>PositioningModes</name>
+        <enumvalue id="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_positioning_1ab74042f3d8ce77f994987c15831d76a2afe6f99ef1ec99efbdc19a9786cf1facc" prot="public">
+          <name>STATIC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_positioning_1ab74042f3d8ce77f994987c15831d76a2a3a0bc063b6db8cae0361657958be836f" prot="public">
+          <name>ABSOLUTE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_positioning_1ab74042f3d8ce77f994987c15831d76a2ac3cb497d8ec3c88b9024774b775358e2" prot="public">
+          <name>RELATIVE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Values that represent positioning modes. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 27.01.2014. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ChartPositioning.cs" line="25" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ChartPositioning.cs" bodystart="25" bodyend="25"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_positioning_1a23ee1fc81270919ab0915956db30e519" prot="private" static="no" mutable="no">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_positioning_1ab74042f3d8ce77f994987c15831d76a2" kindref="member">PositioningModes</ref></type>
+        <definition>PositioningModes ARdevKit.Model.Project.ChartPositioning.positioningMode</definition>
+        <argsstring></argsstring>
+        <name>positioningMode</name>
+        <briefdescription>
+<para>The positioning mode. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ChartPositioning.cs" line="28" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ChartPositioning.cs" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_positioning_1a7795d6ee6ffadbcdad6b08f48eff1871" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ARdevKit.Model.Project.ChartPositioning.top</definition>
+        <argsstring></argsstring>
+        <name>top</name>
+        <briefdescription>
+<para>The top padding </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ChartPositioning.cs" line="45" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ChartPositioning.cs" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_positioning_1a531849bc392cd3bfc3d30a2fea4f52fc" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ARdevKit.Model.Project.ChartPositioning.left</definition>
+        <argsstring></argsstring>
+        <name>left</name>
+        <briefdescription>
+<para>The left padding </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ChartPositioning.cs" line="61" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ChartPositioning.cs" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_positioning_1adae5996b4fe2ac69c164ab256037ec5f" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_positioning_1ab74042f3d8ce77f994987c15831d76a2" kindref="member">PositioningModes</ref></type>
+        <definition>PositioningModes ARdevKit.Model.Project.ChartPositioning.PositioningMode</definition>
+        <argsstring></argsstring>
+        <name>PositioningMode</name>
+        <briefdescription>
+<para>Gets or sets the positioning mode. </para>        </briefdescription>
+        <detaileddescription>
+<para>The positioning mode. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ChartPositioning.cs" line="36" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ChartPositioning.cs" bodystart="37" bodyend="-1"/>
+        <referencedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1a0e04a0743609a16eb7c872427755249e" compoundref="_export_visitor_8cs" startline="238" endline="383">ARdevKit.Controller.ProjectController.ExportVisitor.Visit</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_positioning_1a0853d6ce2e37038ba62f051285ebf2ca" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>int</type>
+        <definition>int ARdevKit.Model.Project.ChartPositioning.Top</definition>
+        <argsstring></argsstring>
+        <name>Top</name>
+        <briefdescription>
+<para>Gets or sets the top. </para>        </briefdescription>
+        <detaileddescription>
+<para>The top. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ChartPositioning.cs" line="52" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ChartPositioning.cs" bodystart="53" bodyend="-1"/>
+        <referencedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1a0e04a0743609a16eb7c872427755249e" compoundref="_export_visitor_8cs" startline="238" endline="383">ARdevKit.Controller.ProjectController.ExportVisitor.Visit</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_positioning_1adc4b121079440c2d28c2ac86f7ee200a" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>int</type>
+        <definition>int ARdevKit.Model.Project.ChartPositioning.Left</definition>
+        <argsstring></argsstring>
+        <name>Left</name>
+        <briefdescription>
+<para>Gets or sets the left. </para>        </briefdescription>
+        <detaileddescription>
+<para>The left. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ChartPositioning.cs" line="68" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ChartPositioning.cs" bodystart="69" bodyend="-1"/>
+        <referencedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1a0e04a0743609a16eb7c872427755249e" compoundref="_export_visitor_8cs" startline="238" endline="383">ARdevKit.Controller.ProjectController.ExportVisitor.Visit</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_positioning_1a7e26c81e7d9989be224634e219cb4dc2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.Model.Project.ChartPositioning.ChartPositioning</definition>
+        <argsstring>(PositioningModes positioningMode)</argsstring>
+        <name>ChartPositioning</name>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_positioning_1ab74042f3d8ce77f994987c15831d76a2" kindref="member">PositioningModes</ref></type>
+          <declname>positioningMode</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 27.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>positioningMode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The position. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ChartPositioning.cs" line="82" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ChartPositioning.cs" bodystart="82" bodyend="85"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Used to set the position of a chart used by HighChart. </para>    </briefdescription>
+    <detaileddescription>
+<para>Imanuel, 20.01.2014. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="512">
+        <label>ARdevKit.Model.Project.ChartPositioning</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_positioning"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ChartPositioning.cs" line="18" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ChartPositioning.cs" bodystart="17" bodyend="86"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_positioning_1a7e26c81e7d9989be224634e219cb4dc2" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::ChartPositioning</scope><name>ChartPositioning</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_positioning_1a531849bc392cd3bfc3d30a2fea4f52fc" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::ChartPositioning</scope><name>left</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_positioning_1adc4b121079440c2d28c2ac86f7ee200a" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::ChartPositioning</scope><name>Left</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_positioning_1adae5996b4fe2ac69c164ab256037ec5f" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::ChartPositioning</scope><name>PositioningMode</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_positioning_1a23ee1fc81270919ab0915956db30e519" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::ChartPositioning</scope><name>positioningMode</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_positioning_1ab74042f3d8ce77f994987c15831d76a2" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::ChartPositioning</scope><name>PositioningModes</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_positioning_1a0853d6ce2e37038ba62f051285ebf2ca" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::ChartPositioning</scope><name>Top</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_positioning_1a7795d6ee6ffadbcdad6b08f48eff1871" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::ChartPositioning</scope><name>top</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

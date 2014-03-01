@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="dir_cdb7409737ae1a99db840e2055ffff9b" kind="dir">
+    <compoundname>C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController</compoundname>
+    <innerfile refid="_process_video_window_8cs">ProcessVideoWindow.cs</innerfile>
+    <innerfile refid="_process_video_window_8_designer_8cs">ProcessVideoWindow.Designer.cs</innerfile>
+    <innerfile refid="_test_controller_8cs">TestController.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,77 @@
+.TH "ARdevKit.Model.Project.File" 3 "Sat Mar 1 2014" "Version 0.2" "ARdevKit" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ARdevKit.Model.Project.File \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBAbstractBlock\fP"
+.br
+.RI "\fIAn \fBAbstractBlock\fP has a \fBlevel\fP and can contain other \fBAbstractBlock\fPs\&. It can have a \fBBlockMarker\fP and a \fBparentFile\fP\&. \fP"
+.ti -1c
+.RI "class \fBAbstractFile\fP"
+.br
+.RI "\fIAn \fBAbstractFile\fP can be an \fBARELConfigFile\fP, an \fBARELProjectFile\fP, a TrackinDataFile or an \fBARELGlueFile\fP\&. It must have a \fBfilePath\fP and can have a header and consists of \fBAbstractBlock\fPs\&. \fP"
+.ti -1c
+.RI "class \fBARELConfigFile\fP"
+.br
+.RI "\fIAn arelConfig\&.xml\&. \fP"
+.ti -1c
+.RI "class \fBARELGlueFile\fP"
+.br
+.RI "\fIAn arelGlue\&.js\&. \fP"
+.ti -1c
+.RI "class \fBARELProjectFile\fP"
+.br
+.RI "\fIA arel[projectName]\&.html\&. \fP"
+.ti -1c
+.RI "class \fBBlockMarker\fP"
+.br
+.RI "\fIA \fBBlockMarker\fP marks an \fBAbstractBlock\fP\&. It has a \fBStart\fP string and an \fBEnd\fP string and can be open or closed\&. \fP"
+.ti -1c
+.RI "class \fBChartFile\fP"
+.br
+.ti -1c
+.RI "class \fBHelper\fP"
+.br
+.RI "\fIA static Helper class which contains some I/O methods\&. \fP"
+.ti -1c
+.RI "class \fBJavaScriptBlock\fP"
+.br
+.RI "\fIA \fBJavaScriptBlock\fP block is an \fBAbstractBlock\fP\&. It has a head and constits of other \fBJavaScriptBlock\fPs and \fBJavaScriptLine\fPs\&. \fP"
+.ti -1c
+.RI "class \fBJavaScriptInLine\fP"
+.br
+.ti -1c
+.RI "class \fBJavaScriptLine\fP"
+.br
+.RI "\fIA \fBJavaScriptLine\fP is a \fBJavaScriptBlock\fP which has a \fBcontent\fP that is written in a single line\&. \fP"
+.ti -1c
+.RI "class \fBNonTerminatingXMLTag\fP"
+.br
+.RI "\fIA \fBNonTerminatingXMLTag\fP is a \fBXMLTag\fP which has no end part\&. \fP"
+.ti -1c
+.RI "class \fBTrackingDataFile\fP"
+.br
+.RI "\fIA trackingData_[SensorType][SensorSubType]\&.xml\&. \fP"
+.ti -1c
+.RI "class \fBXMLBlock\fP"
+.br
+.RI "\fIA \fBXMLBlock\fP is an \fBAbstractBlock\fP which can have \fBXMLTag\fPs\&. \fP"
+.ti -1c
+.RI "class \fBXMLLine\fP"
+.br
+.RI "\fIA line is a \fBXMLBlock\fP which can have a value or not\&. \fP"
+.ti -1c
+.RI "class \fBXMLTag\fP"
+.br
+.RI "\fIA \fBXMLTag\fP is a \fBBlockMarker\fP\&. \fP"
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ARdevKit from the source code\&.

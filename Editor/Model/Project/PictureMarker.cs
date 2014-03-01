@@ -88,7 +88,7 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// Constructor.
         /// </summary>
-        /// <param name="imagePath">Full pathname of the image file.</param>
+        /// <param name="picturePath">The picture path.</param>
         public PictureMarker(string picturePath)
             : this()
         {

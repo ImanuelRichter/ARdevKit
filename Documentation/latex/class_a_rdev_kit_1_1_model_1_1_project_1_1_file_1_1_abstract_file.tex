@@ -1,0 +1,140 @@
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file}{\section{A\-Rdev\-Kit.\-Model.\-Project.\-File.\-Abstract\-File Class Reference}
+\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file}\index{A\-Rdev\-Kit.\-Model.\-Project.\-File.\-Abstract\-File@{A\-Rdev\-Kit.\-Model.\-Project.\-File.\-Abstract\-File}}
+}
+
+
+An \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file}{Abstract\-File} can be an \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_config_file}{A\-R\-E\-L\-Config\-File}, an \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_project_file}{A\-R\-E\-L\-Project\-File}, a Trackin\-Data\-File or an \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_glue_file}{A\-R\-E\-L\-Glue\-File}. It must have a \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_ad879e3a81860da8b72f2d9f61a18ab3b}{file\-Path} and can have a header and consists of \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block}{Abstract\-Block}s.  
+
+
+
+
+Inheritance diagram for A\-Rdev\-Kit.\-Model.\-Project.\-File.\-Abstract\-File\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\-Rdev\-Kit.\-Model.\-Project.\-File.\-Abstract\-File\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_a02b61dbebfbd57f5fd44c7a972c79b50}{Add\-Block} (\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block}{Abstract\-Block} block)
+\begin{DoxyCompactList}\small\item\em Adds an \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block}{Abstract\-Block}. \end{DoxyCompactList}\item 
+abstract void \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_ae49c3262c59642e8f519d0655bbbbbab}{Save} (string project\-Path)
+\begin{DoxyCompactList}\small\item\em Saves the file to the using the passed project\-Path. \end{DoxyCompactList}\item 
+abstract void \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_a095ebaeca96a6d285d9caff1ad726d5b}{Save} ()
+\begin{DoxyCompactList}\small\item\em Saves the file to its \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_ad879e3a81860da8b72f2d9f61a18ab3b}{file\-Path}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_ad879e3a81860da8b72f2d9f61a18ab3b}{file\-Path}
+\begin{DoxyCompactList}\small\item\em Full pathname of the file. \end{DoxyCompactList}\item 
+List$<$ \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block}{Abstract\-Block} $>$ \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_a21e0333fb9d8eab8ebb039bd56ccabc9}{blocks}
+\begin{DoxyCompactList}\small\item\em A list of the \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block}{Abstract\-Block}s this file consists of. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_ac55b0e087f42f7ab5ce36fa3bce111ab}{File\-Path}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the full pathname of the file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file}{Abstract\-File} can be an \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_config_file}{A\-R\-E\-L\-Config\-File}, an \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_project_file}{A\-R\-E\-L\-Project\-File}, a Trackin\-Data\-File or an \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_glue_file}{A\-R\-E\-L\-Glue\-File}. It must have a \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_ad879e3a81860da8b72f2d9f61a18ab3b}{file\-Path} and can have a header and consists of \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block}{Abstract\-Block}s. 
+
+Imanuel, 15.\-01.\-2014. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_a02b61dbebfbd57f5fd44c7a972c79b50}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-File@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-File}!Add\-Block@{Add\-Block}}
+\index{Add\-Block@{Add\-Block}!ARdevKit::Model::Project::File::AbstractFile@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-File}}
+\subsubsection[{Add\-Block}]{\setlength{\rightskip}{0pt plus 5cm}virtual void A\-Rdev\-Kit.\-Model.\-Project.\-File.\-Abstract\-File.\-Add\-Block (
+\begin{DoxyParamCaption}
+\item[{{\bf Abstract\-Block}}]{block}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_a02b61dbebfbd57f5fd44c7a972c79b50}
+
+
+Adds an \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block}{Abstract\-Block}. 
+
+Imanuel, 15.\-01.\-2014. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em block} & The section to be added. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_ae49c3262c59642e8f519d0655bbbbbab}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-File@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-File}!Save@{Save}}
+\index{Save@{Save}!ARdevKit::Model::Project::File::AbstractFile@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-File}}
+\subsubsection[{Save}]{\setlength{\rightskip}{0pt plus 5cm}abstract void A\-Rdev\-Kit.\-Model.\-Project.\-File.\-Abstract\-File.\-Save (
+\begin{DoxyParamCaption}
+\item[{string}]{project\-Path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_ae49c3262c59642e8f519d0655bbbbbab}
+
+
+Saves the file to the using the passed project\-Path. 
+
+Imanuel, 15.\-01.\-2014. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em project\-Path} & The project path to write. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_tracking_data_file_a6b96d140f6a8e9c98888afece89b41f5}{A\-Rdev\-Kit.\-Model.\-Project.\-File.\-Tracking\-Data\-File}, \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_config_file_af0f2e70451d0dda0984dd186fcb6afde}{A\-Rdev\-Kit.\-Model.\-Project.\-File.\-A\-R\-E\-L\-Config\-File}, \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_project_file_aa187897624d6d836b3a76331069d5bee}{A\-Rdev\-Kit.\-Model.\-Project.\-File.\-A\-R\-E\-L\-Project\-File}, \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_glue_file_a82712a65053e760ba21b92fefe67baf3}{A\-Rdev\-Kit.\-Model.\-Project.\-File.\-A\-R\-E\-L\-Glue\-File}, and \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_chart_file_a8a52e5730191b832eb8664016e7bda7f}{A\-Rdev\-Kit.\-Model.\-Project.\-File.\-Chart\-File}.
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_a095ebaeca96a6d285d9caff1ad726d5b}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-File@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-File}!Save@{Save}}
+\index{Save@{Save}!ARdevKit::Model::Project::File::AbstractFile@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-File}}
+\subsubsection[{Save}]{\setlength{\rightskip}{0pt plus 5cm}abstract void A\-Rdev\-Kit.\-Model.\-Project.\-File.\-Abstract\-File.\-Save (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_a095ebaeca96a6d285d9caff1ad726d5b}
+
+
+Saves the file to its \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_ad879e3a81860da8b72f2d9f61a18ab3b}{file\-Path}. 
+
+Imanuel, 17.\-01.\-2014. 
+
+Implemented in \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_tracking_data_file_a101d61e5cb5e45922adb70178838c5be}{A\-Rdev\-Kit.\-Model.\-Project.\-File.\-Tracking\-Data\-File}, \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_config_file_a65bf5e667cb70e7cb9ae9a735ebba97f}{A\-Rdev\-Kit.\-Model.\-Project.\-File.\-A\-R\-E\-L\-Config\-File}, \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_project_file_a021507cbd83b07773ffc1caf0645ca49}{A\-Rdev\-Kit.\-Model.\-Project.\-File.\-A\-R\-E\-L\-Project\-File}, \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_glue_file_af2a513e4dce9fe965fca00612335de10}{A\-Rdev\-Kit.\-Model.\-Project.\-File.\-A\-R\-E\-L\-Glue\-File}, and \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_chart_file_aa19af3145e3bbcb28683e7c77571d06f}{A\-Rdev\-Kit.\-Model.\-Project.\-File.\-Chart\-File}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_a21e0333fb9d8eab8ebb039bd56ccabc9}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-File@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-File}!blocks@{blocks}}
+\index{blocks@{blocks}!ARdevKit::Model::Project::File::AbstractFile@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-File}}
+\subsubsection[{blocks}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Abstract\-Block}$>$ A\-Rdev\-Kit.\-Model.\-Project.\-File.\-Abstract\-File.\-blocks\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_a21e0333fb9d8eab8ebb039bd56ccabc9}
+
+
+A list of the \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block}{Abstract\-Block}s this file consists of. 
+
+The sections. \hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_ad879e3a81860da8b72f2d9f61a18ab3b}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-File@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-File}!file\-Path@{file\-Path}}
+\index{file\-Path@{file\-Path}!ARdevKit::Model::Project::File::AbstractFile@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-File}}
+\subsubsection[{file\-Path}]{\setlength{\rightskip}{0pt plus 5cm}string A\-Rdev\-Kit.\-Model.\-Project.\-File.\-Abstract\-File.\-file\-Path\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_ad879e3a81860da8b72f2d9f61a18ab3b}
+
+
+Full pathname of the file. 
+
+
+
+\subsection{Property Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_ac55b0e087f42f7ab5ce36fa3bce111ab}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-File@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-File}!File\-Path@{File\-Path}}
+\index{File\-Path@{File\-Path}!ARdevKit::Model::Project::File::AbstractFile@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-File}}
+\subsubsection[{File\-Path}]{\setlength{\rightskip}{0pt plus 5cm}string A\-Rdev\-Kit.\-Model.\-Project.\-File.\-Abstract\-File.\-File\-Path\hspace{0.3cm}{\ttfamily [get]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_ac55b0e087f42f7ab5ce36fa3bce111ab}
+
+
+Gets the full pathname of the file. 
+
+The full pathname of the file. 

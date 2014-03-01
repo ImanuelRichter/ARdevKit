@@ -1,7 +1,0 @@
-<map id="Editor.Model.Project.BarGraph" name="Editor.Model.Project.BarGraph">
-<area shape="rect" id="node2" href="$class_editor_1_1_model_1_1_project_1_1_graph.html" title="A graph. " alt="" coords="86,229,143,256"/>
-<area shape="rect" id="node3" href="$class_editor_1_1_model_1_1_project_1_1_abstract_dynamic2_d_augmentation.html" title="An abstract dynamic 2 d augmentation. " alt="" coords="5,155,224,181"/>
-<area shape="rect" id="node4" href="$class_editor_1_1_model_1_1_project_1_1_abstract_augmentation.html" title="An abstract augmentation. " alt="" coords="39,80,189,107"/>
-<area shape="rect" id="node5" href="$interface_serializable.html" title="Interface for serializable. " alt="" coords="13,5,101,32"/>
-<area shape="rect" id="node6" href="$interface_editor_1_1_model_1_1_project_1_1_i_previewable.html" title="Interface for previewable. " alt="" coords="127,5,220,32"/>
-</map>

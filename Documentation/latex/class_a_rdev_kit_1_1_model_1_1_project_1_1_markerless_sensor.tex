@@ -1,0 +1,190 @@
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor}{\section{A\-Rdev\-Kit.\-Model.\-Project.\-Markerless\-Sensor Class Reference}
+\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor}\index{A\-Rdev\-Kit.\-Model.\-Project.\-Markerless\-Sensor@{A\-Rdev\-Kit.\-Model.\-Project.\-Markerless\-Sensor}}
+}
+
+
+Used to change the properties of the metaio S\-D\-K and how to track markerless trackables. it is an \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor}{Abstract\-Sensor}  
+
+
+
+
+Inheritance diagram for A\-Rdev\-Kit.\-Model.\-Project.\-Markerless\-Sensor\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\-Rdev\-Kit.\-Model.\-Project.\-Markerless\-Sensor\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_a1c0b341ee16aa03d68b67714f1cfca53}{Feature\-Descriptor\-Alignments} \{ {\bfseries regular}, 
+{\bfseries upright}, 
+{\bfseries gravity}, 
+{\bfseries rectified}
+ \}
+\begin{DoxyCompactList}\small\item\em The following feature descriptor types are available\-: \char`\"{}regular\char`\"{}, \char`\"{}upright\char`\"{}, \char`\"{}gravity\char`\"{}, \char`\"{}rectified\char`\"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_ad1c6ab110245698ad3e0a8adff8857d1}{Markerless\-Sensor} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+override void \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_a28dd4f8d16e0112ae1f1bfd948c90c59}{Accept} (\hyperlink{class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor}{Abstract\-Project\-Visitor} visitor)
+\begin{DoxyCompactList}\small\item\em Accepts the given visitor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_a1c0b341ee16aa03d68b67714f1cfca53}{Feature\-Descriptor\-Alignments} \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_aa6e040afed0bb46eb2c0fcda8954c1e1}{feature\-Descriptor\-Alignment}
+\begin{DoxyCompactList}\small\item\em The feature descriptor alignment \end{DoxyCompactList}\item 
+int \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_a49898575f95f56a267a82cca2b258134}{max\-Objects\-To\-Detect\-Per\-Frame}
+\begin{DoxyCompactList}\small\item\em A restriction on the number of reference planar objects to be localized per frame. Localization takes longer than interframe tracking, and if the system tries to localize too many objects at the same time, it might cause a lower framerate. The default value for this is 5 and is used if the tag is not specified. Another name that can be used for this parameter is $<$Multiple\-Reference\-Images\-Fast$>$. This name is however deprecated and should not be used any more. This parameter is for expert usage only. In general it is advised to leave the value unchanged. \end{DoxyCompactList}\item 
+int \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_a8c9de52d508a5cb8adf1920438c5f6cb}{max\-Objects\-To\-Track\-In\-Parallel}
+\begin{DoxyCompactList}\small\item\em The maximum number of objects that should be tracked in parallel. Tracking many objects in parallel is quite expensive and might lead to a lower framerate. As soon as the maximum number of tracked objects is reached, the system will no longer try to localize new objects. The default value for this is 1 and is used if the tag is not specified. Another name that can be used for this parameter is $<$Max\-Num\-Coses\-For\-Init$>$. This name is however deprecated and should not be used any more. This parameter is for expert usage only. In general it is advised to leave the value unchanged. \end{DoxyCompactList}\item 
+double \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_aacf707617c0782991ff6f490aabcf37d}{similarity\-Threshold}
+\begin{DoxyCompactList}\small\item\em Default similarity threshold for specifying whether template tracking was successful or failed. The tracking quality measure is defined between -\/1 and 1, where 1 is the best possible value. If the tracking quality is reported to be below the threshold, the tracker will treat the corresponding frame as lost. The default value for this is 0.\-7 and is used if the tag is not specified. This setting can be overridden for each \char`\"{}\-C\-O\-S\char`\"{} if it is defined there. This parameter is for expert usage only. In general it is advised to leave the value unchanged. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_a1c0b341ee16aa03d68b67714f1cfca53}{Feature\-Descriptor\-Alignments} \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_a16b0d056f8ce0a6e79bdb23df1222fd4}{Feature\-Descriptor\-Alignment}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the feature descriptor alignment. \end{DoxyCompactList}\item 
+int \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_ae9ea2cf4d222d4ac0277562b25b6619a}{Max\-Objects\-To\-Detect\-Per\-Frame}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the maximum objects to detect per frame. \end{DoxyCompactList}\item 
+int \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_ac88579a60d45b1d6df015f5e7fd39520}{Max\-Objects\-To\-Track\-In\-Parallel}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the maximum objects to track in parallel. \end{DoxyCompactList}\item 
+double \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_ae4442307a3d64a66c605624a2341aaa2}{Similarity\-Threshold}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the similarity threshold. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Used to change the properties of the metaio S\-D\-K and how to track markerless trackables. it is an \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor}{Abstract\-Sensor} 
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_a1c0b341ee16aa03d68b67714f1cfca53}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Markerless\-Sensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Markerless\-Sensor}!Feature\-Descriptor\-Alignments@{Feature\-Descriptor\-Alignments}}
+\index{Feature\-Descriptor\-Alignments@{Feature\-Descriptor\-Alignments}!ARdevKit::Model::Project::MarkerlessSensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Markerless\-Sensor}}
+\subsubsection[{Feature\-Descriptor\-Alignments}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf A\-Rdev\-Kit.\-Model.\-Project.\-Markerless\-Sensor.\-Feature\-Descriptor\-Alignments}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_a1c0b341ee16aa03d68b67714f1cfca53}
+
+
+The following feature descriptor types are available\-: \char`\"{}regular\char`\"{}, \char`\"{}upright\char`\"{}, \char`\"{}gravity\char`\"{}, \char`\"{}rectified\char`\"{}. 
+
+
+\begin{DoxyItemize}
+\item The \char`\"{}regular\char`\"{} feature descriptor type is the most general feature descriptor type and is used as default if the tag is not specified.
+\item The \char`\"{}upright\char`\"{} feature descriptor type assumes that the camera is not rotated with respect to the optical axis, i.\-e. is turned upside down, during the tracking process.
+\item The \char`\"{}gravity\char`\"{} feature descriptor type can only be used with devices with inertial sensors which measures gravity. It is used for localizing static objects that provide (close to) vertical surfaces, e.\-g. buildings or posters on a wall. The orientation of the features will then be aligned with gravity.
+\item The \char`\"{}rectified\char`\"{} feature descriptor type can only be used with devices with inertial sensors which measures gravity. It is used for planar objects on a horizontal surface, e.\-g. a magazine on a table. This will improve the result of the localization of planar objects under steep camera angles at the cost of a lower framerate during localization. This parameter is for expert usage only. In general it is advised to leave the value unchanged. 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_ad1c6ab110245698ad3e0a8adff8857d1}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Markerless\-Sensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Markerless\-Sensor}!Markerless\-Sensor@{Markerless\-Sensor}}
+\index{Markerless\-Sensor@{Markerless\-Sensor}!ARdevKit::Model::Project::MarkerlessSensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Markerless\-Sensor}}
+\subsubsection[{Markerless\-Sensor}]{\setlength{\rightskip}{0pt plus 5cm}A\-Rdev\-Kit.\-Model.\-Project.\-Markerless\-Sensor.\-Markerless\-Sensor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_ad1c6ab110245698ad3e0a8adff8857d1}
+
+
+Default constructor. 
+
+Imanuel, 17.\-01.\-2014. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_a28dd4f8d16e0112ae1f1bfd948c90c59}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Markerless\-Sensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Markerless\-Sensor}!Accept@{Accept}}
+\index{Accept@{Accept}!ARdevKit::Model::Project::MarkerlessSensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Markerless\-Sensor}}
+\subsubsection[{Accept}]{\setlength{\rightskip}{0pt plus 5cm}override void A\-Rdev\-Kit.\-Model.\-Project.\-Markerless\-Sensor.\-Accept (
+\begin{DoxyParamCaption}
+\item[{{\bf Abstract\-Project\-Visitor}}]{visitor}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_a28dd4f8d16e0112ae1f1bfd948c90c59}
+
+
+Accepts the given visitor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em visitor} & The visitor. \\
+\hline
+\end{DoxyParams}
+
+
+Imanuel, 17.\-01.\-2014. 
+
+Implements \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a4ff825b76bdd9f01a93ca670d02c219c}{A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Sensor}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_aa6e040afed0bb46eb2c0fcda8954c1e1}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Markerless\-Sensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Markerless\-Sensor}!feature\-Descriptor\-Alignment@{feature\-Descriptor\-Alignment}}
+\index{feature\-Descriptor\-Alignment@{feature\-Descriptor\-Alignment}!ARdevKit::Model::Project::MarkerlessSensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Markerless\-Sensor}}
+\subsubsection[{feature\-Descriptor\-Alignment}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Feature\-Descriptor\-Alignments} A\-Rdev\-Kit.\-Model.\-Project.\-Markerless\-Sensor.\-feature\-Descriptor\-Alignment\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_aa6e040afed0bb46eb2c0fcda8954c1e1}
+
+
+The feature descriptor alignment 
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_a49898575f95f56a267a82cca2b258134}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Markerless\-Sensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Markerless\-Sensor}!max\-Objects\-To\-Detect\-Per\-Frame@{max\-Objects\-To\-Detect\-Per\-Frame}}
+\index{max\-Objects\-To\-Detect\-Per\-Frame@{max\-Objects\-To\-Detect\-Per\-Frame}!ARdevKit::Model::Project::MarkerlessSensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Markerless\-Sensor}}
+\subsubsection[{max\-Objects\-To\-Detect\-Per\-Frame}]{\setlength{\rightskip}{0pt plus 5cm}int A\-Rdev\-Kit.\-Model.\-Project.\-Markerless\-Sensor.\-max\-Objects\-To\-Detect\-Per\-Frame\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_a49898575f95f56a267a82cca2b258134}
+
+
+A restriction on the number of reference planar objects to be localized per frame. Localization takes longer than interframe tracking, and if the system tries to localize too many objects at the same time, it might cause a lower framerate. The default value for this is 5 and is used if the tag is not specified. Another name that can be used for this parameter is $<$Multiple\-Reference\-Images\-Fast$>$. This name is however deprecated and should not be used any more. This parameter is for expert usage only. In general it is advised to leave the value unchanged. 
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_a8c9de52d508a5cb8adf1920438c5f6cb}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Markerless\-Sensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Markerless\-Sensor}!max\-Objects\-To\-Track\-In\-Parallel@{max\-Objects\-To\-Track\-In\-Parallel}}
+\index{max\-Objects\-To\-Track\-In\-Parallel@{max\-Objects\-To\-Track\-In\-Parallel}!ARdevKit::Model::Project::MarkerlessSensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Markerless\-Sensor}}
+\subsubsection[{max\-Objects\-To\-Track\-In\-Parallel}]{\setlength{\rightskip}{0pt plus 5cm}int A\-Rdev\-Kit.\-Model.\-Project.\-Markerless\-Sensor.\-max\-Objects\-To\-Track\-In\-Parallel\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_a8c9de52d508a5cb8adf1920438c5f6cb}
+
+
+The maximum number of objects that should be tracked in parallel. Tracking many objects in parallel is quite expensive and might lead to a lower framerate. As soon as the maximum number of tracked objects is reached, the system will no longer try to localize new objects. The default value for this is 1 and is used if the tag is not specified. Another name that can be used for this parameter is $<$Max\-Num\-Coses\-For\-Init$>$. This name is however deprecated and should not be used any more. This parameter is for expert usage only. In general it is advised to leave the value unchanged. 
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_aacf707617c0782991ff6f490aabcf37d}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Markerless\-Sensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Markerless\-Sensor}!similarity\-Threshold@{similarity\-Threshold}}
+\index{similarity\-Threshold@{similarity\-Threshold}!ARdevKit::Model::Project::MarkerlessSensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Markerless\-Sensor}}
+\subsubsection[{similarity\-Threshold}]{\setlength{\rightskip}{0pt plus 5cm}double A\-Rdev\-Kit.\-Model.\-Project.\-Markerless\-Sensor.\-similarity\-Threshold\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_aacf707617c0782991ff6f490aabcf37d}
+
+
+Default similarity threshold for specifying whether template tracking was successful or failed. The tracking quality measure is defined between -\/1 and 1, where 1 is the best possible value. If the tracking quality is reported to be below the threshold, the tracker will treat the corresponding frame as lost. The default value for this is 0.\-7 and is used if the tag is not specified. This setting can be overridden for each \char`\"{}\-C\-O\-S\char`\"{} if it is defined there. This parameter is for expert usage only. In general it is advised to leave the value unchanged. 
+
+
+
+\subsection{Property Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_a16b0d056f8ce0a6e79bdb23df1222fd4}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Markerless\-Sensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Markerless\-Sensor}!Feature\-Descriptor\-Alignment@{Feature\-Descriptor\-Alignment}}
+\index{Feature\-Descriptor\-Alignment@{Feature\-Descriptor\-Alignment}!ARdevKit::Model::Project::MarkerlessSensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Markerless\-Sensor}}
+\subsubsection[{Feature\-Descriptor\-Alignment}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Feature\-Descriptor\-Alignments} A\-Rdev\-Kit.\-Model.\-Project.\-Markerless\-Sensor.\-Feature\-Descriptor\-Alignment\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_a16b0d056f8ce0a6e79bdb23df1222fd4}
+
+
+Gets or sets the feature descriptor alignment. 
+
+The feature descriptor alignment. \hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_ae9ea2cf4d222d4ac0277562b25b6619a}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Markerless\-Sensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Markerless\-Sensor}!Max\-Objects\-To\-Detect\-Per\-Frame@{Max\-Objects\-To\-Detect\-Per\-Frame}}
+\index{Max\-Objects\-To\-Detect\-Per\-Frame@{Max\-Objects\-To\-Detect\-Per\-Frame}!ARdevKit::Model::Project::MarkerlessSensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Markerless\-Sensor}}
+\subsubsection[{Max\-Objects\-To\-Detect\-Per\-Frame}]{\setlength{\rightskip}{0pt plus 5cm}int A\-Rdev\-Kit.\-Model.\-Project.\-Markerless\-Sensor.\-Max\-Objects\-To\-Detect\-Per\-Frame\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_ae9ea2cf4d222d4ac0277562b25b6619a}
+
+
+Gets or sets the maximum objects to detect per frame. 
+
+The maximum objects to detect per frame. \hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_ac88579a60d45b1d6df015f5e7fd39520}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Markerless\-Sensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Markerless\-Sensor}!Max\-Objects\-To\-Track\-In\-Parallel@{Max\-Objects\-To\-Track\-In\-Parallel}}
+\index{Max\-Objects\-To\-Track\-In\-Parallel@{Max\-Objects\-To\-Track\-In\-Parallel}!ARdevKit::Model::Project::MarkerlessSensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Markerless\-Sensor}}
+\subsubsection[{Max\-Objects\-To\-Track\-In\-Parallel}]{\setlength{\rightskip}{0pt plus 5cm}int A\-Rdev\-Kit.\-Model.\-Project.\-Markerless\-Sensor.\-Max\-Objects\-To\-Track\-In\-Parallel\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_ac88579a60d45b1d6df015f5e7fd39520}
+
+
+Gets or sets the maximum objects to track in parallel. 
+
+The maximum objects to track in parallel. \hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_ae4442307a3d64a66c605624a2341aaa2}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Markerless\-Sensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Markerless\-Sensor}!Similarity\-Threshold@{Similarity\-Threshold}}
+\index{Similarity\-Threshold@{Similarity\-Threshold}!ARdevKit::Model::Project::MarkerlessSensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Markerless\-Sensor}}
+\subsubsection[{Similarity\-Threshold}]{\setlength{\rightskip}{0pt plus 5cm}double A\-Rdev\-Kit.\-Model.\-Project.\-Markerless\-Sensor.\-Similarity\-Threshold\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_ae4442307a3d64a66c605624a2341aaa2}
+
+
+Gets or sets the similarity threshold. 
+
+The similarity threshold. 

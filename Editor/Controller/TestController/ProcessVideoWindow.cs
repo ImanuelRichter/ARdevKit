@@ -18,6 +18,12 @@ namespace ARdevKit.Controller.TestController
     {
         private string testFilePath;
         private string tmpPath;
+        /// <summary>
+        /// Gets or sets the FPS.
+        /// </summary>
+        /// <value>
+        /// The FPS.
+        /// </value>
         public int FPS { get; set; }
 
         public ProcessVideoWindow()
@@ -25,6 +31,11 @@ namespace ARdevKit.Controller.TestController
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Extracts the frames.
+        /// </summary>
+        /// <param name="testFilePath">The test file path.</param>
+        /// <param name="tmpPath">The temporary path.</param>
         public void extractFrames(string testFilePath, string tmpPath)
         {
             this.testFilePath = testFilePath;

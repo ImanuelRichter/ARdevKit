@@ -1,0 +1,319 @@
+.TH "ARdevKit.Controller.ProjectController.ExportVisitor" 3 "Sat Mar 1 2014" "Version 0.2" "ARdevKit" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ARdevKit.Controller.ProjectController.ExportVisitor \- 
+.PP
+An \fBExportVisitor\fP is an \fBAbstractProjectVisitor\fP which exports the project to the path defined in Project so that it is readable by the player\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBARdevKit\&.Controller\&.ProjectController\&.AbstractProjectVisitor\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBExportVisitor\fP ()"
+.br
+.RI "\fIDefault constructor \fP"
+.ti -1c
+.RI "override void \fBVisit\fP (\fBCustomUserEvent\fP cue)"
+.br
+.RI "\fIVisits the given CustomUserEvent \fP"
+.ti -1c
+.RI "override void \fBVisit\fP (\fBVideoAugmentation\fP video)"
+.br
+.RI "\fIVisits the given VideoAugmentation \fP"
+.ti -1c
+.RI "override void \fBVisit\fP (\fBImageAugmentation\fP image)"
+.br
+.RI "\fIVisits the given ImageAugmentation\&. \fP"
+.ti -1c
+.RI "override void \fBVisit\fP (\fBChart\fP chart)"
+.br
+.RI "\fIVisits the given Chart\&. \fP"
+.ti -1c
+.RI "override void \fBVisit\fP (\fBDbSource\fP source)"
+.br
+.RI "\fIVisits the given DbSource\&. \fP"
+.ti -1c
+.RI "override void \fBVisit\fP (\fBFileSource\fP source)"
+.br
+.RI "\fIVisits the given FileSource\&. \fP"
+.ti -1c
+.RI "override void \fBVisit\fP (\fBMarkerlessFuser\fP markerlessFuser)"
+.br
+.RI "\fIVisits the given MarkerlessFuser\&. \fP"
+.ti -1c
+.RI "override void \fBVisit\fP (\fBMarkerlessSensor\fP markerlessSensor)"
+.br
+.RI "\fIVisits the given MarkerlessSensor\&. \fP"
+.ti -1c
+.RI "override void \fBVisit\fP (\fBMarkerFuser\fP markerFuser)"
+.br
+.RI "\fIVisits the given MarkerFuser\&. \fP"
+.ti -1c
+.RI "override void \fBVisit\fP (\fBPictureMarkerSensor\fP pictureMarkerSensor)"
+.br
+.RI "\fIVisits the given PictureMarkerSensor\&. \fP"
+.ti -1c
+.RI "override void \fBVisit\fP (\fBImageTrackable\fP image)"
+.br
+.RI "\fIVisits the given Image\&. \fP"
+.ti -1c
+.RI "override void \fBVisit\fP (\fBPictureMarker\fP pictureMarker)"
+.br
+.RI "\fIVisits the given PictureMarker\&. \fP"
+.ti -1c
+.RI "override void \fBVisit\fP (\fBMarkerSensor\fP idMarkerSensor)"
+.br
+.RI "\fIVisits the given MarkerSensor\&. \fP"
+.ti -1c
+.RI "override void \fBVisit\fP (\fBIDMarker\fP idMarker)"
+.br
+.RI "\fIVisits the given IDMarker\&. \fP"
+.ti -1c
+.RI "override void \fBVisit\fP (\fBProject\fP p)"
+.br
+.RI "\fIVisits the given Project\&. \fP"
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "List< \fBAbstractFile\fP > \fBFiles\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the AbstractFiles created by the export visitor\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+An \fBExportVisitor\fP is an \fBAbstractProjectVisitor\fP which exports the project to the path defined in Project so that it is readable by the player\&. 
+
+Imanuel, 15\&.01\&.2014\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ARdevKit\&.Controller\&.ProjectController\&.ExportVisitor\&.ExportVisitor ()"
+
+.PP
+Default constructor 
+.SH "Member Function Documentation"
+.PP 
+.SS "override void ARdevKit\&.Controller\&.ProjectController\&.ExportVisitor\&.Visit (\fBCustomUserEvent\fPcue)\fC [virtual]\fP"
+
+.PP
+Visits the given CustomUserEvent 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcue\fP The customUserEvent
+.RE
+.PP
+
+.PP
+Implements \fBARdevKit\&.Controller\&.ProjectController\&.AbstractProjectVisitor\fP\&.
+.SS "override void ARdevKit\&.Controller\&.ProjectController\&.ExportVisitor\&.Visit (\fBVideoAugmentation\fPvideo)\fC [virtual]\fP"
+
+.PP
+Visits the given VideoAugmentation 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvideo\fP The video
+.RE
+.PP
+
+.PP
+Implements \fBARdevKit\&.Controller\&.ProjectController\&.AbstractProjectVisitor\fP\&.
+.SS "override void ARdevKit\&.Controller\&.ProjectController\&.ExportVisitor\&.Visit (\fBImageAugmentation\fPimage)\fC [virtual]\fP"
+
+.PP
+Visits the given ImageAugmentation\&. Imanuel, 17\&.01\&.2014\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP The image\&. 
+.RE
+.PP
+
+.PP
+Implements \fBARdevKit\&.Controller\&.ProjectController\&.AbstractProjectVisitor\fP\&.
+.SS "override void ARdevKit\&.Controller\&.ProjectController\&.ExportVisitor\&.Visit (\fBChart\fPchart)\fC [virtual]\fP"
+
+.PP
+Visits the given Chart\&. Imanuel, 17\&.01\&.2014\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIchart\fP The bar graph\&. 
+.RE
+.PP
+
+.PP
+Implements \fBARdevKit\&.Controller\&.ProjectController\&.AbstractProjectVisitor\fP\&.
+.SS "override void ARdevKit\&.Controller\&.ProjectController\&.ExportVisitor\&.Visit (\fBDbSource\fPsource)\fC [virtual]\fP"
+
+.PP
+Visits the given DbSource\&. Imanuel, 17\&.01\&.2014\&. 
+.PP
+\fBExceptions:\fP
+.RS 4
+\fINotImplementedException\fP Thrown when the requested operation is unimplemented\&. 
+.RE
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsource\fP Source for the\&. 
+.RE
+.PP
+
+.PP
+Implements \fBARdevKit\&.Controller\&.ProjectController\&.AbstractProjectVisitor\fP\&.
+.SS "override void ARdevKit\&.Controller\&.ProjectController\&.ExportVisitor\&.Visit (\fBFileSource\fPsource)\fC [virtual]\fP"
+
+.PP
+Visits the given FileSource\&. Imanuel, 23\&.01\&.2014\&. 
+.PP
+\fBExceptions:\fP
+.RS 4
+\fINotImplementedException\fP Thrown when the requested operation is unimplemented\&. 
+.RE
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsource\fP Source for the AbstractDynamic2DAugmentation\&. 
+.RE
+.PP
+
+.PP
+Implements \fBARdevKit\&.Controller\&.ProjectController\&.AbstractProjectVisitor\fP\&.
+.SS "override void ARdevKit\&.Controller\&.ProjectController\&.ExportVisitor\&.Visit (\fBMarkerlessFuser\fPmarkerlessFuser)\fC [virtual]\fP"
+
+.PP
+Visits the given MarkerlessFuser\&. Imanuel, 17\&.01\&.2014\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImarkerlessFuser\fP The markerless fuser\&. 
+.RE
+.PP
+
+.PP
+Implements \fBARdevKit\&.Controller\&.ProjectController\&.AbstractProjectVisitor\fP\&.
+.SS "override void ARdevKit\&.Controller\&.ProjectController\&.ExportVisitor\&.Visit (\fBMarkerlessSensor\fPmarkerlessSensor)\fC [virtual]\fP"
+
+.PP
+Visits the given MarkerlessSensor\&. Imanuel, 17\&.01\&.2014\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImarkerlessSensor\fP The markerless sensor\&. 
+.RE
+.PP
+
+.PP
+Implements \fBARdevKit\&.Controller\&.ProjectController\&.AbstractProjectVisitor\fP\&.
+.SS "override void ARdevKit\&.Controller\&.ProjectController\&.ExportVisitor\&.Visit (\fBMarkerFuser\fPmarkerFuser)\fC [virtual]\fP"
+
+.PP
+Visits the given MarkerFuser\&. Imanuel, 17\&.01\&.2014\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImarkerFuser\fP The marker fuser\&. 
+.RE
+.PP
+
+.PP
+Implements \fBARdevKit\&.Controller\&.ProjectController\&.AbstractProjectVisitor\fP\&.
+.SS "override void ARdevKit\&.Controller\&.ProjectController\&.ExportVisitor\&.Visit (\fBPictureMarkerSensor\fPpictureMarkerSensor)\fC [virtual]\fP"
+
+.PP
+Visits the given PictureMarkerSensor\&. Imanuel, 17\&.01\&.2014\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpictureMarkerSensor\fP The picture marker sensor\&. 
+.RE
+.PP
+
+.PP
+Implements \fBARdevKit\&.Controller\&.ProjectController\&.AbstractProjectVisitor\fP\&.
+.SS "override void ARdevKit\&.Controller\&.ProjectController\&.ExportVisitor\&.Visit (\fBImageTrackable\fPimage)\fC [virtual]\fP"
+
+.PP
+Visits the given Image\&. Imanuel, 26\&.01\&.2014\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP The image\&. 
+.RE
+.PP
+
+.PP
+Implements \fBARdevKit\&.Controller\&.ProjectController\&.AbstractProjectVisitor\fP\&.
+.SS "override void ARdevKit\&.Controller\&.ProjectController\&.ExportVisitor\&.Visit (\fBPictureMarker\fPpictureMarker)\fC [virtual]\fP"
+
+.PP
+Visits the given PictureMarker\&. Imanuel, 17\&.01\&.2014\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpictureMarker\fP The picture marker\&. 
+.RE
+.PP
+
+.PP
+Implements \fBARdevKit\&.Controller\&.ProjectController\&.AbstractProjectVisitor\fP\&.
+.SS "override void ARdevKit\&.Controller\&.ProjectController\&.ExportVisitor\&.Visit (\fBMarkerSensor\fPidMarkerSensor)\fC [virtual]\fP"
+
+.PP
+Visits the given MarkerSensor\&. Imanuel, 17\&.01\&.2014\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIidMarkerSensor\fP The identifier marker sensor\&. 
+.RE
+.PP
+
+.PP
+Implements \fBARdevKit\&.Controller\&.ProjectController\&.AbstractProjectVisitor\fP\&.
+.SS "override void ARdevKit\&.Controller\&.ProjectController\&.ExportVisitor\&.Visit (\fBIDMarker\fPidMarker)\fC [virtual]\fP"
+
+.PP
+Visits the given IDMarker\&. Imanuel, 17\&.01\&.2014\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIidMarker\fP The identifier marker\&. 
+.RE
+.PP
+
+.PP
+Implements \fBARdevKit\&.Controller\&.ProjectController\&.AbstractProjectVisitor\fP\&.
+.SS "override void ARdevKit\&.Controller\&.ProjectController\&.ExportVisitor\&.Visit (\fBProject\fPp)\fC [virtual]\fP"
+
+.PP
+Visits the given Project\&. Imanuel, 17\&.01\&.2014\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIp\fP The project\&. 
+.RE
+.PP
+
+.PP
+Implements \fBARdevKit\&.Controller\&.ProjectController\&.AbstractProjectVisitor\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "List<\fBAbstractFile\fP> ARdevKit\&.Controller\&.ProjectController\&.ExportVisitor\&.Files\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the AbstractFiles created by the export visitor\&. The files\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ARdevKit from the source code\&.

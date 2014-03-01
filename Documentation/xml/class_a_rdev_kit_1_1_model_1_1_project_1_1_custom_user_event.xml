@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_model_1_1_project_1_1_custom_user_event" kind="class" prot="public">
+    <compoundname>ARdevKit::Model::Project::CustomUserEvent</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_custom_user_event_1a132543808fc085645b3ed39f28a55fab" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string ARdevKit.Model.Project.CustomUserEvent.augmentationID</definition>
+        <argsstring></argsstring>
+        <name>augmentationID</name>
+        <briefdescription>
+<para>ID of the augmentation </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/CustomUserEvent.cs" line="26" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/CustomUserEvent.cs" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_custom_user_event_1a9128df7bcb95bc729757228cc6d24ea3" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string ARdevKit.Model.Project.CustomUserEvent.filePath</definition>
+        <argsstring></argsstring>
+        <name>filePath</name>
+        <briefdescription>
+<para><ref refid="namespace_a_rdev_kit_1_1_model_1_1_project_1_1_file" kindref="compound">File</ref> path of the customUserEvents </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/CustomUserEvent.cs" line="31" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/CustomUserEvent.cs" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_custom_user_event_1a2160a1e51911b3771b96f45d6ba6f214" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>string</type>
+        <definition>string ARdevKit.Model.Project.CustomUserEvent.FilePath</definition>
+        <argsstring></argsstring>
+        <name>FilePath</name>
+        <briefdescription>
+<para>Get or set the file path for the customUserEvents-File. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/CustomUserEvent.cs" line="35" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/CustomUserEvent.cs" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_custom_user_event_1a57e6abd6b60a1b156cc6f025b5ba8e0e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.Model.Project.CustomUserEvent.CustomUserEvent</definition>
+        <argsstring>(string augmentationID)</argsstring>
+        <name>CustomUserEvent</name>
+        <param>
+          <type>string</type>
+          <declname>augmentationID</declname>
+        </param>
+        <briefdescription>
+<para>Constructor of the <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_custom_user_event" kindref="compound">CustomUserEvent</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>augmentationID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ID of the augmentation</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/CustomUserEvent.cs" line="45" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/CustomUserEvent.cs" bodystart="45" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_custom_user_event_1aa652f9348729297a9749aafa5a3efefb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ARdevKit.Model.Project.CustomUserEvent.Accept</definition>
+        <argsstring>(AbstractProjectVisitor visitor)</argsstring>
+        <name>Accept</name>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor" kindref="compound">AbstractProjectVisitor</ref></type>
+          <declname>visitor</declname>
+        </param>
+        <briefdescription>
+<para>A method, to accept a AbstractProjectVisitor which must be implemented according to the visitor design pattern. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>visitor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the visitor which encapsulates the action which is performed on this <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_custom_user_event" kindref="compound">CustomUserEvent</ref></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/CustomUserEvent.cs" line="87" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/CustomUserEvent.cs" bodystart="87" bodyend="90"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_custom_user_event_1a039216322e7914195897c9930fd5801c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>string ARdevKit.Model.Project.CustomUserEvent.getCustomUserFile</definition>
+        <argsstring>()</argsstring>
+        <name>getCustomUserFile</name>
+        <briefdescription>
+<para>Creates the file from a template. The element in the template will be replaced with the id of the augmentation </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="namespace_a_rdev_kit_1_1_model_1_1_project_1_1_file" kindref="compound">File</ref> path of the newly generated customUserEvent. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/CustomUserEvent.cs" line="58" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/CustomUserEvent.cs" bodystart="58" bodyend="79"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The class <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_custom_user_event" kindref="compound">CustomUserEvent</ref> mainly contains a reference to a file, which is in the /currentProject/ Folder. This file has ALL Events the user creates (inclusive the template events we provide) for ONE augmentation. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="514">
+        <label>ARdevKit.Model.Project.CustomUserEvent</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_custom_user_event"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/CustomUserEvent.cs" line="22" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/CustomUserEvent.cs" bodystart="21" bodyend="91"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_custom_user_event_1aa652f9348729297a9749aafa5a3efefb" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::CustomUserEvent</scope><name>Accept</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_custom_user_event_1a132543808fc085645b3ed39f28a55fab" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::CustomUserEvent</scope><name>augmentationID</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_custom_user_event_1a57e6abd6b60a1b156cc6f025b5ba8e0e" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::CustomUserEvent</scope><name>CustomUserEvent</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_custom_user_event_1a9128df7bcb95bc729757228cc6d24ea3" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::CustomUserEvent</scope><name>filePath</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_custom_user_event_1a2160a1e51911b3771b96f45d6ba6f214" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::CustomUserEvent</scope><name>FilePath</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_custom_user_event_1a039216322e7914195897c9930fd5801c" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::CustomUserEvent</scope><name>getCustomUserFile</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

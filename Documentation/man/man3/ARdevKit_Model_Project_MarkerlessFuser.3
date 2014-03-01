@@ -1,0 +1,95 @@
+.TH "ARdevKit.Model.Project.MarkerlessFuser" 3 "Sat Mar 1 2014" "Version 0.2" "ARdevKit" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ARdevKit.Model.Project.MarkerlessFuser \- 
+.PP
+The \fBMarkerlessFuser\fP is a \fBMarkerFuser\fP that additionally has, gravityAssistance, gammaTranslation, gammaRotation and continueLostTrackingWithOrientationSensor value\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBARdevKit\&.Model\&.Project\&.MarkerFuser\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMarkerlessFuser\fP ()"
+.br
+.RI "\fIInitializes a new instance of the \fBMarkerlessFuser\fP class\&. \fP"
+.ti -1c
+.RI "override void \fBAccept\fP (\fBAbstractProjectVisitor\fP visitor)"
+.br
+.RI "\fIAccepts the given visitor\&. \fP"
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "string \fBGravityAssistance\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the gravity assistance\&. \fP"
+.ti -1c
+.RI "double \fBGammaTranslation\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the gamma translation\&. \fP"
+.ti -1c
+.RI "double \fBGammaRotation\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the gamma rotation\&. \fP"
+.ti -1c
+.RI "bool \fBContinueLostTrackingWithOrientationSensor\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets a value indicating whether the tracking should be continued with orientation sensor\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+The \fBMarkerlessFuser\fP is a \fBMarkerFuser\fP that additionally has, gravityAssistance, gammaTranslation, gammaRotation and continueLostTrackingWithOrientationSensor value\&. 
+
+Imanuel, 17\&.01\&.2014\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ARdevKit\&.Model\&.Project\&.MarkerlessFuser\&.MarkerlessFuser ()"
+
+.PP
+Initializes a new instance of the \fBMarkerlessFuser\fP class\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "override void ARdevKit\&.Model\&.Project\&.MarkerlessFuser\&.Accept (\fBAbstractProjectVisitor\fPvisitor)\fC [virtual]\fP"
+
+.PP
+Accepts the given visitor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvisitor\fP The visitor\&.
+.RE
+.PP
+.PP
+Imanuel, 17\&.01\&.2014\&. 
+.PP
+Reimplemented from \fBARdevKit\&.Model\&.Project\&.MarkerFuser\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "bool ARdevKit\&.Model\&.Project\&.MarkerlessFuser\&.ContinueLostTrackingWithOrientationSensor\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets a value indicating whether the tracking should be continued with orientation sensor\&. true if continue lost tracking with orientation sensor, false if not\&. 
+.SS "double ARdevKit\&.Model\&.Project\&.MarkerlessFuser\&.GammaRotation\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the gamma rotation\&. The gamma rotation\&. 
+.SS "double ARdevKit\&.Model\&.Project\&.MarkerlessFuser\&.GammaTranslation\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the gamma translation\&. The gamma translation\&. 
+.SS "string ARdevKit\&.Model\&.Project\&.MarkerlessFuser\&.GravityAssistance\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the gravity assistance\&. The gravity assistance\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ARdevKit from the source code\&.

@@ -1,0 +1,238 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block" kind="class" prot="public">
+    <compoundname>ARdevKit::Model::Project::File::AbstractBlock</compoundname>
+    <derivedcompoundref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_block" prot="public" virt="non-virtual">ARdevKit.Model.Project.File.JavaScriptBlock</derivedcompoundref>
+    <derivedcompoundref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_block" prot="public" virt="non-virtual">ARdevKit.Model.Project.File.XMLBlock</derivedcompoundref>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_1a7c07abfe27f2f9104fe7c3d23c7333a5" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ARdevKit.Model.Project.File.AbstractBlock.level</definition>
+        <argsstring></argsstring>
+        <name>level</name>
+        <briefdescription>
+<para>The level of the <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block" kindref="compound">AbstractBlock</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>The level. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/AbstractBlock.cs" line="25" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/AbstractBlock.cs" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_1a0975ceb65947c7370dcb6565677e9d0e" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker" kindref="compound">BlockMarker</ref></type>
+        <definition>BlockMarker ARdevKit.Model.Project.File.AbstractBlock.blockMarker</definition>
+        <argsstring></argsstring>
+        <name>blockMarker</name>
+        <briefdescription>
+<para>The <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker" kindref="compound">BlockMarker</ref> of this <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block" kindref="compound">AbstractBlock</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/AbstractBlock.cs" line="28" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/AbstractBlock.cs" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_1a7dd07d5a865359c764a8cdab272a0662" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file" kindref="compound">AbstractFile</ref></type>
+        <definition>AbstractFile ARdevKit.Model.Project.File.AbstractBlock.parentFile</definition>
+        <argsstring></argsstring>
+        <name>parentFile</name>
+        <briefdescription>
+<para>The <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file" kindref="compound">AbstractFile</ref> this block belongs to. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/AbstractBlock.cs" line="31" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/AbstractBlock.cs" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_1aaa3372dadcd8d2b6ff2356ec984551c9" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block" kindref="compound">AbstractBlock</ref></type>
+        <definition>AbstractBlock ARdevKit.Model.Project.File.AbstractBlock.parentBlock</definition>
+        <argsstring></argsstring>
+        <name>parentBlock</name>
+        <briefdescription>
+<para>A <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block" kindref="compound">AbstractBlock</ref> this <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block" kindref="compound">AbstractBlock</ref> belongs to. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/AbstractBlock.cs" line="45" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/AbstractBlock.cs" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_1ae48e43536b76e45e5c84b837cc9bc093" prot="protected" static="no" mutable="no">
+        <type>List&lt; <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block" kindref="compound">AbstractBlock</ref> &gt;</type>
+        <definition>List&lt;AbstractBlock&gt; ARdevKit.Model.Project.File.AbstractBlock.blocks</definition>
+        <argsstring></argsstring>
+        <name>blocks</name>
+        <briefdescription>
+<para>The <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block" kindref="compound">AbstractBlock</ref>s that belong to this <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block" kindref="compound">AbstractBlock</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/AbstractBlock.cs" line="48" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/AbstractBlock.cs" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_1a77fdd4b938d3f9d6d1f63e04018b4410" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file" kindref="compound">AbstractFile</ref></type>
+        <definition>AbstractFile ARdevKit.Model.Project.File.AbstractBlock.ParentFile</definition>
+        <argsstring></argsstring>
+        <name>ParentFile</name>
+        <briefdescription>
+<para>Gets or sets the parent file. </para>        </briefdescription>
+        <detaileddescription>
+<para>The parent file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/AbstractBlock.cs" line="38" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/AbstractBlock.cs" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_1aa238e4f3ad33fc75ab3741048ed4dc6b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ARdevKit.Model.Project.File.AbstractBlock.AddBlock</definition>
+        <argsstring>(AbstractBlock block)</argsstring>
+        <name>AddBlock</name>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block" kindref="compound">AbstractBlock</ref></type>
+          <declname>block</declname>
+        </param>
+        <briefdescription>
+<para>Adds an <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block" kindref="compound">AbstractBlock</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 17.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>block</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block" kindref="compound">AbstractBlock</ref>. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/AbstractBlock.cs" line="58" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/AbstractBlock.cs" bodystart="58" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_1a0b27a217de18a766c6647b71c41cc0ea" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void ARdevKit.Model.Project.File.AbstractBlock.Write</definition>
+        <argsstring>(System.IO.StreamWriter writer)</argsstring>
+        <name>Write</name>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_line_1a7f58add9edb498bee39f2c09dc98c323">Write</reimplementedby>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_in_line_1a49f0664d2621cc8d5e0589c202c19b10">Write</reimplementedby>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_line_1a9a1d47796fc64a50ccd602df70d1d562">Write</reimplementedby>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_block_1a93ad69ccbe004135c2cefca37e9f01db">Write</reimplementedby>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_block_1afe7251c8168c8d6062c7054bf0c21bf1">Write</reimplementedby>
+        <param>
+          <type>System.IO.StreamWriter</type>
+          <declname>writer</declname>
+        </param>
+        <briefdescription>
+<para>Writes the <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block" kindref="compound">AbstractBlock</ref> with the given writer. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 15.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>writer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The writer to write. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/AbstractBlock.cs" line="92" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/AbstractBlock.cs" bodystart="92" bodyend="92"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_1a851f696a88ce274c5f20e1c4bcbdef4c" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>string</type>
+        <definition>virtual string ARdevKit.Model.Project.File.AbstractBlock.getTabs</definition>
+        <argsstring>()</argsstring>
+        <name>getTabs</name>
+        <briefdescription>
+<para>Returns a string containing [<ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_1a7c07abfe27f2f9104fe7c3d23c7333a5" kindref="member">level</ref>] tabs. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 17.01.2014. </para><para><simplesect kind="return"><para>The tabs. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/AbstractBlock.cs" line="74" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/AbstractBlock.cs" bodystart="74" bodyend="82"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>An <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block" kindref="compound">AbstractBlock</ref> has a <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_1a7c07abfe27f2f9104fe7c3d23c7333a5" kindref="member">level</ref> and can contain other <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block" kindref="compound">AbstractBlock</ref>s. It can have a <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker" kindref="compound">BlockMarker</ref> and a <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_1a7dd07d5a865359c764a8cdab272a0662" kindref="member">parentFile</ref>. </para>    </briefdescription>
+    <detaileddescription>
+<para>Imanuel, 17.01.2014. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="421">
+        <label>ARdevKit.Model.Project.File.AbstractBlock</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block"/>
+      </node>
+      <node id="425">
+        <label>ARdevKit.Model.Project.File.XMLBlock</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_block"/>
+        <childnode refid="421" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="424">
+        <label>ARdevKit.Model.Project.File.JavaScriptInLine</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_in_line"/>
+        <childnode refid="423" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="426">
+        <label>ARdevKit.Model.Project.File.XMLLine</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_line"/>
+        <childnode refid="425" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="423">
+        <label>ARdevKit.Model.Project.File.JavaScriptLine</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_line"/>
+        <childnode refid="422" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="422">
+        <label>ARdevKit.Model.Project.File.JavaScriptBlock</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_block"/>
+        <childnode refid="421" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="428">
+        <label>ARdevKit.Model.Project.File.AbstractFile</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file"/>
+      </node>
+      <node id="427">
+        <label>ARdevKit.Model.Project.File.AbstractBlock</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block"/>
+        <childnode refid="428" relation="usage">
+          <edgelabel>#parentFile</edgelabel>
+        </childnode>
+        <childnode refid="429" relation="usage">
+          <edgelabel>#blockMarker</edgelabel>
+        </childnode>
+        <childnode refid="427" relation="usage">
+          <edgelabel>#parentBlock</edgelabel>
+        </childnode>
+      </node>
+      <node id="429">
+        <label>ARdevKit.Model.Project.File.BlockMarker</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/AbstractBlock.cs" line="18" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/AbstractBlock.cs" bodystart="17" bodyend="93"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_1aa238e4f3ad33fc75ab3741048ed4dc6b" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::AbstractBlock</scope><name>AddBlock</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_1a0975ceb65947c7370dcb6565677e9d0e" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::File::AbstractBlock</scope><name>blockMarker</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_1ae48e43536b76e45e5c84b837cc9bc093" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::File::AbstractBlock</scope><name>blocks</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_1a851f696a88ce274c5f20e1c4bcbdef4c" prot="protected" virt="virtual"><scope>ARdevKit::Model::Project::File::AbstractBlock</scope><name>getTabs</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_1a7c07abfe27f2f9104fe7c3d23c7333a5" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::File::AbstractBlock</scope><name>level</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_1aaa3372dadcd8d2b6ff2356ec984551c9" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::File::AbstractBlock</scope><name>parentBlock</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_1a7dd07d5a865359c764a8cdab272a0662" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::File::AbstractBlock</scope><name>parentFile</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_1a77fdd4b938d3f9d6d1f63e04018b4410" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::AbstractBlock</scope><name>ParentFile</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_1a0b27a217de18a766c6647b71c41cc0ea" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::File::AbstractBlock</scope><name>Write</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

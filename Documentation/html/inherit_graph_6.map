@@ -1,3 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_editor_1_1_controller_1_1_connections_1_1_database_connection_1_1_db_command.html" title="Represents an DB statement or stored procedure to execute against a data source. " alt="" coords="5,5,227,46"/>
+<area shape="rect" id="node2" href="$class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_process_video_window.html" title="ARdevKit.Controller.Test\lController.ProcessVideoWindow" alt="" coords="107,5,315,46"/>
+<area shape="rect" id="node3" href="$class_a_rdev_kit_1_1_editor_window.html" title="Form for viewing the editor. This is the main form of the program. " alt="" coords="131,71,290,97"/>
+<area shape="rect" id="node4" href="$class_a_rdev_kit_1_1_text_editor_form.html" title="ARdevKit.TextEditorForm" alt="" coords="127,121,295,148"/>
+<area shape="rect" id="node5" href="$class_a_rdev_kit_1_1_view_1_1_debug_window.html" title="ARdevKit.View.DebugWindow" alt="" coords="113,172,308,199"/>
 </map>

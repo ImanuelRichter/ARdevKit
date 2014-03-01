@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_view_1_1_slider_editor" kind="class" prot="public">
+    <compoundname>ARdevKit::View::SliderEditor</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">UITypeEditor</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_view_1_1_slider_editor_1a957913dea0c46ce3b6fab0d23f51ba2d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.View.SliderEditor.SliderEditor</definition>
+        <argsstring>()</argsstring>
+        <name>SliderEditor</name>
+        <briefdescription>
+<para>Initializes a new instance of the <ref refid="class_a_rdev_kit_1_1_view_1_1_slider_editor" kindref="compound">SliderEditor</ref> class. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/TypeEditoren.cs" line="23" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/TypeEditoren.cs" bodystart="23" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_view_1_1_slider_editor_1acce1dcd63136f491590e0917d1f73532" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override object</type>
+        <definition>override object ARdevKit.View.SliderEditor.EditValue</definition>
+        <argsstring>(ITypeDescriptorContext context, IServiceProvider provider, object value)</argsstring>
+        <name>EditValue</name>
+        <param>
+          <type>ITypeDescriptorContext</type>
+          <declname>context</declname>
+        </param>
+        <param>
+          <type>IServiceProvider</type>
+          <declname>provider</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Bearbeitet den Wert des angegebenen Objekts mit dem von der M:System.Drawing.Design.UITypeEditor.GetEditStyle-Methode angegebenen Editor-Stil. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Eine T:System.ComponentModel.ITypeDescriptorContext-Schnittstelle, über die zusätzliche Kontextinformationen abgerufen werden können.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>provider</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ein T:System.IServiceProvider, über den dieser Editor Dienste anfordern kann.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Das zu bearbeitende Objekt.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Der neue Wert des Objekts. Wenn sich der Wert des Objekts nicht geändert hat, wird hierbei dasselbe Objekt zurückgegeben, das zuvor übergeben wurde. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/TypeEditoren.cs" line="36" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/TypeEditoren.cs" bodystart="36" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_view_1_1_slider_editor_1a8c914aecf1ea867a92871fe81572f13e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override UITypeEditorEditStyle</type>
+        <definition>override UITypeEditorEditStyle ARdevKit.View.SliderEditor.GetEditStyle</definition>
+        <argsstring>(ITypeDescriptorContext context)</argsstring>
+        <name>GetEditStyle</name>
+        <param>
+          <type>ITypeDescriptorContext</type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+<para>Ruft den Editor-Stil ab, der von der M:System.Drawing.Design.UITypeEditor.EditValue(System.IServiceProvider,System.Object)-Methode verwendet wird. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Eine T:System.ComponentModel.ITypeDescriptorContext-Schnittstelle, über die zusätzliche Kontextinformationen abgerufen werden können.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Ein T:System.Drawing.Design.UITypeEditorEditStyle-Wert, der den von der M:System.Drawing.Design.UITypeEditor.EditValue(System.IServiceProvider,System.Object)-Methode verwendeten Editor-Stil angibt. Wenn T:System.Drawing.Design.UITypeEditor diese Methode nicht unterstützt, gibt M:System.Drawing.Design.UITypeEditor.GetEditStyle den Wert F:System.Drawing.Design.UITypeEditorEditStyle.None zurück. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/TypeEditoren.cs" line="64" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/TypeEditoren.cs" bodystart="64" bodyend="67"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class which acts as &quot;bridge&quot; for the .net propertyGrid and an custome ControlForm. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="720">
+        <label>ARdevKit.View.SliderEditor</label>
+        <link refid="class_a_rdev_kit_1_1_view_1_1_slider_editor"/>
+        <childnode refid="721" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="721">
+        <label>UITypeEditor</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="722">
+        <label>ARdevKit.View.SliderEditor</label>
+        <link refid="class_a_rdev_kit_1_1_view_1_1_slider_editor"/>
+        <childnode refid="723" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="723">
+        <label>UITypeEditor</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/TypeEditoren.cs" line="19" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/TypeEditoren.cs" bodystart="18" bodyend="68"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_view_1_1_slider_editor_1acce1dcd63136f491590e0917d1f73532" prot="public" virt="non-virtual"><scope>ARdevKit::View::SliderEditor</scope><name>EditValue</name></member>
+      <member refid="class_a_rdev_kit_1_1_view_1_1_slider_editor_1a8c914aecf1ea867a92871fe81572f13e" prot="public" virt="non-virtual"><scope>ARdevKit::View::SliderEditor</scope><name>GetEditStyle</name></member>
+      <member refid="class_a_rdev_kit_1_1_view_1_1_slider_editor_1a957913dea0c46ce3b6fab0d23f51ba2d" prot="public" virt="non-virtual"><scope>ARdevKit::View::SliderEditor</scope><name>SliderEditor</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

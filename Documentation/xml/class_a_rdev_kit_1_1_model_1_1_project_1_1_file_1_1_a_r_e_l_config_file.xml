@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_config_file" kind="class" prot="public">
+    <compoundname>ARdevKit::Model::Project::File::ARELConfigFile</compoundname>
+    <basecompoundref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file" prot="public" virt="non-virtual">ARdevKit.Model.Project.File.AbstractFile</basecompoundref>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_config_file_1a293887e7bfa91e75acfc21791106dc67" prot="protected" static="no" mutable="no">
+        <type>string</type>
+        <definition>string ARdevKit.Model.Project.File.ARELConfigFile.header</definition>
+        <argsstring></argsstring>
+        <name>header</name>
+        <briefdescription>
+<para>The header. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ARELConfigFile.cs" line="19" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ARELConfigFile.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_config_file_1a740b9f9e195108cf418fff752545a88a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.Model.Project.File.ARELConfigFile.ARELConfigFile</definition>
+        <argsstring>(string header, string projectPath)</argsstring>
+        <name>ARELConfigFile</name>
+        <param>
+          <type>string</type>
+          <declname>header</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>projectPath</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>header</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The header.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>projectPath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The project path.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para><para>Imanuel, 15.01.2014. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ARELConfigFile.cs" line="32" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ARELConfigFile.cs" bodystart="32" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_config_file_1a65bf5e667cb70e7cb9ae9a735ebba97f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override void</type>
+        <definition>override void ARdevKit.Model.Project.File.ARELConfigFile.Save</definition>
+        <argsstring>()</argsstring>
+        <name>Save</name>
+        <reimplements refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1a095ebaeca96a6d285d9caff1ad726d5b">Save</reimplements>
+        <briefdescription>
+<para>Saves the file to its <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1ad879e3a81860da8b72f2d9f61a18ab3b" kindref="member">filePath</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 17.01.2014. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ARELConfigFile.cs" line="44" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ARELConfigFile.cs" bodystart="44" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_config_file_1af0f2e70451d0dda0984dd186fcb6afde" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override void</type>
+        <definition>override void ARdevKit.Model.Project.File.ARELConfigFile.Save</definition>
+        <argsstring>(string projectPath)</argsstring>
+        <name>Save</name>
+        <reimplements refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1ae49c3262c59642e8f519d0655bbbbbab">Save</reimplements>
+        <param>
+          <type>string</type>
+          <declname>projectPath</declname>
+        </param>
+        <briefdescription>
+<para>Saves the file to the using the passed projectPath. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 17.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>projectPath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The project path to write. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ARELConfigFile.cs" line="67" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ARELConfigFile.cs" bodystart="67" bodyend="71"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>An arelConfig.xml. </para>    </briefdescription>
+    <detaileddescription>
+<para>Imanuel, 17.01.2014. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="478">
+        <label>AbstractFile</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file"/>
+      </node>
+      <node id="477">
+        <label>ARdevKit.Model.Project.File.ARELConfigFile</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_config_file"/>
+        <childnode refid="478" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="480">
+        <label>AbstractFile</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file"/>
+      </node>
+      <node id="479">
+        <label>ARdevKit.Model.Project.File.ARELConfigFile</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_config_file"/>
+        <childnode refid="480" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ARELConfigFile.cs" line="17" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ARELConfigFile.cs" bodystart="16" bodyend="72"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1a02b61dbebfbd57f5fd44c7a972c79b50" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::File::ARELConfigFile</scope><name>AddBlock</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_config_file_1a740b9f9e195108cf418fff752545a88a" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::ARELConfigFile</scope><name>ARELConfigFile</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1a21e0333fb9d8eab8ebb039bd56ccabc9" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::File::ARELConfigFile</scope><name>blocks</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1ac55b0e087f42f7ab5ce36fa3bce111ab" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::ARELConfigFile</scope><name>FilePath</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1ad879e3a81860da8b72f2d9f61a18ab3b" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::File::ARELConfigFile</scope><name>filePath</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_config_file_1a293887e7bfa91e75acfc21791106dc67" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::File::ARELConfigFile</scope><name>header</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_config_file_1a65bf5e667cb70e7cb9ae9a735ebba97f" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::File::ARELConfigFile</scope><name>Save</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_config_file_1af0f2e70451d0dda0984dd186fcb6afde" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::File::ARELConfigFile</scope><name>Save</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
