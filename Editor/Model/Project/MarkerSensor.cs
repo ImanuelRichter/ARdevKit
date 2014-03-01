@@ -7,6 +7,9 @@ using ARdevKit.Controller.ProjectController;
 
 namespace ARdevKit.Model.Project
 {
+    /// <summary>
+    /// A <see cref="MarkerSensor"/> is an <see cref="AbstractSensor"/> which is used for marker based tracking.
+    /// </summary>
     [Serializable]
     public class MarkerSensor : AbstractSensor
     {

@@ -12,6 +12,9 @@ using System.Windows.Forms;
 
 namespace ARdevKit.Model.Project
 {
+    /// <summary>
+    /// A <see cref="VideoAugmentation"/> is an <see cref="Abstract2DAugmentation"/> that contains a video file.
+    /// </summary>
     [Serializable]
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public class VideoAugmentation : Abstract2DAugmentation

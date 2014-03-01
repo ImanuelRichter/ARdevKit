@@ -19,6 +19,9 @@ using System.Drawing.Imaging;
 
 namespace ARdevKit.Controller.TestController
 {
+    /// <summary>
+    /// The <see cref="TestController"/> manages the start of the <see cref="Player"/>.
+    /// </summary>
     static class TestController
     {
         /// <summary>
@@ -63,6 +66,9 @@ namespace ARdevKit.Controller.TestController
 
         public static Process player;
 
+        /// <summary>
+        /// The editor window
+        /// </summary>
         private static EditorWindow editorWindow;
 
         /// <summary>
@@ -164,6 +170,11 @@ namespace ARdevKit.Controller.TestController
             project.ProjectPath = originalProjectPath;
         }
 
+        /// <summary>
+        /// Handles the Exited event of the player control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private static void player_Exited(object sender, EventArgs e)
         {
             if (Directory.Exists(TMP_VIDEO_PATH))
@@ -171,6 +182,9 @@ namespace ARdevKit.Controller.TestController
             editorWindow.PlayerClosed();
         }
 
+        /// <summary>
+        /// Opens the player.
+        /// </summary>
         private static void OpenPlayer()
         {
             if (File.Exists(playerPath) )
@@ -192,6 +206,11 @@ namespace ARdevKit.Controller.TestController
             editorWindow.PlayerStarted();
         }
 
+        /// <summary>
+        /// Handles the FormClosed event of the progressVideoWindow control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="FormClosedEventArgs"/> instance containing the event data.</param>
         static void progressVideoWindow_FormClosed(object sender, FormClosedEventArgs e)
         {
             player.StartInfo.Arguments += " -" + progressVideoWindow.FPS;

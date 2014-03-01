@@ -302,6 +302,10 @@ namespace ARdevKit.Model.Project
             return false;
         }
 
+        /// <summary>
+        /// Removes the augmentation and deletes connected files if other augmentations dont need it.
+        /// </summary>
+        /// <param name="augmentation">The augmentation.</param>
         public void RemoveAugmentation(AbstractAugmentation augmentation)
         {
             if (augmentation is Abstract2DAugmentation)
