@@ -63,6 +63,11 @@ namespace ARdevKit.Controller.TestController
 
         public static Process player;
 
+        private static EditorWindow editorWindow;
+
+        /// <summary>
+        /// A window showing the progress of processing the video
+        /// </summary>
         private static ProcessVideoWindow progressVideoWindow;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -73,11 +78,6 @@ namespace ARdevKit.Controller.TestController
 
         private static string playerPath;
 
-        public static void StartPlayer(Project p, int mode, bool showDebug)
-        {
-            StartPlayer(p, mode, 1024, 768, showDebug);
-        }
-
         /// <summary>
         /// Starts the player with the specified settings.
         /// </summary>
@@ -86,8 +86,9 @@ namespace ARdevKit.Controller.TestController
         /// Tells if an image<see cref="IMAGE"/> or video<see cref="VIDEO"/>
         /// should be loaded or if a virtual camera<see cref="CAMERA"/> should be started
         /// </param>
-        public static void StartPlayer(Project project, int mode, int width, int height, bool showDebug)
+        public static void StartPlayer(EditorWindow ew, Project project, int mode, int width, int height, bool showDebug)
         {
+            editorWindow = ew;
             string originalProjectPath = project.ProjectPath;
             if (project.ProjectPath == null || project.ProjectPath.Length <= 0)
                 project.ProjectPath = TMP_PROJECT_PATH;
@@ -146,6 +147,7 @@ namespace ARdevKit.Controller.TestController
                 case (CAMERA):
                     OpenFileDialog openVirualCameraPathDialog = new OpenFileDialog();
                     openVirualCameraPathDialog.Title = "Bitte virtuelle Kamera auswählen";
+                    openVirualCameraPathDialog.Filter = "Executable (*.exe)|*.exe";
                     if (openVirualCameraPathDialog.ShowDialog() == DialogResult.OK)
                     {
                         string virtualCameraPath = openVirualCameraPathDialog.FileName;
@@ -164,6 +166,7 @@ namespace ARdevKit.Controller.TestController
         {
             if (Directory.Exists(TMP_VIDEO_PATH))
                 Directory.Delete(TMP_VIDEO_PATH, true);
+            editorWindow.PlayerClosed();
         }
 
         private static void OpenPlayer()
@@ -177,13 +180,14 @@ namespace ARdevKit.Controller.TestController
             {
                 OpenFileDialog openPlayerDialog = new OpenFileDialog();
                 openPlayerDialog.Title = "Bitte Player auswählen";
-                openPlayerDialog.Filter = "Programm (" + playerPath + ")|" + playerPath;
+                openPlayerDialog.Filter = "Player (" + playerPath + ")|" + playerPath;
                 if (openPlayerDialog.ShowDialog() == DialogResult.OK)
                 {
                     player.StartInfo.FileName = openPlayerDialog.FileName;
                     player.Start();
                 }
             }
+            editorWindow.PlayerStarted();
         }
 
         static void progressVideoWindow_FormClosed(object sender, FormClosedEventArgs e)

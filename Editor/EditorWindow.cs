@@ -40,6 +40,8 @@ namespace ARdevKit
 
     public partial class EditorWindow : Form
     {
+        private delegate void SetEnabledCallback();
+
         /// <summary>
         /// The checksum of the project. Is needed to determine whether there has been made changes to the project.
         /// </summary>
@@ -355,7 +357,7 @@ namespace ARdevKit
             {
                 try
                 {
-                    TestController.StartPlayer(project, TestController.IMAGE, (int)project.Screensize.Width, (int)project.Screensize.Height, tsm_editor_menu_test_togleDebug.Checked);
+                    TestController.StartPlayer(this, project, TestController.IMAGE, (int)project.Screensize.Width, (int)project.Screensize.Height, tsm_editor_menu_test_togleDebug.Checked);
                 }
                 catch (OperationCanceledException oae)
                 {
@@ -378,7 +380,7 @@ namespace ARdevKit
         private void tsm_editor_menu_test_startVideo_Click(object sender, EventArgs e)
         {
             if (project.Trackables != null && project.Trackables.Count > 0 && project.Trackables[0] != null)
-                TestController.StartPlayer(project, TestController.VIDEO, (int)project.Screensize.Width, (int)project.Screensize.Height, tsm_editor_menu_test_togleDebug.Checked);
+                TestController.StartPlayer(this, project, TestController.VIDEO, (int)project.Screensize.Width, (int)project.Screensize.Height, tsm_editor_menu_test_togleDebug.Checked);
             else
                 MessageBox.Show("Keine Szene zum Testen vorhanden");
         }
@@ -396,9 +398,31 @@ namespace ARdevKit
         private void tsm_editor_menu_test_startWithVirtualCamera_Click(object sender, EventArgs e)
         {
             if (project.Trackables != null && project.Trackables.Count > 0 && project.Trackables[0] != null)
-                TestController.StartPlayer(project, TestController.CAMERA, (int)project.Screensize.Width, (int)project.Screensize.Height, tsm_editor_menu_test_togleDebug.Checked);
+                TestController.StartPlayer(this, project, TestController.CAMERA, (int)project.Screensize.Width, (int)project.Screensize.Height, tsm_editor_menu_test_togleDebug.Checked);
             else
                 MessageBox.Show("Keine Szene zum Testen vorhanden");
+        }
+
+        /// <summary>
+        /// This method is used to tell the editorWindow that the player was started.
+        /// </summary>
+        public void PlayerStarted()
+        {
+            this.tsm_editor_menu_file.Enabled = false;
+        }
+
+        /// <summary>
+        /// This method is used to tell the editorWindow that the player has been closed.
+        /// </summary>
+        public void PlayerClosed()
+        {
+            if (this.tsm_editor_menu_file.GetCurrentParent().InvokeRequired)
+            {
+                SetEnabledCallback d = new SetEnabledCallback(PlayerClosed);
+                this.Invoke(d, new object[] { });
+            }
+            else
+                this.tsm_editor_menu_file.Enabled = true;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1138,6 +1162,7 @@ namespace ARdevKit
             propertyGrid1.SelectedObject = project.Screensize;
             propertyGrid1.PropertySort = PropertySort.NoSort;
             this.previewController.setCurrentElement(null);
+            this.tsm_editor_menu_edit_delete.Enabled = false;
         }
 
         /// <summary>
