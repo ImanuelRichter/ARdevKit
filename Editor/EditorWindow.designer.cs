@@ -492,7 +492,6 @@ namespace ARdevKit
             this.Name = "EditorWindow";
             this.Text = "ARdevKit";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditorWindow_FormClosing);
-            this.Load += new System.EventHandler(this.Editor_Load);
             this.panel1.ResumeLayout(false);
             this.pnl_editor_preview.ResumeLayout(false);
             this.pnl_editor_preview.PerformLayout();
