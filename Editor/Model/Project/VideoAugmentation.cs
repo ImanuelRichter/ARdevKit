@@ -159,6 +159,13 @@ namespace ARdevKit.Model.Project
             return ObjectCopier.Clone<VideoAugmentation>(this);
         }
 
+        /// <summary>
+        /// This method is called by the previewController when a new instance of the element is added to the Scene. It sets "must-have" properties.
+        /// </summary>
+        /// <param name="ew">The ew.</param>
+        /// <returns>
+        /// true if it succeeds, false if it fails.
+        /// </returns>
         public override bool initElement(EditorWindow ew)
         {
             if (VideoPath == null)
