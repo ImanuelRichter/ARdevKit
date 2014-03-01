@@ -47,8 +47,11 @@ namespace ARdevKit.Model.Project
             get { return imagePath; }
             set
             {
-                imagePath = value;
-                imageName = Path.GetFileNameWithoutExtension(imagePath);
+                if (System.IO.File.Exists(value))
+                {
+                    imagePath = value;
+                    imageName = Path.GetFileNameWithoutExtension(imagePath);
+                }
             }
         }
 
@@ -136,6 +139,7 @@ namespace ARdevKit.Model.Project
                 bool isInitOk = true;
                 OpenFileDialog openFileDialog = new OpenFileDialog();
                 openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+                openFileDialog.Title = "Wählen sie ein Trackable";
                 openFileDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
                 isInitOk = openFileDialog.ShowDialog() == DialogResult.OK;
                 if (isInitOk)
