@@ -152,14 +152,8 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
             }
             catch (Exception ex)
             {
-                FileStream log = File.Open("connectionDebugLog.txt", FileMode.Append | FileMode.OpenOrCreate, FileAccess.Write);
-                byte [] logLine = UTF8Encoding.UTF8.GetBytes(DateTime.Now.ToString() + " - Exception from: " + ex.Source + " Message: " + ex.Message + " StackTrace: " + ex.StackTrace + "\n\r");
-                log.Write(logLine, 0, logLine.Length);
-                log.Close();
-                if (new FileInfo("connectionDebugLog.txt").Length > 400000)
-                {
-                    File.Delete("connectionDebugLog.txt");
-                }
+                writeExceptionToLog(ex);
+                throw (ex);
             }
             finally
             {
@@ -220,14 +214,8 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
             }
             catch (Exception ex)
             {
-                FileStream log = File.Open("connectionDebugLog.txt", FileMode.Append | FileMode.OpenOrCreate, FileAccess.Write);
-                byte[] logLine = UTF8Encoding.UTF8.GetBytes(DateTime.Now.ToString() + " - Exception from: " + ex.Source + " Message: " + ex.Message + " StackTrace: " + ex.StackTrace + "\n\r");
-                log.Write(logLine, 0, logLine.Length);
-                log.Close();
-                if (new FileInfo("connectionDebugLog.txt").Length > 400000)
-                {
-                    File.Delete("connectionDebugLog.txt");
-                }
+                writeExceptionToLog(ex);
+                throw (ex);
             }
             finally
             {
@@ -245,6 +233,18 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
                 }
             }
             return success;
+        }
+
+        private void writeExceptionToLog(Exception ex)
+        {
+            FileStream log = File.Open("connectionDebugLog.txt", FileMode.Append | FileMode.OpenOrCreate, FileAccess.Write);
+            byte[] logLine = UTF8Encoding.UTF8.GetBytes(DateTime.Now.ToString() + " - Exception from: " + ex.Source + " Message: " + ex.Message + " StackTrace: " + ex.StackTrace + "\n\r");
+            log.Write(logLine, 0, logLine.Length);
+            log.Close();
+            if (new FileInfo("connectionDebugLog.txt").Length > 400000)
+            {
+                File.Delete("connectionDebugLog.txt");
+            }
         }
     }
 }
