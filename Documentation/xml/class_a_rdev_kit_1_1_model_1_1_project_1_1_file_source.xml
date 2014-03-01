@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_source" kind="class" prot="public">
+    <compoundname>ARdevKit::Model::Project::FileSource</compoundname>
+    <basecompoundref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source" prot="public" virt="non-virtual">ARdevKit.Model.Project.AbstractSource</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_source_1a48d4c7330f5124fb1a1bce79ccdab28f" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String ARdevKit.Model.Project.FileSource.sourceFilePath</definition>
+        <argsstring></argsstring>
+        <name>sourceFilePath</name>
+        <briefdescription>
+<para>Full pathname of the source file. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/FileSource.cs" line="19" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/FileSource.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_source_1a9f1dd2b4c0e9eb8c4f8464ece5f544c3" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>string</type>
+        <definition>string ARdevKit.Model.Project.FileSource.Data</definition>
+        <argsstring></argsstring>
+        <name>Data</name>
+        <briefdescription>
+<para>Gets or sets the file source. </para>        </briefdescription>
+        <detaileddescription>
+<para>The file source. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/FileSource.cs" line="25" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/FileSource.cs" bodystart="26" bodyend="-1"/>
+        <referencedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1a078a2d0fef2fa5db4b6adcf4be50debe" compoundref="_export_visitor_8cs" startline="429" endline="457">ARdevKit.Controller.ProjectController.ExportVisitor.Visit</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_source_1a0afe3f4740ae74c4d545154be596e5a2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.Model.Project.FileSource.FileSource</definition>
+        <argsstring>(string sourceFilePath)</argsstring>
+        <name>FileSource</name>
+        <param>
+          <type>string</type>
+          <declname>sourceFilePath</declname>
+        </param>
+        <briefdescription>
+<para>Initializes a new instance of the <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_source" kindref="compound">FileSource</ref> class. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sourceFilePath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The source file path.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/FileSource.cs" line="48" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/FileSource.cs" bodystart="48" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_source_1ad20118e7638c1660059be7740a2ab080" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override void</type>
+        <definition>override void ARdevKit.Model.Project.FileSource.Accept</definition>
+        <argsstring>(Controller.ProjectController.AbstractProjectVisitor visitor)</argsstring>
+        <name>Accept</name>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor" kindref="compound">Controller.ProjectController.AbstractProjectVisitor</ref></type>
+          <declname>visitor</declname>
+        </param>
+        <briefdescription>
+<para>An abstract method, to accept an AbstractProjectVisitor which must be implemented according to the visitor design pattern. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 27.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>visitor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the visitor which encapsulates the action which is performed on this element. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/FileSource.cs" line="65" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/FileSource.cs" bodystart="65" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_source_1a1c35e8b945898af5787b60f3de7a2d26" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override Bitmap</type>
+        <definition>override Bitmap ARdevKit.Model.Project.FileSource.getIcon</definition>
+        <argsstring>()</argsstring>
+        <name>getIcon</name>
+        <reimplements refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_1ae698f1c9d55cc0603931bd2804d0c35d">getIcon</reimplements>
+        <briefdescription>
+<para>returns a Bitmap in order to be displayed on the ElementSelectionPanel, implements <ref refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable" kindref="compound">IPreviewable</ref> </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>a representative iconized Bitmap </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/FileSource.cs" line="77" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/FileSource.cs" bodystart="77" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_source_1ac97ee603e5e8f17bea48dc1d81e7b531" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override object</type>
+        <definition>override object ARdevKit.Model.Project.FileSource.Clone</definition>
+        <argsstring>()</argsstring>
+        <name>Clone</name>
+        <reimplements refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_1a17fb18629481715303c5c55a867bb023">Clone</reimplements>
+        <briefdescription>
+<para>Makes a deep copy of this object. </para>        </briefdescription>
+        <detaileddescription>
+<para>Robin, 21.01.2014. </para><para><simplesect kind="return"><para>A copy of this object. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/FileSource.cs" line="90" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/FileSource.cs" bodystart="90" bodyend="93"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A file source. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="547">
+        <label>ARdevKit.Model.Project.FileSource</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_source"/>
+        <childnode refid="548" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="548">
+        <label>AbstractSource</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source"/>
+        <childnode refid="549" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="549">
+        <label>IPreviewable</label>
+        <link refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable"/>
+        <childnode refid="550" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="550">
+        <label>ICloneable</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="551">
+        <label>ARdevKit.Model.Project.FileSource</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_source"/>
+        <childnode refid="552" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="552">
+        <label>AbstractSource</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source"/>
+        <childnode refid="553" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="553">
+        <label>IPreviewable</label>
+        <link refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable"/>
+        <childnode refid="554" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="554">
+        <label>ICloneable</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/FileSource.cs" line="17" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/FileSource.cs" bodystart="16" bodyend="94"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_1afbfcad1056b3776f35bdd1b09541ae28" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::FileSource</scope><name>AbstractSource</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_1a675e2b01328010a1c6d690e07ba04593" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::FileSource</scope><name>AbstractSource</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_source_1ad20118e7638c1660059be7740a2ab080" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::FileSource</scope><name>Accept</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_1ad45fa69ac940512f91457ca7c7661882" prot="public" virt="pure-virtual" ambiguityscope="ARdevKit::Model::Project::AbstractSource."><scope>ARdevKit::Model::Project::FileSource</scope><name>Accept</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_1a97697e9bd1d99e0c8a35f47a19568016" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::FileSource</scope><name>Augmentation</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_source_1ac97ee603e5e8f17bea48dc1d81e7b531" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::FileSource</scope><name>Clone</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_source_1a9f1dd2b4c0e9eb8c4f8464ece5f544c3" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::FileSource</scope><name>Data</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_source_1a0afe3f4740ae74c4d545154be596e5a2" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::FileSource</scope><name>FileSource</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_source_1a1c35e8b945898af5787b60f3de7a2d26" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::FileSource</scope><name>getIcon</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_1abd9f742efb27a1fca992f6627c0421e4" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::FileSource</scope><name>getPreview</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_1ae0ad810da02d289ddcbb28bb2aabec43" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::FileSource</scope><name>initElement</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_1a77b9039615be2c2792e6f6792f0d32bc" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::FileSource</scope><name>Query</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_1abc3b4344725b8e3ae380f1922b59cf53" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::FileSource</scope><name>queryFilePath</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_source_1a48d4c7330f5124fb1a1bce79ccdab28f" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::FileSource</scope><name>sourceFilePath</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_1ad17fdcfdfb0b52e0a2780e7117fd9ffc" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::FileSource</scope><name>SourceID</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_1a74cf779ccb9c125ff5202864414f2078" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::FileSource</scope><name>ToString</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

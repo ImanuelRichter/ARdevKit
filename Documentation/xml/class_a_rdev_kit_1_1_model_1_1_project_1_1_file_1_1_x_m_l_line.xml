@@ -1,0 +1,201 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_line" kind="class" prot="public">
+    <compoundname>ARdevKit::Model::Project::File::XMLLine</compoundname>
+    <basecompoundref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_block" prot="public" virt="non-virtual">ARdevKit.Model.Project.File.XMLBlock</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_line_1a6baea73a7f9ab9b371ceaa66ef8bdb5b" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string ARdevKit.Model.Project.File.XMLLine.value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+<para>The value. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/XMLLine.cs" line="18" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/XMLLine.cs" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_line_1a3d11a65937837fa4fb9c7163d4088fe5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.Model.Project.File.XMLLine.XMLLine</definition>
+        <argsstring>(XMLTag tag)</argsstring>
+        <name>XMLLine</name>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_tag" kindref="compound">XMLTag</ref></type>
+          <declname>tag</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 15.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The tag. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/XMLLine.cs" line="28" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/XMLLine.cs" bodystart="28" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_line_1a915310c8f5bbec9bc9f15e8975e8ae89" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.Model.Project.File.XMLLine.XMLLine</definition>
+        <argsstring>(XMLTag tag, string value)</argsstring>
+        <name>XMLLine</name>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_tag" kindref="compound">XMLTag</ref></type>
+          <declname>tag</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 15.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The tag. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/XMLLine.cs" line="39" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/XMLLine.cs" bodystart="39" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_line_1a7f58add9edb498bee39f2c09dc98c323" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override void</type>
+        <definition>override void ARdevKit.Model.Project.File.XMLLine.Write</definition>
+        <argsstring>(System.IO.StreamWriter writer)</argsstring>
+        <name>Write</name>
+        <reimplements refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_block_1a93ad69ccbe004135c2cefca37e9f01db">Write</reimplements>
+        <param>
+          <type>System.IO.StreamWriter</type>
+          <declname>writer</declname>
+        </param>
+        <briefdescription>
+<para>Writes itself the given writer. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 15.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>writer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The writer to write. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/XMLLine.cs" line="52" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/XMLLine.cs" bodystart="52" bodyend="56"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A line is a <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_block" kindref="compound">XMLBlock</ref> which can have a value or not. </para>    </briefdescription>
+    <detaileddescription>
+<para>Imanuel, 15.01.2014. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="768">
+        <label>AbstractBlock</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block"/>
+      </node>
+      <node id="766">
+        <label>ARdevKit.Model.Project.File.XMLLine</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_line"/>
+        <childnode refid="767" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="767">
+        <label>XMLBlock</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_block"/>
+        <childnode refid="768" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="772">
+        <label>ARdevKit.Model.Project.File.AbstractFile</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file"/>
+      </node>
+      <node id="774">
+        <label>ARdevKit.Model.Project.File.AbstractBlock</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block"/>
+        <childnode refid="772" relation="usage">
+          <edgelabel>#parentFile</edgelabel>
+        </childnode>
+        <childnode refid="773" relation="usage">
+          <edgelabel>#blockMarker</edgelabel>
+        </childnode>
+        <childnode refid="774" relation="usage">
+          <edgelabel>#parentBlock</edgelabel>
+        </childnode>
+      </node>
+      <node id="773">
+        <label>ARdevKit.Model.Project.File.BlockMarker</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker"/>
+      </node>
+      <node id="771">
+        <label>AbstractBlock</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block"/>
+        <childnode refid="772" relation="usage">
+          <edgelabel>#parentFile</edgelabel>
+        </childnode>
+        <childnode refid="773" relation="usage">
+          <edgelabel>#blockMarker</edgelabel>
+        </childnode>
+        <childnode refid="774" relation="usage">
+          <edgelabel>#parentBlock</edgelabel>
+        </childnode>
+      </node>
+      <node id="769">
+        <label>ARdevKit.Model.Project.File.XMLLine</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_line"/>
+        <childnode refid="770" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="770">
+        <label>XMLBlock</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_block"/>
+        <childnode refid="771" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/XMLLine.cs" line="16" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/XMLLine.cs" bodystart="15" bodyend="57"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_1aa238e4f3ad33fc75ab3741048ed4dc6b" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::XMLLine</scope><name>AddBlock</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_block_1a5b285d49ca7c69b36b51f74cd521787b" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::XMLLine</scope><name>AddLine</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_1a0975ceb65947c7370dcb6565677e9d0e" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::File::XMLLine</scope><name>blockMarker</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_1ae48e43536b76e45e5c84b837cc9bc093" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::File::XMLLine</scope><name>blocks</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_1a851f696a88ce274c5f20e1c4bcbdef4c" prot="protected" virt="virtual"><scope>ARdevKit::Model::Project::File::XMLLine</scope><name>getTabs</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_1a7c07abfe27f2f9104fe7c3d23c7333a5" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::File::XMLLine</scope><name>level</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_block_1a043d163b98a70d26d98d9dda156497bc" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::File::XMLLine</scope><name>lines</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_1aaa3372dadcd8d2b6ff2356ec984551c9" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::File::XMLLine</scope><name>parentBlock</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_1a77fdd4b938d3f9d6d1f63e04018b4410" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::XMLLine</scope><name>ParentFile</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_1a7dd07d5a865359c764a8cdab272a0662" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::File::XMLLine</scope><name>parentFile</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_block_1aca74b767b130910446082faf7e150131" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::XMLLine</scope><name>Update</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_line_1a6baea73a7f9ab9b371ceaa66ef8bdb5b" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::File::XMLLine</scope><name>value</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_line_1a7f58add9edb498bee39f2c09dc98c323" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::File::XMLLine</scope><name>Write</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_block_1a945d325805b0c5e1d468833bd0e7524a" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::XMLLine</scope><name>XMLBlock</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_line_1a3d11a65937837fa4fb9c7163d4088fe5" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::XMLLine</scope><name>XMLLine</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_line_1a915310c8f5bbec9bc9f15e8975e8ae89" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::XMLLine</scope><name>XMLLine</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

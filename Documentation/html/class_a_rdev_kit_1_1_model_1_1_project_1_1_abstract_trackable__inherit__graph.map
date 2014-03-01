@@ -1,0 +1,7 @@
+<map id="ARdevKit.Model.Project.AbstractTrackable" name="ARdevKit.Model.Project.AbstractTrackable">
+<area shape="rect" id="node4" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable.html" title="{ARdevKit.Model.Project.Abstract2\lDTrackable\n|+ SensorCosID\l+ Size\l+ Translation\l+ Rotation\l+ Fuser\l# sensorCosID\l# size\l# translationVector\l# rotationVector\l# fuser\l|+ ToString()\l}" alt="" coords="233,587,452,811"/>
+<area shape="rect" id="node2" href="$interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable.html" title="Interface for previewable elements from the Model. " alt="" coords="289,131,396,237"/>
+<area shape="rect" id="node5" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_marker.html" title="IDMarker is a AbstractMarker adding an matrixID. " alt="" coords="5,903,219,1054"/>
+<area shape="rect" id="node6" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable.html" title="Describes a Marker, which is very flexible, because it is also a Picture. It is an AbstractMarker ..." alt="" coords="243,859,441,1098"/>
+<area shape="rect" id="node7" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker.html" title="Describes a Marker, which is very flexible, because it is also a Picture. It is an AbstractMarker ..." alt="" coords="466,867,669,1091"/>
+</map>

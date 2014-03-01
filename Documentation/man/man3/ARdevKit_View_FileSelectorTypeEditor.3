@@ -1,0 +1,64 @@
+.TH "ARdevKit.View.FileSelectorTypeEditor" 3 "Sat Mar 1 2014" "Version 0.2" "ARdevKit" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ARdevKit.View.FileSelectorTypeEditor \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits UITypeEditor\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "override UITypeEditorEditStyle \fBGetEditStyle\fP (ITypeDescriptorContext context)"
+.br
+.RI "\fIRuft den Editor-Stil ab, der von der M:System\&.Drawing\&.Design\&.UITypeEditor\&.EditValue(System\&.IServiceProvider,System\&.Object)-Methode verwendet wird\&. \fP"
+.ti -1c
+.RI "override object \fBEditValue\fP (ITypeDescriptorContext context, IServiceProvider provider, object value)"
+.br
+.RI "\fIBearbeitet den Wert des angegebenen Objekts mit dem von der M:System\&.Drawing\&.Design\&.UITypeEditor\&.GetEditStyle-Methode angegebenen Editor-Stil\&. \fP"
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "override object ARdevKit\&.View\&.FileSelectorTypeEditor\&.EditValue (ITypeDescriptorContextcontext, IServiceProviderprovider, objectvalue)"
+
+.PP
+Bearbeitet den Wert des angegebenen Objekts mit dem von der M:System\&.Drawing\&.Design\&.UITypeEditor\&.GetEditStyle-Methode angegebenen Editor-Stil\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcontext\fP Eine T:System\&.ComponentModel\&.ITypeDescriptorContext-Schnittstelle, über die zusätzliche Kontextinformationen abgerufen werden können\&.
+.br
+\fIprovider\fP Ein T:System\&.IServiceProvider, über den dieser Editor Dienste anfordern kann\&.
+.br
+\fIvalue\fP Das zu bearbeitende Objekt\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Der neue Wert des Objekts\&. Wenn sich der Wert des Objekts nicht geändert hat, wird hierbei dasselbe Objekt zurückgegeben, das zuvor übergeben wurde\&. 
+.RE
+.PP
+
+.SS "override UITypeEditorEditStyle ARdevKit\&.View\&.FileSelectorTypeEditor\&.GetEditStyle (ITypeDescriptorContextcontext)"
+
+.PP
+Ruft den Editor-Stil ab, der von der M:System\&.Drawing\&.Design\&.UITypeEditor\&.EditValue(System\&.IServiceProvider,System\&.Object)-Methode verwendet wird\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcontext\fP Eine T:System\&.ComponentModel\&.ITypeDescriptorContext-Schnittstelle, über die zusätzliche Kontextinformationen abgerufen werden können\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Ein T:System\&.Drawing\&.Design\&.UITypeEditorEditStyle-Wert, der den von der M:System\&.Drawing\&.Design\&.UITypeEditor\&.EditValue(System\&.IServiceProvider,System\&.Object)-Methode verwendeten Editor-Stil angibt\&. Wenn T:System\&.Drawing\&.Design\&.UITypeEditor diese Methode nicht unterstützt, gibt M:System\&.Drawing\&.Design\&.UITypeEditor\&.GetEditStyle den Wert F:System\&.Drawing\&.Design\&.UITypeEditorEditStyle\&.None zurück\&. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ARdevKit from the source code\&.

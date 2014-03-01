@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="dir_d24d2bc9ba296cc7c29789df05de8dd5" kind="dir">
+    <compoundname>C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File</compoundname>
+    <innerfile refid="_abstract_block_8cs">AbstractBlock.cs</innerfile>
+    <innerfile refid="_abstract_file_8cs">AbstractFile.cs</innerfile>
+    <innerfile refid="_a_r_e_l_config_file_8cs">ARELConfigFile.cs</innerfile>
+    <innerfile refid="_a_r_e_l_glue_file_8cs">ARELGlueFile.cs</innerfile>
+    <innerfile refid="_a_r_e_l_project_file_8cs">ARELProjectFile.cs</innerfile>
+    <innerfile refid="_block_marker_8cs">BlockMarker.cs</innerfile>
+    <innerfile refid="_chart_file_8cs">ChartFile.cs</innerfile>
+    <innerfile refid="_helper_8cs">Helper.cs</innerfile>
+    <innerfile refid="_java_script_block_8cs">JavaScriptBlock.cs</innerfile>
+    <innerfile refid="_java_script_in_line_8cs">JavaScriptInLine.cs</innerfile>
+    <innerfile refid="_java_script_line_8cs">JavaScriptLine.cs</innerfile>
+    <innerfile refid="_non_terminating_x_m_l_tag_8cs">NonTerminatingXMLTag.cs</innerfile>
+    <innerfile refid="_tracking_data_file_8cs">TrackingDataFile.cs</innerfile>
+    <innerfile refid="_x_m_l_block_8cs">XMLBlock.cs</innerfile>
+    <innerfile refid="_x_m_l_line_8cs">XMLLine.cs</innerfile>
+    <innerfile refid="_x_m_l_tag_8cs">XMLTag.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/"/>
+  </compounddef>
+</doxygen>

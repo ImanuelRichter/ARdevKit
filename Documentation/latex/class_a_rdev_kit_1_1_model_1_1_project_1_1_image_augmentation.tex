@@ -1,0 +1,244 @@
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation}{\section{A\-Rdev\-Kit.\-Model.\-Project.\-Image\-Augmentation Class Reference}
+\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation}\index{A\-Rdev\-Kit.\-Model.\-Project.\-Image\-Augmentation@{A\-Rdev\-Kit.\-Model.\-Project.\-Image\-Augmentation}}
+}
+
+
+An augmentation only described by an Image\-Path. It is an \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_augmentation}{Abstract2\-D\-Augmentation}  
+
+
+
+
+Inheritance diagram for A\-Rdev\-Kit.\-Model.\-Project.\-Image\-Augmentation\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\-Rdev\-Kit.\-Model.\-Project.\-Image\-Augmentation\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_a7ef7e1f296fa9ad472fe601d7ab3c4d1}{Image\-Augmentation} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_afb556b0cb19bd252c7edcd948c26ea28}{Image\-Augmentation} (string image\-Path)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation}{Image\-Augmentation} class. \end{DoxyCompactList}\item 
+override void \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_a1450cf89881f65c8882126914379ae50}{Accept} (\hyperlink{class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor}{Abstract\-Project\-Visitor} visitor)
+\begin{DoxyCompactList}\small\item\em An overwriting method, to accept a Abstract\-Project\-Visitor which must be implemented according to the visitor design pattern. \end{DoxyCompactList}\item 
+override Bitmap \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_a76230c0eb40c317bab23b37c27ea3a39}{get\-Preview} ()
+\begin{DoxyCompactList}\small\item\em returns a Bitmap in order to be displayed on the Preview\-Panel, implements \hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} \end{DoxyCompactList}\item 
+override Bitmap \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_a7f1d0335a2559d461cbe18599ce472c2}{get\-Icon} ()
+\begin{DoxyCompactList}\small\item\em returns a Bitmap in order to be displayed on the Element\-Selection\-Panel, implements \hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} \end{DoxyCompactList}\item 
+override void \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_aecb9401ae2f65c089330e280af41d55a}{Clean\-Up} ()
+\begin{DoxyCompactList}\small\item\em Clean up (remove created/copied files and directories). \end{DoxyCompactList}\item 
+override object \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_af25172abfef48a1f9004ec3777d0d6fb}{Clone} ()
+\begin{DoxyCompactList}\small\item\em Makes a deep copy of this object. \end{DoxyCompactList}\item 
+override bool \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_a37ba80403f194a8aad7e7b96a8fd9239}{init\-Element} (\hyperlink{class_a_rdev_kit_1_1_editor_window}{Editor\-Window} ew)
+\begin{DoxyCompactList}\small\item\em This method is called by the preview\-Controller when a new instance of the element is added to the Scene. It sets \char`\"{}must-\/have\char`\"{} properties. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_a499cb36152832a4dd29794e3c1dd2718}{Image\-Path}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the full pathname of the image file. \end{DoxyCompactList}\item 
+new int \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_a372f087469a33d84950310dfcd52e190}{Width}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the width. \end{DoxyCompactList}\item 
+new int \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_a5cecd83037a573b7f4fdfc7ebe6c7476}{Height}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the height. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+An augmentation only described by an Image\-Path. It is an \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_augmentation}{Abstract2\-D\-Augmentation} 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_a7ef7e1f296fa9ad472fe601d7ab3c4d1}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Augmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Augmentation}!Image\-Augmentation@{Image\-Augmentation}}
+\index{Image\-Augmentation@{Image\-Augmentation}!ARdevKit::Model::Project::ImageAugmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Augmentation}}
+\subsubsection[{Image\-Augmentation}]{\setlength{\rightskip}{0pt plus 5cm}A\-Rdev\-Kit.\-Model.\-Project.\-Image\-Augmentation.\-Image\-Augmentation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_a7ef7e1f296fa9ad472fe601d7ab3c4d1}
+
+
+Default constructor. 
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_afb556b0cb19bd252c7edcd948c26ea28}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Augmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Augmentation}!Image\-Augmentation@{Image\-Augmentation}}
+\index{Image\-Augmentation@{Image\-Augmentation}!ARdevKit::Model::Project::ImageAugmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Augmentation}}
+\subsubsection[{Image\-Augmentation}]{\setlength{\rightskip}{0pt plus 5cm}A\-Rdev\-Kit.\-Model.\-Project.\-Image\-Augmentation.\-Image\-Augmentation (
+\begin{DoxyParamCaption}
+\item[{string}]{image\-Path}
+\end{DoxyParamCaption}
+)}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_afb556b0cb19bd252c7edcd948c26ea28}
+
+
+Initializes a new instance of the \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation}{Image\-Augmentation} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image\-Path} & The image path.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_a1450cf89881f65c8882126914379ae50}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Augmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Augmentation}!Accept@{Accept}}
+\index{Accept@{Accept}!ARdevKit::Model::Project::ImageAugmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Augmentation}}
+\subsubsection[{Accept}]{\setlength{\rightskip}{0pt plus 5cm}override void A\-Rdev\-Kit.\-Model.\-Project.\-Image\-Augmentation.\-Accept (
+\begin{DoxyParamCaption}
+\item[{{\bf Abstract\-Project\-Visitor}}]{visitor}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_a1450cf89881f65c8882126914379ae50}
+
+
+An overwriting method, to accept a Abstract\-Project\-Visitor which must be implemented according to the visitor design pattern. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em visitor} & the visitor which encapsulates the action which is performed on this element\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_a2b3fa5e94428fab7f2d94842211a7cc9}{A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Augmentation}.
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_aecb9401ae2f65c089330e280af41d55a}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Augmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Augmentation}!Clean\-Up@{Clean\-Up}}
+\index{Clean\-Up@{Clean\-Up}!ARdevKit::Model::Project::ImageAugmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Augmentation}}
+\subsubsection[{Clean\-Up}]{\setlength{\rightskip}{0pt plus 5cm}override void A\-Rdev\-Kit.\-Model.\-Project.\-Image\-Augmentation.\-Clean\-Up (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_aecb9401ae2f65c089330e280af41d55a}
+
+
+Clean up (remove created/copied files and directories). 
+
+Imanuel, 31.\-01.\-2014. 
+
+Implements \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_a29b5dcf0bea3da72b75707e09f42124f}{A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Augmentation}.
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_af25172abfef48a1f9004ec3777d0d6fb}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Augmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Augmentation}!Clone@{Clone}}
+\index{Clone@{Clone}!ARdevKit::Model::Project::ImageAugmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Augmentation}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}override object A\-Rdev\-Kit.\-Model.\-Project.\-Image\-Augmentation.\-Clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_af25172abfef48a1f9004ec3777d0d6fb}
+
+
+Makes a deep copy of this object. 
+
+Robin, 22.\-01.\-2014. 
+
+\begin{DoxyReturn}{Returns}
+A copy of this object. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_a184416a3d47e35d58bb7f5bb6ce2e269}{A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Augmentation}.
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_a7f1d0335a2559d461cbe18599ce472c2}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Augmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Augmentation}!get\-Icon@{get\-Icon}}
+\index{get\-Icon@{get\-Icon}!ARdevKit::Model::Project::ImageAugmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Augmentation}}
+\subsubsection[{get\-Icon}]{\setlength{\rightskip}{0pt plus 5cm}override Bitmap A\-Rdev\-Kit.\-Model.\-Project.\-Image\-Augmentation.\-get\-Icon (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_a7f1d0335a2559d461cbe18599ce472c2}
+
+
+returns a Bitmap in order to be displayed on the Element\-Selection\-Panel, implements \hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} 
+
+\begin{DoxyReturn}{Returns}
+a representative iconized Bitmap 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em File\-Not\-Found\-Exception} & If Image\-Path is bad\\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_a703566211752c4c4e08ceb5b6c528918}{A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Augmentation}.
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_a76230c0eb40c317bab23b37c27ea3a39}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Augmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Augmentation}!get\-Preview@{get\-Preview}}
+\index{get\-Preview@{get\-Preview}!ARdevKit::Model::Project::ImageAugmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Augmentation}}
+\subsubsection[{get\-Preview}]{\setlength{\rightskip}{0pt plus 5cm}override Bitmap A\-Rdev\-Kit.\-Model.\-Project.\-Image\-Augmentation.\-get\-Preview (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_a76230c0eb40c317bab23b37c27ea3a39}
+
+
+returns a Bitmap in order to be displayed on the Preview\-Panel, implements \hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} 
+
+\begin{DoxyReturn}{Returns}
+a representative Bitmap 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em File\-Not\-Found\-Exception} & Thrown when the requested \hyperlink{namespace_a_rdev_kit_1_1_model_1_1_project_1_1_file}{File} is not found in \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_a499cb36152832a4dd29794e3c1dd2718}{Image\-Path}.\\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_a627330061b5df53ece5646e1cf83ff0f}{A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Augmentation}.
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_a37ba80403f194a8aad7e7b96a8fd9239}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Augmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Augmentation}!init\-Element@{init\-Element}}
+\index{init\-Element@{init\-Element}!ARdevKit::Model::Project::ImageAugmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Augmentation}}
+\subsubsection[{init\-Element}]{\setlength{\rightskip}{0pt plus 5cm}override bool A\-Rdev\-Kit.\-Model.\-Project.\-Image\-Augmentation.\-init\-Element (
+\begin{DoxyParamCaption}
+\item[{{\bf Editor\-Window}}]{ew}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_a37ba80403f194a8aad7e7b96a8fd9239}
+
+
+This method is called by the preview\-Controller when a new instance of the element is added to the Scene. It sets \char`\"{}must-\/have\char`\"{} properties. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ew} & The ew.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if it succeeds, false if it fails. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_a8b02a2eb775b8147e71575694ce8a38f}{A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Augmentation}.
+
+
+
+\subsection{Property Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_a5cecd83037a573b7f4fdfc7ebe6c7476}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Augmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Augmentation}!Height@{Height}}
+\index{Height@{Height}!ARdevKit::Model::Project::ImageAugmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Augmentation}}
+\subsubsection[{Height}]{\setlength{\rightskip}{0pt plus 5cm}new int A\-Rdev\-Kit.\-Model.\-Project.\-Image\-Augmentation.\-Height\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_a5cecd83037a573b7f4fdfc7ebe6c7476}
+
+
+Gets or sets the height. 
+
+The height, in mm. \hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_a499cb36152832a4dd29794e3c1dd2718}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Augmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Augmentation}!Image\-Path@{Image\-Path}}
+\index{Image\-Path@{Image\-Path}!ARdevKit::Model::Project::ImageAugmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Augmentation}}
+\subsubsection[{Image\-Path}]{\setlength{\rightskip}{0pt plus 5cm}string A\-Rdev\-Kit.\-Model.\-Project.\-Image\-Augmentation.\-Image\-Path\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_a499cb36152832a4dd29794e3c1dd2718}
+
+
+Gets or sets the full pathname of the image file. 
+
+The full pathname of the image file. \hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_a372f087469a33d84950310dfcd52e190}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Augmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Augmentation}!Width@{Width}}
+\index{Width@{Width}!ARdevKit::Model::Project::ImageAugmentation@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Augmentation}}
+\subsubsection[{Width}]{\setlength{\rightskip}{0pt plus 5cm}new int A\-Rdev\-Kit.\-Model.\-Project.\-Image\-Augmentation.\-Width\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_a372f087469a33d84950310dfcd52e190}
+
+
+Gets or sets the width. 
+
+The width, in mm. 

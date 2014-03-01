@@ -1,0 +1,7 @@
+<map id="ARdevKit.Model.Project.File.AbstractBlock" name="ARdevKit.Model.Project.File.AbstractBlock">
+<area shape="rect" id="node2" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_block.html" title="A JavaScriptBlock block is an AbstractBlock. It has a head and constits of other JavaScriptBlocks and..." alt="" coords="5,249,192,399"/>
+<area shape="rect" id="node5" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_block.html" title="A XMLBlock is an AbstractBlock which can have XMLTags. " alt="" coords="217,256,404,392"/>
+<area shape="rect" id="node3" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_line.html" title="A JavaScriptLine is a JavaScriptBlock which has a content that is written in a single line..." alt="" coords="5,449,192,570"/>
+<area shape="rect" id="node4" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_in_line.html" title="{ARdevKit.Model.Project.File.\lJavaScriptInLine\n||+ JavaScriptInLine()\l+ JavaScriptInLine()\l+ Write()\l}" alt="" coords="5,619,192,741"/>
+<area shape="rect" id="node6" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_line.html" title="A line is a XMLBlock which can have a value or not. " alt="" coords="217,449,404,570"/>
+</map>

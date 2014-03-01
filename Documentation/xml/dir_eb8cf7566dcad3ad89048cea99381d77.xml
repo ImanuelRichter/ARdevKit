@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="dir_eb8cf7566dcad3ad89048cea99381d77" kind="dir">
+    <compoundname>C:/Users/geht/Source/Repos/ARdevKit/Editor/Model</compoundname>
+    <innerdir refid="dir_58457ffb1d386aa32ab8a7eebdc4bc0f">C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/"/>
+  </compounddef>
+</doxygen>

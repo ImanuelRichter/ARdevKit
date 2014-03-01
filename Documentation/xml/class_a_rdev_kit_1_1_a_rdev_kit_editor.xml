@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_a_rdev_kit_editor" kind="class" prot="public">
+    <compoundname>ARdevKit::ARdevKitEditor</compoundname>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_a_rdev_kit_editor_1a9c2471f4bfa8215a46487bad5e0244c6" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ARdevKit.ARdevKitEditor.Main</definition>
+        <argsstring>()</argsstring>
+        <name>Main</name>
+        <briefdescription>
+<para>Der Haupteinstiegspunkt für die Anwendung. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/ARdevKitEditor.cs" line="17" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/ARdevKitEditor.cs" bodystart="17" bodyend="22"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="476">
+        <label>ARdevKit.ARdevKitEditor</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/ARdevKitEditor.cs" line="12" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/ARdevKitEditor.cs" bodystart="11" bodyend="23"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_a_rdev_kit_editor_1a9c2471f4bfa8215a46487bad5e0244c6" prot="private" virt="non-virtual"><scope>ARdevKit::ARdevKitEditor</scope><name>Main</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,4 @@
+<map id="ARdevKit.Model.Project.IPreviewable.getPreview" name="ARdevKit.Model.Project.IPreviewable.getPreview">
+<area shape="rect" id="node2" href="$class_preview_controller.html#a22b51f7117d79a44defe07c627e52982" title="Refreshs the Augmentation with the new Scale. " alt="" coords="309,5,485,46"/>
+<area shape="rect" id="node3" href="$class_preview_controller.html#a4fad890882bdd075b6ea97ebac62bff6" title="Removes the choosen Source out of the Augmentation and also out of the sourcesList in Project..." alt="" coords="534,5,701,46"/>
+</map>

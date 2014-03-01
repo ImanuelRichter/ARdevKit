@@ -1,0 +1,10 @@
+<map id="PreviewController.updateElementCombobox" name="PreviewController.updateElementCombobox">
+<area shape="rect" id="node2" href="$class_preview_controller.html#aa4cc8c02192eb08afe244825d5796552" title="add Source or augmentation, this method can only be used with the element, which is the over element ..." alt="" coords="219,5,405,32"/>
+<area shape="rect" id="node4" href="$class_preview_controller.html#a4fad890882bdd075b6ea97ebac62bff6" title="Removes the choosen Source out of the Augmentation and also out of the sourcesList in Project..." alt="" coords="229,57,395,98"/>
+<area shape="rect" id="node5" href="$class_preview_controller.html#a73d864a5cea6519a889d70bffbfef8f9" title="Removes the Previewable and the Objekt, what is linked to the Previewable. " alt="" coords="229,122,395,163"/>
+<area shape="rect" id="node6" href="$class_preview_controller.html#a5dd2e4dfcb87bcb1b2290d4ea752db2c" title="updates the preview panel. " alt="" coords="230,187,394,229"/>
+<area shape="rect" id="node7" href="$class_preview_controller.html#ab68e5dc968561b4a115576d84e363cb0" title="load the project with the identical index to the previewPanel (the index is the index of the trackabl..." alt="" coords="232,253,392,294"/>
+<area shape="rect" id="node8" href="$class_preview_controller.html#ae5cb0828e43829a516a998407d6f8a1a" title="sets the currentElement in EditorWindow an marks the PictureBox in the PreviewPanel. " alt="" coords="219,318,405,359"/>
+<area shape="rect" id="node3" href="$class_preview_controller.html#a7bc01f6c09f310b7079a9754ec27e307" title="Raises the drag event when a source is droped on an augmentation. " alt="" coords="454,5,701,32"/>
+<area shape="rect" id="node9" href="$class_preview_controller.html#ae3d0ace09aed4464a7dd91764d1bb03e" title="add Trackable is the method for adding the trackable, each PreviewPanel can holding one Trackable..." alt="" coords="470,325,685,352"/>
+</map>

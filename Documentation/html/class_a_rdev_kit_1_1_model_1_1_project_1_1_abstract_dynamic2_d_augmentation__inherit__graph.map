@@ -1,0 +1,6 @@
+<map id="ARdevKit.Model.Project.AbstractDynamic2DAugmentation" name="ARdevKit.Model.Project.AbstractDynamic2DAugmentation">
+<area shape="rect" id="node6" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_chart.html" title="Describes a Chart with its Colors and OptimalValues. It is a Chart. " alt="" coords="27,987,221,1226"/>
+<area shape="rect" id="node2" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_augmentation.html" title="Describes an abstract twodimensional augmentation with its additional features height and width..." alt="" coords="31,661,217,768"/>
+<area shape="rect" id="node3" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation.html" title="describes an AbstractAugmentation, which is bound to a certain AbstractTrackable. is IPreviewable ..." alt="" coords="26,286,221,613"/>
+<area shape="rect" id="node4" href="$interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable.html" title="Interface for previewable elements from the Model. " alt="" coords="71,131,177,237"/>
+</map>

@@ -1,0 +1,236 @@
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable}{\section{A\-Rdev\-Kit.\-Model.\-Project.\-Image\-Trackable Class Reference}
+\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable}\index{A\-Rdev\-Kit.\-Model.\-Project.\-Image\-Trackable@{A\-Rdev\-Kit.\-Model.\-Project.\-Image\-Trackable}}
+}
+
+
+Describes a Marker, which is very flexible, because it is also a Picture. It is an Abstract\-Marker  
+
+
+
+
+Inheritance diagram for A\-Rdev\-Kit.\-Model.\-Project.\-Image\-Trackable\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\-Rdev\-Kit.\-Model.\-Project.\-Image\-Trackable\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_a2a0ee33f17a65ba9107fb30871c0e36d}{Image\-Trackable} ()
+\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_ab325e30ad03ff3ac68ce3f71592e42d5}{Image\-Trackable} (string \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_a1da6761ca1dd74ff7981d0b19774de99}{image\-Path})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+override void \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_af225ee2673ffa037cd88a00feb77e890}{Accept} (\hyperlink{class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor}{Controller.\-Project\-Controller.\-Abstract\-Project\-Visitor} visitor)
+\begin{DoxyCompactList}\small\item\em An abstract method, to accept a Abstract\-Project\-Visitor which must be implemented according to the visitor design pattern. \end{DoxyCompactList}\item 
+override System.\-Drawing.\-Bitmap \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_a96e42ce5c75d50a49b617d8eb8f87b99}{get\-Preview} ()
+\begin{DoxyCompactList}\small\item\em returns a Bitmap in order to be displayed on the Preview\-Panel, implements \hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} \end{DoxyCompactList}\item 
+override System.\-Drawing.\-Bitmap \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_af11655160fd026f62dca5948cdf630cd}{get\-Icon} ()
+\begin{DoxyCompactList}\small\item\em returns a Bitmap in order to be displayed on the Element\-Selection\-Panel, implements \hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} \end{DoxyCompactList}\item 
+override object \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_a9f0502ccb4306c88c4b15793b0d1c0ba}{Clone} ()
+\begin{DoxyCompactList}\small\item\em Makes a deep copy of this object. \end{DoxyCompactList}\item 
+override bool \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_a90714d32f49a982fdbe39a84abd41704}{init\-Element} (\hyperlink{class_a_rdev_kit_1_1_editor_window}{Editor\-Window} ew)
+\begin{DoxyCompactList}\small\item\em This method is called by the preview\-Controller when a new instance of the element is added to the Scene. It sets \char`\"{}must-\/have\char`\"{} properties. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_a1da6761ca1dd74ff7981d0b19774de99}{image\-Path}
+\begin{DoxyCompactList}\small\item\em Full pathname of the image file. \end{DoxyCompactList}\item 
+string \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_a5395f501dfd3575778147f1cfc4b4e39}{image\-Name}
+\begin{DoxyCompactList}\small\item\em Name of the image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_fuser}{Markerless\-Fuser} \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_a34677234d0cd36ad12af730d87f1a211}{Fuser}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the fuser. Is not Browsable, therefore not editable in the Property\-Panel \end{DoxyCompactList}\item 
+string \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_abf66216adfd7fcd5f94a6bdf55f30a36}{Image\-Path}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the full pathname of the image file. \end{DoxyCompactList}\item 
+string \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_ade2bba8d745b4c9f758bb22f7e82a946}{Image\-Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the name of the image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Describes a Marker, which is very flexible, because it is also a Picture. It is an Abstract\-Marker 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_a2a0ee33f17a65ba9107fb30871c0e36d}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Trackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Trackable}!Image\-Trackable@{Image\-Trackable}}
+\index{Image\-Trackable@{Image\-Trackable}!ARdevKit::Model::Project::ImageTrackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Trackable}}
+\subsubsection[{Image\-Trackable}]{\setlength{\rightskip}{0pt plus 5cm}A\-Rdev\-Kit.\-Model.\-Project.\-Image\-Trackable.\-Image\-Trackable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_a2a0ee33f17a65ba9107fb30871c0e36d}
+
+
+Default Constructor. 
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_ab325e30ad03ff3ac68ce3f71592e42d5}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Trackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Trackable}!Image\-Trackable@{Image\-Trackable}}
+\index{Image\-Trackable@{Image\-Trackable}!ARdevKit::Model::Project::ImageTrackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Trackable}}
+\subsubsection[{Image\-Trackable}]{\setlength{\rightskip}{0pt plus 5cm}A\-Rdev\-Kit.\-Model.\-Project.\-Image\-Trackable.\-Image\-Trackable (
+\begin{DoxyParamCaption}
+\item[{string}]{image\-Path}
+\end{DoxyParamCaption}
+)}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_ab325e30ad03ff3ac68ce3f71592e42d5}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image\-Path} & Full pathname of the image file.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_af225ee2673ffa037cd88a00feb77e890}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Trackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Trackable}!Accept@{Accept}}
+\index{Accept@{Accept}!ARdevKit::Model::Project::ImageTrackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Trackable}}
+\subsubsection[{Accept}]{\setlength{\rightskip}{0pt plus 5cm}override void A\-Rdev\-Kit.\-Model.\-Project.\-Image\-Trackable.\-Accept (
+\begin{DoxyParamCaption}
+\item[{{\bf Controller.\-Project\-Controller.\-Abstract\-Project\-Visitor}}]{visitor}
+\end{DoxyParamCaption}
+)}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_af225ee2673ffa037cd88a00feb77e890}
+
+
+An abstract method, to accept a Abstract\-Project\-Visitor which must be implemented according to the visitor design pattern. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em visitor} & the visitor which encapsulates the action which is performed on this element\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_a9f0502ccb4306c88c4b15793b0d1c0ba}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Trackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Trackable}!Clone@{Clone}}
+\index{Clone@{Clone}!ARdevKit::Model::Project::ImageTrackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Trackable}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}override object A\-Rdev\-Kit.\-Model.\-Project.\-Image\-Trackable.\-Clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_a9f0502ccb4306c88c4b15793b0d1c0ba}
+
+
+Makes a deep copy of this object. 
+
+Robin, 22.\-01.\-2014. 
+
+\begin{DoxyReturn}{Returns}
+A copy of this object. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_a166fc03dc00911591baca14a3341ef29}{A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Trackable}.
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_af11655160fd026f62dca5948cdf630cd}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Trackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Trackable}!get\-Icon@{get\-Icon}}
+\index{get\-Icon@{get\-Icon}!ARdevKit::Model::Project::ImageTrackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Trackable}}
+\subsubsection[{get\-Icon}]{\setlength{\rightskip}{0pt plus 5cm}override System.\-Drawing.\-Bitmap A\-Rdev\-Kit.\-Model.\-Project.\-Image\-Trackable.\-get\-Icon (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_af11655160fd026f62dca5948cdf630cd}
+
+
+returns a Bitmap in order to be displayed on the Element\-Selection\-Panel, implements \hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} 
+
+\begin{DoxyReturn}{Returns}
+a representative iconized Bitmap
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_abee7e96dac48f6fa7fc424c0f9139dff}{A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Trackable}.
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_a96e42ce5c75d50a49b617d8eb8f87b99}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Trackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Trackable}!get\-Preview@{get\-Preview}}
+\index{get\-Preview@{get\-Preview}!ARdevKit::Model::Project::ImageTrackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Trackable}}
+\subsubsection[{get\-Preview}]{\setlength{\rightskip}{0pt plus 5cm}override System.\-Drawing.\-Bitmap A\-Rdev\-Kit.\-Model.\-Project.\-Image\-Trackable.\-get\-Preview (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_a96e42ce5c75d50a49b617d8eb8f87b99}
+
+
+returns a Bitmap in order to be displayed on the Preview\-Panel, implements \hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} 
+
+\begin{DoxyReturn}{Returns}
+a representative Bitmap
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_ab4d8a1902c82fe7a1d385d5688f92bd8}{A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Trackable}.
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_a90714d32f49a982fdbe39a84abd41704}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Trackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Trackable}!init\-Element@{init\-Element}}
+\index{init\-Element@{init\-Element}!ARdevKit::Model::Project::ImageTrackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Trackable}}
+\subsubsection[{init\-Element}]{\setlength{\rightskip}{0pt plus 5cm}override bool A\-Rdev\-Kit.\-Model.\-Project.\-Image\-Trackable.\-init\-Element (
+\begin{DoxyParamCaption}
+\item[{{\bf Editor\-Window}}]{ew}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_a90714d32f49a982fdbe39a84abd41704}
+
+
+This method is called by the preview\-Controller when a new instance of the element is added to the Scene. It sets \char`\"{}must-\/have\char`\"{} properties. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ew} & The ew.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if it succeeds, false if it fails. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_aff50ed9cb95973d56d6a65bd1ef96c0a}{A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Trackable}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_a5395f501dfd3575778147f1cfc4b4e39}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Trackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Trackable}!image\-Name@{image\-Name}}
+\index{image\-Name@{image\-Name}!ARdevKit::Model::Project::ImageTrackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Trackable}}
+\subsubsection[{image\-Name}]{\setlength{\rightskip}{0pt plus 5cm}string A\-Rdev\-Kit.\-Model.\-Project.\-Image\-Trackable.\-image\-Name\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_a5395f501dfd3575778147f1cfc4b4e39}
+
+
+Name of the image. 
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_a1da6761ca1dd74ff7981d0b19774de99}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Trackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Trackable}!image\-Path@{image\-Path}}
+\index{image\-Path@{image\-Path}!ARdevKit::Model::Project::ImageTrackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Trackable}}
+\subsubsection[{image\-Path}]{\setlength{\rightskip}{0pt plus 5cm}string A\-Rdev\-Kit.\-Model.\-Project.\-Image\-Trackable.\-image\-Path\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_a1da6761ca1dd74ff7981d0b19774de99}
+
+
+Full pathname of the image file. 
+
+
+
+\subsection{Property Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_a34677234d0cd36ad12af730d87f1a211}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Trackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Trackable}!Fuser@{Fuser}}
+\index{Fuser@{Fuser}!ARdevKit::Model::Project::ImageTrackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Trackable}}
+\subsubsection[{Fuser}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Markerless\-Fuser} A\-Rdev\-Kit.\-Model.\-Project.\-Image\-Trackable.\-Fuser\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_a34677234d0cd36ad12af730d87f1a211}
+
+
+Gets or sets the fuser. Is not Browsable, therefore not editable in the Property\-Panel 
+
+The fuser. \hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_ade2bba8d745b4c9f758bb22f7e82a946}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Trackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Trackable}!Image\-Name@{Image\-Name}}
+\index{Image\-Name@{Image\-Name}!ARdevKit::Model::Project::ImageTrackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Trackable}}
+\subsubsection[{Image\-Name}]{\setlength{\rightskip}{0pt plus 5cm}string A\-Rdev\-Kit.\-Model.\-Project.\-Image\-Trackable.\-Image\-Name\hspace{0.3cm}{\ttfamily [get]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_ade2bba8d745b4c9f758bb22f7e82a946}
+
+
+Gets or sets the name of the image. 
+
+The name of the image. \hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_abf66216adfd7fcd5f94a6bdf55f30a36}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Trackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Trackable}!Image\-Path@{Image\-Path}}
+\index{Image\-Path@{Image\-Path}!ARdevKit::Model::Project::ImageTrackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Image\-Trackable}}
+\subsubsection[{Image\-Path}]{\setlength{\rightskip}{0pt plus 5cm}string A\-Rdev\-Kit.\-Model.\-Project.\-Image\-Trackable.\-Image\-Path\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_abf66216adfd7fcd5f94a6bdf55f30a36}
+
+
+Gets or sets the full pathname of the image file. 
+
+The full pathname of the image file. 

@@ -1,0 +1,316 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_process_video_window" kind="class" prot="public">
+    <compoundname>ARdevKit::Controller::TestController::ProcessVideoWindow</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Form</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_process_video_window_1a9c8a7ac0763ca664d82b1af9d9d88edf" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string ARdevKit.Controller.TestController.ProcessVideoWindow.testFilePath</definition>
+        <argsstring></argsstring>
+        <name>testFilePath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/ProcessVideoWindow.cs" line="19" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/ProcessVideoWindow.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_process_video_window_1a68b6c92d5187aa8ad9039f4f002a6a40" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string ARdevKit.Controller.TestController.ProcessVideoWindow.tmpPath</definition>
+        <argsstring></argsstring>
+        <name>tmpPath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/ProcessVideoWindow.cs" line="20" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/ProcessVideoWindow.cs" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_process_video_window_1a63340dfb4ae66b7ce2dc47d745f85896" prot="private" static="no" mutable="no">
+        <type>System.ComponentModel.IContainer</type>
+        <definition>System.ComponentModel.IContainer ARdevKit.Controller.TestController.ProcessVideoWindow.components</definition>
+        <argsstring></argsstring>
+        <name>components</name>
+        <initializer>= null</initializer>
+        <briefdescription>
+<para>Required designer variable. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/ProcessVideoWindow.Designer.cs" line="8" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/ProcessVideoWindow.Designer.cs" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_process_video_window_1a357e31798219cbeeeb5541b9ab4e2d34" prot="private" static="no" mutable="no">
+        <type>System.Windows.Forms.ProgressBar</type>
+        <definition>System.Windows.Forms.ProgressBar ARdevKit.Controller.TestController.ProcessVideoWindow.progressBar</definition>
+        <argsstring></argsstring>
+        <name>progressBar</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/ProcessVideoWindow.Designer.cs" line="95" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/ProcessVideoWindow.Designer.cs" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_process_video_window_1a2b4a500d76a8880887a45867ff7e7b45" prot="private" static="no" mutable="no">
+        <type>System.Windows.Forms.TableLayoutPanel</type>
+        <definition>System.Windows.Forms.TableLayoutPanel ARdevKit.Controller.TestController.ProcessVideoWindow.tableLayoutPanel1</definition>
+        <argsstring></argsstring>
+        <name>tableLayoutPanel1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/ProcessVideoWindow.Designer.cs" line="96" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/ProcessVideoWindow.Designer.cs" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_process_video_window_1a531f216c04113ea40cec67a5dfc7f881" prot="private" static="no" mutable="no">
+        <type>System.Windows.Forms.Label</type>
+        <definition>System.Windows.Forms.Label ARdevKit.Controller.TestController.ProcessVideoWindow.label1</definition>
+        <argsstring></argsstring>
+        <name>label1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/ProcessVideoWindow.Designer.cs" line="97" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/ProcessVideoWindow.Designer.cs" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_process_video_window_1a98799f0d59a0ba6a40d012957737e8b8" prot="private" static="no" mutable="no">
+        <type>System.ComponentModel.BackgroundWorker</type>
+        <definition>System.ComponentModel.BackgroundWorker ARdevKit.Controller.TestController.ProcessVideoWindow.extractor</definition>
+        <argsstring></argsstring>
+        <name>extractor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/ProcessVideoWindow.Designer.cs" line="98" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/ProcessVideoWindow.Designer.cs" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_process_video_window_1a8f9c4bafd5143ae34f81c5cc11b9a518" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>int</type>
+        <definition>int ARdevKit.Controller.TestController.ProcessVideoWindow.FPS</definition>
+        <argsstring></argsstring>
+        <name>FPS</name>
+        <briefdescription>
+<para>Gets or sets the FPS. </para>        </briefdescription>
+        <detaileddescription>
+<para>The FPS. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/ProcessVideoWindow.cs" line="27" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/ProcessVideoWindow.cs" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_process_video_window_1a3e7efb670402cf59c07922ba9e56b5b6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.Controller.TestController.ProcessVideoWindow.ProcessVideoWindow</definition>
+        <argsstring>()</argsstring>
+        <name>ProcessVideoWindow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/ProcessVideoWindow.cs" line="29" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/ProcessVideoWindow.cs" bodystart="29" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_process_video_window_1ac67aa1f6af8e93d55444e9a2a95fd47f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ARdevKit.Controller.TestController.ProcessVideoWindow.extractFrames</definition>
+        <argsstring>(string testFilePath, string tmpPath)</argsstring>
+        <name>extractFrames</name>
+        <param>
+          <type>string</type>
+          <declname>testFilePath</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>tmpPath</declname>
+        </param>
+        <briefdescription>
+<para>Extracts the frames. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>testFilePath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The test file path.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tmpPath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The temporary path.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/ProcessVideoWindow.cs" line="39" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/ProcessVideoWindow.cs" bodystart="39" bodyend="51"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_process_video_window_1a2aff834c65e103aa169fea9fcc578c6c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ARdevKit.Controller.TestController.ProcessVideoWindow.extractor_DoWork</definition>
+        <argsstring>(object sender, DoWorkEventArgs e)</argsstring>
+        <name>extractor_DoWork</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>DoWorkEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/ProcessVideoWindow.cs" line="53" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/ProcessVideoWindow.cs" bodystart="53" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_process_video_window_1a3038226999cf79bee66818accb81f194" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ARdevKit.Controller.TestController.ProcessVideoWindow.extractor_ProgressChanged</definition>
+        <argsstring>(object sender, ProgressChangedEventArgs e)</argsstring>
+        <name>extractor_ProgressChanged</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>ProgressChangedEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/ProcessVideoWindow.cs" line="72" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/ProcessVideoWindow.cs" bodystart="72" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_process_video_window_1aae40a110ebe59fb56a6264091e87ec59" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ARdevKit.Controller.TestController.ProcessVideoWindow.extractor_RunWorkerCompleted</definition>
+        <argsstring>(object sender, RunWorkerCompletedEventArgs e)</argsstring>
+        <name>extractor_RunWorkerCompleted</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>RunWorkerCompletedEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/ProcessVideoWindow.cs" line="77" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/ProcessVideoWindow.cs" bodystart="77" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_process_video_window_1a05c9155754826a71fb2ae1273889f71d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ARdevKit.Controller.TestController.ProcessVideoWindow.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>Required method for Designer support - do not modify the contents of this method with the code editor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/ProcessVideoWindow.Designer.cs" line="29" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/ProcessVideoWindow.Designer.cs" bodystart="29" bodyend="91"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_process_video_window_1ac30e02694f12428387eabe473988b245" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override void</type>
+        <definition>override void ARdevKit.Controller.TestController.ProcessVideoWindow.Dispose</definition>
+        <argsstring>(bool disposing)</argsstring>
+        <name>Dispose</name>
+        <param>
+          <type>bool</type>
+          <declname>disposing</declname>
+        </param>
+        <briefdescription>
+<para>Clean up any resources being used. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>disposing</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true if managed resources should be disposed; otherwise, false.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/ProcessVideoWindow.Designer.cs" line="14" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/ProcessVideoWindow.Designer.cs" bodystart="14" bodyend="21"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="690">
+        <label>Form</label>
+      </node>
+      <node id="689">
+        <label>ARdevKit.Controller.TestController.ProcessVideoWindow</label>
+        <link refid="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_process_video_window"/>
+        <childnode refid="690" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="692">
+        <label>Form</label>
+      </node>
+      <node id="691">
+        <label>ARdevKit.Controller.TestController.ProcessVideoWindow</label>
+        <link refid="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_process_video_window"/>
+        <childnode refid="692" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/ProcessVideoWindow.cs" line="18" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/ProcessVideoWindow.cs" bodystart="17" bodyend="81"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_process_video_window_1a63340dfb4ae66b7ce2dc47d745f85896" prot="private" virt="non-virtual"><scope>ARdevKit::Controller::TestController::ProcessVideoWindow</scope><name>components</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_process_video_window_1ac30e02694f12428387eabe473988b245" prot="protected" virt="non-virtual"><scope>ARdevKit::Controller::TestController::ProcessVideoWindow</scope><name>Dispose</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_process_video_window_1ac67aa1f6af8e93d55444e9a2a95fd47f" prot="public" virt="non-virtual"><scope>ARdevKit::Controller::TestController::ProcessVideoWindow</scope><name>extractFrames</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_process_video_window_1a98799f0d59a0ba6a40d012957737e8b8" prot="private" virt="non-virtual"><scope>ARdevKit::Controller::TestController::ProcessVideoWindow</scope><name>extractor</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_process_video_window_1a2aff834c65e103aa169fea9fcc578c6c" prot="private" virt="non-virtual"><scope>ARdevKit::Controller::TestController::ProcessVideoWindow</scope><name>extractor_DoWork</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_process_video_window_1a3038226999cf79bee66818accb81f194" prot="private" virt="non-virtual"><scope>ARdevKit::Controller::TestController::ProcessVideoWindow</scope><name>extractor_ProgressChanged</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_process_video_window_1aae40a110ebe59fb56a6264091e87ec59" prot="private" virt="non-virtual"><scope>ARdevKit::Controller::TestController::ProcessVideoWindow</scope><name>extractor_RunWorkerCompleted</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_process_video_window_1a8f9c4bafd5143ae34f81c5cc11b9a518" prot="public" virt="non-virtual"><scope>ARdevKit::Controller::TestController::ProcessVideoWindow</scope><name>FPS</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_process_video_window_1a05c9155754826a71fb2ae1273889f71d" prot="private" virt="non-virtual"><scope>ARdevKit::Controller::TestController::ProcessVideoWindow</scope><name>InitializeComponent</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_process_video_window_1a531f216c04113ea40cec67a5dfc7f881" prot="private" virt="non-virtual"><scope>ARdevKit::Controller::TestController::ProcessVideoWindow</scope><name>label1</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_process_video_window_1a3e7efb670402cf59c07922ba9e56b5b6" prot="public" virt="non-virtual"><scope>ARdevKit::Controller::TestController::ProcessVideoWindow</scope><name>ProcessVideoWindow</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_process_video_window_1a357e31798219cbeeeb5541b9ab4e2d34" prot="private" virt="non-virtual"><scope>ARdevKit::Controller::TestController::ProcessVideoWindow</scope><name>progressBar</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_process_video_window_1a2b4a500d76a8880887a45867ff7e7b45" prot="private" virt="non-virtual"><scope>ARdevKit::Controller::TestController::ProcessVideoWindow</scope><name>tableLayoutPanel1</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_process_video_window_1a9c8a7ac0763ca664d82b1af9d9d88edf" prot="private" virt="non-virtual"><scope>ARdevKit::Controller::TestController::ProcessVideoWindow</scope><name>testFilePath</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_process_video_window_1a68b6c92d5187aa8ad9039f4f002a6a40" prot="private" virt="non-virtual"><scope>ARdevKit::Controller::TestController::ProcessVideoWindow</scope><name>tmpPath</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

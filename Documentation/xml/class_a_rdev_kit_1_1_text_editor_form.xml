@@ -1,0 +1,269 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_text_editor_form" kind="class" prot="public">
+    <compoundname>ARdevKit::TextEditorForm</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Form</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_text_editor_form_1a15ff6ea79ff7323b75a005b94f35dd76" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string ARdevKit.TextEditorForm.filePath</definition>
+        <argsstring></argsstring>
+        <name>filePath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/TextEditorForm.cs" line="20" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/TextEditorForm.cs" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_text_editor_form_1a419d5b0a833449f860abfc0ac3838f29" prot="private" static="no" mutable="no">
+        <type>System.ComponentModel.IContainer</type>
+        <definition>System.ComponentModel.IContainer ARdevKit.TextEditorForm.components</definition>
+        <argsstring></argsstring>
+        <name>components</name>
+        <initializer>= null</initializer>
+        <briefdescription>
+<para>Required designer variable. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/TextEditorForm.Designer.cs" line="8" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/TextEditorForm.Designer.cs" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_text_editor_form_1ad9ac9c2884a26015a8947f2d8439ea38" prot="private" static="no" mutable="no">
+        <type>System.Windows.Forms.TableLayoutPanel</type>
+        <definition>System.Windows.Forms.TableLayoutPanel ARdevKit.TextEditorForm.tableLayoutPanel1</definition>
+        <argsstring></argsstring>
+        <name>tableLayoutPanel1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/TextEditorForm.Designer.cs" line="103" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/TextEditorForm.Designer.cs" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_text_editor_form_1a4bf483d9aad3f9ef92b4c032df4ece2e" prot="private" static="no" mutable="no">
+        <type>System.Windows.Forms.RichTextBox</type>
+        <definition>System.Windows.Forms.RichTextBox ARdevKit.TextEditorForm.richTextBox1</definition>
+        <argsstring></argsstring>
+        <name>richTextBox1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/TextEditorForm.Designer.cs" line="104" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/TextEditorForm.Designer.cs" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_text_editor_form_1a0079b25a03f17aa36204a6bc71578d13" prot="private" static="no" mutable="no">
+        <type>System.Windows.Forms.Button</type>
+        <definition>System.Windows.Forms.Button ARdevKit.TextEditorForm.button2</definition>
+        <argsstring></argsstring>
+        <name>button2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/TextEditorForm.Designer.cs" line="105" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/TextEditorForm.Designer.cs" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_text_editor_form_1a1dc041c95fd290fe41f2fbde484c3a5d" prot="private" static="no" mutable="no">
+        <type>System.Windows.Forms.Button</type>
+        <definition>System.Windows.Forms.Button ARdevKit.TextEditorForm.button1</definition>
+        <argsstring></argsstring>
+        <name>button1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/TextEditorForm.Designer.cs" line="106" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/TextEditorForm.Designer.cs" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_text_editor_form_1aa0db7b9352834eda621de3e4de359fc1" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>string[]</type>
+        <definition>string [] ARdevKit.TextEditorForm.Value</definition>
+        <argsstring></argsstring>
+        <name>Value</name>
+        <briefdescription>
+<para>Gets or sets the value. </para>        </briefdescription>
+        <detaileddescription>
+<para>The value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/TextEditorForm.cs" line="28" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/TextEditorForm.cs" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_text_editor_form_1a41d9e642c73b54ff0d550107cb7d3638" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.TextEditorForm.TextEditorForm</definition>
+        <argsstring>()</argsstring>
+        <name>TextEditorForm</name>
+        <briefdescription>
+<para>Initializes a new instance of the <ref refid="class_a_rdev_kit_1_1_text_editor_form" kindref="compound">TextEditorForm</ref> class. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/TextEditorForm.cs" line="37" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/TextEditorForm.cs" bodystart="37" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_text_editor_form_1a4a118dd5f3bbf9e0180581d204ad300a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.TextEditorForm.TextEditorForm</definition>
+        <argsstring>(string filePath)</argsstring>
+        <name>TextEditorForm</name>
+        <param>
+          <type>string</type>
+          <declname>filePath</declname>
+        </param>
+        <briefdescription>
+<para>Initializes a new instance of the <ref refid="class_a_rdev_kit_1_1_text_editor_form" kindref="compound">TextEditorForm</ref> class. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filePath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file path.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/TextEditorForm.cs" line="46" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/TextEditorForm.cs" bodystart="46" bodyend="50"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_text_editor_form_1afbff7a2a9b0f84c2bab07b79fd8168a3" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ARdevKit.TextEditorForm.button2_Click</definition>
+        <argsstring>(object sender, EventArgs e)</argsstring>
+        <name>button2_Click</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>EventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/TextEditorForm.cs" line="52" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/TextEditorForm.cs" bodystart="52" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_text_editor_form_1a79740559dc650753017e64363c7daa68" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ARdevKit.TextEditorForm.button1_Click</definition>
+        <argsstring>(object sender, EventArgs e)</argsstring>
+        <name>button1_Click</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>EventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/TextEditorForm.cs" line="57" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/TextEditorForm.cs" bodystart="57" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_text_editor_form_1aa0b69f7cf1a61338f3c9be404ecb270d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ARdevKit.TextEditorForm.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>Required method for Designer support - do not modify the contents of this method with the code editor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/TextEditorForm.Designer.cs" line="29" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/TextEditorForm.Designer.cs" bodystart="29" bodyend="99"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_text_editor_form_1a292d1049568723cd7888b31585665553" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override void</type>
+        <definition>override void ARdevKit.TextEditorForm.Dispose</definition>
+        <argsstring>(bool disposing)</argsstring>
+        <name>Dispose</name>
+        <param>
+          <type>bool</type>
+          <declname>disposing</declname>
+        </param>
+        <briefdescription>
+<para>Clean up any resources being used. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>disposing</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true if managed resources should be disposed; otherwise, false.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/TextEditorForm.Designer.cs" line="14" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/TextEditorForm.Designer.cs" bodystart="14" bodyend="21"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="730">
+        <label>ARdevKit.TextEditorForm</label>
+        <link refid="class_a_rdev_kit_1_1_text_editor_form"/>
+        <childnode refid="731" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="731">
+        <label>Form</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="732">
+        <label>ARdevKit.TextEditorForm</label>
+        <link refid="class_a_rdev_kit_1_1_text_editor_form"/>
+        <childnode refid="733" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="733">
+        <label>Form</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/TextEditorForm.cs" line="19" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/TextEditorForm.cs" bodystart="18" bodyend="61"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_text_editor_form_1a1dc041c95fd290fe41f2fbde484c3a5d" prot="private" virt="non-virtual"><scope>ARdevKit::TextEditorForm</scope><name>button1</name></member>
+      <member refid="class_a_rdev_kit_1_1_text_editor_form_1a79740559dc650753017e64363c7daa68" prot="private" virt="non-virtual"><scope>ARdevKit::TextEditorForm</scope><name>button1_Click</name></member>
+      <member refid="class_a_rdev_kit_1_1_text_editor_form_1a0079b25a03f17aa36204a6bc71578d13" prot="private" virt="non-virtual"><scope>ARdevKit::TextEditorForm</scope><name>button2</name></member>
+      <member refid="class_a_rdev_kit_1_1_text_editor_form_1afbff7a2a9b0f84c2bab07b79fd8168a3" prot="private" virt="non-virtual"><scope>ARdevKit::TextEditorForm</scope><name>button2_Click</name></member>
+      <member refid="class_a_rdev_kit_1_1_text_editor_form_1a419d5b0a833449f860abfc0ac3838f29" prot="private" virt="non-virtual"><scope>ARdevKit::TextEditorForm</scope><name>components</name></member>
+      <member refid="class_a_rdev_kit_1_1_text_editor_form_1a292d1049568723cd7888b31585665553" prot="protected" virt="non-virtual"><scope>ARdevKit::TextEditorForm</scope><name>Dispose</name></member>
+      <member refid="class_a_rdev_kit_1_1_text_editor_form_1a15ff6ea79ff7323b75a005b94f35dd76" prot="private" virt="non-virtual"><scope>ARdevKit::TextEditorForm</scope><name>filePath</name></member>
+      <member refid="class_a_rdev_kit_1_1_text_editor_form_1aa0b69f7cf1a61338f3c9be404ecb270d" prot="private" virt="non-virtual"><scope>ARdevKit::TextEditorForm</scope><name>InitializeComponent</name></member>
+      <member refid="class_a_rdev_kit_1_1_text_editor_form_1a4bf483d9aad3f9ef92b4c032df4ece2e" prot="private" virt="non-virtual"><scope>ARdevKit::TextEditorForm</scope><name>richTextBox1</name></member>
+      <member refid="class_a_rdev_kit_1_1_text_editor_form_1ad9ac9c2884a26015a8947f2d8439ea38" prot="private" virt="non-virtual"><scope>ARdevKit::TextEditorForm</scope><name>tableLayoutPanel1</name></member>
+      <member refid="class_a_rdev_kit_1_1_text_editor_form_1a41d9e642c73b54ff0d550107cb7d3638" prot="public" virt="non-virtual"><scope>ARdevKit::TextEditorForm</scope><name>TextEditorForm</name></member>
+      <member refid="class_a_rdev_kit_1_1_text_editor_form_1a4a118dd5f3bbf9e0180581d204ad300a" prot="public" virt="non-virtual"><scope>ARdevKit::TextEditorForm</scope><name>TextEditorForm</name></member>
+      <member refid="class_a_rdev_kit_1_1_text_editor_form_1aa0db7b9352834eda621de3e4de359fc1" prot="public" virt="non-virtual"><scope>ARdevKit::TextEditorForm</scope><name>Value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,212 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element" kind="class" prot="public">
+    <compoundname>ARdevKit::Controller::EditorController::SceneElement</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_1a9a0ca288694fe535126985fef0b4db79" prot="private" static="no" mutable="no">
+        <type><ref refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable" kindref="compound">IPreviewable</ref></type>
+        <definition>IPreviewable ARdevKit.Controller.EditorController.SceneElement.prototype</definition>
+        <argsstring></argsstring>
+        <name>prototype</name>
+        <briefdescription>
+<para>Prototype-Element. </para>        </briefdescription>
+        <detaileddescription>
+<para>The prototype. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElement.cs" line="26" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElement.cs" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_1aa88e67e2c753107f97fb166aee3bb32a" prot="private" static="no" mutable="no">
+        <type>Bitmap</type>
+        <definition>Bitmap ARdevKit.Controller.EditorController.SceneElement.icon</definition>
+        <argsstring></argsstring>
+        <name>icon</name>
+        <briefdescription>
+<para>grafische Repräsentation des Elements. </para>        </briefdescription>
+        <detaileddescription>
+<para>The icon. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElement.cs" line="46" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElement.cs" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_1a71533f25118617221703527081ac14e4" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String ARdevKit.Controller.EditorController.SceneElement.name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+<para>Gets or sets the name. </para>        </briefdescription>
+        <detaileddescription>
+<para>Name des Elements. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElement.cs" line="66" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElement.cs" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_1aee13143d1ac079e281a8ff5e82297876" prot="private" static="no" mutable="no">
+        <type><ref refid="class_a_rdev_kit_1_1_view_1_1_element_icon" kindref="compound">ElementIcon</ref></type>
+        <definition>ElementIcon ARdevKit.Controller.EditorController.SceneElement.elementIcon</definition>
+        <argsstring></argsstring>
+        <name>elementIcon</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElement.cs" line="80" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElement.cs" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_1a03fd9bd9f7ca766c534b7c6400006a55" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type><ref refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable" kindref="compound">IPreviewable</ref></type>
+        <definition>IPreviewable ARdevKit.Controller.EditorController.SceneElement.Prototype</definition>
+        <argsstring></argsstring>
+        <name>Prototype</name>
+        <briefdescription>
+<para>Gets or sets the prototype. </para>        </briefdescription>
+        <detaileddescription>
+<para>The prototype. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElement.cs" line="34" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElement.cs" bodystart="35" bodyend="-1"/>
+        <referencedby refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_element_selection_controller_1a470d43f1c3fe742fcf7ff5f8f5675819" compoundref="_element_selection_controller_8cs" startline="130" endline="148">ARdevKit.Controller.EditorController.ElementSelectionController.setElementEnable</referencedby>
+        <referencedby refid="class_preview_controller_1a7bc01f6c09f310b7079a9754ec27e307" compoundref="_preview_controller_8cs" startline="1068" endline="1077">PreviewController.onAugmentationDrop</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_1ac20376b4582ba5df3b65aaf2c4f84b9b" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>Bitmap</type>
+        <definition>Bitmap ARdevKit.Controller.EditorController.SceneElement.Icon</definition>
+        <argsstring></argsstring>
+        <name>Icon</name>
+        <briefdescription>
+<para>Gets or sets the icon. </para>        </briefdescription>
+        <detaileddescription>
+<para>The icon. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElement.cs" line="54" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElement.cs" bodystart="55" bodyend="-1"/>
+        <referencedby refid="class_a_rdev_kit_1_1_view_1_1_element_icon_1a30833a0a71c8421f5309f6c384d1ad0b" compoundref="_element_icon_8cs" startline="81" endline="118">ARdevKit.View.ElementIcon.ElementIcon</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_1a815f4b956410f110fa82889e863e6800" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>String</type>
+        <definition>String ARdevKit.Controller.EditorController.SceneElement.Name</definition>
+        <argsstring></argsstring>
+        <name>Name</name>
+        <briefdescription>
+<para>Gets or sets the name. </para>        </briefdescription>
+        <detaileddescription>
+<para>The name. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElement.cs" line="74" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElement.cs" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_1ae58c1e51ff8bfd942670b7c4afd2b2ce" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="no">
+        <type><ref refid="class_a_rdev_kit_1_1_view_1_1_element_icon" kindref="compound">ElementIcon</ref></type>
+        <definition>ElementIcon ARdevKit.Controller.EditorController.SceneElement.ElementIcon</definition>
+        <argsstring></argsstring>
+        <name>ElementIcon</name>
+        <briefdescription>
+<para>The ElementIcon. </para>        </briefdescription>
+        <detaileddescription>
+<para>Lizzard, 1/13/2014. </para><para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>NotImplementedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when the requested operation is unimplemented. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElement.cs" line="91" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElement.cs" bodystart="92" bodyend="-1"/>
+        <referencedby refid="class_a_rdev_kit_1_1_view_1_1_scene_element_category_panel_1ad447d61535ff1dcae31ef5df7e8e694a" compoundref="_scene_element_category_panel_8cs" startline="46" endline="60">ARdevKit.View.SceneElementCategoryPanel.SceneElementCategoryPanel</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_1a1d05fa2da81d1d76ad731faa1f41af7d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.Controller.EditorController.SceneElement.SceneElement</definition>
+        <argsstring>(String name, IPreviewable prototype, EditorWindow ew)</argsstring>
+        <name>SceneElement</name>
+        <param>
+          <type>String</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable" kindref="compound">IPreviewable</ref></type>
+          <declname>prototype</declname>
+        </param>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_editor_window" kindref="compound">EditorWindow</ref></type>
+          <declname>ew</declname>
+        </param>
+        <briefdescription>
+<para>Konstruktor. Create a new <ref refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element" kindref="compound">SceneElement</ref>, takes a prototype of Type IPreviewable, an icon of Typ Bitmap and a name of Typ String. </para>        </briefdescription>
+        <detaileddescription>
+<para>Lizzard, 1/13/2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the Element. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>prototype</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The prototype. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ew</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Editor window. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElement.cs" line="109" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElement.cs" bodystart="109" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_1aa2d13ffbc17d243e5288c8dadf878c77" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override string</type>
+        <definition>override string ARdevKit.Controller.EditorController.SceneElement.ToString</definition>
+        <argsstring>()</argsstring>
+        <name>ToString</name>
+        <briefdescription>
+<para>Gibt eine Zeichenfolge zurück, die das aktuelle Objekt darstellt. </para>        </briefdescription>
+        <detaileddescription>
+<para>Robin, 14.01.2014. </para><para><simplesect kind="return"><para>Eine Zeichenfolge, die das aktuelle Objekt darstellt. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElement.cs" line="125" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElement.cs" bodystart="125" bodyend="128"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>An element that can be added to a Scene. </para>    </briefdescription>
+    <detaileddescription>
+<para>Robin, 19.01.2014. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="703">
+        <label>ARdevKit.Controller.EditorController.SceneElement</label>
+        <link refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElement.cs" line="19" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElement.cs" bodystart="18" bodyend="129"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_1aee13143d1ac079e281a8ff5e82297876" prot="private" virt="non-virtual"><scope>ARdevKit::Controller::EditorController::SceneElement</scope><name>elementIcon</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_1ae58c1e51ff8bfd942670b7c4afd2b2ce" prot="public" virt="non-virtual"><scope>ARdevKit::Controller::EditorController::SceneElement</scope><name>ElementIcon</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_1ac20376b4582ba5df3b65aaf2c4f84b9b" prot="public" virt="non-virtual"><scope>ARdevKit::Controller::EditorController::SceneElement</scope><name>Icon</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_1aa88e67e2c753107f97fb166aee3bb32a" prot="private" virt="non-virtual"><scope>ARdevKit::Controller::EditorController::SceneElement</scope><name>icon</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_1a71533f25118617221703527081ac14e4" prot="private" virt="non-virtual"><scope>ARdevKit::Controller::EditorController::SceneElement</scope><name>name</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_1a815f4b956410f110fa82889e863e6800" prot="public" virt="non-virtual"><scope>ARdevKit::Controller::EditorController::SceneElement</scope><name>Name</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_1a03fd9bd9f7ca766c534b7c6400006a55" prot="public" virt="non-virtual"><scope>ARdevKit::Controller::EditorController::SceneElement</scope><name>Prototype</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_1a9a0ca288694fe535126985fef0b4db79" prot="private" virt="non-virtual"><scope>ARdevKit::Controller::EditorController::SceneElement</scope><name>prototype</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_1a1d05fa2da81d1d76ad731faa1f41af7d" prot="public" virt="non-virtual"><scope>ARdevKit::Controller::EditorController::SceneElement</scope><name>SceneElement</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_1aa2d13ffbc17d243e5288c8dadf878c77" prot="public" virt="non-virtual"><scope>ARdevKit::Controller::EditorController::SceneElement</scope><name>ToString</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

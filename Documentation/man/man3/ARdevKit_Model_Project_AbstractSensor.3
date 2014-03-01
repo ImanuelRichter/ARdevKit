@@ -1,0 +1,174 @@
+.TH "ARdevKit.Model.Project.AbstractSensor" 3 "Sat Mar 1 2014" "Version 0.2" "ARdevKit" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ARdevKit.Model.Project.AbstractSensor \- 
+.PP
+An \fBAbstractSensor\fP has a name, a \fBsensorType\fP, and can have a \fBsensorSubType\fP\&. Moreover it has a \fBsensorIDBase\fP which is used to create the \fBsensorIDString\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBARdevKit\&.Model\&.Project\&.MarkerlessSensor\fP, \fBARdevKit\&.Model\&.Project\&.MarkerSensor\fP, and \fBARdevKit\&.Model\&.Project\&.PictureMarkerSensor\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBSensorTypes\fP { \fBFeatureBasedSensorSource\fP, \fBMarkerBasedSensorSource\fP }"
+.br
+.RI "\fIFlags for specifying SensorTypes\&. \fP"
+.ti -1c
+.RI "enum \fBSensorSubTypes\fP { \fBNone\fP, \fBFast\fP, \fBRobust\fP }"
+.br
+.RI "\fIFlags for specifying SensorSubTypes\&. \fP"
+.ti -1c
+.RI "enum \fBSensorIDBases\fP { \fBFeatureTracking\fP, \fBMarkerTracking\fP }"
+.br
+.RI "\fIFlags for specifying SensorIDBases\&. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "abstract void \fBAccept\fP (\fBAbstractProjectVisitor\fP visitor)"
+.br
+.RI "\fIAccepts the given visitor\&. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAbstractSensor\fP ()"
+.br
+.RI "\fIInitializes no new instance of the \fBAbstractSensor\fP class, but can be used in inheriting classes\&. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSensorTypes\fP \fBsensorType\fP"
+.br
+.RI "\fIType of the sensor\&. \fP"
+.ti -1c
+.RI "\fBSensorSubTypes\fP \fBsensorSubType\fP"
+.br
+.RI "\fISubType of the sensor\&. \fP"
+.ti -1c
+.RI "\fBSensorIDBases\fP \fBsensorIDBase\fP"
+.br
+.RI "\fIThe sensor identifier base\&. \fP"
+.ti -1c
+.RI "string \fBsensorIDString\fP"
+.br
+.RI "\fIThe sensor identifier string\&. \fP"
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "string \fBName\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the name\&. \fP"
+.ti -1c
+.RI "\fBSensorTypes\fP \fBSensorType\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the type of the sensor\&. \fP"
+.ti -1c
+.RI "\fBSensorSubTypes\fP \fBSensorSubType\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the SubType of the sensor\&. \fP"
+.ti -1c
+.RI "\fBSensorIDBases\fP \fBSensorIDBase\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the sensor identifier base\&. \fP"
+.ti -1c
+.RI "string \fBSensorIDString\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the sensor identifier string\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+An \fBAbstractSensor\fP has a name, a \fBsensorType\fP, and can have a \fBsensorSubType\fP\&. Moreover it has a \fBsensorIDBase\fP which is used to create the \fBsensorIDString\fP\&. 
+
+Imanuel, 17\&.01\&.2014\&. 
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBARdevKit\&.Model\&.Project\&.AbstractSensor\&.SensorIDBases\fP"
+
+.PP
+Flags for specifying SensorIDBases\&. Imanuel, 17\&.01\&.2014\&. 
+.SS "enum \fBARdevKit\&.Model\&.Project\&.AbstractSensor\&.SensorSubTypes\fP"
+
+.PP
+Flags for specifying SensorSubTypes\&. Imanuel, 17\&.01\&.2014\&. 
+.SS "enum \fBARdevKit\&.Model\&.Project\&.AbstractSensor\&.SensorTypes\fP"
+
+.PP
+Flags for specifying SensorTypes\&. Imanuel, 17\&.01\&.2014\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ARdevKit\&.Model\&.Project\&.AbstractSensor\&.AbstractSensor ()\fC [protected]\fP"
+
+.PP
+Initializes no new instance of the \fBAbstractSensor\fP class, but can be used in inheriting classes\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "abstract void ARdevKit\&.Model\&.Project\&.AbstractSensor\&.Accept (\fBAbstractProjectVisitor\fPvisitor)\fC [pure virtual]\fP"
+
+.PP
+Accepts the given visitor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvisitor\fP The visitor\&.
+.RE
+.PP
+.PP
+Imanuel, 17\&.01\&.2014\&. 
+.PP
+Implemented in \fBARdevKit\&.Model\&.Project\&.MarkerlessSensor\fP, \fBARdevKit\&.Model\&.Project\&.PictureMarkerSensor\fP, and \fBARdevKit\&.Model\&.Project\&.MarkerSensor\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBSensorIDBases\fP ARdevKit\&.Model\&.Project\&.AbstractSensor\&.sensorIDBase\fC [protected]\fP"
+
+.PP
+The sensor identifier base\&. 
+.SS "string ARdevKit\&.Model\&.Project\&.AbstractSensor\&.sensorIDString\fC [protected]\fP"
+
+.PP
+The sensor identifier string\&. 
+.SS "\fBSensorSubTypes\fP ARdevKit\&.Model\&.Project\&.AbstractSensor\&.sensorSubType\fC [protected]\fP"
+
+.PP
+SubType of the sensor\&. 
+.SS "\fBSensorTypes\fP ARdevKit\&.Model\&.Project\&.AbstractSensor\&.sensorType\fC [protected]\fP"
+
+.PP
+Type of the sensor\&. 
+.SH "Property Documentation"
+.PP 
+.SS "string ARdevKit\&.Model\&.Project\&.AbstractSensor\&.Name\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the name\&. The name\&. 
+.SS "\fBSensorIDBases\fP ARdevKit\&.Model\&.Project\&.AbstractSensor\&.SensorIDBase\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the sensor identifier base\&. The sensor identifier base\&. 
+.SS "string ARdevKit\&.Model\&.Project\&.AbstractSensor\&.SensorIDString\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the sensor identifier string\&. The sensor identifier string\&. 
+.SS "\fBSensorSubTypes\fP ARdevKit\&.Model\&.Project\&.AbstractSensor\&.SensorSubType\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the SubType of the sensor\&. The type of the sensor sub\&. 
+.SS "\fBSensorTypes\fP ARdevKit\&.Model\&.Project\&.AbstractSensor\&.SensorType\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the type of the sensor\&. The type of the sensor\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ARdevKit from the source code\&.

@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_model_1_1_project_1_1_screen_size" kind="class" prot="public">
+    <compoundname>ARdevKit::Model::Project::ScreenSize</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_screen_size_1a7b3387da15130a48275956894d9f32b0" prot="private" static="no" mutable="no">
+        <type>uint</type>
+        <definition>uint ARdevKit.Model.Project.ScreenSize.width</definition>
+        <argsstring></argsstring>
+        <name>width</name>
+        <briefdescription>
+<para>The width </para>        </briefdescription>
+        <detaileddescription>
+<para>geht 26.01.2014 20:16</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ScreenSize.cs" line="22" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ScreenSize.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_screen_size_1a7e2f0e8f2b9566a07e582b10f3aecec6" prot="private" static="no" mutable="no">
+        <type>uint</type>
+        <definition>uint ARdevKit.Model.Project.ScreenSize.height</definition>
+        <argsstring></argsstring>
+        <name>height</name>
+        <briefdescription>
+<para>The height </para>        </briefdescription>
+        <detaileddescription>
+<para>geht 26.01.2014 20:16</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ScreenSize.cs" line="46" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ScreenSize.cs" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_screen_size_1af4b7862efe3c5af99adcf31d7466e307" prot="private" static="no" mutable="no">
+        <type>EventHandler</type>
+        <definition>EventHandler ARdevKit.Model.Project.ScreenSize.sizeChanged</definition>
+        <argsstring></argsstring>
+        <name>sizeChanged</name>
+        <briefdescription>
+<para>event handler for changed size </para>        </briefdescription>
+        <detaileddescription>
+<para>geht 26.01.2014 20:16</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ScreenSize.cs" line="71" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ScreenSize.cs" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_screen_size_1af2592dc42f39f94de6c14385b2d8f55d" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>uint</type>
+        <definition>uint ARdevKit.Model.Project.ScreenSize.Width</definition>
+        <argsstring></argsstring>
+        <name>Width</name>
+        <briefdescription>
+<para>Gets or sets the width. </para>        </briefdescription>
+        <detaileddescription>
+<para>The width. </para><para>geht 26.01.2014 20:16</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ScreenSize.cs" line="32" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ScreenSize.cs" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_screen_size_1ae289860edb4091d9e4467e023cf6351f" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>uint</type>
+        <definition>uint ARdevKit.Model.Project.ScreenSize.Height</definition>
+        <argsstring></argsstring>
+        <name>Height</name>
+        <briefdescription>
+<para>Gets or sets the height. </para>        </briefdescription>
+        <detaileddescription>
+<para>The height. </para><para>geht 26.01.2014 20:16</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ScreenSize.cs" line="56" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ScreenSize.cs" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_screen_size_1a62b2288aaa6d380b2e78d3603f5f2415" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>EventHandler</type>
+        <definition>EventHandler ARdevKit.Model.Project.ScreenSize.SizeChanged</definition>
+        <argsstring></argsstring>
+        <name>SizeChanged</name>
+        <briefdescription>
+<para>Gets or sets the sizeChanged event handler. </para>        </briefdescription>
+        <detaileddescription>
+<para>The size changed. </para><para>geht 26.01.2014 20:16</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ScreenSize.cs" line="81" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ScreenSize.cs" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_screen_size_1a40b284bd3c625195939f8dc8ec5af822" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ARdevKit.Model.Project.ScreenSize.OnSizeChanged</definition>
+        <argsstring>(object sender, EventArgs e)</argsstring>
+        <name>OnSizeChanged</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>EventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Called when [size changed]. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The sender.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The EventArgs instance containing the event data.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para><para>geht 26.01.2014 20:18</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ScreenSize.cs" line="93" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ScreenSize.cs" bodystart="93" bodyend="98"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_screen_size_1a2f80d6e44cc5d7e94c3b5b3ba1b0019f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.Model.Project.ScreenSize.ScreenSize</definition>
+        <argsstring>()</argsstring>
+        <name>ScreenSize</name>
+        <briefdescription>
+<para>Initializes a new instance of the <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_screen_size" kindref="compound">ScreenSize</ref> class. default constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>geht 26.01.2014 20:18</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ScreenSize.cs" line="105" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ScreenSize.cs" bodystart="105" bodyend="105"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This class models the <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_screen_size" kindref="compound">ScreenSize</ref>. </para>    </briefdescription>
+    <detaileddescription>
+<para>geht 26.01.2014 20:15</para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="711">
+        <label>ARdevKit.Model.Project.ScreenSize</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_screen_size"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ScreenSize.cs" line="17" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ScreenSize.cs" bodystart="16" bodyend="106"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_screen_size_1a7e2f0e8f2b9566a07e582b10f3aecec6" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::ScreenSize</scope><name>height</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_screen_size_1ae289860edb4091d9e4467e023cf6351f" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::ScreenSize</scope><name>Height</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_screen_size_1a40b284bd3c625195939f8dc8ec5af822" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::ScreenSize</scope><name>OnSizeChanged</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_screen_size_1a2f80d6e44cc5d7e94c3b5b3ba1b0019f" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::ScreenSize</scope><name>ScreenSize</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_screen_size_1af4b7862efe3c5af99adcf31d7466e307" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::ScreenSize</scope><name>sizeChanged</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_screen_size_1a62b2288aaa6d380b2e78d3603f5f2415" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::ScreenSize</scope><name>SizeChanged</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_screen_size_1af2592dc42f39f94de6c14385b2d8f55d" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::ScreenSize</scope><name>Width</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_screen_size_1a7b3387da15130a48275956894d9f32b0" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::ScreenSize</scope><name>width</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

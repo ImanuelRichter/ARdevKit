@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="namespace_a_rdev_kit_1_1_controller" kind="namespace">
+    <compoundname>ARdevKit::Controller</compoundname>
+    <innernamespace refid="namespace_a_rdev_kit_1_1_controller_1_1_connections">ARdevKit::Controller::Connections</innernamespace>
+    <innernamespace refid="namespace_a_rdev_kit_1_1_controller_1_1_editor_controller">ARdevKit::Controller::EditorController</innernamespace>
+    <innernamespace refid="namespace_a_rdev_kit_1_1_controller_1_1_project_controller">ARdevKit::Controller::ProjectController</innernamespace>
+    <innernamespace refid="namespace_a_rdev_kit_1_1_controller_1_1_test_controller">ARdevKit::Controller::TestController</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="[generated]" line="1" column="1"/>
+  </compounddef>
+</doxygen>

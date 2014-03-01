@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_controller_1_1_editor_controller_1_1_property_controller" kind="class" prot="public">
+    <compoundname>Controller::EditorController::PropertyController</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_controller_1_1_editor_controller_1_1_property_controller_1a9ccaff96ecd303b8cb3a31e29e2727c3" prot="private" static="no" mutable="no">
+        <type><ref refid="class_a_rdev_kit_1_1_editor_window" kindref="compound">EditorWindow</ref></type>
+        <definition>EditorWindow Controller.EditorController.PropertyController.ew</definition>
+        <argsstring></argsstring>
+        <name>ew</name>
+        <briefdescription>
+<para>Instance of the EditorWindow(Controller) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PropertyController.cs" line="22" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PropertyController.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_controller_1_1_editor_controller_1_1_property_controller_1a85eb7c78dfc37eeecc10d2245ccc88f4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Controller.EditorController.PropertyController.PropertyController</definition>
+        <argsstring>(EditorWindow ew)</argsstring>
+        <name>PropertyController</name>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_editor_window" kindref="compound">EditorWindow</ref></type>
+          <declname>ew</declname>
+        </param>
+        <briefdescription>
+<para>Constructor of the class. It adds automatically all events which belongs to the propertyGrid. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ew</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PropertyController.cs" line="28" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PropertyController.cs" bodystart="28" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="class_controller_1_1_editor_controller_1_1_property_controller_1a92aa673be6328b973f2d93b0b75fc132" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Controller.EditorController.PropertyController.addCustomUserEvent</definition>
+        <argsstring>()</argsstring>
+        <name>addCustomUserEvent</name>
+        <briefdescription>
+<para>See issue #13 for reason of these invalid methods etc. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PropertyController.cs" line="38" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PropertyController.cs" bodystart="38" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="class_controller_1_1_editor_controller_1_1_property_controller_1a1f2413f63177c68c138b4553526b9901" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Controller.EditorController.PropertyController.editCustomUserEvent</definition>
+        <argsstring>()</argsstring>
+        <name>editCustomUserEvent</name>
+        <briefdescription>
+<para>See issue #13 for reason of these invalid methods etc. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PropertyController.cs" line="45" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PropertyController.cs" bodystart="45" bodyend="46"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_controller_1_1_editor_controller_1_1_property_controller_1a00db8c275d77109c1c256d7dee825598" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Controller.EditorController.PropertyController.changedProperty</definition>
+        <argsstring>(object sender, PropertyValueChangedEventArgs e)</argsstring>
+        <name>changedProperty</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>PropertyValueChangedEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Event which catches all changes of the propertyGrid, which should have an impact of the elements on the preview panel. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Sender ~...</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Event argument</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PropertyController.cs" line="53" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PropertyController.cs" bodystart="53" bodyend="201"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The <ref refid="class_controller_1_1_editor_controller_1_1_property_controller" kindref="compound">PropertyController</ref> contains events for the propertyGrid </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="697">
+        <label>Controller.EditorController.PropertyController</label>
+        <link refid="class_controller_1_1_editor_controller_1_1_property_controller"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PropertyController.cs" line="18" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PropertyController.cs" bodystart="17" bodyend="202"/>
+    <listofallmembers>
+      <member refid="class_controller_1_1_editor_controller_1_1_property_controller_1a92aa673be6328b973f2d93b0b75fc132" prot="public" virt="non-virtual"><scope>Controller::EditorController::PropertyController</scope><name>addCustomUserEvent</name></member>
+      <member refid="class_controller_1_1_editor_controller_1_1_property_controller_1a00db8c275d77109c1c256d7dee825598" prot="private" virt="non-virtual"><scope>Controller::EditorController::PropertyController</scope><name>changedProperty</name></member>
+      <member refid="class_controller_1_1_editor_controller_1_1_property_controller_1a1f2413f63177c68c138b4553526b9901" prot="public" virt="non-virtual"><scope>Controller::EditorController::PropertyController</scope><name>editCustomUserEvent</name></member>
+      <member refid="class_controller_1_1_editor_controller_1_1_property_controller_1a9ccaff96ecd303b8cb3a31e29e2727c3" prot="private" virt="non-virtual"><scope>Controller::EditorController::PropertyController</scope><name>ew</name></member>
+      <member refid="class_controller_1_1_editor_controller_1_1_property_controller_1a85eb7c78dfc37eeecc10d2245ccc88f4" prot="public" virt="non-virtual"><scope>Controller::EditorController::PropertyController</scope><name>PropertyController</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

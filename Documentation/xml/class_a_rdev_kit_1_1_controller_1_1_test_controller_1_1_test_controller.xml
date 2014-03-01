@@ -1,0 +1,300 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_test_controller" kind="class" prot="public">
+    <compoundname>ARdevKit::Controller::TestController::TestController</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_test_controller_1a408e3301c03207d31b9e2fec304991c6" prot="private" static="no" mutable="no">
+        <type>const string</type>
+        <definition>const string ARdevKit.Controller.TestController.TestController.TMP_PROJECT_PATH</definition>
+        <argsstring></argsstring>
+        <name>TMP_PROJECT_PATH</name>
+        <initializer>= &quot;tmp\\project&quot;</initializer>
+        <briefdescription>
+<para>The location where the temporary project is exported to. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="27" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_test_controller_1ab45a6dad1f9da81b2413e96716c013d7" prot="private" static="no" mutable="no">
+        <type>const string</type>
+        <definition>const string ARdevKit.Controller.TestController.TestController.TMP_VIDEO_PATH</definition>
+        <argsstring></argsstring>
+        <name>TMP_VIDEO_PATH</name>
+        <initializer>= &quot;tmp\\video&quot;</initializer>
+        <briefdescription>
+<para>The location where the temporary frames where extracted to. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="32" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_test_controller_1aabe529bbe77e981444e6ef9b26966ead" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int ARdevKit.Controller.TestController.TestController.IMAGE</definition>
+        <argsstring></argsstring>
+        <name>IMAGE</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Used in StartPlayer(string, int) to load an image </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="40" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_test_controller_1acada57f0413b59d32cf69dfc96fef047" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int ARdevKit.Controller.TestController.TestController.VIDEO</definition>
+        <argsstring></argsstring>
+        <name>VIDEO</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>Used in StartPlayer(string, int) load a video </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="48" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_test_controller_1a8bfb72f3c6a2d590c01a7aee313caa15" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int ARdevKit.Controller.TestController.TestController.CAMERA</definition>
+        <argsstring></argsstring>
+        <name>CAMERA</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>Used in StartPlayer(string, int) start a virtual camera </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="56" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_test_controller_1ae3f7d9889f6a61ad3e503a4fbbe5968e" prot="public" static="yes" mutable="no">
+        <type>Process</type>
+        <definition>Process ARdevKit.Controller.TestController.TestController.player</definition>
+        <argsstring></argsstring>
+        <name>player</name>
+        <briefdescription>
+<para>New process for the player. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="64" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_test_controller_1ab0b869a8e9bb2a2b3c0c9405095bbae1" prot="private" static="yes" mutable="no">
+        <type><ref refid="class_a_rdev_kit_1_1_editor_window" kindref="compound">EditorWindow</ref></type>
+        <definition>EditorWindow ARdevKit.Controller.TestController.TestController.editorWindow</definition>
+        <argsstring></argsstring>
+        <name>editorWindow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="66" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_test_controller_1aae8ff636f0a4fd240c342104847ed5da" prot="private" static="yes" mutable="no">
+        <type><ref refid="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_process_video_window" kindref="compound">ProcessVideoWindow</ref></type>
+        <definition>ProcessVideoWindow ARdevKit.Controller.TestController.TestController.progressVideoWindow</definition>
+        <argsstring></argsstring>
+        <name>progressVideoWindow</name>
+        <briefdescription>
+<para>A window showing the progress of processing the video </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="71" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_test_controller_1ac6bbe628866e8286fd5c2010ea1699fd" prot="private" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string ARdevKit.Controller.TestController.TestController.playerPath</definition>
+        <argsstring></argsstring>
+        <name>playerPath</name>
+        <briefdescription>
+<para>The path to the player. Gonna be the startupPath at the end. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="79" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_test_controller_1a4e0b2662de6bd3c52859a9f31455deae" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ARdevKit.Controller.TestController.TestController.StartPlayer</definition>
+        <argsstring>(EditorWindow ew, Project project, int mode, int width, int height, bool showDebug)</argsstring>
+        <name>StartPlayer</name>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_editor_window" kindref="compound">EditorWindow</ref></type>
+          <declname>ew</declname>
+        </param>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project" kindref="compound">Project</ref></type>
+          <declname>project</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>mode</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>showDebug</declname>
+        </param>
+        <briefdescription>
+<para>Starts the player with the specified settings. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ew</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="class_a_rdev_kit_1_1_editor_window" kindref="compound">EditorWindow</ref>.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>project</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The project.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tells if an imageIMAGE or videoVIDEO should be loaded or if a virtual cameraCAMERA should be started</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The width.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The height.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>showDebug</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if set to <computeroutput>true</computeroutput> [show debug].</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="91" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="91" bodyend="165"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_test_controller_1ad361105726321d1d5e7e7b8ab4d92581" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ARdevKit.Controller.TestController.TestController.player_Exited</definition>
+        <argsstring>(object sender, EventArgs e)</argsstring>
+        <name>player_Exited</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>EventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="167" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="167" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_test_controller_1afdbd2d79e962a76b7a29c4ccb65eaf9c" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ARdevKit.Controller.TestController.TestController.OpenPlayer</definition>
+        <argsstring>()</argsstring>
+        <name>OpenPlayer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="174" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="174" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_test_controller_1a5464691c4bcab48a35be8be08db8970b" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ARdevKit.Controller.TestController.TestController.progressVideoWindow_FormClosed</definition>
+        <argsstring>(object sender, FormClosedEventArgs e)</argsstring>
+        <name>progressVideoWindow_FormClosed</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>FormClosedEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="195" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="195" bodyend="199"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="725">
+        <label>ARdevKit.Controller.TestController.TestController</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="23" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="22" bodyend="200"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_test_controller_1a8bfb72f3c6a2d590c01a7aee313caa15" prot="public" virt="non-virtual"><scope>ARdevKit::Controller::TestController::TestController</scope><name>CAMERA</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_test_controller_1ab0b869a8e9bb2a2b3c0c9405095bbae1" prot="private" virt="non-virtual"><scope>ARdevKit::Controller::TestController::TestController</scope><name>editorWindow</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_test_controller_1aabe529bbe77e981444e6ef9b26966ead" prot="public" virt="non-virtual"><scope>ARdevKit::Controller::TestController::TestController</scope><name>IMAGE</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_test_controller_1afdbd2d79e962a76b7a29c4ccb65eaf9c" prot="private" virt="non-virtual"><scope>ARdevKit::Controller::TestController::TestController</scope><name>OpenPlayer</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_test_controller_1ae3f7d9889f6a61ad3e503a4fbbe5968e" prot="public" virt="non-virtual"><scope>ARdevKit::Controller::TestController::TestController</scope><name>player</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_test_controller_1ad361105726321d1d5e7e7b8ab4d92581" prot="private" virt="non-virtual"><scope>ARdevKit::Controller::TestController::TestController</scope><name>player_Exited</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_test_controller_1ac6bbe628866e8286fd5c2010ea1699fd" prot="private" virt="non-virtual"><scope>ARdevKit::Controller::TestController::TestController</scope><name>playerPath</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_test_controller_1aae8ff636f0a4fd240c342104847ed5da" prot="private" virt="non-virtual"><scope>ARdevKit::Controller::TestController::TestController</scope><name>progressVideoWindow</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_test_controller_1a5464691c4bcab48a35be8be08db8970b" prot="private" virt="non-virtual"><scope>ARdevKit::Controller::TestController::TestController</scope><name>progressVideoWindow_FormClosed</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_test_controller_1a4e0b2662de6bd3c52859a9f31455deae" prot="public" virt="non-virtual"><scope>ARdevKit::Controller::TestController::TestController</scope><name>StartPlayer</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_test_controller_1a408e3301c03207d31b9e2fec304991c6" prot="private" virt="non-virtual"><scope>ARdevKit::Controller::TestController::TestController</scope><name>TMP_PROJECT_PATH</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_test_controller_1ab45a6dad1f9da81b2413e96716c013d7" prot="private" virt="non-virtual"><scope>ARdevKit::Controller::TestController::TestController</scope><name>TMP_VIDEO_PATH</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_test_controller_1acada57f0413b59d32cf69dfc96fef047" prot="public" virt="non-virtual"><scope>ARdevKit::Controller::TestController::TestController</scope><name>VIDEO</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

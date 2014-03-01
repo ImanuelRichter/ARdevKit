@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_helper" kind="class" prot="public">
+    <compoundname>ARdevKit::Model::Project::File::Helper</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_helper_1a521702cdb52384ef248ef53d6511e75c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ARdevKit.Model.Project.File.Helper.Copy</definition>
+        <argsstring>(string srcFile, string destDirectory)</argsstring>
+        <name>Copy</name>
+        <param>
+          <type>string</type>
+          <declname>srcFile</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>destDirectory</declname>
+        </param>
+        <briefdescription>
+<para>Copies a passed file to the passed directory. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 19.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>srcFile</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Source file. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>destDirectory</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pathname of the destination directory. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/Helper.cs" line="25" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/Helper.cs" bodystart="25" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_helper_1aa6c4ac72d1bf2ac37f8f87b695ba9d65" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ARdevKit.Model.Project.File.Helper.Copy</definition>
+        <argsstring>(string srcFile, string destDirectory, string newFileName)</argsstring>
+        <name>Copy</name>
+        <param>
+          <type>string</type>
+          <declname>srcFile</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>destDirectory</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>newFileName</declname>
+        </param>
+        <briefdescription>
+<para>Copies a passed file to the passed directory and renames it to the passed name. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 27.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>srcFile</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Source file. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>destDirectory</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pathname of the destination directory. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>newFileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the new file. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/Helper.cs" line="40" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/Helper.cs" bodystart="40" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_helper_1a0a1fce8ab000484dbc497b5454d5a2f8" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool ARdevKit.Model.Project.File.Helper.FileExists</definition>
+        <argsstring>(string rootPath, string filePath)</argsstring>
+        <name>FileExists</name>
+        <param>
+          <type>string</type>
+          <declname>rootPath</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>filePath</declname>
+        </param>
+        <briefdescription>
+<para>Checks if a file is in a specific directory or its subdirectory </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rootPath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path of the directory which should be checked</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>filePath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path of the file</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns true if the file is in the directory of the rootPath or its subdirectory</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/Helper.cs" line="66" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/Helper.cs" bodystart="66" bodyend="78"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A static Helper class which contains some I/O methods. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="556">
+        <label>ARdevKit.Model.Project.File.Helper</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/Helper.cs" line="15" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/Helper.cs" bodystart="14" bodyend="79"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_helper_1a521702cdb52384ef248ef53d6511e75c" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::Helper</scope><name>Copy</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_helper_1aa6c4ac72d1bf2ac37f8f87b695ba9d65" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::Helper</scope><name>Copy</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_helper_1a0a1fce8ab000484dbc497b5454d5a2f8" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::Helper</scope><name>FileExists</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_save_load_controller" kind="class" prot="public">
+    <compoundname>ARdevKit::Controller::ProjectController::SaveLoadController</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_save_load_controller_1a62040ada82434d7425e66094895f1c72" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ARdevKit.Controller.ProjectController.SaveLoadController.saveProject</definition>
+        <argsstring>(Project project)</argsstring>
+        <name>saveProject</name>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project" kindref="compound">Project</ref></type>
+          <declname>project</declname>
+        </param>
+        <briefdescription>
+<para>Saves the project. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>project</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Project, which need to be serialized</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/ProjectController/SaveLoadController.cs" line="22" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/ProjectController/SaveLoadController.cs" bodystart="22" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_save_load_controller_1a319b0ed0d7170a27e4d0aa1383b7a816" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project" kindref="compound">Project</ref></type>
+        <definition>static Project ARdevKit.Controller.ProjectController.SaveLoadController.loadProject</definition>
+        <argsstring>(string path)</argsstring>
+        <name>loadProject</name>
+        <param>
+          <type>string</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+<para>Loads the project. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The path, where the serialized Project is saved</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the deserialized Project</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/ProjectController/SaveLoadController.cs" line="35" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/ProjectController/SaveLoadController.cs" bodystart="35" bodyend="44"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Provides static methods for saving and loading a Project to or from a certain path </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="701">
+        <label>ARdevKit.Controller.ProjectController.SaveLoadController</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/ProjectController/SaveLoadController.cs" line="17" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/ProjectController/SaveLoadController.cs" bodystart="16" bodyend="45"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_save_load_controller_1a319b0ed0d7170a27e4d0aa1383b7a816" prot="public" virt="non-virtual"><scope>ARdevKit::Controller::ProjectController::SaveLoadController</scope><name>loadProject</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_save_load_controller_1a62040ada82434d7425e66094895f1c72" prot="public" virt="non-virtual"><scope>ARdevKit::Controller::ProjectController::SaveLoadController</scope><name>saveProject</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

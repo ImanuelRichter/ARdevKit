@@ -1,0 +1,230 @@
+.TH "ARdevKit.EditorWindow" 3 "Sat Mar 1 2014" "Version 0.2" "ARdevKit" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ARdevKit.EditorWindow \- 
+.PP
+Form for viewing the editor\&. This is the main form of the program\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits Form\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBEditorWindow\fP ()"
+.br
+.RI "\fIDefault constructor\&. initializes components on startup\&. \fP"
+.ti -1c
+.RI "void \fBPlayerStarted\fP ()"
+.br
+.RI "\fIThis method is used to tell the editorWindow that the player was started\&. \fP"
+.ti -1c
+.RI "void \fBPlayerClosed\fP ()"
+.br
+.RI "\fIThis method is used to tell the editorWindow that the player has been closed\&. \fP"
+.ti -1c
+.RI "void \fBcreateNewProject\fP (String name)"
+.br
+.RI "\fICreates the new project\&. Initialized with the given name\&. \fP"
+.ti -1c
+.RI "void \fBexportProject\fP ()"
+.br
+.RI "\fIExports the project\&. saves the project first and then exports to project path \fP"
+.ti -1c
+.RI "void \fBloadProject\fP ()"
+.br
+.RI "\fILoads the project\&. Opens a file dialog to select a saved project\&. \fP"
+.ti -1c
+.RI "void \fBregisterElements\fP ()"
+.br
+.RI "\fIRegisters all SceneElements that are available\&. \fP"
+.ti -1c
+.RI "void \fBsaveProject\fP ()"
+.br
+.RI "\fISaves the project\&. Opens file save dialog if project Path isn't set yet\&. calls save(String path)\&. \fP"
+.ti -1c
+.RI "void \fBupdateElementSelectionPanel\fP ()"
+.br
+.RI "\fIUpdates the element selection panel\&. (Refreshes the \fBView\fP) \fP"
+.ti -1c
+.RI "void \fBupdatePreviewPanel\fP ()"
+.br
+.RI "\fIThis functions Updates the scene PreviewPanel\&. Alle elements will be removed and all current elements will add again to the panel\&. \fP"
+.ti -1c
+.RI "void \fBupdateSceneSelectionPanel\fP ()"
+.br
+.RI "\fIThis functions Updates the scene SceneSelectionPanel\&. Alle elements will be removed and all current elements will add again to the panel\&. \fP"
+.ti -1c
+.RI "void \fBsetPasteButtonEnabled\fP ()"
+.br
+.RI "\fISets the PasteButton enabled\&. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "override void \fBDispose\fP (bool disposing)"
+.br
+.RI "\fIVerwendete Ressourcen bereinigen\&. \fP"
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "\fBPreviewController\fP \fBPreviewController\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the previewController\&. \fP"
+.ti -1c
+.RI "\fBProject\fP \fBproject\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the project\&. \fP"
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.PropertyGrid \fBPropertyGrid1\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the PropertyGrid1\&. \fP"
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Panel \fBPnl_editor_preview\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the pnl editor preview\&. \fP"
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.Panel \fBPnl_editor_selection\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the pnl editor selection\&. \fP"
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.ComboBox \fBCmb_editor_selection_toolSelection\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the cmb editor selection tool selection\&. \fP"
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.ComboBox \fBCmb_editor_properties_objectSelection\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the cmb editor properties object selection\&. \fP"
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.ToolStripMenuItem \fBTsm_editor_menu_edit_copie\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the tsm_editor_menu_edit_copie\&. \fP"
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.ToolStripMenuItem \fBTsm_editor_menu_edit_paste\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the tsm_editor_menu_edit_paste\&. \fP"
+.ti -1c
+.RI "System\&.Windows\&.Forms\&.ToolStripMenuItem \fBTsm_editor_menu_edit_delete\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the tsm_editor_menu_edit_delete\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Form for viewing the editor\&. This is the main form of the program\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void ARdevKit\&.EditorWindow\&.createNewProject (Stringname)"
+
+.PP
+Creates the new project\&. Initialized with the given name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Name of the new project\&.
+.RE
+.PP
+
+.SS "override void ARdevKit\&.EditorWindow\&.Dispose (booldisposing)\fC [protected]\fP"
+
+.PP
+Verwendete Ressourcen bereinigen\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdisposing\fP True, wenn verwaltete Ressourcen gelöscht werden sollen; andernfalls False\&.
+.RE
+.PP
+
+.SS "void ARdevKit\&.EditorWindow\&.exportProject ()"
+
+.PP
+Exports the project\&. saves the project first and then exports to project path geht 19\&.01\&.2014 22:10
+.SS "void ARdevKit\&.EditorWindow\&.loadProject ()"
+
+.PP
+Loads the project\&. Opens a file dialog to select a saved project\&. geht 19\&.01\&.2014 17:55
+.SS "void ARdevKit\&.EditorWindow\&.PlayerClosed ()"
+
+.PP
+This method is used to tell the editorWindow that the player has been closed\&. 
+.SS "void ARdevKit\&.EditorWindow\&.PlayerStarted ()"
+
+.PP
+This method is used to tell the editorWindow that the player was started\&. 
+.SS "void ARdevKit\&.EditorWindow\&.registerElements ()"
+
+.PP
+Registers all SceneElements that are available\&. Robin, 14\&.01\&.2014\&. 
+.SS "void ARdevKit\&.EditorWindow\&.saveProject ()"
+
+.PP
+Saves the project\&. Opens file save dialog if project Path isn't set yet\&. calls save(String path)\&. geht, 17\&.01\&.2014\&. 
+.SS "void ARdevKit\&.EditorWindow\&.setPasteButtonEnabled ()"
+
+.PP
+Sets the PasteButton enabled\&. 
+.SS "void ARdevKit\&.EditorWindow\&.updateElementSelectionPanel ()"
+
+.PP
+Updates the element selection panel\&. (Refreshes the \fBView\fP) 
+.SS "void ARdevKit\&.EditorWindow\&.updatePreviewPanel ()"
+
+.PP
+This functions Updates the scene PreviewPanel\&. Alle elements will be removed and all current elements will add again to the panel\&. Lizzard, 1/16/2014\&. 
+.SS "void ARdevKit\&.EditorWindow\&.updateSceneSelectionPanel ()"
+
+.PP
+This functions Updates the scene SceneSelectionPanel\&. Alle elements will be removed and all current elements will add again to the panel\&. Lizzard, 1/16/2014\&. 
+.SH "Property Documentation"
+.PP 
+.SS "System\&.Windows\&.Forms\&.ComboBox ARdevKit\&.EditorWindow\&.Cmb_editor_properties_objectSelection\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the cmb editor properties object selection\&. The cmb editor properties object selection\&. 
+.SS "System\&.Windows\&.Forms\&.ComboBox ARdevKit\&.EditorWindow\&.Cmb_editor_selection_toolSelection\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the cmb editor selection tool selection\&. The cmb editor selection tool selection\&. 
+.SS "System\&.Windows\&.Forms\&.Panel ARdevKit\&.EditorWindow\&.Pnl_editor_preview\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the pnl editor preview\&. The pnl editor preview\&. 
+.SS "System\&.Windows\&.Forms\&.Panel ARdevKit\&.EditorWindow\&.Pnl_editor_selection\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the pnl editor selection\&. The pnl editor selection\&. 
+.SS "\fBPreviewController\fP ARdevKit\&.EditorWindow\&.PreviewController\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the previewController\&. The previewController\&. 
+.SS "\fBProject\fP ARdevKit\&.EditorWindow\&.project\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the project\&. The project\&. 
+.SS "System\&.Windows\&.Forms\&.PropertyGrid ARdevKit\&.EditorWindow\&.PropertyGrid1\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the PropertyGrid1\&. PropertyGrid\&. 
+.SS "System\&.Windows\&.Forms\&.ToolStripMenuItem ARdevKit\&.EditorWindow\&.Tsm_editor_menu_edit_copie\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the tsm_editor_menu_edit_copie\&. The tsm_editor_menu_edit_copie\&. 
+.SS "System\&.Windows\&.Forms\&.ToolStripMenuItem ARdevKit\&.EditorWindow\&.Tsm_editor_menu_edit_delete\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the tsm_editor_menu_edit_delete\&. The tsm_editor_menu_edit_delete\&. 
+.SS "System\&.Windows\&.Forms\&.ToolStripMenuItem ARdevKit\&.EditorWindow\&.Tsm_editor_menu_edit_paste\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the tsm_editor_menu_edit_paste\&. The tsm_editor_menu_edit_paste\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ARdevKit from the source code\&.

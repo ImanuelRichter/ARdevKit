@@ -1,0 +1,128 @@
+.TH "ARdevKit.Controller.Connections.DeviceConnection.DeviceConnectionController" 3 "Sat Mar 1 2014" "Version 0.2" "ARdevKit" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ARdevKit.Controller.Connections.DeviceConnection.DeviceConnectionController \- 
+.PP
+\fBController\fP which provides functions, to gather Information about Devices, which are running ARdevKitPlayer and are connected to the local Network\&. On top of that it provides functions to send Projects and receive Debuginformation\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDeviceConnectionController\fP (Form window)"
+.br
+.RI "\fIInitializes a new instance of the \fBDeviceConnectionController\fP class\&. Uses UDPListener to get information about devices\&. Communicating via HTTP order to secure currency of connections and sending the zipped project\&. \fP"
+.ti -1c
+.RI "void \fBrefresh\fP ()"
+.br
+.RI "\fIRuns the refresh listener, using a UDP Broadcast to which the ARdevKitPlayer responds\&. \fP"
+.ti -1c
+.RI "List< string > \fBgetReportedDevices\fP ()"
+.br
+.RI "\fIGets the reported devices\&. \fP"
+.ti -1c
+.RI "bool \fBsendProject\fP (int index)"
+.br
+.RI "\fISends the opened Project to the chosen Device, using the selected index of the EditorWindowsDeviceList, which must be equal to the internal index of the reportedDevices List\&. Exceptions which are thrown are written to a log file, in the path in which the Program is executed\&. \fP"
+.ti -1c
+.RI "bool \fBsendDebug\fP (int index)"
+.br
+.RI "\fISends a Debugrequest to the selected Device and shows its DebugOutput on a PopupWindow with a RichTextbox \fP"
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "\fBView\&.DebugWindow\fP \fBDebugWindow\fP\fC [get]\fP"
+.br
+.RI "\fIGets the debug window\&. \fP"
+.ti -1c
+.RI "bool \fBDebugConnected\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets a value indicating whether [debug connected]\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBController\fP which provides functions, to gather Information about Devices, which are running ARdevKitPlayer and are connected to the local Network\&. On top of that it provides functions to send Projects and receive Debuginformation\&. 
+
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ARdevKit\&.Controller\&.Connections\&.DeviceConnection\&.DeviceConnectionController\&.DeviceConnectionController (Formwindow)"
+
+.PP
+Initializes a new instance of the \fBDeviceConnectionController\fP class\&. Uses UDPListener to get information about devices\&. Communicating via HTTP order to secure currency of connections and sending the zipped project\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIwindow\fP The window\&.
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "List<string> ARdevKit\&.Controller\&.Connections\&.DeviceConnection\&.DeviceConnectionController\&.getReportedDevices ()"
+
+.PP
+Gets the reported devices\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+
+.RE
+.PP
+
+.SS "void ARdevKit\&.Controller\&.Connections\&.DeviceConnection\&.DeviceConnectionController\&.refresh ()"
+
+.PP
+Runs the refresh listener, using a UDP Broadcast to which the ARdevKitPlayer responds\&. 
+.SS "bool ARdevKit\&.Controller\&.Connections\&.DeviceConnection\&.DeviceConnectionController\&.sendDebug (intindex)"
+
+.PP
+Sends a Debugrequest to the selected Device and shows its DebugOutput on a PopupWindow with a RichTextbox 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP index of the chosen Device
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if
+.RE
+.PP
+
+.SS "bool ARdevKit\&.Controller\&.Connections\&.DeviceConnection\&.DeviceConnectionController\&.sendProject (intindex)"
+
+.PP
+Sends the opened Project to the chosen Device, using the selected index of the EditorWindowsDeviceList, which must be equal to the internal index of the reportedDevices List\&. Exceptions which are thrown are written to a log file, in the path in which the Program is executed\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP index of the List of reportedDevices
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+False, if the project could not be send or an Exception was thown
+.RE
+.PP
+
+.SH "Property Documentation"
+.PP 
+.SS "bool ARdevKit\&.Controller\&.Connections\&.DeviceConnection\&.DeviceConnectionController\&.DebugConnected\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets a value indicating whether [debug connected]\&. \fCtrue\fP if [debug connected]; otherwise, \fCfalse\fP\&. 
+.SS "\fBView\&.DebugWindow\fP ARdevKit\&.Controller\&.Connections\&.DeviceConnection\&.DeviceConnectionController\&.DebugWindow\fC [get]\fP"
+
+.PP
+Gets the debug window\&. The debug window\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ARdevKit from the source code\&.

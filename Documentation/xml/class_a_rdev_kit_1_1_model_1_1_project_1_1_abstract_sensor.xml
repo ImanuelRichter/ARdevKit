@@ -1,0 +1,324 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor" kind="class" prot="public" abstract="yes">
+    <compoundname>ARdevKit::Model::Project::AbstractSensor</compoundname>
+    <derivedcompoundref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor" prot="public" virt="non-virtual">ARdevKit.Model.Project.MarkerlessSensor</derivedcompoundref>
+    <derivedcompoundref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor" prot="public" virt="non-virtual">ARdevKit.Model.Project.MarkerSensor</derivedcompoundref>
+    <derivedcompoundref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_sensor" prot="public" virt="non-virtual">ARdevKit.Model.Project.PictureMarkerSensor</derivedcompoundref>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a1954adedcf2a2f61256c9b11fe0c8386" prot="public" static="no">
+        <name>SensorTypes</name>
+        <enumvalue id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a1954adedcf2a2f61256c9b11fe0c8386a87e934c3790ae211608f20952dd60d4b" prot="public">
+          <name>FeatureBasedSensorSource</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a1954adedcf2a2f61256c9b11fe0c8386a4bbe4fd3c35cb8d63211e5c58232e770" prot="public">
+          <name>MarkerBasedSensorSource</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Flags for specifying SensorTypes. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 17.01.2014. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractSensor.cs" line="49" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractSensor.cs" bodystart="49" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="enum" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1af7b41fc81d926ed779ca02ef894fcddf" prot="public" static="no">
+        <name>SensorSubTypes</name>
+        <enumvalue id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1af7b41fc81d926ed779ca02ef894fcddfa6adf97f83acf6453d4a6a4b1070f3754" prot="public">
+          <name>None</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1af7b41fc81d926ed779ca02ef894fcddfae16b5b7f26f54214445cbe38d72c2828" prot="public">
+          <name>Fast</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1af7b41fc81d926ed779ca02ef894fcddfacd8257a80d3498e67b8972607c8377c0" prot="public">
+          <name>Robust</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Flags for specifying SensorSubTypes. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 17.01.2014. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractSensor.cs" line="76" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractSensor.cs" bodystart="76" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="enum" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a8eecc60106e6a54a3e096c63a7d4d012" prot="public" static="no">
+        <name>SensorIDBases</name>
+        <enumvalue id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a8eecc60106e6a54a3e096c63a7d4d012a7d5741ada7574ede4e9c119d4bedd59d" prot="public">
+          <name>FeatureTracking</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a8eecc60106e6a54a3e096c63a7d4d012a4f665932587413c447e525ff98365e79" prot="public">
+          <name>MarkerTracking</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Flags for specifying SensorIDBases. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 17.01.2014. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractSensor.cs" line="103" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractSensor.cs" bodystart="103" bodyend="103"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1abff8c3b3e1b200efcbed119cdfde1246" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string ARdevKit.Model.Project.AbstractSensor.name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+<para>The name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractSensor.cs" line="24" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractSensor.cs" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1ae9ff3a8ab9d8d8a357173cfa55a7030f" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>string</type>
+        <definition>string ARdevKit.Model.Project.AbstractSensor.Name</definition>
+        <argsstring></argsstring>
+        <name>Name</name>
+        <briefdescription>
+<para>Gets or sets the name. </para>        </briefdescription>
+        <detaileddescription>
+<para>The name. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractSensor.cs" line="34" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractSensor.cs" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a66bde8348688b03400befc56c6ce8384" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a1954adedcf2a2f61256c9b11fe0c8386" kindref="member">SensorTypes</ref></type>
+        <definition>SensorTypes ARdevKit.Model.Project.AbstractSensor.SensorType</definition>
+        <argsstring></argsstring>
+        <name>SensorType</name>
+        <briefdescription>
+<para>Gets or sets the type of the sensor. </para>        </briefdescription>
+        <detaileddescription>
+<para>The type of the sensor. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractSensor.cs" line="61" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractSensor.cs" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a092d1bd99165833488f9ce744a1bf65d" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1af7b41fc81d926ed779ca02ef894fcddf" kindref="member">SensorSubTypes</ref></type>
+        <definition>SensorSubTypes ARdevKit.Model.Project.AbstractSensor.SensorSubType</definition>
+        <argsstring></argsstring>
+        <name>SensorSubType</name>
+        <briefdescription>
+<para>Gets or sets the SubType of the sensor. </para>        </briefdescription>
+        <detaileddescription>
+<para>The type of the sensor sub. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractSensor.cs" line="88" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractSensor.cs" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a51a87ecf568c53df079db7af4a553bc6" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a8eecc60106e6a54a3e096c63a7d4d012" kindref="member">SensorIDBases</ref></type>
+        <definition>SensorIDBases ARdevKit.Model.Project.AbstractSensor.SensorIDBase</definition>
+        <argsstring></argsstring>
+        <name>SensorIDBase</name>
+        <briefdescription>
+<para>Gets or sets the sensor identifier base. </para>        </briefdescription>
+        <detaileddescription>
+<para>The sensor identifier base. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractSensor.cs" line="116" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractSensor.cs" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a054724aa9c411a5f813d977c7c1f620c" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>string</type>
+        <definition>string ARdevKit.Model.Project.AbstractSensor.SensorIDString</definition>
+        <argsstring></argsstring>
+        <name>SensorIDString</name>
+        <briefdescription>
+<para>Gets or sets the sensor identifier string. </para>        </briefdescription>
+        <detaileddescription>
+<para>The sensor identifier string. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractSensor.cs" line="134" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractSensor.cs" bodystart="135" bodyend="-1"/>
+        <referencedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1ad58774c6778421b6bf85a6c70029a3d9" compoundref="_export_visitor_8cs" startline="976" endline="1107">ARdevKit.Controller.ProjectController.ExportVisitor.Visit</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a01251db96ea5e0fb0abe1df0a129e751" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a1954adedcf2a2f61256c9b11fe0c8386" kindref="member">SensorTypes</ref></type>
+        <definition>SensorTypes ARdevKit.Model.Project.AbstractSensor.sensorType</definition>
+        <argsstring></argsstring>
+        <name>sensorType</name>
+        <briefdescription>
+<para>Type of the sensor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractSensor.cs" line="51" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractSensor.cs" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a29b9e916f374e31196689e9d7ac73123" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1af7b41fc81d926ed779ca02ef894fcddf" kindref="member">SensorSubTypes</ref></type>
+        <definition>SensorSubTypes ARdevKit.Model.Project.AbstractSensor.sensorSubType</definition>
+        <argsstring></argsstring>
+        <name>sensorSubType</name>
+        <briefdescription>
+<para>SubType of the sensor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractSensor.cs" line="78" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractSensor.cs" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a2f9524a6aba4331373c0c1968b2f6f4d" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a8eecc60106e6a54a3e096c63a7d4d012" kindref="member">SensorIDBases</ref></type>
+        <definition>SensorIDBases ARdevKit.Model.Project.AbstractSensor.sensorIDBase</definition>
+        <argsstring></argsstring>
+        <name>sensorIDBase</name>
+        <briefdescription>
+<para>The sensor identifier base. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractSensor.cs" line="105" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractSensor.cs" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1ae12a6c3bfe5686d888d7e36c9b19df47" prot="protected" static="no" mutable="no">
+        <type>string</type>
+        <definition>string ARdevKit.Model.Project.AbstractSensor.sensorIDString</definition>
+        <argsstring></argsstring>
+        <name>sensorIDString</name>
+        <briefdescription>
+<para>The sensor identifier string. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractSensor.cs" line="123" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractSensor.cs" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1ac267c5a8c7792a6c0ba07108102c0706" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.Model.Project.AbstractSensor.AbstractSensor</definition>
+        <argsstring>()</argsstring>
+        <name>AbstractSensor</name>
+        <briefdescription>
+<para>Initializes no new instance of the <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor" kindref="compound">AbstractSensor</ref> class, but can be used in inheriting classes. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractSensor.cs" line="145" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractSensor.cs" bodystart="145" bodyend="148"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a4ff825b76bdd9f01a93ca670d02c219c" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>abstract void</type>
+        <definition>abstract void ARdevKit.Model.Project.AbstractSensor.Accept</definition>
+        <argsstring>(AbstractProjectVisitor visitor)</argsstring>
+        <name>Accept</name>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_1a21f889bd4916cb1ee7f455a9f644b72a">Accept</reimplementedby>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_sensor_1a4c36ac6cf5bd103a418b5ae21492b70a">Accept</reimplementedby>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor_1a28dd4f8d16e0112ae1f1bfd948c90c59">Accept</reimplementedby>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor" kindref="compound">AbstractProjectVisitor</ref></type>
+          <declname>visitor</declname>
+        </param>
+        <briefdescription>
+<para>Accepts the given visitor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>visitor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The visitor.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para><para>Imanuel, 17.01.2014. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractSensor.cs" line="159" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>An <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor" kindref="compound">AbstractSensor</ref> has a name, a <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a01251db96ea5e0fb0abe1df0a129e751" kindref="member">sensorType</ref>, and can have a <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a29b9e916f374e31196689e9d7ac73123" kindref="member">sensorSubType</ref>. Moreover it has a <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a2f9524a6aba4331373c0c1968b2f6f4d" kindref="member">sensorIDBase</ref> which is used to create the <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1ae12a6c3bfe5686d888d7e36c9b19df47" kindref="member">sensorIDString</ref>. </para>    </briefdescription>
+    <detaileddescription>
+<para>Imanuel, 17.01.2014. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="453">
+        <label>ARdevKit.Model.Project.MarkerlessSensor</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor"/>
+        <childnode refid="452" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="452">
+        <label>ARdevKit.Model.Project.AbstractSensor</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor"/>
+      </node>
+      <node id="455">
+        <label>ARdevKit.Model.Project.PictureMarkerSensor</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_sensor"/>
+        <childnode refid="452" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="454">
+        <label>ARdevKit.Model.Project.MarkerSensor</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor"/>
+        <childnode refid="452" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="456">
+        <label>ARdevKit.Model.Project.AbstractSensor</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractSensor.cs" line="22" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractSensor.cs" bodystart="21" bodyend="160"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1ac267c5a8c7792a6c0ba07108102c0706" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractSensor</scope><name>AbstractSensor</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a4ff825b76bdd9f01a93ca670d02c219c" prot="public" virt="pure-virtual"><scope>ARdevKit::Model::Project::AbstractSensor</scope><name>Accept</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1ae9ff3a8ab9d8d8a357173cfa55a7030f" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractSensor</scope><name>Name</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1abff8c3b3e1b200efcbed119cdfde1246" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractSensor</scope><name>name</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a2f9524a6aba4331373c0c1968b2f6f4d" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractSensor</scope><name>sensorIDBase</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a51a87ecf568c53df079db7af4a553bc6" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractSensor</scope><name>SensorIDBase</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a8eecc60106e6a54a3e096c63a7d4d012" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractSensor</scope><name>SensorIDBases</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a054724aa9c411a5f813d977c7c1f620c" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractSensor</scope><name>SensorIDString</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1ae12a6c3bfe5686d888d7e36c9b19df47" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractSensor</scope><name>sensorIDString</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a29b9e916f374e31196689e9d7ac73123" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractSensor</scope><name>sensorSubType</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a092d1bd99165833488f9ce744a1bf65d" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractSensor</scope><name>SensorSubType</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1af7b41fc81d926ed779ca02ef894fcddf" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractSensor</scope><name>SensorSubTypes</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a01251db96ea5e0fb0abe1df0a129e751" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractSensor</scope><name>sensorType</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a66bde8348688b03400befc56c6ce8384" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractSensor</scope><name>SensorType</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a1954adedcf2a2f61256c9b11fe0c8386" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractSensor</scope><name>SensorTypes</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

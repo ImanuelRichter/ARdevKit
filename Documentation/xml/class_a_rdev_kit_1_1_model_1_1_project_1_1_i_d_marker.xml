@@ -1,0 +1,283 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_marker" kind="class" prot="public">
+    <compoundname>ARdevKit::Model::Project::IDMarker</compoundname>
+    <basecompoundref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable" prot="public" virt="non-virtual">ARdevKit.Model.Project.Abstract2DTrackable</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_marker_1acdb2cf6673d43e0e0999d30790c743b0" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ARdevKit.Model.Project.IDMarker.matrixID</definition>
+        <argsstring></argsstring>
+        <name>matrixID</name>
+        <briefdescription>
+<para>The matrix identifier, describes the Markers, which are deployed by the metaio SDK. They reach from 1 to 255. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/IDMarker.cs" line="26" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/IDMarker.cs" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_marker_1aaa90db647a18c316b7c4de9dcf123170" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>int</type>
+        <definition>int ARdevKit.Model.Project.IDMarker.MatrixID</definition>
+        <argsstring></argsstring>
+        <name>MatrixID</name>
+        <briefdescription>
+<para>Gets or sets the matrix identifier. </para>        </briefdescription>
+        <detaileddescription>
+<para>The matrix identifier. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/IDMarker.cs" line="35" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/IDMarker.cs" bodystart="36" bodyend="-1"/>
+        <referencedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1aa4ad67b0cb408d8ec6aaf48906f1e5b3" compoundref="_export_visitor_8cs" startline="850" endline="966">ARdevKit.Controller.ProjectController.ExportVisitor.Visit</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_marker_1a7fe99aaa5d8dc1fa71bcd8796702928c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.Model.Project.IDMarker.IDMarker</definition>
+        <argsstring>(int matrixID)</argsstring>
+        <name>IDMarker</name>
+        <param>
+          <type>int</type>
+          <declname>matrixID</declname>
+        </param>
+        <briefdescription>
+<para>Initializes a new instance of the <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_marker" kindref="compound">IDMarker</ref> class. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>matrixID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The matrix identifier.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/IDMarker.cs" line="53" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/IDMarker.cs" bodystart="53" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_marker_1a48c59c173c58ba20bff0594587b85182" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override void</type>
+        <definition>override void ARdevKit.Model.Project.IDMarker.Accept</definition>
+        <argsstring>(Controller.ProjectController.AbstractProjectVisitor visitor)</argsstring>
+        <name>Accept</name>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor" kindref="compound">Controller.ProjectController.AbstractProjectVisitor</ref></type>
+          <declname>visitor</declname>
+        </param>
+        <briefdescription>
+<para>An method, to accept a AbstractProjectVisitor and let the visitor visit the associated fuser. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>visitor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the visitor which encapsulates the action which is performed on this element</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/IDMarker.cs" line="73" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/IDMarker.cs" bodystart="73" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_marker_1a4533a46611ee75747a5cf96f3fc2586c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override Bitmap</type>
+        <definition>override Bitmap ARdevKit.Model.Project.IDMarker.getPreview</definition>
+        <argsstring>()</argsstring>
+        <name>getPreview</name>
+        <reimplements refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1ab4d8a1902c82fe7a1d385d5688f92bd8">getPreview</reimplements>
+        <briefdescription>
+<para>Gets the preview. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>a representative Bitmap </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/IDMarker.cs" line="89" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/IDMarker.cs" bodystart="89" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_marker_1ae3713212fbac546d841e3be2ccb43db9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override Bitmap</type>
+        <definition>override Bitmap ARdevKit.Model.Project.IDMarker.getIcon</definition>
+        <argsstring>()</argsstring>
+        <name>getIcon</name>
+        <reimplements refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1abee7e96dac48f6fa7fc424c0f9139dff">getIcon</reimplements>
+        <briefdescription>
+<para>Gets the icon. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>a representative iconized Bitmap </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/IDMarker.cs" line="110" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/IDMarker.cs" bodystart="110" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_marker_1a69480e66c9a3755dfb94bb7b957c18d8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override object</type>
+        <definition>override object ARdevKit.Model.Project.IDMarker.Clone</definition>
+        <argsstring>()</argsstring>
+        <name>Clone</name>
+        <reimplements refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a166fc03dc00911591baca14a3341ef29">Clone</reimplements>
+        <briefdescription>
+<para>Makes a deep copy of this object. </para>        </briefdescription>
+        <detaileddescription>
+<para>Robin, 22.01.2014. </para><para><simplesect kind="return"><para>A copy of this object. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/IDMarker.cs" line="115" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/IDMarker.cs" bodystart="115" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_marker_1a30b191b81b928fbe6397d8136e31baea" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override bool</type>
+        <definition>override bool ARdevKit.Model.Project.IDMarker.initElement</definition>
+        <argsstring>(EditorWindow ew)</argsstring>
+        <name>initElement</name>
+        <reimplements refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1aff50ed9cb95973d56d6a65bd1ef96c0a">initElement</reimplements>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_editor_window" kindref="compound">EditorWindow</ref></type>
+          <declname>ew</declname>
+        </param>
+        <briefdescription>
+<para>This method is called by the previewController when a new instance of the element is added to the Scene. It sets &quot;must-have&quot; properties. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ew</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ew.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if it succeeds, false if it fails. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/IDMarker.cs" line="130" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/IDMarker.cs" bodystart="130" bodyend="141"/>
+        <references refid="class_a_rdev_kit_1_1_editor_window_1aa7e64c912e3d904fae0ec52588be0baa" compoundref="_editor_window_8cs" startline="138">ARdevKit.EditorWindow.project</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_marker" kindref="compound">IDMarker</ref> is a AbstractMarker adding an matrixID. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="560">
+        <label>Abstract2DTrackable</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable"/>
+        <childnode refid="561" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="561">
+        <label>AbstractTrackable</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable"/>
+        <childnode refid="562" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="562">
+        <label>IPreviewable</label>
+        <link refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable"/>
+        <childnode refid="563" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="563">
+        <label>ICloneable</label>
+      </node>
+      <node id="559">
+        <label>ARdevKit.Model.Project.IDMarker</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_marker"/>
+        <childnode refid="560" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="571">
+        <label>ARdevKit.Model.Project.Vector3D</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d"/>
+      </node>
+      <node id="569">
+        <label>ARdevKit.Model.Project.Vector3Di</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_di"/>
+        <childnode refid="570" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="572">
+        <label>ARdevKit.Model.Project.MarkerFuser</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser"/>
+      </node>
+      <node id="565">
+        <label>Abstract2DTrackable</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable"/>
+        <childnode refid="566" relation="public-inheritance">
+        </childnode>
+        <childnode refid="569" relation="usage">
+          <edgelabel>#rotationVector</edgelabel>
+        </childnode>
+        <childnode refid="571" relation="usage">
+          <edgelabel>#translationVector</edgelabel>
+        </childnode>
+        <childnode refid="572" relation="usage">
+          <edgelabel>#fuser</edgelabel>
+        </childnode>
+      </node>
+      <node id="566">
+        <label>AbstractTrackable</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable"/>
+        <childnode refid="567" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="570">
+        <label>Vector3D</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d"/>
+      </node>
+      <node id="567">
+        <label>IPreviewable</label>
+        <link refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable"/>
+        <childnode refid="568" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="568">
+        <label>ICloneable</label>
+      </node>
+      <node id="564">
+        <label>ARdevKit.Model.Project.IDMarker</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_marker"/>
+        <childnode refid="565" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/IDMarker.cs" line="20" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/IDMarker.cs" bodystart="19" bodyend="142"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_marker_1a48c59c173c58ba20bff0594587b85182" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::IDMarker</scope><name>Accept</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a76f6ad0ed8f615b8f5b7738411abb54f" prot="public" virt="pure-virtual" ambiguityscope="ARdevKit::Model::Project::Abstract2DTrackable."><scope>ARdevKit::Model::Project::IDMarker</scope><name>Accept</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a999faeee63dee9445e8617d539c5b8d9" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::IDMarker</scope><name>Augmentations</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_marker_1a69480e66c9a3755dfb94bb7b957c18d8" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::IDMarker</scope><name>Clone</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1ac5dfdc39c3e7ad91ca9156208278b108" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::IDMarker</scope><name>existAugmentation</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a8ebdec7d02359310504e15f3a9852c04" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::IDMarker</scope><name>fuser</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a98e3270dac234f5acd6054707f4c1964" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::IDMarker</scope><name>Fuser</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_marker_1ae3713212fbac546d841e3be2ccb43db9" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::IDMarker</scope><name>getIcon</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_marker_1a4533a46611ee75747a5cf96f3fc2586c" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::IDMarker</scope><name>getPreview</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_marker_1a7fe99aaa5d8dc1fa71bcd8796702928c" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::IDMarker</scope><name>IDMarker</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_marker_1a30b191b81b928fbe6397d8136e31baea" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::IDMarker</scope><name>initElement</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_marker_1aaa90db647a18c316b7c4de9dcf123170" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::IDMarker</scope><name>MatrixID</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_marker_1acdb2cf6673d43e0e0999d30790c743b0" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::IDMarker</scope><name>matrixID</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1ae14b72d85d610bcda17d93255bce45f7" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::IDMarker</scope><name>RemoveAugmentation</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a12ba493972e7d277e8f67294beb70355" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::IDMarker</scope><name>Rotation</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a85997ab052b01f3680d47d199b4551a0" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::IDMarker</scope><name>rotationVector</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1ac965f78edc7135b60377d14acbe6d358" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::IDMarker</scope><name>sensorCosID</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a9578380939f19267cc7372ca19ff936f" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::IDMarker</scope><name>SensorCosID</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1af77b1f7a449ef9150e22c684894213b1" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::IDMarker</scope><name>SimilarityThreshold</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a5a74b70a54b9bb1f4fbad46e08a2e0cd" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::IDMarker</scope><name>similarityThreshold</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a0c9a459cf25e74c8173564d476021c9a" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::IDMarker</scope><name>Size</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a3ef9116db48c612d3428126786516e81" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::IDMarker</scope><name>size</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1ac836d823c247762a615f432375d943c2" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::IDMarker</scope><name>ToString</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1acbb38387d30cb1239814606b54099bb3" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::IDMarker</scope><name>Translation</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a5d6e8cbc9efc6da689e3537d334fec37" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::IDMarker</scope><name>translationVector</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1ab55c05790e5ffbefc7351a91167427bc" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::IDMarker</scope><name>Type</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1ab6faf8843d1e9a61b353286a8d583231" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::IDMarker</scope><name>type</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a1a8b6d43d95fad1720fc5af98b7e42b4" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::IDMarker</scope><name>vector</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

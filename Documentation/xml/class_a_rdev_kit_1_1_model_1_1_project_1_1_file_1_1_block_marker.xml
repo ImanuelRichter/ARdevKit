@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker" kind="class" prot="public">
+    <compoundname>ARdevKit::Model::Project::File::BlockMarker</compoundname>
+    <derivedcompoundref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_tag" prot="public" virt="non-virtual">ARdevKit.Model.Project.File.XMLTag</derivedcompoundref>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker_1add534689f3e6af2448ee6194305ceafc" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ARdevKit.Model.Project.File.BlockMarker.closed</definition>
+        <argsstring></argsstring>
+        <name>closed</name>
+        <initializer>= true</initializer>
+        <briefdescription>
+<para>true if closed. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/BlockMarker.cs" line="21" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/BlockMarker.cs" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker_1a7764ae600714a07a74b8ddf55f1a59d5" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>string</type>
+        <definition>string ARdevKit.Model.Project.File.BlockMarker.Start</definition>
+        <argsstring></argsstring>
+        <name>Start</name>
+        <briefdescription>
+<para>Gets or sets the start. </para>        </briefdescription>
+        <detaileddescription>
+<para>The start. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/BlockMarker.cs" line="29" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/BlockMarker.cs" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker_1a3672477b3c409c07c7189a57fbd004c4" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>string</type>
+        <definition>string ARdevKit.Model.Project.File.BlockMarker.End</definition>
+        <argsstring></argsstring>
+        <name>End</name>
+        <briefdescription>
+<para>Gets or sets the end. </para>        </briefdescription>
+        <detaileddescription>
+<para>The end. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/BlockMarker.cs" line="37" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/BlockMarker.cs" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker_1a148e8916c49f13adff386c50d0b45738" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.Model.Project.File.BlockMarker.BlockMarker</definition>
+        <argsstring>()</argsstring>
+        <name>BlockMarker</name>
+        <briefdescription>
+<para>Default constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 17.01.2014. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/BlockMarker.cs" line="45" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/BlockMarker.cs" bodystart="45" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker_1aa9b3cdf82da639e651b73eff5ec7938f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.Model.Project.File.BlockMarker.BlockMarker</definition>
+        <argsstring>(string start, string end)</argsstring>
+        <name>BlockMarker</name>
+        <param>
+          <type>string</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>end</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 17.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The start. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>end</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The end. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/BlockMarker.cs" line="56" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/BlockMarker.cs" bodystart="56" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker_1a5334b9dcd41a81ccac65d7c98062c43a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override string</type>
+        <definition>override string ARdevKit.Model.Project.File.BlockMarker.ToString</definition>
+        <argsstring>()</argsstring>
+        <name>ToString</name>
+        <briefdescription>
+<para>Returns the start and end part alternating. Beginning with the start part on first call.</para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 15.01.2014. </para><para><simplesect kind="return"><para>Eine Zeichenfolge, die das aktuelle Objekt darstellt. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/BlockMarker.cs" line="71" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/BlockMarker.cs" bodystart="71" bodyend="83"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker" kindref="compound">BlockMarker</ref> marks an <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block" kindref="compound">AbstractBlock</ref>. It has a <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker_1a7764ae600714a07a74b8ddf55f1a59d5" kindref="member">Start</ref> string and an <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker_1a3672477b3c409c07c7189a57fbd004c4" kindref="member">End</ref> string and can be open or closed. </para>    </briefdescription>
+    <detaileddescription>
+<para>Imanuel, 17.01.2014. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="489">
+        <label>ARdevKit.Model.Project.File.BlockMarker</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker"/>
+      </node>
+      <node id="491">
+        <label>ARdevKit.Model.Project.File.NonTerminatingXMLTag</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_non_terminating_x_m_l_tag"/>
+        <childnode refid="490" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="490">
+        <label>ARdevKit.Model.Project.File.XMLTag</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_tag"/>
+        <childnode refid="489" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="492">
+        <label>ARdevKit.Model.Project.File.BlockMarker</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/BlockMarker.cs" line="18" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/BlockMarker.cs" bodystart="17" bodyend="84"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker_1a148e8916c49f13adff386c50d0b45738" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::BlockMarker</scope><name>BlockMarker</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker_1aa9b3cdf82da639e651b73eff5ec7938f" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::BlockMarker</scope><name>BlockMarker</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker_1add534689f3e6af2448ee6194305ceafc" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::File::BlockMarker</scope><name>closed</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker_1a3672477b3c409c07c7189a57fbd004c4" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::BlockMarker</scope><name>End</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker_1a7764ae600714a07a74b8ddf55f1a59d5" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::BlockMarker</scope><name>Start</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker_1a5334b9dcd41a81ccac65d7c98062c43a" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::BlockMarker</scope><name>ToString</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

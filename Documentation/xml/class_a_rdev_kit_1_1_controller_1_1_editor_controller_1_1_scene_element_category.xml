@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_category" kind="class" prot="public">
+    <compoundname>ARdevKit::Controller::EditorController::SceneElementCategory</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_category_1a2f18c6c36effdf0c7cc263ab285ff837" prot="private" static="no" mutable="no">
+        <type><ref refid="namespace_a_rdev_kit_1_1_controller_1_1_editor_controller_1a304367964b3f3f5c115bb81e7b31d534" kindref="member">MetaCategory</ref></type>
+        <definition>MetaCategory ARdevKit.Controller.EditorController.SceneElementCategory.metaCategory</definition>
+        <argsstring></argsstring>
+        <name>metaCategory</name>
+        <briefdescription>
+<para>Hält die Kategorie der in den SceneElements enthaltenen IPreviewables. </para>        </briefdescription>
+        <detaileddescription>
+<para>The meta category. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElementCategory.cs" line="32" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElementCategory.cs" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_category_1a9f1387559c86372b0fa08ae1a969d81d" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String ARdevKit.Controller.EditorController.SceneElementCategory.name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+<para>Hält einen Namen, der die Kategorie beschreibt. Dieser wird in der ComboBox des ElementSelectionPanels angezeigt. </para>        </briefdescription>
+        <detaileddescription>
+<para>The name. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElementCategory.cs" line="55" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElementCategory.cs" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_category_1a937dd5a7a8939117f1f8c6581ddbefd2" prot="private" static="no" mutable="no">
+        <type>List&lt; <ref refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element" kindref="compound">SceneElement</ref> &gt;</type>
+        <definition>List&lt;SceneElement&gt; ARdevKit.Controller.EditorController.SceneElementCategory.sceneElements</definition>
+        <argsstring></argsstring>
+        <name>sceneElements</name>
+        <briefdescription>
+<para>Hält die zur Kategorie gehörenden SceneElements. </para>        </briefdescription>
+        <detaileddescription>
+<para>The scene elements. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElementCategory.cs" line="75" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElementCategory.cs" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_category_1a3b683fe0bda9ff970f7fbc1099818647" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type><ref refid="namespace_a_rdev_kit_1_1_controller_1_1_editor_controller_1a304367964b3f3f5c115bb81e7b31d534" kindref="member">MetaCategory</ref></type>
+        <definition>MetaCategory ARdevKit.Controller.EditorController.SceneElementCategory.Category</definition>
+        <argsstring></argsstring>
+        <name>Category</name>
+        <briefdescription>
+<para>Gets or sets the category the meta belongs to. </para>        </briefdescription>
+        <detaileddescription>
+<para>The meta category. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElementCategory.cs" line="40" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElementCategory.cs" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_category_1a0f33148739c409a2fe2210c4e3ece165" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>String</type>
+        <definition>String ARdevKit.Controller.EditorController.SceneElementCategory.Name</definition>
+        <argsstring></argsstring>
+        <name>Name</name>
+        <briefdescription>
+<para>Gets or sets the name. </para>        </briefdescription>
+        <detaileddescription>
+<para>The name. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElementCategory.cs" line="63" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElementCategory.cs" bodystart="64" bodyend="-1"/>
+        <referencedby refid="class_preview_controller_1ae3d0ace09aed4464a7dd91764d1bb03e" compoundref="_preview_controller_8cs" startline="101" endline="166">PreviewController.addPreviewable</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_category_1a6e7b2d628b8ea21c13b6f4533a26c7ba" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>List&lt; <ref refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element" kindref="compound">SceneElement</ref> &gt;</type>
+        <definition>List&lt;SceneElement&gt; ARdevKit.Controller.EditorController.SceneElementCategory.SceneElements</definition>
+        <argsstring></argsstring>
+        <name>SceneElements</name>
+        <briefdescription>
+<para>Gets or sets the scene elements. </para>        </briefdescription>
+        <detaileddescription>
+<para>The scene elements. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElementCategory.cs" line="83" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElementCategory.cs" bodystart="84" bodyend="-1"/>
+        <referencedby refid="class_preview_controller_1ae3d0ace09aed4464a7dd91764d1bb03e" compoundref="_preview_controller_8cs" startline="101" endline="166">PreviewController.addPreviewable</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_category_1a6936cb0f458240ccf645ab384053d060" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.Controller.EditorController.SceneElementCategory.SceneElementCategory</definition>
+        <argsstring>(MetaCategory metaCategory, String name)</argsstring>
+        <name>SceneElementCategory</name>
+        <param>
+          <type><ref refid="namespace_a_rdev_kit_1_1_controller_1_1_editor_controller_1a304367964b3f3f5c115bb81e7b31d534" kindref="member">MetaCategory</ref></type>
+          <declname>metaCategory</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Robin, 14.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>metaCategory</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Holds the Meta Category of the IPreviewables of this category. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Holds a name for the category that is shown in the ComboBox. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElementCategory.cs" line="98" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElementCategory.cs" bodystart="98" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_category_1a57ca19247962d459e91593410d925b9b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override string</type>
+        <definition>override string ARdevKit.Controller.EditorController.SceneElementCategory.ToString</definition>
+        <argsstring>()</argsstring>
+        <name>ToString</name>
+        <briefdescription>
+<para>Gibt eine Zeichenfolge zurück, die das aktuelle Objekt darstellt. </para>        </briefdescription>
+        <detaileddescription>
+<para>Robin, 14.01.2014. </para><para><simplesect kind="return"><para>Eine Zeichenfolge, die das aktuelle Objekt darstellt. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElementCategory.cs" line="113" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElementCategory.cs" bodystart="113" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_category_1a09c36933f68465de2c1e2427870c9fdc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ARdevKit.Controller.EditorController.SceneElementCategory.addElement</definition>
+        <argsstring>(SceneElement e)</argsstring>
+        <name>addElement</name>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element" kindref="compound">SceneElement</ref></type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Adds an element to the category. </para>        </briefdescription>
+        <detaileddescription>
+<para>Robin, 14.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element" kindref="compound">SceneElement</ref> to process. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElementCategory.cs" line="126" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElementCategory.cs" bodystart="126" bodyend="129"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A category for scene elements. </para>    </briefdescription>
+    <detaileddescription>
+<para>Robin, 19.01.2014. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="705">
+        <label>ARdevKit.Controller.EditorController.SceneElementCategory</label>
+        <link refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_category"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElementCategory.cs" line="24" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElementCategory.cs" bodystart="23" bodyend="130"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_category_1a09c36933f68465de2c1e2427870c9fdc" prot="public" virt="non-virtual"><scope>ARdevKit::Controller::EditorController::SceneElementCategory</scope><name>addElement</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_category_1a3b683fe0bda9ff970f7fbc1099818647" prot="public" virt="non-virtual"><scope>ARdevKit::Controller::EditorController::SceneElementCategory</scope><name>Category</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_category_1a2f18c6c36effdf0c7cc263ab285ff837" prot="private" virt="non-virtual"><scope>ARdevKit::Controller::EditorController::SceneElementCategory</scope><name>metaCategory</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_category_1a0f33148739c409a2fe2210c4e3ece165" prot="public" virt="non-virtual"><scope>ARdevKit::Controller::EditorController::SceneElementCategory</scope><name>Name</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_category_1a9f1387559c86372b0fa08ae1a969d81d" prot="private" virt="non-virtual"><scope>ARdevKit::Controller::EditorController::SceneElementCategory</scope><name>name</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_category_1a6936cb0f458240ccf645ab384053d060" prot="public" virt="non-virtual"><scope>ARdevKit::Controller::EditorController::SceneElementCategory</scope><name>SceneElementCategory</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_category_1a937dd5a7a8939117f1f8c6581ddbefd2" prot="private" virt="non-virtual"><scope>ARdevKit::Controller::EditorController::SceneElementCategory</scope><name>sceneElements</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_category_1a6e7b2d628b8ea21c13b6f4533a26c7ba" prot="public" virt="non-virtual"><scope>ARdevKit::Controller::EditorController::SceneElementCategory</scope><name>SceneElements</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_category_1a57ca19247962d459e91593410d925b9b" prot="public" virt="non-virtual"><scope>ARdevKit::Controller::EditorController::SceneElementCategory</scope><name>ToString</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

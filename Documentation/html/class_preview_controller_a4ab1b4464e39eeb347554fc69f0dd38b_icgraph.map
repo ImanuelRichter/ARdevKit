@@ -1,0 +1,7 @@
+<map id="PreviewController.findBox" name="PreviewController.findBox">
+<area shape="rect" id="node2" href="$class_preview_controller.html#aa4cc8c02192eb08afe244825d5796552" title="add Source or augmentation, this method can only be used with the element, which is the over element ..." alt="" coords="221,5,408,32"/>
+<area shape="rect" id="node4" href="$class_preview_controller.html#ae5cb0828e43829a516a998407d6f8a1a" title="sets the currentElement in EditorWindow an marks the PictureBox in the PreviewPanel. " alt="" coords="222,57,407,98"/>
+<area shape="rect" id="node6" href="$class_preview_controller.html#af14f36a06e16003c0cc11188024521c7" title="This updates the position of the currentElement&#45;Picturebox. " alt="" coords="233,122,397,163"/>
+<area shape="rect" id="node3" href="$class_preview_controller.html#a7bc01f6c09f310b7079a9754ec27e307" title="Raises the drag event when a source is droped on an augmentation. " alt="" coords="457,5,703,32"/>
+<area shape="rect" id="node5" href="$class_preview_controller.html#ae3d0ace09aed4464a7dd91764d1bb03e" title="add Trackable is the method for adding the trackable, each PreviewPanel can holding one Trackable..." alt="" coords="473,64,687,91"/>
+</map>

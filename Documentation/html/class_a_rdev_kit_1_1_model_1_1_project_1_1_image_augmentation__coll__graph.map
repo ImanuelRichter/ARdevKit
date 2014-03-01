@@ -1,0 +1,6 @@
+<map id="ARdevKit.Model.Project.ImageAugmentation" name="ARdevKit.Model.Project.ImageAugmentation">
+<area shape="rect" id="node2" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_augmentation.html" title="Describes an abstract twodimensional augmentation with its additional features height and width..." alt="" coords="11,971,197,1077"/>
+<area shape="rect" id="node3" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation.html" title="describes an AbstractAugmentation, which is bound to a certain AbstractTrackable. is IPreviewable ..." alt="" coords="6,608,201,920"/>
+<area shape="rect" id="node4" href="$interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable.html" title="Interface for previewable elements from the Model. " alt="" coords="20,133,127,240"/>
+<area shape="rect" id="node6" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable.html" title="Describes an AbstractTrackable with its associated AbstractAugmentations and further details used for..." alt="" coords="95,291,307,544"/>
+</map>

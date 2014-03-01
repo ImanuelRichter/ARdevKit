@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="dir_dd825193f934e4744a92918521adc92b" kind="dir">
+    <compoundname>C:/Users/geht/Source/Repos/ARdevKit/Editor</compoundname>
+    <innerdir refid="dir_140b29a0eea4478e8159df94df3187a1">C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller</innerdir>
+    <innerdir refid="dir_eb8cf7566dcad3ad89048cea99381d77">C:/Users/geht/Source/Repos/ARdevKit/Editor/Model</innerdir>
+    <innerdir refid="dir_d1d57132ed90d694202f647988346126">C:/Users/geht/Source/Repos/ARdevKit/Editor/obj</innerdir>
+    <innerdir refid="dir_30daba706260c9ae66b6655819828860">C:/Users/geht/Source/Repos/ARdevKit/Editor/Properties</innerdir>
+    <innerdir refid="dir_67b2f86c91f7cb598c0b904e85c65259">C:/Users/geht/Source/Repos/ARdevKit/Editor/View</innerdir>
+    <innerfile refid="_a_rdev_kit_editor_8cs">ARdevKitEditor.cs</innerfile>
+    <innerfile refid="_editor_window_8cs">EditorWindow.cs</innerfile>
+    <innerfile refid="_editor_window_8designer_8cs">EditorWindow.designer.cs</innerfile>
+    <innerfile refid="_text_editor_form_8cs">TextEditorForm.cs</innerfile>
+    <innerfile refid="_text_editor_form_8_designer_8cs">TextEditorForm.Designer.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/"/>
+  </compounddef>
+</doxygen>

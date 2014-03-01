@@ -1,0 +1,342 @@
+\hypertarget{class_a_rdev_kit_1_1_editor_window}{\section{A\-Rdev\-Kit.\-Editor\-Window Class Reference}
+\label{class_a_rdev_kit_1_1_editor_window}\index{A\-Rdev\-Kit.\-Editor\-Window@{A\-Rdev\-Kit.\-Editor\-Window}}
+}
+
+
+Form for viewing the editor. This is the main form of the program.  
+
+
+
+
+Inheritance diagram for A\-Rdev\-Kit.\-Editor\-Window\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_a_rdev_kit_1_1_editor_window__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\-Rdev\-Kit.\-Editor\-Window\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_a_rdev_kit_1_1_editor_window__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_a_rdev_kit_1_1_editor_window_aceeacbdb108a82c59f88194a3d4e396c}{\hyperlink{class_a_rdev_kit_1_1_editor_window_aceeacbdb108a82c59f88194a3d4e396c}{Editor\-Window} ()}\label{class_a_rdev_kit_1_1_editor_window_aceeacbdb108a82c59f88194a3d4e396c}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. initializes components on startup. \end{DoxyCompactList}\item 
+void \hyperlink{class_a_rdev_kit_1_1_editor_window_a0df48f7d107d823f50799886bd99c1ee}{Player\-Started} ()
+\begin{DoxyCompactList}\small\item\em This method is used to tell the editor\-Window that the player was started. \end{DoxyCompactList}\item 
+void \hyperlink{class_a_rdev_kit_1_1_editor_window_a03fe5bc5b9e383b895fa1a30faf48301}{Player\-Closed} ()
+\begin{DoxyCompactList}\small\item\em This method is used to tell the editor\-Window that the player has been closed. \end{DoxyCompactList}\item 
+void \hyperlink{class_a_rdev_kit_1_1_editor_window_afe0bf240a814370f5b119be462a1acec}{create\-New\-Project} (String name)
+\begin{DoxyCompactList}\small\item\em Creates the new project. Initialized with the given name. \end{DoxyCompactList}\item 
+void \hyperlink{class_a_rdev_kit_1_1_editor_window_a0ae113d771fc8a03dcf53016a54345d4}{export\-Project} ()
+\begin{DoxyCompactList}\small\item\em Exports the project. saves the project first and then exports to project path \end{DoxyCompactList}\item 
+void \hyperlink{class_a_rdev_kit_1_1_editor_window_a5225f8ebee27d368578165c43f826899}{load\-Project} ()
+\begin{DoxyCompactList}\small\item\em Loads the project. Opens a file dialog to select a saved project. \end{DoxyCompactList}\item 
+void \hyperlink{class_a_rdev_kit_1_1_editor_window_a62e369fde3e6bf2d3980ff36256a74c1}{register\-Elements} ()
+\begin{DoxyCompactList}\small\item\em Registers all Scene\-Elements that are available. \end{DoxyCompactList}\item 
+void \hyperlink{class_a_rdev_kit_1_1_editor_window_a7ef9b2d88c9155f213bcc1b0476c4bb2}{save\-Project} ()
+\begin{DoxyCompactList}\small\item\em Saves the project. Opens file save dialog if project Path isn't set yet. calls save(\-String path). \end{DoxyCompactList}\item 
+void \hyperlink{class_a_rdev_kit_1_1_editor_window_ac2843e3145e7ef49d34dc4b104ff66d4}{update\-Element\-Selection\-Panel} ()
+\begin{DoxyCompactList}\small\item\em Updates the element selection panel. (Refreshes the \hyperlink{namespace_a_rdev_kit_1_1_view}{View}) \end{DoxyCompactList}\item 
+void \hyperlink{class_a_rdev_kit_1_1_editor_window_a82a2f39ebff57ea65f545b56859be05a}{update\-Preview\-Panel} ()
+\begin{DoxyCompactList}\small\item\em This functions Updates the scene Preview\-Panel. Alle elements will be removed and all current elements will add again to the panel. \end{DoxyCompactList}\item 
+void \hyperlink{class_a_rdev_kit_1_1_editor_window_abb065a00022ebb57eeb967d319554fc3}{update\-Scene\-Selection\-Panel} ()
+\begin{DoxyCompactList}\small\item\em This functions Updates the scene Scene\-Selection\-Panel. Alle elements will be removed and all current elements will add again to the panel. \end{DoxyCompactList}\item 
+void \hyperlink{class_a_rdev_kit_1_1_editor_window_a302d58e454127a9fb28eb3fa8b20cc5b}{set\-Paste\-Button\-Enabled} ()
+\begin{DoxyCompactList}\small\item\em Sets the Paste\-Button enabled. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \hyperlink{class_a_rdev_kit_1_1_editor_window_a42208cca445e8fc2eb18e829b5c67d37}{Dispose} (bool disposing)
+\begin{DoxyCompactList}\small\item\em Verwendete Ressourcen bereinigen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_preview_controller}{Preview\-Controller} \hyperlink{class_a_rdev_kit_1_1_editor_window_ae57e383a1684241c86a5253d1fd8197a}{Preview\-Controller}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the preview\-Controller. \end{DoxyCompactList}\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_project}{Project} \hyperlink{class_a_rdev_kit_1_1_editor_window_aa7e64c912e3d904fae0ec52588be0baa}{project}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the project. \end{DoxyCompactList}\item 
+System.\-Windows.\-Forms.\-Property\-Grid \hyperlink{class_a_rdev_kit_1_1_editor_window_a8f5f7c03bcb123e147d07b5023a60292}{Property\-Grid1}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the Property\-Grid1. \end{DoxyCompactList}\item 
+System.\-Windows.\-Forms.\-Panel \hyperlink{class_a_rdev_kit_1_1_editor_window_a63d02d43b7dfe8841d6e1204948ecb17}{Pnl\-\_\-editor\-\_\-preview}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the pnl editor preview. \end{DoxyCompactList}\item 
+System.\-Windows.\-Forms.\-Panel \hyperlink{class_a_rdev_kit_1_1_editor_window_a601e295ca226828c6ca4eadc21101a78}{Pnl\-\_\-editor\-\_\-selection}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the pnl editor selection. \end{DoxyCompactList}\item 
+System.\-Windows.\-Forms.\-Combo\-Box \hyperlink{class_a_rdev_kit_1_1_editor_window_a0937e4db376a67530e488c174d512925}{Cmb\-\_\-editor\-\_\-selection\-\_\-tool\-Selection}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the cmb editor selection tool selection. \end{DoxyCompactList}\item 
+System.\-Windows.\-Forms.\-Combo\-Box \hyperlink{class_a_rdev_kit_1_1_editor_window_a7a5f59a2277ea660f5ac354ed6563931}{Cmb\-\_\-editor\-\_\-properties\-\_\-object\-Selection}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the cmb editor properties object selection. \end{DoxyCompactList}\item 
+System.\-Windows.\-Forms.\-Tool\-Strip\-Menu\-Item \hyperlink{class_a_rdev_kit_1_1_editor_window_a7ce809e15aaf06e0d514989fb6292687}{Tsm\-\_\-editor\-\_\-menu\-\_\-edit\-\_\-copie}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the tsm\-\_\-editor\-\_\-menu\-\_\-edit\-\_\-copie. \end{DoxyCompactList}\item 
+System.\-Windows.\-Forms.\-Tool\-Strip\-Menu\-Item \hyperlink{class_a_rdev_kit_1_1_editor_window_ac2310f24fffc1c84b2c23c5e6cbd8156}{Tsm\-\_\-editor\-\_\-menu\-\_\-edit\-\_\-paste}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the tsm\-\_\-editor\-\_\-menu\-\_\-edit\-\_\-paste. \end{DoxyCompactList}\item 
+System.\-Windows.\-Forms.\-Tool\-Strip\-Menu\-Item \hyperlink{class_a_rdev_kit_1_1_editor_window_a94b80b86878dae463d966bd117732260}{Tsm\-\_\-editor\-\_\-menu\-\_\-edit\-\_\-delete}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the tsm\-\_\-editor\-\_\-menu\-\_\-edit\-\_\-delete. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Form for viewing the editor. This is the main form of the program. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_a_rdev_kit_1_1_editor_window_afe0bf240a814370f5b119be462a1acec}{\index{A\-Rdev\-Kit\-::\-Editor\-Window@{A\-Rdev\-Kit\-::\-Editor\-Window}!create\-New\-Project@{create\-New\-Project}}
+\index{create\-New\-Project@{create\-New\-Project}!ARdevKit::EditorWindow@{A\-Rdev\-Kit\-::\-Editor\-Window}}
+\subsubsection[{create\-New\-Project}]{\setlength{\rightskip}{0pt plus 5cm}void A\-Rdev\-Kit.\-Editor\-Window.\-create\-New\-Project (
+\begin{DoxyParamCaption}
+\item[{String}]{name}
+\end{DoxyParamCaption}
+)}}\label{class_a_rdev_kit_1_1_editor_window_afe0bf240a814370f5b119be462a1acec}
+
+
+Creates the new project. Initialized with the given name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the new project.\\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_a_rdev_kit_1_1_editor_window_afe0bf240a814370f5b119be462a1acec_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_a_rdev_kit_1_1_editor_window_a42208cca445e8fc2eb18e829b5c67d37}{\index{A\-Rdev\-Kit\-::\-Editor\-Window@{A\-Rdev\-Kit\-::\-Editor\-Window}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!ARdevKit::EditorWindow@{A\-Rdev\-Kit\-::\-Editor\-Window}}
+\subsubsection[{Dispose}]{\setlength{\rightskip}{0pt plus 5cm}override void A\-Rdev\-Kit.\-Editor\-Window.\-Dispose (
+\begin{DoxyParamCaption}
+\item[{bool}]{disposing}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_rdev_kit_1_1_editor_window_a42208cca445e8fc2eb18e829b5c67d37}
+
+
+Verwendete Ressourcen bereinigen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em disposing} & True, wenn verwaltete Ressourcen gelöscht werden sollen; andernfalls False.\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_a_rdev_kit_1_1_editor_window_a0ae113d771fc8a03dcf53016a54345d4}{\index{A\-Rdev\-Kit\-::\-Editor\-Window@{A\-Rdev\-Kit\-::\-Editor\-Window}!export\-Project@{export\-Project}}
+\index{export\-Project@{export\-Project}!ARdevKit::EditorWindow@{A\-Rdev\-Kit\-::\-Editor\-Window}}
+\subsubsection[{export\-Project}]{\setlength{\rightskip}{0pt plus 5cm}void A\-Rdev\-Kit.\-Editor\-Window.\-export\-Project (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_a_rdev_kit_1_1_editor_window_a0ae113d771fc8a03dcf53016a54345d4}
+
+
+Exports the project. saves the project first and then exports to project path 
+
+geht 19.\-01.\-2014 22\-:10
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_a_rdev_kit_1_1_editor_window_a0ae113d771fc8a03dcf53016a54345d4_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_a_rdev_kit_1_1_editor_window_a5225f8ebee27d368578165c43f826899}{\index{A\-Rdev\-Kit\-::\-Editor\-Window@{A\-Rdev\-Kit\-::\-Editor\-Window}!load\-Project@{load\-Project}}
+\index{load\-Project@{load\-Project}!ARdevKit::EditorWindow@{A\-Rdev\-Kit\-::\-Editor\-Window}}
+\subsubsection[{load\-Project}]{\setlength{\rightskip}{0pt plus 5cm}void A\-Rdev\-Kit.\-Editor\-Window.\-load\-Project (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_a_rdev_kit_1_1_editor_window_a5225f8ebee27d368578165c43f826899}
+
+
+Loads the project. Opens a file dialog to select a saved project. 
+
+geht 19.\-01.\-2014 17\-:55\hypertarget{class_a_rdev_kit_1_1_editor_window_a03fe5bc5b9e383b895fa1a30faf48301}{\index{A\-Rdev\-Kit\-::\-Editor\-Window@{A\-Rdev\-Kit\-::\-Editor\-Window}!Player\-Closed@{Player\-Closed}}
+\index{Player\-Closed@{Player\-Closed}!ARdevKit::EditorWindow@{A\-Rdev\-Kit\-::\-Editor\-Window}}
+\subsubsection[{Player\-Closed}]{\setlength{\rightskip}{0pt plus 5cm}void A\-Rdev\-Kit.\-Editor\-Window.\-Player\-Closed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_a_rdev_kit_1_1_editor_window_a03fe5bc5b9e383b895fa1a30faf48301}
+
+
+This method is used to tell the editor\-Window that the player has been closed. 
+
+\hypertarget{class_a_rdev_kit_1_1_editor_window_a0df48f7d107d823f50799886bd99c1ee}{\index{A\-Rdev\-Kit\-::\-Editor\-Window@{A\-Rdev\-Kit\-::\-Editor\-Window}!Player\-Started@{Player\-Started}}
+\index{Player\-Started@{Player\-Started}!ARdevKit::EditorWindow@{A\-Rdev\-Kit\-::\-Editor\-Window}}
+\subsubsection[{Player\-Started}]{\setlength{\rightskip}{0pt plus 5cm}void A\-Rdev\-Kit.\-Editor\-Window.\-Player\-Started (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_a_rdev_kit_1_1_editor_window_a0df48f7d107d823f50799886bd99c1ee}
+
+
+This method is used to tell the editor\-Window that the player was started. 
+
+\hypertarget{class_a_rdev_kit_1_1_editor_window_a62e369fde3e6bf2d3980ff36256a74c1}{\index{A\-Rdev\-Kit\-::\-Editor\-Window@{A\-Rdev\-Kit\-::\-Editor\-Window}!register\-Elements@{register\-Elements}}
+\index{register\-Elements@{register\-Elements}!ARdevKit::EditorWindow@{A\-Rdev\-Kit\-::\-Editor\-Window}}
+\subsubsection[{register\-Elements}]{\setlength{\rightskip}{0pt plus 5cm}void A\-Rdev\-Kit.\-Editor\-Window.\-register\-Elements (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_a_rdev_kit_1_1_editor_window_a62e369fde3e6bf2d3980ff36256a74c1}
+
+
+Registers all Scene\-Elements that are available. 
+
+Robin, 14.\-01.\-2014. \hypertarget{class_a_rdev_kit_1_1_editor_window_a7ef9b2d88c9155f213bcc1b0476c4bb2}{\index{A\-Rdev\-Kit\-::\-Editor\-Window@{A\-Rdev\-Kit\-::\-Editor\-Window}!save\-Project@{save\-Project}}
+\index{save\-Project@{save\-Project}!ARdevKit::EditorWindow@{A\-Rdev\-Kit\-::\-Editor\-Window}}
+\subsubsection[{save\-Project}]{\setlength{\rightskip}{0pt plus 5cm}void A\-Rdev\-Kit.\-Editor\-Window.\-save\-Project (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_a_rdev_kit_1_1_editor_window_a7ef9b2d88c9155f213bcc1b0476c4bb2}
+
+
+Saves the project. Opens file save dialog if project Path isn't set yet. calls save(\-String path). 
+
+geht, 17.\-01.\-2014. 
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_a_rdev_kit_1_1_editor_window_a7ef9b2d88c9155f213bcc1b0476c4bb2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_a_rdev_kit_1_1_editor_window_a302d58e454127a9fb28eb3fa8b20cc5b}{\index{A\-Rdev\-Kit\-::\-Editor\-Window@{A\-Rdev\-Kit\-::\-Editor\-Window}!set\-Paste\-Button\-Enabled@{set\-Paste\-Button\-Enabled}}
+\index{set\-Paste\-Button\-Enabled@{set\-Paste\-Button\-Enabled}!ARdevKit::EditorWindow@{A\-Rdev\-Kit\-::\-Editor\-Window}}
+\subsubsection[{set\-Paste\-Button\-Enabled}]{\setlength{\rightskip}{0pt plus 5cm}void A\-Rdev\-Kit.\-Editor\-Window.\-set\-Paste\-Button\-Enabled (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_a_rdev_kit_1_1_editor_window_a302d58e454127a9fb28eb3fa8b20cc5b}
+
+
+Sets the Paste\-Button enabled. 
+
+\hypertarget{class_a_rdev_kit_1_1_editor_window_ac2843e3145e7ef49d34dc4b104ff66d4}{\index{A\-Rdev\-Kit\-::\-Editor\-Window@{A\-Rdev\-Kit\-::\-Editor\-Window}!update\-Element\-Selection\-Panel@{update\-Element\-Selection\-Panel}}
+\index{update\-Element\-Selection\-Panel@{update\-Element\-Selection\-Panel}!ARdevKit::EditorWindow@{A\-Rdev\-Kit\-::\-Editor\-Window}}
+\subsubsection[{update\-Element\-Selection\-Panel}]{\setlength{\rightskip}{0pt plus 5cm}void A\-Rdev\-Kit.\-Editor\-Window.\-update\-Element\-Selection\-Panel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_a_rdev_kit_1_1_editor_window_ac2843e3145e7ef49d34dc4b104ff66d4}
+
+
+Updates the element selection panel. (Refreshes the \hyperlink{namespace_a_rdev_kit_1_1_view}{View}) 
+
+\hypertarget{class_a_rdev_kit_1_1_editor_window_a82a2f39ebff57ea65f545b56859be05a}{\index{A\-Rdev\-Kit\-::\-Editor\-Window@{A\-Rdev\-Kit\-::\-Editor\-Window}!update\-Preview\-Panel@{update\-Preview\-Panel}}
+\index{update\-Preview\-Panel@{update\-Preview\-Panel}!ARdevKit::EditorWindow@{A\-Rdev\-Kit\-::\-Editor\-Window}}
+\subsubsection[{update\-Preview\-Panel}]{\setlength{\rightskip}{0pt plus 5cm}void A\-Rdev\-Kit.\-Editor\-Window.\-update\-Preview\-Panel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_a_rdev_kit_1_1_editor_window_a82a2f39ebff57ea65f545b56859be05a}
+
+
+This functions Updates the scene Preview\-Panel. Alle elements will be removed and all current elements will add again to the panel. 
+
+Lizzard, 1/16/2014. \hypertarget{class_a_rdev_kit_1_1_editor_window_abb065a00022ebb57eeb967d319554fc3}{\index{A\-Rdev\-Kit\-::\-Editor\-Window@{A\-Rdev\-Kit\-::\-Editor\-Window}!update\-Scene\-Selection\-Panel@{update\-Scene\-Selection\-Panel}}
+\index{update\-Scene\-Selection\-Panel@{update\-Scene\-Selection\-Panel}!ARdevKit::EditorWindow@{A\-Rdev\-Kit\-::\-Editor\-Window}}
+\subsubsection[{update\-Scene\-Selection\-Panel}]{\setlength{\rightskip}{0pt plus 5cm}void A\-Rdev\-Kit.\-Editor\-Window.\-update\-Scene\-Selection\-Panel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_a_rdev_kit_1_1_editor_window_abb065a00022ebb57eeb967d319554fc3}
+
+
+This functions Updates the scene Scene\-Selection\-Panel. Alle elements will be removed and all current elements will add again to the panel. 
+
+Lizzard, 1/16/2014. 
+
+\subsection{Property Documentation}
+\hypertarget{class_a_rdev_kit_1_1_editor_window_a7a5f59a2277ea660f5ac354ed6563931}{\index{A\-Rdev\-Kit\-::\-Editor\-Window@{A\-Rdev\-Kit\-::\-Editor\-Window}!Cmb\-\_\-editor\-\_\-properties\-\_\-object\-Selection@{Cmb\-\_\-editor\-\_\-properties\-\_\-object\-Selection}}
+\index{Cmb\-\_\-editor\-\_\-properties\-\_\-object\-Selection@{Cmb\-\_\-editor\-\_\-properties\-\_\-object\-Selection}!ARdevKit::EditorWindow@{A\-Rdev\-Kit\-::\-Editor\-Window}}
+\subsubsection[{Cmb\-\_\-editor\-\_\-properties\-\_\-object\-Selection}]{\setlength{\rightskip}{0pt plus 5cm}System.\-Windows.\-Forms.\-Combo\-Box A\-Rdev\-Kit.\-Editor\-Window.\-Cmb\-\_\-editor\-\_\-properties\-\_\-object\-Selection\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_editor_window_a7a5f59a2277ea660f5ac354ed6563931}
+
+
+Gets or sets the cmb editor properties object selection. 
+
+The cmb editor properties object selection. \hypertarget{class_a_rdev_kit_1_1_editor_window_a0937e4db376a67530e488c174d512925}{\index{A\-Rdev\-Kit\-::\-Editor\-Window@{A\-Rdev\-Kit\-::\-Editor\-Window}!Cmb\-\_\-editor\-\_\-selection\-\_\-tool\-Selection@{Cmb\-\_\-editor\-\_\-selection\-\_\-tool\-Selection}}
+\index{Cmb\-\_\-editor\-\_\-selection\-\_\-tool\-Selection@{Cmb\-\_\-editor\-\_\-selection\-\_\-tool\-Selection}!ARdevKit::EditorWindow@{A\-Rdev\-Kit\-::\-Editor\-Window}}
+\subsubsection[{Cmb\-\_\-editor\-\_\-selection\-\_\-tool\-Selection}]{\setlength{\rightskip}{0pt plus 5cm}System.\-Windows.\-Forms.\-Combo\-Box A\-Rdev\-Kit.\-Editor\-Window.\-Cmb\-\_\-editor\-\_\-selection\-\_\-tool\-Selection\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_editor_window_a0937e4db376a67530e488c174d512925}
+
+
+Gets or sets the cmb editor selection tool selection. 
+
+The cmb editor selection tool selection. \hypertarget{class_a_rdev_kit_1_1_editor_window_a63d02d43b7dfe8841d6e1204948ecb17}{\index{A\-Rdev\-Kit\-::\-Editor\-Window@{A\-Rdev\-Kit\-::\-Editor\-Window}!Pnl\-\_\-editor\-\_\-preview@{Pnl\-\_\-editor\-\_\-preview}}
+\index{Pnl\-\_\-editor\-\_\-preview@{Pnl\-\_\-editor\-\_\-preview}!ARdevKit::EditorWindow@{A\-Rdev\-Kit\-::\-Editor\-Window}}
+\subsubsection[{Pnl\-\_\-editor\-\_\-preview}]{\setlength{\rightskip}{0pt plus 5cm}System.\-Windows.\-Forms.\-Panel A\-Rdev\-Kit.\-Editor\-Window.\-Pnl\-\_\-editor\-\_\-preview\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_editor_window_a63d02d43b7dfe8841d6e1204948ecb17}
+
+
+Gets or sets the pnl editor preview. 
+
+The pnl editor preview. \hypertarget{class_a_rdev_kit_1_1_editor_window_a601e295ca226828c6ca4eadc21101a78}{\index{A\-Rdev\-Kit\-::\-Editor\-Window@{A\-Rdev\-Kit\-::\-Editor\-Window}!Pnl\-\_\-editor\-\_\-selection@{Pnl\-\_\-editor\-\_\-selection}}
+\index{Pnl\-\_\-editor\-\_\-selection@{Pnl\-\_\-editor\-\_\-selection}!ARdevKit::EditorWindow@{A\-Rdev\-Kit\-::\-Editor\-Window}}
+\subsubsection[{Pnl\-\_\-editor\-\_\-selection}]{\setlength{\rightskip}{0pt plus 5cm}System.\-Windows.\-Forms.\-Panel A\-Rdev\-Kit.\-Editor\-Window.\-Pnl\-\_\-editor\-\_\-selection\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_editor_window_a601e295ca226828c6ca4eadc21101a78}
+
+
+Gets or sets the pnl editor selection. 
+
+The pnl editor selection. \hypertarget{class_a_rdev_kit_1_1_editor_window_ae57e383a1684241c86a5253d1fd8197a}{\index{A\-Rdev\-Kit\-::\-Editor\-Window@{A\-Rdev\-Kit\-::\-Editor\-Window}!Preview\-Controller@{Preview\-Controller}}
+\index{Preview\-Controller@{Preview\-Controller}!ARdevKit::EditorWindow@{A\-Rdev\-Kit\-::\-Editor\-Window}}
+\subsubsection[{Preview\-Controller}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Preview\-Controller} A\-Rdev\-Kit.\-Editor\-Window.\-Preview\-Controller\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_editor_window_ae57e383a1684241c86a5253d1fd8197a}
+
+
+Gets or sets the preview\-Controller. 
+
+The preview\-Controller. \hypertarget{class_a_rdev_kit_1_1_editor_window_aa7e64c912e3d904fae0ec52588be0baa}{\index{A\-Rdev\-Kit\-::\-Editor\-Window@{A\-Rdev\-Kit\-::\-Editor\-Window}!project@{project}}
+\index{project@{project}!ARdevKit::EditorWindow@{A\-Rdev\-Kit\-::\-Editor\-Window}}
+\subsubsection[{project}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Project} A\-Rdev\-Kit.\-Editor\-Window.\-project\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_editor_window_aa7e64c912e3d904fae0ec52588be0baa}
+
+
+Gets or sets the project. 
+
+The project. \hypertarget{class_a_rdev_kit_1_1_editor_window_a8f5f7c03bcb123e147d07b5023a60292}{\index{A\-Rdev\-Kit\-::\-Editor\-Window@{A\-Rdev\-Kit\-::\-Editor\-Window}!Property\-Grid1@{Property\-Grid1}}
+\index{Property\-Grid1@{Property\-Grid1}!ARdevKit::EditorWindow@{A\-Rdev\-Kit\-::\-Editor\-Window}}
+\subsubsection[{Property\-Grid1}]{\setlength{\rightskip}{0pt plus 5cm}System.\-Windows.\-Forms.\-Property\-Grid A\-Rdev\-Kit.\-Editor\-Window.\-Property\-Grid1\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_editor_window_a8f5f7c03bcb123e147d07b5023a60292}
+
+
+Gets or sets the Property\-Grid1. 
+
+Property\-Grid. \hypertarget{class_a_rdev_kit_1_1_editor_window_a7ce809e15aaf06e0d514989fb6292687}{\index{A\-Rdev\-Kit\-::\-Editor\-Window@{A\-Rdev\-Kit\-::\-Editor\-Window}!Tsm\-\_\-editor\-\_\-menu\-\_\-edit\-\_\-copie@{Tsm\-\_\-editor\-\_\-menu\-\_\-edit\-\_\-copie}}
+\index{Tsm\-\_\-editor\-\_\-menu\-\_\-edit\-\_\-copie@{Tsm\-\_\-editor\-\_\-menu\-\_\-edit\-\_\-copie}!ARdevKit::EditorWindow@{A\-Rdev\-Kit\-::\-Editor\-Window}}
+\subsubsection[{Tsm\-\_\-editor\-\_\-menu\-\_\-edit\-\_\-copie}]{\setlength{\rightskip}{0pt plus 5cm}System.\-Windows.\-Forms.\-Tool\-Strip\-Menu\-Item A\-Rdev\-Kit.\-Editor\-Window.\-Tsm\-\_\-editor\-\_\-menu\-\_\-edit\-\_\-copie\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_editor_window_a7ce809e15aaf06e0d514989fb6292687}
+
+
+Gets or sets the tsm\-\_\-editor\-\_\-menu\-\_\-edit\-\_\-copie. 
+
+The tsm\-\_\-editor\-\_\-menu\-\_\-edit\-\_\-copie. \hypertarget{class_a_rdev_kit_1_1_editor_window_a94b80b86878dae463d966bd117732260}{\index{A\-Rdev\-Kit\-::\-Editor\-Window@{A\-Rdev\-Kit\-::\-Editor\-Window}!Tsm\-\_\-editor\-\_\-menu\-\_\-edit\-\_\-delete@{Tsm\-\_\-editor\-\_\-menu\-\_\-edit\-\_\-delete}}
+\index{Tsm\-\_\-editor\-\_\-menu\-\_\-edit\-\_\-delete@{Tsm\-\_\-editor\-\_\-menu\-\_\-edit\-\_\-delete}!ARdevKit::EditorWindow@{A\-Rdev\-Kit\-::\-Editor\-Window}}
+\subsubsection[{Tsm\-\_\-editor\-\_\-menu\-\_\-edit\-\_\-delete}]{\setlength{\rightskip}{0pt plus 5cm}System.\-Windows.\-Forms.\-Tool\-Strip\-Menu\-Item A\-Rdev\-Kit.\-Editor\-Window.\-Tsm\-\_\-editor\-\_\-menu\-\_\-edit\-\_\-delete\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_editor_window_a94b80b86878dae463d966bd117732260}
+
+
+Gets or sets the tsm\-\_\-editor\-\_\-menu\-\_\-edit\-\_\-delete. 
+
+The tsm\-\_\-editor\-\_\-menu\-\_\-edit\-\_\-delete. \hypertarget{class_a_rdev_kit_1_1_editor_window_ac2310f24fffc1c84b2c23c5e6cbd8156}{\index{A\-Rdev\-Kit\-::\-Editor\-Window@{A\-Rdev\-Kit\-::\-Editor\-Window}!Tsm\-\_\-editor\-\_\-menu\-\_\-edit\-\_\-paste@{Tsm\-\_\-editor\-\_\-menu\-\_\-edit\-\_\-paste}}
+\index{Tsm\-\_\-editor\-\_\-menu\-\_\-edit\-\_\-paste@{Tsm\-\_\-editor\-\_\-menu\-\_\-edit\-\_\-paste}!ARdevKit::EditorWindow@{A\-Rdev\-Kit\-::\-Editor\-Window}}
+\subsubsection[{Tsm\-\_\-editor\-\_\-menu\-\_\-edit\-\_\-paste}]{\setlength{\rightskip}{0pt plus 5cm}System.\-Windows.\-Forms.\-Tool\-Strip\-Menu\-Item A\-Rdev\-Kit.\-Editor\-Window.\-Tsm\-\_\-editor\-\_\-menu\-\_\-edit\-\_\-paste\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_editor_window_ac2310f24fffc1c84b2c23c5e6cbd8156}
+
+
+Gets or sets the tsm\-\_\-editor\-\_\-menu\-\_\-edit\-\_\-paste. 
+
+The tsm\-\_\-editor\-\_\-menu\-\_\-edit\-\_\-paste. 

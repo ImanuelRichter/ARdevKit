@@ -1,0 +1,106 @@
+.TH "ARdevKit.Model.Project.File.BlockMarker" 3 "Sat Mar 1 2014" "Version 0.2" "ARdevKit" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ARdevKit.Model.Project.File.BlockMarker \- 
+.PP
+A \fBBlockMarker\fP marks an \fBAbstractBlock\fP\&. It has a \fBStart\fP string and an \fBEnd\fP string and can be open or closed\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBARdevKit\&.Model\&.Project\&.File\&.XMLTag\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBlockMarker\fP ()"
+.br
+.RI "\fIDefault constructor\&. \fP"
+.ti -1c
+.RI "\fBBlockMarker\fP (string start, string end)"
+.br
+.RI "\fIConstructor\&. \fP"
+.ti -1c
+.RI "override string \fBToString\fP ()"
+.br
+.RI "\fIReturns the start and end part alternating\&. Beginning with the start part on first call\&.\fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBclosed\fP = true"
+.br
+.RI "\fItrue if closed\&. \fP"
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "string \fBStart\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the start\&. \fP"
+.ti -1c
+.RI "string \fBEnd\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the end\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+A \fBBlockMarker\fP marks an \fBAbstractBlock\fP\&. It has a \fBStart\fP string and an \fBEnd\fP string and can be open or closed\&. 
+
+Imanuel, 17\&.01\&.2014\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ARdevKit\&.Model\&.Project\&.File\&.BlockMarker\&.BlockMarker ()"
+
+.PP
+Default constructor\&. Imanuel, 17\&.01\&.2014\&. 
+.SS "ARdevKit\&.Model\&.Project\&.File\&.BlockMarker\&.BlockMarker (stringstart, stringend)"
+
+.PP
+Constructor\&. Imanuel, 17\&.01\&.2014\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstart\fP The start\&. 
+.br
+\fIend\fP The end\&. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "override string ARdevKit\&.Model\&.Project\&.File\&.BlockMarker\&.ToString ()"
+
+.PP
+Returns the start and end part alternating\&. Beginning with the start part on first call\&.Imanuel, 15\&.01\&.2014\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Eine Zeichenfolge, die das aktuelle Objekt darstellt\&. 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "bool ARdevKit\&.Model\&.Project\&.File\&.BlockMarker\&.closed = true\fC [protected]\fP"
+
+.PP
+true if closed\&. 
+.SH "Property Documentation"
+.PP 
+.SS "string ARdevKit\&.Model\&.Project\&.File\&.BlockMarker\&.End\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the end\&. The end\&. 
+.SS "string ARdevKit\&.Model\&.Project\&.File\&.BlockMarker\&.Start\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the start\&. The start\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ARdevKit from the source code\&.

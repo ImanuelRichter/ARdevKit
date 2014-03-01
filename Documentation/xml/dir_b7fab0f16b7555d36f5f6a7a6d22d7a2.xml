@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="dir_b7fab0f16b7555d36f5f6a7a6d22d7a2" kind="dir">
+    <compoundname>C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController</compoundname>
+    <innerfile refid="_element_selection_controller_8cs">ElementSelectionController.cs</innerfile>
+    <innerfile refid="_object_copier_8cs">ObjectCopier.cs</innerfile>
+    <innerfile refid="_preview_controller_8cs">PreviewController.cs</innerfile>
+    <innerfile refid="_property_controller_8cs">PropertyController.cs</innerfile>
+    <innerfile refid="_scene_element_8cs">SceneElement.cs</innerfile>
+    <innerfile refid="_scene_element_category_8cs">SceneElementCategory.cs</innerfile>
+    <innerfile refid="_thumb_creator_8cs">ThumbCreator.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/"/>
+  </compounddef>
+</doxygen>

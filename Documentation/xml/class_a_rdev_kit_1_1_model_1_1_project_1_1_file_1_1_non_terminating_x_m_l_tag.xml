@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_non_terminating_x_m_l_tag" kind="class" prot="public">
+    <compoundname>ARdevKit::Model::Project::File::NonTerminatingXMLTag</compoundname>
+    <basecompoundref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_tag" prot="public" virt="non-virtual">ARdevKit.Model.Project.File.XMLTag</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_non_terminating_x_m_l_tag_1a06c6f90a43f306c87f1a7b8d5e3edb6e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.Model.Project.File.NonTerminatingXMLTag.NonTerminatingXMLTag</definition>
+        <argsstring>(string text)</argsstring>
+        <name>NonTerminatingXMLTag</name>
+        <param>
+          <type>string</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 15.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The text. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/NonTerminatingXMLTag.cs" line="25" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/NonTerminatingXMLTag.cs" bodystart="25" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_non_terminating_x_m_l_tag_1a9f47b9498210c2c2547576f4db50ac13" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.Model.Project.File.NonTerminatingXMLTag.NonTerminatingXMLTag</definition>
+        <argsstring>(string text, string extension)</argsstring>
+        <name>NonTerminatingXMLTag</name>
+        <param>
+          <type>string</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>extension</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 15.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The text. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>extension</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The extension. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/NonTerminatingXMLTag.cs" line="39" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/NonTerminatingXMLTag.cs" bodystart="39" bodyend="43"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_non_terminating_x_m_l_tag" kindref="compound">NonTerminatingXMLTag</ref> is a <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_tag" kindref="compound">XMLTag</ref> which has no end part. </para>    </briefdescription>
+    <detaileddescription>
+<para>Imanuel, 15.01.2014. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="663">
+        <label>BlockMarker</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker"/>
+      </node>
+      <node id="662">
+        <label>XMLTag</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_tag"/>
+        <childnode refid="663" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="661">
+        <label>ARdevKit.Model.Project.File.NonTerminatingXMLTag</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_non_terminating_x_m_l_tag"/>
+        <childnode refid="662" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="666">
+        <label>BlockMarker</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker"/>
+      </node>
+      <node id="665">
+        <label>XMLTag</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_tag"/>
+        <childnode refid="666" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="664">
+        <label>ARdevKit.Model.Project.File.NonTerminatingXMLTag</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_non_terminating_x_m_l_tag"/>
+        <childnode refid="665" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/NonTerminatingXMLTag.cs" line="16" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/NonTerminatingXMLTag.cs" bodystart="15" bodyend="44"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker_1a148e8916c49f13adff386c50d0b45738" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::NonTerminatingXMLTag</scope><name>BlockMarker</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker_1aa9b3cdf82da639e651b73eff5ec7938f" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::NonTerminatingXMLTag</scope><name>BlockMarker</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker_1add534689f3e6af2448ee6194305ceafc" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::File::NonTerminatingXMLTag</scope><name>closed</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker_1a3672477b3c409c07c7189a57fbd004c4" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::NonTerminatingXMLTag</scope><name>End</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_non_terminating_x_m_l_tag_1a06c6f90a43f306c87f1a7b8d5e3edb6e" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::NonTerminatingXMLTag</scope><name>NonTerminatingXMLTag</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_non_terminating_x_m_l_tag_1a9f47b9498210c2c2547576f4db50ac13" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::NonTerminatingXMLTag</scope><name>NonTerminatingXMLTag</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker_1a7764ae600714a07a74b8ddf55f1a59d5" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::NonTerminatingXMLTag</scope><name>Start</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker_1a5334b9dcd41a81ccac65d7c98062c43a" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::NonTerminatingXMLTag</scope><name>ToString</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_tag_1a403881a0be75d927f45605dd37f892f7" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::NonTerminatingXMLTag</scope><name>XMLTag</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_tag_1a147071845dbbac9b266346bfd7c0bb07" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::NonTerminatingXMLTag</scope><name>XMLTag</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

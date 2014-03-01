@@ -1,0 +1,123 @@
+.TH "ARdevKit.Model.Project.File.JavaScriptBlock" 3 "Sat Mar 1 2014" "Version 0.2" "ARdevKit" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ARdevKit.Model.Project.File.JavaScriptBlock \- 
+.PP
+A \fBJavaScriptBlock\fP block is an \fBAbstractBlock\fP\&. It has a head and constits of other \fBJavaScriptBlock\fPs and \fBJavaScriptLine\fPs\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBARdevKit\&.Model\&.Project\&.File\&.AbstractBlock\fP\&.
+.PP
+Inherited by \fBARdevKit\&.Model\&.Project\&.File\&.JavaScriptLine\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBJavaScriptBlock\fP ()"
+.br
+.RI "\fIDefault constructor\&. \fP"
+.ti -1c
+.RI "\fBJavaScriptBlock\fP (string head, \fBBlockMarker\fP \fBblockMarker\fP)"
+.br
+.RI "\fIConstructor\&. \fP"
+.ti -1c
+.RI "void \fBUpdate\fP (string head, \fBBlockMarker\fP \fBblockMarker\fP)"
+.br
+.RI "\fIUpdates the specified head\&. \fP"
+.ti -1c
+.RI "void \fBAddLine\fP (\fBJavaScriptLine\fP line)"
+.br
+.RI "\fIAdds a line\&. \fP"
+.ti -1c
+.RI "override void \fBWrite\fP (System\&.IO\&.StreamWriter writer)"
+.br
+.RI "\fIWrites with the given writer\&. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "List< \fBJavaScriptLine\fP > \fBlines\fP"
+.br
+.RI "\fIThe lines\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+A \fBJavaScriptBlock\fP block is an \fBAbstractBlock\fP\&. It has a head and constits of other \fBJavaScriptBlock\fPs and \fBJavaScriptLine\fPs\&. 
+
+Imanuel, 17\&.01\&.2014\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ARdevKit\&.Model\&.Project\&.File\&.JavaScriptBlock\&.JavaScriptBlock ()"
+
+.PP
+Default constructor\&. Imanuel, 17\&.01\&.2014\&. 
+.SS "ARdevKit\&.Model\&.Project\&.File\&.JavaScriptBlock\&.JavaScriptBlock (stringhead, \fBBlockMarker\fPblockMarker)"
+
+.PP
+Constructor\&. Imanuel, 17\&.01\&.2014\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIhead\fP The head\&. 
+.br
+\fIblockMarker\fP The block marker\&. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void ARdevKit\&.Model\&.Project\&.File\&.JavaScriptBlock\&.AddLine (\fBJavaScriptLine\fPline)"
+
+.PP
+Adds a line\&. Imanuel, 15\&.01\&.2014\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIline\fP The cln\&. 
+.RE
+.PP
+
+.SS "void ARdevKit\&.Model\&.Project\&.File\&.JavaScriptBlock\&.Update (stringhead, \fBBlockMarker\fPblockMarker)"
+
+.PP
+Updates the specified head\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIhead\fP The head\&.
+.br
+\fIblockMarker\fP The block marker\&.
+.RE
+.PP
+
+.SS "override void ARdevKit\&.Model\&.Project\&.File\&.JavaScriptBlock\&.Write (System\&.IO\&.StreamWriterwriter)\fC [virtual]\fP"
+
+.PP
+Writes with the given writer\&. Imanuel, 15\&.01\&.2014\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIwriter\fP The writer to write\&. 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBARdevKit\&.Model\&.Project\&.File\&.AbstractBlock\fP\&.
+.PP
+Reimplemented in \fBARdevKit\&.Model\&.Project\&.File\&.JavaScriptLine\fP, and \fBARdevKit\&.Model\&.Project\&.File\&.JavaScriptInLine\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "List<\fBJavaScriptLine\fP> ARdevKit\&.Model\&.Project\&.File\&.JavaScriptBlock\&.lines\fC [protected]\fP"
+
+.PP
+The lines\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ARdevKit from the source code\&.

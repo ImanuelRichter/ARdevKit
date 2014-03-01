@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_object_copier" kind="class" prot="public">
+    <compoundname>ObjectCopier</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_object_copier_1a908c2497b374716ebc7888c735203a6f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>static T ObjectCopier.Clone&lt; T &gt;</definition>
+        <argsstring>(T source)</argsstring>
+        <name>Clone&lt; T &gt;</name>
+        <param>
+          <type>T</type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+<para>Perform a deep Copy of the object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of object being copied.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>source</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object instance to copy.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The copied object.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ObjectCopier.cs" line="19" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ObjectCopier.cs" bodystart="19" bodyend="41"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Reference Article <ulink url="http://www.codeproject.com/KB/tips/SerializedObjectCloner.aspx">http://www.codeproject.com/KB/tips/SerializedObjectCloner.aspx</ulink> Provides a method for performing a deep copy of an object. Binary Serialization is used to perform the copy. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="668">
+        <label>ObjectCopier</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ObjectCopier.cs" line="12" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ObjectCopier.cs" bodystart="11" bodyend="42"/>
+    <listofallmembers>
+      <member refid="class_object_copier_1a908c2497b374716ebc7888c735203a6f" prot="public" virt="non-virtual"><scope>ObjectCopier</scope><name>Clone&lt; T &gt;</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

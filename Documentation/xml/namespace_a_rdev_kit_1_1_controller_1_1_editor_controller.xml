@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="namespace_a_rdev_kit_1_1_controller_1_1_editor_controller" kind="namespace">
+    <compoundname>ARdevKit::Controller::EditorController</compoundname>
+    <innerclass refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_element_selection_controller" prot="public">ARdevKit::Controller::EditorController::ElementSelectionController</innerclass>
+    <innerclass refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element" prot="public">ARdevKit::Controller::EditorController::SceneElement</innerclass>
+    <innerclass refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_category" prot="public">ARdevKit::Controller::EditorController::SceneElementCategory</innerclass>
+    <innerclass refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_thumb_creator" prot="public">ARdevKit::Controller::EditorController::ThumbCreator</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespace_a_rdev_kit_1_1_controller_1_1_editor_controller_1a304367964b3f3f5c115bb81e7b31d534" prot="public" static="no">
+        <name>MetaCategory</name>
+        <enumvalue id="namespace_a_rdev_kit_1_1_controller_1_1_editor_controller_1a304367964b3f3f5c115bb81e7b31d534af31bbdd1b3e85bccd652680e16935819" prot="public">
+          <name>Source</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_a_rdev_kit_1_1_controller_1_1_editor_controller_1a304367964b3f3f5c115bb81e7b31d534a07b1e6e502b4dadbd46b1a537bee2d94" prot="public">
+          <name>Augmentation</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_a_rdev_kit_1_1_controller_1_1_editor_controller_1a304367964b3f3f5c115bb81e7b31d534a667527dfc3a1e15153e4d5da42c1bacb" prot="public">
+          <name>Trackable</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>A category for scene elements. </para>        </briefdescription>
+        <detaileddescription>
+<para>Robin, 19.01.2014. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElementCategory.cs" line="15" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElementCategory.cs" bodystart="15" bodyend="15"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ElementSelectionController.cs" line="12" column="1"/>
+  </compounddef>
+</doxygen>
