@@ -38,12 +38,11 @@ namespace ARdevKit.Model.Project
             }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FileSource"/> class.
+        /// </summary>
+        /// <param name="sourceFilePath">The source file path.</param>
         public FileSource(string sourceFilePath) : base()
-        {
-            this.sourceFilePath = sourceFilePath;
-        }
-
-        public FileSource(string sourceId, string sourceFilePath) : base(sourceId)
         {
             this.sourceFilePath = sourceFilePath;
         }
