@@ -282,6 +282,7 @@ public class PreviewController
             this.panel.Controls.Remove(this.findBox((AbstractAugmentation)currentElement));
         }
         updateElementCombobox(trackable);
+        this.ew.Tsm_editor_menu_edit_delete.Enabled = false;
     }
 
 
@@ -556,6 +557,10 @@ public class PreviewController
         }
         updateElementCombobox(trackable);
         ew.Cmb_editor_properties_objectSelection.SelectedItem = currentElement;
+        if (this.ew.CurrentElement != null)
+        {
+            this.ew.Tsm_editor_menu_edit_delete.Enabled = true;
+        }
     }
     /// <summary>
     /// set the PictureBox of the Augmentation to a augmentationPreview with source icon
