@@ -152,14 +152,8 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
             }
             catch (Exception ex)
             {
-                FileStream log = File.Open("connectionDebugLog.txt", FileMode.Append | FileMode.OpenOrCreate, FileAccess.Write);
-                byte [] logLine = UTF8Encoding.UTF8.GetBytes(DateTime.Now.ToString() + " - Exception from: " + ex.Source + " Message: " + ex.Message + " StackTrace: " + ex.StackTrace + "\n\r");
-                log.Write(logLine, 0, logLine.Length);
-                log.Close();
-                if (new FileInfo("connectionDebugLog.txt").Length > 400000)
-                {
-                    File.Delete("connectionDebugLog.txt");
-                }
+                writeExceptionToLog(ex);
+                throw (ex);
             }
             finally
             {
@@ -181,8 +175,7 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
         private void exportRecentProject()
         {
             string originalProjectPath = editorWindow.project.ProjectPath;
-            if (editorWindow.project.ProjectPath == null || editorWindow.project.ProjectPath.Length <= 0)
-                editorWindow.project.ProjectPath = "tmp\\project";
+            editorWindow.project.ProjectPath = "tmp\\project";
             ARdevKit.Controller.ProjectController.ExportVisitor exporter = new ARdevKit.Controller.ProjectController.ExportVisitor();
             editorWindow.project.Accept(exporter);
 
@@ -220,14 +213,8 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
             }
             catch (Exception ex)
             {
-                FileStream log = File.Open("connectionDebugLog.txt", FileMode.Append | FileMode.OpenOrCreate, FileAccess.Write);
-                byte[] logLine = UTF8Encoding.UTF8.GetBytes(DateTime.Now.ToString() + " - Exception from: " + ex.Source + " Message: " + ex.Message + " StackTrace: " + ex.StackTrace + "\n\r");
-                log.Write(logLine, 0, logLine.Length);
-                log.Close();
-                if (new FileInfo("connectionDebugLog.txt").Length > 400000)
-                {
-                    File.Delete("connectionDebugLog.txt");
-                }
+                writeExceptionToLog(ex);
+                throw (ex);
             }
             finally
             {
@@ -245,6 +232,18 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
                 }
             }
             return success;
+        }
+
+        private void writeExceptionToLog(Exception ex)
+        {
+            FileStream log = File.Open("connectionDebugLog.txt", FileMode.Append | FileMode.OpenOrCreate, FileAccess.Write);
+            byte[] logLine = UTF8Encoding.UTF8.GetBytes(DateTime.Now.ToString() + " - Exception from: " + ex.Source + " Message: " + ex.Message + " StackTrace: " + ex.StackTrace + "\n\r");
+            log.Write(logLine, 0, logLine.Length);
+            log.Close();
+            if (new FileInfo("connectionDebugLog.txt").Length > 400000)
+            {
+                File.Delete("connectionDebugLog.txt");
+            }
         }
     }
 }

@@ -220,6 +220,13 @@ namespace ARdevKit.Model.Project
 
         public abstract object Clone();
 
+        /// <summary>
+        /// This method is called by the previewController when a new instance of the element is added to the Scene. It sets "must-have" properties.
+        /// </summary>
+        /// <param name="ew">The ew.</param>
+        /// <returns>
+        /// true if it succeeds, false if it fails.
+        /// </returns>
         [MethodImpl(MethodImplOptions.Synchronized)]
         public virtual bool initElement(EditorWindow ew)
         {
@@ -254,7 +261,6 @@ namespace ARdevKit.Model.Project
             id = newID;
             return true;
         }
-
         /**
          * <summary>    Gibt eine Zeichenfolge zurück, die das aktuelle Objekt darstellt. </summary>
          *

@@ -42,8 +42,12 @@ namespace ARdevKit.Model.Project
             get { return picturePath; }
             set
             {
-                picturePath = value;
-                pictureName = Path.GetFileName(value);
+                if (System.IO.File.Exists(value))
+                {
+                    picturePath = value;
+                    pictureName = Path.GetFileName(value);
+                }
+                
             }
         }
 
@@ -156,6 +160,13 @@ namespace ARdevKit.Model.Project
             return n;
         }
 
+        /// <summary>
+        /// This method is called by the previewController when a new instance of the element is added to the Scene. It sets "must-have" properties.
+        /// </summary>
+        /// <param name="ew">The ew.</param>
+        /// <returns>
+        /// true if it succeeds, false if it fails.
+        /// </returns>
         public override bool initElement(EditorWindow ew)
         {
             if (base.initElement(ew))
@@ -163,6 +174,7 @@ namespace ARdevKit.Model.Project
                 bool isInitOk = true;
                 OpenFileDialog openFileDialog = new OpenFileDialog();
                 openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+                openFileDialog.Title = "Wählen sie einen Marker";
                 openFileDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
                 isInitOk = openFileDialog.ShowDialog() == DialogResult.OK;
                 if (isInitOk)

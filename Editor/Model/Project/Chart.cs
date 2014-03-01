@@ -51,15 +51,18 @@ namespace ARdevKit.Model.Project
         public string Options
         {
             get { return optionsFilePath; }
-            set 
+            set
             {
-                if (File.Helper.FileExists(@"res\", value))
+                if (System.IO.File.Exists(value))
                 {
-                    File.Helper.Copy(value, @"tmp\" + ID + "\\");
-                    optionsFilePath = Path.GetFullPath(@"tmp\" + ID + "\\" + Path.GetFileName(value));
+                    if (File.Helper.FileExists(@"res\", value))
+                    {
+                        File.Helper.Copy(value, @"tmp\" + ID + "\\");
+                        optionsFilePath = Path.GetFullPath(@"tmp\" + ID + "\\" + Path.GetFileName(value));
+                    }
+                    else
+                        optionsFilePath = value;
                 }
-                else
-                    optionsFilePath = value; 
             }
         }
 
@@ -157,6 +160,13 @@ namespace ARdevKit.Model.Project
             return base.Clone();
         }
 
+        /// <summary>
+        /// This method is called by the previewController when a new instance of the element is added to the Scene. It sets "must-have" properties.
+        /// </summary>
+        /// <param name="ew">The ew.</param>
+        /// <returns>
+        /// true if it succeeds, false if it fails.
+        /// </returns>
         public override bool initElement(EditorWindow ew)
         {
             bool result = base.initElement(ew);
@@ -165,6 +175,7 @@ namespace ARdevKit.Model.Project
                 OpenFileDialog openFileDialog = new OpenFileDialog();
                 openFileDialog.InitialDirectory = Application.StartupPath + "\\res\\highcharts";
                 openFileDialog.Filter = "js (*.js)|*.js";
+                openFileDialog.Title = "Wählen sie eine Options Datei";
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     Options = openFileDialog.FileName;

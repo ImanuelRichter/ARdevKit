@@ -31,7 +31,14 @@ namespace ARdevKit.Model.Project
         public string VideoPath
         {
             get { return videoPath; }
-            set { videoPath = value; }
+            set 
+            {
+                if (System.IO.File.Exists(value))
+                {
+                    videoPath = value; 
+                }
+                
+            }
         }
 
         //a cached preview to prevent access problems.
@@ -152,12 +159,20 @@ namespace ARdevKit.Model.Project
             return ObjectCopier.Clone<VideoAugmentation>(this);
         }
 
+        /// <summary>
+        /// This method is called by the previewController when a new instance of the element is added to the Scene. It sets "must-have" properties.
+        /// </summary>
+        /// <param name="ew">The ew.</param>
+        /// <returns>
+        /// true if it succeeds, false if it fails.
+        /// </returns>
         public override bool initElement(EditorWindow ew)
         {
             if (VideoPath == null)
             {
                 OpenFileDialog openFileDialog = new OpenFileDialog();
                 openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyVideos);
+                openFileDialog.Title = "Wählen sie ein Video";
                 openFileDialog.Filter = "Video Files (*.3G2)|*.3g2";
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {

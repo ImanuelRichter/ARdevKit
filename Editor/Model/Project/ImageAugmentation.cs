@@ -40,7 +40,13 @@ namespace ARdevKit.Model.Project
         public string ImagePath
         {
             get { return imagePath; }
-            set { imagePath = value; }
+            set
+            {
+                if (System.IO.File.Exists(value))
+                {
+                    imagePath = value;
+                }
+            }
         }
 
         /// <summary>
@@ -72,7 +78,8 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// Default constructor.
         /// </summary>
-        public ImageAugmentation() : base()
+        public ImageAugmentation()
+            : base()
         {
             imagePath = null;
         }
@@ -112,13 +119,10 @@ namespace ARdevKit.Model.Project
         /// not found in <see cref="ImagePath" />.</exception>
         public override Bitmap getPreview()
         {
-            if (cachePreview == null)
-            {
                 cachePreview = new Bitmap(ImagePath);
-            }
             return cachePreview;
         }
-                
+
         /// <summary>
         /// returns a <see cref="Bitmap" /> in order to be displayed
         /// on the ElementSelectionPanel, implements <see cref="IPreviewable" />
@@ -129,7 +133,7 @@ namespace ARdevKit.Model.Project
         /// <exception cref="FileNotFoundException">If ImagePath is bad</exception>
         public override Bitmap getIcon()
         {
-            return Properties.Resources.ImageAugmentation_small_; 
+            return Properties.Resources.ImageAugmentation_small_;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -158,12 +162,20 @@ namespace ARdevKit.Model.Project
             return ObjectCopier.Clone<ImageAugmentation>(this);
         }
 
+        /// <summary>
+        /// This method is called by the previewController when a new instance of the element is added to the Scene. It sets "must-have" properties.
+        /// </summary>
+        /// <param name="ew">The ew.</param>
+        /// <returns>
+        /// true if it succeeds, false if it fails.
+        /// </returns>
         public override bool initElement(EditorWindow ew)
         {
             if (ImagePath == null)
             {
                 OpenFileDialog openFileDialog = new OpenFileDialog();
                 openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+                openFileDialog.Title = "Wählen sie ein Bild";
                 openFileDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
