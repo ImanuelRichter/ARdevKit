@@ -85,12 +85,11 @@ namespace ARdevKit.Controller.TestController
         private static string playerPath;
 
         /// <summary>
-        /// Starts the player with the specified settings.
+        /// Starts the player.
         /// </summary>
-        /// <param name="ew">The EditorWindow.</param>
+        /// <param name="ew">The ew.</param>
         /// <param name="project">The project.</param>
-        /// <param name="mode">Tells if an image<see cref="IMAGE" /> or video<see cref="VIDEO" />
-        /// should be loaded or if a virtual camera<see cref="CAMERA" /> should be started</param>
+        /// <param name="mode">The mode.</param>
         /// <param name="width">The width.</param>
         /// <param name="height">The height.</param>
         /// <param name="showDebug">if set to <c>true</c> [show debug].</param>

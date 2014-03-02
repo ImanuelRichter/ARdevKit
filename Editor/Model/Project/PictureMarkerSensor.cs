@@ -7,6 +7,9 @@ using ARdevKit.Controller.ProjectController;
 
 namespace ARdevKit.Model.Project
 {
+    /// <summary>
+    /// A <see cref="PictureMarkerSensor"/> is a <see cref="AbstractSensor"/> used for <see cref="PictureMarker"/>.
+    /// </summary>
     [Serializable]
     public class PictureMarkerSensor : AbstractSensor
     {
