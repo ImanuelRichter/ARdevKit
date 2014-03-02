@@ -14,6 +14,9 @@ using ARdevKit.Properties;
 using System.Drawing.Drawing2D;
 using System.Runtime.CompilerServices;
 
+/// <summary>
+/// The class PreviewController manages all things which are in contact with the PreviewPanel. Here are all methods, who influence the PreviewPanel.
+/// </summary>
 public class PreviewController
 {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
