@@ -446,7 +446,7 @@ namespace ARdevKit.Controller.ProjectController
                     chartFileCreateBlock.AddBlock(chartFileQueryBlock);
                     chartFileCreateBlock.AddBlock(new JavaScriptInLine(".fail(function() { console.log(\"Failed to load query\")})", false));
                     chartFileCreateBlock.AddBlock(new JavaScriptLine(".done(function() { console.log(\"Loaded query successfully\")})"));
-                    chartFileQueryBlock.AddLine(new JavaScriptLine("var dataPath = \"Assets/" + chartID + "/data.xml\""));
+                    chartFileQueryBlock.AddLine(new JavaScriptLine("var dataPath = \"Assets/" + chartID + "/data" + Path.GetExtension(source.Data) + "\""));
                     chartFileQueryBlock.AddLine(new JavaScriptLine("query(dataPath, " + chartPluginID + ")"));
                 }
                 else
