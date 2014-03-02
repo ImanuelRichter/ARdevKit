@@ -8,6 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace ARdevKit
 {
+    /// <summary>
+    /// Main entry class.
+    /// </summary>
     static class ARdevKitEditor
     {
         /// <summary>
