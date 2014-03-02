@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace ARdevKit.View
 {
+    /// <summary>
+    /// UserControl for an Trackbar/Slider. Currently not used (2.3.14)
+    /// </summary>
     public partial class Slider : UserControl
     {
         /// <summary>
