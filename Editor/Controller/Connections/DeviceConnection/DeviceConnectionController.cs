@@ -160,7 +160,7 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
                 }
 
                 sendStream = sender.GetStream();
-                sendStream.Write(ASCIIEncoding.ASCII.GetBytes("project0\n"), 0,  ASCIIEncoding.ASCII.GetByteCount("project0\n"));
+                sendStream.Write(ASCIIEncoding.ASCII.GetBytes("project\n"), 0,  ASCIIEncoding.ASCII.GetByteCount("project\n"));
                 
                 sendStream.Write(size, 0, 8);
 
