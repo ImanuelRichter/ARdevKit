@@ -1095,11 +1095,17 @@ namespace ARdevKit.Controller.ProjectController
             // Move
             JavaScriptBlock arelGlueMoveBlock = new JavaScriptBlock("function move(anchor, object, coord)", new BlockMarker("{", "};"));
             arelGlueFile.AddBlock(arelGlueMoveBlock);
-            arelGlueMoveBlock.AddBlock(new JavaScriptLine("var left = (coord.getX() - parseInt(object.div.style.width) / 2) + object.translation.getX()"));
-            arelGlueMoveBlock.AddBlock(new JavaScriptLine("var top = (coord.getY() - parseInt(object.div.style.height) / 2) - object.translation.getY()"));
-            arelGlueMoveBlock.AddBlock(new JavaScriptLine("object.div.style.left = left + 'px'"));
-            arelGlueMoveBlock.AddBlock(new JavaScriptLine("object.div.style.top = top + 'px'"));
-            arelGlueMoveBlock.AddBlock(new JavaScriptLine("console.log(\"Moved \" + object.id + \" to \" + left + \", \" + top)"));
+            arelGlueMoveBlock.AddBlock(new JavaScriptLine("var oldLeft = object.div.style.left"));
+            arelGlueMoveBlock.AddBlock(new JavaScriptLine("var oldTop = object.div.style.top"));
+            arelGlueMoveBlock.AddBlock(new JavaScriptLine("var newLeft = (coord.getX() - parseInt(object.div.style.width) / 2) + object.translation.getX()"));
+            arelGlueMoveBlock.AddBlock(new JavaScriptLine("var newTop = (coord.getY() - parseInt(object.div.style.height) / 2) - object.translation.getY()"));
+            arelGlueMoveBlock.AddBlock(new JavaScriptLine("object.div.style.left = newLeft + 'px'"));
+            arelGlueMoveBlock.AddBlock(new JavaScriptLine("object.div.style.top = newTop + 'px'"));
+
+            JavaScriptBlock arelGlueMoveLogBlock = new JavaScriptBlock("if (object.div.style.left != oldLeft || object.div.style.top != oldTop)", new BlockMarker("{", "}"));
+            arelGlueMoveBlock.AddBlock(arelGlueMoveLogBlock);
+            arelGlueMoveLogBlock.AddBlock(new JavaScriptLine("console.log(\"Moved \" + object.id + \" from (\" + oldLeft + \", \" + oldTop + \") to (\" + object.div.style.left + \", \" + object.div.style.top + \")\")"));
+
             JavaScriptBlock arelGlueMoveTimeoutBlock = new JavaScriptBlock("if (object.visible)", new BlockMarker("{", "}"));
             arelGlueMoveBlock.AddBlock(arelGlueMoveTimeoutBlock);
 
