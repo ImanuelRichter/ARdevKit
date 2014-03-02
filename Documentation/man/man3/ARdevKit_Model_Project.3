@@ -1,4 +1,4 @@
-.TH "ARdevKit.Model.Project" 3 "Sat Mar 1 2014" "Version 0.2" "ARdevKit" \" -*- nroff -*-
+.TH "ARdevKit.Model.Project" 3 "Sun Mar 2 2014" "Version 0.2" "ARdevKit" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -23,6 +23,7 @@ ARdevKit.Model.Project \-
 .ti -1c
 .RI "class \fBAbstract2DTrackable\fP"
 .br
+.RI "\fIAn \fBAbstract2DTrackable\fP is a two-dimensional trackable image, that can be tracked by the metaio SDK\&. \fP"
 .ti -1c
 .RI "class \fBAbstractAugmentation\fP"
 .br
@@ -54,7 +55,7 @@ ARdevKit.Model.Project \-
 .ti -1c
 .RI "class \fBCustomUserEvent\fP"
 .br
-.RI "\fIThe class \fBCustomUserEvent\fP mainly contains a reference to a file, which is in the /currentProject/ Folder\&. This file has ALL Events the user creates (inclusive the template events we provide) for ONE augmentation\&. \fP"
+.RI "\fIThe class \fBCustomUserEvent\fP mainly contains a reference path to a file, which is in the /tmp/ Folder\&. This file has ALL Events the user creates (inclusive the template events we provide) for ONE augmentation\&. \fP"
 .ti -1c
 .RI "class \fBDbSource\fP"
 .br
@@ -98,6 +99,7 @@ ARdevKit.Model.Project \-
 .ti -1c
 .RI "class \fBMarkerSensor\fP"
 .br
+.RI "\fIA \fBMarkerSensor\fP is an \fBAbstractSensor\fP which is used for marker based tracking\&. \fP"
 .ti -1c
 .RI "class \fBPictureMarker\fP"
 .br
@@ -105,6 +107,7 @@ ARdevKit.Model.Project \-
 .ti -1c
 .RI "class \fBPictureMarkerSensor\fP"
 .br
+.RI "\fIA \fBPictureMarkerSensor\fP is a \fBAbstractSensor\fP used for \fBPictureMarker\fP\&. Contains the values, which are used from the MetaioSDK to populate the TrackingData\&.XML\&. They describe which Marker should be tracked, and at what quality and speed\&. \fP"
 .ti -1c
 .RI "class \fBProject\fP"
 .br
@@ -124,6 +127,7 @@ ARdevKit.Model.Project \-
 .ti -1c
 .RI "class \fBVideoAugmentation\fP"
 .br
+.RI "\fIA \fBVideoAugmentation\fP is an \fBAbstract2DAugmentation\fP that contains a video file\&. \fP"
 .in -1c
 .SH "Author"
 .PP 

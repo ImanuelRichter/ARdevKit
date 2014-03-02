@@ -4,19 +4,6 @@
     <compoundname>ARdevKit::Model::Project::ImageAugmentation</compoundname>
     <basecompoundref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_augmentation" prot="public" virt="non-virtual">ARdevKit.Model.Project.Abstract2DAugmentation</basecompoundref>
       <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_1a50d3e2ad29198a0895c8956a52410b3a" prot="private" static="no" mutable="no">
-        <type>string</type>
-        <definition>string ARdevKit.Model.Project.ImageAugmentation.imagePath</definition>
-        <argsstring></argsstring>
-        <name>imagePath</name>
-        <briefdescription>
-<para>Full pathname of the image file. </para>        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" line="27" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" bodystart="27" bodyend="-1"/>
-      </memberdef>
       <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_1aca3dadefcb690fbda3732139d2d595ff" prot="private" static="no" mutable="no">
         <type>Bitmap</type>
         <definition>Bitmap ARdevKit.Model.Project.ImageAugmentation.cachePreview</definition>
@@ -29,24 +16,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" line="30" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" bodystart="30" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" line="25" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" bodystart="25" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="property">
-      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_1a499cb36152832a4dd29794e3c1dd2718" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
-        <type>string</type>
-        <definition>string ARdevKit.Model.Project.ImageAugmentation.ImagePath</definition>
-        <argsstring></argsstring>
-        <name>ImagePath</name>
-        <briefdescription>
-<para>Gets or sets the full pathname of the image file. </para>        </briefdescription>
-        <detaileddescription>
-<para>The full pathname of the image file. </para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" line="40" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" bodystart="41" bodyend="-1"/>
-        <referencedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1a68256626e59d84b43153e95697ed1e3a" compoundref="_export_visitor_8cs" startline="181" endline="228">ARdevKit.Controller.ProjectController.ExportVisitor.Visit</referencedby>
-      </memberdef>
       <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_1a372f087469a33d84950310dfcd52e190" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
         <type>new int</type>
         <definition>new int ARdevKit.Model.Project.ImageAugmentation.Width</definition>
@@ -58,7 +31,7 @@
 <para>The width, in mm. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" line="59" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" bodystart="60" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" line="34" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" bodystart="35" bodyend="-1"/>
       </memberdef>
       <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_1a5cecd83037a573b7f4fdfc7ebe6c7476" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
         <type>new int</type>
@@ -71,7 +44,7 @@
 <para>The height, in mm. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" line="72" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" bodystart="73" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" line="47" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" bodystart="48" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -86,7 +59,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" line="81" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" bodystart="81" bodyend="85"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" line="56" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" bodystart="56" bodyend="60"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_1afb556b0cb19bd252c7edcd948c26ea28" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -111,7 +84,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" line="92" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" bodystart="92" bodyend="96"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" line="67" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" bodystart="67" bodyend="71"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_1a1450cf89881f65c8882126914379ae50" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>override void</type>
@@ -137,7 +110,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" line="104" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" bodystart="104" bodyend="108"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" line="79" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" bodystart="79" bodyend="83"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_1a76230c0eb40c317bab23b37c27ea3a39" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>override Bitmap</type>
@@ -154,13 +127,13 @@
 <parametername>FileNotFoundException</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Thrown when the requested <ref refid="namespace_a_rdev_kit_1_1_model_1_1_project_1_1_file" kindref="compound">File</ref> is not found in <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_1a499cb36152832a4dd29794e3c1dd2718" kindref="member">ImagePath</ref>.</para></parameterdescription>
+<para>Thrown when the requested <ref refid="namespace_a_rdev_kit_1_1_model_1_1_project_1_1_file" kindref="compound">File</ref> is not found in <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_augmentation_1af2c60054c5ff96c677c84f33c8cb5f9a" kindref="member">SourceFilePath</ref>.</para></parameterdescription>
 </parameteritem>
 </parameterlist>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" line="120" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" bodystart="120" bodyend="124"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" line="95" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" bodystart="95" bodyend="99"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_1a7f1d0335a2559d461cbe18599ce472c2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>override Bitmap</type>
@@ -183,7 +156,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" line="134" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" bodystart="134" bodyend="137"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" line="109" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" bodystart="109" bodyend="112"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_1aecb9401ae2f65c089330e280af41d55a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>override void</type>
@@ -197,7 +170,7 @@
 <para>Imanuel, 31.01.2014. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" line="145" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" bodystart="145" bodyend="150"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" line="120" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" bodystart="120" bodyend="125"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_1af25172abfef48a1f9004ec3777d0d6fb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>override object</type>
@@ -212,7 +185,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" line="160" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" bodystart="160" bodyend="163"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" line="135" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" bodystart="135" bodyend="138"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_1a37ba80403f194a8aad7e7b96a8fd9239" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>override bool</type>
@@ -239,7 +212,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" line="172" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" bodystart="172" bodyend="191"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" line="147" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" bodystart="147" bodyend="166"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -313,7 +286,7 @@
         <label>ICloneable</label>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" line="23" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" bodystart="22" bodyend="192"/>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" line="23" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/ImageAugmentation.cs" bodystart="22" bodyend="167"/>
     <listofallmembers>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_augmentation_1adfb4e825f67880c9ec8790a51a60b574" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageAugmentation</scope><name>Abstract2DAugmentation</name></member>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_augmentation_1a36b71862a4466a4d1942e83e2341cc88" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageAugmentation</scope><name>Abstract2DAugmentation</name></member>
@@ -332,15 +305,15 @@
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a3590cc30e6169c0946c70b52223eb2bf" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageAugmentation</scope><name>ID</name></member>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_1a7ef7e1f296fa9ad472fe601d7ab3c4d1" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageAugmentation</scope><name>ImageAugmentation</name></member>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_1afb556b0cb19bd252c7edcd948c26ea28" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageAugmentation</scope><name>ImageAugmentation</name></member>
-      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_1a50d3e2ad29198a0895c8956a52410b3a" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageAugmentation</scope><name>imagePath</name></member>
-      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_1a499cb36152832a4dd29794e3c1dd2718" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageAugmentation</scope><name>ImagePath</name></member>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_1a37ba80403f194a8aad7e7b96a8fd9239" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::ImageAugmentation</scope><name>initElement</name></member>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1ab19dda553062c0cae9e4a7a66e9cb64f" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageAugmentation</scope><name>IsVisible</name></member>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1ac94095d5fa4f5d4339f66b259ff55e74" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageAugmentation</scope><name>Rotation</name></member>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1adc3b84e8eb93f1ef50b3a689bd4c2a72" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageAugmentation</scope><name>Scaling</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_augmentation_1a9c16053e6d7cd904ad0d9abf823a9b3b" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageAugmentation</scope><name>sourceFilePath</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_augmentation_1af2c60054c5ff96c677c84f33c8cb5f9a" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageAugmentation</scope><name>SourceFilePath</name></member>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1aa3badea1be1d6317e62e2dda390c2f34" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageAugmentation</scope><name>ToString</name></member>
-      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a8d8e3f3c42696008edbfc44d51ba518d" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageAugmentation</scope><name>trackable</name></member>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a5ef95a16a1d2b03cb6185b86e7120a9c" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageAugmentation</scope><name>Trackable</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a8d8e3f3c42696008edbfc44d51ba518d" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageAugmentation</scope><name>trackable</name></member>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a8ed7943a2eb75682addda8731bff6c34" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageAugmentation</scope><name>Translation</name></member>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_1a372f087469a33d84950310dfcd52e190" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::ImageAugmentation</scope><name>Width</name></member>
     </listofallmembers>

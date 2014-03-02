@@ -52,6 +52,22 @@ namespace ARdevKit
         private string checksum;
 
         /// <summary>
+        /// The debug window, which is used by the DeviceConnectionController
+        /// </summary>
+        private DebugWindow debugWindow;
+
+        /// <summary>
+        /// Gets the debug window.
+        /// </summary>
+        /// <value>
+        /// The debug window.
+        /// </value>
+        public DebugWindow DebugWindow
+        {
+            get { return debugWindow; }
+        }
+
+        /// <summary>
         /// The minscreenwidht
         /// </summary>
         /// <remarks>geht 28.01.2014 15:12</remarks>
@@ -1304,7 +1320,8 @@ namespace ARdevKit
                 if (DeviceList.SelectedItem != null && DeviceList.SelectedIndex >= 0)
                 {
                     int index = DeviceList.SelectedIndex;
-                    deviceConnectionController.DebugWindow.Show();
+                    debugWindow = new DebugWindow(deviceConnectionController);
+                    debugWindow.Show();
                     try
                     {
                         Task.Factory.StartNew(() => deviceConnectionController.sendDebug(index));

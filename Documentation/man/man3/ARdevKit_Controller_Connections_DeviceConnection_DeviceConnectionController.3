@@ -1,4 +1,4 @@
-.TH "ARdevKit.Controller.Connections.DeviceConnection.DeviceConnectionController" 3 "Sat Mar 1 2014" "Version 0.2" "ARdevKit" \" -*- nroff -*-
+.TH "ARdevKit.Controller.Connections.DeviceConnection.DeviceConnectionController" 3 "Sun Mar 2 2014" "Version 0.2" "ARdevKit" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -23,11 +23,11 @@ ARdevKit.Controller.Connections.DeviceConnection.DeviceConnectionController \-
 .ti -1c
 .RI "List< string > \fBgetReportedDevices\fP ()"
 .br
-.RI "\fIGets the reported devices\&. \fP"
+.RI "\fIGets the StringList of devices, which reported back to the UDPBroadcast\&. \fP"
 .ti -1c
 .RI "bool \fBsendProject\fP (int index)"
 .br
-.RI "\fISends the opened Project to the chosen Device, using the selected index of the EditorWindowsDeviceList, which must be equal to the internal index of the reportedDevices List\&. Exceptions which are thrown are written to a log file, in the path in which the Program is executed\&. \fP"
+.RI "\fISends the opened Project to the chosen Device, using the selected index of the EditorWindowsDeviceList, which must be equal to the internal index of the reportedDevices List\&. Therefore it is exported\&. Exceptions which are thrown are written to a log file, in the path in which the Program is executed\&. \fP"
 .ti -1c
 .RI "bool \fBsendDebug\fP (int index)"
 .br
@@ -36,10 +36,6 @@ ARdevKit.Controller.Connections.DeviceConnection.DeviceConnectionController \-
 .SS "Properties"
 
 .in +1c
-.ti -1c
-.RI "\fBView\&.DebugWindow\fP \fBDebugWindow\fP\fC [get]\fP"
-.br
-.RI "\fIGets the debug window\&. \fP"
 .ti -1c
 .RI "bool \fBDebugConnected\fP\fC [get, set]\fP"
 .br
@@ -68,11 +64,11 @@ Initializes a new instance of the \fBDeviceConnectionController\fP class\&. Uses
 .SS "List<string> ARdevKit\&.Controller\&.Connections\&.DeviceConnection\&.DeviceConnectionController\&.getReportedDevices ()"
 
 .PP
-Gets the reported devices\&. 
+Gets the StringList of devices, which reported back to the UDPBroadcast\&. 
 .PP
 \fBReturns:\fP
 .RS 4
-
+StringList of devices, to which connections could be established
 .RE
 .PP
 
@@ -99,7 +95,7 @@ true if
 .SS "bool ARdevKit\&.Controller\&.Connections\&.DeviceConnection\&.DeviceConnectionController\&.sendProject (intindex)"
 
 .PP
-Sends the opened Project to the chosen Device, using the selected index of the EditorWindowsDeviceList, which must be equal to the internal index of the reportedDevices List\&. Exceptions which are thrown are written to a log file, in the path in which the Program is executed\&. 
+Sends the opened Project to the chosen Device, using the selected index of the EditorWindowsDeviceList, which must be equal to the internal index of the reportedDevices List\&. Therefore it is exported\&. Exceptions which are thrown are written to a log file, in the path in which the Program is executed\&. 
 .PP
 \fBParameters:\fP
 .RS 4
@@ -108,7 +104,7 @@ Sends the opened Project to the chosen Device, using the selected index of the E
 .PP
 \fBReturns:\fP
 .RS 4
-False, if the project could not be send or an Exception was thown
+False, if the project could not be send
 .RE
 .PP
 
@@ -117,11 +113,7 @@ False, if the project could not be send or an Exception was thown
 .SS "bool ARdevKit\&.Controller\&.Connections\&.DeviceConnection\&.DeviceConnectionController\&.DebugConnected\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Gets or sets a value indicating whether [debug connected]\&. \fCtrue\fP if [debug connected]; otherwise, \fCfalse\fP\&. 
-.SS "\fBView\&.DebugWindow\fP ARdevKit\&.Controller\&.Connections\&.DeviceConnection\&.DeviceConnectionController\&.DebugWindow\fC [get]\fP"
-
-.PP
-Gets the debug window\&. The debug window\&. 
+Gets or sets a value indicating whether [debug connected]\&. true if [debug connected] the Editor listens for Debugdata; otherwise, the connections will be closed false\&. 
 
 .SH "Author"
 .PP 

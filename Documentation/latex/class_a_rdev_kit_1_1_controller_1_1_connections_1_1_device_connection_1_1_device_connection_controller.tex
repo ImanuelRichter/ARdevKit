@@ -24,16 +24,14 @@ Collaboration diagram for A\-Rdev\-Kit.\-Controller.\-Connections.\-Device\-Conn
 void \hyperlink{class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_a2fa2baab02402dec9c2dce90fadeb54c}{refresh} ()
 \begin{DoxyCompactList}\small\item\em Runs the refresh listener, using a U\-D\-P Broadcast to which the A\-Rdev\-Kit\-Player responds. \end{DoxyCompactList}\item 
 List$<$ string $>$ \hyperlink{class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_a22af53d2338217cf5c77e4f7326cee79}{get\-Reported\-Devices} ()
-\begin{DoxyCompactList}\small\item\em Gets the reported devices. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Gets the String\-List of devices, which reported back to the U\-D\-P\-Broadcast. \end{DoxyCompactList}\item 
 bool \hyperlink{class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_a4fcdf74b36bf40335dfe5179f78f2524}{send\-Project} (int index)
-\begin{DoxyCompactList}\small\item\em Sends the opened Project to the chosen Device, using the selected index of the Editor\-Windows\-Device\-List, which must be equal to the internal index of the reported\-Devices List. Exceptions which are thrown are written to a log file, in the path in which the Program is executed. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Sends the opened Project to the chosen Device, using the selected index of the Editor\-Windows\-Device\-List, which must be equal to the internal index of the reported\-Devices List. Therefore it is exported. Exceptions which are thrown are written to a log file, in the path in which the Program is executed. \end{DoxyCompactList}\item 
 bool \hyperlink{class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_a2810b006ae43957884b041496f4f3498}{send\-Debug} (int index)
 \begin{DoxyCompactList}\small\item\em Sends a Debugrequest to the selected Device and shows its Debug\-Output on a Popup\-Window with a Rich\-Textbox \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_a_rdev_kit_1_1_view_1_1_debug_window}{View.\-Debug\-Window} \hyperlink{class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_acfe2c36b862f9b0775bf8e0f60d055ad}{Debug\-Window}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\begin{DoxyCompactList}\small\item\em Gets the debug window. \end{DoxyCompactList}\item 
 bool \hyperlink{class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_a6e1f49d1912fccc6edc212acbfc74c05}{Debug\-Connected}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Gets or sets a value indicating whether \mbox{[}debug connected\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -72,10 +70,10 @@ Initializes a new instance of the \hyperlink{class_a_rdev_kit_1_1_controller_1_1
 )}}\label{class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_a22af53d2338217cf5c77e4f7326cee79}
 
 
-Gets the reported devices. 
+Gets the String\-List of devices, which reported back to the U\-D\-P\-Broadcast. 
 
 \begin{DoxyReturn}{Returns}
-
+String\-List of devices, to which connections could be established
 \end{DoxyReturn}
 \hypertarget{class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_a2fa2baab02402dec9c2dce90fadeb54c}{\index{A\-Rdev\-Kit\-::\-Controller\-::\-Connections\-::\-Device\-Connection\-::\-Device\-Connection\-Controller@{A\-Rdev\-Kit\-::\-Controller\-::\-Connections\-::\-Device\-Connection\-::\-Device\-Connection\-Controller}!refresh@{refresh}}
 \index{refresh@{refresh}!ARdevKit::Controller::Connections::DeviceConnection::DeviceConnectionController@{A\-Rdev\-Kit\-::\-Controller\-::\-Connections\-::\-Device\-Connection\-::\-Device\-Connection\-Controller}}
@@ -116,7 +114,7 @@ true if
 )}}\label{class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_a4fcdf74b36bf40335dfe5179f78f2524}
 
 
-Sends the opened Project to the chosen Device, using the selected index of the Editor\-Windows\-Device\-List, which must be equal to the internal index of the reported\-Devices List. Exceptions which are thrown are written to a log file, in the path in which the Program is executed. 
+Sends the opened Project to the chosen Device, using the selected index of the Editor\-Windows\-Device\-List, which must be equal to the internal index of the reported\-Devices List. Therefore it is exported. Exceptions which are thrown are written to a log file, in the path in which the Program is executed. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -124,7 +122,7 @@ Sends the opened Project to the chosen Device, using the selected index of the E
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-False, if the project could not be send or an Exception was thown
+False, if the project could not be send
 \end{DoxyReturn}
 
 
@@ -136,11 +134,4 @@ False, if the project could not be send or an Exception was thown
 
 Gets or sets a value indicating whether \mbox{[}debug connected\mbox{]}. 
 
-{\ttfamily true} if \mbox{[}debug connected\mbox{]}; otherwise, {\ttfamily false}. \hypertarget{class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_acfe2c36b862f9b0775bf8e0f60d055ad}{\index{A\-Rdev\-Kit\-::\-Controller\-::\-Connections\-::\-Device\-Connection\-::\-Device\-Connection\-Controller@{A\-Rdev\-Kit\-::\-Controller\-::\-Connections\-::\-Device\-Connection\-::\-Device\-Connection\-Controller}!Debug\-Window@{Debug\-Window}}
-\index{Debug\-Window@{Debug\-Window}!ARdevKit::Controller::Connections::DeviceConnection::DeviceConnectionController@{A\-Rdev\-Kit\-::\-Controller\-::\-Connections\-::\-Device\-Connection\-::\-Device\-Connection\-Controller}}
-\subsubsection[{Debug\-Window}]{\setlength{\rightskip}{0pt plus 5cm}{\bf View.\-Debug\-Window} A\-Rdev\-Kit.\-Controller.\-Connections.\-Device\-Connection.\-Device\-Connection\-Controller.\-Debug\-Window\hspace{0.3cm}{\ttfamily [get]}}}\label{class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_acfe2c36b862f9b0775bf8e0f60d055ad}
-
-
-Gets the debug window. 
-
-The debug window. 
+true if \mbox{[}debug connected\mbox{]} the Editor listens for Debugdata; otherwise, the connections will be closed false. 

@@ -16,6 +16,7 @@ var class_a_rdev_kit_1_1_editor_window =
     [ "Cmb_editor_properties_objectSelection", "class_a_rdev_kit_1_1_editor_window.html#a7a5f59a2277ea660f5ac354ed6563931", null ],
     [ "Cmb_editor_selection_toolSelection", "class_a_rdev_kit_1_1_editor_window.html#a0937e4db376a67530e488c174d512925", null ],
     [ "CurrentElement", "class_a_rdev_kit_1_1_editor_window.html#a246347f55420268d0ea65f7a005d807c", null ],
+    [ "DebugWindow", "class_a_rdev_kit_1_1_editor_window.html#a680468ae45b84228fb668d8dbb0aba48", null ],
     [ "ElementCategories", "class_a_rdev_kit_1_1_editor_window.html#a2831e6a65fca02855cb3461e79de4662", null ],
     [ "ElementSelectionController", "class_a_rdev_kit_1_1_editor_window.html#a88e0a581fb32b49f0c046ebb60cbf322", null ],
     [ "Pnl_editor_preview", "class_a_rdev_kit_1_1_editor_window.html#a63d02d43b7dfe8841d6e1204948ecb17", null ],

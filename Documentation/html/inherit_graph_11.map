@@ -3,6 +3,6 @@
 <area shape="rect" id="node2" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_config_file.html" title="An arelConfig.xml. " alt="" coords="243,5,431,46"/>
 <area shape="rect" id="node3" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_glue_file.html" title="An arelGlue.js. " alt="" coords="243,70,431,111"/>
 <area shape="rect" id="node4" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_project_file.html" title="A arel[projectName].html. " alt="" coords="243,135,431,177"/>
-<area shape="rect" id="node5" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_chart_file.html" title="ARdevKit.Model.Project.File.\lChartFile" alt="" coords="243,201,431,242"/>
+<area shape="rect" id="node5" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_chart_file.html" title="A ChartFile is an AbstractFile which represents the chart.js. " alt="" coords="243,201,431,242"/>
 <area shape="rect" id="node6" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_tracking_data_file.html" title="A trackingData_[SensorType][SensorSubType].xml. " alt="" coords="243,266,431,307"/>
 </map>

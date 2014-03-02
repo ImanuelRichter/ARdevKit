@@ -87,7 +87,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" line="87" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" bodystart="88" bodyend="-1"/>
-        <referencedby refid="class_preview_controller_1af14f36a06e16003c0cc11188024521c7" compoundref="_preview_controller_8cs" startline="797" endline="810">PreviewController.updateTranslation</referencedby>
+        <referencedby refid="class_preview_controller_1af14f36a06e16003c0cc11188024521c7" compoundref="_preview_controller_8cs" startline="800" endline="813">PreviewController.updateTranslation</referencedby>
       </memberdef>
       <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1adc3b84e8eb93f1ef50b3a689bd4c2a72" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
         <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d" kindref="compound">Vector3D</ref></type>
@@ -334,8 +334,8 @@
         <argsstring>()</argsstring>
         <name>getIcon</name>
         <reimplements refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable_1a8573bdaccd5227400b538c34c1b5f279">getIcon</reimplements>
-        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_1ae41611da8c40607d32ab62d29c78a8ae">getIcon</reimplementedby>
         <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_1a7f1d0335a2559d461cbe18599ce472c2">getIcon</reimplementedby>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_1ae41611da8c40607d32ab62d29c78a8ae">getIcon</reimplementedby>
         <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_1a5a3555ace98e2f5c9f4daaa73f94cd96">getIcon</reimplementedby>
         <briefdescription>
 <para>returns a Bitmap in order to be displayed on the ElementSelectionPanel, implements <ref refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable" kindref="compound">IPreviewable</ref> </para>        </briefdescription>
@@ -351,8 +351,8 @@
         <definition>abstract void ARdevKit.Model.Project.AbstractAugmentation.CleanUp</definition>
         <argsstring>()</argsstring>
         <name>CleanUp</name>
-        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_1a83390b8765641d1626b23a06c54490af">CleanUp</reimplementedby>
         <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_1aecb9401ae2f65c089330e280af41d55a">CleanUp</reimplementedby>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_1a83390b8765641d1626b23a06c54490af">CleanUp</reimplementedby>
         <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_1a5cccd28644f1f358d551028759a3fed0">CleanUp</reimplementedby>
         <briefdescription>
 <para>Clean up (remove created/copied files and directories). </para>        </briefdescription>
@@ -368,8 +368,8 @@
         <argsstring>()</argsstring>
         <name>Clone</name>
         <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_dynamic2_d_augmentation_1adbb2d06450362f0385fe937bbb5255a8">Clone</reimplementedby>
-        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_1a1c99b0002e89662c75ae59031f1f7ec5">Clone</reimplementedby>
         <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_1af25172abfef48a1f9004ec3777d0d6fb">Clone</reimplementedby>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_1a1c99b0002e89662c75ae59031f1f7ec5">Clone</reimplementedby>
         <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_1aaa06b6e53f2e5a48508f3a93b0483dc3">Clone</reimplementedby>
         <briefdescription>
 <para>Makes a deep copy of this object. </para>        </briefdescription>
@@ -379,8 +379,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" line="221" column="1"/>
-        <referencedby refid="class_preview_controller_1a58e44b6e2acc62906bfc29eb6854ce32" compoundref="_preview_controller_8cs" startline="1018" endline="1029">PreviewController.paste_augmentation</referencedby>
-        <referencedby refid="class_preview_controller_1a5cc0d886165ca91677acadd895426af2" compoundref="_preview_controller_8cs" startline="1036" endline="1039">PreviewController.paste_augmentation_center</referencedby>
+        <referencedby refid="class_preview_controller_1a58e44b6e2acc62906bfc29eb6854ce32" compoundref="_preview_controller_8cs" startline="1021" endline="1032">PreviewController.paste_augmentation</referencedby>
+        <referencedby refid="class_preview_controller_1a5cc0d886165ca91677acadd895426af2" compoundref="_preview_controller_8cs" startline="1039" endline="1042">PreviewController.paste_augmentation_center</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a8b02a2eb775b8147e71575694ce8a38f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>bool</type>
@@ -388,8 +388,8 @@
         <argsstring>(EditorWindow ew)</argsstring>
         <name>initElement</name>
         <reimplements refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable_1aa638e27d88c30b7e63b241d1001042c9">initElement</reimplements>
-        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_1afb33f9a8ac2591973d29ebd56bd75da5">initElement</reimplementedby>
         <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_1a37ba80403f194a8aad7e7b96a8fd9239">initElement</reimplementedby>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_1afb33f9a8ac2591973d29ebd56bd75da5">initElement</reimplementedby>
         <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_1a74620f6abc6763b5999074c5c6e2f661">initElement</reimplementedby>
         <param>
           <type><ref refid="class_a_rdev_kit_1_1_editor_window" kindref="compound">EditorWindow</ref></type>
@@ -411,7 +411,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" line="231" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" bodystart="231" bodyend="263"/>
-        <references refid="class_a_rdev_kit_1_1_editor_window_1aa7e64c912e3d904fae0ec52588be0baa" compoundref="_editor_window_8cs" startline="138">ARdevKit.EditorWindow.project</references>
+        <references refid="class_a_rdev_kit_1_1_editor_window_1aa7e64c912e3d904fae0ec52588be0baa" compoundref="_editor_window_8cs" startline="154">ARdevKit.EditorWindow.project</references>
         <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a999faeee63dee9445e8617d539c5b8d9" compoundref="_abstract_trackable_8cs" startline="85">ARdevKit.Model.Project.AbstractTrackable.Augmentations</references>
         <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a3590cc30e6169c0946c70b52223eb2bf" compoundref="_abstract_augmentation_8cs" startline="40">ARdevKit.Model.Project.AbstractAugmentation.ID</references>
       </memberdef>

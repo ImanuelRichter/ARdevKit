@@ -14,7 +14,7 @@
 <para>The category panels. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ElementSelectionController.cs" line="21" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ElementSelectionController.cs" bodystart="21" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ElementSelectionController.cs" line="25" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ElementSelectionController.cs" bodystart="25" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_element_selection_controller_1a164106cee7017a47c7c864f0798614a1" prot="private" static="no" mutable="no">
         <type>readonly <ref refid="class_a_rdev_kit_1_1_editor_window" kindref="compound">EditorWindow</ref></type>
@@ -27,7 +27,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ElementSelectionController.cs" line="38" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ElementSelectionController.cs" bodystart="38" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ElementSelectionController.cs" line="42" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ElementSelectionController.cs" bodystart="42" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="property">
@@ -42,7 +42,7 @@
 <para>The category panels. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ElementSelectionController.cs" line="29" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ElementSelectionController.cs" bodystart="30" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ElementSelectionController.cs" line="33" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ElementSelectionController.cs" bodystart="34" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -69,7 +69,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ElementSelectionController.cs" line="50" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ElementSelectionController.cs" bodystart="50" bodyend="55"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ElementSelectionController.cs" line="54" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ElementSelectionController.cs" bodystart="54" bodyend="59"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_element_selection_controller_1a8901ac3bab63f9b4f38f5ba2b86a86d8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -82,7 +82,7 @@
 <para>Lizzard, 1/13/2014. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ElementSelectionController.cs" line="65" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ElementSelectionController.cs" bodystart="65" bodyend="79"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ElementSelectionController.cs" line="69" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ElementSelectionController.cs" bodystart="69" bodyend="83"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_element_selection_controller_1a1bf985716c260e5c312d59a342c4fcb1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -95,7 +95,7 @@
 <para>Lizzard, 1/13/2014. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ElementSelectionController.cs" line="111" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ElementSelectionController.cs" bodystart="111" bodyend="119"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ElementSelectionController.cs" line="115" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ElementSelectionController.cs" bodystart="115" bodyend="123"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_element_selection_controller_1a470d43f1c3fe742fcf7ff5f8f5675819" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -131,7 +131,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ElementSelectionController.cs" line="130" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ElementSelectionController.cs" bodystart="130" bodyend="148"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ElementSelectionController.cs" line="134" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ElementSelectionController.cs" bodystart="134" bodyend="152"/>
         <references refid="class_a_rdev_kit_1_1_view_1_1_scene_element_category_panel_1aced9eb9454bc80f538ba8e5b1f055bbe" compoundref="_scene_element_category_panel_8cs" startline="33">ARdevKit.View.SceneElementCategoryPanel.Category</references>
         <references refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_1a03fd9bd9f7ca766c534b7c6400006a55" compoundref="_scene_element_8cs" startline="35">ARdevKit.Controller.EditorController.SceneElement.Prototype</references>
       </memberdef>
@@ -148,11 +148,11 @@
 <para>Lizzard, 1/13/2014. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ElementSelectionController.cs" line="89" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ElementSelectionController.cs" bodystart="89" bodyend="99"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ElementSelectionController.cs" line="93" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ElementSelectionController.cs" bodystart="93" bodyend="103"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-    </briefdescription>
+<para>The <ref refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_element_selection_controller" kindref="compound">ElementSelectionController</ref> is used to controll the section of the UI, </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
@@ -161,7 +161,7 @@
         <link refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_element_selection_controller"/>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ElementSelectionController.cs" line="14" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ElementSelectionController.cs" bodystart="13" bodyend="150"/>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ElementSelectionController.cs" line="18" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ElementSelectionController.cs" bodystart="17" bodyend="154"/>
     <listofallmembers>
       <member refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_element_selection_controller_1aa993eb677722a709dfa7169e10626a9b" prot="private" virt="non-virtual"><scope>ARdevKit::Controller::EditorController::ElementSelectionController</scope><name>categoryPanels</name></member>
       <member refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_element_selection_controller_1a23dae11ee466555e6be598481a3459f2" prot="public" virt="non-virtual"><scope>ARdevKit::Controller::EditorController::ElementSelectionController</scope><name>CategoryPanels</name></member>

@@ -22,26 +22,13 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
         private UdpClient udpClient;
         private EditorWindow editorWindow;
         private bool debugConnected;
-        private View.DebugWindow debugWindow;
-        
-        /// <summary>
-        /// Gets the debug window, which shows DebugPrompt from connected
-        /// Remotedevices, if requested
-        /// </summary>
-        /// <value>
-        /// The debug window.
-        /// </value>
-        public View.DebugWindow DebugWindow
-        {
-            get { return debugWindow; }
-        }
 
         /// <summary>
         /// Gets or sets a value indicating whether [debug connected].
         /// </summary>
         /// <value>
-        ///   <c>true</c> if [debug connected] the Editor listens for
-        ///   Debugdata; otherwise, the connections will be closed<c>false</c>.
+        /// true if [debug connected] the Editor listens for
+        /// Debugdata; otherwise, the connections will be closed false.
         /// </value>
         public bool DebugConnected
         {
@@ -56,7 +43,6 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
         /// <param name="window">The window.</param>
         public DeviceConnectionController(Form window)
         {
-            debugWindow = new View.DebugWindow(this);
             debugConnected = false;
             editorWindow = (EditorWindow) window;
             reportedDevices = new List<IPEndPoint>();
@@ -205,6 +191,11 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
             }
             return successfullySent;
         }
+
+
+        /// <summary>
+        /// Exports the recent project, in order to zip it and send it.
+        /// </summary>
         private void exportRecentProject()
         {
             string originalProjectPath = editorWindow.project.ProjectPath;
@@ -225,7 +216,7 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
 
 
         /// <summary>
-        ///     Sends a Debugrequest to the selected Device and shows its DebugOutput on a PopupWindow with a RichTextbox
+        /// Sends a Debugrequest to the selected Device and shows its DebugOutput on a PopupWindow with a RichTextbox
         /// </summary>
         /// <param name="index">index of the chosen Device</param>
         /// <returns> true if</returns>
@@ -249,20 +240,20 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
                     if (sender.Available > 0)
                     {
                         int read = sendStream.Read(msg, 0, msg.Length);
-                        debugWindow.AppendText(ASCIIEncoding.ASCII.GetString(msg, 0, read) + "\n");
+                        editorWindow.DebugWindow.AppendText(ASCIIEncoding.ASCII.GetString(msg, 0, read) + "\n");
                     }
                     else
-                {
+                    {
                         Thread.Sleep(1000);
                     } 
                 }
                 success = true;
                 sendStream.Write(ASCIIEncoding.ASCII.GetBytes("OK"), 0, ASCIIEncoding.ASCII.GetByteCount("OK"));
             }
-            catch (SocketException ex)
+            catch (Exception ex)
             {
                 writeExceptionToLog(ex);
-                if (!(sendStream == null))
+                if (!(sendStream == null) && !(sender == null) && sender.Connected)
                 {
                     sendStream.Write(ASCIIEncoding.ASCII.GetBytes("FAIL"), 0, ASCIIEncoding.ASCII.GetByteCount("FAIL"));
                 }
@@ -282,7 +273,6 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
                 {
                     sender.Close();
                 }
-                debugWindow = new View.DebugWindow(this);
             }
             return success;
         }

@@ -36,12 +36,12 @@
             // rtb_out
             // 
             this.rtb_out.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtb_out.Enabled = false;
             this.rtb_out.Location = new System.Drawing.Point(3, 3);
             this.rtb_out.Name = "rtb_out";
             this.rtb_out.Size = new System.Drawing.Size(618, 435);
             this.rtb_out.TabIndex = 0;
             this.rtb_out.Text = "";
+            this.rtb_out.UseWaitCursor = true;
             // 
             // tlp_debugWindow_main
             // 

@@ -9,6 +9,5 @@ var class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation =
     [ "getPreview", "class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation.html#a76230c0eb40c317bab23b37c27ea3a39", null ],
     [ "initElement", "class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation.html#a37ba80403f194a8aad7e7b96a8fd9239", null ],
     [ "Height", "class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation.html#a5cecd83037a573b7f4fdfc7ebe6c7476", null ],
-    [ "ImagePath", "class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation.html#a499cb36152832a4dd29794e3c1dd2718", null ],
     [ "Width", "class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation.html#a372f087469a33d84950310dfcd52e190", null ]
 ];

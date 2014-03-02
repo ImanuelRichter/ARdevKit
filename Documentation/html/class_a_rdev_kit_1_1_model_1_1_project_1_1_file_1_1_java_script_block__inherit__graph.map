@@ -1,5 +1,5 @@
 <map id="ARdevKit.Model.Project.File.JavaScriptBlock" name="ARdevKit.Model.Project.File.JavaScriptBlock">
 <area shape="rect" id="node3" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_line.html" title="A JavaScriptLine is a JavaScriptBlock which has a content that is written in a single line..." alt="" coords="5,435,192,557"/>
 <area shape="rect" id="node2" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block.html" title="An AbstractBlock has a level and can contain other AbstractBlocks. It can have a BlockMarker and a pa..." alt="" coords="47,6,151,186"/>
-<area shape="rect" id="node4" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_in_line.html" title="{ARdevKit.Model.Project.File.\lJavaScriptInLine\n||+ JavaScriptInLine()\l+ JavaScriptInLine()\l+ Write()\l}" alt="" coords="5,606,192,727"/>
+<area shape="rect" id="node4" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_in_line.html" title="A JavaScriptInLine is a JavaScriptLine which is closed by a &quot;,&quot; instead of a &quot;;&quot;. ..." alt="" coords="5,606,192,727"/>
 </map>

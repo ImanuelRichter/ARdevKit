@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/DebugWindow.cs" line="15" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/DebugWindow.cs" bodystart="15" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/DebugWindow.cs" line="19" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/DebugWindow.cs" bodystart="19" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_rdev_kit_1_1_view_1_1_debug_window_1a74e61d6b7d39fcc85b99d7a20381630c" prot="private" static="no" mutable="no">
         <type>System.ComponentModel.IContainer</type>
@@ -89,7 +89,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/DebugWindow.cs" line="16" column="1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/DebugWindow.cs" line="20" column="1"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_view_1_1_debug_window_1a8bd6cbd0d2b276af7bae29ea3f870a83" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -110,7 +110,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/DebugWindow.cs" line="28" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/DebugWindow.cs" bodystart="28" bodyend="31"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/DebugWindow.cs" line="32" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/DebugWindow.cs" bodystart="32" bodyend="35"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_view_1_1_debug_window_1a606ca26ee125fd1f478a0b20013ade70" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -150,7 +150,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/DebugWindow.cs" line="22" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/DebugWindow.cs" bodystart="22" bodyend="26"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/DebugWindow.cs" line="26" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/DebugWindow.cs" bodystart="26" bodyend="30"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_view_1_1_debug_window_1a699da7b94cba73ded382cbe7d09d259e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -175,7 +175,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/DebugWindow.cs" line="37" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/DebugWindow.cs" bodystart="37" bodyend="48"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/DebugWindow.cs" line="41" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/DebugWindow.cs" bodystart="41" bodyend="52"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-func">
@@ -206,7 +206,7 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-    </briefdescription>
+<para>This is a Form, containing a TextBoc, which can be filled threadsafe. Its for displaying DebugInformation. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
@@ -231,7 +231,7 @@
         <label>Form</label>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/DebugWindow.cs" line="14" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/DebugWindow.cs" bodystart="13" bodyend="49"/>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/DebugWindow.cs" line="18" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/DebugWindow.cs" bodystart="17" bodyend="53"/>
     <listofallmembers>
       <member refid="class_a_rdev_kit_1_1_view_1_1_debug_window_1a699da7b94cba73ded382cbe7d09d259e" prot="public" virt="non-virtual"><scope>ARdevKit::View::DebugWindow</scope><name>AppendText</name></member>
       <member refid="class_a_rdev_kit_1_1_view_1_1_debug_window_1af4e71aa025243641cd912e6de88ea14d" prot="private" virt="non-virtual"><scope>ARdevKit::View::DebugWindow</scope><name>AppendTextCallback</name></member>

@@ -69,7 +69,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElementCategory.cs" line="63" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElementCategory.cs" bodystart="64" bodyend="-1"/>
-        <referencedby refid="class_preview_controller_1ae3d0ace09aed4464a7dd91764d1bb03e" compoundref="_preview_controller_8cs" startline="101" endline="166">PreviewController.addPreviewable</referencedby>
+        <referencedby refid="class_preview_controller_1ae3d0ace09aed4464a7dd91764d1bb03e" compoundref="_preview_controller_8cs" startline="104" endline="169">PreviewController.addPreviewable</referencedby>
       </memberdef>
       <memberdef kind="property" id="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_category_1a6e7b2d628b8ea21c13b6f4533a26c7ba" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
         <type>List&lt; <ref refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element" kindref="compound">SceneElement</ref> &gt;</type>
@@ -83,7 +83,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElementCategory.cs" line="83" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElementCategory.cs" bodystart="84" bodyend="-1"/>
-        <referencedby refid="class_preview_controller_1ae3d0ace09aed4464a7dd91764d1bb03e" compoundref="_preview_controller_8cs" startline="101" endline="166">PreviewController.addPreviewable</referencedby>
+        <referencedby refid="class_preview_controller_1ae3d0ace09aed4464a7dd91764d1bb03e" compoundref="_preview_controller_8cs" startline="104" endline="169">PreviewController.addPreviewable</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">

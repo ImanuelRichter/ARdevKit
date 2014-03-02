@@ -1,4 +1,4 @@
-.TH "ARdevKit.Model.Project.Project" 3 "Sat Mar 1 2014" "Version 0.2" "ARdevKit" \" -*- nroff -*-
+.TH "ARdevKit.Model.Project.Project" 3 "Sun Mar 2 2014" "Version 0.2" "ARdevKit" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -52,6 +52,10 @@ Encapsulates everything, that is needed for an AR-Application and so this the el
 .RI "bool \fBexistTrackable\fP (int matrixID)"
 .br
 .RI "\fItrue if an Trackable with the same Path/ID exists, false if not\&. \fP"
+.ti -1c
+.RI "void \fBRemoveAugmentation\fP (\fBAbstractAugmentation\fP augmentation)"
+.br
+.RI "\fIRemoves the augmentation and deletes connected files if other augmentations dont need it\&. \fP"
 .ti -1c
 .RI "string \fBgetChecksum\fP ()"
 .br
@@ -237,6 +241,17 @@ Returns the next bigger Matrix ID\&.
 \fBReturns:\fP
 .RS 4
 
+.RE
+.PP
+
+.SS "void ARdevKit\&.Model\&.Project\&.Project\&.RemoveAugmentation (\fBAbstractAugmentation\fPaugmentation)"
+
+.PP
+Removes the augmentation and deletes connected files if other augmentations dont need it\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIaugmentation\fP The augmentation\&.
 .RE
 .PP
 

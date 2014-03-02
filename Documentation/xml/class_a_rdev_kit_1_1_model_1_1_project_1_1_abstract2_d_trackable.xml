@@ -18,7 +18,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" line="19" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" bodystart="19" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" line="22" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" bodystart="22" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a3ef9116db48c612d3428126786516e81" prot="protected" static="no" mutable="no">
         <type>int</type>
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" line="33" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" bodystart="33" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" line="36" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" bodystart="36" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a5d6e8cbc9efc6da689e3537d334fec37" prot="protected" static="no" mutable="no">
         <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d" kindref="compound">Vector3D</ref></type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" line="54" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" bodystart="54" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" line="57" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" bodystart="57" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a85997ab052b01f3680d47d199b4551a0" prot="protected" static="no" mutable="no">
         <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_di" kindref="compound">Vector3Di</ref></type>
@@ -57,7 +57,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" line="69" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" bodystart="69" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" line="72" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" bodystart="72" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a8ebdec7d02359310504e15f3a9852c04" prot="protected" static="no" mutable="no">
         <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser" kindref="compound">MarkerFuser</ref></type>
@@ -70,7 +70,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" line="85" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" bodystart="85" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" line="88" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" bodystart="88" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="property">
@@ -85,7 +85,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" line="24" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" bodystart="25" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" line="27" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" bodystart="28" bodyend="-1"/>
         <referencedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1a6ba67134957206067b97c6ebba5a9c8a" compoundref="_export_visitor_8cs" startline="568" endline="687">ARdevKit.Controller.ProjectController.ExportVisitor.Visit</referencedby>
       </memberdef>
       <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a0c9a459cf25e74c8173564d476021c9a" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
@@ -99,7 +99,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" line="38" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" bodystart="39" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" line="41" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" bodystart="42" bodyend="-1"/>
         <referencedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1a384b6fc84602fd29bedff296b083b3a0" compoundref="_export_visitor_8cs" startline="697" endline="821">ARdevKit.Controller.ProjectController.ExportVisitor.Visit</referencedby>
       </memberdef>
       <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1acbb38387d30cb1239814606b54099bb3" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
@@ -113,7 +113,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" line="59" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" bodystart="60" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" line="62" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" bodystart="63" bodyend="-1"/>
       </memberdef>
       <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a12ba493972e7d277e8f67294beb70355" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
         <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_di" kindref="compound">Vector3Di</ref></type>
@@ -126,7 +126,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" line="75" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" bodystart="76" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" line="78" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" bodystart="79" bodyend="-1"/>
       </memberdef>
       <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a98e3270dac234f5acd6054707f4c1964" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
         <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser" kindref="compound">MarkerFuser</ref></type>
@@ -139,7 +139,7 @@
 <para>The fuser. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" line="95" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" bodystart="96" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" line="98" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" bodystart="99" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -155,11 +155,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" line="108" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" bodystart="108" bodyend="111"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" line="111" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" bodystart="111" bodyend="114"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-    </briefdescription>
+<para>An <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable" kindref="compound">Abstract2DTrackable</ref> is a two-dimensional trackable image, that can be tracked by the metaio SDK. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
@@ -253,7 +253,7 @@
         <label>ICloneable</label>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" line="13" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" bodystart="12" bodyend="112"/>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" line="16" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Abstract2DTrackable.cs" bodystart="15" bodyend="115"/>
     <listofallmembers>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a76f6ad0ed8f615b8f5b7738411abb54f" prot="public" virt="pure-virtual"><scope>ARdevKit::Model::Project::Abstract2DTrackable</scope><name>Accept</name></member>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a999faeee63dee9445e8617d539c5b8d9" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Abstract2DTrackable</scope><name>Augmentations</name></member>

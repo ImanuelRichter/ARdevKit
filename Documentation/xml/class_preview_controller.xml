@@ -14,9 +14,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="22" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="22" bodyend="-1"/>
-        <referencedby refid="class_preview_controller_1a5d4e3df813540fd4ac0c74523f656fca" compoundref="_preview_controller_8cs" startline="1051" endline="1057">onAugmentationEnter</referencedby>
-        <referencedby refid="class_preview_controller_1a7bc01f6c09f310b7079a9754ec27e307" compoundref="_preview_controller_8cs" startline="1068" endline="1077">onAugmentationDrop</referencedby>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="25" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="25" bodyend="-1"/>
+        <referencedby refid="class_preview_controller_1a5d4e3df813540fd4ac0c74523f656fca" compoundref="_preview_controller_8cs" startline="1054" endline="1060">onAugmentationEnter</referencedby>
+        <referencedby refid="class_preview_controller_1a7bc01f6c09f310b7079a9754ec27e307" compoundref="_preview_controller_8cs" startline="1071" endline="1080">onAugmentationDrop</referencedby>
       </memberdef>
       <memberdef kind="property" id="class_preview_controller_1a38df415628d33de07a741fd3d80f5647" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
         <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable" kindref="compound">AbstractTrackable</ref></type>
@@ -29,14 +29,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="28" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="28" bodyend="-1"/>
-        <referencedby refid="class_preview_controller_1aa43765e04846c1d954bf7e0c5b1cc279" compoundref="_preview_controller_8cs" startline="62" endline="73">PreviewController</referencedby>
-        <referencedby refid="class_preview_controller_1ae3d0ace09aed4464a7dd91764d1bb03e" compoundref="_preview_controller_8cs" startline="101" endline="166">addPreviewable</referencedby>
-        <referencedby refid="class_preview_controller_1aa4cc8c02192eb08afe244825d5796552" compoundref="_preview_controller_8cs" startline="175" endline="249">addSource</referencedby>
-        <referencedby refid="class_preview_controller_1a4fad890882bdd075b6ea97ebac62bff6" compoundref="_preview_controller_8cs" startline="257" endline="267">removeSource</referencedby>
-        <referencedby refid="class_preview_controller_1a73d864a5cea6519a889d70bffbfef8f9" compoundref="_preview_controller_8cs" startline="274" endline="294">removePreviewable</referencedby>
-        <referencedby refid="class_preview_controller_1a5dd2e4dfcb87bcb1b2290d4ea752db2c" compoundref="_preview_controller_8cs" startline="312" endline="321">updatePreviewPanel</referencedby>
-        <referencedby refid="class_preview_controller_1ab68e5dc968561b4a115576d84e363cb0" compoundref="_preview_controller_8cs" startline="328" endline="372">reloadPreviewPanel</referencedby>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="31" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="31" bodyend="-1"/>
+        <referencedby refid="class_preview_controller_1aa43765e04846c1d954bf7e0c5b1cc279" compoundref="_preview_controller_8cs" startline="65" endline="76">PreviewController</referencedby>
+        <referencedby refid="class_preview_controller_1ae3d0ace09aed4464a7dd91764d1bb03e" compoundref="_preview_controller_8cs" startline="104" endline="169">addPreviewable</referencedby>
+        <referencedby refid="class_preview_controller_1aa4cc8c02192eb08afe244825d5796552" compoundref="_preview_controller_8cs" startline="178" endline="252">addSource</referencedby>
+        <referencedby refid="class_preview_controller_1a4fad890882bdd075b6ea97ebac62bff6" compoundref="_preview_controller_8cs" startline="260" endline="270">removeSource</referencedby>
+        <referencedby refid="class_preview_controller_1a73d864a5cea6519a889d70bffbfef8f9" compoundref="_preview_controller_8cs" startline="277" endline="297">removePreviewable</referencedby>
+        <referencedby refid="class_preview_controller_1a5dd2e4dfcb87bcb1b2290d4ea752db2c" compoundref="_preview_controller_8cs" startline="315" endline="324">updatePreviewPanel</referencedby>
+        <referencedby refid="class_preview_controller_1ab68e5dc968561b4a115576d84e363cb0" compoundref="_preview_controller_8cs" startline="331" endline="375">reloadPreviewPanel</referencedby>
       </memberdef>
       <memberdef kind="property" id="class_preview_controller_1a3f44a88dd89aa311b734034de2f70417" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
         <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation" kindref="compound">AbstractAugmentation</ref></type>
@@ -49,9 +49,9 @@
 <para>The copy. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="54" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="54" bodyend="-1"/>
-        <referencedby refid="class_preview_controller_1a58e44b6e2acc62906bfc29eb6854ce32" compoundref="_preview_controller_8cs" startline="1018" endline="1029">paste_augmentation</referencedby>
-        <referencedby refid="class_preview_controller_1a5cc0d886165ca91677acadd895426af2" compoundref="_preview_controller_8cs" startline="1036" endline="1039">paste_augmentation_center</referencedby>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="57" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="57" bodyend="-1"/>
+        <referencedby refid="class_preview_controller_1a58e44b6e2acc62906bfc29eb6854ce32" compoundref="_preview_controller_8cs" startline="1021" endline="1032">paste_augmentation</referencedby>
+        <referencedby refid="class_preview_controller_1a5cc0d886165ca91677acadd895426af2" compoundref="_preview_controller_8cs" startline="1039" endline="1042">paste_augmentation_center</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -66,7 +66,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="33" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="33" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="36" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="36" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_preview_controller_1a8ee944c119de55efc51bba73afe16863" prot="private" static="no" mutable="no">
         <type><ref refid="class_a_rdev_kit_1_1_editor_window" kindref="compound">EditorWindow</ref></type>
@@ -79,7 +79,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="38" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="38" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="41" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="41" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_preview_controller_1a3bda502796213aeefe9542eebfce9d8a" prot="private" static="no" mutable="no">
         <type>double</type>
@@ -92,7 +92,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="46" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="46" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="49" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="49" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-attrib">
@@ -107,9 +107,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="41" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="41" bodyend="-1"/>
-        <referencedby refid="class_preview_controller_1ae3d0ace09aed4464a7dd91764d1bb03e" compoundref="_preview_controller_8cs" startline="101" endline="166">addPreviewable</referencedby>
-        <referencedby refid="class_preview_controller_1ab68e5dc968561b4a115576d84e363cb0" compoundref="_preview_controller_8cs" startline="328" endline="372">reloadPreviewPanel</referencedby>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="44" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="44" bodyend="-1"/>
+        <referencedby refid="class_preview_controller_1ae3d0ace09aed4464a7dd91764d1bb03e" compoundref="_preview_controller_8cs" startline="104" endline="169">addPreviewable</referencedby>
+        <referencedby refid="class_preview_controller_1ab68e5dc968561b4a115576d84e363cb0" compoundref="_preview_controller_8cs" startline="331" endline="375">reloadPreviewPanel</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -136,8 +136,8 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="62" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="62" bodyend="73"/>
-        <references refid="class_preview_controller_1a38df415628d33de07a741fd3d80f5647" compoundref="_preview_controller_8cs" startline="28">trackable</references>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="65" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="65" bodyend="76"/>
+        <references refid="class_preview_controller_1a38df415628d33de07a741fd3d80f5647" compoundref="_preview_controller_8cs" startline="31">trackable</references>
       </memberdef>
       <memberdef kind="function" id="class_preview_controller_1a87e93818ed39df3e7accac5999a85d21" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -170,7 +170,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="89" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="89" bodyend="90"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="92" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="92" bodyend="93"/>
       </memberdef>
       <memberdef kind="function" id="class_preview_controller_1ae3d0ace09aed4464a7dd91764d1bb03e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -206,14 +206,14 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="101" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="101" bodyend="166"/>
-        <references refid="class_preview_controller_1a38df415628d33de07a741fd3d80f5647" compoundref="_preview_controller_8cs" startline="28">trackable</references>
-        <references refid="class_a_rdev_kit_1_1_editor_window_1aa7e64c912e3d904fae0ec52588be0baa" compoundref="_editor_window_8cs" startline="138">ARdevKit.EditorWindow.project</references>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="104" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="104" bodyend="169"/>
+        <references refid="class_preview_controller_1a38df415628d33de07a741fd3d80f5647" compoundref="_preview_controller_8cs" startline="31">trackable</references>
+        <references refid="class_a_rdev_kit_1_1_editor_window_1aa7e64c912e3d904fae0ec52588be0baa" compoundref="_editor_window_8cs" startline="154">ARdevKit.EditorWindow.project</references>
         <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1abb0710a1f1cd83bda71a0c988e9b6d72" compoundref="_project_8cs" startline="255" endline="282">ARdevKit.Model.Project.Project.existTrackable</references>
         <references refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_category_1a0f33148739c409a2fe2210c4e3ece165" compoundref="_scene_element_category_8cs" startline="64">ARdevKit.Controller.EditorController.SceneElementCategory.Name</references>
         <references refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_category_1a6e7b2d628b8ea21c13b6f4533a26c7ba" compoundref="_scene_element_category_8cs" startline="84">ARdevKit.Controller.EditorController.SceneElementCategory.SceneElements</references>
-        <references refid="class_preview_controller_1a9b9691005cc484c0da1d7498e72b8e7f" compoundref="_preview_controller_8cs" startline="41">index</references>
-        <references refid="class_preview_controller_1ae5cb0828e43829a516a998407d6f8a1a" compoundref="_preview_controller_8cs" startline="516" endline="572">setCurrentElement</references>
+        <references refid="class_preview_controller_1a9b9691005cc484c0da1d7498e72b8e7f" compoundref="_preview_controller_8cs" startline="44">index</references>
+        <references refid="class_preview_controller_1ae5cb0828e43829a516a998407d6f8a1a" compoundref="_preview_controller_8cs" startline="519" endline="575">setCurrentElement</references>
         <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1af3d7540cfeabb22ce7290378d7039a76" compoundref="_project_8cs" startline="118">ARdevKit.Model.Project.Project.Trackables</references>
       </memberdef>
       <memberdef kind="function" id="class_preview_controller_1aa4cc8c02192eb08afe244825d5796552" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
@@ -250,12 +250,12 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="175" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="175" bodyend="249"/>
-        <references refid="class_preview_controller_1a38df415628d33de07a741fd3d80f5647" compoundref="_preview_controller_8cs" startline="28">trackable</references>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="178" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="178" bodyend="252"/>
+        <references refid="class_preview_controller_1a38df415628d33de07a741fd3d80f5647" compoundref="_preview_controller_8cs" startline="31">trackable</references>
         <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1ac5dfdc39c3e7ad91ca9156208278b108" compoundref="_abstract_trackable_8cs" startline="115" endline="125">ARdevKit.Model.Project.AbstractTrackable.existAugmentation</references>
-        <references refid="class_preview_controller_1a4ab1b4464e39eeb347554fc69f0dd38b" compoundref="_preview_controller_8cs" startline="487" endline="510">findBox</references>
-        <references refid="class_preview_controller_1ae33fd4d13286e22a819f5a6cd5de292f" compoundref="_preview_controller_8cs" startline="817" endline="839">updateElementCombobox</references>
-        <referencedby refid="class_preview_controller_1a7bc01f6c09f310b7079a9754ec27e307" compoundref="_preview_controller_8cs" startline="1068" endline="1077">onAugmentationDrop</referencedby>
+        <references refid="class_preview_controller_1a4ab1b4464e39eeb347554fc69f0dd38b" compoundref="_preview_controller_8cs" startline="490" endline="513">findBox</references>
+        <references refid="class_preview_controller_1ae33fd4d13286e22a819f5a6cd5de292f" compoundref="_preview_controller_8cs" startline="820" endline="842">updateElementCombobox</references>
+        <referencedby refid="class_preview_controller_1a7bc01f6c09f310b7079a9754ec27e307" compoundref="_preview_controller_8cs" startline="1071" endline="1080">onAugmentationDrop</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_preview_controller_1a4fad890882bdd075b6ea97ebac62bff6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -291,10 +291,10 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="257" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="257" bodyend="267"/>
-        <references refid="class_preview_controller_1a22b51f7117d79a44defe07c627e52982" compoundref="_preview_controller_8cs" startline="867" endline="900">getSizedBitmap</references>
-        <references refid="class_preview_controller_1ae33fd4d13286e22a819f5a6cd5de292f" compoundref="_preview_controller_8cs" startline="817" endline="839">updateElementCombobox</references>
-        <references refid="class_preview_controller_1a38df415628d33de07a741fd3d80f5647" compoundref="_preview_controller_8cs" startline="28">trackable</references>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="260" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="260" bodyend="270"/>
+        <references refid="class_preview_controller_1a22b51f7117d79a44defe07c627e52982" compoundref="_preview_controller_8cs" startline="870" endline="903">getSizedBitmap</references>
+        <references refid="class_preview_controller_1ae33fd4d13286e22a819f5a6cd5de292f" compoundref="_preview_controller_8cs" startline="820" endline="842">updateElementCombobox</references>
+        <references refid="class_preview_controller_1a38df415628d33de07a741fd3d80f5647" compoundref="_preview_controller_8cs" startline="31">trackable</references>
       </memberdef>
       <memberdef kind="function" id="class_preview_controller_1a73d864a5cea6519a889d70bffbfef8f9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -319,11 +319,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="274" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="274" bodyend="294"/>
-        <references refid="class_preview_controller_1a38df415628d33de07a741fd3d80f5647" compoundref="_preview_controller_8cs" startline="28">trackable</references>
-        <references refid="class_a_rdev_kit_1_1_editor_window_1aa7e64c912e3d904fae0ec52588be0baa" compoundref="_editor_window_8cs" startline="138">ARdevKit.EditorWindow.project</references>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="277" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="277" bodyend="297"/>
+        <references refid="class_preview_controller_1a38df415628d33de07a741fd3d80f5647" compoundref="_preview_controller_8cs" startline="31">trackable</references>
+        <references refid="class_a_rdev_kit_1_1_editor_window_1aa7e64c912e3d904fae0ec52588be0baa" compoundref="_editor_window_8cs" startline="154">ARdevKit.EditorWindow.project</references>
         <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a97efde65dc462b98448edd6967f9e777" compoundref="_project_8cs" startline="218" endline="228">ARdevKit.Model.Project.Project.hasTrackable</references>
-        <references refid="class_preview_controller_1ae33fd4d13286e22a819f5a6cd5de292f" compoundref="_preview_controller_8cs" startline="817" endline="839">updateElementCombobox</references>
+        <references refid="class_preview_controller_1ae33fd4d13286e22a819f5a6cd5de292f" compoundref="_preview_controller_8cs" startline="820" endline="842">updateElementCombobox</references>
       </memberdef>
       <memberdef kind="function" id="class_preview_controller_1a5dd2e4dfcb87bcb1b2290d4ea752db2c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -336,10 +336,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="312" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="312" bodyend="321"/>
-        <references refid="class_preview_controller_1a38df415628d33de07a741fd3d80f5647" compoundref="_preview_controller_8cs" startline="28">trackable</references>
-        <references refid="class_preview_controller_1ae33fd4d13286e22a819f5a6cd5de292f" compoundref="_preview_controller_8cs" startline="817" endline="839">updateElementCombobox</references>
-        <references refid="class_preview_controller_1a58e44b6e2acc62906bfc29eb6854ce32" compoundref="_preview_controller_8cs" startline="1018" endline="1029">paste_augmentation</references>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="315" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="315" bodyend="324"/>
+        <references refid="class_preview_controller_1a38df415628d33de07a741fd3d80f5647" compoundref="_preview_controller_8cs" startline="31">trackable</references>
+        <references refid="class_preview_controller_1ae33fd4d13286e22a819f5a6cd5de292f" compoundref="_preview_controller_8cs" startline="820" endline="842">updateElementCombobox</references>
+        <references refid="class_preview_controller_1a58e44b6e2acc62906bfc29eb6854ce32" compoundref="_preview_controller_8cs" startline="1021" endline="1032">paste_augmentation</references>
       </memberdef>
       <memberdef kind="function" id="class_preview_controller_1ab68e5dc968561b4a115576d84e363cb0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -364,12 +364,12 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="328" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="328" bodyend="372"/>
-        <references refid="class_a_rdev_kit_1_1_editor_window_1aa7e64c912e3d904fae0ec52588be0baa" compoundref="_editor_window_8cs" startline="138">ARdevKit.EditorWindow.project</references>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="331" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="331" bodyend="375"/>
+        <references refid="class_a_rdev_kit_1_1_editor_window_1aa7e64c912e3d904fae0ec52588be0baa" compoundref="_editor_window_8cs" startline="154">ARdevKit.EditorWindow.project</references>
         <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1af3d7540cfeabb22ce7290378d7039a76" compoundref="_project_8cs" startline="118">ARdevKit.Model.Project.Project.Trackables</references>
-        <references refid="class_preview_controller_1a9b9691005cc484c0da1d7498e72b8e7f" compoundref="_preview_controller_8cs" startline="41">index</references>
-        <references refid="class_preview_controller_1a38df415628d33de07a741fd3d80f5647" compoundref="_preview_controller_8cs" startline="28">trackable</references>
-        <references refid="class_preview_controller_1ae33fd4d13286e22a819f5a6cd5de292f" compoundref="_preview_controller_8cs" startline="817" endline="839">updateElementCombobox</references>
+        <references refid="class_preview_controller_1a9b9691005cc484c0da1d7498e72b8e7f" compoundref="_preview_controller_8cs" startline="44">index</references>
+        <references refid="class_preview_controller_1a38df415628d33de07a741fd3d80f5647" compoundref="_preview_controller_8cs" startline="31">trackable</references>
+        <references refid="class_preview_controller_1ae33fd4d13286e22a819f5a6cd5de292f" compoundref="_preview_controller_8cs" startline="820" endline="842">updateElementCombobox</references>
       </memberdef>
       <memberdef kind="function" id="class_preview_controller_1a497bb0aabb76d17df7d090fd0b8daac5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -394,7 +394,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="408" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="408" bodyend="424"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="411" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="411" bodyend="427"/>
       </memberdef>
       <memberdef kind="function" id="class_preview_controller_1a4ab1b4464e39eeb347554fc69f0dd38b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>PictureBox</type>
@@ -420,10 +420,10 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="487" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="487" bodyend="510"/>
-        <referencedby refid="class_preview_controller_1aa4cc8c02192eb08afe244825d5796552" compoundref="_preview_controller_8cs" startline="175" endline="249">addSource</referencedby>
-        <referencedby refid="class_preview_controller_1ae5cb0828e43829a516a998407d6f8a1a" compoundref="_preview_controller_8cs" startline="516" endline="572">setCurrentElement</referencedby>
-        <referencedby refid="class_preview_controller_1af14f36a06e16003c0cc11188024521c7" compoundref="_preview_controller_8cs" startline="797" endline="810">updateTranslation</referencedby>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="490" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="490" bodyend="513"/>
+        <referencedby refid="class_preview_controller_1aa4cc8c02192eb08afe244825d5796552" compoundref="_preview_controller_8cs" startline="178" endline="252">addSource</referencedby>
+        <referencedby refid="class_preview_controller_1ae5cb0828e43829a516a998407d6f8a1a" compoundref="_preview_controller_8cs" startline="519" endline="575">setCurrentElement</referencedby>
+        <referencedby refid="class_preview_controller_1af14f36a06e16003c0cc11188024521c7" compoundref="_preview_controller_8cs" startline="800" endline="813">updateTranslation</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_preview_controller_1ae5cb0828e43829a516a998407d6f8a1a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -448,10 +448,10 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="516" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="516" bodyend="572"/>
-        <references refid="class_preview_controller_1a4ab1b4464e39eeb347554fc69f0dd38b" compoundref="_preview_controller_8cs" startline="487" endline="510">findBox</references>
-        <references refid="class_preview_controller_1ae33fd4d13286e22a819f5a6cd5de292f" compoundref="_preview_controller_8cs" startline="817" endline="839">updateElementCombobox</references>
-        <referencedby refid="class_preview_controller_1ae3d0ace09aed4464a7dd91764d1bb03e" compoundref="_preview_controller_8cs" startline="101" endline="166">addPreviewable</referencedby>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="519" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="519" bodyend="575"/>
+        <references refid="class_preview_controller_1a4ab1b4464e39eeb347554fc69f0dd38b" compoundref="_preview_controller_8cs" startline="490" endline="513">findBox</references>
+        <references refid="class_preview_controller_1ae33fd4d13286e22a819f5a6cd5de292f" compoundref="_preview_controller_8cs" startline="820" endline="842">updateElementCombobox</references>
+        <referencedby refid="class_preview_controller_1ae3d0ace09aed4464a7dd91764d1bb03e" compoundref="_preview_controller_8cs" startline="104" endline="169">addPreviewable</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_preview_controller_1a3e156e717573c15c3ef9a3baada91085" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>Bitmap</type>
@@ -477,7 +477,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="631" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="631" bodyend="716"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="634" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="634" bodyend="719"/>
       </memberdef>
       <memberdef kind="function" id="class_preview_controller_1a0013a78d729579e06c50551e87350091" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>Bitmap</type>
@@ -525,7 +525,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="725" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="725" bodyend="737"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="728" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="728" bodyend="740"/>
       </memberdef>
       <memberdef kind="function" id="class_preview_controller_1a03acb2816496e20b416346aeff126b04" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -538,8 +538,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="743" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="743" bodyend="766"/>
-        <references refid="class_a_rdev_kit_1_1_editor_window_1aa7e64c912e3d904fae0ec52588be0baa" compoundref="_editor_window_8cs" startline="138">ARdevKit.EditorWindow.project</references>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="746" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="746" bodyend="769"/>
+        <references refid="class_a_rdev_kit_1_1_editor_window_1aa7e64c912e3d904fae0ec52588be0baa" compoundref="_editor_window_8cs" startline="154">ARdevKit.EditorWindow.project</references>
         <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1af3d7540cfeabb22ce7290378d7039a76" compoundref="_project_8cs" startline="118">ARdevKit.Model.Project.Project.Trackables</references>
         <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a999faeee63dee9445e8617d539c5b8d9" compoundref="_abstract_trackable_8cs" startline="85">ARdevKit.Model.Project.AbstractTrackable.Augmentations</references>
       </memberdef>
@@ -577,7 +577,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="773" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="773" bodyend="792"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="776" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="776" bodyend="795"/>
         <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d_1a06336e90ebe41a0d704d7fb968c3eab8" compoundref="_vector3_d_8cs" startline="25">ARdevKit.Model.Project.Vector3D.X</references>
         <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d_1aaa8679d7364c8f6ba03e89bd00f5b991" compoundref="_vector3_d_8cs" startline="33">ARdevKit.Model.Project.Vector3D.Y</references>
       </memberdef>
@@ -592,9 +592,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="797" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="797" bodyend="810"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="800" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="800" bodyend="813"/>
         <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a8ed7943a2eb75682addda8731bff6c34" compoundref="_abstract_augmentation_8cs" startline="88">ARdevKit.Model.Project.AbstractAugmentation.Translation</references>
-        <references refid="class_preview_controller_1a4ab1b4464e39eeb347554fc69f0dd38b" compoundref="_preview_controller_8cs" startline="487" endline="510">findBox</references>
+        <references refid="class_preview_controller_1a4ab1b4464e39eeb347554fc69f0dd38b" compoundref="_preview_controller_8cs" startline="490" endline="513">findBox</references>
       </memberdef>
       <memberdef kind="function" id="class_preview_controller_1ae33fd4d13286e22a819f5a6cd5de292f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -619,17 +619,17 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="817" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="817" bodyend="839"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="820" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="820" bodyend="842"/>
         <references refid="class_a_rdev_kit_1_1_editor_window_1a7a5f59a2277ea660f5ac354ed6563931" compoundref="_editor_window_8designer_8cs" startline="626">ARdevKit.EditorWindow.Cmb_editor_properties_objectSelection</references>
         <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a999faeee63dee9445e8617d539c5b8d9" compoundref="_abstract_trackable_8cs" startline="85">ARdevKit.Model.Project.AbstractTrackable.Augmentations</references>
-        <references refid="class_a_rdev_kit_1_1_editor_window_1aa7e64c912e3d904fae0ec52588be0baa" compoundref="_editor_window_8cs" startline="138">ARdevKit.EditorWindow.project</references>
+        <references refid="class_a_rdev_kit_1_1_editor_window_1aa7e64c912e3d904fae0ec52588be0baa" compoundref="_editor_window_8cs" startline="154">ARdevKit.EditorWindow.project</references>
         <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1ade6d1eebeab2acee826e2ddf22724fb5" compoundref="_project_8cs" startline="102">ARdevKit.Model.Project.Project.Sources</references>
-        <referencedby refid="class_preview_controller_1aa4cc8c02192eb08afe244825d5796552" compoundref="_preview_controller_8cs" startline="175" endline="249">addSource</referencedby>
-        <referencedby refid="class_preview_controller_1a4fad890882bdd075b6ea97ebac62bff6" compoundref="_preview_controller_8cs" startline="257" endline="267">removeSource</referencedby>
-        <referencedby refid="class_preview_controller_1a73d864a5cea6519a889d70bffbfef8f9" compoundref="_preview_controller_8cs" startline="274" endline="294">removePreviewable</referencedby>
-        <referencedby refid="class_preview_controller_1a5dd2e4dfcb87bcb1b2290d4ea752db2c" compoundref="_preview_controller_8cs" startline="312" endline="321">updatePreviewPanel</referencedby>
-        <referencedby refid="class_preview_controller_1ab68e5dc968561b4a115576d84e363cb0" compoundref="_preview_controller_8cs" startline="328" endline="372">reloadPreviewPanel</referencedby>
-        <referencedby refid="class_preview_controller_1ae5cb0828e43829a516a998407d6f8a1a" compoundref="_preview_controller_8cs" startline="516" endline="572">setCurrentElement</referencedby>
+        <referencedby refid="class_preview_controller_1aa4cc8c02192eb08afe244825d5796552" compoundref="_preview_controller_8cs" startline="178" endline="252">addSource</referencedby>
+        <referencedby refid="class_preview_controller_1a4fad890882bdd075b6ea97ebac62bff6" compoundref="_preview_controller_8cs" startline="260" endline="270">removeSource</referencedby>
+        <referencedby refid="class_preview_controller_1a73d864a5cea6519a889d70bffbfef8f9" compoundref="_preview_controller_8cs" startline="277" endline="297">removePreviewable</referencedby>
+        <referencedby refid="class_preview_controller_1a5dd2e4dfcb87bcb1b2290d4ea752db2c" compoundref="_preview_controller_8cs" startline="315" endline="324">updatePreviewPanel</referencedby>
+        <referencedby refid="class_preview_controller_1ab68e5dc968561b4a115576d84e363cb0" compoundref="_preview_controller_8cs" startline="331" endline="375">reloadPreviewPanel</referencedby>
+        <referencedby refid="class_preview_controller_1ae5cb0828e43829a516a998407d6f8a1a" compoundref="_preview_controller_8cs" startline="519" endline="575">setCurrentElement</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_preview_controller_1ae491c6460dec4eba08e93a12044edf8c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -646,7 +646,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="844" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="844" bodyend="862"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="847" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="847" bodyend="865"/>
       </memberdef>
       <memberdef kind="function" id="class_preview_controller_1a22b51f7117d79a44defe07c627e52982" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>Bitmap</type>
@@ -663,9 +663,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="867" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="867" bodyend="900"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="870" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="870" bodyend="903"/>
         <references refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable_1a7cbcbb20929f4f1b6db3321ed2e83070">ARdevKit.Model.Project.IPreviewable.getPreview</references>
-        <referencedby refid="class_preview_controller_1a4fad890882bdd075b6ea97ebac62bff6" compoundref="_preview_controller_8cs" startline="257" endline="267">removeSource</referencedby>
+        <referencedby refid="class_preview_controller_1a4fad890882bdd075b6ea97ebac62bff6" compoundref="_preview_controller_8cs" startline="260" endline="270">removeSource</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_preview_controller_1a3ee38c7b2e1a69fbe823b8092c2d6c86" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -701,7 +701,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="1003" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="1003" bodyend="1012"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="1006" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="1006" bodyend="1015"/>
       </memberdef>
       <memberdef kind="function" id="class_preview_controller_1a58e44b6e2acc62906bfc29eb6854ce32" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -737,10 +737,10 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="1018" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="1018" bodyend="1029"/>
-        <references refid="class_preview_controller_1a3f44a88dd89aa311b734034de2f70417" compoundref="_preview_controller_8cs" startline="54">copy</references>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="1021" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="1021" bodyend="1032"/>
+        <references refid="class_preview_controller_1a3f44a88dd89aa311b734034de2f70417" compoundref="_preview_controller_8cs" startline="57">copy</references>
         <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a184416a3d47e35d58bb7f5bb6ce2e269">ARdevKit.Model.Project.AbstractAugmentation.Clone</references>
-        <referencedby refid="class_preview_controller_1a5dd2e4dfcb87bcb1b2290d4ea752db2c" compoundref="_preview_controller_8cs" startline="312" endline="321">updatePreviewPanel</referencedby>
+        <referencedby refid="class_preview_controller_1a5dd2e4dfcb87bcb1b2290d4ea752db2c" compoundref="_preview_controller_8cs" startline="315" endline="324">updatePreviewPanel</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_preview_controller_1a5cc0d886165ca91677acadd895426af2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -776,8 +776,8 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="1036" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="1036" bodyend="1039"/>
-        <references refid="class_preview_controller_1a3f44a88dd89aa311b734034de2f70417" compoundref="_preview_controller_8cs" startline="54">copy</references>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="1039" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="1039" bodyend="1042"/>
+        <references refid="class_preview_controller_1a3f44a88dd89aa311b734034de2f70417" compoundref="_preview_controller_8cs" startline="57">copy</references>
         <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a184416a3d47e35d58bb7f5bb6ce2e269">ARdevKit.Model.Project.AbstractAugmentation.Clone</references>
       </memberdef>
       <memberdef kind="function" id="class_preview_controller_1a5d4e3df813540fd4ac0c74523f656fca" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
@@ -814,8 +814,8 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="1051" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="1051" bodyend="1057"/>
-        <references refid="class_preview_controller_1adf3c4a7bbd75ba87a843a3b56b0a04e2" compoundref="_preview_controller_8cs" startline="22">currentMetaCategory</references>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="1054" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="1054" bodyend="1060"/>
+        <references refid="class_preview_controller_1adf3c4a7bbd75ba87a843a3b56b0a04e2" compoundref="_preview_controller_8cs" startline="25">currentMetaCategory</references>
       </memberdef>
       <memberdef kind="function" id="class_preview_controller_1a7bc01f6c09f310b7079a9754ec27e307" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -851,11 +851,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="1068" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="1068" bodyend="1077"/>
-        <references refid="class_preview_controller_1adf3c4a7bbd75ba87a843a3b56b0a04e2" compoundref="_preview_controller_8cs" startline="22">currentMetaCategory</references>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="1071" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="1071" bodyend="1080"/>
+        <references refid="class_preview_controller_1adf3c4a7bbd75ba87a843a3b56b0a04e2" compoundref="_preview_controller_8cs" startline="25">currentMetaCategory</references>
         <references refid="class_a_rdev_kit_1_1_view_1_1_element_icon_1a5d4cda78ae958d4acc7be292e6c0d99e" compoundref="_element_icon_8cs" startline="32">ARdevKit.View.ElementIcon.Element</references>
         <references refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_1a03fd9bd9f7ca766c534b7c6400006a55" compoundref="_scene_element_8cs" startline="35">ARdevKit.Controller.EditorController.SceneElement.Prototype</references>
-        <references refid="class_preview_controller_1aa4cc8c02192eb08afe244825d5796552" compoundref="_preview_controller_8cs" startline="175" endline="249">addSource</references>
+        <references refid="class_preview_controller_1aa4cc8c02192eb08afe244825d5796552" compoundref="_preview_controller_8cs" startline="178" endline="252">addSource</references>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -870,7 +870,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="300" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="300" bodyend="306"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="303" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="303" bodyend="309"/>
       </memberdef>
       <memberdef kind="function" id="class_preview_controller_1a32a2795234c182705bb1109f6b9cdc1a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -895,7 +895,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="379" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="379" bodyend="402"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="382" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="382" bodyend="405"/>
       </memberdef>
       <memberdef kind="function" id="class_preview_controller_1a5c8d3be941dc6f819ff6d91a8a7091c2" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -931,7 +931,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="432" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="432" bodyend="480"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="435" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="435" bodyend="483"/>
       </memberdef>
       <memberdef kind="function" id="class_preview_controller_1aedcb3499d45104732169128b8fdc5fc2" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -956,7 +956,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="578" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="578" bodyend="603"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="581" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="581" bodyend="606"/>
       </memberdef>
       <memberdef kind="function" id="class_preview_controller_1a56e09e0ef66907b9915e64bd88b6c21d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d" kindref="compound">Vector3D</ref></type>
@@ -982,7 +982,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="609" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="609" bodyend="615"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="612" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="612" bodyend="618"/>
       </memberdef>
       <memberdef kind="function" id="class_preview_controller_1a23d02dcb2c8a3cf7937e419928076aee" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d" kindref="compound">Vector3D</ref></type>
@@ -999,7 +999,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="617" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="617" bodyend="623"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="620" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="620" bodyend="626"/>
       </memberdef>
       <memberdef kind="function" id="class_preview_controller_1a1e1d3f2f9e67fe21a4a4822eb92eb188" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1035,7 +1035,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="912" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="912" bodyend="919"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="915" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="915" bodyend="922"/>
       </memberdef>
       <memberdef kind="function" id="class_preview_controller_1a11fda2d15a12799b9d60da0752527e5a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1071,7 +1071,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="927" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="927" bodyend="948"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="930" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="930" bodyend="951"/>
       </memberdef>
       <memberdef kind="function" id="class_preview_controller_1a46df737d070e134581dcf9b81510fd9c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1107,7 +1107,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="955" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="955" bodyend="960"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="958" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="958" bodyend="963"/>
       </memberdef>
       <memberdef kind="function" id="class_preview_controller_1a53d7af61cdfc903f1eacf7e1c38d09ac" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1143,7 +1143,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="968" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="968" bodyend="971"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="971" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="971" bodyend="974"/>
       </memberdef>
       <memberdef kind="function" id="class_preview_controller_1a25f87734dca1642d1c1d88eb79f861c8" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1179,7 +1179,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="980" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="980" bodyend="996"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="983" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="983" bodyend="999"/>
       </memberdef>
       <memberdef kind="function" id="class_preview_controller_1a53e52be55583abca49990e61b3517816" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1215,7 +1215,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="1084" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="1084" bodyend="1088"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="1087" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="1087" bodyend="1091"/>
       </memberdef>
       <memberdef kind="function" id="class_preview_controller_1a2435fce8fcbd17da3858e58746fde3ba" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1251,7 +1251,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="1095" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="1095" bodyend="1099"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="1098" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="1098" bodyend="1102"/>
       </memberdef>
       <memberdef kind="function" id="class_preview_controller_1a399716efd5533a7669b149f0277b842e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1287,7 +1287,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="1106" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="1106" bodyend="1110"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="1109" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="1109" bodyend="1113"/>
       </memberdef>
       <memberdef kind="function" id="class_preview_controller_1ae3a2972ffedfb97510c1c7d6c6e7f5da" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1323,7 +1323,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="1117" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="1117" bodyend="1121"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="1120" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="1120" bodyend="1124"/>
       </memberdef>
       <memberdef kind="function" id="class_preview_controller_1a3bf96e43c3c2796464832faeda70defd" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1359,7 +1359,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="1128" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="1128" bodyend="1134"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="1131" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="1131" bodyend="1137"/>
       </memberdef>
       <memberdef kind="function" id="class_preview_controller_1ad2e214de18132be37e30b10e82af1c3b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1395,11 +1395,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="1141" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="1141" bodyend="1144"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="1144" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="1144" bodyend="1147"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-    </briefdescription>
+<para>The class <ref refid="class_preview_controller" kindref="compound">PreviewController</ref> manages all things which are in contact with the PreviewPanel. Here are all methods, who influence the PreviewPanel. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
@@ -1408,7 +1408,7 @@
         <link refid="class_preview_controller"/>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="18" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="17" bodyend="1145"/>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="21" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="20" bodyend="1148"/>
     <listofallmembers>
       <member refid="class_preview_controller_1a32a2795234c182705bb1109f6b9cdc1a" prot="private" virt="non-virtual"><scope>PreviewController</scope><name>addAllToPanel</name></member>
       <member refid="class_preview_controller_1a5c8d3be941dc6f819ff6d91a8a7091c2" prot="private" virt="non-virtual"><scope>PreviewController</scope><name>addPictureBox</name></member>
