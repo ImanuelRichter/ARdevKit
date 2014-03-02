@@ -96,7 +96,7 @@
         </inbodydescription>
         <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="52" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="53" bodyend="-1"/>
         <referencedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1ad58774c6778421b6bf85a6c70029a3d9" compoundref="_export_visitor_8cs" startline="976" endline="1107">ARdevKit.Controller.ProjectController.ExportVisitor.Visit</referencedby>
-        <referencedby refid="class_a_rdev_kit_1_1_editor_window_1a7ef9b2d88c9155f213bcc1b0476c4bb2" compoundref="_editor_window_8cs" startline="564" endline="596">ARdevKit.EditorWindow.saveProject</referencedby>
+        <referencedby refid="class_a_rdev_kit_1_1_editor_window_1a7ef9b2d88c9155f213bcc1b0476c4bb2" compoundref="_editor_window_8cs" startline="580" endline="612">ARdevKit.EditorWindow.saveProject</referencedby>
       </memberdef>
       <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1ad1061c35bc3ffb4caefebce4f22c365c" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
         <type>string</type>
@@ -110,7 +110,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="68" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="69" bodyend="-1"/>
-        <referencedby refid="class_a_rdev_kit_1_1_editor_window_1a7ef9b2d88c9155f213bcc1b0476c4bb2" compoundref="_editor_window_8cs" startline="564" endline="596">ARdevKit.EditorWindow.saveProject</referencedby>
+        <referencedby refid="class_a_rdev_kit_1_1_editor_window_1a7ef9b2d88c9155f213bcc1b0476c4bb2" compoundref="_editor_window_8cs" startline="580" endline="612">ARdevKit.EditorWindow.saveProject</referencedby>
       </memberdef>
       <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1ac22f350013113d1e85605346d824cbc1" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
         <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor" kindref="compound">AbstractSensor</ref></type>
@@ -125,7 +125,7 @@
         </inbodydescription>
         <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="85" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="86" bodyend="-1"/>
         <referencedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1ad58774c6778421b6bf85a6c70029a3d9" compoundref="_export_visitor_8cs" startline="976" endline="1107">ARdevKit.Controller.ProjectController.ExportVisitor.Visit</referencedby>
-        <referencedby refid="class_a_rdev_kit_1_1_editor_window_1a7ef9b2d88c9155f213bcc1b0476c4bb2" compoundref="_editor_window_8cs" startline="564" endline="596">ARdevKit.EditorWindow.saveProject</referencedby>
+        <referencedby refid="class_a_rdev_kit_1_1_editor_window_1a7ef9b2d88c9155f213bcc1b0476c4bb2" compoundref="_editor_window_8cs" startline="580" endline="612">ARdevKit.EditorWindow.saveProject</referencedby>
       </memberdef>
       <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1ade6d1eebeab2acee826e2ddf22724fb5" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
         <type>List&lt; <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source" kindref="compound">AbstractSource</ref> &gt;</type>
@@ -139,7 +139,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="101" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="102" bodyend="-1"/>
-        <referencedby refid="class_preview_controller_1ae33fd4d13286e22a819f5a6cd5de292f" compoundref="_preview_controller_8cs" startline="817" endline="839">PreviewController.updateElementCombobox</referencedby>
+        <referencedby refid="class_preview_controller_1ae33fd4d13286e22a819f5a6cd5de292f" compoundref="_preview_controller_8cs" startline="820" endline="842">PreviewController.updateElementCombobox</referencedby>
       </memberdef>
       <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1af3d7540cfeabb22ce7290378d7039a76" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
         <type>List&lt; <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable" kindref="compound">AbstractTrackable</ref> &gt;</type>
@@ -153,10 +153,10 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="117" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="118" bodyend="-1"/>
-        <referencedby refid="class_preview_controller_1ae3d0ace09aed4464a7dd91764d1bb03e" compoundref="_preview_controller_8cs" startline="101" endline="166">PreviewController.addPreviewable</referencedby>
-        <referencedby refid="class_preview_controller_1ab68e5dc968561b4a115576d84e363cb0" compoundref="_preview_controller_8cs" startline="328" endline="372">PreviewController.reloadPreviewPanel</referencedby>
-        <referencedby refid="class_preview_controller_1a03acb2816496e20b416346aeff126b04" compoundref="_preview_controller_8cs" startline="743" endline="766">PreviewController.rescalePreviewPanel</referencedby>
-        <referencedby refid="class_a_rdev_kit_1_1_editor_window_1abb065a00022ebb57eeb967d319554fc3" compoundref="_editor_window_8cs" startline="642" endline="671">ARdevKit.EditorWindow.updateSceneSelectionPanel</referencedby>
+        <referencedby refid="class_preview_controller_1ae3d0ace09aed4464a7dd91764d1bb03e" compoundref="_preview_controller_8cs" startline="104" endline="169">PreviewController.addPreviewable</referencedby>
+        <referencedby refid="class_preview_controller_1ab68e5dc968561b4a115576d84e363cb0" compoundref="_preview_controller_8cs" startline="331" endline="375">PreviewController.reloadPreviewPanel</referencedby>
+        <referencedby refid="class_preview_controller_1a03acb2816496e20b416346aeff126b04" compoundref="_preview_controller_8cs" startline="746" endline="769">PreviewController.rescalePreviewPanel</referencedby>
+        <referencedby refid="class_a_rdev_kit_1_1_editor_window_1abb065a00022ebb57eeb967d319554fc3" compoundref="_editor_window_8cs" startline="658" endline="687">ARdevKit.EditorWindow.updateSceneSelectionPanel</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-attrib">
@@ -187,7 +187,7 @@
 <para>geht 20.02.2014 14:10</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="347" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="347" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="374" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="374" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -355,7 +355,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="218" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="218" bodyend="228"/>
-        <referencedby refid="class_preview_controller_1a73d864a5cea6519a889d70bffbfef8f9" compoundref="_preview_controller_8cs" startline="274" endline="294">PreviewController.removePreviewable</referencedby>
+        <referencedby refid="class_preview_controller_1a73d864a5cea6519a889d70bffbfef8f9" compoundref="_preview_controller_8cs" startline="277" endline="297">PreviewController.removePreviewable</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a3176ea13afc802bbb0ac63fe838823e8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
@@ -396,7 +396,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="255" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="255" bodyend="282"/>
-        <referencedby refid="class_preview_controller_1ae3d0ace09aed4464a7dd91764d1bb03e" compoundref="_preview_controller_8cs" startline="101" endline="166">PreviewController.addPreviewable</referencedby>
+        <referencedby refid="class_preview_controller_1ae3d0ace09aed4464a7dd91764d1bb03e" compoundref="_preview_controller_8cs" startline="104" endline="169">PreviewController.addPreviewable</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a4bdc5fa718a8a54711dd659d8edc1ea0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -424,6 +424,31 @@
         </inbodydescription>
         <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="289" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="289" bodyend="303"/>
       </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1ae7f9958ca529fd10eb489566a8adf374" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ARdevKit.Model.Project.Project.RemoveAugmentation</definition>
+        <argsstring>(AbstractAugmentation augmentation)</argsstring>
+        <name>RemoveAugmentation</name>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation" kindref="compound">AbstractAugmentation</ref></type>
+          <declname>augmentation</declname>
+        </param>
+        <briefdescription>
+<para>Removes the augmentation and deletes connected files if other augmentations dont need it. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>augmentation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The augmentation.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="309" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="309" bodyend="331"/>
+      </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a222ab9abcfa20e2637300bbc94a8f3c2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>string</type>
         <definition>string ARdevKit.Model.Project.Project.getChecksum</definition>
@@ -436,7 +461,7 @@
 </para><para>geht 20.02.2014 13:36</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="311" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="311" bodyend="341"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="338" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="338" bodyend="368"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-static-func">
@@ -455,7 +480,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="349" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="349" bodyend="373"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="376" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="376" bodyend="400"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -475,7 +500,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="21" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="20" bodyend="374"/>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" line="21" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Project.cs" bodystart="20" bodyend="401"/>
     <listofallmembers>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a2615d1d448f2db69a77b602391b2a91d" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Project</scope><name>Accept</name></member>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a0efd066f58d552481f075879015e3652" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Project</scope><name>existSource</name></member>
@@ -494,12 +519,13 @@
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a8024daa2d023f14769c154148a0c1528" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Project</scope><name>Project</name></member>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a625b641f48b689657566c3b22d1985de" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::Project</scope><name>projectPath</name></member>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1ad1061c35bc3ffb4caefebce4f22c365c" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Project</scope><name>ProjectPath</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1ae7f9958ca529fd10eb489566a8adf374" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Project</scope><name>RemoveAugmentation</name></member>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1afe6b2e85505c01075fbc52a0cc851ce9" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Project</scope><name>Screensize</name></member>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a4c03fab85709cf9087b38120c2ef9e3d" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::Project</scope><name>screensize</name></member>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1ac22f350013113d1e85605346d824cbc1" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Project</scope><name>Sensor</name></member>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a835cbe6aaacc0f7b0a60a1dd5745667e" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::Project</scope><name>sensor</name></member>
-      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a3c0d72dbec2c395ed8ee1c952f4b8811" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::Project</scope><name>sources</name></member>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1ade6d1eebeab2acee826e2ddf22724fb5" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Project</scope><name>Sources</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a3c0d72dbec2c395ed8ee1c952f4b8811" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::Project</scope><name>sources</name></member>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1af3d7540cfeabb22ce7290378d7039a76" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::Project</scope><name>Trackables</name></member>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a6328ac547d5a2a54d0d574d9d816751c" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::Project</scope><name>trackables</name></member>
     </listofallmembers>

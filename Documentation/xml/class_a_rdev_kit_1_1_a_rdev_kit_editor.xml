@@ -14,11 +14,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/ARdevKitEditor.cs" line="17" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/ARdevKitEditor.cs" bodystart="17" bodyend="22"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/ARdevKitEditor.cs" line="20" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/ARdevKitEditor.cs" bodystart="20" bodyend="25"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-    </briefdescription>
+<para>Main entry class. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
@@ -26,7 +26,7 @@
         <label>ARdevKit.ARdevKitEditor</label>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/ARdevKitEditor.cs" line="12" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/ARdevKitEditor.cs" bodystart="11" bodyend="23"/>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/ARdevKitEditor.cs" line="15" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/ARdevKitEditor.cs" bodystart="14" bodyend="26"/>
     <listofallmembers>
       <member refid="class_a_rdev_kit_1_1_a_rdev_kit_editor_1a9c2471f4bfa8215a46487bad5e0244c6" prot="private" virt="non-virtual"><scope>ARdevKit::ARdevKitEditor</scope><name>Main</name></member>
     </listofallmembers>

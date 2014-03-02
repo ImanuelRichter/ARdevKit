@@ -1,4 +1,4 @@
-.TH "ARdevKit.Model.Project.Abstract2DAugmentation" 3 "Sat Mar 1 2014" "Version 0.2" "ARdevKit" \" -*- nroff -*-
+.TH "ARdevKit.Model.Project.Abstract2DAugmentation" 3 "Sun Mar 2 2014" "Version 0.2" "ARdevKit" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -25,6 +25,14 @@ Inherited by \fBARdevKit\&.Model\&.Project\&.AbstractDynamic2DAugmentation\fP, \
 .br
 .RI "\fIconstructor, which sets every member of the class as specified, for use from inheriting classes \fP"
 .in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "string \fBsourceFilePath\fP"
+.br
+.RI "\fIFull pathname of the source file\&. \fP"
+.in -1c
 .SS "Properties"
 
 .in +1c
@@ -36,6 +44,10 @@ Inherited by \fBARdevKit\&.Model\&.Project\&.AbstractDynamic2DAugmentation\fP, \
 .RI "int \fBWidth\fP\fC [get, set]\fP"
 .br
 .RI "\fIGets or sets the width\&. \fP"
+.ti -1c
+.RI "string \fBSourceFilePath\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the full pathname of the image file\&. \fP"
 .in -1c
 .SS "Additional Inherited Members"
 .SH "Detailed Description"
@@ -70,12 +82,22 @@ constructor, which sets every member of the class as specified, for use from inh
 .RE
 .PP
 
+.SH "Member Data Documentation"
+.PP 
+.SS "string ARdevKit\&.Model\&.Project\&.Abstract2DAugmentation\&.sourceFilePath\fC [protected]\fP"
+
+.PP
+Full pathname of the source file\&. 
 .SH "Property Documentation"
 .PP 
 .SS "int ARdevKit\&.Model\&.Project\&.Abstract2DAugmentation\&.Height\fC [get]\fP, \fC [set]\fP"
 
 .PP
 Gets or sets the height\&. The height, in mm\&. 
+.SS "string ARdevKit\&.Model\&.Project\&.Abstract2DAugmentation\&.SourceFilePath\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the full pathname of the image file\&. The full pathname of the image file\&. 
 .SS "int ARdevKit\&.Model\&.Project\&.Abstract2DAugmentation\&.Width\fC [get]\fP, \fC [set]\fP"
 
 .PP

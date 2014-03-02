@@ -17,6 +17,19 @@
         </inbodydescription>
         <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="52" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="52" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_editor_window_1a44d74494a77ca73135f31a0790cef58d" prot="private" static="no" mutable="no">
+        <type><ref refid="class_a_rdev_kit_1_1_view_1_1_debug_window" kindref="compound">DebugWindow</ref></type>
+        <definition>DebugWindow ARdevKit.EditorWindow.debugWindow</definition>
+        <argsstring></argsstring>
+        <name>debugWindow</name>
+        <briefdescription>
+<para>The debug window, which is used by the DeviceConnectionController </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="57" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="57" bodyend="-1"/>
+      </memberdef>
       <memberdef kind="variable" id="class_a_rdev_kit_1_1_editor_window_1a83dc3407c9f377c203373600abd788eb" prot="private" static="no" mutable="no">
         <type>const uint</type>
         <definition>const uint ARdevKit.EditorWindow.MINSCREENWIDHT</definition>
@@ -29,7 +42,7 @@
 <para>geht 28.01.2014 15:12</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="58" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="58" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="74" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="74" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_rdev_kit_1_1_editor_window_1a968a265eae31352d099219ea1d01101d" prot="private" static="no" mutable="no">
         <type>const uint</type>
@@ -43,7 +56,7 @@
 <para>geht 28.01.2014 15:12</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="64" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="64" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="80" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="80" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_rdev_kit_1_1_editor_window_1a14c4c9e75ab092b615bf79dd61ae2ce7" prot="private" static="no" mutable="no">
         <type>List&lt; <ref refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_category" kindref="compound">SceneElementCategory</ref> &gt;</type>
@@ -56,7 +69,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="73" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="73" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="89" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="89" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_rdev_kit_1_1_editor_window_1a837c6a897c5fbf04ea8025c1637bfe13" prot="private" static="no" mutable="no">
         <type><ref refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_element_selection_controller" kindref="compound">ElementSelectionController</ref></type>
@@ -69,7 +82,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="97" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="97" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="113" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="113" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_rdev_kit_1_1_editor_window_1a188733c07e9108dbd55939aa46378614" prot="private" static="no" mutable="no">
         <type><ref refid="class_preview_controller" kindref="compound">PreviewController</ref></type>
@@ -82,7 +95,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="118" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="118" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="134" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="134" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_rdev_kit_1_1_editor_window_1aaa70acfc863bbb8f1f78a9e8b2e8bf93" prot="private" static="no" mutable="no">
         <type><ref refid="class_controller_1_1_editor_controller_1_1_property_controller" kindref="compound">PropertyController</ref></type>
@@ -95,7 +108,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="146" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="146" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="162" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="162" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_rdev_kit_1_1_editor_window_1aad411ca85b4b2565d2a811afb86bed5b" prot="private" static="no" mutable="no">
         <type><ref refid="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller" kindref="compound">DeviceConnectionController</ref></type>
@@ -108,7 +121,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="154" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="154" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="170" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="170" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_rdev_kit_1_1_editor_window_1a21c203904541f7a1c09fb35e3fd8662b" prot="private" static="no" mutable="no">
         <type><ref refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor" kindref="compound">ExportVisitor</ref></type>
@@ -121,7 +134,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="162" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="162" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="178" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="178" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_rdev_kit_1_1_editor_window_1a412cfdf1318a6c5b25594b4220079860" prot="private" static="no" mutable="no">
         <type><ref refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable" kindref="compound">IPreviewable</ref></type>
@@ -134,7 +147,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="170" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="170" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="186" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="186" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_rdev_kit_1_1_editor_window_1aaedb1cf3ad4db565cdf9196658726acc" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -148,7 +161,7 @@
 <para>geht 01.03.2014 16:33</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="1052" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="1052" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="1068" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="1068" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_rdev_kit_1_1_editor_window_1ae4a09eabf2f380a359feecf66f66135b" prot="private" static="no" mutable="no">
         <type>System.ComponentModel.IContainer</type>
@@ -816,6 +829,19 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="property">
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_editor_window_1a680468ae45b84228fb668d8dbb0aba48" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="no">
+        <type><ref refid="class_a_rdev_kit_1_1_view_1_1_debug_window" kindref="compound">DebugWindow</ref></type>
+        <definition>DebugWindow ARdevKit.EditorWindow.DebugWindow</definition>
+        <argsstring></argsstring>
+        <name>DebugWindow</name>
+        <briefdescription>
+<para>Gets the debug window. </para>        </briefdescription>
+        <detaileddescription>
+<para>The debug window. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="65" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="66" bodyend="-1"/>
+      </memberdef>
       <memberdef kind="property" id="class_a_rdev_kit_1_1_editor_window_1a2831e6a65fca02855cb3461e79de4662" prot="package" static="no" readable="no" writable="no" gettable="yes" settable="yes">
         <type>List&lt; <ref refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_category" kindref="compound">SceneElementCategory</ref> &gt;</type>
         <definition>List&lt;SceneElementCategory&gt; ARdevKit.EditorWindow.ElementCategories</definition>
@@ -827,7 +853,7 @@
 <para>The element categories. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="85" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="86" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="101" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="102" bodyend="-1"/>
       </memberdef>
       <memberdef kind="property" id="class_a_rdev_kit_1_1_editor_window_1a88e0a581fb32b49f0c046ebb60cbf322" prot="package" static="no" readable="no" writable="no" gettable="yes" settable="no">
         <type><ref refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_element_selection_controller" kindref="compound">ElementSelectionController</ref></type>
@@ -840,7 +866,7 @@
 <para>The element selection controller. </para><para>geht 19.01.2014 23:06</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="107" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="108" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="123" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="124" bodyend="-1"/>
       </memberdef>
       <memberdef kind="property" id="class_a_rdev_kit_1_1_editor_window_1ae57e383a1684241c86a5253d1fd8197a" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
         <type><ref refid="class_preview_controller" kindref="compound">PreviewController</ref></type>
@@ -853,7 +879,7 @@
 <para>The previewController. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="126" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="127" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="142" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="143" bodyend="-1"/>
       </memberdef>
       <memberdef kind="property" id="class_a_rdev_kit_1_1_editor_window_1aa7e64c912e3d904fae0ec52588be0baa" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
         <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project" kindref="compound">Project</ref></type>
@@ -866,14 +892,14 @@
 <para>The project. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="138" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="138" bodyend="-1"/>
-        <referencedby refid="class_preview_controller_1ae3d0ace09aed4464a7dd91764d1bb03e" compoundref="_preview_controller_8cs" startline="101" endline="166">PreviewController.addPreviewable</referencedby>
-        <referencedby refid="class_preview_controller_1a73d864a5cea6519a889d70bffbfef8f9" compoundref="_preview_controller_8cs" startline="274" endline="294">PreviewController.removePreviewable</referencedby>
-        <referencedby refid="class_preview_controller_1ab68e5dc968561b4a115576d84e363cb0" compoundref="_preview_controller_8cs" startline="328" endline="372">PreviewController.reloadPreviewPanel</referencedby>
-        <referencedby refid="class_preview_controller_1a03acb2816496e20b416346aeff126b04" compoundref="_preview_controller_8cs" startline="743" endline="766">PreviewController.rescalePreviewPanel</referencedby>
-        <referencedby refid="class_preview_controller_1ae33fd4d13286e22a819f5a6cd5de292f" compoundref="_preview_controller_8cs" startline="817" endline="839">PreviewController.updateElementCombobox</referencedby>
-        <referencedby refid="class_a_rdev_kit_1_1_editor_window_1a7ef9b2d88c9155f213bcc1b0476c4bb2" compoundref="_editor_window_8cs" startline="564" endline="596">ARdevKit.EditorWindow.saveProject</referencedby>
-        <referencedby refid="class_a_rdev_kit_1_1_editor_window_1abb065a00022ebb57eeb967d319554fc3" compoundref="_editor_window_8cs" startline="642" endline="671">ARdevKit.EditorWindow.updateSceneSelectionPanel</referencedby>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="154" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="154" bodyend="-1"/>
+        <referencedby refid="class_preview_controller_1ae3d0ace09aed4464a7dd91764d1bb03e" compoundref="_preview_controller_8cs" startline="104" endline="169">PreviewController.addPreviewable</referencedby>
+        <referencedby refid="class_preview_controller_1a73d864a5cea6519a889d70bffbfef8f9" compoundref="_preview_controller_8cs" startline="277" endline="297">PreviewController.removePreviewable</referencedby>
+        <referencedby refid="class_preview_controller_1ab68e5dc968561b4a115576d84e363cb0" compoundref="_preview_controller_8cs" startline="331" endline="375">PreviewController.reloadPreviewPanel</referencedby>
+        <referencedby refid="class_preview_controller_1a03acb2816496e20b416346aeff126b04" compoundref="_preview_controller_8cs" startline="746" endline="769">PreviewController.rescalePreviewPanel</referencedby>
+        <referencedby refid="class_preview_controller_1ae33fd4d13286e22a819f5a6cd5de292f" compoundref="_preview_controller_8cs" startline="820" endline="842">PreviewController.updateElementCombobox</referencedby>
+        <referencedby refid="class_a_rdev_kit_1_1_editor_window_1a7ef9b2d88c9155f213bcc1b0476c4bb2" compoundref="_editor_window_8cs" startline="580" endline="612">ARdevKit.EditorWindow.saveProject</referencedby>
+        <referencedby refid="class_a_rdev_kit_1_1_editor_window_1abb065a00022ebb57eeb967d319554fc3" compoundref="_editor_window_8cs" startline="658" endline="687">ARdevKit.EditorWindow.updateSceneSelectionPanel</referencedby>
         <referencedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a8b02a2eb775b8147e71575694ce8a38f" compoundref="_abstract_augmentation_8cs" startline="231" endline="263">ARdevKit.Model.Project.AbstractAugmentation.initElement</referencedby>
         <referencedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_1ae0ad810da02d289ddcbb28bb2aabec43" compoundref="_abstract_source_8cs" startline="139" endline="168">ARdevKit.Model.Project.AbstractSource.initElement</referencedby>
         <referencedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_marker_1a30b191b81b928fbe6397d8136e31baea" compoundref="_i_d_marker_8cs" startline="130" endline="141">ARdevKit.Model.Project.IDMarker.initElement</referencedby>
@@ -891,7 +917,7 @@
 <para>The current element. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="182" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="183" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="198" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="199" bodyend="-1"/>
       </memberdef>
       <memberdef kind="property" id="class_a_rdev_kit_1_1_editor_window_1a8f5f7c03bcb123e147d07b5023a60292" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
         <type>System.Windows.Forms.PropertyGrid</type>
@@ -957,7 +983,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.designer.cs" line="625" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.designer.cs" bodystart="626" bodyend="-1"/>
-        <referencedby refid="class_preview_controller_1ae33fd4d13286e22a819f5a6cd5de292f" compoundref="_preview_controller_8cs" startline="817" endline="839">PreviewController.updateElementCombobox</referencedby>
+        <referencedby refid="class_preview_controller_1ae33fd4d13286e22a819f5a6cd5de292f" compoundref="_preview_controller_8cs" startline="820" endline="842">PreviewController.updateElementCombobox</referencedby>
       </memberdef>
       <memberdef kind="property" id="class_a_rdev_kit_1_1_editor_window_1a7ce809e15aaf06e0d514989fb6292687" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
         <type>System.Windows.Forms.ToolStripMenuItem</type>
@@ -1055,7 +1081,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="212" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="212" bodyend="230"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="228" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="228" bodyend="246"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1a23f60ddfe83a21ee0d324ed6fb253f84" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1091,7 +1117,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="241" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="241" bodyend="244"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="257" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="257" bodyend="260"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1a25ca3b01f780fb268c51ff55c31e02f8" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1127,7 +1153,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="255" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="255" bodyend="270"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="271" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="271" bodyend="286"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1a231cae60dcab0a4dbad2b1b964d97f4f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1163,7 +1189,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="281" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="281" bodyend="287"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="297" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="297" bodyend="303"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1a842ba808801b2360202ea8395acab41d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1199,7 +1225,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="299" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="299" bodyend="305"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="315" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="315" bodyend="321"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1a134cfd650a6f4c4c995a5d28e26a6582" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1235,7 +1261,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="343" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="343" bodyend="360"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="359" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="359" bodyend="376"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1ae0f641faaf3f56fa7e5425255fc8822d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1271,7 +1297,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="375" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="375" bodyend="401"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="391" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="391" bodyend="417"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1a633f108a699ddcadc589987ca114ac73" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1307,7 +1333,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="416" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="416" bodyend="445"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="432" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="432" bodyend="461"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1ad3c12cd2cdee177f74a7a88ec7c59f3d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1332,7 +1358,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="602" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="602" bodyend="606"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="618" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="618" bodyend="622"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1aadf1d1a6b34ae8cefdde13e1b54281fd" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1345,7 +1371,7 @@
 <para>Lizzard, 1/19/2014. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="679" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="679" bodyend="700"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="695" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="695" bodyend="716"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1ac5a73047a724d743a2fb6c113b51e6b1" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1370,7 +1396,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="710" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="710" bodyend="713"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="726" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="726" bodyend="729"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1af9376bacb81004dfccfeeecc6108e934" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1406,7 +1432,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="727" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="727" bodyend="731"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="743" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="743" bodyend="747"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1a3b48b18b1d9d497d2761affd6f5dc1ba" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1442,7 +1468,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="742" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="742" bodyend="748"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="758" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="758" bodyend="764"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1a205ad54d6cb2c3ec474ca061134a7b87" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1478,7 +1504,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="759" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="759" bodyend="768"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="775" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="775" bodyend="784"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1ac571580e1a0753706fc8f90ab8f81988" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1491,7 +1517,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="773" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="773" bodyend="779"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="789" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="789" bodyend="795"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1a196872b2fc03e5a3a7be56f9d70f8920" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1516,7 +1542,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="785" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="785" bodyend="797"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="801" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="801" bodyend="813"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1a7947e42b1222139eb5823b6b74825129" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1541,7 +1567,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="803" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="803" bodyend="810"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="819" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="819" bodyend="826"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1a651a92e1e69c8d2d034ed6fb81b0747e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1554,7 +1580,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="815" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="815" bodyend="820"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="831" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="831" bodyend="836"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1a5c0f6c7a8c11e9eec9dee64bfa756e5a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1567,7 +1593,7 @@
 <para>geht 26.01.2014 20:20</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="826" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="826" bodyend="845"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="842" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="842" bodyend="861"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1a4e278fb02c2634a40d73f2afa6bd5c1f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1603,7 +1629,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="861" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="861" bodyend="871"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="877" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="877" bodyend="887"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1a54791d84b3e03aeee0e4bd118535f7c6" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1639,7 +1665,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="887" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="887" bodyend="898"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="903" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="903" bodyend="914"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1a9ee71aec09029b1c08d0e87ccf04f1cc" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1675,7 +1701,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="906" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="906" bodyend="924"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="922" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="922" bodyend="940"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1aee31a15a7bdf682b20a5c7acb6df0cf3" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1711,7 +1737,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="932" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="932" bodyend="935"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="948" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="948" bodyend="951"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1a8dfe35b80a2d2379d1ff26127fc73a12" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1747,7 +1773,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="943" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="943" bodyend="946"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="959" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="959" bodyend="962"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1a0a914afc4c3022378136ebef30d10873" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1772,7 +1798,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="953" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="953" bodyend="962"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="969" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="969" bodyend="978"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1a5682a02b83168d5a62f6212ab38c9e9b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1785,7 +1811,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="967" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="967" bodyend="976"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="983" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="983" bodyend="992"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1a05670beec06eb4b36f453760d416c63c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1821,7 +1847,7 @@
 </para><para>geht 26.01.2014 20:21</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="994" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="994" bodyend="1000"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="1010" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="1010" bodyend="1016"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1a2749eb917ec02b229066bf9cc3ddd519" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1857,7 +1883,7 @@
 </para><para>geht 26.01.2014 20:21</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="1009" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="1009" bodyend="1013"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="1025" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="1025" bodyend="1029"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1a1e48e9a13d3feef6d62502c7d63eca4e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1893,7 +1919,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="1020" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="1020" bodyend="1046"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="1036" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="1036" bodyend="1062"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1a6ecf642a7279f99df52c507a377039bf" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1929,7 +1955,7 @@
 </para><para>geht 04.02.2014 15:14</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="1061" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="1061" bodyend="1087"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="1077" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="1077" bodyend="1103"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1a54171c1a726d8f00d5e0643a6944775d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1965,7 +1991,7 @@
 </para><para>geht 04.02.2014 15:14</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="1096" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="1096" bodyend="1122"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="1112" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="1112" bodyend="1138"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1ade02c35c0e12db057cbca95cad541431" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -2001,7 +2027,7 @@
 </para><para>geht 04.02.2014 15:15</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="1131" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="1131" bodyend="1159"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="1147" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="1147" bodyend="1175"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1afd5cd4bbf537ac0078e2f211c6dfb9d7" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -2015,7 +2041,7 @@
 </para><para>geht 20.02.2014 14:15</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="1168" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="1168" bodyend="1174"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="1184" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="1184" bodyend="1190"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1ae131be5386c0176c2238c3351853ab00" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -2051,7 +2077,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="1182" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="1182" bodyend="1185"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="1198" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="1198" bodyend="1201"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1a0a5b7de79e915433232ccef48fc8285c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -2087,7 +2113,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="1192" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="1192" bodyend="1200"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="1208" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="1208" bodyend="1216"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1af843d81adfcda66f9d1ba125cf21b1b3" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -2100,7 +2126,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="1205" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="1205" bodyend="1225"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="1221" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="1221" bodyend="1241"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1ab56f193dcc9d27727b923c97eece8c8b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -2136,7 +2162,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="1233" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="1233" bodyend="1236"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="1249" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="1249" bodyend="1252"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1a8e76b1c1a64b6ceef752a704b5c03da6" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -2172,7 +2198,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="1244" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="1244" bodyend="1247"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="1260" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="1260" bodyend="1263"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1ac3c376f8e0afb29e83c34ad915f7c27a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -2208,7 +2234,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="1255" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="1255" bodyend="1293"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="1271" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="1271" bodyend="1309"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1aafe8dca6fc78050576710dc557eb3e9d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -2244,7 +2270,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="1300" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="1300" bodyend="1326"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="1316" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="1316" bodyend="1347"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1a85727f81b19ee284a5c4c99b09f99cda" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -2272,8 +2298,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="194" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="194" bodyend="198"/>
-        <references refid="class_a_rdev_kit_1_1_editor_window_1afe0bf240a814370f5b119be462a1acec" compoundref="_editor_window_8cs" startline="451" endline="457">ARdevKit.EditorWindow.createNewProject</references>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="210" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="210" bodyend="214"/>
+        <references refid="class_a_rdev_kit_1_1_editor_window_1afe0bf240a814370f5b119be462a1acec" compoundref="_editor_window_8cs" startline="467" endline="473">ARdevKit.EditorWindow.createNewProject</references>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1a0df48f7d107d823f50799886bd99c1ee" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -2286,7 +2312,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="310" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="310" bodyend="313"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="326" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="326" bodyend="329"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1a03fe5bc5b9e383b895fa1a30faf48301" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -2299,7 +2325,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="318" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="318" bodyend="327"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="334" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="334" bodyend="343"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1afe0bf240a814370f5b119be462a1acec" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -2324,8 +2350,8 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="451" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="451" bodyend="457"/>
-        <referencedby refid="class_a_rdev_kit_1_1_editor_window_1aceeacbdb108a82c59f88194a3d4e396c" compoundref="_editor_window_8cs" startline="194" endline="198">ARdevKit.EditorWindow.EditorWindow</referencedby>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="467" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="467" bodyend="473"/>
+        <referencedby refid="class_a_rdev_kit_1_1_editor_window_1aceeacbdb108a82c59f88194a3d4e396c" compoundref="_editor_window_8cs" startline="210" endline="214">ARdevKit.EditorWindow.EditorWindow</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1a0ae113d771fc8a03dcf53016a54345d4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -2338,8 +2364,8 @@
 <para>geht 19.01.2014 22:10</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="463" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="463" bodyend="500"/>
-        <references refid="class_a_rdev_kit_1_1_editor_window_1a7ef9b2d88c9155f213bcc1b0476c4bb2" compoundref="_editor_window_8cs" startline="564" endline="596">ARdevKit.EditorWindow.saveProject</references>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="479" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="479" bodyend="516"/>
+        <references refid="class_a_rdev_kit_1_1_editor_window_1a7ef9b2d88c9155f213bcc1b0476c4bb2" compoundref="_editor_window_8cs" startline="580" endline="612">ARdevKit.EditorWindow.saveProject</references>
         <references refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1ac241f50a7b72f0cf3dc5b77c42a6a71b" compoundref="_export_visitor_8cs" startline="41">ARdevKit.Controller.ProjectController.ExportVisitor.Files</references>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1a5225f8ebee27d368578165c43f826899" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
@@ -2353,7 +2379,7 @@
 <para>geht 19.01.2014 17:55</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="506" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="506" bodyend="527"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="522" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="522" bodyend="543"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1a62e369fde3e6bf2d3980ff36256a74c1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -2366,7 +2392,7 @@
 <para>Robin, 14.01.2014. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="535" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="535" bodyend="552"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="551" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="551" bodyend="568"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1a7ef9b2d88c9155f213bcc1b0476c4bb2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -2379,12 +2405,12 @@
 <para>geht, 17.01.2014. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="564" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="564" bodyend="596"/>
-        <references refid="class_a_rdev_kit_1_1_editor_window_1aa7e64c912e3d904fae0ec52588be0baa" compoundref="_editor_window_8cs" startline="138">ARdevKit.EditorWindow.project</references>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="580" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="580" bodyend="612"/>
+        <references refid="class_a_rdev_kit_1_1_editor_window_1aa7e64c912e3d904fae0ec52588be0baa" compoundref="_editor_window_8cs" startline="154">ARdevKit.EditorWindow.project</references>
         <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1ac22f350013113d1e85605346d824cbc1" compoundref="_project_8cs" startline="86">ARdevKit.Model.Project.Project.Sensor</references>
         <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1ad1061c35bc3ffb4caefebce4f22c365c" compoundref="_project_8cs" startline="69">ARdevKit.Model.Project.Project.ProjectPath</references>
         <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1ae52006b6ebb8293ff034e8e00fdc4e77" compoundref="_project_8cs" startline="53">ARdevKit.Model.Project.Project.Name</references>
-        <referencedby refid="class_a_rdev_kit_1_1_editor_window_1a0ae113d771fc8a03dcf53016a54345d4" compoundref="_editor_window_8cs" startline="463" endline="500">ARdevKit.EditorWindow.exportProject</referencedby>
+        <referencedby refid="class_a_rdev_kit_1_1_editor_window_1a0ae113d771fc8a03dcf53016a54345d4" compoundref="_editor_window_8cs" startline="479" endline="516">ARdevKit.EditorWindow.exportProject</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1ac2843e3145e7ef49d34dc4b104ff66d4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -2397,7 +2423,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="612" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="612" bodyend="617"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="628" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="628" bodyend="633"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1a82a2f39ebff57ea65f545b56859be05a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -2410,7 +2436,7 @@
 <para>Lizzard, 1/16/2014. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="628" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="628" bodyend="631"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="644" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="644" bodyend="647"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1abb065a00022ebb57eeb967d319554fc3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -2423,8 +2449,8 @@
 <para>Lizzard, 1/16/2014. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="642" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="642" bodyend="671"/>
-        <references refid="class_a_rdev_kit_1_1_editor_window_1aa7e64c912e3d904fae0ec52588be0baa" compoundref="_editor_window_8cs" startline="138">ARdevKit.EditorWindow.project</references>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="658" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="658" bodyend="687"/>
+        <references refid="class_a_rdev_kit_1_1_editor_window_1aa7e64c912e3d904fae0ec52588be0baa" compoundref="_editor_window_8cs" startline="154">ARdevKit.EditorWindow.project</references>
         <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1af3d7540cfeabb22ce7290378d7039a76" compoundref="_project_8cs" startline="118">ARdevKit.Model.Project.Project.Trackables</references>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_editor_window_1a302d58e454127a9fb28eb3fa8b20cc5b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
@@ -2438,7 +2464,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="981" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="981" bodyend="985"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="997" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="997" bodyend="1001"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-func">
@@ -2494,7 +2520,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="42" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="41" bodyend="1328"/>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" line="42" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/EditorWindow.cs" bodystart="41" bodyend="1349"/>
     <listofallmembers>
       <member refid="class_a_rdev_kit_1_1_editor_window_1ac5a73047a724d743a2fb6c113b51e6b1" prot="private" virt="non-virtual"><scope>ARdevKit::EditorWindow</scope><name>addCategory</name></member>
       <member refid="class_a_rdev_kit_1_1_editor_window_1aaa03db7116ee8b20f667e8dfa295dd28" prot="private" virt="non-virtual"><scope>ARdevKit::EditorWindow</scope><name>btn_editor_scene_delete</name></member>
@@ -2507,13 +2533,15 @@
       <member refid="class_a_rdev_kit_1_1_editor_window_1a7a5f59a2277ea660f5ac354ed6563931" prot="public" virt="non-virtual"><scope>ARdevKit::EditorWindow</scope><name>Cmb_editor_properties_objectSelection</name></member>
       <member refid="class_a_rdev_kit_1_1_editor_window_1a71a6a4afd3d0a04d78689596eb244423" prot="private" virt="non-virtual"><scope>ARdevKit::EditorWindow</scope><name>cmb_editor_properties_objectSelection</name></member>
       <member refid="class_a_rdev_kit_1_1_editor_window_1a0a5b7de79e915433232ccef48fc8285c" prot="private" virt="non-virtual"><scope>ARdevKit::EditorWindow</scope><name>cmb_editor_properties_objectSelection_SelectedIndexChanged</name></member>
-      <member refid="class_a_rdev_kit_1_1_editor_window_1a0937e4db376a67530e488c174d512925" prot="public" virt="non-virtual"><scope>ARdevKit::EditorWindow</scope><name>Cmb_editor_selection_toolSelection</name></member>
       <member refid="class_a_rdev_kit_1_1_editor_window_1a92143a0875e415c19e7ee79f4b4f94de" prot="private" virt="non-virtual"><scope>ARdevKit::EditorWindow</scope><name>cmb_editor_selection_toolSelection</name></member>
+      <member refid="class_a_rdev_kit_1_1_editor_window_1a0937e4db376a67530e488c174d512925" prot="public" virt="non-virtual"><scope>ARdevKit::EditorWindow</scope><name>Cmb_editor_selection_toolSelection</name></member>
       <member refid="class_a_rdev_kit_1_1_editor_window_1af9376bacb81004dfccfeeecc6108e934" prot="private" virt="non-virtual"><scope>ARdevKit::EditorWindow</scope><name>cmb_editor_selection_toolSelection_SelectedIndexChanged</name></member>
       <member refid="class_a_rdev_kit_1_1_editor_window_1ae4a09eabf2f380a359feecf66f66135b" prot="private" virt="non-virtual"><scope>ARdevKit::EditorWindow</scope><name>components</name></member>
       <member refid="class_a_rdev_kit_1_1_editor_window_1afe0bf240a814370f5b119be462a1acec" prot="public" virt="non-virtual"><scope>ARdevKit::EditorWindow</scope><name>createNewProject</name></member>
       <member refid="class_a_rdev_kit_1_1_editor_window_1a412cfdf1318a6c5b25594b4220079860" prot="private" virt="non-virtual"><scope>ARdevKit::EditorWindow</scope><name>currentElement</name></member>
       <member refid="class_a_rdev_kit_1_1_editor_window_1a246347f55420268d0ea65f7a005d807c" prot="package" virt="non-virtual"><scope>ARdevKit::EditorWindow</scope><name>CurrentElement</name></member>
+      <member refid="class_a_rdev_kit_1_1_editor_window_1a44d74494a77ca73135f31a0790cef58d" prot="private" virt="non-virtual"><scope>ARdevKit::EditorWindow</scope><name>debugWindow</name></member>
+      <member refid="class_a_rdev_kit_1_1_editor_window_1a680468ae45b84228fb668d8dbb0aba48" prot="public" virt="non-virtual"><scope>ARdevKit::EditorWindow</scope><name>DebugWindow</name></member>
       <member refid="class_a_rdev_kit_1_1_editor_window_1aad411ca85b4b2565d2a811afb86bed5b" prot="private" virt="non-virtual"><scope>ARdevKit::EditorWindow</scope><name>deviceConnectionController</name></member>
       <member refid="class_a_rdev_kit_1_1_editor_window_1a5e65f4726d3016e3dbb16b3faafd4a51" prot="private" virt="non-virtual"><scope>ARdevKit::EditorWindow</scope><name>DeviceDebug</name></member>
       <member refid="class_a_rdev_kit_1_1_editor_window_1aafe8dca6fc78050576710dc557eb3e9d" prot="private" virt="non-virtual"><scope>ARdevKit::EditorWindow</scope><name>DeviceDebug_Click</name></member>

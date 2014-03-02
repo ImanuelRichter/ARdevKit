@@ -97,7 +97,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/ElementIcon.cs" line="32" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/ElementIcon.cs" bodystart="32" bodyend="-1"/>
-        <referencedby refid="class_preview_controller_1a7bc01f6c09f310b7079a9754ec27e307" compoundref="_preview_controller_8cs" startline="1068" endline="1077">PreviewController.onAugmentationDrop</referencedby>
+        <referencedby refid="class_preview_controller_1a7bc01f6c09f310b7079a9754ec27e307" compoundref="_preview_controller_8cs" startline="1071" endline="1080">PreviewController.onAugmentationDrop</referencedby>
       </memberdef>
       <memberdef kind="property" id="class_a_rdev_kit_1_1_view_1_1_element_icon_1a255d6901cfa20cd8d620c675143ddddf" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="no">
         <type><ref refid="class_a_rdev_kit_1_1_editor_window" kindref="compound">EditorWindow</ref></type>

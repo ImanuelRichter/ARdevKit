@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" line="18" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" bodystart="18" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" line="21" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" bodystart="21" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_rdev_kit_1_1_view_1_1_slider_1a7a3ec903f49503e4976e062896e171cd" prot="private" static="no" mutable="no">
         <type>double</type>
@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" line="23" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" bodystart="23" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" line="26" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" bodystart="26" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_rdev_kit_1_1_view_1_1_slider_1a103009d3e8755d44e9df918f3973944d" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -41,7 +41,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" line="36" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" bodystart="36" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" line="39" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" bodystart="39" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_rdev_kit_1_1_view_1_1_slider_1ac3c020895fc3a2037d6b649c61695300" prot="private" static="no" mutable="no">
         <type>System.ComponentModel.IContainer</type>
@@ -122,7 +122,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" line="27" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" bodystart="28" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" line="30" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" bodystart="31" bodyend="-1"/>
       </memberdef>
       <memberdef kind="property" id="class_a_rdev_kit_1_1_view_1_1_slider_1a3405af3a2d8c39d5e018899859768da5" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
         <type>int</type>
@@ -135,7 +135,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" line="40" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" bodystart="41" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" line="43" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" bodystart="44" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -150,7 +150,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" line="49" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" bodystart="49" bodyend="52"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" line="52" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" bodystart="52" bodyend="55"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_view_1_1_slider_1a5e87245712bef9c3b9e89765d04eb38d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -186,7 +186,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" line="85" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" bodystart="85" bodyend="93"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" line="88" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" bodystart="88" bodyend="96"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_view_1_1_slider_1a0abb22f3918798a19961bb2209dbb739" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -237,7 +237,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" line="59" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" bodystart="59" bodyend="68"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" line="62" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" bodystart="62" bodyend="71"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_view_1_1_slider_1af40e3fca8a9d64029b5cd9b94077eb11" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -262,7 +262,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" line="74" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" bodystart="74" bodyend="78"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" line="77" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" bodystart="77" bodyend="81"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-func">
@@ -293,7 +293,7 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-    </briefdescription>
+<para>UserControl for an Trackbar/Slider. Currently not used (2.3.14) </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
@@ -318,7 +318,7 @@
         <label>UserControl</label>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" line="14" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" bodystart="13" bodyend="94"/>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" line="17" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/Slider.cs" bodystart="16" bodyend="97"/>
     <listofallmembers>
       <member refid="class_a_rdev_kit_1_1_view_1_1_slider_1ac3c020895fc3a2037d6b649c61695300" prot="private" virt="non-virtual"><scope>ARdevKit::View::Slider</scope><name>components</name></member>
       <member refid="class_a_rdev_kit_1_1_view_1_1_slider_1ac051ee212a71f40c9e313d46f4d1f209" prot="protected" virt="non-virtual"><scope>ARdevKit::View::Slider</scope><name>Dispose</name></member>

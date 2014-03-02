@@ -156,6 +156,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4bdc5fa718a8a54711dd659d8edc1ea0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_project.html#a4bdc5fa718a8a54711dd659d8edc1ea0">existTrackable</a> (int matrixID)</td></tr>
 <tr class="memdesc:a4bdc5fa718a8a54711dd659d8edc1ea0"><td class="mdescLeft">&#160;</td><td class="mdescRight">true if an Trackable with the same Path/ID exists, false if not.  <a href="#a4bdc5fa718a8a54711dd659d8edc1ea0">More...</a><br/></td></tr>
 <tr class="separator:a4bdc5fa718a8a54711dd659d8edc1ea0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7f9958ca529fd10eb489566a8adf374"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_project.html#ae7f9958ca529fd10eb489566a8adf374">RemoveAugmentation</a> (<a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation.html">AbstractAugmentation</a> augmentation)</td></tr>
+<tr class="memdesc:ae7f9958ca529fd10eb489566a8adf374"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the augmentation and deletes connected files if other augmentations dont need it.  <a href="#ae7f9958ca529fd10eb489566a8adf374">More...</a><br/></td></tr>
+<tr class="separator:ae7f9958ca529fd10eb489566a8adf374"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a222ab9abcfa20e2637300bbc94a8f3c2"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_project.html#a222ab9abcfa20e2637300bbc94a8f3c2">getChecksum</a> ()</td></tr>
 <tr class="memdesc:a222ab9abcfa20e2637300bbc94a8f3c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the checksum of the project lying at the project path.  <a href="#a222ab9abcfa20e2637300bbc94a8f3c2">More...</a><br/></td></tr>
 <tr class="separator:a222ab9abcfa20e2637300bbc94a8f3c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -465,6 +468,30 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a class="anchor" id="ae7f9958ca529fd10eb489566a8adf374"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ARdevKit.Model.Project.Project.RemoveAugmentation </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation.html">AbstractAugmentation</a>&#160;</td>
+          <td class="paramname"><em>augmentation</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Removes the augmentation and deletes connected files if other augmentations dont need it. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">augmentation</td><td>The augmentation.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a class="anchor" id="a835cbe6aaacc0f7b0a60a1dd5745667e"></a>
 <div class="memitem">
@@ -634,7 +661,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_a_rdev_kit.html">ARdevKit</a></li><li class="navelem"><a class="el" href="namespace_a_rdev_kit_1_1_model.html">Model</a></li><li class="navelem"><a class="el" href="namespace_a_rdev_kit_1_1_model_1_1_project.html">Project</a></li><li class="navelem"><a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_project.html">Project</a></li>
-    <li class="footer">Generated on Sat Mar 1 2014 20:48:24 for ARdevKit by
+    <li class="footer">Generated on Sun Mar 2 2014 17:32:35 for ARdevKit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

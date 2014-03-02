@@ -31,7 +31,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/SceneElementCategoryPanel.cs" line="32" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/SceneElementCategoryPanel.cs" bodystart="33" bodyend="-1"/>
-        <referencedby refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_element_selection_controller_1a470d43f1c3fe742fcf7ff5f8f5675819" compoundref="_element_selection_controller_8cs" startline="130" endline="148">ARdevKit.Controller.EditorController.ElementSelectionController.setElementEnable</referencedby>
+        <referencedby refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_element_selection_controller_1a470d43f1c3fe742fcf7ff5f8f5675819" compoundref="_element_selection_controller_8cs" startline="134" endline="152">ARdevKit.Controller.EditorController.ElementSelectionController.setElementEnable</referencedby>
       </memberdef>
       <memberdef kind="property" id="class_a_rdev_kit_1_1_view_1_1_scene_element_category_panel_1abfbcb63fcffe07fbd16582c5cde37c36" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="no">
         <type>string</type>

@@ -233,7 +233,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractSource.cs" line="139" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractSource.cs" bodystart="139" bodyend="168"/>
-        <references refid="class_a_rdev_kit_1_1_editor_window_1aa7e64c912e3d904fae0ec52588be0baa" compoundref="_editor_window_8cs" startline="138">ARdevKit.EditorWindow.project</references>
+        <references refid="class_a_rdev_kit_1_1_editor_window_1aa7e64c912e3d904fae0ec52588be0baa" compoundref="_editor_window_8cs" startline="154">ARdevKit.EditorWindow.project</references>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_1a74cf779ccb9c125ff5202864414f2078" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>override string</type>

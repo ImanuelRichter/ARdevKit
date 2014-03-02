@@ -1,8 +1,8 @@
 <map id="ARdevKit.Model.Project.Abstract2DAugmentation" name="ARdevKit.Model.Project.Abstract2DAugmentation">
-<area shape="rect" id="node5" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_dynamic2_d_augmentation.html" title="Inherits from Abstract2DAugmentation and adds AbstractSource, in order to show dynamic content..." alt="" coords="5,883,243,1005"/>
-<area shape="rect" id="node7" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation.html" title="An augmentation only described by an ImagePath. It is an Abstract2DAugmentation " alt="" coords="267,832,465,1056"/>
-<area shape="rect" id="node8" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation.html" title="{ARdevKit.Model.Project.Video\lAugmentation\n|+ VideoPath\l+ Width\l+ Height\l|+ VideoAugmentation()\l+ VideoAugmentation()\l+ Accept()\l+ getPreview()\l+ getIcon()\l+ CleanUp()\l+ Clone()\l+ initElement()\l}" alt="" coords="490,832,685,1056"/>
+<area shape="rect" id="node5" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_dynamic2_d_augmentation.html" title="Inherits from Abstract2DAugmentation and adds AbstractSource, in order to show dynamic content..." alt="" coords="5,906,243,1027"/>
+<area shape="rect" id="node7" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation.html" title="An augmentation only described by an ImagePath. It is an Abstract2DAugmentation " alt="" coords="267,862,465,1071"/>
+<area shape="rect" id="node8" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation.html" title="A VideoAugmentation is an Abstract2DAugmentation that contains a video file. " alt="" coords="490,862,685,1071"/>
 <area shape="rect" id="node2" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation.html" title="describes an AbstractAugmentation, which is bound to a certain AbstractTrackable. is IPreviewable ..." alt="" coords="269,286,464,613"/>
 <area shape="rect" id="node3" href="$interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable.html" title="Interface for previewable elements from the Model. " alt="" coords="313,131,420,237"/>
-<area shape="rect" id="node6" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_chart.html" title="Describes a Chart with its Colors and OptimalValues. It is a Chart. " alt="" coords="27,1105,221,1343"/>
+<area shape="rect" id="node6" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_chart.html" title="Describes a Chart with its Colors and OptimalValues. It is a Chart. " alt="" coords="27,1121,221,1359"/>
 </map>

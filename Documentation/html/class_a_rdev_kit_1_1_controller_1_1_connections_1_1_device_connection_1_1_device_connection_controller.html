@@ -132,10 +132,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a2fa2baab02402dec9c2dce90fadeb54c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs the refresh listener, using a UDP Broadcast to which the ARdevKitPlayer responds.  <a href="#a2fa2baab02402dec9c2dce90fadeb54c">More...</a><br/></td></tr>
 <tr class="separator:a2fa2baab02402dec9c2dce90fadeb54c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22af53d2338217cf5c77e4f7326cee79"><td class="memItemLeft" align="right" valign="top">List&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller.html#a22af53d2338217cf5c77e4f7326cee79">getReportedDevices</a> ()</td></tr>
-<tr class="memdesc:a22af53d2338217cf5c77e4f7326cee79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the reported devices.  <a href="#a22af53d2338217cf5c77e4f7326cee79">More...</a><br/></td></tr>
+<tr class="memdesc:a22af53d2338217cf5c77e4f7326cee79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the StringList of devices, which reported back to the UDPBroadcast.  <a href="#a22af53d2338217cf5c77e4f7326cee79">More...</a><br/></td></tr>
 <tr class="separator:a22af53d2338217cf5c77e4f7326cee79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4fcdf74b36bf40335dfe5179f78f2524"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller.html#a4fcdf74b36bf40335dfe5179f78f2524">sendProject</a> (int index)</td></tr>
-<tr class="memdesc:a4fcdf74b36bf40335dfe5179f78f2524"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends the opened Project to the chosen Device, using the selected index of the EditorWindowsDeviceList, which must be equal to the internal index of the reportedDevices List. Exceptions which are thrown are written to a log file, in the path in which the Program is executed.  <a href="#a4fcdf74b36bf40335dfe5179f78f2524">More...</a><br/></td></tr>
+<tr class="memdesc:a4fcdf74b36bf40335dfe5179f78f2524"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends the opened Project to the chosen Device, using the selected index of the EditorWindowsDeviceList, which must be equal to the internal index of the reportedDevices List. Therefore it is exported. Exceptions which are thrown are written to a log file, in the path in which the Program is executed.  <a href="#a4fcdf74b36bf40335dfe5179f78f2524">More...</a><br/></td></tr>
 <tr class="separator:a4fcdf74b36bf40335dfe5179f78f2524"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2810b006ae43957884b041496f4f3498"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller.html#a2810b006ae43957884b041496f4f3498">sendDebug</a> (int index)</td></tr>
 <tr class="memdesc:a2810b006ae43957884b041496f4f3498"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a Debugrequest to the selected Device and shows its DebugOutput on a PopupWindow with a RichTextbox  <a href="#a2810b006ae43957884b041496f4f3498">More...</a><br/></td></tr>
@@ -143,9 +143,6 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:acfe2c36b862f9b0775bf8e0f60d055ad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_rdev_kit_1_1_view_1_1_debug_window.html">View.DebugWindow</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller.html#acfe2c36b862f9b0775bf8e0f60d055ad">DebugWindow</a><code> [get]</code></td></tr>
-<tr class="memdesc:acfe2c36b862f9b0775bf8e0f60d055ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the debug window.  <a href="#acfe2c36b862f9b0775bf8e0f60d055ad">More...</a><br/></td></tr>
-<tr class="separator:acfe2c36b862f9b0775bf8e0f60d055ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e1f49d1912fccc6edc212acbfc74c05"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller.html#a6e1f49d1912fccc6edc212acbfc74c05">DebugConnected</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a6e1f49d1912fccc6edc212acbfc74c05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets a value indicating whether [debug connected].  <a href="#a6e1f49d1912fccc6edc212acbfc74c05">More...</a><br/></td></tr>
 <tr class="separator:a6e1f49d1912fccc6edc212acbfc74c05"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -191,8 +188,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Gets the reported devices. </p>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p>Gets the StringList of devices, which reported back to the UDPBroadcast. </p>
+<dl class="section return"><dt>Returns</dt><dd>StringList of devices, to which connections could be established</dd></dl>
 
 </div>
 </div>
@@ -252,14 +249,14 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sends the opened Project to the chosen Device, using the selected index of the EditorWindowsDeviceList, which must be equal to the internal index of the reportedDevices List. Exceptions which are thrown are written to a log file, in the path in which the Program is executed. </p>
+<p>Sends the opened Project to the chosen Device, using the selected index of the EditorWindowsDeviceList, which must be equal to the internal index of the reportedDevices List. Therefore it is exported. Exceptions which are thrown are written to a log file, in the path in which the Program is executed. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">index</td><td>index of the List of reportedDevices</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>False, if the project could not be send or an Exception was thown</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>False, if the project could not be send</dd></dl>
 
 </div>
 </div>
@@ -283,30 +280,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets or sets a value indicating whether [debug connected]. </p>
-<p><code>true</code> if [debug connected]; otherwise, <code>false</code>. </p>
-
-</div>
-</div>
-<a class="anchor" id="acfe2c36b862f9b0775bf8e0f60d055ad"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_a_rdev_kit_1_1_view_1_1_debug_window.html">View.DebugWindow</a> ARdevKit.Controller.Connections.DeviceConnection.DeviceConnectionController.DebugWindow</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Gets the debug window. </p>
-<p>The debug window. </p>
+<p>true if [debug connected] the Editor listens for Debugdata; otherwise, the connections will be closed false. </p>
 
 </div>
 </div>
@@ -316,7 +290,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_a_rdev_kit.html">ARdevKit</a></li><li class="navelem"><a class="el" href="namespace_a_rdev_kit_1_1_controller.html">Controller</a></li><li class="navelem"><a class="el" href="namespace_a_rdev_kit_1_1_controller_1_1_connections.html">Connections</a></li><li class="navelem"><a class="el" href="namespace_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection.html">DeviceConnection</a></li><li class="navelem"><a class="el" href="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller.html">DeviceConnectionController</a></li>
-    <li class="footer">Generated on Sat Mar 1 2014 20:48:21 for ARdevKit by
+    <li class="footer">Generated on Sun Mar 2 2014 17:32:33 for ARdevKit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

@@ -267,7 +267,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/ProjectController/ExportVisitor.cs" line="40" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/ProjectController/ExportVisitor.cs" bodystart="41" bodyend="-1"/>
-        <referencedby refid="class_a_rdev_kit_1_1_editor_window_1a0ae113d771fc8a03dcf53016a54345d4" compoundref="_editor_window_8cs" startline="463" endline="500">ARdevKit.EditorWindow.exportProject</referencedby>
+        <referencedby refid="class_a_rdev_kit_1_1_editor_window_1a0ae113d771fc8a03dcf53016a54345d4" compoundref="_editor_window_8cs" startline="479" endline="516">ARdevKit.EditorWindow.exportProject</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -335,7 +335,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/ProjectController/ExportVisitor.cs" line="120" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/ProjectController/ExportVisitor.cs" bodystart="120" bodyend="171"/>
-        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_1adf603b3ae112358e8cae761e94003de1" compoundref="_video_augmentation_8cs" startline="32">ARdevKit.Model.Project.VideoAugmentation.VideoPath</references>
+        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_augmentation_1af2c60054c5ff96c677c84f33c8cb5f9a" compoundref="_abstract2_d_augmentation_8cs" startline="88">ARdevKit.Model.Project.Abstract2DAugmentation.SourceFilePath</references>
         <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1ab19dda553062c0cae9e4a7a66e9cb64f" compoundref="_abstract_augmentation_8cs" startline="56">ARdevKit.Model.Project.AbstractAugmentation.IsVisible</references>
         <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a333186e3963596bc5b17c02a21f2d384" compoundref="_abstract_augmentation_8cs" startline="72">ARdevKit.Model.Project.AbstractAugmentation.CustomUserEventReference</references>
       </memberdef>
@@ -364,7 +364,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/ProjectController/ExportVisitor.cs" line="181" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/ProjectController/ExportVisitor.cs" bodystart="181" bodyend="228"/>
-        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_1a499cb36152832a4dd29794e3c1dd2718" compoundref="_image_augmentation_8cs" startline="41">ARdevKit.Model.Project.ImageAugmentation.ImagePath</references>
+        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_augmentation_1af2c60054c5ff96c677c84f33c8cb5f9a" compoundref="_abstract2_d_augmentation_8cs" startline="88">ARdevKit.Model.Project.Abstract2DAugmentation.SourceFilePath</references>
         <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1ab19dda553062c0cae9e4a7a66e9cb64f" compoundref="_abstract_augmentation_8cs" startline="56">ARdevKit.Model.Project.AbstractAugmentation.IsVisible</references>
         <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a333186e3963596bc5b17c02a21f2d384" compoundref="_abstract_augmentation_8cs" startline="72">ARdevKit.Model.Project.AbstractAugmentation.CustomUserEventReference</references>
       </memberdef>
@@ -582,9 +582,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/ProjectController/ExportVisitor.cs" line="549" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/ProjectController/ExportVisitor.cs" bodystart="549" bodyend="558"/>
-        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_sensor_1a312b8ea728d3018c96cb50ceb5c59f0c" compoundref="_picture_marker_sensor_8cs" startline="40">ARdevKit.Model.Project.PictureMarkerSensor.TrackingQuality</references>
-        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_sensor_1a423bb9bb3fb7916fc9705640f58522e6" compoundref="_picture_marker_sensor_8cs" startline="68">ARdevKit.Model.Project.PictureMarkerSensor.ThresholdOffset</references>
-        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_sensor_1abdebe622c6ef02494e50d0caa2b142cb" compoundref="_picture_marker_sensor_8cs" startline="90">ARdevKit.Model.Project.PictureMarkerSensor.NumberOfSearchIterations</references>
+        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_sensor_1a312b8ea728d3018c96cb50ceb5c59f0c" compoundref="_picture_marker_sensor_8cs" startline="45">ARdevKit.Model.Project.PictureMarkerSensor.TrackingQuality</references>
+        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_sensor_1a423bb9bb3fb7916fc9705640f58522e6" compoundref="_picture_marker_sensor_8cs" startline="73">ARdevKit.Model.Project.PictureMarkerSensor.ThresholdOffset</references>
+        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_sensor_1abdebe622c6ef02494e50d0caa2b142cb" compoundref="_picture_marker_sensor_8cs" startline="95">ARdevKit.Model.Project.PictureMarkerSensor.NumberOfSearchIterations</references>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1a6ba67134957206067b97c6ebba5a9c8a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>override void</type>
@@ -611,7 +611,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/ProjectController/ExportVisitor.cs" line="568" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/ProjectController/ExportVisitor.cs" bodystart="568" bodyend="687"/>
-        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a9578380939f19267cc7372ca19ff936f" compoundref="_abstract2_d_trackable_8cs" startline="25">ARdevKit.Model.Project.Abstract2DTrackable.SensorCosID</references>
+        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a9578380939f19267cc7372ca19ff936f" compoundref="_abstract2_d_trackable_8cs" startline="28">ARdevKit.Model.Project.Abstract2DTrackable.SensorCosID</references>
         <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_1abf66216adfd7fcd5f94a6bdf55f30a36" compoundref="_image_trackable_8cs" startline="54">ARdevKit.Model.Project.ImageTrackable.ImagePath</references>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1a384b6fc84602fd29bedff296b083b3a0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
@@ -639,8 +639,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/ProjectController/ExportVisitor.cs" line="697" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/ProjectController/ExportVisitor.cs" bodystart="697" bodyend="821"/>
-        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a9578380939f19267cc7372ca19ff936f" compoundref="_abstract2_d_trackable_8cs" startline="25">ARdevKit.Model.Project.Abstract2DTrackable.SensorCosID</references>
-        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a0c9a459cf25e74c8173564d476021c9a" compoundref="_abstract2_d_trackable_8cs" startline="39">ARdevKit.Model.Project.Abstract2DTrackable.Size</references>
+        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a9578380939f19267cc7372ca19ff936f" compoundref="_abstract2_d_trackable_8cs" startline="28">ARdevKit.Model.Project.Abstract2DTrackable.SensorCosID</references>
+        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a0c9a459cf25e74c8173564d476021c9a" compoundref="_abstract2_d_trackable_8cs" startline="42">ARdevKit.Model.Project.Abstract2DTrackable.Size</references>
         <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_1a60a31045ce2dcc1a3a97b3e3956b1b7f" compoundref="_picture_marker_8cs" startline="41">ARdevKit.Model.Project.PictureMarker.PicturePath</references>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1a0e82718aa35b9bff19cd6db0b33f3d5c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
@@ -668,9 +668,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/ProjectController/ExportVisitor.cs" line="831" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/ProjectController/ExportVisitor.cs" bodystart="831" bodyend="840"/>
-        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_1ad8681106fa33f5473799f0e0ed6999bc" compoundref="_marker_sensor_8cs" startline="38">ARdevKit.Model.Project.MarkerSensor.TrackingQuality</references>
-        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_1a704b4bc065e8b27d457c2cfbedee7a79" compoundref="_marker_sensor_8cs" startline="66">ARdevKit.Model.Project.MarkerSensor.ThresholdOffset</references>
-        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_1a106f06e0fb75947b4748a392e7a520b7" compoundref="_marker_sensor_8cs" startline="88">ARdevKit.Model.Project.MarkerSensor.NumberOfSearchIterations</references>
+        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_1ad8681106fa33f5473799f0e0ed6999bc" compoundref="_marker_sensor_8cs" startline="41">ARdevKit.Model.Project.MarkerSensor.TrackingQuality</references>
+        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_1a704b4bc065e8b27d457c2cfbedee7a79" compoundref="_marker_sensor_8cs" startline="69">ARdevKit.Model.Project.MarkerSensor.ThresholdOffset</references>
+        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_1a106f06e0fb75947b4748a392e7a520b7" compoundref="_marker_sensor_8cs" startline="91">ARdevKit.Model.Project.MarkerSensor.NumberOfSearchIterations</references>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1aa4ad67b0cb408d8ec6aaf48906f1e5b3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>override void</type>
@@ -697,8 +697,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/ProjectController/ExportVisitor.cs" line="850" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/ProjectController/ExportVisitor.cs" bodystart="850" bodyend="966"/>
-        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a9578380939f19267cc7372ca19ff936f" compoundref="_abstract2_d_trackable_8cs" startline="25">ARdevKit.Model.Project.Abstract2DTrackable.SensorCosID</references>
-        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a0c9a459cf25e74c8173564d476021c9a" compoundref="_abstract2_d_trackable_8cs" startline="39">ARdevKit.Model.Project.Abstract2DTrackable.Size</references>
+        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a9578380939f19267cc7372ca19ff936f" compoundref="_abstract2_d_trackable_8cs" startline="28">ARdevKit.Model.Project.Abstract2DTrackable.SensorCosID</references>
+        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a0c9a459cf25e74c8173564d476021c9a" compoundref="_abstract2_d_trackable_8cs" startline="42">ARdevKit.Model.Project.Abstract2DTrackable.Size</references>
         <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_marker_1aaa90db647a18c316b7c4de9dcf123170" compoundref="_i_d_marker_8cs" startline="36">ARdevKit.Model.Project.IDMarker.MatrixID</references>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1ad58774c6778421b6bf85a6c70029a3d9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">

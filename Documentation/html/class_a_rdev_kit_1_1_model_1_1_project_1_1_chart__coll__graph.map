@@ -1,8 +1,8 @@
 <map id="ARdevKit.Model.Project.Chart" name="ARdevKit.Model.Project.Chart">
-<area shape="rect" id="node2" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_dynamic2_d_augmentation.html" title="Inherits from Abstract2DAugmentation and adds AbstractSource, in order to show dynamic content..." alt="" coords="5,1136,243,1243"/>
-<area shape="rect" id="node3" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_augmentation.html" title="Describes an abstract twodimensional augmentation with its additional features height and width..." alt="" coords="31,971,217,1077"/>
+<area shape="rect" id="node2" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_dynamic2_d_augmentation.html" title="Inherits from Abstract2DAugmentation and adds AbstractSource, in order to show dynamic content..." alt="" coords="5,1165,243,1272"/>
+<area shape="rect" id="node3" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_augmentation.html" title="Describes an abstract twodimensional augmentation with its additional features height and width..." alt="" coords="31,971,217,1107"/>
 <area shape="rect" id="node4" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation.html" title="describes an AbstractAugmentation, which is bound to a certain AbstractTrackable. is IPreviewable ..." alt="" coords="26,608,221,920"/>
 <area shape="rect" id="node5" href="$interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable.html" title="Interface for previewable elements from the Model. " alt="" coords="93,133,200,240"/>
 <area shape="rect" id="node7" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable.html" title="Describes an AbstractTrackable with its associated AbstractAugmentations and further details used for..." alt="" coords="141,291,352,544"/>
-<area shape="rect" id="node8" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_positioning.html" title="Used to set the position of a chart used by HighChart. " alt="" coords="267,1129,461,1250"/>
+<area shape="rect" id="node8" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_positioning.html" title="Used to set the position of a chart used by HighChart. " alt="" coords="267,1158,461,1279"/>
 </map>

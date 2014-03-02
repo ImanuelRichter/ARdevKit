@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/JavaScriptInLine.cs" line="11" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/JavaScriptInLine.cs" bodystart="11" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/JavaScriptInLine.cs" line="14" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/JavaScriptInLine.cs" bodystart="14" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -53,7 +53,7 @@
 </para><para>Imanuel, 17.01.2014. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/JavaScriptInLine.cs" line="23" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/JavaScriptInLine.cs" bodystart="23" bodyend="26"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/JavaScriptInLine.cs" line="26" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/JavaScriptInLine.cs" bodystart="26" bodyend="29"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_in_line_1a0bda60059c507dd0d88feeb31d6f6a4d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -100,7 +100,7 @@
 </para><para>Imanuel, 17.01.2014. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/JavaScriptInLine.cs" line="40" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/JavaScriptInLine.cs" bodystart="40" bodyend="43"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/JavaScriptInLine.cs" line="43" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/JavaScriptInLine.cs" bodystart="43" bodyend="46"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_in_line_1a49f0664d2621cc8d5e0589c202c19b10" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>override void</type>
@@ -126,11 +126,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/JavaScriptInLine.cs" line="53" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/JavaScriptInLine.cs" bodystart="53" bodyend="70"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/JavaScriptInLine.cs" line="56" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/JavaScriptInLine.cs" bodystart="56" bodyend="73"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-    </briefdescription>
+<para>A <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_in_line" kindref="compound">JavaScriptInLine</ref> is a <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_line" kindref="compound">JavaScriptLine</ref> which is closed by a &quot;,&quot; instead of a &quot;;&quot;. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
@@ -211,7 +211,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/JavaScriptInLine.cs" line="10" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/JavaScriptInLine.cs" bodystart="9" bodyend="71"/>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/JavaScriptInLine.cs" line="13" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/JavaScriptInLine.cs" bodystart="12" bodyend="74"/>
     <listofallmembers>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_1aa238e4f3ad33fc75ab3741048ed4dc6b" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::JavaScriptInLine</scope><name>AddBlock</name></member>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_block_1a1cbaad8763bacb2f87a5cd8b9d075955" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::JavaScriptInLine</scope><name>AddLine</name></member>

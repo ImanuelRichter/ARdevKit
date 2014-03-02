@@ -16,7 +16,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Vector3D.cs" line="25" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Vector3D.cs" bodystart="25" bodyend="-1"/>
-        <referencedby refid="class_preview_controller_1a3b909b7f753ee543cbf42dfdb9a0316f" compoundref="_preview_controller_8cs" startline="773" endline="792">PreviewController.setCoordinates</referencedby>
+        <referencedby refid="class_preview_controller_1a3b909b7f753ee543cbf42dfdb9a0316f" compoundref="_preview_controller_8cs" startline="776" endline="795">PreviewController.setCoordinates</referencedby>
       </memberdef>
       <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d_1aaa8679d7364c8f6ba03e89bd00f5b991" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
         <type>double</type>
@@ -30,7 +30,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Vector3D.cs" line="33" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/Vector3D.cs" bodystart="33" bodyend="-1"/>
-        <referencedby refid="class_preview_controller_1a3b909b7f753ee543cbf42dfdb9a0316f" compoundref="_preview_controller_8cs" startline="773" endline="792">PreviewController.setCoordinates</referencedby>
+        <referencedby refid="class_preview_controller_1a3b909b7f753ee543cbf42dfdb9a0316f" compoundref="_preview_controller_8cs" startline="776" endline="795">PreviewController.setCoordinates</referencedby>
       </memberdef>
       <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d_1a75ca41666b67f93861f074e13964e946" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
         <type>double</type>

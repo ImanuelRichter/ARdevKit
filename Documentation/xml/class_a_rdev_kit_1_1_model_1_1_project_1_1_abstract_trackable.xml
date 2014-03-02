@@ -84,8 +84,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" line="85" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" bodystart="85" bodyend="-1"/>
-        <referencedby refid="class_preview_controller_1a03acb2816496e20b416346aeff126b04" compoundref="_preview_controller_8cs" startline="743" endline="766">PreviewController.rescalePreviewPanel</referencedby>
-        <referencedby refid="class_preview_controller_1ae33fd4d13286e22a819f5a6cd5de292f" compoundref="_preview_controller_8cs" startline="817" endline="839">PreviewController.updateElementCombobox</referencedby>
+        <referencedby refid="class_preview_controller_1a03acb2816496e20b416346aeff126b04" compoundref="_preview_controller_8cs" startline="746" endline="769">PreviewController.rescalePreviewPanel</referencedby>
+        <referencedby refid="class_preview_controller_1ae33fd4d13286e22a819f5a6cd5de292f" compoundref="_preview_controller_8cs" startline="820" endline="842">PreviewController.updateElementCombobox</referencedby>
         <referencedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a8b02a2eb775b8147e71575694ce8a38f" compoundref="_abstract_augmentation_8cs" startline="231" endline="263">ARdevKit.Model.Project.AbstractAugmentation.initElement</referencedby>
       </memberdef>
       </sectiondef>
@@ -177,7 +177,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" line="115" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" bodystart="115" bodyend="125"/>
-        <referencedby refid="class_preview_controller_1aa4cc8c02192eb08afe244825d5796552" compoundref="_preview_controller_8cs" startline="175" endline="249">PreviewController.addSource</referencedby>
+        <referencedby refid="class_preview_controller_1aa4cc8c02192eb08afe244825d5796552" compoundref="_preview_controller_8cs" startline="178" endline="252">PreviewController.addSource</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1ae14b72d85d610bcda17d93255bce45f7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -202,7 +202,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" line="135" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" bodystart="135" bodyend="139"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" line="135" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" bodystart="135" bodyend="138"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a166fc03dc00911591baca14a3341ef29" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>abstract object</type>
@@ -219,7 +219,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" line="149" column="1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" line="148" column="1"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1aff50ed9cb95973d56d6a65bd1ef96c0a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>bool</type>
@@ -249,7 +249,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" line="158" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" bodystart="158" bodyend="162"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" line="157" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" bodystart="157" bodyend="161"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -314,7 +314,7 @@
         <label>ICloneable</label>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" line="24" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" bodystart="23" bodyend="163"/>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" line="24" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" bodystart="23" bodyend="162"/>
     <listofallmembers>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a76f6ad0ed8f615b8f5b7738411abb54f" prot="public" virt="pure-virtual"><scope>ARdevKit::Model::Project::AbstractTrackable</scope><name>Accept</name></member>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a999faeee63dee9445e8617d539c5b8d9" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractTrackable</scope><name>Augmentations</name></member>

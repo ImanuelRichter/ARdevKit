@@ -26,7 +26,7 @@
 <para>Imanuel, 15.01.2014. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarkerSensor.cs" line="22" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarkerSensor.cs" bodystart="22" bodyend="22"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarkerSensor.cs" line="27" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarkerSensor.cs" bodystart="27" bodyend="27"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-attrib">
@@ -43,7 +43,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarkerSensor.cs" line="32" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarkerSensor.cs" bodystart="22" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarkerSensor.cs" line="37" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarkerSensor.cs" bodystart="27" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_sensor_1ae8164ddea1bcb20ca7f5b3e646b6c924" prot="protected" static="no" mutable="no">
         <type>int</type>
@@ -56,7 +56,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarkerSensor.cs" line="60" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarkerSensor.cs" bodystart="60" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarkerSensor.cs" line="65" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarkerSensor.cs" bodystart="65" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_sensor_1a5a3468a9f180fdb258a72e60a92423ad" prot="protected" static="no" mutable="no">
         <type>int</type>
@@ -69,7 +69,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarkerSensor.cs" line="82" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarkerSensor.cs" bodystart="82" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarkerSensor.cs" line="87" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarkerSensor.cs" bodystart="87" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="property">
@@ -84,7 +84,7 @@
 <para>The tracking quality. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarkerSensor.cs" line="39" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarkerSensor.cs" bodystart="40" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarkerSensor.cs" line="44" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarkerSensor.cs" bodystart="45" bodyend="-1"/>
         <referencedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1a567d0ff197539453cc2c34b11f12ad59" compoundref="_export_visitor_8cs" startline="549" endline="558">ARdevKit.Controller.ProjectController.ExportVisitor.Visit</referencedby>
       </memberdef>
       <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_sensor_1a423bb9bb3fb7916fc9705640f58522e6" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
@@ -98,7 +98,7 @@
 <para>The threshold offset. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarkerSensor.cs" line="67" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarkerSensor.cs" bodystart="68" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarkerSensor.cs" line="72" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarkerSensor.cs" bodystart="73" bodyend="-1"/>
         <referencedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1a567d0ff197539453cc2c34b11f12ad59" compoundref="_export_visitor_8cs" startline="549" endline="558">ARdevKit.Controller.ProjectController.ExportVisitor.Visit</referencedby>
       </memberdef>
       <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_sensor_1abdebe622c6ef02494e50d0caa2b142cb" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
@@ -112,7 +112,7 @@
 <para>The total number of search iterations. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarkerSensor.cs" line="89" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarkerSensor.cs" bodystart="90" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarkerSensor.cs" line="94" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarkerSensor.cs" bodystart="95" bodyend="-1"/>
         <referencedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1a567d0ff197539453cc2c34b11f12ad59" compoundref="_export_visitor_8cs" startline="549" endline="558">ARdevKit.Controller.ProjectController.ExportVisitor.Visit</referencedby>
       </memberdef>
       </sectiondef>
@@ -128,7 +128,7 @@
 <para>Imanuel, 17.01.2014. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarkerSensor.cs" line="100" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarkerSensor.cs" bodystart="100" bodyend="109"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarkerSensor.cs" line="105" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarkerSensor.cs" bodystart="105" bodyend="114"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_sensor_1a4c36ac6cf5bd103a418b5ae21492b70a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>override void</type>
@@ -154,11 +154,11 @@
 </para><para>Imanuel, 17.01.2014. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarkerSensor.cs" line="118" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarkerSensor.cs" bodystart="118" bodyend="121"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarkerSensor.cs" line="123" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarkerSensor.cs" bodystart="123" bodyend="126"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-    </briefdescription>
+<para>A <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_sensor" kindref="compound">PictureMarkerSensor</ref> is a <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor" kindref="compound">AbstractSensor</ref> used for <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker" kindref="compound">PictureMarker</ref>. Contains the values, which are used from the MetaioSDK to populate the TrackingData.XML. They describe which Marker should be tracked, and at what quality and speed. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
@@ -185,7 +185,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarkerSensor.cs" line="12" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarkerSensor.cs" bodystart="11" bodyend="122"/>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarkerSensor.cs" line="17" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarkerSensor.cs" bodystart="16" bodyend="127"/>
     <listofallmembers>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1ac267c5a8c7792a6c0ba07108102c0706" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::PictureMarkerSensor</scope><name>AbstractSensor</name></member>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_sensor_1a4c36ac6cf5bd103a418b5ae21492b70a" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::PictureMarkerSensor</scope><name>Accept</name></member>
