@@ -10,6 +10,10 @@ using System.Windows.Forms;
 
 namespace ARdevKit.View
 {
+    /// <summary>
+    /// This is a Form, containing a TextBoc, which can be filled threadsafe.
+    /// Its for displaying DebugInformation.
+    /// </summary>
     public partial class DebugWindow : Form
     {
         private Controller.Connections.DeviceConnection.DeviceConnectionController controller;
