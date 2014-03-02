@@ -13,8 +13,8 @@ using System.Threading;
 namespace ARdevKit.Controller.Connections.DeviceConnection
 {
     /// <summary>
-    ///     Controller which provides functions, to gather Information about Devices, which are running ARdevKitPlayer and are connected
-    ///     to the local Network. On top of that it provides functions to send Projects and receive Debuginformation.
+    /// Controller which provides functions, to gather Information about Devices, which are running ARdevKitPlayer and are connected
+    /// to the local Network. On top of that it provides functions to send Projects and receive Debuginformation.
     /// </summary>
     public class DeviceConnectionController
     {
@@ -23,11 +23,26 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
         private EditorWindow editorWindow;
         private bool debugConnected;
         private View.DebugWindow debugWindow;
+        
+        /// <summary>
+        /// Gets the debug window, which shows DebugPrompt from connected
+        /// Remotedevices, if requested
+        /// </summary>
+        /// <value>
+        /// The debug window.
+        /// </value>
         public View.DebugWindow DebugWindow
         {
             get { return debugWindow; }
         }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether [debug connected].
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if [debug connected] the Editor listens for
+        ///   Debugdata; otherwise, the connections will be closed<c>false</c>.
+        /// </value>
         public bool DebugConnected
         {
             get { return debugConnected; }
@@ -86,6 +101,11 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
             receiveAllQueuedResponses();
         }
 
+
+        /// <summary>
+        /// Gets the StringList of devices, which reported back to the UDPBroadcast.
+        /// </summary>
+        /// <returns>StringList of devices, to which connections could be established</returns>
         public List<string> getReportedDevices()
         {
             List<string> result = new List<string>();
@@ -98,10 +118,10 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
 
         /// <summary>
         /// Sends the opened Project to the chosen Device, using the selected index of the EditorWindowsDeviceList, which must be equal to the internal
-        /// index of the <see cref="reportedDevices"/> List. Exceptions which are thrown are written to a log file, in the path in which the Program is executed.
+        /// index of the <see cref="reportedDevices"/> List. Therefore it is exported. Exceptions which are thrown are written to a log file, in the path in which the Program is executed.
         /// </summary>
         /// <param name="index">index of the List of <see cref="reportedDevices"/></param>
-        /// <returns>False, if the project could not be send or an Exception was thown</returns>
+        /// <returns>False, if the project could not be send</returns>
         public bool sendProject(int index)
         {
             bool successfullySent = false;
@@ -116,7 +136,15 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
                 {
                     File.Delete("tmp\\currentProject.zip");
                 }
-                ZipFile.CreateFromDirectory("tmp\\project", "tmp\\currentProject.zip");
+                if (editorWindow.project.ProjectPath == null || editorWindow.project.ProjectPath.Length <= 0)
+                {
+                    ZipFile.CreateFromDirectory("tmp\\project", "tmp\\currentProject.zip");
+                }
+                else
+                {
+                    ZipFile.CreateFromDirectory(editorWindow.project.ProjectPath, "tmp\\currentProject.zip");
+                }
+                
                 project = File.OpenRead("tmp\\currentProject.zip");
                 byte[] size = new byte[8];
                 size = BitConverter.GetBytes(project.Length);
@@ -126,8 +154,7 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
                 }
 
                 sendStream = sender.GetStream();
-
-                sendStream.Write(ASCIIEncoding.ASCII.GetBytes("project\n"), 0,  ASCIIEncoding.ASCII.GetByteCount("project\n"));
+                sendStream.Write(ASCIIEncoding.ASCII.GetBytes("project0\n"), 0,  ASCIIEncoding.ASCII.GetByteCount("project0\n"));
                 
                 sendStream.Write(size, 0, 8);
 
@@ -175,7 +202,10 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
         private void exportRecentProject()
         {
             string originalProjectPath = editorWindow.project.ProjectPath;
-            editorWindow.project.ProjectPath = "tmp\\project";
+            if (editorWindow.project.ProjectPath == null || editorWindow.project.ProjectPath.Length <= 0)
+            {
+                editorWindow.project.ProjectPath = "tmp\\project";
+            }
             ARdevKit.Controller.ProjectController.ExportVisitor exporter = new ARdevKit.Controller.ProjectController.ExportVisitor();
             editorWindow.project.Accept(exporter);
 
@@ -186,6 +216,7 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
             }
             editorWindow.project.ProjectPath = originalProjectPath;
         }
+
 
         /// <summary>
         ///     Sends a Debugrequest to the selected Device and shows its DebugOutput on a PopupWindow with a RichTextbox
@@ -205,15 +236,30 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
                 sendStream = sender.GetStream();
                 sendStream.Write(ASCIIEncoding.ASCII.GetBytes("debug\n"), 0, ASCIIEncoding.ASCII.GetByteCount("debug\n"));
                 reader = new StreamReader(sendStream);
-                while(debugConnected)
+                sendStream.ReadTimeout  = 1000;
+                byte[] msg = new byte[1024];
+                while (debugConnected)
                 {
-                        debugWindow.AppendText(reader.ReadLine() + "\n");
+                    if (sender.Available > 0)
+                    {
+                        int read = sendStream.Read(msg, 0, msg.Length);
+                        debugWindow.AppendText(ASCIIEncoding.ASCII.GetString(msg, 0, read) + "\n");
+                    }
+                    else
+                    {
+                        Thread.Sleep(1000);
+                    } 
                 }
                 success = true;
+                sendStream.Write(ASCIIEncoding.ASCII.GetBytes("OK"), 0, ASCIIEncoding.ASCII.GetByteCount("OK"));
             }
-            catch (Exception ex)
+            catch (SocketException ex)
             {
                 writeExceptionToLog(ex);
+                if (!(sendStream == null))
+                {
+                    sendStream.Write(ASCIIEncoding.ASCII.GetBytes("FAIL"), 0, ASCIIEncoding.ASCII.GetByteCount("FAIL"));
+                }
                 throw (ex);
             }
             finally
@@ -230,6 +276,7 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
                 {
                     sender.Close();
                 }
+                debugWindow = new View.DebugWindow(this);
             }
             return success;
         }
