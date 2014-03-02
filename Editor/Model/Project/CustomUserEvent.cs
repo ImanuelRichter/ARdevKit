@@ -11,8 +11,8 @@ using ARdevKit.Controller.ProjectController;
 namespace ARdevKit.Model.Project
 {
     /// <summary>
-    /// The class CustomUserEvent mainly contains a reference to a
-    /// file, which is in the /currentProject/ Folder. This file has ALL
+    /// The class CustomUserEvent mainly contains a reference path to a
+    /// file, which is in the /tmp/ Folder. This file has ALL
     /// Events the user creates (inclusive the template events we provide)
     /// for ONE augmentation.
     /// </summary>
@@ -21,12 +21,12 @@ namespace ARdevKit.Model.Project
     public class CustomUserEvent
     {
         /// <summary>
-        /// ID of the augmentation
+        /// ID of the augmentation, which has this user event.
         /// </summary>
         private string augmentationID;
         
         /// <summary>
-        /// File path of the customUserEvents
+        /// File path of the customUserEvents.
         /// </summary>
         private string filePath;
         /// <summary>

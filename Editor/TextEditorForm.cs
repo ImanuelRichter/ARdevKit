@@ -15,6 +15,9 @@ using System.IO;
 
 namespace ARdevKit
 {
+    /// <summary>
+    /// Form-Class for the TextEditor.
+    /// </summary>
     public partial class TextEditorForm : Form
     {
         private string filePath;
@@ -49,11 +52,21 @@ namespace ARdevKit
             richTextBox1.LoadFile(this.filePath, RichTextBoxStreamType.PlainText);
         }
 
+        /// <summary>
+        /// This Click-Event closes the Form.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// This Click-Event saves the content of the RichTextBox to its appropriate file.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void button1_Click(object sender, EventArgs e)
         {
             richTextBox1.SaveFile(this.filePath, RichTextBoxStreamType.PlainText);

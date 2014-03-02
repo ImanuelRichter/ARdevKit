@@ -157,7 +157,7 @@ namespace ARdevKit
             this.lbl_version.Name = "lbl_version";
             this.lbl_version.Size = new System.Drawing.Size(76, 13);
             this.lbl_version.TabIndex = 0;
-            this.lbl_version.Text = "ARdevKit v0.1";
+            this.lbl_version.Text = "ARdevKit v0.2";
             // 
             // btn_editor_scene_new
             // 

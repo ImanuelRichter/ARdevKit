@@ -8,6 +8,7 @@ using ARdevKit.Controller.ProjectController;
 namespace ARdevKit.Model.Project
 {
     /// <summary>
+    /// A <see cref="PictureMarkerSensor"/> is a <see cref="AbstractSensor"/> used for <see cref="PictureMarker"/>.
     /// Contains the values, which are used from the MetaioSDK to populate the TrackingData.XML.
     /// They describe which Marker should be tracked, and at what quality and speed.
     /// </summary>
