@@ -1313,6 +1313,10 @@ namespace ARdevKit
                     {
                         MessageBox.Show("Es gab ein Verbindungsproblem. Bitte überprüfen sie ihre Netzwerkeinstellungen.");
                     }
+                    catch(System.IO.IOException)
+                    {
+                        MessageBox.Show("Es gab ein Verbindungsabbruch. Bitte überprüfen sie ihr Netzwerk oder den Player.");
+                    }
                 }
                 else
                 {
