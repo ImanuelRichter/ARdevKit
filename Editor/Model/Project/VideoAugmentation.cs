@@ -13,7 +13,7 @@ using System.Windows.Forms;
 namespace ARdevKit.Model.Project
 {
     /// <summary>
-    /// A <see cref="VideoAugmentation"/> is an <see cref="Abstract2DAugmentation"/> that contains a video file.
+    /// A <see cref="VideoAugmentation" /> is an <see cref="Abstract2DAugmentation" /> that contains a video file.
     /// </summary>
     [Serializable]
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
@@ -51,7 +51,8 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// Default constructor.
         /// </summary>
-        public VideoAugmentation() : base()
+        public VideoAugmentation()
+            : base()
         {
             sourceFilePath = null;
         }
@@ -97,7 +98,7 @@ namespace ARdevKit.Model.Project
             }
             return cachePreview;
         }
-                
+
         /// <summary>
         /// returns a <see cref="Bitmap" /> in order to be displayed
         /// on the ElementSelectionPanel, implements <see cref="IPreviewable" />
@@ -108,7 +109,7 @@ namespace ARdevKit.Model.Project
         /// <exception cref="FileNotFoundException">If ImagePath is bad</exception>
         public override Bitmap getIcon()
         {
-            return Properties.Resources.ImageAugmentation_small_; 
+            return Properties.Resources.ImageAugmentation_small_;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////

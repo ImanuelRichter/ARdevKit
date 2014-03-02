@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Model.Project
 {
+    /// <summary>
+    /// An Abstract2DTrackable is a two-dimensional trackable image, that can be tracked by the metaio SDK.
+    /// </summary>
     [Serializable]
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public abstract class Abstract2DTrackable : AbstractTrackable

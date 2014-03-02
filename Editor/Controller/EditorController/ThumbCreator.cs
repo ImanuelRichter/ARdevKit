@@ -9,6 +9,9 @@ using System.Diagnostics;
 
 namespace ARdevKit.Controller.EditorController
 {
+    /// <summary>
+    /// Utility class to create a thumbnail from video files. Uses AForge library.
+    /// </summary>
     class ThumbCreator
     {
         /// <summary>
