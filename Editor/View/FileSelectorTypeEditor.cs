@@ -11,6 +11,9 @@ using System.Windows.Forms.Design;
 
 namespace ARdevKit.View
 {
+    /// <summary>
+    /// Class which acts as "bridge" for the .net propertyGrid and an custome ControlForm.
+    /// </summary>
     class FileSelectorTypeEditor : UITypeEditor
     {
         /// <summary>
