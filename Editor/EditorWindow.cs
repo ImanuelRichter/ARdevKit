@@ -1291,6 +1291,10 @@ namespace ARdevKit
                         {
                             MessageBox.Show("Es gab ein Verbindungsproblem. Bitte überprüfen sie ihre Netzwerkeinstellungen.");
                         }
+                        catch (System.IO.IOException)
+                        {
+                            MessageBox.Show("Es gab ein Verbindungsproblem. Anscheinend wurde die Verbindung gelöst.");
+                        }
                     }
                     else
                     {
@@ -1322,18 +1326,7 @@ namespace ARdevKit
                     int index = DeviceList.SelectedIndex;
                     debugWindow = new DebugWindow(deviceConnectionController);
                     debugWindow.Show();
-                    try
-                    {
-                        Task.Factory.StartNew(() => deviceConnectionController.sendDebug(index));
-                    }
-                    catch(System.Net.Sockets.SocketException)
-                    {
-                        MessageBox.Show("Es gab ein Verbindungsproblem. Bitte überprüfen sie ihre Netzwerkeinstellungen.");
-                    }
-                    catch(System.IO.IOException)
-                    {
-                        MessageBox.Show("Es gab ein Verbindungsabbruch. Bitte überprüfen sie ihr Netzwerk oder den Player.");
-                    }
+                    Task.Factory.StartNew(() => deviceConnectionController.sendDebug(index));
                 }
                 else
                 {

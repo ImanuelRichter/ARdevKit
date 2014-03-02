@@ -116,10 +116,13 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
         /// <returns>False, if the project could not be send</returns>
         public bool sendProject(int index)
         {
+            //initialize needed tools
             bool successfullySent = false;
             TcpClient sender = null;
             FileStream project = null;
             NetworkStream sendStream = null;
+
+            //trys to export the project and zip it
             try
             {
                 exportRecentProject();
@@ -136,7 +139,8 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
                 {
                     ZipFile.CreateFromDirectory(editorWindow.project.ProjectPath, "tmp\\currentProject.zip");
                 }
-                
+
+                //gets number of bytes to send
                 project = File.OpenRead("tmp\\currentProject.zip");
                 byte[] size = new byte[8];
                 size = BitConverter.GetBytes(project.Length);
@@ -145,11 +149,14 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
                     size.Reverse();
                 }
 
+                //sends command "project"
                 sendStream = sender.GetStream();
                 sendStream.Write(ASCIIEncoding.ASCII.GetBytes("project\n"), 0,  ASCIIEncoding.ASCII.GetByteCount("project\n"));
                 
+                //sends projectSize
                 sendStream.Write(size, 0, 8);
 
+                //opens zipFile in stream and writes it to the Network Stream in brackets
                 byte[] buffer = new byte[64000];
                 int current = 0, all = 0;
                 sender.SendBufferSize = (int)project.Length;
@@ -159,6 +166,7 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
                     sendStream.Write(buffer, 0, current);
                     all += current;
                 }
+                //waits for positive response
                 sendStream.ReadTimeout = 20000;
                 byte[] response = new byte[2];
                 if (sendStream.Read(response, 0, response.Length) == 2)
@@ -222,10 +230,13 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
         /// <returns> true if</returns>
         public bool sendDebug(int index)
         {
+            //initialize needed tools
             bool success = false;
             TcpClient sender = null;
             NetworkStream sendStream = null;
             StreamReader reader = null;
+            
+            //trys to send command "debug" and connects tools
             try
             {
                 sender = new TcpClient(reportedDevices[index].Address.ToString(), 12345);
@@ -235,6 +246,8 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
                 reader = new StreamReader(sendStream);
                 sendStream.ReadTimeout  = 1000;
                 byte[] msg = new byte[1024];
+                
+                //listens to incomming Debuginfo, as long as Debugwindow is open
                 while (debugConnected)
                 {
                     if (sender.Available > 0)
@@ -247,17 +260,28 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
                         Thread.Sleep(1000);
                     } 
                 }
+
+                //sends OK on success
                 success = true;
                 sendStream.Write(ASCIIEncoding.ASCII.GetBytes("OK"), 0, ASCIIEncoding.ASCII.GetByteCount("OK"));
             }
-            catch (Exception ex)
+            catch (SocketException ex)
             {
                 writeExceptionToLog(ex);
                 if (!(sendStream == null) && !(sender == null) && sender.Connected)
                 {
                     sendStream.Write(ASCIIEncoding.ASCII.GetBytes("FAIL"), 0, ASCIIEncoding.ASCII.GetByteCount("FAIL"));
                 }
-                throw (ex);
+                MessageBox.Show("Es gab ein Problem mit den Sockets. Überprüfen sie ihre Netzwerkeinstellungen.");
+            }
+            catch(IOException io)
+            {
+                writeExceptionToLog(io);
+                if (!(sendStream == null) && !(sender == null) && sender.Connected)
+                {
+                    sendStream.Write(ASCIIEncoding.ASCII.GetBytes("FAIL"), 0, ASCIIEncoding.ASCII.GetByteCount("FAIL"));
+                }
+                MessageBox.Show("Es gab ein Problem mit dem Remotehost. Überprüfen sie ihre Verbindung.");
             }
             finally
             {
