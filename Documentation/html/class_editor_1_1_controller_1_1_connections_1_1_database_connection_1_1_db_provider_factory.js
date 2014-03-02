@@ -1,4 +1,0 @@
-var class_editor_1_1_controller_1_1_connections_1_1_database_connection_1_1_db_provider_factory =
-[
-    [ "CreateConnection", "class_editor_1_1_controller_1_1_connections_1_1_database_connection_1_1_db_provider_factory.html#a37f6aba34ee4e922b36c89f5aa1ce8c0", null ]
-];

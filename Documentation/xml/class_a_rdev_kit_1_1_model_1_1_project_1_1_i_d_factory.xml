@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_factory" kind="class" prot="public">
+    <compoundname>ARdevKit::Model::Project::IDFactory</compoundname>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_factory_1a6579c104b45ec56712f9c927dc27d81c" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int ARdevKit.Model.Project.IDFactory.sensorIDcounter</definition>
+        <argsstring></argsstring>
+        <name>sensorIDcounter</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>The sensorID counter. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/IDFactory.cs" line="19" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/IDFactory.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_factory_1a0e5d946aa2bd6186f69afb293cc7ba45" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int ARdevKit.Model.Project.IDFactory.sensorCosIDcounter</definition>
+        <argsstring></argsstring>
+        <name>sensorCosIDcounter</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>The sensorCosID counter. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/IDFactory.cs" line="21" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/IDFactory.cs" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_factory_1acadcbcc3c49af318474d62cf3233ee09" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>static string ARdevKit.Model.Project.IDFactory.CreateNewSensorID</definition>
+        <argsstring>(AbstractSensor sensor)</argsstring>
+        <name>CreateNewSensorID</name>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor" kindref="compound">AbstractSensor</ref></type>
+          <declname>sensor</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new sensorIDstring. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 17.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sensor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The sensor. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para><para><simplesect kind="return"><para>The new new sensorIDstring. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/IDFactory.cs" line="32" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/IDFactory.cs" bodystart="32" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_factory_1a21d9f3f5681207d9daa5806a06425377" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>static string ARdevKit.Model.Project.IDFactory.CreateNewSensorCosID</definition>
+        <argsstring>(AbstractTrackable trackable)</argsstring>
+        <name>CreateNewSensorCosID</name>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable" kindref="compound">AbstractTrackable</ref></type>
+          <declname>trackable</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new sensorCosIDstring. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 17.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>trackable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The marker. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para><para><simplesect kind="return"><para>The new new sensorCosIDstring. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/IDFactory.cs" line="46" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/IDFactory.cs" bodystart="46" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_factory_1a8851a1027da057884e454d650f26518c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void ARdevKit.Model.Project.IDFactory.Reset</definition>
+        <argsstring>()</argsstring>
+        <name>Reset</name>
+        <briefdescription>
+<para>Resets this instance. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/IDFactory.cs" line="54" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/IDFactory.cs" bodystart="54" bodyend="58"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>An IDFactory produces the ids for <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor" kindref="compound">AbstractSensor</ref>s and AbstractMarkers. </para>    </briefdescription>
+    <detaileddescription>
+<para>Imanuel, 17.01.2014. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="558">
+        <label>ARdevKit.Model.Project.IDFactory</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/IDFactory.cs" line="17" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/IDFactory.cs" bodystart="16" bodyend="59"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_factory_1a21d9f3f5681207d9daa5806a06425377" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::IDFactory</scope><name>CreateNewSensorCosID</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_factory_1acadcbcc3c49af318474d62cf3233ee09" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::IDFactory</scope><name>CreateNewSensorID</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_factory_1a8851a1027da057884e454d650f26518c" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::IDFactory</scope><name>Reset</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_factory_1a0e5d946aa2bd6186f69afb293cc7ba45" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::IDFactory</scope><name>sensorCosIDcounter</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_factory_1a6579c104b45ec56712f9c927dc27d81c" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::IDFactory</scope><name>sensorIDcounter</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

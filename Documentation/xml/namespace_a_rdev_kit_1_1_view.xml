@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="namespace_a_rdev_kit_1_1_view" kind="namespace">
+    <compoundname>ARdevKit::View</compoundname>
+    <innerclass refid="class_a_rdev_kit_1_1_view_1_1_debug_window" prot="public">ARdevKit::View::DebugWindow</innerclass>
+    <innerclass refid="class_a_rdev_kit_1_1_view_1_1_element_icon" prot="public">ARdevKit::View::ElementIcon</innerclass>
+    <innerclass refid="class_a_rdev_kit_1_1_view_1_1_file_selector_type_editor" prot="public">ARdevKit::View::FileSelectorTypeEditor</innerclass>
+    <innerclass refid="class_a_rdev_kit_1_1_view_1_1_scene_element_category_panel" prot="public">ARdevKit::View::SceneElementCategoryPanel</innerclass>
+    <innerclass refid="class_a_rdev_kit_1_1_view_1_1_slider" prot="public">ARdevKit::View::Slider</innerclass>
+    <innerclass refid="class_a_rdev_kit_1_1_view_1_1_slider_editor" prot="public">ARdevKit::View::SliderEditor</innerclass>
+    <innerclass refid="class_a_rdev_kit_1_1_view_1_1_text_editor" prot="public">ARdevKit::View::TextEditor</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/DebugWindow.cs" line="12" column="1"/>
+  </compounddef>
+</doxygen>

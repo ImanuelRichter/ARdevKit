@@ -1,0 +1,192 @@
+.TH "ARdevKit.Model.Project.PictureMarker" 3 "Sat Mar 1 2014" "Version 0.2" "ARdevKit" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ARdevKit.Model.Project.PictureMarker \- 
+.PP
+Describes a Marker, which is very flexible, because it is also a Picture\&. It is an AbstractMarker  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBARdevKit\&.Model\&.Project\&.Abstract2DTrackable\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPictureMarker\fP ()"
+.br
+.RI "\fIDefault Constructor\&. \fP"
+.ti -1c
+.RI "\fBPictureMarker\fP (string \fBpicturePath\fP)"
+.br
+.RI "\fIConstructor\&. \fP"
+.ti -1c
+.RI "override void \fBAccept\fP (\fBAbstractProjectVisitor\fP visitor)"
+.br
+.RI "\fIAn overwriting method, to accept a AbstractProjectVisitor which must be implemented according to the visitor design pattern\&. It lets the visitor visit every augmentation associated with it\&. \fP"
+.ti -1c
+.RI "override Bitmap \fBgetPreview\fP ()"
+.br
+.RI "\fIreturns a Bitmap in order to be displayed on the PreviewPanel, implements \fBIPreviewable\fP \fP"
+.ti -1c
+.RI "override System\&.Drawing\&.Bitmap \fBgetIcon\fP ()"
+.br
+.RI "\fIreturns a Bitmap in order to be displayed on the ElementSelectionPanel, implements \fBIPreviewable\fP \fP"
+.ti -1c
+.RI "override object \fBClone\fP ()"
+.br
+.RI "\fIMakes a deep copy of this object\&. \fP"
+.ti -1c
+.RI "override bool \fBinitElement\fP (\fBEditorWindow\fP ew)"
+.br
+.RI "\fIThis method is called by the previewController when a new instance of the element is added to the Scene\&. It sets 'must-have' properties\&. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "string \fBpicturePath\fP"
+.br
+.RI "\fIFull pathname of the picture file\&. \fP"
+.ti -1c
+.RI "string \fBpictureName\fP"
+.br
+.RI "\fIName of the picture\&. \fP"
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "string \fBPicturePath\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the full pathname of the picture file\&. \fP"
+.ti -1c
+.RI "string \fBPictureName\fP\fC [get]\fP"
+.br
+.RI "\fIGets or sets the name of the picture\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Describes a Marker, which is very flexible, because it is also a Picture\&. It is an AbstractMarker 
+
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ARdevKit\&.Model\&.Project\&.PictureMarker\&.PictureMarker ()"
+
+.PP
+Default Constructor\&. 
+.SS "ARdevKit\&.Model\&.Project\&.PictureMarker\&.PictureMarker (stringpicturePath)"
+
+.PP
+Constructor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpicturePath\fP The picture path\&.
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "override void ARdevKit\&.Model\&.Project\&.PictureMarker\&.Accept (\fBAbstractProjectVisitor\fPvisitor)\fC [virtual]\fP"
+
+.PP
+An overwriting method, to accept a AbstractProjectVisitor which must be implemented according to the visitor design pattern\&. It lets the visitor visit every augmentation associated with it\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvisitor\fP the visitor which encapsulates the action which is performed on this element
+.RE
+.PP
+
+.PP
+Implements \fBARdevKit\&.Model\&.Project\&.AbstractTrackable\fP\&.
+.SS "override object ARdevKit\&.Model\&.Project\&.PictureMarker\&.Clone ()\fC [virtual]\fP"
+
+.PP
+Makes a deep copy of this object\&. Robin, 22\&.01\&.2014\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+A copy of this object\&. 
+.RE
+.PP
+
+.PP
+Implements \fBARdevKit\&.Model\&.Project\&.AbstractTrackable\fP\&.
+.SS "override System\&.Drawing\&.Bitmap ARdevKit\&.Model\&.Project\&.PictureMarker\&.getIcon ()\fC [virtual]\fP"
+
+.PP
+returns a Bitmap in order to be displayed on the ElementSelectionPanel, implements \fBIPreviewable\fP 
+.PP
+\fBReturns:\fP
+.RS 4
+a representative iconized Bitmap 
+.RE
+.PP
+
+.PP
+Implements \fBARdevKit\&.Model\&.Project\&.AbstractTrackable\fP\&.
+.SS "override Bitmap ARdevKit\&.Model\&.Project\&.PictureMarker\&.getPreview ()\fC [virtual]\fP"
+
+.PP
+returns a Bitmap in order to be displayed on the PreviewPanel, implements \fBIPreviewable\fP 
+.PP
+\fBReturns:\fP
+.RS 4
+a representative Bitmap 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fIFileNotFoundException\fP If ImagePath is not correct\&.
+.RE
+.PP
+
+.PP
+Implements \fBARdevKit\&.Model\&.Project\&.AbstractTrackable\fP\&.
+.SS "override bool ARdevKit\&.Model\&.Project\&.PictureMarker\&.initElement (\fBEditorWindow\fPew)\fC [virtual]\fP"
+
+.PP
+This method is called by the previewController when a new instance of the element is added to the Scene\&. It sets 'must-have' properties\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIew\fP The ew\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if it succeeds, false if it fails\&. 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBARdevKit\&.Model\&.Project\&.AbstractTrackable\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "string ARdevKit\&.Model\&.Project\&.PictureMarker\&.pictureName\fC [protected]\fP"
+
+.PP
+Name of the picture\&. 
+.SS "string ARdevKit\&.Model\&.Project\&.PictureMarker\&.picturePath\fC [protected]\fP"
+
+.PP
+Full pathname of the picture file\&. 
+.SH "Property Documentation"
+.PP 
+.SS "string ARdevKit\&.Model\&.Project\&.PictureMarker\&.PictureName\fC [get]\fP"
+
+.PP
+Gets or sets the name of the picture\&. The name of the picture\&. 
+.SS "string ARdevKit\&.Model\&.Project\&.PictureMarker\&.PicturePath\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the full pathname of the picture file\&. The full pathname of the picture file\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ARdevKit from the source code\&.

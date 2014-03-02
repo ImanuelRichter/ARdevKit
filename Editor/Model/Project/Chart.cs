@@ -66,6 +66,9 @@ namespace ARdevKit.Model.Project
             }
         }
 
+        /// <summary>
+        /// gets or sets the Vector
+        /// </summary>
         [Browsable(false)]
         public new Vector3D Rotation
         {

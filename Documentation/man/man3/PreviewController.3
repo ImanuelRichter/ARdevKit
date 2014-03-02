@@ -1,0 +1,422 @@
+.TH "PreviewController" 3 "Sat Mar 1 2014" "Version 0.2" "ARdevKit" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PreviewController \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPreviewController\fP (\fBEditorWindow\fP ew)"
+.br
+.RI "\fIConstructor\&. \fP"
+.ti -1c
+.RI "void \fBaddPreviewAble\fP (\fBIPreviewable\fP p)"
+.br
+.RI "\fI(This method is obsolete) adds a preview able\&. \fP"
+.ti -1c
+.RI "void \fBaddPreviewable\fP (\fBIPreviewable\fP currentElement, \fBVector3D\fP v)"
+.br
+.RI "\fIadd Trackable is the method for adding the trackable, each PreviewPanel can holding one Trackable\&. \fP"
+.ti -1c
+.RI "void \fBaddSource\fP (\fBAbstractSource\fP source, \fBAbstractAugmentation\fP currentElement)"
+.br
+.RI "\fIadd Source or augmentation, this method can only be used with the element, which is the over element by augmentation the overelement is Trackable\&. by Source the overelement is augmentation\&. \fP"
+.ti -1c
+.RI "void \fBremoveSource\fP (\fBAbstractSource\fP source, \fBIPreviewable\fP currentElement)"
+.br
+.RI "\fIRemoves the choosen Source out of the Augmentation and also out of the sourcesList in Project\&. \fP"
+.ti -1c
+.RI "void \fBremovePreviewable\fP (\fBIPreviewable\fP currentElement)"
+.br
+.RI "\fIRemoves the Previewable and the Objekt, what is linked to the Previewable\&. \fP"
+.ti -1c
+.RI "void \fBupdatePreviewPanel\fP ()"
+.br
+.RI "\fIupdates the preview panel\&. \fP"
+.ti -1c
+.RI "void \fBreloadPreviewPanel\fP (int \fBindex\fP)"
+.br
+.RI "\fIload the project with the identical index to the previewPanel (the index is the index of the trackable list in project) \fP"
+.ti -1c
+.RI "void \fBreloadPreviewable\fP (\fBAbstractAugmentation\fP prev)"
+.br
+.RI "\fIReloads a single previewable\&. \fP"
+.ti -1c
+.RI "PictureBox \fBfindBox\fP (\fBIPreviewable\fP prev)"
+.br
+.RI "\fISearchs in the Panel for the important PictureBox and gives this box back\&. \fP"
+.ti -1c
+.RI "void \fBsetCurrentElement\fP (\fBIPreviewable\fP currentElement)"
+.br
+.RI "\fIsets the currentElement in EditorWindow an marks the PictureBox in the PreviewPanel\&. \fP"
+.ti -1c
+.RI "Bitmap \fBscaleIPreviewable\fP (\fBIPreviewable\fP prev)"
+.br
+.RI "\fIscales the Pictureboxes to their own scale size the size is in dependency to the scale, the sideScale of the images and and the scale of the augmentation\&. \fP"
+.ti -1c
+.RI "Bitmap \fBscaleBitmap\fP (Bitmap bit, int width, int height)"
+.br
+.RI "\fIscales the bitmap to the width & height which you want \fP"
+.ti -1c
+.RI "void \fBrescalePreviewPanel\fP ()"
+.br
+.RI "\fIRescales the preview panel if the size was changed\&. \fP"
+.ti -1c
+.RI "void \fBsetCoordinates\fP (\fBIPreviewable\fP prev, \fBVector3D\fP newV)"
+.br
+.RI "\fISet all needed Coordinates for the augmentation\&. \fP"
+.ti -1c
+.RI "void \fBupdateTranslation\fP ()"
+.br
+.RI "\fIThis updates the position of the currentElement-Picturebox\&. \fP"
+.ti -1c
+.RI "void \fBupdateElementCombobox\fP (\fBAbstractTrackable\fP t)"
+.br
+.RI "\fIUpdates the element combobox\&. \fP"
+.ti -1c
+.RI "void \fBrotateAugmentation\fP (\fBIPreviewable\fP currentElement)"
+.br
+.RI "\fIRotates the augmentation, after you've changed the Rotation\&.Z Vector\&. \fP"
+.ti -1c
+.RI "Bitmap \fBgetSizedBitmap\fP (\fBIPreviewable\fP currentElement)"
+.br
+.RI "\fIRefreshs the Augmentation with the new Scale\&. \fP"
+.ti -1c
+.RI "void \fBcopy_augmentation\fP (object sender, EventArgs e)"
+.br
+.RI "\fIEventHandler for copy function\&. copies the currentElement \fP"
+.ti -1c
+.RI "void \fBpaste_augmentation\fP (object sender, EventArgs e)"
+.br
+.RI "\fIEventHandler for paste function\&. paste the object at the current cursor position\&. \fP"
+.ti -1c
+.RI "void \fBpaste_augmentation_center\fP (object sender, EventArgs e)"
+.br
+.RI "\fIEventHandler for paste function\&. paste the object in the center of panel \fP"
+.ti -1c
+.RI "void \fBonAugmentationEnter\fP (object sender, DragEventArgs e)"
+.br
+.RI "\fIRaises the drag event when a source enters a augmentation\&. \fP"
+.ti -1c
+.RI "void \fBonAugmentationDrop\fP (object sender, DragEventArgs e)"
+.br
+.RI "\fIRaises the drag event when a source is droped on an augmentation\&. \fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBindex\fP"
+.br
+.RI "\fIThe Index which Trackable out of Project we musst use \fP"
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "\fBMetaCategory\fP \fBcurrentMetaCategory\fP\fC [get, set]\fP"
+.br
+.RI "\fIThe MetaCategory of the current element\&. \fP"
+.ti -1c
+.RI "\fBAbstractTrackable\fP \fBtrackable\fP\fC [get, set]\fP"
+.br
+.RI "\fIThe Trackable which hold the Augmentations and Sources\&. \fP"
+.ti -1c
+.RI "\fBAbstractAugmentation\fP \fBcopy\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the copy\&. \fP"
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PreviewController\&.PreviewController (\fBEditorWindow\fPew)"
+
+.PP
+Constructor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIew\fP EditorWindow Instanz\&. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void PreviewController\&.addPreviewAble (\fBIPreviewable\fPp)"
+
+.PP
+(This method is obsolete) adds a preview able\&. 
+.PP
+\fBExceptions:\fP
+.RS 4
+\fINotImplementedException\fP Thrown when the requested operation is unimplemented\&. 
+.RE
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIp\fP The Panel to process\&. 
+.RE
+.PP
+
+.SS "void PreviewController\&.addPreviewable (\fBIPreviewable\fPcurrentElement, \fBVector3D\fPv)"
+
+.PP
+add Trackable is the method for adding the trackable, each PreviewPanel can holding one Trackable\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcurrentElement\fP The current element\&.
+.br
+\fIv\fP The Vector3D to set the Trackable\&.
+.RE
+.PP
+
+.SS "void PreviewController\&.addSource (\fBAbstractSource\fPsource, \fBAbstractAugmentation\fPcurrentElement)"
+
+.PP
+add Source or augmentation, this method can only be used with the element, which is the over element by augmentation the overelement is Trackable\&. by Source the overelement is augmentation\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsource\fP The source\&.
+.br
+\fIcurrentElement\fP The current element\&.
+.RE
+.PP
+
+.SS "void PreviewController\&.copy_augmentation (objectsender, EventArgse)"
+
+.PP
+EventHandler for copy function\&. copies the currentElement 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsender\fP The source of the event\&.
+.br
+\fIe\fP The EventArgs instance containing the event data\&.
+.RE
+.PP
+
+.SS "PictureBox PreviewController\&.findBox (\fBIPreviewable\fPprev)"
+
+.PP
+Searchs in the Panel for the important PictureBox and gives this box back\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIprev\fP The previous\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+.RE
+.PP
+
+.SS "Bitmap PreviewController\&.getSizedBitmap (\fBIPreviewable\fPcurrentElement)"
+
+.PP
+Refreshs the Augmentation with the new Scale\&. 
+.SS "void PreviewController\&.onAugmentationDrop (objectsender, DragEventArgse)"
+
+.PP
+Raises the drag event when a source is droped on an augmentation\&. Robin, 19\&.01\&.2014\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsender\fP Source of the event\&. 
+.br
+\fIe\fP Event information to send to registered event handlers\&. 
+.RE
+.PP
+
+.SS "void PreviewController\&.onAugmentationEnter (objectsender, DragEventArgse)"
+
+.PP
+Raises the drag event when a source enters a augmentation\&. Robin, 19\&.01\&.2014\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsender\fP Source of the event\&. 
+.br
+\fIe\fP Event information to send to registered event handlers\&. 
+.RE
+.PP
+
+.SS "void PreviewController\&.paste_augmentation (objectsender, EventArgse)"
+
+.PP
+EventHandler for paste function\&. paste the object at the current cursor position\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsender\fP The source of the event\&.
+.br
+\fIe\fP The EventArgs instance containing the event data\&.
+.RE
+.PP
+
+.SS "void PreviewController\&.paste_augmentation_center (objectsender, EventArgse)"
+
+.PP
+EventHandler for paste function\&. paste the object in the center of panel 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsender\fP The source of the event\&.
+.br
+\fIe\fP The EventArgs instance containing the event data\&.
+.RE
+.PP
+
+.SS "void PreviewController\&.reloadPreviewable (\fBAbstractAugmentation\fPprev)"
+
+.PP
+Reloads a single previewable\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIprev\fP The previous\&.
+.RE
+.PP
+
+.SS "void PreviewController\&.reloadPreviewPanel (intindex)"
+
+.PP
+load the project with the identical index to the previewPanel (the index is the index of the trackable list in project) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP The index\&.
+.RE
+.PP
+
+.SS "void PreviewController\&.removePreviewable (\fBIPreviewable\fPcurrentElement)"
+
+.PP
+Removes the Previewable and the Objekt, what is linked to the Previewable\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcurrentElement\fP The current element\&.
+.RE
+.PP
+
+.SS "void PreviewController\&.removeSource (\fBAbstractSource\fPsource, \fBIPreviewable\fPcurrentElement)"
+
+.PP
+Removes the choosen Source out of the Augmentation and also out of the sourcesList in Project\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsource\fP The source\&.
+.br
+\fIcurrentElement\fP The current element\&.
+.RE
+.PP
+
+.SS "void PreviewController\&.rescalePreviewPanel ()"
+
+.PP
+Rescales the preview panel if the size was changed\&. 
+.SS "void PreviewController\&.rotateAugmentation (\fBIPreviewable\fPcurrentElement)"
+
+.PP
+Rotates the augmentation, after you've changed the Rotation\&.Z Vector\&. 
+.SS "Bitmap PreviewController\&.scaleBitmap (Bitmapbit, intwidth, intheight)"
+
+.PP
+scales the bitmap to the width & height which you want 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbit\fP The bit\&.
+.br
+\fIwidth\fP The width\&.
+.br
+\fIheight\fP The height\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+scaled bitmap
+.RE
+.PP
+
+.SS "Bitmap PreviewController\&.scaleIPreviewable (\fBIPreviewable\fPprev)"
+
+.PP
+scales the Pictureboxes to their own scale size the size is in dependency to the scale, the sideScale of the images and and the scale of the augmentation\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIprev\fP The previous\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+.RE
+.PP
+
+.SS "void PreviewController\&.setCoordinates (\fBIPreviewable\fPprev, \fBVector3D\fPnewV)"
+
+.PP
+Set all needed Coordinates for the augmentation\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIprev\fP The previous\&.
+.br
+\fInewV\fP The new v\&.
+.RE
+.PP
+
+.SS "void PreviewController\&.setCurrentElement (\fBIPreviewable\fPcurrentElement)"
+
+.PP
+sets the currentElement in EditorWindow an marks the PictureBox in the PreviewPanel\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcurrentElement\fP The current element\&.
+.RE
+.PP
+
+.SS "void PreviewController\&.updateElementCombobox (\fBAbstractTrackable\fPt)"
+
+.PP
+Updates the element combobox\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIt\fP The t\&.
+.RE
+.PP
+
+.SS "void PreviewController\&.updatePreviewPanel ()"
+
+.PP
+updates the preview panel\&. 
+.SS "void PreviewController\&.updateTranslation ()"
+
+.PP
+This updates the position of the currentElement-Picturebox\&. 
+.SH "Member Data Documentation"
+.PP 
+.SS "int PreviewController\&.index"
+
+.PP
+The Index which Trackable out of Project we musst use 
+.SH "Property Documentation"
+.PP 
+.SS "\fBAbstractAugmentation\fP PreviewController\&.copy\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the copy\&. The copy\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ARdevKit from the source code\&.

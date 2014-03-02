@@ -134,7 +134,6 @@ namespace ARdevKit.Model.Project
 
         public void RemoveAugmentation(AbstractAugmentation augmentation)
         {
-            augmentation.CleanUp();
             Augmentations.Remove(augmentation);
         }
 

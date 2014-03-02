@@ -72,6 +72,32 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
+        /// Full pathname of the source file.
+        /// </summary>
+        protected string sourceFilePath;
+
+        /// <summary>
+        /// Gets or sets the full pathname of the image file.
+        /// </summary>
+        /// <value>
+        /// The full pathname of the image file.
+        /// </value>
+        [CategoryAttribute("General"), EditorAttribute(typeof(FileSelectorTypeEditor),
+            typeof(System.Drawing.Design.UITypeEditor))]
+        public string SourceFilePath
+        {
+            get { return sourceFilePath; }
+            set
+            {
+                if (System.IO.File.Exists(value))
+                {
+                    sourceFilePath = value;
+                }
+
+            }
+        }
+
+        /// <summary>
         /// Initializes no new instance of the <see cref="Abstract2DAugmentation"/> class,
         /// but can be used in inheriting classes.
         /// sets <see cref="height" /> and <see cref="width" /> = 0

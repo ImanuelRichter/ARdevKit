@@ -50,10 +50,10 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceConnectionController"/> class. Uses UDPListener to 
+        /// Initializes a new instance of the <see cref="DeviceConnectionController" /> class. Uses UDPListener to
         /// get information about devices. Communicating via HTTP order to secure currency of connections and sending the zipped project.
         /// </summary>
-        /// <param name="ew">The ew.</param>
+        /// <param name="window">The window.</param>
         public DeviceConnectionController(Form window)
         {
             debugWindow = new View.DebugWindow(this);
@@ -64,6 +64,9 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
             refresh();
         } 
 
+        /// <summary>
+        /// Sends the broadcast.
+        /// </summary>
         private void sendBroadcast()
         {
             IPEndPoint broadcastAddress = new IPEndPoint(IPAddress.Broadcast, 12345);
@@ -71,6 +74,9 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
             udpClient.Send(broadcastmsg, broadcastmsg.Length, broadcastAddress);
         }
 
+        /// <summary>
+        /// Receives all queued responses.
+        /// </summary>
         private void receiveAllQueuedResponses()
         {
             IPEndPoint anyAddress = new IPEndPoint(IPAddress.Any, 12345);
@@ -138,7 +144,7 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
                 }
                 if (editorWindow.project.ProjectPath == null || editorWindow.project.ProjectPath.Length <= 0)
                 {
-                    ZipFile.CreateFromDirectory("tmp\\project", "tmp\\currentProject.zip");
+                ZipFile.CreateFromDirectory("tmp\\project", "tmp\\currentProject.zip");
                 }
                 else
                 {
@@ -204,7 +210,7 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
             string originalProjectPath = editorWindow.project.ProjectPath;
             if (editorWindow.project.ProjectPath == null || editorWindow.project.ProjectPath.Length <= 0)
             {
-                editorWindow.project.ProjectPath = "tmp\\project";
+            editorWindow.project.ProjectPath = "tmp\\project";
             }
             ARdevKit.Controller.ProjectController.ExportVisitor exporter = new ARdevKit.Controller.ProjectController.ExportVisitor();
             editorWindow.project.Accept(exporter);
@@ -246,7 +252,7 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
                         debugWindow.AppendText(ASCIIEncoding.ASCII.GetString(msg, 0, read) + "\n");
                     }
                     else
-                    {
+                {
                         Thread.Sleep(1000);
                     } 
                 }
@@ -281,6 +287,10 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
             return success;
         }
 
+        /// <summary>
+        /// Writes the exception to log.
+        /// </summary>
+        /// <param name="ex">The ex.</param>
         private void writeExceptionToLog(Exception ex)
         {
             FileStream log = File.Open("connectionDebugLog.txt", FileMode.Append | FileMode.OpenOrCreate, FileAccess.Write);

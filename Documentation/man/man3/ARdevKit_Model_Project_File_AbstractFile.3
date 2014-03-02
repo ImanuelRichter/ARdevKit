@@ -1,0 +1,106 @@
+.TH "ARdevKit.Model.Project.File.AbstractFile" 3 "Sat Mar 1 2014" "Version 0.2" "ARdevKit" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ARdevKit.Model.Project.File.AbstractFile \- 
+.PP
+An \fBAbstractFile\fP can be an \fBARELConfigFile\fP, an \fBARELProjectFile\fP, a TrackinDataFile or an \fBARELGlueFile\fP\&. It must have a \fBfilePath\fP and can have a header and consists of \fBAbstractBlock\fPs\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBARdevKit\&.Model\&.Project\&.File\&.ARELConfigFile\fP, \fBARdevKit\&.Model\&.Project\&.File\&.ARELGlueFile\fP, \fBARdevKit\&.Model\&.Project\&.File\&.ARELProjectFile\fP, \fBARdevKit\&.Model\&.Project\&.File\&.ChartFile\fP, and \fBARdevKit\&.Model\&.Project\&.File\&.TrackingDataFile\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBAddBlock\fP (\fBAbstractBlock\fP block)"
+.br
+.RI "\fIAdds an \fBAbstractBlock\fP\&. \fP"
+.ti -1c
+.RI "abstract void \fBSave\fP (string projectPath)"
+.br
+.RI "\fISaves the file to the using the passed projectPath\&. \fP"
+.ti -1c
+.RI "abstract void \fBSave\fP ()"
+.br
+.RI "\fISaves the file to its \fBfilePath\fP\&. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "string \fBfilePath\fP"
+.br
+.RI "\fIFull pathname of the file\&. \fP"
+.ti -1c
+.RI "List< \fBAbstractBlock\fP > \fBblocks\fP"
+.br
+.RI "\fIA list of the \fBAbstractBlock\fPs this file consists of\&. \fP"
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "string \fBFilePath\fP\fC [get]\fP"
+.br
+.RI "\fIGets the full pathname of the file\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+An \fBAbstractFile\fP can be an \fBARELConfigFile\fP, an \fBARELProjectFile\fP, a TrackinDataFile or an \fBARELGlueFile\fP\&. It must have a \fBfilePath\fP and can have a header and consists of \fBAbstractBlock\fPs\&. 
+
+Imanuel, 15\&.01\&.2014\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void ARdevKit\&.Model\&.Project\&.File\&.AbstractFile\&.AddBlock (\fBAbstractBlock\fPblock)\fC [virtual]\fP"
+
+.PP
+Adds an \fBAbstractBlock\fP\&. Imanuel, 15\&.01\&.2014\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIblock\fP The section to be added\&. 
+.RE
+.PP
+
+.SS "abstract void ARdevKit\&.Model\&.Project\&.File\&.AbstractFile\&.Save (stringprojectPath)\fC [pure virtual]\fP"
+
+.PP
+Saves the file to the using the passed projectPath\&. Imanuel, 15\&.01\&.2014\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIprojectPath\fP The project path to write\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBARdevKit\&.Model\&.Project\&.File\&.TrackingDataFile\fP, \fBARdevKit\&.Model\&.Project\&.File\&.ARELConfigFile\fP, \fBARdevKit\&.Model\&.Project\&.File\&.ARELProjectFile\fP, \fBARdevKit\&.Model\&.Project\&.File\&.ARELGlueFile\fP, and \fBARdevKit\&.Model\&.Project\&.File\&.ChartFile\fP\&.
+.SS "abstract void ARdevKit\&.Model\&.Project\&.File\&.AbstractFile\&.Save ()\fC [pure virtual]\fP"
+
+.PP
+Saves the file to its \fBfilePath\fP\&. Imanuel, 17\&.01\&.2014\&. 
+.PP
+Implemented in \fBARdevKit\&.Model\&.Project\&.File\&.TrackingDataFile\fP, \fBARdevKit\&.Model\&.Project\&.File\&.ARELConfigFile\fP, \fBARdevKit\&.Model\&.Project\&.File\&.ARELProjectFile\fP, \fBARdevKit\&.Model\&.Project\&.File\&.ARELGlueFile\fP, and \fBARdevKit\&.Model\&.Project\&.File\&.ChartFile\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "List<\fBAbstractBlock\fP> ARdevKit\&.Model\&.Project\&.File\&.AbstractFile\&.blocks\fC [protected]\fP"
+
+.PP
+A list of the \fBAbstractBlock\fPs this file consists of\&. The sections\&. 
+.SS "string ARdevKit\&.Model\&.Project\&.File\&.AbstractFile\&.filePath\fC [protected]\fP"
+
+.PP
+Full pathname of the file\&. 
+.SH "Property Documentation"
+.PP 
+.SS "string ARdevKit\&.Model\&.Project\&.File\&.AbstractFile\&.FilePath\fC [get]\fP"
+
+.PP
+Gets the full pathname of the file\&. The full pathname of the file\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ARdevKit from the source code\&.

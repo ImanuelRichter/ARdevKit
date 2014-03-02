@@ -1,0 +1,1463 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_preview_controller" kind="class" prot="public">
+    <compoundname>PreviewController</compoundname>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_preview_controller_1adf3c4a7bbd75ba87a843a3b56b0a04e2" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type><ref refid="namespace_a_rdev_kit_1_1_controller_1_1_editor_controller_1a304367964b3f3f5c115bb81e7b31d534" kindref="member">MetaCategory</ref></type>
+        <definition>MetaCategory PreviewController.currentMetaCategory</definition>
+        <argsstring></argsstring>
+        <name>currentMetaCategory</name>
+        <briefdescription>
+<para>The MetaCategory of the current element. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="22" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="22" bodyend="-1"/>
+        <referencedby refid="class_preview_controller_1a5d4e3df813540fd4ac0c74523f656fca" compoundref="_preview_controller_8cs" startline="1051" endline="1057">onAugmentationEnter</referencedby>
+        <referencedby refid="class_preview_controller_1a7bc01f6c09f310b7079a9754ec27e307" compoundref="_preview_controller_8cs" startline="1068" endline="1077">onAugmentationDrop</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_preview_controller_1a38df415628d33de07a741fd3d80f5647" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable" kindref="compound">AbstractTrackable</ref></type>
+        <definition>AbstractTrackable PreviewController.trackable</definition>
+        <argsstring></argsstring>
+        <name>trackable</name>
+        <briefdescription>
+<para>The Trackable which hold the Augmentations and Sources. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="28" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="28" bodyend="-1"/>
+        <referencedby refid="class_preview_controller_1aa43765e04846c1d954bf7e0c5b1cc279" compoundref="_preview_controller_8cs" startline="62" endline="73">PreviewController</referencedby>
+        <referencedby refid="class_preview_controller_1ae3d0ace09aed4464a7dd91764d1bb03e" compoundref="_preview_controller_8cs" startline="101" endline="166">addPreviewable</referencedby>
+        <referencedby refid="class_preview_controller_1aa4cc8c02192eb08afe244825d5796552" compoundref="_preview_controller_8cs" startline="175" endline="249">addSource</referencedby>
+        <referencedby refid="class_preview_controller_1a4fad890882bdd075b6ea97ebac62bff6" compoundref="_preview_controller_8cs" startline="257" endline="267">removeSource</referencedby>
+        <referencedby refid="class_preview_controller_1a73d864a5cea6519a889d70bffbfef8f9" compoundref="_preview_controller_8cs" startline="274" endline="294">removePreviewable</referencedby>
+        <referencedby refid="class_preview_controller_1a5dd2e4dfcb87bcb1b2290d4ea752db2c" compoundref="_preview_controller_8cs" startline="312" endline="321">updatePreviewPanel</referencedby>
+        <referencedby refid="class_preview_controller_1ab68e5dc968561b4a115576d84e363cb0" compoundref="_preview_controller_8cs" startline="328" endline="372">reloadPreviewPanel</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_preview_controller_1a3f44a88dd89aa311b734034de2f70417" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation" kindref="compound">AbstractAugmentation</ref></type>
+        <definition>AbstractAugmentation PreviewController.copy</definition>
+        <argsstring></argsstring>
+        <name>copy</name>
+        <briefdescription>
+<para>Gets or sets the copy. </para>        </briefdescription>
+        <detaileddescription>
+<para>The copy. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="54" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="54" bodyend="-1"/>
+        <referencedby refid="class_preview_controller_1a58e44b6e2acc62906bfc29eb6854ce32" compoundref="_preview_controller_8cs" startline="1018" endline="1029">paste_augmentation</referencedby>
+        <referencedby refid="class_preview_controller_1a5cc0d886165ca91677acadd895426af2" compoundref="_preview_controller_8cs" startline="1036" endline="1039">paste_augmentation_center</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_preview_controller_1a1753f5b1c7d08080cd666fda69d201c0" prot="private" static="no" mutable="no">
+        <type>Panel</type>
+        <definition>Panel PreviewController.panel</definition>
+        <argsstring></argsstring>
+        <name>panel</name>
+        <briefdescription>
+<para>The PreviewPanel which we need to add Previewables. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="33" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_preview_controller_1a8ee944c119de55efc51bba73afe16863" prot="private" static="no" mutable="no">
+        <type><ref refid="class_a_rdev_kit_1_1_editor_window" kindref="compound">EditorWindow</ref></type>
+        <definition>EditorWindow PreviewController.ew</definition>
+        <argsstring></argsstring>
+        <name>ew</name>
+        <briefdescription>
+<para>EditorWindow Instanz </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="38" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_preview_controller_1a3bda502796213aeefe9542eebfce9d8a" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double PreviewController.scale</definition>
+        <argsstring></argsstring>
+        <name>scale</name>
+        <briefdescription>
+<para>The scale of the previewPanel. we need this to scale the distance and the size of the elements. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="46" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_preview_controller_1a9b9691005cc484c0da1d7498e72b8e7f" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int PreviewController.index</definition>
+        <argsstring></argsstring>
+        <name>index</name>
+        <briefdescription>
+<para>The Index which Trackable out of Project we musst use </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="41" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="41" bodyend="-1"/>
+        <referencedby refid="class_preview_controller_1ae3d0ace09aed4464a7dd91764d1bb03e" compoundref="_preview_controller_8cs" startline="101" endline="166">addPreviewable</referencedby>
+        <referencedby refid="class_preview_controller_1ab68e5dc968561b4a115576d84e363cb0" compoundref="_preview_controller_8cs" startline="328" endline="372">reloadPreviewPanel</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_preview_controller_1aa43765e04846c1d954bf7e0c5b1cc279" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>PreviewController.PreviewController</definition>
+        <argsstring>(EditorWindow ew)</argsstring>
+        <name>PreviewController</name>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_editor_window" kindref="compound">EditorWindow</ref></type>
+          <declname>ew</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ew</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>EditorWindow Instanz. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="62" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="62" bodyend="73"/>
+        <references refid="class_preview_controller_1a38df415628d33de07a741fd3d80f5647" compoundref="_preview_controller_8cs" startline="28">trackable</references>
+      </memberdef>
+      <memberdef kind="function" id="class_preview_controller_1a87e93818ed39df3e7accac5999a85d21" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PreviewController.addPreviewAble</definition>
+        <argsstring>(IPreviewable p)</argsstring>
+        <name>addPreviewAble</name>
+        <param>
+          <type><ref refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable" kindref="compound">IPreviewable</ref></type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+<para>(This method is obsolete) adds a preview able. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>NotImplementedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when the requested operation is unimplemented. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Panel to process. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="89" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="89" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="class_preview_controller_1ae3d0ace09aed4464a7dd91764d1bb03e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PreviewController.addPreviewable</definition>
+        <argsstring>(IPreviewable currentElement, Vector3D v)</argsstring>
+        <name>addPreviewable</name>
+        <param>
+          <type><ref refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable" kindref="compound">IPreviewable</ref></type>
+          <declname>currentElement</declname>
+        </param>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d" kindref="compound">Vector3D</ref></type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+<para>add Trackable is the method for adding the trackable, each PreviewPanel can holding one Trackable. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>currentElement</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current element.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Vector3D to set the Trackable.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="101" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="101" bodyend="166"/>
+        <references refid="class_preview_controller_1a38df415628d33de07a741fd3d80f5647" compoundref="_preview_controller_8cs" startline="28">trackable</references>
+        <references refid="class_a_rdev_kit_1_1_editor_window_1aa7e64c912e3d904fae0ec52588be0baa" compoundref="_editor_window_8cs" startline="138">ARdevKit.EditorWindow.project</references>
+        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1abb0710a1f1cd83bda71a0c988e9b6d72" compoundref="_project_8cs" startline="255" endline="282">ARdevKit.Model.Project.Project.existTrackable</references>
+        <references refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_category_1a0f33148739c409a2fe2210c4e3ece165" compoundref="_scene_element_category_8cs" startline="64">ARdevKit.Controller.EditorController.SceneElementCategory.Name</references>
+        <references refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_category_1a6e7b2d628b8ea21c13b6f4533a26c7ba" compoundref="_scene_element_category_8cs" startline="84">ARdevKit.Controller.EditorController.SceneElementCategory.SceneElements</references>
+        <references refid="class_preview_controller_1a9b9691005cc484c0da1d7498e72b8e7f" compoundref="_preview_controller_8cs" startline="41">index</references>
+        <references refid="class_preview_controller_1ae5cb0828e43829a516a998407d6f8a1a" compoundref="_preview_controller_8cs" startline="516" endline="572">setCurrentElement</references>
+        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1af3d7540cfeabb22ce7290378d7039a76" compoundref="_project_8cs" startline="118">ARdevKit.Model.Project.Project.Trackables</references>
+      </memberdef>
+      <memberdef kind="function" id="class_preview_controller_1aa4cc8c02192eb08afe244825d5796552" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PreviewController.addSource</definition>
+        <argsstring>(AbstractSource source, AbstractAugmentation currentElement)</argsstring>
+        <name>addSource</name>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source" kindref="compound">AbstractSource</ref></type>
+          <declname>source</declname>
+        </param>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation" kindref="compound">AbstractAugmentation</ref></type>
+          <declname>currentElement</declname>
+        </param>
+        <briefdescription>
+<para>add Source or augmentation, this method can only be used with the element, which is the over element by augmentation the overelement is Trackable. by Source the overelement is augmentation. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>source</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The source.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>currentElement</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current element.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="175" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="175" bodyend="249"/>
+        <references refid="class_preview_controller_1a38df415628d33de07a741fd3d80f5647" compoundref="_preview_controller_8cs" startline="28">trackable</references>
+        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1ac5dfdc39c3e7ad91ca9156208278b108" compoundref="_abstract_trackable_8cs" startline="115" endline="125">ARdevKit.Model.Project.AbstractTrackable.existAugmentation</references>
+        <references refid="class_preview_controller_1a4ab1b4464e39eeb347554fc69f0dd38b" compoundref="_preview_controller_8cs" startline="487" endline="510">findBox</references>
+        <references refid="class_preview_controller_1ae33fd4d13286e22a819f5a6cd5de292f" compoundref="_preview_controller_8cs" startline="817" endline="839">updateElementCombobox</references>
+        <referencedby refid="class_preview_controller_1a7bc01f6c09f310b7079a9754ec27e307" compoundref="_preview_controller_8cs" startline="1068" endline="1077">onAugmentationDrop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_preview_controller_1a4fad890882bdd075b6ea97ebac62bff6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PreviewController.removeSource</definition>
+        <argsstring>(AbstractSource source, IPreviewable currentElement)</argsstring>
+        <name>removeSource</name>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source" kindref="compound">AbstractSource</ref></type>
+          <declname>source</declname>
+        </param>
+        <param>
+          <type><ref refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable" kindref="compound">IPreviewable</ref></type>
+          <declname>currentElement</declname>
+        </param>
+        <briefdescription>
+<para>Removes the choosen Source out of the Augmentation and also out of the sourcesList in Project. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>source</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The source.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>currentElement</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current element.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="257" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="257" bodyend="267"/>
+        <references refid="class_preview_controller_1a22b51f7117d79a44defe07c627e52982" compoundref="_preview_controller_8cs" startline="867" endline="900">getSizedBitmap</references>
+        <references refid="class_preview_controller_1ae33fd4d13286e22a819f5a6cd5de292f" compoundref="_preview_controller_8cs" startline="817" endline="839">updateElementCombobox</references>
+        <references refid="class_preview_controller_1a38df415628d33de07a741fd3d80f5647" compoundref="_preview_controller_8cs" startline="28">trackable</references>
+      </memberdef>
+      <memberdef kind="function" id="class_preview_controller_1a73d864a5cea6519a889d70bffbfef8f9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PreviewController.removePreviewable</definition>
+        <argsstring>(IPreviewable currentElement)</argsstring>
+        <name>removePreviewable</name>
+        <param>
+          <type><ref refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable" kindref="compound">IPreviewable</ref></type>
+          <declname>currentElement</declname>
+        </param>
+        <briefdescription>
+<para>Removes the Previewable and the Objekt, what is linked to the Previewable. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>currentElement</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current element.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="274" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="274" bodyend="294"/>
+        <references refid="class_preview_controller_1a38df415628d33de07a741fd3d80f5647" compoundref="_preview_controller_8cs" startline="28">trackable</references>
+        <references refid="class_a_rdev_kit_1_1_editor_window_1aa7e64c912e3d904fae0ec52588be0baa" compoundref="_editor_window_8cs" startline="138">ARdevKit.EditorWindow.project</references>
+        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a97efde65dc462b98448edd6967f9e777" compoundref="_project_8cs" startline="218" endline="228">ARdevKit.Model.Project.Project.hasTrackable</references>
+        <references refid="class_preview_controller_1ae33fd4d13286e22a819f5a6cd5de292f" compoundref="_preview_controller_8cs" startline="817" endline="839">updateElementCombobox</references>
+      </memberdef>
+      <memberdef kind="function" id="class_preview_controller_1a5dd2e4dfcb87bcb1b2290d4ea752db2c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PreviewController.updatePreviewPanel</definition>
+        <argsstring>()</argsstring>
+        <name>updatePreviewPanel</name>
+        <briefdescription>
+<para>updates the preview panel. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="312" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="312" bodyend="321"/>
+        <references refid="class_preview_controller_1a38df415628d33de07a741fd3d80f5647" compoundref="_preview_controller_8cs" startline="28">trackable</references>
+        <references refid="class_preview_controller_1ae33fd4d13286e22a819f5a6cd5de292f" compoundref="_preview_controller_8cs" startline="817" endline="839">updateElementCombobox</references>
+        <references refid="class_preview_controller_1a58e44b6e2acc62906bfc29eb6854ce32" compoundref="_preview_controller_8cs" startline="1018" endline="1029">paste_augmentation</references>
+      </memberdef>
+      <memberdef kind="function" id="class_preview_controller_1ab68e5dc968561b4a115576d84e363cb0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PreviewController.reloadPreviewPanel</definition>
+        <argsstring>(int index)</argsstring>
+        <name>reloadPreviewPanel</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>load the project with the identical index to the previewPanel (the index is the index of the trackable list in project) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="328" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="328" bodyend="372"/>
+        <references refid="class_a_rdev_kit_1_1_editor_window_1aa7e64c912e3d904fae0ec52588be0baa" compoundref="_editor_window_8cs" startline="138">ARdevKit.EditorWindow.project</references>
+        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1af3d7540cfeabb22ce7290378d7039a76" compoundref="_project_8cs" startline="118">ARdevKit.Model.Project.Project.Trackables</references>
+        <references refid="class_preview_controller_1a9b9691005cc484c0da1d7498e72b8e7f" compoundref="_preview_controller_8cs" startline="41">index</references>
+        <references refid="class_preview_controller_1a38df415628d33de07a741fd3d80f5647" compoundref="_preview_controller_8cs" startline="28">trackable</references>
+        <references refid="class_preview_controller_1ae33fd4d13286e22a819f5a6cd5de292f" compoundref="_preview_controller_8cs" startline="817" endline="839">updateElementCombobox</references>
+      </memberdef>
+      <memberdef kind="function" id="class_preview_controller_1a497bb0aabb76d17df7d090fd0b8daac5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PreviewController.reloadPreviewable</definition>
+        <argsstring>(AbstractAugmentation prev)</argsstring>
+        <name>reloadPreviewable</name>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation" kindref="compound">AbstractAugmentation</ref></type>
+          <declname>prev</declname>
+        </param>
+        <briefdescription>
+<para>Reloads a single previewable. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>prev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The previous.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="408" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="408" bodyend="424"/>
+      </memberdef>
+      <memberdef kind="function" id="class_preview_controller_1a4ab1b4464e39eeb347554fc69f0dd38b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>PictureBox</type>
+        <definition>PictureBox PreviewController.findBox</definition>
+        <argsstring>(IPreviewable prev)</argsstring>
+        <name>findBox</name>
+        <param>
+          <type><ref refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable" kindref="compound">IPreviewable</ref></type>
+          <declname>prev</declname>
+        </param>
+        <briefdescription>
+<para>Searchs in the Panel for the important PictureBox and gives this box back. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>prev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The previous.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="487" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="487" bodyend="510"/>
+        <referencedby refid="class_preview_controller_1aa4cc8c02192eb08afe244825d5796552" compoundref="_preview_controller_8cs" startline="175" endline="249">addSource</referencedby>
+        <referencedby refid="class_preview_controller_1ae5cb0828e43829a516a998407d6f8a1a" compoundref="_preview_controller_8cs" startline="516" endline="572">setCurrentElement</referencedby>
+        <referencedby refid="class_preview_controller_1af14f36a06e16003c0cc11188024521c7" compoundref="_preview_controller_8cs" startline="797" endline="810">updateTranslation</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_preview_controller_1ae5cb0828e43829a516a998407d6f8a1a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PreviewController.setCurrentElement</definition>
+        <argsstring>(IPreviewable currentElement)</argsstring>
+        <name>setCurrentElement</name>
+        <param>
+          <type><ref refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable" kindref="compound">IPreviewable</ref></type>
+          <declname>currentElement</declname>
+        </param>
+        <briefdescription>
+<para>sets the currentElement in EditorWindow an marks the PictureBox in the PreviewPanel. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>currentElement</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current element.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="516" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="516" bodyend="572"/>
+        <references refid="class_preview_controller_1a4ab1b4464e39eeb347554fc69f0dd38b" compoundref="_preview_controller_8cs" startline="487" endline="510">findBox</references>
+        <references refid="class_preview_controller_1ae33fd4d13286e22a819f5a6cd5de292f" compoundref="_preview_controller_8cs" startline="817" endline="839">updateElementCombobox</references>
+        <referencedby refid="class_preview_controller_1ae3d0ace09aed4464a7dd91764d1bb03e" compoundref="_preview_controller_8cs" startline="101" endline="166">addPreviewable</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_preview_controller_1a3e156e717573c15c3ef9a3baada91085" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Bitmap</type>
+        <definition>Bitmap PreviewController.scaleIPreviewable</definition>
+        <argsstring>(IPreviewable prev)</argsstring>
+        <name>scaleIPreviewable</name>
+        <param>
+          <type><ref refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable" kindref="compound">IPreviewable</ref></type>
+          <declname>prev</declname>
+        </param>
+        <briefdescription>
+<para>scales the Pictureboxes to their own scale size the size is in dependency to the scale, the sideScale of the images and and the scale of the augmentation. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>prev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The previous.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="631" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="631" bodyend="716"/>
+      </memberdef>
+      <memberdef kind="function" id="class_preview_controller_1a0013a78d729579e06c50551e87350091" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Bitmap</type>
+        <definition>Bitmap PreviewController.scaleBitmap</definition>
+        <argsstring>(Bitmap bit, int width, int height)</argsstring>
+        <name>scaleBitmap</name>
+        <param>
+          <type>Bitmap</type>
+          <declname>bit</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+<para>scales the bitmap to the width &amp; height which you want </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>bit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bit.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The width.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The height.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>scaled bitmap</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="725" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="725" bodyend="737"/>
+      </memberdef>
+      <memberdef kind="function" id="class_preview_controller_1a03acb2816496e20b416346aeff126b04" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PreviewController.rescalePreviewPanel</definition>
+        <argsstring>()</argsstring>
+        <name>rescalePreviewPanel</name>
+        <briefdescription>
+<para>Rescales the preview panel if the size was changed. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="743" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="743" bodyend="766"/>
+        <references refid="class_a_rdev_kit_1_1_editor_window_1aa7e64c912e3d904fae0ec52588be0baa" compoundref="_editor_window_8cs" startline="138">ARdevKit.EditorWindow.project</references>
+        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1af3d7540cfeabb22ce7290378d7039a76" compoundref="_project_8cs" startline="118">ARdevKit.Model.Project.Project.Trackables</references>
+        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a999faeee63dee9445e8617d539c5b8d9" compoundref="_abstract_trackable_8cs" startline="85">ARdevKit.Model.Project.AbstractTrackable.Augmentations</references>
+      </memberdef>
+      <memberdef kind="function" id="class_preview_controller_1a3b909b7f753ee543cbf42dfdb9a0316f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PreviewController.setCoordinates</definition>
+        <argsstring>(IPreviewable prev, Vector3D newV)</argsstring>
+        <name>setCoordinates</name>
+        <param>
+          <type><ref refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable" kindref="compound">IPreviewable</ref></type>
+          <declname>prev</declname>
+        </param>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d" kindref="compound">Vector3D</ref></type>
+          <declname>newV</declname>
+        </param>
+        <briefdescription>
+<para>Set all needed Coordinates for the augmentation. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>prev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The previous.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>newV</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new v.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="773" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="773" bodyend="792"/>
+        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d_1a06336e90ebe41a0d704d7fb968c3eab8" compoundref="_vector3_d_8cs" startline="25">ARdevKit.Model.Project.Vector3D.X</references>
+        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d_1aaa8679d7364c8f6ba03e89bd00f5b991" compoundref="_vector3_d_8cs" startline="33">ARdevKit.Model.Project.Vector3D.Y</references>
+      </memberdef>
+      <memberdef kind="function" id="class_preview_controller_1af14f36a06e16003c0cc11188024521c7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PreviewController.updateTranslation</definition>
+        <argsstring>()</argsstring>
+        <name>updateTranslation</name>
+        <briefdescription>
+<para>This updates the position of the currentElement-Picturebox. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="797" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="797" bodyend="810"/>
+        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a8ed7943a2eb75682addda8731bff6c34" compoundref="_abstract_augmentation_8cs" startline="88">ARdevKit.Model.Project.AbstractAugmentation.Translation</references>
+        <references refid="class_preview_controller_1a4ab1b4464e39eeb347554fc69f0dd38b" compoundref="_preview_controller_8cs" startline="487" endline="510">findBox</references>
+      </memberdef>
+      <memberdef kind="function" id="class_preview_controller_1ae33fd4d13286e22a819f5a6cd5de292f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PreviewController.updateElementCombobox</definition>
+        <argsstring>(AbstractTrackable t)</argsstring>
+        <name>updateElementCombobox</name>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable" kindref="compound">AbstractTrackable</ref></type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>Updates the element combobox. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The t.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="817" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="817" bodyend="839"/>
+        <references refid="class_a_rdev_kit_1_1_editor_window_1a7a5f59a2277ea660f5ac354ed6563931" compoundref="_editor_window_8designer_8cs" startline="626">ARdevKit.EditorWindow.Cmb_editor_properties_objectSelection</references>
+        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a999faeee63dee9445e8617d539c5b8d9" compoundref="_abstract_trackable_8cs" startline="85">ARdevKit.Model.Project.AbstractTrackable.Augmentations</references>
+        <references refid="class_a_rdev_kit_1_1_editor_window_1aa7e64c912e3d904fae0ec52588be0baa" compoundref="_editor_window_8cs" startline="138">ARdevKit.EditorWindow.project</references>
+        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1ade6d1eebeab2acee826e2ddf22724fb5" compoundref="_project_8cs" startline="102">ARdevKit.Model.Project.Project.Sources</references>
+        <referencedby refid="class_preview_controller_1aa4cc8c02192eb08afe244825d5796552" compoundref="_preview_controller_8cs" startline="175" endline="249">addSource</referencedby>
+        <referencedby refid="class_preview_controller_1a4fad890882bdd075b6ea97ebac62bff6" compoundref="_preview_controller_8cs" startline="257" endline="267">removeSource</referencedby>
+        <referencedby refid="class_preview_controller_1a73d864a5cea6519a889d70bffbfef8f9" compoundref="_preview_controller_8cs" startline="274" endline="294">removePreviewable</referencedby>
+        <referencedby refid="class_preview_controller_1a5dd2e4dfcb87bcb1b2290d4ea752db2c" compoundref="_preview_controller_8cs" startline="312" endline="321">updatePreviewPanel</referencedby>
+        <referencedby refid="class_preview_controller_1ab68e5dc968561b4a115576d84e363cb0" compoundref="_preview_controller_8cs" startline="328" endline="372">reloadPreviewPanel</referencedby>
+        <referencedby refid="class_preview_controller_1ae5cb0828e43829a516a998407d6f8a1a" compoundref="_preview_controller_8cs" startline="516" endline="572">setCurrentElement</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_preview_controller_1ae491c6460dec4eba08e93a12044edf8c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PreviewController.rotateAugmentation</definition>
+        <argsstring>(IPreviewable currentElement)</argsstring>
+        <name>rotateAugmentation</name>
+        <param>
+          <type><ref refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable" kindref="compound">IPreviewable</ref></type>
+          <declname>currentElement</declname>
+        </param>
+        <briefdescription>
+<para>Rotates the augmentation, after you&apos;ve changed the Rotation.Z Vector. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="844" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="844" bodyend="862"/>
+      </memberdef>
+      <memberdef kind="function" id="class_preview_controller_1a22b51f7117d79a44defe07c627e52982" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Bitmap</type>
+        <definition>Bitmap PreviewController.getSizedBitmap</definition>
+        <argsstring>(IPreviewable currentElement)</argsstring>
+        <name>getSizedBitmap</name>
+        <param>
+          <type><ref refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable" kindref="compound">IPreviewable</ref></type>
+          <declname>currentElement</declname>
+        </param>
+        <briefdescription>
+<para>Refreshs the Augmentation with the new Scale. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="867" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="867" bodyend="900"/>
+        <references refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable_1a7cbcbb20929f4f1b6db3321ed2e83070">ARdevKit.Model.Project.IPreviewable.getPreview</references>
+        <referencedby refid="class_preview_controller_1a4fad890882bdd075b6ea97ebac62bff6" compoundref="_preview_controller_8cs" startline="257" endline="267">removeSource</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_preview_controller_1a3ee38c7b2e1a69fbe823b8092c2d6c86" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PreviewController.copy_augmentation</definition>
+        <argsstring>(object sender, EventArgs e)</argsstring>
+        <name>copy_augmentation</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>EventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>EventHandler for copy function. copies the currentElement </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The source of the event.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The EventArgs instance containing the event data.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="1003" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="1003" bodyend="1012"/>
+      </memberdef>
+      <memberdef kind="function" id="class_preview_controller_1a58e44b6e2acc62906bfc29eb6854ce32" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PreviewController.paste_augmentation</definition>
+        <argsstring>(object sender, EventArgs e)</argsstring>
+        <name>paste_augmentation</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>EventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>EventHandler for paste function. paste the object at the current cursor position. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The source of the event.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The EventArgs instance containing the event data.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="1018" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="1018" bodyend="1029"/>
+        <references refid="class_preview_controller_1a3f44a88dd89aa311b734034de2f70417" compoundref="_preview_controller_8cs" startline="54">copy</references>
+        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a184416a3d47e35d58bb7f5bb6ce2e269">ARdevKit.Model.Project.AbstractAugmentation.Clone</references>
+        <referencedby refid="class_preview_controller_1a5dd2e4dfcb87bcb1b2290d4ea752db2c" compoundref="_preview_controller_8cs" startline="312" endline="321">updatePreviewPanel</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_preview_controller_1a5cc0d886165ca91677acadd895426af2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PreviewController.paste_augmentation_center</definition>
+        <argsstring>(object sender, EventArgs e)</argsstring>
+        <name>paste_augmentation_center</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>EventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>EventHandler for paste function. paste the object in the center of panel </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The source of the event.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The EventArgs instance containing the event data.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="1036" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="1036" bodyend="1039"/>
+        <references refid="class_preview_controller_1a3f44a88dd89aa311b734034de2f70417" compoundref="_preview_controller_8cs" startline="54">copy</references>
+        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a184416a3d47e35d58bb7f5bb6ce2e269">ARdevKit.Model.Project.AbstractAugmentation.Clone</references>
+      </memberdef>
+      <memberdef kind="function" id="class_preview_controller_1a5d4e3df813540fd4ac0c74523f656fca" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PreviewController.onAugmentationEnter</definition>
+        <argsstring>(object sender, DragEventArgs e)</argsstring>
+        <name>onAugmentationEnter</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>DragEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Raises the drag event when a source enters a augmentation. </para>        </briefdescription>
+        <detaileddescription>
+<para>Robin, 19.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Source of the event. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Event information to send to registered event handlers. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="1051" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="1051" bodyend="1057"/>
+        <references refid="class_preview_controller_1adf3c4a7bbd75ba87a843a3b56b0a04e2" compoundref="_preview_controller_8cs" startline="22">currentMetaCategory</references>
+      </memberdef>
+      <memberdef kind="function" id="class_preview_controller_1a7bc01f6c09f310b7079a9754ec27e307" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PreviewController.onAugmentationDrop</definition>
+        <argsstring>(object sender, DragEventArgs e)</argsstring>
+        <name>onAugmentationDrop</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>DragEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Raises the drag event when a source is droped on an augmentation. </para>        </briefdescription>
+        <detaileddescription>
+<para>Robin, 19.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Source of the event. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Event information to send to registered event handlers. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="1068" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="1068" bodyend="1077"/>
+        <references refid="class_preview_controller_1adf3c4a7bbd75ba87a843a3b56b0a04e2" compoundref="_preview_controller_8cs" startline="22">currentMetaCategory</references>
+        <references refid="class_a_rdev_kit_1_1_view_1_1_element_icon_1a5d4cda78ae958d4acc7be292e6c0d99e" compoundref="_element_icon_8cs" startline="32">ARdevKit.View.ElementIcon.Element</references>
+        <references refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_1a03fd9bd9f7ca766c534b7c6400006a55" compoundref="_scene_element_8cs" startline="35">ARdevKit.Controller.EditorController.SceneElement.Prototype</references>
+        <references refid="class_preview_controller_1aa4cc8c02192eb08afe244825d5796552" compoundref="_preview_controller_8cs" startline="175" endline="249">addSource</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_preview_controller_1ab6c7c86b7631e5ee1a4c9384b87a5dfa" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PreviewController.removeAll</definition>
+        <argsstring>()</argsstring>
+        <name>removeAll</name>
+        <briefdescription>
+<para>Removes all Elements from the PreviewPanel and clears all references and delete the trackable from the list. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="300" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="300" bodyend="306"/>
+      </memberdef>
+      <memberdef kind="function" id="class_preview_controller_1a32a2795234c182705bb1109f6b9cdc1a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PreviewController.addAllToPanel</definition>
+        <argsstring>(AbstractTrackable trackable)</argsstring>
+        <name>addAllToPanel</name>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable" kindref="compound">AbstractTrackable</ref></type>
+          <declname>trackable</declname>
+        </param>
+        <briefdescription>
+<para>Add all existent Objects of the trackable in the Panel, this funktion is exists for change the trackable. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>trackable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The trackable.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="379" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="379" bodyend="402"/>
+      </memberdef>
+      <memberdef kind="function" id="class_preview_controller_1a5c8d3be941dc6f819ff6d91a8a7091c2" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PreviewController.addPictureBox</definition>
+        <argsstring>(IPreviewable prev, Vector3D vector)</argsstring>
+        <name>addPictureBox</name>
+        <param>
+          <type><ref refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable" kindref="compound">IPreviewable</ref></type>
+          <declname>prev</declname>
+        </param>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d" kindref="compound">Vector3D</ref></type>
+          <declname>vector</declname>
+        </param>
+        <briefdescription>
+<para>Adds a PictureBox with for the currentElement to the aktuell Scene. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>prev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The previous.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>vector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="432" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="432" bodyend="480"/>
+      </memberdef>
+      <memberdef kind="function" id="class_preview_controller_1aedcb3499d45104732169128b8fdc5fc2" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PreviewController.setSourcePreview</definition>
+        <argsstring>(IPreviewable currentElement)</argsstring>
+        <name>setSourcePreview</name>
+        <param>
+          <type><ref refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable" kindref="compound">IPreviewable</ref></type>
+          <declname>currentElement</declname>
+        </param>
+        <briefdescription>
+<para>set the PictureBox of the Augmentation to a augmentationPreview with source icon this is only able when the Augmentation is a Chart (all other Augmentations accepts no Source) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>currentElement</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current element.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="578" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="578" bodyend="603"/>
+      </memberdef>
+      <memberdef kind="function" id="class_preview_controller_1a56e09e0ef66907b9915e64bd88b6c21d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d" kindref="compound">Vector3D</ref></type>
+        <definition>Vector3D PreviewController.recalculateVector</definition>
+        <argsstring>(Vector3D v)</argsstring>
+        <name>recalculateVector</name>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d" kindref="compound">Vector3D</ref></type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+<para>Recalculates the vector in dependency to panel. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The v.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the new Vector in dependency to the panel</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="609" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="609" bodyend="615"/>
+      </memberdef>
+      <memberdef kind="function" id="class_preview_controller_1a23d02dcb2c8a3cf7937e419928076aee" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d" kindref="compound">Vector3D</ref></type>
+        <definition>Vector3D PreviewController.recalculateChartVector</definition>
+        <argsstring>(Vector3D v)</argsstring>
+        <name>recalculateChartVector</name>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d" kindref="compound">Vector3D</ref></type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="617" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="617" bodyend="623"/>
+      </memberdef>
+      <memberdef kind="function" id="class_preview_controller_1a1e1d3f2f9e67fe21a4a4822eb92eb188" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PreviewController.selectElement</definition>
+        <argsstring>(object sender, MouseEventArgs e)</argsstring>
+        <name>selectElement</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>MouseEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Select element (Event). </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Source of the event.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Mouse event information.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="912" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="912" bodyend="919"/>
+      </memberdef>
+      <memberdef kind="function" id="class_preview_controller_1a11fda2d15a12799b9d60da0752527e5a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PreviewController.controlMouseMove</definition>
+        <argsstring>(object sender, MouseEventArgs e)</argsstring>
+        <name>controlMouseMove</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>MouseEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Event to move a object of type Control. Also updates x/y coord in the Tag of the control. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Source of the event.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Mouse event information.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="927" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="927" bodyend="948"/>
+      </memberdef>
+      <memberdef kind="function" id="class_preview_controller_1a46df737d070e134581dcf9b81510fd9c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PreviewController.remove_by_click</definition>
+        <argsstring>(object sender, EventArgs e)</argsstring>
+        <name>remove_by_click</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>EventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Event handler. removes the current object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The source of the event.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The EventArgs instance containing the event data.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="955" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="955" bodyend="960"/>
+      </memberdef>
+      <memberdef kind="function" id="class_preview_controller_1a53d7af61cdfc903f1eacf7e1c38d09ac" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PreviewController.show_source_by_click</definition>
+        <argsstring>(object sender, EventArgs e)</argsstring>
+        <name>show_source_by_click</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>EventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Event handler. Shows Source in PropertyGrid when you want this. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The source of the event.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The EventArgs instance containing the event data.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="968" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="968" bodyend="971"/>
+      </memberdef>
+      <memberdef kind="function" id="class_preview_controller_1a25f87734dca1642d1c1d88eb79f861c8" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PreviewController.remove_source_by_click</definition>
+        <argsstring>(object sender, EventArgs e)</argsstring>
+        <name>remove_source_by_click</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>EventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Event handler. Removes the source of the augmentation and the contextmenuentries of this augmentation. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The source of the event.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The EventArgs instance containing the event data.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="980" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="980" bodyend="996"/>
+      </memberdef>
+      <memberdef kind="function" id="class_preview_controller_1a53e52be55583abca49990e61b3517816" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PreviewController.popupContextMenu</definition>
+        <argsstring>(object sender, EventArgs e)</argsstring>
+        <name>popupContextMenu</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>EventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>EventHandler for Action before the ContextMenu is open. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The sender.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The EventArgs instance containing the event data.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="1084" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="1084" bodyend="1088"/>
+      </memberdef>
+      <memberdef kind="function" id="class_preview_controller_1a2435fce8fcbd17da3858e58746fde3ba" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PreviewController.openQueryFile</definition>
+        <argsstring>(object sender, EventArgs e)</argsstring>
+        <name>openQueryFile</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>EventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>EventHandler to open the Query in the Editor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The sender.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The EventArgs instance containing the event data.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="1095" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="1095" bodyend="1099"/>
+      </memberdef>
+      <memberdef kind="function" id="class_preview_controller_1a399716efd5533a7669b149f0277b842e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PreviewController.openSourceFile</definition>
+        <argsstring>(object sender, EventArgs e)</argsstring>
+        <name>openSourceFile</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>EventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>EventHandler to open the SourceFile in the Editor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The sender.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The EventArgs instance containing the event data.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="1106" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="1106" bodyend="1110"/>
+      </memberdef>
+      <memberdef kind="function" id="class_preview_controller_1ae3a2972ffedfb97510c1c7d6c6e7f5da" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PreviewController.openOptionsFile</definition>
+        <argsstring>(object sender, EventArgs e)</argsstring>
+        <name>openOptionsFile</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>EventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>EventHandler to open the Options in the Editor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The sender.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The EventArgs instance containing the event data.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="1117" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="1117" bodyend="1121"/>
+      </memberdef>
+      <memberdef kind="function" id="class_preview_controller_1a3bf96e43c3c2796464832faeda70defd" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PreviewController.openArelScript</definition>
+        <argsstring>(object sender, EventArgs e)</argsstring>
+        <name>openArelScript</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>EventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>EventHandle to open the AREL (customUserEvent) Script in the TextEditor </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The sender</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The EventArgs instance containing the event data.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="1128" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="1128" bodyend="1134"/>
+      </memberdef>
+      <memberdef kind="function" id="class_preview_controller_1ad2e214de18132be37e30b10e82af1c3b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PreviewController.delete_current_element</definition>
+        <argsstring>(object sender, EventArgs e)</argsstring>
+        <name>delete_current_element</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>EventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>EventHandler to delete the PictureBox of the currentElement from the Panel. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The source of the event.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The EventArgs instance containing the event data.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="1141" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="1141" bodyend="1144"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="688">
+        <label>PreviewController</label>
+        <link refid="class_preview_controller"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" line="18" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/PreviewController.cs" bodystart="17" bodyend="1145"/>
+    <listofallmembers>
+      <member refid="class_preview_controller_1a32a2795234c182705bb1109f6b9cdc1a" prot="private" virt="non-virtual"><scope>PreviewController</scope><name>addAllToPanel</name></member>
+      <member refid="class_preview_controller_1a5c8d3be941dc6f819ff6d91a8a7091c2" prot="private" virt="non-virtual"><scope>PreviewController</scope><name>addPictureBox</name></member>
+      <member refid="class_preview_controller_1a87e93818ed39df3e7accac5999a85d21" prot="public" virt="non-virtual"><scope>PreviewController</scope><name>addPreviewAble</name></member>
+      <member refid="class_preview_controller_1ae3d0ace09aed4464a7dd91764d1bb03e" prot="public" virt="non-virtual"><scope>PreviewController</scope><name>addPreviewable</name></member>
+      <member refid="class_preview_controller_1aa4cc8c02192eb08afe244825d5796552" prot="public" virt="non-virtual"><scope>PreviewController</scope><name>addSource</name></member>
+      <member refid="class_preview_controller_1a11fda2d15a12799b9d60da0752527e5a" prot="private" virt="non-virtual"><scope>PreviewController</scope><name>controlMouseMove</name></member>
+      <member refid="class_preview_controller_1a3f44a88dd89aa311b734034de2f70417" prot="public" virt="non-virtual"><scope>PreviewController</scope><name>copy</name></member>
+      <member refid="class_preview_controller_1a3ee38c7b2e1a69fbe823b8092c2d6c86" prot="public" virt="non-virtual"><scope>PreviewController</scope><name>copy_augmentation</name></member>
+      <member refid="class_preview_controller_1adf3c4a7bbd75ba87a843a3b56b0a04e2" prot="public" virt="non-virtual"><scope>PreviewController</scope><name>currentMetaCategory</name></member>
+      <member refid="class_preview_controller_1ad2e214de18132be37e30b10e82af1c3b" prot="private" virt="non-virtual"><scope>PreviewController</scope><name>delete_current_element</name></member>
+      <member refid="class_preview_controller_1a8ee944c119de55efc51bba73afe16863" prot="private" virt="non-virtual"><scope>PreviewController</scope><name>ew</name></member>
+      <member refid="class_preview_controller_1a4ab1b4464e39eeb347554fc69f0dd38b" prot="public" virt="non-virtual"><scope>PreviewController</scope><name>findBox</name></member>
+      <member refid="class_preview_controller_1a22b51f7117d79a44defe07c627e52982" prot="public" virt="non-virtual"><scope>PreviewController</scope><name>getSizedBitmap</name></member>
+      <member refid="class_preview_controller_1a9b9691005cc484c0da1d7498e72b8e7f" prot="public" virt="non-virtual"><scope>PreviewController</scope><name>index</name></member>
+      <member refid="class_preview_controller_1a7bc01f6c09f310b7079a9754ec27e307" prot="public" virt="non-virtual"><scope>PreviewController</scope><name>onAugmentationDrop</name></member>
+      <member refid="class_preview_controller_1a5d4e3df813540fd4ac0c74523f656fca" prot="public" virt="non-virtual"><scope>PreviewController</scope><name>onAugmentationEnter</name></member>
+      <member refid="class_preview_controller_1a3bf96e43c3c2796464832faeda70defd" prot="private" virt="non-virtual"><scope>PreviewController</scope><name>openArelScript</name></member>
+      <member refid="class_preview_controller_1ae3a2972ffedfb97510c1c7d6c6e7f5da" prot="private" virt="non-virtual"><scope>PreviewController</scope><name>openOptionsFile</name></member>
+      <member refid="class_preview_controller_1a2435fce8fcbd17da3858e58746fde3ba" prot="private" virt="non-virtual"><scope>PreviewController</scope><name>openQueryFile</name></member>
+      <member refid="class_preview_controller_1a399716efd5533a7669b149f0277b842e" prot="private" virt="non-virtual"><scope>PreviewController</scope><name>openSourceFile</name></member>
+      <member refid="class_preview_controller_1a1753f5b1c7d08080cd666fda69d201c0" prot="private" virt="non-virtual"><scope>PreviewController</scope><name>panel</name></member>
+      <member refid="class_preview_controller_1a58e44b6e2acc62906bfc29eb6854ce32" prot="public" virt="non-virtual"><scope>PreviewController</scope><name>paste_augmentation</name></member>
+      <member refid="class_preview_controller_1a5cc0d886165ca91677acadd895426af2" prot="public" virt="non-virtual"><scope>PreviewController</scope><name>paste_augmentation_center</name></member>
+      <member refid="class_preview_controller_1a53e52be55583abca49990e61b3517816" prot="private" virt="non-virtual"><scope>PreviewController</scope><name>popupContextMenu</name></member>
+      <member refid="class_preview_controller_1aa43765e04846c1d954bf7e0c5b1cc279" prot="public" virt="non-virtual"><scope>PreviewController</scope><name>PreviewController</name></member>
+      <member refid="class_preview_controller_1a23d02dcb2c8a3cf7937e419928076aee" prot="private" virt="non-virtual"><scope>PreviewController</scope><name>recalculateChartVector</name></member>
+      <member refid="class_preview_controller_1a56e09e0ef66907b9915e64bd88b6c21d" prot="private" virt="non-virtual"><scope>PreviewController</scope><name>recalculateVector</name></member>
+      <member refid="class_preview_controller_1a497bb0aabb76d17df7d090fd0b8daac5" prot="public" virt="non-virtual"><scope>PreviewController</scope><name>reloadPreviewable</name></member>
+      <member refid="class_preview_controller_1ab68e5dc968561b4a115576d84e363cb0" prot="public" virt="non-virtual"><scope>PreviewController</scope><name>reloadPreviewPanel</name></member>
+      <member refid="class_preview_controller_1a46df737d070e134581dcf9b81510fd9c" prot="private" virt="non-virtual"><scope>PreviewController</scope><name>remove_by_click</name></member>
+      <member refid="class_preview_controller_1a25f87734dca1642d1c1d88eb79f861c8" prot="private" virt="non-virtual"><scope>PreviewController</scope><name>remove_source_by_click</name></member>
+      <member refid="class_preview_controller_1ab6c7c86b7631e5ee1a4c9384b87a5dfa" prot="private" virt="non-virtual"><scope>PreviewController</scope><name>removeAll</name></member>
+      <member refid="class_preview_controller_1a73d864a5cea6519a889d70bffbfef8f9" prot="public" virt="non-virtual"><scope>PreviewController</scope><name>removePreviewable</name></member>
+      <member refid="class_preview_controller_1a4fad890882bdd075b6ea97ebac62bff6" prot="public" virt="non-virtual"><scope>PreviewController</scope><name>removeSource</name></member>
+      <member refid="class_preview_controller_1a03acb2816496e20b416346aeff126b04" prot="public" virt="non-virtual"><scope>PreviewController</scope><name>rescalePreviewPanel</name></member>
+      <member refid="class_preview_controller_1ae491c6460dec4eba08e93a12044edf8c" prot="public" virt="non-virtual"><scope>PreviewController</scope><name>rotateAugmentation</name></member>
+      <member refid="class_preview_controller_1a3bda502796213aeefe9542eebfce9d8a" prot="private" virt="non-virtual"><scope>PreviewController</scope><name>scale</name></member>
+      <member refid="class_preview_controller_1a0013a78d729579e06c50551e87350091" prot="public" virt="non-virtual"><scope>PreviewController</scope><name>scaleBitmap</name></member>
+      <member refid="class_preview_controller_1a3e156e717573c15c3ef9a3baada91085" prot="public" virt="non-virtual"><scope>PreviewController</scope><name>scaleIPreviewable</name></member>
+      <member refid="class_preview_controller_1a1e1d3f2f9e67fe21a4a4822eb92eb188" prot="private" virt="non-virtual"><scope>PreviewController</scope><name>selectElement</name></member>
+      <member refid="class_preview_controller_1a3b909b7f753ee543cbf42dfdb9a0316f" prot="public" virt="non-virtual"><scope>PreviewController</scope><name>setCoordinates</name></member>
+      <member refid="class_preview_controller_1ae5cb0828e43829a516a998407d6f8a1a" prot="public" virt="non-virtual"><scope>PreviewController</scope><name>setCurrentElement</name></member>
+      <member refid="class_preview_controller_1aedcb3499d45104732169128b8fdc5fc2" prot="private" virt="non-virtual"><scope>PreviewController</scope><name>setSourcePreview</name></member>
+      <member refid="class_preview_controller_1a53d7af61cdfc903f1eacf7e1c38d09ac" prot="private" virt="non-virtual"><scope>PreviewController</scope><name>show_source_by_click</name></member>
+      <member refid="class_preview_controller_1a38df415628d33de07a741fd3d80f5647" prot="public" virt="non-virtual"><scope>PreviewController</scope><name>trackable</name></member>
+      <member refid="class_preview_controller_1ae33fd4d13286e22a819f5a6cd5de292f" prot="public" virt="non-virtual"><scope>PreviewController</scope><name>updateElementCombobox</name></member>
+      <member refid="class_preview_controller_1a5dd2e4dfcb87bcb1b2290d4ea752db2c" prot="public" virt="non-virtual"><scope>PreviewController</scope><name>updatePreviewPanel</name></member>
+      <member refid="class_preview_controller_1af14f36a06e16003c0cc11188024521c7" prot="public" virt="non-virtual"><scope>PreviewController</scope><name>updateTranslation</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

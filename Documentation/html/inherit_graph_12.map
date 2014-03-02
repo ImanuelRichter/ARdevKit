@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_t_c_p_server.html" title="A TCP server. " alt="" coords="5,5,200,46"/>
+<area shape="rect" id="node1" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker.html" title="A BlockMarker marks an AbstractBlock. It has a Start string and an End string and can be open or clos..." alt="" coords="6,5,194,46"/>
+<area shape="rect" id="node2" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_tag.html" title="A XMLTag is a BlockMarker. " alt="" coords="243,5,431,46"/>
+<area shape="rect" id="node3" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_non_terminating_x_m_l_tag.html" title="A NonTerminatingXMLTag is a XMLTag which has no end part. " alt="" coords="481,5,669,46"/>
 </map>

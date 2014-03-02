@@ -1,0 +1,5 @@
+<map id="ARdevKit.Model.Project.PictureMarker" name="ARdevKit.Model.Project.PictureMarker">
+<area shape="rect" id="node2" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable.html" title="{Abstract2DTrackable\n|+ SensorCosID\l+ Size\l+ Translation\l+ Rotation\l+ Fuser\l# sensorCosID\l# size\l# translationVector\l# rotationVector\l# fuser\l|+ ToString()\l}" alt="" coords="35,574,177,783"/>
+<area shape="rect" id="node3" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable.html" title="Describes an AbstractTrackable with its associated AbstractAugmentations and further details used for..." alt="" coords="23,286,191,525"/>
+<area shape="rect" id="node4" href="$interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable.html" title="Interface for previewable elements from the Model. " alt="" coords="53,131,160,237"/>
+</map>

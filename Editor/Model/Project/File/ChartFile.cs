@@ -7,6 +7,9 @@ using System.IO;
 
 namespace ARdevKit.Model.Project.File
 {
+    /// <summary>
+    /// A <see cref="ChartFile"/> is an <see cref="AbstractFile"/> which represents the chart.js.
+    /// </summary>
     public class ChartFile : AbstractFile
     {
         /// <summary>   Identifier for the chart. </summary>

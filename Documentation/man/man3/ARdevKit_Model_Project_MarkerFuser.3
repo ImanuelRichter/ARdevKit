@@ -1,0 +1,108 @@
+.TH "ARdevKit.Model.Project.MarkerFuser" 3 "Sat Mar 1 2014" "Version 0.2" "ARdevKit" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ARdevKit.Model.Project.MarkerFuser \- 
+.PP
+A \fBMarkerFuser\fP has a fuserType, an alphaTranslation, an alphaRotation and a keepPoseForNumberOfFrames value\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBARdevKit\&.Model\&.Project\&.MarkerlessFuser\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBFuserTypes\fP { \fBSmoothingFuser\fP, \fBBestQualityFuser\fP }"
+.br
+.RI "\fIValues that represent FuserTypes\&. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMarkerFuser\fP ()"
+.br
+.RI "\fIInitializes a new instance of the \fBMarkerFuser\fP class\&. \fP"
+.ti -1c
+.RI "virtual void \fBAccept\fP (\fBAbstractProjectVisitor\fP visitor)"
+.br
+.RI "\fIAccepts the given visitor\&. \fP"
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "\fBFuserTypes\fP \fBFuserType\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the type of the fuser\&. \fP"
+.ti -1c
+.RI "double \fBAlphaTranslation\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the alpha translation\&. \fP"
+.ti -1c
+.RI "double \fBAlphaRotation\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the alpha rotation\&. \fP"
+.ti -1c
+.RI "int \fBKeepPoseForNumberOfFrames\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the keep pose for number of frames\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+A \fBMarkerFuser\fP has a fuserType, an alphaTranslation, an alphaRotation and a keepPoseForNumberOfFrames value\&. 
+
+Imanuel, 17\&.01\&.2014\&. 
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBARdevKit\&.Model\&.Project\&.MarkerFuser\&.FuserTypes\fP"
+
+.PP
+Values that represent FuserTypes\&. Imanuel, 17\&.01\&.2014\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ARdevKit\&.Model\&.Project\&.MarkerFuser\&.MarkerFuser ()"
+
+.PP
+Initializes a new instance of the \fBMarkerFuser\fP class\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void ARdevKit\&.Model\&.Project\&.MarkerFuser\&.Accept (\fBAbstractProjectVisitor\fPvisitor)\fC [virtual]\fP"
+
+.PP
+Accepts the given visitor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvisitor\fP The visitor\&.
+.RE
+.PP
+.PP
+Imanuel, 17\&.01\&.2014\&. 
+.PP
+Reimplemented in \fBARdevKit\&.Model\&.Project\&.MarkerlessFuser\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "double ARdevKit\&.Model\&.Project\&.MarkerFuser\&.AlphaRotation\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the alpha rotation\&. The alpha rotation\&. 
+.SS "double ARdevKit\&.Model\&.Project\&.MarkerFuser\&.AlphaTranslation\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the alpha translation\&. The alpha translation\&. 
+.SS "\fBFuserTypes\fP ARdevKit\&.Model\&.Project\&.MarkerFuser\&.FuserType\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the type of the fuser\&. The type of the fuser\&. 
+.SS "int ARdevKit\&.Model\&.Project\&.MarkerFuser\&.KeepPoseForNumberOfFrames\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the keep pose for number of frames\&. The keep pose for number of frames\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ARdevKit from the source code\&.

@@ -1,0 +1,157 @@
+.TH "ARdevKit.Model.Project.MarkerlessSensor" 3 "Sat Mar 1 2014" "Version 0.2" "ARdevKit" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ARdevKit.Model.Project.MarkerlessSensor \- 
+.PP
+Used to change the properties of the metaio SDK and how to track markerless trackables\&. it is an \fBAbstractSensor\fP  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBARdevKit\&.Model\&.Project\&.AbstractSensor\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBFeatureDescriptorAlignments\fP { \fBregular\fP, \fBupright\fP, \fBgravity\fP, \fBrectified\fP }"
+.br
+.RI "\fIThe following feature descriptor types are available: 'regular', 'upright', 'gravity', 'rectified'\&. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMarkerlessSensor\fP ()"
+.br
+.RI "\fIDefault constructor\&. \fP"
+.ti -1c
+.RI "override void \fBAccept\fP (\fBAbstractProjectVisitor\fP visitor)"
+.br
+.RI "\fIAccepts the given visitor\&. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBFeatureDescriptorAlignments\fP \fBfeatureDescriptorAlignment\fP"
+.br
+.RI "\fIThe feature descriptor alignment \fP"
+.ti -1c
+.RI "int \fBmaxObjectsToDetectPerFrame\fP"
+.br
+.RI "\fIA restriction on the number of reference planar objects to be localized per frame\&. Localization takes longer than interframe tracking, and if the system tries to localize too many objects at the same time, it might cause a lower framerate\&. The default value for this is 5 and is used if the tag is not specified\&. Another name that can be used for this parameter is <MultipleReferenceImagesFast>\&. This name is however deprecated and should not be used any more\&. This parameter is for expert usage only\&. In general it is advised to leave the value unchanged\&. \fP"
+.ti -1c
+.RI "int \fBmaxObjectsToTrackInParallel\fP"
+.br
+.RI "\fIThe maximum number of objects that should be tracked in parallel\&. Tracking many objects in parallel is quite expensive and might lead to a lower framerate\&. As soon as the maximum number of tracked objects is reached, the system will no longer try to localize new objects\&. The default value for this is 1 and is used if the tag is not specified\&. Another name that can be used for this parameter is <MaxNumCosesForInit>\&. This name is however deprecated and should not be used any more\&. This parameter is for expert usage only\&. In general it is advised to leave the value unchanged\&. \fP"
+.ti -1c
+.RI "double \fBsimilarityThreshold\fP"
+.br
+.RI "\fIDefault similarity threshold for specifying whether template tracking was successful or failed\&. The tracking quality measure is defined between -1 and 1, where 1 is the best possible value\&. If the tracking quality is reported to be below the threshold, the tracker will treat the corresponding frame as lost\&. The default value for this is 0\&.7 and is used if the tag is not specified\&. This setting can be overridden for each 'COS' if it is defined there\&. This parameter is for expert usage only\&. In general it is advised to leave the value unchanged\&. \fP"
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "\fBFeatureDescriptorAlignments\fP \fBFeatureDescriptorAlignment\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the feature descriptor alignment\&. \fP"
+.ti -1c
+.RI "int \fBMaxObjectsToDetectPerFrame\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the maximum objects to detect per frame\&. \fP"
+.ti -1c
+.RI "int \fBMaxObjectsToTrackInParallel\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the maximum objects to track in parallel\&. \fP"
+.ti -1c
+.RI "double \fBSimilarityThreshold\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the similarity threshold\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Used to change the properties of the metaio SDK and how to track markerless trackables\&. it is an \fBAbstractSensor\fP 
+
+
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBARdevKit\&.Model\&.Project\&.MarkerlessSensor\&.FeatureDescriptorAlignments\fP"
+
+.PP
+The following feature descriptor types are available: 'regular', 'upright', 'gravity', 'rectified'\&. 
+.IP "\(bu" 2
+The 'regular' feature descriptor type is the most general feature descriptor type and is used as default if the tag is not specified\&.
+.IP "\(bu" 2
+The 'upright' feature descriptor type assumes that the camera is not rotated with respect to the optical axis, i\&.e\&. is turned upside down, during the tracking process\&.
+.IP "\(bu" 2
+The 'gravity' feature descriptor type can only be used with devices with inertial sensors which measures gravity\&. It is used for localizing static objects that provide (close to) vertical surfaces, e\&.g\&. buildings or posters on a wall\&. The orientation of the features will then be aligned with gravity\&.
+.IP "\(bu" 2
+The 'rectified' feature descriptor type can only be used with devices with inertial sensors which measures gravity\&. It is used for planar objects on a horizontal surface, e\&.g\&. a magazine on a table\&. This will improve the result of the localization of planar objects under steep camera angles at the cost of a lower framerate during localization\&. This parameter is for expert usage only\&. In general it is advised to leave the value unchanged\&. 
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ARdevKit\&.Model\&.Project\&.MarkerlessSensor\&.MarkerlessSensor ()"
+
+.PP
+Default constructor\&. Imanuel, 17\&.01\&.2014\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "override void ARdevKit\&.Model\&.Project\&.MarkerlessSensor\&.Accept (\fBAbstractProjectVisitor\fPvisitor)\fC [virtual]\fP"
+
+.PP
+Accepts the given visitor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvisitor\fP The visitor\&. 
+.RE
+.PP
+.PP
+Imanuel, 17\&.01\&.2014\&. 
+.PP
+Implements \fBARdevKit\&.Model\&.Project\&.AbstractSensor\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBFeatureDescriptorAlignments\fP ARdevKit\&.Model\&.Project\&.MarkerlessSensor\&.featureDescriptorAlignment\fC [protected]\fP"
+
+.PP
+The feature descriptor alignment 
+.SS "int ARdevKit\&.Model\&.Project\&.MarkerlessSensor\&.maxObjectsToDetectPerFrame\fC [protected]\fP"
+
+.PP
+A restriction on the number of reference planar objects to be localized per frame\&. Localization takes longer than interframe tracking, and if the system tries to localize too many objects at the same time, it might cause a lower framerate\&. The default value for this is 5 and is used if the tag is not specified\&. Another name that can be used for this parameter is <MultipleReferenceImagesFast>\&. This name is however deprecated and should not be used any more\&. This parameter is for expert usage only\&. In general it is advised to leave the value unchanged\&. 
+.SS "int ARdevKit\&.Model\&.Project\&.MarkerlessSensor\&.maxObjectsToTrackInParallel\fC [protected]\fP"
+
+.PP
+The maximum number of objects that should be tracked in parallel\&. Tracking many objects in parallel is quite expensive and might lead to a lower framerate\&. As soon as the maximum number of tracked objects is reached, the system will no longer try to localize new objects\&. The default value for this is 1 and is used if the tag is not specified\&. Another name that can be used for this parameter is <MaxNumCosesForInit>\&. This name is however deprecated and should not be used any more\&. This parameter is for expert usage only\&. In general it is advised to leave the value unchanged\&. 
+.SS "double ARdevKit\&.Model\&.Project\&.MarkerlessSensor\&.similarityThreshold\fC [protected]\fP"
+
+.PP
+Default similarity threshold for specifying whether template tracking was successful or failed\&. The tracking quality measure is defined between -1 and 1, where 1 is the best possible value\&. If the tracking quality is reported to be below the threshold, the tracker will treat the corresponding frame as lost\&. The default value for this is 0\&.7 and is used if the tag is not specified\&. This setting can be overridden for each 'COS' if it is defined there\&. This parameter is for expert usage only\&. In general it is advised to leave the value unchanged\&. 
+.SH "Property Documentation"
+.PP 
+.SS "\fBFeatureDescriptorAlignments\fP ARdevKit\&.Model\&.Project\&.MarkerlessSensor\&.FeatureDescriptorAlignment\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the feature descriptor alignment\&. The feature descriptor alignment\&. 
+.SS "int ARdevKit\&.Model\&.Project\&.MarkerlessSensor\&.MaxObjectsToDetectPerFrame\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the maximum objects to detect per frame\&. The maximum objects to detect per frame\&. 
+.SS "int ARdevKit\&.Model\&.Project\&.MarkerlessSensor\&.MaxObjectsToTrackInParallel\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the maximum objects to track in parallel\&. The maximum objects to track in parallel\&. 
+.SS "double ARdevKit\&.Model\&.Project\&.MarkerlessSensor\&.SimilarityThreshold\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the similarity threshold\&. The similarity threshold\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ARdevKit from the source code\&.

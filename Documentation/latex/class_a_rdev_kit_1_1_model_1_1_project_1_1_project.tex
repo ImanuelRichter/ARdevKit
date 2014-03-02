@@ -1,0 +1,342 @@
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_project}{\section{A\-Rdev\-Kit.\-Model.\-Project.\-Project Class Reference}
+\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_project}\index{A\-Rdev\-Kit.\-Model.\-Project.\-Project@{A\-Rdev\-Kit.\-Model.\-Project.\-Project}}
+}
+
+
+Encapsulates everything, that is needed for an A\-R-\/\-Application and so this the element, which the user saves, loads or exports  
+
+
+
+
+Collaboration diagram for A\-Rdev\-Kit.\-Model.\-Project.\-Project\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{class_a_rdev_kit_1_1_model_1_1_project_1_1_project__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_a6bed8b5642e71c32a6e055f49ce4b186}{Project} ()
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_project}{Project} class with default values. \end{DoxyCompactList}\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_a27791a5b014dcb7d732f6527a6f4f03a}{Project} (string name)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_project}{Project} class with specified name. \end{DoxyCompactList}\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_a8024daa2d023f14769c154148a0c1528}{Project} (string name, string project\-Path)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_project}{Project} class with specified name and project\-Path. \end{DoxyCompactList}\item 
+void \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_a2615d1d448f2db69a77b602391b2a91d}{Accept} (\hyperlink{class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor}{Abstract\-Project\-Visitor} visitor)
+\begin{DoxyCompactList}\small\item\em Accepts the specified visitor. \end{DoxyCompactList}\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source}{Abstract\-Source} \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_aa03e2b5300ac356aaf2dfa4e587eb411}{find\-Source} (\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source}{Abstract\-Source} source)
+\begin{DoxyCompactList}\small\item\em Returns the associated source, if it is associated with the project. \end{DoxyCompactList}\item 
+bool \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_a0efd066f58d552481f075879015e3652}{exist\-Source} (\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source}{Abstract\-Source} source)
+\begin{DoxyCompactList}\small\item\em Returns, if the specified source is associated with this project. \end{DoxyCompactList}\item 
+bool \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_a97efde65dc462b98448edd6967f9e777}{has\-Trackable} ()
+\begin{DoxyCompactList}\small\item\em tests if all trackables in this.\-trackables are null. if there are one which is not null it's true. \end{DoxyCompactList}\item 
+int \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_a3176ea13afc802bbb0ac63fe838823e8}{next\-I\-D} ()
+\begin{DoxyCompactList}\small\item\em Returns the next bigger Matrix I\-D. \end{DoxyCompactList}\item 
+bool \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_abb0710a1f1cd83bda71a0c988e9b6d72}{exist\-Trackable} (\hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} prev)
+\begin{DoxyCompactList}\small\item\em true if an Trackable with the same Path/\-I\-D exists, false if not. \end{DoxyCompactList}\item 
+bool \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_a4bdc5fa718a8a54711dd659d8edc1ea0}{exist\-Trackable} (int matrix\-I\-D)
+\begin{DoxyCompactList}\small\item\em true if an Trackable with the same Path/\-I\-D exists, false if not. \end{DoxyCompactList}\item 
+string \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_a222ab9abcfa20e2637300bbc94a8f3c2}{get\-Checksum} ()
+\begin{DoxyCompactList}\small\item\em Gets the checksum of the project lying at the project path. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor}{Abstract\-Sensor} \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_a835cbe6aaacc0f7b0a60a1dd5745667e}{sensor}
+\begin{DoxyCompactList}\small\item\em The sensor, is depentend on the used trackables. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_screen_size}{Screen\-Size} \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_afe6b2e85505c01075fbc52a0cc851ce9}{Screensize}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the screensize. \end{DoxyCompactList}\item 
+string \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_ae52006b6ebb8293ff034e8e00fdc4e77}{Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the name. \end{DoxyCompactList}\item 
+string \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_ad1061c35bc3ffb4caefebce4f22c365c}{Project\-Path}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the full pathname of the project file. \end{DoxyCompactList}\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor}{Abstract\-Sensor} \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_ac22f350013113d1e85605346d824cbc1}{Sensor}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the sensor. \end{DoxyCompactList}\item 
+List$<$ \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source}{Abstract\-Source} $>$ \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_ade6d1eebeab2acee826e2ddf22724fb5}{Sources}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the sources. \end{DoxyCompactList}\item 
+List$<$ \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable}{Abstract\-Trackable} $>$ \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_af3d7540cfeabb22ce7290378d7039a76}{Trackables}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the trackables. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Encapsulates everything, that is needed for an A\-R-\/\-Application and so this the element, which the user saves, loads or exports 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_a6bed8b5642e71c32a6e055f49ce4b186}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project}!Project@{Project}}
+\index{Project@{Project}!ARdevKit::Model::Project::Project@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project}}
+\subsubsection[{Project}]{\setlength{\rightskip}{0pt plus 5cm}A\-Rdev\-Kit.\-Model.\-Project.\-Project.\-Project (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_a6bed8b5642e71c32a6e055f49ce4b186}
+
+
+Initializes a new instance of the \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_project}{Project} class with default values. 
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_a27791a5b014dcb7d732f6527a6f4f03a}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project}!Project@{Project}}
+\index{Project@{Project}!ARdevKit::Model::Project::Project@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project}}
+\subsubsection[{Project}]{\setlength{\rightskip}{0pt plus 5cm}A\-Rdev\-Kit.\-Model.\-Project.\-Project.\-Project (
+\begin{DoxyParamCaption}
+\item[{string}]{name}
+\end{DoxyParamCaption}
+)}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_a27791a5b014dcb7d732f6527a6f4f03a}
+
+
+Initializes a new instance of the \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_project}{Project} class with specified name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name.\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_a8024daa2d023f14769c154148a0c1528}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project}!Project@{Project}}
+\index{Project@{Project}!ARdevKit::Model::Project::Project@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project}}
+\subsubsection[{Project}]{\setlength{\rightskip}{0pt plus 5cm}A\-Rdev\-Kit.\-Model.\-Project.\-Project.\-Project (
+\begin{DoxyParamCaption}
+\item[{string}]{name, }
+\item[{string}]{project\-Path}
+\end{DoxyParamCaption}
+)}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_a8024daa2d023f14769c154148a0c1528}
+
+
+Initializes a new instance of the \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_project}{Project} class with specified name and project\-Path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name.\\
+\hline
+{\em project\-Path} & Full pathname of the project file.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_a2615d1d448f2db69a77b602391b2a91d}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project}!Accept@{Accept}}
+\index{Accept@{Accept}!ARdevKit::Model::Project::Project@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project}}
+\subsubsection[{Accept}]{\setlength{\rightskip}{0pt plus 5cm}void A\-Rdev\-Kit.\-Model.\-Project.\-Project.\-Accept (
+\begin{DoxyParamCaption}
+\item[{{\bf Abstract\-Project\-Visitor}}]{visitor}
+\end{DoxyParamCaption}
+)}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_a2615d1d448f2db69a77b602391b2a91d}
+
+
+Accepts the specified visitor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em visitor} & The visitor.\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_a0efd066f58d552481f075879015e3652}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project}!exist\-Source@{exist\-Source}}
+\index{exist\-Source@{exist\-Source}!ARdevKit::Model::Project::Project@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project}}
+\subsubsection[{exist\-Source}]{\setlength{\rightskip}{0pt plus 5cm}bool A\-Rdev\-Kit.\-Model.\-Project.\-Project.\-exist\-Source (
+\begin{DoxyParamCaption}
+\item[{{\bf Abstract\-Source}}]{source}
+\end{DoxyParamCaption}
+)}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_a0efd066f58d552481f075879015e3652}
+
+
+Returns, if the specified source is associated with this project. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & The specified source.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, if the source is associated with this project false, else 
+\end{DoxyReturn}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_abb0710a1f1cd83bda71a0c988e9b6d72}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project}!exist\-Trackable@{exist\-Trackable}}
+\index{exist\-Trackable@{exist\-Trackable}!ARdevKit::Model::Project::Project@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project}}
+\subsubsection[{exist\-Trackable}]{\setlength{\rightskip}{0pt plus 5cm}bool A\-Rdev\-Kit.\-Model.\-Project.\-Project.\-exist\-Trackable (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Previewable}}]{prev}
+\end{DoxyParamCaption}
+)}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_abb0710a1f1cd83bda71a0c988e9b6d72}
+
+
+true if an Trackable with the same Path/\-I\-D exists, false if not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prev} & The previous.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_abb0710a1f1cd83bda71a0c988e9b6d72_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_a4bdc5fa718a8a54711dd659d8edc1ea0}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project}!exist\-Trackable@{exist\-Trackable}}
+\index{exist\-Trackable@{exist\-Trackable}!ARdevKit::Model::Project::Project@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project}}
+\subsubsection[{exist\-Trackable}]{\setlength{\rightskip}{0pt plus 5cm}bool A\-Rdev\-Kit.\-Model.\-Project.\-Project.\-exist\-Trackable (
+\begin{DoxyParamCaption}
+\item[{int}]{matrix\-I\-D}
+\end{DoxyParamCaption}
+)}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_a4bdc5fa718a8a54711dd659d8edc1ea0}
+
+
+true if an Trackable with the same Path/\-I\-D exists, false if not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix\-I\-D} & Identifier for the matrix. \\
+\hline
+\end{DoxyParams}
+
+
+\begin{DoxyReturn}{Returns}
+true if it succeeds, false if it fails. 
+\end{DoxyReturn}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_aa03e2b5300ac356aaf2dfa4e587eb411}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project}!find\-Source@{find\-Source}}
+\index{find\-Source@{find\-Source}!ARdevKit::Model::Project::Project@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project}}
+\subsubsection[{find\-Source}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Abstract\-Source} A\-Rdev\-Kit.\-Model.\-Project.\-Project.\-find\-Source (
+\begin{DoxyParamCaption}
+\item[{{\bf Abstract\-Source}}]{source}
+\end{DoxyParamCaption}
+)}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_aa03e2b5300ac356aaf2dfa4e587eb411}
+
+
+Returns the associated source, if it is associated with the project. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & The source, which is searched.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the associated source 
+\end{DoxyReturn}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_a222ab9abcfa20e2637300bbc94a8f3c2}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project}!get\-Checksum@{get\-Checksum}}
+\index{get\-Checksum@{get\-Checksum}!ARdevKit::Model::Project::Project@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project}}
+\subsubsection[{get\-Checksum}]{\setlength{\rightskip}{0pt plus 5cm}string A\-Rdev\-Kit.\-Model.\-Project.\-Project.\-get\-Checksum (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_a222ab9abcfa20e2637300bbc94a8f3c2}
+
+
+Gets the checksum of the project lying at the project path. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+geht 20.\-02.\-2014 13\-:36\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_a97efde65dc462b98448edd6967f9e777}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project}!has\-Trackable@{has\-Trackable}}
+\index{has\-Trackable@{has\-Trackable}!ARdevKit::Model::Project::Project@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project}}
+\subsubsection[{has\-Trackable}]{\setlength{\rightskip}{0pt plus 5cm}bool A\-Rdev\-Kit.\-Model.\-Project.\-Project.\-has\-Trackable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_a97efde65dc462b98448edd6967f9e777}
+
+
+tests if all trackables in this.\-trackables are null. if there are one which is not null it's true. 
+
+\begin{DoxyReturn}{Returns}
+true if trackable, false if not. 
+\end{DoxyReturn}
+
+
+Lizzard, 1/19/2014. 
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_a97efde65dc462b98448edd6967f9e777_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_a3176ea13afc802bbb0ac63fe838823e8}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project}!next\-I\-D@{next\-I\-D}}
+\index{next\-I\-D@{next\-I\-D}!ARdevKit::Model::Project::Project@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project}}
+\subsubsection[{next\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}int A\-Rdev\-Kit.\-Model.\-Project.\-Project.\-next\-I\-D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_a3176ea13afc802bbb0ac63fe838823e8}
+
+
+Returns the next bigger Matrix I\-D. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_a835cbe6aaacc0f7b0a60a1dd5745667e}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project}!sensor@{sensor}}
+\index{sensor@{sensor}!ARdevKit::Model::Project::Project@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project}}
+\subsubsection[{sensor}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Abstract\-Sensor} A\-Rdev\-Kit.\-Model.\-Project.\-Project.\-sensor\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_a835cbe6aaacc0f7b0a60a1dd5745667e}
+
+
+The sensor, is depentend on the used trackables. 
+
+
+
+\subsection{Property Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_ae52006b6ebb8293ff034e8e00fdc4e77}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project}!Name@{Name}}
+\index{Name@{Name}!ARdevKit::Model::Project::Project@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project}}
+\subsubsection[{Name}]{\setlength{\rightskip}{0pt plus 5cm}string A\-Rdev\-Kit.\-Model.\-Project.\-Project.\-Name\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_ae52006b6ebb8293ff034e8e00fdc4e77}
+
+
+Gets or sets the name. 
+
+The name. \hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_ad1061c35bc3ffb4caefebce4f22c365c}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project}!Project\-Path@{Project\-Path}}
+\index{Project\-Path@{Project\-Path}!ARdevKit::Model::Project::Project@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project}}
+\subsubsection[{Project\-Path}]{\setlength{\rightskip}{0pt plus 5cm}string A\-Rdev\-Kit.\-Model.\-Project.\-Project.\-Project\-Path\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_ad1061c35bc3ffb4caefebce4f22c365c}
+
+
+Gets or sets the full pathname of the project file. 
+
+The full pathname of the project file. \hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_afe6b2e85505c01075fbc52a0cc851ce9}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project}!Screensize@{Screensize}}
+\index{Screensize@{Screensize}!ARdevKit::Model::Project::Project@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project}}
+\subsubsection[{Screensize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Screen\-Size} A\-Rdev\-Kit.\-Model.\-Project.\-Project.\-Screensize\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_afe6b2e85505c01075fbc52a0cc851ce9}
+
+
+Gets or sets the screensize. 
+
+The screensize. 
+
+geht 28.\-01.\-2014 14\-:43\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_ac22f350013113d1e85605346d824cbc1}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project}!Sensor@{Sensor}}
+\index{Sensor@{Sensor}!ARdevKit::Model::Project::Project@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project}}
+\subsubsection[{Sensor}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Abstract\-Sensor} A\-Rdev\-Kit.\-Model.\-Project.\-Project.\-Sensor\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_ac22f350013113d1e85605346d824cbc1}
+
+
+Gets or sets the sensor. 
+
+The sensor. \hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_ade6d1eebeab2acee826e2ddf22724fb5}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project}!Sources@{Sources}}
+\index{Sources@{Sources}!ARdevKit::Model::Project::Project@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project}}
+\subsubsection[{Sources}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Abstract\-Source}$>$ A\-Rdev\-Kit.\-Model.\-Project.\-Project.\-Sources\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_ade6d1eebeab2acee826e2ddf22724fb5}
+
+
+Gets or sets the sources. 
+
+The sources. \hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_af3d7540cfeabb22ce7290378d7039a76}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project}!Trackables@{Trackables}}
+\index{Trackables@{Trackables}!ARdevKit::Model::Project::Project@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Project}}
+\subsubsection[{Trackables}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Abstract\-Trackable}$>$ A\-Rdev\-Kit.\-Model.\-Project.\-Project.\-Trackables\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_project_af3d7540cfeabb22ce7290378d7039a76}
+
+
+Gets or sets the trackables. 
+
+The trackables. 

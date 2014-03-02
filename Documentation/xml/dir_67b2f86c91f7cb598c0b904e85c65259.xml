@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="dir_67b2f86c91f7cb598c0b904e85c65259" kind="dir">
+    <compoundname>C:/Users/geht/Source/Repos/ARdevKit/Editor/View</compoundname>
+    <innerfile refid="_debug_window_8cs">DebugWindow.cs</innerfile>
+    <innerfile refid="_debug_window_8_designer_8cs">DebugWindow.Designer.cs</innerfile>
+    <innerfile refid="_element_icon_8cs">ElementIcon.cs</innerfile>
+    <innerfile refid="_file_selector_type_editor_8cs">FileSelectorTypeEditor.cs</innerfile>
+    <innerfile refid="_scene_element_category_panel_8cs">SceneElementCategoryPanel.cs</innerfile>
+    <innerfile refid="_slider_8cs">Slider.cs</innerfile>
+    <innerfile refid="_slider_8_designer_8cs">Slider.Designer.cs</innerfile>
+    <innerfile refid="_type_editoren_8cs">TypeEditoren.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/"/>
+  </compounddef>
+</doxygen>

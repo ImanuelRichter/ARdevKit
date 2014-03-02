@@ -1,0 +1,133 @@
+.TH "ARdevKit.Model.Project.DbSource" 3 "Sat Mar 1 2014" "Version 0.2" "ARdevKit" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ARdevKit.Model.Project.DbSource \- 
+.PP
+A database source  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBARdevKit\&.Model\&.Project\&.AbstractSource\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDbSource\fP ()"
+.br
+.RI "\fIDefault constructor\&. \fP"
+.ti -1c
+.RI "\fBDbSource\fP (string \fBurl\fP)"
+.br
+.RI "\fIConstructor\&. \fP"
+.ti -1c
+.RI "override void \fBAccept\fP (\fBAbstractProjectVisitor\fP visitor)"
+.br
+.RI "\fIAn abstract method, to accept a AbstractProjectVisitor which must be implemented according to the visitor design pattern\&. \fP"
+.ti -1c
+.RI "override Bitmap \fBgetIcon\fP ()"
+.br
+.RI "\fIreturns a Bitmap in order to be displayed on the ElementSelectionPanel, implements \fBIPreviewable\fP \fP"
+.ti -1c
+.RI "override object \fBClone\fP ()"
+.br
+.RI "\fIMakes a deep copy of this object\&. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "string \fBurl\fP"
+.br
+.RI "\fIURL of the source\&. \fP"
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "string \fBUrl\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets URL of the source\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+A database source 
+
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ARdevKit\&.Model\&.Project\&.DbSource\&.DbSource ()"
+
+.PP
+Default constructor\&. Imanuel, 26\&.01\&.2014\&. 
+.SS "ARdevKit\&.Model\&.Project\&.DbSource\&.DbSource (stringurl)"
+
+.PP
+Constructor\&. Imanuel, 26\&.01\&.2014\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIurl\fP URL of the source\&. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "override void ARdevKit\&.Model\&.Project\&.DbSource\&.Accept (\fBAbstractProjectVisitor\fPvisitor)\fC [virtual]\fP"
+
+.PP
+An abstract method, to accept a AbstractProjectVisitor which must be implemented according to the visitor design pattern\&. Imanuel, 26\&.01\&.2014\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvisitor\fP the visitor which encapsulates the action which is performed on this element\&. 
+.RE
+.PP
+
+.PP
+Implements \fBARdevKit\&.Model\&.Project\&.AbstractSource\fP\&.
+.SS "override object ARdevKit\&.Model\&.Project\&.DbSource\&.Clone ()\fC [virtual]\fP"
+
+.PP
+Makes a deep copy of this object\&. Robin, 21\&.01\&.2014\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+A copy of this object\&. 
+.RE
+.PP
+
+.PP
+Implements \fBARdevKit\&.Model\&.Project\&.AbstractSource\fP\&.
+.SS "override Bitmap ARdevKit\&.Model\&.Project\&.DbSource\&.getIcon ()\fC [virtual]\fP"
+
+.PP
+returns a Bitmap in order to be displayed on the ElementSelectionPanel, implements \fBIPreviewable\fP 
+.PP
+\fBReturns:\fP
+.RS 4
+a representative iconized Bitmap 
+.RE
+.PP
+
+.PP
+Implements \fBARdevKit\&.Model\&.Project\&.AbstractSource\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "string ARdevKit\&.Model\&.Project\&.DbSource\&.url\fC [protected]\fP"
+
+.PP
+URL of the source\&. 
+.SH "Property Documentation"
+.PP 
+.SS "string ARdevKit\&.Model\&.Project\&.DbSource\&.Url\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets URL of the source\&. The URL\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ARdevKit from the source code\&.

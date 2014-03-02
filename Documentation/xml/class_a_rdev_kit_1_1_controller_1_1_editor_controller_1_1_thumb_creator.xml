@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_thumb_creator" kind="class" prot="public">
+    <compoundname>ARdevKit::Controller::EditorController::ThumbCreator</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_thumb_creator_1a0ee173143759d30a2f48cf4a24ff6e20" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Bitmap</type>
+        <definition>static Bitmap ARdevKit.Controller.EditorController.ThumbCreator.CreateThumb</definition>
+        <argsstring>(string videoFilename)</argsstring>
+        <name>CreateThumb</name>
+        <param>
+          <type>string</type>
+          <declname>videoFilename</declname>
+        </param>
+        <briefdescription>
+<para>Creates the thumb. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>videoFilename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The video filename.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ThumbCreator.cs" line="19" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ThumbCreator.cs" bodystart="19" bodyend="24"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="735">
+        <label>ARdevKit.Controller.EditorController.ThumbCreator</label>
+        <link refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_thumb_creator"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ThumbCreator.cs" line="13" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/ThumbCreator.cs" bodystart="12" bodyend="25"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_thumb_creator_1a0ee173143759d30a2f48cf4a24ff6e20" prot="public" virt="non-virtual"><scope>ARdevKit::Controller::EditorController::ThumbCreator</scope><name>CreateThumb</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

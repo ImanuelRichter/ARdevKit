@@ -12,35 +12,13 @@ using System.Windows.Forms;
 
 namespace ARdevKit.Model.Project
 {
+    /// <summary>
+    /// A <see cref="VideoAugmentation" /> is an <see cref="Abstract2DAugmentation" /> that contains a video file.
+    /// </summary>
     [Serializable]
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public class VideoAugmentation : Abstract2DAugmentation
     {
-        /// <summary>
-        /// Full pathname of the image file.
-        /// </summary>
-        private string videoPath;
-        /// <summary>
-        /// Gets or sets the full pathname of the image file.
-        /// </summary>
-        /// <value>
-        /// The full pathname of the image file.
-        /// </value>
-        [CategoryAttribute("General"), EditorAttribute(typeof(FileSelectorTypeEditor),
-            typeof(System.Drawing.Design.UITypeEditor))]
-        public string VideoPath
-        {
-            get { return videoPath; }
-            set 
-            {
-                if (System.IO.File.Exists(value))
-                {
-                    videoPath = value; 
-                }
-                
-            }
-        }
-
         //a cached preview to prevent access problems.
         private Bitmap cachePreview = null;
 
@@ -73,20 +51,21 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// Default constructor.
         /// </summary>
-        public VideoAugmentation() : base()
+        public VideoAugmentation()
+            : base()
         {
-            videoPath = null;
+            sourceFilePath = null;
         }
 
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ImageAugmentation"/> class.
+        /// Initializes a new instance of the <see cref="ImageAugmentation" /> class.
         /// </summary>
-        /// <param name="imagePath">The image path.</param>
+        /// <param name="videoPath">The video path.</param>
         public VideoAugmentation(string videoPath)
             : base()
         {
-            this.videoPath = videoPath;
+            this.sourceFilePath = videoPath;
         }
 
         /// <summary>
@@ -115,11 +94,11 @@ namespace ARdevKit.Model.Project
         {
             if (cachePreview == null)
             {
-                cachePreview = Controller.EditorController.ThumbCreator.CreateThumb(videoPath);
+                cachePreview = Controller.EditorController.ThumbCreator.CreateThumb(sourceFilePath);
             }
             return cachePreview;
         }
-                
+
         /// <summary>
         /// returns a <see cref="Bitmap" /> in order to be displayed
         /// on the ElementSelectionPanel, implements <see cref="IPreviewable" />
@@ -130,7 +109,7 @@ namespace ARdevKit.Model.Project
         /// <exception cref="FileNotFoundException">If ImagePath is bad</exception>
         public override Bitmap getIcon()
         {
-            return Properties.Resources.ImageAugmentation_small_; 
+            return Properties.Resources.ImageAugmentation_small_;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -141,9 +120,9 @@ namespace ARdevKit.Model.Project
 
         public override void CleanUp()
         {
-            string dir = Path.GetDirectoryName(videoPath);
+            string dir = Path.GetDirectoryName(sourceFilePath);
             if (Directory.Exists(dir) && dir.Contains("Assets"))
-                System.IO.File.Delete(videoPath);
+                System.IO.File.Delete(sourceFilePath);
         }
 
         /**
@@ -168,7 +147,7 @@ namespace ARdevKit.Model.Project
         /// </returns>
         public override bool initElement(EditorWindow ew)
         {
-            if (VideoPath == null)
+            if (SourceFilePath == null)
             {
                 OpenFileDialog openFileDialog = new OpenFileDialog();
                 openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyVideos);
@@ -176,7 +155,7 @@ namespace ARdevKit.Model.Project
                 openFileDialog.Filter = "Video Files (*.3G2)|*.3g2";
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    VideoPath = openFileDialog.FileName;
+                    SourceFilePath = openFileDialog.FileName;
                     return base.initElement(ew);
                 }
                 else

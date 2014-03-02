@@ -1,0 +1,538 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation" kind="class" prot="public" abstract="yes">
+    <compoundname>ARdevKit::Model::Project::AbstractAugmentation</compoundname>
+    <basecompoundref refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable" prot="public" virt="non-virtual">ARdevKit.Model.Project.IPreviewable</basecompoundref>
+    <derivedcompoundref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_augmentation" prot="public" virt="non-virtual">ARdevKit.Model.Project.Abstract2DAugmentation</derivedcompoundref>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1af0470569d324d3bf199a841be3a3e853" prot="protected" static="no" mutable="no">
+        <type>string</type>
+        <definition>string ARdevKit.Model.Project.AbstractAugmentation.id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <briefdescription>
+<para>The identifier. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" line="30" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a8d8e3f3c42696008edbfc44d51ba518d" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable" kindref="compound">AbstractTrackable</ref></type>
+        <definition>AbstractTrackable ARdevKit.Model.Project.AbstractAugmentation.trackable</definition>
+        <argsstring></argsstring>
+        <name>trackable</name>
+        <briefdescription>
+<para>The <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable" kindref="compound">AbstractTrackable</ref> with which this <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation" kindref="compound">AbstractAugmentation</ref> is linked. It is visible in the same Scene as the trackable. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" line="128" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a3590cc30e6169c0946c70b52223eb2bf" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>string</type>
+        <definition>string ARdevKit.Model.Project.AbstractAugmentation.ID</definition>
+        <argsstring></argsstring>
+        <name>ID</name>
+        <briefdescription>
+<para>Gets or sets the identifier. </para>        </briefdescription>
+        <detaileddescription>
+<para>The identifier. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" line="39" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" bodystart="40" bodyend="-1"/>
+        <referencedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a8b02a2eb775b8147e71575694ce8a38f" compoundref="_abstract_augmentation_8cs" startline="231" endline="263">ARdevKit.Model.Project.AbstractAugmentation.initElement</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1ab19dda553062c0cae9e4a7a66e9cb64f" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>bool</type>
+        <definition>bool ARdevKit.Model.Project.AbstractAugmentation.IsVisible</definition>
+        <argsstring></argsstring>
+        <name>IsVisible</name>
+        <briefdescription>
+<para>Get or set if the <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation" kindref="compound">AbstractAugmentation</ref> is visible the whole time using AREL or not. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" line="55" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" bodystart="56" bodyend="-1"/>
+        <referencedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1a190039e5dd86df278c99cfacedac3b63" compoundref="_export_visitor_8cs" startline="120" endline="171">ARdevKit.Controller.ProjectController.ExportVisitor.Visit</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a333186e3963596bc5b17c02a21f2d384" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_custom_user_event" kindref="compound">CustomUserEvent</ref></type>
+        <definition>CustomUserEvent ARdevKit.Model.Project.AbstractAugmentation.CustomUserEventReference</definition>
+        <argsstring></argsstring>
+        <name>CustomUserEventReference</name>
+        <briefdescription>
+<para>Get the <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_custom_user_event" kindref="compound">CustomUserEvent</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" line="71" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" bodystart="72" bodyend="-1"/>
+        <referencedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1a190039e5dd86df278c99cfacedac3b63" compoundref="_export_visitor_8cs" startline="120" endline="171">ARdevKit.Controller.ProjectController.ExportVisitor.Visit</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a8ed7943a2eb75682addda8731bff6c34" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d" kindref="compound">Vector3D</ref></type>
+        <definition>Vector3D ARdevKit.Model.Project.AbstractAugmentation.Translation</definition>
+        <argsstring></argsstring>
+        <name>Translation</name>
+        <briefdescription>
+<para>Get or set the position of the <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation" kindref="compound">AbstractAugmentation</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" line="87" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" bodystart="88" bodyend="-1"/>
+        <referencedby refid="class_preview_controller_1af14f36a06e16003c0cc11188024521c7" compoundref="_preview_controller_8cs" startline="797" endline="810">PreviewController.updateTranslation</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1adc3b84e8eb93f1ef50b3a689bd4c2a72" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d" kindref="compound">Vector3D</ref></type>
+        <definition>Vector3D ARdevKit.Model.Project.AbstractAugmentation.Scaling</definition>
+        <argsstring></argsstring>
+        <name>Scaling</name>
+        <briefdescription>
+<para>gets or sets the scaling which is applied to the original <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation" kindref="compound">AbstractAugmentation</ref> </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" line="103" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1ac94095d5fa4f5d4339f66b259ff55e74" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d" kindref="compound">Vector3D</ref></type>
+        <definition>Vector3D ARdevKit.Model.Project.AbstractAugmentation.Rotation</definition>
+        <argsstring></argsstring>
+        <name>Rotation</name>
+        <briefdescription>
+<para>gets or sets the Vector </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" line="118" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a5ef95a16a1d2b03cb6185b86e7120a9c" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable" kindref="compound">AbstractTrackable</ref></type>
+        <definition>AbstractTrackable ARdevKit.Model.Project.AbstractAugmentation.Trackable</definition>
+        <argsstring></argsstring>
+        <name>Trackable</name>
+        <briefdescription>
+<para>Get or set a trackable to the augmentation. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" line="133" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1add1a9acbdd08d307d611c17a02420096" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ARdevKit.Model.Project.AbstractAugmentation.isVisible</definition>
+        <argsstring></argsstring>
+        <name>isVisible</name>
+        <briefdescription>
+<para>describes if the <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation" kindref="compound">AbstractAugmentation</ref> is seen using AREL, even if the associated <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable" kindref="compound">AbstractTrackable</ref> is not recognized. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" line="49" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a91d53f4c9c068efcdb1f3409cc3c2a60" prot="private" static="no" mutable="no">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_custom_user_event" kindref="compound">CustomUserEvent</ref></type>
+        <definition>CustomUserEvent ARdevKit.Model.Project.AbstractAugmentation.cue</definition>
+        <argsstring></argsstring>
+        <name>cue</name>
+        <briefdescription>
+<para>The customUserEvents contains a path to a file, which has all user-generated events of this augmentation. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" line="66" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a4e47f552debbb5e56eaa6d9e8d78671d" prot="private" static="no" mutable="no">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d" kindref="compound">Vector3D</ref></type>
+        <definition>Vector3D ARdevKit.Model.Project.AbstractAugmentation.translationVector</definition>
+        <argsstring></argsstring>
+        <name>translationVector</name>
+        <briefdescription>
+<para>Vector to describe the position on the PreviewPanel, and later to position it on the coordinatesystem given in AREL. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" line="82" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a8dfac7a265d9e0da53baef344e3ffa51" prot="private" static="no" mutable="no">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d" kindref="compound">Vector3D</ref></type>
+        <definition>Vector3D ARdevKit.Model.Project.AbstractAugmentation.scalingVector</definition>
+        <argsstring></argsstring>
+        <name>scalingVector</name>
+        <briefdescription>
+<para>Vector, to describes the scaling of the <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation" kindref="compound">AbstractAugmentation</ref> in x, y and z direction. Is used in AREL. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" line="97" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a71c331229ffcc780bb24b5b1422d819a" prot="private" static="no" mutable="no">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d" kindref="compound">Vector3D</ref></type>
+        <definition>Vector3D ARdevKit.Model.Project.AbstractAugmentation.rotationVector</definition>
+        <argsstring></argsstring>
+        <name>rotationVector</name>
+        <briefdescription>
+<para>Vector, to describes the rotation (euler) of the <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation" kindref="compound">AbstractAugmentation</ref> in x, y and z direction. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" line="113" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a6dcd315fd15d4dd67a6910624cb38fb8" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.Model.Project.AbstractAugmentation.AbstractAugmentation</definition>
+        <argsstring>()</argsstring>
+        <name>AbstractAugmentation</name>
+        <briefdescription>
+<para>Initializes no new instance of the <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation" kindref="compound">AbstractAugmentation</ref> class, but can be used in inheriting classes. Using standard values, such as emptyLists, vectors with 0 as coordinate and null. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" line="144" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" bodystart="144" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a46d8ded608fcaf37e6597e789c052e52" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.Model.Project.AbstractAugmentation.AbstractAugmentation</definition>
+        <argsstring>(bool isVisible, Vector3D translationVector, Vector3D scaling, AbstractTrackable trackable)</argsstring>
+        <name>AbstractAugmentation</name>
+        <param>
+          <type>bool</type>
+          <declname>isVisible</declname>
+        </param>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d" kindref="compound">Vector3D</ref></type>
+          <declname>translationVector</declname>
+        </param>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d" kindref="compound">Vector3D</ref></type>
+          <declname>scaling</declname>
+        </param>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable" kindref="compound">AbstractTrackable</ref></type>
+          <declname>trackable</declname>
+        </param>
+        <briefdescription>
+<para>Initializes no new instance of the <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation" kindref="compound">AbstractAugmentation</ref> class, but can be used in inheriting classes. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>isVisible</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if set to <computeroutput>true</computeroutput> [is visible] using AREL.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>translationVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The translation vector.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>scaling</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The scaling.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>trackable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The trackable.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" line="162" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" bodystart="162" bodyend="169"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a4f4497d02cdf208b57b4e3f90a6130fd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ARdevKit.Model.Project.AbstractAugmentation.createUserEvent</definition>
+        <argsstring>()</argsstring>
+        <name>createUserEvent</name>
+        <briefdescription>
+<para>Method to create an instance of the <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_custom_user_event" kindref="compound">CustomUserEvent</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" line="174" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" bodystart="174" bodyend="177"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a2b3fa5e94428fab7f2d94842211a7cc9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void ARdevKit.Model.Project.AbstractAugmentation.Accept</definition>
+        <argsstring>(AbstractProjectVisitor visitor)</argsstring>
+        <name>Accept</name>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_1a7f23dea6de8cd95e5500e5000245d118">Accept</reimplementedby>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_1a1450cf89881f65c8882126914379ae50">Accept</reimplementedby>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor" kindref="compound">AbstractProjectVisitor</ref></type>
+          <declname>visitor</declname>
+        </param>
+        <briefdescription>
+<para>An abstract method, to accept a AbstractProjectVisitor which must be implemented according to the visitor design pattern. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>visitor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the visitor which encapsulates the action which is performed on this element</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" line="185" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" bodystart="185" bodyend="189"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a627330061b5df53ece5646e1cf83ff0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>abstract Bitmap</type>
+        <definition>abstract Bitmap ARdevKit.Model.Project.AbstractAugmentation.getPreview</definition>
+        <argsstring>()</argsstring>
+        <name>getPreview</name>
+        <reimplements refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable_1a7cbcbb20929f4f1b6db3321ed2e83070">getPreview</reimplements>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_1a3d5968ace1fe7b6becfc10b60f573631">getPreview</reimplementedby>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_1a76230c0eb40c317bab23b37c27ea3a39">getPreview</reimplementedby>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_1aab1b49aedaba3798818abd14c69918e8">getPreview</reimplementedby>
+        <briefdescription>
+<para>returns a Bitmap in order to be displayed on the PreviewPanel, implements <ref refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable" kindref="compound">IPreviewable</ref> </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>a representative Bitmap</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" line="196" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a703566211752c4c4e08ceb5b6c528918" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>abstract Bitmap</type>
+        <definition>abstract Bitmap ARdevKit.Model.Project.AbstractAugmentation.getIcon</definition>
+        <argsstring>()</argsstring>
+        <name>getIcon</name>
+        <reimplements refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable_1a8573bdaccd5227400b538c34c1b5f279">getIcon</reimplements>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_1ae41611da8c40607d32ab62d29c78a8ae">getIcon</reimplementedby>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_1a7f1d0335a2559d461cbe18599ce472c2">getIcon</reimplementedby>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_1a5a3555ace98e2f5c9f4daaa73f94cd96">getIcon</reimplementedby>
+        <briefdescription>
+<para>returns a Bitmap in order to be displayed on the ElementSelectionPanel, implements <ref refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable" kindref="compound">IPreviewable</ref> </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>a representative iconized Bitmap</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" line="203" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a29b5dcf0bea3da72b75707e09f42124f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>abstract void</type>
+        <definition>abstract void ARdevKit.Model.Project.AbstractAugmentation.CleanUp</definition>
+        <argsstring>()</argsstring>
+        <name>CleanUp</name>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_1a83390b8765641d1626b23a06c54490af">CleanUp</reimplementedby>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_1aecb9401ae2f65c089330e280af41d55a">CleanUp</reimplementedby>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_1a5cccd28644f1f358d551028759a3fed0">CleanUp</reimplementedby>
+        <briefdescription>
+<para>Clean up (remove created/copied files and directories). </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 31.01.2014. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" line="211" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a184416a3d47e35d58bb7f5bb6ce2e269" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>abstract object</type>
+        <definition>abstract object ARdevKit.Model.Project.AbstractAugmentation.Clone</definition>
+        <argsstring>()</argsstring>
+        <name>Clone</name>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_dynamic2_d_augmentation_1adbb2d06450362f0385fe937bbb5255a8">Clone</reimplementedby>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_1a1c99b0002e89662c75ae59031f1f7ec5">Clone</reimplementedby>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_1af25172abfef48a1f9004ec3777d0d6fb">Clone</reimplementedby>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_1aaa06b6e53f2e5a48508f3a93b0483dc3">Clone</reimplementedby>
+        <briefdescription>
+<para>Makes a deep copy of this object. </para>        </briefdescription>
+        <detaileddescription>
+<para>Robin, 22.01.2014. </para><para><simplesect kind="return"><para>A copy of this object. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" line="221" column="1"/>
+        <referencedby refid="class_preview_controller_1a58e44b6e2acc62906bfc29eb6854ce32" compoundref="_preview_controller_8cs" startline="1018" endline="1029">PreviewController.paste_augmentation</referencedby>
+        <referencedby refid="class_preview_controller_1a5cc0d886165ca91677acadd895426af2" compoundref="_preview_controller_8cs" startline="1036" endline="1039">PreviewController.paste_augmentation_center</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a8b02a2eb775b8147e71575694ce8a38f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool ARdevKit.Model.Project.AbstractAugmentation.initElement</definition>
+        <argsstring>(EditorWindow ew)</argsstring>
+        <name>initElement</name>
+        <reimplements refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable_1aa638e27d88c30b7e63b241d1001042c9">initElement</reimplements>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_1afb33f9a8ac2591973d29ebd56bd75da5">initElement</reimplementedby>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_1a37ba80403f194a8aad7e7b96a8fd9239">initElement</reimplementedby>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_1a74620f6abc6763b5999074c5c6e2f661">initElement</reimplementedby>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_editor_window" kindref="compound">EditorWindow</ref></type>
+          <declname>ew</declname>
+        </param>
+        <briefdescription>
+<para>This method is called by the previewController when a new instance of the element is added to the Scene. It sets &quot;must-have&quot; properties. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ew</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ew.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if it succeeds, false if it fails. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" line="231" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" bodystart="231" bodyend="263"/>
+        <references refid="class_a_rdev_kit_1_1_editor_window_1aa7e64c912e3d904fae0ec52588be0baa" compoundref="_editor_window_8cs" startline="138">ARdevKit.EditorWindow.project</references>
+        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a999faeee63dee9445e8617d539c5b8d9" compoundref="_abstract_trackable_8cs" startline="85">ARdevKit.Model.Project.AbstractTrackable.Augmentations</references>
+        <references refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a3590cc30e6169c0946c70b52223eb2bf" compoundref="_abstract_augmentation_8cs" startline="40">ARdevKit.Model.Project.AbstractAugmentation.ID</references>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1aa3badea1be1d6317e62e2dda390c2f34" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override string</type>
+        <definition>override string ARdevKit.Model.Project.AbstractAugmentation.ToString</definition>
+        <argsstring>()</argsstring>
+        <name>ToString</name>
+        <briefdescription>
+<para>Gibt eine Zeichenfolge zurück, die das aktuelle Objekt darstellt. </para>        </briefdescription>
+        <detaileddescription>
+<para>Robin, 14.01.2014. </para><para><simplesect kind="return"><para>Eine Zeichenfolge, die das aktuelle Objekt darstellt. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" line="271" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" bodystart="271" bodyend="274"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>describes an <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation" kindref="compound">AbstractAugmentation</ref>, which is bound to a certain <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable" kindref="compound">AbstractTrackable</ref>. is <ref refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable" kindref="compound">IPreviewable</ref> </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="416">
+        <label>ARdevKit.Model.Project.VideoAugmentation</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation"/>
+        <childnode refid="412" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="413">
+        <label>ARdevKit.Model.Project.AbstractDynamic2DAugmentation</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_dynamic2_d_augmentation"/>
+        <childnode refid="412" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="410">
+        <label>IPreviewable</label>
+        <link refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable"/>
+        <childnode refid="411" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="414">
+        <label>ARdevKit.Model.Project.Chart</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart"/>
+        <childnode refid="413" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="409">
+        <label>ARdevKit.Model.Project.AbstractAugmentation</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation"/>
+        <childnode refid="410" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="412">
+        <label>ARdevKit.Model.Project.Abstract2DAugmentation</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_augmentation"/>
+        <childnode refid="409" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="415">
+        <label>ARdevKit.Model.Project.ImageAugmentation</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation"/>
+        <childnode refid="412" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="411">
+        <label>ICloneable</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="418">
+        <label>IPreviewable</label>
+        <link refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable"/>
+        <childnode refid="419" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="420">
+        <label>ARdevKit.Model.Project.AbstractTrackable</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable"/>
+        <childnode refid="418" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="417">
+        <label>ARdevKit.Model.Project.AbstractAugmentation</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation"/>
+        <childnode refid="418" relation="public-inheritance">
+        </childnode>
+        <childnode refid="420" relation="usage">
+          <edgelabel>#trackable</edgelabel>
+        </childnode>
+      </node>
+      <node id="419">
+        <label>ICloneable</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" line="28" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractAugmentation.cs" bodystart="27" bodyend="275"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a6dcd315fd15d4dd67a6910624cb38fb8" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractAugmentation</scope><name>AbstractAugmentation</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a46d8ded608fcaf37e6597e789c052e52" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractAugmentation</scope><name>AbstractAugmentation</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a2b3fa5e94428fab7f2d94842211a7cc9" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::AbstractAugmentation</scope><name>Accept</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a29b5dcf0bea3da72b75707e09f42124f" prot="public" virt="pure-virtual"><scope>ARdevKit::Model::Project::AbstractAugmentation</scope><name>CleanUp</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a184416a3d47e35d58bb7f5bb6ce2e269" prot="public" virt="pure-virtual"><scope>ARdevKit::Model::Project::AbstractAugmentation</scope><name>Clone</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a4f4497d02cdf208b57b4e3f90a6130fd" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractAugmentation</scope><name>createUserEvent</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a91d53f4c9c068efcdb1f3409cc3c2a60" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractAugmentation</scope><name>cue</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a333186e3963596bc5b17c02a21f2d384" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractAugmentation</scope><name>CustomUserEventReference</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a703566211752c4c4e08ceb5b6c528918" prot="public" virt="pure-virtual"><scope>ARdevKit::Model::Project::AbstractAugmentation</scope><name>getIcon</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a627330061b5df53ece5646e1cf83ff0f" prot="public" virt="pure-virtual"><scope>ARdevKit::Model::Project::AbstractAugmentation</scope><name>getPreview</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1af0470569d324d3bf199a841be3a3e853" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractAugmentation</scope><name>id</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a3590cc30e6169c0946c70b52223eb2bf" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractAugmentation</scope><name>ID</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a8b02a2eb775b8147e71575694ce8a38f" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::AbstractAugmentation</scope><name>initElement</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1ab19dda553062c0cae9e4a7a66e9cb64f" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractAugmentation</scope><name>IsVisible</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1add1a9acbdd08d307d611c17a02420096" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractAugmentation</scope><name>isVisible</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1ac94095d5fa4f5d4339f66b259ff55e74" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractAugmentation</scope><name>Rotation</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a71c331229ffcc780bb24b5b1422d819a" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractAugmentation</scope><name>rotationVector</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1adc3b84e8eb93f1ef50b3a689bd4c2a72" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractAugmentation</scope><name>Scaling</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a8dfac7a265d9e0da53baef344e3ffa51" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractAugmentation</scope><name>scalingVector</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1aa3badea1be1d6317e62e2dda390c2f34" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractAugmentation</scope><name>ToString</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a8d8e3f3c42696008edbfc44d51ba518d" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractAugmentation</scope><name>trackable</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a5ef95a16a1d2b03cb6185b86e7120a9c" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractAugmentation</scope><name>Trackable</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a8ed7943a2eb75682addda8731bff6c34" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractAugmentation</scope><name>Translation</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a4e47f552debbb5e56eaa6d9e8d78671d" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractAugmentation</scope><name>translationVector</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -10,6 +10,10 @@ using System.Windows.Forms;
 
 namespace ARdevKit.Controller.EditorController
 {
+    /// <summary>
+    /// The ElementSelectionController is used to controll the section of the UI,
+    //  where the addable elements of a project are displayed, so that the user can add them to the project.
+    /// </summary>
     class ElementSelectionController
     {
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -69,7 +73,7 @@ namespace ARdevKit.Controller.EditorController
                 if (c != editorWindow.Cmb_editor_selection_toolSelection)
                 {
                     editorWindow.Pnl_editor_selection.Controls.Remove(c);
-            }
+                }
             }
             SceneElementCategoryPanel panel = ((SceneElementCategoryPanel)editorWindow.Cmb_editor_selection_toolSelection.SelectedItem);
             editorWindow.Pnl_editor_selection.Controls.Add(panel);
@@ -146,6 +150,6 @@ namespace ARdevKit.Controller.EditorController
                 }
             }
         }
-            
+
     }
 }

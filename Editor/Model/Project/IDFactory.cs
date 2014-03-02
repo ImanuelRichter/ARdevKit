@@ -48,6 +48,9 @@ namespace ARdevKit.Model.Project
             return trackable.Type + sensorCosIDcounter++;
         }
 
+        /// <summary>
+        /// Resets this instance.
+        /// </summary>
         public static void Reset()
         {
             sensorIDcounter = 1;

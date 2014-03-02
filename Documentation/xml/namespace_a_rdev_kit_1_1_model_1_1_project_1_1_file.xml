@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="namespace_a_rdev_kit_1_1_model_1_1_project_1_1_file" kind="namespace">
+    <compoundname>ARdevKit::Model::Project::File</compoundname>
+    <innerclass refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block" prot="public">ARdevKit::Model::Project::File::AbstractBlock</innerclass>
+    <innerclass refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file" prot="public">ARdevKit::Model::Project::File::AbstractFile</innerclass>
+    <innerclass refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_config_file" prot="public">ARdevKit::Model::Project::File::ARELConfigFile</innerclass>
+    <innerclass refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_glue_file" prot="public">ARdevKit::Model::Project::File::ARELGlueFile</innerclass>
+    <innerclass refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_project_file" prot="public">ARdevKit::Model::Project::File::ARELProjectFile</innerclass>
+    <innerclass refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker" prot="public">ARdevKit::Model::Project::File::BlockMarker</innerclass>
+    <innerclass refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_chart_file" prot="public">ARdevKit::Model::Project::File::ChartFile</innerclass>
+    <innerclass refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_helper" prot="public">ARdevKit::Model::Project::File::Helper</innerclass>
+    <innerclass refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_block" prot="public">ARdevKit::Model::Project::File::JavaScriptBlock</innerclass>
+    <innerclass refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_in_line" prot="public">ARdevKit::Model::Project::File::JavaScriptInLine</innerclass>
+    <innerclass refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_line" prot="public">ARdevKit::Model::Project::File::JavaScriptLine</innerclass>
+    <innerclass refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_non_terminating_x_m_l_tag" prot="public">ARdevKit::Model::Project::File::NonTerminatingXMLTag</innerclass>
+    <innerclass refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_tracking_data_file" prot="public">ARdevKit::Model::Project::File::TrackingDataFile</innerclass>
+    <innerclass refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_block" prot="public">ARdevKit::Model::Project::File::XMLBlock</innerclass>
+    <innerclass refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_line" prot="public">ARdevKit::Model::Project::File::XMLLine</innerclass>
+    <innerclass refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_tag" prot="public">ARdevKit::Model::Project::File::XMLTag</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/AbstractBlock.cs" line="8" column="1"/>
+  </compounddef>
+</doxygen>

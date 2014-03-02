@@ -1,0 +1,379 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_view_1_1_element_icon" kind="class" prot="public">
+    <compoundname>ARdevKit::View::ElementIcon</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">TableLayoutPanel</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_view_1_1_element_icon_1a3a02607de8d8bea9df93dc9fb1bf012a" prot="private" static="no" mutable="no">
+        <type><ref refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element" kindref="compound">SceneElement</ref></type>
+        <definition>SceneElement ARdevKit.View.ElementIcon.element</definition>
+        <argsstring></argsstring>
+        <name>element</name>
+        <briefdescription>
+<para>The SceneElement that this Element Icon represents. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/ElementIcon.cs" line="24" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/ElementIcon.cs" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_view_1_1_element_icon_1aecdf8419f4f8d9adc19de33e815256cf" prot="private" static="no" mutable="no">
+        <type>Label</type>
+        <definition>Label ARdevKit.View.ElementIcon.label</definition>
+        <argsstring></argsstring>
+        <name>label</name>
+        <briefdescription>
+<para>The label that displays the name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/ElementIcon.cs" line="40" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/ElementIcon.cs" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_view_1_1_element_icon_1a851ba007bf3aead04cf6b9e65cc044af" prot="private" static="no" mutable="no">
+        <type>PictureBox</type>
+        <definition>PictureBox ARdevKit.View.ElementIcon.picture</definition>
+        <argsstring></argsstring>
+        <name>picture</name>
+        <briefdescription>
+<para>The pictureBox that shows the icon. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/ElementIcon.cs" line="46" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/ElementIcon.cs" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_view_1_1_element_icon_1afb2769b667930b80dad44293a7c4385c" prot="private" static="no" mutable="no">
+        <type><ref refid="class_a_rdev_kit_1_1_editor_window" kindref="compound">EditorWindow</ref></type>
+        <definition>EditorWindow ARdevKit.View.ElementIcon.editorWindow</definition>
+        <argsstring></argsstring>
+        <name>editorWindow</name>
+        <briefdescription>
+<para>The editor window. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/ElementIcon.cs" line="52" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/ElementIcon.cs" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_view_1_1_element_icon_1a8f81f41fd0b525d550253a71bbedea2d" prot="private" static="no" mutable="no">
+        <type>Point</type>
+        <definition>Point ARdevKit.View.ElementIcon.clickPoint</definition>
+        <argsstring></argsstring>
+        <name>clickPoint</name>
+        <briefdescription>
+<para>The point where the user clicked on the control. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/ElementIcon.cs" line="58" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/ElementIcon.cs" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_view_1_1_element_icon_1acff513fb905dce37a568e5cee586d948" prot="private" static="no" mutable="no">
+        <type>Boolean</type>
+        <definition>Boolean ARdevKit.View.ElementIcon.isMousePressed</definition>
+        <argsstring></argsstring>
+        <name>isMousePressed</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>true if the mouse is pressed. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/ElementIcon.cs" line="64" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/ElementIcon.cs" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_view_1_1_element_icon_1a5d4cda78ae958d4acc7be292e6c0d99e" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="no">
+        <type><ref refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element" kindref="compound">SceneElement</ref></type>
+        <definition>SceneElement ARdevKit.View.ElementIcon.Element</definition>
+        <argsstring></argsstring>
+        <name>Element</name>
+        <briefdescription>
+<para>Gets the element. </para>        </briefdescription>
+        <detaileddescription>
+<para>The element. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/ElementIcon.cs" line="32" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/ElementIcon.cs" bodystart="32" bodyend="-1"/>
+        <referencedby refid="class_preview_controller_1a7bc01f6c09f310b7079a9754ec27e307" compoundref="_preview_controller_8cs" startline="1068" endline="1077">PreviewController.onAugmentationDrop</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_view_1_1_element_icon_1a255d6901cfa20cd8d620c675143ddddf" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="no">
+        <type><ref refid="class_a_rdev_kit_1_1_editor_window" kindref="compound">EditorWindow</ref></type>
+        <definition>EditorWindow ARdevKit.View.ElementIcon.EditorWindow</definition>
+        <argsstring></argsstring>
+        <name>EditorWindow</name>
+        <briefdescription>
+<para>Gets the editor window. </para>        </briefdescription>
+        <detaileddescription>
+<para>The editor window. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/ElementIcon.cs" line="72" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/ElementIcon.cs" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_view_1_1_element_icon_1a30833a0a71c8421f5309f6c384d1ad0b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.View.ElementIcon.ElementIcon</definition>
+        <argsstring>(SceneElement element, EditorWindow ew)</argsstring>
+        <name>ElementIcon</name>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element" kindref="compound">SceneElement</ref></type>
+          <declname>element</declname>
+        </param>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_editor_window" kindref="compound">EditorWindow</ref></type>
+          <declname>ew</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. Creates the text label and the pictureBox and adds them to the Panel. Adds event handlers. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>element</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The element.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ew</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ew.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para><para>Robin, 14.01.2014. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/ElementIcon.cs" line="81" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/ElementIcon.cs" bodystart="81" bodyend="118"/>
+        <references refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_1ac20376b4582ba5df3b65aaf2c4f84b9b" compoundref="_scene_element_8cs" startline="55">ARdevKit.Controller.EditorController.SceneElement.Icon</references>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_view_1_1_element_icon_1a58f9a858b7276f2e84a1c5ff53c0c2ad" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ARdevKit.View.ElementIcon.onClick</definition>
+        <argsstring>(object sender, EventArgs e)</argsstring>
+        <name>onClick</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>EventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Raises the click event of the panel, label and picturebox. </para>        </briefdescription>
+        <detaileddescription>
+<para>Robin, 14.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Source of the event. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Event information to send to registered event handlers. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/ElementIcon.cs" line="129" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/ElementIcon.cs" bodystart="129" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_view_1_1_element_icon_1a74260100df10dfa4c774560c5f5eb1f1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ARdevKit.View.ElementIcon.onMouseDown</definition>
+        <argsstring>(object sender, EventArgs e)</argsstring>
+        <name>onMouseDown</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>EventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Raises the mouse down event. Initiates drag&amp;drop. </para>        </briefdescription>
+        <detaileddescription>
+<para>Robin, 18.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Source of the event. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Event information to send to registered event handlers. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/ElementIcon.cs" line="149" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/ElementIcon.cs" bodystart="149" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_view_1_1_element_icon_1a8d579f67f02edc591e947fa48e0bac75" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ARdevKit.View.ElementIcon.onMouseUp</definition>
+        <argsstring>(object sender, EventArgs e)</argsstring>
+        <name>onMouseUp</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>EventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Raises the mouse up event. </para>        </briefdescription>
+        <detaileddescription>
+<para>Robin, 19.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Source of the event. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Event information to send to registered event handlers. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/ElementIcon.cs" line="164" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/ElementIcon.cs" bodystart="164" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_view_1_1_element_icon_1a2eb3b81bfad03aacdeb5321c546c48de" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ARdevKit.View.ElementIcon.onMouseMove</definition>
+        <argsstring>(object sender, EventArgs e)</argsstring>
+        <name>onMouseMove</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>EventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Raises the mouse move event. </para>        </briefdescription>
+        <detaileddescription>
+<para>Robin, 19.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Source of the event. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Event information to send to registered event handlers. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/ElementIcon.cs" line="187" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/ElementIcon.cs" bodystart="187" bodyend="197"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_view_1_1_element_icon_1a20687dd0ecb82c3ec17341ba01256f14" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ARdevKit.View.ElementIcon.onMouseLeave</definition>
+        <argsstring>(object sender, EventArgs e)</argsstring>
+        <name>onMouseLeave</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>EventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Raises the mouse leave event. </para>        </briefdescription>
+        <detaileddescription>
+<para>Robin, 19.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Source of the event. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Event information to send to registered event handlers. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/ElementIcon.cs" line="208" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/ElementIcon.cs" bodystart="208" bodyend="211"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>An element icon is used to display a registered SceneElement in the SceneSelectionPanel. </para>    </briefdescription>
+    <detaileddescription>
+<para>Robin, 14.01.2014. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="534">
+        <label>System::Windows::Forms::TableLayoutPanel</label>
+      </node>
+      <node id="533">
+        <label>ARdevKit.View.ElementIcon</label>
+        <link refid="class_a_rdev_kit_1_1_view_1_1_element_icon"/>
+        <childnode refid="534" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="536">
+        <label>System::Windows::Forms::TableLayoutPanel</label>
+      </node>
+      <node id="535">
+        <label>ARdevKit.View.ElementIcon</label>
+        <link refid="class_a_rdev_kit_1_1_view_1_1_element_icon"/>
+        <childnode refid="536" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/ElementIcon.cs" line="20" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/ElementIcon.cs" bodystart="19" bodyend="212"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_view_1_1_element_icon_1a8f81f41fd0b525d550253a71bbedea2d" prot="private" virt="non-virtual"><scope>ARdevKit::View::ElementIcon</scope><name>clickPoint</name></member>
+      <member refid="class_a_rdev_kit_1_1_view_1_1_element_icon_1a255d6901cfa20cd8d620c675143ddddf" prot="public" virt="non-virtual"><scope>ARdevKit::View::ElementIcon</scope><name>EditorWindow</name></member>
+      <member refid="class_a_rdev_kit_1_1_view_1_1_element_icon_1afb2769b667930b80dad44293a7c4385c" prot="private" virt="non-virtual"><scope>ARdevKit::View::ElementIcon</scope><name>editorWindow</name></member>
+      <member refid="class_a_rdev_kit_1_1_view_1_1_element_icon_1a3a02607de8d8bea9df93dc9fb1bf012a" prot="private" virt="non-virtual"><scope>ARdevKit::View::ElementIcon</scope><name>element</name></member>
+      <member refid="class_a_rdev_kit_1_1_view_1_1_element_icon_1a5d4cda78ae958d4acc7be292e6c0d99e" prot="public" virt="non-virtual"><scope>ARdevKit::View::ElementIcon</scope><name>Element</name></member>
+      <member refid="class_a_rdev_kit_1_1_view_1_1_element_icon_1a30833a0a71c8421f5309f6c384d1ad0b" prot="public" virt="non-virtual"><scope>ARdevKit::View::ElementIcon</scope><name>ElementIcon</name></member>
+      <member refid="class_a_rdev_kit_1_1_view_1_1_element_icon_1acff513fb905dce37a568e5cee586d948" prot="private" virt="non-virtual"><scope>ARdevKit::View::ElementIcon</scope><name>isMousePressed</name></member>
+      <member refid="class_a_rdev_kit_1_1_view_1_1_element_icon_1aecdf8419f4f8d9adc19de33e815256cf" prot="private" virt="non-virtual"><scope>ARdevKit::View::ElementIcon</scope><name>label</name></member>
+      <member refid="class_a_rdev_kit_1_1_view_1_1_element_icon_1a58f9a858b7276f2e84a1c5ff53c0c2ad" prot="public" virt="non-virtual"><scope>ARdevKit::View::ElementIcon</scope><name>onClick</name></member>
+      <member refid="class_a_rdev_kit_1_1_view_1_1_element_icon_1a74260100df10dfa4c774560c5f5eb1f1" prot="public" virt="non-virtual"><scope>ARdevKit::View::ElementIcon</scope><name>onMouseDown</name></member>
+      <member refid="class_a_rdev_kit_1_1_view_1_1_element_icon_1a20687dd0ecb82c3ec17341ba01256f14" prot="public" virt="non-virtual"><scope>ARdevKit::View::ElementIcon</scope><name>onMouseLeave</name></member>
+      <member refid="class_a_rdev_kit_1_1_view_1_1_element_icon_1a2eb3b81bfad03aacdeb5321c546c48de" prot="public" virt="non-virtual"><scope>ARdevKit::View::ElementIcon</scope><name>onMouseMove</name></member>
+      <member refid="class_a_rdev_kit_1_1_view_1_1_element_icon_1a8d579f67f02edc591e947fa48e0bac75" prot="public" virt="non-virtual"><scope>ARdevKit::View::ElementIcon</scope><name>onMouseUp</name></member>
+      <member refid="class_a_rdev_kit_1_1_view_1_1_element_icon_1a851ba007bf3aead04cf6b9e65cc044af" prot="private" virt="non-virtual"><scope>ARdevKit::View::ElementIcon</scope><name>picture</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

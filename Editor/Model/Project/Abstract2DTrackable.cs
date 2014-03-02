@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Model.Project
 {
+    /// <summary>
+    /// An Abstract2DTrackable is a two-dimensional trackable image, that can be tracked by the metaio SDK.
+    /// </summary>
     [Serializable]
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public abstract class Abstract2DTrackable : AbstractTrackable
@@ -50,7 +53,7 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// Vector to describe the position on the PreviewPanel, and later
         /// to position it on the coordinatesystem given in AREL.
-        /// </summar>
+        /// </summary>
         protected Vector3D translationVector;
         /// <summary>
         /// Get or set the position of the <see cref="AbstractAugmentation"/>.

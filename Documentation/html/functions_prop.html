@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>ARdevkit: Class Members - Properties</title>
+<title>ARdevKit: Class Members - Properties</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,9 +28,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="ARRMarker(small).bmp"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">ARdevkit
-   &#160;<span id="projectnumber">0.1</span>
+   <div id="projectname">ARdevKit
+   &#160;<span id="projectnumber">0.2</span>
    </div>
   </td>
  </tr>
@@ -47,7 +48,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="namespaces.html"><span>Packages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -78,7 +78,37 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="functions.html"><span>All</span></a></li>
       <li><a href="functions_func.html"><span>Functions</span></a></li>
+      <li><a href="functions_vars.html"><span>Variables</span></a></li>
+      <li><a href="functions_enum.html"><span>Enumerations</span></a></li>
       <li class="current"><a href="functions_prop.html"><span>Properties</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow4" class="tabs3">
+    <ul class="tablist">
+      <li><a href="#index_a"><span>a</span></a></li>
+      <li><a href="#index_c"><span>c</span></a></li>
+      <li><a href="#index_d"><span>d</span></a></li>
+      <li><a href="#index_e"><span>e</span></a></li>
+      <li><a href="#index_f"><span>f</span></a></li>
+      <li><a href="#index_g"><span>g</span></a></li>
+      <li><a href="#index_h"><span>h</span></a></li>
+      <li><a href="#index_i"><span>i</span></a></li>
+      <li><a href="#index_k"><span>k</span></a></li>
+      <li><a href="#index_l"><span>l</span></a></li>
+      <li><a href="#index_m"><span>m</span></a></li>
+      <li><a href="#index_n"><span>n</span></a></li>
+      <li><a href="#index_o"><span>o</span></a></li>
+      <li><a href="#index_p"><span>p</span></a></li>
+      <li><a href="#index_q"><span>q</span></a></li>
+      <li><a href="#index_r"><span>r</span></a></li>
+      <li><a href="#index_s"><span>s</span></a></li>
+      <li><a href="#index_t"><span>t</span></a></li>
+      <li><a href="#index_u"><span>u</span></a></li>
+      <li><a href="#index_v"><span>v</span></a></li>
+      <li><a href="#index_w"><span>w</span></a></li>
+      <li><a href="#index_x"><span>x</span></a></li>
+      <li><a href="#index_y"><span>y</span></a></li>
+      <li><a href="#index_z"><span>z</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -101,7 +131,7 @@ $(document).ready(function(){initNavTree('functions_prop.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Properties</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Properties</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -111,28 +141,409 @@ $(document).ready(function(){initNavTree('functions_prop.html','');});
 </div>
 
 <div class="contents">
-&#160;<ul>
-<li>ArelFile
-: <a class="el" href="class_player_1_1_controller_1_1_player_controller_1_1_player_controller.html#af8c90d7b79252403dd2560265234b2f3">Player.Controller.PlayerController.PlayerController</a>
+&#160;
+
+<h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
+<li>AlphaRotation
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser.html#a7d1706b92cf1407de2b40183057642d3">ARdevKit.Model.Project.MarkerFuser</a>
 </li>
-<li>Button
-: <a class="el" href="class_player_1_1_view_1_1_stack_panel.html#a728ee1e2f3dd3339866de5f8d4455365">Player.View.StackPanel</a>
+<li>AlphaTranslation
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser.html#ac5342436a234bcd887fc29684e771228">ARdevKit.Model.Project.MarkerFuser</a>
 </li>
-<li>DebugController
-: <a class="el" href="class_player_1_1_controller_1_1_test_controller_1_1_test_controller.html#a194c8319c61c50590131a184fc4e4acc">Player.Controller.TestController.TestController</a>
+<li>Augmentation
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source.html#a97697e9bd1d99e0c8a35f47a19568016">ARdevKit.Model.Project.AbstractSource</a>
 </li>
-<li>element
-: <a class="el" href="class_editor_1_1_view_1_1_editor_window_1_1_element_icon.html#a299decc6d6e4e2cc95bee1cb3f625e4c">Editor.View.EditorWindow.ElementIcon</a>
+<li>Augmentations
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable.html#a999faeee63dee9445e8617d539c5b8d9">ARdevKit.Model.Project.AbstractTrackable</a>
 </li>
-<li>TCPClient
-: <a class="el" href="class_player_1_1_controller_1_1_connection_1_1_device_connection_1_1_u_d_p_client.html#ae7159fd17e457b46ae60964268d0ec37">Player.Controller.Connection.DeviceConnection.UDPClient</a>
-, <a class="el" href="class_player_1_1_controller_1_1_debug_controller_1_1_debug_controller.html#ae8bbb7ce146fd8050fd8ed032f407975">Player.Controller.DebugController.DebugController</a>
+</ul>
+
+
+<h3><a class="anchor" id="index_c"></a>- c -</h3><ul>
+<li>Category
+: <a class="el" href="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_category.html#a3b683fe0bda9ff970f7fbc1099818647">ARdevKit.Controller.EditorController.SceneElementCategory</a>
+, <a class="el" href="class_a_rdev_kit_1_1_view_1_1_scene_element_category_panel.html#aced9eb9454bc80f538ba8e5b1f055bbe">ARdevKit.View.SceneElementCategoryPanel</a>
 </li>
-<li>TCPServer
-: <a class="el" href="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller.html#a5d39c82d739df7023c05aab4d4ab4593">Editor.Controller.Connections.DeviceConnection.DeviceConnectionController</a>
+<li>CategoryName
+: <a class="el" href="class_a_rdev_kit_1_1_view_1_1_scene_element_category_panel.html#abfbcb63fcffe07fbd16582c5cde37c36">ARdevKit.View.SceneElementCategoryPanel</a>
 </li>
-<li>UDPServer
-: <a class="el" href="class_editor_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller.html#a7140b30e3c3b5b35896bb18f0f0da552">Editor.Controller.Connections.DeviceConnection.DeviceConnectionController</a>
+<li>CategoryPanels
+: <a class="el" href="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_element_selection_controller.html#a23dae11ee466555e6be598481a3459f2">ARdevKit.Controller.EditorController.ElementSelectionController</a>
+</li>
+<li>Cmb_editor_properties_objectSelection
+: <a class="el" href="class_a_rdev_kit_1_1_editor_window.html#a7a5f59a2277ea660f5ac354ed6563931">ARdevKit.EditorWindow</a>
+</li>
+<li>Cmb_editor_selection_toolSelection
+: <a class="el" href="class_a_rdev_kit_1_1_editor_window.html#a0937e4db376a67530e488c174d512925">ARdevKit.EditorWindow</a>
+</li>
+<li>ContinueLostTrackingWithOrientationSensor
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_fuser.html#a3c2dc4e70445338e8cd8e6f1aefca9c4">ARdevKit.Model.Project.MarkerlessFuser</a>
+</li>
+<li>copy
+: <a class="el" href="class_preview_controller.html#a3f44a88dd89aa311b734034de2f70417">PreviewController</a>
+</li>
+<li>currentMetaCategory
+: <a class="el" href="class_preview_controller.html#adf3c4a7bbd75ba87a843a3b56b0a04e2">PreviewController</a>
+</li>
+<li>CustomUserEventReference
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation.html#a333186e3963596bc5b17c02a21f2d384">ARdevKit.Model.Project.AbstractAugmentation</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_d"></a>- d -</h3><ul>
+<li>Data
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_source.html#a9f1dd2b4c0e9eb8c4f8464ece5f544c3">ARdevKit.Model.Project.FileSource</a>
+</li>
+<li>DebugConnected
+: <a class="el" href="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller.html#a6e1f49d1912fccc6edc212acbfc74c05">ARdevKit.Controller.Connections.DeviceConnection.DeviceConnectionController</a>
+</li>
+<li>DebugWindow
+: <a class="el" href="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller.html#acfe2c36b862f9b0775bf8e0f60d055ad">ARdevKit.Controller.Connections.DeviceConnection.DeviceConnectionController</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_e"></a>- e -</h3><ul>
+<li>EditorWindow
+: <a class="el" href="class_a_rdev_kit_1_1_view_1_1_element_icon.html#a255d6901cfa20cd8d620c675143ddddf">ARdevKit.View.ElementIcon</a>
+</li>
+<li>Element
+: <a class="el" href="class_a_rdev_kit_1_1_view_1_1_element_icon.html#a5d4cda78ae958d4acc7be292e6c0d99e">ARdevKit.View.ElementIcon</a>
+</li>
+<li>ElementIcon
+: <a class="el" href="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element.html#ae58c1e51ff8bfd942670b7c4afd2b2ce">ARdevKit.Controller.EditorController.SceneElement</a>
+</li>
+<li>End
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker.html#a3672477b3c409c07c7189a57fbd004c4">ARdevKit.Model.Project.File.BlockMarker</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_f"></a>- f -</h3><ul>
+<li>FeatureDescriptorAlignment
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor.html#a16b0d056f8ce0a6e79bdb23df1222fd4">ARdevKit.Model.Project.MarkerlessSensor</a>
+</li>
+<li>FilePath
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_custom_user_event.html#a2160a1e51911b3771b96f45d6ba6f214">ARdevKit.Model.Project.CustomUserEvent</a>
+, <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file.html#ac55b0e087f42f7ab5ce36fa3bce111ab">ARdevKit.Model.Project.File.AbstractFile</a>
+</li>
+<li>Files
+: <a class="el" href="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor.html#ac241f50a7b72f0cf3dc5b77c42a6a71b">ARdevKit.Controller.ProjectController.ExportVisitor</a>
+</li>
+<li>FPS
+: <a class="el" href="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_process_video_window.html#a8f9c4bafd5143ae34f81c5cc11b9a518">ARdevKit.Controller.TestController.ProcessVideoWindow</a>
+</li>
+<li>Fuser
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable.html#a98e3270dac234f5acd6054707f4c1964">ARdevKit.Model.Project.Abstract2DTrackable</a>
+, <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable.html#a34677234d0cd36ad12af730d87f1a211">ARdevKit.Model.Project.ImageTrackable</a>
+</li>
+<li>FuserType
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser.html#af2d47a34650e67792191c3d2553aae3f">ARdevKit.Model.Project.MarkerFuser</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_g"></a>- g -</h3><ul>
+<li>GammaRotation
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_fuser.html#a32b4cbef64b239fe38c7b107158edd85">ARdevKit.Model.Project.MarkerlessFuser</a>
+</li>
+<li>GammaTranslation
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_fuser.html#ad092a956a7a5a982d478ec726d0dafe6">ARdevKit.Model.Project.MarkerlessFuser</a>
+</li>
+<li>GravityAssistance
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_fuser.html#a6a2e22d44700a4d393b8f4e5f0d9a67e">ARdevKit.Model.Project.MarkerlessFuser</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_h"></a>- h -</h3><ul>
+<li>Height
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_augmentation.html#a14d016654e3824108d413c812f134539">ARdevKit.Model.Project.Abstract2DAugmentation</a>
+, <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation.html#accd9c0cc7875d689b73306a38892b4fe">ARdevKit.Model.Project.VideoAugmentation</a>
+, <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_screen_size.html#ae289860edb4091d9e4467e023cf6351f">ARdevKit.Model.Project.ScreenSize</a>
+, <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation.html#a5cecd83037a573b7f4fdfc7ebe6c7476">ARdevKit.Model.Project.ImageAugmentation</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
+<li>Icon
+: <a class="el" href="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element.html#ac20376b4582ba5df3b65aaf2c4f84b9b">ARdevKit.Controller.EditorController.SceneElement</a>
+</li>
+<li>ID
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation.html#a3590cc30e6169c0946c70b52223eb2bf">ARdevKit.Model.Project.AbstractAugmentation</a>
+</li>
+<li>ImageName
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable.html#ade2bba8d745b4c9f758bb22f7e82a946">ARdevKit.Model.Project.ImageTrackable</a>
+</li>
+<li>ImagePath
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation.html#a499cb36152832a4dd29794e3c1dd2718">ARdevKit.Model.Project.ImageAugmentation</a>
+, <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable.html#abf66216adfd7fcd5f94a6bdf55f30a36">ARdevKit.Model.Project.ImageTrackable</a>
+</li>
+<li>IsVisible
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation.html#ab19dda553062c0cae9e4a7a66e9cb64f">ARdevKit.Model.Project.AbstractAugmentation</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_k"></a>- k -</h3><ul>
+<li>KeepPoseForNumberOfFrames
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser.html#abe44b1d8d25a194883d2d676ab020f23">ARdevKit.Model.Project.MarkerFuser</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_l"></a>- l -</h3><ul>
+<li>Left
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_positioning.html#adc4b121079440c2d28c2ac86f7ee200a">ARdevKit.Model.Project.ChartPositioning</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_m"></a>- m -</h3><ul>
+<li>MatrixID
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_marker.html#aaa90db647a18c316b7c4de9dcf123170">ARdevKit.Model.Project.IDMarker</a>
+</li>
+<li>MaxObjectsToDetectPerFrame
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor.html#ae9ea2cf4d222d4ac0277562b25b6619a">ARdevKit.Model.Project.MarkerlessSensor</a>
+</li>
+<li>MaxObjectsToTrackInParallel
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor.html#ac88579a60d45b1d6df015f5e7fd39520">ARdevKit.Model.Project.MarkerlessSensor</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_n"></a>- n -</h3><ul>
+<li>Name
+: <a class="el" href="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element.html#a815f4b956410f110fa82889e863e6800">ARdevKit.Controller.EditorController.SceneElement</a>
+, <a class="el" href="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_category.html#a0f33148739c409a2fe2210c4e3ece165">ARdevKit.Controller.EditorController.SceneElementCategory</a>
+, <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_project.html#ae52006b6ebb8293ff034e8e00fdc4e77">ARdevKit.Model.Project.Project</a>
+, <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor.html#ae9ff3a8ab9d8d8a357173cfa55a7030f">ARdevKit.Model.Project.AbstractSensor</a>
+</li>
+<li>NumberOfSearchIterations
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_sensor.html#abdebe622c6ef02494e50d0caa2b142cb">ARdevKit.Model.Project.PictureMarkerSensor</a>
+, <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor.html#a106f06e0fb75947b4748a392e7a520b7">ARdevKit.Model.Project.MarkerSensor</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_o"></a>- o -</h3><ul>
+<li>Options
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart.html#ad53af854e1106059d97d0845a6fece6d">ARdevKit.Model.Project.Chart</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_p"></a>- p -</h3><ul>
+<li>ParentFile
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block.html#a77fdd4b938d3f9d6d1f63e04018b4410">ARdevKit.Model.Project.File.AbstractBlock</a>
+</li>
+<li>PictureName
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker.html#a1fcd8793ea1432d536bd08c856adf862">ARdevKit.Model.Project.PictureMarker</a>
+</li>
+<li>PicturePath
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker.html#a60a31045ce2dcc1a3a97b3e3956b1b7f">ARdevKit.Model.Project.PictureMarker</a>
+</li>
+<li>Pnl_editor_preview
+: <a class="el" href="class_a_rdev_kit_1_1_editor_window.html#a63d02d43b7dfe8841d6e1204948ecb17">ARdevKit.EditorWindow</a>
+</li>
+<li>Pnl_editor_selection
+: <a class="el" href="class_a_rdev_kit_1_1_editor_window.html#a601e295ca226828c6ca4eadc21101a78">ARdevKit.EditorWindow</a>
+</li>
+<li>Positioning
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart.html#ab0188f5581ff70bd3c70e5490646f26a">ARdevKit.Model.Project.Chart</a>
+</li>
+<li>PositioningMode
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_positioning.html#adae5996b4fe2ac69c164ab256037ec5f">ARdevKit.Model.Project.ChartPositioning</a>
+</li>
+<li>PreviewController
+: <a class="el" href="class_a_rdev_kit_1_1_editor_window.html#ae57e383a1684241c86a5253d1fd8197a">ARdevKit.EditorWindow</a>
+</li>
+<li>project
+: <a class="el" href="class_a_rdev_kit_1_1_editor_window.html#aa7e64c912e3d904fae0ec52588be0baa">ARdevKit.EditorWindow</a>
+</li>
+<li>ProjectPath
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_project.html#ad1061c35bc3ffb4caefebce4f22c365c">ARdevKit.Model.Project.Project</a>
+</li>
+<li>PropertyGrid1
+: <a class="el" href="class_a_rdev_kit_1_1_editor_window.html#a8f5f7c03bcb123e147d07b5023a60292">ARdevKit.EditorWindow</a>
+</li>
+<li>Prototype
+: <a class="el" href="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element.html#a03fd9bd9f7ca766c534b7c6400006a55">ARdevKit.Controller.EditorController.SceneElement</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_q"></a>- q -</h3><ul>
+<li>Query
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source.html#a77b9039615be2c2792e6f6792f0d32bc">ARdevKit.Model.Project.AbstractSource</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
+<li>Rotation
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable.html#a12ba493972e7d277e8f67294beb70355">ARdevKit.Model.Project.Abstract2DTrackable</a>
+, <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation.html#ac94095d5fa4f5d4339f66b259ff55e74">ARdevKit.Model.Project.AbstractAugmentation</a>
+, <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart.html#ad65da47b510958a72b05f6e796307508">ARdevKit.Model.Project.Chart</a>
+</li>
+<li>Rtb_out
+: <a class="el" href="class_a_rdev_kit_1_1_view_1_1_debug_window.html#a0b6022986bb5968dac5184d2024c6fca">ARdevKit.View.DebugWindow</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
+<li>Scaling
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation.html#adc3b84e8eb93f1ef50b3a689bd4c2a72">ARdevKit.Model.Project.AbstractAugmentation</a>
+, <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart.html#a29acf84a78af7e2d3a671b39dc823252">ARdevKit.Model.Project.Chart</a>
+</li>
+<li>SceneElements
+: <a class="el" href="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_category.html#a6e7b2d628b8ea21c13b6f4533a26c7ba">ARdevKit.Controller.EditorController.SceneElementCategory</a>
+</li>
+<li>Screensize
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_project.html#afe6b2e85505c01075fbc52a0cc851ce9">ARdevKit.Model.Project.Project</a>
+</li>
+<li>Sensor
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_project.html#ac22f350013113d1e85605346d824cbc1">ARdevKit.Model.Project.Project</a>
+</li>
+<li>SensorCosID
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable.html#a9578380939f19267cc7372ca19ff936f">ARdevKit.Model.Project.Abstract2DTrackable</a>
+</li>
+<li>SensorIDBase
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor.html#a51a87ecf568c53df079db7af4a553bc6">ARdevKit.Model.Project.AbstractSensor</a>
+</li>
+<li>SensorIDString
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor.html#a054724aa9c411a5f813d977c7c1f620c">ARdevKit.Model.Project.AbstractSensor</a>
+</li>
+<li>SensorSubType
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor.html#a092d1bd99165833488f9ce744a1bf65d">ARdevKit.Model.Project.AbstractSensor</a>
+</li>
+<li>SensorType
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor.html#a66bde8348688b03400befc56c6ce8384">ARdevKit.Model.Project.AbstractSensor</a>
+</li>
+<li>SimilarityThreshold
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable.html#af77b1f7a449ef9150e22c684894213b1">ARdevKit.Model.Project.AbstractTrackable</a>
+, <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_markerless_sensor.html#ae4442307a3d64a66c605624a2341aaa2">ARdevKit.Model.Project.MarkerlessSensor</a>
+</li>
+<li>Size
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable.html#a0c9a459cf25e74c8173564d476021c9a">ARdevKit.Model.Project.Abstract2DTrackable</a>
+</li>
+<li>SizeChanged
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_screen_size.html#a62b2288aaa6d380b2e78d3603f5f2415">ARdevKit.Model.Project.ScreenSize</a>
+</li>
+<li>SliderValueDouble
+: <a class="el" href="class_a_rdev_kit_1_1_view_1_1_slider.html#a4992b4f44df519d4490004030c720d8f">ARdevKit.View.Slider</a>
+</li>
+<li>SliderValueInt
+: <a class="el" href="class_a_rdev_kit_1_1_view_1_1_slider.html#a3405af3a2d8c39d5e018899859768da5">ARdevKit.View.Slider</a>
+</li>
+<li>Source
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_dynamic2_d_augmentation.html#a6abf4f1aff81779f1ec989c2cb99bdf3">ARdevKit.Model.Project.AbstractDynamic2DAugmentation</a>
+</li>
+<li>SourceID
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source.html#ad17fdcfdfb0b52e0a2780e7117fd9ffc">ARdevKit.Model.Project.AbstractSource</a>
+</li>
+<li>Sources
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_project.html#ade6d1eebeab2acee826e2ddf22724fb5">ARdevKit.Model.Project.Project</a>
+</li>
+<li>Start
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker.html#a7764ae600714a07a74b8ddf55f1a59d5">ARdevKit.Model.Project.File.BlockMarker</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_t"></a>- t -</h3><ul>
+<li>ThresholdOffset
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor.html#a704b4bc065e8b27d457c2cfbedee7a79">ARdevKit.Model.Project.MarkerSensor</a>
+, <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_sensor.html#a423bb9bb3fb7916fc9705640f58522e6">ARdevKit.Model.Project.PictureMarkerSensor</a>
+</li>
+<li>Top
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_positioning.html#a0853d6ce2e37038ba62f051285ebf2ca">ARdevKit.Model.Project.ChartPositioning</a>
+</li>
+<li>trackable
+: <a class="el" href="class_preview_controller.html#a38df415628d33de07a741fd3d80f5647">PreviewController</a>
+</li>
+<li>Trackable
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation.html#a5ef95a16a1d2b03cb6185b86e7120a9c">ARdevKit.Model.Project.AbstractAugmentation</a>
+</li>
+<li>Trackables
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_project.html#af3d7540cfeabb22ce7290378d7039a76">ARdevKit.Model.Project.Project</a>
+</li>
+<li>TrackingQuality
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_sensor.html#a312b8ea728d3018c96cb50ceb5c59f0c">ARdevKit.Model.Project.PictureMarkerSensor</a>
+, <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor.html#ad8681106fa33f5473799f0e0ed6999bc">ARdevKit.Model.Project.MarkerSensor</a>
+</li>
+<li>Translation
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable.html#acbb38387d30cb1239814606b54099bb3">ARdevKit.Model.Project.Abstract2DTrackable</a>
+, <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation.html#a8ed7943a2eb75682addda8731bff6c34">ARdevKit.Model.Project.AbstractAugmentation</a>
+</li>
+<li>Tsm_editor_menu_edit_copie
+: <a class="el" href="class_a_rdev_kit_1_1_editor_window.html#a7ce809e15aaf06e0d514989fb6292687">ARdevKit.EditorWindow</a>
+</li>
+<li>Tsm_editor_menu_edit_delete
+: <a class="el" href="class_a_rdev_kit_1_1_editor_window.html#a94b80b86878dae463d966bd117732260">ARdevKit.EditorWindow</a>
+</li>
+<li>Tsm_editor_menu_edit_paste
+: <a class="el" href="class_a_rdev_kit_1_1_editor_window.html#ac2310f24fffc1c84b2c23c5e6cbd8156">ARdevKit.EditorWindow</a>
+</li>
+<li>Type
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable.html#ab55c05790e5ffbefc7351a91167427bc">ARdevKit.Model.Project.AbstractTrackable</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_u"></a>- u -</h3><ul>
+<li>Url
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_db_source.html#a3a58d6e8914c028e06dbd9ebfef1f4bd">ARdevKit.Model.Project.DbSource</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_v"></a>- v -</h3><ul>
+<li>Value
+: <a class="el" href="class_a_rdev_kit_1_1_text_editor_form.html#aa0db7b9352834eda621de3e4de359fc1">ARdevKit.TextEditorForm</a>
+</li>
+<li>vector
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable.html#a1a8b6d43d95fad1720fc5af98b7e42b4">ARdevKit.Model.Project.AbstractTrackable</a>
+</li>
+<li>VideoPath
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation.html#adf603b3ae112358e8cae761e94003de1">ARdevKit.Model.Project.VideoAugmentation</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_w"></a>- w -</h3><ul>
+<li>W
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_di.html#a3e95130b6fadeca994900bf12632a9bd">ARdevKit.Model.Project.Vector3Di</a>
+</li>
+<li>Width
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation.html#aad5c2b8555dfe2fd18f2c67c7f34bbda">ARdevKit.Model.Project.VideoAugmentation</a>
+, <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_screen_size.html#af2592dc42f39f94de6c14385b2d8f55d">ARdevKit.Model.Project.ScreenSize</a>
+, <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation.html#a372f087469a33d84950310dfcd52e190">ARdevKit.Model.Project.ImageAugmentation</a>
+, <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_augmentation.html#abbc74c285b3d91be5841ce16473e2cd6">ARdevKit.Model.Project.Abstract2DAugmentation</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_x"></a>- x -</h3><ul>
+<li>X
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d.html#a06336e90ebe41a0d704d7fb968c3eab8">ARdevKit.Model.Project.Vector3D</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_y"></a>- y -</h3><ul>
+<li>Y
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d.html#aaa8679d7364c8f6ba03e89bd00f5b991">ARdevKit.Model.Project.Vector3D</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_z"></a>- z -</h3><ul>
+<li>Z
+: <a class="el" href="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d.html#a75ca41666b67f93861f074e13964e946">ARdevKit.Model.Project.Vector3D</a>
 </li>
 </ul>
 </div><!-- contents -->
@@ -140,7 +551,7 @@ $(document).ready(function(){initNavTree('functions_prop.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Dec 18 2013 16:38:48 for ARdevkit by
+    <li class="footer">Generated on Sat Mar 1 2014 20:48:27 for ARdevKit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

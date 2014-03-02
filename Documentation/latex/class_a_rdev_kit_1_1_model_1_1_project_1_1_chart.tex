@@ -1,0 +1,245 @@
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart}{\section{A\-Rdev\-Kit.\-Model.\-Project.\-Chart Class Reference}
+\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart}\index{A\-Rdev\-Kit.\-Model.\-Project.\-Chart@{A\-Rdev\-Kit.\-Model.\-Project.\-Chart}}
+}
+
+
+Describes a \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart}{Chart} with its Colors and Optimal\-Values. It is a \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart}{Chart}.  
+
+
+
+
+Inheritance diagram for A\-Rdev\-Kit.\-Model.\-Project.\-Chart\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\-Rdev\-Kit.\-Model.\-Project.\-Chart\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_adc15fc2ed54bf85d32868514e94afb28}{Chart} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+override void \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_a45ba9adb6f6219d3fb8dc6e0edd2700a}{Accept} (\hyperlink{class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor}{Controller.\-Project\-Controller.\-Abstract\-Project\-Visitor} visitor)
+\begin{DoxyCompactList}\small\item\em An overwriting method, to accept a Abstract\-Project\-Visitor which must be implemented according to the visitor design pattern. \end{DoxyCompactList}\item 
+override Bitmap \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_aab1b49aedaba3798818abd14c69918e8}{get\-Preview} ()
+\begin{DoxyCompactList}\small\item\em returns a Bitmap in order to be displayed on the Preview\-Panel, implements \hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} \end{DoxyCompactList}\item 
+override Bitmap \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_a5a3555ace98e2f5c9f4daaa73f94cd96}{get\-Icon} ()
+\begin{DoxyCompactList}\small\item\em returns a Bitmap in order to be displayed on the Element\-Selection\-Panel, implements \hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} \end{DoxyCompactList}\item 
+override void \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_a5cccd28644f1f358d551028759a3fed0}{Clean\-Up} ()
+\begin{DoxyCompactList}\small\item\em Clean up (remove created/copied files and directories). \end{DoxyCompactList}\item 
+override object \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_aaa06b6e53f2e5a48508f3a93b0483dc3}{Clone} ()
+\begin{DoxyCompactList}\small\item\em Makes a deep copy of this object. \end{DoxyCompactList}\item 
+override bool \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_a74620f6abc6763b5999074c5c6e2f661}{init\-Element} (\hyperlink{class_a_rdev_kit_1_1_editor_window}{Editor\-Window} ew)
+\begin{DoxyCompactList}\small\item\em This method is called by the preview\-Controller when a new instance of the element is added to the Scene. It sets \char`\"{}must-\/have\char`\"{} properties. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_positioning}{Chart\-Positioning} \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_a7b0dcd7f24610f6a7eb747628ee47430}{positioning}
+\begin{DoxyCompactList}\small\item\em The style used by High\-Chart. \end{DoxyCompactList}\item 
+string \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_aaf91a6b3628dd8bc5e1717c1fada4f49}{options\-File\-Path}
+\begin{DoxyCompactList}\small\item\em Full pathname of the options file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_positioning}{Chart\-Positioning} \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_ab0188f5581ff70bd3c70e5490646f26a}{Positioning}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the style. \end{DoxyCompactList}\item 
+string \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_ad53af854e1106059d97d0845a6fece6d}{Options}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_aaf91a6b3628dd8bc5e1717c1fada4f49}{options\-File\-Path}. \end{DoxyCompactList}\item 
+new \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d}{Vector3\-D} \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_ad65da47b510958a72b05f6e796307508}{Rotation}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em gets or sets the Vector \end{DoxyCompactList}\item 
+new \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d}{Vector3\-D} \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_a29acf84a78af7e2d3a671b39dc823252}{Scaling}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the scaling. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Describes a \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart}{Chart} with its Colors and Optimal\-Values. It is a \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart}{Chart}. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_adc15fc2ed54bf85d32868514e94afb28}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Chart@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Chart}!Chart@{Chart}}
+\index{Chart@{Chart}!ARdevKit::Model::Project::Chart@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Chart}}
+\subsubsection[{Chart}]{\setlength{\rightskip}{0pt plus 5cm}A\-Rdev\-Kit.\-Model.\-Project.\-Chart.\-Chart (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_adc15fc2ed54bf85d32868514e94afb28}
+
+
+Default constructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_a45ba9adb6f6219d3fb8dc6e0edd2700a}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Chart@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Chart}!Accept@{Accept}}
+\index{Accept@{Accept}!ARdevKit::Model::Project::Chart@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Chart}}
+\subsubsection[{Accept}]{\setlength{\rightskip}{0pt plus 5cm}override void A\-Rdev\-Kit.\-Model.\-Project.\-Chart.\-Accept (
+\begin{DoxyParamCaption}
+\item[{{\bf Controller.\-Project\-Controller.\-Abstract\-Project\-Visitor}}]{visitor}
+\end{DoxyParamCaption}
+)}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_a45ba9adb6f6219d3fb8dc6e0edd2700a}
+
+
+An overwriting method, to accept a Abstract\-Project\-Visitor which must be implemented according to the visitor design pattern. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em visitor} & the visitor which encapsulates the action which is performed on this \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart}{Chart}\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_a5cccd28644f1f358d551028759a3fed0}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Chart@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Chart}!Clean\-Up@{Clean\-Up}}
+\index{Clean\-Up@{Clean\-Up}!ARdevKit::Model::Project::Chart@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Chart}}
+\subsubsection[{Clean\-Up}]{\setlength{\rightskip}{0pt plus 5cm}override void A\-Rdev\-Kit.\-Model.\-Project.\-Chart.\-Clean\-Up (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_a5cccd28644f1f358d551028759a3fed0}
+
+
+Clean up (remove created/copied files and directories). 
+
+Imanuel, 31.\-01.\-2014. 
+
+Implements \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_a29b5dcf0bea3da72b75707e09f42124f}{A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Augmentation}.
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_aaa06b6e53f2e5a48508f3a93b0483dc3}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Chart@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Chart}!Clone@{Clone}}
+\index{Clone@{Clone}!ARdevKit::Model::Project::Chart@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Chart}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}override object A\-Rdev\-Kit.\-Model.\-Project.\-Chart.\-Clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_aaa06b6e53f2e5a48508f3a93b0483dc3}
+
+
+Makes a deep copy of this object. 
+
+Robin, 21.\-01.\-2014. 
+
+\begin{DoxyReturn}{Returns}
+A copy of this object. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_dynamic2_d_augmentation_adbb2d06450362f0385fe937bbb5255a8}{A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Dynamic2\-D\-Augmentation}.
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_a5a3555ace98e2f5c9f4daaa73f94cd96}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Chart@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Chart}!get\-Icon@{get\-Icon}}
+\index{get\-Icon@{get\-Icon}!ARdevKit::Model::Project::Chart@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Chart}}
+\subsubsection[{get\-Icon}]{\setlength{\rightskip}{0pt plus 5cm}override Bitmap A\-Rdev\-Kit.\-Model.\-Project.\-Chart.\-get\-Icon (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_a5a3555ace98e2f5c9f4daaa73f94cd96}
+
+
+returns a Bitmap in order to be displayed on the Element\-Selection\-Panel, implements \hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} 
+
+\begin{DoxyReturn}{Returns}
+a representative iconized Bitmap 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_a703566211752c4c4e08ceb5b6c528918}{A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Augmentation}.
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_aab1b49aedaba3798818abd14c69918e8}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Chart@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Chart}!get\-Preview@{get\-Preview}}
+\index{get\-Preview@{get\-Preview}!ARdevKit::Model::Project::Chart@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Chart}}
+\subsubsection[{get\-Preview}]{\setlength{\rightskip}{0pt plus 5cm}override Bitmap A\-Rdev\-Kit.\-Model.\-Project.\-Chart.\-get\-Preview (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_aab1b49aedaba3798818abd14c69918e8}
+
+
+returns a Bitmap in order to be displayed on the Preview\-Panel, implements \hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} 
+
+\begin{DoxyReturn}{Returns}
+a representative Bitmap 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_a627330061b5df53ece5646e1cf83ff0f}{A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Augmentation}.
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_a74620f6abc6763b5999074c5c6e2f661}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Chart@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Chart}!init\-Element@{init\-Element}}
+\index{init\-Element@{init\-Element}!ARdevKit::Model::Project::Chart@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Chart}}
+\subsubsection[{init\-Element}]{\setlength{\rightskip}{0pt plus 5cm}override bool A\-Rdev\-Kit.\-Model.\-Project.\-Chart.\-init\-Element (
+\begin{DoxyParamCaption}
+\item[{{\bf Editor\-Window}}]{ew}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_a74620f6abc6763b5999074c5c6e2f661}
+
+
+This method is called by the preview\-Controller when a new instance of the element is added to the Scene. It sets \char`\"{}must-\/have\char`\"{} properties. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ew} & The ew.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if it succeeds, false if it fails. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_a8b02a2eb775b8147e71575694ce8a38f}{A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Augmentation}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_aaf91a6b3628dd8bc5e1717c1fada4f49}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Chart@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Chart}!options\-File\-Path@{options\-File\-Path}}
+\index{options\-File\-Path@{options\-File\-Path}!ARdevKit::Model::Project::Chart@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Chart}}
+\subsubsection[{options\-File\-Path}]{\setlength{\rightskip}{0pt plus 5cm}string A\-Rdev\-Kit.\-Model.\-Project.\-Chart.\-options\-File\-Path\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_aaf91a6b3628dd8bc5e1717c1fada4f49}
+
+
+Full pathname of the options file. 
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_a7b0dcd7f24610f6a7eb747628ee47430}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Chart@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Chart}!positioning@{positioning}}
+\index{positioning@{positioning}!ARdevKit::Model::Project::Chart@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Chart}}
+\subsubsection[{positioning}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Chart\-Positioning} A\-Rdev\-Kit.\-Model.\-Project.\-Chart.\-positioning\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_a7b0dcd7f24610f6a7eb747628ee47430}
+
+
+The style used by High\-Chart. 
+
+
+
+\subsection{Property Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_ad53af854e1106059d97d0845a6fece6d}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Chart@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Chart}!Options@{Options}}
+\index{Options@{Options}!ARdevKit::Model::Project::Chart@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Chart}}
+\subsubsection[{Options}]{\setlength{\rightskip}{0pt plus 5cm}string A\-Rdev\-Kit.\-Model.\-Project.\-Chart.\-Options\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_ad53af854e1106059d97d0845a6fece6d}
+
+
+Gets or sets \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_aaf91a6b3628dd8bc5e1717c1fada4f49}{options\-File\-Path}. 
+
+The options. \hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_ab0188f5581ff70bd3c70e5490646f26a}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Chart@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Chart}!Positioning@{Positioning}}
+\index{Positioning@{Positioning}!ARdevKit::Model::Project::Chart@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Chart}}
+\subsubsection[{Positioning}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Chart\-Positioning} A\-Rdev\-Kit.\-Model.\-Project.\-Chart.\-Positioning\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_ab0188f5581ff70bd3c70e5490646f26a}
+
+
+Gets or sets the style. 
+
+The style. \hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_ad65da47b510958a72b05f6e796307508}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Chart@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Chart}!Rotation@{Rotation}}
+\index{Rotation@{Rotation}!ARdevKit::Model::Project::Chart@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Chart}}
+\subsubsection[{Rotation}]{\setlength{\rightskip}{0pt plus 5cm}new {\bf Vector3\-D} A\-Rdev\-Kit.\-Model.\-Project.\-Chart.\-Rotation\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_ad65da47b510958a72b05f6e796307508}
+
+
+gets or sets the Vector 
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_a29acf84a78af7e2d3a671b39dc823252}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Chart@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Chart}!Scaling@{Scaling}}
+\index{Scaling@{Scaling}!ARdevKit::Model::Project::Chart@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Chart}}
+\subsubsection[{Scaling}]{\setlength{\rightskip}{0pt plus 5cm}new {\bf Vector3\-D} A\-Rdev\-Kit.\-Model.\-Project.\-Chart.\-Scaling\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_chart_a29acf84a78af7e2d3a671b39dc823252}
+
+
+Gets or sets the scaling. 
+
+The scaling. 

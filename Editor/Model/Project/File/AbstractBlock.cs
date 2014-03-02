@@ -29,6 +29,12 @@ namespace ARdevKit.Model.Project.File
 
         /// <summary>   The <see cref="AbstractFile"/> this block belongs to. </summary>
         protected AbstractFile parentFile;
+        /// <summary>
+        /// Gets or sets the parent file.
+        /// </summary>
+        /// <value>
+        /// The parent file.
+        /// </value>
         public AbstractFile ParentFile
         {
             get { return parentFile; }

@@ -1,0 +1,334 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable" kind="class" prot="public" abstract="yes">
+    <compoundname>ARdevKit::Model::Project::AbstractTrackable</compoundname>
+    <basecompoundref refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable" prot="public" virt="non-virtual">ARdevKit.Model.Project.IPreviewable</basecompoundref>
+    <derivedcompoundref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable" prot="public" virt="non-virtual">ARdevKit.Model.Project.Abstract2DTrackable</derivedcompoundref>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1ab6faf8843d1e9a61b353286a8d583231" prot="protected" static="no" mutable="no">
+        <type>string</type>
+        <definition>string ARdevKit.Model.Project.AbstractTrackable.type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+<para>The type, to differtiate between different Marker types and their way to be tracked. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" line="29" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a5a74b70a54b9bb1f4fbad46e08a2e0cd" prot="protected" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ARdevKit.Model.Project.AbstractTrackable.similarityThreshold</definition>
+        <argsstring></argsstring>
+        <name>similarityThreshold</name>
+        <briefdescription>
+<para>Describes at which similarity, a picture recorded by the camera is recognized to be the desired one. Only experts usage. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" line="45" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1ab55c05790e5ffbefc7351a91167427bc" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>string</type>
+        <definition>string ARdevKit.Model.Project.AbstractTrackable.Type</definition>
+        <argsstring></argsstring>
+        <name>Type</name>
+        <briefdescription>
+<para>Gets or sets the type. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" line="34" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1af77b1f7a449ef9150e22c684894213b1" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>double</type>
+        <definition>double ARdevKit.Model.Project.AbstractTrackable.SimilarityThreshold</definition>
+        <argsstring></argsstring>
+        <name>SimilarityThreshold</name>
+        <briefdescription>
+<para>Gets or sets the similarity threshold. </para>        </briefdescription>
+        <detaileddescription>
+<para>The similarity threshold. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" line="54" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a1a8b6d43d95fad1720fc5af98b7e42b4" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d" kindref="compound">Vector3D</ref></type>
+        <definition>Vector3D ARdevKit.Model.Project.AbstractTrackable.vector</definition>
+        <argsstring></argsstring>
+        <name>vector</name>
+        <briefdescription>
+<para>Describes the position of the Trackable in the coordinatesystem used by metaio. </para>        </briefdescription>
+        <detaileddescription>
+<para>The vector. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" line="76" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a999faeee63dee9445e8617d539c5b8d9" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>List&lt; <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation" kindref="compound">AbstractAugmentation</ref> &gt;</type>
+        <definition>List&lt;AbstractAugmentation&gt; ARdevKit.Model.Project.AbstractTrackable.Augmentations</definition>
+        <argsstring></argsstring>
+        <name>Augmentations</name>
+        <briefdescription>
+<para>Lists all associated AbstractAugmentations. </para>        </briefdescription>
+        <detaileddescription>
+<para>The augmentations. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" line="85" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" bodystart="85" bodyend="-1"/>
+        <referencedby refid="class_preview_controller_1a03acb2816496e20b416346aeff126b04" compoundref="_preview_controller_8cs" startline="743" endline="766">PreviewController.rescalePreviewPanel</referencedby>
+        <referencedby refid="class_preview_controller_1ae33fd4d13286e22a819f5a6cd5de292f" compoundref="_preview_controller_8cs" startline="817" endline="839">PreviewController.updateElementCombobox</referencedby>
+        <referencedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a8b02a2eb775b8147e71575694ce8a38f" compoundref="_abstract_augmentation_8cs" startline="231" endline="263">ARdevKit.Model.Project.AbstractAugmentation.initElement</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a76f6ad0ed8f615b8f5b7738411abb54f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>abstract void</type>
+        <definition>abstract void ARdevKit.Model.Project.AbstractTrackable.Accept</definition>
+        <argsstring>(AbstractProjectVisitor visitor)</argsstring>
+        <name>Accept</name>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_1a9f06478c438150cd695dc8db8140b913">Accept</reimplementedby>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor" kindref="compound">AbstractProjectVisitor</ref></type>
+          <declname>visitor</declname>
+        </param>
+        <briefdescription>
+<para>An abstract method, to accept a AbstractProjectVisitor which must be implemented according to the visitor design pattern. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>visitor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the visitor which encapsulates the action which is performed on this element</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" line="93" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1ab4d8a1902c82fe7a1d385d5688f92bd8" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>abstract Bitmap</type>
+        <definition>abstract Bitmap ARdevKit.Model.Project.AbstractTrackable.getPreview</definition>
+        <argsstring>()</argsstring>
+        <name>getPreview</name>
+        <reimplements refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable_1a7cbcbb20929f4f1b6db3321ed2e83070">getPreview</reimplements>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_marker_1a4533a46611ee75747a5cf96f3fc2586c">getPreview</reimplementedby>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_1a9d608a1d9abb84c8109b7f34efffc658">getPreview</reimplementedby>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_1a96e42ce5c75d50a49b617d8eb8f87b99">getPreview</reimplementedby>
+        <briefdescription>
+<para>returns a Bitmap in order to be displayed on the PreviewPanel, implements <ref refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable" kindref="compound">IPreviewable</ref> </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>a representative Bitmap</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" line="100" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1abee7e96dac48f6fa7fc424c0f9139dff" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>abstract Bitmap</type>
+        <definition>abstract Bitmap ARdevKit.Model.Project.AbstractTrackable.getIcon</definition>
+        <argsstring>()</argsstring>
+        <name>getIcon</name>
+        <reimplements refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable_1a8573bdaccd5227400b538c34c1b5f279">getIcon</reimplements>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_marker_1ae3713212fbac546d841e3be2ccb43db9">getIcon</reimplementedby>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_1af11655160fd026f62dca5948cdf630cd">getIcon</reimplementedby>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_1acf5e1189f44cc8e1d42964e3842d3769">getIcon</reimplementedby>
+        <briefdescription>
+<para>returns a Bitmap in order to be displayed on the ElementSelectionPanel, implements <ref refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable" kindref="compound">IPreviewable</ref> </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>a representative iconized Bitmap</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" line="107" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1ac5dfdc39c3e7ad91ca9156208278b108" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ARdevKit.Model.Project.AbstractTrackable.existAugmentation</definition>
+        <argsstring>(IPreviewable a)</argsstring>
+        <name>existAugmentation</name>
+        <param>
+          <type><ref refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable" kindref="compound">IPreviewable</ref></type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+<para>Checks if the augmentation is associated with this <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable" kindref="compound">AbstractTrackable</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable" kindref="compound">IPreviewable</ref>, which is checked existence for</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true, if its associated with this <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable" kindref="compound">AbstractTrackable</ref> false, else</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" line="115" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" bodystart="115" bodyend="125"/>
+        <referencedby refid="class_preview_controller_1aa4cc8c02192eb08afe244825d5796552" compoundref="_preview_controller_8cs" startline="175" endline="249">PreviewController.addSource</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1ae14b72d85d610bcda17d93255bce45f7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ARdevKit.Model.Project.AbstractTrackable.RemoveAugmentation</definition>
+        <argsstring>(AbstractAugmentation augmentation)</argsstring>
+        <name>RemoveAugmentation</name>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation" kindref="compound">AbstractAugmentation</ref></type>
+          <declname>augmentation</declname>
+        </param>
+        <briefdescription>
+<para>Removes the augmentation described by augmentation. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 31.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>augmentation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The augmentation. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" line="135" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" bodystart="135" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a166fc03dc00911591baca14a3341ef29" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>abstract object</type>
+        <definition>abstract object ARdevKit.Model.Project.AbstractTrackable.Clone</definition>
+        <argsstring>()</argsstring>
+        <name>Clone</name>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_marker_1a69480e66c9a3755dfb94bb7b957c18d8">Clone</reimplementedby>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_1a9f0502ccb4306c88c4b15793b0d1c0ba">Clone</reimplementedby>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_1a090e0af9c7cdd270248516fe645b345d">Clone</reimplementedby>
+        <briefdescription>
+<para>Makes a deep copy of this object. </para>        </briefdescription>
+        <detaileddescription>
+<para>Robin, 22.01.2014. </para><para><simplesect kind="return"><para>A copy of this object. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" line="149" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1aff50ed9cb95973d56d6a65bd1ef96c0a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool ARdevKit.Model.Project.AbstractTrackable.initElement</definition>
+        <argsstring>(EditorWindow ew)</argsstring>
+        <name>initElement</name>
+        <reimplements refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable_1aa638e27d88c30b7e63b241d1001042c9">initElement</reimplements>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_marker_1a30b191b81b928fbe6397d8136e31baea">initElement</reimplementedby>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_1a90714d32f49a982fdbe39a84abd41704">initElement</reimplementedby>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_1a4563d08f550a2bde05cc86ba49a30756">initElement</reimplementedby>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_editor_window" kindref="compound">EditorWindow</ref></type>
+          <declname>ew</declname>
+        </param>
+        <briefdescription>
+<para>This method is called by the previewController when a new instance of the element is added to the Scene. It sets &quot;must-have&quot; properties. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ew</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ew.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if it succeeds, false if it fails. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" line="158" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" bodystart="158" bodyend="162"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Describes an <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable" kindref="compound">AbstractTrackable</ref> with its associated <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation" kindref="compound">AbstractAugmentation</ref>s and further details used for AREL. Is <ref refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable" kindref="compound">IPreviewable</ref> </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="470">
+        <label>ARdevKit.Model.Project.ImageTrackable</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable"/>
+        <childnode refid="468" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="468">
+        <label>ARdevKit.Model.Project.Abstract2DTrackable</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable"/>
+        <childnode refid="465" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="466">
+        <label>IPreviewable</label>
+        <link refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable"/>
+        <childnode refid="467" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="465">
+        <label>ARdevKit.Model.Project.AbstractTrackable</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable"/>
+        <childnode refid="466" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="467">
+        <label>ICloneable</label>
+      </node>
+      <node id="469">
+        <label>ARdevKit.Model.Project.IDMarker</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_marker"/>
+        <childnode refid="468" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="471">
+        <label>ARdevKit.Model.Project.PictureMarker</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker"/>
+        <childnode refid="468" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="473">
+        <label>IPreviewable</label>
+        <link refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable"/>
+        <childnode refid="474" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="472">
+        <label>ARdevKit.Model.Project.AbstractTrackable</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable"/>
+        <childnode refid="473" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="474">
+        <label>ICloneable</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" line="24" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/AbstractTrackable.cs" bodystart="23" bodyend="163"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a76f6ad0ed8f615b8f5b7738411abb54f" prot="public" virt="pure-virtual"><scope>ARdevKit::Model::Project::AbstractTrackable</scope><name>Accept</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a999faeee63dee9445e8617d539c5b8d9" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractTrackable</scope><name>Augmentations</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a166fc03dc00911591baca14a3341ef29" prot="public" virt="pure-virtual"><scope>ARdevKit::Model::Project::AbstractTrackable</scope><name>Clone</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1ac5dfdc39c3e7ad91ca9156208278b108" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractTrackable</scope><name>existAugmentation</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1abee7e96dac48f6fa7fc424c0f9139dff" prot="public" virt="pure-virtual"><scope>ARdevKit::Model::Project::AbstractTrackable</scope><name>getIcon</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1ab4d8a1902c82fe7a1d385d5688f92bd8" prot="public" virt="pure-virtual"><scope>ARdevKit::Model::Project::AbstractTrackable</scope><name>getPreview</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1aff50ed9cb95973d56d6a65bd1ef96c0a" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::AbstractTrackable</scope><name>initElement</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1ae14b72d85d610bcda17d93255bce45f7" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractTrackable</scope><name>RemoveAugmentation</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1af77b1f7a449ef9150e22c684894213b1" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractTrackable</scope><name>SimilarityThreshold</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a5a74b70a54b9bb1f4fbad46e08a2e0cd" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractTrackable</scope><name>similarityThreshold</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1ab55c05790e5ffbefc7351a91167427bc" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractTrackable</scope><name>Type</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1ab6faf8843d1e9a61b353286a8d583231" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractTrackable</scope><name>type</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a1a8b6d43d95fad1720fc5af98b7e42b4" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::AbstractTrackable</scope><name>vector</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

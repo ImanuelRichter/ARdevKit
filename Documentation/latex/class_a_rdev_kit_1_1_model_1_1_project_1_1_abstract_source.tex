@@ -1,0 +1,259 @@
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source}{\section{A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Source Class Reference}
+\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source}\index{A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Source@{A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Source}}
+}
+
+
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source}{Abstract\-Source} has no Picture\-Box in the Preview\-Panel, so it doesn't need a \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_abd9f742efb27a1fca992f6627c0421e4}{get\-Preview()} method, though \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_ae698f1c9d55cc0603931bd2804d0c35d}{get\-Icon()} is needed for the Element\-Selection\-Panel.  
+
+
+
+
+Inheritance diagram for A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Source\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Source\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+abstract void \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_ad45fa69ac940512f91457ca7c7661882}{Accept} (\hyperlink{class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor}{Abstract\-Project\-Visitor} visitor)
+\begin{DoxyCompactList}\small\item\em An abstract method, to accept an Abstract\-Project\-Visitor which must be implemented according to the visitor design pattern. \end{DoxyCompactList}\item 
+Bitmap \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_abd9f742efb27a1fca992f6627c0421e4}{get\-Preview} ()
+\begin{DoxyCompactList}\small\item\em returns N\-O Bitmap in order to be displayed on the Preview\-Panel, implements \hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} \end{DoxyCompactList}\item 
+abstract Bitmap \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_ae698f1c9d55cc0603931bd2804d0c35d}{get\-Icon} ()
+\begin{DoxyCompactList}\small\item\em returns a Bitmap in order to be displayed on the Element\-Selection\-Panel, implements \hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} \end{DoxyCompactList}\item 
+abstract object \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_a17fb18629481715303c5c55a867bb023}{Clone} ()
+\begin{DoxyCompactList}\small\item\em Makes a deep copy of this object. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_ae0ad810da02d289ddcbb28bb2aabec43}{init\-Element} (\hyperlink{class_a_rdev_kit_1_1_editor_window}{Editor\-Window} ew)
+\begin{DoxyCompactList}\small\item\em This method is called by the preview\-Controller when a new instance of the element is added to the Scene. It sets \char`\"{}must-\/have\char`\"{} properties. \end{DoxyCompactList}\item 
+override string \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_a74cf779ccb9c125ff5202864414f2078}{To\-String} ()
+\begin{DoxyCompactList}\small\item\em Returns a System.\-String that represents this instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_afbfcad1056b3776f35bdd1b09541ae28}{Abstract\-Source} ()
+\begin{DoxyCompactList}\small\item\em Initializes no new instance of the \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source}{Abstract\-Source} class, \end{DoxyCompactList}\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_a675e2b01328010a1c6d690e07ba04593}{Abstract\-Source} (string source\-Id)
+\begin{DoxyCompactList}\small\item\em Initializes no new instance of the \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source}{Abstract\-Source} class. but can be used from inheriting classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_abc3b4344725b8e3ae380f1922b59cf53}{query\-File\-Path}
+\begin{DoxyCompactList}\small\item\em The query to the source. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+String \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_ad17fdcfdfb0b52e0a2780e7117fd9ffc}{Source\-I\-D}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the source identifier. \end{DoxyCompactList}\item 
+string \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_a77b9039615be2c2792e6f6792f0d32bc}{Query}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the query. \end{DoxyCompactList}\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_dynamic2_d_augmentation}{Abstract\-Dynamic2\-D\-Augmentation} \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_a97697e9bd1d99e0c8a35f47a19568016}{Augmentation}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the augmentations, which get their dynamic information from the \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source}{Abstract\-Source} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source}{Abstract\-Source} has no Picture\-Box in the Preview\-Panel, so it doesn't need a \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_abd9f742efb27a1fca992f6627c0421e4}{get\-Preview()} method, though \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_ae698f1c9d55cc0603931bd2804d0c35d}{get\-Icon()} is needed for the Element\-Selection\-Panel. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_afbfcad1056b3776f35bdd1b09541ae28}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Source@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Source}!Abstract\-Source@{Abstract\-Source}}
+\index{Abstract\-Source@{Abstract\-Source}!ARdevKit::Model::Project::AbstractSource@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Source}}
+\subsubsection[{Abstract\-Source}]{\setlength{\rightskip}{0pt plus 5cm}A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Source.\-Abstract\-Source (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_afbfcad1056b3776f35bdd1b09541ae28}
+
+
+Initializes no new instance of the \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source}{Abstract\-Source} class, 
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_a675e2b01328010a1c6d690e07ba04593}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Source@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Source}!Abstract\-Source@{Abstract\-Source}}
+\index{Abstract\-Source@{Abstract\-Source}!ARdevKit::Model::Project::AbstractSource@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Source}}
+\subsubsection[{Abstract\-Source}]{\setlength{\rightskip}{0pt plus 5cm}A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Source.\-Abstract\-Source (
+\begin{DoxyParamCaption}
+\item[{string}]{source\-Id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_a675e2b01328010a1c6d690e07ba04593}
+
+
+Initializes no new instance of the \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source}{Abstract\-Source} class. but can be used from inheriting classes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source\-Id} & The source identifier.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_ad45fa69ac940512f91457ca7c7661882}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Source@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Source}!Accept@{Accept}}
+\index{Accept@{Accept}!ARdevKit::Model::Project::AbstractSource@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Source}}
+\subsubsection[{Accept}]{\setlength{\rightskip}{0pt plus 5cm}abstract void A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Source.\-Accept (
+\begin{DoxyParamCaption}
+\item[{{\bf Abstract\-Project\-Visitor}}]{visitor}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_ad45fa69ac940512f91457ca7c7661882}
+
+
+An abstract method, to accept an Abstract\-Project\-Visitor which must be implemented according to the visitor design pattern. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em visitor} & the visitor which encapsulates the action which is performed on this element\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_db_source_aaa7e395578b8e983de0392dd37c55c93}{A\-Rdev\-Kit.\-Model.\-Project.\-Db\-Source}.
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_a17fb18629481715303c5c55a867bb023}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Source@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Source}!Clone@{Clone}}
+\index{Clone@{Clone}!ARdevKit::Model::Project::AbstractSource@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Source}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}abstract object A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Source.\-Clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_a17fb18629481715303c5c55a867bb023}
+
+
+Makes a deep copy of this object. 
+
+Robin, 22.\-01.\-2014. 
+
+\begin{DoxyReturn}{Returns}
+A copy of this object. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_db_source_a9c58ffefa3fd6d23d58392273be07d17}{A\-Rdev\-Kit.\-Model.\-Project.\-Db\-Source}, and \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_source_ac97ee603e5e8f17bea48dc1d81e7b531}{A\-Rdev\-Kit.\-Model.\-Project.\-File\-Source}.
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_ae698f1c9d55cc0603931bd2804d0c35d}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Source@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Source}!get\-Icon@{get\-Icon}}
+\index{get\-Icon@{get\-Icon}!ARdevKit::Model::Project::AbstractSource@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Source}}
+\subsubsection[{get\-Icon}]{\setlength{\rightskip}{0pt plus 5cm}abstract Bitmap A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Source.\-get\-Icon (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_ae698f1c9d55cc0603931bd2804d0c35d}
+
+
+returns a Bitmap in order to be displayed on the Element\-Selection\-Panel, implements \hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} 
+
+\begin{DoxyReturn}{Returns}
+a representative iconized Bitmap
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable_a8573bdaccd5227400b538c34c1b5f279}{A\-Rdev\-Kit.\-Model.\-Project.\-I\-Previewable}.
+
+
+
+Implemented in \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_db_source_a0890127d66db4ce9c3daa6fe6f44f157}{A\-Rdev\-Kit.\-Model.\-Project.\-Db\-Source}, and \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_source_a1c35e8b945898af5787b60f3de7a2d26}{A\-Rdev\-Kit.\-Model.\-Project.\-File\-Source}.
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_abd9f742efb27a1fca992f6627c0421e4}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Source@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Source}!get\-Preview@{get\-Preview}}
+\index{get\-Preview@{get\-Preview}!ARdevKit::Model::Project::AbstractSource@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Source}}
+\subsubsection[{get\-Preview}]{\setlength{\rightskip}{0pt plus 5cm}Bitmap A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Source.\-get\-Preview (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_abd9f742efb27a1fca992f6627c0421e4}
+
+
+returns N\-O Bitmap in order to be displayed on the Preview\-Panel, implements \hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em System.\-Not\-Supported\-Exception} & \\
+\hline
+{\em Not\-Supported\-Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable_a7cbcbb20929f4f1b6db3321ed2e83070}{A\-Rdev\-Kit.\-Model.\-Project.\-I\-Previewable}.
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_ae0ad810da02d289ddcbb28bb2aabec43}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Source@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Source}!init\-Element@{init\-Element}}
+\index{init\-Element@{init\-Element}!ARdevKit::Model::Project::AbstractSource@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Source}}
+\subsubsection[{init\-Element}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Source.\-init\-Element (
+\begin{DoxyParamCaption}
+\item[{{\bf Editor\-Window}}]{ew}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_ae0ad810da02d289ddcbb28bb2aabec43}
+
+
+This method is called by the preview\-Controller when a new instance of the element is added to the Scene. It sets \char`\"{}must-\/have\char`\"{} properties. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ew} & The ew.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if it succeeds, false if it fails. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable_aa638e27d88c30b7e63b241d1001042c9}{A\-Rdev\-Kit.\-Model.\-Project.\-I\-Previewable}.
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_a74cf779ccb9c125ff5202864414f2078}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Source@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Source}!To\-String@{To\-String}}
+\index{To\-String@{To\-String}!ARdevKit::Model::Project::AbstractSource@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Source}}
+\subsubsection[{To\-String}]{\setlength{\rightskip}{0pt plus 5cm}override string A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Source.\-To\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_a74cf779ccb9c125ff5202864414f2078}
+
+
+Returns a System.\-String that represents this instance. 
+
+\begin{DoxyReturn}{Returns}
+A System.\-String that represents this instance. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_abc3b4344725b8e3ae380f1922b59cf53}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Source@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Source}!query\-File\-Path@{query\-File\-Path}}
+\index{query\-File\-Path@{query\-File\-Path}!ARdevKit::Model::Project::AbstractSource@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Source}}
+\subsubsection[{query\-File\-Path}]{\setlength{\rightskip}{0pt plus 5cm}string A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Source.\-query\-File\-Path\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_abc3b4344725b8e3ae380f1922b59cf53}
+
+
+The query to the source. 
+
+
+
+\subsection{Property Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_a97697e9bd1d99e0c8a35f47a19568016}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Source@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Source}!Augmentation@{Augmentation}}
+\index{Augmentation@{Augmentation}!ARdevKit::Model::Project::AbstractSource@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Source}}
+\subsubsection[{Augmentation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Abstract\-Dynamic2\-D\-Augmentation} A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Source.\-Augmentation\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_a97697e9bd1d99e0c8a35f47a19568016}
+
+
+Gets or sets the augmentations, which get their dynamic information from the \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source}{Abstract\-Source} 
+
+The augmentations. \hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_a77b9039615be2c2792e6f6792f0d32bc}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Source@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Source}!Query@{Query}}
+\index{Query@{Query}!ARdevKit::Model::Project::AbstractSource@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Source}}
+\subsubsection[{Query}]{\setlength{\rightskip}{0pt plus 5cm}string A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Source.\-Query\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_a77b9039615be2c2792e6f6792f0d32bc}
+
+
+Gets or sets the query. 
+
+The query. \hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_ad17fdcfdfb0b52e0a2780e7117fd9ffc}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Source@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Source}!Source\-I\-D@{Source\-I\-D}}
+\index{Source\-I\-D@{Source\-I\-D}!ARdevKit::Model::Project::AbstractSource@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Source}}
+\subsubsection[{Source\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}String A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Source.\-Source\-I\-D\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source_ad17fdcfdfb0b52e0a2780e7117fd9ffc}
+
+
+Gets or sets the source identifier. 
+
+The source identifier. 

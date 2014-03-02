@@ -88,7 +88,7 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// Constructor.
         /// </summary>
-        /// <param name="imagePath">Full pathname of the image file.</param>
+        /// <param name="picturePath">The picture path.</param>
         public PictureMarker(string picturePath)
             : this()
         {
@@ -186,7 +186,7 @@ namespace ARdevKit.Model.Project
 
                     if (!ew.project.existTrackable(this))
                     {
-                        ew.project.Sensor = new MarkerlessSensor();
+                        ew.project.Sensor = new MarkerSensor();
                     }
                     else
                     {

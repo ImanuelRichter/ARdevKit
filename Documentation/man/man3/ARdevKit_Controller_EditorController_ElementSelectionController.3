@@ -1,0 +1,82 @@
+.TH "ARdevKit.Controller.EditorController.ElementSelectionController" 3 "Sat Mar 1 2014" "Version 0.2" "ARdevKit" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ARdevKit.Controller.EditorController.ElementSelectionController \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBElementSelectionController\fP (\fBEditorWindow\fP ew)"
+.br
+.RI "\fIConstructor\&. \fP"
+.ti -1c
+.RI "void \fBupdateElementSelectionPanel\fP ()"
+.br
+.RI "\fIUpdates the ElementSelectionPanel\&. \fP"
+.ti -1c
+.RI "void \fBpopulateComboBox\fP ()"
+.br
+.RI "\fIAdds the SceneElementCategories to the ComboBox of the ElementSelectionPanel\&. \fP"
+.ti -1c
+.RI "void \fBsetElementEnable\fP (Type element, Boolean enable)"
+.br
+.RI "\fIDisables or enables the given element in the Element Selection Panel\&. \fP"
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "List< \fBSceneElementCategoryPanel\fP > \fBCategoryPanels\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the category panels\&. \fP"
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ARdevKit\&.Controller\&.EditorController\&.ElementSelectionController\&.ElementSelectionController (\fBEditorWindow\fPew)"
+
+.PP
+Constructor\&. Lizzard, 1/13/2014\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIew\fP The Editor Window\&. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void ARdevKit\&.Controller\&.EditorController\&.ElementSelectionController\&.populateComboBox ()"
+
+.PP
+Adds the SceneElementCategories to the ComboBox of the ElementSelectionPanel\&. Lizzard, 1/13/2014\&. 
+.SS "void ARdevKit\&.Controller\&.EditorController\&.ElementSelectionController\&.setElementEnable (Typeelement, Booleanenable)"
+
+.PP
+Disables or enables the given element in the Element Selection Panel\&. Robin, 19\&.01\&.2014\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIelement\fP The element to disable or enable\&. Example: typeof(IDMarker) 
+.br
+\fIenable\fP Whether the element should be dis or enabled\&. 
+.RE
+.PP
+
+.SS "void ARdevKit\&.Controller\&.EditorController\&.ElementSelectionController\&.updateElementSelectionPanel ()"
+
+.PP
+Updates the ElementSelectionPanel\&. Lizzard, 1/13/2014\&. 
+.SH "Property Documentation"
+.PP 
+.SS "List<\fBSceneElementCategoryPanel\fP> ARdevKit\&.Controller\&.EditorController\&.ElementSelectionController\&.CategoryPanels\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the category panels\&. The category panels\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ARdevKit from the source code\&.

@@ -7,6 +7,11 @@ using ARdevKit.Controller;
 
 namespace ARdevKit.Controller.EditorController
 {
+    /**
+     * <summary>    A category for scene elements. </summary>
+     *
+     * <remarks>    Robin, 19.01.2014. </remarks>
+     */
     public enum MetaCategory { Source, Augmentation, Trackable }
 
     /**

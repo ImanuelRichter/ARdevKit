@@ -1,0 +1,214 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor" kind="class" prot="public">
+    <compoundname>ARdevKit::Model::Project::MarkerSensor</compoundname>
+    <basecompoundref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor" prot="public" virt="non-virtual">ARdevKit.Model.Project.AbstractSensor</basecompoundref>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_1adf403b5a2cee12e9f0006bd431cf569f" prot="public" static="no">
+        <name>TrackingQualities</name>
+        <enumvalue id="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_1adf403b5a2cee12e9f0006bd431cf569fa00bd624b5b21d2b07edf398c1ce98b5e" prot="public">
+          <name>robust</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_1adf403b5a2cee12e9f0006bd431cf569fa31d4541b8e926a24f0c9b835b68cfdf3" prot="public">
+          <name>fast</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Specifies the <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_1af392037ccf5a8cf5e95ce42b0c768483" kindref="member">trackingQuality</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 15.01.2014. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerSensor.cs" line="20" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerSensor.cs" bodystart="20" bodyend="20"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_1af392037ccf5a8cf5e95ce42b0c768483" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_1adf403b5a2cee12e9f0006bd431cf569f" kindref="member">TrackingQualities</ref></type>
+        <definition>TrackingQualities ARdevKit.Model.Project.MarkerSensor.trackingQuality</definition>
+        <argsstring></argsstring>
+        <name>trackingQuality</name>
+        <briefdescription>
+<para>Strategy which is used for the marker detection. There are two types available: </para>        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>&quot;robust&quot; to use a robust approach to detect the markers, which usually gives the best results, but consumes more computational time, i.e. is slower.</para></listitem><listitem><para>&quot;fast&quot; to use a more simple approach to detect the markers, which is less precise, but faster than robust. </para></listitem></itemizedlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerSensor.cs" line="30" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerSensor.cs" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_1ad80a6fc2821f265fc4c0583d0a66dfa7" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ARdevKit.Model.Project.MarkerSensor.thresholdOffset</definition>
+        <argsstring></argsstring>
+        <name>thresholdOffset</name>
+        <briefdescription>
+<para>The threshold which is used to binarize the camera image. Binarizing is the process where each pixel is converted to a grayscale value (between 0 and 255) and then is set to 0 when the value is below the threshold and to 1 when the value is above. This helps to clearly identify the marker and is therefore important for the detection process. When the tracking quality is set to &quot;fast&quot;, then this value is fixed and will not change during the tracking process. When the tracking quality is set to &quot;robust&quot;, then the value is only the starting value in the very first frame after loading the tracking.xml. Detecting markers using a fixed threshold can lead to failure. The value range for the threshold is between 0 and 255. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerSensor.cs" line="58" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerSensor.cs" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_1aaefe31873d64fdae7c9518487f0ad0d1" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ARdevKit.Model.Project.MarkerSensor.numberOfSearchIterations</definition>
+        <argsstring></argsstring>
+        <name>numberOfSearchIterations</name>
+        <briefdescription>
+<para>Number of search iterations which controls the number of attempts to find a marker with a new ThresholdOffset. This parameter matters when &quot;robust&quot; is set as &quot;TrackingQuality&quot;, but is ignored for &quot;fast&quot;. The ThresholdOffset is adapted when no marker was detected. With a high number, the marker tracker is more likely to detect a marker, but it also needs more computational time, i.e. is slower. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerSensor.cs" line="80" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerSensor.cs" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_1ad8681106fa33f5473799f0e0ed6999bc" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_1adf403b5a2cee12e9f0006bd431cf569f" kindref="member">TrackingQualities</ref></type>
+        <definition>TrackingQualities ARdevKit.Model.Project.MarkerSensor.TrackingQuality</definition>
+        <argsstring></argsstring>
+        <name>TrackingQuality</name>
+        <briefdescription>
+<para>Gets or sets the tracking quality. </para>        </briefdescription>
+        <detaileddescription>
+<para>The tracking quality. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerSensor.cs" line="37" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerSensor.cs" bodystart="38" bodyend="-1"/>
+        <referencedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1a0e82718aa35b9bff19cd6db0b33f3d5c" compoundref="_export_visitor_8cs" startline="831" endline="840">ARdevKit.Controller.ProjectController.ExportVisitor.Visit</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_1a704b4bc065e8b27d457c2cfbedee7a79" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>int</type>
+        <definition>int ARdevKit.Model.Project.MarkerSensor.ThresholdOffset</definition>
+        <argsstring></argsstring>
+        <name>ThresholdOffset</name>
+        <briefdescription>
+<para>Gets or sets the threshold offset. </para>        </briefdescription>
+        <detaileddescription>
+<para>The threshold offset. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerSensor.cs" line="65" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerSensor.cs" bodystart="66" bodyend="-1"/>
+        <referencedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1a0e82718aa35b9bff19cd6db0b33f3d5c" compoundref="_export_visitor_8cs" startline="831" endline="840">ARdevKit.Controller.ProjectController.ExportVisitor.Visit</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_1a106f06e0fb75947b4748a392e7a520b7" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>int</type>
+        <definition>int ARdevKit.Model.Project.MarkerSensor.NumberOfSearchIterations</definition>
+        <argsstring></argsstring>
+        <name>NumberOfSearchIterations</name>
+        <briefdescription>
+<para>Gets or sets the number of search iterations. </para>        </briefdescription>
+        <detaileddescription>
+<para>The total number of search iterations. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerSensor.cs" line="87" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerSensor.cs" bodystart="88" bodyend="-1"/>
+        <referencedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1a0e82718aa35b9bff19cd6db0b33f3d5c" compoundref="_export_visitor_8cs" startline="831" endline="840">ARdevKit.Controller.ProjectController.ExportVisitor.Visit</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_1a520687ce212f4b28f8e322b41bd64551" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.Model.Project.MarkerSensor.MarkerSensor</definition>
+        <argsstring>()</argsstring>
+        <name>MarkerSensor</name>
+        <briefdescription>
+<para>Default constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 17.01.2014. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerSensor.cs" line="99" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerSensor.cs" bodystart="99" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_1a21f889bd4916cb1ee7f455a9f644b72a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override void</type>
+        <definition>override void ARdevKit.Model.Project.MarkerSensor.Accept</definition>
+        <argsstring>(AbstractProjectVisitor visitor)</argsstring>
+        <name>Accept</name>
+        <reimplements refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a4ff825b76bdd9f01a93ca670d02c219c">Accept</reimplements>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor" kindref="compound">AbstractProjectVisitor</ref></type>
+          <declname>visitor</declname>
+        </param>
+        <briefdescription>
+<para>Accepts the given visitor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>visitor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The visitor.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para><para>Imanuel, 17.01.2014. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerSensor.cs" line="117" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerSensor.cs" bodystart="117" bodyend="120"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="658">
+        <label>AbstractSensor</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor"/>
+      </node>
+      <node id="657">
+        <label>ARdevKit.Model.Project.MarkerSensor</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor"/>
+        <childnode refid="658" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="660">
+        <label>AbstractSensor</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor"/>
+      </node>
+      <node id="659">
+        <label>ARdevKit.Model.Project.MarkerSensor</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor"/>
+        <childnode refid="660" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerSensor.cs" line="12" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/MarkerSensor.cs" bodystart="11" bodyend="121"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1ac267c5a8c7792a6c0ba07108102c0706" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerSensor</scope><name>AbstractSensor</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_1a21f889bd4916cb1ee7f455a9f644b72a" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::MarkerSensor</scope><name>Accept</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_1a520687ce212f4b28f8e322b41bd64551" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerSensor</scope><name>MarkerSensor</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1ae9ff3a8ab9d8d8a357173cfa55a7030f" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerSensor</scope><name>Name</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_1aaefe31873d64fdae7c9518487f0ad0d1" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerSensor</scope><name>numberOfSearchIterations</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_1a106f06e0fb75947b4748a392e7a520b7" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerSensor</scope><name>NumberOfSearchIterations</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a2f9524a6aba4331373c0c1968b2f6f4d" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerSensor</scope><name>sensorIDBase</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a51a87ecf568c53df079db7af4a553bc6" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerSensor</scope><name>SensorIDBase</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a8eecc60106e6a54a3e096c63a7d4d012" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerSensor</scope><name>SensorIDBases</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1ae12a6c3bfe5686d888d7e36c9b19df47" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerSensor</scope><name>sensorIDString</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a054724aa9c411a5f813d977c7c1f620c" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerSensor</scope><name>SensorIDString</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a29b9e916f374e31196689e9d7ac73123" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerSensor</scope><name>sensorSubType</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a092d1bd99165833488f9ce744a1bf65d" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerSensor</scope><name>SensorSubType</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1af7b41fc81d926ed779ca02ef894fcddf" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerSensor</scope><name>SensorSubTypes</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a66bde8348688b03400befc56c6ce8384" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerSensor</scope><name>SensorType</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a01251db96ea5e0fb0abe1df0a129e751" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerSensor</scope><name>sensorType</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_1a1954adedcf2a2f61256c9b11fe0c8386" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerSensor</scope><name>SensorTypes</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_1ad80a6fc2821f265fc4c0583d0a66dfa7" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerSensor</scope><name>thresholdOffset</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_1a704b4bc065e8b27d457c2cfbedee7a79" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerSensor</scope><name>ThresholdOffset</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_1adf403b5a2cee12e9f0006bd431cf569f" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerSensor</scope><name>TrackingQualities</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_1af392037ccf5a8cf5e95ce42b0c768483" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerSensor</scope><name>trackingQuality</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_1ad8681106fa33f5473799f0e0ed6999bc" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::MarkerSensor</scope><name>TrackingQuality</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

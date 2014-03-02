@@ -1,0 +1,280 @@
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable}{\section{A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Trackable Class Reference}
+\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable}\index{A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Trackable@{A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Trackable}}
+}
+
+
+Describes an \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable}{Abstract\-Trackable} with its associated \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation}{Abstract\-Augmentation}s and further details used for A\-R\-E\-L. Is \hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable}  
+
+
+
+
+Inheritance diagram for A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Trackable\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Trackable\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+abstract void \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_a76f6ad0ed8f615b8f5b7738411abb54f}{Accept} (\hyperlink{class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor}{Abstract\-Project\-Visitor} visitor)
+\begin{DoxyCompactList}\small\item\em An abstract method, to accept a Abstract\-Project\-Visitor which must be implemented according to the visitor design pattern. \end{DoxyCompactList}\item 
+abstract Bitmap \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_ab4d8a1902c82fe7a1d385d5688f92bd8}{get\-Preview} ()
+\begin{DoxyCompactList}\small\item\em returns a Bitmap in order to be displayed on the Preview\-Panel, implements \hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} \end{DoxyCompactList}\item 
+abstract Bitmap \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_abee7e96dac48f6fa7fc424c0f9139dff}{get\-Icon} ()
+\begin{DoxyCompactList}\small\item\em returns a Bitmap in order to be displayed on the Element\-Selection\-Panel, implements \hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} \end{DoxyCompactList}\item 
+bool \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_ac5dfdc39c3e7ad91ca9156208278b108}{exist\-Augmentation} (\hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} a)
+\begin{DoxyCompactList}\small\item\em Checks if the augmentation is associated with this \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable}{Abstract\-Trackable}. \end{DoxyCompactList}\item 
+void \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_ae14b72d85d610bcda17d93255bce45f7}{Remove\-Augmentation} (\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation}{Abstract\-Augmentation} augmentation)
+\begin{DoxyCompactList}\small\item\em Removes the augmentation described by augmentation. \end{DoxyCompactList}\item 
+abstract object \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_a166fc03dc00911591baca14a3341ef29}{Clone} ()
+\begin{DoxyCompactList}\small\item\em Makes a deep copy of this object. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_aff50ed9cb95973d56d6a65bd1ef96c0a}{init\-Element} (\hyperlink{class_a_rdev_kit_1_1_editor_window}{Editor\-Window} ew)
+\begin{DoxyCompactList}\small\item\em This method is called by the preview\-Controller when a new instance of the element is added to the Scene. It sets \char`\"{}must-\/have\char`\"{} properties. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_ab6faf8843d1e9a61b353286a8d583231}{type}
+\begin{DoxyCompactList}\small\item\em The type, to differtiate between different Marker types and their way to be tracked. \end{DoxyCompactList}\item 
+double \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_a5a74b70a54b9bb1f4fbad46e08a2e0cd}{similarity\-Threshold}
+\begin{DoxyCompactList}\small\item\em Describes at which similarity, a picture recorded by the camera is recognized to be the desired one. Only experts usage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_ab55c05790e5ffbefc7351a91167427bc}{Type}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the type. \end{DoxyCompactList}\item 
+double \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_af77b1f7a449ef9150e22c684894213b1}{Similarity\-Threshold}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the similarity threshold. \end{DoxyCompactList}\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d}{Vector3\-D} \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_a1a8b6d43d95fad1720fc5af98b7e42b4}{vector}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Describes the position of the Trackable in the coordinatesystem used by metaio. \end{DoxyCompactList}\item 
+List$<$ \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation}{Abstract\-Augmentation} $>$ \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_a999faeee63dee9445e8617d539c5b8d9}{Augmentations}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Lists all associated Abstract\-Augmentations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Describes an \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable}{Abstract\-Trackable} with its associated \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation}{Abstract\-Augmentation}s and further details used for A\-R\-E\-L. Is \hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_a76f6ad0ed8f615b8f5b7738411abb54f}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Trackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Trackable}!Accept@{Accept}}
+\index{Accept@{Accept}!ARdevKit::Model::Project::AbstractTrackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Trackable}}
+\subsubsection[{Accept}]{\setlength{\rightskip}{0pt plus 5cm}abstract void A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Trackable.\-Accept (
+\begin{DoxyParamCaption}
+\item[{{\bf Abstract\-Project\-Visitor}}]{visitor}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_a76f6ad0ed8f615b8f5b7738411abb54f}
+
+
+An abstract method, to accept a Abstract\-Project\-Visitor which must be implemented according to the visitor design pattern. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em visitor} & the visitor which encapsulates the action which is performed on this element\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_a9f06478c438150cd695dc8db8140b913}{A\-Rdev\-Kit.\-Model.\-Project.\-Picture\-Marker}.
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_a166fc03dc00911591baca14a3341ef29}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Trackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Trackable}!Clone@{Clone}}
+\index{Clone@{Clone}!ARdevKit::Model::Project::AbstractTrackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Trackable}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}abstract object A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Trackable.\-Clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_a166fc03dc00911591baca14a3341ef29}
+
+
+Makes a deep copy of this object. 
+
+Robin, 22.\-01.\-2014. 
+
+\begin{DoxyReturn}{Returns}
+A copy of this object. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_a090e0af9c7cdd270248516fe645b345d}{A\-Rdev\-Kit.\-Model.\-Project.\-Picture\-Marker}, \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_a9f0502ccb4306c88c4b15793b0d1c0ba}{A\-Rdev\-Kit.\-Model.\-Project.\-Image\-Trackable}, and \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_marker_a69480e66c9a3755dfb94bb7b957c18d8}{A\-Rdev\-Kit.\-Model.\-Project.\-I\-D\-Marker}.
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_ac5dfdc39c3e7ad91ca9156208278b108}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Trackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Trackable}!exist\-Augmentation@{exist\-Augmentation}}
+\index{exist\-Augmentation@{exist\-Augmentation}!ARdevKit::Model::Project::AbstractTrackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Trackable}}
+\subsubsection[{exist\-Augmentation}]{\setlength{\rightskip}{0pt plus 5cm}bool A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Trackable.\-exist\-Augmentation (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Previewable}}]{a}
+\end{DoxyParamCaption}
+)}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_ac5dfdc39c3e7ad91ca9156208278b108}
+
+
+Checks if the augmentation is associated with this \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable}{Abstract\-Trackable}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the \hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable}, which is checked existence for\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, if its associated with this \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable}{Abstract\-Trackable} false, else
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_ac5dfdc39c3e7ad91ca9156208278b108_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_abee7e96dac48f6fa7fc424c0f9139dff}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Trackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Trackable}!get\-Icon@{get\-Icon}}
+\index{get\-Icon@{get\-Icon}!ARdevKit::Model::Project::AbstractTrackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Trackable}}
+\subsubsection[{get\-Icon}]{\setlength{\rightskip}{0pt plus 5cm}abstract Bitmap A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Trackable.\-get\-Icon (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_abee7e96dac48f6fa7fc424c0f9139dff}
+
+
+returns a Bitmap in order to be displayed on the Element\-Selection\-Panel, implements \hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} 
+
+\begin{DoxyReturn}{Returns}
+a representative iconized Bitmap
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable_a8573bdaccd5227400b538c34c1b5f279}{A\-Rdev\-Kit.\-Model.\-Project.\-I\-Previewable}.
+
+
+
+Implemented in \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_acf5e1189f44cc8e1d42964e3842d3769}{A\-Rdev\-Kit.\-Model.\-Project.\-Picture\-Marker}, \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_af11655160fd026f62dca5948cdf630cd}{A\-Rdev\-Kit.\-Model.\-Project.\-Image\-Trackable}, and \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_marker_ae3713212fbac546d841e3be2ccb43db9}{A\-Rdev\-Kit.\-Model.\-Project.\-I\-D\-Marker}.
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_ab4d8a1902c82fe7a1d385d5688f92bd8}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Trackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Trackable}!get\-Preview@{get\-Preview}}
+\index{get\-Preview@{get\-Preview}!ARdevKit::Model::Project::AbstractTrackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Trackable}}
+\subsubsection[{get\-Preview}]{\setlength{\rightskip}{0pt plus 5cm}abstract Bitmap A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Trackable.\-get\-Preview (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_ab4d8a1902c82fe7a1d385d5688f92bd8}
+
+
+returns a Bitmap in order to be displayed on the Preview\-Panel, implements \hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} 
+
+\begin{DoxyReturn}{Returns}
+a representative Bitmap
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable_a7cbcbb20929f4f1b6db3321ed2e83070}{A\-Rdev\-Kit.\-Model.\-Project.\-I\-Previewable}.
+
+
+
+Implemented in \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_a96e42ce5c75d50a49b617d8eb8f87b99}{A\-Rdev\-Kit.\-Model.\-Project.\-Image\-Trackable}, \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_a9d608a1d9abb84c8109b7f34efffc658}{A\-Rdev\-Kit.\-Model.\-Project.\-Picture\-Marker}, and \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_marker_a4533a46611ee75747a5cf96f3fc2586c}{A\-Rdev\-Kit.\-Model.\-Project.\-I\-D\-Marker}.
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_aff50ed9cb95973d56d6a65bd1ef96c0a}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Trackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Trackable}!init\-Element@{init\-Element}}
+\index{init\-Element@{init\-Element}!ARdevKit::Model::Project::AbstractTrackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Trackable}}
+\subsubsection[{init\-Element}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Trackable.\-init\-Element (
+\begin{DoxyParamCaption}
+\item[{{\bf Editor\-Window}}]{ew}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_aff50ed9cb95973d56d6a65bd1ef96c0a}
+
+
+This method is called by the preview\-Controller when a new instance of the element is added to the Scene. It sets \char`\"{}must-\/have\char`\"{} properties. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ew} & The ew.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if it succeeds, false if it fails. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable_aa638e27d88c30b7e63b241d1001042c9}{A\-Rdev\-Kit.\-Model.\-Project.\-I\-Previewable}.
+
+
+
+Reimplemented in \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_a4563d08f550a2bde05cc86ba49a30756}{A\-Rdev\-Kit.\-Model.\-Project.\-Picture\-Marker}, \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_image_trackable_a90714d32f49a982fdbe39a84abd41704}{A\-Rdev\-Kit.\-Model.\-Project.\-Image\-Trackable}, and \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_marker_a30b191b81b928fbe6397d8136e31baea}{A\-Rdev\-Kit.\-Model.\-Project.\-I\-D\-Marker}.
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_ae14b72d85d610bcda17d93255bce45f7}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Trackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Trackable}!Remove\-Augmentation@{Remove\-Augmentation}}
+\index{Remove\-Augmentation@{Remove\-Augmentation}!ARdevKit::Model::Project::AbstractTrackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Trackable}}
+\subsubsection[{Remove\-Augmentation}]{\setlength{\rightskip}{0pt plus 5cm}void A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Trackable.\-Remove\-Augmentation (
+\begin{DoxyParamCaption}
+\item[{{\bf Abstract\-Augmentation}}]{augmentation}
+\end{DoxyParamCaption}
+)}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_ae14b72d85d610bcda17d93255bce45f7}
+
+
+Removes the augmentation described by augmentation. 
+
+Imanuel, 31.\-01.\-2014. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em augmentation} & The augmentation. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_a5a74b70a54b9bb1f4fbad46e08a2e0cd}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Trackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Trackable}!similarity\-Threshold@{similarity\-Threshold}}
+\index{similarity\-Threshold@{similarity\-Threshold}!ARdevKit::Model::Project::AbstractTrackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Trackable}}
+\subsubsection[{similarity\-Threshold}]{\setlength{\rightskip}{0pt plus 5cm}double A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Trackable.\-similarity\-Threshold\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_a5a74b70a54b9bb1f4fbad46e08a2e0cd}
+
+
+Describes at which similarity, a picture recorded by the camera is recognized to be the desired one. Only experts usage. 
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_ab6faf8843d1e9a61b353286a8d583231}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Trackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Trackable}!type@{type}}
+\index{type@{type}!ARdevKit::Model::Project::AbstractTrackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Trackable}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}string A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Trackable.\-type\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_ab6faf8843d1e9a61b353286a8d583231}
+
+
+The type, to differtiate between different Marker types and their way to be tracked. 
+
+
+
+\subsection{Property Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_a999faeee63dee9445e8617d539c5b8d9}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Trackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Trackable}!Augmentations@{Augmentations}}
+\index{Augmentations@{Augmentations}!ARdevKit::Model::Project::AbstractTrackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Trackable}}
+\subsubsection[{Augmentations}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Abstract\-Augmentation}$>$ A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Trackable.\-Augmentations\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_a999faeee63dee9445e8617d539c5b8d9}
+
+
+Lists all associated Abstract\-Augmentations. 
+
+The augmentations. \hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_af77b1f7a449ef9150e22c684894213b1}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Trackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Trackable}!Similarity\-Threshold@{Similarity\-Threshold}}
+\index{Similarity\-Threshold@{Similarity\-Threshold}!ARdevKit::Model::Project::AbstractTrackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Trackable}}
+\subsubsection[{Similarity\-Threshold}]{\setlength{\rightskip}{0pt plus 5cm}double A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Trackable.\-Similarity\-Threshold\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_af77b1f7a449ef9150e22c684894213b1}
+
+
+Gets or sets the similarity threshold. 
+
+The similarity threshold. \hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_ab55c05790e5ffbefc7351a91167427bc}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Trackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Trackable}!Type@{Type}}
+\index{Type@{Type}!ARdevKit::Model::Project::AbstractTrackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Trackable}}
+\subsubsection[{Type}]{\setlength{\rightskip}{0pt plus 5cm}string A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Trackable.\-Type\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_ab55c05790e5ffbefc7351a91167427bc}
+
+
+Gets or sets the type. 
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_a1a8b6d43d95fad1720fc5af98b7e42b4}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Trackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Trackable}!vector@{vector}}
+\index{vector@{vector}!ARdevKit::Model::Project::AbstractTrackable@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Abstract\-Trackable}}
+\subsubsection[{vector}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3\-D} A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Trackable.\-vector\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_a1a8b6d43d95fad1720fc5af98b7e42b4}
+
+
+Describes the position of the Trackable in the coordinatesystem used by metaio. 
+
+The vector. 

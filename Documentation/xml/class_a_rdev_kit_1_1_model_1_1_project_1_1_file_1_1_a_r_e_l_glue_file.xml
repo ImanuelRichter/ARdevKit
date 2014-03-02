@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_glue_file" kind="class" prot="public">
+    <compoundname>ARdevKit::Model::Project::File::ARELGlueFile</compoundname>
+    <basecompoundref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file" prot="public" virt="non-virtual">ARdevKit.Model.Project.File.AbstractFile</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_glue_file_1a944e3a92b64f3988dbd2e289fa3b2d36" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.Model.Project.File.ARELGlueFile.ARELGlueFile</definition>
+        <argsstring>(string projectPath)</argsstring>
+        <name>ARELGlueFile</name>
+        <param>
+          <type>string</type>
+          <declname>projectPath</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 17.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>projectPath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Full pathname of the project file. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ARELGlueFile.cs" line="26" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ARELGlueFile.cs" bodystart="26" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_glue_file_1af2a513e4dce9fe965fca00612335de10" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override void</type>
+        <definition>override void ARdevKit.Model.Project.File.ARELGlueFile.Save</definition>
+        <argsstring>()</argsstring>
+        <name>Save</name>
+        <reimplements refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1a095ebaeca96a6d285d9caff1ad726d5b">Save</reimplements>
+        <briefdescription>
+<para>Saves the file to its <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1ad879e3a81860da8b72f2d9f61a18ab3b" kindref="member">filePath</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 17.01.2014. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ARELGlueFile.cs" line="40" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ARELGlueFile.cs" bodystart="40" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_glue_file_1a82712a65053e760ba21b92fefe67baf3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override void</type>
+        <definition>override void ARdevKit.Model.Project.File.ARELGlueFile.Save</definition>
+        <argsstring>(string projectPath)</argsstring>
+        <name>Save</name>
+        <reimplements refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1ae49c3262c59642e8f519d0655bbbbbab">Save</reimplements>
+        <param>
+          <type>string</type>
+          <declname>projectPath</declname>
+        </param>
+        <briefdescription>
+<para>Saves the file to the using the passed projectPath. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 17.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>projectPath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The project path to write. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ARELGlueFile.cs" line="61" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ARELGlueFile.cs" bodystart="61" bodyend="68"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>An arelGlue.js. </para>    </briefdescription>
+    <detaileddescription>
+<para>Imanuel, 17.01.2014. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="482">
+        <label>AbstractFile</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file"/>
+      </node>
+      <node id="481">
+        <label>ARdevKit.Model.Project.File.ARELGlueFile</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_glue_file"/>
+        <childnode refid="482" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="484">
+        <label>AbstractFile</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file"/>
+      </node>
+      <node id="483">
+        <label>ARdevKit.Model.Project.File.ARELGlueFile</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_glue_file"/>
+        <childnode refid="484" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ARELGlueFile.cs" line="17" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ARELGlueFile.cs" bodystart="16" bodyend="69"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1a02b61dbebfbd57f5fd44c7a972c79b50" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::File::ARELGlueFile</scope><name>AddBlock</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_glue_file_1a944e3a92b64f3988dbd2e289fa3b2d36" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::ARELGlueFile</scope><name>ARELGlueFile</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1a21e0333fb9d8eab8ebb039bd56ccabc9" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::File::ARELGlueFile</scope><name>blocks</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1ac55b0e087f42f7ab5ce36fa3bce111ab" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::ARELGlueFile</scope><name>FilePath</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1ad879e3a81860da8b72f2d9f61a18ab3b" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::File::ARELGlueFile</scope><name>filePath</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_glue_file_1af2a513e4dce9fe965fca00612335de10" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::File::ARELGlueFile</scope><name>Save</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_glue_file_1a82712a65053e760ba21b92fefe67baf3" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::File::ARELGlueFile</scope><name>Save</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

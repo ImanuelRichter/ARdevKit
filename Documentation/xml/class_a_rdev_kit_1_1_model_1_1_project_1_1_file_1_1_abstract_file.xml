@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file" kind="class" prot="public" abstract="yes">
+    <compoundname>ARdevKit::Model::Project::File::AbstractFile</compoundname>
+    <derivedcompoundref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_config_file" prot="public" virt="non-virtual">ARdevKit.Model.Project.File.ARELConfigFile</derivedcompoundref>
+    <derivedcompoundref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_glue_file" prot="public" virt="non-virtual">ARdevKit.Model.Project.File.ARELGlueFile</derivedcompoundref>
+    <derivedcompoundref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_project_file" prot="public" virt="non-virtual">ARdevKit.Model.Project.File.ARELProjectFile</derivedcompoundref>
+    <derivedcompoundref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_chart_file" prot="public" virt="non-virtual">ARdevKit.Model.Project.File.ChartFile</derivedcompoundref>
+    <derivedcompoundref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_tracking_data_file" prot="public" virt="non-virtual">ARdevKit.Model.Project.File.TrackingDataFile</derivedcompoundref>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1ad879e3a81860da8b72f2d9f61a18ab3b" prot="protected" static="no" mutable="no">
+        <type>string</type>
+        <definition>string ARdevKit.Model.Project.File.AbstractFile.filePath</definition>
+        <argsstring></argsstring>
+        <name>filePath</name>
+        <briefdescription>
+<para>Full pathname of the file. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/AbstractFile.cs" line="21" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/AbstractFile.cs" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1a21e0333fb9d8eab8ebb039bd56ccabc9" prot="protected" static="no" mutable="no">
+        <type>List&lt; <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block" kindref="compound">AbstractBlock</ref> &gt;</type>
+        <definition>List&lt;AbstractBlock&gt; ARdevKit.Model.Project.File.AbstractFile.blocks</definition>
+        <argsstring></argsstring>
+        <name>blocks</name>
+        <briefdescription>
+<para>A list of the <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block" kindref="compound">AbstractBlock</ref>s this file consists of. </para>        </briefdescription>
+        <detaileddescription>
+<para>The sections. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/AbstractFile.cs" line="40" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/AbstractFile.cs" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1ac55b0e087f42f7ab5ce36fa3bce111ab" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="no">
+        <type>string</type>
+        <definition>string ARdevKit.Model.Project.File.AbstractFile.FilePath</definition>
+        <argsstring></argsstring>
+        <name>FilePath</name>
+        <briefdescription>
+<para>Gets the full pathname of the file. </para>        </briefdescription>
+        <detaileddescription>
+<para>The full pathname of the file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/AbstractFile.cs" line="29" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/AbstractFile.cs" bodystart="30" bodyend="-1"/>
+        <referencedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1ad58774c6778421b6bf85a6c70029a3d9" compoundref="_export_visitor_8cs" startline="976" endline="1107">ARdevKit.Controller.ProjectController.ExportVisitor.Visit</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1a02b61dbebfbd57f5fd44c7a972c79b50" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void ARdevKit.Model.Project.File.AbstractFile.AddBlock</definition>
+        <argsstring>(AbstractBlock block)</argsstring>
+        <name>AddBlock</name>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block" kindref="compound">AbstractBlock</ref></type>
+          <declname>block</declname>
+        </param>
+        <briefdescription>
+<para>Adds an <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block" kindref="compound">AbstractBlock</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 15.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>block</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The section to be added. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/AbstractFile.cs" line="50" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/AbstractFile.cs" bodystart="50" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1ae49c3262c59642e8f519d0655bbbbbab" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>abstract void</type>
+        <definition>abstract void ARdevKit.Model.Project.File.AbstractFile.Save</definition>
+        <argsstring>(string projectPath)</argsstring>
+        <name>Save</name>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_chart_file_1a8a52e5730191b832eb8664016e7bda7f">Save</reimplementedby>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_glue_file_1a82712a65053e760ba21b92fefe67baf3">Save</reimplementedby>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_project_file_1aa187897624d6d836b3a76331069d5bee">Save</reimplementedby>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_config_file_1af0f2e70451d0dda0984dd186fcb6afde">Save</reimplementedby>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_tracking_data_file_1a6b96d140f6a8e9c98888afece89b41f5">Save</reimplementedby>
+        <param>
+          <type>string</type>
+          <declname>projectPath</declname>
+        </param>
+        <briefdescription>
+<para>Saves the file to the using the passed projectPath. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 15.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>projectPath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The project path to write. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/AbstractFile.cs" line="66" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1a095ebaeca96a6d285d9caff1ad726d5b" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>abstract void</type>
+        <definition>abstract void ARdevKit.Model.Project.File.AbstractFile.Save</definition>
+        <argsstring>()</argsstring>
+        <name>Save</name>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_chart_file_1aa19af3145e3bbcb28683e7c77571d06f">Save</reimplementedby>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_glue_file_1af2a513e4dce9fe965fca00612335de10">Save</reimplementedby>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_project_file_1a021507cbd83b07773ffc1caf0645ca49">Save</reimplementedby>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_config_file_1a65bf5e667cb70e7cb9ae9a735ebba97f">Save</reimplementedby>
+        <reimplementedby refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_tracking_data_file_1a101d61e5cb5e45922adb70178838c5be">Save</reimplementedby>
+        <briefdescription>
+<para>Saves the file to its <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1ad879e3a81860da8b72f2d9f61a18ab3b" kindref="member">filePath</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 17.01.2014. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/AbstractFile.cs" line="74" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>An <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file" kindref="compound">AbstractFile</ref> can be an <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_config_file" kindref="compound">ARELConfigFile</ref>, an <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_project_file" kindref="compound">ARELProjectFile</ref>, a TrackinDataFile or an <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_glue_file" kindref="compound">ARELGlueFile</ref>. It must have a <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1ad879e3a81860da8b72f2d9f61a18ab3b" kindref="member">filePath</ref> and can have a header and consists of <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block" kindref="compound">AbstractBlock</ref>s. </para>    </briefdescription>
+    <detaileddescription>
+<para>Imanuel, 15.01.2014. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="442">
+        <label>ARdevKit.Model.Project.File.AbstractFile</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file"/>
+      </node>
+      <node id="445">
+        <label>ARdevKit.Model.Project.File.ARELProjectFile</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_project_file"/>
+        <childnode refid="442" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="447">
+        <label>ARdevKit.Model.Project.File.TrackingDataFile</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_tracking_data_file"/>
+        <childnode refid="442" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="443">
+        <label>ARdevKit.Model.Project.File.ARELConfigFile</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_config_file"/>
+        <childnode refid="442" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="444">
+        <label>ARdevKit.Model.Project.File.ARELGlueFile</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_glue_file"/>
+        <childnode refid="442" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="446">
+        <label>ARdevKit.Model.Project.File.ChartFile</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_chart_file"/>
+        <childnode refid="442" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="448">
+        <label>ARdevKit.Model.Project.File.AbstractFile</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/AbstractFile.cs" line="19" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/AbstractFile.cs" bodystart="18" bodyend="75"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1a02b61dbebfbd57f5fd44c7a972c79b50" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::File::AbstractFile</scope><name>AddBlock</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1a21e0333fb9d8eab8ebb039bd56ccabc9" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::File::AbstractFile</scope><name>blocks</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1ac55b0e087f42f7ab5ce36fa3bce111ab" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::AbstractFile</scope><name>FilePath</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1ad879e3a81860da8b72f2d9f61a18ab3b" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::File::AbstractFile</scope><name>filePath</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1ae49c3262c59642e8f519d0655bbbbbab" prot="public" virt="pure-virtual"><scope>ARdevKit::Model::Project::File::AbstractFile</scope><name>Save</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1a095ebaeca96a6d285d9caff1ad726d5b" prot="public" virt="pure-virtual"><scope>ARdevKit::Model::Project::File::AbstractFile</scope><name>Save</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

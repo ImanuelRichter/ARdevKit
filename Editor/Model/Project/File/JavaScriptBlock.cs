@@ -45,6 +45,11 @@ namespace ARdevKit.Model.Project.File
             this.blockMarker = blockMarker;
         }
 
+        /// <summary>
+        /// Updates the specified head.
+        /// </summary>
+        /// <param name="head">The head.</param>
+        /// <param name="blockMarker">The block marker.</param>
         public void Update(string head, BlockMarker blockMarker)
         {
             this.head = head;

@@ -1,0 +1,302 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller" kind="class" prot="public">
+    <compoundname>ARdevKit::Controller::Connections::DeviceConnection::DeviceConnectionController</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a8868288724e959d52a8cc8fe1cd9780f" prot="private" static="no" mutable="no">
+        <type>List&lt; IPEndPoint &gt;</type>
+        <definition>List&lt;IPEndPoint&gt; ARdevKit.Controller.Connections.DeviceConnection.DeviceConnectionController.reportedDevices</definition>
+        <argsstring></argsstring>
+        <name>reportedDevices</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" line="21" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a10807ad3c1f643c998b6f73fa90a15c9" prot="private" static="no" mutable="no">
+        <type>UdpClient</type>
+        <definition>UdpClient ARdevKit.Controller.Connections.DeviceConnection.DeviceConnectionController.udpClient</definition>
+        <argsstring></argsstring>
+        <name>udpClient</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" line="22" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a28c95184e4b34e02f4042afc75b5ef9a" prot="private" static="no" mutable="no">
+        <type><ref refid="class_a_rdev_kit_1_1_editor_window" kindref="compound">EditorWindow</ref></type>
+        <definition>EditorWindow ARdevKit.Controller.Connections.DeviceConnection.DeviceConnectionController.editorWindow</definition>
+        <argsstring></argsstring>
+        <name>editorWindow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" line="23" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1ad337ac5e505fb834635a249e6e066c3a" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ARdevKit.Controller.Connections.DeviceConnection.DeviceConnectionController.debugConnected</definition>
+        <argsstring></argsstring>
+        <name>debugConnected</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" line="24" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a62757a5444be1dc023129d6d2fd6dd5e" prot="private" static="no" mutable="no">
+        <type><ref refid="class_a_rdev_kit_1_1_view_1_1_debug_window" kindref="compound">View.DebugWindow</ref></type>
+        <definition>View.DebugWindow ARdevKit.Controller.Connections.DeviceConnection.DeviceConnectionController.debugWindow</definition>
+        <argsstring></argsstring>
+        <name>debugWindow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" line="25" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1acfe2c36b862f9b0775bf8e0f60d055ad" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="no">
+        <type><ref refid="class_a_rdev_kit_1_1_view_1_1_debug_window" kindref="compound">View.DebugWindow</ref></type>
+        <definition>View.DebugWindow ARdevKit.Controller.Connections.DeviceConnection.DeviceConnectionController.DebugWindow</definition>
+        <argsstring></argsstring>
+        <name>DebugWindow</name>
+        <briefdescription>
+<para>Gets the debug window. </para>        </briefdescription>
+        <detaileddescription>
+<para>The debug window. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" line="33" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a6e1f49d1912fccc6edc212acbfc74c05" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>bool</type>
+        <definition>bool ARdevKit.Controller.Connections.DeviceConnection.DeviceConnectionController.DebugConnected</definition>
+        <argsstring></argsstring>
+        <name>DebugConnected</name>
+        <briefdescription>
+<para>Gets or sets a value indicating whether [debug connected]. </para>        </briefdescription>
+        <detaileddescription>
+<para><computeroutput>true</computeroutput> if [debug connected]; otherwise, <computeroutput>false</computeroutput>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" line="44" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a6d505b2d3b51a10e9d83058157a1c62c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.Controller.Connections.DeviceConnection.DeviceConnectionController.DeviceConnectionController</definition>
+        <argsstring>(Form window)</argsstring>
+        <name>DeviceConnectionController</name>
+        <param>
+          <type>Form</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+<para>Initializes a new instance of the <ref refid="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller" kindref="compound">DeviceConnectionController</ref> class. Uses UDPListener to get information about devices. Communicating via HTTP order to secure currency of connections and sending the zipped project. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>window</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The window.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" line="55" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" bodystart="55" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a2fa2baab02402dec9c2dce90fadeb54c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ARdevKit.Controller.Connections.DeviceConnection.DeviceConnectionController.refresh</definition>
+        <argsstring>()</argsstring>
+        <name>refresh</name>
+        <briefdescription>
+<para>Runs the refresh listener, using a UDP Broadcast to which the ARdevKitPlayer responds. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" line="100" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" bodystart="100" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a22af53d2338217cf5c77e4f7326cee79" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; string &gt;</type>
+        <definition>List&lt;string&gt; ARdevKit.Controller.Connections.DeviceConnection.DeviceConnectionController.getReportedDevices</definition>
+        <argsstring>()</argsstring>
+        <name>getReportedDevices</name>
+        <briefdescription>
+<para>Gets the reported devices. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" line="112" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" bodystart="112" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a4fcdf74b36bf40335dfe5179f78f2524" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ARdevKit.Controller.Connections.DeviceConnection.DeviceConnectionController.sendProject</definition>
+        <argsstring>(int index)</argsstring>
+        <name>sendProject</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Sends the opened Project to the chosen Device, using the selected index of the EditorWindowsDeviceList, which must be equal to the internal index of the reportedDevices List. Exceptions which are thrown are written to a log file, in the path in which the Program is executed. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>index of the List of reportedDevices</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>False, if the project could not be send or an Exception was thown</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" line="128" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" bodystart="128" bodyend="197"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a2810b006ae43957884b041496f4f3498" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ARdevKit.Controller.Connections.DeviceConnection.DeviceConnectionController.sendDebug</definition>
+        <argsstring>(int index)</argsstring>
+        <name>sendDebug</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Sends a Debugrequest to the selected Device and shows its DebugOutput on a PopupWindow with a RichTextbox </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>index of the chosen Device</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" line="218" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" bodystart="218" bodyend="258"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a887baaa9a63c95894c43d773751bb414" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ARdevKit.Controller.Connections.DeviceConnection.DeviceConnectionController.sendBroadcast</definition>
+        <argsstring>()</argsstring>
+        <name>sendBroadcast</name>
+        <briefdescription>
+<para>Sends the broadcast. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" line="68" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" bodystart="68" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a25aa648a525878f1275de7923ab91f40" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ARdevKit.Controller.Connections.DeviceConnection.DeviceConnectionController.receiveAllQueuedResponses</definition>
+        <argsstring>()</argsstring>
+        <name>receiveAllQueuedResponses</name>
+        <briefdescription>
+<para>Receives all queued responses. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" line="78" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" bodystart="78" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1adb3d59442d2d242e7d274a6d49134f2e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ARdevKit.Controller.Connections.DeviceConnection.DeviceConnectionController.exportRecentProject</definition>
+        <argsstring>()</argsstring>
+        <name>exportRecentProject</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" line="198" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" bodystart="198" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a036872cbc44b817077e9902f7dca5434" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ARdevKit.Controller.Connections.DeviceConnection.DeviceConnectionController.writeExceptionToLog</definition>
+        <argsstring>(Exception ex)</argsstring>
+        <name>writeExceptionToLog</name>
+        <param>
+          <type>Exception</type>
+          <declname>ex</declname>
+        </param>
+        <briefdescription>
+<para>Writes the exception to log. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ex.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" line="264" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" bodystart="264" bodyend="274"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="namespace_a_rdev_kit_1_1_controller" kindref="compound">Controller</ref> which provides functions, to gather Information about Devices, which are running ARdevKitPlayer and are connected to the local Network. On top of that it provides functions to send Projects and receive Debuginformation. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="528">
+        <label>ARdevKit.Controller.Connections.DeviceConnection.DeviceConnectionController</label>
+        <link refid="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" line="20" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/Connections/DeviceConnection/DeviceConnectionController.cs" bodystart="19" bodyend="275"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1ad337ac5e505fb834635a249e6e066c3a" prot="private" virt="non-virtual"><scope>ARdevKit::Controller::Connections::DeviceConnection::DeviceConnectionController</scope><name>debugConnected</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a6e1f49d1912fccc6edc212acbfc74c05" prot="public" virt="non-virtual"><scope>ARdevKit::Controller::Connections::DeviceConnection::DeviceConnectionController</scope><name>DebugConnected</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a62757a5444be1dc023129d6d2fd6dd5e" prot="private" virt="non-virtual"><scope>ARdevKit::Controller::Connections::DeviceConnection::DeviceConnectionController</scope><name>debugWindow</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1acfe2c36b862f9b0775bf8e0f60d055ad" prot="public" virt="non-virtual"><scope>ARdevKit::Controller::Connections::DeviceConnection::DeviceConnectionController</scope><name>DebugWindow</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a6d505b2d3b51a10e9d83058157a1c62c" prot="public" virt="non-virtual"><scope>ARdevKit::Controller::Connections::DeviceConnection::DeviceConnectionController</scope><name>DeviceConnectionController</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a28c95184e4b34e02f4042afc75b5ef9a" prot="private" virt="non-virtual"><scope>ARdevKit::Controller::Connections::DeviceConnection::DeviceConnectionController</scope><name>editorWindow</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1adb3d59442d2d242e7d274a6d49134f2e" prot="private" virt="non-virtual"><scope>ARdevKit::Controller::Connections::DeviceConnection::DeviceConnectionController</scope><name>exportRecentProject</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a22af53d2338217cf5c77e4f7326cee79" prot="public" virt="non-virtual"><scope>ARdevKit::Controller::Connections::DeviceConnection::DeviceConnectionController</scope><name>getReportedDevices</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a25aa648a525878f1275de7923ab91f40" prot="private" virt="non-virtual"><scope>ARdevKit::Controller::Connections::DeviceConnection::DeviceConnectionController</scope><name>receiveAllQueuedResponses</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a2fa2baab02402dec9c2dce90fadeb54c" prot="public" virt="non-virtual"><scope>ARdevKit::Controller::Connections::DeviceConnection::DeviceConnectionController</scope><name>refresh</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a8868288724e959d52a8cc8fe1cd9780f" prot="private" virt="non-virtual"><scope>ARdevKit::Controller::Connections::DeviceConnection::DeviceConnectionController</scope><name>reportedDevices</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a887baaa9a63c95894c43d773751bb414" prot="private" virt="non-virtual"><scope>ARdevKit::Controller::Connections::DeviceConnection::DeviceConnectionController</scope><name>sendBroadcast</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a2810b006ae43957884b041496f4f3498" prot="public" virt="non-virtual"><scope>ARdevKit::Controller::Connections::DeviceConnection::DeviceConnectionController</scope><name>sendDebug</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a4fcdf74b36bf40335dfe5179f78f2524" prot="public" virt="non-virtual"><scope>ARdevKit::Controller::Connections::DeviceConnection::DeviceConnectionController</scope><name>sendProject</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a10807ad3c1f643c998b6f73fa90a15c9" prot="private" virt="non-virtual"><scope>ARdevKit::Controller::Connections::DeviceConnection::DeviceConnectionController</scope><name>udpClient</name></member>
+      <member refid="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a036872cbc44b817077e9902f7dca5434" prot="private" virt="non-virtual"><scope>ARdevKit::Controller::Connections::DeviceConnection::DeviceConnectionController</scope><name>writeExceptionToLog</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,350 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker" kind="class" prot="public">
+    <compoundname>ARdevKit::Model::Project::PictureMarker</compoundname>
+    <basecompoundref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable" prot="public" virt="non-virtual">ARdevKit.Model.Project.Abstract2DTrackable</basecompoundref>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_1a35143cb6b2a6724b1fce695cdeac06e9" prot="protected" static="no" mutable="no">
+        <type>string</type>
+        <definition>string ARdevKit.Model.Project.PictureMarker.picturePath</definition>
+        <argsstring></argsstring>
+        <name>picturePath</name>
+        <briefdescription>
+<para>Full pathname of the picture file. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarker.cs" line="27" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarker.cs" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_1a1f697f11716f6f14539bb3b368c38742" prot="protected" static="no" mutable="no">
+        <type>string</type>
+        <definition>string ARdevKit.Model.Project.PictureMarker.pictureName</definition>
+        <argsstring></argsstring>
+        <name>pictureName</name>
+        <briefdescription>
+<para>Name of the picture. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarker.cs" line="57" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarker.cs" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_1a737c2d1fab3defe800ab2d7224a71ff3" prot="private" static="no" mutable="no">
+        <type>Bitmap</type>
+        <definition>Bitmap ARdevKit.Model.Project.PictureMarker.cachePreview</definition>
+        <argsstring></argsstring>
+        <name>cachePreview</name>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarker.cs" line="30" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarker.cs" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_1a60a31045ce2dcc1a3a97b3e3956b1b7f" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>string</type>
+        <definition>string ARdevKit.Model.Project.PictureMarker.PicturePath</definition>
+        <argsstring></argsstring>
+        <name>PicturePath</name>
+        <briefdescription>
+<para>Gets or sets the full pathname of the picture file. </para>        </briefdescription>
+        <detaileddescription>
+<para>The full pathname of the picture file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarker.cs" line="40" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarker.cs" bodystart="41" bodyend="-1"/>
+        <referencedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1a384b6fc84602fd29bedff296b083b3a0" compoundref="_export_visitor_8cs" startline="697" endline="821">ARdevKit.Controller.ProjectController.ExportVisitor.Visit</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_1a1fcd8793ea1432d536bd08c856adf862" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="no">
+        <type>string</type>
+        <definition>string ARdevKit.Model.Project.PictureMarker.PictureName</definition>
+        <argsstring></argsstring>
+        <name>PictureName</name>
+        <briefdescription>
+<para>Gets or sets the name of the picture. </para>        </briefdescription>
+        <detaileddescription>
+<para>The name of the picture. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarker.cs" line="65" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarker.cs" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_1a68c1a2ce39397fd12cacbf0a06674788" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.Model.Project.PictureMarker.PictureMarker</definition>
+        <argsstring>()</argsstring>
+        <name>PictureMarker</name>
+        <briefdescription>
+<para>Default Constructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarker.cs" line="73" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarker.cs" bodystart="73" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_1a19f536df00d7c49aa7ec2c612e5b2cca" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.Model.Project.PictureMarker.PictureMarker</definition>
+        <argsstring>(string picturePath)</argsstring>
+        <name>PictureMarker</name>
+        <param>
+          <type>string</type>
+          <declname>picturePath</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>picturePath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The picture path.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarker.cs" line="92" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarker.cs" bodystart="92" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_1a9f06478c438150cd695dc8db8140b913" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override void</type>
+        <definition>override void ARdevKit.Model.Project.PictureMarker.Accept</definition>
+        <argsstring>(AbstractProjectVisitor visitor)</argsstring>
+        <name>Accept</name>
+        <reimplements refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a76f6ad0ed8f615b8f5b7738411abb54f">Accept</reimplements>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor" kindref="compound">AbstractProjectVisitor</ref></type>
+          <declname>visitor</declname>
+        </param>
+        <briefdescription>
+<para>An overwriting method, to accept a AbstractProjectVisitor which must be implemented according to the visitor design pattern. It lets the visitor visit every augmentation associated with it. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>visitor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the visitor which encapsulates the action which is performed on this element</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarker.cs" line="107" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarker.cs" bodystart="107" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_1a9d608a1d9abb84c8109b7f34efffc658" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override Bitmap</type>
+        <definition>override Bitmap ARdevKit.Model.Project.PictureMarker.getPreview</definition>
+        <argsstring>()</argsstring>
+        <name>getPreview</name>
+        <reimplements refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1ab4d8a1902c82fe7a1d385d5688f92bd8">getPreview</reimplements>
+        <briefdescription>
+<para>returns a Bitmap in order to be displayed on the PreviewPanel, implements <ref refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable" kindref="compound">IPreviewable</ref> </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>a representative Bitmap </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>FileNotFoundException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If ImagePath is not correct.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarker.cs" line="126" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarker.cs" bodystart="126" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_1acf5e1189f44cc8e1d42964e3842d3769" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override System.Drawing.Bitmap</type>
+        <definition>override System.Drawing.Bitmap ARdevKit.Model.Project.PictureMarker.getIcon</definition>
+        <argsstring>()</argsstring>
+        <name>getIcon</name>
+        <reimplements refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1abee7e96dac48f6fa7fc424c0f9139dff">getIcon</reimplements>
+        <briefdescription>
+<para>returns a Bitmap in order to be displayed on the ElementSelectionPanel, implements <ref refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable" kindref="compound">IPreviewable</ref> </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>a representative iconized Bitmap </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarker.cs" line="143" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarker.cs" bodystart="143" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_1a090e0af9c7cdd270248516fe645b345d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override object</type>
+        <definition>override object ARdevKit.Model.Project.PictureMarker.Clone</definition>
+        <argsstring>()</argsstring>
+        <name>Clone</name>
+        <reimplements refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a166fc03dc00911591baca14a3341ef29">Clone</reimplements>
+        <briefdescription>
+<para>Makes a deep copy of this object. </para>        </briefdescription>
+        <detaileddescription>
+<para>Robin, 22.01.2014. </para><para><simplesect kind="return"><para>A copy of this object. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarker.cs" line="156" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarker.cs" bodystart="156" bodyend="161"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_1a4563d08f550a2bde05cc86ba49a30756" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override bool</type>
+        <definition>override bool ARdevKit.Model.Project.PictureMarker.initElement</definition>
+        <argsstring>(EditorWindow ew)</argsstring>
+        <name>initElement</name>
+        <reimplements refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1aff50ed9cb95973d56d6a65bd1ef96c0a">initElement</reimplements>
+        <param>
+          <type><ref refid="class_a_rdev_kit_1_1_editor_window" kindref="compound">EditorWindow</ref></type>
+          <declname>ew</declname>
+        </param>
+        <briefdescription>
+<para>This method is called by the previewController when a new instance of the element is added to the Scene. It sets &quot;must-have&quot; properties. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ew</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ew.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if it succeeds, false if it fails. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarker.cs" line="170" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarker.cs" bodystart="170" bodyend="208"/>
+        <references refid="class_a_rdev_kit_1_1_editor_window_1aa7e64c912e3d904fae0ec52588be0baa" compoundref="_editor_window_8cs" startline="138">ARdevKit.EditorWindow.project</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Describes a Marker, which is very flexible, because it is also a Picture. It is an AbstractMarker </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="670">
+        <label>Abstract2DTrackable</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable"/>
+        <childnode refid="671" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="671">
+        <label>AbstractTrackable</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable"/>
+        <childnode refid="672" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="672">
+        <label>IPreviewable</label>
+        <link refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable"/>
+        <childnode refid="673" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="673">
+        <label>ICloneable</label>
+      </node>
+      <node id="669">
+        <label>ARdevKit.Model.Project.PictureMarker</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker"/>
+        <childnode refid="670" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="681">
+        <label>ARdevKit.Model.Project.Vector3D</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d"/>
+      </node>
+      <node id="679">
+        <label>ARdevKit.Model.Project.Vector3Di</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_di"/>
+        <childnode refid="680" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="682">
+        <label>ARdevKit.Model.Project.MarkerFuser</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_fuser"/>
+      </node>
+      <node id="675">
+        <label>Abstract2DTrackable</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable"/>
+        <childnode refid="676" relation="public-inheritance">
+        </childnode>
+        <childnode refid="679" relation="usage">
+          <edgelabel>#rotationVector</edgelabel>
+        </childnode>
+        <childnode refid="681" relation="usage">
+          <edgelabel>#translationVector</edgelabel>
+        </childnode>
+        <childnode refid="682" relation="usage">
+          <edgelabel>#fuser</edgelabel>
+        </childnode>
+      </node>
+      <node id="676">
+        <label>AbstractTrackable</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable"/>
+        <childnode refid="677" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="680">
+        <label>Vector3D</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d"/>
+      </node>
+      <node id="677">
+        <label>IPreviewable</label>
+        <link refid="interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable"/>
+        <childnode refid="678" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="678">
+        <label>ICloneable</label>
+      </node>
+      <node id="674">
+        <label>ARdevKit.Model.Project.PictureMarker</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker"/>
+        <childnode refid="675" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarker.cs" line="23" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/PictureMarker.cs" bodystart="22" bodyend="209"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_1a9f06478c438150cd695dc8db8140b913" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::PictureMarker</scope><name>Accept</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a999faeee63dee9445e8617d539c5b8d9" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::PictureMarker</scope><name>Augmentations</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_1a737c2d1fab3defe800ab2d7224a71ff3" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::PictureMarker</scope><name>cachePreview</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_1a090e0af9c7cdd270248516fe645b345d" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::PictureMarker</scope><name>Clone</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1ac5dfdc39c3e7ad91ca9156208278b108" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::PictureMarker</scope><name>existAugmentation</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a8ebdec7d02359310504e15f3a9852c04" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::PictureMarker</scope><name>fuser</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a98e3270dac234f5acd6054707f4c1964" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::PictureMarker</scope><name>Fuser</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_1acf5e1189f44cc8e1d42964e3842d3769" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::PictureMarker</scope><name>getIcon</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_1a9d608a1d9abb84c8109b7f34efffc658" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::PictureMarker</scope><name>getPreview</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_1a4563d08f550a2bde05cc86ba49a30756" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::PictureMarker</scope><name>initElement</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_1a68c1a2ce39397fd12cacbf0a06674788" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::PictureMarker</scope><name>PictureMarker</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_1a19f536df00d7c49aa7ec2c612e5b2cca" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::PictureMarker</scope><name>PictureMarker</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_1a1f697f11716f6f14539bb3b368c38742" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::PictureMarker</scope><name>pictureName</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_1a1fcd8793ea1432d536bd08c856adf862" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::PictureMarker</scope><name>PictureName</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_1a35143cb6b2a6724b1fce695cdeac06e9" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::PictureMarker</scope><name>picturePath</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_picture_marker_1a60a31045ce2dcc1a3a97b3e3956b1b7f" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::PictureMarker</scope><name>PicturePath</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1ae14b72d85d610bcda17d93255bce45f7" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::PictureMarker</scope><name>RemoveAugmentation</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a12ba493972e7d277e8f67294beb70355" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::PictureMarker</scope><name>Rotation</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a85997ab052b01f3680d47d199b4551a0" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::PictureMarker</scope><name>rotationVector</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1ac965f78edc7135b60377d14acbe6d358" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::PictureMarker</scope><name>sensorCosID</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a9578380939f19267cc7372ca19ff936f" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::PictureMarker</scope><name>SensorCosID</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1af77b1f7a449ef9150e22c684894213b1" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::PictureMarker</scope><name>SimilarityThreshold</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a5a74b70a54b9bb1f4fbad46e08a2e0cd" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::PictureMarker</scope><name>similarityThreshold</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a3ef9116db48c612d3428126786516e81" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::PictureMarker</scope><name>size</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a0c9a459cf25e74c8173564d476021c9a" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::PictureMarker</scope><name>Size</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1ac836d823c247762a615f432375d943c2" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::PictureMarker</scope><name>ToString</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1acbb38387d30cb1239814606b54099bb3" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::PictureMarker</scope><name>Translation</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_trackable_1a5d6e8cbc9efc6da689e3537d334fec37" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::PictureMarker</scope><name>translationVector</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1ab6faf8843d1e9a61b353286a8d583231" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::PictureMarker</scope><name>type</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1ab55c05790e5ffbefc7351a91167427bc" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::PictureMarker</scope><name>Type</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable_1a1a8b6d43d95fad1720fc5af98b7e42b4" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::PictureMarker</scope><name>vector</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

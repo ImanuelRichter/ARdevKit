@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_tracking_data_file" kind="class" prot="public">
+    <compoundname>ARdevKit::Model::Project::File::TrackingDataFile</compoundname>
+    <basecompoundref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file" prot="public" virt="non-virtual">ARdevKit.Model.Project.File.AbstractFile</basecompoundref>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_tracking_data_file_1a77dd60e8f9b895d679a15490f5cbb605" prot="protected" static="no" mutable="no">
+        <type>string</type>
+        <definition>string ARdevKit.Model.Project.File.TrackingDataFile.header</definition>
+        <argsstring></argsstring>
+        <name>header</name>
+        <briefdescription>
+<para>The header. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/TrackingDataFile.cs" line="19" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/TrackingDataFile.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_tracking_data_file_1a6214400ae9e07924ead5ca1779562bd8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ARdevKit.Model.Project.File.TrackingDataFile.TrackingDataFile</definition>
+        <argsstring>(string header, string projectPath, string fileName)</argsstring>
+        <name>TrackingDataFile</name>
+        <param>
+          <type>string</type>
+          <declname>header</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>projectPath</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>fileName</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 17.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>header</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The header. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>projectPath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Full pathname of the project file. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Filename of the file. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/TrackingDataFile.cs" line="31" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/TrackingDataFile.cs" bodystart="31" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_tracking_data_file_1a101d61e5cb5e45922adb70178838c5be" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override void</type>
+        <definition>override void ARdevKit.Model.Project.File.TrackingDataFile.Save</definition>
+        <argsstring>()</argsstring>
+        <name>Save</name>
+        <reimplements refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1a095ebaeca96a6d285d9caff1ad726d5b">Save</reimplements>
+        <briefdescription>
+<para>Saves the file to its <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1ad879e3a81860da8b72f2d9f61a18ab3b" kindref="member">filePath</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 17.01.2014. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/TrackingDataFile.cs" line="46" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/TrackingDataFile.cs" bodystart="46" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_tracking_data_file_1a6b96d140f6a8e9c98888afece89b41f5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override void</type>
+        <definition>override void ARdevKit.Model.Project.File.TrackingDataFile.Save</definition>
+        <argsstring>(string projectPath)</argsstring>
+        <name>Save</name>
+        <reimplements refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1ae49c3262c59642e8f519d0655bbbbbab">Save</reimplements>
+        <param>
+          <type>string</type>
+          <declname>projectPath</declname>
+        </param>
+        <briefdescription>
+<para>Saves the file to the using the passed projectPath. </para>        </briefdescription>
+        <detaileddescription>
+<para>Imanuel, 17.01.2014. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>projectPath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The project path to write. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/TrackingDataFile.cs" line="69" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/TrackingDataFile.cs" bodystart="69" bodyend="76"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A trackingData_[SensorType][SensorSubType].xml. </para>    </briefdescription>
+    <detaileddescription>
+<para>Imanuel, 17.01.2014. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="736">
+        <label>ARdevKit.Model.Project.File.TrackingDataFile</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_tracking_data_file"/>
+        <childnode refid="737" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="737">
+        <label>AbstractFile</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="738">
+        <label>ARdevKit.Model.Project.File.TrackingDataFile</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_tracking_data_file"/>
+        <childnode refid="739" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="739">
+        <label>AbstractFile</label>
+        <link refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/TrackingDataFile.cs" line="17" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/TrackingDataFile.cs" bodystart="16" bodyend="77"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1a02b61dbebfbd57f5fd44c7a972c79b50" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::File::TrackingDataFile</scope><name>AddBlock</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1a21e0333fb9d8eab8ebb039bd56ccabc9" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::File::TrackingDataFile</scope><name>blocks</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1ac55b0e087f42f7ab5ce36fa3bce111ab" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::TrackingDataFile</scope><name>FilePath</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1ad879e3a81860da8b72f2d9f61a18ab3b" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::File::TrackingDataFile</scope><name>filePath</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_tracking_data_file_1a77dd60e8f9b895d679a15490f5cbb605" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::File::TrackingDataFile</scope><name>header</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_tracking_data_file_1a101d61e5cb5e45922adb70178838c5be" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::File::TrackingDataFile</scope><name>Save</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_tracking_data_file_1a6b96d140f6a8e9c98888afece89b41f5" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::File::TrackingDataFile</scope><name>Save</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_tracking_data_file_1a6214400ae9e07924ead5ca1779562bd8" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::File::TrackingDataFile</scope><name>TrackingDataFile</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

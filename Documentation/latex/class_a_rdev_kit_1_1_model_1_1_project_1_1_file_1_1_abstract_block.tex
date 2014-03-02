@@ -1,0 +1,171 @@
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block}{\section{A\-Rdev\-Kit.\-Model.\-Project.\-File.\-Abstract\-Block Class Reference}
+\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block}\index{A\-Rdev\-Kit.\-Model.\-Project.\-File.\-Abstract\-Block@{A\-Rdev\-Kit.\-Model.\-Project.\-File.\-Abstract\-Block}}
+}
+
+
+An \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block}{Abstract\-Block} has a \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_a7c07abfe27f2f9104fe7c3d23c7333a5}{level} and can contain other \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block}{Abstract\-Block}s. It can have a \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker}{Block\-Marker} and a \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_a7dd07d5a865359c764a8cdab272a0662}{parent\-File}.  
+
+
+
+
+Inheritance diagram for A\-Rdev\-Kit.\-Model.\-Project.\-File.\-Abstract\-Block\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\-Rdev\-Kit.\-Model.\-Project.\-File.\-Abstract\-Block\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_aa238e4f3ad33fc75ab3741048ed4dc6b}{Add\-Block} (\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block}{Abstract\-Block} block)
+\begin{DoxyCompactList}\small\item\em Adds an \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block}{Abstract\-Block}. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_a0b27a217de18a766c6647b71c41cc0ea}{Write} (System.\-I\-O.\-Stream\-Writer writer)
+\begin{DoxyCompactList}\small\item\em Writes the \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block}{Abstract\-Block} with the given writer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual string \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_a851f696a88ce274c5f20e1c4bcbdef4c}{get\-Tabs} ()
+\begin{DoxyCompactList}\small\item\em Returns a string containing \mbox{[}\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_a7c07abfe27f2f9104fe7c3d23c7333a5}{level}\mbox{]} tabs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_a7c07abfe27f2f9104fe7c3d23c7333a5}{level}
+\begin{DoxyCompactList}\small\item\em The level of the \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block}{Abstract\-Block}. \end{DoxyCompactList}\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker}{Block\-Marker} \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_a0975ceb65947c7370dcb6565677e9d0e}{block\-Marker}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker}{Block\-Marker} of this \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block}{Abstract\-Block}. \end{DoxyCompactList}\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file}{Abstract\-File} \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_a7dd07d5a865359c764a8cdab272a0662}{parent\-File}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file}{Abstract\-File} this block belongs to. \end{DoxyCompactList}\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block}{Abstract\-Block} \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_aaa3372dadcd8d2b6ff2356ec984551c9}{parent\-Block}
+\begin{DoxyCompactList}\small\item\em A \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block}{Abstract\-Block} this \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block}{Abstract\-Block} belongs to. \end{DoxyCompactList}\item 
+List$<$ \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block}{Abstract\-Block} $>$ \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_ae48e43536b76e45e5c84b837cc9bc093}{blocks}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block}{Abstract\-Block}s that belong to this \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block}{Abstract\-Block}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file}{Abstract\-File} \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_a77fdd4b938d3f9d6d1f63e04018b4410}{Parent\-File}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the parent file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block}{Abstract\-Block} has a \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_a7c07abfe27f2f9104fe7c3d23c7333a5}{level} and can contain other \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block}{Abstract\-Block}s. It can have a \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker}{Block\-Marker} and a \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_a7dd07d5a865359c764a8cdab272a0662}{parent\-File}. 
+
+Imanuel, 17.\-01.\-2014. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_aa238e4f3ad33fc75ab3741048ed4dc6b}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-Block@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-Block}!Add\-Block@{Add\-Block}}
+\index{Add\-Block@{Add\-Block}!ARdevKit::Model::Project::File::AbstractBlock@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-Block}}
+\subsubsection[{Add\-Block}]{\setlength{\rightskip}{0pt plus 5cm}void A\-Rdev\-Kit.\-Model.\-Project.\-File.\-Abstract\-Block.\-Add\-Block (
+\begin{DoxyParamCaption}
+\item[{{\bf Abstract\-Block}}]{block}
+\end{DoxyParamCaption}
+)}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_aa238e4f3ad33fc75ab3741048ed4dc6b}
+
+
+Adds an \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block}{Abstract\-Block}. 
+
+Imanuel, 17.\-01.\-2014. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em block} & The \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block}{Abstract\-Block}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_a851f696a88ce274c5f20e1c4bcbdef4c}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-Block@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-Block}!get\-Tabs@{get\-Tabs}}
+\index{get\-Tabs@{get\-Tabs}!ARdevKit::Model::Project::File::AbstractBlock@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-Block}}
+\subsubsection[{get\-Tabs}]{\setlength{\rightskip}{0pt plus 5cm}virtual string A\-Rdev\-Kit.\-Model.\-Project.\-File.\-Abstract\-Block.\-get\-Tabs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_a851f696a88ce274c5f20e1c4bcbdef4c}
+
+
+Returns a string containing \mbox{[}\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_a7c07abfe27f2f9104fe7c3d23c7333a5}{level}\mbox{]} tabs. 
+
+Imanuel, 17.\-01.\-2014. 
+
+\begin{DoxyReturn}{Returns}
+The tabs. 
+\end{DoxyReturn}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_a0b27a217de18a766c6647b71c41cc0ea}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-Block@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-Block}!Write@{Write}}
+\index{Write@{Write}!ARdevKit::Model::Project::File::AbstractBlock@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-Block}}
+\subsubsection[{Write}]{\setlength{\rightskip}{0pt plus 5cm}virtual void A\-Rdev\-Kit.\-Model.\-Project.\-File.\-Abstract\-Block.\-Write (
+\begin{DoxyParamCaption}
+\item[{System.\-I\-O.\-Stream\-Writer}]{writer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_a0b27a217de18a766c6647b71c41cc0ea}
+
+
+Writes the \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block}{Abstract\-Block} with the given writer. 
+
+Imanuel, 15.\-01.\-2014. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em writer} & The writer to write. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_block_afe7251c8168c8d6062c7054bf0c21bf1}{A\-Rdev\-Kit.\-Model.\-Project.\-File.\-Java\-Script\-Block}, \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_block_a93ad69ccbe004135c2cefca37e9f01db}{A\-Rdev\-Kit.\-Model.\-Project.\-File.\-X\-M\-L\-Block}, \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_line_a9a1d47796fc64a50ccd602df70d1d562}{A\-Rdev\-Kit.\-Model.\-Project.\-File.\-Java\-Script\-Line}, \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_java_script_in_line_a49f0664d2621cc8d5e0589c202c19b10}{A\-Rdev\-Kit.\-Model.\-Project.\-File.\-Java\-Script\-In\-Line}, and \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_line_a7f58add9edb498bee39f2c09dc98c323}{A\-Rdev\-Kit.\-Model.\-Project.\-File.\-X\-M\-L\-Line}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_a0975ceb65947c7370dcb6565677e9d0e}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-Block@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-Block}!block\-Marker@{block\-Marker}}
+\index{block\-Marker@{block\-Marker}!ARdevKit::Model::Project::File::AbstractBlock@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-Block}}
+\subsubsection[{block\-Marker}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Block\-Marker} A\-Rdev\-Kit.\-Model.\-Project.\-File.\-Abstract\-Block.\-block\-Marker\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_a0975ceb65947c7370dcb6565677e9d0e}
+
+
+The \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker}{Block\-Marker} of this \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block}{Abstract\-Block}. 
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_ae48e43536b76e45e5c84b837cc9bc093}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-Block@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-Block}!blocks@{blocks}}
+\index{blocks@{blocks}!ARdevKit::Model::Project::File::AbstractBlock@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-Block}}
+\subsubsection[{blocks}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Abstract\-Block}$>$ A\-Rdev\-Kit.\-Model.\-Project.\-File.\-Abstract\-Block.\-blocks\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_ae48e43536b76e45e5c84b837cc9bc093}
+
+
+The \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block}{Abstract\-Block}s that belong to this \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block}{Abstract\-Block}. 
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_a7c07abfe27f2f9104fe7c3d23c7333a5}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-Block@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-Block}!level@{level}}
+\index{level@{level}!ARdevKit::Model::Project::File::AbstractBlock@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-Block}}
+\subsubsection[{level}]{\setlength{\rightskip}{0pt plus 5cm}int A\-Rdev\-Kit.\-Model.\-Project.\-File.\-Abstract\-Block.\-level\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_a7c07abfe27f2f9104fe7c3d23c7333a5}
+
+
+The level of the \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block}{Abstract\-Block}. 
+
+The level. \hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_aaa3372dadcd8d2b6ff2356ec984551c9}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-Block@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-Block}!parent\-Block@{parent\-Block}}
+\index{parent\-Block@{parent\-Block}!ARdevKit::Model::Project::File::AbstractBlock@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-Block}}
+\subsubsection[{parent\-Block}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Abstract\-Block} A\-Rdev\-Kit.\-Model.\-Project.\-File.\-Abstract\-Block.\-parent\-Block\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_aaa3372dadcd8d2b6ff2356ec984551c9}
+
+
+A \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block}{Abstract\-Block} this \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block}{Abstract\-Block} belongs to. 
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_a7dd07d5a865359c764a8cdab272a0662}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-Block@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-Block}!parent\-File@{parent\-File}}
+\index{parent\-File@{parent\-File}!ARdevKit::Model::Project::File::AbstractBlock@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-Block}}
+\subsubsection[{parent\-File}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Abstract\-File} A\-Rdev\-Kit.\-Model.\-Project.\-File.\-Abstract\-Block.\-parent\-File\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_a7dd07d5a865359c764a8cdab272a0662}
+
+
+The \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file}{Abstract\-File} this block belongs to. 
+
+
+
+\subsection{Property Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_a77fdd4b938d3f9d6d1f63e04018b4410}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-Block@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-Block}!Parent\-File@{Parent\-File}}
+\index{Parent\-File@{Parent\-File}!ARdevKit::Model::Project::File::AbstractBlock@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-File\-::\-Abstract\-Block}}
+\subsubsection[{Parent\-File}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Abstract\-File} A\-Rdev\-Kit.\-Model.\-Project.\-File.\-Abstract\-Block.\-Parent\-File\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block_a77fdd4b938d3f9d6d1f63e04018b4410}
+
+
+Gets or sets the parent file. 
+
+The parent file. 

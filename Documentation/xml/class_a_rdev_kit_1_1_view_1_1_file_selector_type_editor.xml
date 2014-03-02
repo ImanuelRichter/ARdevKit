@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="class_a_rdev_kit_1_1_view_1_1_file_selector_type_editor" kind="class" prot="public">
+    <compoundname>ARdevKit::View::FileSelectorTypeEditor</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">UITypeEditor</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_view_1_1_file_selector_type_editor_1acb7563610f6d10e9ebc54c7f5d2615fb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override UITypeEditorEditStyle</type>
+        <definition>override UITypeEditorEditStyle ARdevKit.View.FileSelectorTypeEditor.GetEditStyle</definition>
+        <argsstring>(ITypeDescriptorContext context)</argsstring>
+        <name>GetEditStyle</name>
+        <param>
+          <type>ITypeDescriptorContext</type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+<para>Ruft den Editor-Stil ab, der von der M:System.Drawing.Design.UITypeEditor.EditValue(System.IServiceProvider,System.Object)-Methode verwendet wird. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Eine T:System.ComponentModel.ITypeDescriptorContext-Schnittstelle, über die zusätzliche Kontextinformationen abgerufen werden können.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Ein T:System.Drawing.Design.UITypeEditorEditStyle-Wert, der den von der M:System.Drawing.Design.UITypeEditor.EditValue(System.IServiceProvider,System.Object)-Methode verwendeten Editor-Stil angibt. Wenn T:System.Drawing.Design.UITypeEditor diese Methode nicht unterstützt, gibt M:System.Drawing.Design.UITypeEditor.GetEditStyle den Wert F:System.Drawing.Design.UITypeEditorEditStyle.None zurück. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/FileSelectorTypeEditor.cs" line="23" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/FileSelectorTypeEditor.cs" bodystart="23" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_rdev_kit_1_1_view_1_1_file_selector_type_editor_1afd8892420141d624154955b904ae2ff6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override object</type>
+        <definition>override object ARdevKit.View.FileSelectorTypeEditor.EditValue</definition>
+        <argsstring>(ITypeDescriptorContext context, IServiceProvider provider, object value)</argsstring>
+        <name>EditValue</name>
+        <param>
+          <type>ITypeDescriptorContext</type>
+          <declname>context</declname>
+        </param>
+        <param>
+          <type>IServiceProvider</type>
+          <declname>provider</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Bearbeitet den Wert des angegebenen Objekts mit dem von der M:System.Drawing.Design.UITypeEditor.GetEditStyle-Methode angegebenen Editor-Stil. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Eine T:System.ComponentModel.ITypeDescriptorContext-Schnittstelle, über die zusätzliche Kontextinformationen abgerufen werden können.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>provider</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ein T:System.IServiceProvider, über den dieser Editor Dienste anfordern kann.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Das zu bearbeitende Objekt.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Der neue Wert des Objekts. Wenn sich der Wert des Objekts nicht geändert hat, wird hierbei dasselbe Objekt zurückgegeben, das zuvor übergeben wurde. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/FileSelectorTypeEditor.cs" line="39" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/FileSelectorTypeEditor.cs" bodystart="39" bodyend="75"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="544">
+        <label>UITypeEditor</label>
+      </node>
+      <node id="543">
+        <label>ARdevKit.View.FileSelectorTypeEditor</label>
+        <link refid="class_a_rdev_kit_1_1_view_1_1_file_selector_type_editor"/>
+        <childnode refid="544" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="546">
+        <label>UITypeEditor</label>
+      </node>
+      <node id="545">
+        <label>ARdevKit.View.FileSelectorTypeEditor</label>
+        <link refid="class_a_rdev_kit_1_1_view_1_1_file_selector_type_editor"/>
+        <childnode refid="546" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/FileSelectorTypeEditor.cs" line="15" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/View/FileSelectorTypeEditor.cs" bodystart="14" bodyend="77"/>
+    <listofallmembers>
+      <member refid="class_a_rdev_kit_1_1_view_1_1_file_selector_type_editor_1afd8892420141d624154955b904ae2ff6" prot="public" virt="non-virtual"><scope>ARdevKit::View::FileSelectorTypeEditor</scope><name>EditValue</name></member>
+      <member refid="class_a_rdev_kit_1_1_view_1_1_file_selector_type_editor_1acb7563610f6d10e9ebc54c7f5d2615fb" prot="public" virt="non-virtual"><scope>ARdevKit::View::FileSelectorTypeEditor</scope><name>GetEditStyle</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

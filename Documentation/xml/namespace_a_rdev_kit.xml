@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="namespace_a_rdev_kit" kind="namespace">
+    <compoundname>ARdevKit</compoundname>
+    <innerclass refid="class_a_rdev_kit_1_1_a_rdev_kit_editor" prot="public">ARdevKit::ARdevKitEditor</innerclass>
+    <innerclass refid="class_a_rdev_kit_1_1_editor_window" prot="public">ARdevKit::EditorWindow</innerclass>
+    <innerclass refid="class_a_rdev_kit_1_1_text_editor_form" prot="public">ARdevKit::TextEditorForm</innerclass>
+    <innernamespace refid="namespace_a_rdev_kit_1_1_controller">ARdevKit::Controller</innernamespace>
+    <innernamespace refid="namespace_a_rdev_kit_1_1_model">ARdevKit::Model</innernamespace>
+    <innernamespace refid="namespace_a_rdev_kit_1_1_properties">ARdevKit::Properties</innernamespace>
+    <innernamespace refid="namespace_a_rdev_kit_1_1_view">ARdevKit::View</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/ARdevKitEditor.cs" line="10" column="1"/>
+  </compounddef>
+</doxygen>

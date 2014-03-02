@@ -1,0 +1,735 @@
+\hypertarget{class_preview_controller}{\section{Preview\-Controller Class Reference}
+\label{class_preview_controller}\index{Preview\-Controller@{Preview\-Controller}}
+}
+
+
+Collaboration diagram for Preview\-Controller\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{class_preview_controller__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_preview_controller_aa43765e04846c1d954bf7e0c5b1cc279}{Preview\-Controller} (\hyperlink{class_a_rdev_kit_1_1_editor_window}{Editor\-Window} ew)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \hyperlink{class_preview_controller_a87e93818ed39df3e7accac5999a85d21}{add\-Preview\-Able} (\hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} p)
+\begin{DoxyCompactList}\small\item\em (This method is obsolete) adds a preview able. \end{DoxyCompactList}\item 
+void \hyperlink{class_preview_controller_ae3d0ace09aed4464a7dd91764d1bb03e}{add\-Previewable} (\hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} current\-Element, \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d}{Vector3\-D} v)
+\begin{DoxyCompactList}\small\item\em add Trackable is the method for adding the trackable, each Preview\-Panel can holding one Trackable. \end{DoxyCompactList}\item 
+void \hyperlink{class_preview_controller_aa4cc8c02192eb08afe244825d5796552}{add\-Source} (\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source}{Abstract\-Source} source, \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation}{Abstract\-Augmentation} current\-Element)
+\begin{DoxyCompactList}\small\item\em add Source or augmentation, this method can only be used with the element, which is the over element by augmentation the overelement is Trackable. by Source the overelement is augmentation. \end{DoxyCompactList}\item 
+void \hyperlink{class_preview_controller_a4fad890882bdd075b6ea97ebac62bff6}{remove\-Source} (\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_source}{Abstract\-Source} source, \hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} current\-Element)
+\begin{DoxyCompactList}\small\item\em Removes the choosen Source out of the Augmentation and also out of the sources\-List in Project. \end{DoxyCompactList}\item 
+void \hyperlink{class_preview_controller_a73d864a5cea6519a889d70bffbfef8f9}{remove\-Previewable} (\hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} current\-Element)
+\begin{DoxyCompactList}\small\item\em Removes the Previewable and the Objekt, what is linked to the Previewable. \end{DoxyCompactList}\item 
+void \hyperlink{class_preview_controller_a5dd2e4dfcb87bcb1b2290d4ea752db2c}{update\-Preview\-Panel} ()
+\begin{DoxyCompactList}\small\item\em updates the preview panel. \end{DoxyCompactList}\item 
+void \hyperlink{class_preview_controller_ab68e5dc968561b4a115576d84e363cb0}{reload\-Preview\-Panel} (int \hyperlink{class_preview_controller_a9b9691005cc484c0da1d7498e72b8e7f}{index})
+\begin{DoxyCompactList}\small\item\em load the project with the identical index to the preview\-Panel (the index is the index of the trackable list in project) \end{DoxyCompactList}\item 
+void \hyperlink{class_preview_controller_a497bb0aabb76d17df7d090fd0b8daac5}{reload\-Previewable} (\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation}{Abstract\-Augmentation} prev)
+\begin{DoxyCompactList}\small\item\em Reloads a single previewable. \end{DoxyCompactList}\item 
+Picture\-Box \hyperlink{class_preview_controller_a4ab1b4464e39eeb347554fc69f0dd38b}{find\-Box} (\hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} prev)
+\begin{DoxyCompactList}\small\item\em Searchs in the Panel for the important Picture\-Box and gives this box back. \end{DoxyCompactList}\item 
+void \hyperlink{class_preview_controller_ae5cb0828e43829a516a998407d6f8a1a}{set\-Current\-Element} (\hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} current\-Element)
+\begin{DoxyCompactList}\small\item\em sets the current\-Element in Editor\-Window an marks the Picture\-Box in the Preview\-Panel. \end{DoxyCompactList}\item 
+Bitmap \hyperlink{class_preview_controller_a3e156e717573c15c3ef9a3baada91085}{scale\-I\-Previewable} (\hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} prev)
+\begin{DoxyCompactList}\small\item\em scales the Pictureboxes to their own scale size the size is in dependency to the scale, the side\-Scale of the images and and the scale of the augmentation. \end{DoxyCompactList}\item 
+Bitmap \hyperlink{class_preview_controller_a0013a78d729579e06c50551e87350091}{scale\-Bitmap} (Bitmap bit, int width, int height)
+\begin{DoxyCompactList}\small\item\em scales the bitmap to the width \& height which you want \end{DoxyCompactList}\item 
+void \hyperlink{class_preview_controller_a03acb2816496e20b416346aeff126b04}{rescale\-Preview\-Panel} ()
+\begin{DoxyCompactList}\small\item\em Rescales the preview panel if the size was changed. \end{DoxyCompactList}\item 
+void \hyperlink{class_preview_controller_a3b909b7f753ee543cbf42dfdb9a0316f}{set\-Coordinates} (\hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} prev, \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_d}{Vector3\-D} new\-V)
+\begin{DoxyCompactList}\small\item\em Set all needed Coordinates for the augmentation. \end{DoxyCompactList}\item 
+void \hyperlink{class_preview_controller_af14f36a06e16003c0cc11188024521c7}{update\-Translation} ()
+\begin{DoxyCompactList}\small\item\em This updates the position of the current\-Element-\/\-Picturebox. \end{DoxyCompactList}\item 
+void \hyperlink{class_preview_controller_ae33fd4d13286e22a819f5a6cd5de292f}{update\-Element\-Combobox} (\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable}{Abstract\-Trackable} t)
+\begin{DoxyCompactList}\small\item\em Updates the element combobox. \end{DoxyCompactList}\item 
+void \hyperlink{class_preview_controller_ae491c6460dec4eba08e93a12044edf8c}{rotate\-Augmentation} (\hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} current\-Element)
+\begin{DoxyCompactList}\small\item\em Rotates the augmentation, after you've changed the Rotation.\-Z Vector. \end{DoxyCompactList}\item 
+Bitmap \hyperlink{class_preview_controller_a22b51f7117d79a44defe07c627e52982}{get\-Sized\-Bitmap} (\hyperlink{interface_a_rdev_kit_1_1_model_1_1_project_1_1_i_previewable}{I\-Previewable} current\-Element)
+\begin{DoxyCompactList}\small\item\em Refreshs the Augmentation with the new Scale. \end{DoxyCompactList}\item 
+void \hyperlink{class_preview_controller_a3ee38c7b2e1a69fbe823b8092c2d6c86}{copy\-\_\-augmentation} (object sender, Event\-Args e)
+\begin{DoxyCompactList}\small\item\em Event\-Handler for copy function. copies the current\-Element \end{DoxyCompactList}\item 
+void \hyperlink{class_preview_controller_a58e44b6e2acc62906bfc29eb6854ce32}{paste\-\_\-augmentation} (object sender, Event\-Args e)
+\begin{DoxyCompactList}\small\item\em Event\-Handler for paste function. paste the object at the current cursor position. \end{DoxyCompactList}\item 
+void \hyperlink{class_preview_controller_a5cc0d886165ca91677acadd895426af2}{paste\-\_\-augmentation\-\_\-center} (object sender, Event\-Args e)
+\begin{DoxyCompactList}\small\item\em Event\-Handler for paste function. paste the object in the center of panel \end{DoxyCompactList}\item 
+void \hyperlink{class_preview_controller_a5d4e3df813540fd4ac0c74523f656fca}{on\-Augmentation\-Enter} (object sender, Drag\-Event\-Args e)
+\begin{DoxyCompactList}\small\item\em Raises the drag event when a source enters a augmentation. \end{DoxyCompactList}\item 
+void \hyperlink{class_preview_controller_a7bc01f6c09f310b7079a9754ec27e307}{on\-Augmentation\-Drop} (object sender, Drag\-Event\-Args e)
+\begin{DoxyCompactList}\small\item\em Raises the drag event when a source is droped on an augmentation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_preview_controller_a9b9691005cc484c0da1d7498e72b8e7f}{index}
+\begin{DoxyCompactList}\small\item\em The Index which Trackable out of Project we musst use \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_preview_controller_adf3c4a7bbd75ba87a843a3b56b0a04e2}{\hyperlink{namespace_a_rdev_kit_1_1_controller_1_1_editor_controller_a304367964b3f3f5c115bb81e7b31d534}{Meta\-Category} \hyperlink{class_preview_controller_adf3c4a7bbd75ba87a843a3b56b0a04e2}{current\-Meta\-Category}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}}\label{class_preview_controller_adf3c4a7bbd75ba87a843a3b56b0a04e2}
+
+\begin{DoxyCompactList}\small\item\em The Meta\-Category of the current element. \end{DoxyCompactList}\item 
+\hypertarget{class_preview_controller_a38df415628d33de07a741fd3d80f5647}{\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable}{Abstract\-Trackable} \hyperlink{class_preview_controller_a38df415628d33de07a741fd3d80f5647}{trackable}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}}\label{class_preview_controller_a38df415628d33de07a741fd3d80f5647}
+
+\begin{DoxyCompactList}\small\item\em The Trackable which hold the Augmentations and Sources. \end{DoxyCompactList}\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation}{Abstract\-Augmentation} \hyperlink{class_preview_controller_a3f44a88dd89aa311b734034de2f70417}{copy}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the copy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_preview_controller_aa43765e04846c1d954bf7e0c5b1cc279}{\index{Preview\-Controller@{Preview\-Controller}!Preview\-Controller@{Preview\-Controller}}
+\index{Preview\-Controller@{Preview\-Controller}!PreviewController@{Preview\-Controller}}
+\subsubsection[{Preview\-Controller}]{\setlength{\rightskip}{0pt plus 5cm}Preview\-Controller.\-Preview\-Controller (
+\begin{DoxyParamCaption}
+\item[{{\bf Editor\-Window}}]{ew}
+\end{DoxyParamCaption}
+)}}\label{class_preview_controller_aa43765e04846c1d954bf7e0c5b1cc279}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ew} & Editor\-Window Instanz. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_preview_controller_a87e93818ed39df3e7accac5999a85d21}{\index{Preview\-Controller@{Preview\-Controller}!add\-Preview\-Able@{add\-Preview\-Able}}
+\index{add\-Preview\-Able@{add\-Preview\-Able}!PreviewController@{Preview\-Controller}}
+\subsubsection[{add\-Preview\-Able}]{\setlength{\rightskip}{0pt plus 5cm}void Preview\-Controller.\-add\-Preview\-Able (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Previewable}}]{p}
+\end{DoxyParamCaption}
+)}}\label{class_preview_controller_a87e93818ed39df3e7accac5999a85d21}
+
+
+(This method is obsolete) adds a preview able. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Not\-Implemented\-Exception} & Thrown when the requested operation is unimplemented. \\
+\hline
+\end{DoxyExceptions}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The Panel to process. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_preview_controller_ae3d0ace09aed4464a7dd91764d1bb03e}{\index{Preview\-Controller@{Preview\-Controller}!add\-Previewable@{add\-Previewable}}
+\index{add\-Previewable@{add\-Previewable}!PreviewController@{Preview\-Controller}}
+\subsubsection[{add\-Previewable}]{\setlength{\rightskip}{0pt plus 5cm}void Preview\-Controller.\-add\-Previewable (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Previewable}}]{current\-Element, }
+\item[{{\bf Vector3\-D}}]{v}
+\end{DoxyParamCaption}
+)}}\label{class_preview_controller_ae3d0ace09aed4464a7dd91764d1bb03e}
+
+
+add Trackable is the method for adding the trackable, each Preview\-Panel can holding one Trackable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\-Element} & The current element.\\
+\hline
+{\em v} & The Vector3\-D to set the Trackable.\\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_preview_controller_ae3d0ace09aed4464a7dd91764d1bb03e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_preview_controller_aa4cc8c02192eb08afe244825d5796552}{\index{Preview\-Controller@{Preview\-Controller}!add\-Source@{add\-Source}}
+\index{add\-Source@{add\-Source}!PreviewController@{Preview\-Controller}}
+\subsubsection[{add\-Source}]{\setlength{\rightskip}{0pt plus 5cm}void Preview\-Controller.\-add\-Source (
+\begin{DoxyParamCaption}
+\item[{{\bf Abstract\-Source}}]{source, }
+\item[{{\bf Abstract\-Augmentation}}]{current\-Element}
+\end{DoxyParamCaption}
+)}}\label{class_preview_controller_aa4cc8c02192eb08afe244825d5796552}
+
+
+add Source or augmentation, this method can only be used with the element, which is the over element by augmentation the overelement is Trackable. by Source the overelement is augmentation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & The source.\\
+\hline
+{\em current\-Element} & The current element.\\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_preview_controller_aa4cc8c02192eb08afe244825d5796552_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_preview_controller_aa4cc8c02192eb08afe244825d5796552_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_preview_controller_a3ee38c7b2e1a69fbe823b8092c2d6c86}{\index{Preview\-Controller@{Preview\-Controller}!copy\-\_\-augmentation@{copy\-\_\-augmentation}}
+\index{copy\-\_\-augmentation@{copy\-\_\-augmentation}!PreviewController@{Preview\-Controller}}
+\subsubsection[{copy\-\_\-augmentation}]{\setlength{\rightskip}{0pt plus 5cm}void Preview\-Controller.\-copy\-\_\-augmentation (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Event\-Args}]{e}
+\end{DoxyParamCaption}
+)}}\label{class_preview_controller_a3ee38c7b2e1a69fbe823b8092c2d6c86}
+
+
+Event\-Handler for copy function. copies the current\-Element 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & The source of the event.\\
+\hline
+{\em e} & The Event\-Args instance containing the event data.\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_preview_controller_a4ab1b4464e39eeb347554fc69f0dd38b}{\index{Preview\-Controller@{Preview\-Controller}!find\-Box@{find\-Box}}
+\index{find\-Box@{find\-Box}!PreviewController@{Preview\-Controller}}
+\subsubsection[{find\-Box}]{\setlength{\rightskip}{0pt plus 5cm}Picture\-Box Preview\-Controller.\-find\-Box (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Previewable}}]{prev}
+\end{DoxyParamCaption}
+)}}\label{class_preview_controller_a4ab1b4464e39eeb347554fc69f0dd38b}
+
+
+Searchs in the Panel for the important Picture\-Box and gives this box back. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prev} & The previous.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_preview_controller_a4ab1b4464e39eeb347554fc69f0dd38b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_preview_controller_a22b51f7117d79a44defe07c627e52982}{\index{Preview\-Controller@{Preview\-Controller}!get\-Sized\-Bitmap@{get\-Sized\-Bitmap}}
+\index{get\-Sized\-Bitmap@{get\-Sized\-Bitmap}!PreviewController@{Preview\-Controller}}
+\subsubsection[{get\-Sized\-Bitmap}]{\setlength{\rightskip}{0pt plus 5cm}Bitmap Preview\-Controller.\-get\-Sized\-Bitmap (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Previewable}}]{current\-Element}
+\end{DoxyParamCaption}
+)}}\label{class_preview_controller_a22b51f7117d79a44defe07c627e52982}
+
+
+Refreshs the Augmentation with the new Scale. 
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_preview_controller_a22b51f7117d79a44defe07c627e52982_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_preview_controller_a22b51f7117d79a44defe07c627e52982_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_preview_controller_a7bc01f6c09f310b7079a9754ec27e307}{\index{Preview\-Controller@{Preview\-Controller}!on\-Augmentation\-Drop@{on\-Augmentation\-Drop}}
+\index{on\-Augmentation\-Drop@{on\-Augmentation\-Drop}!PreviewController@{Preview\-Controller}}
+\subsubsection[{on\-Augmentation\-Drop}]{\setlength{\rightskip}{0pt plus 5cm}void Preview\-Controller.\-on\-Augmentation\-Drop (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Drag\-Event\-Args}]{e}
+\end{DoxyParamCaption}
+)}}\label{class_preview_controller_a7bc01f6c09f310b7079a9754ec27e307}
+
+
+Raises the drag event when a source is droped on an augmentation. 
+
+Robin, 19.\-01.\-2014. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Source of the event. \\
+\hline
+{\em e} & Event information to send to registered event handlers. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_preview_controller_a7bc01f6c09f310b7079a9754ec27e307_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_preview_controller_a5d4e3df813540fd4ac0c74523f656fca}{\index{Preview\-Controller@{Preview\-Controller}!on\-Augmentation\-Enter@{on\-Augmentation\-Enter}}
+\index{on\-Augmentation\-Enter@{on\-Augmentation\-Enter}!PreviewController@{Preview\-Controller}}
+\subsubsection[{on\-Augmentation\-Enter}]{\setlength{\rightskip}{0pt plus 5cm}void Preview\-Controller.\-on\-Augmentation\-Enter (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Drag\-Event\-Args}]{e}
+\end{DoxyParamCaption}
+)}}\label{class_preview_controller_a5d4e3df813540fd4ac0c74523f656fca}
+
+
+Raises the drag event when a source enters a augmentation. 
+
+Robin, 19.\-01.\-2014. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Source of the event. \\
+\hline
+{\em e} & Event information to send to registered event handlers. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_preview_controller_a58e44b6e2acc62906bfc29eb6854ce32}{\index{Preview\-Controller@{Preview\-Controller}!paste\-\_\-augmentation@{paste\-\_\-augmentation}}
+\index{paste\-\_\-augmentation@{paste\-\_\-augmentation}!PreviewController@{Preview\-Controller}}
+\subsubsection[{paste\-\_\-augmentation}]{\setlength{\rightskip}{0pt plus 5cm}void Preview\-Controller.\-paste\-\_\-augmentation (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Event\-Args}]{e}
+\end{DoxyParamCaption}
+)}}\label{class_preview_controller_a58e44b6e2acc62906bfc29eb6854ce32}
+
+
+Event\-Handler for paste function. paste the object at the current cursor position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & The source of the event.\\
+\hline
+{\em e} & The Event\-Args instance containing the event data.\\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_preview_controller_a58e44b6e2acc62906bfc29eb6854ce32_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_preview_controller_a58e44b6e2acc62906bfc29eb6854ce32_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_preview_controller_a5cc0d886165ca91677acadd895426af2}{\index{Preview\-Controller@{Preview\-Controller}!paste\-\_\-augmentation\-\_\-center@{paste\-\_\-augmentation\-\_\-center}}
+\index{paste\-\_\-augmentation\-\_\-center@{paste\-\_\-augmentation\-\_\-center}!PreviewController@{Preview\-Controller}}
+\subsubsection[{paste\-\_\-augmentation\-\_\-center}]{\setlength{\rightskip}{0pt plus 5cm}void Preview\-Controller.\-paste\-\_\-augmentation\-\_\-center (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Event\-Args}]{e}
+\end{DoxyParamCaption}
+)}}\label{class_preview_controller_a5cc0d886165ca91677acadd895426af2}
+
+
+Event\-Handler for paste function. paste the object in the center of panel 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & The source of the event.\\
+\hline
+{\em e} & The Event\-Args instance containing the event data.\\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_preview_controller_a5cc0d886165ca91677acadd895426af2_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_preview_controller_a497bb0aabb76d17df7d090fd0b8daac5}{\index{Preview\-Controller@{Preview\-Controller}!reload\-Previewable@{reload\-Previewable}}
+\index{reload\-Previewable@{reload\-Previewable}!PreviewController@{Preview\-Controller}}
+\subsubsection[{reload\-Previewable}]{\setlength{\rightskip}{0pt plus 5cm}void Preview\-Controller.\-reload\-Previewable (
+\begin{DoxyParamCaption}
+\item[{{\bf Abstract\-Augmentation}}]{prev}
+\end{DoxyParamCaption}
+)}}\label{class_preview_controller_a497bb0aabb76d17df7d090fd0b8daac5}
+
+
+Reloads a single previewable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prev} & The previous.\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_preview_controller_ab68e5dc968561b4a115576d84e363cb0}{\index{Preview\-Controller@{Preview\-Controller}!reload\-Preview\-Panel@{reload\-Preview\-Panel}}
+\index{reload\-Preview\-Panel@{reload\-Preview\-Panel}!PreviewController@{Preview\-Controller}}
+\subsubsection[{reload\-Preview\-Panel}]{\setlength{\rightskip}{0pt plus 5cm}void Preview\-Controller.\-reload\-Preview\-Panel (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{class_preview_controller_ab68e5dc968561b4a115576d84e363cb0}
+
+
+load the project with the identical index to the preview\-Panel (the index is the index of the trackable list in project) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index.\\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_preview_controller_ab68e5dc968561b4a115576d84e363cb0_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_preview_controller_a73d864a5cea6519a889d70bffbfef8f9}{\index{Preview\-Controller@{Preview\-Controller}!remove\-Previewable@{remove\-Previewable}}
+\index{remove\-Previewable@{remove\-Previewable}!PreviewController@{Preview\-Controller}}
+\subsubsection[{remove\-Previewable}]{\setlength{\rightskip}{0pt plus 5cm}void Preview\-Controller.\-remove\-Previewable (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Previewable}}]{current\-Element}
+\end{DoxyParamCaption}
+)}}\label{class_preview_controller_a73d864a5cea6519a889d70bffbfef8f9}
+
+
+Removes the Previewable and the Objekt, what is linked to the Previewable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\-Element} & The current element.\\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_preview_controller_a73d864a5cea6519a889d70bffbfef8f9_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_preview_controller_a4fad890882bdd075b6ea97ebac62bff6}{\index{Preview\-Controller@{Preview\-Controller}!remove\-Source@{remove\-Source}}
+\index{remove\-Source@{remove\-Source}!PreviewController@{Preview\-Controller}}
+\subsubsection[{remove\-Source}]{\setlength{\rightskip}{0pt plus 5cm}void Preview\-Controller.\-remove\-Source (
+\begin{DoxyParamCaption}
+\item[{{\bf Abstract\-Source}}]{source, }
+\item[{{\bf I\-Previewable}}]{current\-Element}
+\end{DoxyParamCaption}
+)}}\label{class_preview_controller_a4fad890882bdd075b6ea97ebac62bff6}
+
+
+Removes the choosen Source out of the Augmentation and also out of the sources\-List in Project. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & The source.\\
+\hline
+{\em current\-Element} & The current element.\\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_preview_controller_a4fad890882bdd075b6ea97ebac62bff6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_preview_controller_a03acb2816496e20b416346aeff126b04}{\index{Preview\-Controller@{Preview\-Controller}!rescale\-Preview\-Panel@{rescale\-Preview\-Panel}}
+\index{rescale\-Preview\-Panel@{rescale\-Preview\-Panel}!PreviewController@{Preview\-Controller}}
+\subsubsection[{rescale\-Preview\-Panel}]{\setlength{\rightskip}{0pt plus 5cm}void Preview\-Controller.\-rescale\-Preview\-Panel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_preview_controller_a03acb2816496e20b416346aeff126b04}
+
+
+Rescales the preview panel if the size was changed. 
+
+\hypertarget{class_preview_controller_ae491c6460dec4eba08e93a12044edf8c}{\index{Preview\-Controller@{Preview\-Controller}!rotate\-Augmentation@{rotate\-Augmentation}}
+\index{rotate\-Augmentation@{rotate\-Augmentation}!PreviewController@{Preview\-Controller}}
+\subsubsection[{rotate\-Augmentation}]{\setlength{\rightskip}{0pt plus 5cm}void Preview\-Controller.\-rotate\-Augmentation (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Previewable}}]{current\-Element}
+\end{DoxyParamCaption}
+)}}\label{class_preview_controller_ae491c6460dec4eba08e93a12044edf8c}
+
+
+Rotates the augmentation, after you've changed the Rotation.\-Z Vector. 
+
+\hypertarget{class_preview_controller_a0013a78d729579e06c50551e87350091}{\index{Preview\-Controller@{Preview\-Controller}!scale\-Bitmap@{scale\-Bitmap}}
+\index{scale\-Bitmap@{scale\-Bitmap}!PreviewController@{Preview\-Controller}}
+\subsubsection[{scale\-Bitmap}]{\setlength{\rightskip}{0pt plus 5cm}Bitmap Preview\-Controller.\-scale\-Bitmap (
+\begin{DoxyParamCaption}
+\item[{Bitmap}]{bit, }
+\item[{int}]{width, }
+\item[{int}]{height}
+\end{DoxyParamCaption}
+)}}\label{class_preview_controller_a0013a78d729579e06c50551e87350091}
+
+
+scales the bitmap to the width \& height which you want 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bit} & The bit.\\
+\hline
+{\em width} & The width.\\
+\hline
+{\em height} & The height.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+scaled bitmap
+\end{DoxyReturn}
+\hypertarget{class_preview_controller_a3e156e717573c15c3ef9a3baada91085}{\index{Preview\-Controller@{Preview\-Controller}!scale\-I\-Previewable@{scale\-I\-Previewable}}
+\index{scale\-I\-Previewable@{scale\-I\-Previewable}!PreviewController@{Preview\-Controller}}
+\subsubsection[{scale\-I\-Previewable}]{\setlength{\rightskip}{0pt plus 5cm}Bitmap Preview\-Controller.\-scale\-I\-Previewable (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Previewable}}]{prev}
+\end{DoxyParamCaption}
+)}}\label{class_preview_controller_a3e156e717573c15c3ef9a3baada91085}
+
+
+scales the Pictureboxes to their own scale size the size is in dependency to the scale, the side\-Scale of the images and and the scale of the augmentation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prev} & The previous.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{class_preview_controller_a3b909b7f753ee543cbf42dfdb9a0316f}{\index{Preview\-Controller@{Preview\-Controller}!set\-Coordinates@{set\-Coordinates}}
+\index{set\-Coordinates@{set\-Coordinates}!PreviewController@{Preview\-Controller}}
+\subsubsection[{set\-Coordinates}]{\setlength{\rightskip}{0pt plus 5cm}void Preview\-Controller.\-set\-Coordinates (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Previewable}}]{prev, }
+\item[{{\bf Vector3\-D}}]{new\-V}
+\end{DoxyParamCaption}
+)}}\label{class_preview_controller_a3b909b7f753ee543cbf42dfdb9a0316f}
+
+
+Set all needed Coordinates for the augmentation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prev} & The previous.\\
+\hline
+{\em new\-V} & The new v.\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_preview_controller_ae5cb0828e43829a516a998407d6f8a1a}{\index{Preview\-Controller@{Preview\-Controller}!set\-Current\-Element@{set\-Current\-Element}}
+\index{set\-Current\-Element@{set\-Current\-Element}!PreviewController@{Preview\-Controller}}
+\subsubsection[{set\-Current\-Element}]{\setlength{\rightskip}{0pt plus 5cm}void Preview\-Controller.\-set\-Current\-Element (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Previewable}}]{current\-Element}
+\end{DoxyParamCaption}
+)}}\label{class_preview_controller_ae5cb0828e43829a516a998407d6f8a1a}
+
+
+sets the current\-Element in Editor\-Window an marks the Picture\-Box in the Preview\-Panel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\-Element} & The current element.\\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_preview_controller_ae5cb0828e43829a516a998407d6f8a1a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_preview_controller_ae5cb0828e43829a516a998407d6f8a1a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_preview_controller_ae33fd4d13286e22a819f5a6cd5de292f}{\index{Preview\-Controller@{Preview\-Controller}!update\-Element\-Combobox@{update\-Element\-Combobox}}
+\index{update\-Element\-Combobox@{update\-Element\-Combobox}!PreviewController@{Preview\-Controller}}
+\subsubsection[{update\-Element\-Combobox}]{\setlength{\rightskip}{0pt plus 5cm}void Preview\-Controller.\-update\-Element\-Combobox (
+\begin{DoxyParamCaption}
+\item[{{\bf Abstract\-Trackable}}]{t}
+\end{DoxyParamCaption}
+)}}\label{class_preview_controller_ae33fd4d13286e22a819f5a6cd5de292f}
+
+
+Updates the element combobox. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & The t.\\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_preview_controller_ae33fd4d13286e22a819f5a6cd5de292f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_preview_controller_a5dd2e4dfcb87bcb1b2290d4ea752db2c}{\index{Preview\-Controller@{Preview\-Controller}!update\-Preview\-Panel@{update\-Preview\-Panel}}
+\index{update\-Preview\-Panel@{update\-Preview\-Panel}!PreviewController@{Preview\-Controller}}
+\subsubsection[{update\-Preview\-Panel}]{\setlength{\rightskip}{0pt plus 5cm}void Preview\-Controller.\-update\-Preview\-Panel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_preview_controller_a5dd2e4dfcb87bcb1b2290d4ea752db2c}
+
+
+updates the preview panel. 
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_preview_controller_a5dd2e4dfcb87bcb1b2290d4ea752db2c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_preview_controller_af14f36a06e16003c0cc11188024521c7}{\index{Preview\-Controller@{Preview\-Controller}!update\-Translation@{update\-Translation}}
+\index{update\-Translation@{update\-Translation}!PreviewController@{Preview\-Controller}}
+\subsubsection[{update\-Translation}]{\setlength{\rightskip}{0pt plus 5cm}void Preview\-Controller.\-update\-Translation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_preview_controller_af14f36a06e16003c0cc11188024521c7}
+
+
+This updates the position of the current\-Element-\/\-Picturebox. 
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_preview_controller_af14f36a06e16003c0cc11188024521c7_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_preview_controller_a9b9691005cc484c0da1d7498e72b8e7f}{\index{Preview\-Controller@{Preview\-Controller}!index@{index}}
+\index{index@{index}!PreviewController@{Preview\-Controller}}
+\subsubsection[{index}]{\setlength{\rightskip}{0pt plus 5cm}int Preview\-Controller.\-index}}\label{class_preview_controller_a9b9691005cc484c0da1d7498e72b8e7f}
+
+
+The Index which Trackable out of Project we musst use 
+
+
+
+\subsection{Property Documentation}
+\hypertarget{class_preview_controller_a3f44a88dd89aa311b734034de2f70417}{\index{Preview\-Controller@{Preview\-Controller}!copy@{copy}}
+\index{copy@{copy}!PreviewController@{Preview\-Controller}}
+\subsubsection[{copy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Abstract\-Augmentation} Preview\-Controller.\-copy\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_preview_controller_a3f44a88dd89aa311b734034de2f70417}
+
+
+Gets or sets the copy. 
+
+The copy. 

@@ -1,0 +1,4 @@
+<map id="ARdevKit.Model.Project.File.AbstractBlock" name="ARdevKit.Model.Project.File.AbstractBlock">
+<area shape="rect" id="node2" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file.html" title="An AbstractFile can be an ARELConfigFile, an ARELProjectFile, a TrackinDataFile or an ARELGlueFile..." alt="" coords="5,6,192,157"/>
+<area shape="rect" id="node3" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_block_marker.html" title="A BlockMarker marks an AbstractBlock. It has a Start string and an End string and can be open or clos..." alt="" coords="217,6,404,157"/>
+</map>

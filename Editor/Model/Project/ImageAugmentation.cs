@@ -21,33 +21,8 @@ namespace ARdevKit.Model.Project
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public class ImageAugmentation : Abstract2DAugmentation
     {
-        /// <summary>
-        /// Full pathname of the image file.
-        /// </summary>
-        private string imagePath;
-
         //an instance of the preview to prevent access complications.
         private Bitmap cachePreview = null;
-
-        /// <summary>
-        /// Gets or sets the full pathname of the image file.
-        /// </summary>
-        /// <value>
-        /// The full pathname of the image file.
-        /// </value>
-        [CategoryAttribute("General"), EditorAttribute(typeof(FileSelectorTypeEditor),
-            typeof(System.Drawing.Design.UITypeEditor))]
-        public string ImagePath
-        {
-            get { return imagePath; }
-            set
-            {
-                if (System.IO.File.Exists(value))
-                {
-                    imagePath = value;
-                }
-            }
-        }
 
         /// <summary>
         /// Gets or sets the width.
@@ -81,7 +56,7 @@ namespace ARdevKit.Model.Project
         public ImageAugmentation()
             : base()
         {
-            imagePath = null;
+            sourceFilePath = null;
         }
 
 
@@ -92,7 +67,7 @@ namespace ARdevKit.Model.Project
         public ImageAugmentation(string imagePath)
             : base()
         {
-            this.imagePath = imagePath;
+            this.sourceFilePath = imagePath;
         }
 
         /// <summary>
@@ -116,10 +91,10 @@ namespace ARdevKit.Model.Project
         /// a representative Bitmap
         /// </returns>
         /// <exception cref="FileNotFoundException">Thrown when the requested File is
-        /// not found in <see cref="ImagePath" />.</exception>
+        /// not found in <see cref="SourceFilePath" />.</exception>
         public override Bitmap getPreview()
         {
-                cachePreview = new Bitmap(ImagePath);
+                cachePreview = new Bitmap(SourceFilePath);
             return cachePreview;
         }
 
@@ -144,9 +119,9 @@ namespace ARdevKit.Model.Project
 
         public override void CleanUp()
         {
-            string dir = Path.GetDirectoryName(imagePath);
+            string dir = Path.GetDirectoryName(sourceFilePath);
             if (Directory.Exists(dir) && dir.Contains("Assets"))
-                System.IO.File.Delete(imagePath);
+                System.IO.File.Delete(sourceFilePath);
         }
 
         /**
@@ -171,7 +146,7 @@ namespace ARdevKit.Model.Project
         /// </returns>
         public override bool initElement(EditorWindow ew)
         {
-            if (ImagePath == null)
+            if (SourceFilePath == null)
             {
                 OpenFileDialog openFileDialog = new OpenFileDialog();
                 openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
@@ -179,7 +154,7 @@ namespace ARdevKit.Model.Project
                 openFileDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    ImagePath = openFileDialog.FileName;
+                    SourceFilePath = openFileDialog.FileName;
                     return base.initElement(ew);
                 }
                 else

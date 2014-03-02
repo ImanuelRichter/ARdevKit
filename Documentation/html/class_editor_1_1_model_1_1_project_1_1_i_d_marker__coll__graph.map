@@ -1,6 +1,0 @@
-<map id="Editor.Model.Project.IDMarker" name="Editor.Model.Project.IDMarker">
-<area shape="rect" id="node2" href="$class_editor_1_1_model_1_1_project_1_1_abstract_marker.html" title="An abstract marker. " alt="" coords="51,155,161,181"/>
-<area shape="rect" id="node3" href="$class_editor_1_1_model_1_1_project_1_1_abstract_trackable.html" title="An abstract trackable. " alt="" coords="43,80,169,107"/>
-<area shape="rect" id="node4" href="$interface_serializable.html" title="Interface for serializable. " alt="" coords="5,5,93,32"/>
-<area shape="rect" id="node5" href="$interface_editor_1_1_model_1_1_project_1_1_i_previewable.html" title="Interface for previewable. " alt="" coords="119,5,212,32"/>
-</map>

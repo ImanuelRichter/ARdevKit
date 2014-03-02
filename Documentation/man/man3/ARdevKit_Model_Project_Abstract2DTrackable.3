@@ -1,0 +1,129 @@
+.TH "ARdevKit.Model.Project.Abstract2DTrackable" 3 "Sat Mar 1 2014" "Version 0.2" "ARdevKit" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ARdevKit.Model.Project.Abstract2DTrackable \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBARdevKit\&.Model\&.Project\&.AbstractTrackable\fP\&.
+.PP
+Inherited by \fBARdevKit\&.Model\&.Project\&.IDMarker\fP, \fBARdevKit\&.Model\&.Project\&.ImageTrackable\fP, and \fBARdevKit\&.Model\&.Project\&.PictureMarker\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "override string \fBToString\fP ()"
+.br
+.RI "\fIGibt eine Zeichenfolge zurück, die das aktuelle Objekt darstellt\&. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "string \fBsensorCosID\fP"
+.br
+.RI "\fIThe sensor cos identifier, used by AREL to specify the TrackingData \fP"
+.ti -1c
+.RI "int \fBsize\fP"
+.br
+.RI "\fIThe size of the Marker in mm \fP"
+.ti -1c
+.RI "\fBVector3D\fP \fBtranslationVector\fP"
+.br
+.RI "\fIVector to describe the position on the PreviewPanel, and later to position it on the coordinatesystem given in AREL\&. \fP"
+.ti -1c
+.RI "\fBVector3Di\fP \fBrotationVector\fP"
+.br
+.RI "\fIVector, to describe the rotation of the \fBAbstractAugmentation\fP in x, y and z direction\&. w is used for TrackingFile Offset in AREL\&. \fP"
+.ti -1c
+.RI "\fBMarkerFuser\fP \fBfuser\fP"
+.br
+.RI "\fIDescribes how different elements are combined and connected in AREL\&. \fP"
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "string \fBSensorCosID\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the sensor cos identifier\&. \fP"
+.ti -1c
+.RI "int \fBSize\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the size\&. \fP"
+.ti -1c
+.RI "\fBVector3D\fP \fBTranslation\fP\fC [get, set]\fP"
+.br
+.RI "\fIGet or set the position of the \fBAbstractAugmentation\fP\&. \fP"
+.ti -1c
+.RI "\fBVector3Di\fP \fBRotation\fP\fC [get, set]\fP"
+.br
+.RI "\fIgets or sets the Vector \fP"
+.ti -1c
+.RI "\fBMarkerFuser\fP \fBFuser\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the fuser\&. Is not Browsable, therefore not editable in the PropertyPanel \fP"
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "override string ARdevKit\&.Model\&.Project\&.Abstract2DTrackable\&.ToString ()"
+
+.PP
+Gibt eine Zeichenfolge zurück, die das aktuelle Objekt darstellt\&. Robin, 14\&.01\&.2014\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Eine Zeichenfolge, die das aktuelle Objekt darstellt\&. 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBMarkerFuser\fP ARdevKit\&.Model\&.Project\&.Abstract2DTrackable\&.fuser\fC [protected]\fP"
+
+.PP
+Describes how different elements are combined and connected in AREL\&. 
+.SS "\fBVector3Di\fP ARdevKit\&.Model\&.Project\&.Abstract2DTrackable\&.rotationVector\fC [protected]\fP"
+
+.PP
+Vector, to describe the rotation of the \fBAbstractAugmentation\fP in x, y and z direction\&. w is used for TrackingFile Offset in AREL\&. 
+.SS "string ARdevKit\&.Model\&.Project\&.Abstract2DTrackable\&.sensorCosID\fC [protected]\fP"
+
+.PP
+The sensor cos identifier, used by AREL to specify the TrackingData 
+.SS "int ARdevKit\&.Model\&.Project\&.Abstract2DTrackable\&.size\fC [protected]\fP"
+
+.PP
+The size of the Marker in mm 
+.SS "\fBVector3D\fP ARdevKit\&.Model\&.Project\&.Abstract2DTrackable\&.translationVector\fC [protected]\fP"
+
+.PP
+Vector to describe the position on the PreviewPanel, and later to position it on the coordinatesystem given in AREL\&. 
+.SH "Property Documentation"
+.PP 
+.SS "\fBMarkerFuser\fP ARdevKit\&.Model\&.Project\&.Abstract2DTrackable\&.Fuser\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the fuser\&. Is not Browsable, therefore not editable in the PropertyPanel The fuser\&. 
+.SS "\fBVector3Di\fP ARdevKit\&.Model\&.Project\&.Abstract2DTrackable\&.Rotation\fC [get]\fP, \fC [set]\fP"
+
+.PP
+gets or sets the Vector 
+.SS "string ARdevKit\&.Model\&.Project\&.Abstract2DTrackable\&.SensorCosID\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the sensor cos identifier\&. 
+.SS "int ARdevKit\&.Model\&.Project\&.Abstract2DTrackable\&.Size\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the size\&. 
+.SS "\fBVector3D\fP ARdevKit\&.Model\&.Project\&.Abstract2DTrackable\&.Translation\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Get or set the position of the \fBAbstractAugmentation\fP\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ARdevKit from the source code\&.

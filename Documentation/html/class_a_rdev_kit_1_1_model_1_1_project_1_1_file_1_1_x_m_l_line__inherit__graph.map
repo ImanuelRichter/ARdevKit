@@ -1,0 +1,4 @@
+<map id="ARdevKit.Model.Project.File.XMLLine" name="ARdevKit.Model.Project.File.XMLLine">
+<area shape="rect" id="node2" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_x_m_l_block.html" title="A XMLBlock is an AbstractBlock which can have XMLTags. " alt="" coords="49,235,148,357"/>
+<area shape="rect" id="node3" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_block.html" title="An AbstractBlock has a level and can contain other AbstractBlocks. It can have a BlockMarker and a pa..." alt="" coords="47,6,151,186"/>
+</map>

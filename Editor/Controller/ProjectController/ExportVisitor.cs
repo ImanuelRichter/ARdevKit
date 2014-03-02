@@ -121,8 +121,8 @@ namespace ARdevKit.Controller.ProjectController
         {
             // Copy to projectPath
             string newPath = Path.Combine(project.ProjectPath, "Assets");
-            Helper.Copy(video.VideoPath, newPath);
-            video.VideoPath = Path.Combine(newPath, Path.GetFileName(video.VideoPath));
+            Helper.Copy(video.SourceFilePath, newPath);
+            video.SourceFilePath = Path.Combine(newPath, Path.GetFileName(video.SourceFilePath));
 
             // arelGlue.js
             string videoID = video.ID = video.ID == null ? "video" + videoCount : video.ID;
@@ -132,7 +132,7 @@ namespace ARdevKit.Controller.ProjectController
             JavaScriptBlock loadContentBlock = new JavaScriptBlock();
             sceneReadyFunctionBlock.AddBlock(loadContentBlock);
 
-            string videoPath = Path.GetFileNameWithoutExtension(video.VideoPath) + Path.GetExtension(video.VideoPath);
+            string videoPath = Path.GetFileNameWithoutExtension(video.SourceFilePath) + Path.GetExtension(video.SourceFilePath);
             loadContentBlock.AddLine(new JavaScriptLine(videoID + " = arel.Object.Model3D.createFromMovie(\"" + videoID + "\",\"Assets/" + videoPath + "\")"));
             loadContentBlock.AddLine(new JavaScriptLine(videoID + ".setVisibility(" + video.IsVisible.ToString().ToLower() + ")"));
             loadContentBlock.AddLine(new JavaScriptLine(videoID + ".setCoordinateSystemID(" + coordinateSystemID + ")"));
@@ -182,8 +182,8 @@ namespace ARdevKit.Controller.ProjectController
         {
             // Copy to projectPath
             string newPath = Path.Combine(project.ProjectPath, "Assets");
-            Helper.Copy(image.ImagePath, newPath);
-            image.ImagePath = Path.Combine(newPath, Path.GetFileName(image.ImagePath));
+            Helper.Copy(image.SourceFilePath, newPath);
+            image.SourceFilePath = Path.Combine(newPath, Path.GetFileName(image.SourceFilePath));
 
             // arelGlue.js
             string imageID = image.ID = image.ID == null ? "image" + imageCount : image.ID;
@@ -193,7 +193,7 @@ namespace ARdevKit.Controller.ProjectController
             JavaScriptBlock loadContentBlock = new JavaScriptBlock();
             sceneReadyFunctionBlock.AddBlock(loadContentBlock);
 
-            loadContentBlock.AddLine(new JavaScriptLine(imageID + " = arel.Object.Model3D.createFromImage(\"" + imageID + "\",\"Assets/" + Path.GetFileName(image.ImagePath) + "\")"));
+            loadContentBlock.AddLine(new JavaScriptLine(imageID + " = arel.Object.Model3D.createFromImage(\"" + imageID + "\",\"Assets/" + Path.GetFileName(image.SourceFilePath) + "\")"));
             loadContentBlock.AddLine(new JavaScriptLine(imageID + ".setVisibility(" + image.IsVisible.ToString().ToLower() + ")"));
             loadContentBlock.AddLine(new JavaScriptLine(imageID + ".setCoordinateSystemID(" + coordinateSystemID + ")"));
             string augmentationScalingX = image.Scaling.X.ToString("F1", CultureInfo.InvariantCulture);
@@ -283,7 +283,7 @@ namespace ARdevKit.Controller.ProjectController
             chartIfPatternIsFoundShowBlock.AddLine(new JavaScriptLine(chartID + ".create()"));
             chartIfPatternIsFoundShowBlock.AddLine(new JavaScriptLine(chartID + ".show()"));
             if (chart.Positioning.PositioningMode == ChartPositioning.PositioningModes.RELATIVE)
-                chartIfPatternIsFoundShowBlock.AddLine(new JavaScriptLine("arel.Scene.getScreenCoordinatesFrom3DPosition(COS" + coordinateSystemID + "Anchor.getTranslation(), " + chartID + ".getCoordinateSystemID(), function(coord){move(" + chartID + ", coord);})"));
+                chartIfPatternIsFoundShowBlock.AddLine(new JavaScriptLine("arel.Scene.getScreenCoordinatesFrom3DPosition(COS" + coordinateSystemID + "Anchor.getTranslation(), " + chartID + ".getCoordinateSystemID(), function(coord){move(COS"+ coordinateSystemID + "Anchor, " + chartID + ", coord);})"));
 
             // onTracking lost
             ifPatternIsLostBlock.AddLine(new JavaScriptLine(chartID + ".hide()"));
@@ -1093,13 +1093,17 @@ namespace ARdevKit.Controller.ProjectController
             ifPatternIsLostBlock.AddLine(new JavaScriptLine("console.log(\"Tracking lost\")"));
 
             // Move
-            JavaScriptBlock arelGlueMoveBlock = new JavaScriptBlock("function move(object, coord)", new BlockMarker("{", "};"));
+            JavaScriptBlock arelGlueMoveBlock = new JavaScriptBlock("function move(anchor, object, coord)", new BlockMarker("{", "};"));
             arelGlueFile.AddBlock(arelGlueMoveBlock);
-            arelGlueMoveBlock.AddLine(new JavaScriptLine("var left = (coord.getX() - parseInt(object.div.style.width) / 2) + object.translation.getX()"));
-            arelGlueMoveBlock.AddLine(new JavaScriptLine("var top = (coord.getY() - parseInt(object.div.style.height) / 2) - object.translation.getY()"));
-            arelGlueMoveBlock.AddLine(new JavaScriptLine("object.div.style.left = left + 'px'"));
-            arelGlueMoveBlock.AddLine(new JavaScriptLine("object.div.style.top = top + 'px'"));
-            arelGlueMoveBlock.AddLine(new JavaScriptLine("console.log(\"Moved \" + object.id + \" to \" + left + \", \" + top)"));
+            arelGlueMoveBlock.AddBlock(new JavaScriptLine("var left = (coord.getX() - parseInt(object.div.style.width) / 2) + object.translation.getX()"));
+            arelGlueMoveBlock.AddBlock(new JavaScriptLine("var top = (coord.getY() - parseInt(object.div.style.height) / 2) - object.translation.getY()"));
+            arelGlueMoveBlock.AddBlock(new JavaScriptLine("object.div.style.left = left + 'px'"));
+            arelGlueMoveBlock.AddBlock(new JavaScriptLine("object.div.style.top = top + 'px'"));
+            arelGlueMoveBlock.AddBlock(new JavaScriptLine("console.log(\"Moved \" + object.id + \" to \" + left + \", \" + top)"));
+            JavaScriptBlock arelGlueMoveTimeoutBlock = new JavaScriptBlock("if (object.visible)", new BlockMarker("{", "}"));
+            arelGlueMoveBlock.AddBlock(arelGlueMoveTimeoutBlock);
+
+            arelGlueMoveTimeoutBlock.AddLine(new JavaScriptLine("setTimeout(function() { arel.Scene.getScreenCoordinatesFrom3DPosition(anchor.getTranslation(), object.getCoordinateSystemID(), function(coord){move(anchor, object, coord);}); }, 100)"));
         }
     }
 }

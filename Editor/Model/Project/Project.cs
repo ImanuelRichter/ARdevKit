@@ -302,6 +302,33 @@ namespace ARdevKit.Model.Project
             return false;
         }
 
+        /// <summary>
+        /// Removes the augmentation and deletes connected files if other augmentations dont need it.
+        /// </summary>
+        /// <param name="augmentation">The augmentation.</param>
+        public void RemoveAugmentation(AbstractAugmentation augmentation)
+        {
+            if (augmentation is Abstract2DAugmentation)
+            {
+                Abstract2DAugmentation augmentationToBeRemoved = (Abstract2DAugmentation) augmentation;
+                bool deleteFile = true;
+                int i = 0;
+                while (deleteFile && i < trackables.Count)
+                {
+                    int j = 0;
+                    while (deleteFile && j < trackables[i].Augmentations.Count)
+                    {
+                        if (trackables[i].Augmentations[j] is Abstract2DAugmentation)
+                        {
+                            deleteFile = !(((Abstract2DAugmentation) trackables[i].Augmentations[j]).SourceFilePath == augmentationToBeRemoved.SourceFilePath);
+                        }
+                    }
+                }
+                if (deleteFile)
+                    augmentation.CleanUp();
+            }
+            augmentation.Trackable.RemoveAugmentation(augmentation);
+        }
 
         /// <summary>
         /// Gets the checksum of the project lying at the project path.

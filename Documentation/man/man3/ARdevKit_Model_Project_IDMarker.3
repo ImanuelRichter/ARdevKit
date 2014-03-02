@@ -1,0 +1,148 @@
+.TH "ARdevKit.Model.Project.IDMarker" 3 "Sat Mar 1 2014" "Version 0.2" "ARdevKit" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ARdevKit.Model.Project.IDMarker \- 
+.PP
+\fBIDMarker\fP is a AbstractMarker adding an matrixID\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBARdevKit\&.Model\&.Project\&.Abstract2DTrackable\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBIDMarker\fP (int matrixID)"
+.br
+.RI "\fIInitializes a new instance of the \fBIDMarker\fP class\&. \fP"
+.ti -1c
+.RI "override void \fBAccept\fP (\fBController\&.ProjectController\&.AbstractProjectVisitor\fP visitor)"
+.br
+.RI "\fIAn method, to accept a AbstractProjectVisitor and let the visitor visit the associated fuser\&. \fP"
+.ti -1c
+.RI "override Bitmap \fBgetPreview\fP ()"
+.br
+.RI "\fIGets the preview\&. \fP"
+.ti -1c
+.RI "override Bitmap \fBgetIcon\fP ()"
+.br
+.RI "\fIGets the icon\&. \fP"
+.ti -1c
+.RI "override object \fBClone\fP ()"
+.br
+.RI "\fIMakes a deep copy of this object\&. \fP"
+.ti -1c
+.RI "override bool \fBinitElement\fP (\fBEditorWindow\fP ew)"
+.br
+.RI "\fIThis method is called by the previewController when a new instance of the element is added to the Scene\&. It sets 'must-have' properties\&. \fP"
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "int \fBMatrixID\fP\fC [get, set]\fP"
+.br
+.RI "\fIGets or sets the matrix identifier\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+\fBIDMarker\fP is a AbstractMarker adding an matrixID\&. 
+
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ARdevKit\&.Model\&.Project\&.IDMarker\&.IDMarker (intmatrixID)"
+
+.PP
+Initializes a new instance of the \fBIDMarker\fP class\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImatrixID\fP The matrix identifier\&.
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "override void ARdevKit\&.Model\&.Project\&.IDMarker\&.Accept (\fBController\&.ProjectController\&.AbstractProjectVisitor\fPvisitor)"
+
+.PP
+An method, to accept a AbstractProjectVisitor and let the visitor visit the associated fuser\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvisitor\fP the visitor which encapsulates the action which is performed on this element
+.RE
+.PP
+
+.SS "override object ARdevKit\&.Model\&.Project\&.IDMarker\&.Clone ()\fC [virtual]\fP"
+
+.PP
+Makes a deep copy of this object\&. Robin, 22\&.01\&.2014\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+A copy of this object\&. 
+.RE
+.PP
+
+.PP
+Implements \fBARdevKit\&.Model\&.Project\&.AbstractTrackable\fP\&.
+.SS "override Bitmap ARdevKit\&.Model\&.Project\&.IDMarker\&.getIcon ()\fC [virtual]\fP"
+
+.PP
+Gets the icon\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+a representative iconized Bitmap 
+.RE
+.PP
+
+.PP
+Implements \fBARdevKit\&.Model\&.Project\&.AbstractTrackable\fP\&.
+.SS "override Bitmap ARdevKit\&.Model\&.Project\&.IDMarker\&.getPreview ()\fC [virtual]\fP"
+
+.PP
+Gets the preview\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+a representative Bitmap 
+.RE
+.PP
+
+.PP
+Implements \fBARdevKit\&.Model\&.Project\&.AbstractTrackable\fP\&.
+.SS "override bool ARdevKit\&.Model\&.Project\&.IDMarker\&.initElement (\fBEditorWindow\fPew)\fC [virtual]\fP"
+
+.PP
+This method is called by the previewController when a new instance of the element is added to the Scene\&. It sets 'must-have' properties\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIew\fP The ew\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if it succeeds, false if it fails\&. 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBARdevKit\&.Model\&.Project\&.AbstractTrackable\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "int ARdevKit\&.Model\&.Project\&.IDMarker\&.MatrixID\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Gets or sets the matrix identifier\&. The matrix identifier\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ARdevKit from the source code\&.

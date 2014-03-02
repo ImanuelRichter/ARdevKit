@@ -1,0 +1,7 @@
+<map id="ARdevKit.Model.Project.File.AbstractFile" name="ARdevKit.Model.Project.File.AbstractFile">
+<area shape="rect" id="node2" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_config_file.html" title="An arelConfig.xml. " alt="" coords="5,206,192,327"/>
+<area shape="rect" id="node3" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_glue_file.html" title="An arelGlue.js. " alt="" coords="217,206,404,327"/>
+<area shape="rect" id="node4" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_a_r_e_l_project_file.html" title="A arel[projectName].html. " alt="" coords="429,206,616,327"/>
+<area shape="rect" id="node5" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_chart_file.html" title="{ARdevKit.Model.Project.File.\lChartFile\n||+ ChartFile()\l+ Save()\l+ Save()\l}" alt="" coords="641,206,828,327"/>
+<area shape="rect" id="node6" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_tracking_data_file.html" title="A trackingData_[SensorType][SensorSubType].xml. " alt="" coords="853,206,1040,327"/>
+</map>

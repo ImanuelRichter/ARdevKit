@@ -1,0 +1,5 @@
+<map id="PreviewController.addSource" name="PreviewController.addSource">
+<area shape="rect" id="node2" href="$class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_trackable.html#ac5dfdc39c3e7ad91ca9156208278b108" title="Checks if the augmentation is associated with this AbstractTrackable. " alt="" coords="241,5,453,46"/>
+<area shape="rect" id="node3" href="$class_preview_controller.html#a4ab1b4464e39eeb347554fc69f0dd38b" title="Searchs in the Panel for the important PictureBox and gives this box back. " alt="" coords="263,71,431,97"/>
+<area shape="rect" id="node4" href="$class_preview_controller.html#ae33fd4d13286e22a819f5a6cd5de292f" title="Updates the element combobox. " alt="" coords="265,122,429,163"/>
+</map>

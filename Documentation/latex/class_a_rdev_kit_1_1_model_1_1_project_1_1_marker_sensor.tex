@@ -1,0 +1,158 @@
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor}{\section{A\-Rdev\-Kit.\-Model.\-Project.\-Marker\-Sensor Class Reference}
+\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor}\index{A\-Rdev\-Kit.\-Model.\-Project.\-Marker\-Sensor@{A\-Rdev\-Kit.\-Model.\-Project.\-Marker\-Sensor}}
+}
+
+
+Inheritance diagram for A\-Rdev\-Kit.\-Model.\-Project.\-Marker\-Sensor\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\-Rdev\-Kit.\-Model.\-Project.\-Marker\-Sensor\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_adf403b5a2cee12e9f0006bd431cf569f}{Tracking\-Qualities} \{ {\bfseries robust}, 
+{\bfseries fast}
+ \}
+\begin{DoxyCompactList}\small\item\em Specifies the \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_af392037ccf5a8cf5e95ce42b0c768483}{tracking\-Quality}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_a520687ce212f4b28f8e322b41bd64551}{Marker\-Sensor} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+override void \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_a21f889bd4916cb1ee7f455a9f644b72a}{Accept} (\hyperlink{class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_abstract_project_visitor}{Abstract\-Project\-Visitor} visitor)
+\begin{DoxyCompactList}\small\item\em Accepts the given visitor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_adf403b5a2cee12e9f0006bd431cf569f}{Tracking\-Qualities} \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_af392037ccf5a8cf5e95ce42b0c768483}{tracking\-Quality}
+\begin{DoxyCompactList}\small\item\em Strategy which is used for the marker detection. There are two types available\-: \end{DoxyCompactList}\item 
+int \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_ad80a6fc2821f265fc4c0583d0a66dfa7}{threshold\-Offset}
+\begin{DoxyCompactList}\small\item\em The threshold which is used to binarize the camera image. Binarizing is the process where each pixel is converted to a grayscale value (between 0 and 255) and then is set to 0 when the value is below the threshold and to 1 when the value is above. This helps to clearly identify the marker and is therefore important for the detection process. When the tracking quality is set to \char`\"{}fast\char`\"{}, then this value is fixed and will not change during the tracking process. When the tracking quality is set to \char`\"{}robust\char`\"{}, then the value is only the starting value in the very first frame after loading the tracking.\-xml. Detecting markers using a fixed threshold can lead to failure. The value range for the threshold is between 0 and 255. \end{DoxyCompactList}\item 
+int \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_aaefe31873d64fdae7c9518487f0ad0d1}{number\-Of\-Search\-Iterations}
+\begin{DoxyCompactList}\small\item\em Number of search iterations which controls the number of attempts to find a marker with a new Threshold\-Offset. This parameter matters when \char`\"{}robust\char`\"{} is set as \char`\"{}\-Tracking\-Quality\char`\"{}, but is ignored for \char`\"{}fast\char`\"{}. The Threshold\-Offset is adapted when no marker was detected. With a high number, the marker tracker is more likely to detect a marker, but it also needs more computational time, i.\-e. is slower. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_adf403b5a2cee12e9f0006bd431cf569f}{Tracking\-Qualities} \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_ad8681106fa33f5473799f0e0ed6999bc}{Tracking\-Quality}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the tracking quality. \end{DoxyCompactList}\item 
+int \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_a704b4bc065e8b27d457c2cfbedee7a79}{Threshold\-Offset}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the threshold offset. \end{DoxyCompactList}\item 
+int \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_a106f06e0fb75947b4748a392e7a520b7}{Number\-Of\-Search\-Iterations}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the number of search iterations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_adf403b5a2cee12e9f0006bd431cf569f}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Marker\-Sensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Marker\-Sensor}!Tracking\-Qualities@{Tracking\-Qualities}}
+\index{Tracking\-Qualities@{Tracking\-Qualities}!ARdevKit::Model::Project::MarkerSensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Marker\-Sensor}}
+\subsubsection[{Tracking\-Qualities}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf A\-Rdev\-Kit.\-Model.\-Project.\-Marker\-Sensor.\-Tracking\-Qualities}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_adf403b5a2cee12e9f0006bd431cf569f}
+
+
+Specifies the \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_af392037ccf5a8cf5e95ce42b0c768483}{tracking\-Quality}. 
+
+Imanuel, 15.\-01.\-2014. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_a520687ce212f4b28f8e322b41bd64551}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Marker\-Sensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Marker\-Sensor}!Marker\-Sensor@{Marker\-Sensor}}
+\index{Marker\-Sensor@{Marker\-Sensor}!ARdevKit::Model::Project::MarkerSensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Marker\-Sensor}}
+\subsubsection[{Marker\-Sensor}]{\setlength{\rightskip}{0pt plus 5cm}A\-Rdev\-Kit.\-Model.\-Project.\-Marker\-Sensor.\-Marker\-Sensor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_a520687ce212f4b28f8e322b41bd64551}
+
+
+Default constructor. 
+
+Imanuel, 17.\-01.\-2014. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_a21f889bd4916cb1ee7f455a9f644b72a}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Marker\-Sensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Marker\-Sensor}!Accept@{Accept}}
+\index{Accept@{Accept}!ARdevKit::Model::Project::MarkerSensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Marker\-Sensor}}
+\subsubsection[{Accept}]{\setlength{\rightskip}{0pt plus 5cm}override void A\-Rdev\-Kit.\-Model.\-Project.\-Marker\-Sensor.\-Accept (
+\begin{DoxyParamCaption}
+\item[{{\bf Abstract\-Project\-Visitor}}]{visitor}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_a21f889bd4916cb1ee7f455a9f644b72a}
+
+
+Accepts the given visitor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em visitor} & The visitor.\\
+\hline
+\end{DoxyParams}
+
+
+Imanuel, 17.\-01.\-2014. 
+
+Implements \hyperlink{class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_sensor_a4ff825b76bdd9f01a93ca670d02c219c}{A\-Rdev\-Kit.\-Model.\-Project.\-Abstract\-Sensor}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_aaefe31873d64fdae7c9518487f0ad0d1}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Marker\-Sensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Marker\-Sensor}!number\-Of\-Search\-Iterations@{number\-Of\-Search\-Iterations}}
+\index{number\-Of\-Search\-Iterations@{number\-Of\-Search\-Iterations}!ARdevKit::Model::Project::MarkerSensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Marker\-Sensor}}
+\subsubsection[{number\-Of\-Search\-Iterations}]{\setlength{\rightskip}{0pt plus 5cm}int A\-Rdev\-Kit.\-Model.\-Project.\-Marker\-Sensor.\-number\-Of\-Search\-Iterations\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_aaefe31873d64fdae7c9518487f0ad0d1}
+
+
+Number of search iterations which controls the number of attempts to find a marker with a new Threshold\-Offset. This parameter matters when \char`\"{}robust\char`\"{} is set as \char`\"{}\-Tracking\-Quality\char`\"{}, but is ignored for \char`\"{}fast\char`\"{}. The Threshold\-Offset is adapted when no marker was detected. With a high number, the marker tracker is more likely to detect a marker, but it also needs more computational time, i.\-e. is slower. 
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_ad80a6fc2821f265fc4c0583d0a66dfa7}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Marker\-Sensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Marker\-Sensor}!threshold\-Offset@{threshold\-Offset}}
+\index{threshold\-Offset@{threshold\-Offset}!ARdevKit::Model::Project::MarkerSensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Marker\-Sensor}}
+\subsubsection[{threshold\-Offset}]{\setlength{\rightskip}{0pt plus 5cm}int A\-Rdev\-Kit.\-Model.\-Project.\-Marker\-Sensor.\-threshold\-Offset\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_ad80a6fc2821f265fc4c0583d0a66dfa7}
+
+
+The threshold which is used to binarize the camera image. Binarizing is the process where each pixel is converted to a grayscale value (between 0 and 255) and then is set to 0 when the value is below the threshold and to 1 when the value is above. This helps to clearly identify the marker and is therefore important for the detection process. When the tracking quality is set to \char`\"{}fast\char`\"{}, then this value is fixed and will not change during the tracking process. When the tracking quality is set to \char`\"{}robust\char`\"{}, then the value is only the starting value in the very first frame after loading the tracking.\-xml. Detecting markers using a fixed threshold can lead to failure. The value range for the threshold is between 0 and 255. 
+
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_af392037ccf5a8cf5e95ce42b0c768483}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Marker\-Sensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Marker\-Sensor}!tracking\-Quality@{tracking\-Quality}}
+\index{tracking\-Quality@{tracking\-Quality}!ARdevKit::Model::Project::MarkerSensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Marker\-Sensor}}
+\subsubsection[{tracking\-Quality}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tracking\-Qualities} A\-Rdev\-Kit.\-Model.\-Project.\-Marker\-Sensor.\-tracking\-Quality\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_af392037ccf5a8cf5e95ce42b0c768483}
+
+
+Strategy which is used for the marker detection. There are two types available\-: 
+
+
+\begin{DoxyItemize}
+\item \char`\"{}robust\char`\"{} to use a robust approach to detect the markers, which usually gives the best results, but consumes more computational time, i.\-e. is slower.
+\item \char`\"{}fast\char`\"{} to use a more simple approach to detect the markers, which is less precise, but faster than robust. 
+\end{DoxyItemize}
+
+\subsection{Property Documentation}
+\hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_a106f06e0fb75947b4748a392e7a520b7}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Marker\-Sensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Marker\-Sensor}!Number\-Of\-Search\-Iterations@{Number\-Of\-Search\-Iterations}}
+\index{Number\-Of\-Search\-Iterations@{Number\-Of\-Search\-Iterations}!ARdevKit::Model::Project::MarkerSensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Marker\-Sensor}}
+\subsubsection[{Number\-Of\-Search\-Iterations}]{\setlength{\rightskip}{0pt plus 5cm}int A\-Rdev\-Kit.\-Model.\-Project.\-Marker\-Sensor.\-Number\-Of\-Search\-Iterations\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_a106f06e0fb75947b4748a392e7a520b7}
+
+
+Gets or sets the number of search iterations. 
+
+The total number of search iterations. \hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_a704b4bc065e8b27d457c2cfbedee7a79}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Marker\-Sensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Marker\-Sensor}!Threshold\-Offset@{Threshold\-Offset}}
+\index{Threshold\-Offset@{Threshold\-Offset}!ARdevKit::Model::Project::MarkerSensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Marker\-Sensor}}
+\subsubsection[{Threshold\-Offset}]{\setlength{\rightskip}{0pt plus 5cm}int A\-Rdev\-Kit.\-Model.\-Project.\-Marker\-Sensor.\-Threshold\-Offset\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_a704b4bc065e8b27d457c2cfbedee7a79}
+
+
+Gets or sets the threshold offset. 
+
+The threshold offset. \hypertarget{class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_ad8681106fa33f5473799f0e0ed6999bc}{\index{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Marker\-Sensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Marker\-Sensor}!Tracking\-Quality@{Tracking\-Quality}}
+\index{Tracking\-Quality@{Tracking\-Quality}!ARdevKit::Model::Project::MarkerSensor@{A\-Rdev\-Kit\-::\-Model\-::\-Project\-::\-Marker\-Sensor}}
+\subsubsection[{Tracking\-Quality}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tracking\-Qualities} A\-Rdev\-Kit.\-Model.\-Project.\-Marker\-Sensor.\-Tracking\-Quality\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_a_rdev_kit_1_1_model_1_1_project_1_1_marker_sensor_ad8681106fa33f5473799f0e0ed6999bc}
+
+
+Gets or sets the tracking quality. 
+
+The tracking quality. 
