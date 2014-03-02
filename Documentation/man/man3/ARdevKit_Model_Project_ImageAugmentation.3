@@ -1,4 +1,4 @@
-.TH "ARdevKit.Model.Project.ImageAugmentation" 3 "Sat Mar 1 2014" "Version 0.2" "ARdevKit" \" -*- nroff -*-
+.TH "ARdevKit.Model.Project.ImageAugmentation" 3 "Sun Mar 2 2014" "Version 0.2" "ARdevKit" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -50,10 +50,6 @@ Inherits \fBARdevKit\&.Model\&.Project\&.Abstract2DAugmentation\fP\&.
 .SS "Properties"
 
 .in +1c
-.ti -1c
-.RI "string \fBImagePath\fP\fC [get, set]\fP"
-.br
-.RI "\fIGets or sets the full pathname of the image file\&. \fP"
 .ti -1c
 .RI "new int \fBWidth\fP\fC [get, set]\fP"
 .br
@@ -150,7 +146,7 @@ a representative Bitmap
 .PP
 \fBExceptions:\fP
 .RS 4
-\fIFileNotFoundException\fP Thrown when the requested \fBFile\fP is not found in \fBImagePath\fP\&.
+\fIFileNotFoundException\fP Thrown when the requested \fBFile\fP is not found in \fBSourceFilePath\fP\&.
 .RE
 .PP
 
@@ -180,10 +176,6 @@ Reimplemented from \fBARdevKit\&.Model\&.Project\&.AbstractAugmentation\fP\&.
 
 .PP
 Gets or sets the height\&. The height, in mm\&. 
-.SS "string ARdevKit\&.Model\&.Project\&.ImageAugmentation\&.ImagePath\fC [get]\fP, \fC [set]\fP"
-
-.PP
-Gets or sets the full pathname of the image file\&. The full pathname of the image file\&. 
 .SS "new int ARdevKit\&.Model\&.Project\&.ImageAugmentation\&.Width\fC [get]\fP, \fC [set]\fP"
 
 .PP

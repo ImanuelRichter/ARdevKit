@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="27" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="27" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="30" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="30" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_test_controller_1ab45a6dad1f9da81b2413e96716c013d7" prot="private" static="no" mutable="no">
         <type>const string</type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="32" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="32" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="35" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="35" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-attrib">
@@ -45,7 +45,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="40" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="40" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="43" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="43" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_test_controller_1acada57f0413b59d32cf69dfc96fef047" prot="public" static="no" mutable="no">
         <type>const int</type>
@@ -59,7 +59,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="48" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="48" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="51" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="51" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_test_controller_1a8bfb72f3c6a2d590c01a7aee313caa15" prot="public" static="no" mutable="no">
         <type>const int</type>
@@ -73,7 +73,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="56" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="56" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="59" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="59" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-attrib">
@@ -88,7 +88,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="64" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="64" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="67" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="67" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-static-attrib">
@@ -98,12 +98,12 @@
         <argsstring></argsstring>
         <name>editorWindow</name>
         <briefdescription>
-        </briefdescription>
+<para>The editor window </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="66" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="66" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="72" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="72" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_test_controller_1aae8ff636f0a4fd240c342104847ed5da" prot="private" static="yes" mutable="no">
         <type><ref refid="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_process_video_window" kindref="compound">ProcessVideoWindow</ref></type>
@@ -116,7 +116,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="71" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="71" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="77" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="77" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_test_controller_1ac6bbe628866e8286fd5c2010ea1699fd" prot="private" static="yes" mutable="no">
         <type>string</type>
@@ -129,7 +129,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="79" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="79" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="85" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="85" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -163,14 +163,14 @@
           <declname>showDebug</declname>
         </param>
         <briefdescription>
-<para>Starts the player with the specified settings. </para>        </briefdescription>
+<para>Starts the player. </para>        </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>ew</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The <ref refid="class_a_rdev_kit_1_1_editor_window" kindref="compound">EditorWindow</ref>.</para></parameterdescription>
+<para>The ew.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -184,7 +184,7 @@
 <parametername>mode</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Tells if an imageIMAGE or videoVIDEO should be loaded or if a virtual cameraCAMERA should be started</para></parameterdescription>
+<para>The mode.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -211,7 +211,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="91" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="91" bodyend="165"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="96" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="96" bodyend="170"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-static-func">
@@ -229,12 +229,27 @@
           <declname>e</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Handles the Exited event of the player control. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The source of the event.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The EventArgs instance containing the event data.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="167" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="167" bodyend="172"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="177" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="177" bodyend="182"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_test_controller_1afdbd2d79e962a76b7a29c4ccb65eaf9c" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -242,12 +257,12 @@
         <argsstring>()</argsstring>
         <name>OpenPlayer</name>
         <briefdescription>
-        </briefdescription>
+<para>Opens the player. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="174" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="174" bodyend="193"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="187" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="187" bodyend="206"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_test_controller_1a5464691c4bcab48a35be8be08db8970b" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -263,16 +278,31 @@
           <declname>e</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Handles the FormClosed event of the progressVideoWindow control. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The source of the event.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The FormClosedEventArgs instance containing the event data.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="195" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="195" bodyend="199"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="213" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="213" bodyend="217"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-    </briefdescription>
+<para>The <ref refid="namespace_a_rdev_kit_1_1_controller_1_1_test_controller" kindref="compound">TestController</ref> manages the start of the Player. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
@@ -280,7 +310,7 @@
         <label>ARdevKit.Controller.TestController.TestController</label>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="23" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="22" bodyend="200"/>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" line="26" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/TestController/TestController.cs" bodystart="25" bodyend="218"/>
     <listofallmembers>
       <member refid="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_test_controller_1a8bfb72f3c6a2d590c01a7aee313caa15" prot="public" virt="non-virtual"><scope>ARdevKit::Controller::TestController::TestController</scope><name>CAMERA</name></member>
       <member refid="class_a_rdev_kit_1_1_controller_1_1_test_controller_1_1_test_controller_1ab0b869a8e9bb2a2b3c0c9405095bbae1" prot="private" virt="non-virtual"><scope>ARdevKit::Controller::TestController::TestController</scope><name>editorWindow</name></member>

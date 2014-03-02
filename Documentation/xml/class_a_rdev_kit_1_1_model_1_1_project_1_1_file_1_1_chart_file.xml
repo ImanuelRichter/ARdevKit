@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ChartFile.cs" line="13" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ChartFile.cs" bodystart="13" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ChartFile.cs" line="16" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ChartFile.cs" bodystart="16" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -53,7 +53,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ChartFile.cs" line="24" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ChartFile.cs" bodystart="24" bodyend="31"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ChartFile.cs" line="27" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ChartFile.cs" bodystart="27" bodyend="34"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_chart_file_1aa19af3145e3bbcb28683e7c77571d06f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>override void</type>
@@ -67,7 +67,7 @@
 <para>Imanuel, 23.01.2014. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ChartFile.cs" line="39" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ChartFile.cs" bodystart="39" bodyend="50"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ChartFile.cs" line="42" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ChartFile.cs" bodystart="42" bodyend="53"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_chart_file_1a8a52e5730191b832eb8664016e7bda7f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>override void</type>
@@ -93,11 +93,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ChartFile.cs" line="60" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ChartFile.cs" bodystart="60" bodyend="67"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ChartFile.cs" line="63" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ChartFile.cs" bodystart="63" bodyend="70"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-    </briefdescription>
+<para>A <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_chart_file" kindref="compound">ChartFile</ref> is an <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file" kindref="compound">AbstractFile</ref> which represents the chart.js. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
@@ -124,7 +124,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ChartFile.cs" line="11" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ChartFile.cs" bodystart="10" bodyend="68"/>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ChartFile.cs" line="14" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/File/ChartFile.cs" bodystart="13" bodyend="71"/>
     <listofallmembers>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1a02b61dbebfbd57f5fd44c7a972c79b50" prot="public" virt="virtual"><scope>ARdevKit::Model::Project::File::ChartFile</scope><name>AddBlock</name></member>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_file_1_1_abstract_file_1a21e0333fb9d8eab8ebb039bd56ccabc9" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::File::ChartFile</scope><name>blocks</name></member>

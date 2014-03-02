@@ -1172,6 +1172,7 @@ namespace ARdevKit
                 e.Cancel = true;
                 return;
             }
+            Directory.Delete("tmp", true);
         }
 
         /// <summary>

@@ -21,14 +21,14 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
         private List<IPEndPoint> reportedDevices;
         private UdpClient udpClient;
         private EditorWindow editorWindow;
-        private bool debugConnected;    
+        private bool debugConnected;
 
         /// <summary>
         /// Gets or sets a value indicating whether [debug connected].
         /// </summary>
         /// <value>
-        ///   <c>true</c> if [debug connected] the Editor listens for
-        ///   Debugdata; otherwise, the connections will be closed<c>false</c>.
+        /// true if [debug connected] the Editor listens for
+        /// Debugdata; otherwise, the connections will be closed false.
         /// </value>
         public bool DebugConnected
         {

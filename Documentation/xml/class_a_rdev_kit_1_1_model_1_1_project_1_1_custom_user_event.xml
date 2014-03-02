@@ -9,7 +9,7 @@
         <argsstring></argsstring>
         <name>augmentationID</name>
         <briefdescription>
-<para>ID of the augmentation </para>        </briefdescription>
+<para>ID of the augmentation, which has this user event. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
@@ -22,7 +22,7 @@
         <argsstring></argsstring>
         <name>filePath</name>
         <briefdescription>
-<para><ref refid="namespace_a_rdev_kit_1_1_model_1_1_project_1_1_file" kindref="compound">File</ref> path of the customUserEvents </para>        </briefdescription>
+<para><ref refid="namespace_a_rdev_kit_1_1_model_1_1_project_1_1_file" kindref="compound">File</ref> path of the customUserEvents. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
@@ -114,7 +114,7 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>The class <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_custom_user_event" kindref="compound">CustomUserEvent</ref> mainly contains a reference to a file, which is in the /currentProject/ Folder. This file has ALL Events the user creates (inclusive the template events we provide) for ONE augmentation. </para>    </briefdescription>
+<para>The class <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_custom_user_event" kindref="compound">CustomUserEvent</ref> mainly contains a reference path to a file, which is in the /tmp/ Folder. This file has ALL Events the user creates (inclusive the template events we provide) for ONE augmentation. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>

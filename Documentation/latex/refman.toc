@@ -8,745 +8,763 @@
 \contentsline {section}{\numberline {4.1}Package A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit}{9}{section.4.1}
 \contentsline {section}{\numberline {4.2}Package A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Controller}{9}{section.4.2}
 \contentsline {section}{\numberline {4.3}Package A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Connections}{9}{section.4.3}
-\contentsline {section}{\numberline {4.4}Package A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Connections.\discretionary {-}{}{}Device\discretionary {-}{}{}Connection}{9}{section.4.4}
+\contentsline {section}{\numberline {4.4}Package A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Connections.\discretionary {-}{}{}Device\discretionary {-}{}{}Connection}{10}{section.4.4}
 \contentsline {section}{\numberline {4.5}Package A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Editor\discretionary {-}{}{}Controller}{10}{section.4.5}
 \contentsline {subsection}{\numberline {4.5.1}Enumeration Type Documentation}{10}{subsection.4.5.1}
 \contentsline {subsubsection}{\numberline {4.5.1.1}Meta\discretionary {-}{}{}Category}{10}{subsubsection.4.5.1.1}
 \contentsline {section}{\numberline {4.6}Package A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Project\discretionary {-}{}{}Controller}{10}{section.4.6}
-\contentsline {section}{\numberline {4.7}Package A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Test\discretionary {-}{}{}Controller}{10}{section.4.7}
+\contentsline {section}{\numberline {4.7}Package A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Test\discretionary {-}{}{}Controller}{11}{section.4.7}
 \contentsline {section}{\numberline {4.8}Package A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model}{11}{section.4.8}
 \contentsline {section}{\numberline {4.9}Package A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project}{11}{section.4.9}
 \contentsline {section}{\numberline {4.10}Package A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}File}{12}{section.4.10}
 \contentsline {section}{\numberline {4.11}Package A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Properties}{13}{section.4.11}
 \contentsline {section}{\numberline {4.12}Package A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}View}{13}{section.4.12}
-\contentsline {section}{\numberline {4.13}Package Controller}{13}{section.4.13}
-\contentsline {section}{\numberline {4.14}Package Controller.\discretionary {-}{}{}Editor\discretionary {-}{}{}Controller}{13}{section.4.14}
+\contentsline {section}{\numberline {4.13}Package Controller}{14}{section.4.13}
+\contentsline {section}{\numberline {4.14}Package Controller.\discretionary {-}{}{}Editor\discretionary {-}{}{}Controller}{14}{section.4.14}
 \contentsline {chapter}{\numberline {5}Class Documentation}{15}{chapter.5}
 \contentsline {section}{\numberline {5.1}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Abstract2\discretionary {-}{}{}D\discretionary {-}{}{}Augmentation Class Reference}{15}{section.5.1}
 \contentsline {subsection}{\numberline {5.1.1}Detailed Description}{18}{subsection.5.1.1}
 \contentsline {subsection}{\numberline {5.1.2}Constructor \& Destructor Documentation}{18}{subsection.5.1.2}
 \contentsline {subsubsection}{\numberline {5.1.2.1}Abstract2\discretionary {-}{}{}D\discretionary {-}{}{}Augmentation}{18}{subsubsection.5.1.2.1}
 \contentsline {subsubsection}{\numberline {5.1.2.2}Abstract2\discretionary {-}{}{}D\discretionary {-}{}{}Augmentation}{18}{subsubsection.5.1.2.2}
-\contentsline {subsection}{\numberline {5.1.3}Property Documentation}{18}{subsection.5.1.3}
-\contentsline {subsubsection}{\numberline {5.1.3.1}Height}{18}{subsubsection.5.1.3.1}
-\contentsline {subsubsection}{\numberline {5.1.3.2}Width}{18}{subsubsection.5.1.3.2}
+\contentsline {subsection}{\numberline {5.1.3}Member Data Documentation}{18}{subsection.5.1.3}
+\contentsline {subsubsection}{\numberline {5.1.3.1}source\discretionary {-}{}{}File\discretionary {-}{}{}Path}{18}{subsubsection.5.1.3.1}
+\contentsline {subsection}{\numberline {5.1.4}Property Documentation}{19}{subsection.5.1.4}
+\contentsline {subsubsection}{\numberline {5.1.4.1}Height}{19}{subsubsection.5.1.4.1}
+\contentsline {subsubsection}{\numberline {5.1.4.2}Source\discretionary {-}{}{}File\discretionary {-}{}{}Path}{19}{subsubsection.5.1.4.2}
+\contentsline {subsubsection}{\numberline {5.1.4.3}Width}{19}{subsubsection.5.1.4.3}
 \contentsline {section}{\numberline {5.2}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Abstract2\discretionary {-}{}{}D\discretionary {-}{}{}Trackable Class Reference}{19}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Member Function Documentation}{21}{subsection.5.2.1}
-\contentsline {subsubsection}{\numberline {5.2.1.1}To\discretionary {-}{}{}String}{21}{subsubsection.5.2.1.1}
-\contentsline {subsection}{\numberline {5.2.2}Member Data Documentation}{21}{subsection.5.2.2}
-\contentsline {subsubsection}{\numberline {5.2.2.1}fuser}{21}{subsubsection.5.2.2.1}
-\contentsline {subsubsection}{\numberline {5.2.2.2}rotation\discretionary {-}{}{}Vector}{21}{subsubsection.5.2.2.2}
-\contentsline {subsubsection}{\numberline {5.2.2.3}sensor\discretionary {-}{}{}Cos\discretionary {-}{}{}I\discretionary {-}{}{}D}{21}{subsubsection.5.2.2.3}
-\contentsline {subsubsection}{\numberline {5.2.2.4}size}{21}{subsubsection.5.2.2.4}
-\contentsline {subsubsection}{\numberline {5.2.2.5}translation\discretionary {-}{}{}Vector}{21}{subsubsection.5.2.2.5}
-\contentsline {subsection}{\numberline {5.2.3}Property Documentation}{21}{subsection.5.2.3}
-\contentsline {subsubsection}{\numberline {5.2.3.1}Fuser}{21}{subsubsection.5.2.3.1}
-\contentsline {subsubsection}{\numberline {5.2.3.2}Rotation}{22}{subsubsection.5.2.3.2}
-\contentsline {subsubsection}{\numberline {5.2.3.3}Sensor\discretionary {-}{}{}Cos\discretionary {-}{}{}I\discretionary {-}{}{}D}{22}{subsubsection.5.2.3.3}
-\contentsline {subsubsection}{\numberline {5.2.3.4}Size}{22}{subsubsection.5.2.3.4}
-\contentsline {subsubsection}{\numberline {5.2.3.5}Translation}{22}{subsubsection.5.2.3.5}
-\contentsline {section}{\numberline {5.3}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Abstract\discretionary {-}{}{}Augmentation Class Reference}{22}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Detailed Description}{25}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Constructor \& Destructor Documentation}{26}{subsection.5.3.2}
-\contentsline {subsubsection}{\numberline {5.3.2.1}Abstract\discretionary {-}{}{}Augmentation}{26}{subsubsection.5.3.2.1}
-\contentsline {subsubsection}{\numberline {5.3.2.2}Abstract\discretionary {-}{}{}Augmentation}{26}{subsubsection.5.3.2.2}
-\contentsline {subsection}{\numberline {5.3.3}Member Function Documentation}{26}{subsection.5.3.3}
-\contentsline {subsubsection}{\numberline {5.3.3.1}Accept}{26}{subsubsection.5.3.3.1}
-\contentsline {subsubsection}{\numberline {5.3.3.2}Clean\discretionary {-}{}{}Up}{26}{subsubsection.5.3.3.2}
-\contentsline {subsubsection}{\numberline {5.3.3.3}Clone}{26}{subsubsection.5.3.3.3}
-\contentsline {subsubsection}{\numberline {5.3.3.4}create\discretionary {-}{}{}User\discretionary {-}{}{}Event}{27}{subsubsection.5.3.3.4}
-\contentsline {subsubsection}{\numberline {5.3.3.5}get\discretionary {-}{}{}Icon}{27}{subsubsection.5.3.3.5}
-\contentsline {subsubsection}{\numberline {5.3.3.6}get\discretionary {-}{}{}Preview}{27}{subsubsection.5.3.3.6}
-\contentsline {subsubsection}{\numberline {5.3.3.7}init\discretionary {-}{}{}Element}{27}{subsubsection.5.3.3.7}
-\contentsline {subsubsection}{\numberline {5.3.3.8}To\discretionary {-}{}{}String}{28}{subsubsection.5.3.3.8}
-\contentsline {subsection}{\numberline {5.3.4}Member Data Documentation}{28}{subsection.5.3.4}
-\contentsline {subsubsection}{\numberline {5.3.4.1}id}{28}{subsubsection.5.3.4.1}
-\contentsline {subsubsection}{\numberline {5.3.4.2}trackable}{28}{subsubsection.5.3.4.2}
-\contentsline {subsection}{\numberline {5.3.5}Property Documentation}{28}{subsection.5.3.5}
-\contentsline {subsubsection}{\numberline {5.3.5.1}Custom\discretionary {-}{}{}User\discretionary {-}{}{}Event\discretionary {-}{}{}Reference}{28}{subsubsection.5.3.5.1}
-\contentsline {subsubsection}{\numberline {5.3.5.2}I\discretionary {-}{}{}D}{28}{subsubsection.5.3.5.2}
-\contentsline {subsubsection}{\numberline {5.3.5.3}Is\discretionary {-}{}{}Visible}{28}{subsubsection.5.3.5.3}
-\contentsline {subsubsection}{\numberline {5.3.5.4}Rotation}{28}{subsubsection.5.3.5.4}
-\contentsline {subsubsection}{\numberline {5.3.5.5}Scaling}{29}{subsubsection.5.3.5.5}
-\contentsline {subsubsection}{\numberline {5.3.5.6}Trackable}{29}{subsubsection.5.3.5.6}
-\contentsline {subsubsection}{\numberline {5.3.5.7}Translation}{29}{subsubsection.5.3.5.7}
-\contentsline {section}{\numberline {5.4}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}File.\discretionary {-}{}{}Abstract\discretionary {-}{}{}Block Class Reference}{29}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Detailed Description}{32}{subsection.5.4.1}
-\contentsline {subsection}{\numberline {5.4.2}Member Function Documentation}{32}{subsection.5.4.2}
-\contentsline {subsubsection}{\numberline {5.4.2.1}Add\discretionary {-}{}{}Block}{32}{subsubsection.5.4.2.1}
-\contentsline {subsubsection}{\numberline {5.4.2.2}get\discretionary {-}{}{}Tabs}{32}{subsubsection.5.4.2.2}
-\contentsline {subsubsection}{\numberline {5.4.2.3}Write}{32}{subsubsection.5.4.2.3}
-\contentsline {subsection}{\numberline {5.4.3}Member Data Documentation}{32}{subsection.5.4.3}
-\contentsline {subsubsection}{\numberline {5.4.3.1}block\discretionary {-}{}{}Marker}{32}{subsubsection.5.4.3.1}
-\contentsline {subsubsection}{\numberline {5.4.3.2}blocks}{33}{subsubsection.5.4.3.2}
-\contentsline {subsubsection}{\numberline {5.4.3.3}level}{33}{subsubsection.5.4.3.3}
-\contentsline {subsubsection}{\numberline {5.4.3.4}parent\discretionary {-}{}{}Block}{33}{subsubsection.5.4.3.4}
-\contentsline {subsubsection}{\numberline {5.4.3.5}parent\discretionary {-}{}{}File}{33}{subsubsection.5.4.3.5}
-\contentsline {subsection}{\numberline {5.4.4}Property Documentation}{33}{subsection.5.4.4}
-\contentsline {subsubsection}{\numberline {5.4.4.1}Parent\discretionary {-}{}{}File}{33}{subsubsection.5.4.4.1}
-\contentsline {section}{\numberline {5.5}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Abstract\discretionary {-}{}{}Dynamic2\discretionary {-}{}{}D\discretionary {-}{}{}Augmentation Class Reference}{33}{section.5.5}
-\contentsline {subsection}{\numberline {5.5.1}Detailed Description}{36}{subsection.5.5.1}
-\contentsline {subsection}{\numberline {5.5.2}Constructor \& Destructor Documentation}{36}{subsection.5.5.2}
-\contentsline {subsubsection}{\numberline {5.5.2.1}Abstract\discretionary {-}{}{}Dynamic2\discretionary {-}{}{}D\discretionary {-}{}{}Augmentation}{36}{subsubsection.5.5.2.1}
-\contentsline {subsubsection}{\numberline {5.5.2.2}Abstract\discretionary {-}{}{}Dynamic2\discretionary {-}{}{}D\discretionary {-}{}{}Augmentation}{36}{subsubsection.5.5.2.2}
-\contentsline {subsection}{\numberline {5.5.3}Member Function Documentation}{36}{subsection.5.5.3}
-\contentsline {subsubsection}{\numberline {5.5.3.1}Clone}{36}{subsubsection.5.5.3.1}
-\contentsline {subsection}{\numberline {5.5.4}Property Documentation}{37}{subsection.5.5.4}
-\contentsline {subsubsection}{\numberline {5.5.4.1}Source}{37}{subsubsection.5.5.4.1}
-\contentsline {section}{\numberline {5.6}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}File.\discretionary {-}{}{}Abstract\discretionary {-}{}{}File Class Reference}{37}{section.5.6}
-\contentsline {subsection}{\numberline {5.6.1}Detailed Description}{38}{subsection.5.6.1}
-\contentsline {subsection}{\numberline {5.6.2}Member Function Documentation}{38}{subsection.5.6.2}
-\contentsline {subsubsection}{\numberline {5.6.2.1}Add\discretionary {-}{}{}Block}{38}{subsubsection.5.6.2.1}
-\contentsline {subsubsection}{\numberline {5.6.2.2}Save}{38}{subsubsection.5.6.2.2}
-\contentsline {subsubsection}{\numberline {5.6.2.3}Save}{39}{subsubsection.5.6.2.3}
-\contentsline {subsection}{\numberline {5.6.3}Member Data Documentation}{39}{subsection.5.6.3}
-\contentsline {subsubsection}{\numberline {5.6.3.1}blocks}{39}{subsubsection.5.6.3.1}
-\contentsline {subsubsection}{\numberline {5.6.3.2}file\discretionary {-}{}{}Path}{39}{subsubsection.5.6.3.2}
-\contentsline {subsection}{\numberline {5.6.4}Property Documentation}{39}{subsection.5.6.4}
-\contentsline {subsubsection}{\numberline {5.6.4.1}File\discretionary {-}{}{}Path}{39}{subsubsection.5.6.4.1}
-\contentsline {section}{\numberline {5.7}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Project\discretionary {-}{}{}Controller.\discretionary {-}{}{}Abstract\discretionary {-}{}{}Project\discretionary {-}{}{}Visitor Class Reference}{39}{section.5.7}
-\contentsline {subsection}{\numberline {5.7.1}Detailed Description}{42}{subsection.5.7.1}
-\contentsline {subsection}{\numberline {5.7.2}Member Function Documentation}{42}{subsection.5.7.2}
-\contentsline {subsubsection}{\numberline {5.7.2.1}Visit}{42}{subsubsection.5.7.2.1}
-\contentsline {subsubsection}{\numberline {5.7.2.2}Visit}{42}{subsubsection.5.7.2.2}
-\contentsline {subsubsection}{\numberline {5.7.2.3}Visit}{42}{subsubsection.5.7.2.3}
-\contentsline {subsubsection}{\numberline {5.7.2.4}Visit}{42}{subsubsection.5.7.2.4}
-\contentsline {subsubsection}{\numberline {5.7.2.5}Visit}{43}{subsubsection.5.7.2.5}
-\contentsline {subsubsection}{\numberline {5.7.2.6}Visit}{43}{subsubsection.5.7.2.6}
-\contentsline {subsubsection}{\numberline {5.7.2.7}Visit}{43}{subsubsection.5.7.2.7}
-\contentsline {subsubsection}{\numberline {5.7.2.8}Visit}{43}{subsubsection.5.7.2.8}
-\contentsline {subsubsection}{\numberline {5.7.2.9}Visit}{43}{subsubsection.5.7.2.9}
-\contentsline {subsubsection}{\numberline {5.7.2.10}Visit}{45}{subsubsection.5.7.2.10}
-\contentsline {subsubsection}{\numberline {5.7.2.11}Visit}{45}{subsubsection.5.7.2.11}
-\contentsline {subsubsection}{\numberline {5.7.2.12}Visit}{45}{subsubsection.5.7.2.12}
-\contentsline {subsubsection}{\numberline {5.7.2.13}Visit}{45}{subsubsection.5.7.2.13}
-\contentsline {subsubsection}{\numberline {5.7.2.14}Visit}{46}{subsubsection.5.7.2.14}
-\contentsline {subsubsection}{\numberline {5.7.2.15}Visit}{46}{subsubsection.5.7.2.15}
-\contentsline {section}{\numberline {5.8}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Abstract\discretionary {-}{}{}Sensor Class Reference}{46}{section.5.8}
-\contentsline {subsection}{\numberline {5.8.1}Detailed Description}{48}{subsection.5.8.1}
-\contentsline {subsection}{\numberline {5.8.2}Member Enumeration Documentation}{48}{subsection.5.8.2}
-\contentsline {subsubsection}{\numberline {5.8.2.1}Sensor\discretionary {-}{}{}I\discretionary {-}{}{}D\discretionary {-}{}{}Bases}{48}{subsubsection.5.8.2.1}
-\contentsline {subsubsection}{\numberline {5.8.2.2}Sensor\discretionary {-}{}{}Sub\discretionary {-}{}{}Types}{48}{subsubsection.5.8.2.2}
-\contentsline {subsubsection}{\numberline {5.8.2.3}Sensor\discretionary {-}{}{}Types}{48}{subsubsection.5.8.2.3}
-\contentsline {subsection}{\numberline {5.8.3}Constructor \& Destructor Documentation}{48}{subsection.5.8.3}
-\contentsline {subsubsection}{\numberline {5.8.3.1}Abstract\discretionary {-}{}{}Sensor}{48}{subsubsection.5.8.3.1}
-\contentsline {subsection}{\numberline {5.8.4}Member Function Documentation}{48}{subsection.5.8.4}
-\contentsline {subsubsection}{\numberline {5.8.4.1}Accept}{48}{subsubsection.5.8.4.1}
-\contentsline {subsection}{\numberline {5.8.5}Member Data Documentation}{49}{subsection.5.8.5}
-\contentsline {subsubsection}{\numberline {5.8.5.1}sensor\discretionary {-}{}{}I\discretionary {-}{}{}D\discretionary {-}{}{}Base}{49}{subsubsection.5.8.5.1}
-\contentsline {subsubsection}{\numberline {5.8.5.2}sensor\discretionary {-}{}{}I\discretionary {-}{}{}D\discretionary {-}{}{}String}{49}{subsubsection.5.8.5.2}
-\contentsline {subsubsection}{\numberline {5.8.5.3}sensor\discretionary {-}{}{}Sub\discretionary {-}{}{}Type}{49}{subsubsection.5.8.5.3}
-\contentsline {subsubsection}{\numberline {5.8.5.4}sensor\discretionary {-}{}{}Type}{49}{subsubsection.5.8.5.4}
-\contentsline {subsection}{\numberline {5.8.6}Property Documentation}{49}{subsection.5.8.6}
-\contentsline {subsubsection}{\numberline {5.8.6.1}Name}{49}{subsubsection.5.8.6.1}
-\contentsline {subsubsection}{\numberline {5.8.6.2}Sensor\discretionary {-}{}{}I\discretionary {-}{}{}D\discretionary {-}{}{}Base}{49}{subsubsection.5.8.6.2}
-\contentsline {subsubsection}{\numberline {5.8.6.3}Sensor\discretionary {-}{}{}I\discretionary {-}{}{}D\discretionary {-}{}{}String}{49}{subsubsection.5.8.6.3}
-\contentsline {subsubsection}{\numberline {5.8.6.4}Sensor\discretionary {-}{}{}Sub\discretionary {-}{}{}Type}{49}{subsubsection.5.8.6.4}
-\contentsline {subsubsection}{\numberline {5.8.6.5}Sensor\discretionary {-}{}{}Type}{50}{subsubsection.5.8.6.5}
-\contentsline {section}{\numberline {5.9}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Abstract\discretionary {-}{}{}Source Class Reference}{50}{section.5.9}
-\contentsline {subsection}{\numberline {5.9.1}Detailed Description}{53}{subsection.5.9.1}
-\contentsline {subsection}{\numberline {5.9.2}Constructor \& Destructor Documentation}{53}{subsection.5.9.2}
-\contentsline {subsubsection}{\numberline {5.9.2.1}Abstract\discretionary {-}{}{}Source}{53}{subsubsection.5.9.2.1}
-\contentsline {subsubsection}{\numberline {5.9.2.2}Abstract\discretionary {-}{}{}Source}{53}{subsubsection.5.9.2.2}
-\contentsline {subsection}{\numberline {5.9.3}Member Function Documentation}{53}{subsection.5.9.3}
-\contentsline {subsubsection}{\numberline {5.9.3.1}Accept}{53}{subsubsection.5.9.3.1}
-\contentsline {subsubsection}{\numberline {5.9.3.2}Clone}{54}{subsubsection.5.9.3.2}
-\contentsline {subsubsection}{\numberline {5.9.3.3}get\discretionary {-}{}{}Icon}{54}{subsubsection.5.9.3.3}
-\contentsline {subsubsection}{\numberline {5.9.3.4}get\discretionary {-}{}{}Preview}{54}{subsubsection.5.9.3.4}
-\contentsline {subsubsection}{\numberline {5.9.3.5}init\discretionary {-}{}{}Element}{54}{subsubsection.5.9.3.5}
-\contentsline {subsubsection}{\numberline {5.9.3.6}To\discretionary {-}{}{}String}{55}{subsubsection.5.9.3.6}
-\contentsline {subsection}{\numberline {5.9.4}Member Data Documentation}{55}{subsection.5.9.4}
-\contentsline {subsubsection}{\numberline {5.9.4.1}query\discretionary {-}{}{}File\discretionary {-}{}{}Path}{55}{subsubsection.5.9.4.1}
-\contentsline {subsection}{\numberline {5.9.5}Property Documentation}{55}{subsection.5.9.5}
-\contentsline {subsubsection}{\numberline {5.9.5.1}Augmentation}{55}{subsubsection.5.9.5.1}
-\contentsline {subsubsection}{\numberline {5.9.5.2}Query}{55}{subsubsection.5.9.5.2}
-\contentsline {subsubsection}{\numberline {5.9.5.3}Source\discretionary {-}{}{}I\discretionary {-}{}{}D}{55}{subsubsection.5.9.5.3}
-\contentsline {section}{\numberline {5.10}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Abstract\discretionary {-}{}{}Trackable Class Reference}{55}{section.5.10}
-\contentsline {subsection}{\numberline {5.10.1}Detailed Description}{58}{subsection.5.10.1}
-\contentsline {subsection}{\numberline {5.10.2}Member Function Documentation}{58}{subsection.5.10.2}
-\contentsline {subsubsection}{\numberline {5.10.2.1}Accept}{58}{subsubsection.5.10.2.1}
-\contentsline {subsubsection}{\numberline {5.10.2.2}Clone}{58}{subsubsection.5.10.2.2}
-\contentsline {subsubsection}{\numberline {5.10.2.3}exist\discretionary {-}{}{}Augmentation}{59}{subsubsection.5.10.2.3}
-\contentsline {subsubsection}{\numberline {5.10.2.4}get\discretionary {-}{}{}Icon}{59}{subsubsection.5.10.2.4}
-\contentsline {subsubsection}{\numberline {5.10.2.5}get\discretionary {-}{}{}Preview}{59}{subsubsection.5.10.2.5}
-\contentsline {subsubsection}{\numberline {5.10.2.6}init\discretionary {-}{}{}Element}{59}{subsubsection.5.10.2.6}
-\contentsline {subsubsection}{\numberline {5.10.2.7}Remove\discretionary {-}{}{}Augmentation}{60}{subsubsection.5.10.2.7}
-\contentsline {subsection}{\numberline {5.10.3}Member Data Documentation}{60}{subsection.5.10.3}
-\contentsline {subsubsection}{\numberline {5.10.3.1}similarity\discretionary {-}{}{}Threshold}{60}{subsubsection.5.10.3.1}
-\contentsline {subsubsection}{\numberline {5.10.3.2}type}{60}{subsubsection.5.10.3.2}
-\contentsline {subsection}{\numberline {5.10.4}Property Documentation}{60}{subsection.5.10.4}
-\contentsline {subsubsection}{\numberline {5.10.4.1}Augmentations}{60}{subsubsection.5.10.4.1}
-\contentsline {subsubsection}{\numberline {5.10.4.2}Similarity\discretionary {-}{}{}Threshold}{60}{subsubsection.5.10.4.2}
-\contentsline {subsubsection}{\numberline {5.10.4.3}Type}{60}{subsubsection.5.10.4.3}
-\contentsline {subsubsection}{\numberline {5.10.4.4}vector}{60}{subsubsection.5.10.4.4}
-\contentsline {section}{\numberline {5.11}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}File.\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}E\discretionary {-}{}{}L\discretionary {-}{}{}Config\discretionary {-}{}{}File Class Reference}{61}{section.5.11}
-\contentsline {subsection}{\numberline {5.11.1}Detailed Description}{62}{subsection.5.11.1}
-\contentsline {subsection}{\numberline {5.11.2}Constructor \& Destructor Documentation}{63}{subsection.5.11.2}
-\contentsline {subsubsection}{\numberline {5.11.2.1}A\discretionary {-}{}{}R\discretionary {-}{}{}E\discretionary {-}{}{}L\discretionary {-}{}{}Config\discretionary {-}{}{}File}{63}{subsubsection.5.11.2.1}
-\contentsline {subsection}{\numberline {5.11.3}Member Function Documentation}{64}{subsection.5.11.3}
-\contentsline {subsubsection}{\numberline {5.11.3.1}Save}{64}{subsubsection.5.11.3.1}
-\contentsline {subsubsection}{\numberline {5.11.3.2}Save}{64}{subsubsection.5.11.3.2}
-\contentsline {subsection}{\numberline {5.11.4}Member Data Documentation}{64}{subsection.5.11.4}
-\contentsline {subsubsection}{\numberline {5.11.4.1}header}{64}{subsubsection.5.11.4.1}
-\contentsline {section}{\numberline {5.12}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}File.\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}E\discretionary {-}{}{}L\discretionary {-}{}{}Glue\discretionary {-}{}{}File Class Reference}{64}{section.5.12}
-\contentsline {subsection}{\numberline {5.12.1}Detailed Description}{66}{subsection.5.12.1}
-\contentsline {subsection}{\numberline {5.12.2}Constructor \& Destructor Documentation}{66}{subsection.5.12.2}
-\contentsline {subsubsection}{\numberline {5.12.2.1}A\discretionary {-}{}{}R\discretionary {-}{}{}E\discretionary {-}{}{}L\discretionary {-}{}{}Glue\discretionary {-}{}{}File}{66}{subsubsection.5.12.2.1}
-\contentsline {subsection}{\numberline {5.12.3}Member Function Documentation}{67}{subsection.5.12.3}
-\contentsline {subsubsection}{\numberline {5.12.3.1}Save}{67}{subsubsection.5.12.3.1}
-\contentsline {subsubsection}{\numberline {5.12.3.2}Save}{67}{subsubsection.5.12.3.2}
-\contentsline {section}{\numberline {5.13}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}File.\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}E\discretionary {-}{}{}L\discretionary {-}{}{}Project\discretionary {-}{}{}File Class Reference}{67}{section.5.13}
-\contentsline {subsection}{\numberline {5.13.1}Detailed Description}{68}{subsection.5.13.1}
-\contentsline {subsection}{\numberline {5.13.2}Constructor \& Destructor Documentation}{69}{subsection.5.13.2}
-\contentsline {subsubsection}{\numberline {5.13.2.1}A\discretionary {-}{}{}R\discretionary {-}{}{}E\discretionary {-}{}{}L\discretionary {-}{}{}Project\discretionary {-}{}{}File}{69}{subsubsection.5.13.2.1}
-\contentsline {subsection}{\numberline {5.13.3}Member Function Documentation}{70}{subsection.5.13.3}
-\contentsline {subsubsection}{\numberline {5.13.3.1}Save}{70}{subsubsection.5.13.3.1}
-\contentsline {subsubsection}{\numberline {5.13.3.2}Save}{70}{subsubsection.5.13.3.2}
-\contentsline {subsection}{\numberline {5.13.4}Member Data Documentation}{70}{subsection.5.13.4}
-\contentsline {subsubsection}{\numberline {5.13.4.1}header}{70}{subsubsection.5.13.4.1}
-\contentsline {section}{\numberline {5.14}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}File.\discretionary {-}{}{}Block\discretionary {-}{}{}Marker Class Reference}{70}{section.5.14}
-\contentsline {subsection}{\numberline {5.14.1}Detailed Description}{72}{subsection.5.14.1}
-\contentsline {subsection}{\numberline {5.14.2}Constructor \& Destructor Documentation}{72}{subsection.5.14.2}
-\contentsline {subsubsection}{\numberline {5.14.2.1}Block\discretionary {-}{}{}Marker}{72}{subsubsection.5.14.2.1}
-\contentsline {subsubsection}{\numberline {5.14.2.2}Block\discretionary {-}{}{}Marker}{73}{subsubsection.5.14.2.2}
-\contentsline {subsection}{\numberline {5.14.3}Member Function Documentation}{73}{subsection.5.14.3}
-\contentsline {subsubsection}{\numberline {5.14.3.1}To\discretionary {-}{}{}String}{73}{subsubsection.5.14.3.1}
-\contentsline {subsection}{\numberline {5.14.4}Member Data Documentation}{73}{subsection.5.14.4}
-\contentsline {subsubsection}{\numberline {5.14.4.1}closed}{73}{subsubsection.5.14.4.1}
-\contentsline {subsection}{\numberline {5.14.5}Property Documentation}{73}{subsection.5.14.5}
-\contentsline {subsubsection}{\numberline {5.14.5.1}End}{73}{subsubsection.5.14.5.1}
-\contentsline {subsubsection}{\numberline {5.14.5.2}Start}{73}{subsubsection.5.14.5.2}
-\contentsline {section}{\numberline {5.15}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Chart Class Reference}{73}{section.5.15}
-\contentsline {subsection}{\numberline {5.15.1}Detailed Description}{76}{subsection.5.15.1}
-\contentsline {subsection}{\numberline {5.15.2}Constructor \& Destructor Documentation}{76}{subsection.5.15.2}
-\contentsline {subsubsection}{\numberline {5.15.2.1}Chart}{76}{subsubsection.5.15.2.1}
-\contentsline {subsection}{\numberline {5.15.3}Member Function Documentation}{76}{subsection.5.15.3}
-\contentsline {subsubsection}{\numberline {5.15.3.1}Accept}{76}{subsubsection.5.15.3.1}
-\contentsline {subsubsection}{\numberline {5.15.3.2}Clean\discretionary {-}{}{}Up}{77}{subsubsection.5.15.3.2}
-\contentsline {subsubsection}{\numberline {5.15.3.3}Clone}{77}{subsubsection.5.15.3.3}
-\contentsline {subsubsection}{\numberline {5.15.3.4}get\discretionary {-}{}{}Icon}{77}{subsubsection.5.15.3.4}
-\contentsline {subsubsection}{\numberline {5.15.3.5}get\discretionary {-}{}{}Preview}{77}{subsubsection.5.15.3.5}
-\contentsline {subsubsection}{\numberline {5.15.3.6}init\discretionary {-}{}{}Element}{77}{subsubsection.5.15.3.6}
-\contentsline {subsection}{\numberline {5.15.4}Member Data Documentation}{78}{subsection.5.15.4}
-\contentsline {subsubsection}{\numberline {5.15.4.1}options\discretionary {-}{}{}File\discretionary {-}{}{}Path}{78}{subsubsection.5.15.4.1}
-\contentsline {subsubsection}{\numberline {5.15.4.2}positioning}{78}{subsubsection.5.15.4.2}
-\contentsline {subsection}{\numberline {5.15.5}Property Documentation}{78}{subsection.5.15.5}
-\contentsline {subsubsection}{\numberline {5.15.5.1}Options}{78}{subsubsection.5.15.5.1}
-\contentsline {subsubsection}{\numberline {5.15.5.2}Positioning}{78}{subsubsection.5.15.5.2}
-\contentsline {subsubsection}{\numberline {5.15.5.3}Rotation}{78}{subsubsection.5.15.5.3}
-\contentsline {subsubsection}{\numberline {5.15.5.4}Scaling}{78}{subsubsection.5.15.5.4}
+\contentsline {subsection}{\numberline {5.2.1}Detailed Description}{22}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Member Function Documentation}{22}{subsection.5.2.2}
+\contentsline {subsubsection}{\numberline {5.2.2.1}To\discretionary {-}{}{}String}{22}{subsubsection.5.2.2.1}
+\contentsline {subsection}{\numberline {5.2.3}Member Data Documentation}{22}{subsection.5.2.3}
+\contentsline {subsubsection}{\numberline {5.2.3.1}fuser}{22}{subsubsection.5.2.3.1}
+\contentsline {subsubsection}{\numberline {5.2.3.2}rotation\discretionary {-}{}{}Vector}{22}{subsubsection.5.2.3.2}
+\contentsline {subsubsection}{\numberline {5.2.3.3}sensor\discretionary {-}{}{}Cos\discretionary {-}{}{}I\discretionary {-}{}{}D}{22}{subsubsection.5.2.3.3}
+\contentsline {subsubsection}{\numberline {5.2.3.4}size}{22}{subsubsection.5.2.3.4}
+\contentsline {subsubsection}{\numberline {5.2.3.5}translation\discretionary {-}{}{}Vector}{22}{subsubsection.5.2.3.5}
+\contentsline {subsection}{\numberline {5.2.4}Property Documentation}{23}{subsection.5.2.4}
+\contentsline {subsubsection}{\numberline {5.2.4.1}Fuser}{23}{subsubsection.5.2.4.1}
+\contentsline {subsubsection}{\numberline {5.2.4.2}Rotation}{23}{subsubsection.5.2.4.2}
+\contentsline {subsubsection}{\numberline {5.2.4.3}Sensor\discretionary {-}{}{}Cos\discretionary {-}{}{}I\discretionary {-}{}{}D}{23}{subsubsection.5.2.4.3}
+\contentsline {subsubsection}{\numberline {5.2.4.4}Size}{23}{subsubsection.5.2.4.4}
+\contentsline {subsubsection}{\numberline {5.2.4.5}Translation}{23}{subsubsection.5.2.4.5}
+\contentsline {section}{\numberline {5.3}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Abstract\discretionary {-}{}{}Augmentation Class Reference}{23}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Detailed Description}{26}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Constructor \& Destructor Documentation}{27}{subsection.5.3.2}
+\contentsline {subsubsection}{\numberline {5.3.2.1}Abstract\discretionary {-}{}{}Augmentation}{27}{subsubsection.5.3.2.1}
+\contentsline {subsubsection}{\numberline {5.3.2.2}Abstract\discretionary {-}{}{}Augmentation}{27}{subsubsection.5.3.2.2}
+\contentsline {subsection}{\numberline {5.3.3}Member Function Documentation}{27}{subsection.5.3.3}
+\contentsline {subsubsection}{\numberline {5.3.3.1}Accept}{27}{subsubsection.5.3.3.1}
+\contentsline {subsubsection}{\numberline {5.3.3.2}Clean\discretionary {-}{}{}Up}{27}{subsubsection.5.3.3.2}
+\contentsline {subsubsection}{\numberline {5.3.3.3}Clone}{27}{subsubsection.5.3.3.3}
+\contentsline {subsubsection}{\numberline {5.3.3.4}create\discretionary {-}{}{}User\discretionary {-}{}{}Event}{28}{subsubsection.5.3.3.4}
+\contentsline {subsubsection}{\numberline {5.3.3.5}get\discretionary {-}{}{}Icon}{28}{subsubsection.5.3.3.5}
+\contentsline {subsubsection}{\numberline {5.3.3.6}get\discretionary {-}{}{}Preview}{28}{subsubsection.5.3.3.6}
+\contentsline {subsubsection}{\numberline {5.3.3.7}init\discretionary {-}{}{}Element}{28}{subsubsection.5.3.3.7}
+\contentsline {subsubsection}{\numberline {5.3.3.8}To\discretionary {-}{}{}String}{29}{subsubsection.5.3.3.8}
+\contentsline {subsection}{\numberline {5.3.4}Member Data Documentation}{29}{subsection.5.3.4}
+\contentsline {subsubsection}{\numberline {5.3.4.1}id}{29}{subsubsection.5.3.4.1}
+\contentsline {subsubsection}{\numberline {5.3.4.2}trackable}{29}{subsubsection.5.3.4.2}
+\contentsline {subsection}{\numberline {5.3.5}Property Documentation}{29}{subsection.5.3.5}
+\contentsline {subsubsection}{\numberline {5.3.5.1}Custom\discretionary {-}{}{}User\discretionary {-}{}{}Event\discretionary {-}{}{}Reference}{29}{subsubsection.5.3.5.1}
+\contentsline {subsubsection}{\numberline {5.3.5.2}I\discretionary {-}{}{}D}{29}{subsubsection.5.3.5.2}
+\contentsline {subsubsection}{\numberline {5.3.5.3}Is\discretionary {-}{}{}Visible}{29}{subsubsection.5.3.5.3}
+\contentsline {subsubsection}{\numberline {5.3.5.4}Rotation}{29}{subsubsection.5.3.5.4}
+\contentsline {subsubsection}{\numberline {5.3.5.5}Scaling}{30}{subsubsection.5.3.5.5}
+\contentsline {subsubsection}{\numberline {5.3.5.6}Trackable}{30}{subsubsection.5.3.5.6}
+\contentsline {subsubsection}{\numberline {5.3.5.7}Translation}{30}{subsubsection.5.3.5.7}
+\contentsline {section}{\numberline {5.4}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}File.\discretionary {-}{}{}Abstract\discretionary {-}{}{}Block Class Reference}{30}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Detailed Description}{33}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Member Function Documentation}{33}{subsection.5.4.2}
+\contentsline {subsubsection}{\numberline {5.4.2.1}Add\discretionary {-}{}{}Block}{33}{subsubsection.5.4.2.1}
+\contentsline {subsubsection}{\numberline {5.4.2.2}get\discretionary {-}{}{}Tabs}{33}{subsubsection.5.4.2.2}
+\contentsline {subsubsection}{\numberline {5.4.2.3}Write}{33}{subsubsection.5.4.2.3}
+\contentsline {subsection}{\numberline {5.4.3}Member Data Documentation}{33}{subsection.5.4.3}
+\contentsline {subsubsection}{\numberline {5.4.3.1}block\discretionary {-}{}{}Marker}{33}{subsubsection.5.4.3.1}
+\contentsline {subsubsection}{\numberline {5.4.3.2}blocks}{34}{subsubsection.5.4.3.2}
+\contentsline {subsubsection}{\numberline {5.4.3.3}level}{34}{subsubsection.5.4.3.3}
+\contentsline {subsubsection}{\numberline {5.4.3.4}parent\discretionary {-}{}{}Block}{34}{subsubsection.5.4.3.4}
+\contentsline {subsubsection}{\numberline {5.4.3.5}parent\discretionary {-}{}{}File}{34}{subsubsection.5.4.3.5}
+\contentsline {subsection}{\numberline {5.4.4}Property Documentation}{34}{subsection.5.4.4}
+\contentsline {subsubsection}{\numberline {5.4.4.1}Parent\discretionary {-}{}{}File}{34}{subsubsection.5.4.4.1}
+\contentsline {section}{\numberline {5.5}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Abstract\discretionary {-}{}{}Dynamic2\discretionary {-}{}{}D\discretionary {-}{}{}Augmentation Class Reference}{34}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Detailed Description}{37}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}Constructor \& Destructor Documentation}{37}{subsection.5.5.2}
+\contentsline {subsubsection}{\numberline {5.5.2.1}Abstract\discretionary {-}{}{}Dynamic2\discretionary {-}{}{}D\discretionary {-}{}{}Augmentation}{37}{subsubsection.5.5.2.1}
+\contentsline {subsubsection}{\numberline {5.5.2.2}Abstract\discretionary {-}{}{}Dynamic2\discretionary {-}{}{}D\discretionary {-}{}{}Augmentation}{37}{subsubsection.5.5.2.2}
+\contentsline {subsection}{\numberline {5.5.3}Member Function Documentation}{37}{subsection.5.5.3}
+\contentsline {subsubsection}{\numberline {5.5.3.1}Clone}{37}{subsubsection.5.5.3.1}
+\contentsline {subsection}{\numberline {5.5.4}Property Documentation}{38}{subsection.5.5.4}
+\contentsline {subsubsection}{\numberline {5.5.4.1}Source}{38}{subsubsection.5.5.4.1}
+\contentsline {section}{\numberline {5.6}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}File.\discretionary {-}{}{}Abstract\discretionary {-}{}{}File Class Reference}{38}{section.5.6}
+\contentsline {subsection}{\numberline {5.6.1}Detailed Description}{39}{subsection.5.6.1}
+\contentsline {subsection}{\numberline {5.6.2}Member Function Documentation}{39}{subsection.5.6.2}
+\contentsline {subsubsection}{\numberline {5.6.2.1}Add\discretionary {-}{}{}Block}{39}{subsubsection.5.6.2.1}
+\contentsline {subsubsection}{\numberline {5.6.2.2}Save}{39}{subsubsection.5.6.2.2}
+\contentsline {subsubsection}{\numberline {5.6.2.3}Save}{40}{subsubsection.5.6.2.3}
+\contentsline {subsection}{\numberline {5.6.3}Member Data Documentation}{40}{subsection.5.6.3}
+\contentsline {subsubsection}{\numberline {5.6.3.1}blocks}{40}{subsubsection.5.6.3.1}
+\contentsline {subsubsection}{\numberline {5.6.3.2}file\discretionary {-}{}{}Path}{40}{subsubsection.5.6.3.2}
+\contentsline {subsection}{\numberline {5.6.4}Property Documentation}{40}{subsection.5.6.4}
+\contentsline {subsubsection}{\numberline {5.6.4.1}File\discretionary {-}{}{}Path}{40}{subsubsection.5.6.4.1}
+\contentsline {section}{\numberline {5.7}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Project\discretionary {-}{}{}Controller.\discretionary {-}{}{}Abstract\discretionary {-}{}{}Project\discretionary {-}{}{}Visitor Class Reference}{40}{section.5.7}
+\contentsline {subsection}{\numberline {5.7.1}Detailed Description}{43}{subsection.5.7.1}
+\contentsline {subsection}{\numberline {5.7.2}Member Function Documentation}{43}{subsection.5.7.2}
+\contentsline {subsubsection}{\numberline {5.7.2.1}Visit}{43}{subsubsection.5.7.2.1}
+\contentsline {subsubsection}{\numberline {5.7.2.2}Visit}{43}{subsubsection.5.7.2.2}
+\contentsline {subsubsection}{\numberline {5.7.2.3}Visit}{43}{subsubsection.5.7.2.3}
+\contentsline {subsubsection}{\numberline {5.7.2.4}Visit}{43}{subsubsection.5.7.2.4}
+\contentsline {subsubsection}{\numberline {5.7.2.5}Visit}{44}{subsubsection.5.7.2.5}
+\contentsline {subsubsection}{\numberline {5.7.2.6}Visit}{44}{subsubsection.5.7.2.6}
+\contentsline {subsubsection}{\numberline {5.7.2.7}Visit}{44}{subsubsection.5.7.2.7}
+\contentsline {subsubsection}{\numberline {5.7.2.8}Visit}{44}{subsubsection.5.7.2.8}
+\contentsline {subsubsection}{\numberline {5.7.2.9}Visit}{44}{subsubsection.5.7.2.9}
+\contentsline {subsubsection}{\numberline {5.7.2.10}Visit}{46}{subsubsection.5.7.2.10}
+\contentsline {subsubsection}{\numberline {5.7.2.11}Visit}{46}{subsubsection.5.7.2.11}
+\contentsline {subsubsection}{\numberline {5.7.2.12}Visit}{46}{subsubsection.5.7.2.12}
+\contentsline {subsubsection}{\numberline {5.7.2.13}Visit}{46}{subsubsection.5.7.2.13}
+\contentsline {subsubsection}{\numberline {5.7.2.14}Visit}{47}{subsubsection.5.7.2.14}
+\contentsline {subsubsection}{\numberline {5.7.2.15}Visit}{47}{subsubsection.5.7.2.15}
+\contentsline {section}{\numberline {5.8}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Abstract\discretionary {-}{}{}Sensor Class Reference}{47}{section.5.8}
+\contentsline {subsection}{\numberline {5.8.1}Detailed Description}{49}{subsection.5.8.1}
+\contentsline {subsection}{\numberline {5.8.2}Member Enumeration Documentation}{49}{subsection.5.8.2}
+\contentsline {subsubsection}{\numberline {5.8.2.1}Sensor\discretionary {-}{}{}I\discretionary {-}{}{}D\discretionary {-}{}{}Bases}{49}{subsubsection.5.8.2.1}
+\contentsline {subsubsection}{\numberline {5.8.2.2}Sensor\discretionary {-}{}{}Sub\discretionary {-}{}{}Types}{49}{subsubsection.5.8.2.2}
+\contentsline {subsubsection}{\numberline {5.8.2.3}Sensor\discretionary {-}{}{}Types}{49}{subsubsection.5.8.2.3}
+\contentsline {subsection}{\numberline {5.8.3}Constructor \& Destructor Documentation}{49}{subsection.5.8.3}
+\contentsline {subsubsection}{\numberline {5.8.3.1}Abstract\discretionary {-}{}{}Sensor}{49}{subsubsection.5.8.3.1}
+\contentsline {subsection}{\numberline {5.8.4}Member Function Documentation}{49}{subsection.5.8.4}
+\contentsline {subsubsection}{\numberline {5.8.4.1}Accept}{49}{subsubsection.5.8.4.1}
+\contentsline {subsection}{\numberline {5.8.5}Member Data Documentation}{50}{subsection.5.8.5}
+\contentsline {subsubsection}{\numberline {5.8.5.1}sensor\discretionary {-}{}{}I\discretionary {-}{}{}D\discretionary {-}{}{}Base}{50}{subsubsection.5.8.5.1}
+\contentsline {subsubsection}{\numberline {5.8.5.2}sensor\discretionary {-}{}{}I\discretionary {-}{}{}D\discretionary {-}{}{}String}{50}{subsubsection.5.8.5.2}
+\contentsline {subsubsection}{\numberline {5.8.5.3}sensor\discretionary {-}{}{}Sub\discretionary {-}{}{}Type}{50}{subsubsection.5.8.5.3}
+\contentsline {subsubsection}{\numberline {5.8.5.4}sensor\discretionary {-}{}{}Type}{50}{subsubsection.5.8.5.4}
+\contentsline {subsection}{\numberline {5.8.6}Property Documentation}{50}{subsection.5.8.6}
+\contentsline {subsubsection}{\numberline {5.8.6.1}Name}{50}{subsubsection.5.8.6.1}
+\contentsline {subsubsection}{\numberline {5.8.6.2}Sensor\discretionary {-}{}{}I\discretionary {-}{}{}D\discretionary {-}{}{}Base}{50}{subsubsection.5.8.6.2}
+\contentsline {subsubsection}{\numberline {5.8.6.3}Sensor\discretionary {-}{}{}I\discretionary {-}{}{}D\discretionary {-}{}{}String}{50}{subsubsection.5.8.6.3}
+\contentsline {subsubsection}{\numberline {5.8.6.4}Sensor\discretionary {-}{}{}Sub\discretionary {-}{}{}Type}{50}{subsubsection.5.8.6.4}
+\contentsline {subsubsection}{\numberline {5.8.6.5}Sensor\discretionary {-}{}{}Type}{51}{subsubsection.5.8.6.5}
+\contentsline {section}{\numberline {5.9}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Abstract\discretionary {-}{}{}Source Class Reference}{51}{section.5.9}
+\contentsline {subsection}{\numberline {5.9.1}Detailed Description}{54}{subsection.5.9.1}
+\contentsline {subsection}{\numberline {5.9.2}Constructor \& Destructor Documentation}{54}{subsection.5.9.2}
+\contentsline {subsubsection}{\numberline {5.9.2.1}Abstract\discretionary {-}{}{}Source}{54}{subsubsection.5.9.2.1}
+\contentsline {subsubsection}{\numberline {5.9.2.2}Abstract\discretionary {-}{}{}Source}{54}{subsubsection.5.9.2.2}
+\contentsline {subsection}{\numberline {5.9.3}Member Function Documentation}{54}{subsection.5.9.3}
+\contentsline {subsubsection}{\numberline {5.9.3.1}Accept}{54}{subsubsection.5.9.3.1}
+\contentsline {subsubsection}{\numberline {5.9.3.2}Clone}{55}{subsubsection.5.9.3.2}
+\contentsline {subsubsection}{\numberline {5.9.3.3}get\discretionary {-}{}{}Icon}{55}{subsubsection.5.9.3.3}
+\contentsline {subsubsection}{\numberline {5.9.3.4}get\discretionary {-}{}{}Preview}{55}{subsubsection.5.9.3.4}
+\contentsline {subsubsection}{\numberline {5.9.3.5}init\discretionary {-}{}{}Element}{55}{subsubsection.5.9.3.5}
+\contentsline {subsubsection}{\numberline {5.9.3.6}To\discretionary {-}{}{}String}{56}{subsubsection.5.9.3.6}
+\contentsline {subsection}{\numberline {5.9.4}Member Data Documentation}{56}{subsection.5.9.4}
+\contentsline {subsubsection}{\numberline {5.9.4.1}query\discretionary {-}{}{}File\discretionary {-}{}{}Path}{56}{subsubsection.5.9.4.1}
+\contentsline {subsection}{\numberline {5.9.5}Property Documentation}{56}{subsection.5.9.5}
+\contentsline {subsubsection}{\numberline {5.9.5.1}Augmentation}{56}{subsubsection.5.9.5.1}
+\contentsline {subsubsection}{\numberline {5.9.5.2}Query}{56}{subsubsection.5.9.5.2}
+\contentsline {subsubsection}{\numberline {5.9.5.3}Source\discretionary {-}{}{}I\discretionary {-}{}{}D}{56}{subsubsection.5.9.5.3}
+\contentsline {section}{\numberline {5.10}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Abstract\discretionary {-}{}{}Trackable Class Reference}{56}{section.5.10}
+\contentsline {subsection}{\numberline {5.10.1}Detailed Description}{59}{subsection.5.10.1}
+\contentsline {subsection}{\numberline {5.10.2}Member Function Documentation}{59}{subsection.5.10.2}
+\contentsline {subsubsection}{\numberline {5.10.2.1}Accept}{59}{subsubsection.5.10.2.1}
+\contentsline {subsubsection}{\numberline {5.10.2.2}Clone}{59}{subsubsection.5.10.2.2}
+\contentsline {subsubsection}{\numberline {5.10.2.3}exist\discretionary {-}{}{}Augmentation}{60}{subsubsection.5.10.2.3}
+\contentsline {subsubsection}{\numberline {5.10.2.4}get\discretionary {-}{}{}Icon}{60}{subsubsection.5.10.2.4}
+\contentsline {subsubsection}{\numberline {5.10.2.5}get\discretionary {-}{}{}Preview}{60}{subsubsection.5.10.2.5}
+\contentsline {subsubsection}{\numberline {5.10.2.6}init\discretionary {-}{}{}Element}{60}{subsubsection.5.10.2.6}
+\contentsline {subsubsection}{\numberline {5.10.2.7}Remove\discretionary {-}{}{}Augmentation}{61}{subsubsection.5.10.2.7}
+\contentsline {subsection}{\numberline {5.10.3}Member Data Documentation}{61}{subsection.5.10.3}
+\contentsline {subsubsection}{\numberline {5.10.3.1}similarity\discretionary {-}{}{}Threshold}{61}{subsubsection.5.10.3.1}
+\contentsline {subsubsection}{\numberline {5.10.3.2}type}{61}{subsubsection.5.10.3.2}
+\contentsline {subsection}{\numberline {5.10.4}Property Documentation}{61}{subsection.5.10.4}
+\contentsline {subsubsection}{\numberline {5.10.4.1}Augmentations}{61}{subsubsection.5.10.4.1}
+\contentsline {subsubsection}{\numberline {5.10.4.2}Similarity\discretionary {-}{}{}Threshold}{61}{subsubsection.5.10.4.2}
+\contentsline {subsubsection}{\numberline {5.10.4.3}Type}{61}{subsubsection.5.10.4.3}
+\contentsline {subsubsection}{\numberline {5.10.4.4}vector}{61}{subsubsection.5.10.4.4}
+\contentsline {section}{\numberline {5.11}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}File.\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}E\discretionary {-}{}{}L\discretionary {-}{}{}Config\discretionary {-}{}{}File Class Reference}{62}{section.5.11}
+\contentsline {subsection}{\numberline {5.11.1}Detailed Description}{63}{subsection.5.11.1}
+\contentsline {subsection}{\numberline {5.11.2}Constructor \& Destructor Documentation}{64}{subsection.5.11.2}
+\contentsline {subsubsection}{\numberline {5.11.2.1}A\discretionary {-}{}{}R\discretionary {-}{}{}E\discretionary {-}{}{}L\discretionary {-}{}{}Config\discretionary {-}{}{}File}{64}{subsubsection.5.11.2.1}
+\contentsline {subsection}{\numberline {5.11.3}Member Function Documentation}{65}{subsection.5.11.3}
+\contentsline {subsubsection}{\numberline {5.11.3.1}Save}{65}{subsubsection.5.11.3.1}
+\contentsline {subsubsection}{\numberline {5.11.3.2}Save}{65}{subsubsection.5.11.3.2}
+\contentsline {subsection}{\numberline {5.11.4}Member Data Documentation}{65}{subsection.5.11.4}
+\contentsline {subsubsection}{\numberline {5.11.4.1}header}{65}{subsubsection.5.11.4.1}
+\contentsline {section}{\numberline {5.12}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}File.\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}E\discretionary {-}{}{}L\discretionary {-}{}{}Glue\discretionary {-}{}{}File Class Reference}{65}{section.5.12}
+\contentsline {subsection}{\numberline {5.12.1}Detailed Description}{67}{subsection.5.12.1}
+\contentsline {subsection}{\numberline {5.12.2}Constructor \& Destructor Documentation}{67}{subsection.5.12.2}
+\contentsline {subsubsection}{\numberline {5.12.2.1}A\discretionary {-}{}{}R\discretionary {-}{}{}E\discretionary {-}{}{}L\discretionary {-}{}{}Glue\discretionary {-}{}{}File}{67}{subsubsection.5.12.2.1}
+\contentsline {subsection}{\numberline {5.12.3}Member Function Documentation}{68}{subsection.5.12.3}
+\contentsline {subsubsection}{\numberline {5.12.3.1}Save}{68}{subsubsection.5.12.3.1}
+\contentsline {subsubsection}{\numberline {5.12.3.2}Save}{68}{subsubsection.5.12.3.2}
+\contentsline {section}{\numberline {5.13}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}File.\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}E\discretionary {-}{}{}L\discretionary {-}{}{}Project\discretionary {-}{}{}File Class Reference}{68}{section.5.13}
+\contentsline {subsection}{\numberline {5.13.1}Detailed Description}{69}{subsection.5.13.1}
+\contentsline {subsection}{\numberline {5.13.2}Constructor \& Destructor Documentation}{70}{subsection.5.13.2}
+\contentsline {subsubsection}{\numberline {5.13.2.1}A\discretionary {-}{}{}R\discretionary {-}{}{}E\discretionary {-}{}{}L\discretionary {-}{}{}Project\discretionary {-}{}{}File}{70}{subsubsection.5.13.2.1}
+\contentsline {subsection}{\numberline {5.13.3}Member Function Documentation}{71}{subsection.5.13.3}
+\contentsline {subsubsection}{\numberline {5.13.3.1}Save}{71}{subsubsection.5.13.3.1}
+\contentsline {subsubsection}{\numberline {5.13.3.2}Save}{71}{subsubsection.5.13.3.2}
+\contentsline {subsection}{\numberline {5.13.4}Member Data Documentation}{71}{subsection.5.13.4}
+\contentsline {subsubsection}{\numberline {5.13.4.1}header}{71}{subsubsection.5.13.4.1}
+\contentsline {section}{\numberline {5.14}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}File.\discretionary {-}{}{}Block\discretionary {-}{}{}Marker Class Reference}{71}{section.5.14}
+\contentsline {subsection}{\numberline {5.14.1}Detailed Description}{73}{subsection.5.14.1}
+\contentsline {subsection}{\numberline {5.14.2}Constructor \& Destructor Documentation}{73}{subsection.5.14.2}
+\contentsline {subsubsection}{\numberline {5.14.2.1}Block\discretionary {-}{}{}Marker}{73}{subsubsection.5.14.2.1}
+\contentsline {subsubsection}{\numberline {5.14.2.2}Block\discretionary {-}{}{}Marker}{74}{subsubsection.5.14.2.2}
+\contentsline {subsection}{\numberline {5.14.3}Member Function Documentation}{74}{subsection.5.14.3}
+\contentsline {subsubsection}{\numberline {5.14.3.1}To\discretionary {-}{}{}String}{74}{subsubsection.5.14.3.1}
+\contentsline {subsection}{\numberline {5.14.4}Member Data Documentation}{74}{subsection.5.14.4}
+\contentsline {subsubsection}{\numberline {5.14.4.1}closed}{74}{subsubsection.5.14.4.1}
+\contentsline {subsection}{\numberline {5.14.5}Property Documentation}{74}{subsection.5.14.5}
+\contentsline {subsubsection}{\numberline {5.14.5.1}End}{74}{subsubsection.5.14.5.1}
+\contentsline {subsubsection}{\numberline {5.14.5.2}Start}{74}{subsubsection.5.14.5.2}
+\contentsline {section}{\numberline {5.15}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Chart Class Reference}{74}{section.5.15}
+\contentsline {subsection}{\numberline {5.15.1}Detailed Description}{77}{subsection.5.15.1}
+\contentsline {subsection}{\numberline {5.15.2}Constructor \& Destructor Documentation}{77}{subsection.5.15.2}
+\contentsline {subsubsection}{\numberline {5.15.2.1}Chart}{77}{subsubsection.5.15.2.1}
+\contentsline {subsection}{\numberline {5.15.3}Member Function Documentation}{77}{subsection.5.15.3}
+\contentsline {subsubsection}{\numberline {5.15.3.1}Accept}{77}{subsubsection.5.15.3.1}
+\contentsline {subsubsection}{\numberline {5.15.3.2}Clean\discretionary {-}{}{}Up}{78}{subsubsection.5.15.3.2}
+\contentsline {subsubsection}{\numberline {5.15.3.3}Clone}{78}{subsubsection.5.15.3.3}
+\contentsline {subsubsection}{\numberline {5.15.3.4}get\discretionary {-}{}{}Icon}{78}{subsubsection.5.15.3.4}
+\contentsline {subsubsection}{\numberline {5.15.3.5}get\discretionary {-}{}{}Preview}{78}{subsubsection.5.15.3.5}
+\contentsline {subsubsection}{\numberline {5.15.3.6}init\discretionary {-}{}{}Element}{78}{subsubsection.5.15.3.6}
+\contentsline {subsection}{\numberline {5.15.4}Member Data Documentation}{79}{subsection.5.15.4}
+\contentsline {subsubsection}{\numberline {5.15.4.1}options\discretionary {-}{}{}File\discretionary {-}{}{}Path}{79}{subsubsection.5.15.4.1}
+\contentsline {subsubsection}{\numberline {5.15.4.2}positioning}{79}{subsubsection.5.15.4.2}
+\contentsline {subsection}{\numberline {5.15.5}Property Documentation}{79}{subsection.5.15.5}
+\contentsline {subsubsection}{\numberline {5.15.5.1}Options}{79}{subsubsection.5.15.5.1}
+\contentsline {subsubsection}{\numberline {5.15.5.2}Positioning}{79}{subsubsection.5.15.5.2}
+\contentsline {subsubsection}{\numberline {5.15.5.3}Rotation}{79}{subsubsection.5.15.5.3}
+\contentsline {subsubsection}{\numberline {5.15.5.4}Scaling}{79}{subsubsection.5.15.5.4}
 \contentsline {section}{\numberline {5.16}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}File.\discretionary {-}{}{}Chart\discretionary {-}{}{}File Class Reference}{79}{section.5.16}
-\contentsline {subsection}{\numberline {5.16.1}Constructor \& Destructor Documentation}{80}{subsection.5.16.1}
-\contentsline {subsubsection}{\numberline {5.16.1.1}Chart\discretionary {-}{}{}File}{80}{subsubsection.5.16.1.1}
-\contentsline {subsection}{\numberline {5.16.2}Member Function Documentation}{80}{subsection.5.16.2}
-\contentsline {subsubsection}{\numberline {5.16.2.1}Save}{81}{subsubsection.5.16.2.1}
-\contentsline {subsubsection}{\numberline {5.16.2.2}Save}{81}{subsubsection.5.16.2.2}
-\contentsline {section}{\numberline {5.17}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Chart\discretionary {-}{}{}Positioning Class Reference}{81}{section.5.17}
-\contentsline {subsection}{\numberline {5.17.1}Detailed Description}{82}{subsection.5.17.1}
-\contentsline {subsection}{\numberline {5.17.2}Member Enumeration Documentation}{82}{subsection.5.17.2}
-\contentsline {subsubsection}{\numberline {5.17.2.1}Positioning\discretionary {-}{}{}Modes}{82}{subsubsection.5.17.2.1}
-\contentsline {subsection}{\numberline {5.17.3}Constructor \& Destructor Documentation}{82}{subsection.5.17.3}
-\contentsline {subsubsection}{\numberline {5.17.3.1}Chart\discretionary {-}{}{}Positioning}{82}{subsubsection.5.17.3.1}
-\contentsline {subsection}{\numberline {5.17.4}Property Documentation}{82}{subsection.5.17.4}
-\contentsline {subsubsection}{\numberline {5.17.4.1}Left}{82}{subsubsection.5.17.4.1}
-\contentsline {subsubsection}{\numberline {5.17.4.2}Positioning\discretionary {-}{}{}Mode}{82}{subsubsection.5.17.4.2}
-\contentsline {subsubsection}{\numberline {5.17.4.3}Top}{82}{subsubsection.5.17.4.3}
-\contentsline {section}{\numberline {5.18}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Custom\discretionary {-}{}{}User\discretionary {-}{}{}Event Class Reference}{82}{section.5.18}
-\contentsline {subsection}{\numberline {5.18.1}Detailed Description}{83}{subsection.5.18.1}
-\contentsline {subsection}{\numberline {5.18.2}Constructor \& Destructor Documentation}{83}{subsection.5.18.2}
-\contentsline {subsubsection}{\numberline {5.18.2.1}Custom\discretionary {-}{}{}User\discretionary {-}{}{}Event}{83}{subsubsection.5.18.2.1}
-\contentsline {subsection}{\numberline {5.18.3}Member Function Documentation}{83}{subsection.5.18.3}
-\contentsline {subsubsection}{\numberline {5.18.3.1}Accept}{83}{subsubsection.5.18.3.1}
-\contentsline {subsection}{\numberline {5.18.4}Property Documentation}{84}{subsection.5.18.4}
-\contentsline {subsubsection}{\numberline {5.18.4.1}File\discretionary {-}{}{}Path}{84}{subsubsection.5.18.4.1}
-\contentsline {section}{\numberline {5.19}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Db\discretionary {-}{}{}Source Class Reference}{84}{section.5.19}
-\contentsline {subsection}{\numberline {5.19.1}Detailed Description}{87}{subsection.5.19.1}
-\contentsline {subsection}{\numberline {5.19.2}Constructor \& Destructor Documentation}{87}{subsection.5.19.2}
-\contentsline {subsubsection}{\numberline {5.19.2.1}Db\discretionary {-}{}{}Source}{87}{subsubsection.5.19.2.1}
-\contentsline {subsubsection}{\numberline {5.19.2.2}Db\discretionary {-}{}{}Source}{87}{subsubsection.5.19.2.2}
-\contentsline {subsection}{\numberline {5.19.3}Member Function Documentation}{87}{subsection.5.19.3}
-\contentsline {subsubsection}{\numberline {5.19.3.1}Accept}{87}{subsubsection.5.19.3.1}
-\contentsline {subsubsection}{\numberline {5.19.3.2}Clone}{88}{subsubsection.5.19.3.2}
-\contentsline {subsubsection}{\numberline {5.19.3.3}get\discretionary {-}{}{}Icon}{88}{subsubsection.5.19.3.3}
-\contentsline {subsection}{\numberline {5.19.4}Member Data Documentation}{88}{subsection.5.19.4}
-\contentsline {subsubsection}{\numberline {5.19.4.1}url}{88}{subsubsection.5.19.4.1}
-\contentsline {subsection}{\numberline {5.19.5}Property Documentation}{88}{subsection.5.19.5}
-\contentsline {subsubsection}{\numberline {5.19.5.1}Url}{88}{subsubsection.5.19.5.1}
+\contentsline {subsection}{\numberline {5.16.1}Detailed Description}{81}{subsection.5.16.1}
+\contentsline {subsection}{\numberline {5.16.2}Constructor \& Destructor Documentation}{81}{subsection.5.16.2}
+\contentsline {subsubsection}{\numberline {5.16.2.1}Chart\discretionary {-}{}{}File}{81}{subsubsection.5.16.2.1}
+\contentsline {subsection}{\numberline {5.16.3}Member Function Documentation}{82}{subsection.5.16.3}
+\contentsline {subsubsection}{\numberline {5.16.3.1}Save}{82}{subsubsection.5.16.3.1}
+\contentsline {subsubsection}{\numberline {5.16.3.2}Save}{82}{subsubsection.5.16.3.2}
+\contentsline {section}{\numberline {5.17}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Chart\discretionary {-}{}{}Positioning Class Reference}{82}{section.5.17}
+\contentsline {subsection}{\numberline {5.17.1}Detailed Description}{83}{subsection.5.17.1}
+\contentsline {subsection}{\numberline {5.17.2}Member Enumeration Documentation}{83}{subsection.5.17.2}
+\contentsline {subsubsection}{\numberline {5.17.2.1}Positioning\discretionary {-}{}{}Modes}{83}{subsubsection.5.17.2.1}
+\contentsline {subsection}{\numberline {5.17.3}Constructor \& Destructor Documentation}{83}{subsection.5.17.3}
+\contentsline {subsubsection}{\numberline {5.17.3.1}Chart\discretionary {-}{}{}Positioning}{83}{subsubsection.5.17.3.1}
+\contentsline {subsection}{\numberline {5.17.4}Property Documentation}{83}{subsection.5.17.4}
+\contentsline {subsubsection}{\numberline {5.17.4.1}Left}{83}{subsubsection.5.17.4.1}
+\contentsline {subsubsection}{\numberline {5.17.4.2}Positioning\discretionary {-}{}{}Mode}{83}{subsubsection.5.17.4.2}
+\contentsline {subsubsection}{\numberline {5.17.4.3}Top}{83}{subsubsection.5.17.4.3}
+\contentsline {section}{\numberline {5.18}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Custom\discretionary {-}{}{}User\discretionary {-}{}{}Event Class Reference}{84}{section.5.18}
+\contentsline {subsection}{\numberline {5.18.1}Detailed Description}{84}{subsection.5.18.1}
+\contentsline {subsection}{\numberline {5.18.2}Constructor \& Destructor Documentation}{84}{subsection.5.18.2}
+\contentsline {subsubsection}{\numberline {5.18.2.1}Custom\discretionary {-}{}{}User\discretionary {-}{}{}Event}{84}{subsubsection.5.18.2.1}
+\contentsline {subsection}{\numberline {5.18.3}Member Function Documentation}{84}{subsection.5.18.3}
+\contentsline {subsubsection}{\numberline {5.18.3.1}Accept}{84}{subsubsection.5.18.3.1}
+\contentsline {subsection}{\numberline {5.18.4}Property Documentation}{85}{subsection.5.18.4}
+\contentsline {subsubsection}{\numberline {5.18.4.1}File\discretionary {-}{}{}Path}{85}{subsubsection.5.18.4.1}
+\contentsline {section}{\numberline {5.19}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Db\discretionary {-}{}{}Source Class Reference}{85}{section.5.19}
+\contentsline {subsection}{\numberline {5.19.1}Detailed Description}{88}{subsection.5.19.1}
+\contentsline {subsection}{\numberline {5.19.2}Constructor \& Destructor Documentation}{88}{subsection.5.19.2}
+\contentsline {subsubsection}{\numberline {5.19.2.1}Db\discretionary {-}{}{}Source}{88}{subsubsection.5.19.2.1}
+\contentsline {subsubsection}{\numberline {5.19.2.2}Db\discretionary {-}{}{}Source}{88}{subsubsection.5.19.2.2}
+\contentsline {subsection}{\numberline {5.19.3}Member Function Documentation}{88}{subsection.5.19.3}
+\contentsline {subsubsection}{\numberline {5.19.3.1}Accept}{88}{subsubsection.5.19.3.1}
+\contentsline {subsubsection}{\numberline {5.19.3.2}Clone}{89}{subsubsection.5.19.3.2}
+\contentsline {subsubsection}{\numberline {5.19.3.3}get\discretionary {-}{}{}Icon}{89}{subsubsection.5.19.3.3}
+\contentsline {subsection}{\numberline {5.19.4}Member Data Documentation}{89}{subsection.5.19.4}
+\contentsline {subsubsection}{\numberline {5.19.4.1}url}{89}{subsubsection.5.19.4.1}
+\contentsline {subsection}{\numberline {5.19.5}Property Documentation}{89}{subsection.5.19.5}
+\contentsline {subsubsection}{\numberline {5.19.5.1}Url}{89}{subsubsection.5.19.5.1}
 \contentsline {section}{\numberline {5.20}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}View.\discretionary {-}{}{}Debug\discretionary {-}{}{}Window Class Reference}{89}{section.5.20}
-\contentsline {subsection}{\numberline {5.20.1}Constructor \& Destructor Documentation}{90}{subsection.5.20.1}
-\contentsline {subsubsection}{\numberline {5.20.1.1}Debug\discretionary {-}{}{}Window}{90}{subsubsection.5.20.1.1}
-\contentsline {subsection}{\numberline {5.20.2}Member Function Documentation}{90}{subsection.5.20.2}
-\contentsline {subsubsection}{\numberline {5.20.2.1}Append\discretionary {-}{}{}Text}{90}{subsubsection.5.20.2.1}
-\contentsline {subsubsection}{\numberline {5.20.2.2}Dispose}{90}{subsubsection.5.20.2.2}
-\contentsline {subsection}{\numberline {5.20.3}Property Documentation}{90}{subsection.5.20.3}
-\contentsline {subsubsection}{\numberline {5.20.3.1}Rtb\discretionary {-}{}{}\_\discretionary {-}{}{}out}{90}{subsubsection.5.20.3.1}
-\contentsline {section}{\numberline {5.21}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Connections.\discretionary {-}{}{}Device\discretionary {-}{}{}Connection.\discretionary {-}{}{}Device\discretionary {-}{}{}Connection\discretionary {-}{}{}Controller Class Reference}{91}{section.5.21}
-\contentsline {subsection}{\numberline {5.21.1}Detailed Description}{91}{subsection.5.21.1}
-\contentsline {subsection}{\numberline {5.21.2}Constructor \& Destructor Documentation}{92}{subsection.5.21.2}
-\contentsline {subsubsection}{\numberline {5.21.2.1}Device\discretionary {-}{}{}Connection\discretionary {-}{}{}Controller}{92}{subsubsection.5.21.2.1}
-\contentsline {subsection}{\numberline {5.21.3}Member Function Documentation}{92}{subsection.5.21.3}
-\contentsline {subsubsection}{\numberline {5.21.3.1}get\discretionary {-}{}{}Reported\discretionary {-}{}{}Devices}{92}{subsubsection.5.21.3.1}
-\contentsline {subsubsection}{\numberline {5.21.3.2}refresh}{92}{subsubsection.5.21.3.2}
-\contentsline {subsubsection}{\numberline {5.21.3.3}send\discretionary {-}{}{}Debug}{92}{subsubsection.5.21.3.3}
-\contentsline {subsubsection}{\numberline {5.21.3.4}send\discretionary {-}{}{}Project}{92}{subsubsection.5.21.3.4}
-\contentsline {subsection}{\numberline {5.21.4}Property Documentation}{93}{subsection.5.21.4}
-\contentsline {subsubsection}{\numberline {5.21.4.1}Debug\discretionary {-}{}{}Connected}{93}{subsubsection.5.21.4.1}
-\contentsline {subsubsection}{\numberline {5.21.4.2}Debug\discretionary {-}{}{}Window}{93}{subsubsection.5.21.4.2}
-\contentsline {section}{\numberline {5.22}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Editor\discretionary {-}{}{}Window Class Reference}{93}{section.5.22}
-\contentsline {subsection}{\numberline {5.22.1}Detailed Description}{97}{subsection.5.22.1}
-\contentsline {subsection}{\numberline {5.22.2}Member Function Documentation}{97}{subsection.5.22.2}
-\contentsline {subsubsection}{\numberline {5.22.2.1}create\discretionary {-}{}{}New\discretionary {-}{}{}Project}{97}{subsubsection.5.22.2.1}
-\contentsline {subsubsection}{\numberline {5.22.2.2}Dispose}{97}{subsubsection.5.22.2.2}
-\contentsline {subsubsection}{\numberline {5.22.2.3}export\discretionary {-}{}{}Project}{97}{subsubsection.5.22.2.3}
-\contentsline {subsubsection}{\numberline {5.22.2.4}load\discretionary {-}{}{}Project}{97}{subsubsection.5.22.2.4}
-\contentsline {subsubsection}{\numberline {5.22.2.5}Player\discretionary {-}{}{}Closed}{98}{subsubsection.5.22.2.5}
-\contentsline {subsubsection}{\numberline {5.22.2.6}Player\discretionary {-}{}{}Started}{98}{subsubsection.5.22.2.6}
-\contentsline {subsubsection}{\numberline {5.22.2.7}register\discretionary {-}{}{}Elements}{98}{subsubsection.5.22.2.7}
-\contentsline {subsubsection}{\numberline {5.22.2.8}save\discretionary {-}{}{}Project}{98}{subsubsection.5.22.2.8}
-\contentsline {subsubsection}{\numberline {5.22.2.9}set\discretionary {-}{}{}Paste\discretionary {-}{}{}Button\discretionary {-}{}{}Enabled}{98}{subsubsection.5.22.2.9}
-\contentsline {subsubsection}{\numberline {5.22.2.10}update\discretionary {-}{}{}Element\discretionary {-}{}{}Selection\discretionary {-}{}{}Panel}{98}{subsubsection.5.22.2.10}
-\contentsline {subsubsection}{\numberline {5.22.2.11}update\discretionary {-}{}{}Preview\discretionary {-}{}{}Panel}{98}{subsubsection.5.22.2.11}
-\contentsline {subsubsection}{\numberline {5.22.2.12}update\discretionary {-}{}{}Scene\discretionary {-}{}{}Selection\discretionary {-}{}{}Panel}{98}{subsubsection.5.22.2.12}
-\contentsline {subsection}{\numberline {5.22.3}Property Documentation}{99}{subsection.5.22.3}
-\contentsline {subsubsection}{\numberline {5.22.3.1}Cmb\discretionary {-}{}{}\_\discretionary {-}{}{}editor\discretionary {-}{}{}\_\discretionary {-}{}{}properties\discretionary {-}{}{}\_\discretionary {-}{}{}object\discretionary {-}{}{}Selection}{99}{subsubsection.5.22.3.1}
-\contentsline {subsubsection}{\numberline {5.22.3.2}Cmb\discretionary {-}{}{}\_\discretionary {-}{}{}editor\discretionary {-}{}{}\_\discretionary {-}{}{}selection\discretionary {-}{}{}\_\discretionary {-}{}{}tool\discretionary {-}{}{}Selection}{99}{subsubsection.5.22.3.2}
-\contentsline {subsubsection}{\numberline {5.22.3.3}Pnl\discretionary {-}{}{}\_\discretionary {-}{}{}editor\discretionary {-}{}{}\_\discretionary {-}{}{}preview}{99}{subsubsection.5.22.3.3}
-\contentsline {subsubsection}{\numberline {5.22.3.4}Pnl\discretionary {-}{}{}\_\discretionary {-}{}{}editor\discretionary {-}{}{}\_\discretionary {-}{}{}selection}{99}{subsubsection.5.22.3.4}
-\contentsline {subsubsection}{\numberline {5.22.3.5}Preview\discretionary {-}{}{}Controller}{99}{subsubsection.5.22.3.5}
-\contentsline {subsubsection}{\numberline {5.22.3.6}project}{99}{subsubsection.5.22.3.6}
-\contentsline {subsubsection}{\numberline {5.22.3.7}Property\discretionary {-}{}{}Grid1}{99}{subsubsection.5.22.3.7}
-\contentsline {subsubsection}{\numberline {5.22.3.8}Tsm\discretionary {-}{}{}\_\discretionary {-}{}{}editor\discretionary {-}{}{}\_\discretionary {-}{}{}menu\discretionary {-}{}{}\_\discretionary {-}{}{}edit\discretionary {-}{}{}\_\discretionary {-}{}{}copie}{99}{subsubsection.5.22.3.8}
-\contentsline {subsubsection}{\numberline {5.22.3.9}Tsm\discretionary {-}{}{}\_\discretionary {-}{}{}editor\discretionary {-}{}{}\_\discretionary {-}{}{}menu\discretionary {-}{}{}\_\discretionary {-}{}{}edit\discretionary {-}{}{}\_\discretionary {-}{}{}delete}{99}{subsubsection.5.22.3.9}
-\contentsline {subsubsection}{\numberline {5.22.3.10}Tsm\discretionary {-}{}{}\_\discretionary {-}{}{}editor\discretionary {-}{}{}\_\discretionary {-}{}{}menu\discretionary {-}{}{}\_\discretionary {-}{}{}edit\discretionary {-}{}{}\_\discretionary {-}{}{}paste}{100}{subsubsection.5.22.3.10}
-\contentsline {section}{\numberline {5.23}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}View.\discretionary {-}{}{}Element\discretionary {-}{}{}Icon Class Reference}{100}{section.5.23}
-\contentsline {subsection}{\numberline {5.23.1}Detailed Description}{102}{subsection.5.23.1}
-\contentsline {subsection}{\numberline {5.23.2}Constructor \& Destructor Documentation}{102}{subsection.5.23.2}
-\contentsline {subsubsection}{\numberline {5.23.2.1}Element\discretionary {-}{}{}Icon}{102}{subsubsection.5.23.2.1}
-\contentsline {subsection}{\numberline {5.23.3}Member Function Documentation}{102}{subsection.5.23.3}
-\contentsline {subsubsection}{\numberline {5.23.3.1}on\discretionary {-}{}{}Click}{102}{subsubsection.5.23.3.1}
-\contentsline {subsubsection}{\numberline {5.23.3.2}on\discretionary {-}{}{}Mouse\discretionary {-}{}{}Down}{102}{subsubsection.5.23.3.2}
-\contentsline {subsubsection}{\numberline {5.23.3.3}on\discretionary {-}{}{}Mouse\discretionary {-}{}{}Leave}{102}{subsubsection.5.23.3.3}
-\contentsline {subsubsection}{\numberline {5.23.3.4}on\discretionary {-}{}{}Mouse\discretionary {-}{}{}Move}{102}{subsubsection.5.23.3.4}
-\contentsline {subsubsection}{\numberline {5.23.3.5}on\discretionary {-}{}{}Mouse\discretionary {-}{}{}Up}{104}{subsubsection.5.23.3.5}
-\contentsline {subsection}{\numberline {5.23.4}Property Documentation}{104}{subsection.5.23.4}
-\contentsline {subsubsection}{\numberline {5.23.4.1}Editor\discretionary {-}{}{}Window}{104}{subsubsection.5.23.4.1}
-\contentsline {subsubsection}{\numberline {5.23.4.2}Element}{104}{subsubsection.5.23.4.2}
-\contentsline {section}{\numberline {5.24}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Editor\discretionary {-}{}{}Controller.\discretionary {-}{}{}Element\discretionary {-}{}{}Selection\discretionary {-}{}{}Controller Class Reference}{104}{section.5.24}
-\contentsline {subsection}{\numberline {5.24.1}Constructor \& Destructor Documentation}{105}{subsection.5.24.1}
-\contentsline {subsubsection}{\numberline {5.24.1.1}Element\discretionary {-}{}{}Selection\discretionary {-}{}{}Controller}{105}{subsubsection.5.24.1.1}
-\contentsline {subsection}{\numberline {5.24.2}Member Function Documentation}{105}{subsection.5.24.2}
-\contentsline {subsubsection}{\numberline {5.24.2.1}populate\discretionary {-}{}{}Combo\discretionary {-}{}{}Box}{105}{subsubsection.5.24.2.1}
-\contentsline {subsubsection}{\numberline {5.24.2.2}set\discretionary {-}{}{}Element\discretionary {-}{}{}Enable}{105}{subsubsection.5.24.2.2}
-\contentsline {subsubsection}{\numberline {5.24.2.3}update\discretionary {-}{}{}Element\discretionary {-}{}{}Selection\discretionary {-}{}{}Panel}{105}{subsubsection.5.24.2.3}
-\contentsline {subsection}{\numberline {5.24.3}Property Documentation}{105}{subsection.5.24.3}
-\contentsline {subsubsection}{\numberline {5.24.3.1}Category\discretionary {-}{}{}Panels}{106}{subsubsection.5.24.3.1}
-\contentsline {section}{\numberline {5.25}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Project\discretionary {-}{}{}Controller.\discretionary {-}{}{}Export\discretionary {-}{}{}Visitor Class Reference}{106}{section.5.25}
-\contentsline {subsection}{\numberline {5.25.1}Detailed Description}{108}{subsection.5.25.1}
-\contentsline {subsection}{\numberline {5.25.2}Constructor \& Destructor Documentation}{108}{subsection.5.25.2}
-\contentsline {subsubsection}{\numberline {5.25.2.1}Export\discretionary {-}{}{}Visitor}{108}{subsubsection.5.25.2.1}
-\contentsline {subsection}{\numberline {5.25.3}Member Function Documentation}{108}{subsection.5.25.3}
-\contentsline {subsubsection}{\numberline {5.25.3.1}Visit}{108}{subsubsection.5.25.3.1}
-\contentsline {subsubsection}{\numberline {5.25.3.2}Visit}{109}{subsubsection.5.25.3.2}
-\contentsline {subsubsection}{\numberline {5.25.3.3}Visit}{109}{subsubsection.5.25.3.3}
-\contentsline {subsubsection}{\numberline {5.25.3.4}Visit}{109}{subsubsection.5.25.3.4}
-\contentsline {subsubsection}{\numberline {5.25.3.5}Visit}{109}{subsubsection.5.25.3.5}
-\contentsline {subsubsection}{\numberline {5.25.3.6}Visit}{109}{subsubsection.5.25.3.6}
-\contentsline {subsubsection}{\numberline {5.25.3.7}Visit}{110}{subsubsection.5.25.3.7}
-\contentsline {subsubsection}{\numberline {5.25.3.8}Visit}{110}{subsubsection.5.25.3.8}
-\contentsline {subsubsection}{\numberline {5.25.3.9}Visit}{110}{subsubsection.5.25.3.9}
-\contentsline {subsubsection}{\numberline {5.25.3.10}Visit}{110}{subsubsection.5.25.3.10}
-\contentsline {subsubsection}{\numberline {5.25.3.11}Visit}{111}{subsubsection.5.25.3.11}
-\contentsline {subsubsection}{\numberline {5.25.3.12}Visit}{111}{subsubsection.5.25.3.12}
-\contentsline {subsubsection}{\numberline {5.25.3.13}Visit}{111}{subsubsection.5.25.3.13}
-\contentsline {subsubsection}{\numberline {5.25.3.14}Visit}{111}{subsubsection.5.25.3.14}
-\contentsline {subsubsection}{\numberline {5.25.3.15}Visit}{111}{subsubsection.5.25.3.15}
-\contentsline {subsection}{\numberline {5.25.4}Property Documentation}{112}{subsection.5.25.4}
-\contentsline {subsubsection}{\numberline {5.25.4.1}Files}{112}{subsubsection.5.25.4.1}
-\contentsline {section}{\numberline {5.26}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}View.\discretionary {-}{}{}File\discretionary {-}{}{}Selector\discretionary {-}{}{}Type\discretionary {-}{}{}Editor Class Reference}{112}{section.5.26}
-\contentsline {subsection}{\numberline {5.26.1}Member Function Documentation}{113}{subsection.5.26.1}
-\contentsline {subsubsection}{\numberline {5.26.1.1}Edit\discretionary {-}{}{}Value}{113}{subsubsection.5.26.1.1}
-\contentsline {subsubsection}{\numberline {5.26.1.2}Get\discretionary {-}{}{}Edit\discretionary {-}{}{}Style}{114}{subsubsection.5.26.1.2}
-\contentsline {section}{\numberline {5.27}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}File\discretionary {-}{}{}Source Class Reference}{115}{section.5.27}
-\contentsline {subsection}{\numberline {5.27.1}Detailed Description}{118}{subsection.5.27.1}
-\contentsline {subsection}{\numberline {5.27.2}Constructor \& Destructor Documentation}{118}{subsection.5.27.2}
-\contentsline {subsubsection}{\numberline {5.27.2.1}File\discretionary {-}{}{}Source}{118}{subsubsection.5.27.2.1}
-\contentsline {subsection}{\numberline {5.27.3}Member Function Documentation}{118}{subsection.5.27.3}
-\contentsline {subsubsection}{\numberline {5.27.3.1}Accept}{118}{subsubsection.5.27.3.1}
-\contentsline {subsubsection}{\numberline {5.27.3.2}Clone}{118}{subsubsection.5.27.3.2}
-\contentsline {subsubsection}{\numberline {5.27.3.3}get\discretionary {-}{}{}Icon}{119}{subsubsection.5.27.3.3}
-\contentsline {subsection}{\numberline {5.27.4}Property Documentation}{119}{subsection.5.27.4}
-\contentsline {subsubsection}{\numberline {5.27.4.1}Data}{119}{subsubsection.5.27.4.1}
-\contentsline {section}{\numberline {5.28}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}I\discretionary {-}{}{}D\discretionary {-}{}{}Marker Class Reference}{119}{section.5.28}
-\contentsline {subsection}{\numberline {5.28.1}Detailed Description}{122}{subsection.5.28.1}
-\contentsline {subsection}{\numberline {5.28.2}Constructor \& Destructor Documentation}{122}{subsection.5.28.2}
-\contentsline {subsubsection}{\numberline {5.28.2.1}I\discretionary {-}{}{}D\discretionary {-}{}{}Marker}{122}{subsubsection.5.28.2.1}
-\contentsline {subsection}{\numberline {5.28.3}Member Function Documentation}{122}{subsection.5.28.3}
-\contentsline {subsubsection}{\numberline {5.28.3.1}Accept}{122}{subsubsection.5.28.3.1}
-\contentsline {subsubsection}{\numberline {5.28.3.2}Clone}{122}{subsubsection.5.28.3.2}
-\contentsline {subsubsection}{\numberline {5.28.3.3}get\discretionary {-}{}{}Icon}{122}{subsubsection.5.28.3.3}
-\contentsline {subsubsection}{\numberline {5.28.3.4}get\discretionary {-}{}{}Preview}{122}{subsubsection.5.28.3.4}
-\contentsline {subsubsection}{\numberline {5.28.3.5}init\discretionary {-}{}{}Element}{123}{subsubsection.5.28.3.5}
-\contentsline {subsection}{\numberline {5.28.4}Property Documentation}{123}{subsection.5.28.4}
-\contentsline {subsubsection}{\numberline {5.28.4.1}Matrix\discretionary {-}{}{}I\discretionary {-}{}{}D}{123}{subsubsection.5.28.4.1}
-\contentsline {section}{\numberline {5.29}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Image\discretionary {-}{}{}Augmentation Class Reference}{123}{section.5.29}
-\contentsline {subsection}{\numberline {5.29.1}Detailed Description}{126}{subsection.5.29.1}
-\contentsline {subsection}{\numberline {5.29.2}Constructor \& Destructor Documentation}{126}{subsection.5.29.2}
-\contentsline {subsubsection}{\numberline {5.29.2.1}Image\discretionary {-}{}{}Augmentation}{126}{subsubsection.5.29.2.1}
-\contentsline {subsubsection}{\numberline {5.29.2.2}Image\discretionary {-}{}{}Augmentation}{126}{subsubsection.5.29.2.2}
-\contentsline {subsection}{\numberline {5.29.3}Member Function Documentation}{126}{subsection.5.29.3}
-\contentsline {subsubsection}{\numberline {5.29.3.1}Accept}{126}{subsubsection.5.29.3.1}
-\contentsline {subsubsection}{\numberline {5.29.3.2}Clean\discretionary {-}{}{}Up}{127}{subsubsection.5.29.3.2}
-\contentsline {subsubsection}{\numberline {5.29.3.3}Clone}{127}{subsubsection.5.29.3.3}
-\contentsline {subsubsection}{\numberline {5.29.3.4}get\discretionary {-}{}{}Icon}{127}{subsubsection.5.29.3.4}
-\contentsline {subsubsection}{\numberline {5.29.3.5}get\discretionary {-}{}{}Preview}{127}{subsubsection.5.29.3.5}
-\contentsline {subsubsection}{\numberline {5.29.3.6}init\discretionary {-}{}{}Element}{127}{subsubsection.5.29.3.6}
-\contentsline {subsection}{\numberline {5.29.4}Property Documentation}{128}{subsection.5.29.4}
-\contentsline {subsubsection}{\numberline {5.29.4.1}Height}{128}{subsubsection.5.29.4.1}
-\contentsline {subsubsection}{\numberline {5.29.4.2}Image\discretionary {-}{}{}Path}{128}{subsubsection.5.29.4.2}
-\contentsline {subsubsection}{\numberline {5.29.4.3}Width}{128}{subsubsection.5.29.4.3}
-\contentsline {section}{\numberline {5.30}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Image\discretionary {-}{}{}Trackable Class Reference}{128}{section.5.30}
-\contentsline {subsection}{\numberline {5.30.1}Detailed Description}{131}{subsection.5.30.1}
-\contentsline {subsection}{\numberline {5.30.2}Constructor \& Destructor Documentation}{131}{subsection.5.30.2}
-\contentsline {subsubsection}{\numberline {5.30.2.1}Image\discretionary {-}{}{}Trackable}{131}{subsubsection.5.30.2.1}
-\contentsline {subsubsection}{\numberline {5.30.2.2}Image\discretionary {-}{}{}Trackable}{131}{subsubsection.5.30.2.2}
-\contentsline {subsection}{\numberline {5.30.3}Member Function Documentation}{131}{subsection.5.30.3}
-\contentsline {subsubsection}{\numberline {5.30.3.1}Accept}{131}{subsubsection.5.30.3.1}
-\contentsline {subsubsection}{\numberline {5.30.3.2}Clone}{131}{subsubsection.5.30.3.2}
-\contentsline {subsubsection}{\numberline {5.30.3.3}get\discretionary {-}{}{}Icon}{132}{subsubsection.5.30.3.3}
-\contentsline {subsubsection}{\numberline {5.30.3.4}get\discretionary {-}{}{}Preview}{132}{subsubsection.5.30.3.4}
-\contentsline {subsubsection}{\numberline {5.30.3.5}init\discretionary {-}{}{}Element}{132}{subsubsection.5.30.3.5}
-\contentsline {subsection}{\numberline {5.30.4}Member Data Documentation}{132}{subsection.5.30.4}
-\contentsline {subsubsection}{\numberline {5.30.4.1}image\discretionary {-}{}{}Name}{132}{subsubsection.5.30.4.1}
-\contentsline {subsubsection}{\numberline {5.30.4.2}image\discretionary {-}{}{}Path}{132}{subsubsection.5.30.4.2}
-\contentsline {subsection}{\numberline {5.30.5}Property Documentation}{132}{subsection.5.30.5}
-\contentsline {subsubsection}{\numberline {5.30.5.1}Fuser}{132}{subsubsection.5.30.5.1}
-\contentsline {subsubsection}{\numberline {5.30.5.2}Image\discretionary {-}{}{}Name}{133}{subsubsection.5.30.5.2}
-\contentsline {subsubsection}{\numberline {5.30.5.3}Image\discretionary {-}{}{}Path}{133}{subsubsection.5.30.5.3}
-\contentsline {section}{\numberline {5.31}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}I\discretionary {-}{}{}Previewable Interface Reference}{133}{section.5.31}
-\contentsline {subsection}{\numberline {5.31.1}Detailed Description}{134}{subsection.5.31.1}
-\contentsline {subsection}{\numberline {5.31.2}Member Function Documentation}{134}{subsection.5.31.2}
-\contentsline {subsubsection}{\numberline {5.31.2.1}get\discretionary {-}{}{}Icon}{134}{subsubsection.5.31.2.1}
-\contentsline {subsubsection}{\numberline {5.31.2.2}get\discretionary {-}{}{}Preview}{135}{subsubsection.5.31.2.2}
-\contentsline {subsubsection}{\numberline {5.31.2.3}init\discretionary {-}{}{}Element}{135}{subsubsection.5.31.2.3}
-\contentsline {section}{\numberline {5.32}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}File.\discretionary {-}{}{}Java\discretionary {-}{}{}Script\discretionary {-}{}{}Block Class Reference}{135}{section.5.32}
-\contentsline {subsection}{\numberline {5.32.1}Detailed Description}{138}{subsection.5.32.1}
-\contentsline {subsection}{\numberline {5.32.2}Constructor \& Destructor Documentation}{138}{subsection.5.32.2}
-\contentsline {subsubsection}{\numberline {5.32.2.1}Java\discretionary {-}{}{}Script\discretionary {-}{}{}Block}{138}{subsubsection.5.32.2.1}
-\contentsline {subsubsection}{\numberline {5.32.2.2}Java\discretionary {-}{}{}Script\discretionary {-}{}{}Block}{138}{subsubsection.5.32.2.2}
-\contentsline {subsection}{\numberline {5.32.3}Member Function Documentation}{138}{subsection.5.32.3}
-\contentsline {subsubsection}{\numberline {5.32.3.1}Add\discretionary {-}{}{}Line}{138}{subsubsection.5.32.3.1}
-\contentsline {subsubsection}{\numberline {5.32.3.2}Update}{138}{subsubsection.5.32.3.2}
-\contentsline {subsubsection}{\numberline {5.32.3.3}Write}{139}{subsubsection.5.32.3.3}
-\contentsline {subsection}{\numberline {5.32.4}Member Data Documentation}{139}{subsection.5.32.4}
-\contentsline {subsubsection}{\numberline {5.32.4.1}lines}{139}{subsubsection.5.32.4.1}
+\contentsline {subsection}{\numberline {5.20.1}Detailed Description}{91}{subsection.5.20.1}
+\contentsline {subsection}{\numberline {5.20.2}Constructor \& Destructor Documentation}{91}{subsection.5.20.2}
+\contentsline {subsubsection}{\numberline {5.20.2.1}Debug\discretionary {-}{}{}Window}{91}{subsubsection.5.20.2.1}
+\contentsline {subsection}{\numberline {5.20.3}Member Function Documentation}{91}{subsection.5.20.3}
+\contentsline {subsubsection}{\numberline {5.20.3.1}Append\discretionary {-}{}{}Text}{91}{subsubsection.5.20.3.1}
+\contentsline {subsubsection}{\numberline {5.20.3.2}Dispose}{91}{subsubsection.5.20.3.2}
+\contentsline {subsection}{\numberline {5.20.4}Property Documentation}{91}{subsection.5.20.4}
+\contentsline {subsubsection}{\numberline {5.20.4.1}Rtb\discretionary {-}{}{}\_\discretionary {-}{}{}out}{91}{subsubsection.5.20.4.1}
+\contentsline {section}{\numberline {5.21}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Connections.\discretionary {-}{}{}Device\discretionary {-}{}{}Connection.\discretionary {-}{}{}Device\discretionary {-}{}{}Connection\discretionary {-}{}{}Controller Class Reference}{92}{section.5.21}
+\contentsline {subsection}{\numberline {5.21.1}Detailed Description}{92}{subsection.5.21.1}
+\contentsline {subsection}{\numberline {5.21.2}Constructor \& Destructor Documentation}{93}{subsection.5.21.2}
+\contentsline {subsubsection}{\numberline {5.21.2.1}Device\discretionary {-}{}{}Connection\discretionary {-}{}{}Controller}{93}{subsubsection.5.21.2.1}
+\contentsline {subsection}{\numberline {5.21.3}Member Function Documentation}{94}{subsection.5.21.3}
+\contentsline {subsubsection}{\numberline {5.21.3.1}get\discretionary {-}{}{}Reported\discretionary {-}{}{}Devices}{94}{subsubsection.5.21.3.1}
+\contentsline {subsubsection}{\numberline {5.21.3.2}refresh}{94}{subsubsection.5.21.3.2}
+\contentsline {subsubsection}{\numberline {5.21.3.3}send\discretionary {-}{}{}Debug}{94}{subsubsection.5.21.3.3}
+\contentsline {subsubsection}{\numberline {5.21.3.4}send\discretionary {-}{}{}Project}{94}{subsubsection.5.21.3.4}
+\contentsline {subsection}{\numberline {5.21.4}Property Documentation}{94}{subsection.5.21.4}
+\contentsline {subsubsection}{\numberline {5.21.4.1}Debug\discretionary {-}{}{}Connected}{94}{subsubsection.5.21.4.1}
+\contentsline {section}{\numberline {5.22}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Editor\discretionary {-}{}{}Window Class Reference}{95}{section.5.22}
+\contentsline {subsection}{\numberline {5.22.1}Detailed Description}{98}{subsection.5.22.1}
+\contentsline {subsection}{\numberline {5.22.2}Member Function Documentation}{98}{subsection.5.22.2}
+\contentsline {subsubsection}{\numberline {5.22.2.1}create\discretionary {-}{}{}New\discretionary {-}{}{}Project}{98}{subsubsection.5.22.2.1}
+\contentsline {subsubsection}{\numberline {5.22.2.2}Dispose}{98}{subsubsection.5.22.2.2}
+\contentsline {subsubsection}{\numberline {5.22.2.3}export\discretionary {-}{}{}Project}{98}{subsubsection.5.22.2.3}
+\contentsline {subsubsection}{\numberline {5.22.2.4}load\discretionary {-}{}{}Project}{98}{subsubsection.5.22.2.4}
+\contentsline {subsubsection}{\numberline {5.22.2.5}Player\discretionary {-}{}{}Closed}{99}{subsubsection.5.22.2.5}
+\contentsline {subsubsection}{\numberline {5.22.2.6}Player\discretionary {-}{}{}Started}{99}{subsubsection.5.22.2.6}
+\contentsline {subsubsection}{\numberline {5.22.2.7}register\discretionary {-}{}{}Elements}{99}{subsubsection.5.22.2.7}
+\contentsline {subsubsection}{\numberline {5.22.2.8}save\discretionary {-}{}{}Project}{99}{subsubsection.5.22.2.8}
+\contentsline {subsubsection}{\numberline {5.22.2.9}set\discretionary {-}{}{}Paste\discretionary {-}{}{}Button\discretionary {-}{}{}Enabled}{99}{subsubsection.5.22.2.9}
+\contentsline {subsubsection}{\numberline {5.22.2.10}update\discretionary {-}{}{}Element\discretionary {-}{}{}Selection\discretionary {-}{}{}Panel}{99}{subsubsection.5.22.2.10}
+\contentsline {subsubsection}{\numberline {5.22.2.11}update\discretionary {-}{}{}Preview\discretionary {-}{}{}Panel}{99}{subsubsection.5.22.2.11}
+\contentsline {subsubsection}{\numberline {5.22.2.12}update\discretionary {-}{}{}Scene\discretionary {-}{}{}Selection\discretionary {-}{}{}Panel}{99}{subsubsection.5.22.2.12}
+\contentsline {subsection}{\numberline {5.22.3}Property Documentation}{100}{subsection.5.22.3}
+\contentsline {subsubsection}{\numberline {5.22.3.1}Cmb\discretionary {-}{}{}\_\discretionary {-}{}{}editor\discretionary {-}{}{}\_\discretionary {-}{}{}properties\discretionary {-}{}{}\_\discretionary {-}{}{}object\discretionary {-}{}{}Selection}{100}{subsubsection.5.22.3.1}
+\contentsline {subsubsection}{\numberline {5.22.3.2}Cmb\discretionary {-}{}{}\_\discretionary {-}{}{}editor\discretionary {-}{}{}\_\discretionary {-}{}{}selection\discretionary {-}{}{}\_\discretionary {-}{}{}tool\discretionary {-}{}{}Selection}{100}{subsubsection.5.22.3.2}
+\contentsline {subsubsection}{\numberline {5.22.3.3}Debug\discretionary {-}{}{}Window}{100}{subsubsection.5.22.3.3}
+\contentsline {subsubsection}{\numberline {5.22.3.4}Pnl\discretionary {-}{}{}\_\discretionary {-}{}{}editor\discretionary {-}{}{}\_\discretionary {-}{}{}preview}{100}{subsubsection.5.22.3.4}
+\contentsline {subsubsection}{\numberline {5.22.3.5}Pnl\discretionary {-}{}{}\_\discretionary {-}{}{}editor\discretionary {-}{}{}\_\discretionary {-}{}{}selection}{100}{subsubsection.5.22.3.5}
+\contentsline {subsubsection}{\numberline {5.22.3.6}Preview\discretionary {-}{}{}Controller}{100}{subsubsection.5.22.3.6}
+\contentsline {subsubsection}{\numberline {5.22.3.7}project}{100}{subsubsection.5.22.3.7}
+\contentsline {subsubsection}{\numberline {5.22.3.8}Property\discretionary {-}{}{}Grid1}{100}{subsubsection.5.22.3.8}
+\contentsline {subsubsection}{\numberline {5.22.3.9}Tsm\discretionary {-}{}{}\_\discretionary {-}{}{}editor\discretionary {-}{}{}\_\discretionary {-}{}{}menu\discretionary {-}{}{}\_\discretionary {-}{}{}edit\discretionary {-}{}{}\_\discretionary {-}{}{}copie}{100}{subsubsection.5.22.3.9}
+\contentsline {subsubsection}{\numberline {5.22.3.10}Tsm\discretionary {-}{}{}\_\discretionary {-}{}{}editor\discretionary {-}{}{}\_\discretionary {-}{}{}menu\discretionary {-}{}{}\_\discretionary {-}{}{}edit\discretionary {-}{}{}\_\discretionary {-}{}{}delete}{101}{subsubsection.5.22.3.10}
+\contentsline {subsubsection}{\numberline {5.22.3.11}Tsm\discretionary {-}{}{}\_\discretionary {-}{}{}editor\discretionary {-}{}{}\_\discretionary {-}{}{}menu\discretionary {-}{}{}\_\discretionary {-}{}{}edit\discretionary {-}{}{}\_\discretionary {-}{}{}paste}{101}{subsubsection.5.22.3.11}
+\contentsline {section}{\numberline {5.23}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}View.\discretionary {-}{}{}Element\discretionary {-}{}{}Icon Class Reference}{101}{section.5.23}
+\contentsline {subsection}{\numberline {5.23.1}Detailed Description}{103}{subsection.5.23.1}
+\contentsline {subsection}{\numberline {5.23.2}Constructor \& Destructor Documentation}{103}{subsection.5.23.2}
+\contentsline {subsubsection}{\numberline {5.23.2.1}Element\discretionary {-}{}{}Icon}{103}{subsubsection.5.23.2.1}
+\contentsline {subsection}{\numberline {5.23.3}Member Function Documentation}{103}{subsection.5.23.3}
+\contentsline {subsubsection}{\numberline {5.23.3.1}on\discretionary {-}{}{}Click}{103}{subsubsection.5.23.3.1}
+\contentsline {subsubsection}{\numberline {5.23.3.2}on\discretionary {-}{}{}Mouse\discretionary {-}{}{}Down}{103}{subsubsection.5.23.3.2}
+\contentsline {subsubsection}{\numberline {5.23.3.3}on\discretionary {-}{}{}Mouse\discretionary {-}{}{}Leave}{103}{subsubsection.5.23.3.3}
+\contentsline {subsubsection}{\numberline {5.23.3.4}on\discretionary {-}{}{}Mouse\discretionary {-}{}{}Move}{103}{subsubsection.5.23.3.4}
+\contentsline {subsubsection}{\numberline {5.23.3.5}on\discretionary {-}{}{}Mouse\discretionary {-}{}{}Up}{105}{subsubsection.5.23.3.5}
+\contentsline {subsection}{\numberline {5.23.4}Property Documentation}{105}{subsection.5.23.4}
+\contentsline {subsubsection}{\numberline {5.23.4.1}Editor\discretionary {-}{}{}Window}{105}{subsubsection.5.23.4.1}
+\contentsline {subsubsection}{\numberline {5.23.4.2}Element}{105}{subsubsection.5.23.4.2}
+\contentsline {section}{\numberline {5.24}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Editor\discretionary {-}{}{}Controller.\discretionary {-}{}{}Element\discretionary {-}{}{}Selection\discretionary {-}{}{}Controller Class Reference}{105}{section.5.24}
+\contentsline {subsection}{\numberline {5.24.1}Detailed Description}{106}{subsection.5.24.1}
+\contentsline {subsection}{\numberline {5.24.2}Constructor \& Destructor Documentation}{106}{subsection.5.24.2}
+\contentsline {subsubsection}{\numberline {5.24.2.1}Element\discretionary {-}{}{}Selection\discretionary {-}{}{}Controller}{106}{subsubsection.5.24.2.1}
+\contentsline {subsection}{\numberline {5.24.3}Member Function Documentation}{106}{subsection.5.24.3}
+\contentsline {subsubsection}{\numberline {5.24.3.1}populate\discretionary {-}{}{}Combo\discretionary {-}{}{}Box}{106}{subsubsection.5.24.3.1}
+\contentsline {subsubsection}{\numberline {5.24.3.2}set\discretionary {-}{}{}Element\discretionary {-}{}{}Enable}{106}{subsubsection.5.24.3.2}
+\contentsline {subsubsection}{\numberline {5.24.3.3}update\discretionary {-}{}{}Element\discretionary {-}{}{}Selection\discretionary {-}{}{}Panel}{106}{subsubsection.5.24.3.3}
+\contentsline {subsection}{\numberline {5.24.4}Property Documentation}{107}{subsection.5.24.4}
+\contentsline {subsubsection}{\numberline {5.24.4.1}Category\discretionary {-}{}{}Panels}{107}{subsubsection.5.24.4.1}
+\contentsline {section}{\numberline {5.25}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Project\discretionary {-}{}{}Controller.\discretionary {-}{}{}Export\discretionary {-}{}{}Visitor Class Reference}{107}{section.5.25}
+\contentsline {subsection}{\numberline {5.25.1}Detailed Description}{110}{subsection.5.25.1}
+\contentsline {subsection}{\numberline {5.25.2}Constructor \& Destructor Documentation}{110}{subsection.5.25.2}
+\contentsline {subsubsection}{\numberline {5.25.2.1}Export\discretionary {-}{}{}Visitor}{110}{subsubsection.5.25.2.1}
+\contentsline {subsection}{\numberline {5.25.3}Member Function Documentation}{110}{subsection.5.25.3}
+\contentsline {subsubsection}{\numberline {5.25.3.1}Visit}{110}{subsubsection.5.25.3.1}
+\contentsline {subsubsection}{\numberline {5.25.3.2}Visit}{111}{subsubsection.5.25.3.2}
+\contentsline {subsubsection}{\numberline {5.25.3.3}Visit}{111}{subsubsection.5.25.3.3}
+\contentsline {subsubsection}{\numberline {5.25.3.4}Visit}{111}{subsubsection.5.25.3.4}
+\contentsline {subsubsection}{\numberline {5.25.3.5}Visit}{111}{subsubsection.5.25.3.5}
+\contentsline {subsubsection}{\numberline {5.25.3.6}Visit}{111}{subsubsection.5.25.3.6}
+\contentsline {subsubsection}{\numberline {5.25.3.7}Visit}{112}{subsubsection.5.25.3.7}
+\contentsline {subsubsection}{\numberline {5.25.3.8}Visit}{112}{subsubsection.5.25.3.8}
+\contentsline {subsubsection}{\numberline {5.25.3.9}Visit}{112}{subsubsection.5.25.3.9}
+\contentsline {subsubsection}{\numberline {5.25.3.10}Visit}{112}{subsubsection.5.25.3.10}
+\contentsline {subsubsection}{\numberline {5.25.3.11}Visit}{113}{subsubsection.5.25.3.11}
+\contentsline {subsubsection}{\numberline {5.25.3.12}Visit}{113}{subsubsection.5.25.3.12}
+\contentsline {subsubsection}{\numberline {5.25.3.13}Visit}{113}{subsubsection.5.25.3.13}
+\contentsline {subsubsection}{\numberline {5.25.3.14}Visit}{113}{subsubsection.5.25.3.14}
+\contentsline {subsubsection}{\numberline {5.25.3.15}Visit}{113}{subsubsection.5.25.3.15}
+\contentsline {subsection}{\numberline {5.25.4}Property Documentation}{114}{subsection.5.25.4}
+\contentsline {subsubsection}{\numberline {5.25.4.1}Files}{114}{subsubsection.5.25.4.1}
+\contentsline {section}{\numberline {5.26}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}View.\discretionary {-}{}{}File\discretionary {-}{}{}Selector\discretionary {-}{}{}Type\discretionary {-}{}{}Editor Class Reference}{114}{section.5.26}
+\contentsline {subsection}{\numberline {5.26.1}Detailed Description}{115}{subsection.5.26.1}
+\contentsline {subsection}{\numberline {5.26.2}Member Function Documentation}{115}{subsection.5.26.2}
+\contentsline {subsubsection}{\numberline {5.26.2.1}Edit\discretionary {-}{}{}Value}{115}{subsubsection.5.26.2.1}
+\contentsline {subsubsection}{\numberline {5.26.2.2}Get\discretionary {-}{}{}Edit\discretionary {-}{}{}Style}{116}{subsubsection.5.26.2.2}
+\contentsline {section}{\numberline {5.27}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}File\discretionary {-}{}{}Source Class Reference}{116}{section.5.27}
+\contentsline {subsection}{\numberline {5.27.1}Detailed Description}{119}{subsection.5.27.1}
+\contentsline {subsection}{\numberline {5.27.2}Constructor \& Destructor Documentation}{119}{subsection.5.27.2}
+\contentsline {subsubsection}{\numberline {5.27.2.1}File\discretionary {-}{}{}Source}{119}{subsubsection.5.27.2.1}
+\contentsline {subsection}{\numberline {5.27.3}Member Function Documentation}{119}{subsection.5.27.3}
+\contentsline {subsubsection}{\numberline {5.27.3.1}Accept}{119}{subsubsection.5.27.3.1}
+\contentsline {subsubsection}{\numberline {5.27.3.2}Clone}{119}{subsubsection.5.27.3.2}
+\contentsline {subsubsection}{\numberline {5.27.3.3}get\discretionary {-}{}{}Icon}{120}{subsubsection.5.27.3.3}
+\contentsline {subsection}{\numberline {5.27.4}Property Documentation}{120}{subsection.5.27.4}
+\contentsline {subsubsection}{\numberline {5.27.4.1}Data}{120}{subsubsection.5.27.4.1}
+\contentsline {section}{\numberline {5.28}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}I\discretionary {-}{}{}D\discretionary {-}{}{}Marker Class Reference}{120}{section.5.28}
+\contentsline {subsection}{\numberline {5.28.1}Detailed Description}{123}{subsection.5.28.1}
+\contentsline {subsection}{\numberline {5.28.2}Constructor \& Destructor Documentation}{123}{subsection.5.28.2}
+\contentsline {subsubsection}{\numberline {5.28.2.1}I\discretionary {-}{}{}D\discretionary {-}{}{}Marker}{123}{subsubsection.5.28.2.1}
+\contentsline {subsection}{\numberline {5.28.3}Member Function Documentation}{123}{subsection.5.28.3}
+\contentsline {subsubsection}{\numberline {5.28.3.1}Accept}{123}{subsubsection.5.28.3.1}
+\contentsline {subsubsection}{\numberline {5.28.3.2}Clone}{123}{subsubsection.5.28.3.2}
+\contentsline {subsubsection}{\numberline {5.28.3.3}get\discretionary {-}{}{}Icon}{123}{subsubsection.5.28.3.3}
+\contentsline {subsubsection}{\numberline {5.28.3.4}get\discretionary {-}{}{}Preview}{123}{subsubsection.5.28.3.4}
+\contentsline {subsubsection}{\numberline {5.28.3.5}init\discretionary {-}{}{}Element}{124}{subsubsection.5.28.3.5}
+\contentsline {subsection}{\numberline {5.28.4}Property Documentation}{124}{subsection.5.28.4}
+\contentsline {subsubsection}{\numberline {5.28.4.1}Matrix\discretionary {-}{}{}I\discretionary {-}{}{}D}{124}{subsubsection.5.28.4.1}
+\contentsline {section}{\numberline {5.29}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Image\discretionary {-}{}{}Augmentation Class Reference}{124}{section.5.29}
+\contentsline {subsection}{\numberline {5.29.1}Detailed Description}{127}{subsection.5.29.1}
+\contentsline {subsection}{\numberline {5.29.2}Constructor \& Destructor Documentation}{127}{subsection.5.29.2}
+\contentsline {subsubsection}{\numberline {5.29.2.1}Image\discretionary {-}{}{}Augmentation}{127}{subsubsection.5.29.2.1}
+\contentsline {subsubsection}{\numberline {5.29.2.2}Image\discretionary {-}{}{}Augmentation}{127}{subsubsection.5.29.2.2}
+\contentsline {subsection}{\numberline {5.29.3}Member Function Documentation}{127}{subsection.5.29.3}
+\contentsline {subsubsection}{\numberline {5.29.3.1}Accept}{127}{subsubsection.5.29.3.1}
+\contentsline {subsubsection}{\numberline {5.29.3.2}Clean\discretionary {-}{}{}Up}{128}{subsubsection.5.29.3.2}
+\contentsline {subsubsection}{\numberline {5.29.3.3}Clone}{128}{subsubsection.5.29.3.3}
+\contentsline {subsubsection}{\numberline {5.29.3.4}get\discretionary {-}{}{}Icon}{128}{subsubsection.5.29.3.4}
+\contentsline {subsubsection}{\numberline {5.29.3.5}get\discretionary {-}{}{}Preview}{128}{subsubsection.5.29.3.5}
+\contentsline {subsubsection}{\numberline {5.29.3.6}init\discretionary {-}{}{}Element}{128}{subsubsection.5.29.3.6}
+\contentsline {subsection}{\numberline {5.29.4}Property Documentation}{129}{subsection.5.29.4}
+\contentsline {subsubsection}{\numberline {5.29.4.1}Height}{129}{subsubsection.5.29.4.1}
+\contentsline {subsubsection}{\numberline {5.29.4.2}Width}{129}{subsubsection.5.29.4.2}
+\contentsline {section}{\numberline {5.30}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Image\discretionary {-}{}{}Trackable Class Reference}{129}{section.5.30}
+\contentsline {subsection}{\numberline {5.30.1}Detailed Description}{132}{subsection.5.30.1}
+\contentsline {subsection}{\numberline {5.30.2}Constructor \& Destructor Documentation}{132}{subsection.5.30.2}
+\contentsline {subsubsection}{\numberline {5.30.2.1}Image\discretionary {-}{}{}Trackable}{132}{subsubsection.5.30.2.1}
+\contentsline {subsubsection}{\numberline {5.30.2.2}Image\discretionary {-}{}{}Trackable}{132}{subsubsection.5.30.2.2}
+\contentsline {subsection}{\numberline {5.30.3}Member Function Documentation}{132}{subsection.5.30.3}
+\contentsline {subsubsection}{\numberline {5.30.3.1}Accept}{132}{subsubsection.5.30.3.1}
+\contentsline {subsubsection}{\numberline {5.30.3.2}Clone}{132}{subsubsection.5.30.3.2}
+\contentsline {subsubsection}{\numberline {5.30.3.3}get\discretionary {-}{}{}Icon}{133}{subsubsection.5.30.3.3}
+\contentsline {subsubsection}{\numberline {5.30.3.4}get\discretionary {-}{}{}Preview}{133}{subsubsection.5.30.3.4}
+\contentsline {subsubsection}{\numberline {5.30.3.5}init\discretionary {-}{}{}Element}{133}{subsubsection.5.30.3.5}
+\contentsline {subsection}{\numberline {5.30.4}Member Data Documentation}{133}{subsection.5.30.4}
+\contentsline {subsubsection}{\numberline {5.30.4.1}image\discretionary {-}{}{}Name}{133}{subsubsection.5.30.4.1}
+\contentsline {subsubsection}{\numberline {5.30.4.2}image\discretionary {-}{}{}Path}{133}{subsubsection.5.30.4.2}
+\contentsline {subsection}{\numberline {5.30.5}Property Documentation}{133}{subsection.5.30.5}
+\contentsline {subsubsection}{\numberline {5.30.5.1}Fuser}{133}{subsubsection.5.30.5.1}
+\contentsline {subsubsection}{\numberline {5.30.5.2}Image\discretionary {-}{}{}Name}{134}{subsubsection.5.30.5.2}
+\contentsline {subsubsection}{\numberline {5.30.5.3}Image\discretionary {-}{}{}Path}{134}{subsubsection.5.30.5.3}
+\contentsline {section}{\numberline {5.31}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}I\discretionary {-}{}{}Previewable Interface Reference}{134}{section.5.31}
+\contentsline {subsection}{\numberline {5.31.1}Detailed Description}{135}{subsection.5.31.1}
+\contentsline {subsection}{\numberline {5.31.2}Member Function Documentation}{135}{subsection.5.31.2}
+\contentsline {subsubsection}{\numberline {5.31.2.1}get\discretionary {-}{}{}Icon}{135}{subsubsection.5.31.2.1}
+\contentsline {subsubsection}{\numberline {5.31.2.2}get\discretionary {-}{}{}Preview}{136}{subsubsection.5.31.2.2}
+\contentsline {subsubsection}{\numberline {5.31.2.3}init\discretionary {-}{}{}Element}{136}{subsubsection.5.31.2.3}
+\contentsline {section}{\numberline {5.32}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}File.\discretionary {-}{}{}Java\discretionary {-}{}{}Script\discretionary {-}{}{}Block Class Reference}{136}{section.5.32}
+\contentsline {subsection}{\numberline {5.32.1}Detailed Description}{139}{subsection.5.32.1}
+\contentsline {subsection}{\numberline {5.32.2}Constructor \& Destructor Documentation}{139}{subsection.5.32.2}
+\contentsline {subsubsection}{\numberline {5.32.2.1}Java\discretionary {-}{}{}Script\discretionary {-}{}{}Block}{139}{subsubsection.5.32.2.1}
+\contentsline {subsubsection}{\numberline {5.32.2.2}Java\discretionary {-}{}{}Script\discretionary {-}{}{}Block}{139}{subsubsection.5.32.2.2}
+\contentsline {subsection}{\numberline {5.32.3}Member Function Documentation}{139}{subsection.5.32.3}
+\contentsline {subsubsection}{\numberline {5.32.3.1}Add\discretionary {-}{}{}Line}{139}{subsubsection.5.32.3.1}
+\contentsline {subsubsection}{\numberline {5.32.3.2}Update}{139}{subsubsection.5.32.3.2}
+\contentsline {subsubsection}{\numberline {5.32.3.3}Write}{140}{subsubsection.5.32.3.3}
+\contentsline {subsection}{\numberline {5.32.4}Member Data Documentation}{140}{subsection.5.32.4}
+\contentsline {subsubsection}{\numberline {5.32.4.1}lines}{140}{subsubsection.5.32.4.1}
 \contentsline {section}{\numberline {5.33}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}File.\discretionary {-}{}{}Java\discretionary {-}{}{}Script\discretionary {-}{}{}In\discretionary {-}{}{}Line Class Reference}{140}{section.5.33}
-\contentsline {subsection}{\numberline {5.33.1}Constructor \& Destructor Documentation}{142}{subsection.5.33.1}
-\contentsline {subsubsection}{\numberline {5.33.1.1}Java\discretionary {-}{}{}Script\discretionary {-}{}{}In\discretionary {-}{}{}Line}{142}{subsubsection.5.33.1.1}
-\contentsline {subsubsection}{\numberline {5.33.1.2}Java\discretionary {-}{}{}Script\discretionary {-}{}{}In\discretionary {-}{}{}Line}{142}{subsubsection.5.33.1.2}
-\contentsline {subsection}{\numberline {5.33.2}Member Function Documentation}{142}{subsection.5.33.2}
-\contentsline {subsubsection}{\numberline {5.33.2.1}Write}{142}{subsubsection.5.33.2.1}
-\contentsline {section}{\numberline {5.34}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}File.\discretionary {-}{}{}Java\discretionary {-}{}{}Script\discretionary {-}{}{}Line Class Reference}{142}{section.5.34}
-\contentsline {subsection}{\numberline {5.34.1}Detailed Description}{145}{subsection.5.34.1}
-\contentsline {subsection}{\numberline {5.34.2}Constructor \& Destructor Documentation}{145}{subsection.5.34.2}
-\contentsline {subsubsection}{\numberline {5.34.2.1}Java\discretionary {-}{}{}Script\discretionary {-}{}{}Line}{145}{subsubsection.5.34.2.1}
-\contentsline {subsubsection}{\numberline {5.34.2.2}Java\discretionary {-}{}{}Script\discretionary {-}{}{}Line}{145}{subsubsection.5.34.2.2}
-\contentsline {subsection}{\numberline {5.34.3}Member Function Documentation}{145}{subsection.5.34.3}
-\contentsline {subsubsection}{\numberline {5.34.3.1}Write}{145}{subsubsection.5.34.3.1}
-\contentsline {subsection}{\numberline {5.34.4}Member Data Documentation}{145}{subsection.5.34.4}
-\contentsline {subsubsection}{\numberline {5.34.4.1}content}{145}{subsubsection.5.34.4.1}
-\contentsline {section}{\numberline {5.35}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Marker\discretionary {-}{}{}Fuser Class Reference}{146}{section.5.35}
-\contentsline {subsection}{\numberline {5.35.1}Detailed Description}{147}{subsection.5.35.1}
-\contentsline {subsection}{\numberline {5.35.2}Member Enumeration Documentation}{147}{subsection.5.35.2}
-\contentsline {subsubsection}{\numberline {5.35.2.1}Fuser\discretionary {-}{}{}Types}{147}{subsubsection.5.35.2.1}
-\contentsline {subsection}{\numberline {5.35.3}Constructor \& Destructor Documentation}{147}{subsection.5.35.3}
-\contentsline {subsubsection}{\numberline {5.35.3.1}Marker\discretionary {-}{}{}Fuser}{147}{subsubsection.5.35.3.1}
-\contentsline {subsection}{\numberline {5.35.4}Member Function Documentation}{147}{subsection.5.35.4}
-\contentsline {subsubsection}{\numberline {5.35.4.1}Accept}{147}{subsubsection.5.35.4.1}
-\contentsline {subsection}{\numberline {5.35.5}Property Documentation}{148}{subsection.5.35.5}
-\contentsline {subsubsection}{\numberline {5.35.5.1}Alpha\discretionary {-}{}{}Rotation}{148}{subsubsection.5.35.5.1}
-\contentsline {subsubsection}{\numberline {5.35.5.2}Alpha\discretionary {-}{}{}Translation}{148}{subsubsection.5.35.5.2}
-\contentsline {subsubsection}{\numberline {5.35.5.3}Fuser\discretionary {-}{}{}Type}{148}{subsubsection.5.35.5.3}
-\contentsline {subsubsection}{\numberline {5.35.5.4}Keep\discretionary {-}{}{}Pose\discretionary {-}{}{}For\discretionary {-}{}{}Number\discretionary {-}{}{}Of\discretionary {-}{}{}Frames}{148}{subsubsection.5.35.5.4}
-\contentsline {section}{\numberline {5.36}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Markerless\discretionary {-}{}{}Fuser Class Reference}{148}{section.5.36}
-\contentsline {subsection}{\numberline {5.36.1}Detailed Description}{151}{subsection.5.36.1}
-\contentsline {subsection}{\numberline {5.36.2}Constructor \& Destructor Documentation}{151}{subsection.5.36.2}
-\contentsline {subsubsection}{\numberline {5.36.2.1}Markerless\discretionary {-}{}{}Fuser}{151}{subsubsection.5.36.2.1}
-\contentsline {subsection}{\numberline {5.36.3}Member Function Documentation}{151}{subsection.5.36.3}
-\contentsline {subsubsection}{\numberline {5.36.3.1}Accept}{151}{subsubsection.5.36.3.1}
-\contentsline {subsection}{\numberline {5.36.4}Property Documentation}{151}{subsection.5.36.4}
-\contentsline {subsubsection}{\numberline {5.36.4.1}Continue\discretionary {-}{}{}Lost\discretionary {-}{}{}Tracking\discretionary {-}{}{}With\discretionary {-}{}{}Orientation\discretionary {-}{}{}Sensor}{151}{subsubsection.5.36.4.1}
-\contentsline {subsubsection}{\numberline {5.36.4.2}Gamma\discretionary {-}{}{}Rotation}{151}{subsubsection.5.36.4.2}
-\contentsline {subsubsection}{\numberline {5.36.4.3}Gamma\discretionary {-}{}{}Translation}{151}{subsubsection.5.36.4.3}
-\contentsline {subsubsection}{\numberline {5.36.4.4}Gravity\discretionary {-}{}{}Assistance}{151}{subsubsection.5.36.4.4}
-\contentsline {section}{\numberline {5.37}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Markerless\discretionary {-}{}{}Sensor Class Reference}{151}{section.5.37}
-\contentsline {subsection}{\numberline {5.37.1}Detailed Description}{154}{subsection.5.37.1}
-\contentsline {subsection}{\numberline {5.37.2}Member Enumeration Documentation}{154}{subsection.5.37.2}
-\contentsline {subsubsection}{\numberline {5.37.2.1}Feature\discretionary {-}{}{}Descriptor\discretionary {-}{}{}Alignments}{154}{subsubsection.5.37.2.1}
-\contentsline {subsection}{\numberline {5.37.3}Constructor \& Destructor Documentation}{155}{subsection.5.37.3}
-\contentsline {subsubsection}{\numberline {5.37.3.1}Markerless\discretionary {-}{}{}Sensor}{155}{subsubsection.5.37.3.1}
-\contentsline {subsection}{\numberline {5.37.4}Member Function Documentation}{155}{subsection.5.37.4}
-\contentsline {subsubsection}{\numberline {5.37.4.1}Accept}{155}{subsubsection.5.37.4.1}
-\contentsline {subsection}{\numberline {5.37.5}Member Data Documentation}{155}{subsection.5.37.5}
-\contentsline {subsubsection}{\numberline {5.37.5.1}feature\discretionary {-}{}{}Descriptor\discretionary {-}{}{}Alignment}{155}{subsubsection.5.37.5.1}
-\contentsline {subsubsection}{\numberline {5.37.5.2}max\discretionary {-}{}{}Objects\discretionary {-}{}{}To\discretionary {-}{}{}Detect\discretionary {-}{}{}Per\discretionary {-}{}{}Frame}{155}{subsubsection.5.37.5.2}
-\contentsline {subsubsection}{\numberline {5.37.5.3}max\discretionary {-}{}{}Objects\discretionary {-}{}{}To\discretionary {-}{}{}Track\discretionary {-}{}{}In\discretionary {-}{}{}Parallel}{155}{subsubsection.5.37.5.3}
-\contentsline {subsubsection}{\numberline {5.37.5.4}similarity\discretionary {-}{}{}Threshold}{155}{subsubsection.5.37.5.4}
-\contentsline {subsection}{\numberline {5.37.6}Property Documentation}{156}{subsection.5.37.6}
-\contentsline {subsubsection}{\numberline {5.37.6.1}Feature\discretionary {-}{}{}Descriptor\discretionary {-}{}{}Alignment}{156}{subsubsection.5.37.6.1}
-\contentsline {subsubsection}{\numberline {5.37.6.2}Max\discretionary {-}{}{}Objects\discretionary {-}{}{}To\discretionary {-}{}{}Detect\discretionary {-}{}{}Per\discretionary {-}{}{}Frame}{156}{subsubsection.5.37.6.2}
-\contentsline {subsubsection}{\numberline {5.37.6.3}Max\discretionary {-}{}{}Objects\discretionary {-}{}{}To\discretionary {-}{}{}Track\discretionary {-}{}{}In\discretionary {-}{}{}Parallel}{156}{subsubsection.5.37.6.3}
-\contentsline {subsubsection}{\numberline {5.37.6.4}Similarity\discretionary {-}{}{}Threshold}{156}{subsubsection.5.37.6.4}
+\contentsline {subsection}{\numberline {5.33.1}Detailed Description}{143}{subsection.5.33.1}
+\contentsline {subsection}{\numberline {5.33.2}Constructor \& Destructor Documentation}{143}{subsection.5.33.2}
+\contentsline {subsubsection}{\numberline {5.33.2.1}Java\discretionary {-}{}{}Script\discretionary {-}{}{}In\discretionary {-}{}{}Line}{143}{subsubsection.5.33.2.1}
+\contentsline {subsubsection}{\numberline {5.33.2.2}Java\discretionary {-}{}{}Script\discretionary {-}{}{}In\discretionary {-}{}{}Line}{143}{subsubsection.5.33.2.2}
+\contentsline {subsection}{\numberline {5.33.3}Member Function Documentation}{143}{subsection.5.33.3}
+\contentsline {subsubsection}{\numberline {5.33.3.1}Write}{143}{subsubsection.5.33.3.1}
+\contentsline {section}{\numberline {5.34}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}File.\discretionary {-}{}{}Java\discretionary {-}{}{}Script\discretionary {-}{}{}Line Class Reference}{143}{section.5.34}
+\contentsline {subsection}{\numberline {5.34.1}Detailed Description}{146}{subsection.5.34.1}
+\contentsline {subsection}{\numberline {5.34.2}Constructor \& Destructor Documentation}{146}{subsection.5.34.2}
+\contentsline {subsubsection}{\numberline {5.34.2.1}Java\discretionary {-}{}{}Script\discretionary {-}{}{}Line}{146}{subsubsection.5.34.2.1}
+\contentsline {subsubsection}{\numberline {5.34.2.2}Java\discretionary {-}{}{}Script\discretionary {-}{}{}Line}{146}{subsubsection.5.34.2.2}
+\contentsline {subsection}{\numberline {5.34.3}Member Function Documentation}{146}{subsection.5.34.3}
+\contentsline {subsubsection}{\numberline {5.34.3.1}Write}{146}{subsubsection.5.34.3.1}
+\contentsline {subsection}{\numberline {5.34.4}Member Data Documentation}{146}{subsection.5.34.4}
+\contentsline {subsubsection}{\numberline {5.34.4.1}content}{146}{subsubsection.5.34.4.1}
+\contentsline {section}{\numberline {5.35}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Marker\discretionary {-}{}{}Fuser Class Reference}{147}{section.5.35}
+\contentsline {subsection}{\numberline {5.35.1}Detailed Description}{148}{subsection.5.35.1}
+\contentsline {subsection}{\numberline {5.35.2}Member Enumeration Documentation}{148}{subsection.5.35.2}
+\contentsline {subsubsection}{\numberline {5.35.2.1}Fuser\discretionary {-}{}{}Types}{148}{subsubsection.5.35.2.1}
+\contentsline {subsection}{\numberline {5.35.3}Constructor \& Destructor Documentation}{148}{subsection.5.35.3}
+\contentsline {subsubsection}{\numberline {5.35.3.1}Marker\discretionary {-}{}{}Fuser}{148}{subsubsection.5.35.3.1}
+\contentsline {subsection}{\numberline {5.35.4}Member Function Documentation}{148}{subsection.5.35.4}
+\contentsline {subsubsection}{\numberline {5.35.4.1}Accept}{148}{subsubsection.5.35.4.1}
+\contentsline {subsection}{\numberline {5.35.5}Property Documentation}{149}{subsection.5.35.5}
+\contentsline {subsubsection}{\numberline {5.35.5.1}Alpha\discretionary {-}{}{}Rotation}{149}{subsubsection.5.35.5.1}
+\contentsline {subsubsection}{\numberline {5.35.5.2}Alpha\discretionary {-}{}{}Translation}{149}{subsubsection.5.35.5.2}
+\contentsline {subsubsection}{\numberline {5.35.5.3}Fuser\discretionary {-}{}{}Type}{149}{subsubsection.5.35.5.3}
+\contentsline {subsubsection}{\numberline {5.35.5.4}Keep\discretionary {-}{}{}Pose\discretionary {-}{}{}For\discretionary {-}{}{}Number\discretionary {-}{}{}Of\discretionary {-}{}{}Frames}{149}{subsubsection.5.35.5.4}
+\contentsline {section}{\numberline {5.36}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Markerless\discretionary {-}{}{}Fuser Class Reference}{149}{section.5.36}
+\contentsline {subsection}{\numberline {5.36.1}Detailed Description}{152}{subsection.5.36.1}
+\contentsline {subsection}{\numberline {5.36.2}Constructor \& Destructor Documentation}{152}{subsection.5.36.2}
+\contentsline {subsubsection}{\numberline {5.36.2.1}Markerless\discretionary {-}{}{}Fuser}{152}{subsubsection.5.36.2.1}
+\contentsline {subsection}{\numberline {5.36.3}Member Function Documentation}{152}{subsection.5.36.3}
+\contentsline {subsubsection}{\numberline {5.36.3.1}Accept}{152}{subsubsection.5.36.3.1}
+\contentsline {subsection}{\numberline {5.36.4}Property Documentation}{152}{subsection.5.36.4}
+\contentsline {subsubsection}{\numberline {5.36.4.1}Continue\discretionary {-}{}{}Lost\discretionary {-}{}{}Tracking\discretionary {-}{}{}With\discretionary {-}{}{}Orientation\discretionary {-}{}{}Sensor}{152}{subsubsection.5.36.4.1}
+\contentsline {subsubsection}{\numberline {5.36.4.2}Gamma\discretionary {-}{}{}Rotation}{152}{subsubsection.5.36.4.2}
+\contentsline {subsubsection}{\numberline {5.36.4.3}Gamma\discretionary {-}{}{}Translation}{152}{subsubsection.5.36.4.3}
+\contentsline {subsubsection}{\numberline {5.36.4.4}Gravity\discretionary {-}{}{}Assistance}{152}{subsubsection.5.36.4.4}
+\contentsline {section}{\numberline {5.37}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Markerless\discretionary {-}{}{}Sensor Class Reference}{152}{section.5.37}
+\contentsline {subsection}{\numberline {5.37.1}Detailed Description}{155}{subsection.5.37.1}
+\contentsline {subsection}{\numberline {5.37.2}Member Enumeration Documentation}{155}{subsection.5.37.2}
+\contentsline {subsubsection}{\numberline {5.37.2.1}Feature\discretionary {-}{}{}Descriptor\discretionary {-}{}{}Alignments}{155}{subsubsection.5.37.2.1}
+\contentsline {subsection}{\numberline {5.37.3}Constructor \& Destructor Documentation}{156}{subsection.5.37.3}
+\contentsline {subsubsection}{\numberline {5.37.3.1}Markerless\discretionary {-}{}{}Sensor}{156}{subsubsection.5.37.3.1}
+\contentsline {subsection}{\numberline {5.37.4}Member Function Documentation}{156}{subsection.5.37.4}
+\contentsline {subsubsection}{\numberline {5.37.4.1}Accept}{156}{subsubsection.5.37.4.1}
+\contentsline {subsection}{\numberline {5.37.5}Member Data Documentation}{156}{subsection.5.37.5}
+\contentsline {subsubsection}{\numberline {5.37.5.1}feature\discretionary {-}{}{}Descriptor\discretionary {-}{}{}Alignment}{156}{subsubsection.5.37.5.1}
+\contentsline {subsubsection}{\numberline {5.37.5.2}max\discretionary {-}{}{}Objects\discretionary {-}{}{}To\discretionary {-}{}{}Detect\discretionary {-}{}{}Per\discretionary {-}{}{}Frame}{156}{subsubsection.5.37.5.2}
+\contentsline {subsubsection}{\numberline {5.37.5.3}max\discretionary {-}{}{}Objects\discretionary {-}{}{}To\discretionary {-}{}{}Track\discretionary {-}{}{}In\discretionary {-}{}{}Parallel}{156}{subsubsection.5.37.5.3}
+\contentsline {subsubsection}{\numberline {5.37.5.4}similarity\discretionary {-}{}{}Threshold}{156}{subsubsection.5.37.5.4}
+\contentsline {subsection}{\numberline {5.37.6}Property Documentation}{157}{subsection.5.37.6}
+\contentsline {subsubsection}{\numberline {5.37.6.1}Feature\discretionary {-}{}{}Descriptor\discretionary {-}{}{}Alignment}{157}{subsubsection.5.37.6.1}
+\contentsline {subsubsection}{\numberline {5.37.6.2}Max\discretionary {-}{}{}Objects\discretionary {-}{}{}To\discretionary {-}{}{}Detect\discretionary {-}{}{}Per\discretionary {-}{}{}Frame}{157}{subsubsection.5.37.6.2}
+\contentsline {subsubsection}{\numberline {5.37.6.3}Max\discretionary {-}{}{}Objects\discretionary {-}{}{}To\discretionary {-}{}{}Track\discretionary {-}{}{}In\discretionary {-}{}{}Parallel}{157}{subsubsection.5.37.6.3}
+\contentsline {subsubsection}{\numberline {5.37.6.4}Similarity\discretionary {-}{}{}Threshold}{157}{subsubsection.5.37.6.4}
 \contentsline {section}{\numberline {5.38}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Marker\discretionary {-}{}{}Sensor Class Reference}{157}{section.5.38}
-\contentsline {subsection}{\numberline {5.38.1}Member Enumeration Documentation}{159}{subsection.5.38.1}
-\contentsline {subsubsection}{\numberline {5.38.1.1}Tracking\discretionary {-}{}{}Qualities}{159}{subsubsection.5.38.1.1}
-\contentsline {subsection}{\numberline {5.38.2}Constructor \& Destructor Documentation}{159}{subsection.5.38.2}
-\contentsline {subsubsection}{\numberline {5.38.2.1}Marker\discretionary {-}{}{}Sensor}{159}{subsubsection.5.38.2.1}
-\contentsline {subsection}{\numberline {5.38.3}Member Function Documentation}{159}{subsection.5.38.3}
-\contentsline {subsubsection}{\numberline {5.38.3.1}Accept}{159}{subsubsection.5.38.3.1}
-\contentsline {subsection}{\numberline {5.38.4}Member Data Documentation}{160}{subsection.5.38.4}
-\contentsline {subsubsection}{\numberline {5.38.4.1}number\discretionary {-}{}{}Of\discretionary {-}{}{}Search\discretionary {-}{}{}Iterations}{160}{subsubsection.5.38.4.1}
-\contentsline {subsubsection}{\numberline {5.38.4.2}threshold\discretionary {-}{}{}Offset}{160}{subsubsection.5.38.4.2}
-\contentsline {subsubsection}{\numberline {5.38.4.3}tracking\discretionary {-}{}{}Quality}{160}{subsubsection.5.38.4.3}
-\contentsline {subsection}{\numberline {5.38.5}Property Documentation}{160}{subsection.5.38.5}
-\contentsline {subsubsection}{\numberline {5.38.5.1}Number\discretionary {-}{}{}Of\discretionary {-}{}{}Search\discretionary {-}{}{}Iterations}{160}{subsubsection.5.38.5.1}
-\contentsline {subsubsection}{\numberline {5.38.5.2}Threshold\discretionary {-}{}{}Offset}{160}{subsubsection.5.38.5.2}
-\contentsline {subsubsection}{\numberline {5.38.5.3}Tracking\discretionary {-}{}{}Quality}{160}{subsubsection.5.38.5.3}
-\contentsline {section}{\numberline {5.39}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}File.\discretionary {-}{}{}Non\discretionary {-}{}{}Terminating\discretionary {-}{}{}X\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}Tag Class Reference}{160}{section.5.39}
-\contentsline {subsection}{\numberline {5.39.1}Detailed Description}{162}{subsection.5.39.1}
-\contentsline {subsection}{\numberline {5.39.2}Constructor \& Destructor Documentation}{162}{subsection.5.39.2}
-\contentsline {subsubsection}{\numberline {5.39.2.1}Non\discretionary {-}{}{}Terminating\discretionary {-}{}{}X\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}Tag}{163}{subsubsection.5.39.2.1}
-\contentsline {subsubsection}{\numberline {5.39.2.2}Non\discretionary {-}{}{}Terminating\discretionary {-}{}{}X\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}Tag}{163}{subsubsection.5.39.2.2}
-\contentsline {section}{\numberline {5.40}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Picture\discretionary {-}{}{}Marker Class Reference}{163}{section.5.40}
-\contentsline {subsection}{\numberline {5.40.1}Detailed Description}{166}{subsection.5.40.1}
-\contentsline {subsection}{\numberline {5.40.2}Constructor \& Destructor Documentation}{166}{subsection.5.40.2}
-\contentsline {subsubsection}{\numberline {5.40.2.1}Picture\discretionary {-}{}{}Marker}{166}{subsubsection.5.40.2.1}
-\contentsline {subsubsection}{\numberline {5.40.2.2}Picture\discretionary {-}{}{}Marker}{166}{subsubsection.5.40.2.2}
-\contentsline {subsection}{\numberline {5.40.3}Member Function Documentation}{166}{subsection.5.40.3}
-\contentsline {subsubsection}{\numberline {5.40.3.1}Accept}{166}{subsubsection.5.40.3.1}
-\contentsline {subsubsection}{\numberline {5.40.3.2}Clone}{166}{subsubsection.5.40.3.2}
-\contentsline {subsubsection}{\numberline {5.40.3.3}get\discretionary {-}{}{}Icon}{167}{subsubsection.5.40.3.3}
-\contentsline {subsubsection}{\numberline {5.40.3.4}get\discretionary {-}{}{}Preview}{167}{subsubsection.5.40.3.4}
-\contentsline {subsubsection}{\numberline {5.40.3.5}init\discretionary {-}{}{}Element}{167}{subsubsection.5.40.3.5}
-\contentsline {subsection}{\numberline {5.40.4}Member Data Documentation}{167}{subsection.5.40.4}
-\contentsline {subsubsection}{\numberline {5.40.4.1}picture\discretionary {-}{}{}Name}{167}{subsubsection.5.40.4.1}
-\contentsline {subsubsection}{\numberline {5.40.4.2}picture\discretionary {-}{}{}Path}{167}{subsubsection.5.40.4.2}
-\contentsline {subsection}{\numberline {5.40.5}Property Documentation}{167}{subsection.5.40.5}
-\contentsline {subsubsection}{\numberline {5.40.5.1}Picture\discretionary {-}{}{}Name}{167}{subsubsection.5.40.5.1}
-\contentsline {subsubsection}{\numberline {5.40.5.2}Picture\discretionary {-}{}{}Path}{168}{subsubsection.5.40.5.2}
-\contentsline {section}{\numberline {5.41}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Picture\discretionary {-}{}{}Marker\discretionary {-}{}{}Sensor Class Reference}{168}{section.5.41}
-\contentsline {subsection}{\numberline {5.41.1}Member Enumeration Documentation}{170}{subsection.5.41.1}
-\contentsline {subsubsection}{\numberline {5.41.1.1}Tracking\discretionary {-}{}{}Qualities}{170}{subsubsection.5.41.1.1}
-\contentsline {subsection}{\numberline {5.41.2}Constructor \& Destructor Documentation}{170}{subsection.5.41.2}
-\contentsline {subsubsection}{\numberline {5.41.2.1}Picture\discretionary {-}{}{}Marker\discretionary {-}{}{}Sensor}{170}{subsubsection.5.41.2.1}
-\contentsline {subsection}{\numberline {5.41.3}Member Function Documentation}{170}{subsection.5.41.3}
-\contentsline {subsubsection}{\numberline {5.41.3.1}Accept}{170}{subsubsection.5.41.3.1}
-\contentsline {subsection}{\numberline {5.41.4}Member Data Documentation}{171}{subsection.5.41.4}
-\contentsline {subsubsection}{\numberline {5.41.4.1}number\discretionary {-}{}{}Of\discretionary {-}{}{}Search\discretionary {-}{}{}Iterations}{171}{subsubsection.5.41.4.1}
-\contentsline {subsubsection}{\numberline {5.41.4.2}threshold\discretionary {-}{}{}Offset}{171}{subsubsection.5.41.4.2}
-\contentsline {subsubsection}{\numberline {5.41.4.3}tracking\discretionary {-}{}{}Quality}{171}{subsubsection.5.41.4.3}
-\contentsline {subsection}{\numberline {5.41.5}Property Documentation}{171}{subsection.5.41.5}
-\contentsline {subsubsection}{\numberline {5.41.5.1}Number\discretionary {-}{}{}Of\discretionary {-}{}{}Search\discretionary {-}{}{}Iterations}{171}{subsubsection.5.41.5.1}
-\contentsline {subsubsection}{\numberline {5.41.5.2}Threshold\discretionary {-}{}{}Offset}{171}{subsubsection.5.41.5.2}
-\contentsline {subsubsection}{\numberline {5.41.5.3}Tracking\discretionary {-}{}{}Quality}{171}{subsubsection.5.41.5.3}
-\contentsline {section}{\numberline {5.42}Preview\discretionary {-}{}{}Controller Class Reference}{172}{section.5.42}
-\contentsline {subsection}{\numberline {5.42.1}Constructor \& Destructor Documentation}{173}{subsection.5.42.1}
-\contentsline {subsubsection}{\numberline {5.42.1.1}Preview\discretionary {-}{}{}Controller}{173}{subsubsection.5.42.1.1}
-\contentsline {subsection}{\numberline {5.42.2}Member Function Documentation}{174}{subsection.5.42.2}
-\contentsline {subsubsection}{\numberline {5.42.2.1}add\discretionary {-}{}{}Preview\discretionary {-}{}{}Able}{174}{subsubsection.5.42.2.1}
-\contentsline {subsubsection}{\numberline {5.42.2.2}add\discretionary {-}{}{}Previewable}{174}{subsubsection.5.42.2.2}
-\contentsline {subsubsection}{\numberline {5.42.2.3}add\discretionary {-}{}{}Source}{174}{subsubsection.5.42.2.3}
-\contentsline {subsubsection}{\numberline {5.42.2.4}copy\discretionary {-}{}{}\_\discretionary {-}{}{}augmentation}{175}{subsubsection.5.42.2.4}
-\contentsline {subsubsection}{\numberline {5.42.2.5}find\discretionary {-}{}{}Box}{175}{subsubsection.5.42.2.5}
-\contentsline {subsubsection}{\numberline {5.42.2.6}get\discretionary {-}{}{}Sized\discretionary {-}{}{}Bitmap}{176}{subsubsection.5.42.2.6}
-\contentsline {subsubsection}{\numberline {5.42.2.7}on\discretionary {-}{}{}Augmentation\discretionary {-}{}{}Drop}{176}{subsubsection.5.42.2.7}
-\contentsline {subsubsection}{\numberline {5.42.2.8}on\discretionary {-}{}{}Augmentation\discretionary {-}{}{}Enter}{177}{subsubsection.5.42.2.8}
-\contentsline {subsubsection}{\numberline {5.42.2.9}paste\discretionary {-}{}{}\_\discretionary {-}{}{}augmentation}{177}{subsubsection.5.42.2.9}
-\contentsline {subsubsection}{\numberline {5.42.2.10}paste\discretionary {-}{}{}\_\discretionary {-}{}{}augmentation\discretionary {-}{}{}\_\discretionary {-}{}{}center}{178}{subsubsection.5.42.2.10}
-\contentsline {subsubsection}{\numberline {5.42.2.11}reload\discretionary {-}{}{}Previewable}{178}{subsubsection.5.42.2.11}
-\contentsline {subsubsection}{\numberline {5.42.2.12}reload\discretionary {-}{}{}Preview\discretionary {-}{}{}Panel}{178}{subsubsection.5.42.2.12}
-\contentsline {subsubsection}{\numberline {5.42.2.13}remove\discretionary {-}{}{}Previewable}{179}{subsubsection.5.42.2.13}
-\contentsline {subsubsection}{\numberline {5.42.2.14}remove\discretionary {-}{}{}Source}{179}{subsubsection.5.42.2.14}
-\contentsline {subsubsection}{\numberline {5.42.2.15}rescale\discretionary {-}{}{}Preview\discretionary {-}{}{}Panel}{180}{subsubsection.5.42.2.15}
-\contentsline {subsubsection}{\numberline {5.42.2.16}rotate\discretionary {-}{}{}Augmentation}{180}{subsubsection.5.42.2.16}
-\contentsline {subsubsection}{\numberline {5.42.2.17}scale\discretionary {-}{}{}Bitmap}{180}{subsubsection.5.42.2.17}
-\contentsline {subsubsection}{\numberline {5.42.2.18}scale\discretionary {-}{}{}I\discretionary {-}{}{}Previewable}{180}{subsubsection.5.42.2.18}
-\contentsline {subsubsection}{\numberline {5.42.2.19}set\discretionary {-}{}{}Coordinates}{180}{subsubsection.5.42.2.19}
-\contentsline {subsubsection}{\numberline {5.42.2.20}set\discretionary {-}{}{}Current\discretionary {-}{}{}Element}{180}{subsubsection.5.42.2.20}
-\contentsline {subsubsection}{\numberline {5.42.2.21}update\discretionary {-}{}{}Element\discretionary {-}{}{}Combobox}{181}{subsubsection.5.42.2.21}
-\contentsline {subsubsection}{\numberline {5.42.2.22}update\discretionary {-}{}{}Preview\discretionary {-}{}{}Panel}{182}{subsubsection.5.42.2.22}
-\contentsline {subsubsection}{\numberline {5.42.2.23}update\discretionary {-}{}{}Translation}{182}{subsubsection.5.42.2.23}
-\contentsline {subsection}{\numberline {5.42.3}Member Data Documentation}{182}{subsection.5.42.3}
-\contentsline {subsubsection}{\numberline {5.42.3.1}index}{182}{subsubsection.5.42.3.1}
-\contentsline {subsection}{\numberline {5.42.4}Property Documentation}{182}{subsection.5.42.4}
-\contentsline {subsubsection}{\numberline {5.42.4.1}copy}{182}{subsubsection.5.42.4.1}
-\contentsline {section}{\numberline {5.43}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Test\discretionary {-}{}{}Controller.\discretionary {-}{}{}Process\discretionary {-}{}{}Video\discretionary {-}{}{}Window Class Reference}{183}{section.5.43}
-\contentsline {subsection}{\numberline {5.43.1}Member Function Documentation}{184}{subsection.5.43.1}
-\contentsline {subsubsection}{\numberline {5.43.1.1}Dispose}{184}{subsubsection.5.43.1.1}
-\contentsline {subsubsection}{\numberline {5.43.1.2}extract\discretionary {-}{}{}Frames}{184}{subsubsection.5.43.1.2}
-\contentsline {subsection}{\numberline {5.43.2}Property Documentation}{184}{subsection.5.43.2}
-\contentsline {subsubsection}{\numberline {5.43.2.1}F\discretionary {-}{}{}P\discretionary {-}{}{}S}{184}{subsubsection.5.43.2.1}
-\contentsline {section}{\numberline {5.44}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Project Class Reference}{184}{section.5.44}
-\contentsline {subsection}{\numberline {5.44.1}Detailed Description}{186}{subsection.5.44.1}
-\contentsline {subsection}{\numberline {5.44.2}Constructor \& Destructor Documentation}{186}{subsection.5.44.2}
-\contentsline {subsubsection}{\numberline {5.44.2.1}Project}{186}{subsubsection.5.44.2.1}
-\contentsline {subsubsection}{\numberline {5.44.2.2}Project}{186}{subsubsection.5.44.2.2}
-\contentsline {subsubsection}{\numberline {5.44.2.3}Project}{187}{subsubsection.5.44.2.3}
-\contentsline {subsection}{\numberline {5.44.3}Member Function Documentation}{187}{subsection.5.44.3}
-\contentsline {subsubsection}{\numberline {5.44.3.1}Accept}{187}{subsubsection.5.44.3.1}
-\contentsline {subsubsection}{\numberline {5.44.3.2}exist\discretionary {-}{}{}Source}{187}{subsubsection.5.44.3.2}
-\contentsline {subsubsection}{\numberline {5.44.3.3}exist\discretionary {-}{}{}Trackable}{187}{subsubsection.5.44.3.3}
-\contentsline {subsubsection}{\numberline {5.44.3.4}exist\discretionary {-}{}{}Trackable}{188}{subsubsection.5.44.3.4}
-\contentsline {subsubsection}{\numberline {5.44.3.5}find\discretionary {-}{}{}Source}{188}{subsubsection.5.44.3.5}
-\contentsline {subsubsection}{\numberline {5.44.3.6}get\discretionary {-}{}{}Checksum}{188}{subsubsection.5.44.3.6}
-\contentsline {subsubsection}{\numberline {5.44.3.7}has\discretionary {-}{}{}Trackable}{188}{subsubsection.5.44.3.7}
-\contentsline {subsubsection}{\numberline {5.44.3.8}next\discretionary {-}{}{}I\discretionary {-}{}{}D}{189}{subsubsection.5.44.3.8}
-\contentsline {subsection}{\numberline {5.44.4}Member Data Documentation}{189}{subsection.5.44.4}
-\contentsline {subsubsection}{\numberline {5.44.4.1}sensor}{189}{subsubsection.5.44.4.1}
-\contentsline {subsection}{\numberline {5.44.5}Property Documentation}{189}{subsection.5.44.5}
-\contentsline {subsubsection}{\numberline {5.44.5.1}Name}{189}{subsubsection.5.44.5.1}
-\contentsline {subsubsection}{\numberline {5.44.5.2}Project\discretionary {-}{}{}Path}{189}{subsubsection.5.44.5.2}
-\contentsline {subsubsection}{\numberline {5.44.5.3}Screensize}{189}{subsubsection.5.44.5.3}
-\contentsline {subsubsection}{\numberline {5.44.5.4}Sensor}{189}{subsubsection.5.44.5.4}
-\contentsline {subsubsection}{\numberline {5.44.5.5}Sources}{189}{subsubsection.5.44.5.5}
-\contentsline {subsubsection}{\numberline {5.44.5.6}Trackables}{189}{subsubsection.5.44.5.6}
-\contentsline {section}{\numberline {5.45}Controller.\discretionary {-}{}{}Editor\discretionary {-}{}{}Controller.\discretionary {-}{}{}Property\discretionary {-}{}{}Controller Class Reference}{190}{section.5.45}
-\contentsline {subsection}{\numberline {5.45.1}Detailed Description}{190}{subsection.5.45.1}
-\contentsline {subsection}{\numberline {5.45.2}Constructor \& Destructor Documentation}{190}{subsection.5.45.2}
-\contentsline {subsubsection}{\numberline {5.45.2.1}Property\discretionary {-}{}{}Controller}{190}{subsubsection.5.45.2.1}
-\contentsline {subsection}{\numberline {5.45.3}Member Function Documentation}{190}{subsection.5.45.3}
-\contentsline {subsubsection}{\numberline {5.45.3.1}add\discretionary {-}{}{}Custom\discretionary {-}{}{}User\discretionary {-}{}{}Event}{190}{subsubsection.5.45.3.1}
-\contentsline {subsubsection}{\numberline {5.45.3.2}edit\discretionary {-}{}{}Custom\discretionary {-}{}{}User\discretionary {-}{}{}Event}{190}{subsubsection.5.45.3.2}
-\contentsline {section}{\numberline {5.46}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Editor\discretionary {-}{}{}Controller.\discretionary {-}{}{}Scene\discretionary {-}{}{}Element Class Reference}{191}{section.5.46}
-\contentsline {subsection}{\numberline {5.46.1}Detailed Description}{191}{subsection.5.46.1}
-\contentsline {subsection}{\numberline {5.46.2}Constructor \& Destructor Documentation}{191}{subsection.5.46.2}
-\contentsline {subsubsection}{\numberline {5.46.2.1}Scene\discretionary {-}{}{}Element}{192}{subsubsection.5.46.2.1}
-\contentsline {subsection}{\numberline {5.46.3}Member Function Documentation}{192}{subsection.5.46.3}
-\contentsline {subsubsection}{\numberline {5.46.3.1}To\discretionary {-}{}{}String}{192}{subsubsection.5.46.3.1}
-\contentsline {subsection}{\numberline {5.46.4}Property Documentation}{192}{subsection.5.46.4}
-\contentsline {subsubsection}{\numberline {5.46.4.1}Element\discretionary {-}{}{}Icon}{192}{subsubsection.5.46.4.1}
-\contentsline {subsubsection}{\numberline {5.46.4.2}Icon}{192}{subsubsection.5.46.4.2}
-\contentsline {subsubsection}{\numberline {5.46.4.3}Name}{192}{subsubsection.5.46.4.3}
-\contentsline {subsubsection}{\numberline {5.46.4.4}Prototype}{192}{subsubsection.5.46.4.4}
-\contentsline {section}{\numberline {5.47}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Editor\discretionary {-}{}{}Controller.\discretionary {-}{}{}Scene\discretionary {-}{}{}Element\discretionary {-}{}{}Category Class Reference}{193}{section.5.47}
-\contentsline {subsection}{\numberline {5.47.1}Detailed Description}{193}{subsection.5.47.1}
-\contentsline {subsection}{\numberline {5.47.2}Constructor \& Destructor Documentation}{193}{subsection.5.47.2}
-\contentsline {subsubsection}{\numberline {5.47.2.1}Scene\discretionary {-}{}{}Element\discretionary {-}{}{}Category}{193}{subsubsection.5.47.2.1}
-\contentsline {subsection}{\numberline {5.47.3}Member Function Documentation}{195}{subsection.5.47.3}
-\contentsline {subsubsection}{\numberline {5.47.3.1}add\discretionary {-}{}{}Element}{195}{subsubsection.5.47.3.1}
-\contentsline {subsubsection}{\numberline {5.47.3.2}To\discretionary {-}{}{}String}{195}{subsubsection.5.47.3.2}
-\contentsline {subsection}{\numberline {5.47.4}Property Documentation}{195}{subsection.5.47.4}
-\contentsline {subsubsection}{\numberline {5.47.4.1}Category}{195}{subsubsection.5.47.4.1}
-\contentsline {subsubsection}{\numberline {5.47.4.2}Name}{195}{subsubsection.5.47.4.2}
-\contentsline {subsubsection}{\numberline {5.47.4.3}Scene\discretionary {-}{}{}Elements}{195}{subsubsection.5.47.4.3}
-\contentsline {section}{\numberline {5.48}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}View.\discretionary {-}{}{}Scene\discretionary {-}{}{}Element\discretionary {-}{}{}Category\discretionary {-}{}{}Panel Class Reference}{195}{section.5.48}
-\contentsline {subsection}{\numberline {5.48.1}Detailed Description}{197}{subsection.5.48.1}
-\contentsline {subsection}{\numberline {5.48.2}Constructor \& Destructor Documentation}{197}{subsection.5.48.2}
-\contentsline {subsubsection}{\numberline {5.48.2.1}Scene\discretionary {-}{}{}Element\discretionary {-}{}{}Category\discretionary {-}{}{}Panel}{197}{subsubsection.5.48.2.1}
-\contentsline {subsection}{\numberline {5.48.3}Member Function Documentation}{197}{subsection.5.48.3}
-\contentsline {subsubsection}{\numberline {5.48.3.1}add}{197}{subsubsection.5.48.3.1}
-\contentsline {subsubsection}{\numberline {5.48.3.2}To\discretionary {-}{}{}String}{197}{subsubsection.5.48.3.2}
-\contentsline {subsection}{\numberline {5.48.4}Property Documentation}{198}{subsection.5.48.4}
-\contentsline {subsubsection}{\numberline {5.48.4.1}Category}{198}{subsubsection.5.48.4.1}
-\contentsline {subsubsection}{\numberline {5.48.4.2}Category\discretionary {-}{}{}Name}{198}{subsubsection.5.48.4.2}
-\contentsline {section}{\numberline {5.49}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Screen\discretionary {-}{}{}Size Class Reference}{198}{section.5.49}
-\contentsline {subsection}{\numberline {5.49.1}Detailed Description}{198}{subsection.5.49.1}
-\contentsline {subsection}{\numberline {5.49.2}Constructor \& Destructor Documentation}{199}{subsection.5.49.2}
-\contentsline {subsubsection}{\numberline {5.49.2.1}Screen\discretionary {-}{}{}Size}{199}{subsubsection.5.49.2.1}
-\contentsline {subsection}{\numberline {5.49.3}Property Documentation}{199}{subsection.5.49.3}
-\contentsline {subsubsection}{\numberline {5.49.3.1}Height}{199}{subsubsection.5.49.3.1}
-\contentsline {subsubsection}{\numberline {5.49.3.2}Size\discretionary {-}{}{}Changed}{199}{subsubsection.5.49.3.2}
-\contentsline {subsubsection}{\numberline {5.49.3.3}Width}{199}{subsubsection.5.49.3.3}
-\contentsline {section}{\numberline {5.50}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}View.\discretionary {-}{}{}Slider Class Reference}{200}{section.5.50}
-\contentsline {subsection}{\numberline {5.50.1}Constructor \& Destructor Documentation}{201}{subsection.5.50.1}
-\contentsline {subsubsection}{\numberline {5.50.1.1}Slider}{201}{subsubsection.5.50.1.1}
-\contentsline {subsubsection}{\numberline {5.50.1.2}Slider}{201}{subsubsection.5.50.1.2}
-\contentsline {subsection}{\numberline {5.50.2}Member Function Documentation}{201}{subsection.5.50.2}
-\contentsline {subsubsection}{\numberline {5.50.2.1}Dispose}{201}{subsubsection.5.50.2.1}
-\contentsline {subsection}{\numberline {5.50.3}Property Documentation}{201}{subsection.5.50.3}
-\contentsline {subsubsection}{\numberline {5.50.3.1}Slider\discretionary {-}{}{}Value\discretionary {-}{}{}Double}{201}{subsubsection.5.50.3.1}
-\contentsline {subsubsection}{\numberline {5.50.3.2}Slider\discretionary {-}{}{}Value\discretionary {-}{}{}Int}{202}{subsubsection.5.50.3.2}
-\contentsline {section}{\numberline {5.51}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}View.\discretionary {-}{}{}Slider\discretionary {-}{}{}Editor Class Reference}{202}{section.5.51}
-\contentsline {subsection}{\numberline {5.51.1}Detailed Description}{203}{subsection.5.51.1}
-\contentsline {subsection}{\numberline {5.51.2}Constructor \& Destructor Documentation}{203}{subsection.5.51.2}
-\contentsline {subsubsection}{\numberline {5.51.2.1}Slider\discretionary {-}{}{}Editor}{203}{subsubsection.5.51.2.1}
-\contentsline {subsection}{\numberline {5.51.3}Member Function Documentation}{203}{subsection.5.51.3}
-\contentsline {subsubsection}{\numberline {5.51.3.1}Edit\discretionary {-}{}{}Value}{203}{subsubsection.5.51.3.1}
-\contentsline {subsubsection}{\numberline {5.51.3.2}Get\discretionary {-}{}{}Edit\discretionary {-}{}{}Style}{203}{subsubsection.5.51.3.2}
-\contentsline {section}{\numberline {5.52}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}View.\discretionary {-}{}{}Text\discretionary {-}{}{}Editor Class Reference}{204}{section.5.52}
-\contentsline {subsection}{\numberline {5.52.1}Detailed Description}{205}{subsection.5.52.1}
-\contentsline {subsection}{\numberline {5.52.2}Constructor \& Destructor Documentation}{205}{subsection.5.52.2}
-\contentsline {subsubsection}{\numberline {5.52.2.1}Text\discretionary {-}{}{}Editor}{205}{subsubsection.5.52.2.1}
-\contentsline {subsection}{\numberline {5.52.3}Member Function Documentation}{205}{subsection.5.52.3}
-\contentsline {subsubsection}{\numberline {5.52.3.1}Edit\discretionary {-}{}{}Value}{205}{subsubsection.5.52.3.1}
-\contentsline {subsubsection}{\numberline {5.52.3.2}Get\discretionary {-}{}{}Edit\discretionary {-}{}{}Style}{206}{subsubsection.5.52.3.2}
-\contentsline {section}{\numberline {5.53}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Text\discretionary {-}{}{}Editor\discretionary {-}{}{}Form Class Reference}{206}{section.5.53}
-\contentsline {subsection}{\numberline {5.53.1}Constructor \& Destructor Documentation}{207}{subsection.5.53.1}
-\contentsline {subsubsection}{\numberline {5.53.1.1}Text\discretionary {-}{}{}Editor\discretionary {-}{}{}Form}{207}{subsubsection.5.53.1.1}
-\contentsline {subsubsection}{\numberline {5.53.1.2}Text\discretionary {-}{}{}Editor\discretionary {-}{}{}Form}{207}{subsubsection.5.53.1.2}
-\contentsline {subsection}{\numberline {5.53.2}Member Function Documentation}{208}{subsection.5.53.2}
-\contentsline {subsubsection}{\numberline {5.53.2.1}Dispose}{208}{subsubsection.5.53.2.1}
-\contentsline {subsection}{\numberline {5.53.3}Property Documentation}{208}{subsection.5.53.3}
-\contentsline {subsubsection}{\numberline {5.53.3.1}Value}{208}{subsubsection.5.53.3.1}
-\contentsline {section}{\numberline {5.54}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Editor\discretionary {-}{}{}Controller.\discretionary {-}{}{}Thumb\discretionary {-}{}{}Creator Class Reference}{208}{section.5.54}
-\contentsline {subsection}{\numberline {5.54.1}Member Function Documentation}{208}{subsection.5.54.1}
-\contentsline {subsubsection}{\numberline {5.54.1.1}Create\discretionary {-}{}{}Thumb}{208}{subsubsection.5.54.1.1}
-\contentsline {section}{\numberline {5.55}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}File.\discretionary {-}{}{}Tracking\discretionary {-}{}{}Data\discretionary {-}{}{}File Class Reference}{209}{section.5.55}
-\contentsline {subsection}{\numberline {5.55.1}Detailed Description}{210}{subsection.5.55.1}
-\contentsline {subsection}{\numberline {5.55.2}Constructor \& Destructor Documentation}{211}{subsection.5.55.2}
-\contentsline {subsubsection}{\numberline {5.55.2.1}Tracking\discretionary {-}{}{}Data\discretionary {-}{}{}File}{211}{subsubsection.5.55.2.1}
-\contentsline {subsection}{\numberline {5.55.3}Member Function Documentation}{211}{subsection.5.55.3}
-\contentsline {subsubsection}{\numberline {5.55.3.1}Save}{211}{subsubsection.5.55.3.1}
-\contentsline {subsubsection}{\numberline {5.55.3.2}Save}{211}{subsubsection.5.55.3.2}
-\contentsline {subsection}{\numberline {5.55.4}Member Data Documentation}{211}{subsection.5.55.4}
-\contentsline {subsubsection}{\numberline {5.55.4.1}header}{211}{subsubsection.5.55.4.1}
-\contentsline {section}{\numberline {5.56}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Vector3\discretionary {-}{}{}D Class Reference}{211}{section.5.56}
-\contentsline {subsection}{\numberline {5.56.1}Detailed Description}{213}{subsection.5.56.1}
-\contentsline {subsection}{\numberline {5.56.2}Constructor \& Destructor Documentation}{213}{subsection.5.56.2}
-\contentsline {subsubsection}{\numberline {5.56.2.1}Vector3\discretionary {-}{}{}D}{213}{subsubsection.5.56.2.1}
-\contentsline {subsection}{\numberline {5.56.3}Property Documentation}{213}{subsection.5.56.3}
-\contentsline {subsubsection}{\numberline {5.56.3.1}X}{213}{subsubsection.5.56.3.1}
-\contentsline {subsubsection}{\numberline {5.56.3.2}Y}{213}{subsubsection.5.56.3.2}
-\contentsline {subsubsection}{\numberline {5.56.3.3}Z}{213}{subsubsection.5.56.3.3}
-\contentsline {section}{\numberline {5.57}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Vector3\discretionary {-}{}{}Di Class Reference}{213}{section.5.57}
-\contentsline {subsection}{\numberline {5.57.1}Detailed Description}{215}{subsection.5.57.1}
-\contentsline {subsection}{\numberline {5.57.2}Constructor \& Destructor Documentation}{215}{subsection.5.57.2}
-\contentsline {subsubsection}{\numberline {5.57.2.1}Vector3\discretionary {-}{}{}Di}{215}{subsubsection.5.57.2.1}
-\contentsline {subsection}{\numberline {5.57.3}Property Documentation}{215}{subsection.5.57.3}
-\contentsline {subsubsection}{\numberline {5.57.3.1}W}{215}{subsubsection.5.57.3.1}
-\contentsline {section}{\numberline {5.58}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Video\discretionary {-}{}{}Augmentation Class Reference}{216}{section.5.58}
-\contentsline {subsection}{\numberline {5.58.1}Constructor \& Destructor Documentation}{218}{subsection.5.58.1}
-\contentsline {subsubsection}{\numberline {5.58.1.1}Video\discretionary {-}{}{}Augmentation}{218}{subsubsection.5.58.1.1}
-\contentsline {subsubsection}{\numberline {5.58.1.2}Video\discretionary {-}{}{}Augmentation}{218}{subsubsection.5.58.1.2}
-\contentsline {subsection}{\numberline {5.58.2}Member Function Documentation}{218}{subsection.5.58.2}
-\contentsline {subsubsection}{\numberline {5.58.2.1}Accept}{218}{subsubsection.5.58.2.1}
-\contentsline {subsubsection}{\numberline {5.58.2.2}Clean\discretionary {-}{}{}Up}{219}{subsubsection.5.58.2.2}
-\contentsline {subsubsection}{\numberline {5.58.2.3}Clone}{219}{subsubsection.5.58.2.3}
-\contentsline {subsubsection}{\numberline {5.58.2.4}get\discretionary {-}{}{}Icon}{219}{subsubsection.5.58.2.4}
-\contentsline {subsubsection}{\numberline {5.58.2.5}get\discretionary {-}{}{}Preview}{219}{subsubsection.5.58.2.5}
-\contentsline {subsubsection}{\numberline {5.58.2.6}init\discretionary {-}{}{}Element}{219}{subsubsection.5.58.2.6}
-\contentsline {subsection}{\numberline {5.58.3}Property Documentation}{220}{subsection.5.58.3}
-\contentsline {subsubsection}{\numberline {5.58.3.1}Height}{220}{subsubsection.5.58.3.1}
-\contentsline {subsubsection}{\numberline {5.58.3.2}Video\discretionary {-}{}{}Path}{220}{subsubsection.5.58.3.2}
-\contentsline {subsubsection}{\numberline {5.58.3.3}Width}{220}{subsubsection.5.58.3.3}
-\contentsline {section}{\numberline {5.59}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}File.\discretionary {-}{}{}X\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}Block Class Reference}{220}{section.5.59}
-\contentsline {subsection}{\numberline {5.59.1}Detailed Description}{223}{subsection.5.59.1}
-\contentsline {subsection}{\numberline {5.59.2}Constructor \& Destructor Documentation}{223}{subsection.5.59.2}
-\contentsline {subsubsection}{\numberline {5.59.2.1}X\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}Block}{223}{subsubsection.5.59.2.1}
-\contentsline {subsection}{\numberline {5.59.3}Member Function Documentation}{223}{subsection.5.59.3}
-\contentsline {subsubsection}{\numberline {5.59.3.1}Add\discretionary {-}{}{}Line}{223}{subsubsection.5.59.3.1}
-\contentsline {subsubsection}{\numberline {5.59.3.2}Update}{223}{subsubsection.5.59.3.2}
-\contentsline {subsubsection}{\numberline {5.59.3.3}Write}{223}{subsubsection.5.59.3.3}
-\contentsline {subsection}{\numberline {5.59.4}Member Data Documentation}{224}{subsection.5.59.4}
-\contentsline {subsubsection}{\numberline {5.59.4.1}lines}{224}{subsubsection.5.59.4.1}
-\contentsline {section}{\numberline {5.60}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}File.\discretionary {-}{}{}X\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}Line Class Reference}{224}{section.5.60}
-\contentsline {subsection}{\numberline {5.60.1}Detailed Description}{226}{subsection.5.60.1}
-\contentsline {subsection}{\numberline {5.60.2}Constructor \& Destructor Documentation}{226}{subsection.5.60.2}
-\contentsline {subsubsection}{\numberline {5.60.2.1}X\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}Line}{226}{subsubsection.5.60.2.1}
-\contentsline {subsubsection}{\numberline {5.60.2.2}X\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}Line}{226}{subsubsection.5.60.2.2}
-\contentsline {subsection}{\numberline {5.60.3}Member Function Documentation}{226}{subsection.5.60.3}
-\contentsline {subsubsection}{\numberline {5.60.3.1}Write}{226}{subsubsection.5.60.3.1}
-\contentsline {section}{\numberline {5.61}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}File.\discretionary {-}{}{}X\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}Tag Class Reference}{226}{section.5.61}
-\contentsline {subsection}{\numberline {5.61.1}Detailed Description}{228}{subsection.5.61.1}
-\contentsline {subsection}{\numberline {5.61.2}Constructor \& Destructor Documentation}{228}{subsection.5.61.2}
-\contentsline {subsubsection}{\numberline {5.61.2.1}X\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}Tag}{228}{subsubsection.5.61.2.1}
-\contentsline {subsubsection}{\numberline {5.61.2.2}X\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}Tag}{229}{subsubsection.5.61.2.2}
+\contentsline {subsection}{\numberline {5.38.1}Detailed Description}{160}{subsection.5.38.1}
+\contentsline {subsection}{\numberline {5.38.2}Member Enumeration Documentation}{160}{subsection.5.38.2}
+\contentsline {subsubsection}{\numberline {5.38.2.1}Tracking\discretionary {-}{}{}Qualities}{160}{subsubsection.5.38.2.1}
+\contentsline {subsection}{\numberline {5.38.3}Constructor \& Destructor Documentation}{160}{subsection.5.38.3}
+\contentsline {subsubsection}{\numberline {5.38.3.1}Marker\discretionary {-}{}{}Sensor}{160}{subsubsection.5.38.3.1}
+\contentsline {subsection}{\numberline {5.38.4}Member Function Documentation}{160}{subsection.5.38.4}
+\contentsline {subsubsection}{\numberline {5.38.4.1}Accept}{160}{subsubsection.5.38.4.1}
+\contentsline {subsection}{\numberline {5.38.5}Member Data Documentation}{161}{subsection.5.38.5}
+\contentsline {subsubsection}{\numberline {5.38.5.1}number\discretionary {-}{}{}Of\discretionary {-}{}{}Search\discretionary {-}{}{}Iterations}{161}{subsubsection.5.38.5.1}
+\contentsline {subsubsection}{\numberline {5.38.5.2}threshold\discretionary {-}{}{}Offset}{161}{subsubsection.5.38.5.2}
+\contentsline {subsubsection}{\numberline {5.38.5.3}tracking\discretionary {-}{}{}Quality}{161}{subsubsection.5.38.5.3}
+\contentsline {subsection}{\numberline {5.38.6}Property Documentation}{161}{subsection.5.38.6}
+\contentsline {subsubsection}{\numberline {5.38.6.1}Number\discretionary {-}{}{}Of\discretionary {-}{}{}Search\discretionary {-}{}{}Iterations}{161}{subsubsection.5.38.6.1}
+\contentsline {subsubsection}{\numberline {5.38.6.2}Threshold\discretionary {-}{}{}Offset}{161}{subsubsection.5.38.6.2}
+\contentsline {subsubsection}{\numberline {5.38.6.3}Tracking\discretionary {-}{}{}Quality}{161}{subsubsection.5.38.6.3}
+\contentsline {section}{\numberline {5.39}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}File.\discretionary {-}{}{}Non\discretionary {-}{}{}Terminating\discretionary {-}{}{}X\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}Tag Class Reference}{162}{section.5.39}
+\contentsline {subsection}{\numberline {5.39.1}Detailed Description}{163}{subsection.5.39.1}
+\contentsline {subsection}{\numberline {5.39.2}Constructor \& Destructor Documentation}{163}{subsection.5.39.2}
+\contentsline {subsubsection}{\numberline {5.39.2.1}Non\discretionary {-}{}{}Terminating\discretionary {-}{}{}X\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}Tag}{164}{subsubsection.5.39.2.1}
+\contentsline {subsubsection}{\numberline {5.39.2.2}Non\discretionary {-}{}{}Terminating\discretionary {-}{}{}X\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}Tag}{164}{subsubsection.5.39.2.2}
+\contentsline {section}{\numberline {5.40}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Picture\discretionary {-}{}{}Marker Class Reference}{164}{section.5.40}
+\contentsline {subsection}{\numberline {5.40.1}Detailed Description}{167}{subsection.5.40.1}
+\contentsline {subsection}{\numberline {5.40.2}Constructor \& Destructor Documentation}{167}{subsection.5.40.2}
+\contentsline {subsubsection}{\numberline {5.40.2.1}Picture\discretionary {-}{}{}Marker}{167}{subsubsection.5.40.2.1}
+\contentsline {subsubsection}{\numberline {5.40.2.2}Picture\discretionary {-}{}{}Marker}{167}{subsubsection.5.40.2.2}
+\contentsline {subsection}{\numberline {5.40.3}Member Function Documentation}{167}{subsection.5.40.3}
+\contentsline {subsubsection}{\numberline {5.40.3.1}Accept}{167}{subsubsection.5.40.3.1}
+\contentsline {subsubsection}{\numberline {5.40.3.2}Clone}{167}{subsubsection.5.40.3.2}
+\contentsline {subsubsection}{\numberline {5.40.3.3}get\discretionary {-}{}{}Icon}{168}{subsubsection.5.40.3.3}
+\contentsline {subsubsection}{\numberline {5.40.3.4}get\discretionary {-}{}{}Preview}{168}{subsubsection.5.40.3.4}
+\contentsline {subsubsection}{\numberline {5.40.3.5}init\discretionary {-}{}{}Element}{168}{subsubsection.5.40.3.5}
+\contentsline {subsection}{\numberline {5.40.4}Member Data Documentation}{168}{subsection.5.40.4}
+\contentsline {subsubsection}{\numberline {5.40.4.1}picture\discretionary {-}{}{}Name}{168}{subsubsection.5.40.4.1}
+\contentsline {subsubsection}{\numberline {5.40.4.2}picture\discretionary {-}{}{}Path}{168}{subsubsection.5.40.4.2}
+\contentsline {subsection}{\numberline {5.40.5}Property Documentation}{168}{subsection.5.40.5}
+\contentsline {subsubsection}{\numberline {5.40.5.1}Picture\discretionary {-}{}{}Name}{168}{subsubsection.5.40.5.1}
+\contentsline {subsubsection}{\numberline {5.40.5.2}Picture\discretionary {-}{}{}Path}{169}{subsubsection.5.40.5.2}
+\contentsline {section}{\numberline {5.41}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Picture\discretionary {-}{}{}Marker\discretionary {-}{}{}Sensor Class Reference}{169}{section.5.41}
+\contentsline {subsection}{\numberline {5.41.1}Detailed Description}{171}{subsection.5.41.1}
+\contentsline {subsection}{\numberline {5.41.2}Member Enumeration Documentation}{171}{subsection.5.41.2}
+\contentsline {subsubsection}{\numberline {5.41.2.1}Tracking\discretionary {-}{}{}Qualities}{171}{subsubsection.5.41.2.1}
+\contentsline {subsection}{\numberline {5.41.3}Constructor \& Destructor Documentation}{171}{subsection.5.41.3}
+\contentsline {subsubsection}{\numberline {5.41.3.1}Picture\discretionary {-}{}{}Marker\discretionary {-}{}{}Sensor}{171}{subsubsection.5.41.3.1}
+\contentsline {subsection}{\numberline {5.41.4}Member Function Documentation}{171}{subsection.5.41.4}
+\contentsline {subsubsection}{\numberline {5.41.4.1}Accept}{171}{subsubsection.5.41.4.1}
+\contentsline {subsection}{\numberline {5.41.5}Member Data Documentation}{172}{subsection.5.41.5}
+\contentsline {subsubsection}{\numberline {5.41.5.1}number\discretionary {-}{}{}Of\discretionary {-}{}{}Search\discretionary {-}{}{}Iterations}{172}{subsubsection.5.41.5.1}
+\contentsline {subsubsection}{\numberline {5.41.5.2}threshold\discretionary {-}{}{}Offset}{172}{subsubsection.5.41.5.2}
+\contentsline {subsubsection}{\numberline {5.41.5.3}tracking\discretionary {-}{}{}Quality}{172}{subsubsection.5.41.5.3}
+\contentsline {subsection}{\numberline {5.41.6}Property Documentation}{172}{subsection.5.41.6}
+\contentsline {subsubsection}{\numberline {5.41.6.1}Number\discretionary {-}{}{}Of\discretionary {-}{}{}Search\discretionary {-}{}{}Iterations}{172}{subsubsection.5.41.6.1}
+\contentsline {subsubsection}{\numberline {5.41.6.2}Threshold\discretionary {-}{}{}Offset}{172}{subsubsection.5.41.6.2}
+\contentsline {subsubsection}{\numberline {5.41.6.3}Tracking\discretionary {-}{}{}Quality}{172}{subsubsection.5.41.6.3}
+\contentsline {section}{\numberline {5.42}Preview\discretionary {-}{}{}Controller Class Reference}{173}{section.5.42}
+\contentsline {subsection}{\numberline {5.42.1}Detailed Description}{174}{subsection.5.42.1}
+\contentsline {subsection}{\numberline {5.42.2}Constructor \& Destructor Documentation}{175}{subsection.5.42.2}
+\contentsline {subsubsection}{\numberline {5.42.2.1}Preview\discretionary {-}{}{}Controller}{175}{subsubsection.5.42.2.1}
+\contentsline {subsection}{\numberline {5.42.3}Member Function Documentation}{176}{subsection.5.42.3}
+\contentsline {subsubsection}{\numberline {5.42.3.1}add\discretionary {-}{}{}Preview\discretionary {-}{}{}Able}{176}{subsubsection.5.42.3.1}
+\contentsline {subsubsection}{\numberline {5.42.3.2}add\discretionary {-}{}{}Previewable}{176}{subsubsection.5.42.3.2}
+\contentsline {subsubsection}{\numberline {5.42.3.3}add\discretionary {-}{}{}Source}{176}{subsubsection.5.42.3.3}
+\contentsline {subsubsection}{\numberline {5.42.3.4}copy\discretionary {-}{}{}\_\discretionary {-}{}{}augmentation}{177}{subsubsection.5.42.3.4}
+\contentsline {subsubsection}{\numberline {5.42.3.5}find\discretionary {-}{}{}Box}{177}{subsubsection.5.42.3.5}
+\contentsline {subsubsection}{\numberline {5.42.3.6}get\discretionary {-}{}{}Sized\discretionary {-}{}{}Bitmap}{178}{subsubsection.5.42.3.6}
+\contentsline {subsubsection}{\numberline {5.42.3.7}on\discretionary {-}{}{}Augmentation\discretionary {-}{}{}Drop}{178}{subsubsection.5.42.3.7}
+\contentsline {subsubsection}{\numberline {5.42.3.8}on\discretionary {-}{}{}Augmentation\discretionary {-}{}{}Enter}{179}{subsubsection.5.42.3.8}
+\contentsline {subsubsection}{\numberline {5.42.3.9}paste\discretionary {-}{}{}\_\discretionary {-}{}{}augmentation}{179}{subsubsection.5.42.3.9}
+\contentsline {subsubsection}{\numberline {5.42.3.10}paste\discretionary {-}{}{}\_\discretionary {-}{}{}augmentation\discretionary {-}{}{}\_\discretionary {-}{}{}center}{180}{subsubsection.5.42.3.10}
+\contentsline {subsubsection}{\numberline {5.42.3.11}reload\discretionary {-}{}{}Previewable}{180}{subsubsection.5.42.3.11}
+\contentsline {subsubsection}{\numberline {5.42.3.12}reload\discretionary {-}{}{}Preview\discretionary {-}{}{}Panel}{180}{subsubsection.5.42.3.12}
+\contentsline {subsubsection}{\numberline {5.42.3.13}remove\discretionary {-}{}{}Previewable}{181}{subsubsection.5.42.3.13}
+\contentsline {subsubsection}{\numberline {5.42.3.14}remove\discretionary {-}{}{}Source}{181}{subsubsection.5.42.3.14}
+\contentsline {subsubsection}{\numberline {5.42.3.15}rescale\discretionary {-}{}{}Preview\discretionary {-}{}{}Panel}{182}{subsubsection.5.42.3.15}
+\contentsline {subsubsection}{\numberline {5.42.3.16}rotate\discretionary {-}{}{}Augmentation}{182}{subsubsection.5.42.3.16}
+\contentsline {subsubsection}{\numberline {5.42.3.17}scale\discretionary {-}{}{}Bitmap}{182}{subsubsection.5.42.3.17}
+\contentsline {subsubsection}{\numberline {5.42.3.18}scale\discretionary {-}{}{}I\discretionary {-}{}{}Previewable}{182}{subsubsection.5.42.3.18}
+\contentsline {subsubsection}{\numberline {5.42.3.19}set\discretionary {-}{}{}Coordinates}{182}{subsubsection.5.42.3.19}
+\contentsline {subsubsection}{\numberline {5.42.3.20}set\discretionary {-}{}{}Current\discretionary {-}{}{}Element}{182}{subsubsection.5.42.3.20}
+\contentsline {subsubsection}{\numberline {5.42.3.21}update\discretionary {-}{}{}Element\discretionary {-}{}{}Combobox}{183}{subsubsection.5.42.3.21}
+\contentsline {subsubsection}{\numberline {5.42.3.22}update\discretionary {-}{}{}Preview\discretionary {-}{}{}Panel}{184}{subsubsection.5.42.3.22}
+\contentsline {subsubsection}{\numberline {5.42.3.23}update\discretionary {-}{}{}Translation}{184}{subsubsection.5.42.3.23}
+\contentsline {subsection}{\numberline {5.42.4}Member Data Documentation}{184}{subsection.5.42.4}
+\contentsline {subsubsection}{\numberline {5.42.4.1}index}{184}{subsubsection.5.42.4.1}
+\contentsline {subsection}{\numberline {5.42.5}Property Documentation}{184}{subsection.5.42.5}
+\contentsline {subsubsection}{\numberline {5.42.5.1}copy}{184}{subsubsection.5.42.5.1}
+\contentsline {section}{\numberline {5.43}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Test\discretionary {-}{}{}Controller.\discretionary {-}{}{}Process\discretionary {-}{}{}Video\discretionary {-}{}{}Window Class Reference}{184}{section.5.43}
+\contentsline {subsection}{\numberline {5.43.1}Detailed Description}{186}{subsection.5.43.1}
+\contentsline {subsection}{\numberline {5.43.2}Constructor \& Destructor Documentation}{186}{subsection.5.43.2}
+\contentsline {subsubsection}{\numberline {5.43.2.1}Process\discretionary {-}{}{}Video\discretionary {-}{}{}Window}{186}{subsubsection.5.43.2.1}
+\contentsline {subsection}{\numberline {5.43.3}Member Function Documentation}{186}{subsection.5.43.3}
+\contentsline {subsubsection}{\numberline {5.43.3.1}Dispose}{186}{subsubsection.5.43.3.1}
+\contentsline {subsubsection}{\numberline {5.43.3.2}extract\discretionary {-}{}{}Frames}{186}{subsubsection.5.43.3.2}
+\contentsline {subsection}{\numberline {5.43.4}Property Documentation}{186}{subsection.5.43.4}
+\contentsline {subsubsection}{\numberline {5.43.4.1}F\discretionary {-}{}{}P\discretionary {-}{}{}S}{186}{subsubsection.5.43.4.1}
+\contentsline {section}{\numberline {5.44}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Project Class Reference}{187}{section.5.44}
+\contentsline {subsection}{\numberline {5.44.1}Detailed Description}{188}{subsection.5.44.1}
+\contentsline {subsection}{\numberline {5.44.2}Constructor \& Destructor Documentation}{189}{subsection.5.44.2}
+\contentsline {subsubsection}{\numberline {5.44.2.1}Project}{189}{subsubsection.5.44.2.1}
+\contentsline {subsubsection}{\numberline {5.44.2.2}Project}{189}{subsubsection.5.44.2.2}
+\contentsline {subsubsection}{\numberline {5.44.2.3}Project}{189}{subsubsection.5.44.2.3}
+\contentsline {subsection}{\numberline {5.44.3}Member Function Documentation}{189}{subsection.5.44.3}
+\contentsline {subsubsection}{\numberline {5.44.3.1}Accept}{189}{subsubsection.5.44.3.1}
+\contentsline {subsubsection}{\numberline {5.44.3.2}exist\discretionary {-}{}{}Source}{189}{subsubsection.5.44.3.2}
+\contentsline {subsubsection}{\numberline {5.44.3.3}exist\discretionary {-}{}{}Trackable}{189}{subsubsection.5.44.3.3}
+\contentsline {subsubsection}{\numberline {5.44.3.4}exist\discretionary {-}{}{}Trackable}{190}{subsubsection.5.44.3.4}
+\contentsline {subsubsection}{\numberline {5.44.3.5}find\discretionary {-}{}{}Source}{190}{subsubsection.5.44.3.5}
+\contentsline {subsubsection}{\numberline {5.44.3.6}get\discretionary {-}{}{}Checksum}{190}{subsubsection.5.44.3.6}
+\contentsline {subsubsection}{\numberline {5.44.3.7}has\discretionary {-}{}{}Trackable}{190}{subsubsection.5.44.3.7}
+\contentsline {subsubsection}{\numberline {5.44.3.8}next\discretionary {-}{}{}I\discretionary {-}{}{}D}{191}{subsubsection.5.44.3.8}
+\contentsline {subsubsection}{\numberline {5.44.3.9}Remove\discretionary {-}{}{}Augmentation}{191}{subsubsection.5.44.3.9}
+\contentsline {subsection}{\numberline {5.44.4}Member Data Documentation}{191}{subsection.5.44.4}
+\contentsline {subsubsection}{\numberline {5.44.4.1}sensor}{191}{subsubsection.5.44.4.1}
+\contentsline {subsection}{\numberline {5.44.5}Property Documentation}{191}{subsection.5.44.5}
+\contentsline {subsubsection}{\numberline {5.44.5.1}Name}{191}{subsubsection.5.44.5.1}
+\contentsline {subsubsection}{\numberline {5.44.5.2}Project\discretionary {-}{}{}Path}{191}{subsubsection.5.44.5.2}
+\contentsline {subsubsection}{\numberline {5.44.5.3}Screensize}{192}{subsubsection.5.44.5.3}
+\contentsline {subsubsection}{\numberline {5.44.5.4}Sensor}{192}{subsubsection.5.44.5.4}
+\contentsline {subsubsection}{\numberline {5.44.5.5}Sources}{192}{subsubsection.5.44.5.5}
+\contentsline {subsubsection}{\numberline {5.44.5.6}Trackables}{192}{subsubsection.5.44.5.6}
+\contentsline {section}{\numberline {5.45}Controller.\discretionary {-}{}{}Editor\discretionary {-}{}{}Controller.\discretionary {-}{}{}Property\discretionary {-}{}{}Controller Class Reference}{192}{section.5.45}
+\contentsline {subsection}{\numberline {5.45.1}Detailed Description}{193}{subsection.5.45.1}
+\contentsline {subsection}{\numberline {5.45.2}Constructor \& Destructor Documentation}{193}{subsection.5.45.2}
+\contentsline {subsubsection}{\numberline {5.45.2.1}Property\discretionary {-}{}{}Controller}{193}{subsubsection.5.45.2.1}
+\contentsline {subsection}{\numberline {5.45.3}Member Function Documentation}{193}{subsection.5.45.3}
+\contentsline {subsubsection}{\numberline {5.45.3.1}add\discretionary {-}{}{}Custom\discretionary {-}{}{}User\discretionary {-}{}{}Event}{193}{subsubsection.5.45.3.1}
+\contentsline {subsubsection}{\numberline {5.45.3.2}edit\discretionary {-}{}{}Custom\discretionary {-}{}{}User\discretionary {-}{}{}Event}{193}{subsubsection.5.45.3.2}
+\contentsline {section}{\numberline {5.46}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Editor\discretionary {-}{}{}Controller.\discretionary {-}{}{}Scene\discretionary {-}{}{}Element Class Reference}{193}{section.5.46}
+\contentsline {subsection}{\numberline {5.46.1}Detailed Description}{194}{subsection.5.46.1}
+\contentsline {subsection}{\numberline {5.46.2}Constructor \& Destructor Documentation}{194}{subsection.5.46.2}
+\contentsline {subsubsection}{\numberline {5.46.2.1}Scene\discretionary {-}{}{}Element}{194}{subsubsection.5.46.2.1}
+\contentsline {subsection}{\numberline {5.46.3}Member Function Documentation}{194}{subsection.5.46.3}
+\contentsline {subsubsection}{\numberline {5.46.3.1}To\discretionary {-}{}{}String}{194}{subsubsection.5.46.3.1}
+\contentsline {subsection}{\numberline {5.46.4}Property Documentation}{194}{subsection.5.46.4}
+\contentsline {subsubsection}{\numberline {5.46.4.1}Element\discretionary {-}{}{}Icon}{194}{subsubsection.5.46.4.1}
+\contentsline {subsubsection}{\numberline {5.46.4.2}Icon}{195}{subsubsection.5.46.4.2}
+\contentsline {subsubsection}{\numberline {5.46.4.3}Name}{195}{subsubsection.5.46.4.3}
+\contentsline {subsubsection}{\numberline {5.46.4.4}Prototype}{195}{subsubsection.5.46.4.4}
+\contentsline {section}{\numberline {5.47}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Editor\discretionary {-}{}{}Controller.\discretionary {-}{}{}Scene\discretionary {-}{}{}Element\discretionary {-}{}{}Category Class Reference}{195}{section.5.47}
+\contentsline {subsection}{\numberline {5.47.1}Detailed Description}{196}{subsection.5.47.1}
+\contentsline {subsection}{\numberline {5.47.2}Constructor \& Destructor Documentation}{196}{subsection.5.47.2}
+\contentsline {subsubsection}{\numberline {5.47.2.1}Scene\discretionary {-}{}{}Element\discretionary {-}{}{}Category}{196}{subsubsection.5.47.2.1}
+\contentsline {subsection}{\numberline {5.47.3}Member Function Documentation}{196}{subsection.5.47.3}
+\contentsline {subsubsection}{\numberline {5.47.3.1}add\discretionary {-}{}{}Element}{196}{subsubsection.5.47.3.1}
+\contentsline {subsubsection}{\numberline {5.47.3.2}To\discretionary {-}{}{}String}{196}{subsubsection.5.47.3.2}
+\contentsline {subsection}{\numberline {5.47.4}Property Documentation}{196}{subsection.5.47.4}
+\contentsline {subsubsection}{\numberline {5.47.4.1}Category}{196}{subsubsection.5.47.4.1}
+\contentsline {subsubsection}{\numberline {5.47.4.2}Name}{197}{subsubsection.5.47.4.2}
+\contentsline {subsubsection}{\numberline {5.47.4.3}Scene\discretionary {-}{}{}Elements}{197}{subsubsection.5.47.4.3}
+\contentsline {section}{\numberline {5.48}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}View.\discretionary {-}{}{}Scene\discretionary {-}{}{}Element\discretionary {-}{}{}Category\discretionary {-}{}{}Panel Class Reference}{197}{section.5.48}
+\contentsline {subsection}{\numberline {5.48.1}Detailed Description}{198}{subsection.5.48.1}
+\contentsline {subsection}{\numberline {5.48.2}Constructor \& Destructor Documentation}{198}{subsection.5.48.2}
+\contentsline {subsubsection}{\numberline {5.48.2.1}Scene\discretionary {-}{}{}Element\discretionary {-}{}{}Category\discretionary {-}{}{}Panel}{199}{subsubsection.5.48.2.1}
+\contentsline {subsection}{\numberline {5.48.3}Member Function Documentation}{200}{subsection.5.48.3}
+\contentsline {subsubsection}{\numberline {5.48.3.1}add}{200}{subsubsection.5.48.3.1}
+\contentsline {subsubsection}{\numberline {5.48.3.2}To\discretionary {-}{}{}String}{200}{subsubsection.5.48.3.2}
+\contentsline {subsection}{\numberline {5.48.4}Property Documentation}{200}{subsection.5.48.4}
+\contentsline {subsubsection}{\numberline {5.48.4.1}Category}{200}{subsubsection.5.48.4.1}
+\contentsline {subsubsection}{\numberline {5.48.4.2}Category\discretionary {-}{}{}Name}{200}{subsubsection.5.48.4.2}
+\contentsline {section}{\numberline {5.49}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Screen\discretionary {-}{}{}Size Class Reference}{200}{section.5.49}
+\contentsline {subsection}{\numberline {5.49.1}Detailed Description}{201}{subsection.5.49.1}
+\contentsline {subsection}{\numberline {5.49.2}Constructor \& Destructor Documentation}{201}{subsection.5.49.2}
+\contentsline {subsubsection}{\numberline {5.49.2.1}Screen\discretionary {-}{}{}Size}{201}{subsubsection.5.49.2.1}
+\contentsline {subsection}{\numberline {5.49.3}Property Documentation}{201}{subsection.5.49.3}
+\contentsline {subsubsection}{\numberline {5.49.3.1}Height}{201}{subsubsection.5.49.3.1}
+\contentsline {subsubsection}{\numberline {5.49.3.2}Size\discretionary {-}{}{}Changed}{202}{subsubsection.5.49.3.2}
+\contentsline {subsubsection}{\numberline {5.49.3.3}Width}{202}{subsubsection.5.49.3.3}
+\contentsline {section}{\numberline {5.50}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}View.\discretionary {-}{}{}Slider Class Reference}{202}{section.5.50}
+\contentsline {subsection}{\numberline {5.50.1}Detailed Description}{203}{subsection.5.50.1}
+\contentsline {subsection}{\numberline {5.50.2}Constructor \& Destructor Documentation}{203}{subsection.5.50.2}
+\contentsline {subsubsection}{\numberline {5.50.2.1}Slider}{204}{subsubsection.5.50.2.1}
+\contentsline {subsubsection}{\numberline {5.50.2.2}Slider}{205}{subsubsection.5.50.2.2}
+\contentsline {subsection}{\numberline {5.50.3}Member Function Documentation}{205}{subsection.5.50.3}
+\contentsline {subsubsection}{\numberline {5.50.3.1}Dispose}{205}{subsubsection.5.50.3.1}
+\contentsline {subsection}{\numberline {5.50.4}Property Documentation}{205}{subsection.5.50.4}
+\contentsline {subsubsection}{\numberline {5.50.4.1}Slider\discretionary {-}{}{}Value\discretionary {-}{}{}Double}{205}{subsubsection.5.50.4.1}
+\contentsline {subsubsection}{\numberline {5.50.4.2}Slider\discretionary {-}{}{}Value\discretionary {-}{}{}Int}{205}{subsubsection.5.50.4.2}
+\contentsline {section}{\numberline {5.51}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}View.\discretionary {-}{}{}Slider\discretionary {-}{}{}Editor Class Reference}{205}{section.5.51}
+\contentsline {subsection}{\numberline {5.51.1}Detailed Description}{207}{subsection.5.51.1}
+\contentsline {subsection}{\numberline {5.51.2}Constructor \& Destructor Documentation}{207}{subsection.5.51.2}
+\contentsline {subsubsection}{\numberline {5.51.2.1}Slider\discretionary {-}{}{}Editor}{207}{subsubsection.5.51.2.1}
+\contentsline {subsection}{\numberline {5.51.3}Member Function Documentation}{207}{subsection.5.51.3}
+\contentsline {subsubsection}{\numberline {5.51.3.1}Edit\discretionary {-}{}{}Value}{207}{subsubsection.5.51.3.1}
+\contentsline {subsubsection}{\numberline {5.51.3.2}Get\discretionary {-}{}{}Edit\discretionary {-}{}{}Style}{207}{subsubsection.5.51.3.2}
+\contentsline {section}{\numberline {5.52}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}View.\discretionary {-}{}{}Text\discretionary {-}{}{}Editor Class Reference}{207}{section.5.52}
+\contentsline {subsection}{\numberline {5.52.1}Detailed Description}{209}{subsection.5.52.1}
+\contentsline {subsection}{\numberline {5.52.2}Constructor \& Destructor Documentation}{209}{subsection.5.52.2}
+\contentsline {subsubsection}{\numberline {5.52.2.1}Text\discretionary {-}{}{}Editor}{209}{subsubsection.5.52.2.1}
+\contentsline {subsection}{\numberline {5.52.3}Member Function Documentation}{209}{subsection.5.52.3}
+\contentsline {subsubsection}{\numberline {5.52.3.1}Edit\discretionary {-}{}{}Value}{209}{subsubsection.5.52.3.1}
+\contentsline {subsubsection}{\numberline {5.52.3.2}Get\discretionary {-}{}{}Edit\discretionary {-}{}{}Style}{209}{subsubsection.5.52.3.2}
+\contentsline {section}{\numberline {5.53}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Text\discretionary {-}{}{}Editor\discretionary {-}{}{}Form Class Reference}{209}{section.5.53}
+\contentsline {subsection}{\numberline {5.53.1}Detailed Description}{211}{subsection.5.53.1}
+\contentsline {subsection}{\numberline {5.53.2}Constructor \& Destructor Documentation}{211}{subsection.5.53.2}
+\contentsline {subsubsection}{\numberline {5.53.2.1}Text\discretionary {-}{}{}Editor\discretionary {-}{}{}Form}{211}{subsubsection.5.53.2.1}
+\contentsline {subsubsection}{\numberline {5.53.2.2}Text\discretionary {-}{}{}Editor\discretionary {-}{}{}Form}{211}{subsubsection.5.53.2.2}
+\contentsline {subsection}{\numberline {5.53.3}Member Function Documentation}{211}{subsection.5.53.3}
+\contentsline {subsubsection}{\numberline {5.53.3.1}Dispose}{211}{subsubsection.5.53.3.1}
+\contentsline {subsection}{\numberline {5.53.4}Property Documentation}{211}{subsection.5.53.4}
+\contentsline {subsubsection}{\numberline {5.53.4.1}Value}{211}{subsubsection.5.53.4.1}
+\contentsline {section}{\numberline {5.54}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Controller.\discretionary {-}{}{}Editor\discretionary {-}{}{}Controller.\discretionary {-}{}{}Thumb\discretionary {-}{}{}Creator Class Reference}{211}{section.5.54}
+\contentsline {subsection}{\numberline {5.54.1}Detailed Description}{212}{subsection.5.54.1}
+\contentsline {subsection}{\numberline {5.54.2}Member Function Documentation}{212}{subsection.5.54.2}
+\contentsline {subsubsection}{\numberline {5.54.2.1}Create\discretionary {-}{}{}Thumb}{212}{subsubsection.5.54.2.1}
+\contentsline {section}{\numberline {5.55}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}File.\discretionary {-}{}{}Tracking\discretionary {-}{}{}Data\discretionary {-}{}{}File Class Reference}{213}{section.5.55}
+\contentsline {subsection}{\numberline {5.55.1}Detailed Description}{214}{subsection.5.55.1}
+\contentsline {subsection}{\numberline {5.55.2}Constructor \& Destructor Documentation}{215}{subsection.5.55.2}
+\contentsline {subsubsection}{\numberline {5.55.2.1}Tracking\discretionary {-}{}{}Data\discretionary {-}{}{}File}{215}{subsubsection.5.55.2.1}
+\contentsline {subsection}{\numberline {5.55.3}Member Function Documentation}{215}{subsection.5.55.3}
+\contentsline {subsubsection}{\numberline {5.55.3.1}Save}{215}{subsubsection.5.55.3.1}
+\contentsline {subsubsection}{\numberline {5.55.3.2}Save}{215}{subsubsection.5.55.3.2}
+\contentsline {subsection}{\numberline {5.55.4}Member Data Documentation}{215}{subsection.5.55.4}
+\contentsline {subsubsection}{\numberline {5.55.4.1}header}{215}{subsubsection.5.55.4.1}
+\contentsline {section}{\numberline {5.56}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Vector3\discretionary {-}{}{}D Class Reference}{215}{section.5.56}
+\contentsline {subsection}{\numberline {5.56.1}Detailed Description}{217}{subsection.5.56.1}
+\contentsline {subsection}{\numberline {5.56.2}Constructor \& Destructor Documentation}{217}{subsection.5.56.2}
+\contentsline {subsubsection}{\numberline {5.56.2.1}Vector3\discretionary {-}{}{}D}{217}{subsubsection.5.56.2.1}
+\contentsline {subsection}{\numberline {5.56.3}Property Documentation}{217}{subsection.5.56.3}
+\contentsline {subsubsection}{\numberline {5.56.3.1}X}{217}{subsubsection.5.56.3.1}
+\contentsline {subsubsection}{\numberline {5.56.3.2}Y}{217}{subsubsection.5.56.3.2}
+\contentsline {subsubsection}{\numberline {5.56.3.3}Z}{217}{subsubsection.5.56.3.3}
+\contentsline {section}{\numberline {5.57}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Vector3\discretionary {-}{}{}Di Class Reference}{217}{section.5.57}
+\contentsline {subsection}{\numberline {5.57.1}Detailed Description}{219}{subsection.5.57.1}
+\contentsline {subsection}{\numberline {5.57.2}Constructor \& Destructor Documentation}{219}{subsection.5.57.2}
+\contentsline {subsubsection}{\numberline {5.57.2.1}Vector3\discretionary {-}{}{}Di}{219}{subsubsection.5.57.2.1}
+\contentsline {subsection}{\numberline {5.57.3}Property Documentation}{219}{subsection.5.57.3}
+\contentsline {subsubsection}{\numberline {5.57.3.1}W}{219}{subsubsection.5.57.3.1}
+\contentsline {section}{\numberline {5.58}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}Video\discretionary {-}{}{}Augmentation Class Reference}{219}{section.5.58}
+\contentsline {subsection}{\numberline {5.58.1}Detailed Description}{222}{subsection.5.58.1}
+\contentsline {subsection}{\numberline {5.58.2}Constructor \& Destructor Documentation}{222}{subsection.5.58.2}
+\contentsline {subsubsection}{\numberline {5.58.2.1}Video\discretionary {-}{}{}Augmentation}{222}{subsubsection.5.58.2.1}
+\contentsline {subsubsection}{\numberline {5.58.2.2}Video\discretionary {-}{}{}Augmentation}{222}{subsubsection.5.58.2.2}
+\contentsline {subsection}{\numberline {5.58.3}Member Function Documentation}{222}{subsection.5.58.3}
+\contentsline {subsubsection}{\numberline {5.58.3.1}Accept}{222}{subsubsection.5.58.3.1}
+\contentsline {subsubsection}{\numberline {5.58.3.2}Clean\discretionary {-}{}{}Up}{223}{subsubsection.5.58.3.2}
+\contentsline {subsubsection}{\numberline {5.58.3.3}Clone}{223}{subsubsection.5.58.3.3}
+\contentsline {subsubsection}{\numberline {5.58.3.4}get\discretionary {-}{}{}Icon}{223}{subsubsection.5.58.3.4}
+\contentsline {subsubsection}{\numberline {5.58.3.5}get\discretionary {-}{}{}Preview}{223}{subsubsection.5.58.3.5}
+\contentsline {subsubsection}{\numberline {5.58.3.6}init\discretionary {-}{}{}Element}{223}{subsubsection.5.58.3.6}
+\contentsline {subsection}{\numberline {5.58.4}Property Documentation}{224}{subsection.5.58.4}
+\contentsline {subsubsection}{\numberline {5.58.4.1}Height}{224}{subsubsection.5.58.4.1}
+\contentsline {subsubsection}{\numberline {5.58.4.2}Width}{224}{subsubsection.5.58.4.2}
+\contentsline {section}{\numberline {5.59}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}File.\discretionary {-}{}{}X\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}Block Class Reference}{224}{section.5.59}
+\contentsline {subsection}{\numberline {5.59.1}Detailed Description}{227}{subsection.5.59.1}
+\contentsline {subsection}{\numberline {5.59.2}Constructor \& Destructor Documentation}{227}{subsection.5.59.2}
+\contentsline {subsubsection}{\numberline {5.59.2.1}X\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}Block}{227}{subsubsection.5.59.2.1}
+\contentsline {subsection}{\numberline {5.59.3}Member Function Documentation}{227}{subsection.5.59.3}
+\contentsline {subsubsection}{\numberline {5.59.3.1}Add\discretionary {-}{}{}Line}{227}{subsubsection.5.59.3.1}
+\contentsline {subsubsection}{\numberline {5.59.3.2}Update}{227}{subsubsection.5.59.3.2}
+\contentsline {subsubsection}{\numberline {5.59.3.3}Write}{227}{subsubsection.5.59.3.3}
+\contentsline {subsection}{\numberline {5.59.4}Member Data Documentation}{228}{subsection.5.59.4}
+\contentsline {subsubsection}{\numberline {5.59.4.1}lines}{228}{subsubsection.5.59.4.1}
+\contentsline {section}{\numberline {5.60}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}File.\discretionary {-}{}{}X\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}Line Class Reference}{228}{section.5.60}
+\contentsline {subsection}{\numberline {5.60.1}Detailed Description}{230}{subsection.5.60.1}
+\contentsline {subsection}{\numberline {5.60.2}Constructor \& Destructor Documentation}{230}{subsection.5.60.2}
+\contentsline {subsubsection}{\numberline {5.60.2.1}X\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}Line}{230}{subsubsection.5.60.2.1}
+\contentsline {subsubsection}{\numberline {5.60.2.2}X\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}Line}{230}{subsubsection.5.60.2.2}
+\contentsline {subsection}{\numberline {5.60.3}Member Function Documentation}{230}{subsection.5.60.3}
+\contentsline {subsubsection}{\numberline {5.60.3.1}Write}{230}{subsubsection.5.60.3.1}
+\contentsline {section}{\numberline {5.61}A\discretionary {-}{}{}Rdev\discretionary {-}{}{}Kit.\discretionary {-}{}{}Model.\discretionary {-}{}{}Project.\discretionary {-}{}{}File.\discretionary {-}{}{}X\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}Tag Class Reference}{230}{section.5.61}
+\contentsline {subsection}{\numberline {5.61.1}Detailed Description}{232}{subsection.5.61.1}
+\contentsline {subsection}{\numberline {5.61.2}Constructor \& Destructor Documentation}{232}{subsection.5.61.2}
+\contentsline {subsubsection}{\numberline {5.61.2.1}X\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}Tag}{232}{subsubsection.5.61.2.1}
+\contentsline {subsubsection}{\numberline {5.61.2.2}X\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}Tag}{233}{subsubsection.5.61.2.2}

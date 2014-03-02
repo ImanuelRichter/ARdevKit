@@ -5,6 +5,8 @@
     <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_augmentation_1a56dc37f0d6cb4c039fb15598206bfa21" kind="variable"><name>width</name></member>
     <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_augmentation_1a14d016654e3824108d413c812f134539" kind="property"><name>Height</name></member>
     <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_augmentation_1abbc74c285b3d91be5841ce16473e2cd6" kind="property"><name>Width</name></member>
+    <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_augmentation_1af2c60054c5ff96c677c84f33c8cb5f9a" kind="property"><name>SourceFilePath</name></member>
+    <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_augmentation_1a9c16053e6d7cd904ad0d9abf823a9b3b" kind="variable"><name>sourceFilePath</name></member>
     <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_augmentation_1adfb4e825f67880c9ec8790a51a60b574" kind="function"><name>Abstract2DAugmentation</name></member>
     <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_augmentation_1a36b71862a4466a4d1942e83e2341cc88" kind="function"><name>Abstract2DAugmentation</name></member>
   </compound>
@@ -240,8 +242,6 @@
     <member refid="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a10807ad3c1f643c998b6f73fa90a15c9" kind="variable"><name>udpClient</name></member>
     <member refid="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a28c95184e4b34e02f4042afc75b5ef9a" kind="variable"><name>editorWindow</name></member>
     <member refid="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1ad337ac5e505fb834635a249e6e066c3a" kind="variable"><name>debugConnected</name></member>
-    <member refid="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a62757a5444be1dc023129d6d2fd6dd5e" kind="variable"><name>debugWindow</name></member>
-    <member refid="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1acfe2c36b862f9b0775bf8e0f60d055ad" kind="property"><name>DebugWindow</name></member>
     <member refid="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a6e1f49d1912fccc6edc212acbfc74c05" kind="property"><name>DebugConnected</name></member>
     <member refid="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a6d505b2d3b51a10e9d83058157a1c62c" kind="function"><name>DeviceConnectionController</name></member>
     <member refid="class_a_rdev_kit_1_1_controller_1_1_connections_1_1_device_connection_1_1_device_connection_controller_1a2fa2baab02402dec9c2dce90fadeb54c" kind="function"><name>refresh</name></member>
@@ -255,6 +255,7 @@
   </compound>
   <compound refid="class_a_rdev_kit_1_1_editor_window" kind="class"><name>ARdevKit::EditorWindow</name>
     <member refid="class_a_rdev_kit_1_1_editor_window_1a96095aa6e3081aaa2165bba77231a69b" kind="variable"><name>checksum</name></member>
+    <member refid="class_a_rdev_kit_1_1_editor_window_1a44d74494a77ca73135f31a0790cef58d" kind="variable"><name>debugWindow</name></member>
     <member refid="class_a_rdev_kit_1_1_editor_window_1a83dc3407c9f377c203373600abd788eb" kind="variable"><name>MINSCREENWIDHT</name></member>
     <member refid="class_a_rdev_kit_1_1_editor_window_1a968a265eae31352d099219ea1d01101d" kind="variable"><name>MINSCREENHEIGHT</name></member>
     <member refid="class_a_rdev_kit_1_1_editor_window_1a14c4c9e75ab092b615bf79dd61ae2ce7" kind="variable"><name>elementCategories</name></member>
@@ -316,6 +317,7 @@
     <member refid="class_a_rdev_kit_1_1_editor_window_1abd954cff7180a2dfa426a69f97b5042c" kind="variable"><name>toolStripSeparator2</name></member>
     <member refid="class_a_rdev_kit_1_1_editor_window_1a4c6f5e6fab0f3a7ac782fd3ae243777c" kind="variable"><name>sendProject</name></member>
     <member refid="class_a_rdev_kit_1_1_editor_window_1a5e65f4726d3016e3dbb16b3faafd4a51" kind="variable"><name>DeviceDebug</name></member>
+    <member refid="class_a_rdev_kit_1_1_editor_window_1a680468ae45b84228fb668d8dbb0aba48" kind="property"><name>DebugWindow</name></member>
     <member refid="class_a_rdev_kit_1_1_editor_window_1a2831e6a65fca02855cb3461e79de4662" kind="property"><name>ElementCategories</name></member>
     <member refid="class_a_rdev_kit_1_1_editor_window_1a88e0a581fb32b49f0c046ebb60cbf322" kind="property"><name>ElementSelectionController</name></member>
     <member refid="class_a_rdev_kit_1_1_editor_window_1ae57e383a1684241c86a5253d1fd8197a" kind="property"><name>PreviewController</name></member>
@@ -484,9 +486,7 @@
     <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_i_d_marker_1a30b191b81b928fbe6397d8136e31baea" kind="function"><name>initElement</name></member>
   </compound>
   <compound refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation" kind="class"><name>ARdevKit::Model::Project::ImageAugmentation</name>
-    <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_1a50d3e2ad29198a0895c8956a52410b3a" kind="variable"><name>imagePath</name></member>
     <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_1aca3dadefcb690fbda3732139d2d595ff" kind="variable"><name>cachePreview</name></member>
-    <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_1a499cb36152832a4dd29794e3c1dd2718" kind="property"><name>ImagePath</name></member>
     <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_1a372f087469a33d84950310dfcd52e190" kind="property"><name>Width</name></member>
     <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_1a5cecd83037a573b7f4fdfc7ebe6c7476" kind="property"><name>Height</name></member>
     <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_image_augmentation_1a7ef7e1f296fa9ad472fe601d7ab3c4d1" kind="function"><name>ImageAugmentation</name></member>
@@ -722,6 +722,7 @@
     <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a3176ea13afc802bbb0ac63fe838823e8" kind="function"><name>nextID</name></member>
     <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1abb0710a1f1cd83bda71a0c988e9b6d72" kind="function"><name>existTrackable</name></member>
     <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a4bdc5fa718a8a54711dd659d8edc1ea0" kind="function"><name>existTrackable</name></member>
+    <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1ae7f9958ca529fd10eb489566a8adf374" kind="function"><name>RemoveAugmentation</name></member>
     <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a222ab9abcfa20e2637300bbc94a8f3c2" kind="function"><name>getChecksum</name></member>
     <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_project_1a2b009652210fed6623806dec3dd59193" kind="function"><name>ObjectToByteArray</name></member>
   </compound>
@@ -1392,9 +1393,7 @@
     <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_vector3_di_1aa98218f5103fd2f935676f4cd4bf00d0" kind="function"><name>Vector3Di</name></member>
   </compound>
   <compound refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation" kind="class"><name>ARdevKit::Model::Project::VideoAugmentation</name>
-    <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_1a40674f81d617a58f1305f0e0fe65ff8d" kind="variable"><name>videoPath</name></member>
     <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_1aff78ca3b5c9df02a86bff8db24b6eb57" kind="variable"><name>cachePreview</name></member>
-    <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_1adf603b3ae112358e8cae761e94003de1" kind="property"><name>VideoPath</name></member>
     <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_1aad5c2b8555dfe2fd18f2c67c7f34bbda" kind="property"><name>Width</name></member>
     <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_1accd9c0cc7875d689b73306a38892b4fe" kind="property"><name>Height</name></member>
     <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_1a7f447fcc225f68f6b17ac7365cd9b33f" kind="function"><name>VideoAugmentation</name></member>

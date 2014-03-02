@@ -9,6 +9,5 @@ var class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation =
     [ "getPreview", "class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation.html#a3d5968ace1fe7b6becfc10b60f573631", null ],
     [ "initElement", "class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation.html#afb33f9a8ac2591973d29ebd56bd75da5", null ],
     [ "Height", "class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation.html#accd9c0cc7875d689b73306a38892b4fe", null ],
-    [ "VideoPath", "class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation.html#adf603b3ae112358e8cae761e94003de1", null ],
     [ "Width", "class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation.html#aad5c2b8555dfe2fd18f2c67c7f34bbda", null ]
 ];

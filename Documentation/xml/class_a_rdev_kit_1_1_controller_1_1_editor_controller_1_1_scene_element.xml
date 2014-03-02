@@ -69,8 +69,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElement.cs" line="34" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Controller/EditorController/SceneElement.cs" bodystart="35" bodyend="-1"/>
-        <referencedby refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_element_selection_controller_1a470d43f1c3fe742fcf7ff5f8f5675819" compoundref="_element_selection_controller_8cs" startline="130" endline="148">ARdevKit.Controller.EditorController.ElementSelectionController.setElementEnable</referencedby>
-        <referencedby refid="class_preview_controller_1a7bc01f6c09f310b7079a9754ec27e307" compoundref="_preview_controller_8cs" startline="1068" endline="1077">PreviewController.onAugmentationDrop</referencedby>
+        <referencedby refid="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_element_selection_controller_1a470d43f1c3fe742fcf7ff5f8f5675819" compoundref="_element_selection_controller_8cs" startline="134" endline="152">ARdevKit.Controller.EditorController.ElementSelectionController.setElementEnable</referencedby>
+        <referencedby refid="class_preview_controller_1a7bc01f6c09f310b7079a9754ec27e307" compoundref="_preview_controller_8cs" startline="1071" endline="1080">PreviewController.onAugmentationDrop</referencedby>
       </memberdef>
       <memberdef kind="property" id="class_a_rdev_kit_1_1_controller_1_1_editor_controller_1_1_scene_element_1ac20376b4582ba5df3b65aaf2c4f84b9b" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
         <type>Bitmap</type>

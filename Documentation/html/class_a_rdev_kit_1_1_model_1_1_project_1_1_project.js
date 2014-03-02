@@ -11,6 +11,7 @@ var class_a_rdev_kit_1_1_model_1_1_project_1_1_project =
     [ "getChecksum", "class_a_rdev_kit_1_1_model_1_1_project_1_1_project.html#a222ab9abcfa20e2637300bbc94a8f3c2", null ],
     [ "hasTrackable", "class_a_rdev_kit_1_1_model_1_1_project_1_1_project.html#a97efde65dc462b98448edd6967f9e777", null ],
     [ "nextID", "class_a_rdev_kit_1_1_model_1_1_project_1_1_project.html#a3176ea13afc802bbb0ac63fe838823e8", null ],
+    [ "RemoveAugmentation", "class_a_rdev_kit_1_1_model_1_1_project_1_1_project.html#ae7f9958ca529fd10eb489566a8adf374", null ],
     [ "sensor", "class_a_rdev_kit_1_1_model_1_1_project_1_1_project.html#a835cbe6aaacc0f7b0a60a1dd5745667e", null ],
     [ "Name", "class_a_rdev_kit_1_1_model_1_1_project_1_1_project.html#ae52006b6ebb8293ff034e8e00fdc4e77", null ],
     [ "ProjectPath", "class_a_rdev_kit_1_1_model_1_1_project_1_1_project.html#ad1061c35bc3ffb4caefebce4f22c365c", null ],

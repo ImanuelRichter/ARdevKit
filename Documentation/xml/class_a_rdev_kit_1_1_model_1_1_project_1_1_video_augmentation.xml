@@ -4,19 +4,6 @@
     <compoundname>ARdevKit::Model::Project::VideoAugmentation</compoundname>
     <basecompoundref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_augmentation" prot="public" virt="non-virtual">ARdevKit.Model.Project.Abstract2DAugmentation</basecompoundref>
       <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_1a40674f81d617a58f1305f0e0fe65ff8d" prot="private" static="no" mutable="no">
-        <type>string</type>
-        <definition>string ARdevKit.Model.Project.VideoAugmentation.videoPath</definition>
-        <argsstring></argsstring>
-        <name>videoPath</name>
-        <briefdescription>
-<para>Full pathname of the image file. </para>        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" line="22" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" bodystart="22" bodyend="-1"/>
-      </memberdef>
       <memberdef kind="variable" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_1aff78ca3b5c9df02a86bff8db24b6eb57" prot="private" static="no" mutable="no">
         <type>Bitmap</type>
         <definition>Bitmap ARdevKit.Model.Project.VideoAugmentation.cachePreview</definition>
@@ -29,24 +16,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" line="45" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" bodystart="45" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" line="23" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" bodystart="23" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="property">
-      <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_1adf603b3ae112358e8cae761e94003de1" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
-        <type>string</type>
-        <definition>string ARdevKit.Model.Project.VideoAugmentation.VideoPath</definition>
-        <argsstring></argsstring>
-        <name>VideoPath</name>
-        <briefdescription>
-<para>Gets or sets the full pathname of the image file. </para>        </briefdescription>
-        <detaileddescription>
-<para>The full pathname of the image file. </para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" line="31" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" bodystart="32" bodyend="-1"/>
-        <referencedby refid="class_a_rdev_kit_1_1_controller_1_1_project_controller_1_1_export_visitor_1a190039e5dd86df278c99cfacedac3b63" compoundref="_export_visitor_8cs" startline="120" endline="171">ARdevKit.Controller.ProjectController.ExportVisitor.Visit</referencedby>
-      </memberdef>
       <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_1aad5c2b8555dfe2fd18f2c67c7f34bbda" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
         <type>new int</type>
         <definition>new int ARdevKit.Model.Project.VideoAugmentation.Width</definition>
@@ -58,7 +31,7 @@
 <para>The width, in mm. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" line="54" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" bodystart="55" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" line="32" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" bodystart="33" bodyend="-1"/>
       </memberdef>
       <memberdef kind="property" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_1accd9c0cc7875d689b73306a38892b4fe" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
         <type>new int</type>
@@ -71,7 +44,7 @@
 <para>The height, in mm. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" line="67" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" bodystart="68" bodyend="-1"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" line="45" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" bodystart="46" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -86,7 +59,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" line="76" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" bodystart="76" bodyend="79"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" line="54" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" bodystart="54" bodyend="58"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_1a38e4d291c9003b29aa5c94dff8fd9c3f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -111,7 +84,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" line="86" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" bodystart="86" bodyend="90"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" line="65" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" bodystart="65" bodyend="69"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_1a7f23dea6de8cd95e5500e5000245d118" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>override void</type>
@@ -137,7 +110,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" line="98" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" bodystart="98" bodyend="102"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" line="77" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" bodystart="77" bodyend="81"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_1a3d5968ace1fe7b6becfc10b60f573631" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>override Bitmap</type>
@@ -160,7 +133,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" line="114" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" bodystart="114" bodyend="121"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" line="93" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" bodystart="93" bodyend="100"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_1ae41611da8c40607d32ab62d29c78a8ae" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>override Bitmap</type>
@@ -183,7 +156,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" line="131" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" bodystart="131" bodyend="134"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" line="110" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" bodystart="110" bodyend="113"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_1a83390b8765641d1626b23a06c54490af" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>override void</type>
@@ -197,7 +170,7 @@
 <para>Imanuel, 31.01.2014. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" line="142" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" bodystart="142" bodyend="147"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" line="121" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" bodystart="121" bodyend="126"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_1a1c99b0002e89662c75ae59031f1f7ec5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>override object</type>
@@ -212,7 +185,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" line="157" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" bodystart="157" bodyend="160"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" line="136" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" bodystart="136" bodyend="139"/>
       </memberdef>
       <memberdef kind="function" id="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_1afb33f9a8ac2591973d29ebd56bd75da5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>override bool</type>
@@ -239,11 +212,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" line="169" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" bodystart="169" bodyend="188"/>
+        <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" line="148" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" bodystart="148" bodyend="167"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-    </briefdescription>
+<para>A <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation" kindref="compound">VideoAugmentation</ref> is an <ref refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_augmentation" kindref="compound">Abstract2DAugmentation</ref> that contains a video file. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
@@ -313,7 +286,7 @@
         <label>ICloneable</label>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" line="18" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" bodystart="17" bodyend="189"/>
+    <location file="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" line="21" column="1" bodyfile="C:/Users/geht/Source/Repos/ARdevKit/Editor/Model/Project/VideoAugmentation.cs" bodystart="20" bodyend="168"/>
     <listofallmembers>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_augmentation_1adfb4e825f67880c9ec8790a51a60b574" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::VideoAugmentation</scope><name>Abstract2DAugmentation</name></member>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_augmentation_1a36b71862a4466a4d1942e83e2341cc88" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::VideoAugmentation</scope><name>Abstract2DAugmentation</name></member>
@@ -334,14 +307,14 @@
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1ab19dda553062c0cae9e4a7a66e9cb64f" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::VideoAugmentation</scope><name>IsVisible</name></member>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1ac94095d5fa4f5d4339f66b259ff55e74" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::VideoAugmentation</scope><name>Rotation</name></member>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1adc3b84e8eb93f1ef50b3a689bd4c2a72" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::VideoAugmentation</scope><name>Scaling</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_augmentation_1a9c16053e6d7cd904ad0d9abf823a9b3b" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::VideoAugmentation</scope><name>sourceFilePath</name></member>
+      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract2_d_augmentation_1af2c60054c5ff96c677c84f33c8cb5f9a" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::VideoAugmentation</scope><name>SourceFilePath</name></member>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1aa3badea1be1d6317e62e2dda390c2f34" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::VideoAugmentation</scope><name>ToString</name></member>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a5ef95a16a1d2b03cb6185b86e7120a9c" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::VideoAugmentation</scope><name>Trackable</name></member>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a8d8e3f3c42696008edbfc44d51ba518d" prot="protected" virt="non-virtual"><scope>ARdevKit::Model::Project::VideoAugmentation</scope><name>trackable</name></member>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_abstract_augmentation_1a8ed7943a2eb75682addda8731bff6c34" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::VideoAugmentation</scope><name>Translation</name></member>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_1a7f447fcc225f68f6b17ac7365cd9b33f" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::VideoAugmentation</scope><name>VideoAugmentation</name></member>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_1a38e4d291c9003b29aa5c94dff8fd9c3f" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::VideoAugmentation</scope><name>VideoAugmentation</name></member>
-      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_1adf603b3ae112358e8cae761e94003de1" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::VideoAugmentation</scope><name>VideoPath</name></member>
-      <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_1a40674f81d617a58f1305f0e0fe65ff8d" prot="private" virt="non-virtual"><scope>ARdevKit::Model::Project::VideoAugmentation</scope><name>videoPath</name></member>
       <member refid="class_a_rdev_kit_1_1_model_1_1_project_1_1_video_augmentation_1aad5c2b8555dfe2fd18f2c67c7f34bbda" prot="public" virt="non-virtual"><scope>ARdevKit::Model::Project::VideoAugmentation</scope><name>Width</name></member>
     </listofallmembers>
   </compounddef>
