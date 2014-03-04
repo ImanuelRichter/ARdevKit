@@ -72,8 +72,16 @@ namespace Controller.EditorController
                 if (string.Equals((string)e.ChangedItem.Value, "", StringComparison.Ordinal))
                     ((PictureMarker)ew.CurrentElement).PicturePath = e.OldValue.ToString();
                 else
-                    ew.PreviewController.findBox(ew.CurrentElement).Load(e.ChangedItem.Value.ToString());
-
+                {
+                    ((PictureMarker)ew.CurrentElement).PicturePath = e.ChangedItem.Value.ToString();
+                    this.ew.Pnl_editor_preview.Controls.Remove(this.ew.PreviewController.findBox(this.ew.CurrentElement));
+                    this.ew.PreviewController.addPictureBox(this.ew.CurrentElement,
+                        new Vector3D(this.ew.Pnl_editor_preview.Width / 2, this.ew.Pnl_editor_preview.Height / 2, 0));
+                    PictureBox temp = this.ew.PreviewController.findBox(this.ew.CurrentElement);
+                    temp.BorderStyle = BorderStyle.Fixed3D;
+                    temp.BringToFront();
+                }
+                
                 return;
             }
 
@@ -89,14 +97,28 @@ namespace Controller.EditorController
                 }
                 else
                 {
-                    ((ImageAugmentation)ew.CurrentElement).SourceFilePath = e.ChangedItem.Value.ToString();
-                    this.ew.PreviewController.reloadPreviewable((AbstractAugmentation)this.ew.CurrentElement);
-                    PictureBox temp = this.ew.PreviewController.findBox(this.ew.CurrentElement);
-                    temp.BorderStyle = BorderStyle.Fixed3D;
-                    temp.BringToFront();
+                    if (ew.CurrentElement is ImageAugmentation)
+                    {
+                        ((ImageAugmentation)ew.CurrentElement).SourceFilePath = e.ChangedItem.Value.ToString();
+                        this.ew.PreviewController.reloadPreviewable((AbstractAugmentation)this.ew.CurrentElement);
+                        PictureBox temp = this.ew.PreviewController.findBox(this.ew.CurrentElement);
+                        temp.BorderStyle = BorderStyle.Fixed3D;
+                        temp.BringToFront();
+                    }
+                    if (ew.CurrentElement is ImageTrackable)
+                    {
+                        ((ImageTrackable)ew.CurrentElement).ImagePath = e.ChangedItem.Value.ToString();
+                        this.ew.Pnl_editor_preview.Controls.Remove(this.ew.PreviewController.findBox(this.ew.CurrentElement));
+                        this.ew.PreviewController.addPictureBox(this.ew.CurrentElement,
+                            new Vector3D(this.ew.Pnl_editor_preview.Width / 2, this.ew.Pnl_editor_preview.Height / 2, 0));
+                        PictureBox temp = this.ew.PreviewController.findBox(this.ew.CurrentElement);
+                        temp.BorderStyle = BorderStyle.Fixed3D;
+                        temp.BringToFront();
+                    }
                 }
-                    
-                    
+
+
+
 
                 return;
             }
@@ -144,8 +166,8 @@ namespace Controller.EditorController
             {
                 this.ew.PreviewController.reloadPreviewable((AbstractAugmentation)this.ew.CurrentElement);
                 PictureBox temp = this.ew.PreviewController.findBox(this.ew.CurrentElement);
-                        temp.BorderStyle = BorderStyle.Fixed3D;
-                        temp.BringToFront();
+                temp.BorderStyle = BorderStyle.Fixed3D;
+                temp.BringToFront();
 
                 return;
             }
@@ -167,8 +189,8 @@ namespace Controller.EditorController
                 {
                     this.ew.PreviewController.reloadPreviewable((AbstractAugmentation)this.ew.CurrentElement);
                     PictureBox temp = this.ew.PreviewController.findBox(this.ew.CurrentElement);
-                        temp.BorderStyle = BorderStyle.Fixed3D;
-                        temp.BringToFront();
+                    temp.BorderStyle = BorderStyle.Fixed3D;
+                    temp.BringToFront();
                     return;
                 }
             }
