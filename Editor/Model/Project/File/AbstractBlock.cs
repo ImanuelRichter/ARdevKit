@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 namespace ARdevKit.Model.Project.File
 {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-    /// <summary>   An <see cref="AbstractBlock"/> has a <see cref="level"/>
+    /// <summary>
+    ///             An <see cref="AbstractBlock"/> has a <see cref="level"/>
     ///             and can contain other <see cref="AbstractBlock"/>s.
-    ///             It can have a <see cref="BlockMarker"/> and a <see cref="parentFile"/>. </summary>
+    ///             It can have a <see cref="BlockMarker"/> and a <see cref="parentFile"/>.
+    /// </summary>
     ///
     /// <remarks>   Imanuel, 17.01.2014. </remarks>
     ////////////////////////////////////////////////////////////////////////////////////////////////////

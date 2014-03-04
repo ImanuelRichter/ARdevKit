@@ -14,8 +14,11 @@ namespace ARdevKit.Model.Project
 {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// <summary>
-    ///     AbstractSource has no PictureBox in the PreviewPanel, so it doesn't need a getPreview() method,
-    ///     though getIcon() is needed for the ElementSelectionPanel.
+    ///     An <see cref="AbstractSource"/> is an <see cref="IPreviewable"/> and can be a <see cref="DbSource"/>
+    ///     or a <see cref="FileSource"/> and is used by <see cref="AbstractDynamic2DAugmentations"/>
+    ///     to provide their content.
+    ///     Every <see cref="AbstractSource"/> has its own <see cref="sourceID"/> and a <see cref="queryFilePath"/>
+    ///     which leads to a file containing the query to grant access to the data.
     /// </summary>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     [Serializable]
