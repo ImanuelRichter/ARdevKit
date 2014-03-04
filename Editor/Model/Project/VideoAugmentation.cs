@@ -54,7 +54,7 @@ namespace ARdevKit.Model.Project
         public VideoAugmentation()
             : base()
         {
-            sourceFilePath = null;
+            resFilePath = null;
         }
 
 
@@ -65,7 +65,7 @@ namespace ARdevKit.Model.Project
         public VideoAugmentation(string videoPath)
             : base()
         {
-            this.sourceFilePath = videoPath;
+            this.resFilePath = videoPath;
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace ARdevKit.Model.Project
         {
             if (cachePreview == null)
             {
-                cachePreview = Controller.EditorController.ThumbCreator.CreateThumb(sourceFilePath);
+                cachePreview = Controller.EditorController.ThumbCreator.CreateThumb(resFilePath);
             }
             return cachePreview;
         }
@@ -120,9 +120,9 @@ namespace ARdevKit.Model.Project
 
         public override void CleanUp()
         {
-            string dir = Path.GetDirectoryName(sourceFilePath);
+            string dir = Path.GetDirectoryName(resFilePath);
             if (Directory.Exists(dir) && dir.Contains("Assets"))
-                System.IO.File.Delete(sourceFilePath);
+                System.IO.File.Delete(resFilePath);
         }
 
         /**
@@ -147,7 +147,7 @@ namespace ARdevKit.Model.Project
         /// </returns>
         public override bool initElement(EditorWindow ew)
         {
-            if (SourceFilePath == null)
+            if (ResFilePath == null)
             {
                 OpenFileDialog openFileDialog = new OpenFileDialog();
                 openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyVideos);
@@ -155,7 +155,7 @@ namespace ARdevKit.Model.Project
                 openFileDialog.Filter = "Video Files (*.3G2)|*.3g2";
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    SourceFilePath = openFileDialog.FileName;
+                    ResFilePath = openFileDialog.FileName;
                     return base.initElement(ew);
                 }
                 else

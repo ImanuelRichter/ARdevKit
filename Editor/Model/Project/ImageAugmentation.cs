@@ -56,7 +56,7 @@ namespace ARdevKit.Model.Project
         public ImageAugmentation()
             : base()
         {
-            sourceFilePath = null;
+            resFilePath = null;
         }
 
 
@@ -67,7 +67,7 @@ namespace ARdevKit.Model.Project
         public ImageAugmentation(string imagePath)
             : base()
         {
-            this.sourceFilePath = imagePath;
+            this.resFilePath = imagePath;
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace ARdevKit.Model.Project
         /// not found in <see cref="SourceFilePath" />.</exception>
         public override Bitmap getPreview()
         {
-                cachePreview = new Bitmap(SourceFilePath);
+                cachePreview = new Bitmap(ResFilePath);
             return cachePreview;
         }
 
@@ -119,9 +119,9 @@ namespace ARdevKit.Model.Project
 
         public override void CleanUp()
         {
-            string dir = Path.GetDirectoryName(sourceFilePath);
+            string dir = Path.GetDirectoryName(resFilePath);
             if (Directory.Exists(dir) && dir.Contains("Assets"))
-                System.IO.File.Delete(sourceFilePath);
+                System.IO.File.Delete(resFilePath);
         }
 
         /**
@@ -146,7 +146,7 @@ namespace ARdevKit.Model.Project
         /// </returns>
         public override bool initElement(EditorWindow ew)
         {
-            if (SourceFilePath == null)
+            if (ResFilePath == null)
             {
                 OpenFileDialog openFileDialog = new OpenFileDialog();
                 openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
@@ -154,7 +154,7 @@ namespace ARdevKit.Model.Project
                 openFileDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    SourceFilePath = openFileDialog.FileName;
+                    ResFilePath = openFileDialog.FileName;
                     return base.initElement(ew);
                 }
                 else

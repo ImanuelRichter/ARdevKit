@@ -121,8 +121,8 @@ namespace ARdevKit.Controller.ProjectController
         {
             // Copy to projectPath
             string newPath = Path.Combine(project.ProjectPath, "Assets");
-            Helper.Copy(video.SourceFilePath, newPath);
-            video.SourceFilePath = Path.Combine(newPath, Path.GetFileName(video.SourceFilePath));
+            Helper.Copy(video.ResFilePath, newPath);
+            video.ResFilePath = Path.Combine(newPath, Path.GetFileName(video.ResFilePath));
 
             // arelGlue.js
             string videoID = video.ID = video.ID == null ? "video" + videoCount : video.ID;
@@ -132,7 +132,7 @@ namespace ARdevKit.Controller.ProjectController
             JavaScriptBlock loadContentBlock = new JavaScriptBlock();
             sceneReadyFunctionBlock.AddBlock(loadContentBlock);
 
-            string videoPath = Path.GetFileNameWithoutExtension(video.SourceFilePath) + Path.GetExtension(video.SourceFilePath);
+            string videoPath = Path.GetFileNameWithoutExtension(video.ResFilePath) + Path.GetExtension(video.ResFilePath);
             loadContentBlock.AddLine(new JavaScriptLine(videoID + " = arel.Object.Model3D.createFromMovie(\"" + videoID + "\",\"Assets/" + videoPath + "\")"));
             loadContentBlock.AddLine(new JavaScriptLine(videoID + ".setVisibility(" + video.IsVisible.ToString().ToLower() + ")"));
             loadContentBlock.AddLine(new JavaScriptLine(videoID + ".setCoordinateSystemID(" + coordinateSystemID + ")"));
@@ -182,8 +182,8 @@ namespace ARdevKit.Controller.ProjectController
         {
             // Copy to projectPath
             string newPath = Path.Combine(project.ProjectPath, "Assets");
-            Helper.Copy(image.SourceFilePath, newPath);
-            image.SourceFilePath = Path.Combine(newPath, Path.GetFileName(image.SourceFilePath));
+            Helper.Copy(image.ResFilePath, newPath);
+            image.ResFilePath = Path.Combine(newPath, Path.GetFileName(image.ResFilePath));
 
             // arelGlue.js
             string imageID = image.ID = image.ID == null ? "image" + imageCount : image.ID;
@@ -193,7 +193,7 @@ namespace ARdevKit.Controller.ProjectController
             JavaScriptBlock loadContentBlock = new JavaScriptBlock();
             sceneReadyFunctionBlock.AddBlock(loadContentBlock);
 
-            loadContentBlock.AddLine(new JavaScriptLine(imageID + " = arel.Object.Model3D.createFromImage(\"" + imageID + "\",\"Assets/" + Path.GetFileName(image.SourceFilePath) + "\")"));
+            loadContentBlock.AddLine(new JavaScriptLine(imageID + " = arel.Object.Model3D.createFromImage(\"" + imageID + "\",\"Assets/" + Path.GetFileName(image.ResFilePath) + "\")"));
             loadContentBlock.AddLine(new JavaScriptLine(imageID + ".setVisibility(" + image.IsVisible.ToString().ToLower() + ")"));
             loadContentBlock.AddLine(new JavaScriptLine(imageID + ".setCoordinateSystemID(" + coordinateSystemID + ")"));
             string augmentationScalingX = image.Scaling.X.ToString("F1", CultureInfo.InvariantCulture);
