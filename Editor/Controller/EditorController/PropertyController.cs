@@ -90,35 +90,36 @@ namespace Controller.EditorController
             {
                 if (string.Equals((string)e.ChangedItem.Value, "", StringComparison.Ordinal))
                 {
-                    if (ew.CurrentElement is ImageAugmentation)
-                        ((ImageAugmentation)ew.CurrentElement).ResFilePath = e.OldValue.ToString();
-                    if (ew.CurrentElement is ImageTrackable)
                         ((ImageTrackable)ew.CurrentElement).ImagePath = e.OldValue.ToString();
                 }
                 else
                 {
-                    ((ImageAugmentation)ew.CurrentElement).ResFilePath = e.ChangedItem.Value.ToString();
+                    ((ImageTrackable)ew.CurrentElement).ImagePath = e.ChangedItem.Value.ToString();
+                    this.ew.Pnl_editor_preview.Controls.Remove(this.ew.PreviewController.findBox(this.ew.CurrentElement));
+                    this.ew.PreviewController.addPictureBox(this.ew.CurrentElement,
+                        new Vector3D(this.ew.Pnl_editor_preview.Width / 2, this.ew.Pnl_editor_preview.Height / 2, 0));
+                    PictureBox temp = this.ew.PreviewController.findBox(this.ew.CurrentElement);
+                    temp.BorderStyle = BorderStyle.Fixed3D;
+                    temp.BringToFront();
+                }
+                return;
+            }
+
+            // Checks if resFilePath has been changed
+            if (String.Equals(e.ChangedItem.Label.ToString(), "ResFilePath", StringComparison.Ordinal))
+            {
+                if (string.Equals((string)e.ChangedItem.Value, "", StringComparison.Ordinal))
+                {
+                    ((Abstract2DAugmentation)ew.CurrentElement).ResFilePath = e.OldValue.ToString();
+                }
+                else
+                {
+                    ((Abstract2DAugmentation)ew.CurrentElement).ResFilePath = e.ChangedItem.Value.ToString();
                     this.ew.PreviewController.reloadPreviewable((AbstractAugmentation)this.ew.CurrentElement);
                     PictureBox temp = this.ew.PreviewController.findBox(this.ew.CurrentElement);
                     temp.BorderStyle = BorderStyle.Fixed3D;
                     temp.BringToFront();
                 }
-                    if (ew.CurrentElement is ImageTrackable)
-                    {
-                        ((ImageTrackable)ew.CurrentElement).ImagePath = e.ChangedItem.Value.ToString();
-                        this.ew.Pnl_editor_preview.Controls.Remove(this.ew.PreviewController.findBox(this.ew.CurrentElement));
-                        this.ew.PreviewController.addPictureBox(this.ew.CurrentElement,
-                            new Vector3D(this.ew.Pnl_editor_preview.Width / 2, this.ew.Pnl_editor_preview.Height / 2, 0));
-                        PictureBox temp = this.ew.PreviewController.findBox(this.ew.CurrentElement);
-                        temp.BorderStyle = BorderStyle.Fixed3D;
-                        temp.BringToFront();
-                    }
-                }
-
-                    
-                    
-
-                return;
             }
 
             // Checks if Data has been changed (only for FileSource for now)
@@ -164,8 +165,8 @@ namespace Controller.EditorController
             {
                 this.ew.PreviewController.reloadPreviewable((AbstractAugmentation)this.ew.CurrentElement);
                 PictureBox temp = this.ew.PreviewController.findBox(this.ew.CurrentElement);
-                        temp.BorderStyle = BorderStyle.Fixed3D;
-                        temp.BringToFront();
+                temp.BorderStyle = BorderStyle.Fixed3D;
+                temp.BringToFront();
 
                 return;
             }
@@ -187,8 +188,8 @@ namespace Controller.EditorController
                 {
                     this.ew.PreviewController.reloadPreviewable((AbstractAugmentation)this.ew.CurrentElement);
                     PictureBox temp = this.ew.PreviewController.findBox(this.ew.CurrentElement);
-                        temp.BorderStyle = BorderStyle.Fixed3D;
-                        temp.BringToFront();
+                    temp.BorderStyle = BorderStyle.Fixed3D;
+                    temp.BringToFront();
                     return;
                 }
             }
