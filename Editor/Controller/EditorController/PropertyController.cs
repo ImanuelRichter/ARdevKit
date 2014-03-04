@@ -194,8 +194,10 @@ namespace Controller.EditorController
                     IDMarker marker = (IDMarker)ew.CurrentElement;
                     marker.MatrixID = ew.project.nextID();
                 }
-                this.ew.PreviewController.findBox(this.ew.CurrentElement).Image = this.ew.PreviewController.scaleIPreviewable(this.ew.CurrentElement);
+                IPreviewable temp = this.ew.CurrentElement;
+                this.ew.PreviewController.findBox(temp).Image = this.ew.PreviewController.scaleIPreviewable(temp);
                 this.ew.PreviewController.reloadPreviewPanel(this.ew.PreviewController.index);
+                this.ew.PreviewController.setCurrentElement(temp);
                 return;
             }
         }
