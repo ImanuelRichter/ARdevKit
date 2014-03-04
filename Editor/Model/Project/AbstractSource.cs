@@ -78,7 +78,6 @@ namespace ARdevKit.Model.Project
 
         /// <summary>
         /// Initializes no new instance of the <see cref="AbstractSource" /> class,
-
         /// </summary>
         protected AbstractSource() { }
 
@@ -106,7 +105,6 @@ namespace ARdevKit.Model.Project
         /// </summary>
         /// <returns></returns>
         /// <exception cref="System.NotSupportedException"></exception>
-        /// <exception cref="NotSupportedException"></exception>
         public Bitmap getPreview()
         {
             throw new NotSupportedException();
@@ -132,7 +130,7 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// This method is called by the previewController when a new instance of the element is added to the Scene. It sets "must-have" properties.
         /// </summary>
-        /// <param name="ew">The ew.</param>
+        /// <param name="ew">The EditorWindow.</param>
         /// <returns>
         /// true if it succeeds, false if it fails.
         /// </returns>

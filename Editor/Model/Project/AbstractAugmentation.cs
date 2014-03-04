@@ -42,7 +42,7 @@ namespace ARdevKit.Model.Project
             set { id = value; }
         }
         /// <summary>
-        /// describes if the <see cref="AbstractAugmentation"/>
+        /// Describes if the <see cref="AbstractAugmentation"/>
         /// is seen using AREL, even if the associated <see cref="AbstractTrackable"/>
         /// is not recognized.
         /// </summary>
@@ -65,7 +65,7 @@ namespace ARdevKit.Model.Project
         /// </summary>
         private CustomUserEvent cue;
         /// <summary>
-        /// Get the CustomUserEvent.
+        /// Get and set the CustomUserEvent.
         /// </summary>
         [Browsable(false)]
         public CustomUserEvent CustomUserEventReference
@@ -261,13 +261,13 @@ namespace ARdevKit.Model.Project
             id = newID;
             return true;
         }
-        /**
-         * <summary>    Gibt eine Zeichenfolge zurück, die das aktuelle Objekt darstellt. </summary>
-         *
-         * <remarks>    Robin, 14.01.2014. </remarks>
-         *
-         * <returns>    Eine Zeichenfolge, die das aktuelle Objekt darstellt. </returns>
-         */
+
+        /// <summary>
+        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="System.String" /> that represents this instance.
+        /// </returns>
         public override string ToString()
         {
             return id;

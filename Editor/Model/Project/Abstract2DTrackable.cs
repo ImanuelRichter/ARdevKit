@@ -23,7 +23,7 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// Gets or sets the sensor cos identifier.
         /// </summary>
-        [CategoryAttribute("Expert"), Description("The sensor cos identifier, used by AREL to specify the tracking data.")]
+        [CategoryAttribute("Expert"), Description("Der Sensor cos Bezeichner, der im AREL benutzt wird um die verfolgten Daten zu definieren.")]
         public string SensorCosID
         {
             get { return sensorCosID; }
@@ -37,7 +37,7 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// Gets or sets the size.
         /// </summary>
-        [CategoryAttribute("General"), Description("Size of the actual marker in mm")]
+        [CategoryAttribute("General"), Description("Größe des realen Markers in mm.")]
         public int Size
         {
             get { return size; }
@@ -74,7 +74,6 @@ namespace ARdevKit.Model.Project
         /// gets or sets the Vector
         /// </summary>
         [Browsable(false)]
-        [Description("Vector which describes the rotation of the augmentation.")]
         public Vector3Di Rotation
         {
             get { return rotationVector; }
@@ -101,13 +100,12 @@ namespace ARdevKit.Model.Project
             set { fuser = value; }
         }
 
-        /**
-         * <summary>    Gibt eine Zeichenfolge zurück, die das aktuelle Objekt darstellt. </summary>
-         *
-         * <remarks>    Robin, 14.01.2014. </remarks>
-         *
-         * <returns>    Eine Zeichenfolge, die das aktuelle Objekt darstellt. </returns>
-         */
+        /// <summary>
+        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="System.String" /> that represents this instance.
+        /// </returns>
         public override string ToString()
         {
             return sensorCosID;
