@@ -127,10 +127,7 @@ namespace ARdevKit.Model.Project
 
         public override System.Drawing.Bitmap getPreview()
         {
-            if (cachePreview == null)
-            {
-                cachePreview = new Bitmap(ImagePath);
-            }
+            cachePreview = new Bitmap(ImagePath);
             return cachePreview;
         }
 
