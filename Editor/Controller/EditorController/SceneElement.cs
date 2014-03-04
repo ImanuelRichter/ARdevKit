@@ -37,12 +37,9 @@ namespace ARdevKit.Controller.EditorController
             set { prototype = value; }
         }
 
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   grafische Repräsentation des Elements. </summary>
-        ///
-        /// <value> The icon. </value>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
+        /// <summary>
+        /// The icon of the element.
+        /// </summary>
         private Bitmap icon;
 
         /**
@@ -114,14 +111,12 @@ namespace ARdevKit.Controller.EditorController
             this.elementIcon = new ElementIcon(this, ew);
         }
 
-        /**
-         * <summary>    Gibt eine Zeichenfolge zurück, die das aktuelle Objekt darstellt. </summary>
-         *
-         * <remarks>    Robin, 14.01.2014. </remarks>
-         *
-         * <returns>    Eine Zeichenfolge, die das aktuelle Objekt darstellt. </returns>
-         */
-
+        /// <summary>
+        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="System.String" /> that represents this instance.
+        /// </returns>
         public override string ToString()
         {
             return name;

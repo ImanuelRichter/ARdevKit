@@ -65,13 +65,33 @@ namespace ARdevKit.Model.Project.File
         /// <returns>Returns true if the file is in the directory of the rootPath or its subdirectory</returns>
         public static bool FileExists(string rootPath, string filePath)
         {
-            if (System.IO.File.Exists(Path.Combine(rootPath, Path.GetFileName(filePath))))
-                return true;
+            Stack<string> stack;
+            string[] files;
+            string[] directories;
+            string dir;
 
-            foreach (string subDir in Directory.GetDirectories(rootPath))
+            stack = new Stack<string>();
+            stack.Push(rootPath);
+
+            while (stack.Count > 0)
             {
-                if (FileExists(subDir, filePath) && System.IO.File.Equals(subDir, filePath))
-                    return true;
+
+                // Pop a directory
+                dir = stack.Pop();
+
+                files = Directory.GetFiles(dir);
+                foreach (string file in files)
+                {
+                    if (String.Equals(Path.GetFullPath(file), filePath, StringComparison.Ordinal))
+                        return true;
+                }
+
+                directories = Directory.GetDirectories(dir);
+                foreach (string directory in directories)
+                {
+                    // Push each directory into stack
+                    stack.Push(directory);
+                }
             }
 
             return false;
