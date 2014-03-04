@@ -4,7 +4,7 @@ function init() {
 			type: 'spline'
 		},
 		title: {
-			text: 'Tempretures'
+			text: 'Temperatures'
 		},
 		xAxis: {
 			type: 'datetime',

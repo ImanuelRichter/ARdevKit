@@ -120,7 +120,7 @@ namespace ARdevKit.Controller.TestController
                 case (IMAGE):
                     OpenFileDialog openTestImageDialog = new OpenFileDialog();
                     openTestImageDialog.Title = "Bitte ein Bild auswählen, an dem getestet werden soll";
-                    openTestImageDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
+                    openTestImageDialog.Filter = "Supported files (*.jpg, *.png, *.bmp, *.ppm, *.pgm)|*.jpg; *.png; *.bmp; *.ppm; *.pgm";
                     if (openTestImageDialog.ShowDialog() == DialogResult.OK)
                     {
                         string testFilePath = openTestImageDialog.FileName;
