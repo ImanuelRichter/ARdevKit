@@ -321,7 +321,7 @@ namespace ARdevKit.Model.Project
                     {
                         if (trackables[i].Augmentations[j] is Abstract2DAugmentation)
                         {
-                            deleteFile = !(((Abstract2DAugmentation) trackables[i].Augmentations[j]).SourceFilePath == augmentationToBeRemoved.SourceFilePath);
+                            deleteFile = !(((Abstract2DAugmentation) trackables[i].Augmentations[j]).ResFilePath == augmentationToBeRemoved.ResFilePath);
                         }
                     }
                 }

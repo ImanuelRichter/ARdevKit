@@ -74,7 +74,7 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// Full pathname of the source file.
         /// </summary>
-        protected string sourceFilePath;
+        protected string resFilePath;
 
         /// <summary>
         /// Gets or sets the full pathname of the image file.
@@ -84,14 +84,14 @@ namespace ARdevKit.Model.Project
         /// </value>
         [CategoryAttribute("General"), EditorAttribute(typeof(FileSelectorTypeEditor),
             typeof(System.Drawing.Design.UITypeEditor))]
-        public string SourceFilePath
+        public string ResFilePath
         {
-            get { return sourceFilePath; }
+            get { return resFilePath; }
             set
             {
                 if (System.IO.File.Exists(value))
                 {
-                    sourceFilePath = value;
+                    resFilePath = value;
                 }
 
             }

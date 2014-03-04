@@ -432,7 +432,7 @@ public class PreviewController
     /// </summary>
     /// <param name="prev">The previous.</param>
     /// <param name="vector">The vector.</param>
-    private void addPictureBox(IPreviewable prev, Vector3D vector)
+    public void addPictureBox(IPreviewable prev, Vector3D vector)
     {
         //creates the temporateBox with all variables, which'll be add than to the panel.
         PictureBox tempBox;
@@ -473,9 +473,9 @@ public class PreviewController
 
         this.panel.Controls.Add(tempBox);
         
-        if (prev is ImageAugmentation)
+        if (prev is ImageAugmentation || prev is VideoAugmentation)
         {
-            if (((ImageAugmentation)prev).Rotation.Z != 0)
+            if (((AbstractAugmentation)prev).Rotation.Z != 0)
             {
                 this.rotateAugmentation(prev);
             }

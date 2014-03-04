@@ -1176,8 +1176,20 @@ namespace ARdevKit
                 e.Cancel = true;
                 return;
             }
-            if (Directory.Exists("tmp"))
-                Directory.Delete("tmp", true);
+            DialogResult result = DialogResult.Retry;
+            while (Directory.Exists("tmp") && result == System.Windows.Forms.DialogResult.Retry)
+            {
+                try
+                {
+                    Directory.Delete("tmp", true);
+                } catch (IOException ioe)
+                {
+                   result = MessageBox.Show("Could not delete tmp folder.\n" + ioe.Message, "Error!", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                } catch (UnauthorizedAccessException uae)
+                {
+                    MessageBox.Show("Could not delete tmp folder.\n" + uae.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         /// <summary>
