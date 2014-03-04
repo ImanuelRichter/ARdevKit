@@ -1176,7 +1176,8 @@ namespace ARdevKit
                 e.Cancel = true;
                 return;
             }
-            Directory.Delete("tmp", true);
+            if (Directory.Exists("tmp"))
+                Directory.Delete("tmp", true);
         }
 
         /// <summary>
