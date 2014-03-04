@@ -125,10 +125,7 @@ namespace ARdevKit.Model.Project
         ///     not correct.</exception>
         public override Bitmap getPreview()
         {
-            if (cachePreview == null)
-            {
-                cachePreview = new Bitmap(PicturePath);
-            }
+            cachePreview = new Bitmap(PicturePath);
             return cachePreview;
         }
 

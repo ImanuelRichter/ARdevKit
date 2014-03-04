@@ -473,9 +473,9 @@ public class PreviewController
 
         this.panel.Controls.Add(tempBox);
         
-        if (prev is ImageAugmentation)
+        if (prev is ImageAugmentation || prev is VideoAugmentation)
         {
-            if (((ImageAugmentation)prev).Rotation.Z != 0)
+            if (((AbstractAugmentation)prev).Rotation.Z != 0)
             {
                 this.rotateAugmentation(prev);
             }

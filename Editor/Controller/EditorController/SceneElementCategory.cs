@@ -22,13 +22,9 @@ namespace ARdevKit.Controller.EditorController
 
     class SceneElementCategory
     {
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Hält die Kategorie der in den SceneElements enthaltenen IPreviewables. </summary>
-        ///
-        /// <value> The meta category. </value>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
+        /// <summary>
+        /// The meta category of the of all IPreviewables.
+        /// </summary>
         private MetaCategory metaCategory;
 
         /**
@@ -43,15 +39,9 @@ namespace ARdevKit.Controller.EditorController
             set { metaCategory = value; }
         }
 
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
-        ///     Hält einen Namen, der die Kategorie beschreibt. Dieser wird in der ComboBox des
-        ///     ElementSelectionPanels angezeigt.
+        /// The name of a category. This will be shown in the ComboBox of the ElementSelectionPanel.
         /// </summary>
-        ///
-        /// <value> The name. </value>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
         private String name;
 
         /**
@@ -66,12 +56,9 @@ namespace ARdevKit.Controller.EditorController
             set { name = value; }
         }
 
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Hält die zur Kategorie gehörenden SceneElements. </summary>
-        ///
-        /// <value> The scene elements. </value>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
+        /// <summary>
+        /// List of SceneElements in this particular category.
+        /// </summary>
         private List<SceneElement> sceneElements;
 
         /**
@@ -102,14 +89,12 @@ namespace ARdevKit.Controller.EditorController
             sceneElements = new List<SceneElement>();
         }
 
-        /**
-         * <summary>    Gibt eine Zeichenfolge zurück, die das aktuelle Objekt darstellt. </summary>
-         *
-         * <remarks>    Robin, 14.01.2014. </remarks>
-         *
-         * <returns>    Eine Zeichenfolge, die das aktuelle Objekt darstellt. </returns>
-         */
-
+        /// <summary>
+        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="System.String" /> that represents this instance.
+        /// </returns>
         public override string ToString()
         {
             return name;

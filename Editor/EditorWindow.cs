@@ -119,7 +119,7 @@ namespace ARdevKit
         /// The element selection controller.
         /// </value>
         /// <remarks>geht 19.01.2014 23:06</remarks>
-        
+
         internal ElementSelectionController ElementSelectionController
         {
             get { return elementSelectionController; }
@@ -229,17 +229,17 @@ namespace ARdevKit
         {
             if (projectChanged())
             {
-            if (MessageBox.Show("Möchten Sie das aktuelle Projekt abspeichern, bevor ein neues angelegt wird?", "Projekt speichern?", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                try
+                if (MessageBox.Show("Möchten Sie das aktuelle Projekt abspeichern, bevor ein neues angelegt wird?", "Projekt speichern?", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    this.saveProject();
+                    try
+                    {
+                        this.saveProject();
+                    }
+                    catch (ArgumentNullException ae)
+                    {
+                        Debug.WriteLine(ae.StackTrace);
+                    }
                 }
-                catch (ArgumentNullException ae)
-                {
-                    Debug.WriteLine(ae.StackTrace);
-                }
-            }
             }
 
             createNewProject("");
@@ -776,10 +776,14 @@ namespace ARdevKit
         {
             if (previewController.currentMetaCategory != MetaCategory.Source)
             {
-                ElementIcon icon = (ElementIcon)e.Data.GetData(typeof(ElementIcon));
-                Point p = pnl_editor_preview.PointToClient(Cursor.Position);
-                IPreviewable element = (IPreviewable)icon.Element.Prototype.Clone();
-                icon.EditorWindow.PreviewController.addPreviewable(element, new Vector3D(p.X, p.Y, 0));
+                if (((ElementIcon)e.Data.GetData(typeof(ElementIcon)) != null))
+                {
+                    ElementIcon icon = (ElementIcon)e.Data.GetData(typeof(ElementIcon));
+                    Point p = pnl_editor_preview.PointToClient(Cursor.Position);
+
+                    IPreviewable element = (IPreviewable)icon.Element.Prototype.Clone();
+                    icon.EditorWindow.PreviewController.addPreviewable(element, new Vector3D(p.X, p.Y, 0));
+                }
             }
         }
 
@@ -788,11 +792,11 @@ namespace ARdevKit
         /// </summary>
         private void initializeControllers()
         {
-                this.elementSelectionController = new ElementSelectionController(this);
+            this.elementSelectionController = new ElementSelectionController(this);
             this.previewController = new PreviewController(this);
             this.propertyController = new PropertyController(this);
-                this.deviceConnectionController = new DeviceConnectionController(this);
-            }
+            this.deviceConnectionController = new DeviceConnectionController(this);
+        }
 
         /// <summary>
         /// Initializes the empty project.
@@ -808,7 +812,7 @@ namespace ARdevKit
             this.project.Screensize = new ScreenSize();
             this.project.Screensize.Height = Convert.ToUInt32(pnl_editor_preview.Size.Height);
             this.project.Screensize.Width = Convert.ToUInt32(pnl_editor_preview.Size.Width);
-            this.project.Screensize.SizeChanged += new System.EventHandler(this.pnl_editor_preview_SizeChanged); 
+            this.project.Screensize.SizeChanged += new System.EventHandler(this.pnl_editor_preview_SizeChanged);
             registerElements();
         }
 
@@ -923,19 +927,19 @@ namespace ARdevKit
         {
             if (projectChanged())
             {
-            if (MessageBox.Show("Möchten Sie das aktuelle Projekt abspeichern, bevor ein anderes geöffnet wird?", "Projekt speichern?", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                try
+                if (MessageBox.Show("Möchten Sie das aktuelle Projekt abspeichern, bevor ein anderes geöffnet wird?", "Projekt speichern?", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    this.saveProject();
-                }
-                catch (ArgumentNullException ae)
-                {
-                    Debug.WriteLine(ae.StackTrace);
+                    try
+                    {
+                        this.saveProject();
+                    }
+                    catch (ArgumentNullException ae)
+                    {
+                        Debug.WriteLine(ae.StackTrace);
+                    }
                 }
             }
-            }
-            
+
             this.loadProject();
         }
 
@@ -1086,12 +1090,12 @@ namespace ARdevKit
 
                 PrintDialog printd = new PrintDialog();
                 printd.Document = pd;
-                
+
                 if (printd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     PrintPreviewDialog dlg = new PrintPreviewDialog();
                     dlg.Document = printd.Document;
-                    
+
                     if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                         pd.Print();
                 }
@@ -1226,7 +1230,7 @@ namespace ARdevKit
             {
                 previewController.setCurrentElement((IPreviewable)cmb_editor_properties_objectSelection.SelectedItem);
             }
-            
+
         }
 
         /// <summary>
@@ -1239,10 +1243,10 @@ namespace ARdevKit
             {
                 deviceConnectionController.refresh();
             }
-            catch(System.Net.Sockets.SocketException)
+            catch (System.Net.Sockets.SocketException)
             {
                 MessageBox.Show("Es gab ein Problem mit der Netzwerkverbindung, stellen sie sicher, dass kein anderes Programm den benötigten Port belegt");
-            }           
+            }
             List<string> devices = deviceConnectionController.getReportedDevices();
             foreach (string device in devices)
             {
@@ -1251,7 +1255,7 @@ namespace ARdevKit
             if (DeviceList.Items.Count > 0)
             {
                 DeviceList.SelectedItem = devices[0];
-            } 
+            }
         }
 
         /// <summary>
@@ -1301,7 +1305,7 @@ namespace ARdevKit
                                 MessageBox.Show("Das Projekt wurde nicht versand.");
                             }
                         }
-                        catch(System.Net.Sockets.SocketException)
+                        catch (System.Net.Sockets.SocketException)
                         {
                             MessageBox.Show("Es gab ein Verbindungsproblem. Bitte überprüfen sie ihre Netzwerkeinstellungen.");
                         }
