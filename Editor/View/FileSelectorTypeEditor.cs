@@ -53,7 +53,10 @@ namespace ARdevKit.View
                 provider.GetService(typeof(IWindowsFormsEditorService));
 
                 OpenFileDialog dlg = new OpenFileDialog();
-                dlg.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm|All files (*.*)|*.*";
+                if (context.Instance is ARdevKit.Model.Project.VideoAugmentation)
+                    dlg.Filter = "3g2 Files (*.3g2)|*3g2";
+                else
+                    dlg.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm|All files (*.*)|*.*";
                 dlg.CheckFileExists = true;
 
                 string filename = (string)value;
