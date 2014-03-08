@@ -9,6 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Editor", "Editor\Editor.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EditorTest", "EditorTest\EditorTest.csproj", "{3A846B92-31B7-4602-BB8C-21FA6FC2E3FB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EditorUITest", "EditorUITest\EditorUITest.csproj", "{3C126B59-3163-481B-AD0F-FCA1ED7E42EE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{89322CCE-624D-489E-A157-06C0DD4A3719} = {89322CCE-624D-489E-A157-06C0DD4A3719}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +52,16 @@ Global
 		{3A846B92-31B7-4602-BB8C-21FA6FC2E3FB}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{3A846B92-31B7-4602-BB8C-21FA6FC2E3FB}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{3A846B92-31B7-4602-BB8C-21FA6FC2E3FB}.Release|Win32.ActiveCfg = Release|Any CPU
+		{3C126B59-3163-481B-AD0F-FCA1ED7E42EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C126B59-3163-481B-AD0F-FCA1ED7E42EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C126B59-3163-481B-AD0F-FCA1ED7E42EE}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{3C126B59-3163-481B-AD0F-FCA1ED7E42EE}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3C126B59-3163-481B-AD0F-FCA1ED7E42EE}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{3C126B59-3163-481B-AD0F-FCA1ED7E42EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C126B59-3163-481B-AD0F-FCA1ED7E42EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C126B59-3163-481B-AD0F-FCA1ED7E42EE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{3C126B59-3163-481B-AD0F-FCA1ED7E42EE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{3C126B59-3163-481B-AD0F-FCA1ED7E42EE}.Release|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
