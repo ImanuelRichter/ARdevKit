@@ -12,8 +12,8 @@
     using System.Drawing;
     using System.Windows.Input;
     using System.Text.RegularExpressions;
-    
-    
+
+
     public partial class UIMap
     {
     }

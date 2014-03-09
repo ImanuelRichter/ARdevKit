@@ -31,36 +31,89 @@ namespace EditorUITest
     {
         
         /// <summary>
-        /// DuplicateIDMarker
+        /// IDDuplicateMarkerAssertion - Verwenden Sie "IDDuplicateMarkerAssertionExpectedValues", um Parameter an diese Methode zu übergeben.
         /// </summary>
-        public void DuplicateIDMarker()
+        public void IDDuplicateMarkerAssertion()
         {
             #region Variable Declarations
-            WinClient uIIDMarkerClient = this.UIARdevKitWindow.UIIDMarkerIconWindow.UIIDMarkerClient;
+            WinRow uISensorCosIDRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UISensorCosIDRow;
+            #endregion
+
+            // Sicherstellen, dass die Eigenschaft 'Value' von "SensorCosID" Zeile ist gleich 'IDMarker2'
+            Assert.AreEqual(this.IDDuplicateMarkerAssertionExpectedValues.UISensorCosIDRowValue, uISensorCosIDRow.Value);
+        }
+        
+        /// <summary>
+        /// IDMarkerDuplicate - Verwenden Sie "IDMarkerDuplicateParams", um Parameter an diese Methode zu übergeben.
+        /// </summary>
+        public void IDMarkerDuplicate()
+        {
+            #region Variable Declarations
+            WinClient uIPictureMarkerClient1 = this.UIARdevKitWindow.UIPictureMarkerClient.UIPictureMarkerClient1;
             WinButton uIItem1Button = this.UIARdevKitWindow.UIItem1Window.UIItem1Button;
             WinMenuItem uIDuplicateMenuItem = this.UIItemWindow.UIKontextmenüMenu.UIDuplicateMenuItem;
             WinButton uIItem2Button = this.UIARdevKitWindow.UIItem2Window.UIItem2Button;
-            WinClient uIARdevKitv02Client1 = this.UIARdevKitWindow.UIARdevKitv02Client.UIARdevKitv02Client1;
+            WinComboBox uICmb_editor_propertieComboBox = this.UIARdevKitWindow.UICmb_editor_propertieWindow.UICmb_editor_propertieComboBox;
             #endregion
 
             // Klicken "Picture Marker" Client
-            //Mouse.Click(uIIDMarkerClient, new Point(19, 48));
+            Mouse.Click(uIPictureMarkerClient1, new Point(45, 52));
 
-            Mouse.Click(new Point(20, 200));
             // Rechts-Klicken "1" Schaltfläche
-            //Mouse.Click(uIItem1Button, MouseButtons.Right, ModifierKeys.None, new Point(17, 23));
+            Mouse.Click(uIItem1Button, MouseButtons.Right, ModifierKeys.None, new Point(29, 11));
 
             // Klicken "Duplicate" Menüelement
-            //Mouse.Click(uIDuplicateMenuItem, new Point(19, 3));
+            Mouse.Click(uIDuplicateMenuItem, new Point(35, 7));
 
             // Klicken "2" Schaltfläche
-            //Mouse.Click(uIItem2Button, new Point(24, 29));
+            Mouse.Click(uIItem2Button, new Point(24, 20));
 
-            // Klicken "ARdevKit v0.2" Client
-            //Mouse.Click(uIARdevKitv02Client1, new Point(30, 45));
+            // "IDMarker2" in "cmb_editor_properties_objectSelection" Kombinationsfeld auswählen
+            uICmb_editor_propertieComboBox.SelectedItem = this.IDMarkerDuplicateParams.UICmb_editor_propertieComboBoxSelectedItem;
+        }
+        
+        /// <summary>
+        /// CloseWithoutSave
+        /// </summary>
+        public void CloseWithoutSave()
+        {
+            #region Variable Declarations
+            WinButton uISchließenButton = this.UIARdevKitWindow.UIARdevKitTitleBar.UISchließenButton;
+            WinButton uINeinButton = this.UIProjektspeichernWindow.UINeinWindow.UINeinButton;
+            #endregion
+
+            // Klicken "Schließen" Schaltfläche
+            Mouse.Click(uISchließenButton, new Point(13, 17));
+
+            // Klicken "&Nein" Schaltfläche
+            Mouse.Click(uINeinButton, new Point(21, 9));
         }
         
         #region Properties
+        public virtual IDDuplicateMarkerAssertionExpectedValues IDDuplicateMarkerAssertionExpectedValues
+        {
+            get
+            {
+                if ((this.mIDDuplicateMarkerAssertionExpectedValues == null))
+                {
+                    this.mIDDuplicateMarkerAssertionExpectedValues = new IDDuplicateMarkerAssertionExpectedValues();
+                }
+                return this.mIDDuplicateMarkerAssertionExpectedValues;
+            }
+        }
+        
+        public virtual IDMarkerDuplicateParams IDMarkerDuplicateParams
+        {
+            get
+            {
+                if ((this.mIDMarkerDuplicateParams == null))
+                {
+                    this.mIDMarkerDuplicateParams = new IDMarkerDuplicateParams();
+                }
+                return this.mIDMarkerDuplicateParams;
+            }
+        }
+        
         public UIARdevKitWindow UIARdevKitWindow
         {
             get
@@ -70,6 +123,18 @@ namespace EditorUITest
                     this.mUIARdevKitWindow = new UIARdevKitWindow();
                 }
                 return this.mUIARdevKitWindow;
+            }
+        }
+        
+        public UIProjektspeichernWindow UIProjektspeichernWindow
+        {
+            get
+            {
+                if ((this.mUIProjektspeichernWindow == null))
+                {
+                    this.mUIProjektspeichernWindow = new UIProjektspeichernWindow();
+                }
+                return this.mUIProjektspeichernWindow;
             }
         }
         
@@ -87,9 +152,45 @@ namespace EditorUITest
         #endregion
         
         #region Fields
+        private IDDuplicateMarkerAssertionExpectedValues mIDDuplicateMarkerAssertionExpectedValues;
+        
+        private IDMarkerDuplicateParams mIDMarkerDuplicateParams;
+        
         private UIARdevKitWindow mUIARdevKitWindow;
         
+        private UIProjektspeichernWindow mUIProjektspeichernWindow;
+        
         private UIItemWindow mUIItemWindow;
+        #endregion
+    }
+    
+    /// <summary>
+    /// An "IDDuplicateMarkerAssertion" zu übergebende Parameter
+    /// </summary>
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class IDDuplicateMarkerAssertionExpectedValues
+    {
+        
+        #region Fields
+        /// <summary>
+        /// Sicherstellen, dass die Eigenschaft 'Value' von "SensorCosID" Zeile ist gleich 'IDMarker2'
+        /// </summary>
+        public string UISensorCosIDRowValue = "IDMarker2";
+        #endregion
+    }
+    
+    /// <summary>
+    /// An "IDMarkerDuplicate" zu übergebende Parameter
+    /// </summary>
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class IDMarkerDuplicateParams
+    {
+        
+        #region Fields
+        /// <summary>
+        /// "IDMarker2" in "cmb_editor_properties_objectSelection" Kombinationsfeld auswählen
+        /// </summary>
+        public string UICmb_editor_propertieComboBoxSelectedItem = "IDMarker2";
         #endregion
     }
     
@@ -107,15 +208,39 @@ namespace EditorUITest
         }
         
         #region Properties
-        public UIIDMarkerIconWindow UIIDMarkerIconWindow
+        public UIPictureMarkerClient UIPictureMarkerClient
         {
             get
             {
-                if ((this.mUIIDMarkerIconWindow == null))
+                if ((this.mUIPictureMarkerClient == null))
                 {
-                    this.mUIIDMarkerIconWindow = new UIIDMarkerIconWindow(this);
+                    this.mUIPictureMarkerClient = new UIPictureMarkerClient(this);
                 }
-                return this.mUIIDMarkerIconWindow;
+                return this.mUIPictureMarkerClient;
+            }
+        }
+        
+        public UIARdevKitTitleBar UIARdevKitTitleBar
+        {
+            get
+            {
+                if ((this.mUIARdevKitTitleBar == null))
+                {
+                    this.mUIARdevKitTitleBar = new UIARdevKitTitleBar(this);
+                }
+                return this.mUIARdevKitTitleBar;
+            }
+        }
+        
+        public UICmb_editor_selectionWindow UICmb_editor_selectionWindow
+        {
+            get
+            {
+                if ((this.mUICmb_editor_selectionWindow == null))
+                {
+                    this.mUICmb_editor_selectionWindow = new UICmb_editor_selectionWindow(this);
+                }
+                return this.mUICmb_editor_selectionWindow;
             }
         }
         
@@ -154,52 +279,155 @@ namespace EditorUITest
                 return this.mUIARdevKitv02Client;
             }
         }
+        
+        public UIPropertyGridViewWindow UIPropertyGridViewWindow
+        {
+            get
+            {
+                if ((this.mUIPropertyGridViewWindow == null))
+                {
+                    this.mUIPropertyGridViewWindow = new UIPropertyGridViewWindow(this);
+                }
+                return this.mUIPropertyGridViewWindow;
+            }
+        }
+        
+        public UICmb_editor_propertieWindow UICmb_editor_propertieWindow
+        {
+            get
+            {
+                if ((this.mUICmb_editor_propertieWindow == null))
+                {
+                    this.mUICmb_editor_propertieWindow = new UICmb_editor_propertieWindow(this);
+                }
+                return this.mUICmb_editor_propertieWindow;
+            }
+        }
         #endregion
         
         #region Fields
-        private UIIDMarkerIconWindow mUIIDMarkerIconWindow;
+        private UIPictureMarkerClient mUIPictureMarkerClient;
+        
+        private UIARdevKitTitleBar mUIARdevKitTitleBar;
+        
+        private UICmb_editor_selectionWindow mUICmb_editor_selectionWindow;
         
         private UIItem1Window mUIItem1Window;
         
         private UIItem2Window mUIItem2Window;
         
         private UIARdevKitv02Client mUIARdevKitv02Client;
+        
+        private UIPropertyGridViewWindow mUIPropertyGridViewWindow;
+        
+        private UICmb_editor_propertieWindow mUICmb_editor_propertieWindow;
         #endregion
     }
     
     [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
-    public class UIIDMarkerIconWindow : WinWindow
+    public class UIPictureMarkerClient : WinClient
     {
         
-        public UIIDMarkerIconWindow(UITestControl searchLimitContainer) : 
+        public UIPictureMarkerClient(UITestControl searchLimitContainer) : 
                 base(searchLimitContainer)
         {
             #region Suchkriterien
-            this.SearchProperties[WinWindow.PropertyNames.ControlName] = "IDMarkerIcon";
+            this.SearchProperties[WinControl.PropertyNames.Name] = "Picture Marker";
             this.WindowTitles.Add("ARdevKit");
             #endregion
         }
         
         #region Properties
-        public WinClient UIIDMarkerClient
+        public WinClient UIPictureMarkerClient1
         {
             get
             {
-                if ((this.mUIIDMarkerClient == null))
+                if ((this.mUIPictureMarkerClient1 == null))
                 {
-                    this.mUIIDMarkerClient = new WinClient(this);
+                    this.mUIPictureMarkerClient1 = new WinClient(this);
                     #region Suchkriterien
-                    this.mUIIDMarkerClient.SearchProperties[WinControl.PropertyNames.Name] = "ID Marker";
-                    this.mUIIDMarkerClient.WindowTitles.Add("ARdevKit");
+                    this.mUIPictureMarkerClient1.SearchProperties[WinControl.PropertyNames.Name] = "Picture Marker";
+                    this.mUIPictureMarkerClient1.SearchConfigurations.Add(SearchConfiguration.DisambiguateChild);
+                    this.mUIPictureMarkerClient1.WindowTitles.Add("ARdevKit");
                     #endregion
                 }
-                return this.mUIIDMarkerClient;
+                return this.mUIPictureMarkerClient1;
             }
         }
         #endregion
         
         #region Fields
-        private WinClient mUIIDMarkerClient;
+        private WinClient mUIPictureMarkerClient1;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIARdevKitTitleBar : WinTitleBar
+    {
+        
+        public UIARdevKitTitleBar(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.WindowTitles.Add("ARdevKit");
+            #endregion
+        }
+        
+        #region Properties
+        public WinButton UISchließenButton
+        {
+            get
+            {
+                if ((this.mUISchließenButton == null))
+                {
+                    this.mUISchließenButton = new WinButton(this);
+                    #region Suchkriterien
+                    this.mUISchließenButton.SearchProperties[WinButton.PropertyNames.Name] = "Schließen";
+                    this.mUISchließenButton.WindowTitles.Add("ARdevKit");
+                    #endregion
+                }
+                return this.mUISchließenButton;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinButton mUISchließenButton;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UICmb_editor_selectionWindow : WinWindow
+    {
+        
+        public UICmb_editor_selectionWindow(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.ControlName] = "cmb_editor_selection_toolSelection";
+            this.WindowTitles.Add("ARdevKit");
+            #endregion
+        }
+        
+        #region Properties
+        public WinComboBox UICmb_editor_selectionComboBox
+        {
+            get
+            {
+                if ((this.mUICmb_editor_selectionComboBox == null))
+                {
+                    this.mUICmb_editor_selectionComboBox = new WinComboBox(this);
+                    #region Suchkriterien
+                    this.mUICmb_editor_selectionComboBox.WindowTitles.Add("ARdevKit");
+                    #endregion
+                }
+                return this.mUICmb_editor_selectionComboBox;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinComboBox mUICmb_editor_selectionComboBox;
         #endregion
     }
     
@@ -310,6 +538,179 @@ namespace EditorUITest
         
         #region Fields
         private WinClient mUIARdevKitv02Client1;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIPropertyGridViewWindow : WinWindow
+    {
+        
+        public UIPropertyGridViewWindow(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.Name] = "PropertyGridView";
+            this.SearchProperties.Add(new PropertyExpression(WinWindow.PropertyNames.ClassName, "WindowsForms10.Window", PropertyExpressionOperator.Contains));
+            this.WindowTitles.Add("ARdevKit");
+            #endregion
+        }
+        
+        #region Properties
+        public UIPropertyGridViewTable UIPropertyGridViewTable
+        {
+            get
+            {
+                if ((this.mUIPropertyGridViewTable == null))
+                {
+                    this.mUIPropertyGridViewTable = new UIPropertyGridViewTable(this);
+                }
+                return this.mUIPropertyGridViewTable;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIPropertyGridViewTable mUIPropertyGridViewTable;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIPropertyGridViewTable : WinTable
+    {
+        
+        public UIPropertyGridViewTable(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinTable.PropertyNames.Name] = "Eigenschaftenfenster";
+            this.WindowTitles.Add("ARdevKit");
+            #endregion
+        }
+        
+        #region Properties
+        public WinRow UISensorCosIDRow
+        {
+            get
+            {
+                if ((this.mUISensorCosIDRow == null))
+                {
+                    this.mUISensorCosIDRow = new WinRow(this);
+                    #region Suchkriterien
+                    this.mUISensorCosIDRow.SearchProperties[WinRow.PropertyNames.Name] = "SensorCosID";
+                    this.mUISensorCosIDRow.SearchConfigurations.Add(SearchConfiguration.AlwaysSearch);
+                    this.mUISensorCosIDRow.WindowTitles.Add("ARdevKit");
+                    #endregion
+                }
+                return this.mUISensorCosIDRow;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinRow mUISensorCosIDRow;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UICmb_editor_propertieWindow : WinWindow
+    {
+        
+        public UICmb_editor_propertieWindow(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.ControlName] = "cmb_editor_properties_objectSelection";
+            this.WindowTitles.Add("ARdevKit");
+            #endregion
+        }
+        
+        #region Properties
+        public WinComboBox UICmb_editor_propertieComboBox
+        {
+            get
+            {
+                if ((this.mUICmb_editor_propertieComboBox == null))
+                {
+                    this.mUICmb_editor_propertieComboBox = new WinComboBox(this);
+                    #region Suchkriterien
+                    this.mUICmb_editor_propertieComboBox.WindowTitles.Add("ARdevKit");
+                    #endregion
+                }
+                return this.mUICmb_editor_propertieComboBox;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinComboBox mUICmb_editor_propertieComboBox;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIProjektspeichernWindow : WinWindow
+    {
+        
+        public UIProjektspeichernWindow()
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.Name] = "Projekt speichern?";
+            this.SearchProperties[WinWindow.PropertyNames.ClassName] = "#32770";
+            this.WindowTitles.Add("Projekt speichern?");
+            #endregion
+        }
+        
+        #region Properties
+        public UINeinWindow UINeinWindow
+        {
+            get
+            {
+                if ((this.mUINeinWindow == null))
+                {
+                    this.mUINeinWindow = new UINeinWindow(this);
+                }
+                return this.mUINeinWindow;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UINeinWindow mUINeinWindow;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UINeinWindow : WinWindow
+    {
+        
+        public UINeinWindow(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "7";
+            this.WindowTitles.Add("Projekt speichern?");
+            #endregion
+        }
+        
+        #region Properties
+        public WinButton UINeinButton
+        {
+            get
+            {
+                if ((this.mUINeinButton == null))
+                {
+                    this.mUINeinButton = new WinButton(this);
+                    #region Suchkriterien
+                    this.mUINeinButton.SearchProperties[WinButton.PropertyNames.Name] = "Nein";
+                    this.mUINeinButton.WindowTitles.Add("Projekt speichern?");
+                    #endregion
+                }
+                return this.mUINeinButton;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinButton mUINeinButton;
         #endregion
     }
     
