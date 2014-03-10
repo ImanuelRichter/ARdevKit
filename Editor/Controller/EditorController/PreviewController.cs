@@ -100,9 +100,19 @@ public class PreviewController
     /// </summary>
     /// <param name="currentElement">The current element.</param>
     /// <param name="v">The Vector3D to set the Trackable.</param>
+    /// <exception cref="System.ArgumentException">
+    /// parameter currentEelement was null
+    /// or
+    /// parameter v was null
+    /// </exception>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     public void addPreviewable(IPreviewable currentElement, Vector3D v)
     {
+        if (currentElement == null)
+            throw new ArgumentException("parameter currentEelement was null");
+        if (v == null)
+            throw new ArgumentException("parameter v was null");
+
         if (currentElement is AbstractTrackable && trackable == null)
         {
             this.ew.Tsm_editor_menu_edit_delete.Enabled = true;
