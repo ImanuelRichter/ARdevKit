@@ -179,14 +179,24 @@ public class PreviewController
     }
 
     /// <summary>
-    ///     add Source or augmentation, this method can only be used with the element, which is the
-    ///     over element by augmentation the overelement is Trackable. by Source the overelement is
-    ///     augmentation.
+    /// add Source or augmentation, this method can only be used with the element, which is the
+    /// over element by augmentation the overelement is Trackable. by Source the overelement is
+    /// augmentation.
     /// </summary>
     /// <param name="source">The source.</param>
     /// <param name="currentElement">The current element.</param>
+    /// <exception cref="System.ArgumentException">
+    /// parameter source was null.
+    /// or
+    /// parameter currentElement was null.
+    /// </exception>
     public void addSource(AbstractSource source, AbstractAugmentation currentElement)
     {
+        if (source == null)
+            throw new ArgumentException("parameter source was null.");
+        if (currentElement == null)
+            throw new ArgumentException("parameter currentElement was null.");
+
         if (source != null && currentElement is AbstractDynamic2DAugmentation)
         {
 
