@@ -57,13 +57,18 @@ public class PreviewController
     public AbstractAugmentation copy { get; set; }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-    /// <summary>   Constructor. </summary>
-    ///
-    /// <param name="ew">   EditorWindow Instanz. </param>
+    /// <summary>
+    /// Constructor.
+    /// </summary>
+    /// <param name="ew">EditorWindow Instanz.</param>
+    /// <exception cref="System.ArgumentException">parameter ew was null.</exception>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
     public PreviewController(EditorWindow ew)
     {
+        if (ew == null)
+            throw new ArgumentException("parameter ew was null.");
+
         this.ew = ew;
         this.panel = this.ew.Pnl_editor_preview;
         this.currentMetaCategory = new MetaCategory();
@@ -100,9 +105,19 @@ public class PreviewController
     /// </summary>
     /// <param name="currentElement">The current element.</param>
     /// <param name="v">The Vector3D to set the Trackable.</param>
+    /// <exception cref="System.ArgumentException">
+    /// parameter currentEelement was null
+    /// or
+    /// parameter v was null
+    /// </exception>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     public void addPreviewable(IPreviewable currentElement, Vector3D v)
     {
+        if (currentElement == null)
+            throw new ArgumentException("parameter currentEelement was null");
+        if (v == null)
+            throw new ArgumentException("parameter v was null");
+
         if (currentElement is AbstractTrackable && trackable == null)
         {
             this.ew.Tsm_editor_menu_edit_delete.Enabled = true;
@@ -169,14 +184,24 @@ public class PreviewController
     }
 
     /// <summary>
-    ///     add Source or augmentation, this method can only be used with the element, which is the
-    ///     over element by augmentation the overelement is Trackable. by Source the overelement is
-    ///     augmentation.
+    /// add Source or augmentation, this method can only be used with the element, which is the
+    /// over element by augmentation the overelement is Trackable. by Source the overelement is
+    /// augmentation.
     /// </summary>
     /// <param name="source">The source.</param>
     /// <param name="currentElement">The current element.</param>
+    /// <exception cref="System.ArgumentException">
+    /// parameter source was null.
+    /// or
+    /// parameter currentElement was null.
+    /// </exception>
     public void addSource(AbstractSource source, AbstractAugmentation currentElement)
     {
+        if (source == null)
+            throw new ArgumentException("parameter source was null.");
+        if (currentElement == null)
+            throw new ArgumentException("parameter currentElement was null.");
+
         if (source != null && currentElement is AbstractDynamic2DAugmentation)
         {
 
@@ -259,6 +284,11 @@ public class PreviewController
     /// <param name="currentElement">The current element.</param>
     public void removeSource(AbstractSource source, IPreviewable currentElement)
     {
+        if (source == null)
+            throw new ArgumentException("parameter source was null.");
+        if (currentElement == null)
+            throw new ArgumentException("parameter currentElement was null.");
+
         if (currentElement is AbstractAugmentation)
         {
             ((AbstractDynamic2DAugmentation)currentElement).Source = null;
@@ -276,6 +306,9 @@ public class PreviewController
     /// <param name="currentElement">The current element.</param>
     public void removePreviewable(IPreviewable currentElement)
     {
+        if (currentElement == null)
+            throw new ArgumentException("parameter currentElement was null.");
+
         if (currentElement is AbstractTrackable && trackable != null)
         {
             this.removeAll();
@@ -432,8 +465,19 @@ public class PreviewController
     /// </summary>
     /// <param name="prev">The previous.</param>
     /// <param name="vector">The vector.</param>
+    /// <exception cref="System.ArgumentNullException">
+    /// parameter prev was null
+    /// or
+    /// parameter vector was null
+    /// </exception>
     public void addPictureBox(IPreviewable prev, Vector3D vector)
     {
+        if (prev == null)
+            throw new ArgumentException("parameter prev was null");
+
+        if (vector == null)
+            throw new ArgumentException("parameter vector was null");
+
         //creates the temporateBox with all variables, which'll be add than to the panel.
         PictureBox tempBox;
         tempBox = new PictureBox();
@@ -487,8 +531,11 @@ public class PreviewController
     /// </summary>
     /// <param name="prev">The previous.</param>
     /// <returns></returns>
+    /// <exception cref="System.ArgumentException">parameter prev was null.</exception>
     public PictureBox findBox(IPreviewable prev)
     {
+        if (prev == null)
+            throw new ArgumentException("parameter prev was null.");
         if (prev is AbstractTrackable)
         {
             foreach (Control comp in panel.Controls)
@@ -631,8 +678,16 @@ public class PreviewController
     /// </summary>
     /// <param name="prev">The previous.</param>
     /// <returns></returns>
+    /// <exception cref="System.ArgumentException">parameter prev was null.</exception>
+    /// <exception cref="System.InvalidOperationException">trackable was not set beforehand.</exception>
     public Bitmap scaleIPreviewable(IPreviewable prev)
     {
+        if (prev == null)
+            throw new ArgumentException("parameter prev was null.");
+
+        if (trackable == null)
+            throw new InvalidOperationException("trackable was not set beforehand.");
+
         int height = prev.getPreview().Height;
         int width = prev.getPreview().Width;
         double sideScale;
@@ -719,14 +774,17 @@ public class PreviewController
     }
 
     /// <summary>
-    /// scales the bitmap to the width & height which you want
+    /// Scales the bitmap.
     /// </summary>
     /// <param name="bit">The bit.</param>
     /// <param name="width">The width.</param>
     /// <param name="height">The height.</param>
-    /// <returns>scaled bitmap</returns>
+    /// <returns></returns>
+    /// <exception cref="System.ArgumentException">parameter bit was null.</exception>
     public Bitmap scaleBitmap(Bitmap bit, int width, int height)
     {
+        if (bit == null)
+            throw new ArgumentException("parameter bit was null.");
 
         Bitmap resizedImg = new Bitmap(width, height);
         Bitmap img = bit;
@@ -773,8 +831,18 @@ public class PreviewController
     /// </summary>
     /// <param name="prev">The previous.</param>
     /// <param name="newV">The new v.</param>
+    /// <exception cref="System.ArgumentException">
+    /// parameter prev was null.
+    /// or
+    /// parameter newV was null.
+    /// </exception>
     public void setCoordinates(IPreviewable prev, Vector3D newV)
     {
+        if (prev == null)
+            throw new ArgumentException("parameter prev was null.");
+        if (newV == null)
+            throw new ArgumentException("parameter newV was null.");
+
         if (prev is Chart)
         {
             ((Chart)prev).Positioning.Left = (int)newV.X;
@@ -844,8 +912,13 @@ public class PreviewController
     /// <summary>
     /// Rotates the augmentation, after you've changed the Rotation.Z Vector.
     /// </summary>
+    /// <param name="currentElement">The current element.</param>
+    /// <exception cref="System.ArgumentException">parameter currentElement was null.</exception>
     public void rotateAugmentation(IPreviewable currentElement)
     {
+        if (currentElement == null)
+            throw new ArgumentException("parameter currentElement was null.");
+
         IPreviewable prev = currentElement;
         int grad = -(int)((AbstractAugmentation)prev).Rotation.Z;
         PictureBox box = this.findBox(prev);
@@ -867,8 +940,18 @@ public class PreviewController
     /// <summary>
     /// Refreshs the Augmentation with the new Scale.
     /// </summary>
+    /// <param name="currentElement">The current element.</param>
+    /// <returns></returns>
+    /// <exception cref="System.ArgumentException">parameter currentElement was null.</exception>
+    /// <exception cref="System.InvalidOperationException">trackable was not set beforehand</exception>
     public Bitmap getSizedBitmap(IPreviewable currentElement)
     {
+        if (currentElement == null)
+            throw new ArgumentException("parameter currentElement was null.");
+
+        if (this.trackable == null)
+            throw new InvalidOperationException("trackable was not set beforehand");
+
         IPreviewable prev = currentElement;
         PictureBox box = this.findBox(prev);
 

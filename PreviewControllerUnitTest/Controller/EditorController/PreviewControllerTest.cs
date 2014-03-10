@@ -400,22 +400,6 @@ namespace Tests
         }
 
         [TestMethod()]
-        [ExpectedException(typeof(ArgumentException))]
-        public void setCurrentElementTest_nullArgument01()
-        {
-            //arrange
-            EditorWindow ew = new EditorWindow();
-            IPreviewable previewable = null;
-            PreviewController prevcontr = new PreviewController(ew);
-
-            //act
-            prevcontr.setCurrentElement(previewable);
-
-            //assert
-            //assert is handled by the ExcpectedException
-        }
-
-        [TestMethod()]
         public void setCurrentElementTest()
         {
             //arrange
@@ -730,22 +714,6 @@ namespace Tests
         }
 
         [TestMethod()]
-        [ExpectedException(typeof(ArgumentException))]
-        public void updateElementComboboxTest_NullArgument01()
-        {
-            //arrange
-            EditorWindow ew = new EditorWindow();
-            AbstractTrackable trackable = new IDMarker(1);
-            PreviewController prevcontr = new PreviewController(ew);
-
-            //act
-            prevcontr.updateElementCombobox(trackable);
-
-            //assert
-            //assert is handled by the ExcpectedException
-        }
-
-        [TestMethod()]
         public void updateElementComboboxTest()
         {
             //arrange
@@ -802,19 +770,36 @@ namespace Tests
         }
 
         [TestMethod()]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void getSizedBitmapTest_nullArgument02()
+        {
+            //arrange
+            EditorWindow ew = new EditorWindow();
+            IPreviewable previewable = new PictureMarker(System.IO.Directory.GetCurrentDirectory() + "\\res\\testFiles\\trackables\\pictureMarker1.png");
+            PreviewController prevcontr = new PreviewController(ew);
+            //no trackable set
+
+            //act
+            prevcontr.getSizedBitmap(previewable);
+
+            //assert
+            //assert is handled by the ExcpectedException
+        }
+
+        [TestMethod()]
         public void getSizedBitmapTest01()
         {
             //arrange
             EditorWindow ew = new EditorWindow();
             IPreviewable previewable = new PictureMarker(System.IO.Directory.GetCurrentDirectory() + "\\res\\testFiles\\trackables\\pictureMarker1.png");
             PreviewController prevcontr = new PreviewController(ew);
+            prevcontr.trackable = new IDMarker(1);
 
             //act
             Bitmap bmp = prevcontr.getSizedBitmap(previewable);
 
             //assert
-            Assert.IsNotNull(bmp);
-            Assert.IsInstanceOfType(bmp, typeof(Bitmap));
+            Assert.IsNull(bmp);
         }
 
         [TestMethod()]
