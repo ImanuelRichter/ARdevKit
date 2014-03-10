@@ -284,6 +284,11 @@ public class PreviewController
     /// <param name="currentElement">The current element.</param>
     public void removeSource(AbstractSource source, IPreviewable currentElement)
     {
+        if (source == null)
+            throw new ArgumentException("parameter source was null.");
+        if (currentElement == null)
+            throw new ArgumentException("parameter currentElement was null.");
+
         if (currentElement is AbstractAugmentation)
         {
             ((AbstractDynamic2DAugmentation)currentElement).Source = null;
