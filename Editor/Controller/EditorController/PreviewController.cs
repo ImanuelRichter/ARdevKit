@@ -432,8 +432,19 @@ public class PreviewController
     /// </summary>
     /// <param name="prev">The previous.</param>
     /// <param name="vector">The vector.</param>
+    /// <exception cref="System.ArgumentNullException">
+    /// parameter prev was null
+    /// or
+    /// parameter vector was null
+    /// </exception>
     public void addPictureBox(IPreviewable prev, Vector3D vector)
     {
+        if (prev == null)
+            throw new ArgumentException("parameter prev was null");
+
+        if (vector == null)
+            throw new ArgumentException("parameter vector was null");
+
         //creates the temporateBox with all variables, which'll be add than to the panel.
         PictureBox tempBox;
         tempBox = new PictureBox();
