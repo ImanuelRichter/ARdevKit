@@ -891,8 +891,13 @@ public class PreviewController
     /// <summary>
     /// Rotates the augmentation, after you've changed the Rotation.Z Vector.
     /// </summary>
+    /// <param name="currentElement">The current element.</param>
+    /// <exception cref="System.ArgumentException">parameter currentElement was null.</exception>
     public void rotateAugmentation(IPreviewable currentElement)
     {
+        if (currentElement == null)
+            throw new ArgumentException("parameter currentElement was null.");
+
         IPreviewable prev = currentElement;
         int grad = -(int)((AbstractAugmentation)prev).Rotation.Z;
         PictureBox box = this.findBox(prev);
