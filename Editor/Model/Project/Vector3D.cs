@@ -16,26 +16,26 @@ namespace ARdevKit.Model.Project
     public class Vector3D
     {
         /// <summary>
-        /// Gets or sets the x.
+        /// Gets or sets the X coordinate.
         /// </summary>
         /// <value>
-        /// The x.
+        /// The x coordinate.
         /// </value>
         [CategoryAttribute("General")]
         public double X { get; set; }
         /// <summary>
-        /// Gets or sets the y.
+        /// Gets or sets the Y coordinate.
         /// </summary>
         /// <value>
-        /// The y.
+        /// The y coordinate.
         /// </value>
         [CategoryAttribute("General")]
         public double Y { get; set; }
         /// <summary>
-        /// Gets or sets the z.
+        /// Gets or sets the Z coordinate.
         /// </summary>
         /// <value>
-        /// The z.
+        /// The z coordinate.
         /// </value>
         [CategoryAttribute("General")]
         public double Z { get; set; }

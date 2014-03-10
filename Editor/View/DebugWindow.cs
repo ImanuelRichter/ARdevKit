@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace ARdevKit.View
 {
     /// <summary>
-    /// This is a Form, containing a TextBoc, which can be filled threadsafe.
+    /// This is a Form, containing a TextBox, which can be filled threadsafe.
     /// Its for displaying DebugInformation.
     /// </summary>
     public partial class DebugWindow : Form
@@ -29,6 +29,11 @@ namespace ARdevKit.View
             this.controller = controller;
         }
 
+        /// <summary>
+        /// Handles the FormClosing event of the DebugWindow control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="FormClosingEventArgs"/> instance containing the event data.</param>
         private void DebugWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
             controller.DebugConnected = false;

@@ -11,8 +11,10 @@ namespace ARdevKit.Model.Project
 {
 
     /// <summary>
-    /// <see cref="IDMarker"/> is a <see cref="AbstractMarker"/>
-    /// adding an matrixID.
+    /// The ID Marker is a simple marker for tracking. 
+    /// For more information look at the metaio developer forum or here:
+    /// http://dev.metaio.com/sdk/tracking-config/optical-tracking/id-marker/
+    /// It inherits from <see cref="Abstract2DTrackable"/>
     /// </summary>
     [Serializable]
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
@@ -21,7 +23,7 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// The matrix identifier, describes the Markers, which
         /// are deployed by the metaio SDK.
-        /// They reach from 1 to 255.
+        /// They reach from 1 to 512.
         /// </summary>
         private int matrixID;
         /// <summary>

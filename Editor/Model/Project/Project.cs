@@ -306,6 +306,7 @@ namespace ARdevKit.Model.Project
         /// Removes the augmentation and deletes connected files if other augmentations dont need it.
         /// </summary>
         /// <param name="augmentation">The augmentation.</param>
+        /// <param name="index">The index.</param>
         public void RemoveAugmentation(AbstractAugmentation augmentation, int index)
         {
             if (augmentation is Abstract2DAugmentation)

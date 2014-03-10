@@ -16,7 +16,8 @@ using System.IO;
 namespace ARdevKit
 {
     /// <summary>
-    /// Form-Class for the TextEditor.
+    /// Form-Class for the TextEditor. This text editor provides only basic operation and functionallity
+    /// to edit a .txt or .js file. 
     /// </summary>
     public partial class TextEditorForm : Form
     {

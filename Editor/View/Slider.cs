@@ -11,7 +11,8 @@ using System.Windows.Forms;
 namespace ARdevKit.View
 {
     /// <summary>
-    /// UserControl for an Trackbar/Slider. Currently not used (2.3.14)
+    /// UserControl for an Trackbar/Slider.
+    /// It inherits from UserControl.
     /// </summary>
     public partial class Slider : UserControl
     {

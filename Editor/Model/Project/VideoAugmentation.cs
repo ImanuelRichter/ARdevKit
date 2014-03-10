@@ -13,13 +13,16 @@ using System.Windows.Forms;
 namespace ARdevKit.Model.Project
 {
     /// <summary>
-    /// A <see cref="VideoAugmentation" /> is an <see cref="Abstract2DAugmentation" /> that contains a video file.
+    /// A <see cref="VideoAugmentation" /> is an Augmentation that contains a video file.
+    /// It inherits from <see cref="Abstract2DAugmentation" />.
     /// </summary>
     [Serializable]
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public class VideoAugmentation : Abstract2DAugmentation
     {
-        //a cached preview to prevent access problems.
+        /// <summary>
+        /// A cached preview to prevent access problems.
+        /// </summary>
         private Bitmap cachePreview = null;
 
         /// <summary>

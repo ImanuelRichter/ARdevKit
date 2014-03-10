@@ -14,7 +14,7 @@ namespace ARdevKit
     static class ARdevKitEditor
     {
         /// <summary>
-        /// Der Haupteinstiegspunkt für die Anwendung.
+        /// Defines the entry point of the application.
         /// </summary>
         [STAThread]
         static void Main()

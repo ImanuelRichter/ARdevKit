@@ -12,8 +12,10 @@ using System.Windows.Forms;
 namespace ARdevKit.Model.Project
 {
     /// <summary>
-    /// Describes a Marker, which is very flexible, because it is also
-    /// a Picture. It is an <see cref="AbstractMarker"/>
+    /// Describes a markerless image tracker. 
+    /// For more information look at the metaio developer forum or here:
+    /// http://dev.metaio.com/sdk/tracking-config/optical-tracking/image-tracking/
+    /// It inherits from <see cref="Abstract2DTrackable"/>
     /// </summary>
     [Serializable]
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
@@ -22,12 +24,11 @@ namespace ARdevKit.Model.Project
         private MarkerlessFuser fuser;
         /// <summary>
         /// Gets or sets the fuser.
-        /// Is not Browsable, therefore not editable in
-        /// the PropertyPanel
         /// </summary>
         /// <value>
         /// The fuser.
         /// </value>
+        [Browsable(false)]
         public MarkerlessFuser Fuser
         {
             get { return fuser; }
@@ -39,11 +40,13 @@ namespace ARdevKit.Model.Project
         /// </summary>
         protected string imagePath;
 
-        //a cached preview to prevent access problems.
+        /// <summary>
+        /// A cached preview to prevent access problems.
+        /// </summary>
         private Bitmap cachePreview = null;
 
         /// <summary>
-        /// Gets or sets the full pathname of the image file.
+        /// Gets or sets the full pathname of the image file. It automatically sets the imageName.
         /// </summary>
         /// <value>
         /// The full pathname of the image file.
@@ -125,17 +128,40 @@ namespace ARdevKit.Model.Project
             Fuser.Accept(visitor);
         }
 
+        /// <summary>
+        /// returns a <see cref="Bitmap" /> in order to be displayed
+        /// on the PreviewPanel, implements <see cref="IPreviewable" />
+        /// </summary>
+        /// <returns>
+        /// a representative Bitmap
+        /// </returns>
         public override System.Drawing.Bitmap getPreview()
         {
             cachePreview = new Bitmap(ImagePath);
             return cachePreview;
         }
 
+        /// <summary>
+        /// returns a <see cref="Bitmap" /> in order to be displayed
+        /// on the ElementSelectionPanel, implements <see cref="IPreviewable" />
+        /// </summary>
+        /// <returns>
+        /// a representative iconized Bitmap
+        /// </returns>
         public override System.Drawing.Bitmap getIcon()
         {
             return Properties.Resources.ARMarker_small_;
         }
 
+        /// <summary>
+        /// Makes a deep copy of this object.
+        /// </summary>
+        /// <returns>
+        /// A copy of this object.
+        /// </returns>
+        /// <remarks>
+        /// Robin, 22.01.2014.
+        /// </remarks>
         public override object Clone()
         {
             ImageTrackable n = ObjectCopier.Clone<ImageTrackable>(this);
