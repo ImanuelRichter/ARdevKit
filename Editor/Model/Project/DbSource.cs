@@ -11,7 +11,9 @@ using ARdevKit.Controller.ProjectController;
 namespace ARdevKit.Model.Project
 {
     /// <summary>
-    /// A database source 
+    /// A database source for <see cref="AbstractDynamic2DAugmentation"/>. 
+    /// It can also be used of other DynamicAugmentation, if the program will be extended.
+    /// It inherits from <see cref="AbstractSource"/>.
     /// </summary>
     [Serializable]
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]

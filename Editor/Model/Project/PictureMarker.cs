@@ -14,8 +14,10 @@ using System.Windows.Forms;
 namespace ARdevKit.Model.Project
 {
     /// <summary>
-    /// Describes a Marker, which is very flexible, because it is also
-    /// a Picture. It is an <see cref="AbstractMarker"/>
+    /// Describes a Marker, which is somewhat in-between an id marker and a markerless.
+    /// For more information look at the metaio developer forum or here:
+    /// http://dev.metaio.com/sdk/tracking-config/optical-tracking/picture-marker/
+    /// It inhertis form <see cref="Abstract2DTrackable"/>.
     /// </summary>
     [Serializable]
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
@@ -26,7 +28,9 @@ namespace ARdevKit.Model.Project
         /// </summary>
         protected string picturePath;
 
-        //a cached preview to prevent access problems.
+        /// <summary>
+        /// A cached preview to prevent access problems.
+        /// </summary>
         private Bitmap cachePreview = null;
 
         /// <summary>

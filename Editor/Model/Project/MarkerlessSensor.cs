@@ -68,7 +68,7 @@ namespace ARdevKit.Model.Project
         ///				cause a lower framerate. The default value for this is 5
         ///				and is used if the tag is not specified.
         ///				Another name that can be used for this parameter is
-        ///				&lt;MultipleReferenceImagesFast&gt;. This name is however
+        ///				MultipleReferenceImagesFast. This name is however
         ///				deprecated and should not be used any more.
         ///				This parameter is for expert usage only. In general it
         ///				is advised to leave the value unchanged. </summary>
@@ -93,7 +93,7 @@ namespace ARdevKit.Model.Project
         ///				The default value for this is 1 and is used if the tag
         ///				is not specified.
         ///				Another name that can be used for this parameter is
-        ///				&lt;MaxNumCosesForInit&gt;. This name is however deprecated
+        ///				MaxNumCosesForInit. This name is however deprecated
         ///				and should not be used any more.
         ///				This parameter is for expert usage only. In general it
         ///				is advised to leave the value unchanged. </summary>

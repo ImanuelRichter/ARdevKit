@@ -10,16 +10,24 @@ using System.ComponentModel;
 
 namespace ARdevKit.Model.Project
 {
-    /// <summary>   A file source. </summary>
+    /// <summary>
+    /// A file source for <see cref="AbstractDynamic2DAugmentation"/>. 
+    /// It can also be used of other DynamicAugmentation, if the program will be extended.
+    /// It inherits from <see cref"AbstractSource">.
+    /// </summary>
     [Serializable]
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public class FileSource : AbstractSource
     {
         /// <summary>   Full pathname of the source file. </summary>
         private String sourceFilePath;
-        /// <summary>   Gets or sets the file source. </summary>
-        ///
-        /// <value> The file source. </value>
+        /// <summary>
+        /// Gets or sets the data file path. If the file exists, it will be copied to a temporary directore 
+        /// /tmp/ of the program directory. If not, nothing happens.
+        /// </summary>
+        /// <value>
+        /// The data.
+        /// </value>
         [CategoryAttribute("General")]
         [EditorAttribute(typeof(System.Windows.Forms.Design.FileNameEditor), typeof(System.Drawing.Design.UITypeEditor))]
         public string Data
@@ -29,14 +37,16 @@ namespace ARdevKit.Model.Project
             {
                 if (System.IO.File.Exists(value))
                 {
-                    if (File.Helper.FileExists(@"res\", value))
+                    try
                     {
                         var endFileName = SourceID + "_" + System.IO.Path.GetFileName(value);
                         File.Helper.Copy(value, @"tmp\source\", endFileName);
                         sourceFilePath = System.IO.Path.GetFullPath(@"tmp\source\" + endFileName);
                     }
-                    else
-                        sourceFilePath = value;
+                    catch (Exception e)
+                    {
+                        System.Windows.Forms.MessageBox.Show(e.Message);
+                    }
                 }
             }
         }
