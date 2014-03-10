@@ -802,19 +802,36 @@ namespace Tests
         }
 
         [TestMethod()]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void getSizedBitmapTest_nullArgument02()
+        {
+            //arrange
+            EditorWindow ew = new EditorWindow();
+            IPreviewable previewable = new PictureMarker(System.IO.Directory.GetCurrentDirectory() + "\\res\\testFiles\\trackables\\pictureMarker1.png");
+            PreviewController prevcontr = new PreviewController(ew);
+            //no trackable set
+
+            //act
+            prevcontr.getSizedBitmap(previewable);
+
+            //assert
+            //assert is handled by the ExcpectedException
+        }
+
+        [TestMethod()]
         public void getSizedBitmapTest01()
         {
             //arrange
             EditorWindow ew = new EditorWindow();
             IPreviewable previewable = new PictureMarker(System.IO.Directory.GetCurrentDirectory() + "\\res\\testFiles\\trackables\\pictureMarker1.png");
             PreviewController prevcontr = new PreviewController(ew);
+            prevcontr.trackable = new IDMarker(1);
 
             //act
             Bitmap bmp = prevcontr.getSizedBitmap(previewable);
 
             //assert
-            Assert.IsNotNull(bmp);
-            Assert.IsInstanceOfType(bmp, typeof(Bitmap));
+            Assert.IsNull(bmp);
         }
 
         [TestMethod()]
