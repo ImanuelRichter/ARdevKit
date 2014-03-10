@@ -57,13 +57,18 @@ public class PreviewController
     public AbstractAugmentation copy { get; set; }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-    /// <summary>   Constructor. </summary>
-    ///
-    /// <param name="ew">   EditorWindow Instanz. </param>
+    /// <summary>
+    /// Constructor.
+    /// </summary>
+    /// <param name="ew">EditorWindow Instanz.</param>
+    /// <exception cref="System.ArgumentException">parameter ew was null.</exception>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
     public PreviewController(EditorWindow ew)
     {
+        if (ew == null)
+            throw new ArgumentException("parameter ew was null.");
+
         this.ew = ew;
         this.panel = this.ew.Pnl_editor_preview;
         this.currentMetaCategory = new MetaCategory();
