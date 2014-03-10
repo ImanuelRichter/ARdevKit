@@ -766,14 +766,17 @@ public class PreviewController
     }
 
     /// <summary>
-    /// scales the bitmap to the width & height which you want
+    /// Scales the bitmap.
     /// </summary>
     /// <param name="bit">The bit.</param>
     /// <param name="width">The width.</param>
     /// <param name="height">The height.</param>
-    /// <returns>scaled bitmap</returns>
+    /// <returns></returns>
+    /// <exception cref="System.ArgumentException">parameter bit was null.</exception>
     public Bitmap scaleBitmap(Bitmap bit, int width, int height)
     {
+        if (bit == null)
+            throw new ArgumentException("parameter bit was null.");
 
         Bitmap resizedImg = new Bitmap(width, height);
         Bitmap img = bit;
