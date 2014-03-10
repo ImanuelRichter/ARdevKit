@@ -523,8 +523,11 @@ public class PreviewController
     /// </summary>
     /// <param name="prev">The previous.</param>
     /// <returns></returns>
+    /// <exception cref="System.ArgumentException">parameter prev was null.</exception>
     public PictureBox findBox(IPreviewable prev)
     {
+        if (prev == null)
+            throw new ArgumentException("parameter prev was null.");
         if (prev is AbstractTrackable)
         {
             foreach (Control comp in panel.Controls)
