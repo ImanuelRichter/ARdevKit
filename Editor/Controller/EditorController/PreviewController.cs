@@ -831,8 +831,18 @@ public class PreviewController
     /// </summary>
     /// <param name="prev">The previous.</param>
     /// <param name="newV">The new v.</param>
+    /// <exception cref="System.ArgumentException">
+    /// parameter prev was null.
+    /// or
+    /// parameter newV was null.
+    /// </exception>
     public void setCoordinates(IPreviewable prev, Vector3D newV)
     {
+        if (prev == null)
+            throw new ArgumentException("parameter prev was null.");
+        if (newV == null)
+            throw new ArgumentException("parameter newV was null.");
+
         if (prev is Chart)
         {
             ((Chart)prev).Positioning.Left = (int)newV.X;
