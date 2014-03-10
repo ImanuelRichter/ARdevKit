@@ -22,6 +22,14 @@ namespace ARdevKit.View
         /// <summary>
         /// Initializes a new instance of the <see cref="DebugWindow"/> class.
         /// </summary>
+        public DebugWindow()
+        {
+            InitializeComponent();
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DebugWindow"/> class.
+        /// </summary>
         /// <param name="controller">The controller.</param>
         public DebugWindow(Controller.Connections.DeviceConnection.DeviceConnectionController controller)
         {
@@ -29,9 +37,15 @@ namespace ARdevKit.View
             this.controller = controller;
         }
 
+        /// <summary>
+        /// Event triggered when this <see cref="DebugWindow"/> closes.
+        /// </summary>
+        /// <param name="sender"> The sender. </param>
+        /// <param name="e"> The event. </param>
         private void DebugWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
-            controller.DebugConnected = false;
+            if (controller != null)
+                controller.DebugConnected = false;
         }
 
         /// <summary>

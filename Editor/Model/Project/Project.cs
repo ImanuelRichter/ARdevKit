@@ -323,7 +323,9 @@ namespace ARdevKit.Model.Project
                         {
                             deleteFile = !(((Abstract2DAugmentation) trackables[i].Augmentations[j]).ResFilePath == augmentationToBeRemoved.ResFilePath);
                         }
+                        j++;
                     }
+                    i++;
                 }
                 if (deleteFile)
                     augmentation.CleanUp();

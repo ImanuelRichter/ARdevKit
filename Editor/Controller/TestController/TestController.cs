@@ -16,6 +16,8 @@ using ARdevKit.Model.Project;
 using ARdevKit.Model.Project.File;
 using System.Drawing;
 using System.Drawing.Imaging;
+using ARdevKit.View;
+using System.Threading;
 
 namespace ARdevKit.Controller.TestController
 {
@@ -67,9 +69,16 @@ namespace ARdevKit.Controller.TestController
         public static Process player;
 
         /// <summary>
+        /// True if user chose to show debug information.
+        /// </summary>
+        private static bool showDebug;
+
+        /// <summary>
         /// The editor window
         /// </summary>
         private static EditorWindow editorWindow;
+
+        private static DebugWindow debugWindow;
 
         /// <summary>
         /// A window showing the progress of processing the video
@@ -92,10 +101,11 @@ namespace ARdevKit.Controller.TestController
         /// <param name="mode">The mode.</param>
         /// <param name="width">The width.</param>
         /// <param name="height">The height.</param>
-        /// <param name="showDebug">if set to <c>true</c> [show debug].</param>
-        public static void StartPlayer(EditorWindow ew, Project project, int mode, int width, int height, bool showDebug)
+        /// <param name="_showDebug">if set to <c>true</c> [show debug].</param>
+        public static void StartPlayer(EditorWindow ew, Project project, int mode, int width, int height, bool _showDebug)
         {
             editorWindow = ew;
+            showDebug = _showDebug;
             string originalProjectPath = project.ProjectPath;
             if (project.ProjectPath == null || project.ProjectPath.Length <= 0)
                 project.ProjectPath = TMP_PROJECT_PATH;
@@ -111,7 +121,7 @@ namespace ARdevKit.Controller.TestController
             player = new Process();
             player.EnableRaisingEvents = true;
             player.Exited += player_Exited;
-            playerPath = showDebug ? "DebugPlayer.exe" : "Player.exe";
+            playerPath = "Player.exe";
             player.StartInfo.Arguments = "-" + width + " -" + height + " -" + project.ProjectPath + " -" + mode;
 
             bool open = false;
@@ -188,8 +198,28 @@ namespace ARdevKit.Controller.TestController
         {
             if (File.Exists(playerPath) )
             {
-                player.StartInfo.FileName = playerPath;
-                player.Start();
+                if (showDebug)
+                {
+                    player.StartInfo.FileName = "Player.exe";
+                    //player.StartInfo.CreateNoWindow = false;
+                    //player.StartInfo.UseShellExecute = true;
+                    //player.StartInfo.RedirectStandardOutput = true;
+                    //player.OutputDataReceived += new DataReceivedEventHandler(player_OutputDataReceived);
+                    player.Start();
+                    
+                    /* not working atm
+                    debugWindow = new DebugWindow();
+                    debugWindow.Show();
+                    //new MethodInvoker(player.BeginOutputReadLine).BeginInvoke(null, null);
+                    */
+                }
+                else
+                {
+                    player.StartInfo.FileName = playerPath;
+                    player.StartInfo.UseShellExecute = false;
+                    player.StartInfo.CreateNoWindow = true;
+                    player.Start();
+                }
             }
             else
             {
@@ -204,6 +234,13 @@ namespace ARdevKit.Controller.TestController
             }
             editorWindow.PlayerStarted();
         }
+
+        /* not working atm
+        static void player_OutputDataReceived(object sender, DataReceivedEventArgs e)
+        {
+            debugWindow.AppendText(e.Data + Environment.NewLine);
+        }
+        */
 
         /// <summary>
         /// Handles the FormClosed event of the progressVideoWindow control.
