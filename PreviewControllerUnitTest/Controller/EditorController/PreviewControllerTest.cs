@@ -400,22 +400,6 @@ namespace Tests
         }
 
         [TestMethod()]
-        [ExpectedException(typeof(ArgumentException))]
-        public void setCurrentElementTest_nullArgument01()
-        {
-            //arrange
-            EditorWindow ew = new EditorWindow();
-            IPreviewable previewable = null;
-            PreviewController prevcontr = new PreviewController(ew);
-
-            //act
-            prevcontr.setCurrentElement(previewable);
-
-            //assert
-            //assert is handled by the ExcpectedException
-        }
-
-        [TestMethod()]
         public void setCurrentElementTest()
         {
             //arrange

@@ -563,12 +563,8 @@ public class PreviewController
     /// sets the currentElement in EditorWindow an marks the PictureBox in the PreviewPanel.
     /// </summary>
     /// <param name="currentElement">The current element.</param>
-    /// <exception cref="System.ArgumentException">parameter currentElement was null.</exception>
     public void setCurrentElement(IPreviewable currentElement)
     {
-        if (currentElement == null)
-            throw new ArgumentException("parameter currentElement was null.");
-
         //if there is a currentElement we musst set the box of the actual currentElement to normal
         //the box of the new currentElement will be set to the new Borderstyle.
         if (currentElement != null)
@@ -888,7 +884,6 @@ public class PreviewController
     /// Updates the element combobox.
     /// </summary>
     /// <param name="t">The t.</param>
-    /// <exception cref="System.ArgumentException">parameter t was null.</exception>
     [MethodImpl(MethodImplOptions.Synchronized)]
     public void updateElementCombobox(AbstractTrackable t)
     {
