@@ -730,22 +730,6 @@ namespace Tests
         }
 
         [TestMethod()]
-        [ExpectedException(typeof(ArgumentException))]
-        public void updateElementComboboxTest_NullArgument01()
-        {
-            //arrange
-            EditorWindow ew = new EditorWindow();
-            AbstractTrackable trackable = new IDMarker(1);
-            PreviewController prevcontr = new PreviewController(ew);
-
-            //act
-            prevcontr.updateElementCombobox(trackable);
-
-            //assert
-            //assert is handled by the ExcpectedException
-        }
-
-        [TestMethod()]
         public void updateElementComboboxTest()
         {
             //arrange
