@@ -1225,12 +1225,7 @@ namespace ARdevKit
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void cmb_editor_properties_objectSelection_SelectedIndexChanged(object sender, EventArgs e)
         {
-            PropertyGrid1.SelectedObject = cmb_editor_properties_objectSelection.SelectedItem;
-            if (!(cmb_editor_properties_objectSelection.SelectedItem is AbstractSource))
-            {
-                previewController.setCurrentElement((IPreviewable)cmb_editor_properties_objectSelection.SelectedItem);
-            }
-
+            previewController.setCurrentElement((IPreviewable)cmb_editor_properties_objectSelection.SelectedItem);
         }
 
         /// <summary>
