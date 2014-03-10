@@ -301,6 +301,9 @@ public class PreviewController
     /// <param name="currentElement">The current element.</param>
     public void removePreviewable(IPreviewable currentElement)
     {
+        if (currentElement == null)
+            throw new ArgumentException("parameter currentElement was null.");
+
         if (currentElement is AbstractTrackable && trackable != null)
         {
             this.removeAll();
