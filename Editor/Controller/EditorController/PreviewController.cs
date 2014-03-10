@@ -906,8 +906,14 @@ public class PreviewController
     /// <summary>
     /// Refreshs the Augmentation with the new Scale.
     /// </summary>
+    /// <param name="currentElement">The current element.</param>
+    /// <returns></returns>
+    /// <exception cref="System.ArgumentException">parameter currentElement was null.</exception>
     public Bitmap getSizedBitmap(IPreviewable currentElement)
     {
+        if (currentElement == null)
+            throw new ArgumentException("parameter currentElement was null.");
+
         IPreviewable prev = currentElement;
         PictureBox box = this.findBox(prev);
 
