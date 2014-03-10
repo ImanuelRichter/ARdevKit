@@ -888,9 +888,13 @@ public class PreviewController
     /// Updates the element combobox.
     /// </summary>
     /// <param name="t">The t.</param>
+    /// <exception cref="System.ArgumentException">parameter t was null.</exception>
     [MethodImpl(MethodImplOptions.Synchronized)]
     public void updateElementCombobox(AbstractTrackable t)
     {
+        if (t == null)
+            throw new ArgumentException("parameter t was null.");
+
         if (t != null)
         {
             if (ew.Cmb_editor_properties_objectSelection.Items.Count != 1 + t.Augmentations.Count + ew.project.Sources.Count)
