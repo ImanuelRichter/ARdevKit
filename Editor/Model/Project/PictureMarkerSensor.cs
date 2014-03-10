@@ -33,7 +33,8 @@ namespace ARdevKit.Model.Project
         ///                 slower.
         ///             -   "fast" to use a more simple approach to detect
         ///                 the markers, which is less precise, but faster
-        ///                 than robust. </summary>
+        ///                 than robust. 
+        /// </summary>
         protected TrackingQualities trackingQuality;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////

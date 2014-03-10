@@ -44,7 +44,7 @@ namespace ARdevKit.Model.Project
         /// </summary>
         private int top;
         /// <summary>
-        /// Gets or sets the top.
+        /// Gets or sets the top padding.
         /// </summary>
         /// <value>
         /// The top.
@@ -60,7 +60,7 @@ namespace ARdevKit.Model.Project
         /// </summary>
         private int left;
         /// <summary>
-        /// Gets or sets the left.
+        /// Gets or sets the left padding.
         /// </summary>
         /// <value>
         /// The left.

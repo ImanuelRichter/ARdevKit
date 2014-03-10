@@ -14,14 +14,14 @@ namespace ARdevKit.Model.Project
     /// The class CustomUserEvent mainly contains a reference path to a
     /// file, which is in the /tmp/ Folder. This file has ALL
     /// Events the user creates (inclusive the template events we provide)
-    /// for ONE augmentation.
+    /// for ONE <see cref="AbstractAugmentation"/>.
     /// </summary>
     [Serializable]
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public class CustomUserEvent
     {
         /// <summary>
-        /// ID of the augmentation, which has this user event.
+        /// ID of the augmentation, which has these user events.
         /// </summary>
         private string augmentationID;
         
@@ -49,7 +49,7 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
-        /// Creates the file from a template. The element in the template
+        /// Creates the file from a template. The string "#element" in the template
         /// will be replaced with the id of the augmentation
         /// </summary>
         /// <returns>

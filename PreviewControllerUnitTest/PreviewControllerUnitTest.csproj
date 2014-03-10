@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BD3B2152-29F8-4583-80D6-B7353EBB6B7F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PreviewControllerUnitTest</RootNamespace>
+    <AssemblyName>PreviewControllerUnitTest</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="Controller\EditorController\PreviewControllerTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Editor\Editor.csproj">
+      <Project>{89322cce-624d-489e-a157-06c0dd4a3719}</Project>
+      <Name>Editor</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\res\arel\arel.js" />
+    <Content Include="bin\Debug\res\highcharts\barChartColumn\data.xml" />
+    <Content Include="bin\Debug\res\highcharts\barChartColumn\liveOptions.js" />
+    <Content Include="bin\Debug\res\highcharts\barChartColumn\liveQuery.js" />
+    <Content Include="bin\Debug\res\highcharts\barChartColumn\options.js" />
+    <Content Include="bin\Debug\res\highcharts\barChartColumn\xmlOptions.js" />
+    <Content Include="bin\Debug\res\highcharts\barChartColumn\xmlQuery.js" />
+    <Content Include="bin\Debug\res\highcharts\demo\options.js" />
+    <Content Include="bin\Debug\res\highcharts\demo\query.js" />
+    <Content Include="bin\Debug\res\highcharts\highcharts.js" />
+    <Content Include="bin\Debug\res\highcharts\pieChart\options.js" />
+    <Content Include="bin\Debug\res\highcharts\pieChart\xmlOptions.js" />
+    <Content Include="bin\Debug\res\jquery\jquery-2.0.3.js" />
+    <Content Include="bin\Debug\res\templates\customUserEventTemplate.txt" />
+    <Content Include="bin\Debug\res\testFiles\augmentations\frame.png" />
+    <Content Include="bin\Debug\res\testFiles\augmentations\video.3g2" />
+    <Content Include="bin\Debug\res\testFiles\augmentations\video.alpha.3g2" />
+    <Content Include="bin\Debug\res\testFiles\imagesToLoadForTesting\idMarker1.jpg" />
+    <Content Include="bin\Debug\res\testFiles\imagesToLoadForTesting\idMarker1and2.jpg" />
+    <Content Include="bin\Debug\res\testFiles\imagesToLoadForTesting\idMarker2.jpg" />
+    <Content Include="bin\Debug\res\testFiles\imagesToLoadForTesting\idMarker3.jpg" />
+    <Content Include="bin\Debug\res\testFiles\imagesToLoadForTesting\idMarker4.jpg" />
+    <Content Include="bin\Debug\res\testFiles\imagesToLoadForTesting\testImage_ImageMarker1.jpg" />
+    <Content Include="bin\Debug\res\testFiles\imagesToLoadForTesting\testImage_PictureMarker1.jpg" />
+    <Content Include="bin\Debug\res\testFiles\imagesToLoadForTesting\testImage_PictureMarker2.jpg" />
+    <Content Include="bin\Debug\res\testFiles\trackables\metaioman_target.png" />
+    <Content Include="bin\Debug\res\testFiles\trackables\pictureMarker1.png" />
+    <Content Include="bin\Debug\res\testFiles\trackables\pictureMarker2.png" />
+    <Content Include="bin\Debug\res\testFiles\videosToLoadForTesting\testVideoImage.mp4" />
+    <Content Include="bin\Debug\res\testFiles\videosToLoadForTesting\testVideoMarker.mp4" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\res\highcharts\demo\data.json" />
+    <None Include="bin\Debug\res\highcharts\demo\URL.url" />
+    <None Include="bin\Debug\res\highcharts\documentation.url" />
+    <None Include="bin\Debug\res\highcharts\examples.url" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

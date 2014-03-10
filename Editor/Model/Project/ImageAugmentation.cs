@@ -15,13 +15,15 @@ namespace ARdevKit.Model.Project
 {
     /// <summary>   
     /// An augmentation only described by an ImagePath.
-    /// It is an <see cref="Abstract2DAugmentation"/>
+    /// It inherits from <see cref="Abstract2DAugmentation"/>.
     /// </summary>
     [Serializable]
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public class ImageAugmentation : Abstract2DAugmentation
     {
-        //an instance of the preview to prevent access complications.
+        /// <summary>
+        /// An instance of the preview to prevent access complications.
+        /// </summary>
         private Bitmap cachePreview = null;
 
         /// <summary>

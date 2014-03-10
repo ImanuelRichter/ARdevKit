@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EditorUITest", "EditorUITes
 		{89322CCE-624D-489E-A157-06C0DD4A3719} = {89322CCE-624D-489E-A157-06C0DD4A3719}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PreviewControllerUnitTest", "PreviewControllerUnitTest\PreviewControllerUnitTest.csproj", "{BD3B2152-29F8-4583-80D6-B7353EBB6B7F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,6 +87,21 @@ Global
 		{3C126B59-3163-481B-AD0F-FCA1ED7E42EE}.UITest|Mixed Platforms.ActiveCfg = UITest|Any CPU
 		{3C126B59-3163-481B-AD0F-FCA1ED7E42EE}.UITest|Mixed Platforms.Build.0 = UITest|Any CPU
 		{3C126B59-3163-481B-AD0F-FCA1ED7E42EE}.UITest|Win32.ActiveCfg = UITest|Any CPU
+		{BD3B2152-29F8-4583-80D6-B7353EBB6B7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD3B2152-29F8-4583-80D6-B7353EBB6B7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD3B2152-29F8-4583-80D6-B7353EBB6B7F}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{BD3B2152-29F8-4583-80D6-B7353EBB6B7F}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{BD3B2152-29F8-4583-80D6-B7353EBB6B7F}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{BD3B2152-29F8-4583-80D6-B7353EBB6B7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD3B2152-29F8-4583-80D6-B7353EBB6B7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD3B2152-29F8-4583-80D6-B7353EBB6B7F}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{BD3B2152-29F8-4583-80D6-B7353EBB6B7F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{BD3B2152-29F8-4583-80D6-B7353EBB6B7F}.Release|Win32.ActiveCfg = Release|Any CPU
+		{BD3B2152-29F8-4583-80D6-B7353EBB6B7F}.UITest|Any CPU.ActiveCfg = Release|Any CPU
+		{BD3B2152-29F8-4583-80D6-B7353EBB6B7F}.UITest|Any CPU.Build.0 = Release|Any CPU
+		{BD3B2152-29F8-4583-80D6-B7353EBB6B7F}.UITest|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{BD3B2152-29F8-4583-80D6-B7353EBB6B7F}.UITest|Mixed Platforms.Build.0 = Release|Any CPU
+		{BD3B2152-29F8-4583-80D6-B7353EBB6B7F}.UITest|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

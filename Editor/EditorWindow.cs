@@ -46,7 +46,7 @@ namespace ARdevKit
         private delegate void SetEnabledCallback();
 
         /// <summary>
-        /// The checksum of the project. Is needed to determine whether there has been made changes to the project.
+        /// The checksum of the project. It is needed to determine whether there has been made a change to the project or not.
         /// </summary>
         /// <remarks>geht 20.02.2014 13:06</remarks>
         private string checksum;

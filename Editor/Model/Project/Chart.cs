@@ -14,22 +14,23 @@ namespace ARdevKit.Model.Project
 {
 
     /// <summary>
-    /// Describes a <see cref="Chart"/> with its
-    /// Colors and OptimalValues. It is a <see cref="Chart"/>.
+    /// Describes a <see cref="Chart"/> which is programmed in JavaScript and display a set of 
+    /// data which can either be from a file or a database.
+    /// It inherits from <see cref="AbstractDynamic2DAugmentation"/>.
     /// </summary>
     [Serializable]
     [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public class Chart : AbstractDynamic2DAugmentation
     {
         /// <summary>
-        /// The style used by HighChart.
+        /// The positioning of the Chart
         /// </summary>
         protected ChartPositioning positioning;
         /// <summary>
-        /// Gets or sets the style.
+        /// Gets or sets the positioning of the Chart
         /// </summary>
         /// <value>
-        /// The style.
+        /// The positioning.
         /// </value>
         [CategoryAttribute("Position"), ReadOnly(true)]
         public ChartPositioning Positioning
@@ -41,12 +42,13 @@ namespace ARdevKit.Model.Project
         /// <summary>   Full pathname of the options file. </summary>
         protected string optionsFilePath;
 
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Gets or sets <see cref="optionsFilePath"/>. </summary>
-        ///
-        /// <value> The options. </value>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
+        /// <summary>
+        /// Gets or sets the options. If the file exists, it will be copied to a temporary directore 
+        /// /tmp/ of the program directory. If not, nothing happens.
+        /// </summary>
+        /// <value>
+        /// The options.
+        /// </value>
         [CategoryAttribute("General"), EditorAttribute(typeof(System.Windows.Forms.Design.FileNameEditor), typeof(System.Drawing.Design.UITypeEditor))]
         public string Options
         {
@@ -55,13 +57,15 @@ namespace ARdevKit.Model.Project
             {
                 if (System.IO.File.Exists(value))
                 {
-                    if (File.Helper.FileExists(@"res\", value))
+                    try
                     {
                         File.Helper.Copy(value, @"tmp\" + ID + "\\");
                         optionsFilePath = Path.GetFullPath(@"tmp\" + ID + "\\" + Path.GetFileName(value));
                     }
-                    else
-                        optionsFilePath = value;
+                    catch (Exception e)
+                    {
+                        System.Windows.Forms.MessageBox.Show(e.Message);
+                    }
                 }
             }
         }
