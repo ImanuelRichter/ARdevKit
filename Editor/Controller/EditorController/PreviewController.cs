@@ -678,8 +678,16 @@ public class PreviewController
     /// </summary>
     /// <param name="prev">The previous.</param>
     /// <returns></returns>
+    /// <exception cref="System.ArgumentException">parameter prev was null.</exception>
+    /// <exception cref="System.InvalidOperationException">trackable was not set beforehand.</exception>
     public Bitmap scaleIPreviewable(IPreviewable prev)
     {
+        if (prev == null)
+            throw new ArgumentException("parameter prev was null.");
+
+        if (trackable == null)
+            throw new InvalidOperationException("trackable was not set beforehand.");
+
         int height = prev.getPreview().Height;
         int width = prev.getPreview().Width;
         double sideScale;
