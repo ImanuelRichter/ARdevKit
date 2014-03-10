@@ -909,10 +909,14 @@ public class PreviewController
     /// <param name="currentElement">The current element.</param>
     /// <returns></returns>
     /// <exception cref="System.ArgumentException">parameter currentElement was null.</exception>
+    /// <exception cref="System.InvalidOperationException">trackable was not set beforehand</exception>
     public Bitmap getSizedBitmap(IPreviewable currentElement)
     {
         if (currentElement == null)
             throw new ArgumentException("parameter currentElement was null.");
+
+        if (this.trackable == null)
+            throw new InvalidOperationException("trackable was not set beforehand");
 
         IPreviewable prev = currentElement;
         PictureBox box = this.findBox(prev);
