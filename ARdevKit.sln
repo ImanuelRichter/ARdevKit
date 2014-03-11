@@ -14,7 +14,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EditorUITest", "EditorUITes
 		{89322CCE-624D-489E-A157-06C0DD4A3719} = {89322CCE-624D-489E-A157-06C0DD4A3719}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PreviewControllerUnitTest", "PreviewControllerUnitTest\PreviewControllerUnitTest.csproj", "{BD3B2152-29F8-4583-80D6-B7353EBB6B7F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PreviewController_TextEditorForm_Tests", "PreviewControllerUnitTest\PreviewController_TextEditorForm_Tests.csproj", "{BD3B2152-29F8-4583-80D6-B7353EBB6B7F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
