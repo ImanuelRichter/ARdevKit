@@ -49,10 +49,22 @@ namespace ARdevKit
         /// <param name="filePath">The file path.</param>
         public TextEditorForm(string filePath) : this()
         {
+            if (filePath == null)
+            {
+                throw new ArgumentNullException("Parameter filePath was null");
+            }
+            if (!System.IO.File.Exists(filePath))
+            {
+                throw new ArgumentException("The file you want to load doesn't exist.");
+            }
+            if (new FileInfo(filePath).Length > 52428800)
+            {
+                throw new ArgumentException("The file you want to load is bigger than 50 MB.");
+            }
             this.filePath = filePath;
             richTextBox1.LoadFile(this.filePath, RichTextBoxStreamType.PlainText);
         }
-
+       
         /// <summary>
         /// This Click-Event closes the Form.
         /// </summary>
