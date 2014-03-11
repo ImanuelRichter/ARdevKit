@@ -16,8 +16,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EditorUITest", "EditorUITes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PreviewController_TextEditorForm_Tests", "PreviewControllerUnitTest\PreviewController_TextEditorForm_Tests.csproj", "{BD3B2152-29F8-4583-80D6-B7353EBB6B7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElementSelectionUiTest", "..\Users\Lizzard.Lizzard-Laptop\Desktop\ElementSelectionUiTest\ElementSelectionUiTest.csproj", "{6E90466C-00BD-4CBA-83FB-D8EB9241A719}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,21 +103,6 @@ Global
 		{BD3B2152-29F8-4583-80D6-B7353EBB6B7F}.UITest|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{BD3B2152-29F8-4583-80D6-B7353EBB6B7F}.UITest|Mixed Platforms.Build.0 = Release|Any CPU
 		{BD3B2152-29F8-4583-80D6-B7353EBB6B7F}.UITest|Win32.ActiveCfg = Release|Any CPU
-		{6E90466C-00BD-4CBA-83FB-D8EB9241A719}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6E90466C-00BD-4CBA-83FB-D8EB9241A719}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6E90466C-00BD-4CBA-83FB-D8EB9241A719}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{6E90466C-00BD-4CBA-83FB-D8EB9241A719}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{6E90466C-00BD-4CBA-83FB-D8EB9241A719}.Debug|Win32.ActiveCfg = Debug|Any CPU
-		{6E90466C-00BD-4CBA-83FB-D8EB9241A719}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6E90466C-00BD-4CBA-83FB-D8EB9241A719}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6E90466C-00BD-4CBA-83FB-D8EB9241A719}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{6E90466C-00BD-4CBA-83FB-D8EB9241A719}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{6E90466C-00BD-4CBA-83FB-D8EB9241A719}.Release|Win32.ActiveCfg = Release|Any CPU
-		{6E90466C-00BD-4CBA-83FB-D8EB9241A719}.UITest|Any CPU.ActiveCfg = UITest|Any CPU
-		{6E90466C-00BD-4CBA-83FB-D8EB9241A719}.UITest|Any CPU.Build.0 = UITest|Any CPU
-		{6E90466C-00BD-4CBA-83FB-D8EB9241A719}.UITest|Mixed Platforms.ActiveCfg = UITest|Any CPU
-		{6E90466C-00BD-4CBA-83FB-D8EB9241A719}.UITest|Mixed Platforms.Build.0 = UITest|Any CPU
-		{6E90466C-00BD-4CBA-83FB-D8EB9241A719}.UITest|Win32.ActiveCfg = UITest|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

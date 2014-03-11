@@ -95,11 +95,7 @@ namespace ARdevKit.Model.Project
         /// not found in <see cref="ImagePath" />.</exception>
         public override Bitmap getPreview()
         {
-            if (cachePreview == null)
-            {
-                cachePreview = Controller.EditorController.ThumbCreator.CreateThumb(resFilePath);
-            }
-            return cachePreview;
+                return Controller.EditorController.ThumbCreator.CreateThumb(resFilePath);     
         }
 
         /// <summary>
