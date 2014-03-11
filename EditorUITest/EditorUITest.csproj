@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Controller\PropertyController\IDMarkerDuplicate.cs" />
     <Compile Include="Controller\PropertyController\PropertyControllerTest.cs" />
+    <Compile Include="Manual Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UIMap.cs">
       <DependentUpon>UIMap.uitest</DependentUpon>
