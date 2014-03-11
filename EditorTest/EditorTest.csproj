@@ -55,7 +55,6 @@
   <ItemGroup>
     <Compile Include="Controller\ProjectController\ExportVisitorTest.cs" />
     <Compile Include="Controller\ProjectController\SaveVisitorTest.cs" />
-    <Compile Include="Model\Project\VideoAugmentationTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
