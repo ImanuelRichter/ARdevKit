@@ -571,13 +571,20 @@ public class PreviewController
         {
             if (this.ew.CurrentElement != currentElement)
             {
-                this.ew.CurrentElement = currentElement;
+                if (currentElement is AbstractSource)
+                {
+                    this.ew.CurrentElement = ((AbstractSource)currentElement).Augmentation;
+                }
+                else
+                {
+                    this.ew.CurrentElement = currentElement;
+                }
 
-                if (currentElement is AbstractAugmentation)
+                if (this.ew.CurrentElement is AbstractAugmentation)
                 {
                     this.ew.Tsm_editor_menu_edit_copie.Enabled = true;
                 }
-                else if (currentElement is AbstractTrackable)
+                else if (this.ew.CurrentElement is AbstractTrackable)
                 {
                     this.ew.Tsm_editor_menu_edit_copie.Enabled = false;
                 }
@@ -590,11 +597,11 @@ public class PreviewController
                         ((PictureBox)comp).Refresh();
                     }
                 }
-                findBox(currentElement).BorderStyle = BorderStyle.Fixed3D;
-                findBox(currentElement).Refresh();
-                if (typeof(AbstractAugmentation).IsAssignableFrom(currentElement.GetType()))
+                findBox(this.ew.CurrentElement).BorderStyle = BorderStyle.Fixed3D;
+                findBox(this.ew.CurrentElement).Refresh();
+                if (typeof(AbstractAugmentation).IsAssignableFrom(this.ew.CurrentElement.GetType()))
                 {
-                    findBox(currentElement).BringToFront();
+                    findBox(this.ew.CurrentElement).BringToFront();
                 }
                 ew.PropertyGrid1.SelectedObject = currentElement;
             }

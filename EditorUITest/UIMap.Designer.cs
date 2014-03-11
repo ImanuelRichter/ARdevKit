@@ -31,6 +31,490 @@ namespace EditorUITest
     {
         
         /// <summary>
+        /// ChangeImagePathRecord - Verwenden Sie "ChangeImagePathRecordParams", um Parameter an diese Methode zu übergeben.
+        /// </summary>
+        public void ChangeImagePathRecord()
+        {
+            #region Variable Declarations
+            WinClient uIIDMarkerClient1 = this.UIARdevKitWindow.UIIDMarkerClient.UIIDMarkerClient1;
+            WinTreeItem uILokalerDatenträgerCTreeItem = this.UIWählensieeinTrackablWindow.UIStrukturansichtWindow.UIStrukturansichtTree.UIDesktopTreeItem.UIDieserPCTreeItem.UILokalerDatenträgerCTreeItem;
+            WinComboBox uIDateinameComboBox = this.UIWählensieeinTrackablWindow.UIItemWindow.UIDateinameComboBox;
+            WinButton uIÖffnenButton = this.UIWählensieeinTrackablWindow.UIÖffnenWindow.UIÖffnenButton;
+            WinRow uIImagePathRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIImagePathRow;
+            WinTable uIPropertyGridViewTable = this.UIARdevKitWindow.UIPropertyGridClient.UIPropertyGridViewTable;
+            #endregion
+
+            // Klicken "IDMarker" Client
+            Mouse.Click(uIIDMarkerClient1, new Point(48, 94));
+
+            // Klicken "Desktop" -> "Dieser PC" -> "Lokaler Datenträger (C:)" Strukturelement
+            Mouse.Click(uILokalerDatenträgerCTreeItem, new Point(27, 5));
+
+            // "1.jpg" in "Dateiname:" Kombinationsfeld auswählen
+            uIDateinameComboBox.EditableItem = this.ChangeImagePathRecordParams.UIDateinameComboBoxEditableItem;
+
+            // Klicken "Ö&ffnen" Schaltfläche
+            Mouse.Click(uIÖffnenButton, new Point(34, 14));
+
+            // Klicken "ImagePath" Zeile
+            Mouse.Click(uIImagePathRow, new Point(36, 4));
+
+            // "Control + v" in "ImagePath" Zeile eingeben
+            Keyboard.SendKeys(uIImagePathRow, this.ChangeImagePathRecordParams.UIImagePathRowSendKeys, ModifierKeys.Control);
+
+            // Klicken "PropertyGridView" Tabelle
+            Mouse.Click(uIPropertyGridViewTable, new Point(79, 288));
+        }
+        
+        /// <summary>
+        /// ChangePicturePathRecord - Verwenden Sie "ChangePicturePathRecordParams", um Parameter an diese Methode zu übergeben.
+        /// </summary>
+        public void ChangePicturePathRecord()
+        {
+            #region Variable Declarations
+            WinClient uIPnl_editor_selectionClient = this.UIARdevKitWindow.UIItemWindow.UIPnl_editor_selectionClient;
+            WinTreeItem uILokalerDatenträgerCTreeItem = this.UIWählensieeinenMarkerWindow.UIStrukturansichtWindow.UIStrukturansichtTree.UIDesktopTreeItem.UIDieserPCTreeItem.UILokalerDatenträgerCTreeItem;
+            WinComboBox uIDateinameComboBox = this.UIWählensieeinenMarkerWindow.UIItemWindow2.UIDateinameComboBox;
+            WinEdit uIDateinameEdit = this.UIWählensieeinenMarkerWindow.UIItemWindow11.UIDateinameEdit;
+            WinRow uIPicturePathRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIPicturePathRow;
+            WinTable uIPropertyGridViewTable = this.UIARdevKitWindow.UIPropertyGridClient.UIPropertyGridViewTable;
+            #endregion
+
+            // Klicken "pnl_editor_selection" Client
+            Mouse.Click(uIPnl_editor_selectionClient, new Point(76, 86));
+
+            // Klicken "Desktop" -> "Dieser PC" -> "Lokaler Datenträger (C:)" Strukturelement
+            Mouse.Click(uILokalerDatenträgerCTreeItem, new Point(38, 18));
+
+            // "1.jpg" in "Dateiname:" Kombinationsfeld auswählen
+            uIDateinameComboBox.EditableItem = this.ChangePicturePathRecordParams.UIDateinameComboBoxEditableItem;
+
+            // "{Enter}" in "Dateiname:" Textfeld eingeben
+            Keyboard.SendKeys(uIDateinameEdit, this.ChangePicturePathRecordParams.UIDateinameEditSendKeys, ModifierKeys.None);
+
+            // Klicken "PicturePath" Zeile
+            Mouse.Click(uIPicturePathRow, new Point(61, 5));
+
+            // "Control + v" in "PicturePath" Zeile eingeben
+            Keyboard.SendKeys(uIPicturePathRow, this.ChangePicturePathRecordParams.UIPicturePathRowSendKeys, ModifierKeys.Control);
+
+            // Klicken "PropertyGridView" Tabelle
+            Mouse.Click(uIPropertyGridViewTable, new Point(89, 334));
+        }
+        
+        /// <summary>
+        /// ChangeResPathImageRecord - Verwenden Sie "ChangeResPathImageRecordParams", um Parameter an diese Methode zu übergeben.
+        /// </summary>
+        public void ChangeResPathImageRecord()
+        {
+            #region Variable Declarations
+            WinClient uIPictureMarkerClient1 = this.UIARdevKitWindow.UIPictureMarkerClient.UIPictureMarkerClient1;
+            WinComboBox uICmb_editor_selectionComboBox = this.UIARdevKitWindow.UICmb_editor_selectionWindow.UICmb_editor_selectionComboBox;
+            WinClient uIChartClient1 = this.UIARdevKitWindow.UIChartClient.UIChartClient1;
+            WinTreeItem uILokalerDatenträgerCTreeItem = this.UIWählensieeinBildWindow.UIStrukturansichtWindow.UIStrukturansichtTree.UIDesktopTreeItem.UIDieserPCTreeItem.UILokalerDatenträgerCTreeItem;
+            WinComboBox uIDateinameComboBox = this.UIWählensieeinBildWindow.UIItemWindow.UIDateinameComboBox;
+            WinEdit uIDateinameEdit = this.UIWählensieeinBildWindow.UIItemWindow1.UIDateinameEdit;
+            WinRow uIResFilePathRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIResFilePathRow;
+            WinTable uIPropertyGridViewTable = this.UIARdevKitWindow.UIPropertyGridClient.UIPropertyGridViewTable;
+            #endregion
+
+            // Klicken "Picture Marker" Client
+            Mouse.Click(uIPictureMarkerClient1, new Point(42, 68));
+
+            // "Augmentations" in "cmb_editor_selection_toolSelection" Kombinationsfeld auswählen
+            uICmb_editor_selectionComboBox.SelectedItem = this.ChangeResPathImageRecordParams.UICmb_editor_selectionComboBoxSelectedItem;
+
+            // Klicken "Chart" Client
+            Mouse.Click(uIChartClient1, new Point(45, 65));
+
+            // Klicken "Desktop" -> "Dieser PC" -> "Lokaler Datenträger (C:)" Strukturelement
+            Mouse.Click(uILokalerDatenträgerCTreeItem, new Point(75, 12));
+
+            // "1.jpg" in "Dateiname:" Kombinationsfeld auswählen
+            uIDateinameComboBox.EditableItem = this.ChangeResPathImageRecordParams.UIDateinameComboBoxEditableItem;
+
+            // "{Enter}" in "Dateiname:" Textfeld eingeben
+            Keyboard.SendKeys(uIDateinameEdit, this.ChangeResPathImageRecordParams.UIDateinameEditSendKeys, ModifierKeys.None);
+
+            // Klicken "ResFilePath" Zeile
+            Mouse.Click(uIResFilePathRow, new Point(41, 3));
+
+            // "Control + v" in "ResFilePath" Zeile eingeben
+            Keyboard.SendKeys(uIResFilePathRow, this.ChangeResPathImageRecordParams.UIResFilePathRowSendKeys, ModifierKeys.Control);
+
+            // Klicken "PropertyGridView" Tabelle
+            Mouse.Click(uIPropertyGridViewTable, new Point(75, 297));
+        }
+        
+        /// <summary>
+        /// ChangeResPathVideoRecord - Verwenden Sie "ChangeResPathVideoRecordParams", um Parameter an diese Methode zu übergeben.
+        /// </summary>
+        public void ChangeResPathVideoRecord()
+        {
+            #region Variable Declarations
+            WinClient uIPictureMarkerClient1 = this.UIARdevKitWindow.UIPictureMarkerClient.UIPictureMarkerClient1;
+            WinComboBox uICmb_editor_selectionComboBox = this.UIARdevKitWindow.UICmb_editor_selectionWindow.UICmb_editor_selectionComboBox;
+            WinClient uIImageAugmentationClient1 = this.UIARdevKitWindow.UIImageAugmentationClient.UIImageAugmentationClient1;
+            WinTreeItem uILokalerDatenträgerCTreeItem = this.UIWählensieeinVideoWindow.UIStrukturansichtWindow.UIStrukturansichtTree.UIDesktopTreeItem.UIDieserPCTreeItem.UILokalerDatenträgerCTreeItem;
+            WinComboBox uIDateinameComboBox = this.UIWählensieeinVideoWindow.UIItemWindow.UIDateinameComboBox;
+            WinButton uIÖffnenButton = this.UIWählensieeinVideoWindow.UIÖffnenWindow.UIÖffnenButton;
+            WinRow uIResFilePathRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIResFilePathRow;
+            WinTable uIPropertyGridViewTable = this.UIARdevKitWindow.UIPropertyGridClient.UIPropertyGridViewTable;
+            #endregion
+
+            // Klicken "Picture Marker" Client
+            Mouse.Click(uIPictureMarkerClient1, new Point(49, 55));
+
+            // "Augmentations" in "cmb_editor_selection_toolSelection" Kombinationsfeld auswählen
+            uICmb_editor_selectionComboBox.SelectedItem = this.ChangeResPathVideoRecordParams.UICmb_editor_selectionComboBoxSelectedItem;
+
+            // Klicken "Image Augmentation" Client
+            Mouse.Click(uIImageAugmentationClient1, new Point(48, 69));
+
+            // Klicken "Desktop" -> "Dieser PC" -> "Lokaler Datenträger (C:)" Strukturelement
+            Mouse.Click(uILokalerDatenträgerCTreeItem, new Point(14, 10));
+
+            // "video.3g2" in "Dateiname:" Kombinationsfeld auswählen
+            uIDateinameComboBox.EditableItem = this.ChangeResPathVideoRecordParams.UIDateinameComboBoxEditableItem;
+
+            // Klicken "Ö&ffnen" Schaltfläche
+            Mouse.Click(uIÖffnenButton, new Point(28, 14));
+
+            // Klicken "ResFilePath" Zeile
+            Mouse.Click(uIResFilePathRow, new Point(50, 5));
+
+            // "Control + v" in "ResFilePath" Zeile eingeben
+            Keyboard.SendKeys(uIResFilePathRow, this.ChangeResPathVideoRecordParams.UIResFilePathRowSendKeys, ModifierKeys.Control);
+
+            // Klicken "PropertyGridView" Tabelle
+            Mouse.Click(uIPropertyGridViewTable, new Point(80, 315));
+        }
+        
+        /// <summary>
+        /// Close
+        /// </summary>
+        public void Close()
+        {
+            #region Variable Declarations
+            WinButton uISchließenButton = this.UIARdevKitWindow.UIARdevKitTitleBar.UISchließenButton;
+            #endregion
+
+            // Klicken "Schließen" Schaltfläche
+            Mouse.Click(uISchließenButton, new Point(19, 8));
+        }
+        
+        /// <summary>
+        /// CloseWithoutSave
+        /// </summary>
+        public void CloseWithoutSave()
+        {
+            #region Variable Declarations
+            WinButton uISchließenButton = this.UIARdevKitWindow.UIARdevKitTitleBar.UISchließenButton;
+            WinButton uINeinButton = this.UIProjektspeichernWindow.UINeinWindow.UINeinButton;
+            #endregion
+
+            // Klicken "Schließen" Schaltfläche
+            Mouse.Click(uISchließenButton, new Point(13, 17));
+
+            // Klicken "&Nein" Schaltfläche
+            Mouse.Click(uINeinButton, new Point(21, 9));
+        }
+        
+        /// <summary>
+        /// EmptyDataPathAssertion - Verwenden Sie "EmptyDataPathAssertionExpectedValues", um Parameter an diese Methode zu übergeben.
+        /// </summary>
+        public void EmptyDataPathAssertion()
+        {
+            #region Variable Declarations
+            WinRow uIDataRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIDataRow;
+            #endregion
+
+            // Sicherstellen, dass die Eigenschaft 'Value' von "Data" Zeile ist gleich 'C:\Users\soowe_000\Documents\Studium\PSE\bin\Debug\tmp\source\fileSource1_highcharts.js'
+            Assert.AreEqual(this.EmptyDataPathAssertionExpectedValues.UIDataRowValue, uIDataRow.Value);
+        }
+        
+        /// <summary>
+        /// EmptyDataPathRecord - Verwenden Sie "EmptyDataPathRecordParams", um Parameter an diese Methode zu übergeben.
+        /// </summary>
+        public void EmptyDataPathRecord()
+        {
+            #region Variable Declarations
+            WinMenuItem uIÖffnenMenuItem = this.UIARdevKitWindow.UIMst_editor_menuMenuBar.UIDateiMenuItem.UIÖffnenMenuItem;
+            WinTreeItem uILokalerDatenträgerCTreeItem = this.UIProjektöffnenWindow.UIStrukturansichtWindow.UIStrukturansichtTree.UIDesktopTreeItem.UIDieserPCTreeItem.UILokalerDatenträgerCTreeItem;
+            WinComboBox uIDateinameComboBox = this.UIProjektöffnenWindow.UIItemWindow.UIDateinameComboBox;
+            WinEdit uIDateinameEdit = this.UIProjektöffnenWindow.UIItemWindow1.UIDateinameEdit;
+            WinComboBox uICmb_editor_propertieComboBox = this.UIARdevKitWindow.UICmb_editor_propertieWindow.UICmb_editor_propertieComboBox;
+            WinRow uIDataRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIDataRow;
+            WinTable uIPropertyGridViewTable = this.UIARdevKitWindow.UIPropertyGridClient.UIPropertyGridViewTable;
+            #endregion
+
+            // Klicken "Datei" -> "Öffnen" Menüelement
+            Mouse.Click(uIÖffnenMenuItem, new Point(37, 7));
+
+            // Klicken "Desktop" -> "Dieser PC" -> "Lokaler Datenträger (C:)" Strukturelement
+            Mouse.Click(uILokalerDatenträgerCTreeItem, new Point(56, 18));
+
+            // "emptyDataPath.ardev" in "Dateiname:" Kombinationsfeld auswählen
+            uIDateinameComboBox.EditableItem = this.EmptyDataPathRecordParams.UIDateinameComboBoxEditableItem;
+
+            // "{Enter}" in "Dateiname:" Textfeld eingeben
+            Keyboard.SendKeys(uIDateinameEdit, this.EmptyDataPathRecordParams.UIDateinameEditSendKeys, ModifierKeys.None);
+
+            // "fileSource1" in "cmb_editor_properties_objectSelection" Kombinationsfeld auswählen
+            uICmb_editor_propertieComboBox.SelectedItem = this.EmptyDataPathRecordParams.UICmb_editor_propertieComboBoxSelectedItem;
+
+            // Klicken "Data" Zeile
+            Mouse.Click(uIDataRow, new Point(47, 8));
+
+            // "{Back}" in "Data" Zeile eingeben
+            Keyboard.SendKeys(uIDataRow, this.EmptyDataPathRecordParams.UIDataRowSendKeys, ModifierKeys.None);
+
+            // Klicken "PropertyGridView" Tabelle
+            Mouse.Click(uIPropertyGridViewTable, new Point(78, 234));
+        }
+        
+        /// <summary>
+        /// EmptyImagePathAssertion - Verwenden Sie "EmptyImagePathAssertionExpectedValues", um Parameter an diese Methode zu übergeben.
+        /// </summary>
+        public void EmptyImagePathAssertion()
+        {
+            #region Variable Declarations
+            WinRow uIImagePathRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIImagePathRow;
+            #endregion
+
+            // Sicherstellen, dass die Eigenschaft 'Value' von "ImagePath" Zeile ist gleich 'C:\1.jpg'
+            Assert.AreEqual(this.EmptyImagePathAssertionExpectedValues.UIImagePathRowValue, uIImagePathRow.Value);
+        }
+        
+        /// <summary>
+        /// EmptyImagePathRecord - Verwenden Sie "EmptyImagePathRecordParams", um Parameter an diese Methode zu übergeben.
+        /// </summary>
+        public void EmptyImagePathRecord()
+        {
+            #region Variable Declarations
+            WinClient uIIDMarkerClient1 = this.UIARdevKitWindow.UIIDMarkerClient.UIIDMarkerClient1;
+            WinTreeItem uILokalerDatenträgerCTreeItem = this.UIWählensieeinTrackablWindow.UIStrukturansichtWindow.UIStrukturansichtTree.UIDesktopTreeItem.UIDieserPCTreeItem.UILokalerDatenträgerCTreeItem;
+            WinComboBox uIDateinameComboBox = this.UIWählensieeinTrackablWindow.UIItemWindow.UIDateinameComboBox;
+            WinEdit uIDateinameEdit = this.UIWählensieeinTrackablWindow.UIItemWindow1.UIDateinameEdit;
+            WinRow uIImagePathRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIImagePathRow;
+            WinTable uIPropertyGridViewTable = this.UIARdevKitWindow.UIPropertyGridClient.UIPropertyGridViewTable;
+            #endregion
+
+            // Klicken "IDMarker" Client
+            Mouse.Click(uIIDMarkerClient1, new Point(59, 33));
+
+            // Klicken "Desktop" -> "Dieser PC" -> "Lokaler Datenträger (C:)" Strukturelement
+            Mouse.Click(uILokalerDatenträgerCTreeItem, new Point(2, 16));
+
+            // "1.jpg" in "Dateiname:" Kombinationsfeld auswählen
+            uIDateinameComboBox.EditableItem = this.EmptyImagePathRecordParams.UIDateinameComboBoxEditableItem;
+
+            // "{Enter}" in "Dateiname:" Textfeld eingeben
+            Keyboard.SendKeys(uIDateinameEdit, this.EmptyImagePathRecordParams.UIDateinameEditSendKeys, ModifierKeys.None);
+
+            // Klicken "ImagePath" Zeile
+            Mouse.Click(uIImagePathRow, new Point(44, 11));
+
+            // "{Back}" in "ImagePath" Zeile eingeben
+            Keyboard.SendKeys(uIImagePathRow, this.EmptyImagePathRecordParams.UIImagePathRowSendKeys, ModifierKeys.None);
+
+            // Klicken "PropertyGridView" Tabelle
+            Mouse.Click(uIPropertyGridViewTable, new Point(101, 353));
+        }
+        
+        /// <summary>
+        /// EmptyOptionsPathAssertion - Verwenden Sie "EmptyOptionsPathAssertionExpectedValues", um Parameter an diese Methode zu übergeben.
+        /// </summary>
+        public void EmptyOptionsPathAssertion()
+        {
+            #region Variable Declarations
+            WinRow uIOptionsRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIOptionsRow;
+            #endregion
+
+            // Sicherstellen, dass die Eigenschaft 'Value' von "Options" Zeile ist gleich 'C:\Users\soowe_000\Documents\Studium\PSE\bin\Debug\tmp\chart1\highcharts.js'
+            Assert.AreEqual(this.EmptyOptionsPathAssertionExpectedValues.UIOptionsRowValue, uIOptionsRow.Value);
+        }
+        
+        /// <summary>
+        /// EmptyOptionsPathRecord - Verwenden Sie "EmptyOptionsPathRecordParams", um Parameter an diese Methode zu übergeben.
+        /// </summary>
+        public void EmptyOptionsPathRecord()
+        {
+            #region Variable Declarations
+            WinClient uIPictureMarkerClient1 = this.UIARdevKitWindow.UIPictureMarkerClient.UIPictureMarkerClient1;
+            WinComboBox uICmb_editor_selectionComboBox = this.UIARdevKitWindow.UICmb_editor_selectionWindow.UICmb_editor_selectionComboBox;
+            WinClient uIPnl_editor_selectionClient = this.UIARdevKitWindow.UIItemWindow.UIPnl_editor_selectionClient;
+            WinEdit uINameEdit = this.UIWählensieeineOptionsWindow.UIItemWindow.UIHighchartsjsListItem.UINameEdit;
+            WinRow uIOptionsRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIOptionsRow;
+            WinTable uIPropertyGridViewTable = this.UIARdevKitWindow.UIPropertyGridClient.UIPropertyGridViewTable;
+            WinButton uISchließenButton = this.UIARdevKitWindow.UIARdevKitTitleBar.UISchließenButton;
+            WinButton uINeinButton = this.UIProjektspeichernWindow.UINeinWindow.UINeinButton;
+            #endregion
+
+            // Klicken "Picture Marker" Client
+            Mouse.Click(uIPictureMarkerClient1, new Point(78, 73));
+
+            // "Augmentations" in "cmb_editor_selection_toolSelection" Kombinationsfeld auswählen
+            uICmb_editor_selectionComboBox.SelectedItem = this.EmptyOptionsPathRecordParams.UICmb_editor_selectionComboBoxSelectedItem;
+
+            // Klicken "pnl_editor_selection" Client
+            Mouse.Click(uIPnl_editor_selectionClient, new Point(87, 55));
+
+            // Doppelklicken "Name" Textfeld
+            Mouse.DoubleClick(uINameEdit, new Point(29, 19));
+
+            // Klicken "Options" Zeile
+            Mouse.Click(uIOptionsRow, new Point(35, 7));
+
+            // "{Back}" in "Options" Zeile eingeben
+            Keyboard.SendKeys(uIOptionsRow, this.EmptyOptionsPathRecordParams.UIOptionsRowSendKeys, ModifierKeys.None);
+
+            // Klicken "PropertyGridView" Tabelle
+            Mouse.Click(uIPropertyGridViewTable, new Point(93, 364));
+
+            // Klicken "Schließen" Schaltfläche
+            Mouse.Click(uISchließenButton, new Point(30, 14));
+
+            // Klicken "&Nein" Schaltfläche
+            Mouse.Click(uINeinButton, new Point(20, 13));
+        }
+        
+        /// <summary>
+        /// EmptyPicturePathAssertion - Verwenden Sie "EmptyPicturePathAssertionExpectedValues", um Parameter an diese Methode zu übergeben.
+        /// </summary>
+        public void EmptyPicturePathAssertion()
+        {
+            #region Variable Declarations
+            WinRow uIPicturePathRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIPicturePathRow;
+            #endregion
+
+            // Sicherstellen, dass die Eigenschaft 'Value' von "PicturePath" Zeile ist gleich 'C:\Users\soowe_000\Pictures\Desktop Rota\1.jpg'
+            Assert.AreEqual(this.EmptyPicturePathAssertionExpectedValues.UIPicturePathRowValue, uIPicturePathRow.Value);
+        }
+        
+        /// <summary>
+        /// EmptyPicturePathRecord - Verwenden Sie "EmptyPicturePathRecordParams", um Parameter an diese Methode zu übergeben.
+        /// </summary>
+        public void EmptyPicturePathRecord()
+        {
+            #region Variable Declarations
+            WinClient uIPnl_editor_selectionClient = this.UIARdevKitWindow.UIItemWindow.UIPnl_editor_selectionClient;
+            WinEdit uINameEdit = this.UIWählensieeinenMarkerWindow.UIItemWindow.UIDesktopRotaListItem.UINameEdit;
+            WinEdit uINameEdit1 = this.UIWählensieeinenMarkerWindow.UIItemWindow1.UIItem1jpgListItem.UINameEdit;
+            WinRow uIPicturePathRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIPicturePathRow;
+            WinTable uIPropertyGridViewTable = this.UIARdevKitWindow.UIPropertyGridClient.UIPropertyGridViewTable;
+            #endregion
+
+            // Klicken "pnl_editor_selection" Client
+            Mouse.Click(uIPnl_editor_selectionClient, new Point(47, 40));
+
+            // Doppelklicken "Name" Textfeld
+            Mouse.DoubleClick(uINameEdit, new Point(43, 2));
+
+            // Doppelklicken "Name" Textfeld
+            Mouse.DoubleClick(uINameEdit1, new Point(43, 2));
+
+            // Klicken "PicturePath" Zeile
+            Mouse.Click(uIPicturePathRow, new Point(79, 5));
+
+            // "{Back}" in "PicturePath" Zeile eingeben
+            Keyboard.SendKeys(uIPicturePathRow, this.EmptyPicturePathRecordParams.UIPicturePathRowSendKeys, ModifierKeys.None);
+
+            // Klicken "PropertyGridView" Tabelle
+            Mouse.Click(uIPropertyGridViewTable, new Point(84, 311));
+        }
+        
+        /// <summary>
+        /// EmptyQueryPathAssertion - Verwenden Sie "EmptyQueryPathAssertionExpectedValues", um Parameter an diese Methode zu übergeben.
+        /// </summary>
+        public void EmptyQueryPathAssertion()
+        {
+            #region Variable Declarations
+            WinRow uIQueryRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIQueryRow;
+            #endregion
+
+            // Sicherstellen, dass die Eigenschaft 'Value' von "Query" Zeile ist gleich ''
+            Assert.AreEqual(this.EmptyQueryPathAssertionExpectedValues.UIQueryRowValue, uIQueryRow.Value);
+        }
+        
+        /// <summary>
+        /// EmptyQueryPathRecording - Verwenden Sie "EmptyQueryPathRecordingParams", um Parameter an diese Methode zu übergeben.
+        /// </summary>
+        public void EmptyQueryPathRecording()
+        {
+            #region Variable Declarations
+            WinRow uIQueryRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIQueryRow;
+            WinTable uIPropertyGridViewTable = this.UIARdevKitWindow.UIPropertyGridClient.UIPropertyGridViewTable;
+            #endregion
+
+            // Klicken "Query" Zeile
+            Mouse.Click(uIQueryRow, new Point(48, 12));
+
+            // "{Back}" in "Query" Zeile eingeben
+            Keyboard.SendKeys(uIQueryRow, this.EmptyQueryPathRecordingParams.UIQueryRowSendKeys, ModifierKeys.None);
+
+            // Klicken "PropertyGridView" Tabelle
+            Mouse.Click(uIPropertyGridViewTable, new Point(82, 253));
+        }
+        
+        /// <summary>
+        /// EmptyResPathAssertion - Verwenden Sie "EmptyResPathAssertionExpectedValues", um Parameter an diese Methode zu übergeben.
+        /// </summary>
+        public void EmptyResPathAssertion()
+        {
+            #region Variable Declarations
+            WinRow uIResFilePathRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIResFilePathRow;
+            #endregion
+
+            // Sicherstellen, dass die Eigenschaft 'Value' von "ResFilePath" Zeile ist gleich 'C:\1.jpg'
+            Assert.AreEqual(this.EmptyResPathAssertionExpectedValues.UIResFilePathRowValue, uIResFilePathRow.Value);
+        }
+        
+        /// <summary>
+        /// EmptyResPathRecord - Verwenden Sie "EmptyResPathRecordParams", um Parameter an diese Methode zu übergeben.
+        /// </summary>
+        public void EmptyResPathRecord()
+        {
+            #region Variable Declarations
+            WinClient uIPictureMarkerClient1 = this.UIARdevKitWindow.UIPictureMarkerClient.UIPictureMarkerClient1;
+            WinComboBox uICmb_editor_selectionComboBox = this.UIARdevKitWindow.UICmb_editor_selectionWindow.UICmb_editor_selectionComboBox;
+            WinClient uIChartClient1 = this.UIARdevKitWindow.UIChartClient.UIChartClient1;
+            WinTreeItem uILokalerDatenträgerCTreeItem = this.UIWählensieeinBildWindow.UIStrukturansichtWindow.UIStrukturansichtTree.UIDesktopTreeItem.UIDieserPCTreeItem.UILokalerDatenträgerCTreeItem;
+            WinComboBox uIDateinameComboBox = this.UIWählensieeinBildWindow.UIItemWindow.UIDateinameComboBox;
+            WinEdit uIDateinameEdit = this.UIWählensieeinBildWindow.UIItemWindow1.UIDateinameEdit;
+            WinRow uIResFilePathRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIResFilePathRow;
+            WinTable uIPropertyGridViewTable = this.UIARdevKitWindow.UIPropertyGridClient.UIPropertyGridViewTable;
+            #endregion
+
+            // Klicken "Picture Marker" Client
+            Mouse.Click(uIPictureMarkerClient1, new Point(87, 70));
+
+            // "Augmentations" in "cmb_editor_selection_toolSelection" Kombinationsfeld auswählen
+            uICmb_editor_selectionComboBox.SelectedItem = this.EmptyResPathRecordParams.UICmb_editor_selectionComboBoxSelectedItem;
+
+            // Klicken "Chart" Client
+            Mouse.Click(uIChartClient1, new Point(87, 71));
+
+            // Klicken "Desktop" -> "Dieser PC" -> "Lokaler Datenträger (C:)" Strukturelement
+            Mouse.Click(uILokalerDatenträgerCTreeItem, new Point(27, 3));
+
+            // "1.jpg" in "Dateiname:" Kombinationsfeld auswählen
+            uIDateinameComboBox.EditableItem = this.EmptyResPathRecordParams.UIDateinameComboBoxEditableItem;
+
+            // "{Enter}" in "Dateiname:" Textfeld eingeben
+            Keyboard.SendKeys(uIDateinameEdit, this.EmptyResPathRecordParams.UIDateinameEditSendKeys, ModifierKeys.None);
+
+            // Klicken "ResFilePath" Zeile
+            Mouse.Click(uIResFilePathRow, new Point(45, 4));
+
+            // "{Back}" in "ResFilePath" Zeile eingeben
+            Keyboard.SendKeys(uIResFilePathRow, this.EmptyResPathRecordParams.UIResFilePathRowSendKeys, ModifierKeys.None);
+
+            // Klicken "PropertyGridView" Tabelle
+            Mouse.Click(uIPropertyGridViewTable, new Point(143, 459));
+        }
+        
+        /// <summary>
         /// IDDuplicateMarkerAssertion - Verwenden Sie "IDDuplicateMarkerAssertionExpectedValues", um Parameter an diese Methode zu übergeben.
         /// </summary>
         public void IDDuplicateMarkerAssertion()
@@ -73,23 +557,260 @@ namespace EditorUITest
         }
         
         /// <summary>
-        /// CloseWithoutSave
+        /// LoadEmptyQueryProjectRecord - Verwenden Sie "LoadEmptyQueryProjectRecordParams", um Parameter an diese Methode zu übergeben.
         /// </summary>
-        public void CloseWithoutSave()
+        public void LoadEmptyQueryProjectRecord()
         {
             #region Variable Declarations
-            WinButton uISchließenButton = this.UIARdevKitWindow.UIARdevKitTitleBar.UISchließenButton;
-            WinButton uINeinButton = this.UIProjektspeichernWindow.UINeinWindow.UINeinButton;
+            WinMenuItem uIÖffnenMenuItem = this.UIARdevKitWindow.UIMst_editor_menuMenuBar.UIDateiMenuItem.UIÖffnenMenuItem;
+            WinTreeItem uILokalerDatenträgerCTreeItem = this.UIProjektöffnenWindow.UIStrukturansichtWindow.UIStrukturansichtTree.UIDesktopTreeItem.UIDieserPCTreeItem.UILokalerDatenträgerCTreeItem;
+            WinComboBox uIDateinameComboBox = this.UIProjektöffnenWindow.UIItemWindow.UIDateinameComboBox;
+            WinButton uIÖffnenButton = this.UIProjektöffnenWindow.UIÖffnenWindow.UIÖffnenButton;
+            WinComboBox uICmb_editor_propertieComboBox = this.UIARdevKitWindow.UICmb_editor_propertieWindow.UICmb_editor_propertieComboBox;
             #endregion
 
-            // Klicken "Schließen" Schaltfläche
-            Mouse.Click(uISchließenButton, new Point(13, 17));
+            // Klicken "Datei" -> "Öffnen" Menüelement
+            Mouse.Click(uIÖffnenMenuItem, new Point(46, 7));
 
-            // Klicken "&Nein" Schaltfläche
-            Mouse.Click(uINeinButton, new Point(21, 9));
+            // Klicken "Desktop" -> "Dieser PC" -> "Lokaler Datenträger (C:)" Strukturelement
+            Mouse.Click(uILokalerDatenträgerCTreeItem, new Point(57, 18));
+
+            // "emptyDataPath.ardev" in "Dateiname:" Kombinationsfeld auswählen
+            uIDateinameComboBox.EditableItem = this.LoadEmptyQueryProjectRecordParams.UIDateinameComboBoxEditableItem;
+
+            // Klicken "Ö&ffnen" Schaltfläche
+            Mouse.Click(uIÖffnenButton, new Point(30, 14));
+
+            // "fileSource1" in "cmb_editor_properties_objectSelection" Kombinationsfeld auswählen
+            uICmb_editor_propertieComboBox.SelectedItem = this.LoadEmptyQueryProjectRecordParams.UICmb_editor_propertieComboBoxSelectedItem;
+        }
+        
+        /// <summary>
+        /// SetQueryPathAssertion - Verwenden Sie "SetQueryPathAssertionExpectedValues", um Parameter an diese Methode zu übergeben.
+        /// </summary>
+        public void SetQueryPathAssertion()
+        {
+            #region Variable Declarations
+            WinRow uIQueryRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIQueryRow;
+            #endregion
+
+            // Sicherstellen, dass die Eigenschaft 'Value' von "Query" Zeile ist gleich 'C:\query.log'
+            Assert.AreEqual(this.SetQueryPathAssertionExpectedValues.UIQueryRowValue, uIQueryRow.Value);
+        }
+        
+        /// <summary>
+        /// SetQueryPathRecord - Verwenden Sie "SetQueryPathRecordParams", um Parameter an diese Methode zu übergeben.
+        /// </summary>
+        public void SetQueryPathRecord()
+        {
+            #region Variable Declarations
+            WinRow uIQueryRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIQueryRow;
+            WinTable uIPropertyGridViewTable = this.UIARdevKitWindow.UIPropertyGridClient.UIPropertyGridViewTable;
+            #endregion
+
+            // Klicken "Query" Zeile
+            Mouse.Click(uIQueryRow, new Point(61, 8));
+
+            // "Control + v" in "Query" Zeile eingeben
+            Keyboard.SendKeys(uIQueryRow, this.SetQueryPathRecordParams.UIQueryRowSendKeys, ModifierKeys.Control);
+
+            // Klicken "PropertyGridView" Tabelle
+            Mouse.Click(uIPropertyGridViewTable, new Point(98, 329));
         }
         
         #region Properties
+        public virtual ChangeImagePathRecordParams ChangeImagePathRecordParams
+        {
+            get
+            {
+                if ((this.mChangeImagePathRecordParams == null))
+                {
+                    this.mChangeImagePathRecordParams = new ChangeImagePathRecordParams();
+                }
+                return this.mChangeImagePathRecordParams;
+            }
+        }
+        
+        public virtual ChangePicturePathRecordParams ChangePicturePathRecordParams
+        {
+            get
+            {
+                if ((this.mChangePicturePathRecordParams == null))
+                {
+                    this.mChangePicturePathRecordParams = new ChangePicturePathRecordParams();
+                }
+                return this.mChangePicturePathRecordParams;
+            }
+        }
+        
+        public virtual ChangeResPathImageRecordParams ChangeResPathImageRecordParams
+        {
+            get
+            {
+                if ((this.mChangeResPathImageRecordParams == null))
+                {
+                    this.mChangeResPathImageRecordParams = new ChangeResPathImageRecordParams();
+                }
+                return this.mChangeResPathImageRecordParams;
+            }
+        }
+        
+        public virtual ChangeResPathVideoRecordParams ChangeResPathVideoRecordParams
+        {
+            get
+            {
+                if ((this.mChangeResPathVideoRecordParams == null))
+                {
+                    this.mChangeResPathVideoRecordParams = new ChangeResPathVideoRecordParams();
+                }
+                return this.mChangeResPathVideoRecordParams;
+            }
+        }
+        
+        public virtual EmptyDataPathAssertionExpectedValues EmptyDataPathAssertionExpectedValues
+        {
+            get
+            {
+                if ((this.mEmptyDataPathAssertionExpectedValues == null))
+                {
+                    this.mEmptyDataPathAssertionExpectedValues = new EmptyDataPathAssertionExpectedValues();
+                }
+                return this.mEmptyDataPathAssertionExpectedValues;
+            }
+        }
+        
+        public virtual EmptyDataPathRecordParams EmptyDataPathRecordParams
+        {
+            get
+            {
+                if ((this.mEmptyDataPathRecordParams == null))
+                {
+                    this.mEmptyDataPathRecordParams = new EmptyDataPathRecordParams();
+                }
+                return this.mEmptyDataPathRecordParams;
+            }
+        }
+        
+        public virtual EmptyImagePathAssertionExpectedValues EmptyImagePathAssertionExpectedValues
+        {
+            get
+            {
+                if ((this.mEmptyImagePathAssertionExpectedValues == null))
+                {
+                    this.mEmptyImagePathAssertionExpectedValues = new EmptyImagePathAssertionExpectedValues();
+                }
+                return this.mEmptyImagePathAssertionExpectedValues;
+            }
+        }
+        
+        public virtual EmptyImagePathRecordParams EmptyImagePathRecordParams
+        {
+            get
+            {
+                if ((this.mEmptyImagePathRecordParams == null))
+                {
+                    this.mEmptyImagePathRecordParams = new EmptyImagePathRecordParams();
+                }
+                return this.mEmptyImagePathRecordParams;
+            }
+        }
+        
+        public virtual EmptyOptionsPathAssertionExpectedValues EmptyOptionsPathAssertionExpectedValues
+        {
+            get
+            {
+                if ((this.mEmptyOptionsPathAssertionExpectedValues == null))
+                {
+                    this.mEmptyOptionsPathAssertionExpectedValues = new EmptyOptionsPathAssertionExpectedValues();
+                }
+                return this.mEmptyOptionsPathAssertionExpectedValues;
+            }
+        }
+        
+        public virtual EmptyOptionsPathRecordParams EmptyOptionsPathRecordParams
+        {
+            get
+            {
+                if ((this.mEmptyOptionsPathRecordParams == null))
+                {
+                    this.mEmptyOptionsPathRecordParams = new EmptyOptionsPathRecordParams();
+                }
+                return this.mEmptyOptionsPathRecordParams;
+            }
+        }
+        
+        public virtual EmptyPicturePathAssertionExpectedValues EmptyPicturePathAssertionExpectedValues
+        {
+            get
+            {
+                if ((this.mEmptyPicturePathAssertionExpectedValues == null))
+                {
+                    this.mEmptyPicturePathAssertionExpectedValues = new EmptyPicturePathAssertionExpectedValues();
+                }
+                return this.mEmptyPicturePathAssertionExpectedValues;
+            }
+        }
+        
+        public virtual EmptyPicturePathRecordParams EmptyPicturePathRecordParams
+        {
+            get
+            {
+                if ((this.mEmptyPicturePathRecordParams == null))
+                {
+                    this.mEmptyPicturePathRecordParams = new EmptyPicturePathRecordParams();
+                }
+                return this.mEmptyPicturePathRecordParams;
+            }
+        }
+        
+        public virtual EmptyQueryPathAssertionExpectedValues EmptyQueryPathAssertionExpectedValues
+        {
+            get
+            {
+                if ((this.mEmptyQueryPathAssertionExpectedValues == null))
+                {
+                    this.mEmptyQueryPathAssertionExpectedValues = new EmptyQueryPathAssertionExpectedValues();
+                }
+                return this.mEmptyQueryPathAssertionExpectedValues;
+            }
+        }
+        
+        public virtual EmptyQueryPathRecordingParams EmptyQueryPathRecordingParams
+        {
+            get
+            {
+                if ((this.mEmptyQueryPathRecordingParams == null))
+                {
+                    this.mEmptyQueryPathRecordingParams = new EmptyQueryPathRecordingParams();
+                }
+                return this.mEmptyQueryPathRecordingParams;
+            }
+        }
+        
+        public virtual EmptyResPathAssertionExpectedValues EmptyResPathAssertionExpectedValues
+        {
+            get
+            {
+                if ((this.mEmptyResPathAssertionExpectedValues == null))
+                {
+                    this.mEmptyResPathAssertionExpectedValues = new EmptyResPathAssertionExpectedValues();
+                }
+                return this.mEmptyResPathAssertionExpectedValues;
+            }
+        }
+        
+        public virtual EmptyResPathRecordParams EmptyResPathRecordParams
+        {
+            get
+            {
+                if ((this.mEmptyResPathRecordParams == null))
+                {
+                    this.mEmptyResPathRecordParams = new EmptyResPathRecordParams();
+                }
+                return this.mEmptyResPathRecordParams;
+            }
+        }
+        
         public virtual IDDuplicateMarkerAssertionExpectedValues IDDuplicateMarkerAssertionExpectedValues
         {
             get
@@ -111,6 +832,42 @@ namespace EditorUITest
                     this.mIDMarkerDuplicateParams = new IDMarkerDuplicateParams();
                 }
                 return this.mIDMarkerDuplicateParams;
+            }
+        }
+        
+        public virtual LoadEmptyQueryProjectRecordParams LoadEmptyQueryProjectRecordParams
+        {
+            get
+            {
+                if ((this.mLoadEmptyQueryProjectRecordParams == null))
+                {
+                    this.mLoadEmptyQueryProjectRecordParams = new LoadEmptyQueryProjectRecordParams();
+                }
+                return this.mLoadEmptyQueryProjectRecordParams;
+            }
+        }
+        
+        public virtual SetQueryPathAssertionExpectedValues SetQueryPathAssertionExpectedValues
+        {
+            get
+            {
+                if ((this.mSetQueryPathAssertionExpectedValues == null))
+                {
+                    this.mSetQueryPathAssertionExpectedValues = new SetQueryPathAssertionExpectedValues();
+                }
+                return this.mSetQueryPathAssertionExpectedValues;
+            }
+        }
+        
+        public virtual SetQueryPathRecordParams SetQueryPathRecordParams
+        {
+            get
+            {
+                if ((this.mSetQueryPathRecordParams == null))
+                {
+                    this.mSetQueryPathRecordParams = new SetQueryPathRecordParams();
+                }
+                return this.mSetQueryPathRecordParams;
             }
         }
         
@@ -138,29 +895,533 @@ namespace EditorUITest
             }
         }
         
-        public UIItemWindow UIItemWindow
+        public UIItemWindow1 UIItemWindow
         {
             get
             {
                 if ((this.mUIItemWindow == null))
                 {
-                    this.mUIItemWindow = new UIItemWindow();
+                    this.mUIItemWindow = new UIItemWindow1();
                 }
                 return this.mUIItemWindow;
+            }
+        }
+        
+        public UIWählensieeineOptionsWindow UIWählensieeineOptionsWindow
+        {
+            get
+            {
+                if ((this.mUIWählensieeineOptionsWindow == null))
+                {
+                    this.mUIWählensieeineOptionsWindow = new UIWählensieeineOptionsWindow();
+                }
+                return this.mUIWählensieeineOptionsWindow;
+            }
+        }
+        
+        public UIItemWindow11 UIItemWindow1
+        {
+            get
+            {
+                if ((this.mUIItemWindow1 == null))
+                {
+                    this.mUIItemWindow1 = new UIItemWindow11();
+                }
+                return this.mUIItemWindow1;
+            }
+        }
+        
+        public UIWählensieeinenMarkerWindow UIWählensieeinenMarkerWindow
+        {
+            get
+            {
+                if ((this.mUIWählensieeinenMarkerWindow == null))
+                {
+                    this.mUIWählensieeinenMarkerWindow = new UIWählensieeinenMarkerWindow();
+                }
+                return this.mUIWählensieeinenMarkerWindow;
+            }
+        }
+        
+        public UIÖffnenWindow1 UIÖffnenWindow
+        {
+            get
+            {
+                if ((this.mUIÖffnenWindow == null))
+                {
+                    this.mUIÖffnenWindow = new UIÖffnenWindow1();
+                }
+                return this.mUIÖffnenWindow;
+            }
+        }
+        
+        public UIWählensieeinTrackablWindow UIWählensieeinTrackablWindow
+        {
+            get
+            {
+                if ((this.mUIWählensieeinTrackablWindow == null))
+                {
+                    this.mUIWählensieeinTrackablWindow = new UIWählensieeinTrackablWindow();
+                }
+                return this.mUIWählensieeinTrackablWindow;
+            }
+        }
+        
+        public UIWählensieeinBildWindow UIWählensieeinBildWindow
+        {
+            get
+            {
+                if ((this.mUIWählensieeinBildWindow == null))
+                {
+                    this.mUIWählensieeinBildWindow = new UIWählensieeinBildWindow();
+                }
+                return this.mUIWählensieeinBildWindow;
+            }
+        }
+        
+        public UIWählensieeinVideoWindow UIWählensieeinVideoWindow
+        {
+            get
+            {
+                if ((this.mUIWählensieeinVideoWindow == null))
+                {
+                    this.mUIWählensieeinVideoWindow = new UIWählensieeinVideoWindow();
+                }
+                return this.mUIWählensieeinVideoWindow;
+            }
+        }
+        
+        public UIDatenauswählenWindow UIDatenauswählenWindow
+        {
+            get
+            {
+                if ((this.mUIDatenauswählenWindow == null))
+                {
+                    this.mUIDatenauswählenWindow = new UIDatenauswählenWindow();
+                }
+                return this.mUIDatenauswählenWindow;
+            }
+        }
+        
+        public UIQueryWindow UIQueryWindow
+        {
+            get
+            {
+                if ((this.mUIQueryWindow == null))
+                {
+                    this.mUIQueryWindow = new UIQueryWindow();
+                }
+                return this.mUIQueryWindow;
+            }
+        }
+        
+        public UIProjektöffnenWindow UIProjektöffnenWindow
+        {
+            get
+            {
+                if ((this.mUIProjektöffnenWindow == null))
+                {
+                    this.mUIProjektöffnenWindow = new UIProjektöffnenWindow();
+                }
+                return this.mUIProjektöffnenWindow;
             }
         }
         #endregion
         
         #region Fields
+        private ChangeImagePathRecordParams mChangeImagePathRecordParams;
+        
+        private ChangePicturePathRecordParams mChangePicturePathRecordParams;
+        
+        private ChangeResPathImageRecordParams mChangeResPathImageRecordParams;
+        
+        private ChangeResPathVideoRecordParams mChangeResPathVideoRecordParams;
+        
+        private EmptyDataPathAssertionExpectedValues mEmptyDataPathAssertionExpectedValues;
+        
+        private EmptyDataPathRecordParams mEmptyDataPathRecordParams;
+        
+        private EmptyImagePathAssertionExpectedValues mEmptyImagePathAssertionExpectedValues;
+        
+        private EmptyImagePathRecordParams mEmptyImagePathRecordParams;
+        
+        private EmptyOptionsPathAssertionExpectedValues mEmptyOptionsPathAssertionExpectedValues;
+        
+        private EmptyOptionsPathRecordParams mEmptyOptionsPathRecordParams;
+        
+        private EmptyPicturePathAssertionExpectedValues mEmptyPicturePathAssertionExpectedValues;
+        
+        private EmptyPicturePathRecordParams mEmptyPicturePathRecordParams;
+        
+        private EmptyQueryPathAssertionExpectedValues mEmptyQueryPathAssertionExpectedValues;
+        
+        private EmptyQueryPathRecordingParams mEmptyQueryPathRecordingParams;
+        
+        private EmptyResPathAssertionExpectedValues mEmptyResPathAssertionExpectedValues;
+        
+        private EmptyResPathRecordParams mEmptyResPathRecordParams;
+        
         private IDDuplicateMarkerAssertionExpectedValues mIDDuplicateMarkerAssertionExpectedValues;
         
         private IDMarkerDuplicateParams mIDMarkerDuplicateParams;
+        
+        private LoadEmptyQueryProjectRecordParams mLoadEmptyQueryProjectRecordParams;
+        
+        private SetQueryPathAssertionExpectedValues mSetQueryPathAssertionExpectedValues;
+        
+        private SetQueryPathRecordParams mSetQueryPathRecordParams;
         
         private UIARdevKitWindow mUIARdevKitWindow;
         
         private UIProjektspeichernWindow mUIProjektspeichernWindow;
         
-        private UIItemWindow mUIItemWindow;
+        private UIItemWindow1 mUIItemWindow;
+        
+        private UIWählensieeineOptionsWindow mUIWählensieeineOptionsWindow;
+        
+        private UIItemWindow11 mUIItemWindow1;
+        
+        private UIWählensieeinenMarkerWindow mUIWählensieeinenMarkerWindow;
+        
+        private UIÖffnenWindow1 mUIÖffnenWindow;
+        
+        private UIWählensieeinTrackablWindow mUIWählensieeinTrackablWindow;
+        
+        private UIWählensieeinBildWindow mUIWählensieeinBildWindow;
+        
+        private UIWählensieeinVideoWindow mUIWählensieeinVideoWindow;
+        
+        private UIDatenauswählenWindow mUIDatenauswählenWindow;
+        
+        private UIQueryWindow mUIQueryWindow;
+        
+        private UIProjektöffnenWindow mUIProjektöffnenWindow;
+        #endregion
+    }
+    
+    /// <summary>
+    /// An "ChangeImagePathRecord" zu übergebende Parameter
+    /// </summary>
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class ChangeImagePathRecordParams
+    {
+        
+        #region Fields
+        /// <summary>
+        /// "1.jpg" in "Dateiname:" Kombinationsfeld auswählen
+        /// </summary>
+        public string UIDateinameComboBoxEditableItem = "1.jpg";
+        
+        /// <summary>
+        /// "Control + v" in "ImagePath" Zeile eingeben
+        /// </summary>
+        public string UIImagePathRowSendKeys = "v";
+        #endregion
+    }
+    
+    /// <summary>
+    /// An "ChangePicturePathRecord" zu übergebende Parameter
+    /// </summary>
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class ChangePicturePathRecordParams
+    {
+        
+        #region Fields
+        /// <summary>
+        /// "1.jpg" in "Dateiname:" Kombinationsfeld auswählen
+        /// </summary>
+        public string UIDateinameComboBoxEditableItem = "1.jpg";
+        
+        /// <summary>
+        /// "{Enter}" in "Dateiname:" Textfeld eingeben
+        /// </summary>
+        public string UIDateinameEditSendKeys = "{Enter}";
+        
+        /// <summary>
+        /// "Control + v" in "PicturePath" Zeile eingeben
+        /// </summary>
+        public string UIPicturePathRowSendKeys = "v";
+        #endregion
+    }
+    
+    /// <summary>
+    /// An "ChangeResPathImageRecord" zu übergebende Parameter
+    /// </summary>
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class ChangeResPathImageRecordParams
+    {
+        
+        #region Fields
+        /// <summary>
+        /// "Augmentations" in "cmb_editor_selection_toolSelection" Kombinationsfeld auswählen
+        /// </summary>
+        public string UICmb_editor_selectionComboBoxSelectedItem = "Augmentations";
+        
+        /// <summary>
+        /// "1.jpg" in "Dateiname:" Kombinationsfeld auswählen
+        /// </summary>
+        public string UIDateinameComboBoxEditableItem = "1.jpg";
+        
+        /// <summary>
+        /// "{Enter}" in "Dateiname:" Textfeld eingeben
+        /// </summary>
+        public string UIDateinameEditSendKeys = "{Enter}";
+        
+        /// <summary>
+        /// "Control + v" in "ResFilePath" Zeile eingeben
+        /// </summary>
+        public string UIResFilePathRowSendKeys = "v";
+        #endregion
+    }
+    
+    /// <summary>
+    /// An "ChangeResPathVideoRecord" zu übergebende Parameter
+    /// </summary>
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class ChangeResPathVideoRecordParams
+    {
+        
+        #region Fields
+        /// <summary>
+        /// "Augmentations" in "cmb_editor_selection_toolSelection" Kombinationsfeld auswählen
+        /// </summary>
+        public string UICmb_editor_selectionComboBoxSelectedItem = "Augmentations";
+        
+        /// <summary>
+        /// "video.3g2" in "Dateiname:" Kombinationsfeld auswählen
+        /// </summary>
+        public string UIDateinameComboBoxEditableItem = "video.3g2";
+        
+        /// <summary>
+        /// "Control + v" in "ResFilePath" Zeile eingeben
+        /// </summary>
+        public string UIResFilePathRowSendKeys = "v";
+        #endregion
+    }
+    
+    /// <summary>
+    /// An "EmptyDataPathAssertion" zu übergebende Parameter
+    /// </summary>
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class EmptyDataPathAssertionExpectedValues
+    {
+        
+        #region Fields
+        /// <summary>
+        /// Sicherstellen, dass die Eigenschaft 'Value' von "Data" Zeile ist gleich 'C:\Users\soowe_000\Documents\Studium\PSE\bin\Debug\tmp\source\fileSource1_highcharts.js'
+        /// </summary>
+        public string UIDataRowValue = "C:\\Users\\soowe_000\\Documents\\Studium\\PSE\\bin\\Debug\\tmp\\source\\fileSource1_highcha" +
+            "rts.js";
+        #endregion
+    }
+    
+    /// <summary>
+    /// An "EmptyDataPathRecord" zu übergebende Parameter
+    /// </summary>
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class EmptyDataPathRecordParams
+    {
+        
+        #region Fields
+        /// <summary>
+        /// "emptyDataPath.ardev" in "Dateiname:" Kombinationsfeld auswählen
+        /// </summary>
+        public string UIDateinameComboBoxEditableItem = "emptyDataPath.ardev";
+        
+        /// <summary>
+        /// "{Enter}" in "Dateiname:" Textfeld eingeben
+        /// </summary>
+        public string UIDateinameEditSendKeys = "{Enter}";
+        
+        /// <summary>
+        /// "fileSource1" in "cmb_editor_properties_objectSelection" Kombinationsfeld auswählen
+        /// </summary>
+        public string UICmb_editor_propertieComboBoxSelectedItem = "fileSource1";
+        
+        /// <summary>
+        /// "{Back}" in "Data" Zeile eingeben
+        /// </summary>
+        public string UIDataRowSendKeys = "{Back}";
+        #endregion
+    }
+    
+    /// <summary>
+    /// An "EmptyImagePathAssertion" zu übergebende Parameter
+    /// </summary>
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class EmptyImagePathAssertionExpectedValues
+    {
+        
+        #region Fields
+        /// <summary>
+        /// Sicherstellen, dass die Eigenschaft 'Value' von "ImagePath" Zeile ist gleich 'C:\1.jpg'
+        /// </summary>
+        public string UIImagePathRowValue = "C:\\1.jpg";
+        #endregion
+    }
+    
+    /// <summary>
+    /// An "EmptyImagePathRecord" zu übergebende Parameter
+    /// </summary>
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class EmptyImagePathRecordParams
+    {
+        
+        #region Fields
+        /// <summary>
+        /// "1.jpg" in "Dateiname:" Kombinationsfeld auswählen
+        /// </summary>
+        public string UIDateinameComboBoxEditableItem = "1.jpg";
+        
+        /// <summary>
+        /// "{Enter}" in "Dateiname:" Textfeld eingeben
+        /// </summary>
+        public string UIDateinameEditSendKeys = "{Enter}";
+        
+        /// <summary>
+        /// "{Back}" in "ImagePath" Zeile eingeben
+        /// </summary>
+        public string UIImagePathRowSendKeys = "{Back}";
+        #endregion
+    }
+    
+    /// <summary>
+    /// An "EmptyOptionsPathAssertion" zu übergebende Parameter
+    /// </summary>
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class EmptyOptionsPathAssertionExpectedValues
+    {
+        
+        #region Fields
+        /// <summary>
+        /// Sicherstellen, dass die Eigenschaft 'Value' von "Options" Zeile ist gleich 'C:\Users\soowe_000\Documents\Studium\PSE\bin\Debug\tmp\chart1\highcharts.js'
+        /// </summary>
+        public string UIOptionsRowValue = "C:\\Users\\soowe_000\\Documents\\Studium\\PSE\\bin\\Debug\\tmp\\chart1\\highcharts.js";
+        #endregion
+    }
+    
+    /// <summary>
+    /// An "EmptyOptionsPathRecord" zu übergebende Parameter
+    /// </summary>
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class EmptyOptionsPathRecordParams
+    {
+        
+        #region Fields
+        /// <summary>
+        /// "Augmentations" in "cmb_editor_selection_toolSelection" Kombinationsfeld auswählen
+        /// </summary>
+        public string UICmb_editor_selectionComboBoxSelectedItem = "Augmentations";
+        
+        /// <summary>
+        /// "{Back}" in "Options" Zeile eingeben
+        /// </summary>
+        public string UIOptionsRowSendKeys = "{Back}";
+        #endregion
+    }
+    
+    /// <summary>
+    /// An "EmptyPicturePathAssertion" zu übergebende Parameter
+    /// </summary>
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class EmptyPicturePathAssertionExpectedValues
+    {
+        
+        #region Fields
+        /// <summary>
+        /// Sicherstellen, dass die Eigenschaft 'Value' von "PicturePath" Zeile ist gleich 'C:\Users\soowe_000\Pictures\Desktop Rota\1.jpg'
+        /// </summary>
+        public string UIPicturePathRowValue = "C:\\Users\\soowe_000\\Pictures\\Desktop Rota\\1.jpg";
+        #endregion
+    }
+    
+    /// <summary>
+    /// An "EmptyPicturePathRecord" zu übergebende Parameter
+    /// </summary>
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class EmptyPicturePathRecordParams
+    {
+        
+        #region Fields
+        /// <summary>
+        /// "{Back}" in "PicturePath" Zeile eingeben
+        /// </summary>
+        public string UIPicturePathRowSendKeys = "{Back}";
+        #endregion
+    }
+    
+    /// <summary>
+    /// An "EmptyQueryPathAssertion" zu übergebende Parameter
+    /// </summary>
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class EmptyQueryPathAssertionExpectedValues
+    {
+        
+        #region Fields
+        /// <summary>
+        /// Sicherstellen, dass die Eigenschaft 'Value' von "Query" Zeile ist gleich ''
+        /// </summary>
+        public string UIQueryRowValue = "";
+        #endregion
+    }
+    
+    /// <summary>
+    /// An "EmptyQueryPathRecording" zu übergebende Parameter
+    /// </summary>
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class EmptyQueryPathRecordingParams
+    {
+        
+        #region Fields
+        /// <summary>
+        /// "{Back}" in "Query" Zeile eingeben
+        /// </summary>
+        public string UIQueryRowSendKeys = "{Back}";
+        #endregion
+    }
+    
+    /// <summary>
+    /// An "EmptyResPathAssertion" zu übergebende Parameter
+    /// </summary>
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class EmptyResPathAssertionExpectedValues
+    {
+        
+        #region Fields
+        /// <summary>
+        /// Sicherstellen, dass die Eigenschaft 'Value' von "ResFilePath" Zeile ist gleich 'C:\1.jpg'
+        /// </summary>
+        public string UIResFilePathRowValue = "C:\\1.jpg";
+        #endregion
+    }
+    
+    /// <summary>
+    /// An "EmptyResPathRecord" zu übergebende Parameter
+    /// </summary>
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class EmptyResPathRecordParams
+    {
+        
+        #region Fields
+        /// <summary>
+        /// "Augmentations" in "cmb_editor_selection_toolSelection" Kombinationsfeld auswählen
+        /// </summary>
+        public string UICmb_editor_selectionComboBoxSelectedItem = "Augmentations";
+        
+        /// <summary>
+        /// "1.jpg" in "Dateiname:" Kombinationsfeld auswählen
+        /// </summary>
+        public string UIDateinameComboBoxEditableItem = "1.jpg";
+        
+        /// <summary>
+        /// "{Enter}" in "Dateiname:" Textfeld eingeben
+        /// </summary>
+        public string UIDateinameEditSendKeys = "{Enter}";
+        
+        /// <summary>
+        /// "{Back}" in "ResFilePath" Zeile eingeben
+        /// </summary>
+        public string UIResFilePathRowSendKeys = "{Back}";
         #endregion
     }
     
@@ -191,6 +1452,56 @@ namespace EditorUITest
         /// "IDMarker2" in "cmb_editor_properties_objectSelection" Kombinationsfeld auswählen
         /// </summary>
         public string UICmb_editor_propertieComboBoxSelectedItem = "IDMarker2";
+        #endregion
+    }
+    
+    /// <summary>
+    /// An "LoadEmptyQueryProjectRecord" zu übergebende Parameter
+    /// </summary>
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class LoadEmptyQueryProjectRecordParams
+    {
+        
+        #region Fields
+        /// <summary>
+        /// "emptyDataPath.ardev" in "Dateiname:" Kombinationsfeld auswählen
+        /// </summary>
+        public string UIDateinameComboBoxEditableItem = "emptyDataPath.ardev";
+        
+        /// <summary>
+        /// "fileSource1" in "cmb_editor_properties_objectSelection" Kombinationsfeld auswählen
+        /// </summary>
+        public string UICmb_editor_propertieComboBoxSelectedItem = "fileSource1";
+        #endregion
+    }
+    
+    /// <summary>
+    /// An "SetQueryPathAssertion" zu übergebende Parameter
+    /// </summary>
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class SetQueryPathAssertionExpectedValues
+    {
+        
+        #region Fields
+        /// <summary>
+        /// Sicherstellen, dass die Eigenschaft 'Value' von "Query" Zeile ist gleich 'C:\query.log'
+        /// </summary>
+        public string UIQueryRowValue = "C:\\query.log";
+        #endregion
+    }
+    
+    /// <summary>
+    /// An "SetQueryPathRecord" zu übergebende Parameter
+    /// </summary>
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class SetQueryPathRecordParams
+    {
+        
+        #region Fields
+        /// <summary>
+        /// "Control + v" in "Query" Zeile eingeben
+        /// </summary>
+        public string UIQueryRowSendKeys = "v";
         #endregion
     }
     
@@ -303,6 +1614,102 @@ namespace EditorUITest
                 return this.mUICmb_editor_propertieWindow;
             }
         }
+        
+        public UIItemWindow UIItemWindow
+        {
+            get
+            {
+                if ((this.mUIItemWindow == null))
+                {
+                    this.mUIItemWindow = new UIItemWindow(this);
+                }
+                return this.mUIItemWindow;
+            }
+        }
+        
+        public UIPropertyGridViewTable1 UIPropertyGridViewTable
+        {
+            get
+            {
+                if ((this.mUIPropertyGridViewTable == null))
+                {
+                    this.mUIPropertyGridViewTable = new UIPropertyGridViewTable1(this);
+                }
+                return this.mUIPropertyGridViewTable;
+            }
+        }
+        
+        public UIPropertyGridClient UIPropertyGridClient
+        {
+            get
+            {
+                if ((this.mUIPropertyGridClient == null))
+                {
+                    this.mUIPropertyGridClient = new UIPropertyGridClient(this);
+                }
+                return this.mUIPropertyGridClient;
+            }
+        }
+        
+        public UIIDMarkerClient UIIDMarkerClient
+        {
+            get
+            {
+                if ((this.mUIIDMarkerClient == null))
+                {
+                    this.mUIIDMarkerClient = new UIIDMarkerClient(this);
+                }
+                return this.mUIIDMarkerClient;
+            }
+        }
+        
+        public UIChartClient UIChartClient
+        {
+            get
+            {
+                if ((this.mUIChartClient == null))
+                {
+                    this.mUIChartClient = new UIChartClient(this);
+                }
+                return this.mUIChartClient;
+            }
+        }
+        
+        public UIImageAugmentationClient UIImageAugmentationClient
+        {
+            get
+            {
+                if ((this.mUIImageAugmentationClient == null))
+                {
+                    this.mUIImageAugmentationClient = new UIImageAugmentationClient(this);
+                }
+                return this.mUIImageAugmentationClient;
+            }
+        }
+        
+        public UIDatabaseSourceClient UIDatabaseSourceClient
+        {
+            get
+            {
+                if ((this.mUIDatabaseSourceClient == null))
+                {
+                    this.mUIDatabaseSourceClient = new UIDatabaseSourceClient(this);
+                }
+                return this.mUIDatabaseSourceClient;
+            }
+        }
+        
+        public UIMst_editor_menuMenuBar UIMst_editor_menuMenuBar
+        {
+            get
+            {
+                if ((this.mUIMst_editor_menuMenuBar == null))
+                {
+                    this.mUIMst_editor_menuMenuBar = new UIMst_editor_menuMenuBar(this);
+                }
+                return this.mUIMst_editor_menuMenuBar;
+            }
+        }
         #endregion
         
         #region Fields
@@ -321,6 +1728,22 @@ namespace EditorUITest
         private UIPropertyGridViewWindow mUIPropertyGridViewWindow;
         
         private UICmb_editor_propertieWindow mUICmb_editor_propertieWindow;
+        
+        private UIItemWindow mUIItemWindow;
+        
+        private UIPropertyGridViewTable1 mUIPropertyGridViewTable;
+        
+        private UIPropertyGridClient mUIPropertyGridClient;
+        
+        private UIIDMarkerClient mUIIDMarkerClient;
+        
+        private UIChartClient mUIChartClient;
+        
+        private UIImageAugmentationClient mUIImageAugmentationClient;
+        
+        private UIDatabaseSourceClient mUIDatabaseSourceClient;
+        
+        private UIMst_editor_menuMenuBar mUIMst_editor_menuMenuBar;
         #endregion
     }
     
@@ -534,10 +1957,29 @@ namespace EditorUITest
                 return this.mUIARdevKitv02Client1;
             }
         }
+        
+        public WinWindow UIItemWindow
+        {
+            get
+            {
+                if ((this.mUIItemWindow == null))
+                {
+                    this.mUIItemWindow = new WinWindow(this);
+                    #region Suchkriterien
+                    this.mUIItemWindow.SearchProperties[WinWindow.PropertyNames.AccessibleName] = "ARdevKit v0.2";
+                    this.mUIItemWindow.SearchProperties.Add(new PropertyExpression(WinWindow.PropertyNames.ClassName, "WindowsForms10.Window", PropertyExpressionOperator.Contains));
+                    this.mUIItemWindow.WindowTitles.Add("ARdevKit");
+                    #endregion
+                }
+                return this.mUIItemWindow;
+            }
+        }
         #endregion
         
         #region Fields
         private WinClient mUIARdevKitv02Client1;
+        
+        private WinWindow mUIItemWindow;
         #endregion
     }
     
@@ -604,10 +2046,197 @@ namespace EditorUITest
                 return this.mUISensorCosIDRow;
             }
         }
+        
+        public WinRow UIOptionsRow
+        {
+            get
+            {
+                if ((this.mUIOptionsRow == null))
+                {
+                    this.mUIOptionsRow = new WinRow(this);
+                    #region Suchkriterien
+                    this.mUIOptionsRow.SearchProperties[WinRow.PropertyNames.Name] = "Options";
+                    this.mUIOptionsRow.SearchConfigurations.Add(SearchConfiguration.AlwaysSearch);
+                    this.mUIOptionsRow.WindowTitles.Add("ARdevKit");
+                    #endregion
+                }
+                return this.mUIOptionsRow;
+            }
+        }
+        
+        public WinEdit UIOptionsEdit
+        {
+            get
+            {
+                if ((this.mUIOptionsEdit == null))
+                {
+                    this.mUIOptionsEdit = new WinEdit(this);
+                    #region Suchkriterien
+                    this.mUIOptionsEdit.SearchProperties[WinEdit.PropertyNames.Name] = "Options";
+                    this.mUIOptionsEdit.WindowTitles.Add("ARdevKit");
+                    #endregion
+                }
+                return this.mUIOptionsEdit;
+            }
+        }
+        
+        public WinRow UIGeneralRow
+        {
+            get
+            {
+                if ((this.mUIGeneralRow == null))
+                {
+                    this.mUIGeneralRow = new WinRow(this);
+                    #region Suchkriterien
+                    this.mUIGeneralRow.SearchProperties[WinRow.PropertyNames.Name] = "General";
+                    this.mUIGeneralRow.SearchConfigurations.Add(SearchConfiguration.AlwaysSearch);
+                    this.mUIGeneralRow.WindowTitles.Add("ARdevKit");
+                    #endregion
+                }
+                return this.mUIGeneralRow;
+            }
+        }
+        
+        public WinRow UIPicturePathRow
+        {
+            get
+            {
+                if ((this.mUIPicturePathRow == null))
+                {
+                    this.mUIPicturePathRow = new WinRow(this);
+                    #region Suchkriterien
+                    this.mUIPicturePathRow.SearchProperties[WinRow.PropertyNames.Name] = "PicturePath";
+                    this.mUIPicturePathRow.SearchConfigurations.Add(SearchConfiguration.AlwaysSearch);
+                    this.mUIPicturePathRow.WindowTitles.Add("ARdevKit");
+                    #endregion
+                }
+                return this.mUIPicturePathRow;
+            }
+        }
+        
+        public WinButton UIDurchsuchenButton
+        {
+            get
+            {
+                if ((this.mUIDurchsuchenButton == null))
+                {
+                    this.mUIDurchsuchenButton = new WinButton(this);
+                    #region Suchkriterien
+                    this.mUIDurchsuchenButton.SearchProperties[WinButton.PropertyNames.Name] = "Durchsuchen...";
+                    this.mUIDurchsuchenButton.WindowTitles.Add("ARdevKit");
+                    #endregion
+                }
+                return this.mUIDurchsuchenButton;
+            }
+        }
+        
+        public WinEdit UIPicturePathEdit
+        {
+            get
+            {
+                if ((this.mUIPicturePathEdit == null))
+                {
+                    this.mUIPicturePathEdit = new WinEdit(this);
+                    #region Suchkriterien
+                    this.mUIPicturePathEdit.SearchProperties[WinEdit.PropertyNames.Name] = "PicturePath";
+                    this.mUIPicturePathEdit.WindowTitles.Add("ARdevKit");
+                    #endregion
+                }
+                return this.mUIPicturePathEdit;
+            }
+        }
+        
+        public WinRow UIImagePathRow
+        {
+            get
+            {
+                if ((this.mUIImagePathRow == null))
+                {
+                    this.mUIImagePathRow = new WinRow(this);
+                    #region Suchkriterien
+                    this.mUIImagePathRow.SearchProperties[WinRow.PropertyNames.Name] = "ImagePath";
+                    this.mUIImagePathRow.SearchConfigurations.Add(SearchConfiguration.AlwaysSearch);
+                    this.mUIImagePathRow.WindowTitles.Add("ARdevKit");
+                    #endregion
+                }
+                return this.mUIImagePathRow;
+            }
+        }
+        
+        public WinRow UIResFilePathRow
+        {
+            get
+            {
+                if ((this.mUIResFilePathRow == null))
+                {
+                    this.mUIResFilePathRow = new WinRow(this);
+                    #region Suchkriterien
+                    this.mUIResFilePathRow.SearchProperties[WinRow.PropertyNames.Name] = "ResFilePath";
+                    this.mUIResFilePathRow.SearchConfigurations.Add(SearchConfiguration.AlwaysSearch);
+                    this.mUIResFilePathRow.WindowTitles.Add("ARdevKit");
+                    #endregion
+                }
+                return this.mUIResFilePathRow;
+            }
+        }
+        
+        public WinRow UIDataRow
+        {
+            get
+            {
+                if ((this.mUIDataRow == null))
+                {
+                    this.mUIDataRow = new WinRow(this);
+                    #region Suchkriterien
+                    this.mUIDataRow.SearchProperties[WinRow.PropertyNames.Name] = "Data";
+                    this.mUIDataRow.SearchConfigurations.Add(SearchConfiguration.AlwaysSearch);
+                    this.mUIDataRow.WindowTitles.Add("ARdevKit");
+                    #endregion
+                }
+                return this.mUIDataRow;
+            }
+        }
+        
+        public WinRow UIQueryRow
+        {
+            get
+            {
+                if ((this.mUIQueryRow == null))
+                {
+                    this.mUIQueryRow = new WinRow(this);
+                    #region Suchkriterien
+                    this.mUIQueryRow.SearchProperties[WinRow.PropertyNames.Name] = "Query";
+                    this.mUIQueryRow.SearchConfigurations.Add(SearchConfiguration.AlwaysSearch);
+                    this.mUIQueryRow.WindowTitles.Add("ARdevKit");
+                    #endregion
+                }
+                return this.mUIQueryRow;
+            }
+        }
         #endregion
         
         #region Fields
         private WinRow mUISensorCosIDRow;
+        
+        private WinRow mUIOptionsRow;
+        
+        private WinEdit mUIOptionsEdit;
+        
+        private WinRow mUIGeneralRow;
+        
+        private WinRow mUIPicturePathRow;
+        
+        private WinButton mUIDurchsuchenButton;
+        
+        private WinEdit mUIPicturePathEdit;
+        
+        private WinRow mUIImagePathRow;
+        
+        private WinRow mUIResFilePathRow;
+        
+        private WinRow mUIDataRow;
+        
+        private WinRow mUIQueryRow;
         #endregion
     }
     
@@ -643,6 +2272,350 @@ namespace EditorUITest
         
         #region Fields
         private WinComboBox mUICmb_editor_propertieComboBox;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIItemWindow : WinWindow
+    {
+        
+        public UIItemWindow(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties.Add(new PropertyExpression(WinWindow.PropertyNames.ClassName, "WindowsForms10.Window", PropertyExpressionOperator.Contains));
+            this.SearchProperties[WinWindow.PropertyNames.Instance] = "11";
+            this.WindowTitles.Add("ARdevKit");
+            #endregion
+        }
+        
+        #region Properties
+        public WinClient UIPnl_editor_selectionClient
+        {
+            get
+            {
+                if ((this.mUIPnl_editor_selectionClient == null))
+                {
+                    this.mUIPnl_editor_selectionClient = new WinClient(this);
+                    #region Suchkriterien
+                    this.mUIPnl_editor_selectionClient.WindowTitles.Add("ARdevKit");
+                    #endregion
+                }
+                return this.mUIPnl_editor_selectionClient;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinClient mUIPnl_editor_selectionClient;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIPropertyGridViewTable1 : WinTable
+    {
+        
+        public UIPropertyGridViewTable1(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinTable.PropertyNames.Name] = "Eigenschaftenfenster";
+            this.WindowTitles.Add("ARdevKit");
+            #endregion
+        }
+        
+        #region Properties
+        public WinEdit UIOptionsEdit
+        {
+            get
+            {
+                if ((this.mUIOptionsEdit == null))
+                {
+                    this.mUIOptionsEdit = new WinEdit(this);
+                    #region Suchkriterien
+                    this.mUIOptionsEdit.SearchProperties[WinEdit.PropertyNames.Name] = "Options";
+                    this.mUIOptionsEdit.WindowTitles.Add("ARdevKit");
+                    #endregion
+                }
+                return this.mUIOptionsEdit;
+            }
+        }
+        
+        public WinRow UIOptionsRow
+        {
+            get
+            {
+                if ((this.mUIOptionsRow == null))
+                {
+                    this.mUIOptionsRow = new WinRow(this);
+                    #region Suchkriterien
+                    this.mUIOptionsRow.SearchProperties[WinRow.PropertyNames.Name] = "Options";
+                    this.mUIOptionsRow.SearchConfigurations.Add(SearchConfiguration.AlwaysSearch);
+                    this.mUIOptionsRow.WindowTitles.Add("ARdevKit");
+                    #endregion
+                }
+                return this.mUIOptionsRow;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinEdit mUIOptionsEdit;
+        
+        private WinRow mUIOptionsRow;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIPropertyGridClient : WinClient
+    {
+        
+        public UIPropertyGridClient(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinControl.PropertyNames.Name] = "PropertyGrid";
+            this.WindowTitles.Add("ARdevKit");
+            #endregion
+        }
+        
+        #region Properties
+        public WinTable UIPropertyGridViewTable
+        {
+            get
+            {
+                if ((this.mUIPropertyGridViewTable == null))
+                {
+                    this.mUIPropertyGridViewTable = new WinTable(this);
+                    #region Suchkriterien
+                    this.mUIPropertyGridViewTable.SearchProperties[WinTable.PropertyNames.Name] = "Eigenschaftenfenster";
+                    this.mUIPropertyGridViewTable.WindowTitles.Add("ARdevKit");
+                    #endregion
+                }
+                return this.mUIPropertyGridViewTable;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinTable mUIPropertyGridViewTable;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIIDMarkerClient : WinClient
+    {
+        
+        public UIIDMarkerClient(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinControl.PropertyNames.Name] = "IDMarker";
+            this.WindowTitles.Add("ARdevKit");
+            #endregion
+        }
+        
+        #region Properties
+        public WinClient UIIDMarkerClient1
+        {
+            get
+            {
+                if ((this.mUIIDMarkerClient1 == null))
+                {
+                    this.mUIIDMarkerClient1 = new WinClient(this);
+                    #region Suchkriterien
+                    this.mUIIDMarkerClient1.SearchProperties[WinControl.PropertyNames.Name] = "IDMarker";
+                    this.mUIIDMarkerClient1.SearchConfigurations.Add(SearchConfiguration.DisambiguateChild);
+                    this.mUIIDMarkerClient1.WindowTitles.Add("ARdevKit");
+                    #endregion
+                }
+                return this.mUIIDMarkerClient1;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinClient mUIIDMarkerClient1;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIChartClient : WinClient
+    {
+        
+        public UIChartClient(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinControl.PropertyNames.Name] = "Chart";
+            this.WindowTitles.Add("ARdevKit");
+            #endregion
+        }
+        
+        #region Properties
+        public WinClient UIChartClient1
+        {
+            get
+            {
+                if ((this.mUIChartClient1 == null))
+                {
+                    this.mUIChartClient1 = new WinClient(this);
+                    #region Suchkriterien
+                    this.mUIChartClient1.SearchProperties[WinControl.PropertyNames.Name] = "Chart";
+                    this.mUIChartClient1.SearchConfigurations.Add(SearchConfiguration.DisambiguateChild);
+                    this.mUIChartClient1.WindowTitles.Add("ARdevKit");
+                    #endregion
+                }
+                return this.mUIChartClient1;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinClient mUIChartClient1;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIImageAugmentationClient : WinClient
+    {
+        
+        public UIImageAugmentationClient(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinControl.PropertyNames.Name] = "Image Augmentation";
+            this.WindowTitles.Add("ARdevKit");
+            #endregion
+        }
+        
+        #region Properties
+        public WinClient UIImageAugmentationClient1
+        {
+            get
+            {
+                if ((this.mUIImageAugmentationClient1 == null))
+                {
+                    this.mUIImageAugmentationClient1 = new WinClient(this);
+                    #region Suchkriterien
+                    this.mUIImageAugmentationClient1.SearchProperties[WinControl.PropertyNames.Name] = "Image Augmentation";
+                    this.mUIImageAugmentationClient1.SearchConfigurations.Add(SearchConfiguration.DisambiguateChild);
+                    this.mUIImageAugmentationClient1.WindowTitles.Add("ARdevKit");
+                    #endregion
+                }
+                return this.mUIImageAugmentationClient1;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinClient mUIImageAugmentationClient1;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIDatabaseSourceClient : WinClient
+    {
+        
+        public UIDatabaseSourceClient(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinControl.PropertyNames.Name] = "Database Source";
+            this.WindowTitles.Add("ARdevKit");
+            #endregion
+        }
+        
+        #region Properties
+        public WinClient UIDatabaseSourceClient1
+        {
+            get
+            {
+                if ((this.mUIDatabaseSourceClient1 == null))
+                {
+                    this.mUIDatabaseSourceClient1 = new WinClient(this);
+                    #region Suchkriterien
+                    this.mUIDatabaseSourceClient1.SearchProperties[WinControl.PropertyNames.Name] = "Database Source";
+                    this.mUIDatabaseSourceClient1.SearchConfigurations.Add(SearchConfiguration.DisambiguateChild);
+                    this.mUIDatabaseSourceClient1.WindowTitles.Add("ARdevKit");
+                    #endregion
+                }
+                return this.mUIDatabaseSourceClient1;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinClient mUIDatabaseSourceClient1;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIMst_editor_menuMenuBar : WinMenuBar
+    {
+        
+        public UIMst_editor_menuMenuBar(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinMenu.PropertyNames.Name] = "menuStrip1";
+            this.WindowTitles.Add("ARdevKit");
+            #endregion
+        }
+        
+        #region Properties
+        public UIDateiMenuItem UIDateiMenuItem
+        {
+            get
+            {
+                if ((this.mUIDateiMenuItem == null))
+                {
+                    this.mUIDateiMenuItem = new UIDateiMenuItem(this);
+                }
+                return this.mUIDateiMenuItem;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIDateiMenuItem mUIDateiMenuItem;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIDateiMenuItem : WinMenuItem
+    {
+        
+        public UIDateiMenuItem(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinMenuItem.PropertyNames.Name] = "Datei";
+            this.WindowTitles.Add("ARdevKit");
+            #endregion
+        }
+        
+        #region Properties
+        public WinMenuItem UIÖffnenMenuItem
+        {
+            get
+            {
+                if ((this.mUIÖffnenMenuItem == null))
+                {
+                    this.mUIÖffnenMenuItem = new WinMenuItem(this);
+                    #region Suchkriterien
+                    this.mUIÖffnenMenuItem.SearchProperties[WinMenuItem.PropertyNames.Name] = "Öffnen";
+                    this.mUIÖffnenMenuItem.SearchConfigurations.Add(SearchConfiguration.ExpandWhileSearching);
+                    this.mUIÖffnenMenuItem.WindowTitles.Add("ARdevKit");
+                    #endregion
+                }
+                return this.mUIÖffnenMenuItem;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinMenuItem mUIÖffnenMenuItem;
         #endregion
     }
     
@@ -715,10 +2688,10 @@ namespace EditorUITest
     }
     
     [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
-    public class UIItemWindow : WinWindow
+    public class UIItemWindow1 : WinWindow
     {
         
-        public UIItemWindow()
+        public UIItemWindow1()
         {
             #region Suchkriterien
             this.SearchProperties[WinWindow.PropertyNames.AccessibleName] = "Kontextmenü";
@@ -776,6 +2749,2291 @@ namespace EditorUITest
         
         #region Fields
         private WinMenuItem mUIDuplicateMenuItem;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIWählensieeineOptionsWindow : WinWindow
+    {
+        
+        public UIWählensieeineOptionsWindow()
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.Name] = "Wählen sie eine Options Datei";
+            this.SearchProperties[WinWindow.PropertyNames.ClassName] = "#32770";
+            this.WindowTitles.Add("Wählen sie eine Options Datei");
+            #endregion
+        }
+        
+        #region Properties
+        public UIItemWindow2 UIItemWindow
+        {
+            get
+            {
+                if ((this.mUIItemWindow == null))
+                {
+                    this.mUIItemWindow = new UIItemWindow2(this);
+                }
+                return this.mUIItemWindow;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIItemWindow2 mUIItemWindow;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIItemWindow2 : WinWindow
+    {
+        
+        public UIItemWindow2(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.AccessibleName] = "Elementansicht";
+            this.SearchProperties[WinWindow.PropertyNames.ClassName] = "DirectUIHWND";
+            this.WindowTitles.Add("Wählen sie eine Options Datei");
+            #endregion
+        }
+        
+        #region Properties
+        public UIHighchartsjsListItem UIHighchartsjsListItem
+        {
+            get
+            {
+                if ((this.mUIHighchartsjsListItem == null))
+                {
+                    this.mUIHighchartsjsListItem = new UIHighchartsjsListItem(this);
+                }
+                return this.mUIHighchartsjsListItem;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIHighchartsjsListItem mUIHighchartsjsListItem;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIHighchartsjsListItem : WinListItem
+    {
+        
+        public UIHighchartsjsListItem(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinListItem.PropertyNames.Name] = "highcharts.js";
+            this.WindowTitles.Add("Wählen sie eine Options Datei");
+            #endregion
+        }
+        
+        #region Properties
+        public WinEdit UINameEdit
+        {
+            get
+            {
+                if ((this.mUINameEdit == null))
+                {
+                    this.mUINameEdit = new WinEdit(this);
+                    #region Suchkriterien
+                    this.mUINameEdit.SearchProperties[WinEdit.PropertyNames.Name] = "Name";
+                    this.mUINameEdit.WindowTitles.Add("Wählen sie eine Options Datei");
+                    #endregion
+                }
+                return this.mUINameEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinEdit mUINameEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIItemWindow11 : WinWindow
+    {
+        
+        public UIItemWindow11()
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.AccessibleName] = "C:\\Users\\soowe_000\\Documents\\Studium\\PSE\\bin\\Debug\\tmp\\chart1\\highcharts.js";
+            this.SearchProperties.Add(new PropertyExpression(WinWindow.PropertyNames.ClassName, "WindowsForms10.tooltips_class32", PropertyExpressionOperator.Contains));
+            #endregion
+        }
+        
+        #region Properties
+        public WinToolTip UICUserssoowe_000DocumToolTip
+        {
+            get
+            {
+                if ((this.mUICUserssoowe_000DocumToolTip == null))
+                {
+                    this.mUICUserssoowe_000DocumToolTip = new WinToolTip(this);
+                    #region Suchkriterien
+                    this.mUICUserssoowe_000DocumToolTip.SearchProperties[WinControl.PropertyNames.Name] = "C:\\Users\\soowe_000\\Documents\\Studium\\PSE\\bin\\Debug\\tmp\\chart1\\highcharts.js";
+                    #endregion
+                }
+                return this.mUICUserssoowe_000DocumToolTip;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinToolTip mUICUserssoowe_000DocumToolTip;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIWählensieeinenMarkerWindow : WinWindow
+    {
+        
+        public UIWählensieeinenMarkerWindow()
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.Name] = "Wählen sie einen Marker";
+            this.SearchProperties[WinWindow.PropertyNames.ClassName] = "#32770";
+            this.WindowTitles.Add("Wählen sie einen Marker");
+            #endregion
+        }
+        
+        #region Properties
+        public UIItemWindow3 UIItemWindow
+        {
+            get
+            {
+                if ((this.mUIItemWindow == null))
+                {
+                    this.mUIItemWindow = new UIItemWindow3(this);
+                }
+                return this.mUIItemWindow;
+            }
+        }
+        
+        public UIItemWindow12 UIItemWindow1
+        {
+            get
+            {
+                if ((this.mUIItemWindow1 == null))
+                {
+                    this.mUIItemWindow1 = new UIItemWindow12(this);
+                }
+                return this.mUIItemWindow1;
+            }
+        }
+        
+        public UIShellViewClient UIShellViewClient
+        {
+            get
+            {
+                if ((this.mUIShellViewClient == null))
+                {
+                    this.mUIShellViewClient = new UIShellViewClient(this);
+                }
+                return this.mUIShellViewClient;
+            }
+        }
+        
+        public UIStrukturansichtWindow UIStrukturansichtWindow
+        {
+            get
+            {
+                if ((this.mUIStrukturansichtWindow == null))
+                {
+                    this.mUIStrukturansichtWindow = new UIStrukturansichtWindow(this);
+                }
+                return this.mUIStrukturansichtWindow;
+            }
+        }
+        
+        public UIItemWindow21 UIItemWindow2
+        {
+            get
+            {
+                if ((this.mUIItemWindow2 == null))
+                {
+                    this.mUIItemWindow2 = new UIItemWindow21(this);
+                }
+                return this.mUIItemWindow2;
+            }
+        }
+        
+        public UIÖffnenWindow UIÖffnenWindow
+        {
+            get
+            {
+                if ((this.mUIÖffnenWindow == null))
+                {
+                    this.mUIÖffnenWindow = new UIÖffnenWindow(this);
+                }
+                return this.mUIÖffnenWindow;
+            }
+        }
+        
+        public UIItemWindow111 UIItemWindow11
+        {
+            get
+            {
+                if ((this.mUIItemWindow11 == null))
+                {
+                    this.mUIItemWindow11 = new UIItemWindow111(this);
+                }
+                return this.mUIItemWindow11;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIItemWindow3 mUIItemWindow;
+        
+        private UIItemWindow12 mUIItemWindow1;
+        
+        private UIShellViewClient mUIShellViewClient;
+        
+        private UIStrukturansichtWindow mUIStrukturansichtWindow;
+        
+        private UIItemWindow21 mUIItemWindow2;
+        
+        private UIÖffnenWindow mUIÖffnenWindow;
+        
+        private UIItemWindow111 mUIItemWindow11;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIItemWindow3 : WinWindow
+    {
+        
+        public UIItemWindow3(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.AccessibleName] = "Elementansicht";
+            this.SearchProperties[WinWindow.PropertyNames.ClassName] = "DirectUIHWND";
+            this.WindowTitles.Add("Wählen sie einen Marker");
+            #endregion
+        }
+        
+        #region Properties
+        public UIDesktopRotaListItem UIDesktopRotaListItem
+        {
+            get
+            {
+                if ((this.mUIDesktopRotaListItem == null))
+                {
+                    this.mUIDesktopRotaListItem = new UIDesktopRotaListItem(this);
+                }
+                return this.mUIDesktopRotaListItem;
+            }
+        }
+        
+        public UIElementansichtList UIElementansichtList
+        {
+            get
+            {
+                if ((this.mUIElementansichtList == null))
+                {
+                    this.mUIElementansichtList = new UIElementansichtList(this);
+                }
+                return this.mUIElementansichtList;
+            }
+        }
+        
+        public UIItem1jpgListItem UIItem1jpgListItem
+        {
+            get
+            {
+                if ((this.mUIItem1jpgListItem == null))
+                {
+                    this.mUIItem1jpgListItem = new UIItem1jpgListItem(this);
+                }
+                return this.mUIItem1jpgListItem;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIDesktopRotaListItem mUIDesktopRotaListItem;
+        
+        private UIElementansichtList mUIElementansichtList;
+        
+        private UIItem1jpgListItem mUIItem1jpgListItem;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIDesktopRotaListItem : WinListItem
+    {
+        
+        public UIDesktopRotaListItem(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinListItem.PropertyNames.Name] = "Desktop Rota";
+            this.WindowTitles.Add("Wählen sie einen Marker");
+            #endregion
+        }
+        
+        #region Properties
+        public WinEdit UINameEdit
+        {
+            get
+            {
+                if ((this.mUINameEdit == null))
+                {
+                    this.mUINameEdit = new WinEdit(this);
+                    #region Suchkriterien
+                    this.mUINameEdit.SearchProperties[WinEdit.PropertyNames.Name] = "Name";
+                    this.mUINameEdit.WindowTitles.Add("Wählen sie einen Marker");
+                    #endregion
+                }
+                return this.mUINameEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinEdit mUINameEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIElementansichtList : WinList
+    {
+        
+        public UIElementansichtList(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinList.PropertyNames.Name] = "Elementansicht";
+            this.WindowTitles.Add("Wählen sie einen Marker");
+            #endregion
+        }
+        
+        #region Properties
+        public WinListItem UIDesktopRotaListItem
+        {
+            get
+            {
+                if ((this.mUIDesktopRotaListItem == null))
+                {
+                    this.mUIDesktopRotaListItem = new WinListItem(this);
+                    #region Suchkriterien
+                    this.mUIDesktopRotaListItem.SearchProperties[WinListItem.PropertyNames.Name] = "Desktop Rota";
+                    this.mUIDesktopRotaListItem.WindowTitles.Add("Wählen sie einen Marker");
+                    #endregion
+                }
+                return this.mUIDesktopRotaListItem;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinListItem mUIDesktopRotaListItem;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIItem1jpgListItem : WinListItem
+    {
+        
+        public UIItem1jpgListItem(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinListItem.PropertyNames.Name] = "1.jpg";
+            this.WindowTitles.Add("Wählen sie einen Marker");
+            #endregion
+        }
+        
+        #region Properties
+        public WinEdit UINameEdit
+        {
+            get
+            {
+                if ((this.mUINameEdit == null))
+                {
+                    this.mUINameEdit = new WinEdit(this);
+                    #region Suchkriterien
+                    this.mUINameEdit.SearchProperties[WinEdit.PropertyNames.Name] = "Name";
+                    this.mUINameEdit.WindowTitles.Add("Wählen sie einen Marker");
+                    #endregion
+                }
+                return this.mUINameEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinEdit mUINameEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIItemWindow12 : WinWindow
+    {
+        
+        public UIItemWindow12(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.AccessibleName] = "Elementansicht";
+            this.SearchProperties[WinWindow.PropertyNames.ClassName] = "DirectUIHWND";
+            this.WindowTitles.Add("Wählen sie einen Marker");
+            #endregion
+        }
+        
+        #region Properties
+        public UIItem1jpgListItem1 UIItem1jpgListItem
+        {
+            get
+            {
+                if ((this.mUIItem1jpgListItem == null))
+                {
+                    this.mUIItem1jpgListItem = new UIItem1jpgListItem1(this);
+                }
+                return this.mUIItem1jpgListItem;
+            }
+        }
+        
+        public UIElementansichtList1 UIElementansichtList
+        {
+            get
+            {
+                if ((this.mUIElementansichtList == null))
+                {
+                    this.mUIElementansichtList = new UIElementansichtList1(this);
+                }
+                return this.mUIElementansichtList;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIItem1jpgListItem1 mUIItem1jpgListItem;
+        
+        private UIElementansichtList1 mUIElementansichtList;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIItem1jpgListItem1 : WinListItem
+    {
+        
+        public UIItem1jpgListItem1(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinListItem.PropertyNames.Name] = "1.jpg";
+            this.WindowTitles.Add("Wählen sie einen Marker");
+            #endregion
+        }
+        
+        #region Properties
+        public WinEdit UINameEdit
+        {
+            get
+            {
+                if ((this.mUINameEdit == null))
+                {
+                    this.mUINameEdit = new WinEdit(this);
+                    #region Suchkriterien
+                    this.mUINameEdit.SearchProperties[WinEdit.PropertyNames.Name] = "Name";
+                    this.mUINameEdit.WindowTitles.Add("Wählen sie einen Marker");
+                    #endregion
+                }
+                return this.mUINameEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinEdit mUINameEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIElementansichtList1 : WinList
+    {
+        
+        public UIElementansichtList1(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinList.PropertyNames.Name] = "Elementansicht";
+            this.WindowTitles.Add("Wählen sie einen Marker");
+            #endregion
+        }
+        
+        #region Properties
+        public WinListItem UIItem1jpgListItem
+        {
+            get
+            {
+                if ((this.mUIItem1jpgListItem == null))
+                {
+                    this.mUIItem1jpgListItem = new WinListItem(this);
+                    #region Suchkriterien
+                    this.mUIItem1jpgListItem.SearchProperties[WinListItem.PropertyNames.Name] = "1.jpg";
+                    this.mUIItem1jpgListItem.WindowTitles.Add("Wählen sie einen Marker");
+                    #endregion
+                }
+                return this.mUIItem1jpgListItem;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinListItem mUIItem1jpgListItem;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIShellViewClient : WinClient
+    {
+        
+        public UIShellViewClient(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinControl.PropertyNames.Name] = "Shellordneransicht";
+            this.WindowTitles.Add("Wählen sie einen Marker");
+            #endregion
+        }
+        
+        #region Properties
+        public WinList UIElementansichtList
+        {
+            get
+            {
+                if ((this.mUIElementansichtList == null))
+                {
+                    this.mUIElementansichtList = new WinList(this);
+                    #region Suchkriterien
+                    this.mUIElementansichtList.SearchProperties[WinList.PropertyNames.Name] = "Elementansicht";
+                    this.mUIElementansichtList.WindowTitles.Add("Wählen sie einen Marker");
+                    #endregion
+                }
+                return this.mUIElementansichtList;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinList mUIElementansichtList;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIStrukturansichtWindow : WinWindow
+    {
+        
+        public UIStrukturansichtWindow(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "100";
+            this.WindowTitles.Add("Wählen sie einen Marker");
+            #endregion
+        }
+        
+        #region Properties
+        public UIStrukturansichtTree UIStrukturansichtTree
+        {
+            get
+            {
+                if ((this.mUIStrukturansichtTree == null))
+                {
+                    this.mUIStrukturansichtTree = new UIStrukturansichtTree(this);
+                }
+                return this.mUIStrukturansichtTree;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIStrukturansichtTree mUIStrukturansichtTree;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIStrukturansichtTree : WinTree
+    {
+        
+        public UIStrukturansichtTree(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinTree.PropertyNames.Name] = "Namespacestruktursteuerelement";
+            this.WindowTitles.Add("Wählen sie einen Marker");
+            #endregion
+        }
+        
+        #region Properties
+        public UIDesktopTreeItem UIDesktopTreeItem
+        {
+            get
+            {
+                if ((this.mUIDesktopTreeItem == null))
+                {
+                    this.mUIDesktopTreeItem = new UIDesktopTreeItem(this);
+                }
+                return this.mUIDesktopTreeItem;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIDesktopTreeItem mUIDesktopTreeItem;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIDesktopTreeItem : WinTreeItem
+    {
+        
+        public UIDesktopTreeItem(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinTreeItem.PropertyNames.Name] = "Desktop";
+            this.SearchProperties["Value"] = "0";
+            this.WindowTitles.Add("Wählen sie einen Marker");
+            #endregion
+        }
+        
+        #region Properties
+        public UIDieserPCTreeItem UIDieserPCTreeItem
+        {
+            get
+            {
+                if ((this.mUIDieserPCTreeItem == null))
+                {
+                    this.mUIDieserPCTreeItem = new UIDieserPCTreeItem(this);
+                }
+                return this.mUIDieserPCTreeItem;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIDieserPCTreeItem mUIDieserPCTreeItem;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIDieserPCTreeItem : WinTreeItem
+    {
+        
+        public UIDieserPCTreeItem(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinTreeItem.PropertyNames.Name] = "Dieser PC";
+            this.SearchProperties["Value"] = "1";
+            this.SearchConfigurations.Add(SearchConfiguration.ExpandWhileSearching);
+            this.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+            this.WindowTitles.Add("Wählen sie einen Marker");
+            #endregion
+        }
+        
+        #region Properties
+        public WinTreeItem UILokalerDatenträgerCTreeItem
+        {
+            get
+            {
+                if ((this.mUILokalerDatenträgerCTreeItem == null))
+                {
+                    this.mUILokalerDatenträgerCTreeItem = new WinTreeItem(this);
+                    #region Suchkriterien
+                    this.mUILokalerDatenträgerCTreeItem.SearchProperties[WinTreeItem.PropertyNames.Name] = "Lokaler Datenträger (C:)";
+                    this.mUILokalerDatenträgerCTreeItem.SearchProperties["Value"] = "2";
+                    this.mUILokalerDatenträgerCTreeItem.SearchConfigurations.Add(SearchConfiguration.ExpandWhileSearching);
+                    this.mUILokalerDatenträgerCTreeItem.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUILokalerDatenträgerCTreeItem.WindowTitles.Add("Wählen sie einen Marker");
+                    #endregion
+                }
+                return this.mUILokalerDatenträgerCTreeItem;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinTreeItem mUILokalerDatenträgerCTreeItem;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIItemWindow21 : WinWindow
+    {
+        
+        public UIItemWindow21(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "1148";
+            this.SearchProperties[WinWindow.PropertyNames.Instance] = "2";
+            this.WindowTitles.Add("Wählen sie einen Marker");
+            #endregion
+        }
+        
+        #region Properties
+        public WinComboBox UIDateinameComboBox
+        {
+            get
+            {
+                if ((this.mUIDateinameComboBox == null))
+                {
+                    this.mUIDateinameComboBox = new WinComboBox(this);
+                    #region Suchkriterien
+                    this.mUIDateinameComboBox.SearchProperties[WinComboBox.PropertyNames.Name] = "Dateiname:";
+                    this.mUIDateinameComboBox.WindowTitles.Add("Wählen sie einen Marker");
+                    #endregion
+                }
+                return this.mUIDateinameComboBox;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinComboBox mUIDateinameComboBox;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIÖffnenWindow : WinWindow
+    {
+        
+        public UIÖffnenWindow(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "1";
+            this.WindowTitles.Add("Wählen sie einen Marker");
+            #endregion
+        }
+        
+        #region Properties
+        public WinButton UIÖffnenButton
+        {
+            get
+            {
+                if ((this.mUIÖffnenButton == null))
+                {
+                    this.mUIÖffnenButton = new WinButton(this);
+                    #region Suchkriterien
+                    this.mUIÖffnenButton.SearchProperties[WinButton.PropertyNames.Name] = "Öffnen";
+                    this.mUIÖffnenButton.WindowTitles.Add("Wählen sie einen Marker");
+                    #endregion
+                }
+                return this.mUIÖffnenButton;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinButton mUIÖffnenButton;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIItemWindow111 : WinWindow
+    {
+        
+        public UIItemWindow111(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "1148";
+            this.SearchProperties[WinWindow.PropertyNames.Instance] = "3";
+            this.WindowTitles.Add("Wählen sie einen Marker");
+            #endregion
+        }
+        
+        #region Properties
+        public WinEdit UIDateinameEdit
+        {
+            get
+            {
+                if ((this.mUIDateinameEdit == null))
+                {
+                    this.mUIDateinameEdit = new WinEdit(this);
+                    #region Suchkriterien
+                    this.mUIDateinameEdit.SearchProperties[WinEdit.PropertyNames.Name] = "Dateiname:";
+                    this.mUIDateinameEdit.WindowTitles.Add("Wählen sie einen Marker");
+                    #endregion
+                }
+                return this.mUIDateinameEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinEdit mUIDateinameEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIÖffnenWindow1 : WinWindow
+    {
+        
+        public UIÖffnenWindow1()
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.Name] = "Öffnen";
+            this.SearchProperties[WinWindow.PropertyNames.ClassName] = "#32770";
+            this.WindowTitles.Add("Öffnen");
+            #endregion
+        }
+        
+        #region Properties
+        public UIItemWindow4 UIItemWindow
+        {
+            get
+            {
+                if ((this.mUIItemWindow == null))
+                {
+                    this.mUIItemWindow = new UIItemWindow4(this);
+                }
+                return this.mUIItemWindow;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIItemWindow4 mUIItemWindow;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIItemWindow4 : WinWindow
+    {
+        
+        public UIItemWindow4(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.AccessibleName] = "Elementansicht";
+            this.SearchProperties[WinWindow.PropertyNames.ClassName] = "DirectUIHWND";
+            this.WindowTitles.Add("Öffnen");
+            #endregion
+        }
+        
+        #region Properties
+        public UIElementansichtList2 UIElementansichtList
+        {
+            get
+            {
+                if ((this.mUIElementansichtList == null))
+                {
+                    this.mUIElementansichtList = new UIElementansichtList2(this);
+                }
+                return this.mUIElementansichtList;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIElementansichtList2 mUIElementansichtList;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIElementansichtList2 : WinList
+    {
+        
+        public UIElementansichtList2(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinList.PropertyNames.Name] = "Elementansicht";
+            this.WindowTitles.Add("Öffnen");
+            #endregion
+        }
+        
+        #region Properties
+        public WinListItem UIItem2jpgListItem
+        {
+            get
+            {
+                if ((this.mUIItem2jpgListItem == null))
+                {
+                    this.mUIItem2jpgListItem = new WinListItem(this);
+                    #region Suchkriterien
+                    this.mUIItem2jpgListItem.SearchProperties[WinListItem.PropertyNames.Name] = "2.jpg";
+                    this.mUIItem2jpgListItem.WindowTitles.Add("Öffnen");
+                    #endregion
+                }
+                return this.mUIItem2jpgListItem;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinListItem mUIItem2jpgListItem;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIWählensieeinTrackablWindow : WinWindow
+    {
+        
+        public UIWählensieeinTrackablWindow()
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.Name] = "Wählen sie ein Trackable";
+            this.SearchProperties[WinWindow.PropertyNames.ClassName] = "#32770";
+            this.WindowTitles.Add("Wählen sie ein Trackable");
+            #endregion
+        }
+        
+        #region Properties
+        public UIStrukturansichtWindow1 UIStrukturansichtWindow
+        {
+            get
+            {
+                if ((this.mUIStrukturansichtWindow == null))
+                {
+                    this.mUIStrukturansichtWindow = new UIStrukturansichtWindow1(this);
+                }
+                return this.mUIStrukturansichtWindow;
+            }
+        }
+        
+        public UIItemWindow5 UIItemWindow
+        {
+            get
+            {
+                if ((this.mUIItemWindow == null))
+                {
+                    this.mUIItemWindow = new UIItemWindow5(this);
+                }
+                return this.mUIItemWindow;
+            }
+        }
+        
+        public UIÖffnenWindow2 UIÖffnenWindow
+        {
+            get
+            {
+                if ((this.mUIÖffnenWindow == null))
+                {
+                    this.mUIÖffnenWindow = new UIÖffnenWindow2(this);
+                }
+                return this.mUIÖffnenWindow;
+            }
+        }
+        
+        public UIItemWindow13 UIItemWindow1
+        {
+            get
+            {
+                if ((this.mUIItemWindow1 == null))
+                {
+                    this.mUIItemWindow1 = new UIItemWindow13(this);
+                }
+                return this.mUIItemWindow1;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIStrukturansichtWindow1 mUIStrukturansichtWindow;
+        
+        private UIItemWindow5 mUIItemWindow;
+        
+        private UIÖffnenWindow2 mUIÖffnenWindow;
+        
+        private UIItemWindow13 mUIItemWindow1;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIStrukturansichtWindow1 : WinWindow
+    {
+        
+        public UIStrukturansichtWindow1(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "100";
+            this.WindowTitles.Add("Wählen sie ein Trackable");
+            #endregion
+        }
+        
+        #region Properties
+        public UIStrukturansichtTree1 UIStrukturansichtTree
+        {
+            get
+            {
+                if ((this.mUIStrukturansichtTree == null))
+                {
+                    this.mUIStrukturansichtTree = new UIStrukturansichtTree1(this);
+                }
+                return this.mUIStrukturansichtTree;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIStrukturansichtTree1 mUIStrukturansichtTree;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIStrukturansichtTree1 : WinTree
+    {
+        
+        public UIStrukturansichtTree1(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinTree.PropertyNames.Name] = "Namespacestruktursteuerelement";
+            this.WindowTitles.Add("Wählen sie ein Trackable");
+            #endregion
+        }
+        
+        #region Properties
+        public UIDesktopTreeItem1 UIDesktopTreeItem
+        {
+            get
+            {
+                if ((this.mUIDesktopTreeItem == null))
+                {
+                    this.mUIDesktopTreeItem = new UIDesktopTreeItem1(this);
+                }
+                return this.mUIDesktopTreeItem;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIDesktopTreeItem1 mUIDesktopTreeItem;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIDesktopTreeItem1 : WinTreeItem
+    {
+        
+        public UIDesktopTreeItem1(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinTreeItem.PropertyNames.Name] = "Desktop";
+            this.SearchProperties["Value"] = "0";
+            this.WindowTitles.Add("Wählen sie ein Trackable");
+            #endregion
+        }
+        
+        #region Properties
+        public UIDieserPCTreeItem1 UIDieserPCTreeItem
+        {
+            get
+            {
+                if ((this.mUIDieserPCTreeItem == null))
+                {
+                    this.mUIDieserPCTreeItem = new UIDieserPCTreeItem1(this);
+                }
+                return this.mUIDieserPCTreeItem;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIDieserPCTreeItem1 mUIDieserPCTreeItem;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIDieserPCTreeItem1 : WinTreeItem
+    {
+        
+        public UIDieserPCTreeItem1(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinTreeItem.PropertyNames.Name] = "Dieser PC";
+            this.SearchProperties["Value"] = "1";
+            this.SearchConfigurations.Add(SearchConfiguration.ExpandWhileSearching);
+            this.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+            this.WindowTitles.Add("Wählen sie ein Trackable");
+            #endregion
+        }
+        
+        #region Properties
+        public WinTreeItem UILokalerDatenträgerCTreeItem
+        {
+            get
+            {
+                if ((this.mUILokalerDatenträgerCTreeItem == null))
+                {
+                    this.mUILokalerDatenträgerCTreeItem = new WinTreeItem(this);
+                    #region Suchkriterien
+                    this.mUILokalerDatenträgerCTreeItem.SearchProperties[WinTreeItem.PropertyNames.Name] = "Lokaler Datenträger (C:)";
+                    this.mUILokalerDatenträgerCTreeItem.SearchProperties["Value"] = "2";
+                    this.mUILokalerDatenträgerCTreeItem.SearchConfigurations.Add(SearchConfiguration.ExpandWhileSearching);
+                    this.mUILokalerDatenträgerCTreeItem.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUILokalerDatenträgerCTreeItem.WindowTitles.Add("Wählen sie ein Trackable");
+                    #endregion
+                }
+                return this.mUILokalerDatenträgerCTreeItem;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinTreeItem mUILokalerDatenträgerCTreeItem;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIItemWindow5 : WinWindow
+    {
+        
+        public UIItemWindow5(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "1148";
+            this.SearchProperties[WinWindow.PropertyNames.Instance] = "2";
+            this.WindowTitles.Add("Wählen sie ein Trackable");
+            #endregion
+        }
+        
+        #region Properties
+        public WinComboBox UIDateinameComboBox
+        {
+            get
+            {
+                if ((this.mUIDateinameComboBox == null))
+                {
+                    this.mUIDateinameComboBox = new WinComboBox(this);
+                    #region Suchkriterien
+                    this.mUIDateinameComboBox.SearchProperties[WinComboBox.PropertyNames.Name] = "Dateiname:";
+                    this.mUIDateinameComboBox.WindowTitles.Add("Wählen sie ein Trackable");
+                    #endregion
+                }
+                return this.mUIDateinameComboBox;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinComboBox mUIDateinameComboBox;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIÖffnenWindow2 : WinWindow
+    {
+        
+        public UIÖffnenWindow2(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "1";
+            this.WindowTitles.Add("Wählen sie ein Trackable");
+            #endregion
+        }
+        
+        #region Properties
+        public WinButton UIÖffnenButton
+        {
+            get
+            {
+                if ((this.mUIÖffnenButton == null))
+                {
+                    this.mUIÖffnenButton = new WinButton(this);
+                    #region Suchkriterien
+                    this.mUIÖffnenButton.SearchProperties[WinButton.PropertyNames.Name] = "Öffnen";
+                    this.mUIÖffnenButton.WindowTitles.Add("Wählen sie ein Trackable");
+                    #endregion
+                }
+                return this.mUIÖffnenButton;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinButton mUIÖffnenButton;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIItemWindow13 : WinWindow
+    {
+        
+        public UIItemWindow13(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "1148";
+            this.SearchProperties[WinWindow.PropertyNames.Instance] = "3";
+            this.WindowTitles.Add("Wählen sie ein Trackable");
+            #endregion
+        }
+        
+        #region Properties
+        public WinEdit UIDateinameEdit
+        {
+            get
+            {
+                if ((this.mUIDateinameEdit == null))
+                {
+                    this.mUIDateinameEdit = new WinEdit(this);
+                    #region Suchkriterien
+                    this.mUIDateinameEdit.SearchProperties[WinEdit.PropertyNames.Name] = "Dateiname:";
+                    this.mUIDateinameEdit.WindowTitles.Add("Wählen sie ein Trackable");
+                    #endregion
+                }
+                return this.mUIDateinameEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinEdit mUIDateinameEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIWählensieeinBildWindow : WinWindow
+    {
+        
+        public UIWählensieeinBildWindow()
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.Name] = "Wählen sie ein Bild";
+            this.SearchProperties[WinWindow.PropertyNames.ClassName] = "#32770";
+            this.WindowTitles.Add("Wählen sie ein Bild");
+            #endregion
+        }
+        
+        #region Properties
+        public UIStrukturansichtWindow2 UIStrukturansichtWindow
+        {
+            get
+            {
+                if ((this.mUIStrukturansichtWindow == null))
+                {
+                    this.mUIStrukturansichtWindow = new UIStrukturansichtWindow2(this);
+                }
+                return this.mUIStrukturansichtWindow;
+            }
+        }
+        
+        public UIItemWindow6 UIItemWindow
+        {
+            get
+            {
+                if ((this.mUIItemWindow == null))
+                {
+                    this.mUIItemWindow = new UIItemWindow6(this);
+                }
+                return this.mUIItemWindow;
+            }
+        }
+        
+        public UIItemWindow14 UIItemWindow1
+        {
+            get
+            {
+                if ((this.mUIItemWindow1 == null))
+                {
+                    this.mUIItemWindow1 = new UIItemWindow14(this);
+                }
+                return this.mUIItemWindow1;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIStrukturansichtWindow2 mUIStrukturansichtWindow;
+        
+        private UIItemWindow6 mUIItemWindow;
+        
+        private UIItemWindow14 mUIItemWindow1;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIStrukturansichtWindow2 : WinWindow
+    {
+        
+        public UIStrukturansichtWindow2(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "100";
+            this.WindowTitles.Add("Wählen sie ein Bild");
+            #endregion
+        }
+        
+        #region Properties
+        public UIStrukturansichtTree2 UIStrukturansichtTree
+        {
+            get
+            {
+                if ((this.mUIStrukturansichtTree == null))
+                {
+                    this.mUIStrukturansichtTree = new UIStrukturansichtTree2(this);
+                }
+                return this.mUIStrukturansichtTree;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIStrukturansichtTree2 mUIStrukturansichtTree;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIStrukturansichtTree2 : WinTree
+    {
+        
+        public UIStrukturansichtTree2(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinTree.PropertyNames.Name] = "Namespacestruktursteuerelement";
+            this.WindowTitles.Add("Wählen sie ein Bild");
+            #endregion
+        }
+        
+        #region Properties
+        public UIDesktopTreeItem2 UIDesktopTreeItem
+        {
+            get
+            {
+                if ((this.mUIDesktopTreeItem == null))
+                {
+                    this.mUIDesktopTreeItem = new UIDesktopTreeItem2(this);
+                }
+                return this.mUIDesktopTreeItem;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIDesktopTreeItem2 mUIDesktopTreeItem;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIDesktopTreeItem2 : WinTreeItem
+    {
+        
+        public UIDesktopTreeItem2(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinTreeItem.PropertyNames.Name] = "Desktop";
+            this.SearchProperties["Value"] = "0";
+            this.WindowTitles.Add("Wählen sie ein Bild");
+            #endregion
+        }
+        
+        #region Properties
+        public UIDieserPCTreeItem2 UIDieserPCTreeItem
+        {
+            get
+            {
+                if ((this.mUIDieserPCTreeItem == null))
+                {
+                    this.mUIDieserPCTreeItem = new UIDieserPCTreeItem2(this);
+                }
+                return this.mUIDieserPCTreeItem;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIDieserPCTreeItem2 mUIDieserPCTreeItem;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIDieserPCTreeItem2 : WinTreeItem
+    {
+        
+        public UIDieserPCTreeItem2(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinTreeItem.PropertyNames.Name] = "Dieser PC";
+            this.SearchProperties["Value"] = "1";
+            this.SearchConfigurations.Add(SearchConfiguration.ExpandWhileSearching);
+            this.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+            this.WindowTitles.Add("Wählen sie ein Bild");
+            #endregion
+        }
+        
+        #region Properties
+        public WinTreeItem UILokalerDatenträgerCTreeItem
+        {
+            get
+            {
+                if ((this.mUILokalerDatenträgerCTreeItem == null))
+                {
+                    this.mUILokalerDatenträgerCTreeItem = new WinTreeItem(this);
+                    #region Suchkriterien
+                    this.mUILokalerDatenträgerCTreeItem.SearchProperties[WinTreeItem.PropertyNames.Name] = "Lokaler Datenträger (C:)";
+                    this.mUILokalerDatenträgerCTreeItem.SearchProperties["Value"] = "2";
+                    this.mUILokalerDatenträgerCTreeItem.SearchConfigurations.Add(SearchConfiguration.ExpandWhileSearching);
+                    this.mUILokalerDatenträgerCTreeItem.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUILokalerDatenträgerCTreeItem.WindowTitles.Add("Wählen sie ein Bild");
+                    #endregion
+                }
+                return this.mUILokalerDatenträgerCTreeItem;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinTreeItem mUILokalerDatenträgerCTreeItem;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIItemWindow6 : WinWindow
+    {
+        
+        public UIItemWindow6(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "1148";
+            this.SearchProperties[WinWindow.PropertyNames.Instance] = "2";
+            this.WindowTitles.Add("Wählen sie ein Bild");
+            #endregion
+        }
+        
+        #region Properties
+        public WinComboBox UIDateinameComboBox
+        {
+            get
+            {
+                if ((this.mUIDateinameComboBox == null))
+                {
+                    this.mUIDateinameComboBox = new WinComboBox(this);
+                    #region Suchkriterien
+                    this.mUIDateinameComboBox.SearchProperties[WinComboBox.PropertyNames.Name] = "Dateiname:";
+                    this.mUIDateinameComboBox.WindowTitles.Add("Wählen sie ein Bild");
+                    #endregion
+                }
+                return this.mUIDateinameComboBox;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinComboBox mUIDateinameComboBox;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIItemWindow14 : WinWindow
+    {
+        
+        public UIItemWindow14(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "1148";
+            this.SearchProperties[WinWindow.PropertyNames.Instance] = "3";
+            this.WindowTitles.Add("Wählen sie ein Bild");
+            #endregion
+        }
+        
+        #region Properties
+        public WinEdit UIDateinameEdit
+        {
+            get
+            {
+                if ((this.mUIDateinameEdit == null))
+                {
+                    this.mUIDateinameEdit = new WinEdit(this);
+                    #region Suchkriterien
+                    this.mUIDateinameEdit.SearchProperties[WinEdit.PropertyNames.Name] = "Dateiname:";
+                    this.mUIDateinameEdit.WindowTitles.Add("Wählen sie ein Bild");
+                    #endregion
+                }
+                return this.mUIDateinameEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinEdit mUIDateinameEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIWählensieeinVideoWindow : WinWindow
+    {
+        
+        public UIWählensieeinVideoWindow()
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.Name] = "Wählen sie ein Video";
+            this.SearchProperties[WinWindow.PropertyNames.ClassName] = "#32770";
+            this.WindowTitles.Add("Wählen sie ein Video");
+            #endregion
+        }
+        
+        #region Properties
+        public UIStrukturansichtWindow3 UIStrukturansichtWindow
+        {
+            get
+            {
+                if ((this.mUIStrukturansichtWindow == null))
+                {
+                    this.mUIStrukturansichtWindow = new UIStrukturansichtWindow3(this);
+                }
+                return this.mUIStrukturansichtWindow;
+            }
+        }
+        
+        public UIItemWindow7 UIItemWindow
+        {
+            get
+            {
+                if ((this.mUIItemWindow == null))
+                {
+                    this.mUIItemWindow = new UIItemWindow7(this);
+                }
+                return this.mUIItemWindow;
+            }
+        }
+        
+        public UIÖffnenWindow3 UIÖffnenWindow
+        {
+            get
+            {
+                if ((this.mUIÖffnenWindow == null))
+                {
+                    this.mUIÖffnenWindow = new UIÖffnenWindow3(this);
+                }
+                return this.mUIÖffnenWindow;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIStrukturansichtWindow3 mUIStrukturansichtWindow;
+        
+        private UIItemWindow7 mUIItemWindow;
+        
+        private UIÖffnenWindow3 mUIÖffnenWindow;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIStrukturansichtWindow3 : WinWindow
+    {
+        
+        public UIStrukturansichtWindow3(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "100";
+            this.WindowTitles.Add("Wählen sie ein Video");
+            #endregion
+        }
+        
+        #region Properties
+        public UIStrukturansichtTree3 UIStrukturansichtTree
+        {
+            get
+            {
+                if ((this.mUIStrukturansichtTree == null))
+                {
+                    this.mUIStrukturansichtTree = new UIStrukturansichtTree3(this);
+                }
+                return this.mUIStrukturansichtTree;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIStrukturansichtTree3 mUIStrukturansichtTree;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIStrukturansichtTree3 : WinTree
+    {
+        
+        public UIStrukturansichtTree3(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinTree.PropertyNames.Name] = "Namespacestruktursteuerelement";
+            this.WindowTitles.Add("Wählen sie ein Video");
+            #endregion
+        }
+        
+        #region Properties
+        public UIDesktopTreeItem3 UIDesktopTreeItem
+        {
+            get
+            {
+                if ((this.mUIDesktopTreeItem == null))
+                {
+                    this.mUIDesktopTreeItem = new UIDesktopTreeItem3(this);
+                }
+                return this.mUIDesktopTreeItem;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIDesktopTreeItem3 mUIDesktopTreeItem;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIDesktopTreeItem3 : WinTreeItem
+    {
+        
+        public UIDesktopTreeItem3(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinTreeItem.PropertyNames.Name] = "Desktop";
+            this.SearchProperties["Value"] = "0";
+            this.WindowTitles.Add("Wählen sie ein Video");
+            #endregion
+        }
+        
+        #region Properties
+        public UIDieserPCTreeItem3 UIDieserPCTreeItem
+        {
+            get
+            {
+                if ((this.mUIDieserPCTreeItem == null))
+                {
+                    this.mUIDieserPCTreeItem = new UIDieserPCTreeItem3(this);
+                }
+                return this.mUIDieserPCTreeItem;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIDieserPCTreeItem3 mUIDieserPCTreeItem;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIDieserPCTreeItem3 : WinTreeItem
+    {
+        
+        public UIDieserPCTreeItem3(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinTreeItem.PropertyNames.Name] = "Dieser PC";
+            this.SearchProperties["Value"] = "1";
+            this.SearchConfigurations.Add(SearchConfiguration.ExpandWhileSearching);
+            this.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+            this.WindowTitles.Add("Wählen sie ein Video");
+            #endregion
+        }
+        
+        #region Properties
+        public WinTreeItem UILokalerDatenträgerCTreeItem
+        {
+            get
+            {
+                if ((this.mUILokalerDatenträgerCTreeItem == null))
+                {
+                    this.mUILokalerDatenträgerCTreeItem = new WinTreeItem(this);
+                    #region Suchkriterien
+                    this.mUILokalerDatenträgerCTreeItem.SearchProperties[WinTreeItem.PropertyNames.Name] = "Lokaler Datenträger (C:)";
+                    this.mUILokalerDatenträgerCTreeItem.SearchProperties["Value"] = "2";
+                    this.mUILokalerDatenträgerCTreeItem.SearchConfigurations.Add(SearchConfiguration.ExpandWhileSearching);
+                    this.mUILokalerDatenträgerCTreeItem.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUILokalerDatenträgerCTreeItem.WindowTitles.Add("Wählen sie ein Video");
+                    #endregion
+                }
+                return this.mUILokalerDatenträgerCTreeItem;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinTreeItem mUILokalerDatenträgerCTreeItem;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIItemWindow7 : WinWindow
+    {
+        
+        public UIItemWindow7(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "1148";
+            this.SearchProperties[WinWindow.PropertyNames.Instance] = "2";
+            this.WindowTitles.Add("Wählen sie ein Video");
+            #endregion
+        }
+        
+        #region Properties
+        public WinComboBox UIDateinameComboBox
+        {
+            get
+            {
+                if ((this.mUIDateinameComboBox == null))
+                {
+                    this.mUIDateinameComboBox = new WinComboBox(this);
+                    #region Suchkriterien
+                    this.mUIDateinameComboBox.SearchProperties[WinComboBox.PropertyNames.Name] = "Dateiname:";
+                    this.mUIDateinameComboBox.WindowTitles.Add("Wählen sie ein Video");
+                    #endregion
+                }
+                return this.mUIDateinameComboBox;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinComboBox mUIDateinameComboBox;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIÖffnenWindow3 : WinWindow
+    {
+        
+        public UIÖffnenWindow3(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "1";
+            this.WindowTitles.Add("Wählen sie ein Video");
+            #endregion
+        }
+        
+        #region Properties
+        public WinButton UIÖffnenButton
+        {
+            get
+            {
+                if ((this.mUIÖffnenButton == null))
+                {
+                    this.mUIÖffnenButton = new WinButton(this);
+                    #region Suchkriterien
+                    this.mUIÖffnenButton.SearchProperties[WinButton.PropertyNames.Name] = "Öffnen";
+                    this.mUIÖffnenButton.WindowTitles.Add("Wählen sie ein Video");
+                    #endregion
+                }
+                return this.mUIÖffnenButton;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinButton mUIÖffnenButton;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIDatenauswählenWindow : WinWindow
+    {
+        
+        public UIDatenauswählenWindow()
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.Name] = "Daten auswählen";
+            this.SearchProperties[WinWindow.PropertyNames.ClassName] = "#32770";
+            this.WindowTitles.Add("Daten auswählen");
+            #endregion
+        }
+        
+        #region Properties
+        public UIItemWindow8 UIItemWindow
+        {
+            get
+            {
+                if ((this.mUIItemWindow == null))
+                {
+                    this.mUIItemWindow = new UIItemWindow8(this);
+                }
+                return this.mUIItemWindow;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIItemWindow8 mUIItemWindow;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIItemWindow8 : WinWindow
+    {
+        
+        public UIItemWindow8(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.AccessibleName] = "Elementansicht";
+            this.SearchProperties[WinWindow.PropertyNames.ClassName] = "DirectUIHWND";
+            this.WindowTitles.Add("Daten auswählen");
+            #endregion
+        }
+        
+        #region Properties
+        public UIHighchartsjsListItem1 UIHighchartsjsListItem
+        {
+            get
+            {
+                if ((this.mUIHighchartsjsListItem == null))
+                {
+                    this.mUIHighchartsjsListItem = new UIHighchartsjsListItem1(this);
+                }
+                return this.mUIHighchartsjsListItem;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIHighchartsjsListItem1 mUIHighchartsjsListItem;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIHighchartsjsListItem1 : WinListItem
+    {
+        
+        public UIHighchartsjsListItem1(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinListItem.PropertyNames.Name] = "highcharts.js";
+            this.WindowTitles.Add("Daten auswählen");
+            #endregion
+        }
+        
+        #region Properties
+        public WinEdit UINameEdit
+        {
+            get
+            {
+                if ((this.mUINameEdit == null))
+                {
+                    this.mUINameEdit = new WinEdit(this);
+                    #region Suchkriterien
+                    this.mUINameEdit.SearchProperties[WinEdit.PropertyNames.Name] = "Name";
+                    this.mUINameEdit.WindowTitles.Add("Daten auswählen");
+                    #endregion
+                }
+                return this.mUINameEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinEdit mUINameEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIQueryWindow : WinWindow
+    {
+        
+        public UIQueryWindow()
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.Name] = "Query?";
+            this.SearchProperties[WinWindow.PropertyNames.ClassName] = "#32770";
+            this.WindowTitles.Add("Query?");
+            #endregion
+        }
+        
+        #region Properties
+        public UINeinWindow1 UINeinWindow
+        {
+            get
+            {
+                if ((this.mUINeinWindow == null))
+                {
+                    this.mUINeinWindow = new UINeinWindow1(this);
+                }
+                return this.mUINeinWindow;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UINeinWindow1 mUINeinWindow;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UINeinWindow1 : WinWindow
+    {
+        
+        public UINeinWindow1(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "7";
+            this.WindowTitles.Add("Query?");
+            #endregion
+        }
+        
+        #region Properties
+        public WinButton UINeinButton
+        {
+            get
+            {
+                if ((this.mUINeinButton == null))
+                {
+                    this.mUINeinButton = new WinButton(this);
+                    #region Suchkriterien
+                    this.mUINeinButton.SearchProperties[WinButton.PropertyNames.Name] = "Nein";
+                    this.mUINeinButton.WindowTitles.Add("Query?");
+                    #endregion
+                }
+                return this.mUINeinButton;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinButton mUINeinButton;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIProjektöffnenWindow : WinWindow
+    {
+        
+        public UIProjektöffnenWindow()
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.Name] = "Projekt öffnen";
+            this.SearchProperties[WinWindow.PropertyNames.ClassName] = "#32770";
+            this.WindowTitles.Add("Projekt öffnen");
+            #endregion
+        }
+        
+        #region Properties
+        public UIStrukturansichtWindow4 UIStrukturansichtWindow
+        {
+            get
+            {
+                if ((this.mUIStrukturansichtWindow == null))
+                {
+                    this.mUIStrukturansichtWindow = new UIStrukturansichtWindow4(this);
+                }
+                return this.mUIStrukturansichtWindow;
+            }
+        }
+        
+        public UIItemWindow9 UIItemWindow
+        {
+            get
+            {
+                if ((this.mUIItemWindow == null))
+                {
+                    this.mUIItemWindow = new UIItemWindow9(this);
+                }
+                return this.mUIItemWindow;
+            }
+        }
+        
+        public UIItemWindow15 UIItemWindow1
+        {
+            get
+            {
+                if ((this.mUIItemWindow1 == null))
+                {
+                    this.mUIItemWindow1 = new UIItemWindow15(this);
+                }
+                return this.mUIItemWindow1;
+            }
+        }
+        
+        public UIÖffnenWindow4 UIÖffnenWindow
+        {
+            get
+            {
+                if ((this.mUIÖffnenWindow == null))
+                {
+                    this.mUIÖffnenWindow = new UIÖffnenWindow4(this);
+                }
+                return this.mUIÖffnenWindow;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIStrukturansichtWindow4 mUIStrukturansichtWindow;
+        
+        private UIItemWindow9 mUIItemWindow;
+        
+        private UIItemWindow15 mUIItemWindow1;
+        
+        private UIÖffnenWindow4 mUIÖffnenWindow;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIStrukturansichtWindow4 : WinWindow
+    {
+        
+        public UIStrukturansichtWindow4(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "100";
+            this.WindowTitles.Add("Projekt öffnen");
+            #endregion
+        }
+        
+        #region Properties
+        public UIStrukturansichtTree4 UIStrukturansichtTree
+        {
+            get
+            {
+                if ((this.mUIStrukturansichtTree == null))
+                {
+                    this.mUIStrukturansichtTree = new UIStrukturansichtTree4(this);
+                }
+                return this.mUIStrukturansichtTree;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIStrukturansichtTree4 mUIStrukturansichtTree;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIStrukturansichtTree4 : WinTree
+    {
+        
+        public UIStrukturansichtTree4(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinTree.PropertyNames.Name] = "Namespacestruktursteuerelement";
+            this.WindowTitles.Add("Projekt öffnen");
+            #endregion
+        }
+        
+        #region Properties
+        public UIDesktopTreeItem4 UIDesktopTreeItem
+        {
+            get
+            {
+                if ((this.mUIDesktopTreeItem == null))
+                {
+                    this.mUIDesktopTreeItem = new UIDesktopTreeItem4(this);
+                }
+                return this.mUIDesktopTreeItem;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIDesktopTreeItem4 mUIDesktopTreeItem;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIDesktopTreeItem4 : WinTreeItem
+    {
+        
+        public UIDesktopTreeItem4(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinTreeItem.PropertyNames.Name] = "Desktop";
+            this.SearchProperties["Value"] = "0";
+            this.WindowTitles.Add("Projekt öffnen");
+            #endregion
+        }
+        
+        #region Properties
+        public UIDieserPCTreeItem4 UIDieserPCTreeItem
+        {
+            get
+            {
+                if ((this.mUIDieserPCTreeItem == null))
+                {
+                    this.mUIDieserPCTreeItem = new UIDieserPCTreeItem4(this);
+                }
+                return this.mUIDieserPCTreeItem;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIDieserPCTreeItem4 mUIDieserPCTreeItem;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIDieserPCTreeItem4 : WinTreeItem
+    {
+        
+        public UIDieserPCTreeItem4(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinTreeItem.PropertyNames.Name] = "Dieser PC";
+            this.SearchProperties["Value"] = "1";
+            this.SearchConfigurations.Add(SearchConfiguration.ExpandWhileSearching);
+            this.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+            this.WindowTitles.Add("Projekt öffnen");
+            #endregion
+        }
+        
+        #region Properties
+        public WinTreeItem UILokalerDatenträgerCTreeItem
+        {
+            get
+            {
+                if ((this.mUILokalerDatenträgerCTreeItem == null))
+                {
+                    this.mUILokalerDatenträgerCTreeItem = new WinTreeItem(this);
+                    #region Suchkriterien
+                    this.mUILokalerDatenträgerCTreeItem.SearchProperties[WinTreeItem.PropertyNames.Name] = "Lokaler Datenträger (C:)";
+                    this.mUILokalerDatenträgerCTreeItem.SearchProperties["Value"] = "2";
+                    this.mUILokalerDatenträgerCTreeItem.SearchConfigurations.Add(SearchConfiguration.ExpandWhileSearching);
+                    this.mUILokalerDatenträgerCTreeItem.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUILokalerDatenträgerCTreeItem.WindowTitles.Add("Projekt öffnen");
+                    #endregion
+                }
+                return this.mUILokalerDatenträgerCTreeItem;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinTreeItem mUILokalerDatenträgerCTreeItem;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIItemWindow9 : WinWindow
+    {
+        
+        public UIItemWindow9(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "1148";
+            this.SearchProperties[WinWindow.PropertyNames.Instance] = "2";
+            this.WindowTitles.Add("Projekt öffnen");
+            #endregion
+        }
+        
+        #region Properties
+        public WinComboBox UIDateinameComboBox
+        {
+            get
+            {
+                if ((this.mUIDateinameComboBox == null))
+                {
+                    this.mUIDateinameComboBox = new WinComboBox(this);
+                    #region Suchkriterien
+                    this.mUIDateinameComboBox.SearchProperties[WinComboBox.PropertyNames.Name] = "Dateiname:";
+                    this.mUIDateinameComboBox.WindowTitles.Add("Projekt öffnen");
+                    #endregion
+                }
+                return this.mUIDateinameComboBox;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinComboBox mUIDateinameComboBox;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIItemWindow15 : WinWindow
+    {
+        
+        public UIItemWindow15(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "1148";
+            this.SearchProperties[WinWindow.PropertyNames.Instance] = "3";
+            this.WindowTitles.Add("Projekt öffnen");
+            #endregion
+        }
+        
+        #region Properties
+        public WinEdit UIDateinameEdit
+        {
+            get
+            {
+                if ((this.mUIDateinameEdit == null))
+                {
+                    this.mUIDateinameEdit = new WinEdit(this);
+                    #region Suchkriterien
+                    this.mUIDateinameEdit.SearchProperties[WinEdit.PropertyNames.Name] = "Dateiname:";
+                    this.mUIDateinameEdit.WindowTitles.Add("Projekt öffnen");
+                    #endregion
+                }
+                return this.mUIDateinameEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinEdit mUIDateinameEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIÖffnenWindow4 : WinWindow
+    {
+        
+        public UIÖffnenWindow4(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "1";
+            this.WindowTitles.Add("Projekt öffnen");
+            #endregion
+        }
+        
+        #region Properties
+        public WinButton UIÖffnenButton
+        {
+            get
+            {
+                if ((this.mUIÖffnenButton == null))
+                {
+                    this.mUIÖffnenButton = new WinButton(this);
+                    #region Suchkriterien
+                    this.mUIÖffnenButton.SearchProperties[WinButton.PropertyNames.Name] = "Öffnen";
+                    this.mUIÖffnenButton.WindowTitles.Add("Projekt öffnen");
+                    #endregion
+                }
+                return this.mUIÖffnenButton;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinButton mUIÖffnenButton;
         #endregion
     }
 }
