@@ -24,7 +24,7 @@ namespace ARdevKit.Model.Project
         /// ID of the augmentation, which has these user events.
         /// </summary>
         private string augmentationID;
-        
+
         /// <summary>
         /// File path of the customUserEvents.
         /// </summary>
@@ -44,6 +44,10 @@ namespace ARdevKit.Model.Project
         /// <param name="augmentationID">ID of the augmentation</param>
         public CustomUserEvent(string augmentationID)
         {
+            if (augmentationID == null)
+            {
+                throw new ArgumentNullException("augmentionID was null.");
+            }
             this.augmentationID = augmentationID;
             filePath = getCustomUserFile();
         }
