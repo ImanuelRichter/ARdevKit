@@ -536,10 +536,14 @@ namespace ARdevKit
                 this.updateScreenSize();
                 this.checksum = project.getChecksum();
             }
-            catch (System.ArgumentException)
+            catch (System.ArgumentException a)
             {
-                this.createNewProject("");
-                MessageBox.Show("Fehler beim laden des Projectes, die Datei scheint beschädigt zu sein");
+                
+                if (a.Message.Equals("Projekt-Datei beschädigt"))
+                {
+                    MessageBox.Show(a.Message, "Error");
+                    this.createNewProject("");
+                }
             }
         }
 
