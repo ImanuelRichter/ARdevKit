@@ -32,11 +32,7 @@ namespace ARdevKit.Model.Project
         /// The width, in mm.
         /// </value>
         [Browsable(false)]
-        public new int Width
-        {
-            get { return base.Width; }
-            set { base.Width = value; }
-        }
+        private new int Width;
 
         /// <summary>
         /// Gets or sets the height.
@@ -58,17 +54,6 @@ namespace ARdevKit.Model.Project
             : base()
         {
             resFilePath = null;
-        }
-
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ImageAugmentation" /> class.
-        /// </summary>
-        /// <param name="videoPath">The video path.</param>
-        public VideoAugmentation(string videoPath)
-            : base()
-        {
-            this.resFilePath = videoPath;
         }
 
         /// <summary>
@@ -95,7 +80,12 @@ namespace ARdevKit.Model.Project
         /// not found in <see cref="ImagePath" />.</exception>
         public override Bitmap getPreview()
         {
+            string dir = Path.GetDirectoryName(resFilePath);
+            if (Directory.Exists(dir))
                 return Controller.EditorController.ThumbCreator.CreateThumb(resFilePath);     
+            else
+                throw new ArgumentException("project is corrupted");
+            
         }
 
         /// <summary>

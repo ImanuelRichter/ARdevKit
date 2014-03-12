@@ -96,8 +96,12 @@ namespace ARdevKit.Model.Project
         /// not found in <see cref="SourceFilePath" />.</exception>
         public override Bitmap getPreview()
         {
-                cachePreview = new Bitmap(ResFilePath);
-            return cachePreview;
+            string dir = Path.GetDirectoryName(resFilePath);
+            if (Directory.Exists(dir))
+                return new Bitmap(ResFilePath);
+            else
+                throw new ArgumentException("project is corrupted");
+
         }
 
         /// <summary>

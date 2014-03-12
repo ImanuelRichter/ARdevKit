@@ -101,7 +101,6 @@ namespace ARdevKit.Model.Project
         public List<AbstractSource> Sources
         {
             get { return sources; }
-            set { sources = value; }
         }
 
         /// <summary>
@@ -117,7 +116,6 @@ namespace ARdevKit.Model.Project
         public List<AbstractTrackable> Trackables
         {
             get { return trackables; }
-            set { trackables = value; }
         }
 
         /// <summary>
