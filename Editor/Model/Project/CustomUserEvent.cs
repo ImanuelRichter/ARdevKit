@@ -66,6 +66,11 @@ namespace ARdevKit.Model.Project
             var dest = @"tmp\" + augmentationID + "\\";
             var source = @"res\templates\";
 
+            if (!System.IO.File.Exists(source + fileName))
+            {
+                throw new System.IO.FileNotFoundException("Die Datei " + fileName + " kann nicht gefunden werden.");
+            }
+
             string content = System.IO.File.ReadAllText(source + fileName);
             content = content.Replace("#element", augmentationID);
 
