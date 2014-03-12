@@ -35,6 +35,73 @@ namespace EditorUITest
         }
 
         [TestMethod]
+        public void TF11150_TF11151_TF20030_TF20050_TF20060_TF20080_TF20090()
+        {
+            bool isInTecoNetwork;
+            //Preperation
+            MessageBox.Show(new Form() { TopMost = true }, "Erstelle ein neues Projekt", "Testschritt!");
+            MessageBox.Show(new Form() { TopMost = true }, "Füge einen ID-Marker hinzu", "Testschritt!");
+            MessageBox.Show(new Form() { TopMost = true }, "Füge ein Bild als Augmentation hinzu", "Testschritt!");
+            MessageBox.Show(new Form() { TopMost = true }, "Füge ein Diagramm hinzu und wähle \"res\\highcharts\\demo\\opions.js\" als Vorlage aus", "Testschritt!");
+            MessageBox.Show(new Form() { TopMost = true }, "Füge dem Diagramm eine \"Database Source\" hinzu", "Testschritt!");
+            MessageBox.Show(new Form() { TopMost = true }, "Wähle \"res\\highcharts\\demo\\query.js\" als Datenbankanfrage", "Testschritt!");
+            MessageBox.Show(new Form() { TopMost = true }, "Wähle die in der Verknüpfung \"res\\highcharts\\demo\\URL\" hinterlegte URL als URL", "Testschritt!");
+
+
+            //TF11150
+            MessageBox.Show(new Form() { TopMost = true }, "Klicke auf \"Datei\" und geh mit der Maus auf \"Projekt versenden\" (ohne zu klicken)", "Testschritt!");
+            Assert.IsTrue(MessageBox.Show("Wird die IP des mobilen Geräts angezeigt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.No);
+
+            MessageBox.Show(new Form() { TopMost = true }, "Klicke auf \"Datei\" und geh mit der Maus auf \"Projekt versenden\" (ohne zu klicken) und klicke auf \"Projekt an Gerät senden\"", "Testschritt!");
+            Assert.IsTrue(MessageBox.Show("Wird eine Meldung angezeigt, dass kein Gerät zum Versenden verfügbar ist?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            MessageBox.Show(new Form() { TopMost = true }, "Klicke auf \"Datei\" und geh mit der Maus auf \"Projekt versenden\" (ohne zu klicken) und klicke auf \"Gerätedebugmodus starten\"", "Testschritt!");
+            Assert.IsTrue(MessageBox.Show("Wird eine Meldung angezeigt, dass kein Gerät verfügbar ist?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            MessageBox.Show(new Form() { TopMost = true }, "Starte den Player auf dem mobilen Gerät und warte, bis er vollständig geladen hat", "Testschritt!");
+            Assert.IsTrue(MessageBox.Show("Wird das Webcambild angezeigt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            //TF11151
+            MessageBox.Show(new Form() { TopMost = true }, "Klicke auf \"Datei\" und geh mit der Maus auf \"Projekt versenden\" (ohne zu klicken) und klicke auf \"Liste aktualisieren\"", "Testschritt!");
+            MessageBox.Show(new Form() { TopMost = true }, "Klicke auf \"Datei\" und geh mit der Maus auf \"Projekt versenden\" (ohne zu klicken)", "Testschritt!");
+            Assert.IsTrue(MessageBox.Show("Wird die IP des mobilen Geräts angezeigt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            MessageBox.Show(new Form() { TopMost = true }, "Klicke auf \"Datei\" und geh mit der Maus auf \"Projekt versenden\" (ohne zu klicken) und klicke auf \"Projekt an Gerät senden\"", "Testschritt!");
+            Assert.IsTrue(MessageBox.Show("Wird eine Meldung \"Das Projekt wurde versand.\" angezeigt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+            Assert.IsTrue(MessageBox.Show("Startet der Player neu?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            isInTecoNetwork = MessageBox.Show("Befinden sich Editor und Player im teco-Netzwerk?", "Branch!", MessageBoxButtons.YesNo) == DialogResult.Yes;
+            if (isInTecoNetwork)
+            {
+                MessageBox.Show(new Form() { TopMost = true }, "Halte das im Projekt verwendete Trackable vor die Linse des mobilen Geräts", "Testschritt!");
+                Assert.IsTrue(MessageBox.Show("Ist das Diagramm mit Daten zu sehen?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+            }
+            else
+            {
+                MessageBox.Show(new Form() { TopMost = true }, "Halte das im Projekt verwendete Trackable vor die Linse des mobilen Geräts", "Testschritt!");
+                Assert.IsTrue(MessageBox.Show("Ist das Diagramm ohne Inhalt zu sehen?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            }
+            Assert.IsTrue(MessageBox.Show("Ist das Bild zu sehen?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            MessageBox.Show(new Form() { TopMost = true }, "Klicke auf \"Datei\" und geh mit der Maus auf \"Projekt versenden\" (ohne zu klicken) und klicke auf \"Gerätedebugmodus starten\"", "Testschritt!");
+            Assert.IsTrue(MessageBox.Show("Öffnet sich ein neues Fenster mit einem Textfeld?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            //TF20030
+            MessageBox.Show(new Form() { TopMost = true }, "Halte den ID-Marker vor die Kamera des mobilen Geräts", "Testschritt!");
+            Assert.IsTrue(MessageBox.Show("Wird im Debugfenster die erkannte id angezeigt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            //TF20050
+            Assert.IsTrue(MessageBox.Show("Werden im Debugfenster Informationen über die Verbindung zum Server angezeigt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            if (isInTecoNetwork)
+            {
+                //TF20060
+                Assert.IsTrue(MessageBox.Show("Werden im Debugfenster Informationen über die gesendete Anfrage und empfangene Antwort angezeigt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+            }
+        }
+
+        [TestMethod]
         public void TF12110() //jede TestMethode ist ein manuellerTest. Aussagekräftigen Namen verwenden ggf. Nummber aus Pflichtenheft (TF...)
         {
             MessageBox.Show(new Form() { TopMost = true },"Öffne das Project onlyOneTrackable im Ordner Test(Ui)", "Testschritt!");
