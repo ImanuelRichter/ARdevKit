@@ -538,7 +538,8 @@ namespace ARdevKit
             }
             catch (System.ArgumentException)
             {
-
+                this.createNewProject("");
+                MessageBox.Show("Fehler beim laden des Projectes, die Datei scheint beschädigt zu sein");
             }
         }
 

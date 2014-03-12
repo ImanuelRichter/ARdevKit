@@ -137,8 +137,11 @@ namespace ARdevKit.Model.Project
         /// </returns>
         public override System.Drawing.Bitmap getPreview()
         {
-            cachePreview = new Bitmap(ImagePath);
-            return cachePreview;
+            string dir = Path.GetDirectoryName(ImagePath);
+            if (Directory.Exists(dir))
+                return new Bitmap(ImagePath);
+            else
+                throw new ArgumentException("project is corrupted");
         }
 
         /// <summary>

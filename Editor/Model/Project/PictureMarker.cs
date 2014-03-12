@@ -129,8 +129,12 @@ namespace ARdevKit.Model.Project
         ///     not correct.</exception>
         public override Bitmap getPreview()
         {
-            cachePreview = new Bitmap(PicturePath);
-            return cachePreview;
+            string dir = Path.GetDirectoryName(PicturePath);
+            if (Directory.Exists(dir))
+                return new Bitmap(PicturePath);
+            else
+                throw new ArgumentException("project is corrupted");
+            
         }
 
 

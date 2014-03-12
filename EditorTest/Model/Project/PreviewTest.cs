@@ -32,6 +32,14 @@ namespace EditorTest.Model.Project
         }
 
         [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void VideoAugmentationPreviewTest3()
+        {
+            VideoAugmentation vid = new VideoAugmentation();
+            Bitmap preview = vid.getPreview();
+        }
+
+        [TestMethod]
         public void PictureMarkerPreviewTest1()
         {
             PictureMarker marker = new PictureMarker();
@@ -52,6 +60,14 @@ namespace EditorTest.Model.Project
             Bitmap preview2 = marker.getPreview();
 
             Assert.IsFalse(this.CompareBitmaps(preview, preview2));
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void PictureMarkerPreviewTest3()
+        {
+            PictureMarker marker = new PictureMarker();
+            Bitmap preview = marker.getPreview();
         }
 
         [TestMethod]
@@ -78,6 +94,14 @@ namespace EditorTest.Model.Project
         }
 
         [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void ImageTrackablePreviewTest3()
+        {
+            ImageTrackable marker = new ImageTrackable();
+            Bitmap preview = marker.getPreview();
+        }
+
+        [TestMethod]
         public void ImageAugmentationPreviewTest1()
         {
             ImageAugmentation aug = new ImageAugmentation();
@@ -100,6 +124,14 @@ namespace EditorTest.Model.Project
             Bitmap preview2 = aug.getPreview();
 
             Assert.IsFalse(this.CompareBitmaps(preview, preview2));
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void ImageAugmentationPreviewTest3()
+        {
+            ImageAugmentation aug = new ImageAugmentation();
+            Bitmap preview = aug.getPreview();
         }
 
         [TestMethod]

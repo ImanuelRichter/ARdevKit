@@ -114,7 +114,7 @@ public class PreviewController
     public void addPreviewable(IPreviewable currentElement, Vector3D v)
     {
         if (currentElement == null)
-            throw new ArgumentException("parameter currentEelement was null");
+            throw new ArgumentException("parameter currentElement was null");
         if (v == null)
             throw new ArgumentException("parameter v was null");
 
