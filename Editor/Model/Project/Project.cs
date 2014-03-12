@@ -170,39 +170,6 @@ namespace ARdevKit.Model.Project
             sensor.Accept(visitor);
         }
 
-
-        /// <summary>
-        /// Returns the associated source, if it is associated with the project.
-        /// </summary>
-        /// <param name="source">The source, which is searched.</param>
-        /// <returns>
-        /// the associated source
-        /// </returns>
-        public AbstractSource findSource(AbstractSource source)
-        {
-            return this.sources[this.sources.IndexOf(source)];
-        }
-
-        /// <summary>
-        /// Returns, if the specified source is associated with this project.
-        /// </summary>
-        /// <param name="source">The specified source.</param>
-        /// <returns>
-        /// true, if the source is associated with this project
-        /// false, else
-        /// </returns>
-        public bool existSource(AbstractSource source)
-        {
-            foreach (AbstractSource s in sources)
-            {
-                if (s == source)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
         /// tests if all trackables in this.trackables are null. if there are one which is not null
@@ -211,9 +178,6 @@ namespace ARdevKit.Model.Project
         /// <returns>
         /// true if trackable, false if not.
         /// </returns>
-        /// <remarks>
-        /// Lizzard, 1/19/2014.
-        /// </remarks>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         public bool hasTrackable()
         {
@@ -300,38 +264,6 @@ namespace ARdevKit.Model.Project
             }
 
             return false;
-        }
-
-        /// <summary>
-        /// Removes the augmentation and deletes connected files if other augmentations dont need it.
-        /// </summary>
-        /// <param name="augmentation">The augmentation.</param>
-        /// <param name="index">The index.</param>
-        public void RemoveAugmentation(AbstractAugmentation augmentation, int index)
-        {
-            if (augmentation is Abstract2DAugmentation)
-            {
-                Abstract2DAugmentation augmentationToBeRemoved = (Abstract2DAugmentation) augmentation;
-                bool deleteFile = true;
-                int i = index;
-
-                while (deleteFile && i < trackables.Count)
-                {
-                    int j = 0;
-                    while (deleteFile && j < trackables[i].Augmentations.Count)
-                    {
-                        if (trackables[i].Augmentations[j] is Abstract2DAugmentation)
-                        {
-                            deleteFile = !(((Abstract2DAugmentation) trackables[i].Augmentations[j]).ResFilePath == augmentationToBeRemoved.ResFilePath);
-                        }
-                        j++;
-                    }
-                    i++;
-                }
-                if (deleteFile)
-                    augmentation.CleanUp();
-            }
-            augmentation.Trackable.RemoveAugmentation(augmentation);
         }
 
         /// <summary>

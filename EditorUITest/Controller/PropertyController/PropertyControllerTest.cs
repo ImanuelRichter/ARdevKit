@@ -113,6 +113,31 @@ namespace EditorUITest.Controller.PropertyController
             this.UIMap.CloseWithoutSave();
         }
 
+        [TestMethod]
+        public void UseSliderTest()
+        {
+            this.UIMap.UseSliderRecord();
+            MessageBox.Show("Ändere den Wert mit dem Slider auf 0.5", "Teststep");
+            this.UIMap.UseSliderAssertion();
+        }
+
+        [TestMethod]
+        public void UseFileDialogTest()
+        {
+            Clipboard.SetText("C:\\1.jpg");
+            this.UIMap.UseFileDialogRecord();
+            MessageBox.Show("Wähle mit dem FileDialog das Bild 2.jpg", "Teststep");
+            this.UIMap.UseFileDialogAssertion();
+        }
+
+        [TestMethod]
+        public void UseFileDialogAugmentationTest()
+        {
+            this.UIMap.UseFileDialogAugmentationRecord();
+            MessageBox.Show("Wähle mit dem FileDialog das Bild 2.jpg", "Teststep");
+            this.UIMap.UseFileDialogAugmentationAssertion();
+        }
+
         #region Zusätzliche Testattribute
 
         ApplicationUnderTest aut;

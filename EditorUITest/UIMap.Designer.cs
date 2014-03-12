@@ -344,52 +344,39 @@ namespace EditorUITest
             WinClient uIPictureMarkerClient1 = this.UIARdevKitWindow.UIPictureMarkerClient.UIPictureMarkerClient1;
             WinComboBox uICmb_editor_selectionComboBox = this.UIARdevKitWindow.UICmb_editor_selectionWindow.UICmb_editor_selectionComboBox;
             WinClient uIPnl_editor_selectionClient = this.UIARdevKitWindow.UIItemWindow.UIPnl_editor_selectionClient;
-            WinEdit uINameEdit = this.UIWählensieeineOptionsWindow.UIItemWindow.UIHighchartsjsListItem.UINameEdit;
+            WinTreeItem uILokalerDatenträgerCTreeItem = this.UIWählensieeineOptionsWindow.UIStrukturansichtWindow.UIStrukturansichtTree.UIDesktopTreeItem.UIDieserPCTreeItem.UILokalerDatenträgerCTreeItem;
+            WinComboBox uIDateinameComboBox = this.UIWählensieeineOptionsWindow.UIItemWindow1.UIDateinameComboBox;
+            WinEdit uIDateinameEdit = this.UIWählensieeineOptionsWindow.UIItemWindow11.UIDateinameEdit;
             WinRow uIOptionsRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIOptionsRow;
             WinTable uIPropertyGridViewTable = this.UIARdevKitWindow.UIPropertyGridClient.UIPropertyGridViewTable;
-            WinButton uISchließenButton = this.UIARdevKitWindow.UIARdevKitTitleBar.UISchließenButton;
-            WinButton uINeinButton = this.UIProjektspeichernWindow.UINeinWindow.UINeinButton;
             #endregion
 
             // Klicken "Picture Marker" Client
-            Mouse.Click(uIPictureMarkerClient1, new Point(78, 73));
+            Mouse.Click(uIPictureMarkerClient1, new Point(74, 79));
 
             // "Augmentations" in "cmb_editor_selection_toolSelection" Kombinationsfeld auswählen
             uICmb_editor_selectionComboBox.SelectedItem = this.EmptyOptionsPathRecordParams.UICmb_editor_selectionComboBoxSelectedItem;
 
             // Klicken "pnl_editor_selection" Client
-            Mouse.Click(uIPnl_editor_selectionClient, new Point(87, 55));
+            Mouse.Click(uIPnl_editor_selectionClient, new Point(80, 86));
 
-            // Doppelklicken "Name" Textfeld
-            Mouse.DoubleClick(uINameEdit, new Point(29, 19));
+            // Klicken "Desktop" -> "Dieser PC" -> "Lokaler Datenträger (C:)" Strukturelement
+            Mouse.Click(uILokalerDatenträgerCTreeItem, new Point(43, 14));
+
+            // "highcharts.js" in "Dateiname:" Kombinationsfeld auswählen
+            uIDateinameComboBox.EditableItem = this.EmptyOptionsPathRecordParams.UIDateinameComboBoxEditableItem;
+
+            // "{Enter}" in "Dateiname:" Textfeld eingeben
+            Keyboard.SendKeys(uIDateinameEdit, this.EmptyOptionsPathRecordParams.UIDateinameEditSendKeys, ModifierKeys.None);
 
             // Klicken "Options" Zeile
-            Mouse.Click(uIOptionsRow, new Point(35, 7));
+            Mouse.Click(uIOptionsRow, new Point(45, 7));
 
             // "{Back}" in "Options" Zeile eingeben
             Keyboard.SendKeys(uIOptionsRow, this.EmptyOptionsPathRecordParams.UIOptionsRowSendKeys, ModifierKeys.None);
 
             // Klicken "PropertyGridView" Tabelle
-            Mouse.Click(uIPropertyGridViewTable, new Point(93, 364));
-
-            // Klicken "Schließen" Schaltfläche
-            Mouse.Click(uISchließenButton, new Point(30, 14));
-
-            // Klicken "&Nein" Schaltfläche
-            Mouse.Click(uINeinButton, new Point(20, 13));
-        }
-        
-        /// <summary>
-        /// EmptyPicturePathAssertion - Verwenden Sie "EmptyPicturePathAssertionExpectedValues", um Parameter an diese Methode zu übergeben.
-        /// </summary>
-        public void EmptyPicturePathAssertion()
-        {
-            #region Variable Declarations
-            WinRow uIPicturePathRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIPicturePathRow;
-            #endregion
-
-            // Sicherstellen, dass die Eigenschaft 'Value' von "PicturePath" Zeile ist gleich 'C:\Users\soowe_000\Pictures\Desktop Rota\1.jpg'
-            Assert.AreEqual(this.EmptyPicturePathAssertionExpectedValues.UIPicturePathRowValue, uIPicturePathRow.Value);
+            Mouse.Click(uIPropertyGridViewTable, new Point(99, 371));
         }
         
         /// <summary>
@@ -399,29 +386,35 @@ namespace EditorUITest
         {
             #region Variable Declarations
             WinClient uIPnl_editor_selectionClient = this.UIARdevKitWindow.UIItemWindow.UIPnl_editor_selectionClient;
-            WinEdit uINameEdit = this.UIWählensieeinenMarkerWindow.UIItemWindow.UIDesktopRotaListItem.UINameEdit;
-            WinEdit uINameEdit1 = this.UIWählensieeinenMarkerWindow.UIItemWindow1.UIItem1jpgListItem.UINameEdit;
+            WinComboBox uIDateinameComboBox = this.UIWählensieeinenMarkerWindow.UIItemWindow2.UIDateinameComboBox;
+            WinEdit uIDateinameEdit = this.UIWählensieeinenMarkerWindow.UIItemWindow11.UIDateinameEdit;
             WinRow uIPicturePathRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIPicturePathRow;
             WinTable uIPropertyGridViewTable = this.UIARdevKitWindow.UIPropertyGridClient.UIPropertyGridViewTable;
             #endregion
 
             // Klicken "pnl_editor_selection" Client
-            Mouse.Click(uIPnl_editor_selectionClient, new Point(47, 40));
+            Mouse.Click(uIPnl_editor_selectionClient, new Point(88, 72));
 
-            // Doppelklicken "Name" Textfeld
-            Mouse.DoubleClick(uINameEdit, new Point(43, 2));
+            // "C:" in "Dateiname:" Kombinationsfeld auswählen
+            uIDateinameComboBox.EditableItem = this.EmptyPicturePathRecordParams.UIDateinameComboBoxEditableItem;
 
-            // Doppelklicken "Name" Textfeld
-            Mouse.DoubleClick(uINameEdit1, new Point(43, 2));
+            // "Alt, Control + {[}" in "Dateiname:" Textfeld eingeben
+            Keyboard.SendKeys(uIDateinameEdit, this.EmptyPicturePathRecordParams.UIDateinameEditSendKeys, (ModifierKeys.Alt | ModifierKeys.Control));
+
+            // "C:\1.jpg" in "Dateiname:" Kombinationsfeld auswählen
+            uIDateinameComboBox.EditableItem = this.EmptyPicturePathRecordParams.UIDateinameComboBoxEditableItem1;
+
+            // "{Enter}" in "Dateiname:" Textfeld eingeben
+            Keyboard.SendKeys(uIDateinameEdit, this.EmptyPicturePathRecordParams.UIDateinameEditSendKeys1, ModifierKeys.None);
 
             // Klicken "PicturePath" Zeile
-            Mouse.Click(uIPicturePathRow, new Point(79, 5));
+            Mouse.Click(uIPicturePathRow, new Point(51, 5));
 
             // "{Back}" in "PicturePath" Zeile eingeben
             Keyboard.SendKeys(uIPicturePathRow, this.EmptyPicturePathRecordParams.UIPicturePathRowSendKeys, ModifierKeys.None);
 
             // Klicken "PropertyGridView" Tabelle
-            Mouse.Click(uIPropertyGridViewTable, new Point(84, 311));
+            Mouse.Click(uIPropertyGridViewTable, new Point(73, 334));
         }
         
         /// <summary>
@@ -618,6 +611,133 @@ namespace EditorUITest
             Mouse.Click(uIPropertyGridViewTable, new Point(98, 329));
         }
         
+        /// <summary>
+        /// UseFileDialogAssertion - Verwenden Sie "UseFileDialogAssertionExpectedValues", um Parameter an diese Methode zu übergeben.
+        /// </summary>
+        public void UseFileDialogAssertion()
+        {
+            #region Variable Declarations
+            WinRow uIPicturePathRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIPicturePathRow;
+            #endregion
+
+            // Sicherstellen, dass die Eigenschaft 'Value' von "PicturePath" Zeile ist gleich 'C:\2.jpg'
+            Assert.AreEqual(this.UseFileDialogAssertionExpectedValues.UIPicturePathRowValue, uIPicturePathRow.Value);
+        }
+        
+        /// <summary>
+        /// UseFileDialogRecord - Verwenden Sie "UseFileDialogRecordParams", um Parameter an diese Methode zu übergeben.
+        /// </summary>
+        public void UseFileDialogRecord()
+        {
+            #region Variable Declarations
+            WinClient uIPnl_editor_selectionClient = this.UIARdevKitWindow.UIItemWindow.UIPnl_editor_selectionClient;
+            WinComboBox uIDateinameComboBox = this.UIWählensieeinenMarkerWindow.UIItemWindow2.UIDateinameComboBox;
+            WinButton uIÖffnenButton = this.UIWählensieeinenMarkerWindow.UIÖffnenWindow.UIÖffnenButton;
+            WinRow uIPicturePathRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIPicturePathRow;
+            #endregion
+
+            // Klicken "pnl_editor_selection" Client
+            Mouse.Click(uIPnl_editor_selectionClient, new Point(36, 52));
+
+            // "C:\1.jpg" in "Dateiname:" Kombinationsfeld auswählen
+            uIDateinameComboBox.EditableItem = this.UseFileDialogRecordParams.UIDateinameComboBoxEditableItem;
+
+            // Klicken "Ö&ffnen" Schaltfläche
+            Mouse.Click(uIÖffnenButton, new Point(36, 19));
+
+            // Klicken "PicturePath" Zeile
+            Mouse.Click(uIPicturePathRow, new Point(44, 7));
+        }
+        
+        /// <summary>
+        /// UseSliderAssertion - Verwenden Sie "UseSliderAssertionExpectedValues", um Parameter an diese Methode zu übergeben.
+        /// </summary>
+        public void UseSliderAssertion()
+        {
+            #region Variable Declarations
+            WinRow uISimilarityThresholdRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UISimilarityThresholdRow;
+            #endregion
+
+            // Sicherstellen, dass die Eigenschaft 'Value' von "SimilarityThreshold" Zeile ist gleich '0,5'
+            Assert.AreEqual(this.UseSliderAssertionExpectedValues.UISimilarityThresholdRowValue, uISimilarityThresholdRow.Value);
+        }
+        
+        /// <summary>
+        /// UseSliderRecord
+        /// </summary>
+        public void UseSliderRecord()
+        {
+            #region Variable Declarations
+            WinClient uIPictureMarkerClient1 = this.UIARdevKitWindow.UIPictureMarkerClient.UIPictureMarkerClient1;
+            WinRow uISimilarityThresholdRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UISimilarityThresholdRow;
+            #endregion
+
+            // Klicken "Picture Marker" Client
+            Mouse.Click(uIPictureMarkerClient1, new Point(59, 63));
+
+            // Klicken "SimilarityThreshold" Zeile
+            Mouse.Click(uISimilarityThresholdRow, new Point(189, 5));
+        }
+        
+        /// <summary>
+        /// EmptyPicturePathAssertion - Verwenden Sie "EmptyPicturePathAssertionExpectedValues", um Parameter an diese Methode zu übergeben.
+        /// </summary>
+        public void EmptyPicturePathAssertion()
+        {
+            #region Variable Declarations
+            WinRow uIPicturePathRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIPicturePathRow;
+            #endregion
+
+            // Sicherstellen, dass die Eigenschaft 'Value' von "PicturePath" Zeile ist gleich 'C:\1.jpg'
+            Assert.AreEqual(this.EmptyPicturePathAssertionExpectedValues.UIPicturePathRowValue, uIPicturePathRow.Value);
+        }
+        
+        /// <summary>
+        /// UseFileDialogAugmentationRecord - Verwenden Sie "UseFileDialogAugmentationRecordParams", um Parameter an diese Methode zu übergeben.
+        /// </summary>
+        public void UseFileDialogAugmentationRecord()
+        {
+            #region Variable Declarations
+            WinClient uIPictureMarkerClient1 = this.UIARdevKitWindow.UIPictureMarkerClient.UIPictureMarkerClient1;
+            WinComboBox uICmb_editor_selectionComboBox = this.UIARdevKitWindow.UICmb_editor_selectionWindow.UICmb_editor_selectionComboBox;
+            WinClient uIChartClient1 = this.UIARdevKitWindow.UIChartClient.UIChartClient1;
+            WinComboBox uIDateinameComboBox = this.UIWählensieeinBildWindow.UIItemWindow.UIDateinameComboBox;
+            WinButton uIÖffnenButton = this.UIWählensieeinBildWindow.UIÖffnenWindow.UIÖffnenButton;
+            WinRow uIResFilePathRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIResFilePathRow;
+            #endregion
+
+            // Klicken "Picture Marker" Client
+            Mouse.Click(uIPictureMarkerClient1, new Point(38, 27));
+
+            // "Augmentations" in "cmb_editor_selection_toolSelection" Kombinationsfeld auswählen
+            uICmb_editor_selectionComboBox.SelectedItem = this.UseFileDialogAugmentationRecordParams.UICmb_editor_selectionComboBoxSelectedItem;
+
+            // Klicken "Chart" Client
+            Mouse.Click(uIChartClient1, new Point(54, 51));
+
+            // "C:\1.jpg" in "Dateiname:" Kombinationsfeld auswählen
+            uIDateinameComboBox.EditableItem = this.UseFileDialogAugmentationRecordParams.UIDateinameComboBoxEditableItem;
+
+            // Klicken "Ö&ffnen" Schaltfläche
+            Mouse.Click(uIÖffnenButton, new Point(27, 7));
+
+            // Klicken "ResFilePath" Zeile
+            Mouse.Click(uIResFilePathRow, new Point(74, 7));
+        }
+        
+        /// <summary>
+        /// UseFileDialogAugmentationAssertion - Verwenden Sie "UseFileDialogAugmentationAssertionExpectedValues", um Parameter an diese Methode zu übergeben.
+        /// </summary>
+        public void UseFileDialogAugmentationAssertion()
+        {
+            #region Variable Declarations
+            WinRow uIResFilePathRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIResFilePathRow;
+            #endregion
+
+            // Sicherstellen, dass die Eigenschaft 'Value' von "ResFilePath" Zeile ist gleich 'C:\2.jpg'
+            Assert.AreEqual(this.UseFileDialogAugmentationAssertionExpectedValues.UIResFilePathRowValue, uIResFilePathRow.Value);
+        }
+        
         #region Properties
         public virtual ChangeImagePathRecordParams ChangeImagePathRecordParams
         {
@@ -736,18 +856,6 @@ namespace EditorUITest
                     this.mEmptyOptionsPathRecordParams = new EmptyOptionsPathRecordParams();
                 }
                 return this.mEmptyOptionsPathRecordParams;
-            }
-        }
-        
-        public virtual EmptyPicturePathAssertionExpectedValues EmptyPicturePathAssertionExpectedValues
-        {
-            get
-            {
-                if ((this.mEmptyPicturePathAssertionExpectedValues == null))
-                {
-                    this.mEmptyPicturePathAssertionExpectedValues = new EmptyPicturePathAssertionExpectedValues();
-                }
-                return this.mEmptyPicturePathAssertionExpectedValues;
             }
         }
         
@@ -871,6 +979,78 @@ namespace EditorUITest
             }
         }
         
+        public virtual UseFileDialogAssertionExpectedValues UseFileDialogAssertionExpectedValues
+        {
+            get
+            {
+                if ((this.mUseFileDialogAssertionExpectedValues == null))
+                {
+                    this.mUseFileDialogAssertionExpectedValues = new UseFileDialogAssertionExpectedValues();
+                }
+                return this.mUseFileDialogAssertionExpectedValues;
+            }
+        }
+        
+        public virtual UseFileDialogRecordParams UseFileDialogRecordParams
+        {
+            get
+            {
+                if ((this.mUseFileDialogRecordParams == null))
+                {
+                    this.mUseFileDialogRecordParams = new UseFileDialogRecordParams();
+                }
+                return this.mUseFileDialogRecordParams;
+            }
+        }
+        
+        public virtual UseSliderAssertionExpectedValues UseSliderAssertionExpectedValues
+        {
+            get
+            {
+                if ((this.mUseSliderAssertionExpectedValues == null))
+                {
+                    this.mUseSliderAssertionExpectedValues = new UseSliderAssertionExpectedValues();
+                }
+                return this.mUseSliderAssertionExpectedValues;
+            }
+        }
+        
+        public virtual EmptyPicturePathAssertionExpectedValues EmptyPicturePathAssertionExpectedValues
+        {
+            get
+            {
+                if ((this.mEmptyPicturePathAssertionExpectedValues == null))
+                {
+                    this.mEmptyPicturePathAssertionExpectedValues = new EmptyPicturePathAssertionExpectedValues();
+                }
+                return this.mEmptyPicturePathAssertionExpectedValues;
+            }
+        }
+        
+        public virtual UseFileDialogAugmentationRecordParams UseFileDialogAugmentationRecordParams
+        {
+            get
+            {
+                if ((this.mUseFileDialogAugmentationRecordParams == null))
+                {
+                    this.mUseFileDialogAugmentationRecordParams = new UseFileDialogAugmentationRecordParams();
+                }
+                return this.mUseFileDialogAugmentationRecordParams;
+            }
+        }
+        
+        public virtual UseFileDialogAugmentationAssertionExpectedValues UseFileDialogAugmentationAssertionExpectedValues
+        {
+            get
+            {
+                if ((this.mUseFileDialogAugmentationAssertionExpectedValues == null))
+                {
+                    this.mUseFileDialogAugmentationAssertionExpectedValues = new UseFileDialogAugmentationAssertionExpectedValues();
+                }
+                return this.mUseFileDialogAugmentationAssertionExpectedValues;
+            }
+        }
+        
         public UIARdevKitWindow UIARdevKitWindow
         {
             get
@@ -919,13 +1099,13 @@ namespace EditorUITest
             }
         }
         
-        public UIItemWindow11 UIItemWindow1
+        public UIItemWindow12 UIItemWindow1
         {
             get
             {
                 if ((this.mUIItemWindow1 == null))
                 {
-                    this.mUIItemWindow1 = new UIItemWindow11();
+                    this.mUIItemWindow1 = new UIItemWindow12();
                 }
                 return this.mUIItemWindow1;
             }
@@ -1026,6 +1206,18 @@ namespace EditorUITest
                 return this.mUIProjektöffnenWindow;
             }
         }
+        
+        public UIItemWindow22 UIItemWindow2
+        {
+            get
+            {
+                if ((this.mUIItemWindow2 == null))
+                {
+                    this.mUIItemWindow2 = new UIItemWindow22();
+                }
+                return this.mUIItemWindow2;
+            }
+        }
         #endregion
         
         #region Fields
@@ -1049,8 +1241,6 @@ namespace EditorUITest
         
         private EmptyOptionsPathRecordParams mEmptyOptionsPathRecordParams;
         
-        private EmptyPicturePathAssertionExpectedValues mEmptyPicturePathAssertionExpectedValues;
-        
         private EmptyPicturePathRecordParams mEmptyPicturePathRecordParams;
         
         private EmptyQueryPathAssertionExpectedValues mEmptyQueryPathAssertionExpectedValues;
@@ -1071,6 +1261,18 @@ namespace EditorUITest
         
         private SetQueryPathRecordParams mSetQueryPathRecordParams;
         
+        private UseFileDialogAssertionExpectedValues mUseFileDialogAssertionExpectedValues;
+        
+        private UseFileDialogRecordParams mUseFileDialogRecordParams;
+        
+        private UseSliderAssertionExpectedValues mUseSliderAssertionExpectedValues;
+        
+        private EmptyPicturePathAssertionExpectedValues mEmptyPicturePathAssertionExpectedValues;
+        
+        private UseFileDialogAugmentationRecordParams mUseFileDialogAugmentationRecordParams;
+        
+        private UseFileDialogAugmentationAssertionExpectedValues mUseFileDialogAugmentationAssertionExpectedValues;
+        
         private UIARdevKitWindow mUIARdevKitWindow;
         
         private UIProjektspeichernWindow mUIProjektspeichernWindow;
@@ -1079,7 +1281,7 @@ namespace EditorUITest
         
         private UIWählensieeineOptionsWindow mUIWählensieeineOptionsWindow;
         
-        private UIItemWindow11 mUIItemWindow1;
+        private UIItemWindow12 mUIItemWindow1;
         
         private UIWählensieeinenMarkerWindow mUIWählensieeinenMarkerWindow;
         
@@ -1096,6 +1298,8 @@ namespace EditorUITest
         private UIQueryWindow mUIQueryWindow;
         
         private UIProjektöffnenWindow mUIProjektöffnenWindow;
+        
+        private UIItemWindow22 mUIItemWindow2;
         #endregion
     }
     
@@ -1314,24 +1518,19 @@ namespace EditorUITest
         public string UICmb_editor_selectionComboBoxSelectedItem = "Augmentations";
         
         /// <summary>
+        /// "highcharts.js" in "Dateiname:" Kombinationsfeld auswählen
+        /// </summary>
+        public string UIDateinameComboBoxEditableItem = "highcharts.js";
+        
+        /// <summary>
+        /// "{Enter}" in "Dateiname:" Textfeld eingeben
+        /// </summary>
+        public string UIDateinameEditSendKeys = "{Enter}";
+        
+        /// <summary>
         /// "{Back}" in "Options" Zeile eingeben
         /// </summary>
         public string UIOptionsRowSendKeys = "{Back}";
-        #endregion
-    }
-    
-    /// <summary>
-    /// An "EmptyPicturePathAssertion" zu übergebende Parameter
-    /// </summary>
-    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
-    public class EmptyPicturePathAssertionExpectedValues
-    {
-        
-        #region Fields
-        /// <summary>
-        /// Sicherstellen, dass die Eigenschaft 'Value' von "PicturePath" Zeile ist gleich 'C:\Users\soowe_000\Pictures\Desktop Rota\1.jpg'
-        /// </summary>
-        public string UIPicturePathRowValue = "C:\\Users\\soowe_000\\Pictures\\Desktop Rota\\1.jpg";
         #endregion
     }
     
@@ -1343,6 +1542,26 @@ namespace EditorUITest
     {
         
         #region Fields
+        /// <summary>
+        /// "C:" in "Dateiname:" Kombinationsfeld auswählen
+        /// </summary>
+        public string UIDateinameComboBoxEditableItem = "C:";
+        
+        /// <summary>
+        /// "Alt, Control + {[}" in "Dateiname:" Textfeld eingeben
+        /// </summary>
+        public string UIDateinameEditSendKeys = "{[}";
+        
+        /// <summary>
+        /// "C:\1.jpg" in "Dateiname:" Kombinationsfeld auswählen
+        /// </summary>
+        public string UIDateinameComboBoxEditableItem1 = "C:\\1.jpg";
+        
+        /// <summary>
+        /// "{Enter}" in "Dateiname:" Textfeld eingeben
+        /// </summary>
+        public string UIDateinameEditSendKeys1 = "{Enter}";
+        
         /// <summary>
         /// "{Back}" in "PicturePath" Zeile eingeben
         /// </summary>
@@ -1502,6 +1721,101 @@ namespace EditorUITest
         /// "Control + v" in "Query" Zeile eingeben
         /// </summary>
         public string UIQueryRowSendKeys = "v";
+        #endregion
+    }
+    
+    /// <summary>
+    /// An "UseFileDialogAssertion" zu übergebende Parameter
+    /// </summary>
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UseFileDialogAssertionExpectedValues
+    {
+        
+        #region Fields
+        /// <summary>
+        /// Sicherstellen, dass die Eigenschaft 'Value' von "PicturePath" Zeile ist gleich 'C:\2.jpg'
+        /// </summary>
+        public string UIPicturePathRowValue = "C:\\2.jpg";
+        #endregion
+    }
+    
+    /// <summary>
+    /// An "UseFileDialogRecord" zu übergebende Parameter
+    /// </summary>
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UseFileDialogRecordParams
+    {
+        
+        #region Fields
+        /// <summary>
+        /// "C:\1.jpg" in "Dateiname:" Kombinationsfeld auswählen
+        /// </summary>
+        public string UIDateinameComboBoxEditableItem = "C:\\1.jpg";
+        #endregion
+    }
+    
+    /// <summary>
+    /// An "UseSliderAssertion" zu übergebende Parameter
+    /// </summary>
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UseSliderAssertionExpectedValues
+    {
+        
+        #region Fields
+        /// <summary>
+        /// Sicherstellen, dass die Eigenschaft 'Value' von "SimilarityThreshold" Zeile ist gleich '0,5'
+        /// </summary>
+        public string UISimilarityThresholdRowValue = "0,5";
+        #endregion
+    }
+    
+    /// <summary>
+    /// An "EmptyPicturePathAssertion" zu übergebende Parameter
+    /// </summary>
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class EmptyPicturePathAssertionExpectedValues
+    {
+        
+        #region Fields
+        /// <summary>
+        /// Sicherstellen, dass die Eigenschaft 'Value' von "PicturePath" Zeile ist gleich 'C:\1.jpg'
+        /// </summary>
+        public string UIPicturePathRowValue = "C:\\1.jpg";
+        #endregion
+    }
+    
+    /// <summary>
+    /// An "UseFileDialogAugmentationRecord" zu übergebende Parameter
+    /// </summary>
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UseFileDialogAugmentationRecordParams
+    {
+        
+        #region Fields
+        /// <summary>
+        /// "Augmentations" in "cmb_editor_selection_toolSelection" Kombinationsfeld auswählen
+        /// </summary>
+        public string UICmb_editor_selectionComboBoxSelectedItem = "Augmentations";
+        
+        /// <summary>
+        /// "C:\1.jpg" in "Dateiname:" Kombinationsfeld auswählen
+        /// </summary>
+        public string UIDateinameComboBoxEditableItem = "C:\\1.jpg";
+        #endregion
+    }
+    
+    /// <summary>
+    /// An "UseFileDialogAugmentationAssertion" zu übergebende Parameter
+    /// </summary>
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UseFileDialogAugmentationAssertionExpectedValues
+    {
+        
+        #region Fields
+        /// <summary>
+        /// Sicherstellen, dass die Eigenschaft 'Value' von "ResFilePath" Zeile ist gleich 'C:\2.jpg'
+        /// </summary>
+        public string UIResFilePathRowValue = "C:\\2.jpg";
         #endregion
     }
     
@@ -2213,6 +2527,23 @@ namespace EditorUITest
                 return this.mUIQueryRow;
             }
         }
+        
+        public WinRow UISimilarityThresholdRow
+        {
+            get
+            {
+                if ((this.mUISimilarityThresholdRow == null))
+                {
+                    this.mUISimilarityThresholdRow = new WinRow(this);
+                    #region Suchkriterien
+                    this.mUISimilarityThresholdRow.SearchProperties[WinRow.PropertyNames.Name] = "SimilarityThreshold";
+                    this.mUISimilarityThresholdRow.SearchConfigurations.Add(SearchConfiguration.AlwaysSearch);
+                    this.mUISimilarityThresholdRow.WindowTitles.Add("ARdevKit");
+                    #endregion
+                }
+                return this.mUISimilarityThresholdRow;
+            }
+        }
         #endregion
         
         #region Fields
@@ -2237,6 +2568,8 @@ namespace EditorUITest
         private WinRow mUIDataRow;
         
         private WinRow mUIQueryRow;
+        
+        private WinRow mUISimilarityThresholdRow;
         #endregion
     }
     
@@ -2777,10 +3110,52 @@ namespace EditorUITest
                 return this.mUIItemWindow;
             }
         }
+        
+        public UIStrukturansichtWindow UIStrukturansichtWindow
+        {
+            get
+            {
+                if ((this.mUIStrukturansichtWindow == null))
+                {
+                    this.mUIStrukturansichtWindow = new UIStrukturansichtWindow(this);
+                }
+                return this.mUIStrukturansichtWindow;
+            }
+        }
+        
+        public UIItemWindow11 UIItemWindow1
+        {
+            get
+            {
+                if ((this.mUIItemWindow1 == null))
+                {
+                    this.mUIItemWindow1 = new UIItemWindow11(this);
+                }
+                return this.mUIItemWindow1;
+            }
+        }
+        
+        public UIItemWindow111 UIItemWindow11
+        {
+            get
+            {
+                if ((this.mUIItemWindow11 == null))
+                {
+                    this.mUIItemWindow11 = new UIItemWindow111(this);
+                }
+                return this.mUIItemWindow11;
+            }
+        }
         #endregion
         
         #region Fields
         private UIItemWindow2 mUIItemWindow;
+        
+        private UIStrukturansichtWindow mUIStrukturansichtWindow;
+        
+        private UIItemWindow11 mUIItemWindow1;
+        
+        private UIItemWindow111 mUIItemWindow11;
         #endregion
     }
     
@@ -2854,10 +3229,223 @@ namespace EditorUITest
     }
     
     [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIStrukturansichtWindow : WinWindow
+    {
+        
+        public UIStrukturansichtWindow(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "100";
+            this.WindowTitles.Add("Wählen sie eine Options Datei");
+            #endregion
+        }
+        
+        #region Properties
+        public UIStrukturansichtTree UIStrukturansichtTree
+        {
+            get
+            {
+                if ((this.mUIStrukturansichtTree == null))
+                {
+                    this.mUIStrukturansichtTree = new UIStrukturansichtTree(this);
+                }
+                return this.mUIStrukturansichtTree;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIStrukturansichtTree mUIStrukturansichtTree;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIStrukturansichtTree : WinTree
+    {
+        
+        public UIStrukturansichtTree(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinTree.PropertyNames.Name] = "Namespacestruktursteuerelement";
+            this.WindowTitles.Add("Wählen sie eine Options Datei");
+            #endregion
+        }
+        
+        #region Properties
+        public UIDesktopTreeItem UIDesktopTreeItem
+        {
+            get
+            {
+                if ((this.mUIDesktopTreeItem == null))
+                {
+                    this.mUIDesktopTreeItem = new UIDesktopTreeItem(this);
+                }
+                return this.mUIDesktopTreeItem;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIDesktopTreeItem mUIDesktopTreeItem;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIDesktopTreeItem : WinTreeItem
+    {
+        
+        public UIDesktopTreeItem(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinTreeItem.PropertyNames.Name] = "Desktop";
+            this.SearchProperties["Value"] = "0";
+            this.WindowTitles.Add("Wählen sie eine Options Datei");
+            #endregion
+        }
+        
+        #region Properties
+        public UIDieserPCTreeItem UIDieserPCTreeItem
+        {
+            get
+            {
+                if ((this.mUIDieserPCTreeItem == null))
+                {
+                    this.mUIDieserPCTreeItem = new UIDieserPCTreeItem(this);
+                }
+                return this.mUIDieserPCTreeItem;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIDieserPCTreeItem mUIDieserPCTreeItem;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIDieserPCTreeItem : WinTreeItem
+    {
+        
+        public UIDieserPCTreeItem(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinTreeItem.PropertyNames.Name] = "Dieser PC";
+            this.SearchProperties["Value"] = "1";
+            this.SearchConfigurations.Add(SearchConfiguration.ExpandWhileSearching);
+            this.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+            this.WindowTitles.Add("Wählen sie eine Options Datei");
+            #endregion
+        }
+        
+        #region Properties
+        public WinTreeItem UILokalerDatenträgerCTreeItem
+        {
+            get
+            {
+                if ((this.mUILokalerDatenträgerCTreeItem == null))
+                {
+                    this.mUILokalerDatenträgerCTreeItem = new WinTreeItem(this);
+                    #region Suchkriterien
+                    this.mUILokalerDatenträgerCTreeItem.SearchProperties[WinTreeItem.PropertyNames.Name] = "Lokaler Datenträger (C:)";
+                    this.mUILokalerDatenträgerCTreeItem.SearchProperties["Value"] = "2";
+                    this.mUILokalerDatenträgerCTreeItem.SearchConfigurations.Add(SearchConfiguration.ExpandWhileSearching);
+                    this.mUILokalerDatenträgerCTreeItem.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUILokalerDatenträgerCTreeItem.WindowTitles.Add("Wählen sie eine Options Datei");
+                    #endregion
+                }
+                return this.mUILokalerDatenträgerCTreeItem;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinTreeItem mUILokalerDatenträgerCTreeItem;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
     public class UIItemWindow11 : WinWindow
     {
         
-        public UIItemWindow11()
+        public UIItemWindow11(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "1148";
+            this.SearchProperties[WinWindow.PropertyNames.Instance] = "2";
+            this.WindowTitles.Add("Wählen sie eine Options Datei");
+            #endregion
+        }
+        
+        #region Properties
+        public WinComboBox UIDateinameComboBox
+        {
+            get
+            {
+                if ((this.mUIDateinameComboBox == null))
+                {
+                    this.mUIDateinameComboBox = new WinComboBox(this);
+                    #region Suchkriterien
+                    this.mUIDateinameComboBox.SearchProperties[WinComboBox.PropertyNames.Name] = "Dateiname:";
+                    this.mUIDateinameComboBox.WindowTitles.Add("Wählen sie eine Options Datei");
+                    #endregion
+                }
+                return this.mUIDateinameComboBox;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinComboBox mUIDateinameComboBox;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIItemWindow111 : WinWindow
+    {
+        
+        public UIItemWindow111(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "1148";
+            this.SearchProperties[WinWindow.PropertyNames.Instance] = "3";
+            this.WindowTitles.Add("Wählen sie eine Options Datei");
+            #endregion
+        }
+        
+        #region Properties
+        public WinEdit UIDateinameEdit
+        {
+            get
+            {
+                if ((this.mUIDateinameEdit == null))
+                {
+                    this.mUIDateinameEdit = new WinEdit(this);
+                    #region Suchkriterien
+                    this.mUIDateinameEdit.SearchProperties[WinEdit.PropertyNames.Name] = "Dateiname:";
+                    this.mUIDateinameEdit.WindowTitles.Add("Wählen sie eine Options Datei");
+                    #endregion
+                }
+                return this.mUIDateinameEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinEdit mUIDateinameEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIItemWindow12 : WinWindow
+    {
+        
+        public UIItemWindow12()
         {
             #region Suchkriterien
             this.SearchProperties[WinWindow.PropertyNames.AccessibleName] = "C:\\Users\\soowe_000\\Documents\\Studium\\PSE\\bin\\Debug\\tmp\\chart1\\highcharts.js";
@@ -2913,13 +3501,13 @@ namespace EditorUITest
             }
         }
         
-        public UIItemWindow12 UIItemWindow1
+        public UIItemWindow13 UIItemWindow1
         {
             get
             {
                 if ((this.mUIItemWindow1 == null))
                 {
-                    this.mUIItemWindow1 = new UIItemWindow12(this);
+                    this.mUIItemWindow1 = new UIItemWindow13(this);
                 }
                 return this.mUIItemWindow1;
             }
@@ -2937,13 +3525,13 @@ namespace EditorUITest
             }
         }
         
-        public UIStrukturansichtWindow UIStrukturansichtWindow
+        public UIStrukturansichtWindow1 UIStrukturansichtWindow
         {
             get
             {
                 if ((this.mUIStrukturansichtWindow == null))
                 {
-                    this.mUIStrukturansichtWindow = new UIStrukturansichtWindow(this);
+                    this.mUIStrukturansichtWindow = new UIStrukturansichtWindow1(this);
                 }
                 return this.mUIStrukturansichtWindow;
             }
@@ -2973,15 +3561,63 @@ namespace EditorUITest
             }
         }
         
-        public UIItemWindow111 UIItemWindow11
+        public UIItemWindow112 UIItemWindow11
         {
             get
             {
                 if ((this.mUIItemWindow11 == null))
                 {
-                    this.mUIItemWindow11 = new UIItemWindow111(this);
+                    this.mUIItemWindow11 = new UIItemWindow112(this);
                 }
                 return this.mUIItemWindow11;
+            }
+        }
+        
+        public UIAdresseBilderWindow UIAdresseBilderWindow
+        {
+            get
+            {
+                if ((this.mUIAdresseBilderWindow == null))
+                {
+                    this.mUIAdresseBilderWindow = new UIAdresseBilderWindow(this);
+                }
+                return this.mUIAdresseBilderWindow;
+            }
+        }
+        
+        public UIItemWindow31 UIItemWindow3
+        {
+            get
+            {
+                if ((this.mUIItemWindow3 == null))
+                {
+                    this.mUIItemWindow3 = new UIItemWindow31(this);
+                }
+                return this.mUIItemWindow3;
+            }
+        }
+        
+        public UIItemWindow121 UIItemWindow12
+        {
+            get
+            {
+                if ((this.mUIItemWindow12 == null))
+                {
+                    this.mUIItemWindow12 = new UIItemWindow121(this);
+                }
+                return this.mUIItemWindow12;
+            }
+        }
+        
+        public UIItemWindow131 UIItemWindow13
+        {
+            get
+            {
+                if ((this.mUIItemWindow13 == null))
+                {
+                    this.mUIItemWindow13 = new UIItemWindow131(this);
+                }
+                return this.mUIItemWindow13;
             }
         }
         #endregion
@@ -2989,17 +3625,25 @@ namespace EditorUITest
         #region Fields
         private UIItemWindow3 mUIItemWindow;
         
-        private UIItemWindow12 mUIItemWindow1;
+        private UIItemWindow13 mUIItemWindow1;
         
         private UIShellViewClient mUIShellViewClient;
         
-        private UIStrukturansichtWindow mUIStrukturansichtWindow;
+        private UIStrukturansichtWindow1 mUIStrukturansichtWindow;
         
         private UIItemWindow21 mUIItemWindow2;
         
         private UIÖffnenWindow mUIÖffnenWindow;
         
-        private UIItemWindow111 mUIItemWindow11;
+        private UIItemWindow112 mUIItemWindow11;
+        
+        private UIAdresseBilderWindow mUIAdresseBilderWindow;
+        
+        private UIItemWindow31 mUIItemWindow3;
+        
+        private UIItemWindow121 mUIItemWindow12;
+        
+        private UIItemWindow131 mUIItemWindow13;
         #endregion
     }
     
@@ -3173,10 +3817,10 @@ namespace EditorUITest
     }
     
     [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
-    public class UIItemWindow12 : WinWindow
+    public class UIItemWindow13 : WinWindow
     {
         
-        public UIItemWindow12(UITestControl searchLimitContainer) : 
+        public UIItemWindow13(UITestControl searchLimitContainer) : 
                 base(searchLimitContainer)
         {
             #region Suchkriterien
@@ -3328,10 +3972,10 @@ namespace EditorUITest
     }
     
     [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
-    public class UIStrukturansichtWindow : WinWindow
+    public class UIStrukturansichtWindow1 : WinWindow
     {
         
-        public UIStrukturansichtWindow(UITestControl searchLimitContainer) : 
+        public UIStrukturansichtWindow1(UITestControl searchLimitContainer) : 
                 base(searchLimitContainer)
         {
             #region Suchkriterien
@@ -3341,13 +3985,13 @@ namespace EditorUITest
         }
         
         #region Properties
-        public UIStrukturansichtTree UIStrukturansichtTree
+        public UIStrukturansichtTree1 UIStrukturansichtTree
         {
             get
             {
                 if ((this.mUIStrukturansichtTree == null))
                 {
-                    this.mUIStrukturansichtTree = new UIStrukturansichtTree(this);
+                    this.mUIStrukturansichtTree = new UIStrukturansichtTree1(this);
                 }
                 return this.mUIStrukturansichtTree;
             }
@@ -3355,15 +3999,15 @@ namespace EditorUITest
         #endregion
         
         #region Fields
-        private UIStrukturansichtTree mUIStrukturansichtTree;
+        private UIStrukturansichtTree1 mUIStrukturansichtTree;
         #endregion
     }
     
     [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
-    public class UIStrukturansichtTree : WinTree
+    public class UIStrukturansichtTree1 : WinTree
     {
         
-        public UIStrukturansichtTree(UITestControl searchLimitContainer) : 
+        public UIStrukturansichtTree1(UITestControl searchLimitContainer) : 
                 base(searchLimitContainer)
         {
             #region Suchkriterien
@@ -3373,13 +4017,13 @@ namespace EditorUITest
         }
         
         #region Properties
-        public UIDesktopTreeItem UIDesktopTreeItem
+        public UIDesktopTreeItem1 UIDesktopTreeItem
         {
             get
             {
                 if ((this.mUIDesktopTreeItem == null))
                 {
-                    this.mUIDesktopTreeItem = new UIDesktopTreeItem(this);
+                    this.mUIDesktopTreeItem = new UIDesktopTreeItem1(this);
                 }
                 return this.mUIDesktopTreeItem;
             }
@@ -3387,15 +4031,15 @@ namespace EditorUITest
         #endregion
         
         #region Fields
-        private UIDesktopTreeItem mUIDesktopTreeItem;
+        private UIDesktopTreeItem1 mUIDesktopTreeItem;
         #endregion
     }
     
     [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
-    public class UIDesktopTreeItem : WinTreeItem
+    public class UIDesktopTreeItem1 : WinTreeItem
     {
         
-        public UIDesktopTreeItem(UITestControl searchLimitContainer) : 
+        public UIDesktopTreeItem1(UITestControl searchLimitContainer) : 
                 base(searchLimitContainer)
         {
             #region Suchkriterien
@@ -3406,13 +4050,13 @@ namespace EditorUITest
         }
         
         #region Properties
-        public UIDieserPCTreeItem UIDieserPCTreeItem
+        public UIDieserPCTreeItem1 UIDieserPCTreeItem
         {
             get
             {
                 if ((this.mUIDieserPCTreeItem == null))
                 {
-                    this.mUIDieserPCTreeItem = new UIDieserPCTreeItem(this);
+                    this.mUIDieserPCTreeItem = new UIDieserPCTreeItem1(this);
                 }
                 return this.mUIDieserPCTreeItem;
             }
@@ -3420,15 +4064,15 @@ namespace EditorUITest
         #endregion
         
         #region Fields
-        private UIDieserPCTreeItem mUIDieserPCTreeItem;
+        private UIDieserPCTreeItem1 mUIDieserPCTreeItem;
         #endregion
     }
     
     [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
-    public class UIDieserPCTreeItem : WinTreeItem
+    public class UIDieserPCTreeItem1 : WinTreeItem
     {
         
-        public UIDieserPCTreeItem(UITestControl searchLimitContainer) : 
+        public UIDieserPCTreeItem1(UITestControl searchLimitContainer) : 
                 base(searchLimitContainer)
         {
             #region Suchkriterien
@@ -3540,10 +4184,10 @@ namespace EditorUITest
     }
     
     [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
-    public class UIItemWindow111 : WinWindow
+    public class UIItemWindow112 : WinWindow
     {
         
-        public UIItemWindow111(UITestControl searchLimitContainer) : 
+        public UIItemWindow112(UITestControl searchLimitContainer) : 
                 base(searchLimitContainer)
         {
             #region Suchkriterien
@@ -3573,6 +4217,153 @@ namespace EditorUITest
         
         #region Fields
         private WinEdit mUIDateinameEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIAdresseBilderWindow : WinWindow
+    {
+        
+        public UIAdresseBilderWindow(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "1001";
+            this.WindowTitles.Add("Wählen sie einen Marker");
+            #endregion
+        }
+        
+        #region Properties
+        public WinToolBar UIAdresseBilderToolBar
+        {
+            get
+            {
+                if ((this.mUIAdresseBilderToolBar == null))
+                {
+                    this.mUIAdresseBilderToolBar = new WinToolBar(this);
+                    #region Suchkriterien
+                    this.mUIAdresseBilderToolBar.SearchProperties[WinToolBar.PropertyNames.Name] = "Adresse: Bilder";
+                    this.mUIAdresseBilderToolBar.WindowTitles.Add("Wählen sie einen Marker");
+                    #endregion
+                }
+                return this.mUIAdresseBilderToolBar;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinToolBar mUIAdresseBilderToolBar;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIItemWindow31 : WinWindow
+    {
+        
+        public UIItemWindow31(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "41477";
+            this.SearchProperties[WinWindow.PropertyNames.Instance] = "3";
+            this.WindowTitles.Add("Wählen sie einen Marker");
+            #endregion
+        }
+        
+        #region Properties
+        public WinComboBox UIAdresseComboBox
+        {
+            get
+            {
+                if ((this.mUIAdresseComboBox == null))
+                {
+                    this.mUIAdresseComboBox = new WinComboBox(this);
+                    #region Suchkriterien
+                    this.mUIAdresseComboBox.SearchProperties[WinComboBox.PropertyNames.Name] = "Adresse";
+                    this.mUIAdresseComboBox.WindowTitles.Add("Wählen sie einen Marker");
+                    #endregion
+                }
+                return this.mUIAdresseComboBox;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinComboBox mUIAdresseComboBox;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIItemWindow121 : WinWindow
+    {
+        
+        public UIItemWindow121(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "41477";
+            this.SearchProperties[WinWindow.PropertyNames.Instance] = "4";
+            this.WindowTitles.Add("Wählen sie einen Marker");
+            #endregion
+        }
+        
+        #region Properties
+        public WinEdit UIAdresseEdit
+        {
+            get
+            {
+                if ((this.mUIAdresseEdit == null))
+                {
+                    this.mUIAdresseEdit = new WinEdit(this);
+                    #region Suchkriterien
+                    this.mUIAdresseEdit.SearchProperties[WinEdit.PropertyNames.Name] = "Adresse";
+                    this.mUIAdresseEdit.WindowTitles.Add("Wählen sie einen Marker");
+                    #endregion
+                }
+                return this.mUIAdresseEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinEdit mUIAdresseEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIItemWindow131 : WinWindow
+    {
+        
+        public UIItemWindow131(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "41477";
+            this.SearchProperties[WinWindow.PropertyNames.Instance] = "4";
+            this.WindowTitles.Add("Wählen sie einen Marker");
+            #endregion
+        }
+        
+        #region Properties
+        public WinEdit UIAdresseEdit
+        {
+            get
+            {
+                if ((this.mUIAdresseEdit == null))
+                {
+                    this.mUIAdresseEdit = new WinEdit(this);
+                    #region Suchkriterien
+                    this.mUIAdresseEdit.SearchProperties[WinEdit.PropertyNames.Name] = "Adresse";
+                    this.mUIAdresseEdit.WindowTitles.Add("Wählen sie einen Marker");
+                    #endregion
+                }
+                return this.mUIAdresseEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinEdit mUIAdresseEdit;
         #endregion
     }
     
@@ -3691,13 +4482,13 @@ namespace EditorUITest
         }
         
         #region Properties
-        public UIStrukturansichtWindow1 UIStrukturansichtWindow
+        public UIStrukturansichtWindow2 UIStrukturansichtWindow
         {
             get
             {
                 if ((this.mUIStrukturansichtWindow == null))
                 {
-                    this.mUIStrukturansichtWindow = new UIStrukturansichtWindow1(this);
+                    this.mUIStrukturansichtWindow = new UIStrukturansichtWindow2(this);
                 }
                 return this.mUIStrukturansichtWindow;
             }
@@ -3727,13 +4518,13 @@ namespace EditorUITest
             }
         }
         
-        public UIItemWindow13 UIItemWindow1
+        public UIItemWindow14 UIItemWindow1
         {
             get
             {
                 if ((this.mUIItemWindow1 == null))
                 {
-                    this.mUIItemWindow1 = new UIItemWindow13(this);
+                    this.mUIItemWindow1 = new UIItemWindow14(this);
                 }
                 return this.mUIItemWindow1;
             }
@@ -3741,21 +4532,21 @@ namespace EditorUITest
         #endregion
         
         #region Fields
-        private UIStrukturansichtWindow1 mUIStrukturansichtWindow;
+        private UIStrukturansichtWindow2 mUIStrukturansichtWindow;
         
         private UIItemWindow5 mUIItemWindow;
         
         private UIÖffnenWindow2 mUIÖffnenWindow;
         
-        private UIItemWindow13 mUIItemWindow1;
+        private UIItemWindow14 mUIItemWindow1;
         #endregion
     }
     
     [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
-    public class UIStrukturansichtWindow1 : WinWindow
+    public class UIStrukturansichtWindow2 : WinWindow
     {
         
-        public UIStrukturansichtWindow1(UITestControl searchLimitContainer) : 
+        public UIStrukturansichtWindow2(UITestControl searchLimitContainer) : 
                 base(searchLimitContainer)
         {
             #region Suchkriterien
@@ -3765,13 +4556,13 @@ namespace EditorUITest
         }
         
         #region Properties
-        public UIStrukturansichtTree1 UIStrukturansichtTree
+        public UIStrukturansichtTree2 UIStrukturansichtTree
         {
             get
             {
                 if ((this.mUIStrukturansichtTree == null))
                 {
-                    this.mUIStrukturansichtTree = new UIStrukturansichtTree1(this);
+                    this.mUIStrukturansichtTree = new UIStrukturansichtTree2(this);
                 }
                 return this.mUIStrukturansichtTree;
             }
@@ -3779,15 +4570,15 @@ namespace EditorUITest
         #endregion
         
         #region Fields
-        private UIStrukturansichtTree1 mUIStrukturansichtTree;
+        private UIStrukturansichtTree2 mUIStrukturansichtTree;
         #endregion
     }
     
     [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
-    public class UIStrukturansichtTree1 : WinTree
+    public class UIStrukturansichtTree2 : WinTree
     {
         
-        public UIStrukturansichtTree1(UITestControl searchLimitContainer) : 
+        public UIStrukturansichtTree2(UITestControl searchLimitContainer) : 
                 base(searchLimitContainer)
         {
             #region Suchkriterien
@@ -3797,13 +4588,13 @@ namespace EditorUITest
         }
         
         #region Properties
-        public UIDesktopTreeItem1 UIDesktopTreeItem
+        public UIDesktopTreeItem2 UIDesktopTreeItem
         {
             get
             {
                 if ((this.mUIDesktopTreeItem == null))
                 {
-                    this.mUIDesktopTreeItem = new UIDesktopTreeItem1(this);
+                    this.mUIDesktopTreeItem = new UIDesktopTreeItem2(this);
                 }
                 return this.mUIDesktopTreeItem;
             }
@@ -3811,15 +4602,15 @@ namespace EditorUITest
         #endregion
         
         #region Fields
-        private UIDesktopTreeItem1 mUIDesktopTreeItem;
+        private UIDesktopTreeItem2 mUIDesktopTreeItem;
         #endregion
     }
     
     [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
-    public class UIDesktopTreeItem1 : WinTreeItem
+    public class UIDesktopTreeItem2 : WinTreeItem
     {
         
-        public UIDesktopTreeItem1(UITestControl searchLimitContainer) : 
+        public UIDesktopTreeItem2(UITestControl searchLimitContainer) : 
                 base(searchLimitContainer)
         {
             #region Suchkriterien
@@ -3830,13 +4621,13 @@ namespace EditorUITest
         }
         
         #region Properties
-        public UIDieserPCTreeItem1 UIDieserPCTreeItem
+        public UIDieserPCTreeItem2 UIDieserPCTreeItem
         {
             get
             {
                 if ((this.mUIDieserPCTreeItem == null))
                 {
-                    this.mUIDieserPCTreeItem = new UIDieserPCTreeItem1(this);
+                    this.mUIDieserPCTreeItem = new UIDieserPCTreeItem2(this);
                 }
                 return this.mUIDieserPCTreeItem;
             }
@@ -3844,15 +4635,15 @@ namespace EditorUITest
         #endregion
         
         #region Fields
-        private UIDieserPCTreeItem1 mUIDieserPCTreeItem;
+        private UIDieserPCTreeItem2 mUIDieserPCTreeItem;
         #endregion
     }
     
     [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
-    public class UIDieserPCTreeItem1 : WinTreeItem
+    public class UIDieserPCTreeItem2 : WinTreeItem
     {
         
-        public UIDieserPCTreeItem1(UITestControl searchLimitContainer) : 
+        public UIDieserPCTreeItem2(UITestControl searchLimitContainer) : 
                 base(searchLimitContainer)
         {
             #region Suchkriterien
@@ -3964,10 +4755,10 @@ namespace EditorUITest
     }
     
     [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
-    public class UIItemWindow13 : WinWindow
+    public class UIItemWindow14 : WinWindow
     {
         
-        public UIItemWindow13(UITestControl searchLimitContainer) : 
+        public UIItemWindow14(UITestControl searchLimitContainer) : 
                 base(searchLimitContainer)
         {
             #region Suchkriterien
@@ -4014,13 +4805,13 @@ namespace EditorUITest
         }
         
         #region Properties
-        public UIStrukturansichtWindow2 UIStrukturansichtWindow
+        public UIStrukturansichtWindow3 UIStrukturansichtWindow
         {
             get
             {
                 if ((this.mUIStrukturansichtWindow == null))
                 {
-                    this.mUIStrukturansichtWindow = new UIStrukturansichtWindow2(this);
+                    this.mUIStrukturansichtWindow = new UIStrukturansichtWindow3(this);
                 }
                 return this.mUIStrukturansichtWindow;
             }
@@ -4038,33 +4829,47 @@ namespace EditorUITest
             }
         }
         
-        public UIItemWindow14 UIItemWindow1
+        public UIItemWindow15 UIItemWindow1
         {
             get
             {
                 if ((this.mUIItemWindow1 == null))
                 {
-                    this.mUIItemWindow1 = new UIItemWindow14(this);
+                    this.mUIItemWindow1 = new UIItemWindow15(this);
                 }
                 return this.mUIItemWindow1;
+            }
+        }
+        
+        public UIÖffnenWindow3 UIÖffnenWindow
+        {
+            get
+            {
+                if ((this.mUIÖffnenWindow == null))
+                {
+                    this.mUIÖffnenWindow = new UIÖffnenWindow3(this);
+                }
+                return this.mUIÖffnenWindow;
             }
         }
         #endregion
         
         #region Fields
-        private UIStrukturansichtWindow2 mUIStrukturansichtWindow;
+        private UIStrukturansichtWindow3 mUIStrukturansichtWindow;
         
         private UIItemWindow6 mUIItemWindow;
         
-        private UIItemWindow14 mUIItemWindow1;
+        private UIItemWindow15 mUIItemWindow1;
+        
+        private UIÖffnenWindow3 mUIÖffnenWindow;
         #endregion
     }
     
     [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
-    public class UIStrukturansichtWindow2 : WinWindow
+    public class UIStrukturansichtWindow3 : WinWindow
     {
         
-        public UIStrukturansichtWindow2(UITestControl searchLimitContainer) : 
+        public UIStrukturansichtWindow3(UITestControl searchLimitContainer) : 
                 base(searchLimitContainer)
         {
             #region Suchkriterien
@@ -4074,13 +4879,13 @@ namespace EditorUITest
         }
         
         #region Properties
-        public UIStrukturansichtTree2 UIStrukturansichtTree
+        public UIStrukturansichtTree3 UIStrukturansichtTree
         {
             get
             {
                 if ((this.mUIStrukturansichtTree == null))
                 {
-                    this.mUIStrukturansichtTree = new UIStrukturansichtTree2(this);
+                    this.mUIStrukturansichtTree = new UIStrukturansichtTree3(this);
                 }
                 return this.mUIStrukturansichtTree;
             }
@@ -4088,15 +4893,15 @@ namespace EditorUITest
         #endregion
         
         #region Fields
-        private UIStrukturansichtTree2 mUIStrukturansichtTree;
+        private UIStrukturansichtTree3 mUIStrukturansichtTree;
         #endregion
     }
     
     [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
-    public class UIStrukturansichtTree2 : WinTree
+    public class UIStrukturansichtTree3 : WinTree
     {
         
-        public UIStrukturansichtTree2(UITestControl searchLimitContainer) : 
+        public UIStrukturansichtTree3(UITestControl searchLimitContainer) : 
                 base(searchLimitContainer)
         {
             #region Suchkriterien
@@ -4106,13 +4911,13 @@ namespace EditorUITest
         }
         
         #region Properties
-        public UIDesktopTreeItem2 UIDesktopTreeItem
+        public UIDesktopTreeItem3 UIDesktopTreeItem
         {
             get
             {
                 if ((this.mUIDesktopTreeItem == null))
                 {
-                    this.mUIDesktopTreeItem = new UIDesktopTreeItem2(this);
+                    this.mUIDesktopTreeItem = new UIDesktopTreeItem3(this);
                 }
                 return this.mUIDesktopTreeItem;
             }
@@ -4120,15 +4925,15 @@ namespace EditorUITest
         #endregion
         
         #region Fields
-        private UIDesktopTreeItem2 mUIDesktopTreeItem;
+        private UIDesktopTreeItem3 mUIDesktopTreeItem;
         #endregion
     }
     
     [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
-    public class UIDesktopTreeItem2 : WinTreeItem
+    public class UIDesktopTreeItem3 : WinTreeItem
     {
         
-        public UIDesktopTreeItem2(UITestControl searchLimitContainer) : 
+        public UIDesktopTreeItem3(UITestControl searchLimitContainer) : 
                 base(searchLimitContainer)
         {
             #region Suchkriterien
@@ -4139,13 +4944,13 @@ namespace EditorUITest
         }
         
         #region Properties
-        public UIDieserPCTreeItem2 UIDieserPCTreeItem
+        public UIDieserPCTreeItem3 UIDieserPCTreeItem
         {
             get
             {
                 if ((this.mUIDieserPCTreeItem == null))
                 {
-                    this.mUIDieserPCTreeItem = new UIDieserPCTreeItem2(this);
+                    this.mUIDieserPCTreeItem = new UIDieserPCTreeItem3(this);
                 }
                 return this.mUIDieserPCTreeItem;
             }
@@ -4153,15 +4958,15 @@ namespace EditorUITest
         #endregion
         
         #region Fields
-        private UIDieserPCTreeItem2 mUIDieserPCTreeItem;
+        private UIDieserPCTreeItem3 mUIDieserPCTreeItem;
         #endregion
     }
     
     [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
-    public class UIDieserPCTreeItem2 : WinTreeItem
+    public class UIDieserPCTreeItem3 : WinTreeItem
     {
         
-        public UIDieserPCTreeItem2(UITestControl searchLimitContainer) : 
+        public UIDieserPCTreeItem3(UITestControl searchLimitContainer) : 
                 base(searchLimitContainer)
         {
             #region Suchkriterien
@@ -4237,10 +5042,10 @@ namespace EditorUITest
     }
     
     [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
-    public class UIItemWindow14 : WinWindow
+    public class UIItemWindow15 : WinWindow
     {
         
-        public UIItemWindow14(UITestControl searchLimitContainer) : 
+        public UIItemWindow15(UITestControl searchLimitContainer) : 
                 base(searchLimitContainer)
         {
             #region Suchkriterien
@@ -4274,6 +5079,42 @@ namespace EditorUITest
     }
     
     [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIÖffnenWindow3 : WinWindow
+    {
+        
+        public UIÖffnenWindow3(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "1";
+            this.WindowTitles.Add("Wählen sie ein Bild");
+            #endregion
+        }
+        
+        #region Properties
+        public WinButton UIÖffnenButton
+        {
+            get
+            {
+                if ((this.mUIÖffnenButton == null))
+                {
+                    this.mUIÖffnenButton = new WinButton(this);
+                    #region Suchkriterien
+                    this.mUIÖffnenButton.SearchProperties[WinButton.PropertyNames.Name] = "Öffnen";
+                    this.mUIÖffnenButton.WindowTitles.Add("Wählen sie ein Bild");
+                    #endregion
+                }
+                return this.mUIÖffnenButton;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinButton mUIÖffnenButton;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
     public class UIWählensieeinVideoWindow : WinWindow
     {
         
@@ -4287,13 +5128,13 @@ namespace EditorUITest
         }
         
         #region Properties
-        public UIStrukturansichtWindow3 UIStrukturansichtWindow
+        public UIStrukturansichtWindow4 UIStrukturansichtWindow
         {
             get
             {
                 if ((this.mUIStrukturansichtWindow == null))
                 {
-                    this.mUIStrukturansichtWindow = new UIStrukturansichtWindow3(this);
+                    this.mUIStrukturansichtWindow = new UIStrukturansichtWindow4(this);
                 }
                 return this.mUIStrukturansichtWindow;
             }
@@ -4311,13 +5152,13 @@ namespace EditorUITest
             }
         }
         
-        public UIÖffnenWindow3 UIÖffnenWindow
+        public UIÖffnenWindow4 UIÖffnenWindow
         {
             get
             {
                 if ((this.mUIÖffnenWindow == null))
                 {
-                    this.mUIÖffnenWindow = new UIÖffnenWindow3(this);
+                    this.mUIÖffnenWindow = new UIÖffnenWindow4(this);
                 }
                 return this.mUIÖffnenWindow;
             }
@@ -4325,19 +5166,19 @@ namespace EditorUITest
         #endregion
         
         #region Fields
-        private UIStrukturansichtWindow3 mUIStrukturansichtWindow;
+        private UIStrukturansichtWindow4 mUIStrukturansichtWindow;
         
         private UIItemWindow7 mUIItemWindow;
         
-        private UIÖffnenWindow3 mUIÖffnenWindow;
+        private UIÖffnenWindow4 mUIÖffnenWindow;
         #endregion
     }
     
     [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
-    public class UIStrukturansichtWindow3 : WinWindow
+    public class UIStrukturansichtWindow4 : WinWindow
     {
         
-        public UIStrukturansichtWindow3(UITestControl searchLimitContainer) : 
+        public UIStrukturansichtWindow4(UITestControl searchLimitContainer) : 
                 base(searchLimitContainer)
         {
             #region Suchkriterien
@@ -4347,13 +5188,13 @@ namespace EditorUITest
         }
         
         #region Properties
-        public UIStrukturansichtTree3 UIStrukturansichtTree
+        public UIStrukturansichtTree4 UIStrukturansichtTree
         {
             get
             {
                 if ((this.mUIStrukturansichtTree == null))
                 {
-                    this.mUIStrukturansichtTree = new UIStrukturansichtTree3(this);
+                    this.mUIStrukturansichtTree = new UIStrukturansichtTree4(this);
                 }
                 return this.mUIStrukturansichtTree;
             }
@@ -4361,15 +5202,15 @@ namespace EditorUITest
         #endregion
         
         #region Fields
-        private UIStrukturansichtTree3 mUIStrukturansichtTree;
+        private UIStrukturansichtTree4 mUIStrukturansichtTree;
         #endregion
     }
     
     [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
-    public class UIStrukturansichtTree3 : WinTree
+    public class UIStrukturansichtTree4 : WinTree
     {
         
-        public UIStrukturansichtTree3(UITestControl searchLimitContainer) : 
+        public UIStrukturansichtTree4(UITestControl searchLimitContainer) : 
                 base(searchLimitContainer)
         {
             #region Suchkriterien
@@ -4379,13 +5220,13 @@ namespace EditorUITest
         }
         
         #region Properties
-        public UIDesktopTreeItem3 UIDesktopTreeItem
+        public UIDesktopTreeItem4 UIDesktopTreeItem
         {
             get
             {
                 if ((this.mUIDesktopTreeItem == null))
                 {
-                    this.mUIDesktopTreeItem = new UIDesktopTreeItem3(this);
+                    this.mUIDesktopTreeItem = new UIDesktopTreeItem4(this);
                 }
                 return this.mUIDesktopTreeItem;
             }
@@ -4393,15 +5234,15 @@ namespace EditorUITest
         #endregion
         
         #region Fields
-        private UIDesktopTreeItem3 mUIDesktopTreeItem;
+        private UIDesktopTreeItem4 mUIDesktopTreeItem;
         #endregion
     }
     
     [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
-    public class UIDesktopTreeItem3 : WinTreeItem
+    public class UIDesktopTreeItem4 : WinTreeItem
     {
         
-        public UIDesktopTreeItem3(UITestControl searchLimitContainer) : 
+        public UIDesktopTreeItem4(UITestControl searchLimitContainer) : 
                 base(searchLimitContainer)
         {
             #region Suchkriterien
@@ -4412,13 +5253,13 @@ namespace EditorUITest
         }
         
         #region Properties
-        public UIDieserPCTreeItem3 UIDieserPCTreeItem
+        public UIDieserPCTreeItem4 UIDieserPCTreeItem
         {
             get
             {
                 if ((this.mUIDieserPCTreeItem == null))
                 {
-                    this.mUIDieserPCTreeItem = new UIDieserPCTreeItem3(this);
+                    this.mUIDieserPCTreeItem = new UIDieserPCTreeItem4(this);
                 }
                 return this.mUIDieserPCTreeItem;
             }
@@ -4426,15 +5267,15 @@ namespace EditorUITest
         #endregion
         
         #region Fields
-        private UIDieserPCTreeItem3 mUIDieserPCTreeItem;
+        private UIDieserPCTreeItem4 mUIDieserPCTreeItem;
         #endregion
     }
     
     [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
-    public class UIDieserPCTreeItem3 : WinTreeItem
+    public class UIDieserPCTreeItem4 : WinTreeItem
     {
         
-        public UIDieserPCTreeItem3(UITestControl searchLimitContainer) : 
+        public UIDieserPCTreeItem4(UITestControl searchLimitContainer) : 
                 base(searchLimitContainer)
         {
             #region Suchkriterien
@@ -4510,10 +5351,10 @@ namespace EditorUITest
     }
     
     [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
-    public class UIÖffnenWindow3 : WinWindow
+    public class UIÖffnenWindow4 : WinWindow
     {
         
-        public UIÖffnenWindow3(UITestControl searchLimitContainer) : 
+        public UIÖffnenWindow4(UITestControl searchLimitContainer) : 
                 base(searchLimitContainer)
         {
             #region Suchkriterien
@@ -4728,13 +5569,13 @@ namespace EditorUITest
         }
         
         #region Properties
-        public UIStrukturansichtWindow4 UIStrukturansichtWindow
+        public UIStrukturansichtWindow5 UIStrukturansichtWindow
         {
             get
             {
                 if ((this.mUIStrukturansichtWindow == null))
                 {
-                    this.mUIStrukturansichtWindow = new UIStrukturansichtWindow4(this);
+                    this.mUIStrukturansichtWindow = new UIStrukturansichtWindow5(this);
                 }
                 return this.mUIStrukturansichtWindow;
             }
@@ -4752,25 +5593,25 @@ namespace EditorUITest
             }
         }
         
-        public UIItemWindow15 UIItemWindow1
+        public UIItemWindow16 UIItemWindow1
         {
             get
             {
                 if ((this.mUIItemWindow1 == null))
                 {
-                    this.mUIItemWindow1 = new UIItemWindow15(this);
+                    this.mUIItemWindow1 = new UIItemWindow16(this);
                 }
                 return this.mUIItemWindow1;
             }
         }
         
-        public UIÖffnenWindow4 UIÖffnenWindow
+        public UIÖffnenWindow5 UIÖffnenWindow
         {
             get
             {
                 if ((this.mUIÖffnenWindow == null))
                 {
-                    this.mUIÖffnenWindow = new UIÖffnenWindow4(this);
+                    this.mUIÖffnenWindow = new UIÖffnenWindow5(this);
                 }
                 return this.mUIÖffnenWindow;
             }
@@ -4778,21 +5619,21 @@ namespace EditorUITest
         #endregion
         
         #region Fields
-        private UIStrukturansichtWindow4 mUIStrukturansichtWindow;
+        private UIStrukturansichtWindow5 mUIStrukturansichtWindow;
         
         private UIItemWindow9 mUIItemWindow;
         
-        private UIItemWindow15 mUIItemWindow1;
+        private UIItemWindow16 mUIItemWindow1;
         
-        private UIÖffnenWindow4 mUIÖffnenWindow;
+        private UIÖffnenWindow5 mUIÖffnenWindow;
         #endregion
     }
     
     [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
-    public class UIStrukturansichtWindow4 : WinWindow
+    public class UIStrukturansichtWindow5 : WinWindow
     {
         
-        public UIStrukturansichtWindow4(UITestControl searchLimitContainer) : 
+        public UIStrukturansichtWindow5(UITestControl searchLimitContainer) : 
                 base(searchLimitContainer)
         {
             #region Suchkriterien
@@ -4802,13 +5643,13 @@ namespace EditorUITest
         }
         
         #region Properties
-        public UIStrukturansichtTree4 UIStrukturansichtTree
+        public UIStrukturansichtTree5 UIStrukturansichtTree
         {
             get
             {
                 if ((this.mUIStrukturansichtTree == null))
                 {
-                    this.mUIStrukturansichtTree = new UIStrukturansichtTree4(this);
+                    this.mUIStrukturansichtTree = new UIStrukturansichtTree5(this);
                 }
                 return this.mUIStrukturansichtTree;
             }
@@ -4816,15 +5657,15 @@ namespace EditorUITest
         #endregion
         
         #region Fields
-        private UIStrukturansichtTree4 mUIStrukturansichtTree;
+        private UIStrukturansichtTree5 mUIStrukturansichtTree;
         #endregion
     }
     
     [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
-    public class UIStrukturansichtTree4 : WinTree
+    public class UIStrukturansichtTree5 : WinTree
     {
         
-        public UIStrukturansichtTree4(UITestControl searchLimitContainer) : 
+        public UIStrukturansichtTree5(UITestControl searchLimitContainer) : 
                 base(searchLimitContainer)
         {
             #region Suchkriterien
@@ -4834,13 +5675,13 @@ namespace EditorUITest
         }
         
         #region Properties
-        public UIDesktopTreeItem4 UIDesktopTreeItem
+        public UIDesktopTreeItem5 UIDesktopTreeItem
         {
             get
             {
                 if ((this.mUIDesktopTreeItem == null))
                 {
-                    this.mUIDesktopTreeItem = new UIDesktopTreeItem4(this);
+                    this.mUIDesktopTreeItem = new UIDesktopTreeItem5(this);
                 }
                 return this.mUIDesktopTreeItem;
             }
@@ -4848,15 +5689,15 @@ namespace EditorUITest
         #endregion
         
         #region Fields
-        private UIDesktopTreeItem4 mUIDesktopTreeItem;
+        private UIDesktopTreeItem5 mUIDesktopTreeItem;
         #endregion
     }
     
     [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
-    public class UIDesktopTreeItem4 : WinTreeItem
+    public class UIDesktopTreeItem5 : WinTreeItem
     {
         
-        public UIDesktopTreeItem4(UITestControl searchLimitContainer) : 
+        public UIDesktopTreeItem5(UITestControl searchLimitContainer) : 
                 base(searchLimitContainer)
         {
             #region Suchkriterien
@@ -4867,13 +5708,13 @@ namespace EditorUITest
         }
         
         #region Properties
-        public UIDieserPCTreeItem4 UIDieserPCTreeItem
+        public UIDieserPCTreeItem5 UIDieserPCTreeItem
         {
             get
             {
                 if ((this.mUIDieserPCTreeItem == null))
                 {
-                    this.mUIDieserPCTreeItem = new UIDieserPCTreeItem4(this);
+                    this.mUIDieserPCTreeItem = new UIDieserPCTreeItem5(this);
                 }
                 return this.mUIDieserPCTreeItem;
             }
@@ -4881,15 +5722,15 @@ namespace EditorUITest
         #endregion
         
         #region Fields
-        private UIDieserPCTreeItem4 mUIDieserPCTreeItem;
+        private UIDieserPCTreeItem5 mUIDieserPCTreeItem;
         #endregion
     }
     
     [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
-    public class UIDieserPCTreeItem4 : WinTreeItem
+    public class UIDieserPCTreeItem5 : WinTreeItem
     {
         
-        public UIDieserPCTreeItem4(UITestControl searchLimitContainer) : 
+        public UIDieserPCTreeItem5(UITestControl searchLimitContainer) : 
                 base(searchLimitContainer)
         {
             #region Suchkriterien
@@ -4965,10 +5806,10 @@ namespace EditorUITest
     }
     
     [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
-    public class UIItemWindow15 : WinWindow
+    public class UIItemWindow16 : WinWindow
     {
         
-        public UIItemWindow15(UITestControl searchLimitContainer) : 
+        public UIItemWindow16(UITestControl searchLimitContainer) : 
                 base(searchLimitContainer)
         {
             #region Suchkriterien
@@ -5002,10 +5843,10 @@ namespace EditorUITest
     }
     
     [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
-    public class UIÖffnenWindow4 : WinWindow
+    public class UIÖffnenWindow5 : WinWindow
     {
         
-        public UIÖffnenWindow4(UITestControl searchLimitContainer) : 
+        public UIÖffnenWindow5(UITestControl searchLimitContainer) : 
                 base(searchLimitContainer)
         {
             #region Suchkriterien
@@ -5034,6 +5875,68 @@ namespace EditorUITest
         
         #region Fields
         private WinButton mUIÖffnenButton;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UIItemWindow22 : WinWindow
+    {
+        
+        public UIItemWindow22()
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.AccessibleName] = "Desktop";
+            this.SearchProperties[WinWindow.PropertyNames.ClassName] = "#32769";
+            #endregion
+        }
+        
+        #region Properties
+        public UITrackBar1Window UITrackBar1Window
+        {
+            get
+            {
+                if ((this.mUITrackBar1Window == null))
+                {
+                    this.mUITrackBar1Window = new UITrackBar1Window(this);
+                }
+                return this.mUITrackBar1Window;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UITrackBar1Window mUITrackBar1Window;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UITrackBar1Window : WinWindow
+    {
+        
+        public UITrackBar1Window(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.ControlName] = "trackBar1";
+            #endregion
+        }
+        
+        #region Properties
+        public WinSlider UITrackBar1Slider
+        {
+            get
+            {
+                if ((this.mUITrackBar1Slider == null))
+                {
+                    this.mUITrackBar1Slider = new WinSlider(this);
+                }
+                return this.mUITrackBar1Slider;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinSlider mUITrackBar1Slider;
         #endregion
     }
 }
