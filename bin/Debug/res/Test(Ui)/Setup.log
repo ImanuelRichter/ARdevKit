@@ -1,0 +1,10 @@
+[InstallShield Silent]
+Version=v7.00
+File=Log File
+[ResponseResult]
+ResultCode=0
+[Application]
+Name=Realtek Ethernet Controller Driver
+Version=1.00.0029
+Company=Realtek
+Lang=0007

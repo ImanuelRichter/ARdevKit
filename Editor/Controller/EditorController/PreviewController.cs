@@ -114,7 +114,7 @@ public class PreviewController
     public void addPreviewable(IPreviewable currentElement, Vector3D v)
     {
         if (currentElement == null)
-            throw new ArgumentException("parameter currentEelement was null");
+            throw new ArgumentException("parameter currentElement was null");
         if (v == null)
             throw new ArgumentException("parameter v was null");
 
@@ -1220,10 +1220,17 @@ public class PreviewController
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     private void openArelScript(object sender, EventArgs e)
     {
-        if (((AbstractAugmentation)ew.CurrentElement).CustomUserEventReference == null)
-            ((AbstractAugmentation)ew.CurrentElement).createUserEvent();
-        TextEditorForm tef = new TextEditorForm(((AbstractAugmentation)ew.CurrentElement).CustomUserEventReference.FilePath);
-        tef.Show();
+        try
+        {
+            if (((AbstractAugmentation)ew.CurrentElement).CustomUserEventReference == null)
+                ((AbstractAugmentation)ew.CurrentElement).createUserEvent();
+            TextEditorForm tef = new TextEditorForm(((AbstractAugmentation)ew.CurrentElement).CustomUserEventReference.FilePath);
+            tef.Show();
+        }
+        catch (System.IO.FileNotFoundException fnfe)
+        {
+            MessageBox.Show(fnfe.Message);
+        }
     }
 
     /// <summary>
