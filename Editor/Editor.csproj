@@ -89,10 +89,13 @@
   <ItemGroup>
     <Compile Include="Controller\EditorController\ObjectCopier.cs" />
     <Compile Include="Controller\EditorController\ThumbCreator.cs" />
-    <Compile Include="Controller\TestController\ProcessVideoWindow.cs">
+    <Compile Include="Controller\TestController\FrameExtractor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\ProcessVideoWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Controller\TestController\ProcessVideoWindow.Designer.cs">
+    <Compile Include="View\ProcessVideoWindow.Designer.cs">
       <DependentUpon>ProcessVideoWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Project\Abstract2DTrackable.cs" />
@@ -188,7 +191,7 @@
       <DependentUpon>Slider.cs</DependentUpon>
     </Compile>
     <Compile Include="View\TypeEditoren.cs" />
-    <EmbeddedResource Include="Controller\TestController\ProcessVideoWindow.resx">
+    <EmbeddedResource Include="View\ProcessVideoWindow.resx">
       <DependentUpon>ProcessVideoWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditorWindow.resx">

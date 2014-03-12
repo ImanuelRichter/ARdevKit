@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.Threading;
 
 using AForge;
 using AForge.Video;
@@ -14,10 +17,7 @@ using AForge.Video.FFMPEG;
 using ARdevKit.Controller.ProjectController;
 using ARdevKit.Model.Project;
 using ARdevKit.Model.Project.File;
-using System.Drawing;
-using System.Drawing.Imaging;
 using ARdevKit.View;
-using System.Threading;
 
 namespace ARdevKit.Controller.TestController
 {
@@ -74,24 +74,23 @@ namespace ARdevKit.Controller.TestController
         private static bool showDebug;
 
         /// <summary>
-        /// The editor window
+        /// The editor window.
         /// </summary>
         private static EditorWindow editorWindow;
-
-        private static DebugWindow debugWindow;
-
+        
         /// <summary>
-        /// A window showing the progress of processing the video
+        /// A window showing the progress of processing the video.
         /// </summary>
         private static ProcessVideoWindow progressVideoWindow;
+        private static FrameExtractor frameExtractor;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
-        /// The path to the player. Gonna be the startupPath at the end.
+        /// The path to the player.
         /// </summary>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        private static string playerPath;
+        private static string playerPath = "Player.exe";
 
         /// <summary>
         /// Starts the player.
@@ -121,7 +120,6 @@ namespace ARdevKit.Controller.TestController
             player = new Process();
             player.EnableRaisingEvents = true;
             player.Exited += player_Exited;
-            playerPath = "Player.exe";
             player.StartInfo.Arguments = "-" + width + " -" + height + " -" + project.ProjectPath + " -" + mode;
 
             bool open = false;
@@ -158,7 +156,9 @@ namespace ARdevKit.Controller.TestController
                         progressVideoWindow = new ProcessVideoWindow();
                         progressVideoWindow.FormClosed += progressVideoWindow_FormClosed;
                         progressVideoWindow.Show();
-                        progressVideoWindow.extractFrames(testFilePath, TMP_VIDEO_PATH);
+
+                        frameExtractor = new FrameExtractor(progressVideoWindow, testFilePath, TMP_VIDEO_PATH);
+                        frameExtractor.RunWorkerAsync();
                     }
                     break;
                 case (CAMERA):
@@ -187,7 +187,13 @@ namespace ARdevKit.Controller.TestController
         private static void player_Exited(object sender, EventArgs e)
         {
             if (Directory.Exists(TMP_VIDEO_PATH))
-                Directory.Delete(TMP_VIDEO_PATH, true);
+                try
+                {
+                    Directory.Delete(TMP_VIDEO_PATH, true);
+                } catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             editorWindow.PlayerClosed();
         }
 
@@ -196,11 +202,11 @@ namespace ARdevKit.Controller.TestController
         /// </summary>
         private static void OpenPlayer()
         {
-            if (File.Exists(playerPath) )
+            if (File.Exists(playerPath))
             {
                 if (showDebug)
                 {
-                    player.StartInfo.FileName = "Player.exe";
+                    player.StartInfo.FileName = playerPath;
                     //player.StartInfo.CreateNoWindow = false;
                     //player.StartInfo.UseShellExecute = true;
                     //player.StartInfo.RedirectStandardOutput = true;
@@ -220,19 +226,19 @@ namespace ARdevKit.Controller.TestController
                     player.StartInfo.CreateNoWindow = true;
                     player.Start();
                 }
+                editorWindow.PlayerStarted();
             }
             else
             {
                 OpenFileDialog openPlayerDialog = new OpenFileDialog();
                 openPlayerDialog.Title = "Bitte Player auswählen";
-                openPlayerDialog.Filter = "Player (" + playerPath + ")|" + playerPath;
+                openPlayerDialog.Filter = "Player (Player.exe)|Player.exe";
                 if (openPlayerDialog.ShowDialog() == DialogResult.OK)
                 {
-                    player.StartInfo.FileName = openPlayerDialog.FileName;
-                    player.Start();
+                    playerPath = openPlayerDialog.FileName;
+                    OpenPlayer();
                 }
             }
-            editorWindow.PlayerStarted();
         }
 
         /* not working atm
@@ -249,8 +255,11 @@ namespace ARdevKit.Controller.TestController
         /// <param name="e">The <see cref="FormClosedEventArgs"/> instance containing the event data.</param>
         static void progressVideoWindow_FormClosed(object sender, FormClosedEventArgs e)
         {
-            player.StartInfo.Arguments += " -" + progressVideoWindow.FPS;
-            OpenPlayer();
+            if (frameExtractor.Ready)
+            {
+                player.StartInfo.Arguments += " -" + frameExtractor.FPS;
+                OpenPlayer();
+            }
         }
     }
 }

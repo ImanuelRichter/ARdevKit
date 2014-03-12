@@ -96,5 +96,15 @@ namespace ARdevKit.Model.Project.File
 
             return false;
         }
+
+        /// <summary>
+        /// Returns the drive information of the drive that belongs to the passed file.
+        /// </summary>
+        /// <param name="file"> The file. </param>
+        /// <returns> The drive information. </returns>
+        public static DriveInfo GetDriveInfo(this FileInfo file)
+        {
+            return new DriveInfo(file.Directory.Root.FullName);
+        }
     }
 }
