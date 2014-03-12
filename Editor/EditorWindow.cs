@@ -796,6 +796,7 @@ namespace ARdevKit
             this.elementSelectionController = new ElementSelectionController(this);
             this.previewController = new PreviewController(this);
             this.propertyController = new PropertyController(this);
+            this.propertyGrid1.SelectedObject = null;
             this.deviceConnectionController = new DeviceConnectionController(this);
         }
 
