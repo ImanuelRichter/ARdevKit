@@ -26,7 +26,7 @@ namespace EditorUITest
         public void createNewProject1()
         {
             MessageBox.Show(new Form() { TopMost = true }, "Öffne ein neues Projekt (Datei -> Neu).", "Schritt 1/1");
-            Assert.IsTrue(MessageBox.Show("Ist das Previewpanel leer?", "Test 1", MessageBoxButtons.YesNo) == DialogResult.Yes);
+            Assert.IsTrue(MessageBox.Show("Hat sich NICHTS geändert?", "Test 1", MessageBoxButtons.YesNo) == DialogResult.Yes);
         }
 
         [TestMethod]
@@ -35,8 +35,8 @@ namespace EditorUITest
             MessageBox.Show(new Form() { TopMost = true }, "Füge einen (beliebigen) Trackable dem Projekt zu.", "Schritt 1/2");
             MessageBox.Show(new Form() { TopMost = true }, "Erstelle ein neues Projekt, ohne das vorherige abzuspeichern.", "Schritt 2/2");
             Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Ist das Previewpanel leer?", "Test 2", MessageBoxButtons.YesNo) == DialogResult.Yes);
-            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Ist zeigt das PropertyGrid irgendwelche Informationen (sofern nicht auf das Previewpanel geklickt wurde)?", "Test 2",
-                MessageBoxButtons.YesNo) == DialogResult.No);
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Zeigt das PropertyGrid KEINE Informationen (sofern nicht auf das Previewpanel geklickt wurde)?", "Test 2",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
             Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Wird im ElementSelectionPanel bei 'Trackables' drei Trackables angezeigt?", "Test 2",
                 MessageBoxButtons.YesNo) == DialogResult.Yes);
         }
@@ -48,15 +48,15 @@ namespace EditorUITest
             saveLoad1();
 
         }
-        [TestMethod]
+
         private void createNewProject3()
         {
             MessageBox.Show(new Form() { TopMost = true }, "Füge einen (beliebigen) Trackable dem Projekt zu.", "Schritt 1/2");
             MessageBox.Show(new Form() { TopMost = true }, "Erstelle ein neues Projekt und speichere dabei ab.", "Schritt 2/2");
 
             Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Ist das Previewpanel leer?", "Test 3", MessageBoxButtons.YesNo) == DialogResult.Yes);
-            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Zeigt das PropertyGrid irgendwelche Informationen (sofern nicht auf das Previewpanel geklickt wurde)?", "Test 3",
-                MessageBoxButtons.YesNo) == DialogResult.No);
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Zeigt das PropertyGrid KEINE Informationen (sofern nicht auf das Previewpanel geklickt wurde)?", "Test 3",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
             Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Wird im ElementSelectionPanel bei 'Trackables' drei Trackables angezeigt?", "Test 3",
                 MessageBoxButtons.YesNo) == DialogResult.Yes);
         }
@@ -64,7 +64,8 @@ namespace EditorUITest
         private void saveLoad1()
         {
             MessageBox.Show(new Form() { TopMost = true }, "Lade das zuvor gespeicherte Projekt.", "Schritt 1/2");
-            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Enthält das Previewpanel das Trackable?", "Test 4", MessageBoxButtons.YesNo) == DialogResult.Yes);
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Enthält das Previewpanel das Trackable und ist in der Mitte des Panels positioniert?", "Test 4", 
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
             Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Wird im ElementSelectionPanel nur das Trackable angezeigt, was auch hinzugeüft wurde?", "Test 3", 
                 MessageBoxButtons.YesNo) == DialogResult.Yes);
         }
