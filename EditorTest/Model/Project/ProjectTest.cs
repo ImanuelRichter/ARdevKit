@@ -8,6 +8,20 @@ namespace EditorTest.Model.Project
     public class ProjectTest
     {
         [TestMethod]
+        public void initializeTest()
+        {
+            ARdevKit.Model.Project.Project project = new ARdevKit.Model.Project.Project("name");
+            Assert.IsTrue(project.Name == "name");
+            project = new ARdevKit.Model.Project.Project("name", @"C:\");
+            Assert.IsTrue(project.Name == "name" && project.ProjectPath == @"C:\");
+            project.Name = "x";
+            project.ProjectPath = @"D:\";
+            project.Screensize = new ARdevKit.Model.Project.ScreenSize();
+            project.Sensor = new ARdevKit.Model.Project.MarkerSensor();
+            Assert.IsTrue(project.Name == "x" && project.ProjectPath == @"D:\");
+        }
+
+        [TestMethod]
         public void hasTrackableTest1()
         {
             ARdevKit.Model.Project.Project project = new ARdevKit.Model.Project.Project();
