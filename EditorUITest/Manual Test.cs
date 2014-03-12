@@ -73,12 +73,12 @@ namespace EditorUITest
             isInTecoNetwork = MessageBox.Show("Befinden sich Editor und Player im teco-Netzwerk?", "Branch!", MessageBoxButtons.YesNo) == DialogResult.Yes;
             if (isInTecoNetwork)
             {
-                MessageBox.Show(new Form() { TopMost = true }, "Halte das im Projekt verwendete Trackable vor die Linse des mobilen Geräts", "Testschritt!");
+                MessageBox.Show(new Form() { TopMost = true }, "Halte den ID-Marker vor die Kamera des mobilen Geräts", "Testschritt!");
                 Assert.IsTrue(MessageBox.Show("Ist das Diagramm mit Daten zu sehen?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
             }
             else
             {
-                MessageBox.Show(new Form() { TopMost = true }, "Halte das im Projekt verwendete Trackable vor die Linse des mobilen Geräts", "Testschritt!");
+                MessageBox.Show(new Form() { TopMost = true }, "Halte den ID-Marker vor die Kamera des mobilen Geräts", "Testschritt!");
                 Assert.IsTrue(MessageBox.Show("Ist das Diagramm ohne Inhalt zu sehen?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
 
             }
