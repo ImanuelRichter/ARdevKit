@@ -38,7 +38,7 @@ namespace ARdevKit.Tests
         }
 
         [TestMethod()]
-        [ExpectedException(typeof(ArgumentException))]
+        [ExpectedException(typeof(System.IO.FileNotFoundException))]
         public void constructorTest_emptyString()
         {
             //arrange
@@ -52,7 +52,7 @@ namespace ARdevKit.Tests
         }
 
         [TestMethod()]
-        [ExpectedException(typeof(ArgumentException))]
+        [ExpectedException(typeof(System.IO.FileNotFoundException))]
         public void constructorTest_wrongPath01()
         {
             //arrange
