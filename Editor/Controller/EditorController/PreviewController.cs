@@ -323,7 +323,7 @@ public class PreviewController
         else if (currentElement is AbstractAugmentation && trackable != null)
         {
             this.panel.Controls.Remove(this.findBox((AbstractAugmentation)currentElement));
-            this.trackable.RemoveAugmentation((AbstractAugmentation)this.ew.CurrentElement);
+            this.ew.project.RemoveAugmentation((AbstractAugmentation)currentElement, this.index);
         }
         updateElementCombobox(trackable);
         this.ew.Tsm_editor_menu_edit_delete.Enabled = false;
