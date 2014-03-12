@@ -23,6 +23,7 @@ namespace EditorUITest
         }
 
         [TestMethod]
+        [TestCategory("CustomUserEvent")]
         public void EditorFormTest()
         {
             this.UIMap.EditorFormTestRecord();

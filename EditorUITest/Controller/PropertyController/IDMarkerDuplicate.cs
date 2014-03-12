@@ -27,6 +27,7 @@ namespace EditorUITest
         }
 
         [TestMethod]
+        [TestCategory("PropertyController")]
         public void IDMarkerDuplicateTest()
         {
             this.UIMap.IDMarkerDuplicate();
