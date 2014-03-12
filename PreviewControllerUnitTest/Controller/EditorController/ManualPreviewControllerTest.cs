@@ -123,6 +123,69 @@ namespace PreviewController_TextEditorForm_Tests
             Assert.IsTrue(MessageBox.Show("Wurde das Symbol der verknuepften Quelle korrekt im Diagramm angezeigt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
         }
 
+        [TestMethod()]
+        public void addSource_removeSource()
+        {
+            createProject03();
+
+            Assert.IsTrue(MessageBox.Show("Wurde das Symbol der verknuepften Quelle korrekt im Diagramm angezeigt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            MessageBox.Show(new Form() { TopMost = true }, "Rechtsklicke auf das Diagramm und waehle \"Source loeschen\" im Kontextmenu aus", "Testschritt!");
+
+            Assert.IsTrue(MessageBox.Show("Wurde die verknuepfte Source korrekt entfernt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+        }
+
+        [TestMethod()]
+        public void addPreviewable_removePreviewable01()
+        {
+            createProject01();
+
+            Assert.IsTrue(MessageBox.Show("Wurde das Bild korrekt hinzugefuegt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            MessageBox.Show(new Form() { TopMost = true }, "Rechtsklicke auf das Bild und waehle \"loeschen\" im Kontextmenu aus", "Testschritt!");
+
+            Assert.IsTrue(MessageBox.Show("Wurde das Bild korrekt entfernt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+        }
+
+        [TestMethod()]
+        public void addPreviewable_removePreviewable02()
+        {
+            createProject02();
+
+            Assert.IsTrue(MessageBox.Show("Wurde das Diagramm korrekt hinzugefuegt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            MessageBox.Show(new Form() { TopMost = true }, "Rechtsklicke auf das Diagramm und waehle \"loeschen\" im Kontextmenu aus", "Testschritt!");
+
+            Assert.IsTrue(MessageBox.Show("Wurde das Diagramm korrekt entfernt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+        }
+
+        [TestMethod()]
+        public void setCurrentElementTest()
+        {
+            createProject01();
+
+            MessageBox.Show(new Form() { TopMost = true }, "Klicke auf den ID-Marker", "Testschritt!");
+            MessageBox.Show(new Form() { TopMost = true }, "Klicke wieder auf das Bild", "Testschritt!");
+
+            Assert.IsTrue(MessageBox.Show("Konnte sich korrekt erkennen lassen, welches das aktuell ausgewaehlte Objekt im Vorschaubereich ist?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+        }
+
+        [TestMethod()]
+        public void rescalePreviewPanelTest()
+        {
+            createProject01();
+
+            MessageBox.Show(new Form() { TopMost = true }, "Klicke auf eine freie Stelle im Vorschaubereich", "Testschritt!");
+
+            Assert.IsTrue(MessageBox.Show("Wird im PropertyPanel (rechte Seite) die aktuelle Aufloesung angezeigt", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            MessageBox.Show(new Form() { TopMost = true }, "Trage eine andere Aufloesung ein", "Testschritt!");
+
+            Assert.IsTrue(MessageBox.Show("Hat sich die Groesse des Vorschaubereiches korrekt geaendert?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+        }
+
+
+
         #region Additional test attributes
 
         // You can use the following additional attributes as you write your tests:
