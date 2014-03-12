@@ -34,6 +34,17 @@ namespace EditorUITest
             //Es können auch automatisierte und manuelle Schritte kombiniert werden.
         }
 
+        [TestMethod]
+        public void TF12110() //jede TestMethode ist ein manuellerTest. Aussagekräftigen Namen verwenden ggf. Nummber aus Pflichtenheft (TF...)
+        {
+            MessageBox.Show( "Öffne das Project testproject im ProgrammPfad C:/ARdevKit/bin/Debug/res/Test(Ui)" , "Testschritt!");
+            //diese Assertion öffnet einen Ja/Nein Dialog in dem man anklickt ob der Testfall erfolgreich war. Dadurch wird das Ergebnis im Test-Explorer sichtbar.
+            Assert.IsTrue(MessageBox.Show("Ist der Testfall erfolgreich?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            //Eine MessageBox für den Testschritt und eine für die Assertion. Dies kann für einen Testfall beliebig oft wiederholt werden.
+            //Es können auch automatisierte und manuelle Schritte kombiniert werden.
+        }
+
         #region Zusätzliche Testattribute
 
         // Sie können beim Schreiben der Tests folgende zusätzliche Attribute verwenden:
