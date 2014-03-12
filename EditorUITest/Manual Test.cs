@@ -37,12 +37,50 @@ namespace EditorUITest
         [TestMethod]
         public void TF12110() //jede TestMethode ist ein manuellerTest. Aussagekräftigen Namen verwenden ggf. Nummber aus Pflichtenheft (TF...)
         {
-            MessageBox.Show( "Öffne das Project testproject im ProgrammPfad C:/ARdevKit/bin/Debug/res/Test(Ui)" , "Testschritt!");
-            //diese Assertion öffnet einen Ja/Nein Dialog in dem man anklickt ob der Testfall erfolgreich war. Dadurch wird das Ergebnis im Test-Explorer sichtbar.
-            Assert.IsTrue(MessageBox.Show("Ist der Testfall erfolgreich?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+            MessageBox.Show("Öffne das Project onlyOneTrackable im Ordner Test(Ui)", "Testschritt!");
 
-            //Eine MessageBox für den Testschritt und eine für die Assertion. Dies kann für einen Testfall beliebig oft wiederholt werden.
-            //Es können auch automatisierte und manuelle Schritte kombiniert werden.
+            MessageBox.Show("Wechsel im linken DropDownMenü(aktueller eintrag Trackable) zu Augmentation ", "Testschritt!");
+            Assert.IsTrue(MessageBox.Show("Werden Chart, ImageAugmentation & VideoAugmentation angezeigt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            MessageBox.Show("Wechsel im DropDownMenü zu Source!", "Testschritt!");
+            Assert.IsTrue(MessageBox.Show("Werden DbSource & FileSource angezeigt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            MessageBox.Show("Wechsel im DropDownMenü zu Trackable!", "Testschritt!");
+            Assert.IsTrue(MessageBox.Show("Wird IDMarker angezeigt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            MessageBox.Show("Löschen sie per Rechtsklick -> Löschen auf dem Trackable das Trackable", "Testschritt");
+            Assert.IsTrue(MessageBox.Show("Werden nun ImageTrackable, IDMarker & PictureMarker angezeigt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            MessageBox.Show("Fügen sie ein PictureMarker hinzu","Testschritt");
+            Assert.IsTrue(MessageBox.Show("Wird nun nur noch der PictureMarker angezeigt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            MessageBox.Show("löschen sie per Rechtsklick -> Löschen auf dem Trackable das Trackable und fügen sie wie zuvor nun ein ImageTrackable hinzu");
+            Assert.IsTrue(MessageBox.Show("Wird nun nur noch das ImageTrackable angezeigt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+        }
+
+        [TestMethod]
+        public void TF12120() {
+            MessageBox.Show("Öffne das Project onlyOneTrackable im Ordner Test(Ui)", "Testschritt!");
+
+            MessageBox.Show("Ziehen sie nun eine Chart in das PreviewPanel mit Option -> barChartColumn/options.js", "Testschritt!");
+            Assert.IsTrue(MessageBox.Show("Liegt die Chart nun da wo sie sie gedropt haben?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            MessageBox.Show("Ziehen sie nun eine ImageAugmentation in das PreviewPanel", "Testschritt!");
+            Assert.IsTrue(MessageBox.Show("Liegt die ImageAugmentation nun da wo sie sie gedropt haben?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            MessageBox.Show("Ziehen sie nun eine VideoAugmentation in das PreviewPanel, eine Testdatei finden sie in dem Test(UI) Ordner", "Testschritt!");
+            Assert.IsTrue(MessageBox.Show("Liegt die VideoAugmentation nun da wo sie sie gedropt haben?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+        }
+
+        [TestMethod]
+        public void TF12160()
+        {
+            MessageBox.Show("Öffne das Project testProject im Ordner Test(Ui)", "Testschritt!");
+
+            MessageBox.Show("Ziehen sie nun eine DbSource auf die Chart, Option Datei finden sie in barChartColumn/options.js", "Testschritt");
+            Assert.IsTrue(MessageBox.Show("Wird nun ein Source-Zeichen auf der Augmentation angezeigt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+            MessageBox.Show("Rechtsklick auf die Augmentation -> Source anzeigen", "Testschritt");
+            Assert.IsTrue(MessageBox.Show("Wird die Source rechts angezeigt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
         }
 
         #region Zusätzliche Testattribute
