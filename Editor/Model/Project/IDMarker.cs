@@ -88,7 +88,7 @@ namespace ARdevKit.Model.Project
         /// <returns>
         /// a representative Bitmap
         /// </returns>
-        public override Bitmap getPreview()
+        public override Bitmap getPreview(string projectPath)
         {
             StringBuilder markerName = new StringBuilder("IDMarker");
             if(matrixID < 100)
@@ -111,7 +111,7 @@ namespace ARdevKit.Model.Project
         /// </returns>
         public override Bitmap getIcon()
         {
-            return Properties.Resources.ARRMarker_small_;
+            return Properties.Resources.IDMarker_small_;
         }
 
         public override object Clone()

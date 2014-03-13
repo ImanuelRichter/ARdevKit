@@ -33,22 +33,7 @@ namespace ARdevKit.Model.Project
         public string Data
         {
             get { return sourceFilePath; }
-            set
-            {
-                if (System.IO.File.Exists(value))
-                {
-                    try
-                    {
-                        var endFileName = SourceID + "_" + System.IO.Path.GetFileName(value);
-                        File.Helper.Copy(value, @"tmp\source\", endFileName);
-                        sourceFilePath = System.IO.Path.GetFullPath(@"tmp\source\" + endFileName);
-                    }
-                    catch (Exception e)
-                    {
-                        System.Windows.Forms.MessageBox.Show(e.Message);
-                    }
-                }
-            }
+            set { sourceFilePath = value; }
         }
 
         /// <summary>

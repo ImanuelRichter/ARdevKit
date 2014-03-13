@@ -53,21 +53,7 @@ namespace ARdevKit.Model.Project
         public string Options
         {
             get { return optionsFilePath; }
-            set
-            {
-                if (System.IO.File.Exists(value))
-                {
-                    try
-                    {
-                        File.Helper.Copy(value, @"tmp\" + ID + "\\");
-                        optionsFilePath = Path.GetFullPath(@"tmp\" + ID + "\\" + Path.GetFileName(value));
-                    }
-                    catch (Exception e)
-                    {
-                        System.Windows.Forms.MessageBox.Show(e.Message);
-                    }
-                }
-            }
+            set { optionsFilePath = value; }
         }
 
         /// <summary>
@@ -123,7 +109,7 @@ namespace ARdevKit.Model.Project
         /// <returns>
         /// a representative Bitmap
         /// </returns>
-        public override Bitmap getPreview()
+        public override Bitmap getPreview(string projectPath)
         {
             return Properties.Resources.highcharts_normal_;
         }
@@ -180,7 +166,7 @@ namespace ARdevKit.Model.Project
             if (Options == null)
             {
                 OpenFileDialog openFileDialog = new OpenFileDialog();
-                openFileDialog.InitialDirectory = Application.StartupPath + "\\res\\highcharts";
+                openFileDialog.InitialDirectory = Environment.CurrentDirectory + "\\res\\highcharts";
                 openFileDialog.Filter = "js (*.js)|*.js";
                 openFileDialog.Title = "Wählen sie eine Options Datei";
                 if (openFileDialog.ShowDialog() == DialogResult.OK)

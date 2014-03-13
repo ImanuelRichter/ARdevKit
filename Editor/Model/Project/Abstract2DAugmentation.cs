@@ -87,14 +87,7 @@ namespace ARdevKit.Model.Project
         public string ResFilePath
         {
             get { return resFilePath; }
-            set
-            {
-                if (System.IO.File.Exists(value))
-                {
-                    resFilePath = value;
-                }
-
-            }
+            set { resFilePath = value; }
         }
 
         /// <summary>

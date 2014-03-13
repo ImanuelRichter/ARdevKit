@@ -41,6 +41,128 @@
   </Configuration>
   <InitializeActions />
   <ExecuteActions>
+    <MouseAction UIObjectName="UIMap.UIARdevKitWindow.UIPictureMarkerClient.UIPictureMarkerClient1">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="79" Y="74" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <SetValueAction UIObjectName="UIMap.UIARdevKitWindow.UICmb_editor_selectionWindow.UICmb_editor_selectionComboBox">
+      <ParameterName />
+      <Value Encoded="false">Augmentations</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <MouseAction UIObjectName="UIMap.UIARdevKitWindow.UIItemWindow.UIPnl_editor_selectionClient">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="49" Y="74" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIWählensieeineOptionsWindow.UIItemWindow.UIHighchartsjsListItem.UINameEdit">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="78" Y="14" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>DoubleClick</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIHeightRow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="45" Y="5" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <SendKeysAction UIObjectName="UIMap.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIHeightRow">
+      <ParameterName />
+      <ModifierKeys>Control</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Text Encoded="false">v</Text>
+    </SendKeysAction>
+    <MouseAction UIObjectName="UIMap.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIWidthRow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="45" Y="6" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <SendKeysAction UIObjectName="UIMap.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIWidthRow">
+      <ParameterName />
+      <ModifierKeys>Control</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Text Encoded="false">v</Text>
+    </SendKeysAction>
+    <MouseAction UIObjectName="UIMap.UIARdevKitWindow.UIPropertyGridClient.UIPropertyGridViewTable">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="55" Y="257" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="ChangeHeightWidthRecord">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Action</MarkerRegionType>
+    </TestStepMarkerAction>
+    <MouseAction UIObjectName="UIMap.UIARdevKitWindow.UIPictureMarkerClient.UIPictureMarkerClient1">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="73" Y="77" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIMatrixIDRow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="38" Y="1" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <SendKeysAction UIObjectName="UIMap.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIMatrixIDRow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Text Encoded="false">2</Text>
+    </SendKeysAction>
+    <MouseAction UIObjectName="UIMap.UIARdevKitWindow.UIPropertyGridClient.UIPropertyGridViewTable">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="106" Y="262" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="ChangeIDMarkerRecord">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Action</MarkerRegionType>
+    </TestStepMarkerAction>
     <MouseAction UIObjectName="UIMap.UIARdevKitWindow.UIIDMarkerClient.UIIDMarkerClient1">
       <ParameterName />
       <ModifierKeys>None</ModifierKeys>
@@ -372,6 +494,122 @@
       <WorkItemId>0</WorkItemId>
       <MarkerRegionType>Action</MarkerRegionType>
     </TestStepMarkerAction>
+    <MouseAction UIObjectName="UIMap.UIARdevKitWindow.UIItem1Window.UIItem1Button">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="28" Y="25" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="EditorFormBackRecord">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Action</MarkerRegionType>
+    </TestStepMarkerAction>
+    <MouseAction UIObjectName="UIMap.UIARdevKitWindow.UIItem1Window.UIItem1Button">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="30" Y="29" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Right</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIItemWindow.UIKontextmenüMenu.UIDuplicateMenuItem">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="16" Y="7" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIARdevKitWindow.UIItem2Window.UIItem2Button">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="28" Y="25" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="EditorFormDuplicateRecord">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Action</MarkerRegionType>
+    </TestStepMarkerAction>
+    <MouseAction UIObjectName="UIMap.UIARdevKitWindow.UIPictureMarkerClient.UIPictureMarkerClient1">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="67" Y="52" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <SetValueAction UIObjectName="UIMap.UIARdevKitWindow.UICmb_editor_selectionWindow.UICmb_editor_selectionComboBox">
+      <ParameterName />
+      <Value Encoded="false">Augmentations</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <MouseAction UIObjectName="UIMap.UIARdevKitWindow.UIChartClient.UIChartClient1">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="81" Y="97" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <SetValueAction UIObjectName="UIMap.UIWählensieeinBildWindow.UIItemWindow.UIDateinameComboBox">
+      <ParameterName />
+      <Value Encoded="false">C:</Value>
+      <Type>String</Type>
+      <PreferEdit>True</PreferEdit>
+    </SetValueAction>
+    <SendKeysAction UIObjectName="UIMap.UIWählensieeinBildWindow.UIItemWindow1.UIDateinameEdit">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Text Encoded="false">{LShiftKey}</Text>
+    </SendKeysAction>
+    <SendKeysAction UIObjectName="UIMap.UIWählensieeinBildWindow.UIItemWindow1.UIDateinameEdit">
+      <ParameterName />
+      <ModifierKeys>Alt Control</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Text Encoded="false">{[}</Text>
+    </SendKeysAction>
+    <SetValueAction UIObjectName="UIMap.UIWählensieeinBildWindow.UIItemWindow.UIDateinameComboBox">
+      <ParameterName />
+      <Value Encoded="false">C:\1.jpg</Value>
+      <Type>String</Type>
+      <PreferEdit>True</PreferEdit>
+    </SetValueAction>
+    <SendKeysAction UIObjectName="UIMap.UIWählensieeinBildWindow.UIItemWindow1.UIDateinameEdit">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Text Encoded="false">{Enter}</Text>
+    </SendKeysAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="EditorFormTestRecord">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Action</MarkerRegionType>
+    </TestStepMarkerAction>
     <AssertAction UIObjectName="UIMap.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIDataRow">
       <ParameterName />
       <PropertyName>Value</PropertyName>
@@ -630,6 +868,23 @@
       <Disabled>false</Disabled>
       <WorkItemId>0</WorkItemId>
       <MarkerRegionType>Action</MarkerRegionType>
+    </TestStepMarkerAction>
+    <AssertAction UIObjectName="UIMap.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIPicturePathRow">
+      <ParameterName />
+      <PropertyName>Value</PropertyName>
+      <ExpectedValue>C:\1.jpg</ExpectedValue>
+      <MessageOnValidationFailure />
+      <Type>String</Type>
+      <PropertyCondition>AreEqual</PropertyCondition>
+    </AssertAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="EmptyPicturePathAssertion">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Assertion</MarkerRegionType>
     </TestStepMarkerAction>
     <MouseAction UIObjectName="UIMap.UIARdevKitWindow.UIItemWindow.UIPnl_editor_selectionClient">
       <ParameterName />
@@ -1022,6 +1277,79 @@
       <WorkItemId>0</WorkItemId>
       <MarkerRegionType>Assertion</MarkerRegionType>
     </TestStepMarkerAction>
+    <AssertAction UIObjectName="UIMap.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIResFilePathRow">
+      <ParameterName />
+      <PropertyName>Value</PropertyName>
+      <ExpectedValue>C:\2.jpg</ExpectedValue>
+      <MessageOnValidationFailure />
+      <Type>String</Type>
+      <PropertyCondition>AreEqual</PropertyCondition>
+    </AssertAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="UseFileDialogAugmentationAssertion">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Assertion</MarkerRegionType>
+    </TestStepMarkerAction>
+    <MouseAction UIObjectName="UIMap.UIARdevKitWindow.UIPictureMarkerClient.UIPictureMarkerClient1">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="38" Y="27" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <SetValueAction UIObjectName="UIMap.UIARdevKitWindow.UICmb_editor_selectionWindow.UICmb_editor_selectionComboBox">
+      <ParameterName />
+      <Value Encoded="false">Augmentations</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <MouseAction UIObjectName="UIMap.UIARdevKitWindow.UIChartClient.UIChartClient1">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="54" Y="51" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <SetValueAction UIObjectName="UIMap.UIWählensieeinBildWindow.UIItemWindow.UIDateinameComboBox">
+      <ParameterName />
+      <Value Encoded="false">C:\1.jpg</Value>
+      <Type>String</Type>
+      <PreferEdit>True</PreferEdit>
+    </SetValueAction>
+    <MouseAction UIObjectName="UIMap.UIWählensieeinBildWindow.UIÖffnenWindow.UIÖffnenButton">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="27" Y="7" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIResFilePathRow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="74" Y="7" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="UseFileDialogAugmentationRecord">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Action</MarkerRegionType>
+    </TestStepMarkerAction>
     <MouseAction UIObjectName="UIMap.UIARdevKitWindow.UIItemWindow.UIPnl_editor_selectionClient">
       <ParameterName />
       <ModifierKeys>None</ModifierKeys>
@@ -1108,28 +1436,11 @@
       <WorkItemId>0</WorkItemId>
       <MarkerRegionType>Action</MarkerRegionType>
     </TestStepMarkerAction>
-    <AssertAction UIObjectName="UIMap.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIPicturePathRow">
-      <ParameterName />
-      <PropertyName>Value</PropertyName>
-      <ExpectedValue>C:\1.jpg</ExpectedValue>
-      <MessageOnValidationFailure />
-      <Type>String</Type>
-      <PropertyCondition>AreEqual</PropertyCondition>
-    </AssertAction>
-    <TestStepMarkerAction Comment="" MarkerInformation="EmptyPicturePathAssertion">
-      <ParameterName />
-      <StepId>-1</StepId>
-      <Direction>Start</Direction>
-      <Outcome />
-      <Disabled>false</Disabled>
-      <WorkItemId>0</WorkItemId>
-      <MarkerRegionType>Assertion</MarkerRegionType>
-    </TestStepMarkerAction>
     <MouseAction UIObjectName="UIMap.UIARdevKitWindow.UIPictureMarkerClient.UIPictureMarkerClient1">
       <ParameterName />
       <ModifierKeys>None</ModifierKeys>
       <IsGlobalHotkey>false</IsGlobalHotkey>
-      <Location X="38" Y="27" />
+      <Location X="35" Y="79" />
       <WheelDirection>0</WheelDirection>
       <ActionType>Click</ActionType>
       <MouseButton>Left</MouseButton>
@@ -1143,80 +1454,7 @@
       <ParameterName />
       <ModifierKeys>None</ModifierKeys>
       <IsGlobalHotkey>false</IsGlobalHotkey>
-      <Location X="54" Y="51" />
-      <WheelDirection>0</WheelDirection>
-      <ActionType>Click</ActionType>
-      <MouseButton>Left</MouseButton>
-    </MouseAction>
-    <SetValueAction UIObjectName="UIMap.UIWählensieeinBildWindow.UIItemWindow.UIDateinameComboBox">
-      <ParameterName />
-      <Value Encoded="false">C:\1.jpg</Value>
-      <Type>String</Type>
-      <PreferEdit>True</PreferEdit>
-    </SetValueAction>
-    <MouseAction UIObjectName="UIMap.UIWählensieeinBildWindow.UIÖffnenWindow.UIÖffnenButton">
-      <ParameterName />
-      <ModifierKeys>None</ModifierKeys>
-      <IsGlobalHotkey>false</IsGlobalHotkey>
-      <Location X="27" Y="7" />
-      <WheelDirection>0</WheelDirection>
-      <ActionType>Click</ActionType>
-      <MouseButton>Left</MouseButton>
-    </MouseAction>
-    <MouseAction UIObjectName="UIMap.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIResFilePathRow">
-      <ParameterName />
-      <ModifierKeys>None</ModifierKeys>
-      <IsGlobalHotkey>false</IsGlobalHotkey>
-      <Location X="74" Y="7" />
-      <WheelDirection>0</WheelDirection>
-      <ActionType>Click</ActionType>
-      <MouseButton>Left</MouseButton>
-    </MouseAction>
-    <TestStepMarkerAction Comment="" MarkerInformation="UseFileDialogAugmentationRecord">
-      <ParameterName />
-      <StepId>-1</StepId>
-      <Direction>Start</Direction>
-      <Outcome />
-      <Disabled>false</Disabled>
-      <WorkItemId>0</WorkItemId>
-      <MarkerRegionType>Action</MarkerRegionType>
-    </TestStepMarkerAction>
-    <AssertAction UIObjectName="UIMap.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIResFilePathRow">
-      <ParameterName />
-      <PropertyName>Value</PropertyName>
-      <ExpectedValue>C:\2.jpg</ExpectedValue>
-      <MessageOnValidationFailure />
-      <Type>String</Type>
-      <PropertyCondition>AreEqual</PropertyCondition>
-    </AssertAction>
-    <TestStepMarkerAction Comment="" MarkerInformation="UseFileDialogAugmentationAssertion">
-      <ParameterName />
-      <StepId>-1</StepId>
-      <Direction>Start</Direction>
-      <Outcome />
-      <Disabled>false</Disabled>
-      <WorkItemId>0</WorkItemId>
-      <MarkerRegionType>Assertion</MarkerRegionType>
-    </TestStepMarkerAction>
-    <MouseAction UIObjectName="UIMap.UIARdevKitWindow.UIPictureMarkerClient.UIPictureMarkerClient1">
-      <ParameterName />
-      <ModifierKeys>None</ModifierKeys>
-      <IsGlobalHotkey>false</IsGlobalHotkey>
-      <Location X="67" Y="52" />
-      <WheelDirection>0</WheelDirection>
-      <ActionType>Click</ActionType>
-      <MouseButton>Left</MouseButton>
-    </MouseAction>
-    <SetValueAction UIObjectName="UIMap.UIARdevKitWindow.UICmb_editor_selectionWindow.UICmb_editor_selectionComboBox">
-      <ParameterName />
-      <Value Encoded="false">Augmentations</Value>
-      <Type>String</Type>
-    </SetValueAction>
-    <MouseAction UIObjectName="UIMap.UIARdevKitWindow.UIChartClient.UIChartClient1">
-      <ParameterName />
-      <ModifierKeys>None</ModifierKeys>
-      <IsGlobalHotkey>false</IsGlobalHotkey>
-      <Location X="81" Y="97" />
+      <Location X="35" Y="79" />
       <WheelDirection>0</WheelDirection>
       <ActionType>Click</ActionType>
       <MouseButton>Left</MouseButton>
@@ -1227,12 +1465,6 @@
       <Type>String</Type>
       <PreferEdit>True</PreferEdit>
     </SetValueAction>
-    <SendKeysAction UIObjectName="UIMap.UIWählensieeinBildWindow.UIItemWindow1.UIDateinameEdit">
-      <ParameterName />
-      <ModifierKeys>None</ModifierKeys>
-      <IsGlobalHotkey>false</IsGlobalHotkey>
-      <Text Encoded="false">{LShiftKey}</Text>
-    </SendKeysAction>
     <SendKeysAction UIObjectName="UIMap.UIWählensieeinBildWindow.UIItemWindow1.UIDateinameEdit">
       <ParameterName />
       <ModifierKeys>Alt Control</ModifierKeys>
@@ -1251,61 +1483,70 @@
       <IsGlobalHotkey>false</IsGlobalHotkey>
       <Text Encoded="false">{Enter}</Text>
     </SendKeysAction>
-    <TestStepMarkerAction Comment="" MarkerInformation="EditorFormTestRecord">
-      <ParameterName />
-      <StepId>-1</StepId>
-      <Direction>Start</Direction>
-      <Outcome />
-      <Disabled>false</Disabled>
-      <WorkItemId>0</WorkItemId>
-      <MarkerRegionType>Action</MarkerRegionType>
-    </TestStepMarkerAction>
-    <MouseAction UIObjectName="UIMap.UIARdevKitWindow.UIItem1Window.UIItem1Button">
+    <MouseAction UIObjectName="UIMap.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIRotationRow">
       <ParameterName />
       <ModifierKeys>None</ModifierKeys>
       <IsGlobalHotkey>false</IsGlobalHotkey>
-      <Location X="30" Y="29" />
-      <WheelDirection>0</WheelDirection>
-      <ActionType>Click</ActionType>
-      <MouseButton>Right</MouseButton>
-    </MouseAction>
-    <MouseAction UIObjectName="UIMap.UIItemWindow.UIKontextmenüMenu.UIDuplicateMenuItem">
-      <ParameterName />
-      <ModifierKeys>None</ModifierKeys>
-      <IsGlobalHotkey>false</IsGlobalHotkey>
-      <Location X="16" Y="7" />
+      <Location X="9" Y="12" />
       <WheelDirection>0</WheelDirection>
       <ActionType>Click</ActionType>
       <MouseButton>Left</MouseButton>
     </MouseAction>
-    <MouseAction UIObjectName="UIMap.UIARdevKitWindow.UIItem2Window.UIItem2Button">
+    <MouseAction UIObjectName="UIMap.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIXRow">
       <ParameterName />
       <ModifierKeys>None</ModifierKeys>
       <IsGlobalHotkey>false</IsGlobalHotkey>
-      <Location X="28" Y="25" />
+      <Location X="65" Y="7" />
       <WheelDirection>0</WheelDirection>
       <ActionType>Click</ActionType>
       <MouseButton>Left</MouseButton>
     </MouseAction>
-    <TestStepMarkerAction Comment="" MarkerInformation="EditorFormDuplicateRecord">
-      <ParameterName />
-      <StepId>-1</StepId>
-      <Direction>Start</Direction>
-      <Outcome />
-      <Disabled>false</Disabled>
-      <WorkItemId>0</WorkItemId>
-      <MarkerRegionType>Action</MarkerRegionType>
-    </TestStepMarkerAction>
-    <MouseAction UIObjectName="UIMap.UIARdevKitWindow.UIItem1Window.UIItem1Button">
+    <SendKeysAction UIObjectName="UIMap.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIXRow">
       <ParameterName />
       <ModifierKeys>None</ModifierKeys>
       <IsGlobalHotkey>false</IsGlobalHotkey>
-      <Location X="28" Y="25" />
+      <Text Encoded="false">9</Text>
+    </SendKeysAction>
+    <MouseAction UIObjectName="UIMap.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIYRow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="64" Y="10" />
       <WheelDirection>0</WheelDirection>
       <ActionType>Click</ActionType>
       <MouseButton>Left</MouseButton>
     </MouseAction>
-    <TestStepMarkerAction Comment="" MarkerInformation="EditorFormBackRecord">
+    <SendKeysAction UIObjectName="UIMap.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIYRow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Text Encoded="false">9</Text>
+    </SendKeysAction>
+    <MouseAction UIObjectName="UIMap.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIZRow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="64" Y="10" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <SendKeysAction UIObjectName="UIMap.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIZRow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Text Encoded="false">9</Text>
+    </SendKeysAction>
+    <MouseAction UIObjectName="UIMap.UIARdevKitWindow.UIPropertyGridClient.UIPropertyGridViewTable">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="82" Y="314" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="ChangeRotatingRecord">
       <ParameterName />
       <StepId>-1</StepId>
       <Direction>Start</Direction>
@@ -1751,6 +1992,148 @@
                       </SearchConfigurations>
                       <AndCondition Id="SearchCondition">
                         <PropertyCondition Name="Name">SimilarityThreshold</PropertyCondition>
+                        <PropertyCondition Name="ControlType">Row</PropertyCondition>
+                      </AndCondition>
+                      <SupportLevel>0</SupportLevel>
+                      <Descendants />
+                    </UIObject>
+                    <UIObject ControlType="Row" Id="UIHeightRow" FriendlyName="Height" SpecialControlType="None">
+                      <TechnologyName>MSAA</TechnologyName>
+                      <WindowTitles>
+                        <WindowTitle>ARdevKit</WindowTitle>
+                      </WindowTitles>
+                      <SearchConfigurations>
+                        <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                        <SearchConfiguration>AlwaysSearch</SearchConfiguration>
+                      </SearchConfigurations>
+                      <AndCondition Id="SearchCondition">
+                        <PropertyCondition Name="Name">Height</PropertyCondition>
+                        <PropertyCondition Name="ControlType">Row</PropertyCondition>
+                      </AndCondition>
+                      <SupportLevel>0</SupportLevel>
+                      <Descendants />
+                    </UIObject>
+                    <UIObject ControlType="Row" Id="UIWidthRow" FriendlyName="Width" SpecialControlType="None">
+                      <TechnologyName>MSAA</TechnologyName>
+                      <WindowTitles>
+                        <WindowTitle>ARdevKit</WindowTitle>
+                      </WindowTitles>
+                      <SearchConfigurations>
+                        <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                        <SearchConfiguration>AlwaysSearch</SearchConfiguration>
+                      </SearchConfigurations>
+                      <AndCondition Id="SearchCondition">
+                        <PropertyCondition Name="Name">Width</PropertyCondition>
+                        <PropertyCondition Name="ControlType">Row</PropertyCondition>
+                      </AndCondition>
+                      <SupportLevel>0</SupportLevel>
+                      <Descendants />
+                    </UIObject>
+                    <UIObject ControlType="Row" Id="UIMatrixIDRow" FriendlyName="MatrixID" SpecialControlType="None">
+                      <TechnologyName>MSAA</TechnologyName>
+                      <WindowTitles>
+                        <WindowTitle>ARdevKit</WindowTitle>
+                      </WindowTitles>
+                      <SearchConfigurations>
+                        <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                        <SearchConfiguration>AlwaysSearch</SearchConfiguration>
+                      </SearchConfigurations>
+                      <AndCondition Id="SearchCondition">
+                        <PropertyCondition Name="Name">MatrixID</PropertyCondition>
+                        <PropertyCondition Name="ControlType">Row</PropertyCondition>
+                      </AndCondition>
+                      <SupportLevel>0</SupportLevel>
+                      <Descendants />
+                    </UIObject>
+                    <UIObject ControlType="Edit" Id="UIMatrixIDEdit" FriendlyName="MatrixID" SpecialControlType="None">
+                      <TechnologyName>MSAA</TechnologyName>
+                      <WindowTitles>
+                        <WindowTitle>ARdevKit</WindowTitle>
+                      </WindowTitles>
+                      <SearchConfigurations>
+                        <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                      </SearchConfigurations>
+                      <AndCondition Id="SearchCondition">
+                        <PropertyCondition Name="Name">MatrixID</PropertyCondition>
+                        <PropertyCondition Name="ControlType">Edit</PropertyCondition>
+                      </AndCondition>
+                      <SupportLevel>0</SupportLevel>
+                      <Descendants />
+                    </UIObject>
+                    <UIObject ControlType="Row" Id="UIRotationRow" FriendlyName="Rotation" SpecialControlType="None">
+                      <TechnologyName>MSAA</TechnologyName>
+                      <WindowTitles>
+                        <WindowTitle>ARdevKit</WindowTitle>
+                      </WindowTitles>
+                      <SearchConfigurations>
+                        <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                        <SearchConfiguration>AlwaysSearch</SearchConfiguration>
+                      </SearchConfigurations>
+                      <AndCondition Id="SearchCondition">
+                        <PropertyCondition Name="Name">Rotation</PropertyCondition>
+                        <PropertyCondition Name="ControlType">Row</PropertyCondition>
+                      </AndCondition>
+                      <SupportLevel>0</SupportLevel>
+                      <Descendants />
+                    </UIObject>
+                    <UIObject ControlType="Row" Id="UIXRow" FriendlyName="X" SpecialControlType="None">
+                      <TechnologyName>MSAA</TechnologyName>
+                      <WindowTitles>
+                        <WindowTitle>ARdevKit</WindowTitle>
+                      </WindowTitles>
+                      <SearchConfigurations>
+                        <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                        <SearchConfiguration>AlwaysSearch</SearchConfiguration>
+                      </SearchConfigurations>
+                      <AndCondition Id="SearchCondition">
+                        <PropertyCondition Name="Name">X</PropertyCondition>
+                        <PropertyCondition Name="ControlType">Row</PropertyCondition>
+                      </AndCondition>
+                      <SupportLevel>0</SupportLevel>
+                      <Descendants />
+                    </UIObject>
+                    <UIObject ControlType="Edit" Id="UIXEdit" FriendlyName="X" SpecialControlType="None">
+                      <TechnologyName>MSAA</TechnologyName>
+                      <WindowTitles>
+                        <WindowTitle>ARdevKit</WindowTitle>
+                      </WindowTitles>
+                      <SearchConfigurations>
+                        <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                      </SearchConfigurations>
+                      <AndCondition Id="SearchCondition">
+                        <PropertyCondition Name="Name">X</PropertyCondition>
+                        <PropertyCondition Name="ControlType">Edit</PropertyCondition>
+                      </AndCondition>
+                      <SupportLevel>0</SupportLevel>
+                      <Descendants />
+                    </UIObject>
+                    <UIObject ControlType="Row" Id="UIYRow" FriendlyName="Y" SpecialControlType="None">
+                      <TechnologyName>MSAA</TechnologyName>
+                      <WindowTitles>
+                        <WindowTitle>ARdevKit</WindowTitle>
+                      </WindowTitles>
+                      <SearchConfigurations>
+                        <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                        <SearchConfiguration>AlwaysSearch</SearchConfiguration>
+                      </SearchConfigurations>
+                      <AndCondition Id="SearchCondition">
+                        <PropertyCondition Name="Name">Y</PropertyCondition>
+                        <PropertyCondition Name="ControlType">Row</PropertyCondition>
+                      </AndCondition>
+                      <SupportLevel>0</SupportLevel>
+                      <Descendants />
+                    </UIObject>
+                    <UIObject ControlType="Row" Id="UIZRow" FriendlyName="Z" SpecialControlType="None">
+                      <TechnologyName>MSAA</TechnologyName>
+                      <WindowTitles>
+                        <WindowTitle>ARdevKit</WindowTitle>
+                      </WindowTitles>
+                      <SearchConfigurations>
+                        <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                        <SearchConfiguration>AlwaysSearch</SearchConfiguration>
+                      </SearchConfigurations>
+                      <AndCondition Id="SearchCondition">
+                        <PropertyCondition Name="Name">Z</PropertyCondition>
                         <PropertyCondition Name="ControlType">Row</PropertyCondition>
                       </AndCondition>
                       <SupportLevel>0</SupportLevel>

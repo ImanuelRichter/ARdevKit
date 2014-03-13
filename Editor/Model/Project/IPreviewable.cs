@@ -20,7 +20,7 @@ namespace ARdevKit.Model.Project
         ///PreviewPanel.
         /// </summary>
         /// <returns></returns>
-        Bitmap getPreview();
+        Bitmap getPreview(string projectPath);
 
         /// <summary>
         /// Gets the icon which is displayed by

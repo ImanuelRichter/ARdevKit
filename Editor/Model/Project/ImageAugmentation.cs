@@ -94,14 +94,13 @@ namespace ARdevKit.Model.Project
         /// </returns>
         /// <exception cref="FileNotFoundException">Thrown when the requested File is
         /// not found in <see cref="SourceFilePath" />.</exception>
-        public override Bitmap getPreview()
+        public override Bitmap getPreview(string projectPath)
         {
-            string dir = Path.GetDirectoryName(resFilePath);
-            if (Directory.Exists(dir))
-                return new Bitmap(ResFilePath);
+            string absolutePath = Path.Combine(projectPath == null ? "" : projectPath, resFilePath);
+            if (System.IO.File.Exists(absolutePath))
+                return new Bitmap(absolutePath);
             else
                 throw new ArgumentException("Projekt-Datei beschädigt");
-
         }
 
         /// <summary>
@@ -155,9 +154,9 @@ namespace ARdevKit.Model.Project
             if (ResFilePath == null)
             {
                 OpenFileDialog openFileDialog = new OpenFileDialog();
-                openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+                openFileDialog.InitialDirectory = Environment.CurrentDirectory + "\\res\\testFiles\\augmentations";
                 openFileDialog.Title = "Wählen sie ein Bild";
-                openFileDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
+                openFileDialog.Filter = "Supported image files (*.jpg, *.png, *.bmp, *.ppm, *.pgm)|*.jpg; *.png; *.bmp; *.ppm; *.pgm";
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     ResFilePath = openFileDialog.FileName;

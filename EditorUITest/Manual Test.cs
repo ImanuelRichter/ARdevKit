@@ -39,14 +39,7 @@ namespace EditorUITest
         {
             bool isInTecoNetwork;
             //Preperation
-            MessageBox.Show(new Form() { TopMost = true }, "Erstelle ein neues Projekt", "Testschritt!");
-            MessageBox.Show(new Form() { TopMost = true }, "Füge einen ID-Marker hinzu", "Testschritt!");
-            MessageBox.Show(new Form() { TopMost = true }, "Füge ein Bild als Augmentation hinzu", "Testschritt!");
-            MessageBox.Show(new Form() { TopMost = true }, "Füge ein Diagramm hinzu und wähle \"res\\highcharts\\demo\\opions.js\" als Vorlage aus", "Testschritt!");
-            MessageBox.Show(new Form() { TopMost = true }, "Füge dem Diagramm eine \"Database Source\" hinzu", "Testschritt!");
-            MessageBox.Show(new Form() { TopMost = true }, "Wähle \"res\\highcharts\\demo\\query.js\" als Datenbankanfrage", "Testschritt!");
-            MessageBox.Show(new Form() { TopMost = true }, "Wähle die in der Verknüpfung \"res\\highcharts\\demo\\URL\" hinterlegte URL als URL", "Testschritt!");
-
+            MessageBox.Show(new Form() { TopMost = true }, "Lade das Projekt \"res\\testFiles\\testProjects\\networkProject\"", "Testschritt!");
 
             //TF11150
             MessageBox.Show(new Form() { TopMost = true }, "Klicke auf \"Datei\" und geh mit der Maus auf \"Projekt versenden\" (ohne zu klicken)", "Testschritt!");
@@ -71,24 +64,21 @@ namespace EditorUITest
             Assert.IsTrue(MessageBox.Show("Startet der Player neu?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
 
             isInTecoNetwork = MessageBox.Show("Befinden sich Editor und Player im teco-Netzwerk?", "Branch!", MessageBoxButtons.YesNo) == DialogResult.Yes;
+            MessageBox.Show(new Form() { TopMost = true }, "Halte den ID-Marker mit der ID 1 vor die Kamera des mobilen Geräts", "Testschritt!");
             if (isInTecoNetwork)
             {
-                MessageBox.Show(new Form() { TopMost = true }, "Halte den ID-Marker vor die Kamera des mobilen Geräts", "Testschritt!");
-                Assert.IsTrue(MessageBox.Show("Ist das Diagramm mit Daten zu sehen?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+                Assert.IsTrue(MessageBox.Show("Sind zwei mit Graphen gefüllte Diagramme zu sehen?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
             }
             else
             {
-                MessageBox.Show(new Form() { TopMost = true }, "Halte den ID-Marker vor die Kamera des mobilen Geräts", "Testschritt!");
-                Assert.IsTrue(MessageBox.Show("Ist das Diagramm ohne Inhalt zu sehen?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
-
+                Assert.IsTrue(MessageBox.Show("Ist ein Diagramm mit Graphen und eines ohne zu sehen?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
             }
-            Assert.IsTrue(MessageBox.Show("Ist das Bild zu sehen?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
 
             MessageBox.Show(new Form() { TopMost = true }, "Klicke auf \"Datei\" und geh mit der Maus auf \"Projekt versenden\" (ohne zu klicken) und klicke auf \"Gerätedebugmodus starten\"", "Testschritt!");
             Assert.IsTrue(MessageBox.Show("Öffnet sich ein neues Fenster mit einem Textfeld?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
 
             //TF20030
-            MessageBox.Show(new Form() { TopMost = true }, "Halte den ID-Marker vor die Kamera des mobilen Geräts", "Testschritt!");
+            MessageBox.Show(new Form() { TopMost = true }, "Halte wieder den ID-Marker mit der ID 1 vor die Kamera des mobilen Geräts", "Testschritt!");
             Assert.IsTrue(MessageBox.Show("Wird im Debugfenster die erkannte id angezeigt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
 
             //TF20050
