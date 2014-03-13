@@ -594,14 +594,15 @@ namespace ARdevKit
             {
                 if (project.ProjectPath == null || project.Name.Equals(""))
                 {
-                    SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-                    saveFileDialog1.Filter = "ARdevkit Projektdatei|*.ardev";
-                    saveFileDialog1.Title = "Projekt speichern";
-                    saveFileDialog1.ShowDialog();
+                    SaveFileDialog saveFileDialog = new SaveFileDialog();
+                    saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                    saveFileDialog.Filter = "ARdevkit Projektdatei|*.ardev";
+                    saveFileDialog.Title = "Projekt speichern";
+                    saveFileDialog.ShowDialog();
                     try
                     {
-                        project.ProjectPath = Path.GetDirectoryName(saveFileDialog1.FileName);
-                        project.Name = Path.GetFileNameWithoutExtension(saveFileDialog1.FileName);
+                        project.ProjectPath = Path.GetDirectoryName(saveFileDialog.FileName);
+                        project.Name = Path.GetFileNameWithoutExtension(saveFileDialog.FileName);
                         this.Export(save);
                         if (save)
                             this.Save(project.ProjectPath);

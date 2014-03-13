@@ -107,6 +107,7 @@ namespace ARdevKit.Controller.TestController
             {
                 MessageBox.Show("Das Projekt muss zuerst gespeichert werden");
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
                 saveFileDialog.Filter = "ARdevkit Projektdatei|*.ardev";
                 saveFileDialog.Title = "Projekt speichern";
                 saveFileDialogResult = saveFileDialog.ShowDialog();
@@ -127,8 +128,9 @@ namespace ARdevKit.Controller.TestController
                 {
                     case (IMAGE):
                         OpenFileDialog openTestImageDialog = new OpenFileDialog();
+                        openTestImageDialog.InitialDirectory = "res\\testFiles\\imagesToLoadForTesting";
                         openTestImageDialog.Title = "Bitte ein Bild auswählen, an dem getestet werden soll";
-                        openTestImageDialog.Filter = "Supported files (*.jpg, *.png, *.bmp, *.ppm, *.pgm)|*.jpg; *.png; *.bmp; *.ppm; *.pgm";
+                        openTestImageDialog.Filter = "Supported image files (*.jpg, *.png, *.bmp, *.ppm, *.pgm)|*.jpg; *.png; *.bmp; *.ppm; *.pgm";
                         if (openTestImageDialog.ShowDialog() == DialogResult.OK)
                         {
                             string testFilePath = openTestImageDialog.FileName;
@@ -138,6 +140,7 @@ namespace ARdevKit.Controller.TestController
                         break;
                     case (VIDEO):
                         OpenFileDialog openTestVideoDialog = new OpenFileDialog();
+                        openTestVideoDialog.InitialDirectory = "res\\testFiles\\videosToLoadForTesting";
                         openTestVideoDialog.Title = "Bitte ein Video auswählen, an dem getestet werden soll";
                         if (openTestVideoDialog.ShowDialog() == DialogResult.OK)
                         {
@@ -163,6 +166,10 @@ namespace ARdevKit.Controller.TestController
                         break;
                     case (CAMERA):
                         OpenFileDialog openVirualCameraPathDialog = new OpenFileDialog();
+                        if (Environment.Is64BitOperatingSystem && Environment.Is64BitProcess)
+                            openVirualCameraPathDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles);
+                        else
+                            openVirualCameraPathDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86);
                         openVirualCameraPathDialog.Title = "Bitte virtuelle Kamera auswählen";
                         openVirualCameraPathDialog.Filter = "Executable (*.exe)|*.exe";
                         if (openVirualCameraPathDialog.ShowDialog() == DialogResult.OK)
