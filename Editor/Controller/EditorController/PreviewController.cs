@@ -1222,7 +1222,7 @@ public class PreviewController
     {
         try
         {
-            if (((AbstractAugmentation)ew.CurrentElement).CustomUserEventReference == null)
+            if (((AbstractAugmentation)ew.CurrentElement).CustomUserEventReference == null || !System.IO.File.Exists(((AbstractAugmentation)ew.CurrentElement).CustomUserEventReference.FilePath))
                 ((AbstractAugmentation)ew.CurrentElement).createUserEvent();
             TextEditorForm tef = new TextEditorForm(((AbstractAugmentation)ew.CurrentElement).CustomUserEventReference.FilePath);
             tef.Show();

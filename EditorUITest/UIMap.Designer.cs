@@ -738,6 +738,78 @@ namespace EditorUITest
             Assert.AreEqual(this.UseFileDialogAugmentationAssertionExpectedValues.UIResFilePathRowValue, uIResFilePathRow.Value);
         }
         
+        /// <summary>
+        /// EditorFormTestRecord - Verwenden Sie "EditorFormTestRecordParams", um Parameter an diese Methode zu übergeben.
+        /// </summary>
+        public void EditorFormTestRecord()
+        {
+            #region Variable Declarations
+            WinClient uIPictureMarkerClient1 = this.UIARdevKitWindow.UIPictureMarkerClient.UIPictureMarkerClient1;
+            WinComboBox uICmb_editor_selectionComboBox = this.UIARdevKitWindow.UICmb_editor_selectionWindow.UICmb_editor_selectionComboBox;
+            WinClient uIChartClient1 = this.UIARdevKitWindow.UIChartClient.UIChartClient1;
+            WinComboBox uIDateinameComboBox = this.UIWählensieeinBildWindow.UIItemWindow.UIDateinameComboBox;
+            WinEdit uIDateinameEdit = this.UIWählensieeinBildWindow.UIItemWindow1.UIDateinameEdit;
+            #endregion
+
+            // Klicken "Picture Marker" Client
+            Mouse.Click(uIPictureMarkerClient1, new Point(67, 52));
+
+            // "Augmentations" in "cmb_editor_selection_toolSelection" Kombinationsfeld auswählen
+            uICmb_editor_selectionComboBox.SelectedItem = this.EditorFormTestRecordParams.UICmb_editor_selectionComboBoxSelectedItem;
+
+            // Klicken "Chart" Client
+            Mouse.Click(uIChartClient1, new Point(81, 97));
+
+            // "C:" in "Dateiname:" Kombinationsfeld auswählen
+            uIDateinameComboBox.EditableItem = this.EditorFormTestRecordParams.UIDateinameComboBoxEditableItem;
+
+            // "{LShiftKey}" in "Dateiname:" Textfeld eingeben
+            Keyboard.SendKeys(uIDateinameEdit, this.EditorFormTestRecordParams.UIDateinameEditSendKeys, ModifierKeys.None);
+
+            // "Alt, Control + {[}" in "Dateiname:" Textfeld eingeben
+            Keyboard.SendKeys(uIDateinameEdit, this.EditorFormTestRecordParams.UIDateinameEditSendKeys1, (ModifierKeys.Alt | ModifierKeys.Control));
+
+            // "C:\1.jpg" in "Dateiname:" Kombinationsfeld auswählen
+            uIDateinameComboBox.EditableItem = this.EditorFormTestRecordParams.UIDateinameComboBoxEditableItem1;
+
+            // "{Enter}" in "Dateiname:" Textfeld eingeben
+            Keyboard.SendKeys(uIDateinameEdit, this.EditorFormTestRecordParams.UIDateinameEditSendKeys2, ModifierKeys.None);
+        }
+        
+        /// <summary>
+        /// EditorFormDuplicateRecord
+        /// </summary>
+        public void EditorFormDuplicateRecord()
+        {
+            #region Variable Declarations
+            WinButton uIItem1Button = this.UIARdevKitWindow.UIItem1Window.UIItem1Button;
+            WinMenuItem uIDuplicateMenuItem = this.UIItemWindow.UIKontextmenüMenu.UIDuplicateMenuItem;
+            WinButton uIItem2Button = this.UIARdevKitWindow.UIItem2Window.UIItem2Button;
+            #endregion
+
+            // Rechts-Klicken "1" Schaltfläche
+            Mouse.Click(uIItem1Button, MouseButtons.Right, ModifierKeys.None, new Point(30, 29));
+
+            // Klicken "Duplicate" Menüelement
+            Mouse.Click(uIDuplicateMenuItem, new Point(16, 7));
+
+            // Klicken "2" Schaltfläche
+            Mouse.Click(uIItem2Button, new Point(28, 25));
+        }
+        
+        /// <summary>
+        /// EditorFormBackRecord
+        /// </summary>
+        public void EditorFormBackRecord()
+        {
+            #region Variable Declarations
+            WinButton uIItem1Button = this.UIARdevKitWindow.UIItem1Window.UIItem1Button;
+            #endregion
+
+            // Klicken "1" Schaltfläche
+            Mouse.Click(uIItem1Button, new Point(28, 25));
+        }
+        
         #region Properties
         public virtual ChangeImagePathRecordParams ChangeImagePathRecordParams
         {
@@ -1051,6 +1123,18 @@ namespace EditorUITest
             }
         }
         
+        public virtual EditorFormTestRecordParams EditorFormTestRecordParams
+        {
+            get
+            {
+                if ((this.mEditorFormTestRecordParams == null))
+                {
+                    this.mEditorFormTestRecordParams = new EditorFormTestRecordParams();
+                }
+                return this.mEditorFormTestRecordParams;
+            }
+        }
+        
         public UIARdevKitWindow UIARdevKitWindow
         {
             get
@@ -1272,6 +1356,8 @@ namespace EditorUITest
         private UseFileDialogAugmentationRecordParams mUseFileDialogAugmentationRecordParams;
         
         private UseFileDialogAugmentationAssertionExpectedValues mUseFileDialogAugmentationAssertionExpectedValues;
+        
+        private EditorFormTestRecordParams mEditorFormTestRecordParams;
         
         private UIARdevKitWindow mUIARdevKitWindow;
         
@@ -1816,6 +1902,46 @@ namespace EditorUITest
         /// Sicherstellen, dass die Eigenschaft 'Value' von "ResFilePath" Zeile ist gleich 'C:\2.jpg'
         /// </summary>
         public string UIResFilePathRowValue = "C:\\2.jpg";
+        #endregion
+    }
+    
+    /// <summary>
+    /// An "EditorFormTestRecord" zu übergebende Parameter
+    /// </summary>
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class EditorFormTestRecordParams
+    {
+        
+        #region Fields
+        /// <summary>
+        /// "Augmentations" in "cmb_editor_selection_toolSelection" Kombinationsfeld auswählen
+        /// </summary>
+        public string UICmb_editor_selectionComboBoxSelectedItem = "Augmentations";
+        
+        /// <summary>
+        /// "C:" in "Dateiname:" Kombinationsfeld auswählen
+        /// </summary>
+        public string UIDateinameComboBoxEditableItem = "C:";
+        
+        /// <summary>
+        /// "{LShiftKey}" in "Dateiname:" Textfeld eingeben
+        /// </summary>
+        public string UIDateinameEditSendKeys = "{LShiftKey}";
+        
+        /// <summary>
+        /// "Alt, Control + {[}" in "Dateiname:" Textfeld eingeben
+        /// </summary>
+        public string UIDateinameEditSendKeys1 = "{[}";
+        
+        /// <summary>
+        /// "C:\1.jpg" in "Dateiname:" Kombinationsfeld auswählen
+        /// </summary>
+        public string UIDateinameComboBoxEditableItem1 = "C:\\1.jpg";
+        
+        /// <summary>
+        /// "{Enter}" in "Dateiname:" Textfeld eingeben
+        /// </summary>
+        public string UIDateinameEditSendKeys2 = "{Enter}";
         #endregion
     }
     

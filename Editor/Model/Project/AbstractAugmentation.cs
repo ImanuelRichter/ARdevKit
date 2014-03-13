@@ -259,6 +259,10 @@ namespace ARdevKit.Model.Project
                 }
             }
             id = newID;
+            if (cue != null)
+            {
+                cue.AugmentationID = id;
+            }
             return true;
         }
 
