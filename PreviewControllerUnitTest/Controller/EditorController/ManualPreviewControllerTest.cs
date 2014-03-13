@@ -527,8 +527,6 @@ namespace PreviewController_TextEditorForm_Tests
         [TestMethod()]
         public void sceneTest02()
         {
-            createProject01(Markers.Picture);
-
             MessageBox.Show(new Form() { TopMost = true }, "Fuege so viele Szenen wie moeglich hinzu (10)", "Testschritt!");
 
             Assert.IsTrue(MessageBox.Show("Wurden die neuen Szene korrekt hinzugefuegt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
