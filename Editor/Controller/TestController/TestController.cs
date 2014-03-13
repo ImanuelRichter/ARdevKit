@@ -102,7 +102,7 @@ namespace ARdevKit.Controller.TestController
             showDebug = _showDebug;
 
             IDFactory.Reset();
-            DialogResult saveFileDialogResult = DialogResult.None;
+            DialogResult saveFileDialogResult = DialogResult.OK;
             if (project.ProjectPath == null || project.Name.Equals(""))
             {
                 MessageBox.Show("Das Projekt muss zuerst gespeichert werden");
@@ -110,7 +110,7 @@ namespace ARdevKit.Controller.TestController
                 saveFileDialog.Filter = "ARdevkit Projektdatei|*.ardev";
                 saveFileDialog.Title = "Projekt speichern";
                 saveFileDialogResult = saveFileDialog.ShowDialog();
-                project.ProjectPath = saveFileDialog.FileName;
+                project.ProjectPath = Path.GetDirectoryName(saveFileDialog.FileName);
                 project.Name = Path.GetFileNameWithoutExtension(saveFileDialog.FileName);
             }
             if (saveFileDialogResult == DialogResult.OK)
