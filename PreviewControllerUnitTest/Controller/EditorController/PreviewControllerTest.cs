@@ -91,18 +91,6 @@ namespace Tests
         }
 
         [TestMethod()]
-        public void addPreviewAbleTest()
-        {
-            //arrange
-
-            //act
-
-            //assert
-            //result has to be tested via UI testing
-            Assert.Inconclusive("please test correct functionality via UI test");
-        }
-
-        [TestMethod()]
         [ExpectedException(typeof(ArgumentException))]
         public void addSourceTest_nullArgument01()
         {
@@ -151,18 +139,6 @@ namespace Tests
 
             //assert
             //assert is handled by the ExcpectedException
-        }
-
-        [TestMethod()]
-        public void addSourceTest()
-        {
-            //arrange
-
-            //act
-
-            //assert
-            //result has to be tested via UI testing
-            Assert.Inconclusive("please test correct functionality via UI test");
         }
 
         [TestMethod()]
@@ -217,18 +193,6 @@ namespace Tests
         }
 
         [TestMethod()]
-        public void removeSourceTest()
-        {
-            //arrange
-
-            //act
-
-            //assert
-            //result has to be tested via UI testing
-            Assert.Inconclusive("please test correct functionality via UI test");
-        }
-
-        [TestMethod()]
         [ExpectedException(typeof(ArgumentException))]
         public void removePreviewableTest_nullArgument01()
         {
@@ -245,42 +209,6 @@ namespace Tests
         }
 
         [TestMethod()]
-        public void removePreviewableTest()
-        {
-            //arrange
-
-            //act
-
-            //assert
-            //result has to be tested via UI testing
-            Assert.Inconclusive("please test correct functionality via UI test");
-        }
-
-        [TestMethod()]
-        public void updatePreviewPanelTest()
-        {
-            //arrange
-
-            //act
-
-            //assert
-            //result has to be tested via UI testing
-            Assert.Inconclusive("please test correct functionality via UI test");
-        }
-
-        [TestMethod()]
-        public void reloadPreviewPanelTest()
-        {
-            //arrange
-
-            //act
-
-            //assert
-            //result has to be tested via UI testing
-            Assert.Inconclusive("please test correct functionality via UI test");
-        }
-
-        [TestMethod()]
         [ExpectedException(typeof(ArgumentException))]
         public void reloadPreviewableTest_nullArgument01()
         {
@@ -294,18 +222,6 @@ namespace Tests
 
             //assert
             //assert is handled by the ExcpectedException
-        }
-
-        [TestMethod()]
-        public void reloadPreviewableTest()
-        {
-            //arrange
-
-            //act
-
-            //assert
-            //result has to be tested via UI testing
-            Assert.Inconclusive("please test correct functionality via UI test");
         }
 
         [TestMethod()]
@@ -360,18 +276,6 @@ namespace Tests
         }
 
         [TestMethod()]
-        public void addPictureBoxTest()
-        {
-            //arrange
-
-            //act
-
-            //assert
-            //result has to be tested via UI testing
-            Assert.Inconclusive("please test correct functionality via UI test");
-        }
-
-        [TestMethod()]
         [ExpectedException(typeof(ArgumentException))]
         public void findBoxTest_nullArgument01()
         {
@@ -387,29 +291,6 @@ namespace Tests
             //assert is handled by the ExcpectedException
         }
 
-        [TestMethod()]
-        public void findBoxTest()
-        {
-            //arrange
-
-            //act
-
-            //assert
-            //result has to be tested via UI testing
-            Assert.Inconclusive("please test correct functionality via UI test");
-        }
-
-        [TestMethod()]
-        public void setCurrentElementTest()
-        {
-            //arrange
-
-            //act
-
-            //assert
-            //result has to be tested via UI testing
-            Assert.Inconclusive("please test correct functionality via UI test");
-        }
 
         [TestMethod()]
         [ExpectedException(typeof(ArgumentException))]
@@ -459,18 +340,6 @@ namespace Tests
             //assert
             Assert.IsNotNull(bmp);
             Assert.IsInstanceOfType(bmp, typeof(Bitmap));
-        }
-
-        [TestMethod()]
-        public void scaleIPreviewableTest02()
-        {
-            //arrange
-
-            //act
-
-            //assert
-            //result has to be tested via UI testing
-            Assert.Inconclusive("please test correct functionality via UI test");
         }
 
         [TestMethod()]
@@ -627,18 +496,6 @@ namespace Tests
         }
 
         [TestMethod()]
-        public void rescalePreviewPanelTest()
-        {
-            //arrange
-
-            //act
-
-            //assert
-            //result has to be tested via UI testing
-            Assert.Inconclusive("please test correct functionality via UI test");
-        }
-
-        [TestMethod()]
         [ExpectedException(typeof(ArgumentException))]
         public void setCoordinatesTest_nullArgument01()
         {
@@ -690,42 +547,6 @@ namespace Tests
         }
 
         [TestMethod()]
-        public void setCoordinatesTest()
-        {
-            //arrange
-
-            //act
-
-            //assert
-            //result has to be tested via UI testing
-            Assert.Inconclusive("please test correct functionality via UI test");
-        }
-
-        [TestMethod()]
-        public void updateTranslationTest()
-        {
-            //arrange
-
-            //act
-
-            //assert
-            //result has to be tested via UI testing
-            Assert.Inconclusive("please test correct functionality via UI test");
-        }
-
-        [TestMethod()]
-        public void updateElementComboboxTest()
-        {
-            //arrange
-
-            //act
-
-            //assert
-            //result has to be tested via UI testing
-            Assert.Inconclusive("please test correct functionality via UI test");
-        }
-
-        [TestMethod()]
         [ExpectedException(typeof(ArgumentException))]
         public void rotateAugmentationTest_nullArgument01()
         {
@@ -739,18 +560,6 @@ namespace Tests
 
             //assert
             //assert is handled by the ExcpectedException
-        }
-
-        [TestMethod()]
-        public void rotateAugmentationTest()
-        {
-            //arrange
-
-            //act
-
-            //assert
-            //result has to be tested via UI testing
-            Assert.Inconclusive("please test correct functionality via UI test");
         }
 
         [TestMethod()]
@@ -800,54 +609,6 @@ namespace Tests
 
             //assert
             Assert.IsNull(bmp);
-        }
-
-        [TestMethod()]
-        public void getSizedBitmapTest02()
-        {
-            //arrange
-
-            //act
-
-            //assert
-            //result has to be tested via UI testing
-            Assert.Inconclusive("please test correct functionality via UI test");
-        }
-
-        [TestMethod()]
-        public void copy_augmentationTest()
-        {
-            //arrange
-
-            //act
-
-            //assert
-            //result has to be tested via UI testing
-            Assert.Inconclusive("please test correct functionality via UI test");
-        }
-
-        [TestMethod()]
-        public void paste_augmentationTest()
-        {
-            //arrange
-
-            //act
-
-            //assert
-            //result has to be tested via UI testing
-            Assert.Inconclusive("please test correct functionality via UI test");
-        }
-
-        [TestMethod()]
-        public void paste_augmentation_centerTest()
-        {
-            //arrange
-
-            //act
-
-            //assert
-            //result has to be tested via UI testing
-            Assert.Inconclusive("please test correct functionality via UI test");
         }
     }
 }

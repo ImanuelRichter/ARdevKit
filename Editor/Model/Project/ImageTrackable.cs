@@ -141,7 +141,7 @@ namespace ARdevKit.Model.Project
             if (Directory.Exists(dir))
                 return new Bitmap(ImagePath);
             else
-                throw new ArgumentException("project is corrupted");
+                throw new ArgumentException("Projekt-Datei beschädigt");
         }
 
         /// <summary>

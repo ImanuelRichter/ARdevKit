@@ -446,14 +446,18 @@ namespace ARdevKit
             }
             else
             {
-                this.project.Trackables[0] = null;
-                this.previewController.currentMetaCategory = MetaCategory.Trackable;
-                this.previewController.removePreviewable(this.previewController.trackable);
-                if (!this.project.hasTrackable())
+                if (this.project.Trackables[0] != null)
                 {
-                    this.ElementSelectionController.setElementEnable(typeof(PictureMarker), true);
-                    this.ElementSelectionController.setElementEnable(typeof(IDMarker), true);
+                    this.project.Trackables[0] = null;
+                    this.previewController.currentMetaCategory = MetaCategory.Trackable;
+                    this.previewController.removePreviewable(this.previewController.trackable);
+                    if (!this.project.hasTrackable())
+                    {
+                        this.ElementSelectionController.setElementEnable(typeof(PictureMarker), true);
+                        this.ElementSelectionController.setElementEnable(typeof(IDMarker), true);
+                    }
                 }
+                
             }
             this.resetButton();
             this.setButton(Convert.ToString("1"));
@@ -536,10 +540,14 @@ namespace ARdevKit
                 this.updateScreenSize();
                 this.checksum = project.getChecksum();
             }
-            catch (System.ArgumentException)
+            catch (System.ArgumentException a)
             {
-                this.createNewProject("");
-                MessageBox.Show("Fehler beim laden des Projectes, die Datei scheint beschädigt zu sein");
+                
+                if (a.Message.Equals("Projekt-Datei beschädigt"))
+                {
+                    MessageBox.Show(a.Message, "Error");
+                    this.createNewProject("");
+                }
             }
         }
 
