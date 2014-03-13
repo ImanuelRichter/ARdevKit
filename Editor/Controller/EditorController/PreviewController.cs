@@ -695,8 +695,8 @@ public class PreviewController
         if (trackable == null)
             throw new InvalidOperationException("trackable was not set beforehand.");
 
-        int height = prev.getPreview().Height;
-        int width = prev.getPreview().Width;
+        int height = prev.getPreview(ew.project.ProjectPath).Height;
+        int width = prev.getPreview(ew.project.ProjectPath).Width;
         double sideScale;
 
         if (((Abstract2DTrackable)this.trackable).Size == 0)
@@ -717,12 +717,12 @@ public class PreviewController
             if (width > height)
             {
                 sideScale = scalex / scaley;
-                return this.scaleBitmap(prev.getPreview(), (int)(100 * sideScale), 100);
+                return this.scaleBitmap(prev.getPreview(ew.project.ProjectPath), (int)(100 * sideScale), 100);
             }
             else if (width <= height)
             {
                 sideScale = scaley / scalex;
-                return this.scaleBitmap(prev.getPreview(), 100, (int)(100 * sideScale));
+                return this.scaleBitmap(prev.getPreview(ew.project.ProjectPath), 100, (int)(100 * sideScale));
             }
             else { return null; }
         }
@@ -758,13 +758,13 @@ public class PreviewController
                 if (width > height)
                 {
                     sideScale = scalex / scaley;
-                    return this.scaleBitmap(prev.getPreview(), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X * sideScale * sideScale * 1.15),
+                    return this.scaleBitmap(prev.getPreview(ew.project.ProjectPath), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X * sideScale * sideScale * 1.15),
                             (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.Y * sideScale * 1.15));
                 }
                 else if (width <= height)
                 {
                     sideScale = scaley / scalex;
-                    return this.scaleBitmap(prev.getPreview(), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X * 1.15),
+                    return this.scaleBitmap(prev.getPreview(ew.project.ProjectPath), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X * 1.15),
                             (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.Y * sideScale * 1.15));
                 }
                 else { return null; }
@@ -773,7 +773,7 @@ public class PreviewController
             //if the currentElement is a chart chosse this. The chart Scaling is an exception in the calculation
             else if (prev is Chart)
             {
-                return this.scaleBitmap(prev.getPreview(), ((Chart)prev).Width, ((Chart)prev).Height);
+                return this.scaleBitmap(prev.getPreview(ew.project.ProjectPath), ((Chart)prev).Width, ((Chart)prev).Height);
             }
             else { return null; }
         }
@@ -968,16 +968,16 @@ public class PreviewController
         {
             if (prev is ImageAugmentation || prev is VideoAugmentation)
             {
-                if (prev.getPreview().Width > prev.getPreview().Height)
+                if (prev.getPreview(ew.project.ProjectPath).Width > prev.getPreview(ew.project.ProjectPath).Height)
                 {
-                    double sideScale = (double)prev.getPreview().Width / (double)prev.getPreview().Height;
-                    return this.scaleBitmap(prev.getPreview(), (int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale * sideScale * sideScale * 1.15), 
+                    double sideScale = (double)prev.getPreview(ew.project.ProjectPath).Width / (double)prev.getPreview(ew.project.ProjectPath).Height;
+                    return this.scaleBitmap(prev.getPreview(ew.project.ProjectPath), (int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale * sideScale * sideScale * 1.15), 
                         (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale * sideScale * 1.15));
                 }
-                else if (prev.getPreview().Width < prev.getPreview().Height)
+                else if (prev.getPreview(ew.project.ProjectPath).Width < prev.getPreview(ew.project.ProjectPath).Height)
                 {
-                    double sideScale = (double)prev.getPreview().Height / (double)prev.getPreview().Width;
-                    return this.scaleBitmap(prev.getPreview(), (int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale * 1.15), 
+                    double sideScale = (double)prev.getPreview(ew.project.ProjectPath).Height / (double)prev.getPreview(ew.project.ProjectPath).Width;
+                    return this.scaleBitmap(prev.getPreview(ew.project.ProjectPath), (int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale * 1.15), 
                         (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale * sideScale * 1.15));
                 }
                 else { return null; }
@@ -985,7 +985,7 @@ public class PreviewController
             }
             else if (prev is Chart)
             {
-                return this.scaleBitmap(prev.getPreview(), ((Chart)prev).Width, ((Chart)prev).Height);
+                return this.scaleBitmap(prev.getPreview(ew.project.ProjectPath), ((Chart)prev).Width, ((Chart)prev).Height);
             }
             else { return null; }
         }

@@ -108,7 +108,7 @@ namespace ARdevKit.Model.Project
         /// </summary>
         /// <returns></returns>
         /// <exception cref="System.NotSupportedException"></exception>
-        public Bitmap getPreview()
+        public Bitmap getPreview(string projectPath)
         {
             throw new NotSupportedException();
         }

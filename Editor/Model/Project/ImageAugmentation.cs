@@ -94,14 +94,13 @@ namespace ARdevKit.Model.Project
         /// </returns>
         /// <exception cref="FileNotFoundException">Thrown when the requested File is
         /// not found in <see cref="SourceFilePath" />.</exception>
-        public override Bitmap getPreview()
+        public override Bitmap getPreview(string projectPath)
         {
-            string dir = Path.GetDirectoryName(resFilePath);
-            if (Directory.Exists(dir))
-                return new Bitmap(ResFilePath);
+            string absolutePath = Path.Combine(projectPath == null ? "" : projectPath, resFilePath);
+            if (System.IO.File.Exists(absolutePath))
+                return new Bitmap(absolutePath);
             else
                 throw new ArgumentException("Projekt-Datei beschädigt");
-
         }
 
         /// <summary>

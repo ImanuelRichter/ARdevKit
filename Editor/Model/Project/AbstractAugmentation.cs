@@ -193,7 +193,7 @@ namespace ARdevKit.Model.Project
         /// on the PreviewPanel, implements <see cref="IPreviewable"/>
         /// </summary>
         /// <returns>a representative Bitmap</returns>
-        public abstract Bitmap getPreview();
+        public abstract Bitmap getPreview(string projectPath);
 
         /// <summary>
         /// returns a <see cref="Bitmap"/> in order to be displayed

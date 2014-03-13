@@ -135,11 +135,11 @@ namespace ARdevKit.Model.Project
         /// <returns>
         /// a representative Bitmap
         /// </returns>
-        public override System.Drawing.Bitmap getPreview()
+        public override System.Drawing.Bitmap getPreview(string projectPath)
         {
-            string dir = Path.GetDirectoryName(ImagePath);
-            if (Directory.Exists(dir))
-                return new Bitmap(ImagePath);
+            string absolutePath = Path.Combine(projectPath == null ? "" : projectPath, imagePath);
+            if (System.IO.File.Exists(absolutePath))
+                return new Bitmap(absolutePath);
             else
                 throw new ArgumentException("Projekt-Datei beschädigt");
         }

@@ -1130,10 +1130,10 @@ namespace ARdevKit
                 {
                     IDMarker temp = (IDMarker)project.Trackables[trackablePCounter];
                     int dpi = (int)(Math.Sqrt(Math.Pow(e.PageSettings.PrinterResolution.X, 2) + Math.Pow(e.PageSettings.PrinterResolution.Y, 2)));
-                    e.Graphics.DrawImage(previewController.scaleBitmap(temp.getPreview(), (int)((dpi * temp.Size) / 254), (int)((dpi * temp.Size) / 254)), x, y);
+                    e.Graphics.DrawImage(previewController.scaleBitmap(temp.getPreview(project.ProjectPath), (int)((dpi * temp.Size) / 254), (int)((dpi * temp.Size) / 254)), x, y);
                 }
                 else
-                    e.Graphics.DrawImage(project.Trackables[trackablePCounter].getPreview(), x, y);
+                    e.Graphics.DrawImage(project.Trackables[trackablePCounter].getPreview(project.ProjectPath), x, y);
             }
 
             if (project.Trackables[trackablePCounter] != project.Trackables.Last())
