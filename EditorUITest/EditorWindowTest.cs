@@ -45,7 +45,7 @@ namespace EditorUITest
         public void saveLoad()
         {
             createNewProject3();
-            saveLoad1();
+            load1();
 
         }
 
@@ -61,7 +61,7 @@ namespace EditorUITest
                 MessageBoxButtons.YesNo) == DialogResult.Yes);
         }
 
-        private void saveLoad1()
+        private void load1()
         {
             MessageBox.Show(new Form() { TopMost = true }, "Lade das zuvor gespeicherte Projekt.", "Schritt 1/2");
             Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Enthält das Previewpanel das Trackable und ist in der Mitte des Panels positioniert?", "Test 4", 
@@ -69,6 +69,12 @@ namespace EditorUITest
             Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Wird im ElementSelectionPanel nur das Trackable angezeigt, was auch hinzugeüft wurde?", "Test 3", 
                 MessageBoxButtons.YesNo) == DialogResult.Yes);
         }
+
+        private void save1()
+        {
+
+        }
+
         #region Zusätzliche Testattribute
 
         // Sie können beim Schreiben der Tests folgende zusätzliche Attribute verwenden:
