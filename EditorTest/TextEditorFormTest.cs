@@ -3,6 +3,7 @@ using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ARdevKit;
+using System.IO;
 
 namespace EditorTest
 {
@@ -66,7 +67,7 @@ namespace EditorTest
 
         [TestMethod]
         [TestCategory("CustomUserEvent")]
-        [ExpectedException(typeof(ArgumentException))]
+        [ExpectedException(typeof(FileNotFoundException))]
         public void TextFormEmptyPathTest()
         {
             TextEditorForm form = new TextEditorForm("");
@@ -74,7 +75,7 @@ namespace EditorTest
 
         [TestMethod]
         [TestCategory("CustomUserEvent")]
-        [ExpectedException(typeof(ArgumentException))]
+        [ExpectedException(typeof(FileNotFoundException))]
         public void TextFormInvalidPathTest()
         {
             TextEditorForm form=new TextEditorForm("C:\\invalidpath\\test.txt");
