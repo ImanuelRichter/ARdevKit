@@ -538,6 +538,86 @@ namespace PreviewController_TextEditorForm_Tests
             Assert.IsTrue(MessageBox.Show("Ist eine leere Szene uebrig geblieben?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
         }
 
+        [TestMethod()]
+        public void TextEditorFormTest_options()
+        {
+            createProject03(Markers.ID);
+
+            MessageBox.Show(new Form() { TopMost = true }, "Rechtklicke auf das Diagramm und klicke auf \"Oeffne Optionen\"", "Testschritt!");
+           
+            Assert.IsTrue(MessageBox.Show("Wurde der TextEditor mit dem richtigen Dokument geoeffnet?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            MessageBox.Show(new Form() { TopMost = true }, "Editiere das Dokument und schliesse es (nicht speichern!)", "Testschritt!");
+            MessageBox.Show(new Form() { TopMost = true }, "Oeffne den TextEditor wie vorher", "Testschritt!");
+
+            Assert.IsTrue(MessageBox.Show("Wurde der TextEditor mit dem richtigen Dokument geoeffnet?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            MessageBox.Show(new Form() { TopMost = true }, "Editiere das Dokument, speicher es und schliesse es", "Testschritt!");
+            MessageBox.Show(new Form() { TopMost = true }, "Oeffne den TextEditor wie vorher", "Testschritt!");
+
+            Assert.IsTrue(MessageBox.Show("Wurde der TextEditor mit dem richtigen Dokument geoeffnet?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+        }
+
+        [TestMethod()]
+        public void TextEditorFormTest_AREL()
+        {
+            createProject03(Markers.ID);
+
+            MessageBox.Show(new Form() { TopMost = true }, "Rechtklicke auf das Diagramm und klicke auf \"Oeffne AREL Script\"", "Testschritt!");
+
+            Assert.IsTrue(MessageBox.Show("Wurde der TextEditor mit dem richtigen Dokument geoeffnet?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            MessageBox.Show(new Form() { TopMost = true }, "Editiere das Dokument und schliesse es (nicht speichern!)", "Testschritt!");
+            MessageBox.Show(new Form() { TopMost = true }, "Oeffne den TextEditor wie vorher", "Testschritt!");
+
+            Assert.IsTrue(MessageBox.Show("Wurde der TextEditor mit dem richtigen Dokument geoeffnet?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            MessageBox.Show(new Form() { TopMost = true }, "Editiere das Dokument, speicher es und schliesse es", "Testschritt!");
+            MessageBox.Show(new Form() { TopMost = true }, "Oeffne den TextEditor wie vorher", "Testschritt!");
+
+            Assert.IsTrue(MessageBox.Show("Wurde der TextEditor mit dem richtigen Dokument geoeffnet?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+        }
+
+        [TestMethod()]
+        public void TextEditorFormTest_query()
+        {
+            createProject03(Markers.ID);
+
+            MessageBox.Show(new Form() { TopMost = true }, "Rechtklicke auf das Diagramm und klicke auf \"QueryFile oeffnen\"", "Testschritt!");
+
+            Assert.IsTrue(MessageBox.Show("Wurde der TextEditor mit dem richtigen Dokument geoeffnet?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            MessageBox.Show(new Form() { TopMost = true }, "Editiere das Dokument und schliesse es (nicht speichern!)", "Testschritt!");
+            MessageBox.Show(new Form() { TopMost = true }, "Oeffne den TextEditor wie vorher", "Testschritt!");
+
+            Assert.IsTrue(MessageBox.Show("Wurde der TextEditor mit dem richtigen Dokument geoeffnet?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            MessageBox.Show(new Form() { TopMost = true }, "Editiere das Dokument, speicher es und schliesse es", "Testschritt!");
+            MessageBox.Show(new Form() { TopMost = true }, "Oeffne den TextEditor wie vorher", "Testschritt!");
+
+            Assert.IsTrue(MessageBox.Show("Wurde der TextEditor mit dem richtigen Dokument geoeffnet?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+        }
+
+        [TestMethod()]
+        public void TextEditorFormTest_source()
+        {
+            createProject03(Markers.ID);
+
+            MessageBox.Show(new Form() { TopMost = true }, "Rechtklicke auf das Diagramm und klicke auf \"SourceFile oeffnen\"", "Testschritt!");
+
+            Assert.IsTrue(MessageBox.Show("Wurde der TextEditor mit dem richtigen Dokument geoeffnet?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            MessageBox.Show(new Form() { TopMost = true }, "Editiere das Dokument und schliesse es (nicht speichern!)", "Testschritt!");
+            MessageBox.Show(new Form() { TopMost = true }, "Oeffne den TextEditor wie vorher", "Testschritt!");
+
+            Assert.IsTrue(MessageBox.Show("Wurde der TextEditor mit dem richtigen Dokument geoeffnet?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            MessageBox.Show(new Form() { TopMost = true }, "Editiere das Dokument, speicher es und schliesse es", "Testschritt!");
+            MessageBox.Show(new Form() { TopMost = true }, "Oeffne den TextEditor wie vorher", "Testschritt!");
+
+            Assert.IsTrue(MessageBox.Show("Wurde der TextEditor mit dem richtigen Dokument geoeffnet?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+        }
+
         #region Additional test attributes
 
         // You can use the following additional attributes as you write your tests:
