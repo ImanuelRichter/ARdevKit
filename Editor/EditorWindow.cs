@@ -446,14 +446,18 @@ namespace ARdevKit
             }
             else
             {
-                this.project.Trackables[0] = null;
-                this.previewController.currentMetaCategory = MetaCategory.Trackable;
-                this.previewController.removePreviewable(this.previewController.trackable);
-                if (!this.project.hasTrackable())
+                if (this.project.Trackables[0] != null)
                 {
-                    this.ElementSelectionController.setElementEnable(typeof(PictureMarker), true);
-                    this.ElementSelectionController.setElementEnable(typeof(IDMarker), true);
+                    this.project.Trackables[0] = null;
+                    this.previewController.currentMetaCategory = MetaCategory.Trackable;
+                    this.previewController.removePreviewable(this.previewController.trackable);
+                    if (!this.project.hasTrackable())
+                    {
+                        this.ElementSelectionController.setElementEnable(typeof(PictureMarker), true);
+                        this.ElementSelectionController.setElementEnable(typeof(IDMarker), true);
+                    }
                 }
+                
             }
             this.resetButton();
             this.setButton(Convert.ToString("1"));
