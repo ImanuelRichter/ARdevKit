@@ -25,6 +25,30 @@ namespace ARdevKit.Model.Project
         /// </summary>
         private string augmentationID;
 
+        public string AugmentationID
+        {
+            get 
+            {
+                return augmentationID; 
+            }
+            set
+            {
+                string oldID = augmentationID;
+                augmentationID = value;
+                if (value != oldID)
+                {
+                    string oldFilePath = filePath;
+                    filePath = getCustomUserFile();
+                    string content = System.IO.File.ReadAllText(oldFilePath);
+                    content = content.Replace(oldID, augmentationID);
+                    using (System.IO.StreamWriter outfile = new System.IO.StreamWriter(filePath))
+                    {
+                        outfile.Write(content);
+                    }
+                }
+            }
+        }
+
         /// <summary>
         /// File path of the customUserEvents.
         /// </summary>

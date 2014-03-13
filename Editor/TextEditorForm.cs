@@ -55,7 +55,7 @@ namespace ARdevKit
             }
             if (!System.IO.File.Exists(filePath))
             {
-                throw new ArgumentException("The file you want to load doesn't exist.");
+                throw new FileNotFoundException("The file you want to load doesn't exist.");
             }
             if (new FileInfo(filePath).Length > 52428800)
             {

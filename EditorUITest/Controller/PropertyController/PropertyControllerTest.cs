@@ -24,6 +24,7 @@ namespace EditorUITest.Controller.PropertyController
         }
 
         [TestMethod]
+        [TestCategory("PropertyController")]
         public void EmptyOptionsTest()
         {
             this.UIMap.EmptyOptionsPathRecord();
@@ -32,6 +33,7 @@ namespace EditorUITest.Controller.PropertyController
         }
 
         [TestMethod]
+        [TestCategory("PropertyController")]
         public void EmptyPicturePathTest()
         {
             this.UIMap.EmptyPicturePathRecord();
@@ -40,6 +42,7 @@ namespace EditorUITest.Controller.PropertyController
         }
 
         [TestMethod]
+        [TestCategory("PropertyController")]
         public void ChangePicturePathTest()
         {
             Clipboard.SetText("C:\\2.jpg");
@@ -49,6 +52,7 @@ namespace EditorUITest.Controller.PropertyController
         }
 
         [TestMethod]
+        [TestCategory("PropertyController")]
         public void EmptyImagePathTest()
         {
             this.UIMap.EmptyImagePathRecord();
@@ -57,6 +61,7 @@ namespace EditorUITest.Controller.PropertyController
         }
 
         [TestMethod]
+        [TestCategory("PropertyController")]
         public void ChangeImagePathTest()
         {
             Clipboard.SetText("C:\\2.jpg");
@@ -66,6 +71,7 @@ namespace EditorUITest.Controller.PropertyController
         }
 
         [TestMethod]
+        [TestCategory("PropertyController")]
         public void EmptyResPathTest()
         {
             this.UIMap.EmptyResPathRecord();
@@ -74,6 +80,7 @@ namespace EditorUITest.Controller.PropertyController
         }
 
         [TestMethod]
+        [TestCategory("PropertyController")]
         public void ChangeResPathImageTest()
         {
             Clipboard.SetText("C:\\2.jpg");
@@ -83,6 +90,7 @@ namespace EditorUITest.Controller.PropertyController
         }
 
         [TestMethod]
+        [TestCategory("PropertyController")]
         public void ChangeResPathVideoTest()
         {
             Clipboard.SetText("C:\\video.alpha.3g2");
@@ -92,6 +100,7 @@ namespace EditorUITest.Controller.PropertyController
         }
 
         [TestMethod]
+        [TestCategory("PropertyController")]
         public void EmptyDataPathTest()
         {
             this.UIMap.EmptyDataPathRecord();
@@ -100,6 +109,7 @@ namespace EditorUITest.Controller.PropertyController
         }
 
         [TestMethod]
+        [TestCategory("PropertyController")]
         public void ChangeQueryPathTest()
         {
             this.UIMap.LoadEmptyQueryProjectRecord();
@@ -114,6 +124,7 @@ namespace EditorUITest.Controller.PropertyController
         }
 
         [TestMethod]
+        [TestCategory("PropertyController")]
         public void UseSliderTest()
         {
             this.UIMap.UseSliderRecord();
@@ -122,6 +133,7 @@ namespace EditorUITest.Controller.PropertyController
         }
 
         [TestMethod]
+        [TestCategory("PropertyController")]
         public void UseFileDialogTest()
         {
             Clipboard.SetText("C:\\1.jpg");
@@ -131,6 +143,7 @@ namespace EditorUITest.Controller.PropertyController
         }
 
         [TestMethod]
+        [TestCategory("PropertyController")]
         public void UseFileDialogAugmentationTest()
         {
             this.UIMap.UseFileDialogAugmentationRecord();
