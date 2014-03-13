@@ -78,11 +78,11 @@ namespace ARdevKit.Model.Project
         /// </returns>
         /// <exception cref="FileNotFoundException">Thrown when the requested File is
         /// not found in <see cref="ImagePath" />.</exception>
-        public override Bitmap getPreview()
+        public override Bitmap getPreview(string projectPath)
         {
-            string dir = Path.GetDirectoryName(resFilePath);
-            if (Directory.Exists(dir))
-                return Controller.EditorController.ThumbCreator.CreateThumb(resFilePath);     
+            string absolutePath = Path.Combine(projectPath == null ? "" : projectPath, resFilePath);
+            if (System.IO.File.Exists(absolutePath))
+                return Controller.EditorController.ThumbCreator.CreateThumb(absolutePath);     
             else
                 throw new ArgumentException("Projekt-Datei beschädigt");
             
@@ -139,7 +139,7 @@ namespace ARdevKit.Model.Project
             if (ResFilePath == null)
             {
                 OpenFileDialog openFileDialog = new OpenFileDialog();
-                openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyVideos);
+                openFileDialog.InitialDirectory = Environment.CurrentDirectory + "\\res\\testFiles\\augmentations";
                 openFileDialog.Title = "Wählen sie ein Video";
                 openFileDialog.Filter = "Video Files (*.3G2)|*.3g2";
                 if (openFileDialog.ShowDialog() == DialogResult.OK)

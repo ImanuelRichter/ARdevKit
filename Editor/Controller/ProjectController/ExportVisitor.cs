@@ -101,8 +101,9 @@ namespace ARdevKit.Controller.ProjectController
         /// <param name="cue">The customUserEvent</param>
         public override void Visit(CustomUserEvent cue)
         {
-            string newPath = Path.Combine(project.ProjectPath, "Events");
-            Helper.Copy(cue.FilePath, newPath);
+            // Copy to projectPath
+            string newPath = "Assets";
+            Helper.Copy(cue.FilePath.Contains(':') ? cue.FilePath : Path.Combine(project.ProjectPath, cue.FilePath), Path.Combine(project.ProjectPath, newPath));
             cue.FilePath = Path.Combine(newPath, Path.GetFileName(cue.FilePath));
 
             if (!importedJQuery)
@@ -120,8 +121,8 @@ namespace ARdevKit.Controller.ProjectController
         public override void Visit(VideoAugmentation video)
         {
             // Copy to projectPath
-            string newPath = Path.Combine(project.ProjectPath, "Assets");
-            Helper.Copy(video.ResFilePath, newPath);
+            string newPath = "Assets";
+            Helper.Copy(video.ResFilePath.Contains(':') ? video.ResFilePath : Path.Combine(project.ProjectPath, video.ResFilePath), Path.Combine(project.ProjectPath, newPath));
             video.ResFilePath = Path.Combine(newPath, Path.GetFileName(video.ResFilePath));
 
             // arelGlue.js
@@ -181,8 +182,8 @@ namespace ARdevKit.Controller.ProjectController
         public override void Visit(ImageAugmentation image)
         {
             // Copy to projectPath
-            string newPath = Path.Combine(project.ProjectPath, "Assets");
-            Helper.Copy(image.ResFilePath, newPath);
+            string newPath = "Assets";
+            Helper.Copy(image.ResFilePath.Contains(':') ? image.ResFilePath : Path.Combine(project.ProjectPath, image.ResFilePath), Path.Combine(project.ProjectPath, newPath));
             image.ResFilePath = Path.Combine(newPath, Path.GetFileName(image.ResFilePath));
 
             // arelGlue.js
@@ -349,8 +350,8 @@ namespace ARdevKit.Controller.ProjectController
             chartFileCreateBlock.AddLine(new JavaScriptLine("document.documentElement.appendChild(this.div)"));
 
             // Copy options.js
-            string chartFilesDirectory = Path.Combine(project.ProjectPath, "Assets", chartID);
-            Helper.Copy(chart.Options, chartFilesDirectory, "options.js");
+            string chartFilesDirectory = Path.Combine("Assets", chartID);
+            Helper.Copy(chart.Options.Contains(':') ? chart.Options : Path.Combine(project.ProjectPath, chart.Options), Path.Combine(project.ProjectPath, chartFilesDirectory), "options.js");
             chart.Options = Path.Combine(chartFilesDirectory, "options.js");
 
             // setOptions
@@ -397,11 +398,11 @@ namespace ARdevKit.Controller.ProjectController
         {
             string chartID = source.Augmentation.ID;
             string chartPluginID = "arel.Plugin." + CultureInfo.CurrentCulture.TextInfo.ToTitleCase(chartID);
-            string chartFilesDirectory = Path.Combine(project.ProjectPath, "Assets", chartID);
+            string chartFilesDirectory = Path.Combine("Assets", chartID);
 
             if (source.Query != null && source.Query != "")
             {
-                Helper.Copy(source.Query, chartFilesDirectory, "query.js");
+                Helper.Copy(source.Query.Contains(':') ? source.Query : Path.Combine(project.ProjectPath, source.Query), Path.Combine(project.ProjectPath, chartFilesDirectory), "query.js");
                 source.Query = Path.Combine(chartFilesDirectory, "query.js");
 
                 chartFileQueryBlock = new JavaScriptBlock("$.getScript(\"Assets/" + chartID + "/" + Path.GetFileName(source.Query) + "\", function()", new BlockMarker("{", "})"));
@@ -430,16 +431,16 @@ namespace ARdevKit.Controller.ProjectController
         {
             string chartID = source.Augmentation.ID;
             string chartPluginID = "arel.Plugin." + CultureInfo.CurrentCulture.TextInfo.ToTitleCase(chartID);
-            string chartFilesDirectory = Path.Combine(project.ProjectPath, "Assets", chartID);
+            string chartFilesDirectory = Path.Combine("Assets", chartID);
 
             if (source.Data != null && source.Data != "")
             {
-                Helper.Copy(source.Data, chartFilesDirectory, "data" + Path.GetExtension(source.Data));
+                Helper.Copy(source.Data.Contains(':') ? source.Data : Path.Combine(project.ProjectPath, source.Data), Path.Combine(project.ProjectPath, chartFilesDirectory), "data" + Path.GetExtension(source.Data));
                 source.Data = Path.Combine(chartFilesDirectory, "data" + Path.GetExtension(source.Data));
 
                 if (source.Query != null && source.Query != "")
                 {
-                    Helper.Copy(source.Query, chartFilesDirectory, "query.js");
+                    Helper.Copy(source.Query.Contains(':') ? source.Query : Path.Combine(project.ProjectPath, source.Query), Path.Combine(project.ProjectPath, chartFilesDirectory), "query.js");
                     source.Query = Path.Combine(chartFilesDirectory, "query.js");
 
                     chartFileQueryBlock = new JavaScriptBlock("$.getScript(\"Assets/" + chartID + "/" + Path.GetFileName(source.Query) + "\", function()", new BlockMarker("{", "})"));
@@ -568,8 +569,8 @@ namespace ARdevKit.Controller.ProjectController
         public override void Visit(ImageTrackable image)
         {
             // Copy the file
-            string newPath = Path.Combine(project.ProjectPath, "Assets");
-            Helper.Copy(image.ImagePath, newPath);
+            string newPath = "Assets";
+            Helper.Copy(image.ImagePath.Contains(':') ? image.ImagePath : Path.Combine(project.ProjectPath, image.ImagePath), Path.Combine(project.ProjectPath, newPath));
             image.ImagePath = Path.Combine(newPath, Path.GetFileName(image.ImagePath));
 
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -697,8 +698,8 @@ namespace ARdevKit.Controller.ProjectController
         public override void Visit(PictureMarker pictureMarker)
         {
             // Copy the file
-            string newPath = Path.Combine(project.ProjectPath, "Assets");
-            Helper.Copy(pictureMarker.PicturePath, newPath);
+            string newPath = "Assets";
+            Helper.Copy(pictureMarker.PicturePath.Contains(':') ? pictureMarker.PicturePath : Path.Combine(project.ProjectPath, pictureMarker.PicturePath), Path.Combine(project.ProjectPath, newPath));
             pictureMarker.PicturePath = Path.Combine(newPath, Path.GetFileName(pictureMarker.PicturePath));
 
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

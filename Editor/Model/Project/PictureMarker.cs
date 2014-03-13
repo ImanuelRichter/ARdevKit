@@ -46,11 +46,8 @@ namespace ARdevKit.Model.Project
             get { return picturePath; }
             set
             {
-                if (System.IO.File.Exists(value))
-                {
-                    picturePath = value;
-                    pictureName = Path.GetFileName(value);
-                }
+                picturePath = value;
+                pictureName = Path.GetFileName(value);
                 
             }
         }
@@ -127,14 +124,13 @@ namespace ARdevKit.Model.Project
         /// </returns>
         /// <exception cref="FileNotFoundException">If ImagePath is
         ///     not correct.</exception>
-        public override Bitmap getPreview()
+        public override Bitmap getPreview(string projectPath)
         {
-            string dir = Path.GetDirectoryName(PicturePath);
-            if (Directory.Exists(dir))
-                return new Bitmap(PicturePath);
+            string absolutePath = Path.Combine(projectPath == null ? "" : projectPath, picturePath);
+            if (System.IO.File.Exists(absolutePath))
+                return new Bitmap(absolutePath);
             else
-                throw new ArgumentException("Projekt-Datei beschädigt");
-            
+                throw new ArgumentException("Projekt-Datei beschädigt");            
         }
 
 
@@ -147,7 +143,7 @@ namespace ARdevKit.Model.Project
         /// </returns>
         public override System.Drawing.Bitmap getIcon()
         {
-            return Properties.Resources.ARMarker_small_;
+            return Properties.Resources.PictureMarker_small_;
         }
 
         /**
@@ -178,9 +174,9 @@ namespace ARdevKit.Model.Project
             {
                 bool isInitOk = true;
                 OpenFileDialog openFileDialog = new OpenFileDialog();
-                openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+                openFileDialog.InitialDirectory = Environment.CurrentDirectory + "\\res\\testFiles\\trackables";
                 openFileDialog.Title = "Wählen sie einen Marker";
-                openFileDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
+                openFileDialog.Filter = "Supported image files (*.jpg, *.png, *.bmp, *.ppm, *.pgm)|*.jpg; *.png; *.bmp; *.ppm; *.pgm";
                 isInitOk = openFileDialog.ShowDialog() == DialogResult.OK;
                 if (isInitOk)
                 {

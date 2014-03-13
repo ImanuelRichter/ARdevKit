@@ -56,7 +56,7 @@
     <Compile Include="Controller\ProjectController\ExportVisitorTest.cs" />
     <Compile Include="Model\Project\ProjectTest.cs" />
     <Compile Include="Model\Project\CustomUserEventTest.cs" />
-    <Compile Include="Model\Project\PreviewTest.cs" />
+    <None Include="Model\Project\PreviewTest.cs" />
     <Compile Include="Model\Project\CloneTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TextEditorFormTest.cs" />

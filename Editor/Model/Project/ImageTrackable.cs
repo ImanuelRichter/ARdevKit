@@ -58,11 +58,8 @@ namespace ARdevKit.Model.Project
             get { return imagePath; }
             set
             {
-                if (System.IO.File.Exists(value))
-                {
-                    imagePath = value;
-                    imageName = Path.GetFileNameWithoutExtension(imagePath);
-                }
+                imagePath = value;
+                imageName = Path.GetFileNameWithoutExtension(imagePath);
             }
         }
 
@@ -135,11 +132,11 @@ namespace ARdevKit.Model.Project
         /// <returns>
         /// a representative Bitmap
         /// </returns>
-        public override System.Drawing.Bitmap getPreview()
+        public override System.Drawing.Bitmap getPreview(string projectPath)
         {
-            string dir = Path.GetDirectoryName(ImagePath);
-            if (Directory.Exists(dir))
-                return new Bitmap(ImagePath);
+            string absolutePath = Path.Combine(projectPath == null ? "" : projectPath, imagePath);
+            if (System.IO.File.Exists(absolutePath))
+                return new Bitmap(absolutePath);
             else
                 throw new ArgumentException("Projekt-Datei beschädigt");
         }
@@ -153,7 +150,7 @@ namespace ARdevKit.Model.Project
         /// </returns>
         public override System.Drawing.Bitmap getIcon()
         {
-            return Properties.Resources.ARMarker_small_;
+            return Properties.Resources.ImageTrackable_small_;
         }
 
         /// <summary>
@@ -185,9 +182,9 @@ namespace ARdevKit.Model.Project
             {
                 bool isInitOk = true;
                 OpenFileDialog openFileDialog = new OpenFileDialog();
-                openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+                openFileDialog.InitialDirectory = Environment.CurrentDirectory + "\\res\\testFiles\\trackables";
                 openFileDialog.Title = "Wählen sie ein Trackable";
-                openFileDialog.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm";
+                openFileDialog.Filter = "Supported image files (*.jpg, *.png, *.bmp, *.ppm, *.pgm)|*.jpg; *.png; *.bmp; *.ppm; *.pgm";
                 isInitOk = openFileDialog.ShowDialog() == DialogResult.OK;
                 if (isInitOk)
                 {
