@@ -92,7 +92,7 @@ namespace PreviewController_TextEditorForm_Tests
 
             MessageBox.Show(new Form() { TopMost = true }, "Füge ein Diagramm hinzu und wähle \"res\\highcharts\\barChartColumn\\xmlOptions.js\" als Vorlage aus", "Testschritt!");
             MessageBox.Show(new Form() { TopMost = true }, "Füge dem Diagramm eine \"File Source\" hinzu und wähle \"res\\highcharts\\barChartColumn\\data.xml\" als Vorlage aus", "Testschritt!");
-            MessageBox.Show(new Form() { TopMost = true }, "Wähle \"res\\highcharts\\barChartColumn\\xmlQuery.js\" als Datenbankanfrage", "Testschritt!");
+            MessageBox.Show(new Form() { TopMost = true }, "Wähle \"res\\highcharts\\barChartColumn\\xmlQuery.js\" als Query", "Testschritt!");
         }
 
         [TestMethod()]
@@ -476,7 +476,7 @@ namespace PreviewController_TextEditorForm_Tests
 
             Assert.IsTrue(MessageBox.Show("Wurde die neue Szene korrekt hinzugefuegt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
 
-            MessageBox.Show(new Form() { TopMost = true }, "Fuege (mind.) einen weiteren Marker und Trackable hinzu", "Testschritt!");
+            MessageBox.Show(new Form() { TopMost = true }, "Fuege (mind.) ein weiteres Trackable und Augmentation hinzu", "Testschritt!");
             MessageBox.Show(new Form() { TopMost = true }, "Wechsle zwischen den Szenen hin und her", "Testschritt!");
 
             Assert.IsTrue(MessageBox.Show("Wurden die Szenen korrekt gewechselt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
@@ -495,7 +495,7 @@ namespace PreviewController_TextEditorForm_Tests
 
             Assert.IsTrue(MessageBox.Show("Wurde die neue Szene korrekt hinzugefuegt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
 
-            MessageBox.Show(new Form() { TopMost = true }, "Fuege (mind.) einen weiteren Marker und Trackable hinzu", "Testschritt!");
+            MessageBox.Show(new Form() { TopMost = true }, "Fuege (mind.) ein weiteres Trackable und Augmentation hinzu", "Testschritt!");
             MessageBox.Show(new Form() { TopMost = true }, "Wechsle zwischen den Szenen hin und her", "Testschritt!");
 
             Assert.IsTrue(MessageBox.Show("Wurden die Szenen korrekt gewechselt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
@@ -514,7 +514,7 @@ namespace PreviewController_TextEditorForm_Tests
 
             Assert.IsTrue(MessageBox.Show("Wurde die neue Szene korrekt hinzugefuegt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
 
-            MessageBox.Show(new Form() { TopMost = true }, "Fuege (mind.) einen weiteren Marker und Trackable hinzu", "Testschritt!");
+            MessageBox.Show(new Form() { TopMost = true }, "Fuege (mind.) ein weiteres Trackable und Augmentation hinzu", "Testschritt!");
             MessageBox.Show(new Form() { TopMost = true }, "Wechsle zwischen den Szenen hin und her", "Testschritt!");
 
             Assert.IsTrue(MessageBox.Show("Wurden die Szenen korrekt gewechselt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
