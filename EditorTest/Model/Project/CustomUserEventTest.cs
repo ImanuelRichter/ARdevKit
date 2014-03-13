@@ -59,6 +59,7 @@ namespace EditorTest.Model.Project
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
+        [TestCategory("CustomUserEvent")]
         public void NullTest()
         {
             CustomUserEvent c = new CustomUserEvent(null);
