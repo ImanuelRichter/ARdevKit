@@ -53,21 +53,7 @@ namespace ARdevKit.Model.Project
         public string Options
         {
             get { return optionsFilePath; }
-            set
-            {
-                if (System.IO.File.Exists(value))
-                {
-                    try
-                    {
-                        File.Helper.Copy(value, @"tmp\" + ID + "\\");
-                        optionsFilePath = Path.GetFullPath(@"tmp\" + ID + "\\" + Path.GetFileName(value));
-                    }
-                    catch (Exception e)
-                    {
-                        System.Windows.Forms.MessageBox.Show(e.Message);
-                    }
-                }
-            }
+            set { optionsFilePath = value; }
         }
 
         /// <summary>

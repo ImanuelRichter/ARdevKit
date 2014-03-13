@@ -27,11 +27,6 @@ namespace ARdevKit.Controller.TestController
     static class TestController
     {
         /// <summary>
-        /// The location where the temporary project is exported to.
-        /// </summary>
-        private const string TMP_PROJECT_PATH = "tmp\\project";
-
-        /// <summary>
         /// The location where the temporary frames where extracted to.
         /// </summary>
         private const string TMP_VIDEO_PATH = "tmp\\video";
@@ -105,17 +100,9 @@ namespace ARdevKit.Controller.TestController
         {
             editorWindow = ew;
             showDebug = _showDebug;
-            string originalProjectPath = project.ProjectPath;
-            if (project.ProjectPath == null || project.ProjectPath.Length <= 0)
-                project.ProjectPath = TMP_PROJECT_PATH;
-            ExportVisitor exporter = new ExportVisitor();
-            project.Accept(exporter);
 
             IDFactory.Reset();
-            foreach (AbstractFile file in exporter.Files)
-            {
-                file.Save();
-            }
+            ew.exportProject();
 
             player = new Process();
             player.EnableRaisingEvents = true;
@@ -176,7 +163,6 @@ namespace ARdevKit.Controller.TestController
                     }
                     break;
             }
-            project.ProjectPath = originalProjectPath;
         }
 
         /// <summary>

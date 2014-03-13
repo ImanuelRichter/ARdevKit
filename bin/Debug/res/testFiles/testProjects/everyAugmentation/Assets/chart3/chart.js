@@ -20,7 +20,7 @@ arel.Plugin.Chart3 =
 		})
 		.fail(function() { console.log("Failed to load options for chart3")})
 		.done(function() { console.log("Loaded options for chart3 successfully")});
-		$.getScript("Assets/chart3/dbSource1_query.js", function()
+		$.getScript("Assets/chart3/query.js", function()
 		{
 			var dataPath = "http://cumulus.teco.edu:4242/api/query?start=1392741669001&m=avg:temperature%7bresource_id=Heater_Living%7d&ms=true";
 			query(dataPath, arel.Plugin.Chart3);

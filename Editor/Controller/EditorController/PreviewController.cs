@@ -211,7 +211,7 @@ public class PreviewController
                 if (source is FileSource)
                 {
                     OpenFileDialog openFileDialog = new OpenFileDialog();
-                    openFileDialog.InitialDirectory = Application.StartupPath + "\\res\\highcharts";
+                    openFileDialog.InitialDirectory = "res\\highcharts";
                     openFileDialog.Title = "Daten auswählen";
                     if (openFileDialog.ShowDialog() == DialogResult.OK)
                     {
@@ -232,9 +232,9 @@ public class PreviewController
                         if (dialogResult == DialogResult.Yes)
                         {
                             openFileDialog = new OpenFileDialog();
-                            openFileDialog.InitialDirectory = Application.StartupPath + "\\res\\highcharts\\barChartColumn";
+                            openFileDialog.InitialDirectory = openFileDialog.FileName;
                             openFileDialog.Title = "Query File auswählen";
-                            openFileDialog.Filter = "JavaFile (*.js)|*.js";
+                            openFileDialog.Filter = "JavaScriptFile (*.js)|*.js";
                             if (openFileDialog.ShowDialog() == DialogResult.OK)
                             {
                                 ((FileSource)source).Query = openFileDialog.FileName;
@@ -248,9 +248,9 @@ public class PreviewController
                     //set reference to the augmentations in Source
                     OpenFileDialog openFileDialog;
                     openFileDialog = new OpenFileDialog();
-                    openFileDialog.InitialDirectory = Application.StartupPath + "\\res\\highchartsn";
+                    openFileDialog.InitialDirectory = "res\\highcharts";
                     openFileDialog.Title = "Query File auswählen";
-                    openFileDialog.Filter = "JavaFile (*.js)|*.js";
+                    openFileDialog.Filter = "JavaScriptFile (*.js)|*.js";
                     if (openFileDialog.ShowDialog() == DialogResult.OK)
                     {
                         source.initElement(ew);
