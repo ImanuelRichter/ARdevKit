@@ -452,6 +452,7 @@ namespace PreviewController_TextEditorForm_Tests
 
             Assert.IsTrue(MessageBox.Show("Hat sich die Groesse des Vorschaubereiches korrekt geaendert?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
         }
+
         [TestMethod()]
         public void rescalePreviewPanelTest_Picture()
         {
@@ -464,6 +465,77 @@ namespace PreviewController_TextEditorForm_Tests
             MessageBox.Show(new Form() { TopMost = true }, "Trage eine andere Aufloesung ein", "Testschritt!");
 
             Assert.IsTrue(MessageBox.Show("Hat sich die Groesse des Vorschaubereiches korrekt geaendert?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+        }
+
+        [TestMethod()]
+        public void sceneTest01_ID()
+        {
+            createProject01(Markers.ID);
+
+            MessageBox.Show(new Form() { TopMost = true }, "Fuege (mind.) eine weitere Szene hinzu", "Testschritt!");
+
+            Assert.IsTrue(MessageBox.Show("Wurde die neue Szene korrekt hinzugefuegt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            MessageBox.Show(new Form() { TopMost = true }, "Fuege (mind.) einen weiteren Marker und Trackable hinzu", "Testschritt!");
+            MessageBox.Show(new Form() { TopMost = true }, "Wechsle zwischen den Szenen hin und her", "Testschritt!");
+
+            Assert.IsTrue(MessageBox.Show("Wurden die Szenen korrekt gewechselt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            MessageBox.Show(new Form() { TopMost = true }, "Loesche (mind.) eine Szene", "Testschritt!");
+
+            Assert.IsTrue(MessageBox.Show("Wurden die Szenen korrekt geloescht?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+        }
+
+        [TestMethod()]
+        public void sceneTest01_Image()
+        {
+            createProject01(Markers.Image);
+
+            MessageBox.Show(new Form() { TopMost = true }, "Fuege (mind.) eine weitere Szene hinzu", "Testschritt!");
+
+            Assert.IsTrue(MessageBox.Show("Wurde die neue Szene korrekt hinzugefuegt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            MessageBox.Show(new Form() { TopMost = true }, "Fuege (mind.) einen weiteren Marker und Trackable hinzu", "Testschritt!");
+            MessageBox.Show(new Form() { TopMost = true }, "Wechsle zwischen den Szenen hin und her", "Testschritt!");
+
+            Assert.IsTrue(MessageBox.Show("Wurden die Szenen korrekt gewechselt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            MessageBox.Show(new Form() { TopMost = true }, "Loesche (mind.) eine Szene", "Testschritt!");
+
+            Assert.IsTrue(MessageBox.Show("Wurden die Szenen korrekt geloescht?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+        }
+
+        [TestMethod()]
+        public void sceneTest01_Picture()
+        {
+            createProject01(Markers.Picture);
+
+            MessageBox.Show(new Form() { TopMost = true }, "Fuege (mind.) eine weitere Szene hinzu", "Testschritt!");
+
+            Assert.IsTrue(MessageBox.Show("Wurde die neue Szene korrekt hinzugefuegt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            MessageBox.Show(new Form() { TopMost = true }, "Fuege (mind.) einen weiteren Marker und Trackable hinzu", "Testschritt!");
+            MessageBox.Show(new Form() { TopMost = true }, "Wechsle zwischen den Szenen hin und her", "Testschritt!");
+
+            Assert.IsTrue(MessageBox.Show("Wurden die Szenen korrekt gewechselt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            MessageBox.Show(new Form() { TopMost = true }, "Loesche (mind.) eine Szene", "Testschritt!");
+
+            Assert.IsTrue(MessageBox.Show("Wurden die Szenen korrekt geloescht?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+        }
+
+        [TestMethod()]
+        public void sceneTest02()
+        {
+            createProject01(Markers.Picture);
+
+            MessageBox.Show(new Form() { TopMost = true }, "Fuege so viele Szenen wie moeglich hinzu (10)", "Testschritt!");
+
+            Assert.IsTrue(MessageBox.Show("Wurden die neuen Szene korrekt hinzugefuegt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+            Assert.IsTrue(MessageBox.Show("Konnte man nur 10 Szenen insgesamt haben?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            Assert.IsTrue(MessageBox.Show("Wurden die Szenen korrekt geloescht?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+            Assert.IsTrue(MessageBox.Show("Ist eine leere Szene uebrig geblieben?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
         }
 
         #region Additional test attributes
