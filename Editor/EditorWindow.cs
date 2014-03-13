@@ -233,7 +233,7 @@ namespace ARdevKit
                 {
                     try
                     {
-                        this.saveProject();
+                        this.ExportProject(true);
                     }
                     catch (ArgumentNullException ae)
                     {
@@ -473,15 +473,13 @@ namespace ARdevKit
         }
 
         /// <summary>
-        /// Exports the project. saves the project first and then exports to project path
+        /// Exports the project to the project path using <see cref="ExportVisitor"/>.
         /// </summary>
         /// <remarks>geht 19.01.2014 22:10</remarks>
-        public void exportProject()
+        public void Export(bool save)
         {
             try
             {
-                saveProject();
-
                 try
                 {
                     exportVisitor = new ExportVisitor();
@@ -506,8 +504,8 @@ namespace ARdevKit
                 {
                     Debug.WriteLine(ne.StackTrace);
                 }
-
-                MessageBox.Show("Projekt wurde exportiert!", "Export");
+                if (!save)
+                    MessageBox.Show("Projekt wurde exportiert!", "Export");
             }
             catch (ArgumentNullException ae)
             {
@@ -574,15 +572,17 @@ namespace ARdevKit
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
-        /// Saves the project. Opens file save dialog if project Path isn't set yet. calls save(String path).
+        /// Expors the project. Opens file save dialog if project Path isn't set yet. calls save(String path)
+        /// and Export(bool save).
         /// </summary>
+        /// <param name="save">True if an *.ardev file should be generated</param>
         ///
         /// <remarks>
         /// geht, 17.01.2014.
         /// </remarks>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public void saveProject()
+        public void ExportProject(bool save)
         {
             if (project.Sensor == null)
             {
@@ -602,8 +602,9 @@ namespace ARdevKit
                     {
                         project.ProjectPath = Path.GetDirectoryName(saveFileDialog1.FileName);
                         project.Name = Path.GetFileNameWithoutExtension(saveFileDialog1.FileName);
-                        this.exportProject();
-                        this.save(project.ProjectPath);
+                        this.Export(save);
+                        if (save)
+                            this.Save(project.ProjectPath);
                     }
                     catch (System.ArgumentException)
                     {
@@ -612,16 +613,18 @@ namespace ARdevKit
                 }
                 else
                 {
-                    this.save(project.ProjectPath);
+                    this.Export(save);
+                    if (save)
+                        this.Save(project.ProjectPath);
                 }
             }
         }
 
         /// <summary>
-        /// Saves project at the specified path.
+        /// Saves project at the specified path (*.ardev file).
         /// </summary>
         /// <param name="path">The path.</param>
-        private void save(String path)
+        private void Save(String path)
         {
             SaveLoadController.saveProject(this.project);
             checksum = this.project.getChecksum();
@@ -889,7 +892,7 @@ namespace ARdevKit
         {
             try
             {
-                this.saveProject();
+                this.ExportProject(true);
             }
             catch (ArgumentNullException ae)
             {
@@ -916,7 +919,7 @@ namespace ARdevKit
             this.project.ProjectPath = null;
             try
             {
-                this.saveProject();
+                this.ExportProject(true);
             }
             catch (ArgumentNullException ae)
             {
@@ -938,7 +941,7 @@ namespace ARdevKit
                 {
                     try
                     {
-                        this.saveProject();
+                        this.ExportProject(true);
                     }
                     catch (ArgumentNullException ae)
                     {
@@ -958,7 +961,7 @@ namespace ARdevKit
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void tsm_editor_menu_file_export_Click(object sender, EventArgs e)
         {
-            this.exportProject();
+            this.Export(false);
         }
 
         /// <summary>
@@ -1166,7 +1169,7 @@ namespace ARdevKit
                 e.Cancel = true;
                 try
                 {
-                    this.saveProject();
+                    this.ExportProject(true);
                     e.Cancel = false;
                 }
                 catch (ArgumentNullException ae)

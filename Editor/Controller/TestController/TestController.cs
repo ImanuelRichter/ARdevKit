@@ -102,66 +102,80 @@ namespace ARdevKit.Controller.TestController
             showDebug = _showDebug;
 
             IDFactory.Reset();
-            ew.exportProject();
-
-            player = new Process();
-            player.EnableRaisingEvents = true;
-            player.Exited += player_Exited;
-            player.StartInfo.Arguments = "-" + width + " -" + height + " -" + project.ProjectPath + " -" + mode;
-
-            bool open = false;
-            switch (mode)
+            DialogResult saveFileDialogResult = DialogResult.None;
+            if (project.ProjectPath == null || project.Name.Equals(""))
             {
-                case (IMAGE):
-                    OpenFileDialog openTestImageDialog = new OpenFileDialog();
-                    openTestImageDialog.Title = "Bitte ein Bild auswählen, an dem getestet werden soll";
-                    openTestImageDialog.Filter = "Supported files (*.jpg, *.png, *.bmp, *.ppm, *.pgm)|*.jpg; *.png; *.bmp; *.ppm; *.pgm";
-                    if (openTestImageDialog.ShowDialog() == DialogResult.OK)
-                    {
-                        string testFilePath = openTestImageDialog.FileName;
-                        player.StartInfo.Arguments += " -" + testFilePath;
-                        OpenPlayer();
-                    }
-                    break;
-                case (VIDEO):
-                    OpenFileDialog openTestVideoDialog = new OpenFileDialog();
-                    openTestVideoDialog.Title = "Bitte ein Video auswählen, an dem getestet werden soll";
-                    if (openTestVideoDialog.ShowDialog() == DialogResult.OK)
-                    {
-                        string testFilePath = openTestVideoDialog.FileName;
+                MessageBox.Show("Das Projekt muss zuerst gespeichert werden");
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "ARdevkit Projektdatei|*.ardev";
+                saveFileDialog.Title = "Projekt speichern";
+                saveFileDialogResult = saveFileDialog.ShowDialog();
+                project.ProjectPath = saveFileDialog.FileName;
+                project.Name = Path.GetFileNameWithoutExtension(saveFileDialog.FileName);
+            }
+            if (saveFileDialogResult == DialogResult.OK)
+            {
+                ew.ExportProject(true);
 
-                        if (Directory.Exists(TMP_VIDEO_PATH))
+                player = new Process();
+                player.EnableRaisingEvents = true;
+                player.Exited += player_Exited;
+                player.StartInfo.Arguments = "-" + width + " -" + height + " -" + project.ProjectPath + " -" + mode;
+
+                bool open = false;
+                switch (mode)
+                {
+                    case (IMAGE):
+                        OpenFileDialog openTestImageDialog = new OpenFileDialog();
+                        openTestImageDialog.Title = "Bitte ein Bild auswählen, an dem getestet werden soll";
+                        openTestImageDialog.Filter = "Supported files (*.jpg, *.png, *.bmp, *.ppm, *.pgm)|*.jpg; *.png; *.bmp; *.ppm; *.pgm";
+                        if (openTestImageDialog.ShowDialog() == DialogResult.OK)
                         {
-                            foreach (string path in Directory.GetFiles(TMP_VIDEO_PATH))
-                                File.Delete(path);
+                            string testFilePath = openTestImageDialog.FileName;
+                            player.StartInfo.Arguments += " -" + testFilePath;
+                            OpenPlayer();
                         }
-                        else
-                            Directory.CreateDirectory(TMP_VIDEO_PATH);
+                        break;
+                    case (VIDEO):
+                        OpenFileDialog openTestVideoDialog = new OpenFileDialog();
+                        openTestVideoDialog.Title = "Bitte ein Video auswählen, an dem getestet werden soll";
+                        if (openTestVideoDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            string testFilePath = openTestVideoDialog.FileName;
 
-                        player.StartInfo.Arguments += " -" + TMP_VIDEO_PATH;
+                            if (Directory.Exists(TMP_VIDEO_PATH))
+                            {
+                                foreach (string path in Directory.GetFiles(TMP_VIDEO_PATH))
+                                    File.Delete(path);
+                            }
+                            else
+                                Directory.CreateDirectory(TMP_VIDEO_PATH);
 
-                        progressVideoWindow = new ProcessVideoWindow();
-                        progressVideoWindow.FormClosed += progressVideoWindow_FormClosed;
-                        progressVideoWindow.Show();
+                            player.StartInfo.Arguments += " -" + TMP_VIDEO_PATH;
 
-                        frameExtractor = new FrameExtractor(progressVideoWindow, testFilePath, TMP_VIDEO_PATH);
-                        frameExtractor.RunWorkerAsync();
-                    }
-                    break;
-                case (CAMERA):
-                    OpenFileDialog openVirualCameraPathDialog = new OpenFileDialog();
-                    openVirualCameraPathDialog.Title = "Bitte virtuelle Kamera auswählen";
-                    openVirualCameraPathDialog.Filter = "Executable (*.exe)|*.exe";
-                    if (openVirualCameraPathDialog.ShowDialog() == DialogResult.OK)
-                    {
-                        string virtualCameraPath = openVirualCameraPathDialog.FileName;
+                            progressVideoWindow = new ProcessVideoWindow();
+                            progressVideoWindow.FormClosed += progressVideoWindow_FormClosed;
+                            progressVideoWindow.Show();
 
-                        Process vCam = new Process();
-                        vCam.StartInfo.FileName = virtualCameraPath;
-                        vCam.Start();
-                        OpenPlayer();
-                    }
-                    break;
+                            frameExtractor = new FrameExtractor(progressVideoWindow, testFilePath, TMP_VIDEO_PATH);
+                            frameExtractor.RunWorkerAsync();
+                        }
+                        break;
+                    case (CAMERA):
+                        OpenFileDialog openVirualCameraPathDialog = new OpenFileDialog();
+                        openVirualCameraPathDialog.Title = "Bitte virtuelle Kamera auswählen";
+                        openVirualCameraPathDialog.Filter = "Executable (*.exe)|*.exe";
+                        if (openVirualCameraPathDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            string virtualCameraPath = openVirualCameraPathDialog.FileName;
+
+                            Process vCam = new Process();
+                            vCam.StartInfo.FileName = virtualCameraPath;
+                            vCam.Start();
+                            OpenPlayer();
+                        }
+                        break;
+                }
             }
         }
 
