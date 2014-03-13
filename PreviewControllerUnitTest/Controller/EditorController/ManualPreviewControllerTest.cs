@@ -532,6 +532,8 @@ namespace PreviewController_TextEditorForm_Tests
             Assert.IsTrue(MessageBox.Show("Wurden die neuen Szene korrekt hinzugefuegt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
             Assert.IsTrue(MessageBox.Show("Konnte man nur 10 Szenen insgesamt haben?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
 
+            MessageBox.Show(new Form() { TopMost = true }, "Loesche so viele Szenen wie moeglich", "Testschritt!");
+
             Assert.IsTrue(MessageBox.Show("Wurden die Szenen korrekt geloescht?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
             Assert.IsTrue(MessageBox.Show("Ist eine leere Szene uebrig geblieben?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
         }
