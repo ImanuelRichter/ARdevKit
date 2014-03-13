@@ -576,7 +576,7 @@ namespace ARdevKit
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
-        /// Expors the project. Opens file save dialog if project Path isn't set yet. calls save(String path)
+        /// Exports the project. Opens file save dialog if project Path isn't set yet. calls save(String path)
         /// and Export(bool save).
         /// </summary>
         /// <param name="save">True if an *.ardev file should be generated</param>
