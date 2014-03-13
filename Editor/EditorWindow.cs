@@ -602,6 +602,7 @@ namespace ARdevKit
                     {
                         project.ProjectPath = Path.GetDirectoryName(saveFileDialog1.FileName);
                         project.Name = Path.GetFileNameWithoutExtension(saveFileDialog1.FileName);
+                        this.exportProject();
                         this.save(project.ProjectPath);
                     }
                     catch (System.ArgumentException)

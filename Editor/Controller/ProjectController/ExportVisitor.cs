@@ -402,7 +402,7 @@ namespace ARdevKit.Controller.ProjectController
 
             if (source.Query != null && source.Query != "")
             {
-                Helper.Copy(source.Query.Contains(':') ? source.Query : Path.Combine(project.ProjectPath, source.Query), chartFilesDirectory, "query.js");
+                Helper.Copy(source.Query.Contains(':') ? source.Query : Path.Combine(project.ProjectPath, source.Query), Path.Combine(project.ProjectPath, chartFilesDirectory), "query.js");
                 source.Query = Path.Combine(chartFilesDirectory, "query.js");
 
                 chartFileQueryBlock = new JavaScriptBlock("$.getScript(\"Assets/" + chartID + "/" + Path.GetFileName(source.Query) + "\", function()", new BlockMarker("{", "})"));
@@ -435,12 +435,12 @@ namespace ARdevKit.Controller.ProjectController
 
             if (source.Data != null && source.Data != "")
             {
-                Helper.Copy(source.Data.Contains(':') ? source.Data : Path.Combine(project.ProjectPath, source.Data), chartFilesDirectory, "data" + Path.GetExtension(source.Data));
+                Helper.Copy(source.Data.Contains(':') ? source.Data : Path.Combine(project.ProjectPath, source.Data), Path.Combine(project.ProjectPath, chartFilesDirectory), "data" + Path.GetExtension(source.Data));
                 source.Data = Path.Combine(chartFilesDirectory, "data" + Path.GetExtension(source.Data));
 
                 if (source.Query != null && source.Query != "")
                 {
-                    Helper.Copy(source.Query.Contains(':') ? source.Query : Path.Combine(project.ProjectPath, source.Query), chartFilesDirectory, "query.js");
+                    Helper.Copy(source.Query.Contains(':') ? source.Query : Path.Combine(project.ProjectPath, source.Query), Path.Combine(project.ProjectPath, chartFilesDirectory), "query.js");
                     source.Query = Path.Combine(chartFilesDirectory, "query.js");
 
                     chartFileQueryBlock = new JavaScriptBlock("$.getScript(\"Assets/" + chartID + "/" + Path.GetFileName(source.Query) + "\", function()", new BlockMarker("{", "})"));
