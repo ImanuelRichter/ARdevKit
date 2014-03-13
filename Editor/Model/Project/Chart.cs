@@ -166,7 +166,7 @@ namespace ARdevKit.Model.Project
             if (Options == null)
             {
                 OpenFileDialog openFileDialog = new OpenFileDialog();
-                openFileDialog.InitialDirectory = Application.StartupPath + "\\res\\highcharts";
+                openFileDialog.InitialDirectory = Environment.CurrentDirectory + "\\res\\highcharts";
                 openFileDialog.Filter = "js (*.js)|*.js";
                 openFileDialog.Title = "Wählen sie eine Options Datei";
                 if (openFileDialog.ShowDialog() == DialogResult.OK)

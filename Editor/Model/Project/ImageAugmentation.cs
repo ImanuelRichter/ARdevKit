@@ -154,7 +154,7 @@ namespace ARdevKit.Model.Project
             if (ResFilePath == null)
             {
                 OpenFileDialog openFileDialog = new OpenFileDialog();
-                openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+                openFileDialog.InitialDirectory = Environment.CurrentDirectory + "\\res\\testFiles\\augmentations";
                 openFileDialog.Title = "Wählen sie ein Bild";
                 openFileDialog.Filter = "Supported image files (*.jpg, *.png, *.bmp, *.ppm, *.pgm)|*.jpg; *.png; *.bmp; *.ppm; *.pgm";
                 if (openFileDialog.ShowDialog() == DialogResult.OK)

@@ -211,7 +211,7 @@ public class PreviewController
                 if (source is FileSource)
                 {
                     OpenFileDialog openFileDialog = new OpenFileDialog();
-                    openFileDialog.InitialDirectory = "res\\highcharts";
+                    openFileDialog.InitialDirectory = Environment.CurrentDirectory + "\\res\\highcharts";
                     openFileDialog.Title = "Daten auswählen";
                     if (openFileDialog.ShowDialog() == DialogResult.OK)
                     {
@@ -248,7 +248,7 @@ public class PreviewController
                     //set reference to the augmentations in Source
                     OpenFileDialog openFileDialog;
                     openFileDialog = new OpenFileDialog();
-                    openFileDialog.InitialDirectory = "res\\highcharts";
+                    openFileDialog.InitialDirectory = Environment.CurrentDirectory + "\\res\\highcharts";
                     openFileDialog.Title = "Query File auswählen";
                     openFileDialog.Filter = "JavaScriptFile (*.js)|*.js";
                     if (openFileDialog.ShowDialog() == DialogResult.OK)

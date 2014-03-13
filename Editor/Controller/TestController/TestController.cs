@@ -128,7 +128,7 @@ namespace ARdevKit.Controller.TestController
                 {
                     case (IMAGE):
                         OpenFileDialog openTestImageDialog = new OpenFileDialog();
-                        openTestImageDialog.InitialDirectory = "res\\testFiles\\imagesToLoadForTesting";
+                        openTestImageDialog.InitialDirectory = Environment.CurrentDirectory + "\\res\\testFiles\\imagesToLoadForTesting";
                         openTestImageDialog.Title = "Bitte ein Bild auswählen, an dem getestet werden soll";
                         openTestImageDialog.Filter = "Supported image files (*.jpg, *.png, *.bmp, *.ppm, *.pgm)|*.jpg; *.png; *.bmp; *.ppm; *.pgm";
                         if (openTestImageDialog.ShowDialog() == DialogResult.OK)
@@ -140,7 +140,7 @@ namespace ARdevKit.Controller.TestController
                         break;
                     case (VIDEO):
                         OpenFileDialog openTestVideoDialog = new OpenFileDialog();
-                        openTestVideoDialog.InitialDirectory = "res\\testFiles\\videosToLoadForTesting";
+                        openTestVideoDialog.InitialDirectory = Environment.CurrentDirectory + "\\res\\testFiles\\videosToLoadForTesting";
                         openTestVideoDialog.Title = "Bitte ein Video auswählen, an dem getestet werden soll";
                         if (openTestVideoDialog.ShowDialog() == DialogResult.OK)
                         {

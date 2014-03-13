@@ -139,7 +139,7 @@ namespace ARdevKit.Model.Project
             if (ResFilePath == null)
             {
                 OpenFileDialog openFileDialog = new OpenFileDialog();
-                openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyVideos);
+                openFileDialog.InitialDirectory = Environment.CurrentDirectory + "\\res\\testFiles\\augmentations";
                 openFileDialog.Title = "Wählen sie ein Video";
                 openFileDialog.Filter = "Video Files (*.3G2)|*.3g2";
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
