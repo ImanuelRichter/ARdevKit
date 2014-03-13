@@ -58,11 +58,8 @@ namespace ARdevKit.Model.Project
             get { return imagePath; }
             set
             {
-                if (System.IO.File.Exists(value))
-                {
-                    imagePath = value;
-                    imageName = Path.GetFileNameWithoutExtension(imagePath);
-                }
+                imagePath = value;
+                imageName = Path.GetFileNameWithoutExtension(imagePath);
             }
         }
 
@@ -153,7 +150,7 @@ namespace ARdevKit.Model.Project
         /// </returns>
         public override System.Drawing.Bitmap getIcon()
         {
-            return Properties.Resources.ARMarker_small_;
+            return Properties.Resources.ImageTrackable_small_;
         }
 
         /// <summary>
