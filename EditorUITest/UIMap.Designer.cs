@@ -31,6 +31,73 @@ namespace EditorUITest
     {
         
         /// <summary>
+        /// ChangeHeightWidthRecord - Verwenden Sie "ChangeHeightWidthRecordParams", um Parameter an diese Methode zu übergeben.
+        /// </summary>
+        public void ChangeHeightWidthRecord()
+        {
+            #region Variable Declarations
+            WinClient uIPictureMarkerClient1 = this.UIARdevKitWindow.UIPictureMarkerClient.UIPictureMarkerClient1;
+            WinComboBox uICmb_editor_selectionComboBox = this.UIARdevKitWindow.UICmb_editor_selectionWindow.UICmb_editor_selectionComboBox;
+            WinClient uIPnl_editor_selectionClient = this.UIARdevKitWindow.UIItemWindow.UIPnl_editor_selectionClient;
+            WinEdit uINameEdit = this.UIWählensieeineOptionsWindow.UIItemWindow.UIHighchartsjsListItem.UINameEdit;
+            WinRow uIHeightRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIHeightRow;
+            WinRow uIWidthRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIWidthRow;
+            WinTable uIPropertyGridViewTable = this.UIARdevKitWindow.UIPropertyGridClient.UIPropertyGridViewTable;
+            #endregion
+
+            // Klicken "Picture Marker" Client
+            Mouse.Click(uIPictureMarkerClient1, new Point(79, 74));
+
+            // "Augmentations" in "cmb_editor_selection_toolSelection" Kombinationsfeld auswählen
+            uICmb_editor_selectionComboBox.SelectedItem = this.ChangeHeightWidthRecordParams.UICmb_editor_selectionComboBoxSelectedItem;
+
+            // Klicken "pnl_editor_selection" Client
+            Mouse.Click(uIPnl_editor_selectionClient, new Point(49, 74));
+
+            // Doppelklicken "Name" Textfeld
+            Mouse.DoubleClick(uINameEdit, new Point(78, 14));
+
+            // Klicken "Height" Zeile
+            Mouse.Click(uIHeightRow, new Point(45, 5));
+
+            // "Control + v" in "Height" Zeile eingeben
+            Keyboard.SendKeys(uIHeightRow, this.ChangeHeightWidthRecordParams.UIHeightRowSendKeys, ModifierKeys.Control);
+
+            // Klicken "Width" Zeile
+            Mouse.Click(uIWidthRow, new Point(45, 6));
+
+            // "Control + v" in "Width" Zeile eingeben
+            Keyboard.SendKeys(uIWidthRow, this.ChangeHeightWidthRecordParams.UIWidthRowSendKeys, ModifierKeys.Control);
+
+            // Klicken "PropertyGridView" Tabelle
+            Mouse.Click(uIPropertyGridViewTable, new Point(55, 257));
+        }
+        
+        /// <summary>
+        /// ChangeIDMarkerRecord - Verwenden Sie "ChangeIDMarkerRecordParams", um Parameter an diese Methode zu übergeben.
+        /// </summary>
+        public void ChangeIDMarkerRecord()
+        {
+            #region Variable Declarations
+            WinClient uIPictureMarkerClient1 = this.UIARdevKitWindow.UIPictureMarkerClient.UIPictureMarkerClient1;
+            WinRow uIMatrixIDRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIMatrixIDRow;
+            WinTable uIPropertyGridViewTable = this.UIARdevKitWindow.UIPropertyGridClient.UIPropertyGridViewTable;
+            #endregion
+
+            // Klicken "Picture Marker" Client
+            Mouse.Click(uIPictureMarkerClient1, new Point(73, 77));
+
+            // Klicken "MatrixID" Zeile
+            Mouse.Click(uIMatrixIDRow, new Point(38, 1));
+
+            // "2" in "MatrixID" Zeile eingeben
+            Keyboard.SendKeys(uIMatrixIDRow, this.ChangeIDMarkerRecordParams.UIMatrixIDRowSendKeys, ModifierKeys.None);
+
+            // Klicken "PropertyGridView" Tabelle
+            Mouse.Click(uIPropertyGridViewTable, new Point(106, 262));
+        }
+        
+        /// <summary>
         /// ChangeImagePathRecord - Verwenden Sie "ChangeImagePathRecordParams", um Parameter an diese Methode zu übergeben.
         /// </summary>
         public void ChangeImagePathRecord()
@@ -221,6 +288,78 @@ namespace EditorUITest
         }
         
         /// <summary>
+        /// EditorFormBackRecord
+        /// </summary>
+        public void EditorFormBackRecord()
+        {
+            #region Variable Declarations
+            WinButton uIItem1Button = this.UIARdevKitWindow.UIItem1Window.UIItem1Button;
+            #endregion
+
+            // Klicken "1" Schaltfläche
+            Mouse.Click(uIItem1Button, new Point(28, 25));
+        }
+        
+        /// <summary>
+        /// EditorFormDuplicateRecord
+        /// </summary>
+        public void EditorFormDuplicateRecord()
+        {
+            #region Variable Declarations
+            WinButton uIItem1Button = this.UIARdevKitWindow.UIItem1Window.UIItem1Button;
+            WinMenuItem uIDuplicateMenuItem = this.UIItemWindow.UIKontextmenüMenu.UIDuplicateMenuItem;
+            WinButton uIItem2Button = this.UIARdevKitWindow.UIItem2Window.UIItem2Button;
+            #endregion
+
+            // Rechts-Klicken "1" Schaltfläche
+            Mouse.Click(uIItem1Button, MouseButtons.Right, ModifierKeys.None, new Point(30, 29));
+
+            // Klicken "Duplicate" Menüelement
+            Mouse.Click(uIDuplicateMenuItem, new Point(16, 7));
+
+            // Klicken "2" Schaltfläche
+            Mouse.Click(uIItem2Button, new Point(28, 25));
+        }
+        
+        /// <summary>
+        /// EditorFormTestRecord - Verwenden Sie "EditorFormTestRecordParams", um Parameter an diese Methode zu übergeben.
+        /// </summary>
+        public void EditorFormTestRecord()
+        {
+            #region Variable Declarations
+            WinClient uIPictureMarkerClient1 = this.UIARdevKitWindow.UIPictureMarkerClient.UIPictureMarkerClient1;
+            WinComboBox uICmb_editor_selectionComboBox = this.UIARdevKitWindow.UICmb_editor_selectionWindow.UICmb_editor_selectionComboBox;
+            WinClient uIChartClient1 = this.UIARdevKitWindow.UIChartClient.UIChartClient1;
+            WinComboBox uIDateinameComboBox = this.UIWählensieeinBildWindow.UIItemWindow.UIDateinameComboBox;
+            WinEdit uIDateinameEdit = this.UIWählensieeinBildWindow.UIItemWindow1.UIDateinameEdit;
+            #endregion
+
+            // Klicken "Picture Marker" Client
+            Mouse.Click(uIPictureMarkerClient1, new Point(67, 52));
+
+            // "Augmentations" in "cmb_editor_selection_toolSelection" Kombinationsfeld auswählen
+            uICmb_editor_selectionComboBox.SelectedItem = this.EditorFormTestRecordParams.UICmb_editor_selectionComboBoxSelectedItem;
+
+            // Klicken "Chart" Client
+            Mouse.Click(uIChartClient1, new Point(81, 97));
+
+            // "C:" in "Dateiname:" Kombinationsfeld auswählen
+            uIDateinameComboBox.EditableItem = this.EditorFormTestRecordParams.UIDateinameComboBoxEditableItem;
+
+            // "{LShiftKey}" in "Dateiname:" Textfeld eingeben
+            Keyboard.SendKeys(uIDateinameEdit, this.EditorFormTestRecordParams.UIDateinameEditSendKeys, ModifierKeys.None);
+
+            // "Alt, Control + {[}" in "Dateiname:" Textfeld eingeben
+            Keyboard.SendKeys(uIDateinameEdit, this.EditorFormTestRecordParams.UIDateinameEditSendKeys1, (ModifierKeys.Alt | ModifierKeys.Control));
+
+            // "C:\1.jpg" in "Dateiname:" Kombinationsfeld auswählen
+            uIDateinameComboBox.EditableItem = this.EditorFormTestRecordParams.UIDateinameComboBoxEditableItem1;
+
+            // "{Enter}" in "Dateiname:" Textfeld eingeben
+            Keyboard.SendKeys(uIDateinameEdit, this.EditorFormTestRecordParams.UIDateinameEditSendKeys2, ModifierKeys.None);
+        }
+        
+        /// <summary>
         /// EmptyDataPathAssertion - Verwenden Sie "EmptyDataPathAssertionExpectedValues", um Parameter an diese Methode zu übergeben.
         /// </summary>
         public void EmptyDataPathAssertion()
@@ -377,6 +516,19 @@ namespace EditorUITest
 
             // Klicken "PropertyGridView" Tabelle
             Mouse.Click(uIPropertyGridViewTable, new Point(99, 371));
+        }
+        
+        /// <summary>
+        /// EmptyPicturePathAssertion - Verwenden Sie "EmptyPicturePathAssertionExpectedValues", um Parameter an diese Methode zu übergeben.
+        /// </summary>
+        public void EmptyPicturePathAssertion()
+        {
+            #region Variable Declarations
+            WinRow uIPicturePathRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIPicturePathRow;
+            #endregion
+
+            // Sicherstellen, dass die Eigenschaft 'Value' von "PicturePath" Zeile ist gleich 'C:\1.jpg'
+            Assert.AreEqual(this.EmptyPicturePathAssertionExpectedValues.UIPicturePathRowValue, uIPicturePathRow.Value);
         }
         
         /// <summary>
@@ -625,6 +777,52 @@ namespace EditorUITest
         }
         
         /// <summary>
+        /// UseFileDialogAugmentationAssertion - Verwenden Sie "UseFileDialogAugmentationAssertionExpectedValues", um Parameter an diese Methode zu übergeben.
+        /// </summary>
+        public void UseFileDialogAugmentationAssertion()
+        {
+            #region Variable Declarations
+            WinRow uIResFilePathRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIResFilePathRow;
+            #endregion
+
+            // Sicherstellen, dass die Eigenschaft 'Value' von "ResFilePath" Zeile ist gleich 'C:\2.jpg'
+            Assert.AreEqual(this.UseFileDialogAugmentationAssertionExpectedValues.UIResFilePathRowValue, uIResFilePathRow.Value);
+        }
+        
+        /// <summary>
+        /// UseFileDialogAugmentationRecord - Verwenden Sie "UseFileDialogAugmentationRecordParams", um Parameter an diese Methode zu übergeben.
+        /// </summary>
+        public void UseFileDialogAugmentationRecord()
+        {
+            #region Variable Declarations
+            WinClient uIPictureMarkerClient1 = this.UIARdevKitWindow.UIPictureMarkerClient.UIPictureMarkerClient1;
+            WinComboBox uICmb_editor_selectionComboBox = this.UIARdevKitWindow.UICmb_editor_selectionWindow.UICmb_editor_selectionComboBox;
+            WinClient uIChartClient1 = this.UIARdevKitWindow.UIChartClient.UIChartClient1;
+            WinComboBox uIDateinameComboBox = this.UIWählensieeinBildWindow.UIItemWindow.UIDateinameComboBox;
+            WinButton uIÖffnenButton = this.UIWählensieeinBildWindow.UIÖffnenWindow.UIÖffnenButton;
+            WinRow uIResFilePathRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIResFilePathRow;
+            #endregion
+
+            // Klicken "Picture Marker" Client
+            Mouse.Click(uIPictureMarkerClient1, new Point(38, 27));
+
+            // "Augmentations" in "cmb_editor_selection_toolSelection" Kombinationsfeld auswählen
+            uICmb_editor_selectionComboBox.SelectedItem = this.UseFileDialogAugmentationRecordParams.UICmb_editor_selectionComboBoxSelectedItem;
+
+            // Klicken "Chart" Client
+            Mouse.Click(uIChartClient1, new Point(54, 51));
+
+            // "C:\1.jpg" in "Dateiname:" Kombinationsfeld auswählen
+            uIDateinameComboBox.EditableItem = this.UseFileDialogAugmentationRecordParams.UIDateinameComboBoxEditableItem;
+
+            // Klicken "Ö&ffnen" Schaltfläche
+            Mouse.Click(uIÖffnenButton, new Point(27, 7));
+
+            // Klicken "ResFilePath" Zeile
+            Mouse.Click(uIResFilePathRow, new Point(74, 7));
+        }
+        
+        /// <summary>
         /// UseFileDialogRecord - Verwenden Sie "UseFileDialogRecordParams", um Parameter an diese Methode zu übergeben.
         /// </summary>
         public void UseFileDialogRecord()
@@ -680,68 +878,9 @@ namespace EditorUITest
         }
         
         /// <summary>
-        /// EmptyPicturePathAssertion - Verwenden Sie "EmptyPicturePathAssertionExpectedValues", um Parameter an diese Methode zu übergeben.
+        /// ChangeRotatingRecord - Verwenden Sie "ChangeRotatingRecordParams", um Parameter an diese Methode zu übergeben.
         /// </summary>
-        public void EmptyPicturePathAssertion()
-        {
-            #region Variable Declarations
-            WinRow uIPicturePathRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIPicturePathRow;
-            #endregion
-
-            // Sicherstellen, dass die Eigenschaft 'Value' von "PicturePath" Zeile ist gleich 'C:\1.jpg'
-            Assert.AreEqual(this.EmptyPicturePathAssertionExpectedValues.UIPicturePathRowValue, uIPicturePathRow.Value);
-        }
-        
-        /// <summary>
-        /// UseFileDialogAugmentationRecord - Verwenden Sie "UseFileDialogAugmentationRecordParams", um Parameter an diese Methode zu übergeben.
-        /// </summary>
-        public void UseFileDialogAugmentationRecord()
-        {
-            #region Variable Declarations
-            WinClient uIPictureMarkerClient1 = this.UIARdevKitWindow.UIPictureMarkerClient.UIPictureMarkerClient1;
-            WinComboBox uICmb_editor_selectionComboBox = this.UIARdevKitWindow.UICmb_editor_selectionWindow.UICmb_editor_selectionComboBox;
-            WinClient uIChartClient1 = this.UIARdevKitWindow.UIChartClient.UIChartClient1;
-            WinComboBox uIDateinameComboBox = this.UIWählensieeinBildWindow.UIItemWindow.UIDateinameComboBox;
-            WinButton uIÖffnenButton = this.UIWählensieeinBildWindow.UIÖffnenWindow.UIÖffnenButton;
-            WinRow uIResFilePathRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIResFilePathRow;
-            #endregion
-
-            // Klicken "Picture Marker" Client
-            Mouse.Click(uIPictureMarkerClient1, new Point(38, 27));
-
-            // "Augmentations" in "cmb_editor_selection_toolSelection" Kombinationsfeld auswählen
-            uICmb_editor_selectionComboBox.SelectedItem = this.UseFileDialogAugmentationRecordParams.UICmb_editor_selectionComboBoxSelectedItem;
-
-            // Klicken "Chart" Client
-            Mouse.Click(uIChartClient1, new Point(54, 51));
-
-            // "C:\1.jpg" in "Dateiname:" Kombinationsfeld auswählen
-            uIDateinameComboBox.EditableItem = this.UseFileDialogAugmentationRecordParams.UIDateinameComboBoxEditableItem;
-
-            // Klicken "Ö&ffnen" Schaltfläche
-            Mouse.Click(uIÖffnenButton, new Point(27, 7));
-
-            // Klicken "ResFilePath" Zeile
-            Mouse.Click(uIResFilePathRow, new Point(74, 7));
-        }
-        
-        /// <summary>
-        /// UseFileDialogAugmentationAssertion - Verwenden Sie "UseFileDialogAugmentationAssertionExpectedValues", um Parameter an diese Methode zu übergeben.
-        /// </summary>
-        public void UseFileDialogAugmentationAssertion()
-        {
-            #region Variable Declarations
-            WinRow uIResFilePathRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIResFilePathRow;
-            #endregion
-
-            // Sicherstellen, dass die Eigenschaft 'Value' von "ResFilePath" Zeile ist gleich 'C:\2.jpg'
-            Assert.AreEqual(this.UseFileDialogAugmentationAssertionExpectedValues.UIResFilePathRowValue, uIResFilePathRow.Value);
-        }
-        
-        /// <summary>
-        /// EditorFormTestRecord - Verwenden Sie "EditorFormTestRecordParams", um Parameter an diese Methode zu übergeben.
-        /// </summary>
-        public void EditorFormTestRecord()
+        public void ChangeRotatingRecord()
         {
             #region Variable Declarations
             WinClient uIPictureMarkerClient1 = this.UIARdevKitWindow.UIPictureMarkerClient.UIPictureMarkerClient1;
@@ -749,68 +888,84 @@ namespace EditorUITest
             WinClient uIChartClient1 = this.UIARdevKitWindow.UIChartClient.UIChartClient1;
             WinComboBox uIDateinameComboBox = this.UIWählensieeinBildWindow.UIItemWindow.UIDateinameComboBox;
             WinEdit uIDateinameEdit = this.UIWählensieeinBildWindow.UIItemWindow1.UIDateinameEdit;
+            WinRow uIRotationRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIRotationRow;
+            WinRow uIXRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIXRow;
+            WinRow uIYRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIYRow;
+            WinRow uIZRow = this.UIARdevKitWindow.UIPropertyGridViewWindow.UIPropertyGridViewTable.UIZRow;
+            WinTable uIPropertyGridViewTable = this.UIARdevKitWindow.UIPropertyGridClient.UIPropertyGridViewTable;
             #endregion
 
             // Klicken "Picture Marker" Client
-            Mouse.Click(uIPictureMarkerClient1, new Point(67, 52));
+            Mouse.Click(uIPictureMarkerClient1, new Point(35, 79));
 
             // "Augmentations" in "cmb_editor_selection_toolSelection" Kombinationsfeld auswählen
-            uICmb_editor_selectionComboBox.SelectedItem = this.EditorFormTestRecordParams.UICmb_editor_selectionComboBoxSelectedItem;
+            uICmb_editor_selectionComboBox.SelectedItem = this.ChangeRotatingRecordParams.UICmb_editor_selectionComboBoxSelectedItem;
 
             // Klicken "Chart" Client
-            Mouse.Click(uIChartClient1, new Point(81, 97));
+            Mouse.Click(uIChartClient1, new Point(35, 79));
 
             // "C:" in "Dateiname:" Kombinationsfeld auswählen
-            uIDateinameComboBox.EditableItem = this.EditorFormTestRecordParams.UIDateinameComboBoxEditableItem;
-
-            // "{LShiftKey}" in "Dateiname:" Textfeld eingeben
-            Keyboard.SendKeys(uIDateinameEdit, this.EditorFormTestRecordParams.UIDateinameEditSendKeys, ModifierKeys.None);
+            uIDateinameComboBox.EditableItem = this.ChangeRotatingRecordParams.UIDateinameComboBoxEditableItem;
 
             // "Alt, Control + {[}" in "Dateiname:" Textfeld eingeben
-            Keyboard.SendKeys(uIDateinameEdit, this.EditorFormTestRecordParams.UIDateinameEditSendKeys1, (ModifierKeys.Alt | ModifierKeys.Control));
+            Keyboard.SendKeys(uIDateinameEdit, this.ChangeRotatingRecordParams.UIDateinameEditSendKeys, (ModifierKeys.Alt | ModifierKeys.Control));
 
             // "C:\1.jpg" in "Dateiname:" Kombinationsfeld auswählen
-            uIDateinameComboBox.EditableItem = this.EditorFormTestRecordParams.UIDateinameComboBoxEditableItem1;
+            uIDateinameComboBox.EditableItem = this.ChangeRotatingRecordParams.UIDateinameComboBoxEditableItem1;
 
             // "{Enter}" in "Dateiname:" Textfeld eingeben
-            Keyboard.SendKeys(uIDateinameEdit, this.EditorFormTestRecordParams.UIDateinameEditSendKeys2, ModifierKeys.None);
-        }
-        
-        /// <summary>
-        /// EditorFormDuplicateRecord
-        /// </summary>
-        public void EditorFormDuplicateRecord()
-        {
-            #region Variable Declarations
-            WinButton uIItem1Button = this.UIARdevKitWindow.UIItem1Window.UIItem1Button;
-            WinMenuItem uIDuplicateMenuItem = this.UIItemWindow.UIKontextmenüMenu.UIDuplicateMenuItem;
-            WinButton uIItem2Button = this.UIARdevKitWindow.UIItem2Window.UIItem2Button;
-            #endregion
+            Keyboard.SendKeys(uIDateinameEdit, this.ChangeRotatingRecordParams.UIDateinameEditSendKeys1, ModifierKeys.None);
 
-            // Rechts-Klicken "1" Schaltfläche
-            Mouse.Click(uIItem1Button, MouseButtons.Right, ModifierKeys.None, new Point(30, 29));
+            // Klicken "Rotation" Zeile
+            Mouse.Click(uIRotationRow, new Point(9, 12));
 
-            // Klicken "Duplicate" Menüelement
-            Mouse.Click(uIDuplicateMenuItem, new Point(16, 7));
+            // Klicken "X" Zeile
+            Mouse.Click(uIXRow, new Point(65, 7));
 
-            // Klicken "2" Schaltfläche
-            Mouse.Click(uIItem2Button, new Point(28, 25));
-        }
-        
-        /// <summary>
-        /// EditorFormBackRecord
-        /// </summary>
-        public void EditorFormBackRecord()
-        {
-            #region Variable Declarations
-            WinButton uIItem1Button = this.UIARdevKitWindow.UIItem1Window.UIItem1Button;
-            #endregion
+            // "9" in "X" Zeile eingeben
+            Keyboard.SendKeys(uIXRow, this.ChangeRotatingRecordParams.UIXRowSendKeys, ModifierKeys.None);
 
-            // Klicken "1" Schaltfläche
-            Mouse.Click(uIItem1Button, new Point(28, 25));
+            // Klicken "Y" Zeile
+            Mouse.Click(uIYRow, new Point(64, 10));
+
+            // "9" in "Y" Zeile eingeben
+            Keyboard.SendKeys(uIYRow, this.ChangeRotatingRecordParams.UIYRowSendKeys, ModifierKeys.None);
+
+            // Klicken "Z" Zeile
+            Mouse.Click(uIZRow, new Point(64, 10));
+
+            // "9" in "Z" Zeile eingeben
+            Keyboard.SendKeys(uIZRow, this.ChangeRotatingRecordParams.UIZRowSendKeys, ModifierKeys.None);
+
+            // Klicken "PropertyGridView" Tabelle
+            Mouse.Click(uIPropertyGridViewTable, new Point(82, 314));
         }
         
         #region Properties
+        public virtual ChangeHeightWidthRecordParams ChangeHeightWidthRecordParams
+        {
+            get
+            {
+                if ((this.mChangeHeightWidthRecordParams == null))
+                {
+                    this.mChangeHeightWidthRecordParams = new ChangeHeightWidthRecordParams();
+                }
+                return this.mChangeHeightWidthRecordParams;
+            }
+        }
+        
+        public virtual ChangeIDMarkerRecordParams ChangeIDMarkerRecordParams
+        {
+            get
+            {
+                if ((this.mChangeIDMarkerRecordParams == null))
+                {
+                    this.mChangeIDMarkerRecordParams = new ChangeIDMarkerRecordParams();
+                }
+                return this.mChangeIDMarkerRecordParams;
+            }
+        }
+        
         public virtual ChangeImagePathRecordParams ChangeImagePathRecordParams
         {
             get
@@ -856,6 +1011,18 @@ namespace EditorUITest
                     this.mChangeResPathVideoRecordParams = new ChangeResPathVideoRecordParams();
                 }
                 return this.mChangeResPathVideoRecordParams;
+            }
+        }
+        
+        public virtual EditorFormTestRecordParams EditorFormTestRecordParams
+        {
+            get
+            {
+                if ((this.mEditorFormTestRecordParams == null))
+                {
+                    this.mEditorFormTestRecordParams = new EditorFormTestRecordParams();
+                }
+                return this.mEditorFormTestRecordParams;
             }
         }
         
@@ -928,6 +1095,18 @@ namespace EditorUITest
                     this.mEmptyOptionsPathRecordParams = new EmptyOptionsPathRecordParams();
                 }
                 return this.mEmptyOptionsPathRecordParams;
+            }
+        }
+        
+        public virtual EmptyPicturePathAssertionExpectedValues EmptyPicturePathAssertionExpectedValues
+        {
+            get
+            {
+                if ((this.mEmptyPicturePathAssertionExpectedValues == null))
+                {
+                    this.mEmptyPicturePathAssertionExpectedValues = new EmptyPicturePathAssertionExpectedValues();
+                }
+                return this.mEmptyPicturePathAssertionExpectedValues;
             }
         }
         
@@ -1063,6 +1242,30 @@ namespace EditorUITest
             }
         }
         
+        public virtual UseFileDialogAugmentationAssertionExpectedValues UseFileDialogAugmentationAssertionExpectedValues
+        {
+            get
+            {
+                if ((this.mUseFileDialogAugmentationAssertionExpectedValues == null))
+                {
+                    this.mUseFileDialogAugmentationAssertionExpectedValues = new UseFileDialogAugmentationAssertionExpectedValues();
+                }
+                return this.mUseFileDialogAugmentationAssertionExpectedValues;
+            }
+        }
+        
+        public virtual UseFileDialogAugmentationRecordParams UseFileDialogAugmentationRecordParams
+        {
+            get
+            {
+                if ((this.mUseFileDialogAugmentationRecordParams == null))
+                {
+                    this.mUseFileDialogAugmentationRecordParams = new UseFileDialogAugmentationRecordParams();
+                }
+                return this.mUseFileDialogAugmentationRecordParams;
+            }
+        }
+        
         public virtual UseFileDialogRecordParams UseFileDialogRecordParams
         {
             get
@@ -1087,51 +1290,15 @@ namespace EditorUITest
             }
         }
         
-        public virtual EmptyPicturePathAssertionExpectedValues EmptyPicturePathAssertionExpectedValues
+        public virtual ChangeRotatingRecordParams ChangeRotatingRecordParams
         {
             get
             {
-                if ((this.mEmptyPicturePathAssertionExpectedValues == null))
+                if ((this.mChangeRotatingRecordParams == null))
                 {
-                    this.mEmptyPicturePathAssertionExpectedValues = new EmptyPicturePathAssertionExpectedValues();
+                    this.mChangeRotatingRecordParams = new ChangeRotatingRecordParams();
                 }
-                return this.mEmptyPicturePathAssertionExpectedValues;
-            }
-        }
-        
-        public virtual UseFileDialogAugmentationRecordParams UseFileDialogAugmentationRecordParams
-        {
-            get
-            {
-                if ((this.mUseFileDialogAugmentationRecordParams == null))
-                {
-                    this.mUseFileDialogAugmentationRecordParams = new UseFileDialogAugmentationRecordParams();
-                }
-                return this.mUseFileDialogAugmentationRecordParams;
-            }
-        }
-        
-        public virtual UseFileDialogAugmentationAssertionExpectedValues UseFileDialogAugmentationAssertionExpectedValues
-        {
-            get
-            {
-                if ((this.mUseFileDialogAugmentationAssertionExpectedValues == null))
-                {
-                    this.mUseFileDialogAugmentationAssertionExpectedValues = new UseFileDialogAugmentationAssertionExpectedValues();
-                }
-                return this.mUseFileDialogAugmentationAssertionExpectedValues;
-            }
-        }
-        
-        public virtual EditorFormTestRecordParams EditorFormTestRecordParams
-        {
-            get
-            {
-                if ((this.mEditorFormTestRecordParams == null))
-                {
-                    this.mEditorFormTestRecordParams = new EditorFormTestRecordParams();
-                }
-                return this.mEditorFormTestRecordParams;
+                return this.mChangeRotatingRecordParams;
             }
         }
         
@@ -1305,6 +1472,10 @@ namespace EditorUITest
         #endregion
         
         #region Fields
+        private ChangeHeightWidthRecordParams mChangeHeightWidthRecordParams;
+        
+        private ChangeIDMarkerRecordParams mChangeIDMarkerRecordParams;
+        
         private ChangeImagePathRecordParams mChangeImagePathRecordParams;
         
         private ChangePicturePathRecordParams mChangePicturePathRecordParams;
@@ -1312,6 +1483,8 @@ namespace EditorUITest
         private ChangeResPathImageRecordParams mChangeResPathImageRecordParams;
         
         private ChangeResPathVideoRecordParams mChangeResPathVideoRecordParams;
+        
+        private EditorFormTestRecordParams mEditorFormTestRecordParams;
         
         private EmptyDataPathAssertionExpectedValues mEmptyDataPathAssertionExpectedValues;
         
@@ -1324,6 +1497,8 @@ namespace EditorUITest
         private EmptyOptionsPathAssertionExpectedValues mEmptyOptionsPathAssertionExpectedValues;
         
         private EmptyOptionsPathRecordParams mEmptyOptionsPathRecordParams;
+        
+        private EmptyPicturePathAssertionExpectedValues mEmptyPicturePathAssertionExpectedValues;
         
         private EmptyPicturePathRecordParams mEmptyPicturePathRecordParams;
         
@@ -1347,17 +1522,15 @@ namespace EditorUITest
         
         private UseFileDialogAssertionExpectedValues mUseFileDialogAssertionExpectedValues;
         
+        private UseFileDialogAugmentationAssertionExpectedValues mUseFileDialogAugmentationAssertionExpectedValues;
+        
+        private UseFileDialogAugmentationRecordParams mUseFileDialogAugmentationRecordParams;
+        
         private UseFileDialogRecordParams mUseFileDialogRecordParams;
         
         private UseSliderAssertionExpectedValues mUseSliderAssertionExpectedValues;
         
-        private EmptyPicturePathAssertionExpectedValues mEmptyPicturePathAssertionExpectedValues;
-        
-        private UseFileDialogAugmentationRecordParams mUseFileDialogAugmentationRecordParams;
-        
-        private UseFileDialogAugmentationAssertionExpectedValues mUseFileDialogAugmentationAssertionExpectedValues;
-        
-        private EditorFormTestRecordParams mEditorFormTestRecordParams;
+        private ChangeRotatingRecordParams mChangeRotatingRecordParams;
         
         private UIARdevKitWindow mUIARdevKitWindow;
         
@@ -1386,6 +1559,46 @@ namespace EditorUITest
         private UIProjektöffnenWindow mUIProjektöffnenWindow;
         
         private UIItemWindow22 mUIItemWindow2;
+        #endregion
+    }
+    
+    /// <summary>
+    /// An "ChangeHeightWidthRecord" zu übergebende Parameter
+    /// </summary>
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class ChangeHeightWidthRecordParams
+    {
+        
+        #region Fields
+        /// <summary>
+        /// "Augmentations" in "cmb_editor_selection_toolSelection" Kombinationsfeld auswählen
+        /// </summary>
+        public string UICmb_editor_selectionComboBoxSelectedItem = "Augmentations";
+        
+        /// <summary>
+        /// "Control + v" in "Height" Zeile eingeben
+        /// </summary>
+        public string UIHeightRowSendKeys = "v";
+        
+        /// <summary>
+        /// "Control + v" in "Width" Zeile eingeben
+        /// </summary>
+        public string UIWidthRowSendKeys = "v";
+        #endregion
+    }
+    
+    /// <summary>
+    /// An "ChangeIDMarkerRecord" zu übergebende Parameter
+    /// </summary>
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class ChangeIDMarkerRecordParams
+    {
+        
+        #region Fields
+        /// <summary>
+        /// "2" in "MatrixID" Zeile eingeben
+        /// </summary>
+        public string UIMatrixIDRowSendKeys = "2";
         #endregion
     }
     
@@ -1486,6 +1699,46 @@ namespace EditorUITest
         /// "Control + v" in "ResFilePath" Zeile eingeben
         /// </summary>
         public string UIResFilePathRowSendKeys = "v";
+        #endregion
+    }
+    
+    /// <summary>
+    /// An "EditorFormTestRecord" zu übergebende Parameter
+    /// </summary>
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class EditorFormTestRecordParams
+    {
+        
+        #region Fields
+        /// <summary>
+        /// "Augmentations" in "cmb_editor_selection_toolSelection" Kombinationsfeld auswählen
+        /// </summary>
+        public string UICmb_editor_selectionComboBoxSelectedItem = "Augmentations";
+        
+        /// <summary>
+        /// "C:" in "Dateiname:" Kombinationsfeld auswählen
+        /// </summary>
+        public string UIDateinameComboBoxEditableItem = "C:";
+        
+        /// <summary>
+        /// "{LShiftKey}" in "Dateiname:" Textfeld eingeben
+        /// </summary>
+        public string UIDateinameEditSendKeys = "{LShiftKey}";
+        
+        /// <summary>
+        /// "Alt, Control + {[}" in "Dateiname:" Textfeld eingeben
+        /// </summary>
+        public string UIDateinameEditSendKeys1 = "{[}";
+        
+        /// <summary>
+        /// "C:\1.jpg" in "Dateiname:" Kombinationsfeld auswählen
+        /// </summary>
+        public string UIDateinameComboBoxEditableItem1 = "C:\\1.jpg";
+        
+        /// <summary>
+        /// "{Enter}" in "Dateiname:" Textfeld eingeben
+        /// </summary>
+        public string UIDateinameEditSendKeys2 = "{Enter}";
         #endregion
     }
     
@@ -1617,6 +1870,21 @@ namespace EditorUITest
         /// "{Back}" in "Options" Zeile eingeben
         /// </summary>
         public string UIOptionsRowSendKeys = "{Back}";
+        #endregion
+    }
+    
+    /// <summary>
+    /// An "EmptyPicturePathAssertion" zu übergebende Parameter
+    /// </summary>
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class EmptyPicturePathAssertionExpectedValues
+    {
+        
+        #region Fields
+        /// <summary>
+        /// Sicherstellen, dass die Eigenschaft 'Value' von "PicturePath" Zeile ist gleich 'C:\1.jpg'
+        /// </summary>
+        public string UIPicturePathRowValue = "C:\\1.jpg";
         #endregion
     }
     
@@ -1826,6 +2094,41 @@ namespace EditorUITest
     }
     
     /// <summary>
+    /// An "UseFileDialogAugmentationAssertion" zu übergebende Parameter
+    /// </summary>
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UseFileDialogAugmentationAssertionExpectedValues
+    {
+        
+        #region Fields
+        /// <summary>
+        /// Sicherstellen, dass die Eigenschaft 'Value' von "ResFilePath" Zeile ist gleich 'C:\2.jpg'
+        /// </summary>
+        public string UIResFilePathRowValue = "C:\\2.jpg";
+        #endregion
+    }
+    
+    /// <summary>
+    /// An "UseFileDialogAugmentationRecord" zu übergebende Parameter
+    /// </summary>
+    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
+    public class UseFileDialogAugmentationRecordParams
+    {
+        
+        #region Fields
+        /// <summary>
+        /// "Augmentations" in "cmb_editor_selection_toolSelection" Kombinationsfeld auswählen
+        /// </summary>
+        public string UICmb_editor_selectionComboBoxSelectedItem = "Augmentations";
+        
+        /// <summary>
+        /// "C:\1.jpg" in "Dateiname:" Kombinationsfeld auswählen
+        /// </summary>
+        public string UIDateinameComboBoxEditableItem = "C:\\1.jpg";
+        #endregion
+    }
+    
+    /// <summary>
     /// An "UseFileDialogRecord" zu übergebende Parameter
     /// </summary>
     [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
@@ -1856,60 +2159,10 @@ namespace EditorUITest
     }
     
     /// <summary>
-    /// An "EmptyPicturePathAssertion" zu übergebende Parameter
+    /// An "ChangeRotatingRecord" zu übergebende Parameter
     /// </summary>
     [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
-    public class EmptyPicturePathAssertionExpectedValues
-    {
-        
-        #region Fields
-        /// <summary>
-        /// Sicherstellen, dass die Eigenschaft 'Value' von "PicturePath" Zeile ist gleich 'C:\1.jpg'
-        /// </summary>
-        public string UIPicturePathRowValue = "C:\\1.jpg";
-        #endregion
-    }
-    
-    /// <summary>
-    /// An "UseFileDialogAugmentationRecord" zu übergebende Parameter
-    /// </summary>
-    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
-    public class UseFileDialogAugmentationRecordParams
-    {
-        
-        #region Fields
-        /// <summary>
-        /// "Augmentations" in "cmb_editor_selection_toolSelection" Kombinationsfeld auswählen
-        /// </summary>
-        public string UICmb_editor_selectionComboBoxSelectedItem = "Augmentations";
-        
-        /// <summary>
-        /// "C:\1.jpg" in "Dateiname:" Kombinationsfeld auswählen
-        /// </summary>
-        public string UIDateinameComboBoxEditableItem = "C:\\1.jpg";
-        #endregion
-    }
-    
-    /// <summary>
-    /// An "UseFileDialogAugmentationAssertion" zu übergebende Parameter
-    /// </summary>
-    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
-    public class UseFileDialogAugmentationAssertionExpectedValues
-    {
-        
-        #region Fields
-        /// <summary>
-        /// Sicherstellen, dass die Eigenschaft 'Value' von "ResFilePath" Zeile ist gleich 'C:\2.jpg'
-        /// </summary>
-        public string UIResFilePathRowValue = "C:\\2.jpg";
-        #endregion
-    }
-    
-    /// <summary>
-    /// An "EditorFormTestRecord" zu übergebende Parameter
-    /// </summary>
-    [GeneratedCode("Coded UI-Test-Generator", "12.0.21005.1")]
-    public class EditorFormTestRecordParams
+    public class ChangeRotatingRecordParams
     {
         
         #region Fields
@@ -1924,14 +2177,9 @@ namespace EditorUITest
         public string UIDateinameComboBoxEditableItem = "C:";
         
         /// <summary>
-        /// "{LShiftKey}" in "Dateiname:" Textfeld eingeben
-        /// </summary>
-        public string UIDateinameEditSendKeys = "{LShiftKey}";
-        
-        /// <summary>
         /// "Alt, Control + {[}" in "Dateiname:" Textfeld eingeben
         /// </summary>
-        public string UIDateinameEditSendKeys1 = "{[}";
+        public string UIDateinameEditSendKeys = "{[}";
         
         /// <summary>
         /// "C:\1.jpg" in "Dateiname:" Kombinationsfeld auswählen
@@ -1941,7 +2189,22 @@ namespace EditorUITest
         /// <summary>
         /// "{Enter}" in "Dateiname:" Textfeld eingeben
         /// </summary>
-        public string UIDateinameEditSendKeys2 = "{Enter}";
+        public string UIDateinameEditSendKeys1 = "{Enter}";
+        
+        /// <summary>
+        /// "9" in "X" Zeile eingeben
+        /// </summary>
+        public string UIXRowSendKeys = "9";
+        
+        /// <summary>
+        /// "9" in "Y" Zeile eingeben
+        /// </summary>
+        public string UIYRowSendKeys = "9";
+        
+        /// <summary>
+        /// "9" in "Z" Zeile eingeben
+        /// </summary>
+        public string UIZRowSendKeys = "9";
         #endregion
     }
     
@@ -2670,6 +2933,157 @@ namespace EditorUITest
                 return this.mUISimilarityThresholdRow;
             }
         }
+        
+        public WinRow UIHeightRow
+        {
+            get
+            {
+                if ((this.mUIHeightRow == null))
+                {
+                    this.mUIHeightRow = new WinRow(this);
+                    #region Suchkriterien
+                    this.mUIHeightRow.SearchProperties[WinRow.PropertyNames.Name] = "Height";
+                    this.mUIHeightRow.SearchConfigurations.Add(SearchConfiguration.AlwaysSearch);
+                    this.mUIHeightRow.WindowTitles.Add("ARdevKit");
+                    #endregion
+                }
+                return this.mUIHeightRow;
+            }
+        }
+        
+        public WinRow UIWidthRow
+        {
+            get
+            {
+                if ((this.mUIWidthRow == null))
+                {
+                    this.mUIWidthRow = new WinRow(this);
+                    #region Suchkriterien
+                    this.mUIWidthRow.SearchProperties[WinRow.PropertyNames.Name] = "Width";
+                    this.mUIWidthRow.SearchConfigurations.Add(SearchConfiguration.AlwaysSearch);
+                    this.mUIWidthRow.WindowTitles.Add("ARdevKit");
+                    #endregion
+                }
+                return this.mUIWidthRow;
+            }
+        }
+        
+        public WinRow UIMatrixIDRow
+        {
+            get
+            {
+                if ((this.mUIMatrixIDRow == null))
+                {
+                    this.mUIMatrixIDRow = new WinRow(this);
+                    #region Suchkriterien
+                    this.mUIMatrixIDRow.SearchProperties[WinRow.PropertyNames.Name] = "MatrixID";
+                    this.mUIMatrixIDRow.SearchConfigurations.Add(SearchConfiguration.AlwaysSearch);
+                    this.mUIMatrixIDRow.WindowTitles.Add("ARdevKit");
+                    #endregion
+                }
+                return this.mUIMatrixIDRow;
+            }
+        }
+        
+        public WinEdit UIMatrixIDEdit
+        {
+            get
+            {
+                if ((this.mUIMatrixIDEdit == null))
+                {
+                    this.mUIMatrixIDEdit = new WinEdit(this);
+                    #region Suchkriterien
+                    this.mUIMatrixIDEdit.SearchProperties[WinEdit.PropertyNames.Name] = "MatrixID";
+                    this.mUIMatrixIDEdit.WindowTitles.Add("ARdevKit");
+                    #endregion
+                }
+                return this.mUIMatrixIDEdit;
+            }
+        }
+        
+        public WinRow UIRotationRow
+        {
+            get
+            {
+                if ((this.mUIRotationRow == null))
+                {
+                    this.mUIRotationRow = new WinRow(this);
+                    #region Suchkriterien
+                    this.mUIRotationRow.SearchProperties[WinRow.PropertyNames.Name] = "Rotation";
+                    this.mUIRotationRow.SearchConfigurations.Add(SearchConfiguration.AlwaysSearch);
+                    this.mUIRotationRow.WindowTitles.Add("ARdevKit");
+                    #endregion
+                }
+                return this.mUIRotationRow;
+            }
+        }
+        
+        public WinRow UIXRow
+        {
+            get
+            {
+                if ((this.mUIXRow == null))
+                {
+                    this.mUIXRow = new WinRow(this);
+                    #region Suchkriterien
+                    this.mUIXRow.SearchProperties[WinRow.PropertyNames.Name] = "X";
+                    this.mUIXRow.SearchConfigurations.Add(SearchConfiguration.AlwaysSearch);
+                    this.mUIXRow.WindowTitles.Add("ARdevKit");
+                    #endregion
+                }
+                return this.mUIXRow;
+            }
+        }
+        
+        public WinEdit UIXEdit
+        {
+            get
+            {
+                if ((this.mUIXEdit == null))
+                {
+                    this.mUIXEdit = new WinEdit(this);
+                    #region Suchkriterien
+                    this.mUIXEdit.SearchProperties[WinEdit.PropertyNames.Name] = "X";
+                    this.mUIXEdit.WindowTitles.Add("ARdevKit");
+                    #endregion
+                }
+                return this.mUIXEdit;
+            }
+        }
+        
+        public WinRow UIYRow
+        {
+            get
+            {
+                if ((this.mUIYRow == null))
+                {
+                    this.mUIYRow = new WinRow(this);
+                    #region Suchkriterien
+                    this.mUIYRow.SearchProperties[WinRow.PropertyNames.Name] = "Y";
+                    this.mUIYRow.SearchConfigurations.Add(SearchConfiguration.AlwaysSearch);
+                    this.mUIYRow.WindowTitles.Add("ARdevKit");
+                    #endregion
+                }
+                return this.mUIYRow;
+            }
+        }
+        
+        public WinRow UIZRow
+        {
+            get
+            {
+                if ((this.mUIZRow == null))
+                {
+                    this.mUIZRow = new WinRow(this);
+                    #region Suchkriterien
+                    this.mUIZRow.SearchProperties[WinRow.PropertyNames.Name] = "Z";
+                    this.mUIZRow.SearchConfigurations.Add(SearchConfiguration.AlwaysSearch);
+                    this.mUIZRow.WindowTitles.Add("ARdevKit");
+                    #endregion
+                }
+                return this.mUIZRow;
+            }
+        }
         #endregion
         
         #region Fields
@@ -2696,6 +3110,24 @@ namespace EditorUITest
         private WinRow mUIQueryRow;
         
         private WinRow mUISimilarityThresholdRow;
+        
+        private WinRow mUIHeightRow;
+        
+        private WinRow mUIWidthRow;
+        
+        private WinRow mUIMatrixIDRow;
+        
+        private WinEdit mUIMatrixIDEdit;
+        
+        private WinRow mUIRotationRow;
+        
+        private WinRow mUIXRow;
+        
+        private WinEdit mUIXEdit;
+        
+        private WinRow mUIYRow;
+        
+        private WinRow mUIZRow;
         #endregion
     }
     

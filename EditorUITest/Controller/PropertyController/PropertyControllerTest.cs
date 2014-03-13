@@ -151,6 +151,31 @@ namespace EditorUITest.Controller.PropertyController
             this.UIMap.UseFileDialogAugmentationAssertion();
         }
 
+        [TestMethod]
+        [TestCategory("PropertyController")]
+        public void ChangeHeightWidthTest()
+        {
+            Clipboard.SetText("100");
+            this.UIMap.ChangeHeightWidthRecord();
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Wurde die Größe korrekt angepasst?", "Assertion!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+        }
+
+        [TestMethod]
+        [TestCategory("PropertyController")]
+        public void ChangeIDMarkerTest()
+        {
+            this.UIMap.ChangeIDMarkerRecord();
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Wurde der Marker korrekt angepasst?", "Assertion!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+        }
+
+        [TestMethod]
+        [TestCategory("PropertyController")]
+        public void ChangeRotatingTest()
+        {
+            this.UIMap.ChangeRotatingRecord();
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Wurde das Bild korrekt gedreht?", "Assertion!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+        }
+
         #region Zusätzliche Testattribute
 
         ApplicationUnderTest aut;
