@@ -639,6 +639,8 @@ namespace ARdevKit
                         this.Save(project.ProjectPath);
                 }
             }
+            if (!isValid)
+                MessageBox.Show("Beim " + (save ? "Speichern" : "Export") + " ist ein Fehler aufgetreten. Das Projekt wird möglicherweise nicht richtig funktionieren.");
             return isValid;
         }
 

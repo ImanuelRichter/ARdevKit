@@ -23,6 +23,12 @@ namespace ARdevKit.Controller.ProjectController
 
     public class ExportVisitor : AbstractProjectVisitor
     {
+        /// <summary>
+        /// Gets or sets a value indicating whether [export is valid].
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if [export is valid]; otherwise, <c>false</c>.
+        /// </value>
         public bool ExportIsValid { get; set; }
 
         /// <summary>
