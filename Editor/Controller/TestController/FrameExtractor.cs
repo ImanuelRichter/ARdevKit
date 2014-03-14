@@ -78,7 +78,7 @@ namespace ARdevKit.Controller.TestController
                 this.testFilePath = testFilePath;
             else
             {
-                MessageBox.Show("The video at " + testFilePath + " does not exist.");
+                MessageBox.Show("Das Video im angegebenen Pfad (" + testFilePath + ") existiert nicht (mehr).");
                 processVideoWindow.ReportException(new FileNotFoundException());
             }
 
@@ -92,7 +92,7 @@ namespace ARdevKit.Controller.TestController
             // Same handling for every exception so general Exception is cought
             catch (Exception e)
             {
-                MessageBox.Show("Unable to open video at " + testFilePath + ".\n" + e.Message);
+                MessageBox.Show("Das Video im angegebenen Pfad (" + testFilePath + ") konnte nicht geöffnet werden.\n" + e.Message);
                 processVideoWindow.ReportException(e);
             }
             int height = reader.Height;
@@ -110,7 +110,7 @@ namespace ARdevKit.Controller.TestController
 
             if (propSizeByte > freeDiskSpaceByte)
             {
-                MessageBox.Show("The temporary folder may need " + propSizeMegaByte / 8 * 2 + " MB of free disk space but there are only " + freeDiskSpaceMegaByte + " MB availiable.");
+                MessageBox.Show("Die Verarbeitung des Videos benötigt " + propSizeMegaByte + " MB freien Speicher aber es stehen nur " + freeDiskSpaceMegaByte + " MB zur Verfügung.");
                 processVideoWindow.ReportException(new OutOfMemoryException());
             }
 
@@ -132,7 +132,7 @@ namespace ARdevKit.Controller.TestController
             // Same handling for every exception so general Exception is cought
             catch (Exception ex)
             {
-                MessageBox.Show("Unable to open video at " + testFilePath + ".\n" + ex.Message);
+                MessageBox.Show("Das Video im angegebenen Pfad (" + testFilePath + ") konnte nicht geöffnet werden.\n" + ex.Message);
                 processVideoWindow.ReportException(ex);
             }
             fps = reader.FrameRate;
@@ -148,7 +148,7 @@ namespace ARdevKit.Controller.TestController
                 // Same handling for every exception so general Exception is cought
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Unable to save frame " + i + " to " + tmpPath + ".\n" + ex.Message);
+                    MessageBox.Show("Frame " + i + " konnte nicht in " + tmpPath + " gespeichert werden.\n" + ex.Message);
                     reader.Close();
                     processVideoWindow.ReportException(ex);
                 }
