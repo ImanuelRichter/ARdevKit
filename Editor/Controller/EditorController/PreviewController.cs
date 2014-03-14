@@ -262,9 +262,9 @@ public class PreviewController
                         source.initElement(ew);
                         source.Augmentation = ((AbstractDynamic2DAugmentation)currentElement);
 
-                        string newQueryPath = Path.Combine(Environment.CurrentDirectory, "tmp\\" + source.Augmentation.ID);
-                        ARdevKit.Model.Project.File.Helper.Copy(openFileDialog.FileName, newQueryPath);
-                        ((DbSource)source).Query = newQueryPath;
+                        string newQueryPath = Path.Combine(Environment.CurrentDirectory, "tmp", source.Augmentation.ID);
+                        ARdevKit.Model.Project.File.Helper.Copy(openFileDialog.FileName, newQueryPath, "query.js");
+                        ((DbSource)source).Query = Path.Combine(newQueryPath, "query.js");
 
                         //add references in Augmentation, Picturebox + project.sources List.
                         ((AbstractDynamic2DAugmentation)currentElement).Source = source;
@@ -766,14 +766,14 @@ public class PreviewController
                 if (width > height)
                 {
                     sideScale = scalex / scaley;
-                    return this.scaleBitmap(prev.getPreview(ew.project.ProjectPath), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X * sideScale * sideScale * 1.15),
-                            (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.Y * sideScale * 1.15));
+                    return this.scaleBitmap(prev.getPreview(ew.project.ProjectPath), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X * sideScale * sideScale * 1.3),
+                            (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.Y * sideScale * 1.3));
                 }
                 else if (width <= height)
                 {
                     sideScale = scaley / scalex;
-                    return this.scaleBitmap(prev.getPreview(ew.project.ProjectPath), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X * 1.15),
-                            (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.Y * sideScale * 1.15));
+                    return this.scaleBitmap(prev.getPreview(ew.project.ProjectPath), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X * 1.3),
+                            (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.Y * sideScale * 1.3));
                 }
                 else { return null; }
             }
@@ -994,14 +994,14 @@ public class PreviewController
                 if (prev.getPreview(ew.project.ProjectPath).Width > prev.getPreview(ew.project.ProjectPath).Height)
                 {
                     double sideScale = (double)prev.getPreview(ew.project.ProjectPath).Width / (double)prev.getPreview(ew.project.ProjectPath).Height;
-                    return this.scaleBitmap(prev.getPreview(ew.project.ProjectPath), (int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale * sideScale * sideScale * 1.15), 
-                        (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale * sideScale * 1.15));
+                    return this.scaleBitmap(prev.getPreview(ew.project.ProjectPath), (int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale * sideScale * sideScale * 1.3), 
+                        (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale * sideScale * 1.3));
                 }
                 else if (prev.getPreview(ew.project.ProjectPath).Width < prev.getPreview(ew.project.ProjectPath).Height)
                 {
                     double sideScale = (double)prev.getPreview(ew.project.ProjectPath).Height / (double)prev.getPreview(ew.project.ProjectPath).Width;
-                    return this.scaleBitmap(prev.getPreview(ew.project.ProjectPath), (int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale * 1.15), 
-                        (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale * sideScale * 1.15));
+                    return this.scaleBitmap(prev.getPreview(ew.project.ProjectPath), (int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale * 1.3), 
+                        (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale * sideScale * 1.3));
                 }
                 else { return null; }
 
