@@ -261,9 +261,9 @@ public class PreviewController
                         source.initElement(ew);
                         source.Augmentation = ((AbstractDynamic2DAugmentation)currentElement);
 
-                        string newQueryPath = Path.Combine(Environment.CurrentDirectory, "tmp\\" + source.Augmentation.ID);
-                        ARdevKit.Model.Project.File.Helper.Copy(openFileDialog.FileName, newQueryPath);
-                        ((DbSource)source).Query = newQueryPath;
+                        string newQueryPath = Path.Combine(Environment.CurrentDirectory, "tmp", source.Augmentation.ID);
+                        ARdevKit.Model.Project.File.Helper.Copy(openFileDialog.FileName, newQueryPath, "query.js");
+                        ((DbSource)source).Query = Path.Combine(newQueryPath, "query.js");
 
                         //add references in Augmentation, Picturebox + project.sources List.
                         ((AbstractDynamic2DAugmentation)currentElement).Source = source;
