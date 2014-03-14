@@ -52,7 +52,10 @@ namespace ARdevKit.Controller.ProjectController
             }
             finally
             {
-                stream.Close();
+                if(stream != null)
+                {
+                    stream.Close();
+                }
             }
             return deserializedProject;
         }
