@@ -547,6 +547,10 @@ namespace ARdevKit
                     this.createNewProject("");
                 }
             }
+            catch (System.Runtime.Serialization.SerializationException se)
+            {
+                MessageBox.Show("Die Ausgewählte Datei ist nicht erkennbar binär kodiert", "Error");
+            }
         }
 
         /**

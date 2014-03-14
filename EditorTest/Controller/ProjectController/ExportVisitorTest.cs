@@ -51,7 +51,7 @@ namespace EditorTest
             if (!anchorJpg)
                 Assert.IsTrue(false, "anchor.jpg ist nicht vorhanden");
             if (!trackingDataXml)
-                Assert.IsTrue(false, "trackingData_" + (testProject.Sensor is MarkerSensor ? "Marker" : "Markerless") + ".xml ist nicht vorhanden");
+                Assert.IsTrue(false, "trackingData_" + (testProject.Sensor is MarkerSensor ? "Marker" : "MarkerlessFast") + ".xml ist nicht vorhanden");
         }
 
         private void checkAugmentations()
