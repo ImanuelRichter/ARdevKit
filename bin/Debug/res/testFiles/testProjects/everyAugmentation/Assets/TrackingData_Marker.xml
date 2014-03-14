@@ -13,7 +13,7 @@
 			<SensorCOS>
 				<SensorCosID>PictureMarker1</SensorCosID>
 				<Parameters>
-					<Size>60</Size>
+					<Size>300</Size>
 					<SimilarityThreshold>0.7</SimilarityThreshold>
 					<MarkerParameters>
 						<referenceImage qualityThreshold="0.70">pictureMarker1.png</referenceImage>
@@ -23,7 +23,7 @@
 			<SensorCOS>
 				<SensorCosID>PictureMarker2</SensorCosID>
 				<Parameters>
-					<Size>60</Size>
+					<Size>300</Size>
 					<SimilarityThreshold>0.7</SimilarityThreshold>
 					<MarkerParameters>
 						<referenceImage qualityThreshold="0.70">pictureMarker2.png</referenceImage>

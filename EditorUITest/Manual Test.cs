@@ -91,21 +91,8 @@ namespace EditorUITest
             }
         }
 
-        [TestMethod]
-        public void TF42010_1()
-        {
-            MessageBox.Show(new Form() { TopMost = true }, "Öffnen sie das Project everyAugmentation", "Testschritt!");
-
-            MessageBox.Show(new Form() { TopMost = true }, "Aktivieren sie im Menü den Punkt 'Debug' per Click", "Testschritt!");
-
-            MessageBox.Show(new Form() { TopMost = true }, "Test -> Bild laden -> testImage_PictureMarker1 laden", "Testschritt!");
-
-            Assert.IsTrue(MessageBox.Show("Sehen sie nun im Player die Bilder?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
-            Assert.IsTrue(MessageBox.Show("Wird im DebugWindow(Console) eine Ausgabe angezeigt mit 'Tracked coordinateSystemID: 1 ?'", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
-        }
-
          [TestMethod]
-        public void TF42010_2()
+        public void TF42010_TF42020_TF42030()
         {
             MessageBox.Show(new Form() { TopMost = true }, "Öffnen sie das Project everyAugmentation", "Testschritt!");
 
@@ -122,6 +109,34 @@ namespace EditorUITest
             
             MessageBox.Show(new Form() { TopMost = true }, "Filmen sie nun mit dem Player Trackable 1", "Testschritt!");
             Assert.IsTrue(MessageBox.Show("Wird im DebugWindow(Console) eine Ausgabe angezeigt mit 'Tracked coordinateSystemID: 1 ?'", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            MessageBox.Show(new Form() { TopMost = true }, "klicken sie nun auf die ImageAugmentation", "Testschritt!");
+            Assert.IsTrue(MessageBox.Show("Geht nun ein Popup auf mit 'foo'?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+            Assert.IsTrue(MessageBox.Show("Steht nun im DebugWindow 'Loaded Event successfully?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+        }
+
+        [TestMethod]
+        public void TF42040_TF42050_TF42060()
+        {
+            Assert.IsTrue(MessageBox.Show("Befinden sich Editor und Player im teco-Netzwerk?", "Branch!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+            MessageBox.Show(new Form() { TopMost = true }, "Öffnen sie das Project everyAugmentation", "Testschritt!");
+
+            MessageBox.Show(new Form() { TopMost = true }, "Klicke auf \"Datei\" und geh mit der Maus auf \"Projekt versenden\" (ohne zu klicken) und klicke auf \"Liste aktualisieren\"", "Testschritt!");
+            MessageBox.Show(new Form() { TopMost = true }, "Klicke auf \"Datei\" und geh mit der Maus auf \"Projekt versenden\" (ohne zu klicken)", "Testschritt!");
+            Assert.IsTrue(MessageBox.Show("Wird die IP des mobilen Geräts angezeigt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            MessageBox.Show(new Form() { TopMost = true }, "Klicke auf \"Datei\" und geh mit der Maus auf \"Projekt versenden\" (ohne zu klicken) und klicke auf \"Projekt an Gerät senden\"", "Testschritt!");
+            Assert.IsTrue(MessageBox.Show("Wird eine Meldung \"Das Projekt wurde versand.\" angezeigt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+            Assert.IsTrue(MessageBox.Show("Startet der Player neu?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            MessageBox.Show(new Form() { TopMost = true }, "Klicke auf \"Datei\" und geh mit der Maus auf \"Projekt versenden\" (ohne zu klicken) und klicke auf \"Gerätedebugmodus starten\"", "Testschritt!");
+            Assert.IsTrue(MessageBox.Show("Öffnet sich nun auf das DebugWindow?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            MessageBox.Show(new Form() { TopMost = true }, "Filmen sie nun mit dem Player Trackable 2", "Testschritt!");
+
+            Assert.IsTrue(MessageBox.Show("Steht nun im DebugWindow 'Loaded data for ... successfully?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+            Assert.IsTrue(MessageBox.Show("Ist der letzte eintrag 'Loaded data successfully?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
+            Assert.IsTrue(MessageBox.Show("können sie in dem DebugWindow scrollen?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
         }
 
         [TestMethod]

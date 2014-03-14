@@ -21,22 +21,32 @@ arel.sceneReady
 			imageAugmentation1 = arel.Object.Model3D.createFromImage("imageAugmentation1","Assets/frame.png");
 			imageAugmentation1.setVisibility(true);
 			imageAugmentation1.setCoordinateSystemID(1);
-			imageAugmentation1.setScale(new arel.Vector3D(1.0,1.0,1.0));
-			imageAugmentation1.setTranslation(new arel.Vector3D(0.0,0.0,0.0));
+			imageAugmentation1.setScale(new arel.Vector3D(4.0,4.0,1.0));
+			imageAugmentation1.setTranslation(new arel.Vector3D(315.0,6.0,0.0));
 			var imageAugmentation1Rotation = new arel.Rotation();
 			imageAugmentation1Rotation.setFromEulerAngleDegrees(new arel.Vector3D(0.0,0.0,0.0));
 			imageAugmentation1.setRotation(imageAugmentation1Rotation);
 			arel.Scene.addObject(imageAugmentation1);
+			$.getScript("Events/imageAugmentation1_Event.js", function()
+			{
+			})
+			.fail(function() { console.log("Failed to load events")})
+			.done(function() { console.log("Loaded events successfully")});
 		
 			videoAugmentation1 = arel.Object.Model3D.createFromMovie("videoAugmentation1","Assets/video.alpha.3g2");
 			videoAugmentation1.setVisibility(true);
 			videoAugmentation1.setCoordinateSystemID(1);
-			videoAugmentation1.setScale(new arel.Vector3D(1.0,1.0,1.0));
-			videoAugmentation1.setTranslation(new arel.Vector3D(0.0,0.0,0.0));
+			videoAugmentation1.setScale(new arel.Vector3D(4.0,4.0,1.0));
+			videoAugmentation1.setTranslation(new arel.Vector3D(-378.0,-6.0,0.0));
 			var videoAugmentation1Rotation = new arel.Rotation();
 			videoAugmentation1Rotation.setFromEulerAngleDegrees(new arel.Vector3D(0.0,0.0,-90.0));
 			videoAugmentation1.setRotation(videoAugmentation1Rotation);
 			arel.Scene.addObject(videoAugmentation1);
+			$.getScript("Events/videoAugmentation1_Event.js", function()
+			{
+			})
+			.fail(function() { console.log("Failed to load events")})
+			.done(function() { console.log("Loaded events successfully")});
 		
 			chart1 = arel.Plugin.Chart1;
 			chart1.hide();
