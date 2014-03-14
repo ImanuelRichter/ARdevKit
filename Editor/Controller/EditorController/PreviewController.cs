@@ -1117,15 +1117,18 @@ public class PreviewController
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     public void paste_augmentation(object sender, EventArgs e)
     {
-        Point p = this.panel.PointToClient(Cursor.Position);
-        IPreviewable element = (IPreviewable)this.copy.Clone();
-        this.addPreviewable(element, new Vector3D(p.X, p.Y, 0));
-
-        if (element is AbstractDynamic2DAugmentation && ((AbstractDynamic2DAugmentation)element).Source != null)
+        if (this.trackable.Augmentations.Count < 3)
         {
-            this.setSourcePreview(element);
-            ((AbstractDynamic2DAugmentation)element).Source = (AbstractSource)((AbstractDynamic2DAugmentation)copy).Source.Clone();
-        }
+            Point p = this.panel.PointToClient(Cursor.Position);
+            IPreviewable element = (IPreviewable)this.copy.Clone();
+            this.addPreviewable(element, new Vector3D(p.X, p.Y, 0));
+
+            if (element is AbstractDynamic2DAugmentation && ((AbstractDynamic2DAugmentation)element).Source != null)
+            {
+                this.setSourcePreview(element);
+                ((AbstractDynamic2DAugmentation)element).Source = (AbstractSource)((AbstractDynamic2DAugmentation)copy).Source.Clone();
+            }
+        }  
     }
 
     /// <summary>
@@ -1135,13 +1138,16 @@ public class PreviewController
     /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
     public void paste_augmentation_center(object sender, EventArgs e)
     {
-        IPreviewable element = (IPreviewable)this.copy.Clone();
-        this.addPreviewable(element, new Vector3D(this.panel.Width / 2, this.panel.Height / 2, 0));
-        
-        if (element is AbstractDynamic2DAugmentation && ((AbstractDynamic2DAugmentation)element).Source != null)
+        if (this.trackable.Augmentations.Count < 3)
         {
-            this.setSourcePreview(element);
-            ((AbstractDynamic2DAugmentation)element).Source = (AbstractSource)((AbstractDynamic2DAugmentation)copy).Source.Clone();
+            IPreviewable element = (IPreviewable)this.copy.Clone();
+            this.addPreviewable(element, new Vector3D(this.panel.Width / 2, this.panel.Height / 2, 0));
+
+            if (element is AbstractDynamic2DAugmentation && ((AbstractDynamic2DAugmentation)element).Source != null)
+            {
+                this.setSourcePreview(element);
+                ((AbstractDynamic2DAugmentation)element).Source = (AbstractSource)((AbstractDynamic2DAugmentation)copy).Source.Clone();
+            }
         }
     }
 
