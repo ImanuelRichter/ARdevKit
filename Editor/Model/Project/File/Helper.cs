@@ -22,9 +22,9 @@ namespace ARdevKit.Model.Project.File
         /// <param name="destDirectory">    Pathname of the destination directory. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public static void Copy(string srcFile, string destDirectory)
+        public static bool Copy(string srcFile, string destDirectory)
         {
-            Copy(srcFile, destDirectory, Path.GetFileName(srcFile));
+            return Copy(srcFile, destDirectory, Path.GetFileName(srcFile));
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -37,7 +37,7 @@ namespace ARdevKit.Model.Project.File
         /// <param name="newFileName">          Name of the new file. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public static void Copy(string srcFile, string destDirectory, string newFileName)
+        public static bool Copy(string srcFile, string destDirectory, string newFileName)
         {
             Directory.CreateDirectory(destDirectory);
 
@@ -52,9 +52,10 @@ namespace ARdevKit.Model.Project.File
                 {
                     System.Windows.Forms.MessageBox.Show(e.Message, "Error!",
                         System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                    return false;
                 }
-
             }
+            return true;
         }
 
         /// <summary>

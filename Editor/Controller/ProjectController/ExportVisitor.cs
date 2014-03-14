@@ -23,8 +23,10 @@ namespace ARdevKit.Controller.ProjectController
 
     public class ExportVisitor : AbstractProjectVisitor
     {
+        public bool ExportIsValid { get; set; }
+
         /// <summary>
-        /// The exported <see cref="Project"/>
+        /// The exported <see cref="Project"/>.
         /// </summary>
         private Project project;
 
@@ -89,6 +91,7 @@ namespace ARdevKit.Controller.ProjectController
         /// </summary>
         public ExportVisitor()
         {
+            ExportIsValid = true;
             videoCount = 1;
             imageCount = 1;
             chartCount = 1;
@@ -105,17 +108,17 @@ namespace ARdevKit.Controller.ProjectController
             string newPath = "Assets";
             if (cue.FilePath.Contains(':'))
             {
-                Helper.Copy(cue.FilePath, Path.Combine(project.ProjectPath, newPath));
+                ExportIsValid = Helper.Copy(cue.FilePath, Path.Combine(project.ProjectPath, newPath)) && ExportIsValid;
             }
             else if (project.OldProjectPath != null && !project.OldProjectPath.Equals(project.ProjectPath))
             {
-                Helper.Copy(Path.Combine(project.OldProjectPath, cue.FilePath), Path.Combine(project.ProjectPath, newPath));
+                ExportIsValid = Helper.Copy(Path.Combine(project.OldProjectPath, cue.FilePath), Path.Combine(project.ProjectPath, newPath)) && ExportIsValid;
             }
             cue.FilePath = Path.Combine(newPath, Path.GetFileName(cue.FilePath));
 
             if (!importedJQuery)
             {
-                Helper.Copy("res\\jquery\\jquery-2.0.3.js", Path.Combine(project.ProjectPath, "Assets"));
+                ExportIsValid = Helper.Copy("res\\jquery\\jquery-2.0.3.js", Path.Combine(project.ProjectPath, "Assets")) && ExportIsValid;
                 arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("script", "src=\"Assets/jquery-2.0.3.js\"")));
                 importedJQuery = true;
             }
@@ -131,11 +134,11 @@ namespace ARdevKit.Controller.ProjectController
             string newPath = "Assets";
             if (video.ResFilePath.Contains(':'))
             {
-                Helper.Copy(video.ResFilePath, Path.Combine(project.ProjectPath, newPath));
+                ExportIsValid = Helper.Copy(video.ResFilePath, Path.Combine(project.ProjectPath, newPath)) && ExportIsValid;
             }
             else if (project.OldProjectPath != null && !project.OldProjectPath.Equals(project.ProjectPath))
             {
-                Helper.Copy(Path.Combine(project.OldProjectPath, video.ResFilePath), Path.Combine(project.ProjectPath, newPath));
+                ExportIsValid = Helper.Copy(Path.Combine(project.OldProjectPath, video.ResFilePath), Path.Combine(project.ProjectPath, newPath)) && ExportIsValid;
             }
             video.ResFilePath = Path.Combine(newPath, Path.GetFileName(video.ResFilePath));
 
@@ -199,11 +202,11 @@ namespace ARdevKit.Controller.ProjectController
             string newPath = "Assets";
             if (image.ResFilePath.Contains(':'))
             {
-                Helper.Copy(image.ResFilePath, Path.Combine(project.ProjectPath, newPath));
+                ExportIsValid = Helper.Copy(image.ResFilePath, Path.Combine(project.ProjectPath, newPath)) && ExportIsValid;
             }
             else if (project.OldProjectPath != null && !project.OldProjectPath.Equals(project.ProjectPath))
             {
-                Helper.Copy(Path.Combine(project.OldProjectPath, image.ResFilePath), Path.Combine(project.ProjectPath, newPath));
+                ExportIsValid = Helper.Copy(Path.Combine(project.OldProjectPath, image.ResFilePath), Path.Combine(project.ProjectPath, newPath)) && ExportIsValid;
             }
             image.ResFilePath = Path.Combine(newPath, Path.GetFileName(image.ResFilePath));
 
@@ -268,12 +271,12 @@ namespace ARdevKit.Controller.ProjectController
             {
                 if (!importedJQuery)
                 {
-                    Helper.Copy("res\\jquery\\jquery-2.0.3.js", Path.Combine(project.ProjectPath, "Assets"));
+                    ExportIsValid = Helper.Copy("res\\jquery\\jquery-2.0.3.js", Path.Combine(project.ProjectPath, "Assets")) && ExportIsValid;
                     arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("script", "src=\"Assets/jquery-2.0.3.js\"")));
                     importedJQuery = true;
                 }
 
-                Helper.Copy("res\\highcharts\\highcharts.js", Path.Combine(project.ProjectPath, "Assets"));
+                ExportIsValid = Helper.Copy("res\\highcharts\\highcharts.js", Path.Combine(project.ProjectPath, "Assets")) && ExportIsValid;
                 arelProjectFileHeadBlock.AddLine(new XMLLine(new XMLTag("script", "src=\"Assets/highcharts.js\"")));
             }
 
@@ -374,11 +377,11 @@ namespace ARdevKit.Controller.ProjectController
             string chartFilesDirectory = Path.Combine("Assets", chartID);
             if (chart.Options.Contains(':'))
             {
-                Helper.Copy(chart.Options, Path.Combine(project.ProjectPath, chartFilesDirectory), "options.js");
+                ExportIsValid = Helper.Copy(chart.Options, Path.Combine(project.ProjectPath, chartFilesDirectory), "options.js") && ExportIsValid;
             }
             else if (project.OldProjectPath != null && !project.OldProjectPath.Equals(project.ProjectPath))
             {
-                Helper.Copy(Path.Combine(project.OldProjectPath, chart.Options), Path.Combine(project.ProjectPath, chartFilesDirectory), "options.js");
+                ExportIsValid = Helper.Copy(Path.Combine(project.OldProjectPath, chart.Options), Path.Combine(project.ProjectPath, chartFilesDirectory), "options.js") && ExportIsValid;
             }
             chart.Options = Path.Combine(chartFilesDirectory, "options.js");
 
@@ -432,11 +435,11 @@ namespace ARdevKit.Controller.ProjectController
             {
                 if (source.Query.Contains(':'))
                 {
-                    Helper.Copy(source.Query, Path.Combine(project.ProjectPath, chartFilesDirectory), "query.js");
+                    ExportIsValid = Helper.Copy(source.Query, Path.Combine(project.ProjectPath, chartFilesDirectory), "query.js") && ExportIsValid;
                 }
                 else if (project.OldProjectPath != null && !project.OldProjectPath.Equals(project.ProjectPath))
                 {
-                    Helper.Copy(Path.Combine(project.OldProjectPath, source.Query), Path.Combine(project.ProjectPath, chartFilesDirectory), "query.js");
+                    ExportIsValid = Helper.Copy(Path.Combine(project.OldProjectPath, source.Query), Path.Combine(project.ProjectPath, chartFilesDirectory), "query.js") && ExportIsValid;
                 }
                 source.Query = Path.Combine(chartFilesDirectory, "query.js");
 
@@ -472,11 +475,11 @@ namespace ARdevKit.Controller.ProjectController
             {
                 if (source.Query.Contains(':'))
                 {
-                    Helper.Copy(source.Data, Path.Combine(project.ProjectPath, chartFilesDirectory), "data" + Path.GetExtension(source.Data));
+                    ExportIsValid = Helper.Copy(source.Data, Path.Combine(project.ProjectPath, chartFilesDirectory), "data" + Path.GetExtension(source.Data)) && ExportIsValid;
                 }
                 else if (project.OldProjectPath != null && !project.OldProjectPath.Equals(project.ProjectPath))
                 {
-                    Helper.Copy(Path.Combine(project.OldProjectPath, source.Data), Path.Combine(project.ProjectPath, chartFilesDirectory), "data" + Path.GetExtension(source.Data));
+                    ExportIsValid = Helper.Copy(Path.Combine(project.OldProjectPath, source.Data), Path.Combine(project.ProjectPath, chartFilesDirectory), "data" + Path.GetExtension(source.Data)) && ExportIsValid;
                 }
                 source.Data = Path.Combine(chartFilesDirectory, "data" + Path.GetExtension(source.Data));
 
@@ -484,11 +487,11 @@ namespace ARdevKit.Controller.ProjectController
                 {
                     if (source.Query.Contains(':'))
                     {
-                        Helper.Copy(source.Query, Path.Combine(project.ProjectPath, chartFilesDirectory), "query.js");
+                        ExportIsValid = Helper.Copy(source.Query, Path.Combine(project.ProjectPath, chartFilesDirectory), "query.js");
                     }
                     else if (project.OldProjectPath != null && !project.OldProjectPath.Equals(project.ProjectPath))
                     {
-                        Helper.Copy(Path.Combine(project.OldProjectPath, source.Query), Path.Combine(project.ProjectPath, chartFilesDirectory), "query.js");
+                        ExportIsValid = Helper.Copy(Path.Combine(project.OldProjectPath, source.Query), Path.Combine(project.ProjectPath, chartFilesDirectory), "query.js");
                     }
                     source.Query = Path.Combine(chartFilesDirectory, "query.js");
 
@@ -621,11 +624,11 @@ namespace ARdevKit.Controller.ProjectController
             string newPath = "Assets";
             if (image.ImagePath.Contains(':'))
             {
-                Helper.Copy(image.ImagePath, Path.Combine(project.ProjectPath, newPath));
+                ExportIsValid = Helper.Copy(image.ImagePath, Path.Combine(project.ProjectPath, newPath)) && ExportIsValid;
             }
             else if (project.OldProjectPath != null && !project.OldProjectPath.Equals(project.ProjectPath))
             {
-                Helper.Copy(Path.Combine(project.OldProjectPath, image.ImagePath), Path.Combine(project.ProjectPath, newPath));
+                ExportIsValid = Helper.Copy(Path.Combine(project.OldProjectPath, image.ImagePath), Path.Combine(project.ProjectPath, newPath)) && ExportIsValid;
             }
             image.ImagePath = Path.Combine(newPath, Path.GetFileName(image.ImagePath));
 
@@ -757,11 +760,11 @@ namespace ARdevKit.Controller.ProjectController
             string newPath = "Assets";
             if (pictureMarker.PicturePath.Contains(':'))
             {
-                Helper.Copy(pictureMarker.PicturePath, Path.Combine(project.ProjectPath, newPath));
+                ExportIsValid = Helper.Copy(pictureMarker.PicturePath, Path.Combine(project.ProjectPath, newPath)) && ExportIsValid;
             }
             else if (project.OldProjectPath != null && !project.OldProjectPath.Equals(project.ProjectPath))
             {
-                Helper.Copy(Path.Combine(project.OldProjectPath, pictureMarker.PicturePath), Path.Combine(project.ProjectPath, newPath));
+                ExportIsValid = Helper.Copy(Path.Combine(project.OldProjectPath, pictureMarker.PicturePath), Path.Combine(project.ProjectPath, newPath)) && ExportIsValid;
             }
             pictureMarker.PicturePath = Path.Combine(newPath, Path.GetFileName(pictureMarker.PicturePath));
 
@@ -1042,7 +1045,7 @@ namespace ARdevKit.Controller.ProjectController
             project = p;
 
             // Copy arel file
-            Helper.Copy(Path.Combine("res", "arel", "arel.js"), project.ProjectPath);
+            ExportIsValid = Helper.Copy(Path.Combine("res", "arel", "arel.js"), project.ProjectPath) && ExportIsValid;
 
             // Create [projectName].html
             ARELProjectFile arelProjectFile = new ARELProjectFile("<!DOCTYPE html>", Path.Combine(project.ProjectPath, "arel" + (p.Name != "" ? p.Name : "Test") + ".html"));

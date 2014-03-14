@@ -477,10 +477,14 @@ namespace ARdevKit
         }
 
         /// <summary>
-        /// Exports the project to the project path using <see cref="ExportVisitor"/>.
+        /// Exports the project to the project path using <see cref="ExportVisitor" />.
         /// </summary>
-        /// <remarks>geht 19.01.2014 22:10</remarks>
-        public void Export(bool save)
+        /// <param name="save">if set to <c>true</c> [save].</param>
+        /// <returns>true, if export is valid</returns>
+        /// <remarks>
+        /// geht 19.01.2014 22:10
+        /// </remarks>
+        public bool Export(bool save)
         {
             try
             {
@@ -492,10 +496,12 @@ namespace ARdevKit
                 catch (DirectoryNotFoundException de)
                 {
                     Debug.WriteLine(de.StackTrace);
+                    return false;
                 }
                 catch (OperationCanceledException oce)
                 {
                     MessageBox.Show("Exportvorgang abgebrochen");
+                    return false;
                 }
                 try
                 {
@@ -507,14 +513,18 @@ namespace ARdevKit
                 catch (NullReferenceException ne)
                 {
                     Debug.WriteLine(ne.StackTrace);
+                    return false;
                 }
+                return exportVisitor.ExportIsValid;
                 if (!save)
                     MessageBox.Show("Projekt wurde exportiert!", "Export");
             }
             catch (ArgumentNullException ae)
             {
                 Debug.WriteLine(ae.StackTrace);
+                return false;
             }
+            return exportVisitor.ExportIsValid;
         }
 
         /// <summary>
@@ -584,14 +594,16 @@ namespace ARdevKit
         /// and Export(bool save).
         /// </summary>
         /// <param name="save">True if an *.ardev file should be generated</param>
-        ///
+        /// <returns>true, if export is valid</returns>
+        /// <exception cref="System.ArgumentNullException"></exception>
         /// <remarks>
         /// geht, 17.01.2014.
         /// </remarks>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public void ExportProject(bool save)
+        public bool ExportProject(bool save)
         {
+            bool isValid = true;
             if (project.Sensor == null)
             {
                 MessageBox.Show("Sie müssen mindestens ein Trackable hinzufügen!", "Achtung", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -611,7 +623,7 @@ namespace ARdevKit
                     {
                         project.ProjectPath = Path.GetDirectoryName(saveFileDialog.FileName);
                         project.Name = Path.GetFileNameWithoutExtension(saveFileDialog.FileName);
-                        this.Export(save);
+                        isValid = this.Export(save);
                         if (save)
                             this.Save(project.ProjectPath);
                     }
@@ -622,11 +634,12 @@ namespace ARdevKit
                 }
                 else
                 {
-                    this.Export(save);
+                    isValid = this.Export(save);
                     if (save)
                         this.Save(project.ProjectPath);
                 }
             }
+            return isValid;
         }
 
         /// <summary>
@@ -971,7 +984,7 @@ namespace ARdevKit
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void tsm_editor_menu_file_export_Click(object sender, EventArgs e)
         {
-            this.Export(false);
+            this.ExportProject(false);
         }
 
         /// <summary>
