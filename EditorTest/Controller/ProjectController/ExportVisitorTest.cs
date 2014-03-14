@@ -12,13 +12,13 @@ namespace EditorTest
     [TestClass]
     public class ExportVisitorTest
     {
-        
+
         private Project testProject;
-        private bool arelNameHtml = false, 
-            arelJs = false, 
-            arelConfigXml = false, 
-            arelGlueJs = false, 
-            anchorJpg = false, 
+        private bool arelNameHtml = false,
+            arelJs = false,
+            arelConfigXml = false,
+            arelGlueJs = false,
+            anchorJpg = false,
             trackingDataXml = false;
         private ExportVisitor exportVisitor;
 
@@ -39,7 +39,10 @@ namespace EditorTest
             arelConfigXml = File.Exists(testProject.ProjectPath + "\\arelConfig.xml");
             arelGlueJs = File.Exists(testProject.ProjectPath + "\\Assets\\arelGlue.js");
             anchorJpg = File.Exists(testProject.ProjectPath + "\\Assets\\anchor.png");
-            trackingDataXml = File.Exists(testProject.ProjectPath + "\\Assets\\trackingData_" + testProject.Sensor.Name + ".xml");
+            string trackingDataFileName = "TrackingData_" + testProject.Sensor.Name;
+            trackingDataFileName += testProject.Sensor.SensorSubType != AbstractSensor.SensorSubTypes.None ? testProject.Sensor.SensorSubType.ToString() : "";
+            trackingDataFileName += ".xml";
+            trackingDataXml = File.Exists(testProject.ProjectPath + "\\Assets\\" + trackingDataFileName);
             if (!arelNameHtml)
                 Assert.IsTrue(false, "arel" + testProject.Name == "" ? "Test" : testProject.Name + ".html ist nicht vorhanden");
             if (!arelJs)
@@ -119,8 +122,8 @@ namespace EditorTest
         [TestCleanup]
         public void Cleanup()
         {
-            if(testProject.ProjectPath != null && Directory.Exists(testProject.ProjectPath))
-            Directory.Delete(testProject.ProjectPath, true);
+            if (testProject.ProjectPath != null && Directory.Exists(testProject.ProjectPath))
+                Directory.Delete(testProject.ProjectPath, true);
             testProject = null;
             exportVisitor = null;
         }
@@ -152,7 +155,7 @@ namespace EditorTest
             testProject.Sensor = new MarkerSensor();
             export();
             checkStandardFiles();
-            Assert.IsTrue(true);   
+            Assert.IsTrue(true);
         }
 
         [TestMethod]
