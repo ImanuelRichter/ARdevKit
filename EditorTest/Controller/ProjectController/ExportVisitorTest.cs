@@ -102,9 +102,9 @@ namespace EditorTest
                             }
                             if (augmentation.CustomUserEventReference != null)
                             {
-                                if (!File.Exists(testProject.ProjectPath + "\\Assets\\" + augmentation.ID + "_Event.js"))
+                                if (!File.Exists(testProject.ProjectPath + "\\Events\\" + augmentation.ID + "_Event.js"))
                                 {
-                                    Assert.IsTrue(false, "\\Assets\\" + augmentation.ID + "_Event.js exisitert nicht");
+                                    Assert.IsTrue(false, "\\Events\\" + augmentation.ID + "_Event.js exisitert nicht");
                                 }
                             }
                         }
