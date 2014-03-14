@@ -13,7 +13,7 @@ namespace ARdevKit.Controller.ProjectController
     ///     Provides static methods for saving and loading a <see cref="Project"/> 
     ///     to or from a certain path
     /// </summary>
-    static class SaveLoadController
+    public static class SaveLoadController
     {
         /// <summary>
         /// Saves the project.
