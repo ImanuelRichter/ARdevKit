@@ -72,7 +72,7 @@ namespace ARdevKit.Model.Project
         public new int Size
         {
             get { return base.Size; }
-            set { base.Size = size; }
+            set { base.Size = value; }
         }
 
         /// <summary>

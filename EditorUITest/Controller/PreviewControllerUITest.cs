@@ -31,7 +31,8 @@ namespace EditorUITest.Controller
         [TestMethod]
         public void copyPaste1()
         {
-
+            MessageBox.Show(new Form() { TopMost = true }, "Füge einen (beliebigen) Trackable dem Projekt hinzu.", "Schritt 1/2");
+            MessageBox.Show(new Form() { TopMost = true }, "Füge einen (beliebigen) Augmentation dem Projekt hinzu.", "Schritt 1/2");
         }
 
         #region Zusätzliche Testattribute

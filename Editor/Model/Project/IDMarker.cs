@@ -48,6 +48,20 @@ namespace ARdevKit.Model.Project
             }
         }
 
+        [Browsable(false)]
+        public new int WidthMM
+        {
+            get { return base.widthMM; }
+            set { base.widthMM = value; }
+        }
+
+        [Browsable(false)]
+        public new int HeightMM
+        {
+            get { return base.heightMM; }
+            set { base.heightMM = value; }
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="IDMarker"/> class.
         /// </summary>

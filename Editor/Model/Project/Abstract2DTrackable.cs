@@ -41,7 +41,7 @@ namespace ARdevKit.Model.Project
         /// <value>
         /// The width in mm.
         /// </value>
-        [CategoryAttribute("General"), Description("Breite des realen Markers in mm.")]
+        [CategoryAttribute("Größe"), Description("Breite des realen Markers in mm.")]
         public int WidthMM
         {
             get { return widthMM; }
@@ -59,7 +59,7 @@ namespace ARdevKit.Model.Project
         /// <value>
         /// The width in mm.
         /// </value>
-        [CategoryAttribute("General"), Description("Höhe des realen Markers in mm.")]
+        [CategoryAttribute("Größe"), Description("Höhe des realen Markers in mm.")]
         public int HeightMM
         {
             get { return heightMM; }
@@ -73,6 +73,7 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// Gets or sets the size.
         /// </summary>
+        [CategoryAttribute("Größe"), Description("Größe des realen Markers in mm.")]
         public int Size
         {
             get { return (int) Math.Round(Math.Sqrt(widthMM * heightMM), 0); }
