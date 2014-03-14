@@ -34,13 +34,22 @@ namespace EditorUITest.Controller
             // Prepare project
             copyPasteTemplate("Chart", "TF11210 and TF11220");
 
-            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Hat der Options-Pfad einen fast identischen Pfad wie das original (der letzte Ordner hat die ID als Namen)?", "Test 4",
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Hat der Options-Pfad einen fast identischen Pfad wie das original (der letzte Ordner hat die ID der Kopie als Namen)?", "Test 4",
                 MessageBoxButtons.YesNo) == DialogResult.Yes);
             Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Hat die ID der Chart sich geändert?", "Test 4",
                 MessageBoxButtons.YesNo) == DialogResult.Yes);
 
             MessageBox.Show(new Form() { TopMost = true }, "Ändere den Options-Pfad der neuen Chart.", "Schritt 1/2");
             Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Unterscheidet sich der Options-Pfad der Kopie mit dem Original?", "Test 4",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            MessageBox.Show(new Form() { TopMost = true }, "Füge eine FileSource der kopierten Chart hinzu.", "Schritt 1/2");
+            MessageBox.Show(new Form() { TopMost = true }, "Füge etwas der Option-File der kopierten Chart hinzu.", "Schritt 1/2");
+            MessageBox.Show(new Form() { TopMost = true }, "Kopiere diese Chart und füge die in der selben Szene ein.", "Schritt 1/2");
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Ist der Inhalt vom Options-File der neuen Kopie identisch mit der alten Kopie?", "Test 4",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+            MessageBox.Show(new Form() { TopMost = true }, "Ändere etwas in der Query-File.", "Schritt 1/2");
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Ist der Inhalt der QueryFile von der neuen Kopie NICHT identisch mit der alten Kopie?", "Test 4",
                 MessageBoxButtons.YesNo) == DialogResult.Yes);
         }
 
