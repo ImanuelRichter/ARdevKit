@@ -72,6 +72,23 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
+        /// Full pathname of the project file before it was changed.
+        /// </summary>
+        private string oldProjectPath;
+
+        /// <summary>
+        /// Gets or sets the <see cref="oldProjectPath"/>.
+        /// </summary>
+        /// <value>
+        /// <see cref="oldProjectPath"/>.
+        /// </value>
+        public string OldProjectPath
+        {
+            get { return oldProjectPath; }
+            set { oldProjectPath = value; }
+        }
+
+        /// <summary>
         /// The sensor, is depentend on the
         /// used trackables.
         /// </summary>

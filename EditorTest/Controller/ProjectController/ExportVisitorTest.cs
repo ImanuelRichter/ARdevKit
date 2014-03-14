@@ -39,7 +39,7 @@ namespace EditorTest
             arelConfigXml = File.Exists(testProject.ProjectPath + "\\arelConfig.xml");
             arelGlueJs = File.Exists(testProject.ProjectPath + "\\Assets\\arelGlue.js");
             anchorJpg = File.Exists(testProject.ProjectPath + "\\Assets\\anchor.png");
-            trackingDataXml = File.Exists(testProject.ProjectPath + "\\Assets\\trackingData_" + (testProject.Sensor is MarkerSensor ? "Marker" : "Markerless") + ".xml");
+            trackingDataXml = File.Exists(testProject.ProjectPath + "\\Assets\\trackingData_" + testProject.Sensor.Name + ".xml");
             if (!arelNameHtml)
                 Assert.IsTrue(false, "arel" + testProject.Name == "" ? "Test" : testProject.Name + ".html ist nicht vorhanden");
             if (!arelJs)
@@ -51,7 +51,7 @@ namespace EditorTest
             if (!anchorJpg)
                 Assert.IsTrue(false, "anchor.jpg ist nicht vorhanden");
             if (!trackingDataXml)
-                Assert.IsTrue(false, "trackingData_" + (testProject.Sensor is MarkerSensor ? "Marker" : "MarkerlessFast") + ".xml ist nicht vorhanden");
+                Assert.IsTrue(false, "trackingData_" + testProject.Sensor.Name + ".xml ist nicht vorhanden");
         }
 
         private void checkAugmentations()
@@ -75,14 +75,14 @@ namespace EditorTest
                         {
                             if (source.Query != null || source.Query != "")
                             {
-                                if (!File.Exists(testProject.ProjectPath + source.Query))
+                                if (!File.Exists(Path.Combine(testProject.ProjectPath, source.Query)))
                                 {
                                     Assert.IsTrue(false, source.Query + " existiert nicht");
                                 }
                             }
                             if (source is FileSource)
                             {
-                                if (!File.Exists(testProject.ProjectPath + ((FileSource)source).Data))
+                                if (!File.Exists(Path.Combine(testProject.ProjectPath, ((FileSource)source).Data)))
                                 {
                                     Assert.IsTrue(false, ((FileSource)source).Data + " existiert nicht");
                                 }
@@ -93,7 +93,7 @@ namespace EditorTest
                     {
                         if (augmentation is Abstract2DAugmentation)
                         {
-                            if (!File.Exists(testProject.ProjectPath + ((Abstract2DAugmentation)augmentation).ResFilePath))
+                            if (!File.Exists(Path.Combine(testProject.ProjectPath, ((Abstract2DAugmentation)augmentation).ResFilePath)))
                             {
                                 Assert.IsTrue(false, "\\Assets\\" + ((Abstract2DAugmentation)augmentation).ResFilePath + " existiert nicht");
                             }
@@ -160,6 +160,7 @@ namespace EditorTest
         public void Export_Project_FullIDMarker()
         {
             testProject = SaveLoadController.loadProject(".\\res\\TestFiles\\TestProjects\\FullIDMarker\\FullIDMarker.ardev");
+            testProject.OldProjectPath = ".\\res\\TestFiles\\TestProjects\\FullIDMarker";
             testProject.ProjectPath = ".\\res\\TestFiles\\TestProjects\\Test";
             export();
             checkStandardFiles();
@@ -172,6 +173,7 @@ namespace EditorTest
         public void Export_Project_FullImageTrackable()
         {
             testProject = SaveLoadController.loadProject(".\\res\\TestFiles\\TestProjects\\FullImageTrackable\\FullImageTrackable.ardev");
+            testProject.OldProjectPath = ".\\res\\TestFiles\\TestProjects\\FullImageTrackable";
             testProject.ProjectPath = ".\\res\\TestFiles\\TestProjects\\Test";
             export();
             checkStandardFiles();
@@ -183,7 +185,8 @@ namespace EditorTest
         [TestCategory("ExportVisitorTest")]
         public void Export_Project_FullPictureMarker()
         {
-            testProject = SaveLoadController.loadProject(".\\res\\TestFiles\\TestProjects\\FullIDMarker\\FullIDMarker.ardev");
+            testProject = SaveLoadController.loadProject(".\\res\\TestFiles\\TestProjects\\FullPictureMarker\\FullPictureMarker.ardev");
+            testProject.OldProjectPath = ".\\res\\TestFiles\\TestProjects\\FullPictureMarker";
             testProject.ProjectPath = ".\\res\\TestFiles\\TestProjects\\Test";
             export();
             checkStandardFiles();
