@@ -31,8 +31,13 @@ namespace ARdevKit.Model.Project
         /// <value>
         /// The width, in mm.
         /// </value>
+
         [Browsable(false)]
-        private new int Width;
+        public new int Width
+        {
+            get { return base.Height; }
+            set { base.Height = value; }
+        }
 
         /// <summary>
         /// Gets or sets the height.
