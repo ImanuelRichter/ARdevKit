@@ -1194,8 +1194,15 @@ public class PreviewController
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     private void openQueryFile(object sender, EventArgs e)
     {
-        TextEditorForm tef = new TextEditorForm(((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source.Query);
-        tef.Show();
+        try
+        {
+            TextEditorForm tef = new TextEditorForm(((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source.Query);
+            tef.Show();
+        }
+        catch (Exception exception)
+        {
+            MessageBox.Show(exception.Message);
+        }
     }
 
     /// <summary>
@@ -1205,8 +1212,15 @@ public class PreviewController
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     private void openSourceFile(object sender, EventArgs e)
     {
-        TextEditorForm tef = new TextEditorForm(((FileSource)((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source).Data);
-        tef.Show();
+        try
+        {
+            TextEditorForm tef = new TextEditorForm(((FileSource)((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source).Data);
+            tef.Show();
+        }
+        catch (Exception exception)
+        {
+            MessageBox.Show(exception.Message);
+        }
     }
 
     /// <summary>
@@ -1216,8 +1230,15 @@ public class PreviewController
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     private void openOptionsFile(object sender, EventArgs e)
     {
-        TextEditorForm tef = new TextEditorForm(((Chart)this.ew.CurrentElement).Options);
-        tef.Show();
+        try
+        {
+            TextEditorForm tef = new TextEditorForm(((Chart)this.ew.CurrentElement).Options);
+            tef.Show();
+        }
+        catch (Exception exception)
+        {
+            MessageBox.Show(exception.Message);
+        }
     }
 
     /// <summary>
@@ -1242,9 +1263,9 @@ public class PreviewController
             TextEditorForm tef = new TextEditorForm(path);
             tef.Show();
         }
-        catch (System.IO.FileNotFoundException fnfe)
+        catch (Exception exception)
         {
-            MessageBox.Show(fnfe.Message);
+            MessageBox.Show(exception.Message);
         }
     }
 

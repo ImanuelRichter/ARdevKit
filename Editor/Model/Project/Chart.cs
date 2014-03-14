@@ -66,6 +66,13 @@ namespace ARdevKit.Model.Project
             set { base.Rotation = value; }
         }
 
+        [Browsable(false)]
+        public new string ResFilePath
+        {
+            get { return base.ResFilePath; }
+            set { base.ResFilePath = value; }
+        }
+
         /// <summary>   Default constructor. </summary>
         public Chart()
         {

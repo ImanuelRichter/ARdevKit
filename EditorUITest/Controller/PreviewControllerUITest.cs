@@ -31,8 +31,17 @@ namespace EditorUITest.Controller
         [TestMethod]
         public void copyPaste1()
         {
+            // Prepare project
             MessageBox.Show(new Form() { TopMost = true }, "Füge einen (beliebigen) Trackable dem Projekt hinzu.", "Schritt 1/2");
-            MessageBox.Show(new Form() { TopMost = true }, "Füge einen (beliebigen) Augmentation dem Projekt hinzu.", "Schritt 1/2");
+            MessageBox.Show(new Form() { TopMost = true }, "Füge eine Chart dem Projekt hinzu.", "Schritt 1/2");
+
+            MessageBox.Show(new Form() { TopMost = true }, "Kopiere die Chart und füge sie in die gleiche Scene ein (Bearbeiten -> Kopieren).", "Schritt 1/2");
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Hat die kopierte Chart die selben Eigenschaten wie das original (Ausnahmen sind die Eigenschaften Option und TranslationVector)?", "Test 4",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Hat die ID der Chart sich geändert?", "Test 4",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Hat der Options-Pfad einen fast identischen Pfad wie das original (der letzte Ordner hat die ID als Namen)?", "Test 4",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
         }
 
         #region Zusätzliche Testattribute
