@@ -2,7 +2,7 @@
 <TrackingData>
 	<Sensors>
 		<Sensor Type="MarkerBasedSensorSource">
-			<SensorID>MarkerTracking2</SensorID>
+			<SensorID>MarkerTracking1</SensorID>
 			<Parameters>
 				<MarkerTrackingParameters>
 					<TrackingQuality>robust</TrackingQuality>
@@ -11,22 +11,20 @@
 				</MarkerTrackingParameters>
 			</Parameters>
 			<SensorCOS>
-				<SensorCosID>PictureMarker1</SensorCosID>
+				<SensorCosID>IDMarker3</SensorCosID>
 				<Parameters>
-					<Size>300</Size>
-					<SimilarityThreshold>0.7</SimilarityThreshold>
 					<MarkerParameters>
-						<referenceImage qualityThreshold="0.70">pictureMarker1.png</referenceImage>
+						<Size>60</Size>
+						<MatrixID>1</MatrixID>
 					</MarkerParameters>
 				</Parameters>
 			</SensorCOS>
 			<SensorCOS>
-				<SensorCosID>PictureMarker2</SensorCosID>
+				<SensorCosID>IDMarker4</SensorCosID>
 				<Parameters>
-					<Size>300</Size>
-					<SimilarityThreshold>0.7</SimilarityThreshold>
 					<MarkerParameters>
-						<referenceImage qualityThreshold="0.70">pictureMarker2.png</referenceImage>
+						<Size>60</Size>
+						<MatrixID>2</MatrixID>
 					</MarkerParameters>
 				</Parameters>
 			</SensorCOS>
@@ -43,8 +41,8 @@
 				</Parameters>
 			</Fuser>
 			<SensorSource trigger="1">
-				<SensorID>MarkerTracking2</SensorID>
-				<SensorCosID>PictureMarker1</SensorCosID>
+				<SensorID>MarkerTracking1</SensorID>
+				<SensorCosID>IDMarker3</SensorCosID>
 				<HandEyeCalibration>
 					<TranslationOffset>
 						<X>0</X>
@@ -83,8 +81,8 @@
 				</Parameters>
 			</Fuser>
 			<SensorSource trigger="1">
-				<SensorID>MarkerTracking2</SensorID>
-				<SensorCosID>PictureMarker2</SensorCosID>
+				<SensorID>MarkerTracking1</SensorID>
+				<SensorCosID>IDMarker4</SensorCosID>
 				<HandEyeCalibration>
 					<TranslationOffset>
 						<X>0</X>

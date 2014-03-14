@@ -1,7 +1,7 @@
 // Will be executed when touch interaction has been started,
 // e.g. user touched a model, button, etc.
 imageAugmentation1.onTouchStarted = function () {
-	alert('foo');
+	alert('foobar');
 };
 
 // Will be executed when touch interaction has been finished,
