@@ -1204,7 +1204,7 @@ public class PreviewController
     {
         try
         {
-            TextEditorForm tef = new TextEditorForm(((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source.Query);
+            TextEditorForm tef = new TextEditorForm(Path.Combine(ew.project.ProjectPath, ((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source.Query));
             tef.Show();
         }
         catch (Exception exception)
@@ -1222,7 +1222,7 @@ public class PreviewController
     {
         try
         {
-            TextEditorForm tef = new TextEditorForm(((FileSource)((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source).Data);
+            TextEditorForm tef = new TextEditorForm(Path.Combine(ew.project.ProjectPath, ((FileSource)((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source).Data));
             tef.Show();
         }
         catch (Exception exception)
@@ -1240,7 +1240,7 @@ public class PreviewController
     {
         try
         {
-            TextEditorForm tef = new TextEditorForm(((Chart)this.ew.CurrentElement).Options);
+            TextEditorForm tef = new TextEditorForm(Path.Combine(ew.project.ProjectPath, ((Chart)this.ew.CurrentElement).Options));
             tef.Show();
         }
         catch (Exception exception)
