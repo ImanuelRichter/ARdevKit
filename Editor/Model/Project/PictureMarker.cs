@@ -68,6 +68,13 @@ namespace ARdevKit.Model.Project
             get { return pictureName; }
         }
 
+        [Browsable(false)]
+        public new int Size
+        {
+            get { return base.Size; }
+            set { base.Size = size; }
+        }
+
         /// <summary>
         /// Default Constructor.
         /// </summary>

@@ -61,6 +61,7 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\PreviewControllerUITest.cs" />
     <Compile Include="EditorWindowTest.cs" />
     <Compile Include="Controller\PropertyController\IDMarkerDuplicate.cs" />
     <Compile Include="Controller\PropertyController\PropertyControllerTest.cs" />
