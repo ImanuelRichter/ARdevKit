@@ -162,7 +162,15 @@ namespace ARdevKit.Controller.TestController
                             progressVideoWindow.FormClosed += progressVideoWindow_FormClosed;
                             progressVideoWindow.Show();
 
-                            frameExtractor = new FrameExtractor(progressVideoWindow, testFilePath, TMP_VIDEO_PATH);
+                            try
+                            {
+                                frameExtractor = new FrameExtractor(progressVideoWindow, testFilePath, TMP_VIDEO_PATH);
+                            }
+                            catch (Exception e)
+                            {
+                                MessageBox.Show("Das Video konnte nicht verarbeitet werden:\nEventuell fehlt einer der folgenden Dateien: AForge.Video.FFMPEG.dll, AForge.Video.dll, AForge.Video.FFMPEG.dll.\n" + e.Message);
+                                break;
+                            }
                             frameExtractor.RunWorkerAsync();
                         }
                         break;
