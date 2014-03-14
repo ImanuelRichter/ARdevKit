@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.ComponentModel;
+using System.IO;
 
 namespace ARdevKit.Model.Project
 {
@@ -57,6 +58,8 @@ namespace ARdevKit.Model.Project
             set { queryFilePath = value; }
         }
 
+        AbstractDynamic2DAugmentation augmentation;
+
         /// <summary>
         /// Gets or sets the augmentations, which get their dynamic information from the <see cref="AbstractSource" />
         /// </summary>
@@ -64,7 +67,24 @@ namespace ARdevKit.Model.Project
         /// The augmentations.
         /// </value>
         [Browsable(false)]
-        public AbstractDynamic2DAugmentation Augmentation { get; set; }
+        public virtual AbstractDynamic2DAugmentation Augmentation 
+        {
+            get { return augmentation; }
+            set
+            {
+                if (augmentation!=null && !value.Equals(augmentation))
+                {
+                    string newPath = Path.Combine(Environment.CurrentDirectory, "tmp\\" + value.ID);
+                    if (!System.IO.Directory.Exists(newPath))
+                    {
+                        System.IO.Directory.CreateDirectory(newPath);
+                    }
+                    System.IO.File.Copy(queryFilePath, newPath + "\\query.js");
+                    queryFilePath = newPath + "\\query.js";
+                }
+                augmentation = value;
+            }
+        }
 
         /// <summary>
         /// Initializes no new instance of the <see cref="AbstractSource" /> class,
@@ -107,16 +127,6 @@ namespace ARdevKit.Model.Project
         /// <returns>a representative iconized Bitmap</returns>
         public abstract Bitmap getIcon();
 
-        /**
-         * <summary>    Makes a deep copy of this object. </summary>
-         *
-         * <remarks>    Robin, 22.01.2014. </remarks>
-         *
-         * <returns>    A copy of this object. </returns>
-         */
-
-        public abstract object Clone();
-
         /// <summary>
         /// This method is called by the previewController when a new instance of the element is added to the Scene. It sets "must-have" properties.
         /// </summary>
@@ -152,6 +162,10 @@ namespace ARdevKit.Model.Project
                 }
             }
             sourceID = newID;
+            if (!ew.project.Sources.Contains(this))
+            {
+                ew.project.Sources.Add(this);
+            }
             return true;
         }
 
@@ -164,6 +178,11 @@ namespace ARdevKit.Model.Project
         public override string ToString()
         {
             return sourceID;
+        }
+
+        public virtual object Clone()
+        {
+            return ObjectCopier.Clone(this);
         }
     }
 }

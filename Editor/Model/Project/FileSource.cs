@@ -36,6 +36,25 @@ namespace ARdevKit.Model.Project
             set { sourceFilePath = value; }
         }
 
+        public override AbstractDynamic2DAugmentation Augmentation
+        {
+            get { return base.Augmentation; }
+            set
+            {
+                if (base.Augmentation != null && !value.Equals(base.Augmentation))
+                {
+                    string newPath = Path.Combine(Environment.CurrentDirectory, "tmp\\" + value.ID);
+                    if (!System.IO.Directory.Exists(newPath))
+                    {
+                        System.IO.Directory.CreateDirectory(newPath);
+                    }
+                    System.IO.File.Copy(sourceFilePath, newPath + "\\" + Path.GetFileName(sourceFilePath));
+                    sourceFilePath = newPath + "\\" + Path.GetFileName(sourceFilePath);
+                }
+                base.Augmentation = value;
+            }
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="FileSource"/> class.
         /// </summary>

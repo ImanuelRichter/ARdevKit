@@ -147,19 +147,6 @@ namespace ARdevKit.Model.Project
                 Directory.Delete(dir, true);
         }
 
-        /**
-         * <summary>    Makes a deep copy of this object. </summary>
-         *
-         * <remarks>    Robin, 21.01.2014. </remarks>
-         *
-         * <returns>    A copy of this object. </returns>
-         */
-
-        public override object Clone()
-        {
-            return base.Clone();
-        }
-
         /// <summary>
         /// This method is called by the previewController when a new instance of the element is added to the Scene. It sets "must-have" properties.
         /// </summary>
@@ -186,6 +173,12 @@ namespace ARdevKit.Model.Project
                 {
                     return false;
                 }
+            }
+            else
+            {
+                string newPath = Path.Combine(Environment.CurrentDirectory, "tmp", id);
+                Helper.Copy(Options, newPath, "options.js");
+                Options = Path.Combine(newPath, "options.js");
             }
             return result;
         }

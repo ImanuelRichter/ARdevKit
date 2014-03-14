@@ -226,7 +226,6 @@ public class PreviewController
 
                         //add references in Augmentation, Picturebox + project.sources List.
                         ((AbstractDynamic2DAugmentation)currentElement).Source = source;
-                        this.ew.project.Sources.Add(((AbstractDynamic2DAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).Source);
 
 
                         //make it possible to add a query to the source.
@@ -262,12 +261,11 @@ public class PreviewController
                         source.Augmentation = ((AbstractDynamic2DAugmentation)currentElement);
 
                         string newQueryPath = Path.Combine(Environment.CurrentDirectory, "tmp\\" + source.Augmentation.ID);
-                        ARdevKit.Model.Project.File.Helper.Copy(openFileDialog.FileName, newQueryPath);
-                        ((DbSource)source).Query = newQueryPath;
+                        ARdevKit.Model.Project.File.Helper.Copy(openFileDialog.FileName, newQueryPath, "query.js");
+                        ((DbSource)source).Query = Path.Combine(newQueryPath, "query.js");
 
                         //add references in Augmentation, Picturebox + project.sources List.
                         ((AbstractDynamic2DAugmentation)currentElement).Source = source;
-                        this.ew.project.Sources.Add(((AbstractDynamic2DAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).Source);
 
                         this.setSourcePreview(currentElement);
                     }
@@ -1124,7 +1122,6 @@ public class PreviewController
         if (typeof(AbstractDynamic2DAugmentation).IsAssignableFrom(element.GetType()) && ((AbstractDynamic2DAugmentation)element).Source != null)
         {
             this.setSourcePreview(element);
-            ((AbstractDynamic2DAugmentation)element).Source = (AbstractSource)((AbstractDynamic2DAugmentation)copy).Source.Clone();
         }
     }
 
