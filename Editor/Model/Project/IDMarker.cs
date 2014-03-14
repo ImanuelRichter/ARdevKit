@@ -76,7 +76,7 @@ namespace ARdevKit.Model.Project
             this.matrixID = matrixID;
             this.sensorCosID = IDFactory.CreateNewSensorCosID(this);
             fuser = new MarkerFuser();
-            size = 60;
+            Size = 60;
         }
 
 
