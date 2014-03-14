@@ -1121,7 +1121,7 @@ public class PreviewController
         IPreviewable element = (IPreviewable)this.copy.Clone();
         this.addPreviewable(element, new Vector3D(p.X, p.Y, 0));
 
-        if (typeof(AbstractDynamic2DAugmentation).IsAssignableFrom(element.GetType()) && ((AbstractDynamic2DAugmentation)element).Source != null)
+        if (element is AbstractDynamic2DAugmentation && ((AbstractDynamic2DAugmentation)element).Source != null)
         {
             this.setSourcePreview(element);
             ((AbstractDynamic2DAugmentation)element).Source = (AbstractSource)((AbstractDynamic2DAugmentation)copy).Source.Clone();
@@ -1135,8 +1135,16 @@ public class PreviewController
     /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
     public void paste_augmentation_center(object sender, EventArgs e)
     {
-        this.addPreviewable((IPreviewable)this.copy.Clone(), new Vector3D(this.panel.Width / 2, this.panel.Height / 2, 0));
+        IPreviewable element = (IPreviewable)this.copy.Clone();
+        this.addPreviewable(element, new Vector3D(this.panel.Width / 2, this.panel.Height / 2, 0));
+        
+        if (element is AbstractDynamic2DAugmentation && ((AbstractDynamic2DAugmentation)element).Source != null)
+        {
+            this.setSourcePreview(element);
+            ((AbstractDynamic2DAugmentation)element).Source = (AbstractSource)((AbstractDynamic2DAugmentation)copy).Source.Clone();
+        }
     }
+
 
 
     /**
