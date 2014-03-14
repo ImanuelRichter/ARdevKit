@@ -175,34 +175,97 @@ namespace EditorUITest
                 // General files from export for AREL
                 MessageBox.Show(new Form() { TopMost = true }, "Gehe zum Speicherort des exportieren Projekt", "Schritt 1/2");
                 Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Sind die Dateien arel.js, arelConfig.xml, areltest.html und der Ordner Assets vorhanden?", "Test 4",
-                MessageBoxButtons.YesNo) == DialogResult.Yes);
+                    MessageBoxButtons.YesNo) == DialogResult.Yes);
 
                 MessageBox.Show(new Form() { TopMost = true }, "Gehe in den Assets-Ordner rein", "Schritt 1/2");
                 Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Sind die Dateien anchor.png, arelGlue.js, highcharts.js, jquery-2.0.3.js und TrackingData_Marker.xml vorhanden?", "Test 4",
-                MessageBoxButtons.YesNo) == DialogResult.Yes);
+                    MessageBoxButtons.YesNo) == DialogResult.Yes);
 
                 // Files from imageAugmentation
                 Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Sind die Dateien imageAugmentation1_Event.js und das Bild, was du für die ImageAugmentation verwendet hast, vorhanden?", "Test 4",
-                MessageBoxButtons.YesNo) == DialogResult.Yes);
+                    MessageBoxButtons.YesNo) == DialogResult.Yes);
                 Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Öffne imageAugmentation1_Event.js mit einem beliebigen Editor. Sind die hinzugefügten Änderungen vorhanden?", "Test 4",
-                MessageBoxButtons.YesNo) == DialogResult.Yes);
+                    MessageBoxButtons.YesNo) == DialogResult.Yes);
 
 
                 // Files from Chart
                 Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Sind die zwei Ordner chart1 und chart2 vorhanden?", "Test 4",
-                MessageBoxButtons.YesNo) == DialogResult.Yes);
+                    MessageBoxButtons.YesNo) == DialogResult.Yes);
 
                 MessageBox.Show(new Form() { TopMost = true }, "Gehe in den chart1-Ordner rein", "Schritt 1/2");
                 Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Sind die Dateien chart.js, options.js und query.js vorhanden?", "Test 4",
-                MessageBoxButtons.YesNo) == DialogResult.Yes);
+                    MessageBoxButtons.YesNo) == DialogResult.Yes);
                 MessageBox.Show(new Form() { TopMost = true }, "Öffne die option.js und deine SourceFile mit einem beliebigen Editor", "Schritt 1/2");
                 Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Sind die Änderungen in der option.js und deiner SourceFile vorhanden?", "Test 4",
-                MessageBoxButtons.YesNo) == DialogResult.Yes);
+                    MessageBoxButtons.YesNo) == DialogResult.Yes);
 
                 MessageBox.Show(new Form() { TopMost = true }, "Gehe in den chart2-Ordner rein", "Schritt 1/2");
                 MessageBox.Show(new Form() { TopMost = true }, "Öffne die query.js mit einem beliebigen Editor", "Schritt 1/2");
                 Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Sind die Änderungen in der query.js vorhanden?", "Test 4",
-                MessageBoxButtons.YesNo) == DialogResult.Yes);
+                    MessageBoxButtons.YesNo) == DialogResult.Yes);
+            }
+            else
+            {
+                Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Kam eine entsprechende Meldung, dass das exportieren NICHT erfolgreich war?", "Test 4",
+                    MessageBoxButtons.YesNo) == DialogResult.Yes);
+            }
+        }
+
+        [TestMethod]
+        public void export2()
+        {
+            MessageBox.Show(new Form() { TopMost = true }, "Füge einen IDMarker, eine ImageAugmentationen eine Chart und eine VideoAugmentation hinzu.", "Schritt 1/2");
+            MessageBox.Show(new Form() { TopMost = true }, "Erstelle eine neue Szene und füge einen IDMarker, eine ImageAugmentationen und zwei Charts hinzu.", "Schritt 1/2");
+            
+            MessageBox.Show(new Form() { TopMost = true }, "Füge der Chart1 eine FileSource hinzu", "Schritt 1/2");
+            MessageBox.Show(new Form() { TopMost = true }, "Öffne die Option Datei der Chart (Kontextmenü -> Öffne Optionen) und schreibe etwas rein", "Schritt 1/2");
+            MessageBox.Show(new Form() { TopMost = true }, "Öffne die SourceFile der Chart (Kontextmenü -> SourceFile öffnen) und schreibe etwas rein", "Schritt 1/2");
+
+            MessageBox.Show(new Form() { TopMost = true }, "Füge der Chart2 eine DbSource hinzu", "Schritt 1/2");
+            MessageBox.Show(new Form() { TopMost = true }, "Öffne die QueryFile der Chart (Kontextmenü -> QueryFile öffnen) und schreibe etwas rein", "Schritt 1/2");
+
+            MessageBox.Show(new Form() { TopMost = true }, "Exportiere das Projekt (Datei -> Exportieren)", "Schritt 1/2");
+
+            if ((MessageBox.Show(new Form() { TopMost = true }, "War das exportieren laut der Meldung erfolgreich?", "Test 4",
+                    MessageBoxButtons.YesNo) == DialogResult.Yes))
+            {
+                // General files from export for AREL
+                MessageBox.Show(new Form() { TopMost = true }, "Gehe zum Speicherort des exportieren Projekt", "Schritt 1/2");
+                Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Sind die Dateien arel.js, arelConfig.xml, areltest.html und der Ordner Assets vorhanden?", "Test 4",
+                    MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+                MessageBox.Show(new Form() { TopMost = true }, "Gehe in den Assets-Ordner rein", "Schritt 1/2");
+                Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Sind die Dateien anchor.png, arelGlue.js, highcharts.js, jquery-2.0.3.js und TrackingData_Marker.xml vorhanden?", "Test 4",
+                    MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+                // File from VideoAugmentation
+                Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Ist das Video, dass du eingefügt hattest vorhanden?", "Test 4",
+                    MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+                // File from ImageAugmentation
+                Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Ist das Bild, was du für die ImageAugmentation verwendet hast, vorhanden?", "Test 4",
+                    MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+                // Files from Chart
+                Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Sind die zwei Ordner chart1 und chart2 vorhanden?", "Test 4",
+                    MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+                MessageBox.Show(new Form() { TopMost = true }, "Gehe in den chart1-Ordner rein", "Schritt 1/2");
+                Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Sind die Dateien chart.js, options.js und query.js vorhanden?", "Test 4",
+                    MessageBoxButtons.YesNo) == DialogResult.Yes);
+                MessageBox.Show(new Form() { TopMost = true }, "Öffne die option.js und deine SourceFile mit einem beliebigen Editor", "Schritt 1/2");
+                Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Sind die Änderungen in der option.js und deiner SourceFile vorhanden?", "Test 4",
+                    MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+                MessageBox.Show(new Form() { TopMost = true }, "Gehe in den chart2-Ordner rein", "Schritt 1/2");
+                MessageBox.Show(new Form() { TopMost = true }, "Öffne die query.js mit einem beliebigen Editor", "Schritt 1/2");
+                Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Sind die Änderungen in der query.js vorhanden?", "Test 4",
+                    MessageBoxButtons.YesNo) == DialogResult.Yes);
+            }
+            else
+            {
+                Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Kam eine entsprechende Meldung, dass das exportieren NICHT erfolgreich war?", "Test 4",
+                    MessageBoxButtons.YesNo) == DialogResult.Yes);
             }
         }
 
@@ -250,6 +313,7 @@ namespace EditorUITest
         [TestCleanup()]
         public void MyTestCleanup()
         {
+            MessageBox.Show(new Form() { TopMost = true }, "Beenden das Programm, ohne abzuspeichern.", "Test end");
             MessageBox.Show(new Form() { TopMost = true }, "Lösche das Projekt und alles, was damit erstellt wurde vom Speicherort (sofern in diesem Test etwas gespeichert wurde).", "Test end");
         }
 

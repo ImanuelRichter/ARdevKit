@@ -63,6 +63,13 @@ namespace ARdevKit.Model.Project
             }
         }
 
+        [Browsable(false)]
+        public new int Size
+        {
+            get { return base.Size; }
+            set { base.Size = size; }
+        }
+
         /// <summary>
         /// Name of the image.
         /// </summary>
