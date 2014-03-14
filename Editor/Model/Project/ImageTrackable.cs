@@ -191,7 +191,7 @@ namespace ARdevKit.Model.Project
                     string path = openFileDialog.FileName;
                     bool isClonedMarker = ImagePath != null;
                     ImagePath = path;
-
+                    size = Math.Min(this.getPreview(ImagePath).Width, this.getPreview(ImagePath).Height);
 
                     if (!ew.project.existTrackable(this))
                     {
