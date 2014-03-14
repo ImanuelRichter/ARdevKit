@@ -101,7 +101,8 @@ namespace ARdevKit.Model.Project
         public PictureMarker(string picturePath)
             : this()
         {
-            size = new Bitmap(picturePath).Height * new Bitmap(picturePath).Width;
+            widthMM = (int) Math.Round(new Bitmap(picturePath).PhysicalDimension.Width, 0);
+            heightMM = new Bitmap(picturePath).Height;
             this.picturePath = picturePath;
             pictureName = Path.GetFileName(picturePath);
         }
@@ -190,8 +191,17 @@ namespace ARdevKit.Model.Project
                 {
                     string path = openFileDialog.FileName;
                     bool isClonedMarker = PicturePath != null;
-                    PicturePath = path;
-                    size = Math.Min(this.getPreview(PicturePath).Width, this.getPreview(PicturePath).Height);
+                    picturePath = path;
+                    pictureName = Path.GetFileName(picturePath);
+
+                    Bitmap bmp = getPreview(picturePath);
+                    int widthPX = bmp.Width;
+                    float hPXperInch = bmp.HorizontalResolution;
+                    widthMM = (int)Math.Round(widthPX / hPXperInch * 25.4, 0);
+
+                    int heightPX = bmp.Height;
+                    float vPXperInch = bmp.VerticalResolution;
+                    heightMM = (int)Math.Round(heightPX / vPXperInch * 25.4, 0);
 
                     if (!ew.project.existTrackable(this))
                     {

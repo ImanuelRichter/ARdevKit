@@ -101,8 +101,8 @@ namespace ARdevKit.Model.Project
             fuser = new MarkerlessFuser();
             imagePath = null;
             imageName = "";
-            widthMM = 300;
-            heightMM = 300;
+            widthMM = 100;
+            heightMM = 100;
         }
 
         /// <summary>
@@ -198,8 +198,17 @@ namespace ARdevKit.Model.Project
                 {
                     string path = openFileDialog.FileName;
                     bool isClonedMarker = ImagePath != null;
-                    ImagePath = path;
-                    size = Math.Min(this.getPreview(ImagePath).Width, this.getPreview(ImagePath).Height);
+                    imagePath = path;
+                    imagePath = Path.GetFileName(imagePath);
+
+                    Bitmap bmp = getPreview(imagePath);
+                    int widthPX = bmp.Width;
+                    float hPXperInch = bmp.HorizontalResolution;
+                    widthMM = (int)Math.Round(widthPX / hPXperInch * 25.4, 0);
+
+                    int heightPX = bmp.Height;
+                    float vPXperInch = bmp.VerticalResolution;
+                    heightMM = (int)Math.Round(heightPX / vPXperInch * 25.4, 0);
 
                     if (!ew.project.existTrackable(this))
                     {
