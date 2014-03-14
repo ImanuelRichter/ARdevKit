@@ -14,6 +14,7 @@ using ARdevKit.Properties;
 using System.Drawing.Drawing2D;
 using System.Runtime.CompilerServices;
 using System.IO;
+using System.Diagnostics;
 
 /// <summary>
 /// The class PreviewController manages all things which are in contact with the PreviewPanel. Here are all methods, who influence the PreviewPanel.
@@ -765,14 +766,14 @@ public class PreviewController
                 if (width > height)
                 {
                     sideScale = scalex / scaley;
-                    return this.scaleBitmap(prev.getPreview(ew.project.ProjectPath), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X * sideScale * sideScale * 1.15),
-                            (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.Y * sideScale * 1.15));
+                    return this.scaleBitmap(prev.getPreview(ew.project.ProjectPath), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X * sideScale * sideScale * 1.3),
+                            (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.Y * sideScale * 1.3));
                 }
                 else if (width <= height)
                 {
                     sideScale = scaley / scalex;
-                    return this.scaleBitmap(prev.getPreview(ew.project.ProjectPath), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X * 1.15),
-                            (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.Y * sideScale * 1.15));
+                    return this.scaleBitmap(prev.getPreview(ew.project.ProjectPath), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X * 1.3),
+                            (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.Y * sideScale * 1.3));
                 }
                 else { return null; }
             }
@@ -789,6 +790,7 @@ public class PreviewController
 
     /// <summary>
     /// Scales the bitmap.
+    /// dirty workaround: when the scaling might get too big, the original image is returned
     /// </summary>
     /// <param name="bit">The bit.</param>
     /// <param name="width">The width.</param>
@@ -799,16 +801,30 @@ public class PreviewController
     {
         if (bit == null)
             throw new ArgumentException("parameter bit was null.");
+        if (width == null)
+            throw new ArgumentException("parameter width was null.");
+        if (height == null)
+            throw new ArgumentException("parameter height was null.");
 
-        Bitmap resizedImg = new Bitmap(width, height);
-        Bitmap img = bit;
-
-        using (Graphics gNew = Graphics.FromImage(resizedImg))
+        try
         {
-            gNew.InterpolationMode = InterpolationMode.HighQualityBicubic;
-            gNew.DrawImage(img, new Rectangle(0, 0, width, height));
+            Bitmap resizedImg = new Bitmap(width, height);
+            Bitmap img = bit;
+
+            using (Graphics gNew = Graphics.FromImage(resizedImg))
+            {
+                gNew.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                gNew.DrawImage(img, new Rectangle(0, 0, width, height));
+            }
+
+            return resizedImg;
         }
-        return resizedImg;
+        catch (ArgumentException ae)
+        {
+            Debug.WriteLine("Bitmap konnte nicht skaliert werden");
+        }
+
+        return bit;
     }
 
     /// <summary>
@@ -978,14 +994,14 @@ public class PreviewController
                 if (prev.getPreview(ew.project.ProjectPath).Width > prev.getPreview(ew.project.ProjectPath).Height)
                 {
                     double sideScale = (double)prev.getPreview(ew.project.ProjectPath).Width / (double)prev.getPreview(ew.project.ProjectPath).Height;
-                    return this.scaleBitmap(prev.getPreview(ew.project.ProjectPath), (int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale * sideScale * sideScale * 1.15), 
-                        (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale * sideScale * 1.15));
+                    return this.scaleBitmap(prev.getPreview(ew.project.ProjectPath), (int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale * sideScale * sideScale * 1.3), 
+                        (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale * sideScale * 1.3));
                 }
                 else if (prev.getPreview(ew.project.ProjectPath).Width < prev.getPreview(ew.project.ProjectPath).Height)
                 {
                     double sideScale = (double)prev.getPreview(ew.project.ProjectPath).Height / (double)prev.getPreview(ew.project.ProjectPath).Width;
-                    return this.scaleBitmap(prev.getPreview(ew.project.ProjectPath), (int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale * 1.15), 
-                        (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale * sideScale * 1.15));
+                    return this.scaleBitmap(prev.getPreview(ew.project.ProjectPath), (int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale * 1.3), 
+                        (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale * sideScale * 1.3));
                 }
                 else { return null; }
 
