@@ -199,7 +199,7 @@ namespace ARdevKit.Model.Project
                     string path = openFileDialog.FileName;
                     bool isClonedMarker = ImagePath != null;
                     imagePath = path;
-                    imagePath = Path.GetFileName(imagePath);
+                    imageName = Path.GetFileName(imagePath);
 
                     Bitmap bmp = getPreview(imagePath);
                     int widthPX = bmp.Width;

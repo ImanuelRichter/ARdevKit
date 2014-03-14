@@ -220,9 +220,9 @@ public class PreviewController
                         source.initElement(ew);
                         source.Augmentation = ((AbstractDynamic2DAugmentation)currentElement);
 
-                        string newDataPath = Path.Combine(Environment.CurrentDirectory, "tmp\\" + source.Augmentation.ID);
-                        ARdevKit.Model.Project.File.Helper.Copy(openFileDialog.FileName, newDataPath);
-                        ((FileSource)source).Data = newDataPath;
+                        string newDataPath = Path.Combine(Environment.CurrentDirectory, "tmp", source.Augmentation.ID);
+                        ARdevKit.Model.Project.File.Helper.Copy(openFileDialog.FileName, newDataPath, "data" + Path.GetExtension(openFileDialog.FileName));
+                        ((FileSource)source).Data = Path.Combine(newDataPath, "data" + Path.GetExtension(openFileDialog.FileName));
 
                         //add references in Augmentation, Picturebox + project.sources List.
                         ((AbstractDynamic2DAugmentation)currentElement).Source = source;
@@ -240,9 +240,9 @@ public class PreviewController
                             openFileDialog.Filter = "JavaScriptFile (*.js)|*.js";
                             if (openFileDialog.ShowDialog() == DialogResult.OK)
                             {
-                                string newQueryPath = Path.Combine(Environment.CurrentDirectory, "tmp\\" + source.Augmentation.ID);
-                                ARdevKit.Model.Project.File.Helper.Copy(openFileDialog.FileName, newQueryPath);
-                                ((FileSource)source).Query = newQueryPath;
+                                string newQueryPath = Path.Combine(Environment.CurrentDirectory, "tmp", source.Augmentation.ID);
+                                ARdevKit.Model.Project.File.Helper.Copy(openFileDialog.FileName, newQueryPath, "query.js");
+                                ((FileSource)source).Query = Path.Combine(newQueryPath, "query.js");
                             }
                         }
                         this.setSourcePreview(currentElement);

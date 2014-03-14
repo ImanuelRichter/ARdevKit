@@ -171,9 +171,9 @@ namespace ARdevKit.Model.Project
                 openFileDialog.Title = "Wählen sie eine Options Datei";
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    string newPath = Path.Combine(Environment.CurrentDirectory, "tmp\\" + id);
-                    Helper.Copy(openFileDialog.FileName, newPath);
-                    Options = newPath;
+                    string newPath = Path.Combine(Environment.CurrentDirectory, "tmp", id);
+                    Helper.Copy(openFileDialog.FileName, newPath, "options.js");
+                    Options = Path.Combine(newPath, "options.js");
                 }
                 else
                 {
