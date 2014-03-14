@@ -14,6 +14,7 @@ using ARdevKit.Properties;
 using System.Drawing.Drawing2D;
 using System.Runtime.CompilerServices;
 using System.IO;
+using System.Diagnostics;
 
 /// <summary>
 /// The class PreviewController manages all things which are in contact with the PreviewPanel. Here are all methods, who influence the PreviewPanel.
@@ -789,6 +790,7 @@ public class PreviewController
 
     /// <summary>
     /// Scales the bitmap.
+    /// dirty workaround: when the scaling might get too big, the original image is returned
     /// </summary>
     /// <param name="bit">The bit.</param>
     /// <param name="width">The width.</param>
@@ -799,16 +801,30 @@ public class PreviewController
     {
         if (bit == null)
             throw new ArgumentException("parameter bit was null.");
+        if (width == null)
+            throw new ArgumentException("parameter width was null.");
+        if (height == null)
+            throw new ArgumentException("parameter height was null.");
 
-        Bitmap resizedImg = new Bitmap(width, height);
-        Bitmap img = bit;
-
-        using (Graphics gNew = Graphics.FromImage(resizedImg))
+        try
         {
-            gNew.InterpolationMode = InterpolationMode.HighQualityBicubic;
-            gNew.DrawImage(img, new Rectangle(0, 0, width, height));
+            Bitmap resizedImg = new Bitmap(width, height);
+            Bitmap img = bit;
+
+            using (Graphics gNew = Graphics.FromImage(resizedImg))
+            {
+                gNew.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                gNew.DrawImage(img, new Rectangle(0, 0, width, height));
+            }
+
+            return resizedImg;
         }
-        return resizedImg;
+        catch (ArgumentException ae)
+        {
+            Debug.WriteLine("Bitmap konnte nicht skaliert werden");
+        }
+
+        return bit;
     }
 
     /// <summary>
