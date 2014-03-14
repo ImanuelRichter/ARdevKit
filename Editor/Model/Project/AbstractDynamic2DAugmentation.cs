@@ -21,7 +21,7 @@ namespace ARdevKit.Model.Project
         /// variable which links an <see cref="AbstractSource"/> to 
         /// this <see cref="Abstract2DAugmentation"/>.
         /// </summary>
-        [CategoryAttribute("General")]
+        [CategoryAttribute("General")] [Browsable(false)]
         public AbstractSource Source { get; set; }
 
         /// <summary>
