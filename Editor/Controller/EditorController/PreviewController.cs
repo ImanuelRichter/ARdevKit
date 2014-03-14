@@ -1229,9 +1229,17 @@ public class PreviewController
     {
         try
         {
-            if (((AbstractAugmentation)ew.CurrentElement).CustomUserEventReference == null || !System.IO.File.Exists(((AbstractAugmentation)ew.CurrentElement).CustomUserEventReference.FilePath))
+            string path;
+            if (((AbstractAugmentation)ew.CurrentElement).CustomUserEventReference == null)
                 ((AbstractAugmentation)ew.CurrentElement).createUserEvent();
-            TextEditorForm tef = new TextEditorForm(((AbstractAugmentation)ew.CurrentElement).CustomUserEventReference.FilePath);
+            else
+            {
+                path = Path.Combine(ew.project.ProjectPath == null ? Environment.CurrentDirectory : ew.project.ProjectPath, ((AbstractAugmentation)ew.CurrentElement).CustomUserEventReference.FilePath);
+                if (!System.IO.File.Exists(path))
+                    ((AbstractAugmentation)ew.CurrentElement).createUserEvent();
+            }
+            path = Path.Combine(ew.project.ProjectPath == null ? Environment.CurrentDirectory : ew.project.ProjectPath, ((AbstractAugmentation)ew.CurrentElement).CustomUserEventReference.FilePath);
+            TextEditorForm tef = new TextEditorForm(path);
             tef.Show();
         }
         catch (System.IO.FileNotFoundException fnfe)
