@@ -99,6 +99,8 @@ namespace EditorUITest
 
             // Load files
             MessageBox.Show(new Form() { TopMost = true }, "Erstelle ein neues Projekt (Datei -> Neu) und danach öffne das vorher gespeicherte Projekt.", "Schritt 1/2");
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Sind in dem neu geladenem Projekt zwei Szenen vorhanden?", "Test 4",  // This is TF12510
+                MessageBoxButtons.YesNo) == DialogResult.Yes); 
             Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Sieht das Projekt genau so aus, wie du es vorher abgespeichert hattest?", "Test 4",
                 MessageBoxButtons.YesNo) == DialogResult.Yes);
         }

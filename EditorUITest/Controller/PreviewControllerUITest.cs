@@ -78,6 +78,7 @@ namespace EditorUITest.Controller
         {
             MessageBox.Show(new Form() { TopMost = true }, "Füge einen (beliebigen) Trackable dem Projekt hinzu.", "Schritt 1/2");
             MessageBox.Show(new Form() { TopMost = true }, "Jeweils eine Augmentation von jedem Typ hinzu.", "Schritt 1/2");
+            MessageBox.Show(new Form() { TopMost = true }, "Füge bei der Chart eine (beliebige) Source hinzu.", "Schritt 1/2");
             MessageBox.Show(new Form() { TopMost = true }, "Erstelle eine zweite Szene", "Schritt 1/2");
             MessageBox.Show(new Form() { TopMost = true }, "Kopiere jeweils eine Augmentation und füge diese in die zweite Szene ein (mit der Tastenkombination STRG+C und STRG+V)", "Schritt 1/2");
 
@@ -110,6 +111,48 @@ namespace EditorUITest.Controller
                 MessageBoxButtons.YesNo) == DialogResult.Yes);
         }
 
+        [TestMethod]
+        public void switchDuplicateDeleteScene1()  // TF12510 - TF12550
+        {
+            var pathFile = System.IO.Path.GetFullPath(@"\res\testFiles\testProjects\everyAugmentation");
+            
+            MessageBox.Show(new Form() { TopMost = true }, "Öffne das Projekt im Ordner " + pathFile + " .", "Schritt 1/2");
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Sind zwei verfügbare Szenen zur Auswahl?", "Schritt 1/2",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+            
+            // Switch between scenes
+            MessageBox.Show(new Form() { TopMost = true }, "Wechsele zur Szene 2. Merke dir dabei die Positionen der Elemente in Szene 1 (ggf. mit einem Screenshot)", "Schritt 1/2");
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Wird Szene 2 im Szenen-Wechsel-Bereich farblich hervorgehoben?", "Schritt 1/2",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+            
+            MessageBox.Show(new Form() { TopMost = true }, "Bewege die Augmentationen von deren ursprünglichen Position und wechsele zurück zu Szene 1.", "Schritt 1/2");
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Haben sich die Positionen der Elemente in Szene 1 NICHT verändert?", "Schritt 1/2",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+            
+            // Duplicate a scene
+            MessageBox.Show(new Form() { TopMost = true }, "Drücke mit rechtsklick auf Szene 1 und klicke auf Duplizieren.", "Schritt 1/2");
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Sind 3 Szenen im Szenen-Wechsel-Bereich zu sehen?", "Schritt 1/2",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Sehen Szene 1 und Szene 2 identisch aus?", "Schritt 1/2",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Sind die Charts von Szene 1 und Szene 2 bis auf die Eigenschaften Option und deren Sourcen identisch?", "Schritt 1/2",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Sind die Eigenschaften Option und Source zwischen den Charts NICHT identisch, also Unterscheiden sich nur am letzten Name des letzten Ordners?", "Schritt 1/2",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+
+            // Delete a scene
+            MessageBox.Show(new Form() { TopMost = true }, "Lösche Szene 1.", "Schritt 1/2");
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Ist Szene 1 gelöscht worden?", "Schritt 1/2",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Ist im Szenen-Wechsel-Bereich nur noch zwei Szene vorhanden?", "Schritt 1/2",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Ist die neue Szene 1 die ehemalige Szene 2 und die neue Szene 2 die ehemalige Szene 3?", "Schritt 1/2",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Haben sich die Positionen der Elemente in Szene 1 und 2 NICHT verändert?", "Schritt 1/2",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+        }        
+        
+        
         private void copyPasteTemplate(string augmentation, string testName)
         {
             // Prepare project
