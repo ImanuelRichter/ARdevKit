@@ -13,7 +13,7 @@ namespace ARdevKit.Controller.ProjectController
     ///     Provides static methods for saving and loading a <see cref="Project"/> 
     ///     to or from a certain path
     /// </summary>
-    static class SaveLoadController
+    public static class SaveLoadController
     {
         /// <summary>
         /// Saves the project.
@@ -34,12 +34,26 @@ namespace ARdevKit.Controller.ProjectController
         /// <returns>the deserialized <see cref="Project"/></returns>
         public static Project loadProject(string path)
         {
-            BinaryFormatter formatter = new BinaryFormatter();
-            Stream stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read);
-            Project deserializedProject = (Project)formatter.Deserialize(stream);
-            stream.Close();
-            deserializedProject.ProjectPath = Path.GetDirectoryName(path);
-            deserializedProject.Name = Path.GetFileNameWithoutExtension(path);
+            BinaryFormatter formatter = null;
+            Stream stream = null;
+            Project deserializedProject = null;
+            try
+            {
+                formatter = new BinaryFormatter();
+                stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read);
+                deserializedProject = (Project)formatter.Deserialize(stream);
+                deserializedProject.ProjectPath = Path.GetDirectoryName(path);
+                deserializedProject.Name = Path.GetFileNameWithoutExtension(path);
+                
+            }
+            catch(System.Runtime.Serialization.SerializationException se)
+            {
+                throw se;
+            }
+            finally
+            {
+                stream.Close();
+            }
             return deserializedProject;
         }
     }

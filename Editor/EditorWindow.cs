@@ -547,6 +547,10 @@ namespace ARdevKit
                     this.createNewProject("");
                 }
             }
+            catch (System.Runtime.Serialization.SerializationException se)
+            {
+                MessageBox.Show("Die Ausgewählte Datei ist nicht erkennbar binär kodiert", "Error");
+            }
         }
 
         /**
@@ -921,7 +925,8 @@ namespace ARdevKit
 
         private void tsm_editor_menu_file_saveAs_Click(object sender, EventArgs e)
         {
-            this.project.ProjectPath = null;
+            this.project.OldProjectPath = this.project.ProjectPath;
+            this.project.Name = "";
             try
             {
                 this.ExportProject(true);

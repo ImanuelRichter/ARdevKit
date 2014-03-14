@@ -54,7 +54,6 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Controller\ProjectController\ExportVisitorTest.cs" />
-    <Compile Include="Controller\ProjectController\SaveVisitorTest.cs" />
     <Compile Include="Model\Project\ProjectTest.cs" />
     <Compile Include="Model\Project\CustomUserEventTest.cs" />
     <None Include="Model\Project\PreviewTest.cs" />

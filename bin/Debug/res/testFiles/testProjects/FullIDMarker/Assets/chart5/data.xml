@@ -1,0 +1,42 @@
+<chart1>
+	<categories>
+		<item>Kategorie 1</item>
+		<item>Kategorie 2</item>
+	</categories>
+	<series>
+		<name>Serie 1</name>
+		<color>
+			<linearGradient>
+				<x1>0</x1>
+				<x2>0</x2>
+				<y1>0</y1>
+				<y2>1</y2>
+			</linearGradient>
+			<stops>
+				<zero>#DD210E</zero>
+				<one>#55AA22</one>
+			</stops>
+		</color>
+		<data>
+			<points>33.1,66.9</points>
+		</data>
+	</series>
+	<series>
+		<name>Serie 2</name>
+		<color>
+			<linearGradient>
+				<x1>0</x1>
+				<x2>0</x2>
+				<y1>0</y1>
+				<y2>1</y2>
+			</linearGradient>
+			<stops>
+				<zero>#DD210E</zero>
+				<one>#55AA22</one>
+			</stops>
+		</color>
+		<data>
+			<points>41.7,58.3</points>
+		</data>
+	</series>
+</chart1>

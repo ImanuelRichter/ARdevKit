@@ -12,181 +12,186 @@ namespace EditorTest
     [TestClass]
     public class ExportVisitorTest
     {
-        Project testProject;
+        
+        private Project testProject;
+        private bool arelNameHtml = false, 
+            arelJs = false, 
+            arelConfigXml = false, 
+            arelGlueJs = false, 
+            anchorJpg = false, 
+            trackingDataXml = false;
+        private ExportVisitor exportVisitor;
 
-        private void SetUptProjectWithIDMarkerAndImage()
+        private void export()
         {
-            string projectPath = "currentProject";
-            testProject = new Project("HelloIDMarker", projectPath);
+            exportVisitor = new ExportVisitor();
+            testProject.Accept(exportVisitor);
 
-            IDMarker idMarker1 = new IDMarker(1);
-
-            ImageAugmentation image1 = new ImageAugmentation();
-            image1.ResFilePath = Path.Combine(testProject.ProjectPath, "Assets", "frame.png");
-            image1.IsVisible = false;
-            image1.Translation = new Vector3D(0, 0, 0);
-            image1.Rotation = new Vector3Di(0, 0, 0, 1);
-            image1.Scaling = new Vector3D(0, 0, 0);
-            idMarker1.Augmentations.Add(image1);
-            image1.Trackable = idMarker1;
-
-            testProject.Sensor = new MarkerSensor();
-            testProject.Trackables.Add(idMarker1);
-        }
-
-        private void SetUptProject_pictureMarker_barChart_noSource()
-        {
-            string projectPath = "currentProject";
-            testProject = new Project("HelloPictureMarker", projectPath);
-
-            PictureMarker pictureMarker1 = new PictureMarker("res\\testFiles\\trackables\\pictureMarker1.png");
-
-            Chart barChart1 = new Chart();
-            barChart1.IsVisible = false;
-            barChart1.Translation = new Vector3D(100, -100, 0);
-            barChart1.Width = 200;
-            barChart1.Height = 200;
-
-            pictureMarker1.Augmentations.Add(barChart1);
-            barChart1.Trackable = pictureMarker1;
-
-            testProject.Sensor = new MarkerSensor();
-            testProject.Trackables.Add(pictureMarker1);
-        }
-
-        private void SetUptProject_pictureMarker_barChart_fileSource()
-        {
-            string projectPath = "currentProject";
-            testProject = new Project("HelloPictureMarker", projectPath);
-
-            PictureMarker pictureMarker1 = new PictureMarker("res\\testFiles\\trackables\\pictureMarker1.png");
-
-            Chart barChart1 = new Chart();
-            barChart1.IsVisible = false;
-            barChart1.Translation = new Vector3D(100, -100, 0);
-            barChart1.Width = 200;
-            barChart1.Height = 200;
-
-            barChart1.Source = new FileSource("res\\highcharts\\barChartColumn\\data.xml");
-            barChart1.Source.Query = "res\\highcharts\\barChartColumn\\xmlQuery.js";
-            barChart1.Source.Augmentation = barChart1;
-            pictureMarker1.Augmentations.Add(barChart1);
-            barChart1.Trackable = pictureMarker1;
-
-            testProject.Sensor = new MarkerSensor();
-            testProject.Trackables.Add(pictureMarker1);
-        }
-
-        private void SetUptProject_pictureMarker_barChart_liveSource()
-        {
-            string projectPath = "currentProject";
-            testProject = new Project("HelloPictureMarker", projectPath);
-
-            PictureMarker pictureMarker1 = new PictureMarker("res\\testFiles\\trackables\\pictureMarker1.png");
-
-            Chart barChart1 = new Chart();
-            barChart1.IsVisible = false;
-            barChart1.Translation = new Vector3D(100, -100, 0);
-            barChart1.Width = 200;
-            barChart1.Height = 200;
-
-            barChart1.Options = File.OpenText("res\\highcharts\\barChartColumn\\liveOptions.json").ReadToEnd();
-            barChart1.Source = new DbSource("http://localhost/highcharts/server.php?callback=?");
-            barChart1.Source.Query = "res\\highcharts\\barChartColumn\\liveQuery.js";
-            barChart1.Source.Augmentation = barChart1;
-            pictureMarker1.Augmentations.Add(barChart1);
-            barChart1.Trackable = pictureMarker1;
-
-            testProject.Sensor = new MarkerSensor();
-            testProject.Trackables.Add(pictureMarker1);
-        }
-
-        private void SetUptProject_imageTrackable_imageAugmentation()
-        {
-            string projectPath = "currentProject";
-            testProject = new Project("HelloImageTrackable", projectPath);
-
-            ImageTrackable imageTrackable = new ImageTrackable("res\\testFiles\\trackables\\metaioman_target.png");
-
-            ImageAugmentation image1 = new ImageAugmentation();
-            image1.ResFilePath = Path.Combine(testProject.ProjectPath, "Assets", "frame.png");
-            image1.IsVisible = false;
-            imageTrackable.Augmentations.Add(image1);
-            image1.Trackable = imageTrackable;
-
-            testProject.Sensor = new MarkerlessSensor();
-            testProject.Trackables.Add(imageTrackable);
-        }
-
-        private void SetUptProject_imageTrackable_videoAugmentation()
-        {
-            testProject = new Project("HelloVideo");
-
-            ImageTrackable imageTrackable = new ImageTrackable("res\\testFiles\\trackables\\metaioman_target.png");
-
-            VideoAugmentation video = new VideoAugmentation();
-            video.ResFilePath = "res\\testFiles\\augmentations\\video.alpha.3g2";
-            video.IsVisible = false;
-            video.Rotation = new Vector3D(0, 0, -90);
-            video.Scaling = new Vector3D(2, 2, 1);
-            imageTrackable.Augmentations.Add(video);
-            video.Trackable = imageTrackable;
-
-            testProject.Sensor = new MarkerlessSensor();
-            testProject.Trackables.Add(imageTrackable);
-        }
-
-        private void export(bool exportToTestFolder)
-        {
-            ExportVisitor exporter = new ExportVisitor();
-            testProject.Accept(exporter);
-
-            foreach (AbstractFile file in exporter.Files)
+            foreach (AbstractFile file in exportVisitor.Files)
             {
                 file.Save();
             }
         }
-
-        [TestMethod]
-        public void Export_idMarker_validPath_resultingFiles()
+        private void checkStandardFiles()
         {
-            SetUptProjectWithIDMarkerAndImage();
-            export(false);
+            arelNameHtml = File.Exists(testProject.ProjectPath + "\\arel" + (testProject.Name == "" ? "Test" : testProject.Name) + ".html");
+            arelJs = File.Exists(testProject.ProjectPath + "\\arel.js");
+            arelConfigXml = File.Exists(testProject.ProjectPath + "\\arelConfig.xml");
+            arelGlueJs = File.Exists(testProject.ProjectPath + "\\Assets\\arelGlue.js");
+            anchorJpg = File.Exists(testProject.ProjectPath + "\\Assets\\anchor.png");
+            trackingDataXml = File.Exists(testProject.ProjectPath + "\\Assets\\trackingData_" + testProject.Sensor.Name + ".xml");
+            if (!arelNameHtml)
+                Assert.IsTrue(false, "arel" + testProject.Name == "" ? "Test" : testProject.Name + ".html ist nicht vorhanden");
+            if (!arelJs)
+                Assert.IsTrue(false, "arel.js ist nicht vorhanden");
+            if (!arelConfigXml)
+                Assert.IsTrue(false, "arelConfig.xml ist nicht vorhanden");
+            if (!arelGlueJs)
+                Assert.IsTrue(false, "arelGlue.js ist nicht vorhanden");
+            if (!anchorJpg)
+                Assert.IsTrue(false, "anchor.jpg ist nicht vorhanden");
+            if (!trackingDataXml)
+                Assert.IsTrue(false, "trackingData_" + testProject.Sensor.Name + ".xml ist nicht vorhanden");
+        }
+
+        private void checkAugmentations()
+        {
+            foreach (var trackable in testProject.Trackables)
+            {
+                foreach (var augmentation in trackable.Augmentations)
+                {
+                    if (augmentation is Chart)
+                    {
+                        if (!File.Exists(testProject.ProjectPath + "\\Assets\\" + augmentation.ID + "\\chart.js"))
+                        {
+                            Assert.IsTrue(false, "\\Assets\\" + augmentation.ID + "\\chart.js existiert nicht");
+                        }
+                        if (!File.Exists(testProject.ProjectPath + "\\Assets\\" + augmentation.ID + "\\options.js"))
+                        {
+                            Assert.IsTrue(false, "\\Assets\\" + augmentation.ID + "\\options.js existiert nicht");
+                        }
+                        var source = ((Chart)augmentation).Source;
+                        if (source != null)
+                        {
+                            if (source.Query != null || source.Query != "")
+                            {
+                                if (!File.Exists(Path.Combine(testProject.ProjectPath, source.Query)))
+                                {
+                                    Assert.IsTrue(false, source.Query + " existiert nicht");
+                                }
+                            }
+                            if (source is FileSource)
+                            {
+                                if (!File.Exists(Path.Combine(testProject.ProjectPath, ((FileSource)source).Data)))
+                                {
+                                    Assert.IsTrue(false, ((FileSource)source).Data + " existiert nicht");
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (augmentation is Abstract2DAugmentation)
+                        {
+                            if (!File.Exists(Path.Combine(testProject.ProjectPath, ((Abstract2DAugmentation)augmentation).ResFilePath)))
+                            {
+                                Assert.IsTrue(false, "\\Assets\\" + ((Abstract2DAugmentation)augmentation).ResFilePath + " existiert nicht");
+                            }
+                            if (augmentation.CustomUserEventReference != null)
+                            {
+                                if (!File.Exists(testProject.ProjectPath + "\\Assets\\" + augmentation.ID + "_Event.js"))
+                                {
+                                    Assert.IsTrue(false, "\\Assets\\" + augmentation.ID + "_Event.js exisitert nicht");
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        [TestInitialize]
+        public void Initialize()
+        {
+            exportVisitor = new ExportVisitor();
+        }
+
+        [TestCleanup]
+        public void Cleanup()
+        {
+            if(testProject.ProjectPath != null && Directory.Exists(testProject.ProjectPath))
+            Directory.Delete(testProject.ProjectPath, true);
+            testProject = null;
+            exportVisitor = null;
         }
 
         [TestMethod]
-        public void Export_pictureMarker_barChart_fileSource()
+        [TestCategory("ExportVisitorTest")]
+        [ExpectedException(typeof(ArgumentException))]
+        public void Export_AllEmptyProject()
         {
-            SetUptProject_pictureMarker_barChart_fileSource();
-            export(true);
+            testProject = new Project();
+            export();
         }
 
         [TestMethod]
-        public void Export_pictureMarker_barChart_liveSource()
+        [TestCategory("ExportVisitorTest")]
+        [ExpectedException(typeof(ArgumentException))]
+        public void Export_PathEmptyProject()
         {
-            SetUptProject_pictureMarker_barChart_liveSource();
-            export(true);
+            testProject = new Project("Name");
+            export();
         }
 
         [TestMethod]
-        public void Export_pictureMarker_validPath_resultingFile()
+        [TestCategory("ExportVisitorTest")]
+        public void Export_NoNameProject_OneIDMarker()
         {
-            SetUptProject_pictureMarker_barChart_noSource();
-            export(false);
+            testProject = new Project("", ".\\res\\TestFiles\\TestProjects\\NoName");
+            testProject.Trackables.Add(new IDMarker(1));
+            testProject.Sensor = new MarkerSensor();
+            export();
+            checkStandardFiles();
+            Assert.IsTrue(true);   
         }
 
         [TestMethod]
-        public void Export_imageTrackable_validPath_resultingFile()
+        [TestCategory("ExportVisitorTest")]
+        public void Export_Project_FullIDMarker()
         {
-            SetUptProject_imageTrackable_imageAugmentation();
-            export(false);
+            testProject = SaveLoadController.loadProject(".\\res\\TestFiles\\TestProjects\\FullIDMarker\\FullIDMarker.ardev");
+            testProject.OldProjectPath = ".\\res\\TestFiles\\TestProjects\\FullIDMarker";
+            testProject.ProjectPath = ".\\res\\TestFiles\\TestProjects\\Test";
+            export();
+            checkStandardFiles();
+            checkAugmentations();
+            Assert.IsTrue(true);
         }
 
         [TestMethod]
-        public void Export_imageTrackable_videoAugmentation()
+        [TestCategory("ExportVisitorTest")]
+        public void Export_Project_FullImageTrackable()
         {
-            SetUptProject_imageTrackable_videoAugmentation();
-            export(true);
+            testProject = SaveLoadController.loadProject(".\\res\\TestFiles\\TestProjects\\FullImageTrackable\\FullImageTrackable.ardev");
+            testProject.OldProjectPath = ".\\res\\TestFiles\\TestProjects\\FullImageTrackable";
+            testProject.ProjectPath = ".\\res\\TestFiles\\TestProjects\\Test";
+            export();
+            checkStandardFiles();
+            checkAugmentations();
+            Assert.IsTrue(true);
+        }
+
+        [TestMethod]
+        [TestCategory("ExportVisitorTest")]
+        public void Export_Project_FullPictureMarker()
+        {
+            testProject = SaveLoadController.loadProject(".\\res\\TestFiles\\TestProjects\\FullPictureMarker\\FullPictureMarker.ardev");
+            testProject.OldProjectPath = ".\\res\\TestFiles\\TestProjects\\FullPictureMarker";
+            testProject.ProjectPath = ".\\res\\TestFiles\\TestProjects\\Test";
+            export();
+            checkStandardFiles();
+            checkAugmentations();
+            Assert.IsTrue(true);
         }
     }
 }

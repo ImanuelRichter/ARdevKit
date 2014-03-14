@@ -103,7 +103,14 @@ namespace ARdevKit.Controller.ProjectController
         {
             // Copy to projectPath
             string newPath = "Assets";
-            Helper.Copy(cue.FilePath.Contains(':') ? cue.FilePath : Path.Combine(project.ProjectPath, cue.FilePath), Path.Combine(project.ProjectPath, newPath));
+            if (cue.FilePath.Contains(':'))
+            {
+                Helper.Copy(cue.FilePath, Path.Combine(project.ProjectPath, newPath));
+            }
+            else if (project.OldProjectPath != null && !project.OldProjectPath.Equals(project.ProjectPath))
+            {
+                Helper.Copy(Path.Combine(project.OldProjectPath, cue.FilePath), Path.Combine(project.ProjectPath, newPath));
+            }
             cue.FilePath = Path.Combine(newPath, Path.GetFileName(cue.FilePath));
 
             if (!importedJQuery)
@@ -122,7 +129,14 @@ namespace ARdevKit.Controller.ProjectController
         {
             // Copy to projectPath
             string newPath = "Assets";
-            Helper.Copy(video.ResFilePath.Contains(':') ? video.ResFilePath : Path.Combine(project.ProjectPath, video.ResFilePath), Path.Combine(project.ProjectPath, newPath));
+            if (video.ResFilePath.Contains(':'))
+            {
+                Helper.Copy(video.ResFilePath, Path.Combine(project.ProjectPath, newPath));
+            }
+            else if (project.OldProjectPath != null && !project.OldProjectPath.Equals(project.ProjectPath))
+            {
+                Helper.Copy(Path.Combine(project.OldProjectPath, video.ResFilePath), Path.Combine(project.ProjectPath, newPath));
+            }
             video.ResFilePath = Path.Combine(newPath, Path.GetFileName(video.ResFilePath));
 
             // arelGlue.js
@@ -183,7 +197,14 @@ namespace ARdevKit.Controller.ProjectController
         {
             // Copy to projectPath
             string newPath = "Assets";
-            Helper.Copy(image.ResFilePath.Contains(':') ? image.ResFilePath : Path.Combine(project.ProjectPath, image.ResFilePath), Path.Combine(project.ProjectPath, newPath));
+            if (image.ResFilePath.Contains(':'))
+            {
+                Helper.Copy(image.ResFilePath, Path.Combine(project.ProjectPath, newPath));
+            }
+            else if (project.OldProjectPath != null && !project.OldProjectPath.Equals(project.ProjectPath))
+            {
+                Helper.Copy(Path.Combine(project.OldProjectPath, image.ResFilePath), Path.Combine(project.ProjectPath, newPath));
+            }
             image.ResFilePath = Path.Combine(newPath, Path.GetFileName(image.ResFilePath));
 
             // arelGlue.js
@@ -351,7 +372,14 @@ namespace ARdevKit.Controller.ProjectController
 
             // Copy options.js
             string chartFilesDirectory = Path.Combine("Assets", chartID);
-            Helper.Copy(chart.Options.Contains(':') ? chart.Options : Path.Combine(project.ProjectPath, chart.Options), Path.Combine(project.ProjectPath, chartFilesDirectory), "options.js");
+            if (chart.Options.Contains(':'))
+            {
+                Helper.Copy(chart.Options, Path.Combine(project.ProjectPath, chartFilesDirectory), "options.js");
+            }
+            else if (project.OldProjectPath != null && !project.OldProjectPath.Equals(project.ProjectPath))
+            {
+                Helper.Copy(Path.Combine(project.OldProjectPath, chart.Options), Path.Combine(project.ProjectPath, chartFilesDirectory), "options.js");
+            }
             chart.Options = Path.Combine(chartFilesDirectory, "options.js");
 
             // setOptions
@@ -402,7 +430,14 @@ namespace ARdevKit.Controller.ProjectController
 
             if (source.Query != null && source.Query != "")
             {
-                Helper.Copy(source.Query.Contains(':') ? source.Query : Path.Combine(project.ProjectPath, source.Query), Path.Combine(project.ProjectPath, chartFilesDirectory), "query.js");
+                if (source.Query.Contains(':'))
+                {
+                    Helper.Copy(source.Query, Path.Combine(project.ProjectPath, chartFilesDirectory), "query.js");
+                }
+                else if (project.OldProjectPath != null && !project.OldProjectPath.Equals(project.ProjectPath))
+                {
+                    Helper.Copy(Path.Combine(project.OldProjectPath, source.Query), Path.Combine(project.ProjectPath, chartFilesDirectory), "query.js");
+                }
                 source.Query = Path.Combine(chartFilesDirectory, "query.js");
 
                 chartFileQueryBlock = new JavaScriptBlock("$.getScript(\"Assets/" + chartID + "/" + Path.GetFileName(source.Query) + "\", function()", new BlockMarker("{", "})"));
@@ -435,12 +470,26 @@ namespace ARdevKit.Controller.ProjectController
 
             if (source.Data != null && source.Data != "")
             {
-                Helper.Copy(source.Data.Contains(':') ? source.Data : Path.Combine(project.ProjectPath, source.Data), Path.Combine(project.ProjectPath, chartFilesDirectory), "data" + Path.GetExtension(source.Data));
+                if (source.Query.Contains(':'))
+                {
+                    Helper.Copy(source.Data, Path.Combine(project.ProjectPath, chartFilesDirectory), "data" + Path.GetExtension(source.Data));
+                }
+                else if (project.OldProjectPath != null && !project.OldProjectPath.Equals(project.ProjectPath))
+                {
+                    Helper.Copy(Path.Combine(project.OldProjectPath, source.Data), Path.Combine(project.ProjectPath, chartFilesDirectory), "data" + Path.GetExtension(source.Data));
+                }
                 source.Data = Path.Combine(chartFilesDirectory, "data" + Path.GetExtension(source.Data));
 
                 if (source.Query != null && source.Query != "")
                 {
-                    Helper.Copy(source.Query.Contains(':') ? source.Query : Path.Combine(project.ProjectPath, source.Query), Path.Combine(project.ProjectPath, chartFilesDirectory), "query.js");
+                    if (source.Query.Contains(':'))
+                    {
+                        Helper.Copy(source.Query, Path.Combine(project.ProjectPath, chartFilesDirectory), "query.js");
+                    }
+                    else if (project.OldProjectPath != null && !project.OldProjectPath.Equals(project.ProjectPath))
+                    {
+                        Helper.Copy(Path.Combine(project.OldProjectPath, source.Query), Path.Combine(project.ProjectPath, chartFilesDirectory), "query.js");
+                    }
                     source.Query = Path.Combine(chartFilesDirectory, "query.js");
 
                     chartFileQueryBlock = new JavaScriptBlock("$.getScript(\"Assets/" + chartID + "/" + Path.GetFileName(source.Query) + "\", function()", new BlockMarker("{", "})"));
@@ -570,7 +619,14 @@ namespace ARdevKit.Controller.ProjectController
         {
             // Copy the file
             string newPath = "Assets";
-            Helper.Copy(image.ImagePath.Contains(':') ? image.ImagePath : Path.Combine(project.ProjectPath, image.ImagePath), Path.Combine(project.ProjectPath, newPath));
+            if (image.ImagePath.Contains(':'))
+            {
+                Helper.Copy(image.ImagePath, Path.Combine(project.ProjectPath, newPath));
+            }
+            else if (project.OldProjectPath != null && !project.OldProjectPath.Equals(project.ProjectPath))
+            {
+                Helper.Copy(Path.Combine(project.OldProjectPath, image.ImagePath), Path.Combine(project.ProjectPath, newPath));
+            }
             image.ImagePath = Path.Combine(newPath, Path.GetFileName(image.ImagePath));
 
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -699,7 +755,14 @@ namespace ARdevKit.Controller.ProjectController
         {
             // Copy the file
             string newPath = "Assets";
-            Helper.Copy(pictureMarker.PicturePath.Contains(':') ? pictureMarker.PicturePath : Path.Combine(project.ProjectPath, pictureMarker.PicturePath), Path.Combine(project.ProjectPath, newPath));
+            if (pictureMarker.PicturePath.Contains(':'))
+            {
+                Helper.Copy(pictureMarker.PicturePath, Path.Combine(project.ProjectPath, newPath));
+            }
+            else if (project.OldProjectPath != null && !project.OldProjectPath.Equals(project.ProjectPath))
+            {
+                Helper.Copy(Path.Combine(project.OldProjectPath, pictureMarker.PicturePath), Path.Combine(project.ProjectPath, newPath));
+            }
             pictureMarker.PicturePath = Path.Combine(newPath, Path.GetFileName(pictureMarker.PicturePath));
 
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
