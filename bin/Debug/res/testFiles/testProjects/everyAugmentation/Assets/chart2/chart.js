@@ -4,7 +4,7 @@ arel.Plugin.Chart2 =
 	id : "chart2",
 	coordinateSystemID : 1,
 	options : {},
-	translation : new arel.Vector3D(136.0,135.0,0.0),
+	translation : new arel.Vector3D(-132.0,-136.0,0.0),
 	div : document.createElement("div"),
 	create : function()
 	{
@@ -22,7 +22,7 @@ arel.Plugin.Chart2 =
 		.done(function() { console.log("Loaded options for chart2 successfully")});
 		$.getScript("Assets/chart2/query.js", function()
 		{
-			var dataPath = "Assets/chart2/data.json";
+			var dataPath = "http://cumulus.teco.edu:4242/api/query?start=1392741669001&m=avg:temperature%7bresource_id=Heater_Living%7d&ms=true";
 			query(dataPath, arel.Plugin.Chart2);
 		})
 		.fail(function() { console.log("Failed to load query")})

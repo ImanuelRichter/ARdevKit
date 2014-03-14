@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TrackingData>
+	<Sensors>
+		<Sensor Type="MarkerBasedSensorSource">
+			<SensorID>MarkerTracking1</SensorID>
+			<Parameters>
+				<MarkerTrackingParameters>
+					<TrackingQuality>robust</TrackingQuality>
+					<ThresholdOffset>110</ThresholdOffset>
+					<NumberOfSearchIterations>3</NumberOfSearchIterations>
+				</MarkerTrackingParameters>
+			</Parameters>
+			<SensorCOS>
+				<SensorCosID>IDMarker2</SensorCosID>
+				<Parameters>
+					<MarkerParameters>
+						<Size>60</Size>
+						<MatrixID>1</MatrixID>
+					</MarkerParameters>
+				</Parameters>
+			</SensorCOS>
+		</Sensor>
+	</Sensors>
+	<Connections>
+		<COS>
+			<Name>MarkerCOS1</Name>
+			<Fuser type="SmoothingFuser">
+				<Parameters>
+					<AlphaRotation>0.5</AlphaRotation>
+					<AlphaTranslation>0.8</AlphaTranslation>
+					<KeepPoseForNumberOfFrames>2</KeepPoseForNumberOfFrames>
+				</Parameters>
+			</Fuser>
+			<SensorSource trigger="1">
+				<SensorID>MarkerTracking1</SensorID>
+				<SensorCosID>IDMarker2</SensorCosID>
+				<HandEyeCalibration>
+					<TranslationOffset>
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</TranslationOffset>
+					<RotationOffset>
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+						<W>1</W>
+					</RotationOffset>
+				</HandEyeCalibration>
+				<COSOffset>
+					<TranslationOffset>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+					</TranslationOffset>
+					<RotationOffset>
+						<X>0.0</X>
+						<Y>0.0</Y>
+						<Z>0.0</Z>
+						<W>0.0</W>
+					</RotationOffset>
+				</COSOffset>
+			</SensorSource>
+		</COS>
+	</Connections>
+</TrackingData>

@@ -31,31 +31,21 @@ arel.sceneReady
 			imageAugmentation1.setVisibility(true);
 			imageAugmentation1.setCoordinateSystemID(2);
 			imageAugmentation1.setScale(new arel.Vector3D(1.0,1.0,1.0));
-			imageAugmentation1.setTranslation(new arel.Vector3D(0.0,0.0,0.0));
+			imageAugmentation1.setTranslation(new arel.Vector3D(-2.0,8.0,0.0));
 			var imageAugmentation1Rotation = new arel.Rotation();
 			imageAugmentation1Rotation.setFromEulerAngleDegrees(new arel.Vector3D(0.0,0.0,0.0));
 			imageAugmentation1.setRotation(imageAugmentation1Rotation);
 			arel.Scene.addObject(imageAugmentation1);
-			$.getScript("Events/imageAugmentation1_Event.js", function()
-			{
-			})
-			.fail(function() { console.log("Failed to load events")})
-			.done(function() { console.log("Loaded events successfully")});
 		
-			videoAugmentation2 = arel.Object.Model3D.createFromMovie("videoAugmentation2","Assets/video.alpha.3g2");
-			videoAugmentation2.setVisibility(true);
-			videoAugmentation2.setCoordinateSystemID(2);
-			videoAugmentation2.setScale(new arel.Vector3D(1.0,1.0,1.0));
-			videoAugmentation2.setTranslation(new arel.Vector3D(2.0,0.0,0.0));
-			var videoAugmentation2Rotation = new arel.Rotation();
-			videoAugmentation2Rotation.setFromEulerAngleDegrees(new arel.Vector3D(0.0,0.0,-90.0));
-			videoAugmentation2.setRotation(videoAugmentation2Rotation);
-			arel.Scene.addObject(videoAugmentation2);
-			$.getScript("Events/videoAugmentation2_Event.js", function()
-			{
-			})
-			.fail(function() { console.log("Failed to load events")})
-			.done(function() { console.log("Loaded events successfully")});
+			videoAugmentation1 = arel.Object.Model3D.createFromMovie("videoAugmentation1","Assets/video.alpha.3g2");
+			videoAugmentation1.setVisibility(true);
+			videoAugmentation1.setCoordinateSystemID(2);
+			videoAugmentation1.setScale(new arel.Vector3D(1.0,1.0,1.0));
+			videoAugmentation1.setTranslation(new arel.Vector3D(-4.0,8.0,0.0));
+			var videoAugmentation1Rotation = new arel.Rotation();
+			videoAugmentation1Rotation.setFromEulerAngleDegrees(new arel.Vector3D(0.0,0.0,-90.0));
+			videoAugmentation1.setRotation(videoAugmentation1Rotation);
+			arel.Scene.addObject(videoAugmentation1);
 		
 	}
 );
@@ -67,8 +57,8 @@ function trackingHandler(type, param)
 		{
 			console.log("Tracked coordinateSystemID: " + param[0].getCoordinateSystemID());
 			arel.Scene.getObject("imageAugmentation1").setVisibility(true);
-			arel.Scene.getObject("videoAugmentation2").setVisibility(true);
-			arel.Scene.getObject("videoAugmentation2").startMovieTexture();
+			arel.Scene.getObject("videoAugmentation1").setVisibility(true);
+			arel.Scene.getObject("videoAugmentation1").startMovieTexture();
 			if (param[0].getCoordinateSystemID() == chart1.getCoordinateSystemID())
 			{
 				chart1.create();
@@ -95,8 +85,8 @@ function trackingHandler(type, param)
 			chart2.hide();
 			chart3.hide();
 			arel.Scene.getObject("imageAugmentation1").setVisibility(false);
-			arel.Scene.getObject("videoAugmentation2").setVisibility(false);
-			arel.Scene.getObject("videoAugmentation2").pauseMovieTexture();
+			arel.Scene.getObject("videoAugmentation1").setVisibility(false);
+			arel.Scene.getObject("videoAugmentation1").pauseMovieTexture();
 		}
 	}
 };
@@ -123,4 +113,4 @@ var chart2;
 var chart3;
 var COS2Anchor;
 var imageAugmentation1;
-var videoAugmentation2;
+var videoAugmentation1;

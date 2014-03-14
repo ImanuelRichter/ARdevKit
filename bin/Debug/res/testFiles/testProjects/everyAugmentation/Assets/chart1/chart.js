@@ -4,7 +4,7 @@ arel.Plugin.Chart1 =
 	id : "chart1",
 	coordinateSystemID : 1,
 	options : {},
-	translation : new arel.Vector3D(-136.0,137.0,0.0),
+	translation : new arel.Vector3D(-6.0,150.0,0.0),
 	div : document.createElement("div"),
 	create : function()
 	{
