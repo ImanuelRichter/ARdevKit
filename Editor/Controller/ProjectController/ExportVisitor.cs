@@ -425,9 +425,6 @@ namespace ARdevKit.Controller.ProjectController
         ///
         /// <remarks>   Imanuel, 17.01.2014. </remarks>
         ///
-        /// <exception cref="NotImplementedException">  Thrown when the requested operation is
-        ///                                             unimplemented. </exception>
-        ///
         /// <param name="source">   Source for the. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -464,9 +461,6 @@ namespace ARdevKit.Controller.ProjectController
         /// <summary>   Visits the given <see cref="FileSource"/>. </summary>
         ///
         /// <remarks>   Imanuel, 23.01.2014. </remarks>
-        ///
-        /// <exception cref="NotImplementedException">  Thrown when the requested operation is
-        ///                                             unimplemented. </exception>
         ///
         /// <param name="source">   Source for the <see cref="AbstractDynamic2DAugmentation"/>. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -18,36 +18,6 @@ arel.sceneReady
 				trackingHandler(type, param);
 			}
 		);
-			imageAugmentation1 = arel.Object.Model3D.createFromImage("imageAugmentation1","Assets/frame.png");
-			imageAugmentation1.setVisibility(true);
-			imageAugmentation1.setCoordinateSystemID(1);
-			imageAugmentation1.setScale(new arel.Vector3D(4.0,4.0,1.0));
-			imageAugmentation1.setTranslation(new arel.Vector3D(315.0,6.0,0.0));
-			var imageAugmentation1Rotation = new arel.Rotation();
-			imageAugmentation1Rotation.setFromEulerAngleDegrees(new arel.Vector3D(0.0,0.0,0.0));
-			imageAugmentation1.setRotation(imageAugmentation1Rotation);
-			arel.Scene.addObject(imageAugmentation1);
-			$.getScript("Events/imageAugmentation1_Event.js", function()
-			{
-			})
-			.fail(function() { console.log("Failed to load events")})
-			.done(function() { console.log("Loaded events successfully")});
-		
-			videoAugmentation1 = arel.Object.Model3D.createFromMovie("videoAugmentation1","Assets/video.alpha.3g2");
-			videoAugmentation1.setVisibility(true);
-			videoAugmentation1.setCoordinateSystemID(1);
-			videoAugmentation1.setScale(new arel.Vector3D(4.0,4.0,1.0));
-			videoAugmentation1.setTranslation(new arel.Vector3D(-378.0,-6.0,0.0));
-			var videoAugmentation1Rotation = new arel.Rotation();
-			videoAugmentation1Rotation.setFromEulerAngleDegrees(new arel.Vector3D(0.0,0.0,-90.0));
-			videoAugmentation1.setRotation(videoAugmentation1Rotation);
-			arel.Scene.addObject(videoAugmentation1);
-			$.getScript("Events/videoAugmentation1_Event.js", function()
-			{
-			})
-			.fail(function() { console.log("Failed to load events")})
-			.done(function() { console.log("Loaded events successfully")});
-		
 			chart1 = arel.Plugin.Chart1;
 			chart1.hide();
 		
@@ -56,6 +26,26 @@ arel.sceneReady
 		
 			chart3 = arel.Plugin.Chart3;
 			chart3.hide();
+		
+			imageAugmentation1 = arel.Object.Model3D.createFromImage("imageAugmentation1","Assets/frame.png");
+			imageAugmentation1.setVisibility(true);
+			imageAugmentation1.setCoordinateSystemID(2);
+			imageAugmentation1.setScale(new arel.Vector3D(1.0,1.0,1.0));
+			imageAugmentation1.setTranslation(new arel.Vector3D(-2.0,8.0,0.0));
+			var imageAugmentation1Rotation = new arel.Rotation();
+			imageAugmentation1Rotation.setFromEulerAngleDegrees(new arel.Vector3D(0.0,0.0,0.0));
+			imageAugmentation1.setRotation(imageAugmentation1Rotation);
+			arel.Scene.addObject(imageAugmentation1);
+		
+			videoAugmentation1 = arel.Object.Model3D.createFromMovie("videoAugmentation1","Assets/video.alpha.3g2");
+			videoAugmentation1.setVisibility(true);
+			videoAugmentation1.setCoordinateSystemID(2);
+			videoAugmentation1.setScale(new arel.Vector3D(1.0,1.0,1.0));
+			videoAugmentation1.setTranslation(new arel.Vector3D(-4.0,8.0,0.0));
+			var videoAugmentation1Rotation = new arel.Rotation();
+			videoAugmentation1Rotation.setFromEulerAngleDegrees(new arel.Vector3D(0.0,0.0,-90.0));
+			videoAugmentation1.setRotation(videoAugmentation1Rotation);
+			arel.Scene.addObject(videoAugmentation1);
 		
 	}
 );
@@ -73,30 +63,30 @@ function trackingHandler(type, param)
 			{
 				chart1.create();
 				chart1.show();
-				arel.Scene.getScreenCoordinatesFrom3DPosition(COS2Anchor.getTranslation(), chart1.getCoordinateSystemID(), function(coord){move(COS2Anchor, chart1, coord);});
+				arel.Scene.getScreenCoordinatesFrom3DPosition(COS1Anchor.getTranslation(), chart1.getCoordinateSystemID(), function(coord){move(COS1Anchor, chart1, coord);});
 			}
 			if (param[0].getCoordinateSystemID() == chart2.getCoordinateSystemID())
 			{
 				chart2.create();
 				chart2.show();
-				arel.Scene.getScreenCoordinatesFrom3DPosition(COS2Anchor.getTranslation(), chart2.getCoordinateSystemID(), function(coord){move(COS2Anchor, chart2, coord);});
+				arel.Scene.getScreenCoordinatesFrom3DPosition(COS1Anchor.getTranslation(), chart2.getCoordinateSystemID(), function(coord){move(COS1Anchor, chart2, coord);});
 			}
 			if (param[0].getCoordinateSystemID() == chart3.getCoordinateSystemID())
 			{
 				chart3.create();
 				chart3.show();
-				arel.Scene.getScreenCoordinatesFrom3DPosition(COS2Anchor.getTranslation(), chart3.getCoordinateSystemID(), function(coord){move(COS2Anchor, chart3, coord);});
+				arel.Scene.getScreenCoordinatesFrom3DPosition(COS1Anchor.getTranslation(), chart3.getCoordinateSystemID(), function(coord){move(COS1Anchor, chart3, coord);});
 			}
 		}
 		else if(type && type == arel.Events.Scene.ONTRACKING && param[0].getState() == arel.Tracking.STATE_NOTTRACKING)
 		{
 			console.log("Tracking lost");
-			arel.Scene.getObject("imageAugmentation1").setVisibility(false);
-			arel.Scene.getObject("videoAugmentation1").setVisibility(false);
-			arel.Scene.getObject("videoAugmentation1").pauseMovieTexture();
 			chart1.hide();
 			chart2.hide();
 			chart3.hide();
+			arel.Scene.getObject("imageAugmentation1").setVisibility(false);
+			arel.Scene.getObject("videoAugmentation1").setVisibility(false);
+			arel.Scene.getObject("videoAugmentation1").pauseMovieTexture();
 		}
 	}
 };
@@ -118,9 +108,9 @@ function move(anchor, object, coord)
 	}
 };
 var COS1Anchor;
-var imageAugmentation1;
-var videoAugmentation1;
-var COS2Anchor;
 var chart1;
 var chart2;
 var chart3;
+var COS2Anchor;
+var imageAugmentation1;
+var videoAugmentation1;

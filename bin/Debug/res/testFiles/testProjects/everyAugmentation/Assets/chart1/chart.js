@@ -2,9 +2,9 @@ arel.Plugin.Chart1 =
 {
 	visible : false,
 	id : "chart1",
-	coordinateSystemID : 2,
+	coordinateSystemID : 1,
 	options : {},
-	translation : new arel.Vector3D(-134.0,137.0,0.0),
+	translation : new arel.Vector3D(-6.0,150.0,0.0),
 	div : document.createElement("div"),
 	create : function()
 	{

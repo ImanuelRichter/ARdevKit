@@ -14,6 +14,7 @@ using ARdevKit.Properties;
 using System.Drawing.Drawing2D;
 using System.Runtime.CompilerServices;
 using System.IO;
+using System.Diagnostics;
 
 /// <summary>
 /// The class PreviewController manages all things which are in contact with the PreviewPanel. Here are all methods, who influence the PreviewPanel.
@@ -763,14 +764,14 @@ public class PreviewController
                 if (width > height)
                 {
                     sideScale = scalex / scaley;
-                    return this.scaleBitmap(prev.getPreview(ew.project.ProjectPath), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X * sideScale * sideScale * 1.15),
-                            (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.Y * sideScale * 1.15));
+                    return this.scaleBitmap(prev.getPreview(ew.project.ProjectPath), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X * sideScale * sideScale * 1.3),
+                            (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.Y * sideScale * 1.3));
                 }
                 else if (width <= height)
                 {
                     sideScale = scaley / scalex;
-                    return this.scaleBitmap(prev.getPreview(ew.project.ProjectPath), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X * 1.15),
-                            (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.Y * sideScale * 1.15));
+                    return this.scaleBitmap(prev.getPreview(ew.project.ProjectPath), (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.X * 1.3),
+                            (int)(scale * 100 * ((AbstractAugmentation)prev).Scaling.Y * sideScale * 1.3));
                 }
                 else { return null; }
             }
@@ -787,6 +788,7 @@ public class PreviewController
 
     /// <summary>
     /// Scales the bitmap.
+    /// dirty workaround: when the scaling might get too big, the original image is returned
     /// </summary>
     /// <param name="bit">The bit.</param>
     /// <param name="width">The width.</param>
@@ -797,7 +799,13 @@ public class PreviewController
     {
         if (bit == null)
             throw new ArgumentException("parameter bit was null.");
+        if (width == null)
+            throw new ArgumentException("parameter width was null.");
+        if (height == null)
+            throw new ArgumentException("parameter height was null.");
 
+        try
+        {
         Bitmap resizedImg = new Bitmap(width, height);
         Bitmap img = bit;
 
@@ -806,7 +814,15 @@ public class PreviewController
             gNew.InterpolationMode = InterpolationMode.HighQualityBicubic;
             gNew.DrawImage(img, new Rectangle(0, 0, width, height));
         }
+
         return resizedImg;
+    }
+        catch (ArgumentException ae)
+        {
+            Debug.WriteLine("Bitmap konnte nicht skaliert werden");
+        }
+
+        return bit;
     }
 
     /// <summary>
@@ -976,14 +992,14 @@ public class PreviewController
                 if (prev.getPreview(ew.project.ProjectPath).Width > prev.getPreview(ew.project.ProjectPath).Height)
                 {
                     double sideScale = (double)prev.getPreview(ew.project.ProjectPath).Width / (double)prev.getPreview(ew.project.ProjectPath).Height;
-                    return this.scaleBitmap(prev.getPreview(ew.project.ProjectPath), (int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale * sideScale * sideScale * 1.15), 
-                        (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale * sideScale * 1.15));
+                    return this.scaleBitmap(prev.getPreview(ew.project.ProjectPath), (int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale * sideScale * sideScale * 1.3), 
+                        (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale * sideScale * 1.3));
                 }
                 else if (prev.getPreview(ew.project.ProjectPath).Width < prev.getPreview(ew.project.ProjectPath).Height)
                 {
                     double sideScale = (double)prev.getPreview(ew.project.ProjectPath).Height / (double)prev.getPreview(ew.project.ProjectPath).Width;
-                    return this.scaleBitmap(prev.getPreview(ew.project.ProjectPath), (int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale * 1.15), 
-                        (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale * sideScale * 1.15));
+                    return this.scaleBitmap(prev.getPreview(ew.project.ProjectPath), (int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale * 1.3), 
+                        (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale * sideScale * 1.3));
                 }
                 else { return null; }
 
@@ -1115,14 +1131,17 @@ public class PreviewController
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     public void paste_augmentation(object sender, EventArgs e)
     {
+        if (this.trackable.Augmentations.Count < 3)
+        {
         Point p = this.panel.PointToClient(Cursor.Position);
         IPreviewable element = (IPreviewable)this.copy.Clone();
         this.addPreviewable(element, new Vector3D(p.X, p.Y, 0));
 
-        if (typeof(AbstractDynamic2DAugmentation).IsAssignableFrom(element.GetType()) && ((AbstractDynamic2DAugmentation)element).Source != null)
+            if (element is AbstractDynamic2DAugmentation && ((AbstractDynamic2DAugmentation)element).Source != null)
         {
             this.setSourcePreview(element);
         }
+    }
     }
 
     /// <summary>
@@ -1132,8 +1151,19 @@ public class PreviewController
     /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
     public void paste_augmentation_center(object sender, EventArgs e)
     {
-        this.addPreviewable((IPreviewable)this.copy.Clone(), new Vector3D(this.panel.Width / 2, this.panel.Height / 2, 0));
+        if (this.trackable.Augmentations.Count < 3)
+        {
+            IPreviewable element = (IPreviewable)this.copy.Clone();
+            this.addPreviewable(element, new Vector3D(this.panel.Width / 2, this.panel.Height / 2, 0));
+
+            if (element is AbstractDynamic2DAugmentation && ((AbstractDynamic2DAugmentation)element).Source != null)
+            {
+                this.setSourcePreview(element);
+                ((AbstractDynamic2DAugmentation)element).Source = (AbstractSource)((AbstractDynamic2DAugmentation)copy).Source.Clone();
+            }
+        }
     }
+
 
 
     /**
@@ -1193,7 +1223,7 @@ public class PreviewController
     {
         try
         {
-            TextEditorForm tef = new TextEditorForm(((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source.Query);
+            TextEditorForm tef = new TextEditorForm(Path.Combine(ew.project.ProjectPath, ((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source.Query));
             tef.Show();
         }
         catch (Exception exception)
@@ -1211,7 +1241,7 @@ public class PreviewController
     {
         try
         {
-            TextEditorForm tef = new TextEditorForm(((FileSource)((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source).Data);
+            TextEditorForm tef = new TextEditorForm(Path.Combine(ew.project.ProjectPath, ((FileSource)((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source).Data));
             tef.Show();
         }
         catch (Exception exception)
@@ -1229,7 +1259,7 @@ public class PreviewController
     {
         try
         {
-            TextEditorForm tef = new TextEditorForm(((Chart)this.ew.CurrentElement).Options);
+            TextEditorForm tef = new TextEditorForm(Path.Combine(ew.project.ProjectPath, ((Chart)this.ew.CurrentElement).Options));
             tef.Show();
         }
         catch (Exception exception)
