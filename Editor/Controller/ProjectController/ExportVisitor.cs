@@ -111,7 +111,7 @@ namespace ARdevKit.Controller.ProjectController
         public override void Visit(CustomUserEvent cue)
         {
             // Copy to projectPath
-            string newPath = "Assets";
+            string newPath = "Events";
             if (cue.FilePath.Contains(':'))
             {
                 ExportIsValid = Helper.Copy(cue.FilePath, Path.Combine(project.ProjectPath, newPath)) && ExportIsValid;

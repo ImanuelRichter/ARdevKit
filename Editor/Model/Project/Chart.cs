@@ -9,6 +9,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Drawing.Design;
 using System.Windows.Forms;
+using ARdevKit.Model.Project.File;
 
 namespace ARdevKit.Model.Project
 {
@@ -43,8 +44,7 @@ namespace ARdevKit.Model.Project
         protected string optionsFilePath;
 
         /// <summary>
-        /// Gets or sets the options. If the file exists, it will be copied to a temporary directore 
-        /// /tmp/ of the program directory. If not, nothing happens.
+        /// Gets or sets the options.
         /// </summary>
         /// <value>
         /// The options.
@@ -171,7 +171,9 @@ namespace ARdevKit.Model.Project
                 openFileDialog.Title = "Wählen sie eine Options Datei";
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    Options = openFileDialog.FileName;
+                    string newPath = Path.Combine(Environment.CurrentDirectory, "tmp\\" + id);
+                    Helper.Copy(openFileDialog.FileName, newPath);
+                    Options = newPath;
                 }
                 else
                 {

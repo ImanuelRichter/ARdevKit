@@ -13,6 +13,7 @@ using ARdevKit.View;
 using ARdevKit.Properties;
 using System.Drawing.Drawing2D;
 using System.Runtime.CompilerServices;
+using System.IO;
 
 /// <summary>
 /// The class PreviewController manages all things which are in contact with the PreviewPanel. Here are all methods, who influence the PreviewPanel.
@@ -219,7 +220,9 @@ public class PreviewController
                         source.initElement(ew);
                         source.Augmentation = ((AbstractDynamic2DAugmentation)currentElement);
 
-                        ((FileSource)source).Data = openFileDialog.FileName;
+                        string newDataPath = Path.Combine(Environment.CurrentDirectory, "tmp\\" + source.Augmentation.ID);
+                        ARdevKit.Model.Project.File.Helper.Copy(openFileDialog.FileName, newDataPath);
+                        ((FileSource)source).Data = newDataPath;
 
                         //add references in Augmentation, Picturebox + project.sources List.
                         ((AbstractDynamic2DAugmentation)currentElement).Source = source;
@@ -237,7 +240,9 @@ public class PreviewController
                             openFileDialog.Filter = "JavaScriptFile (*.js)|*.js";
                             if (openFileDialog.ShowDialog() == DialogResult.OK)
                             {
-                                ((FileSource)source).Query = openFileDialog.FileName;
+                                string newQueryPath = Path.Combine(Environment.CurrentDirectory, "tmp\\" + source.Augmentation.ID);
+                                ARdevKit.Model.Project.File.Helper.Copy(openFileDialog.FileName, newQueryPath);
+                                ((FileSource)source).Query = newQueryPath;
                             }
                         }
                         this.setSourcePreview(currentElement);
@@ -256,7 +261,9 @@ public class PreviewController
                         source.initElement(ew);
                         source.Augmentation = ((AbstractDynamic2DAugmentation)currentElement);
 
-                        ((DbSource)source).Query = openFileDialog.FileName;
+                        string newQueryPath = Path.Combine(Environment.CurrentDirectory, "tmp\\" + source.Augmentation.ID);
+                        ARdevKit.Model.Project.File.Helper.Copy(openFileDialog.FileName, newQueryPath);
+                        ((DbSource)source).Query = newQueryPath;
 
                         //add references in Augmentation, Picturebox + project.sources List.
                         ((AbstractDynamic2DAugmentation)currentElement).Source = source;
