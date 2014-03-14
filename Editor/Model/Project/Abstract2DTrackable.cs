@@ -31,22 +31,63 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
+        /// The width in mm.
+        /// </summary>
+        protected int widthMM;
+
+        /// <summary>
+        /// Gets or sets the width mm.
+        /// </summary>
+        /// <value>
+        /// The width in mm.
+        /// </value>
+        [CategoryAttribute("General"), Description("Breite des realen Markers in mm.")]
+        public int WidthMM
+        {
+            get { return widthMM; }
+            set { widthMM = value;  }
+        }
+
+        /// <summary>
+        /// The height in mm.
+        /// </summary>
+        protected int heightMM;
+
+        /// <summary>
+        /// Gets or sets the width mm.
+        /// </summary>
+        /// <value>
+        /// The width in mm.
+        /// </value>
+        [CategoryAttribute("General"), Description("Höhe des realen Markers in mm.")]
+        public int HeightMM
+        {
+            get { return heightMM; }
+            set { heightMM = value; }
+        }
+
+        /// <summary>
         /// The size of the Marker in mm
         /// </summary>
         protected int size;
         /// <summary>
         /// Gets or sets the size.
         /// </summary>
-        [CategoryAttribute("General"), Description("Größe des realen Markers in mm.")]
         public int Size
         {
-            get { return size; }
+            get { return (int) Math.Round(Math.Sqrt(widthMM * heightMM), 0); }
             set 
             {
                 if (value < 1)
-                    size = 1;
+                {
+                    widthMM = 1;
+                    heightMM = 1;
+                }
                 else
-                    size = value; 
+                {
+                    widthMM = value;
+                    heightMM = value;
+                }
             }
         }
 

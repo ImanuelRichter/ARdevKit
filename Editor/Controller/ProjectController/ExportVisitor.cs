@@ -650,7 +650,7 @@ namespace ARdevKit.Controller.ProjectController
 
             XMLBlock parameterBlock = new XMLBlock(new XMLTag("Parameters"));
             sensorCOSBlock.AddBlock(parameterBlock);
-            parameterBlock.AddLine(new XMLLine(new XMLTag("referenceImage"), Path.GetFileName(image.ImagePath)));
+            parameterBlock.AddLine(new XMLLine(new XMLTag("referenceImage", "WidthMM=\"" + image.WidthMM + "\" HeightMM=\"" + image.HeightMM + "\""), Path.GetFileName(image.ImagePath)));
             string value = image.SimilarityThreshold.ToString("F1", CultureInfo.InvariantCulture);
             parameterBlock.AddLine(new XMLLine(new XMLTag("SimilarityThreshold"), value));
 
@@ -787,12 +787,11 @@ namespace ARdevKit.Controller.ProjectController
             XMLBlock parameterBlock = new XMLBlock(new XMLTag("Parameters"));
             sensorCOSBlock.AddBlock(parameterBlock);
 
-            parameterBlock.AddLine(new XMLLine(new XMLTag("Size"), pictureMarker.Size.ToString()));
-
             XMLBlock markerParametersBlock = new XMLBlock(new XMLTag("MarkerParameters"));
             parameterBlock.AddBlock(markerParametersBlock);
-            markerParametersBlock.AddLine(new XMLLine(new XMLTag("referenceImage", "qualityThreshold=\"0.70\""), Path.GetFileName(pictureMarker.PicturePath)));
             string value = pictureMarker.SimilarityThreshold.ToString("F1", CultureInfo.InvariantCulture);
+            markerParametersBlock.AddLine(new XMLLine(new XMLTag("referenceImage", "WidthMM=\"" + pictureMarker.WidthMM + "\" HeightMM=\""+ pictureMarker.HeightMM + "\" qualityThreshold=\"" + value + "\""), Path.GetFileName(pictureMarker.PicturePath)));
+            value = pictureMarker.SimilarityThreshold.ToString("F1", CultureInfo.InvariantCulture);
             parameterBlock.AddLine(new XMLLine(new XMLTag("SimilarityThreshold"), value));
 
             // Connections 

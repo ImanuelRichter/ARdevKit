@@ -90,7 +90,8 @@ namespace ARdevKit.Model.Project
             fuser = new MarkerFuser();
             picturePath = null;
             pictureName = "";
-            size = 60;
+            widthMM = 300;
+            heightMM = 300;
         }
 
         /// <summary>

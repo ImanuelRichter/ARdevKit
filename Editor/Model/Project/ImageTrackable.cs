@@ -101,7 +101,8 @@ namespace ARdevKit.Model.Project
             fuser = new MarkerlessFuser();
             imagePath = null;
             imageName = "";
-            size = 60;
+            widthMM = 300;
+            heightMM = 300;
         }
 
         /// <summary>
