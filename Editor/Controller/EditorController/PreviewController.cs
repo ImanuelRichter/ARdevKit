@@ -510,6 +510,8 @@ public class PreviewController
                 cm.MenuItems.Add("Öffne Optionen", new EventHandler(this.openOptionsFile));
             }
             cm.MenuItems.Add("Öffne AREL Script", new EventHandler(this.openArelScript));
+            if(prev is Chart) 
+                cm.MenuItems[2].Enabled = false;
         }
         tempBox.MouseClick += new MouseEventHandler(selectElement);
         cm.MenuItems.Add("löschen", new EventHandler(this.remove_by_click));
