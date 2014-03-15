@@ -609,8 +609,8 @@ public class PreviewController
                 {
                     findBox(this.ew.CurrentElement).BringToFront();
                 }
-                ew.PropertyGrid1.SelectedObject = currentElement;
             }
+            ew.PropertyGrid1.SelectedObject = currentElement;
         }
         //if there is no currentElement we'll mark the box and set the currentElement in EditorWindow.
         else
