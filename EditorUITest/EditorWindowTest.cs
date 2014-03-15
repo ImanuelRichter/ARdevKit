@@ -99,6 +99,8 @@ namespace EditorUITest
 
             // Load files
             MessageBox.Show(new Form() { TopMost = true }, "Erstelle ein neues Projekt (Datei -> Neu) und danach öffne das vorher gespeicherte Projekt.", "Schritt 1/2");
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Sind in dem neu geladenem Projekt zwei Szenen vorhanden?", "Test 4",  // This is TF12510
+                MessageBoxButtons.YesNo) == DialogResult.Yes); 
             Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Sieht das Projekt genau so aus, wie du es vorher abgespeichert hattest?", "Test 4",
                 MessageBoxButtons.YesNo) == DialogResult.Yes);
         }
@@ -287,6 +289,151 @@ namespace EditorUITest
             Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Wurdest du abgefragt, ob du das Projekt speichern wolltest?", "Test 4",
                 MessageBoxButtons.YesNo) == DialogResult.Yes);
             Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Hat sich das Programm beendet?", "Test 4",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+        }
+
+        [TestMethod]
+        public void testImage1()
+        {
+            var pathFile = System.IO.Path.GetFullPath(@"\res\testFiles\testProjects\everyAugmentation");
+            var imagePath = System.IO.Path.GetFullPath(@"\res\testFiles\imagesToLoadForTesting\idMarker1.jpg");
+
+            MessageBox.Show(new Form() { TopMost = true }, "Öffne das Projekt im Ordner " + pathFile + " .", "Schritt 1/2");
+            MessageBox.Show(new Form() { TopMost = true }, "Speichere das Projekt in einem anderen Ordner außerhalb von /res/", "Schritt 1/2");
+            MessageBox.Show(new Form() { TopMost = true }, "Gehe auf Test -> Bild laden und lade das Bild  " + imagePath + " .", "Schritt 1/2");
+
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Startet die Player.exe?", "Test 4",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Wird das ausgewählte Bild angezeigt?", "Test 4",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Wird (nach kurzer Zeit) drei Diagramm angezeigt?", "Test 4",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Sind in den drei Diagrammen Daten zu entnehmen bzw werden Kurven in den Diagrammen angezeigt?", "Test 4",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+        }
+
+        [TestMethod]
+        public void testImage2()
+        {
+            var pathFile = System.IO.Path.GetFullPath(@"\res\testFiles\testProjects\everyAugmentation");
+            var imagePath = System.IO.Path.GetFullPath(@"\res\testFiles\imagesToLoadForTesting\idMarker1.jpg");
+
+            MessageBox.Show(new Form() { TopMost = true }, "Öffne das Projekt im Ordner " + pathFile + " .", "Schritt 1/2");
+            MessageBox.Show(new Form() { TopMost = true }, "Speichere das Projekt in einem anderen Ordner außerhalb von /res/", "Schritt 1/2");
+            MessageBox.Show(new Form() { TopMost = true }, "Gehe auf Test -> Debug um den Debug damit zu aktivieren.", "Schritt 1/2");
+            MessageBox.Show(new Form() { TopMost = true }, "Gehe auf Test -> Bild laden und lade das Bild  " + imagePath + " .", "Schritt 1/2");
+
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Startet die Player.exe?", "Test 4",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Wird das ausgewählte Bild angezeigt?", "Test 4",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Wird dir in einem seperaten Fenster Debug-Informationen angezeigt?", "Test 4",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+        }
+
+        [TestMethod]
+        public void testVideo1()
+        {
+            var pathFile = System.IO.Path.GetFullPath(@"\res\testFiles\testProjects\everyAugmentation");
+            var videoPath = System.IO.Path.GetFullPath(@"\res\testFiles\videosToLoadForTesting\testVideoMarker.mp4");
+
+            MessageBox.Show(new Form() { TopMost = true }, "Öffne das Projekt im Ordner " + pathFile + " .", "Schritt 1/2");
+            MessageBox.Show(new Form() { TopMost = true }, "Speichere das Projekt in einem anderen Ordner außerhalb von /res/", "Schritt 1/2");
+            MessageBox.Show(new Form() { TopMost = true }, "Gehe auf Test -> Bild laden und lade das Bild  " + videoPath + " .", "Schritt 1/2");
+
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Startet die Player.exe (nachdem es das Video verarbeitet hat)?", "Test 4",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Wird das Video abgespielt?", "Test 4",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Werden für zwei der drei IDMarkers die Szenen abgespielt?", "Test 4",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+        }
+
+        [TestMethod]
+        public void testVideo2()
+        {
+            var pathFile = System.IO.Path.GetFullPath(@"\res\testFiles\testProjects\everyAugmentation");
+            var videoPath = System.IO.Path.GetFullPath(@"\res\testFiles\videosToLoadForTesting\testVideoMarker.mp4");
+
+            MessageBox.Show(new Form() { TopMost = true }, "Öffne das Projekt im Ordner " + pathFile + " .", "Schritt 1/2");
+            MessageBox.Show(new Form() { TopMost = true }, "Speichere das Projekt in einem anderen Ordner außerhalb von /res/", "Schritt 1/2");
+            MessageBox.Show(new Form() { TopMost = true }, "Gehe auf Test -> Debug um den Debug damit zu aktivieren.", "Schritt 1/2");
+            MessageBox.Show(new Form() { TopMost = true }, "Gehe auf Test -> Bild laden und lade das Bild  " + videoPath + " .", "Schritt 1/2");
+
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Startet die Player.exe?", "Test 4",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Wird das ausgewählte Video abgespielt?", "Test 4",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Wird dir in einem seperaten Fenster Debug-Informationen angezeigt?", "Test 4",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+        }
+
+        [TestMethod]
+        public void testVirtualCamera1()
+        {
+            var pathFile = System.IO.Path.GetFullPath(@"\res\testFiles\testProjects\everyAugmentation");
+
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Diese Test geht nur, wenn du eine virtuelle Kamera installiert hast. Hast du eine installiert?", "Test 4",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+            MessageBox.Show(new Form() { TopMost = true }, "Öffne das Projekt im Ordner " + pathFile + " .", "Schritt 1/2");
+            MessageBox.Show(new Form() { TopMost = true }, "Speichere das Projekt in einem anderen Ordner außerhalb von /res/", "Schritt 1/2");
+            MessageBox.Show(new Form() { TopMost = true }, "Gehe auf Test -> vCam und führe die .exe deiner virtuellen Kamera aus.", "Schritt 1/2");
+
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Startet das Programm der virtuellen Kamera?", "Test 4",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Startet die Player.exe?", "Test 4",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Werden die Augmentationen angezeigt, wenn du die IDMarker in die Kamera hälst (egal ob WebCam oder die virtuelle, die den Desktop abfilmt)?", "Test 4",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+        }
+
+        [TestMethod]
+        public void testVirtualCamera2()
+        {
+            var pathFile = System.IO.Path.GetFullPath(@"\res\testFiles\testProjects\everyAugmentation");
+
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Diese Test geht nur, wenn du eine virtuelle Kamera installiert hast. Hast du eine installiert?", "Test 4",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+            MessageBox.Show(new Form() { TopMost = true }, "Öffne das Projekt im Ordner " + pathFile + " .", "Schritt 1/2");
+            MessageBox.Show(new Form() { TopMost = true }, "Speichere das Projekt in einem anderen Ordner außerhalb von /res/", "Schritt 1/2");
+            MessageBox.Show(new Form() { TopMost = true }, "Gehe auf Test -> Debug um den Debug damit zu aktivieren.", "Schritt 1/2");
+            MessageBox.Show(new Form() { TopMost = true }, "Gehe auf Test -> vCam und führe die .exe deiner virtuellen Kamera aus.", "Schritt 1/2");
+
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Startet das Programm der virtuellen Kamera?", "Test 4",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Startet die Player.exe?", "Test 4",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Wird dir in einem seperaten Fenster Debug-Informationen angezeigt?", "Test 4",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+        }
+
+        [TestMethod]
+        public void testPrint1()
+        {
+            MessageBox.Show(new Form() { TopMost = true }, "Erstelle ein Projekt mit 3 Szenen mit je einem IDMarker", "Schritt 1/2");
+            MessageBox.Show(new Form() { TopMost = true }, "Gehe auf Test -> Drucken und drucke die Trackables aus", "Schritt 1/2");
+
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Haben die IDMarker eine Größe von 60mm (Einstellung der Größe ist die Size bei IDMarkern)?", "Test 4",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+        }
+
+        [TestMethod]
+        public void testPrint2()
+        {
+            MessageBox.Show(new Form() { TopMost = true }, "Erstelle ein Projekt mit 3 Szenen mit je einem PictureMarker", "Schritt 1/2");
+            MessageBox.Show(new Form() { TopMost = true }, "Gehe auf Test -> Drucken und drucke die Trackables aus", "Schritt 1/2");
+
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Haben die PictureMarker die gleichen Größen (in mm), wie im ProperyGrid bei den Eigenschaften HeihtMM und WidthMM angezeigt?", "Test 4",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+        }
+
+        [TestMethod]
+        public void testPrint3()
+        {
+            MessageBox.Show(new Form() { TopMost = true }, "Erstelle ein Projekt mit 3 Szenen mit je einem ImageTrackable", "Schritt 1/2");
+            MessageBox.Show(new Form() { TopMost = true }, "Gehe auf Test -> Drucken und drucke die Trackables aus", "Schritt 1/2");
+
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Haben die ImageTrackable die gleichen Größen (in mm), wie im ProperyGrid bei den Eigenschaften HeihtMM und WidthMM angezeigt?", "Test 4",
                 MessageBoxButtons.YesNo) == DialogResult.Yes);
         }
 

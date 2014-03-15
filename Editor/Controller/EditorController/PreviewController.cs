@@ -227,7 +227,6 @@ public class PreviewController
 
                         //add references in Augmentation, Picturebox + project.sources List.
                         ((AbstractDynamic2DAugmentation)currentElement).Source = source;
-                        this.ew.project.Sources.Add(((AbstractDynamic2DAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).Source);
 
 
                         //make it possible to add a query to the source.
@@ -262,13 +261,12 @@ public class PreviewController
                         source.initElement(ew);
                         source.Augmentation = ((AbstractDynamic2DAugmentation)currentElement);
 
-                        string newQueryPath = Path.Combine(Environment.CurrentDirectory, "tmp", source.Augmentation.ID);
+                        string newQueryPath = Path.Combine(Environment.CurrentDirectory, "tmp\\" + source.Augmentation.ID);
                         ARdevKit.Model.Project.File.Helper.Copy(openFileDialog.FileName, newQueryPath, "query.js");
                         ((DbSource)source).Query = Path.Combine(newQueryPath, "query.js");
 
                         //add references in Augmentation, Picturebox + project.sources List.
                         ((AbstractDynamic2DAugmentation)currentElement).Source = source;
-                        this.ew.project.Sources.Add(((AbstractDynamic2DAugmentation)this.findBox((AbstractAugmentation)currentElement).Tag).Source);
 
                         this.setSourcePreview(currentElement);
                     }
@@ -808,17 +806,17 @@ public class PreviewController
 
         try
         {
-            Bitmap resizedImg = new Bitmap(width, height);
-            Bitmap img = bit;
+        Bitmap resizedImg = new Bitmap(width, height);
+        Bitmap img = bit;
 
-            using (Graphics gNew = Graphics.FromImage(resizedImg))
-            {
-                gNew.InterpolationMode = InterpolationMode.HighQualityBicubic;
-                gNew.DrawImage(img, new Rectangle(0, 0, width, height));
-            }
-
-            return resizedImg;
+        using (Graphics gNew = Graphics.FromImage(resizedImg))
+        {
+            gNew.InterpolationMode = InterpolationMode.HighQualityBicubic;
+            gNew.DrawImage(img, new Rectangle(0, 0, width, height));
         }
+
+        return resizedImg;
+    }
         catch (ArgumentException ae)
         {
             Debug.WriteLine("Bitmap konnte nicht skaliert werden");
@@ -1135,16 +1133,15 @@ public class PreviewController
     {
         if (this.trackable.Augmentations.Count < 3)
         {
-            Point p = this.panel.PointToClient(Cursor.Position);
-            IPreviewable element = (IPreviewable)this.copy.Clone();
-            this.addPreviewable(element, new Vector3D(p.X, p.Y, 0));
+        Point p = this.panel.PointToClient(Cursor.Position);
+        IPreviewable element = (IPreviewable)this.copy.Clone();
+        this.addPreviewable(element, new Vector3D(p.X, p.Y, 0));
 
             if (element is AbstractDynamic2DAugmentation && ((AbstractDynamic2DAugmentation)element).Source != null)
-            {
-                this.setSourcePreview(element);
-                ((AbstractDynamic2DAugmentation)element).Source = (AbstractSource)((AbstractDynamic2DAugmentation)copy).Source.Clone();
-            }
-        }  
+        {
+            this.setSourcePreview(element);
+        }
+    }
     }
 
     /// <summary>

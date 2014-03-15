@@ -39,7 +39,10 @@ namespace ARdevKit.Model.Project.File
 
         public static bool Copy(string srcFile, string destDirectory, string newFileName)
         {
-            Directory.CreateDirectory(destDirectory);
+            if (!System.IO.Directory.Exists(destDirectory))
+            {
+                Directory.CreateDirectory(destDirectory);
+            }
 
             string destFile = Path.Combine(destDirectory, newFileName);
             if (!System.IO.File.Equals(srcFile, destFile))

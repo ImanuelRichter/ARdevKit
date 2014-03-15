@@ -101,6 +101,29 @@ namespace ARdevKit.Controller.TestController
             editorWindow = ew;
             showDebug = _showDebug;
 
+            if (ew == null)
+            {
+                MessageBox.Show("Der EditorWindow wurde nicht richtig instanziiert!");
+                return;
+            }
+
+            if (project == null)
+            {
+                MessageBox.Show("Es ist kein Projekt vorhanden!");
+                return;
+            }
+
+            if (mode < 0 || mode > 2)
+            {
+                MessageBox.Show("The mode must be between 0 to 2!");
+                return;
+            }
+
+            if (width < 20 || height < 20)
+            {
+                throw new ArgumentException("Die Höhe und/oder Breite ist zu klein! Sie müssen mindestens einen Wert von 20 haben.");
+            }
+
             IDFactory.Reset();
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             DialogResult saveFileDialogResult = DialogResult.OK;
