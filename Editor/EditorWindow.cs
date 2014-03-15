@@ -515,9 +515,9 @@ namespace ARdevKit
                     Debug.WriteLine(ne.StackTrace);
                     return false;
                 }
-                return exportVisitor.ExportIsValid;
                 if (!save)
                     MessageBox.Show("Projekt wurde exportiert!", "Export");
+                return exportVisitor.ExportIsValid;
             }
             catch (ArgumentNullException ae)
             {
