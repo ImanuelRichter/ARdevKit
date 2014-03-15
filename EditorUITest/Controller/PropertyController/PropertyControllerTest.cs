@@ -25,15 +25,6 @@ namespace EditorUITest.Controller.PropertyController
 
         [TestMethod]
         [TestCategory("PropertyController")]
-        public void EmptyOptionsTest()
-        {
-            this.UIMap.EmptyOptionsPathRecord();
-            this.UIMap.EmptyOptionsPathAssertion();
-            this.UIMap.CloseWithoutSave();
-        }
-
-        [TestMethod]
-        [TestCategory("PropertyController")]
         public void EmptyPicturePathTest()
         {
             this.UIMap.EmptyPicturePathRecord();
@@ -96,30 +87,6 @@ namespace EditorUITest.Controller.PropertyController
             Clipboard.SetText("C:\\video.alpha.3g2");
             this.UIMap.ChangeResPathVideoRecord();
             Assert.IsTrue(MessageBox.Show("Wurde das Bild korrekt geändert?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
-            this.UIMap.CloseWithoutSave();
-        }
-
-        [TestMethod]
-        [TestCategory("PropertyController")]
-        public void EmptyDataPathTest()
-        {
-            this.UIMap.EmptyDataPathRecord();
-            this.UIMap.EmptyDataPathAssertion();
-            this.UIMap.Close();
-        }
-
-        [TestMethod]
-        [TestCategory("PropertyController")]
-        public void ChangeQueryPathTest()
-        {
-            this.UIMap.LoadEmptyQueryProjectRecord();
-            this.UIMap.EmptyQueryPathRecording();
-            this.UIMap.EmptyQueryPathAssertion();
-            Clipboard.SetText("C:\\query.log");
-            this.UIMap.SetQueryPathRecord();
-            this.UIMap.SetQueryPathAssertion();
-            this.UIMap.EmptyQueryPathRecording();
-            this.UIMap.SetQueryPathAssertion();
             this.UIMap.CloseWithoutSave();
         }
 

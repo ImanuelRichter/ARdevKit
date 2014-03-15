@@ -131,6 +131,10 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
                 {
                     File.Delete("tmp\\currentProject.zip");
                 }
+                if (!System.IO.Directory.Exists("tmp"))
+                {
+                    System.IO.Directory.CreateDirectory("tmp");
+                }
                 if (editorWindow.project.ProjectPath == null || editorWindow.project.ProjectPath.Length <= 0)
                 {
                 ZipFile.CreateFromDirectory("tmp\\project", "tmp\\currentProject.zip");
