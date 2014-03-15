@@ -371,7 +371,40 @@ namespace EditorUITest
         [TestMethod]
         public void testVirtualCamera1()
         {
-            /* WIP because I have no virual camera */
+            var pathFile = System.IO.Path.GetFullPath(@"\res\testFiles\testProjects\everyAugmentation");
+
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Diese Test geht nur, wenn du eine virtuelle Kamera installiert hast. Hast du eine installiert?", "Test 4",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+            MessageBox.Show(new Form() { TopMost = true }, "Öffne das Projekt im Ordner " + pathFile + " .", "Schritt 1/2");
+            MessageBox.Show(new Form() { TopMost = true }, "Speichere das Projekt in einem anderen Ordner außerhalb von /res/", "Schritt 1/2");
+            MessageBox.Show(new Form() { TopMost = true }, "Gehe auf Test -> vCam und führe die .exe deiner virtuellen Kamera aus.", "Schritt 1/2");
+
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Startet das Programm der virtuellen Kamera?", "Test 4",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Startet die Player.exe?", "Test 4",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Werden die Augmentationen angezeigt, wenn du die IDMarker in die Kamera hälst (egal ob WebCam oder die virtuelle, die den Desktop abfilmt)?", "Test 4",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+        }
+
+        [TestMethod]
+        public void testVirtualCamera2()
+        {
+            var pathFile = System.IO.Path.GetFullPath(@"\res\testFiles\testProjects\everyAugmentation");
+
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Diese Test geht nur, wenn du eine virtuelle Kamera installiert hast. Hast du eine installiert?", "Test 4",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+            MessageBox.Show(new Form() { TopMost = true }, "Öffne das Projekt im Ordner " + pathFile + " .", "Schritt 1/2");
+            MessageBox.Show(new Form() { TopMost = true }, "Speichere das Projekt in einem anderen Ordner außerhalb von /res/", "Schritt 1/2");
+            MessageBox.Show(new Form() { TopMost = true }, "Gehe auf Test -> Debug um den Debug damit zu aktivieren.", "Schritt 1/2");
+            MessageBox.Show(new Form() { TopMost = true }, "Gehe auf Test -> vCam und führe die .exe deiner virtuellen Kamera aus.", "Schritt 1/2");
+
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Startet das Programm der virtuellen Kamera?", "Test 4",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Startet die Player.exe?", "Test 4",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
+            Assert.IsTrue(MessageBox.Show(new Form() { TopMost = true }, "Wird dir in einem seperaten Fenster Debug-Informationen angezeigt?", "Test 4",
+                MessageBoxButtons.YesNo) == DialogResult.Yes);
         }
 
         [TestMethod]
