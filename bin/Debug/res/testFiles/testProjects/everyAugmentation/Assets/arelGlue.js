@@ -31,7 +31,7 @@ arel.sceneReady
 			imageAugmentation1.setVisibility(true);
 			imageAugmentation1.setCoordinateSystemID(2);
 			imageAugmentation1.setScale(new arel.Vector3D(1.0,1.0,1.0));
-			imageAugmentation1.setTranslation(new arel.Vector3D(-2.0,8.0,0.0));
+			imageAugmentation1.setTranslation(new arel.Vector3D(0.0,0.0,0.0));
 			var imageAugmentation1Rotation = new arel.Rotation();
 			imageAugmentation1Rotation.setFromEulerAngleDegrees(new arel.Vector3D(0.0,0.0,0.0));
 			imageAugmentation1.setRotation(imageAugmentation1Rotation);
@@ -41,7 +41,7 @@ arel.sceneReady
 			videoAugmentation1.setVisibility(true);
 			videoAugmentation1.setCoordinateSystemID(2);
 			videoAugmentation1.setScale(new arel.Vector3D(1.0,1.0,1.0));
-			videoAugmentation1.setTranslation(new arel.Vector3D(-4.0,8.0,0.0));
+			videoAugmentation1.setTranslation(new arel.Vector3D(0.0,0.0,0.0));
 			var videoAugmentation1Rotation = new arel.Rotation();
 			videoAugmentation1Rotation.setFromEulerAngleDegrees(new arel.Vector3D(0.0,0.0,-90.0));
 			videoAugmentation1.setRotation(videoAugmentation1Rotation);

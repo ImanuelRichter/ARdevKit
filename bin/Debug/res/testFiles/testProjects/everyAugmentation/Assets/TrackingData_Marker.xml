@@ -11,7 +11,7 @@
 				</MarkerTrackingParameters>
 			</Parameters>
 			<SensorCOS>
-				<SensorCosID>IDMarker1</SensorCosID>
+				<SensorCosID>IDMarker3</SensorCosID>
 				<Parameters>
 					<MarkerParameters>
 						<Size>60</Size>
@@ -20,7 +20,7 @@
 				</Parameters>
 			</SensorCOS>
 			<SensorCOS>
-				<SensorCosID>IDMarker2</SensorCosID>
+				<SensorCosID>IDMarker4</SensorCosID>
 				<Parameters>
 					<MarkerParameters>
 						<Size>60</Size>
@@ -42,7 +42,7 @@
 			</Fuser>
 			<SensorSource trigger="1">
 				<SensorID>MarkerTracking1</SensorID>
-				<SensorCosID>IDMarker1</SensorCosID>
+				<SensorCosID>IDMarker3</SensorCosID>
 				<HandEyeCalibration>
 					<TranslationOffset>
 						<X>0</X>
@@ -82,7 +82,7 @@
 			</Fuser>
 			<SensorSource trigger="1">
 				<SensorID>MarkerTracking1</SensorID>
-				<SensorCosID>IDMarker2</SensorCosID>
+				<SensorCosID>IDMarker4</SensorCosID>
 				<HandEyeCalibration>
 					<TranslationOffset>
 						<X>0</X>

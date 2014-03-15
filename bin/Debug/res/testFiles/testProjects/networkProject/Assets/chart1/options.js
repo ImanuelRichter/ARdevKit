@@ -1,10 +1,13 @@
 function init() {
 	return {
 		chart: {
-			type: 'spline'
+			type: 'column'
 		},
 		title: {
-			text: 'Temperatures'
+			text: 'Titel'
+		},
+		subtitle: {
+			text: 'Untertitel'
 		},
 		xAxis: {
 			type: 'datetime',
@@ -16,7 +19,7 @@ function init() {
 			},
 			labels: {
 				formatter: function() {
-					return this.value + '°C';
+					return this.value + '%';
 				}
 			}
 		},
@@ -36,12 +39,20 @@ function init() {
 			color: {
 				linearGradient: { x1: 0, x2: 0, y1: 0, y1: 1 },
 				stops: [
-					[0, '#0000FF'],
-					[1, '#DD210E']
+					[0, '#DD210E'],
+					[1, '#55AA22']
 				]
 			},
 			name: 'Serie 1',
-			data: []
+			data: [
+				[Date.UTC(2014, 2, 24, 10, 30, 45), 55],
+				[Date.UTC(2014, 2, 24, 10, 31, 00), 87]]
+		}, {
+			type: 'spline',
+			name: 'Serie 2',
+			data: [
+				[Date.UTC(2014, 2, 24, 10, 30, 45), 55],
+				[Date.UTC(2014, 2, 24, 10, 31, 00), 87]]
 		}],
 		credits: {
 			enabled: false
