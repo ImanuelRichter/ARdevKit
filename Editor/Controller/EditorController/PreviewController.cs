@@ -522,7 +522,7 @@ public class PreviewController
             tempBox.MouseMove += new MouseEventHandler(controlMouseMove);
 
         this.panel.Controls.Add(tempBox);
-        
+
         if (prev is ImageAugmentation || prev is VideoAugmentation)
         {
             if (((AbstractAugmentation)prev).Rotation.Z != 0)
@@ -806,17 +806,17 @@ public class PreviewController
 
         try
         {
-        Bitmap resizedImg = new Bitmap(width, height);
-        Bitmap img = bit;
+            Bitmap resizedImg = new Bitmap(width, height);
+            Bitmap img = bit;
 
-        using (Graphics gNew = Graphics.FromImage(resizedImg))
-        {
-            gNew.InterpolationMode = InterpolationMode.HighQualityBicubic;
-            gNew.DrawImage(img, new Rectangle(0, 0, width, height));
+            using (Graphics gNew = Graphics.FromImage(resizedImg))
+            {
+                gNew.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                gNew.DrawImage(img, new Rectangle(0, 0, width, height));
+            }
+
+            return resizedImg;
         }
-
-        return resizedImg;
-    }
         catch (ArgumentException ae)
         {
             Debug.WriteLine("Bitmap konnte nicht skaliert werden");
@@ -992,13 +992,13 @@ public class PreviewController
                 if (prev.getPreview(ew.project.ProjectPath).Width > prev.getPreview(ew.project.ProjectPath).Height)
                 {
                     double sideScale = (double)prev.getPreview(ew.project.ProjectPath).Width / (double)prev.getPreview(ew.project.ProjectPath).Height;
-                    return this.scaleBitmap(prev.getPreview(ew.project.ProjectPath), (int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale * sideScale * sideScale * 1.3), 
+                    return this.scaleBitmap(prev.getPreview(ew.project.ProjectPath), (int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale * sideScale * sideScale * 1.3),
                         (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale * sideScale * 1.3));
                 }
                 else if (prev.getPreview(ew.project.ProjectPath).Width < prev.getPreview(ew.project.ProjectPath).Height)
                 {
                     double sideScale = (double)prev.getPreview(ew.project.ProjectPath).Height / (double)prev.getPreview(ew.project.ProjectPath).Width;
-                    return this.scaleBitmap(prev.getPreview(ew.project.ProjectPath), (int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale * 1.3), 
+                    return this.scaleBitmap(prev.getPreview(ew.project.ProjectPath), (int)(100 * ((AbstractAugmentation)prev).Scaling.X * scale * 1.3),
                         (int)(100 * ((AbstractAugmentation)prev).Scaling.Y * scale * sideScale * 1.3));
                 }
                 else { return null; }
@@ -1131,17 +1131,20 @@ public class PreviewController
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     public void paste_augmentation(object sender, EventArgs e)
     {
-        if (this.trackable.Augmentations.Count < 3)
+        if (this.trackable != null)
         {
-        Point p = this.panel.PointToClient(Cursor.Position);
-        IPreviewable element = (IPreviewable)this.copy.Clone();
-        this.addPreviewable(element, new Vector3D(p.X, p.Y, 0));
+            if (this.trackable.Augmentations.Count < 3)
+            {
+                Point p = this.panel.PointToClient(Cursor.Position);
+                IPreviewable element = (IPreviewable)this.copy.Clone();
+                this.addPreviewable(element, new Vector3D(p.X, p.Y, 0));
 
-            if (element is AbstractDynamic2DAugmentation && ((AbstractDynamic2DAugmentation)element).Source != null)
-        {
-            this.setSourcePreview(element);
+                if (element is AbstractDynamic2DAugmentation && ((AbstractDynamic2DAugmentation)element).Source != null)
+                {
+                    this.setSourcePreview(element);
+                }
+            }
         }
-    }
     }
 
     /// <summary>
@@ -1151,15 +1154,18 @@ public class PreviewController
     /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
     public void paste_augmentation_center(object sender, EventArgs e)
     {
-        if (this.trackable.Augmentations.Count < 3)
+        if (this.trackable != null)
         {
-            IPreviewable element = (IPreviewable)this.copy.Clone();
-            this.addPreviewable(element, new Vector3D(this.panel.Width / 2, this.panel.Height / 2, 0));
-
-            if (element is AbstractDynamic2DAugmentation && ((AbstractDynamic2DAugmentation)element).Source != null)
+            if (this.trackable.Augmentations.Count < 3)
             {
-                this.setSourcePreview(element);
-                ((AbstractDynamic2DAugmentation)element).Source = (AbstractSource)((AbstractDynamic2DAugmentation)copy).Source.Clone();
+                IPreviewable element = (IPreviewable)this.copy.Clone();
+                this.addPreviewable(element, new Vector3D(this.panel.Width / 2, this.panel.Height / 2, 0));
+
+                if (element is AbstractDynamic2DAugmentation && ((AbstractDynamic2DAugmentation)element).Source != null)
+                {
+                    this.setSourcePreview(element);
+                    ((AbstractDynamic2DAugmentation)element).Source = (AbstractSource)((AbstractDynamic2DAugmentation)copy).Source.Clone();
+                }
             }
         }
     }
