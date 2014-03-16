@@ -205,8 +205,10 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
             //trys to send command "debug" and connects tools
             try
             {
-                sender = new TcpClient(reportedDevices[index].Address.ToString(), 12345);
+                string ip = reportedDevices[index].Address.ToString();
+                sender = new TcpClient(ip, 12345);
                 debugConnected = true;
+                editorWindow.DebugWindow.AppendText("Debug connection initialized to:" + ip + "\n");
                 sendStream = sender.GetStream();
                 sendStream.Write(ASCIIEncoding.ASCII.GetBytes("debug\n"), 0, ASCIIEncoding.ASCII.GetByteCount("debug\n"));
                 reader = new StreamReader(sendStream);

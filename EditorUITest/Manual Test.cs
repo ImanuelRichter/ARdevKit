@@ -89,6 +89,8 @@ namespace EditorUITest
                 //TF20060
                 Assert.IsTrue(MessageBox.Show("Werden im Debugfenster Informationen über die gesendete Anfrage und empfangene Antwort angezeigt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
             }
+
+            MessageBox.Show(new Form() { TopMost = true }, "Schließe das Debug Fenster", "Testschritt!");
         }
 
          [TestMethod]
