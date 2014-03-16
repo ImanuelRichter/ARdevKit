@@ -265,6 +265,7 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
                 {
                     sender.Close();
                 }
+                editorWindow.PlayerClosed();
             }
             return success;
         }

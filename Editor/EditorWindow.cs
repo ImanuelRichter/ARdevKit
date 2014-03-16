@@ -1374,6 +1374,7 @@ namespace ARdevKit
                     int index = DeviceList.SelectedIndex;
                     debugWindow = new DebugWindow(deviceConnectionController);
                     debugWindow.Show();
+                    PlayerStarted();
                     Task.Factory.StartNew(() => deviceConnectionController.sendDebug(index));
                 }
                 else
