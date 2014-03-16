@@ -45,7 +45,7 @@ namespace ARdevKit.View
         private void DebugWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (controller != null)
-            controller.DebugConnected = false;
+                controller.DebugConnected = false;
         }
 
         /// <summary>

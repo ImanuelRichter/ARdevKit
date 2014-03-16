@@ -32,7 +32,6 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
         /// </value>
         public bool DebugConnected
         {
-            get { return debugConnected; }
             set { debugConnected = value; }
         }
 
@@ -125,24 +124,10 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
             //trys to export the project and zip it
             try
             {
-                exportRecentProject();
+                editorWindow.ExportProject(false);
                 sender = new TcpClient(reportedDevices[index].Address.ToString(), 12345);
-                if (File.Exists("tmp\\currentProject.zip"))
-                {
-                    File.Delete("tmp\\currentProject.zip");
-                }
-                if (!System.IO.Directory.Exists("tmp"))
-                {
-                    System.IO.Directory.CreateDirectory("tmp");
-                }
-                if (editorWindow.project.ProjectPath == null || editorWindow.project.ProjectPath.Length <= 0)
-                {
-                ZipFile.CreateFromDirectory("tmp\\project", "tmp\\currentProject.zip");
-                }
-                else
-                {
-                    ZipFile.CreateFromDirectory(editorWindow.project.ProjectPath, "tmp\\currentProject.zip");
-                }
+                Directory.CreateDirectory("tmp");
+                ZipFile.CreateFromDirectory(editorWindow.project.ProjectPath, "tmp\\currentProject.zip");
 
                 //gets number of bytes to send
                 project = File.OpenRead("tmp\\currentProject.zip");
@@ -204,29 +189,6 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
             return successfullySent;
         }
 
-
-        /// <summary>
-        /// Exports the recent project, in order to zip it and send it.
-        /// </summary>
-        private void exportRecentProject()
-        {
-            string originalProjectPath = editorWindow.project.ProjectPath;
-            if (editorWindow.project.ProjectPath == null || editorWindow.project.ProjectPath.Length <= 0)
-            {
-            editorWindow.project.ProjectPath = "tmp\\project";
-            }
-            ARdevKit.Controller.ProjectController.ExportVisitor exporter = new ARdevKit.Controller.ProjectController.ExportVisitor();
-            editorWindow.project.Accept(exporter);
-
-            ARdevKit.Model.Project.IDFactory.Reset();
-            foreach (ARdevKit.Model.Project.File.AbstractFile file in exporter.Files)
-            {
-                file.Save();
-            }
-            editorWindow.project.ProjectPath = originalProjectPath;
-        }
-
-
         /// <summary>
         /// Sends a Debugrequest to the selected Device and shows its DebugOutput on a PopupWindow with a RichTextbox
         /// </summary>
@@ -269,18 +231,18 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
                 success = true;
                 sendStream.Write(ASCIIEncoding.ASCII.GetBytes("OK"), 0, ASCIIEncoding.ASCII.GetByteCount("OK"));
             }
-            catch (SocketException ex)
+            catch (SocketException se)
             {
-                writeExceptionToLog(ex);
+                writeExceptionToLog(se);
                 if (!(sendStream == null) && !(sender == null) && sender.Connected)
                 {
                     sendStream.Write(ASCIIEncoding.ASCII.GetBytes("FAIL"), 0, ASCIIEncoding.ASCII.GetByteCount("FAIL"));
                 }
                 MessageBox.Show("Es gab ein Problem mit den Sockets. Überprüfen sie ihre Netzwerkeinstellungen.");
             }
-            catch(IOException io)
+            catch(IOException ioe)
             {
-                writeExceptionToLog(io);
+                writeExceptionToLog(ioe);
                 if (!(sendStream == null) && !(sender == null) && sender.Connected)
                 {
                     sendStream.Write(ASCIIEncoding.ASCII.GetBytes("FAIL"), 0, ASCIIEncoding.ASCII.GetByteCount("FAIL"));

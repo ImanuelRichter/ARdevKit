@@ -42,10 +42,10 @@ namespace EditorUITest
             MessageBox.Show(new Form() { TopMost = true }, "Lade das Projekt \"res\\testFiles\\testProjects\\networkProject\"", "Testschritt!");
 
             //TF11150
-            MessageBox.Show(new Form() { TopMost = true }, "Klicke auf \"Datei\" und geh mit der Maus auf \"Projekt versenden\" (ohne zu klicken)", "Testschritt!");
+            MessageBox.Show(new Form() { TopMost = true }, "Klicke auf \"Datei\" und geh mit der Maus auf \"Projekt versenden\"", "Testschritt!");
             Assert.IsTrue(MessageBox.Show("Wird die IP des mobilen Geräts angezeigt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.No);
 
-            MessageBox.Show(new Form() { TopMost = true }, "Klicke auf \"Datei\" und geh mit der Maus auf \"Projekt versenden\" (ohne zu klicken) und klicke auf \"Projekt an Gerät senden\"", "Testschritt!");
+            MessageBox.Show(new Form() { TopMost = true }, "Klicke auf \"Datei\" und geh mit der Maus auf \"Projekt versenden\" und klicke auf \"Projekt an Gerät senden\"", "Testschritt!");
             Assert.IsTrue(MessageBox.Show("Wird eine Meldung angezeigt, dass kein Gerät zum Versenden verfügbar ist?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
 
             MessageBox.Show(new Form() { TopMost = true }, "Klicke auf \"Datei\" und geh mit der Maus auf \"Projekt versenden\" (ohne zu klicken) und klicke auf \"Gerätedebugmodus starten\"", "Testschritt!");
@@ -55,11 +55,11 @@ namespace EditorUITest
             Assert.IsTrue(MessageBox.Show("Wird das Webcambild angezeigt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
 
             //TF11151
-            MessageBox.Show(new Form() { TopMost = true }, "Klicke auf \"Datei\" und geh mit der Maus auf \"Projekt versenden\" (ohne zu klicken) und klicke auf \"Liste aktualisieren\"", "Testschritt!");
-            MessageBox.Show(new Form() { TopMost = true }, "Klicke auf \"Datei\" und geh mit der Maus auf \"Projekt versenden\" (ohne zu klicken)", "Testschritt!");
+            MessageBox.Show(new Form() { TopMost = true }, "Klicke auf \"Datei\" und geh mit der Maus auf \"Projekt versenden\" und klicke auf \"Liste aktualisieren\"", "Testschritt!");
+            MessageBox.Show(new Form() { TopMost = true }, "Klicke auf \"Datei\" und geh mit der Maus auf \"Projekt versenden\"", "Testschritt!");
             Assert.IsTrue(MessageBox.Show("Wird die IP des mobilen Geräts angezeigt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
 
-            MessageBox.Show(new Form() { TopMost = true }, "Klicke auf \"Datei\" und geh mit der Maus auf \"Projekt versenden\" (ohne zu klicken) und klicke auf \"Projekt an Gerät senden\"", "Testschritt!");
+            MessageBox.Show(new Form() { TopMost = true }, "Klicke auf \"Datei\" und geh mit der Maus auf \"Projekt versenden\" und klicke auf \"Projekt an Gerät senden\"", "Testschritt!");
             Assert.IsTrue(MessageBox.Show("Wird eine Meldung \"Das Projekt wurde versand.\" angezeigt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
             Assert.IsTrue(MessageBox.Show("Startet der Player neu?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
 
@@ -74,7 +74,7 @@ namespace EditorUITest
                 Assert.IsTrue(MessageBox.Show("Ist ein Diagramm mit Graphen und eines ohne zu sehen?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
             }
 
-            MessageBox.Show(new Form() { TopMost = true }, "Klicke auf \"Datei\" und geh mit der Maus auf \"Projekt versenden\" (ohne zu klicken) und klicke auf \"Gerätedebugmodus starten\"", "Testschritt!");
+            MessageBox.Show(new Form() { TopMost = true }, "Klicke auf \"Datei\" und geh mit der Maus auf \"Projekt versenden\" und klicke auf \"Gerätedebugmodus starten\"", "Testschritt!");
             Assert.IsTrue(MessageBox.Show("Öffnet sich ein neues Fenster mit einem Textfeld?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
 
             //TF20030
@@ -96,15 +96,15 @@ namespace EditorUITest
         {
             MessageBox.Show(new Form() { TopMost = true }, "Öffnen sie das Project everyAugmentation", "Testschritt!");
 
-            MessageBox.Show(new Form() { TopMost = true }, "Klicke auf \"Datei\" und geh mit der Maus auf \"Projekt versenden\" (ohne zu klicken) und klicke auf \"Liste aktualisieren\"", "Testschritt!");
-            MessageBox.Show(new Form() { TopMost = true }, "Klicke auf \"Datei\" und geh mit der Maus auf \"Projekt versenden\" (ohne zu klicken)", "Testschritt!");
+            MessageBox.Show(new Form() { TopMost = true }, "Klicke auf \"Datei\" und geh mit der Maus auf \"Projekt versenden\" und klicke auf \"Liste aktualisieren\"", "Testschritt!");
+            MessageBox.Show(new Form() { TopMost = true }, "Klicke auf \"Datei\" und geh mit der Maus auf \"Projekt versenden\"", "Testschritt!");
             Assert.IsTrue(MessageBox.Show("Wird die IP des mobilen Geräts angezeigt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
 
-            MessageBox.Show(new Form() { TopMost = true }, "Klicke auf \"Datei\" und geh mit der Maus auf \"Projekt versenden\" (ohne zu klicken) und klicke auf \"Projekt an Gerät senden\"", "Testschritt!");
+            MessageBox.Show(new Form() { TopMost = true }, "Klicke auf \"Datei\" und geh mit der Maus auf \"Projekt versenden\" und klicke auf \"Projekt an Gerät senden\"", "Testschritt!");
             Assert.IsTrue(MessageBox.Show("Wird eine Meldung \"Das Projekt wurde versand.\" angezeigt?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
             Assert.IsTrue(MessageBox.Show("Startet der Player neu?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
 
-            MessageBox.Show(new Form() { TopMost = true }, "Klicke auf \"Datei\" und geh mit der Maus auf \"Projekt versenden\" (ohne zu klicken) und klicke auf \"Gerätedebugmodus starten\"", "Testschritt!");
+            MessageBox.Show(new Form() { TopMost = true }, "Klicke auf \"Datei\" und geh mit der Maus auf \"Projekt versenden\" und klicke auf \"Gerätedebugmodus starten\"", "Testschritt!");
             Assert.IsTrue(MessageBox.Show("Öffnet sich nun auf das DebugWindow?", "ASSERTION!", MessageBoxButtons.YesNo) == DialogResult.Yes);
             
             MessageBox.Show(new Form() { TopMost = true }, "Filmen sie nun mit dem Player Trackable 1", "Testschritt!");
