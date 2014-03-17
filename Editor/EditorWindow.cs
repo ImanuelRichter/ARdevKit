@@ -492,6 +492,10 @@ namespace ARdevKit
                 {
                     exportVisitor = new ExportVisitor();
                     project.Accept(exportVisitor);
+                    foreach (AbstractFile file in exportVisitor.Files)
+                    {
+                        file.Save();
+                    }
                 }
                 catch (DirectoryNotFoundException de)
                 {
@@ -502,13 +506,6 @@ namespace ARdevKit
                 {
                     MessageBox.Show("Exportvorgang abgebrochen");
                     return false;
-                }
-                try
-                {
-                    foreach (AbstractFile file in exportVisitor.Files)
-                    {
-                        file.Save();
-                    }
                 }
                 catch (NullReferenceException ne)
                 {
@@ -524,7 +521,6 @@ namespace ARdevKit
                 Debug.WriteLine(ae.StackTrace);
                 return false;
             }
-            return exportVisitor.ExportIsValid;
         }
 
         /// <summary>
@@ -623,24 +619,18 @@ namespace ARdevKit
                     {
                         project.ProjectPath = Path.GetDirectoryName(saveFileDialog.FileName);
                         project.Name = Path.GetFileNameWithoutExtension(saveFileDialog.FileName);
-                        isValid = this.Export(save);
-                        if (save)
-                            this.Save(project.ProjectPath);
                     }
                     catch (System.ArgumentException)
                     {
                         project.ProjectPath = null;
                     }
                 }
-                else
-                {
-                    isValid = this.Export(save);
-                    if (save)
-                        this.Save(project.ProjectPath);
-                }
+                isValid = this.Export(save);
+                if (isValid && save)
+                    this.Save(project.ProjectPath);
             }
             if (!isValid)
-                MessageBox.Show("Beim " + (save ? "Speichern" : "Export") + " ist ein Fehler aufgetreten. Das Projekt wird möglicherweise nicht richtig funktionieren.");
+                MessageBox.Show("Beim " + (save ? "Speichern" : "Export") + " ist ein Fehler aufgetreten. Das Projekt wird möglicherweise nicht richtig funktionieren.", "Error!");
             return isValid;
         }
 
