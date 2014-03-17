@@ -45,7 +45,7 @@ namespace ARdevKit.Model.Project
         public int WidthMM
         {
             get { return widthMM; }
-            set { widthMM = value;  }
+            set { widthMM = value <= 0 ? widthMM : value;  }
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace ARdevKit.Model.Project
         public int HeightMM
         {
             get { return heightMM; }
-            set { heightMM = value; }
+            set { heightMM = value <= 0 ? heightMM : value; }
         }
 
         /// <summary>
@@ -79,16 +79,8 @@ namespace ARdevKit.Model.Project
             get { return (int) Math.Round(Math.Sqrt(widthMM * heightMM), 0); }
             set 
             {
-                if (value < 1)
-                {
-                    widthMM = 1;
-                    heightMM = 1;
-                }
-                else
-                {
-                    widthMM = value;
-                    heightMM = value;
-                }
+                WidthMM = value;
+                HeightMM = value;
             }
         }
 
