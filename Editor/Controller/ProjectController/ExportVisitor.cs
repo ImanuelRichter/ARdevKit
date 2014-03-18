@@ -311,7 +311,10 @@ namespace ARdevKit.Controller.ProjectController
             // onTracking
             JavaScriptBlock chartIfPatternIsFoundShowBlock = new JavaScriptBlock("if (param[0].getCoordinateSystemID() == " + chartID + ".getCoordinateSystemID())", new BlockMarker("{", "}"));
             ifPatternIsFoundBlock.AddBlock(chartIfPatternIsFoundShowBlock);
-            chartIfPatternIsFoundShowBlock.AddLine(new JavaScriptLine(chartID + ".create()"));
+            JavaScriptBlock chartIfPatternIsFoundCreateBlock = new JavaScriptBlock("if (!" + chartID + ".created || " + chartID + ".forceRecalculation)", new BlockMarker("{", "}"));
+            chartIfPatternIsFoundShowBlock.AddBlock(chartIfPatternIsFoundCreateBlock);
+            chartIfPatternIsFoundCreateBlock.AddLine(new JavaScriptLine(chartID + ".create()"));
+
             chartIfPatternIsFoundShowBlock.AddLine(new JavaScriptLine(chartID + ".show()"));
             if (chart.Positioning.PositioningMode == ChartPositioning.PositioningModes.RELATIVE)
                 chartIfPatternIsFoundShowBlock.AddLine(new JavaScriptLine("arel.Scene.getScreenCoordinatesFrom3DPosition(COS" + coordinateSystemID + "Anchor.getTranslation(), " + chartID + ".getCoordinateSystemID(), function(coord){move(COS"+ coordinateSystemID + "Anchor, " + chartID + ", coord);})"));
@@ -330,8 +333,13 @@ namespace ARdevKit.Controller.ProjectController
             JavaScriptBlock chartFileDefineBlock = new JavaScriptBlock(chartPluginID + " = ", new BlockMarker("{", "};"));
             chartFile.AddBlock(chartFileDefineBlock);
 
-            // ID
+            // Ready
+            chartFileDefineBlock.AddLine(new JavaScriptInLine("created : false", true));
+            // Recalculate
+            chartFileDefineBlock.AddLine(new JavaScriptInLine("forceRecalculation : " + chart.ForceRecalculation.ToString().ToLower(), true));
+            // Visibility
             chartFileDefineBlock.AddLine(new JavaScriptInLine("visible : false", true));
+            // ID
             chartFileDefineBlock.AddLine(new JavaScriptInLine("id : \"" + chartID + "\"", true));
             // CoordinateSystemID
             chartFileDefineBlock.AddLine(new JavaScriptInLine("coordinateSystemID : " + coordinateSystemID, true));
@@ -345,16 +353,11 @@ namespace ARdevKit.Controller.ProjectController
             // ChartDiv
             chartFileDefineBlock.AddBlock(new JavaScriptInLine("div : document.createElement(\"div\")", true));
 
-            // This is for "realtime" preview
-            /*
-            if (exportForTest)
-                chartFileDefineSetOptionsLoadFileBlock.AddLine(new JavaScriptLine("setTimeout(function() { " + chartPluginID + ".setOptions(optionsPath); }, 5000)"));
-             */
-
             // Create
             // Div
             chartFileCreateBlock = new JavaScriptBlock("create : function()", new BlockMarker("{", "},"));
             chartFileDefineBlock.AddBlock(chartFileCreateBlock);
+            chartFileCreateBlock.AddLine(new JavaScriptLine("this.created = true"));
             chartFileCreateBlock.AddLine(new JavaScriptLine("this.div.setAttribute(\"id\", this.id)"));
             switch (chart.Positioning.PositioningMode)
             {

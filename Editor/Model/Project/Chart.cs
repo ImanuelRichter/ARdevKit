@@ -24,9 +24,22 @@ namespace ARdevKit.Model.Project
     public class Chart : AbstractDynamic2DAugmentation
     {
         /// <summary>
+        /// True if the chart should be recalculated after tracking is lost.
+        /// </summary>
+        private bool forceRecalculation;
+        /// <summary>
+        /// Gets or sets a value indicating whether this <see cref="Chart" /> should be recalculated after tracking is lost.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if recalculate; otherwise, <c>false</c>.
+        /// </value>
+        [CategoryAttribute("General")]
+        public bool ForceRecalculation { get; set; }
+
+        /// <summary>
         /// The positioning of the Chart
         /// </summary>
-        protected ChartPositioning positioning;
+        private ChartPositioning positioning;
         /// <summary>
         /// Gets or sets the positioning of the Chart
         /// </summary>
