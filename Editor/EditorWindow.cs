@@ -227,7 +227,7 @@ namespace ARdevKit
 
         private void tsm_editor_menu_file_new_Click(object sender, EventArgs e)
         {
-            if (projectChanged())
+            if (ProjectChanged())
             {
                 if (MessageBox.Show("Möchten Sie das aktuelle Projekt abspeichern, bevor ein neues angelegt wird?", "Projekt speichern?", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
@@ -599,6 +599,7 @@ namespace ARdevKit
 
         public bool ExportProject(bool save)
         {
+            this.project.OldProjectPath = this.project.ProjectPath;
             bool isValid = true;
             if (project.Sensor == null)
             {
@@ -608,10 +609,13 @@ namespace ARdevKit
             }
             else
             {
-                if (project.ProjectPath == null || project.Name.Equals(""))
+                if (save && project.Name.Equals(""))
                 {
                     SaveFileDialog saveFileDialog = new SaveFileDialog();
-                    saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                    if (project.ProjectPath == null)
+                        saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                    else
+                        saveFileDialog.InitialDirectory = project.ProjectPath;
                     saveFileDialog.Filter = "ARdevkit Projektdatei|*.ardev";
                     saveFileDialog.Title = "Projekt speichern";
                     saveFileDialog.ShowDialog();
@@ -619,15 +623,39 @@ namespace ARdevKit
                     {
                         project.ProjectPath = Path.GetDirectoryName(saveFileDialog.FileName);
                         project.Name = Path.GetFileNameWithoutExtension(saveFileDialog.FileName);
+                        isValid = this.Export(save);
+                        if (isValid)
+                            this.Save(project.ProjectPath);
                     }
                     catch (System.ArgumentException)
                     {
                         project.ProjectPath = null;
                     }
                 }
-                isValid = this.Export(save);
-                if (isValid && save)
-                    this.Save(project.ProjectPath);
+                else if (!save && project.ProjectPath == null)
+                {
+                    FolderBrowserDialog exportDialog = new FolderBrowserDialog();
+                    exportDialog.RootFolder = Environment.SpecialFolder.MyDocuments;
+                    DialogResult exportDialogResult = DialogResult.OK;
+                    try
+                    {
+                        if ((exportDialogResult = exportDialog.ShowDialog()) == DialogResult.OK)
+                        {
+                            project.ProjectPath = exportDialog.SelectedPath;
+                            isValid = this.Export(save);
+                        }
+                    }
+                    catch (System.ArgumentException)
+                    {
+                        project.ProjectPath = null;
+                    }
+                }
+                else if (ProjectChanged())
+                {
+                    isValid = this.Export(save);
+                    if (isValid && save)
+                        this.Save(project.ProjectPath);
+                }
             }
             if (!isValid)
                 MessageBox.Show("Beim " + (save ? "Speichern" : "Export") + " ist ein Fehler aufgetreten. Das Projekt wird möglicherweise nicht richtig funktionieren.", "Error!");
@@ -930,7 +958,6 @@ namespace ARdevKit
 
         private void tsm_editor_menu_file_saveAs_Click(object sender, EventArgs e)
         {
-            this.project.OldProjectPath = this.project.ProjectPath;
             this.project.Name = "";
             try
             {
@@ -950,7 +977,7 @@ namespace ARdevKit
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void tsm_editor_menu_file_open_Click_1(object sender, EventArgs e)
         {
-            if (projectChanged())
+            if (ProjectChanged())
             {
                 if (MessageBox.Show("Möchten Sie das aktuelle Projekt abspeichern, bevor ein anderes geöffnet wird?", "Projekt speichern?", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
@@ -1175,7 +1202,7 @@ namespace ARdevKit
         /// <remarks>geht 04.02.2014 15:15</remarks>
         private void EditorWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (!projectChanged())
+            if (!ProjectChanged())
                 return;
 
             DialogResult dlg = MessageBox.Show("Möchten Sie das aktuelle Projekt abspeichern, bevor ARdevKit beendet wird?", "Projekt speichern?", MessageBoxButtons.YesNoCancel);
@@ -1224,7 +1251,7 @@ namespace ARdevKit
         /// </summary>
         /// <returns></returns>
         /// <remarks>geht 20.02.2014 14:15</remarks>
-        private bool projectChanged()
+        private bool ProjectChanged()
         {
             if (checksum.Equals(this.project.getChecksum()))
                 return false;
@@ -1240,7 +1267,7 @@ namespace ARdevKit
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void tsm_editor_menu_help_help_Click(object sender, EventArgs e)
         {
-            Help.ShowHelp(this, Application.StartupPath + "\\Documentation.chm", HelpNavigator.TableOfContents);
+            Help.ShowHelp(this, Environment.CurrentDirectory + "\\Documentation.chm", HelpNavigator.TableOfContents);
         }
 
         /// <summary>

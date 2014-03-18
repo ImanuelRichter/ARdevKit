@@ -125,23 +125,20 @@ namespace ARdevKit.Controller.TestController
             }
 
             IDFactory.Reset();
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            DialogResult saveFileDialogResult = DialogResult.OK;
-            if (project.ProjectPath == null || project.Name.Equals(""))
+            FolderBrowserDialog exportDialog = new FolderBrowserDialog();
+            DialogResult exportDialogResult = DialogResult.OK;
+            if (project.ProjectPath == null)
             {
-                MessageBox.Show("Das Projekt muss zuerst gespeichert werden");
-                saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                saveFileDialog.Filter = "ARdevkit Projektdatei|*.ardev";
-                saveFileDialog.Title = "Projekt speichern";
-                if ((saveFileDialogResult = saveFileDialog.ShowDialog()) == DialogResult.OK)
+                MessageBox.Show("Das Projekt muss zuerst exportiert werden");
+                exportDialog.RootFolder = Environment.SpecialFolder.MyDocuments;
+                if ((exportDialogResult = exportDialog.ShowDialog()) == DialogResult.OK)
                 {
-                    project.ProjectPath = Path.GetDirectoryName(saveFileDialog.FileName);
-                    project.Name = Path.GetFileNameWithoutExtension(saveFileDialog.FileName);
+                    project.ProjectPath = exportDialog.SelectedPath;
                 }
             }
-            if (saveFileDialogResult == DialogResult.OK)
+            if (exportDialogResult == DialogResult.OK)
             {
-                if (ew.ExportProject(true))
+                if (ew.ExportProject(false))
                 {
                     player = new Process();
                     player.EnableRaisingEvents = true;

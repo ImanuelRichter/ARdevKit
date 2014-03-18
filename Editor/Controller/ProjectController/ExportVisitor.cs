@@ -1043,6 +1043,21 @@ namespace ARdevKit.Controller.ProjectController
         {
             project = p;
 
+            //Clean up before export
+            if (project.OldProjectPath != project.ProjectPath)
+            {
+                try
+                {
+                    if (Directory.Exists(project.ProjectPath))
+                        Directory.Delete(project.ProjectPath, true);
+                    Directory.CreateDirectory(project.ProjectPath);
+                }
+                catch (Exception e)
+                {
+                    ExportIsValid = false;
+                }
+            }
+
             // Copy arel file
             ExportIsValid = Helper.Copy(Path.Combine("res", "arel", "arel.js"), project.ProjectPath) && ExportIsValid;
 
