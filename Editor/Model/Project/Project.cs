@@ -309,11 +309,16 @@ namespace ARdevKit.Model.Project
                         return sBuilder.ToString();
                 }
             }
-            catch (FileNotFoundException e)
+            catch (FileNotFoundException fnfe)
             {
                 Debug.WriteLine(ProjectPath + "\\" + Name + ".ardev" + " not found");
-                Debug.WriteLine(e.StackTrace);
+                Debug.WriteLine(fnfe.StackTrace);
             }
+            catch (ArgumentNullException ane)
+           {
+               Debug.WriteLine(ProjectPath + "\\" + Name + ".ardev" + " not found");
+               Debug.WriteLine(ane.StackTrace);
+           }
 
             return null;
         }

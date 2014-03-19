@@ -34,7 +34,7 @@ namespace ARdevKit.Model.Project
         ///   <c>true</c> if recalculate; otherwise, <c>false</c>.
         /// </value>
         [CategoryAttribute("General")]
-        public bool ForceRecalculation { get; set; }
+        public bool ForceRecalculation { get { return forceRecalculation; } set { forceRecalculation = value; } }
 
         /// <summary>
         /// The positioning of the Chart

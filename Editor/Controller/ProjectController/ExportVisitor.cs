@@ -103,24 +103,13 @@ namespace ARdevKit.Controller.ProjectController
             chartCount = 1;
             coordinateSystemID = 0;
         }
-
-        /// <summary>
-        /// Visits the given <see cref="CustomUserEvent"/>
-        /// </summary>
-        /// <param name="cue">The customUserEvent</param>
-        public override void Visit(CustomUserEvent cue)
+        public override void Visit(EventFile eventFile)
         {
             // Copy to projectPath
-            string newPath = "Events";
-            if (cue.FilePath.Contains(':'))
-            {
-                ExportIsValid = Helper.Copy(cue.FilePath, Path.Combine(project.ProjectPath, newPath)) && ExportIsValid;
-            }
-            else if (project.OldProjectPath != null && !project.OldProjectPath.Equals(project.ProjectPath))
-            {
-                ExportIsValid = Helper.Copy(Path.Combine(project.OldProjectPath, cue.FilePath), Path.Combine(project.ProjectPath, newPath)) && ExportIsValid;
-            }
-            cue.FilePath = Path.Combine(newPath, Path.GetFileName(cue.FilePath));
+            if (!Directory.Exists(Path.Combine(project.ProjectPath, "Events")))
+                Directory.CreateDirectory(Path.Combine(project.ProjectPath, "Events"));
+            eventFile.FilePath = Path.Combine(project.ProjectPath, eventFile.FilePath);
+            Files.Add(eventFile);
 
             if (!importedJQuery)
             {
@@ -175,9 +164,9 @@ namespace ARdevKit.Controller.ProjectController
             loadContentBlock.AddLine(new JavaScriptLine(videoID + "Rotation.setFromEulerAngleDegrees(new arel.Vector3D(" + augmentationRotationX + "," + augmentationRotationY + "," + augmentationRotationZ + "))"));
             loadContentBlock.AddLine(new JavaScriptLine(videoID + ".setRotation(" + videoID + "Rotation)"));
 
-            if (video.CustomUserEventReference != null)
+            if (video.Events != null)
             {
-                JavaScriptBlock loadEventsBlock = new JavaScriptBlock("$.getScript(\"Events/" +videoID + "_Event.js\", function()", new BlockMarker("{", "})"));
+                JavaScriptBlock loadEventsBlock = new JavaScriptBlock("$.getScript(\"Events/" + videoID + "_events.js\", function()", new BlockMarker("{", "})"));
                 loadContentBlock.AddBlock(loadEventsBlock);
                 loadContentBlock.AddBlock(new JavaScriptInLine(".fail(function() { console.log(\"Failed to load events\")})", false));
                 loadContentBlock.AddBlock(new JavaScriptLine(".done(function() { console.log(\"Loaded events successfully\")})"));
@@ -242,9 +231,9 @@ namespace ARdevKit.Controller.ProjectController
             loadContentBlock.AddLine(new JavaScriptLine(imageID + "Rotation.setFromEulerAngleDegrees(new arel.Vector3D(" + augmentationRotationX + "," + augmentationRotationY + "," + augmentationRotationZ + "))"));
             loadContentBlock.AddLine(new JavaScriptLine(imageID + ".setRotation(" + imageID + "Rotation)"));
 
-            if (image.CustomUserEventReference != null)
+            if (image.Events != null)
             {
-                JavaScriptBlock loadEventsBlock = new JavaScriptBlock("$.getScript(\"Events/" + imageID + "_Event.js\", function()", new BlockMarker("{", "})"));
+                JavaScriptBlock loadEventsBlock = new JavaScriptBlock("$.getScript(\"Events/" + imageID + "_events.js\", function()", new BlockMarker("{", "})"));
                 loadContentBlock.AddBlock(loadEventsBlock);
                 loadContentBlock.AddBlock(new JavaScriptInLine(".fail(function() { console.log(\"Failed to load events\")})", false));
                 loadContentBlock.AddBlock(new JavaScriptLine(".done(function() { console.log(\"Loaded events successfully\")})"));
@@ -298,7 +287,7 @@ namespace ARdevKit.Controller.ProjectController
 
             loadContentBlock.AddLine(new JavaScriptLine(chartID + " = " + chartPluginID));
 
-            if (chart.CustomUserEventReference != null)
+            if (chart.Events != null)
             {
                 JavaScriptBlock loadEventsBlock = new JavaScriptBlock("$.getScript(\"Events/" + chartID + "_Event.js\", function()", new BlockMarker("{", "})"));
                 loadContentBlock.AddBlock(loadEventsBlock);

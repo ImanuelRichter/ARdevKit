@@ -29,6 +29,149 @@ namespace Controller.EditorController
         {
             this.ew = ew;
             ew.PropertyGrid1.PropertyValueChanged += new PropertyValueChangedEventHandler(changedProperty);
+            ew.PropertyGrid1.SelectedGridItemChanged += new SelectedGridItemChangedEventHandler(selectedGridItemChanged);
+        }
+
+        private void selectedGridItemChanged(object source, SelectedGridItemChangedEventArgs e)
+        {
+            if (ew.PropertyGrid1.SelectedGridItem.PropertyDescriptor.PropertyType.Name.Equals("Event"))
+            {
+                TextEditorForm tef;
+                AbstractAugmentation a = (AbstractAugmentation)ew.PropertyGrid1.SelectedObject;
+                Event selectedEvent;
+                Event.Types type;
+                switch (e.NewSelection.Label)
+                {
+                    case ("OnTouchStarted"):
+                        if (a.OnTouchStarted == null)
+                        {
+                            a.createEvent(Event.Types.ONTOUCHSTARTED);
+                            tef = new TextEditorForm(a.OnTouchStarted);
+                            if (tef.ShowDialog() == DialogResult.OK)
+                            {
+                                a.OnTouchStarted = tef.SelectedEvent;
+                            }
+                            else
+                                a.OnTouchStarted = null;
+                        }
+                        else
+                        {
+                            tef = new TextEditorForm(a.OnTouchStarted);
+                            if (tef.ShowDialog() == DialogResult.OK)
+                            {
+                                a.OnTouchStarted = tef.SelectedEvent;
+                            }
+                        }
+                        break;
+                    case ("OnTouchEnded"):
+                        if (a.OnTouchEnded == null)
+                        {
+                            a.createEvent(Event.Types.ONTOUCHENDED);
+                            tef = new TextEditorForm(a.OnTouchEnded);
+                            if (tef.ShowDialog() == DialogResult.OK)
+                            {
+                                a.OnTouchEnded = tef.SelectedEvent;
+                            }
+                            else
+                                a.OnTouchEnded = null;
+                        }
+                        else
+                        {
+                            tef = new TextEditorForm(a.OnTouchEnded);
+                            if (tef.ShowDialog() == DialogResult.OK)
+                            {
+                                a.OnTouchEnded = tef.SelectedEvent;
+                            }
+                        }
+                        break;
+                    case ("OnVisible"):
+                        if (a.OnVisible == null)
+                        {
+                            a.createEvent(Event.Types.ONVISIBLE);
+                            tef = new TextEditorForm(a.OnVisible);
+                            if (tef.ShowDialog() == DialogResult.OK)
+                            {
+                                a.OnVisible = tef.SelectedEvent;
+                            }
+                            else
+                                a.OnVisible = null;
+                        }
+                        else
+                        {
+                            tef = new TextEditorForm(a.OnVisible);
+                            if (tef.ShowDialog() == DialogResult.OK)
+                            {
+                                a.OnVisible = tef.SelectedEvent;
+                            }
+                        }
+                        break;
+                    case ("OnInvisible"):
+                        if (a.OnInvisible == null)
+                        {
+                            a.createEvent(Event.Types.ONINVISIBLE);
+                            tef = new TextEditorForm(a.OnInvisible);
+                            if (tef.ShowDialog() == DialogResult.OK)
+                            {
+                                a.OnInvisible = tef.SelectedEvent;
+                            }
+                            else
+                                a.OnInvisible = null;
+                        }
+                        else
+                        {
+                            tef = new TextEditorForm(a.OnInvisible);
+                            if (tef.ShowDialog() == DialogResult.OK)
+                            {
+                                a.OnInvisible = tef.SelectedEvent;
+                            }
+                        }
+                        break;
+                    case ("OnLoaded"):
+                        if (a.OnLoaded == null)
+                        {
+                            a.createEvent(Event.Types.ONLOADED);
+                            tef = new TextEditorForm(a.OnLoaded);
+                            if (tef.ShowDialog() == DialogResult.OK)
+                            {
+                                a.OnLoaded = tef.SelectedEvent;
+                            }
+                            else
+                                a.OnLoaded = null;
+                        }
+                        else
+                        {
+                            tef = new TextEditorForm(a.OnLoaded);
+                            if (tef.ShowDialog() == DialogResult.OK)
+                            {
+                                a.OnLoaded = tef.SelectedEvent;
+                            }
+                        }
+                        break;
+                    case ("OnUnloaded"):
+                        if (a.OnUnloaded == null)
+                        {
+                            a.createEvent(Event.Types.ONUNLOADED);
+                            tef = new TextEditorForm(a.OnUnloaded);
+                            if (tef.ShowDialog() == DialogResult.OK)
+                            {
+                                a.OnUnloaded = tef.SelectedEvent;
+                            }
+                            else
+                                a.OnUnloaded = null;
+                        }
+                        else
+                        {
+                            tef = new TextEditorForm(a.OnUnloaded);
+                            if (tef.ShowDialog() == DialogResult.OK)
+                            {
+                                a.OnUnloaded = tef.SelectedEvent;
+                            }
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
 
         /// <summary>

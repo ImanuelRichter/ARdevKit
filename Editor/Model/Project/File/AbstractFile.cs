@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,8 @@ namespace ARdevKit.Model.Project.File
     /// <remarks>   Imanuel, 15.01.2014. </remarks>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    [Serializable]
+    [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public abstract class AbstractFile
     {
         /// <summary>   Full pathname of the file. </summary>
@@ -29,6 +32,7 @@ namespace ARdevKit.Model.Project.File
         public string FilePath
         {
             get { return filePath; }
+            set { filePath = value; }
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////

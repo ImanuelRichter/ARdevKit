@@ -92,6 +92,7 @@
     <Compile Include="Controller\TestController\FrameExtractor.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Model\Project\File\EventFile.cs" />
     <Compile Include="View\ProcessVideoWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,7 +136,7 @@
     <Compile Include="Controller\EditorController\PreviewController.cs" />
     <Compile Include="Model\Project\AbstractTrackable.cs" />
     <Compile Include="Model\Project\Chart.cs" />
-    <Compile Include="Model\Project\CustomUserEvent.cs" />
+    <Compile Include="Model\Project\Event.cs" />
     <Compile Include="Model\Project\DbSource.cs" />
     <Compile Include="Model\Project\FileSource.cs" />
     <Compile Include="Model\Project\File\AbstractFile.cs" />

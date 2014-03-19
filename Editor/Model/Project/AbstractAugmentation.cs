@@ -13,6 +13,7 @@ using System.ComponentModel;
 using System.Collections;
 using System.IO;
 using System.Runtime.CompilerServices;
+using ARdevKit.Model.Project.File;
 
 namespace ARdevKit.Model.Project
 {
@@ -58,20 +59,124 @@ namespace ARdevKit.Model.Project
             set { isVisible = value; }
         }
 
+        private EventFile eventFile;
 
-        /// <summary>
-        /// The customUserEvents contains a path to a file, which has
-        /// all user-generated events of this augmentation.
-        /// </summary>
-        private CustomUserEvent cue;
-        /// <summary>
-        /// Get and set the CustomUserEvent.
-        /// </summary>
         [Browsable(false)]
-        public CustomUserEvent CustomUserEventReference
+        public EventFile EventFile
         {
-            get { return cue; }
-            set { cue = value; }
+            get 
+            {
+                if (eventFile == null)
+                {
+                    if (Events != null)
+                    {
+                        eventFile = new EventFile(Path.Combine("Events", ID + "_events.js"));
+                        foreach (Event e in Events)
+                            eventFile.AddBlock(e);
+                        return eventFile;
+                    }
+                    else
+                        return null;
+                }
+                else
+                {
+                    eventFile.Clear();
+                    foreach (Event e in Events)
+                        eventFile.AddBlock(e);
+                    return eventFile;
+                }
+            }
+            set { eventFile = value; }
+        }
+
+        private List<Event> events;
+        [Browsable(false)]
+        public List<Event> Events
+        {
+            get
+            {
+                events = new List<Event>();
+                if (OnTouchStarted != null)
+                    events.Add(OnTouchStarted);
+                if (OnTouchEnded != null)
+                    events.Add(OnTouchEnded);
+                if (OnVisible != null)
+                    events.Add(OnVisible);
+                if (OnInvisible != null)
+                    events.Add(OnInvisible);
+                if (OnLoaded != null)
+                    events.Add(OnLoaded);
+                if (OnUnloaded != null)
+                    events.Add(OnUnloaded);
+                if (CustomEvents != null)
+                    foreach (Event e in CustomEvents)
+                        events.Add(e);
+                return events;
+            }
+            set { events = value; }
+        }
+
+        private Event onTouchStarted;
+
+        [CategoryAttribute("Events")]
+        public Event OnTouchStarted
+        {
+            get { return onTouchStarted; }
+            set { onTouchStarted = value; }
+        }
+
+        private Event onTouchEnded;
+
+        [CategoryAttribute("Events")]
+        public Event OnTouchEnded
+        {
+            get { return onTouchEnded; }
+            set { onTouchEnded = value; }
+        }
+
+        private Event onVisible;
+
+        [CategoryAttribute("Events")]
+        public Event OnVisible
+        {
+            get { return onVisible; }
+            set { onVisible = value; }
+        }
+
+        private Event onInvisible;
+
+        [CategoryAttribute("Events")]
+        public Event OnInvisible
+        {
+            get { return onInvisible; }
+            set { onInvisible = value; }
+        }
+
+        private Event onLoaded;
+
+        [CategoryAttribute("Events")]
+        public Event OnLoaded
+        {
+            get { return onLoaded; }
+            set { onLoaded = value; }
+        }
+
+        private Event onUnloaded;
+
+        [CategoryAttribute("Events")]
+        public Event OnUnloaded
+        {
+            get { return onUnloaded; }
+            set { onUnloaded = value; }
+        }
+
+        private List<Event> customEvents;
+
+        [CategoryAttribute("Events")]
+        public List<Event> CustomEvents
+        {
+            get { return customEvents; }
+            set { customEvents = value; }
         }
 
 
@@ -171,9 +276,40 @@ namespace ARdevKit.Model.Project
         /// <summary>
         /// Method to create an instance of the CustomUserEvent.
         /// </summary>
-        public void createUserEvent()
+        public Event createEvent(Event.Types type)
         {
-            cue = new CustomUserEvent(id);
+            Event newEvent = null;
+            switch (type)
+            {
+                case (Event.Types.ONTOUCHSTARTED):
+                    return OnTouchStarted = new Event(id, type);
+                    break;
+                case (Event.Types.ONTOUCHENDED):
+                    return OnTouchEnded = new Event(id, type);
+                    break;
+                case (Event.Types.ONVISIBLE):
+                    return OnVisible = new Event(id, type);
+                    break;
+                case (Event.Types.ONINVISIBLE):
+                    return OnInvisible = new Event(id, type);
+                    break;
+                case (Event.Types.ONLOADED):
+                    return OnLoaded = new Event(id, type);
+                    break;
+                case (Event.Types.ONUNLOADED):
+                    return OnUnloaded = new Event(id, type);
+                    break;
+                case (Event.Types.CUSTOM):
+                    Event customEvent = new Event(id, type);
+                    if (CustomEvents == null)
+                        CustomEvents = new List<Event>();
+                    CustomEvents.Add(customEvent);
+                    return customEvent;
+                    break;
+                default:
+                    return null;
+                    break;
+            }
         }
 
         /// <summary>
@@ -184,8 +320,7 @@ namespace ARdevKit.Model.Project
         ///     which is performed on this element</param>
         public virtual void Accept(AbstractProjectVisitor visitor)
         {
-            if (cue != null && !Equals(cue.FilePath, "NULL"))
-                cue.Accept(visitor);
+            visitor.Visit(EventFile);
         }
 
         /// <summary>
@@ -259,9 +394,15 @@ namespace ARdevKit.Model.Project
                 }
             }
             id = newID;
-            if (cue != null)
+            if (Events != null)
             {
-                cue.AugmentationID = id;
+                foreach (Event e in Events)
+                {
+                    if (e != null)
+                    {
+                        e.AugmentationID = id;
+                    }
+                }
             }
             return true;
         }

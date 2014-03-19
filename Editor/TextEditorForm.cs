@@ -12,6 +12,8 @@ using System.Globalization;
 using System.Reflection;
 using System.Resources;
 using System.IO;
+using ARdevKit.Model.Project.File;
+using ARdevKit.Model.Project;
 
 namespace ARdevKit
 {
@@ -22,6 +24,13 @@ namespace ARdevKit
     public partial class TextEditorForm : Form
     {
         private string filePath;
+        private Event selectedEvent;
+
+        public Event SelectedEvent
+        {
+            get { return selectedEvent; }
+            set { selectedEvent = value; }
+        }
 
         /// <summary>
         /// Gets or sets the value.
@@ -31,8 +40,8 @@ namespace ARdevKit
         /// </value>
         public string[] Value
         {
-            get { return richTextBox1.Lines; }
-            set { richTextBox1.Lines = value; }
+            get { return rtb_content.Lines; }
+            set { rtb_content.Lines = value; }
         }
 
         /// <summary>
@@ -62,7 +71,19 @@ namespace ARdevKit
                 throw new ArgumentException("The file you want to load is bigger than 50 MB.");
             }
             this.filePath = filePath;
-            richTextBox1.LoadFile(this.filePath, RichTextBoxStreamType.PlainText);
+            rtb_content.LoadFile(this.filePath, RichTextBoxStreamType.PlainText);
+        }
+
+        public TextEditorForm(Event selectedEvent)
+            : this()
+        {
+            this.selectedEvent = selectedEvent;
+            tb_head.Visible = true;
+            tb_head.Text = selectedEvent.GetHeadLine();
+            tb_end.Visible = true;
+            tb_end.Text = selectedEvent.GetLastLine();
+            foreach (JavaScriptInLine l in selectedEvent.Content)
+                rtb_content.AppendText(l.ToString());
         }
        
         /// <summary>
@@ -70,7 +91,7 @@ namespace ARdevKit
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
-        private void button2_Click(object sender, EventArgs e)
+        private void btn_close_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -80,9 +101,19 @@ namespace ARdevKit
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_save_Click(object sender, EventArgs e)
         {
-            richTextBox1.SaveFile(this.filePath, RichTextBoxStreamType.PlainText);
+            if (filePath != null)
+                rtb_content.SaveFile(this.filePath, RichTextBoxStreamType.PlainText);
+            else
+            {
+                SelectedEvent.Content = new List<JavaScriptInLine>();
+                foreach (string l in rtb_content.Lines)
+                    SelectedEvent.Content.Add(new JavaScriptInLine(l, false));
+            }
+            tb_head.Visible = false;
+            tb_end.Visible = false;
+            Close();
         }
     }
 }

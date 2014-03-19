@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,10 +15,12 @@ namespace ARdevKit.Model.Project.File
     /// <remarks>   Imanuel, 17.01.2014. </remarks>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    [Serializable]
+    [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public class JavaScriptBlock : AbstractBlock
     {
         /// <summary>   The head. </summary>
-        private string head;
+        protected string head;
 
         /// <summary>   The lines. </summary>
         protected List<JavaScriptLine> lines;
@@ -102,6 +105,32 @@ namespace ARdevKit.Model.Project.File
                 }
             }
             writer.WriteLine(tabs + blockMarker);
+        }
+
+        public override string ToString()
+        {
+            string output = "";
+            string tabs = getTabs();
+            if (head != null)
+                output += (tabs + head + Environment.NewLine);
+            if (blockMarker != null)
+                output += (tabs + blockMarker + Environment.NewLine);
+            if (lines != null)
+            {
+                foreach (JavaScriptLine l in lines)
+                {
+                    output += l.ToString();
+                }
+            }
+            if (blocks != null)
+            {
+                foreach (JavaScriptBlock block in blocks)
+                {
+                    output += block.ToString();
+                }
+            }
+            output += (tabs + blockMarker + Environment.NewLine);
+            return output;
         }
     }
 }

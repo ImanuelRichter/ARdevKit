@@ -509,7 +509,7 @@ public class PreviewController
             {
                 cm.MenuItems.Add("Öffne Optionen", new EventHandler(this.openOptionsFile));
             }
-            cm.MenuItems.Add("Öffne AREL Script", new EventHandler(this.openArelScript));
+            cm.MenuItems.Add("Öffne Event Datei", new EventHandler(this.openEventFile));
             if(prev is Chart) 
                 cm.MenuItems[2].Enabled = false;
         }
@@ -1287,20 +1287,20 @@ public class PreviewController
     /// </summary>
     /// <param name="sender">The sender</param>
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
-    private void openArelScript(object sender, EventArgs e)
+    private void openEventFile(object sender, EventArgs e)
     {
         try
         {
             string path;
-            if (((AbstractAugmentation)ew.CurrentElement).CustomUserEventReference == null)
-                ((AbstractAugmentation)ew.CurrentElement).createUserEvent();
+            if (((AbstractAugmentation)ew.CurrentElement).EventFile == null)
+                ((AbstractAugmentation)ew.CurrentElement).EventFile = new ARdevKit.Model.Project.File.EventFile(Path.Combine("Events", ((AbstractAugmentation)ew.CurrentElement).ID + "_events.js"));
             else
             {
-                path = Path.Combine(ew.project.ProjectPath == null ? Environment.CurrentDirectory : ew.project.ProjectPath, ((AbstractAugmentation)ew.CurrentElement).CustomUserEventReference.FilePath);
+                path = Path.Combine(ew.project.ProjectPath == null ? Environment.CurrentDirectory : ew.project.ProjectPath, ((AbstractAugmentation)ew.CurrentElement).EventFile.FilePath);
                 if (!System.IO.File.Exists(path))
-                    ((AbstractAugmentation)ew.CurrentElement).createUserEvent();
+                    ((AbstractAugmentation)ew.CurrentElement).EventFile = new ARdevKit.Model.Project.File.EventFile(Path.Combine("Events", ((AbstractAugmentation)ew.CurrentElement).ID + "_events.js"));
             }
-            path = Path.Combine(ew.project.ProjectPath == null ? Environment.CurrentDirectory : ew.project.ProjectPath, ((AbstractAugmentation)ew.CurrentElement).CustomUserEventReference.FilePath);
+            path = Path.Combine(ew.project.ProjectPath == null ? Environment.CurrentDirectory : ew.project.ProjectPath, ((AbstractAugmentation)ew.CurrentElement).EventFile.FilePath);
             TextEditorForm tef = new TextEditorForm(path);
             tef.Show();
         }

@@ -62,7 +62,7 @@ namespace EditorTest.Model.Project
         [TestCategory("CustomUserEvent")]
         public void NullTest()
         {
-            CustomUserEvent c = new CustomUserEvent(null);
+            Event c = new Event(null);
         }
 
         [TestMethod]
@@ -70,7 +70,7 @@ namespace EditorTest.Model.Project
         public void CreateUserEventTest()
         {
             string id = "eineID";
-            CustomUserEvent c = new CustomUserEvent(id);
+            Event c = new Event(id);
             string folder = Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory);
             string debugPath = folder + "\\Debug";
             Assert.IsTrue(System.IO.Directory.Exists(debugPath + "\\tmp\\" + id + "\\"));
@@ -85,7 +85,7 @@ namespace EditorTest.Model.Project
         public void CreateUserEventCheckFilePath()
         {
             string id = "eineID";
-            CustomUserEvent c = new CustomUserEvent(id);
+            Event c = new Event(id);
             Assert.IsTrue(System.IO.File.Exists(c.FilePath));
         }
     }

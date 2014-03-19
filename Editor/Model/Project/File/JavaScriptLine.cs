@@ -62,5 +62,16 @@ namespace ARdevKit.Model.Project.File
             else
                 writer.WriteLine(tabs + content + ";");
         }
+
+        public override string ToString()
+        {
+            string output = "";
+            string tabs = getTabs();
+            if (blockMarker != null)
+                output += tabs + blockMarker + content + blockMarker + ";" + Environment.NewLine;
+            else
+                output += tabs + content + ";" + Environment.NewLine;
+            return output;
+        }
     }
 }

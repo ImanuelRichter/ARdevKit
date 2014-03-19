@@ -1,4 +1,5 @@
 ﻿using ARdevKit.Model.Project;
+using ARdevKit.Model.Project.File;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,10 +17,10 @@ namespace ARdevKit.Controller.ProjectController
     public abstract class AbstractProjectVisitor
     {
         /// <summary>
-        /// Visits the given <see cref="CustomUserEvent"/>.
+        /// Visits the given <see cref="Event"/>.
         /// </summary>
-        /// <param name="cue"> The custom user event. </param>
-        public abstract void Visit(CustomUserEvent cue);
+        /// <param name="eventFile"> The custom user event. </param>
+        public abstract void Visit(EventFile eventFile);
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Visits the given <see cref="Chart"/>. </summary>

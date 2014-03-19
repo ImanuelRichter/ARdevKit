@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,8 @@ namespace ARdevKit.Model.Project.File
     /// <remarks>   Imanuel, 17.01.2014. </remarks>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    [Serializable]
+    [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public abstract class AbstractBlock
     {
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -37,6 +40,7 @@ namespace ARdevKit.Model.Project.File
         /// <value>
         /// The parent file.
         /// </value>
+        [Browsable(false)]
         public AbstractFile ParentFile
         {
             get { return parentFile; }
