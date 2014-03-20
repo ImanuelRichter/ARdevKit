@@ -29,9 +29,10 @@ namespace Controller.EditorController
         {
             this.ew = ew;
             ew.PropertyGrid1.PropertyValueChanged += new PropertyValueChangedEventHandler(changedProperty);
-            ew.PropertyGrid1.SelectedGridItemChanged += new SelectedGridItemChangedEventHandler(selectedGridItemChanged);
+            //ew.PropertyGrid1.SelectedGridItemChanged += new SelectedGridItemChangedEventHandler(selectedGridItemChanged);
         }
 
+        /*
         private void selectedGridItemChanged(object source, SelectedGridItemChangedEventArgs e)
         {
             if (ew.PropertyGrid1.SelectedGridItem.PropertyDescriptor.PropertyType.Name.Equals("Event"))
@@ -172,7 +173,7 @@ namespace Controller.EditorController
                         break;
                 }
             }
-        }
+        }*/
 
         /// <summary>
         /// See issue #13 for reason of these invalid methods etc.

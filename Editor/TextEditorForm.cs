@@ -12,8 +12,7 @@ using System.Globalization;
 using System.Reflection;
 using System.Resources;
 using System.IO;
-using ARdevKit.Model.Project.File;
-using ARdevKit.Model.Project;
+using ARdevKit.Model.Project.Event;
 
 namespace ARdevKit
 {
@@ -24,9 +23,9 @@ namespace ARdevKit
     public partial class TextEditorForm : Form
     {
         private string filePath;
-        private Event selectedEvent;
+        private AbstractEvent selectedEvent;
 
-        public Event SelectedEvent
+        public AbstractEvent SelectedEvent
         {
             get { return selectedEvent; }
             set { selectedEvent = value; }
@@ -74,7 +73,7 @@ namespace ARdevKit
             rtb_content.LoadFile(this.filePath, RichTextBoxStreamType.PlainText);
         }
 
-        public TextEditorForm(Event selectedEvent)
+        public TextEditorForm(AbstractEvent selectedEvent)
             : this()
         {
             this.selectedEvent = selectedEvent;
@@ -82,8 +81,7 @@ namespace ARdevKit
             tb_head.Text = selectedEvent.GetHeadLine();
             tb_end.Visible = true;
             tb_end.Text = selectedEvent.GetLastLine();
-            foreach (JavaScriptInLine l in selectedEvent.Content)
-                rtb_content.AppendText(l.ToString());
+            rtb_content.Lines = selectedEvent.Content;
         }
        
         /// <summary>
@@ -107,9 +105,7 @@ namespace ARdevKit
                 rtb_content.SaveFile(this.filePath, RichTextBoxStreamType.PlainText);
             else
             {
-                SelectedEvent.Content = new List<JavaScriptInLine>();
-                foreach (string l in rtb_content.Lines)
-                    SelectedEvent.Content.Add(new JavaScriptInLine(l, false));
+                SelectedEvent.Content = rtb_content.Lines;
             }
             tb_head.Visible = false;
             tb_end.Visible = false;

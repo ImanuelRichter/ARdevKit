@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using ARdevKit.Model.Project.Event;
+
 namespace ARdevKit.Model.Project.File
 {
     [Serializable]
@@ -33,7 +35,7 @@ namespace ARdevKit.Model.Project.File
             StreamWriter writer = new StreamWriter(filePath);
             if (blocks != null)
             {
-                foreach (Event e in blocks)
+                foreach (AbstractEvent e in blocks)
                 {
                     e.Write(writer);
                 }

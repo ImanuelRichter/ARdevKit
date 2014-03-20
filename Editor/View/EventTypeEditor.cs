@@ -1,20 +1,18 @@
-﻿using System;
+﻿using ARdevKit.Model.Project;
+using ARdevKit.Model.Project.Event;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.ComponentModel.Design;
-using System.Drawing;
 using System.Drawing.Design;
-using System.IO;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 
 namespace ARdevKit.View
 {
-    /// <summary>
-    /// Class which acts as "bridge" for the .net propertyGrid and an custome ControlForm.
-    /// </summary>
-    public class FileSelectorTypeEditor : UITypeEditor
+    public class EventTypeEditor : UITypeEditor
     {
         /// <summary>
         /// Ruft den Editor-Stil ab, der von der <see cref="M:System.Drawing.Design.UITypeEditor.EditValue(System.IServiceProvider,System.Object)" />-Methode verwendet wird.
@@ -41,44 +39,31 @@ namespace ARdevKit.View
         /// </returns>
         public override object EditValue(ITypeDescriptorContext context, IServiceProvider provider, object value)
         {
-             IWindowsFormsEditorService editorService;
+            IWindowsFormsEditorService editorService;
 
-            if ( context == null || context.Instance == null || provider == null )
+            if (context == null || context.Instance == null || provider == null)
                 return value;
 
-             try
-             {
+            try
+            {
                 // get the editor service, just like in windows forms
                 editorService = (IWindowsFormsEditorService)
                 provider.GetService(typeof(IWindowsFormsEditorService));
-
-                OpenFileDialog dlg = new OpenFileDialog();
-                if (context.Instance is ARdevKit.Model.Project.VideoAugmentation)
-                    dlg.Filter = "3g2 Files (*.3g2)|*3g2";
-                else
-                    dlg.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm|All files (*.*)|*.*";
-                dlg.CheckFileExists = true;
-
-                string filename = (string)value;
-                if ( !File.Exists(filename) )
-                   filename = null;
-                dlg.FileName = filename;
-
-                using ( dlg )
+                AbstractAugmentation a = (AbstractAugmentation)context.Instance;
+                AbstractEvent selectedEvent = (AbstractEvent)value;
+                TextEditorForm tef = new TextEditorForm(selectedEvent);
+                using (tef)
                 {
-                    DialogResult res = dlg.ShowDialog();
-                    if ( res == DialogResult.OK )
-                    {
-                        filename = dlg.FileName;
-                    }
+                    if (tef.ShowDialog() == DialogResult.OK)
+                        return tef.SelectedEvent;
+                    else
+                        return selectedEvent;
                 }
-            return filename;
-
-            } finally
-         {
-            editorService = null;
-         }
-      }
-
+            }
+            finally
+            {
+                editorService = null;
+            }
+        }
     }
 }

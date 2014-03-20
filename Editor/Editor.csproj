@@ -92,7 +92,15 @@
     <Compile Include="Controller\TestController\FrameExtractor.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Model\Project\Event\OnVisibleEvent.cs" />
+    <Compile Include="Model\Project\Event\OnLoadedEvent.cs" />
+    <Compile Include="Model\Project\Event\OnUnloadedEvent.cs" />
+    <Compile Include="Model\Project\Event\CustomEvent.cs" />
+    <Compile Include="Model\Project\Event\OnInvisibleEvent.cs" />
+    <Compile Include="Model\Project\Event\OnTouchEndedEvent.cs" />
     <Compile Include="Model\Project\File\EventFile.cs" />
+    <Compile Include="Model\Project\Event\OnTouchStartedEvent.cs" />
+    <Compile Include="View\EventTypeEditor.cs" />
     <Compile Include="View\ProcessVideoWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,7 +144,7 @@
     <Compile Include="Controller\EditorController\PreviewController.cs" />
     <Compile Include="Model\Project\AbstractTrackable.cs" />
     <Compile Include="Model\Project\Chart.cs" />
-    <Compile Include="Model\Project\Event.cs" />
+    <Compile Include="Model\Project\Event\AbstractEvent.cs" />
     <Compile Include="Model\Project\DbSource.cs" />
     <Compile Include="Model\Project\FileSource.cs" />
     <Compile Include="Model\Project\File\AbstractFile.cs" />
@@ -191,7 +199,7 @@
     <Compile Include="View\Slider.Designer.cs">
       <DependentUpon>Slider.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\TypeEditoren.cs" />
+    <Compile Include="View\SliderEditor.cs" />
     <EmbeddedResource Include="View\ProcessVideoWindow.resx">
       <DependentUpon>ProcessVideoWindow.cs</DependentUpon>
     </EmbeddedResource>

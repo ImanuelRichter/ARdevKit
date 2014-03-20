@@ -14,6 +14,7 @@ using System.Collections;
 using System.IO;
 using System.Runtime.CompilerServices;
 using ARdevKit.Model.Project.File;
+using ARdevKit.Model.Project.Event;
 
 namespace ARdevKit.Model.Project
 {
@@ -71,7 +72,7 @@ namespace ARdevKit.Model.Project
                     if (Events != null)
                     {
                         eventFile = new EventFile(Path.Combine("Events", ID + "_events.js"));
-                        foreach (Event e in Events)
+                        foreach (AbstractEvent e in Events)
                             eventFile.AddBlock(e);
                         return eventFile;
                     }
@@ -81,7 +82,7 @@ namespace ARdevKit.Model.Project
                 else
                 {
                     eventFile.Clear();
-                    foreach (Event e in Events)
+                    foreach (AbstractEvent e in Events)
                         eventFile.AddBlock(e);
                     return eventFile;
                 }
@@ -89,13 +90,13 @@ namespace ARdevKit.Model.Project
             set { eventFile = value; }
         }
 
-        private List<Event> events;
+        private List<AbstractEvent> events;
         [Browsable(false)]
-        public List<Event> Events
+        public List<AbstractEvent> Events
         {
             get
             {
-                events = new List<Event>();
+                events = new List<AbstractEvent>();
                 if (OnTouchStarted != null)
                     events.Add(OnTouchStarted);
                 if (OnTouchEnded != null)
@@ -109,73 +110,79 @@ namespace ARdevKit.Model.Project
                 if (OnUnloaded != null)
                     events.Add(OnUnloaded);
                 if (CustomEvents != null)
-                    foreach (Event e in CustomEvents)
-                        events.Add(e);
+                    events.Add(CustomEvents);
                 return events;
             }
             set { events = value; }
         }
 
-        private Event onTouchStarted;
+        private AbstractEvent onTouchStarted;
 
-        [CategoryAttribute("Events")]
-        public Event OnTouchStarted
+        [CategoryAttribute("Events"), EditorAttribute(typeof(EventTypeEditor),
+            typeof(System.Drawing.Design.UITypeEditor)), ReadOnly(true)]
+        public AbstractEvent OnTouchStarted
         {
-            get { return onTouchStarted; }
+            get { return onTouchStarted == null ? (onTouchStarted = new OnTouchStartedEvent(ID)) : onTouchStarted; }
             set { onTouchStarted = value; }
         }
 
-        private Event onTouchEnded;
+        private AbstractEvent onTouchEnded;
 
-        [CategoryAttribute("Events")]
-        public Event OnTouchEnded
+        [CategoryAttribute("Events"), EditorAttribute(typeof(EventTypeEditor),
+            typeof(System.Drawing.Design.UITypeEditor)), ReadOnly(true)]
+        public AbstractEvent OnTouchEnded
         {
-            get { return onTouchEnded; }
+            get { return onTouchEnded == null ? (onTouchEnded = new OnTouchEndedEvent(ID)) : onTouchEnded; }
             set { onTouchEnded = value; }
         }
 
-        private Event onVisible;
+        private AbstractEvent onVisible;
 
-        [CategoryAttribute("Events")]
-        public Event OnVisible
+        [CategoryAttribute("Events"), EditorAttribute(typeof(EventTypeEditor),
+            typeof(System.Drawing.Design.UITypeEditor)), ReadOnly(true)]
+        public AbstractEvent OnVisible
         {
-            get { return onVisible; }
+            get { return onVisible == null ? (onVisible = new OnVisibleEvent(ID)) : onVisible; }
             set { onVisible = value; }
         }
 
-        private Event onInvisible;
+        private AbstractEvent onInvisible;
 
-        [CategoryAttribute("Events")]
-        public Event OnInvisible
+        [CategoryAttribute("Events"), EditorAttribute(typeof(EventTypeEditor),
+            typeof(System.Drawing.Design.UITypeEditor)), ReadOnly(true)]
+        public AbstractEvent OnInvisible
         {
-            get { return onInvisible; }
+            get { return onInvisible == null ? (onInvisible = new OnInvisibleEvent(ID)) : onInvisible; }
             set { onInvisible = value; }
         }
 
-        private Event onLoaded;
+        private AbstractEvent onLoaded;
 
-        [CategoryAttribute("Events")]
-        public Event OnLoaded
+        [CategoryAttribute("Events"), EditorAttribute(typeof(EventTypeEditor),
+            typeof(System.Drawing.Design.UITypeEditor)), ReadOnly(true)]
+        public AbstractEvent OnLoaded
         {
-            get { return onLoaded; }
+            get { return onLoaded == null ? (onLoaded = new OnLoadedEvent(ID)) : onLoaded; }
             set { onLoaded = value; }
         }
 
-        private Event onUnloaded;
+        private AbstractEvent onUnloaded;
 
-        [CategoryAttribute("Events")]
-        public Event OnUnloaded
+        [CategoryAttribute("Events"), EditorAttribute(typeof(EventTypeEditor),
+            typeof(System.Drawing.Design.UITypeEditor)), ReadOnly(true)]
+        public AbstractEvent OnUnloaded
         {
-            get { return onUnloaded; }
+            get { return onUnloaded == null ? (onUnloaded = new OnUnloadedEvent(ID)) : onUnloaded; }
             set { onUnloaded = value; }
         }
 
-        private List<Event> customEvents;
+        private AbstractEvent customEvents;
 
-        [CategoryAttribute("Events")]
-        public List<Event> CustomEvents
+        [CategoryAttribute("Events"), EditorAttribute(typeof(EventTypeEditor),
+            typeof(System.Drawing.Design.UITypeEditor)), ReadOnly(true)]
+        public AbstractEvent CustomEvents
         {
-            get { return customEvents; }
+            get { return customEvents == null ? (customEvents = new CustomEvent(ID)) : customEvents; }
             set { customEvents = value; }
         }
 
@@ -274,45 +281,6 @@ namespace ARdevKit.Model.Project
         }
 
         /// <summary>
-        /// Method to create an instance of the CustomUserEvent.
-        /// </summary>
-        public Event createEvent(Event.Types type)
-        {
-            Event newEvent = null;
-            switch (type)
-            {
-                case (Event.Types.ONTOUCHSTARTED):
-                    return OnTouchStarted = new Event(id, type);
-                    break;
-                case (Event.Types.ONTOUCHENDED):
-                    return OnTouchEnded = new Event(id, type);
-                    break;
-                case (Event.Types.ONVISIBLE):
-                    return OnVisible = new Event(id, type);
-                    break;
-                case (Event.Types.ONINVISIBLE):
-                    return OnInvisible = new Event(id, type);
-                    break;
-                case (Event.Types.ONLOADED):
-                    return OnLoaded = new Event(id, type);
-                    break;
-                case (Event.Types.ONUNLOADED):
-                    return OnUnloaded = new Event(id, type);
-                    break;
-                case (Event.Types.CUSTOM):
-                    Event customEvent = new Event(id, type);
-                    if (CustomEvents == null)
-                        CustomEvents = new List<Event>();
-                    CustomEvents.Add(customEvent);
-                    return customEvent;
-                    break;
-                default:
-                    return null;
-                    break;
-            }
-        }
-
-        /// <summary>
         /// An abstract method, to accept a <see cref="AbstractProjectVisitor"/>
         /// which must be implemented according to the visitor design pattern.
         /// </summary>
@@ -396,7 +364,7 @@ namespace ARdevKit.Model.Project
             id = newID;
             if (Events != null)
             {
-                foreach (Event e in Events)
+                foreach (AbstractEvent e in Events)
                 {
                     if (e != null)
                     {
