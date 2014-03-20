@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ARdevKit.Model.Project;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Design;
@@ -53,8 +54,10 @@ namespace ARdevKit.View
                 provider.GetService(typeof(IWindowsFormsEditorService));
 
                 OpenFileDialog dlg = new OpenFileDialog();
-                if (context.Instance is ARdevKit.Model.Project.VideoAugmentation)
-                    dlg.Filter = "3g2 Files (*.3g2)|*3g2";
+                if (context.Instance is VideoAugmentation)
+                    dlg.Filter = "3g2 Files (*.3g2)|*.3g2";
+                else if (context.Instance is Chart)
+                    dlg.Filter = "JavaScript Files (*.js)|*.js";
                 else
                     dlg.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|PPM Files (*.ppm)|*.ppm|PGM Files (*.pgm)|*.pgm|All files (*.*)|*.*";
                 dlg.CheckFileExists = true;

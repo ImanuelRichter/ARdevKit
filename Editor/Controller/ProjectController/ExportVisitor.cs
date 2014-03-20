@@ -373,15 +373,15 @@ namespace ARdevKit.Controller.ProjectController
 
             // Copy options.js
             string chartFilesDirectory = Path.Combine("Assets", chartID);
-            if (chart.Options.Contains(':'))
+            if (chart.ResFilePath.Contains(':'))
             {
-                ExportIsValid = Helper.Copy(chart.Options, Path.Combine(project.ProjectPath, chartFilesDirectory), "options.js") && ExportIsValid;
+                ExportIsValid = Helper.Copy(chart.ResFilePath, Path.Combine(project.ProjectPath, chartFilesDirectory), "options.js") && ExportIsValid;
             }
             else if (project.OldProjectPath != null && !project.OldProjectPath.Equals(project.ProjectPath))
             {
-                ExportIsValid = Helper.Copy(Path.Combine(project.OldProjectPath, chart.Options), Path.Combine(project.ProjectPath, chartFilesDirectory), "options.js") && ExportIsValid;
+                ExportIsValid = Helper.Copy(Path.Combine(project.OldProjectPath, chart.ResFilePath), Path.Combine(project.ProjectPath, chartFilesDirectory), "options.js") && ExportIsValid;
             }
-            chart.Options = Path.Combine(chartFilesDirectory, "options.js");
+            chart.ResFilePath = Path.Combine(chartFilesDirectory, "options.js");
 
             // setOptions
             JavaScriptBlock chartFileDefineLoadOptionsBlock = new JavaScriptBlock("$.getScript(\"Assets/" + chartID + "/options.js\", function()", new BlockMarker("{", "})"));

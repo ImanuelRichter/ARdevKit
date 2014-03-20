@@ -116,7 +116,7 @@ namespace ARdevKit.Model.Project
             set { events = value; }
         }
 
-        private AbstractEvent onTouchStarted;
+        protected AbstractEvent onTouchStarted;
 
         [CategoryAttribute("Events"), EditorAttribute(typeof(EventTypeEditor),
             typeof(System.Drawing.Design.UITypeEditor)), ReadOnly(true)]
@@ -126,7 +126,7 @@ namespace ARdevKit.Model.Project
             set { onTouchStarted = value; }
         }
 
-        private AbstractEvent onTouchEnded;
+        protected AbstractEvent onTouchEnded;
 
         [CategoryAttribute("Events"), EditorAttribute(typeof(EventTypeEditor),
             typeof(System.Drawing.Design.UITypeEditor)), ReadOnly(true)]
@@ -136,7 +136,7 @@ namespace ARdevKit.Model.Project
             set { onTouchEnded = value; }
         }
 
-        private AbstractEvent onVisible;
+        protected AbstractEvent onVisible;
 
         [CategoryAttribute("Events"), EditorAttribute(typeof(EventTypeEditor),
             typeof(System.Drawing.Design.UITypeEditor)), ReadOnly(true)]
@@ -146,7 +146,7 @@ namespace ARdevKit.Model.Project
             set { onVisible = value; }
         }
 
-        private AbstractEvent onInvisible;
+        protected AbstractEvent onInvisible;
 
         [CategoryAttribute("Events"), EditorAttribute(typeof(EventTypeEditor),
             typeof(System.Drawing.Design.UITypeEditor)), ReadOnly(true)]
@@ -156,7 +156,7 @@ namespace ARdevKit.Model.Project
             set { onInvisible = value; }
         }
 
-        private AbstractEvent onLoaded;
+        protected AbstractEvent onLoaded;
 
         [CategoryAttribute("Events"), EditorAttribute(typeof(EventTypeEditor),
             typeof(System.Drawing.Design.UITypeEditor)), ReadOnly(true)]
@@ -166,7 +166,7 @@ namespace ARdevKit.Model.Project
             set { onLoaded = value; }
         }
 
-        private AbstractEvent onUnloaded;
+        protected AbstractEvent onUnloaded;
 
         [CategoryAttribute("Events"), EditorAttribute(typeof(EventTypeEditor),
             typeof(System.Drawing.Design.UITypeEditor)), ReadOnly(true)]
@@ -176,7 +176,7 @@ namespace ARdevKit.Model.Project
             set { onUnloaded = value; }
         }
 
-        private AbstractEvent customEvents;
+        protected AbstractEvent customEvents;
 
         [CategoryAttribute("Events"), EditorAttribute(typeof(EventTypeEditor),
             typeof(System.Drawing.Design.UITypeEditor)), ReadOnly(true)]

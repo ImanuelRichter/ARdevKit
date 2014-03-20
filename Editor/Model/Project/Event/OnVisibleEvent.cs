@@ -13,6 +13,7 @@ namespace ARdevKit.Model.Project.Event
             : base(augmentationID)
         {
             head = augmentationID + ".onVisible = function()";
+            content = new string[] { "/*This function is called when the arel.Oject is set to visible", "TODO Add your code here*/" };
         }
     }
 }

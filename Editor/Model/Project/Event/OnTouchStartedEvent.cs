@@ -13,6 +13,7 @@ namespace ARdevKit.Model.Project.Event
         public OnTouchStartedEvent(string augmentationID) : base(augmentationID)
         {
             head = augmentationID + ".onTouchStarted = function()";
+            content = new string[] { "/*This function is called when the touch on the arel.Oject has started.", "TODO Add your code here*/" };
         }
     }
 }

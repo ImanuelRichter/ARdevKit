@@ -1271,7 +1271,7 @@ public class PreviewController
     {
         try
         {
-            string path = ((Chart)this.ew.CurrentElement).Options;
+            string path = ((Chart)this.ew.CurrentElement).ResFilePath;
             path = ew.project.ProjectPath == null ? path : Path.Combine(ew.project.ProjectPath, path);
             TextEditorForm tef = new TextEditorForm(path);
             tef.Show();

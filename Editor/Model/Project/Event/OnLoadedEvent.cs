@@ -13,6 +13,7 @@ namespace ARdevKit.Model.Project.Event
             : base(augmentationID)
         {
             head = augmentationID + ".onLoaded = function()";
+            content = new string[] { "/*This function is called when the arel.Oject is loaded.", "TODO Add your code here*/" };
         }
     }
 }

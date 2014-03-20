@@ -204,7 +204,7 @@ namespace Controller.EditorController
             {
                 if (string.Equals((string)e.ChangedItem.Value, "", StringComparison.Ordinal))
                 {
-                    ((Chart)ew.CurrentElement).Options = e.OldValue.ToString();
+                    ((Chart)ew.CurrentElement).ResFilePath = e.OldValue.ToString();
 
                     return;
                 }

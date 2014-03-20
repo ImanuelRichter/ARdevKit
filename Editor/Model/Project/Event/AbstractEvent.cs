@@ -63,8 +63,6 @@ namespace ARdevKit.Model.Project.Event
             {
                 this.augmentationID = augmentationID;
                 this.blockMarker = new BlockMarker("{", "};");
-                content = new string[1];
-                content[Content.Length - 1] = "//TODO add your content here";
             }
         }
 

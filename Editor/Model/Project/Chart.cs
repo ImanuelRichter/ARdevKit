@@ -10,6 +10,7 @@ using System.IO;
 using System.Drawing.Design;
 using System.Windows.Forms;
 using ARdevKit.Model.Project.File;
+using ARdevKit.Model.Project.Event;
 
 namespace ARdevKit.Model.Project
 {
@@ -53,59 +54,77 @@ namespace ARdevKit.Model.Project
             set { positioning = value; }
         }
 
-        /// <summary>   Full pathname of the options file. </summary>
-        protected string optionsFilePath;
-
-        /// <summary>
-        /// Gets or sets the options.
-        /// </summary>
-        /// <value>
-        /// The options.
-        /// </value>
-        [CategoryAttribute("General"), EditorAttribute(typeof(System.Windows.Forms.Design.FileNameEditor), typeof(System.Drawing.Design.UITypeEditor))]
-        public string Options
-        {
-            get { return optionsFilePath; }
-            set { optionsFilePath = value; }
-        }
-
         /// <summary>
         /// gets or sets the Vector
         /// </summary>
         [Browsable(false)]
-        public new Vector3D Rotation
+        public Vector3D Rotation
         {
             get { return base.Rotation; }
             set { base.Rotation = value; }
-        }
-
-        [Browsable(false)]
-        public new string ResFilePath
-        {
-            get { return base.ResFilePath; }
-            set { base.ResFilePath = value; }
-        }
-
-        /// <summary>   Default constructor. </summary>
-        public Chart()
-        {
-            Positioning = new ChartPositioning(ChartPositioning.PositioningModes.RELATIVE);
-            optionsFilePath = null;
-            Width = 200;
-            Height = 200;
-            Scaling = new Vector3D(0, 0, 0);
         }
 
         /// <summary>   Gets or sets the scaling. </summary>
         ///
         /// <value> The scaling. </value>
         [Browsable(false)]
-        public new Vector3D Scaling
+        public Vector3D Scaling
         {
             get { return base.Scaling; }
             set { base.Scaling = value; }
         }
 
+        [Browsable(false)]
+        public AbstractEvent OnTouchStarted
+        {
+            get { return onTouchStarted == null ? (onTouchStarted = new OnTouchStartedEvent(ID)) : onTouchStarted; }
+            set { onTouchStarted = value; }
+        }
+
+        [Browsable(false)]
+        public AbstractEvent OnTouchEnded
+        {
+            get { return onTouchEnded == null ? (onTouchEnded = new OnTouchEndedEvent(ID)) : onTouchEnded; }
+            set { onTouchEnded = value; }
+        }
+
+        [Browsable(false)]
+        public AbstractEvent OnVisible
+        {
+            get { return onVisible == null ? (onVisible = new OnVisibleEvent(ID)) : onVisible; }
+            set { onVisible = value; }
+        }
+
+        [Browsable(false)]
+        public AbstractEvent OnInvisible
+        {
+            get { return onInvisible == null ? (onInvisible = new OnInvisibleEvent(ID)) : onInvisible; }
+            set { onInvisible = value; }
+        }
+
+        [Browsable(false)]
+        public AbstractEvent OnLoaded
+        {
+            get { return onLoaded == null ? (onLoaded = new OnLoadedEvent(ID)) : onLoaded; }
+            set { onLoaded = value; }
+        }
+
+        [Browsable(false)]
+        public AbstractEvent OnUnloaded
+        {
+            get { return onUnloaded == null ? (onUnloaded = new OnUnloadedEvent(ID)) : onUnloaded; }
+            set { onUnloaded = value; }
+        }
+
+        /// <summary>   Default constructor. </summary>
+        public Chart()
+        {
+            Positioning = new ChartPositioning(ChartPositioning.PositioningModes.RELATIVE);
+            resFilePath = null;
+            Width = 200;
+            Height = 200;
+            Scaling = new Vector3D(0, 0, 0);
+        }
 
         /// <summary>
         /// An overwriting method, to accept a <see cref="AbstractProjectVisitor" />
@@ -155,7 +174,7 @@ namespace ARdevKit.Model.Project
 
         public override void CleanUp()
         {
-            string dir = Path.GetDirectoryName(optionsFilePath);
+            string dir = Path.GetDirectoryName(resFilePath);
             if (Directory.Exists(dir) && System.IO.File.Exists(Path.Combine(dir, "chart.js")))
                 Directory.Delete(dir, true);
         }
@@ -170,7 +189,7 @@ namespace ARdevKit.Model.Project
         public override bool initElement(EditorWindow ew)
         {
             bool result = base.initElement(ew);
-            if (Options == null)
+            if (ResFilePath == null)
             {
                 OpenFileDialog openFileDialog = new OpenFileDialog();
                 openFileDialog.InitialDirectory = Environment.CurrentDirectory + "\\res\\highcharts";
@@ -180,7 +199,7 @@ namespace ARdevKit.Model.Project
                 {
                     string newPath = Path.Combine(Environment.CurrentDirectory, "tmp", id);
                     Helper.Copy(openFileDialog.FileName, newPath, "options.js");
-                    Options = Path.Combine(newPath, "options.js");
+                    ResFilePath = Path.Combine(newPath, "options.js");
                 }
                 else
                 {
@@ -190,8 +209,8 @@ namespace ARdevKit.Model.Project
             else
             {
                 string newPath = Path.Combine(Environment.CurrentDirectory, "tmp", id);
-                Helper.Copy(Options, newPath, "options.js");
-                Options = Path.Combine(newPath, "options.js");
+                Helper.Copy(ResFilePath, newPath, "options.js");
+                ResFilePath = Path.Combine(newPath, "options.js");
             }
             return result;
         }

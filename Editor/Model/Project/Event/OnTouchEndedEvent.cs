@@ -13,6 +13,7 @@ namespace ARdevKit.Model.Project.Event
             : base(augmentationID)
         {
             head = augmentationID + ".onTouchEnded = function()";
+            content = new string[] { "/*This function is called when the touch on the arel.Oject has ended.", "TODO Add your code here*/" };
         }
     }
 }
