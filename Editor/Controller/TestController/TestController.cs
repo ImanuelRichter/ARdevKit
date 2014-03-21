@@ -22,7 +22,7 @@ using ARdevKit.View;
 namespace ARdevKit.Controller.TestController
 {
     /// <summary>
-    /// The <see cref="TestController"/> manages the start of the <see cref="Player"/>.
+    /// The <see cref="TestController" /> manages the start of the <see cref="Player" />.
     /// </summary>
     static class TestController
     {
@@ -77,6 +77,10 @@ namespace ARdevKit.Controller.TestController
         /// A window showing the progress of processing the video.
         /// </summary>
         private static ProcessVideoWindow progressVideoWindow;
+
+        /// <summary>
+        /// The frame extractor.
+        /// </summary>
         private static FrameExtractor frameExtractor;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -180,7 +184,6 @@ namespace ARdevKit.Controller.TestController
 
                                 progressVideoWindow = new ProcessVideoWindow();
                                 progressVideoWindow.FormClosed += progressVideoWindow_FormClosed;
-                                progressVideoWindow.Show();
 
                                 try
                                 {
@@ -191,7 +194,11 @@ namespace ARdevKit.Controller.TestController
                                     MessageBox.Show("Das Video konnte nicht verarbeitet werden:\nEventuell fehlt einer der folgenden Dateien: AForge.Video.FFMPEG.dll, AForge.Video.dll, AForge.Video.FFMPEG.dll.\n" + e.Message);
                                     break;
                                 }
-                                frameExtractor.RunWorkerAsync();
+                                if (frameExtractor.Ready)
+                                {
+                                    progressVideoWindow.Show();
+                                    frameExtractor.RunWorkerAsync();
+                                }
                             }
                             break;
                         case (CAMERA):
@@ -293,7 +300,7 @@ namespace ARdevKit.Controller.TestController
         /// <param name="e">The <see cref="FormClosedEventArgs"/> instance containing the event data.</param>
         static void progressVideoWindow_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (frameExtractor.Ready)
+            if (frameExtractor.Finished)
             {
                 player.StartInfo.Arguments += " -" + frameExtractor.FPS;
                 OpenPlayer();

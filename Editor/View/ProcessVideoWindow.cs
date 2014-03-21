@@ -15,6 +15,8 @@ namespace ARdevKit.View
     /// </summary>
     public partial class ProcessVideoWindow : Form
     {
+        private delegate void CloseCallback();
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ProcessVideoWindow"/> class.
         /// </summary>
@@ -27,18 +29,30 @@ namespace ARdevKit.View
             progressBar.Value = 1;
         }
 
+        public void ReportSize(decimal size)
+        {
+            lbl_text.Text = "Video wird vorbereitet (" + size + " MB)...";
+        }
+
         /// <summary>
         /// Reports the progress.
         /// </summary>
         /// <param name="value">The value.</param>
-        public void ReportProgress(int value)
+        public void ReportProgress(int value, long frames, long calculatedFrames, TimeSpan remainingTime)
         {
             progressBar.Value = value;
+            lbl_info.Text = calculatedFrames + "/" + frames + " (" + remainingTime.ToString("hh\\:mm\\:ss") + ")";
         }
 
-        public void ReportException(Exception e)
+        public void BufferingIsReady()
         {
-            Close();
+            if (this.InvokeRequired)
+            {
+                CloseCallback d = new CloseCallback(BufferingIsReady);
+                this.Invoke(d, new object[] { });
+            }
+            else
+                this.Close();
         }
     }
 }
