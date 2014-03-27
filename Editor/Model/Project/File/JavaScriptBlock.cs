@@ -16,7 +16,6 @@ namespace ARdevKit.Model.Project.File
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
     [Serializable]
-    [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public class JavaScriptBlock : AbstractBlock
     {
         /// <summary>   The head. </summary>

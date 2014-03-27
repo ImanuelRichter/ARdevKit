@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Model.Project.Event
 {
+    [Serializable]
     public class CustomEvent : AbstractEvent
     {
         public CustomEvent(string augmentationID)

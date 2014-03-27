@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Model.Project.Event
 {
+    [Serializable]
     public class OnUnloadedEvent : AbstractEvent
     {
         public OnUnloadedEvent(string augmentationID)

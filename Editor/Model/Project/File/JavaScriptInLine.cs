@@ -9,6 +9,7 @@ namespace ARdevKit.Model.Project.File
     /// <summary>
     /// A <see cref="JavaScriptInLine"/> is a <see cref="JavaScriptLine"/> which is closed by a "," instead of a ";".
     /// </summary>
+    [Serializable]
     public class JavaScriptInLine : JavaScriptLine
     {
         private bool useComma;

@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Model.Project.Event
 {
+    /// <summary>
+    /// An <see cref="OnVisibleEvent"/> is an <see cref="AbstractEvent"/> that represents
+    /// a function that is called when the arel.Oject is set to visible.
+    /// </summary>
+    [Serializable]
     public class OnVisibleEvent : AbstractEvent
     {
         public OnVisibleEvent(string augmentationID)

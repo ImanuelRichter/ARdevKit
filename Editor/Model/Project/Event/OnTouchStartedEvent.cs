@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Model.Project.Event
 {
+    [Serializable]
     public class OnTouchStartedEvent : AbstractEvent
     {
         public OnTouchStartedEvent(string augmentationID) : base(augmentationID)

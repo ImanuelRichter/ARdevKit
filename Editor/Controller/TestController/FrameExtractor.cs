@@ -15,8 +15,15 @@ using ARdevKit.View;
 
 namespace ARdevKit.Controller.TestController
 {
+    /// <summary>
+    /// A <see cref="FrameExtractor"/> is a <see cref="BackgroundWorker"/> that extracts
+    /// the frames of a given video.
+    /// </summary>
     public class FrameExtractor : BackgroundWorker
     {
+        /// <summary>
+        /// The process video window that shows the progress of this <see cref="FrameExtractor"/>.
+        /// </summary>
         private ProcessVideoWindow processVideoWindow;
 
         /// <summary>
@@ -83,10 +90,32 @@ namespace ARdevKit.Controller.TestController
             get { return fps; }
         }
 
+        /// <summary>
+        /// The total frames.
+        /// </summary>
         private long totalFrames;
+
+        /// <summary>
+        /// The calculated frames.
+        /// </summary>
         private long calculatedFrames;
+
+        /// <summary>
+        /// The remaining time.
+        /// </summary>
         private TimeSpan remainingTime;
 
+        /// <summary>
+        /// The current size in byte.
+        /// </summary>
+        long currentSizeByte;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FrameExtractor"/> class.
+        /// </summary>
+        /// <param name="processVideoWindow">The process video window.</param>
+        /// <param name="testFilePath">The test file path.</param>
+        /// <param name="tmpPath">The temporary path.</param>
         public FrameExtractor(ProcessVideoWindow processVideoWindow, string testFilePath, string tmpPath)
         {
             this.ready = true;
@@ -127,14 +156,10 @@ namespace ARdevKit.Controller.TestController
 
             long maxSizeByte = height * width * totalFrames * 8;
             decimal maxSizeMegaByte = Math.Round((decimal)(maxSizeByte / (1000 * 1000)), 2);
-            long expectedSizeByte = maxSizeByte / 8;
-            decimal expectedSizeMegaByte = Math.Round((decimal)(expectedSizeByte / (1000 * 1000)), 2);
 
             DriveInfo drive = new FileInfo(tmpPath).GetDriveInfo();
             long freeDiskSpaceByte = drive.AvailableFreeSpace;
             decimal freeDiskSpaceMegaByte = Math.Round((decimal)(freeDiskSpaceByte / (1000 * 1000)), 2);
-
-            processVideoWindow.ReportSize(expectedSizeMegaByte);
 
             //maxSizeByte a lot bigger than the expected size
             if (maxSizeByte > freeDiskSpaceByte)
@@ -167,14 +192,16 @@ namespace ARdevKit.Controller.TestController
                 return;
             }
             fps = reader.FrameRate;
-            int n = (int)reader.FrameCount;
 
-            for (calculatedFrames = 0; calculatedFrames < n; calculatedFrames++)
+            for (calculatedFrames = 0; calculatedFrames < totalFrames; calculatedFrames++)
             {
                 Bitmap videoFrame = reader.ReadVideoFrame();
                 try
                 {
-                    videoFrame.Save(Path.Combine(tmpPath, (calculatedFrames + 1) + ".png"), ImageFormat.Png);
+                    string fileName = Path.Combine(tmpPath, (calculatedFrames + 1) + ".png");
+                    videoFrame.Save(fileName, ImageFormat.Png);
+                    FileInfo fi = new FileInfo(fileName);
+                    currentSizeByte += fi.Length;
                 }
                 // Same handling for every exception so general Exception is cought
                 catch (Exception ex)
@@ -184,12 +211,27 @@ namespace ARdevKit.Controller.TestController
                     return;
                 }
                 videoFrame.Dispose();
-                int progress = (int)Math.Round((decimal)((calculatedFrames + 1) * 100.0) / n);
+                int progress = (int)Math.Round((decimal)((calculatedFrames + 1) * 100.0) / totalFrames);
                 TimeSpan passedTime = DateTime.Now - startTime;
                 TimeSpan frameCalculationTime = TimeSpan.FromMilliseconds(passedTime.TotalMilliseconds / (calculatedFrames + 1));
-                remainingTime = TimeSpan.FromMilliseconds(frameCalculationTime.TotalMilliseconds * (n - (calculatedFrames + 1)));
+                remainingTime = TimeSpan.FromMilliseconds(frameCalculationTime.TotalMilliseconds * (totalFrames - (calculatedFrames + 1)));
+
+                if (calculatedFrames > 0)
+                {
+                    long expectedSizeByte = currentSizeByte / calculatedFrames * totalFrames;
+                    decimal expectedSizeMegaByte = Math.Round((decimal)(expectedSizeByte / (1000 * 1000)), 2);
+                    processVideoWindow.UpdateExpectedSize(expectedSizeMegaByte);
+                }
+                else
+                {
+                    long maxSizeByte = reader.Height * reader.Width * totalFrames * 8;
+                    decimal maxSizeMegaByte = Math.Round((decimal)(maxSizeByte / (1000 * 1000)), 2);
+                    processVideoWindow.UpdateExpectedSize(maxSizeMegaByte);
+                }
+
                 ReportProgress(progress);
-                /*
+
+                /* Try to calculate when the video processing is buffered so that the player can start before extraction is finished
                 int calculatedFPS = (int)(1000 / frameCalculationTime.TotalMilliseconds);
                 if (calculatedFrames >= 5 && ((1 - (calculatedFPS / fps)) * n) >= calculatedFrames)
                 {

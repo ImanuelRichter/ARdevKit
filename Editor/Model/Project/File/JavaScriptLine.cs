@@ -13,6 +13,7 @@ namespace ARdevKit.Model.Project.File
     /// <remarks>   Imanuel, 17.01.2014. </remarks>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    [Serializable]
     public class JavaScriptLine : JavaScriptBlock
     {
         /// <summary>   The content. </summary>

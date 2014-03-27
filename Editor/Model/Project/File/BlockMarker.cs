@@ -13,7 +13,7 @@ namespace ARdevKit.Model.Project.File
     ///
     /// <remarks>   Imanuel, 17.01.2014. </remarks>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-
+    [Serializable]
     public class BlockMarker
     {
         // No state pattern is used because there are just those two states and just one different action

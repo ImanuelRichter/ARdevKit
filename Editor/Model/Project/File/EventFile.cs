@@ -11,7 +11,6 @@ using ARdevKit.Model.Project.Event;
 namespace ARdevKit.Model.Project.File
 {
     [Serializable]
-    [TypeConverterAttribute(typeof(ExpandableObjectConverter))]
     public class EventFile : AbstractFile
     {
         public EventFile(string filePath)

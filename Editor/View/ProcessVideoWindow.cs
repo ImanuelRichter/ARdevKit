@@ -16,6 +16,7 @@ namespace ARdevKit.View
     public partial class ProcessVideoWindow : Form
     {
         private delegate void CloseCallback();
+        private delegate void UpdateExpectedSizeCallback(decimal size);
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ProcessVideoWindow"/> class.
@@ -29,9 +30,15 @@ namespace ARdevKit.View
             progressBar.Value = 1;
         }
 
-        public void ReportSize(decimal size)
+        public void UpdateExpectedSize(decimal size)
         {
-            lbl_text.Text = "Video wird vorbereitet (" + size + " MB)...";
+            if (this.InvokeRequired)
+            {
+                UpdateExpectedSizeCallback d = new UpdateExpectedSizeCallback(UpdateExpectedSize);
+                this.Invoke(d, new object[] {size});
+            }
+            else
+                lbl_text.Text = "Video wird vorbereitet (" + size + " MB)...";
         }
 
         /// <summary>
