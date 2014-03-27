@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace ARdevKit.Model.Project.Event
 {
+    /// <summary>
+    /// An <see cref="OnUnloadedEvent"/> is an <see cref="AbstractEvent"/>
+    /// that is triggered when the arel.Oject is unloaded.
+    /// </summary>
     [Serializable]
     public class OnUnloadedEvent : AbstractEvent
     {

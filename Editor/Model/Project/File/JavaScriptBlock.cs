@@ -75,7 +75,7 @@ namespace ARdevKit.Model.Project.File
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Writes with the given writer. </summary>
+        /// <summary>   Writes this Block (including sub-blocks and -lines) with the given writer. </summary>
         ///
         /// <remarks>   Imanuel, 15.01.2014. </remarks>
         ///
@@ -106,6 +106,12 @@ namespace ARdevKit.Model.Project.File
             writer.WriteLine(tabs + blockMarker);
         }
 
+        /// <summary>
+        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="System.String" /> that represents this instance.
+        /// </returns>
         public override string ToString()
         {
             string output = "";

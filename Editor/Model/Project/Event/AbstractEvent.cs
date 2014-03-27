@@ -12,16 +12,24 @@ using ARdevKit.Model.Project.File;
 namespace ARdevKit.Model.Project.Event
 {
     /// <summary>
-    /// The class CustomUserEvent mainly contains a reference path to a
-    /// file, which is in the /tmp/ Folder. This file has ALL
-    /// Events the user creates (inclusive the template events we provide)
-    /// for ONE <see cref="AbstractAugmentation"/>.
+    /// An <see cref="AbstractEvent"/> is a <see cref="JavaScriptBlock"/>
+    /// that represents a function block (Event) triggered through the metaioSDK.
     /// </summary>
     [Serializable]
     public abstract class AbstractEvent : JavaScriptBlock
     {
+        /// <summary>
+        /// The content of the <see cref="AbstractEvent"/>.
+        /// That means the stuff written by the user.
+        /// </summary>
         protected string[] content;
 
+        /// <summary>
+        /// Gets or sets the <see cref="content"/>.
+        /// </summary>
+        /// <value>
+        /// The content.
+        /// </value>
         [Browsable(false)]
         public string[] Content
         {
@@ -34,6 +42,12 @@ namespace ARdevKit.Model.Project.Event
         /// </summary>
         protected string augmentationID;
 
+        /// <summary>
+        /// Gets or sets the augmentation identifier.
+        /// </summary>
+        /// <value>
+        /// The augmentation identifier.
+        /// </value>
         [Browsable(false)]
         public string AugmentationID
         {
@@ -66,6 +80,10 @@ namespace ARdevKit.Model.Project.Event
             }
         }
 
+        /// <summary>
+        /// Returns the header (Signature of the function).
+        /// </summary>
+        /// <returns></returns>
         public string GetHeadLine()
         {
             if (head != null)
@@ -74,6 +92,10 @@ namespace ARdevKit.Model.Project.Event
                 return "";
         }
 
+        /// <summary>
+        /// Gets the last line (currently it allways returns "};").
+        /// </summary>
+        /// <returns></returns>
         public string GetLastLine()
         {
             if (blockMarker != null)
@@ -82,6 +104,12 @@ namespace ARdevKit.Model.Project.Event
                 return "";
         }
 
+        /// <summary>
+        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="System.String" /> that represents this instance.
+        /// </returns>
         public override string ToString()
         {
             string output = GetHeadLine() + Environment.NewLine;
@@ -91,6 +119,13 @@ namespace ARdevKit.Model.Project.Event
             return output + GetLastLine() + Environment.NewLine;
         }
 
+        /// <summary>
+        /// Writes this Block (including sub-blocks and -lines) with the given writer.
+        /// </summary>
+        /// <param name="writer">The writer to write.</param>
+        /// <remarks>
+        /// Imanuel, 15.01.2014.
+        /// </remarks>
         public override void Write(System.IO.StreamWriter writer)
         {
             writer.Write(this.ToString());
