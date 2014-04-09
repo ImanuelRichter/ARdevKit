@@ -509,9 +509,6 @@ public class PreviewController
             {
                 cm.MenuItems.Add("Öffne Optionen", new EventHandler(this.openOptionsFile));
             }
-            cm.MenuItems.Add("Öffne Event Datei", new EventHandler(this.openEventFile));
-            if(prev is Chart) 
-                cm.MenuItems[2].Enabled = false;
         }
         tempBox.MouseClick += new MouseEventHandler(selectElement);
         cm.MenuItems.Add("löschen", new EventHandler(this.remove_by_click));
@@ -661,7 +658,7 @@ public class PreviewController
             //if there is no Query added the QueryButton'll be disabled.
             if (((AbstractDynamic2DAugmentation)currentElement).Source.Query == null)
             {
-                temp.ContextMenu.MenuItems[6].Enabled = false;
+                temp.ContextMenu.MenuItems[5].Enabled = false;
             }
         }
         temp.Refresh();
@@ -1102,7 +1099,7 @@ public class PreviewController
         this.findBox(temp).ContextMenu.MenuItems.RemoveAt(4);
         if (((AbstractDynamic2DAugmentation)this.ew.CurrentElement).Source is FileSource)
         {
-            this.findBox(temp).ContextMenu.MenuItems.RemoveAt(4);
+            this.findBox(temp).ContextMenu.MenuItems.RemoveAt(3);
         }
 
         this.removeSource(temp.Source, temp);

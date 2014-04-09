@@ -286,14 +286,14 @@ namespace Controller.EditorController
             {
                 if (string.Equals((string)e.ChangedItem.Value, "", StringComparison.Ordinal))
                 {
-                    (ew.PreviewController.findBox(ew.CurrentElement).ContextMenu).MenuItems[6].Enabled = false;
+                    (ew.PreviewController.findBox(ew.CurrentElement).ContextMenu).MenuItems[5].Enabled = false;
 
                     return;
                 }
 
                 if (e.OldValue == null || string.Equals(e.OldValue.ToString(), "", StringComparison.Ordinal))
                 {
-                    (ew.PreviewController.findBox(ew.CurrentElement).ContextMenu).MenuItems[6].Enabled = true;
+                    (ew.PreviewController.findBox(ew.CurrentElement).ContextMenu).MenuItems[5].Enabled = true;
 
                     return;
                 }
