@@ -30,6 +30,10 @@ namespace ARdevKit.View
             progressBar.Value = 1;
         }
 
+        /// <summary>
+        /// Updates the expected size.
+        /// </summary>
+        /// <param name="size">The size.</param>
         public void UpdateExpectedSize(decimal size)
         {
             if (this.InvokeRequired)
@@ -45,21 +49,13 @@ namespace ARdevKit.View
         /// Reports the progress.
         /// </summary>
         /// <param name="value">The value.</param>
+        /// <param name="frames">The frames.</param>
+        /// <param name="calculatedFrames">The calculated frames.</param>
+        /// <param name="remainingTime">The remaining time.</param>
         public void ReportProgress(int value, long frames, long calculatedFrames, TimeSpan remainingTime)
         {
             progressBar.Value = value;
             lbl_info.Text = calculatedFrames + "/" + frames + " (" + remainingTime.ToString("hh\\:mm\\:ss") + ")";
-        }
-
-        public void BufferingIsReady()
-        {
-            if (this.InvokeRequired)
-            {
-                CloseCallback d = new CloseCallback(BufferingIsReady);
-                this.Invoke(d, new object[] { });
-            }
-            else
-                this.Close();
         }
     }
 }
