@@ -60,8 +60,14 @@ namespace ARdevKit.Model.Project
             set { isVisible = value; }
         }
 
+        /// <summary>
+        /// The <see cref="EventFile"/> that belongs to this <see cref="Augmentation"/>.
+        /// </summary>
         private EventFile eventFile;
 
+        /// <summary>
+        /// Gets or sets the <see cref="eventFile"/>.
+        /// </summary>
         [Browsable(false)]
         public EventFile EventFile
         {
@@ -90,7 +96,14 @@ namespace ARdevKit.Model.Project
             set { eventFile = value; }
         }
 
+        /// <summary>
+        /// A list of the <see cref="AbstractEvent"/>s.
+        /// </summary>
         private List<AbstractEvent> events;
+
+        /// <summary>
+        /// Gets or sets the <see cref="events"/>.
+        /// </summary>
         [Browsable(false)]
         public List<AbstractEvent> Events
         {
@@ -116,8 +129,14 @@ namespace ARdevKit.Model.Project
             set { events = value; }
         }
 
+        /// <summary>
+        /// The <see cref="OnTouchStartedEvent"/> corresponding to this <see cref="AbstractAugmentation"/>.
+        /// </summary>
         protected AbstractEvent onTouchStarted;
 
+        /// <summary>
+        /// Gets or sets the <see cref="onTouchStarted"/> event.
+        /// </summary>
         [CategoryAttribute("Events"), EditorAttribute(typeof(EventTypeEditor),
             typeof(System.Drawing.Design.UITypeEditor)), ReadOnly(true)]
         public AbstractEvent OnTouchStarted
@@ -126,8 +145,14 @@ namespace ARdevKit.Model.Project
             set { onTouchStarted = value; }
         }
 
+        /// <summary>
+        /// The <see cref="OnTouchEndedEvent"/> corresponding to this <see cref="AbstractAugmentation"/>.
+        /// </summary>
         protected AbstractEvent onTouchEnded;
 
+        /// <summary>
+        /// Gets or sets the <see cref="onTouchEnded"/> event.
+        /// </summary>
         [CategoryAttribute("Events"), EditorAttribute(typeof(EventTypeEditor),
             typeof(System.Drawing.Design.UITypeEditor)), ReadOnly(true)]
         public AbstractEvent OnTouchEnded
@@ -136,8 +161,14 @@ namespace ARdevKit.Model.Project
             set { onTouchEnded = value; }
         }
 
+        /// <summary>
+        /// The <see cref="OnVisibleEvent"/> corresponding to this <see cref="AbstractAugmentation"/>.
+        /// </summary>
         protected AbstractEvent onVisible;
 
+        /// <summary>
+        /// Gets or sets the <see cref="onVisible"/> event.
+        /// </summary>
         [CategoryAttribute("Events"), EditorAttribute(typeof(EventTypeEditor),
             typeof(System.Drawing.Design.UITypeEditor)), ReadOnly(true)]
         public AbstractEvent OnVisible
@@ -146,8 +177,14 @@ namespace ARdevKit.Model.Project
             set { onVisible = value; }
         }
 
+        /// <summary>
+        /// The <see cref="OnInvisibleEvent"/> corresponding to this <see cref="AbstractAugmentation"/>.
+        /// </summary>
         protected AbstractEvent onInvisible;
 
+        /// <summary>
+        /// Gets or sets the <see cref="onInvisible"/> event.
+        /// </summary>
         [CategoryAttribute("Events"), EditorAttribute(typeof(EventTypeEditor),
             typeof(System.Drawing.Design.UITypeEditor)), ReadOnly(true)]
         public AbstractEvent OnInvisible
@@ -156,8 +193,14 @@ namespace ARdevKit.Model.Project
             set { onInvisible = value; }
         }
 
+        /// <summary>
+        /// The <see cref="OnLoadedEvent"/> corresponding to this <see cref="AbstractAugmentation"/>.
+        /// </summary>
         protected AbstractEvent onLoaded;
 
+        /// <summary>
+        /// Gets or sets the <see cref="onLoaded"/> event.
+        /// </summary>
         [CategoryAttribute("Events"), EditorAttribute(typeof(EventTypeEditor),
             typeof(System.Drawing.Design.UITypeEditor)), ReadOnly(true)]
         public AbstractEvent OnLoaded
@@ -166,8 +209,14 @@ namespace ARdevKit.Model.Project
             set { onLoaded = value; }
         }
 
+        /// <summary>
+        /// The <see cref="OnUnloadedEvent"/> corresponding to this <see cref="AbstractAugmentation"/>.
+        /// </summary>
         protected AbstractEvent onUnloaded;
 
+        /// <summary>
+        /// Gets or sets the <see cref="onUnloaded"/> event.
+        /// </summary>
         [CategoryAttribute("Events"), EditorAttribute(typeof(EventTypeEditor),
             typeof(System.Drawing.Design.UITypeEditor)), ReadOnly(true)]
         public AbstractEvent OnUnloaded
@@ -176,8 +225,16 @@ namespace ARdevKit.Model.Project
             set { onUnloaded = value; }
         }
 
+
+        /// <summary>
+        /// The <see cref="CustomEvent"/>s corresponding to this <see cref="AbstractAugmentation"/>.
+        /// All custom events are stored in one <see cref="CustomEvent"/>.
+        /// </summary>
         protected AbstractEvent customEvents;
 
+        /// <summary>
+        /// Gets or sets the <see cref="customEvents"/>.
+        /// </summary>
         [CategoryAttribute("Events"), EditorAttribute(typeof(EventTypeEditor),
             typeof(System.Drawing.Design.UITypeEditor)), ReadOnly(true)]
         public AbstractEvent CustomEvents

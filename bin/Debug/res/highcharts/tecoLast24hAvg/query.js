@@ -5,11 +5,19 @@ function query(dataPath, plugin)
 	{
 		console.log("Response:");
 		console.log("metric: " + data[0].metric);
-		console.log("unit: " + data[0].unit);
+		console.log("unit: " + data[0].tags.unit);
 		console.log("resource_id: " + data[0].tags.resource_id);
 		plugin.options.yAxis.title.text = data[0].metric + " in " + data[0].tags.unit;
 		plugin.options.series[0].name = data[0].tags.resource_id;
-		plugin.options.series[0].data = data[0].dps;
+		var values = new Array();
+		var i = 0;
+		var last = 0;
+		$.each(data[0].dps, function(k, v) {
+			var key = parseInt(k);
+			values[i] = [key, v];
+			i++;
+        });
+		plugin.options.series[0].data = values;
 		$('#' + plugin.id).highcharts(plugin.options);
 	})
 	.fail(function() { console.log("Failed to load data for " + plugin.id)})

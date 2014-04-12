@@ -74,6 +74,9 @@ namespace ARdevKit.Model.Project
             set { base.Scaling = value; }
         }
 
+        /// <summary>
+        /// Stump to remove it from propertyGrid because its not possible to use this functions on <see cref="Chart"/>s.
+        /// </summary>
         [Browsable(false)]
         public AbstractEvent OnTouchStarted
         {
@@ -81,6 +84,9 @@ namespace ARdevKit.Model.Project
             set { onTouchStarted = value; }
         }
 
+        /// <summary>
+        /// Stump to remove it from propertyGrid because its not possible to use this functions on <see cref="Chart"/>s.
+        /// </summary>
         [Browsable(false)]
         public AbstractEvent OnTouchEnded
         {
@@ -88,6 +94,9 @@ namespace ARdevKit.Model.Project
             set { onTouchEnded = value; }
         }
 
+        /// <summary>
+        /// Stump to remove it from propertyGrid because its not possible to use this functions on <see cref="Chart"/>s.
+        /// </summary>
         [Browsable(false)]
         public AbstractEvent OnVisible
         {
@@ -95,6 +104,9 @@ namespace ARdevKit.Model.Project
             set { onVisible = value; }
         }
 
+        /// <summary>
+        /// Stump to remove it from propertyGrid because its not possible to use this functions on <see cref="Chart"/>s.
+        /// </summary>
         [Browsable(false)]
         public AbstractEvent OnInvisible
         {
@@ -102,6 +114,9 @@ namespace ARdevKit.Model.Project
             set { onInvisible = value; }
         }
 
+        /// <summary>
+        /// Stump to remove it from propertyGrid because its not possible to use this functions on <see cref="Chart"/>s.
+        /// </summary>
         [Browsable(false)]
         public AbstractEvent OnLoaded
         {
@@ -109,6 +124,9 @@ namespace ARdevKit.Model.Project
             set { onLoaded = value; }
         }
 
+        /// <summary>
+        /// Stump to remove it from propertyGrid because its not possible to use this functions on <see cref="Chart"/>s.
+        /// </summary>
         [Browsable(false)]
         public AbstractEvent OnUnloaded
         {
