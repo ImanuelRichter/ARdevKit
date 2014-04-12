@@ -18,13 +18,26 @@ namespace ARdevKit
 {
     /// <summary>
     /// Form-Class for the TextEditor. This text editor provides only basic operation and functionallity
-    /// to edit a .txt or .js file. 
+    /// to edit a .txt or .js file.
     /// </summary>
     public partial class TextEditorForm : Form
     {
+        /// <summary>
+        /// The file path.
+        /// </summary>
         private string filePath;
+
+        /// <summary>
+        /// The selected event.
+        /// </summary>
         private AbstractEvent selectedEvent;
 
+        /// <summary>
+        /// Gets or sets the selected event.
+        /// </summary>
+        /// <value>
+        /// The selected event.
+        /// </value>
         public AbstractEvent SelectedEvent
         {
             get { return selectedEvent; }
@@ -73,6 +86,10 @@ namespace ARdevKit
             rtb_content.LoadFile(this.filePath, RichTextBoxStreamType.PlainText);
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TextEditorForm"/> class.
+        /// </summary>
+        /// <param name="selectedEvent">The selected event.</param>
         public TextEditorForm(AbstractEvent selectedEvent)
             : this()
         {

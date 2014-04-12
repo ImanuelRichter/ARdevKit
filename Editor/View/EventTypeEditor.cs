@@ -12,6 +12,9 @@ using System.Windows.Forms.Design;
 
 namespace ARdevKit.View
 {
+    /// <summary>
+    /// An <see cref="EventTypeEditor"/> is an <see cref="UITypeEditor"/> that is used to edit <see cref="AbstractEvent"/>s.
+    /// </summary>
     public class EventTypeEditor : UITypeEditor
     {
         /// <summary>
