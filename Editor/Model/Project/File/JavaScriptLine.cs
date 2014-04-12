@@ -64,6 +64,12 @@ namespace ARdevKit.Model.Project.File
                 writer.WriteLine(tabs + content + ";");
         }
 
+        /// <summary>
+        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="System.String" /> that represents this instance.
+        /// </returns>
         public override string ToString()
         {
             string output = "";

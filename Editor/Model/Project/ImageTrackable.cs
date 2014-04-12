@@ -63,6 +63,9 @@ namespace ARdevKit.Model.Project
             }
         }
 
+        /// <summary>
+        /// Gets or sets the size.
+        /// </summary>
         [Browsable(false)]
         public new int Size
         {

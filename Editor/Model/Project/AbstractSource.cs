@@ -180,6 +180,12 @@ namespace ARdevKit.Model.Project
             return sourceID;
         }
 
+        /// <summary>
+        /// Makes a deep copy of this object.
+        /// </summary>
+        /// <returns>
+        /// A copy of this object.
+        /// </returns>
         public virtual object Clone()
         {
             return ObjectCopier.Clone(this);

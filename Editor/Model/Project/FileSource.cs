@@ -36,6 +36,12 @@ namespace ARdevKit.Model.Project
             set { sourceFilePath = value; }
         }
 
+        /// <summary>
+        /// Gets or sets the augmentations, which get their dynamic information from the <see cref="AbstractSource" />
+        /// </summary>
+        /// <value>
+        /// The augmentations.
+        /// </value>
         public override AbstractDynamic2DAugmentation Augmentation
         {
             get { return base.Augmentation; }
@@ -93,14 +99,12 @@ namespace ARdevKit.Model.Project
             return Properties.Resources.FileSource_small_;
         }
 
-        /**
-         * <summary>    Makes a deep copy of this object. </summary>
-         *
-         * <remarks>    Robin, 21.01.2014. </remarks>
-         *
-         * <returns>    A copy of this object. </returns>
-         */
-
+        /// <summary>
+        /// Makes a deep copy of this object.
+        /// </summary>
+        /// <returns>
+        /// A copy of this object.
+        /// </returns>
         public override object Clone()
         {
             return ObjectCopier.Clone<FileSource>(this);

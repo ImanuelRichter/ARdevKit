@@ -48,6 +48,12 @@ namespace ARdevKit.Model.Project
             }
         }
 
+        /// <summary>
+        /// Gets or sets the width in mm.
+        /// </summary>
+        /// <value>
+        /// The width in mm.
+        /// </value>
         [Browsable(false)]
         public new int WidthMM
         {
@@ -55,6 +61,12 @@ namespace ARdevKit.Model.Project
             set { base.widthMM = value; }
         }
 
+        /// <summary>
+        /// Gets or sets the width in mm.
+        /// </summary>
+        /// <value>
+        /// The width in mm.
+        /// </value>
         [Browsable(false)]
         public new int HeightMM
         {

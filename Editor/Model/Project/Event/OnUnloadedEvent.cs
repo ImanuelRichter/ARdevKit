@@ -14,6 +14,10 @@ namespace ARdevKit.Model.Project.Event
     [Serializable]
     public class OnUnloadedEvent : AbstractEvent
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OnUnloadedEvent"/> class.
+        /// </summary>
+        /// <param name="augmentationID">ID of the augmentation</param>
         public OnUnloadedEvent(string augmentationID)
             : base(augmentationID)
         {

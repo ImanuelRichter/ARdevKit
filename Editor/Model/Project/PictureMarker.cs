@@ -68,6 +68,9 @@ namespace ARdevKit.Model.Project
             get { return pictureName; }
         }
 
+        /// <summary>
+        /// Gets or sets the size.
+        /// </summary>
         [Browsable(false)]
         public new int Size
         {
