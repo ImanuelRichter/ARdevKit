@@ -1014,7 +1014,7 @@ namespace ARdevKit
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void tsm_editor_menu_help_info_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("ARdevKit Version 0.2 alpha \n\n Rüdiger Heres \n Jonas Lachowitzer \n Robin Lamberti \n Tuong-Vu Mai \n Imanuel Richter\n Marwin Rieger \n\n Nutzung auf eigene Gefahr! \n Das Programm könnte Ihre Kekse auffressen...", "Info");
+            MessageBox.Show("ARdevKit Version 0.3 alpha \n\n Rüdiger Heres \n Jonas Lachowitzer \n Robin Lamberti \n Tuong-Vu Mai \n Imanuel Richter\n Marwin Rieger \n\n", "Info");
         }
 
 
