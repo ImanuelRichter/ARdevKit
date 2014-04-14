@@ -568,7 +568,7 @@ namespace ARdevKit
         public void registerElements()
         {
             SceneElementCategory sources = new SceneElementCategory(MetaCategory.Source, "Sources");
-            sources.addElement(new SceneElement("Database Source", new DbSource(), this));
+            sources.addElement(new SceneElement("Datasource", new DbSource(), this));
             sources.addElement(new SceneElement("File Source", new FileSource(""), this));
             SceneElementCategory augmentations = new SceneElementCategory(MetaCategory.Augmentation, "Augmentations");
             augmentations.addElement(new SceneElement("Chart", new Chart(), this));
