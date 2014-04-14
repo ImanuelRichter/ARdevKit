@@ -1360,6 +1360,10 @@ namespace ARdevKit
                         {
                             MessageBox.Show("Es gab ein Verbindungsproblem. Anscheinend wurde die Verbindung gelöst.");
                         }
+                        catch (System.ArgumentException)
+                        {
+                            MessageBox.Show("Das Projekt muss zuerst exportiert werden.");
+                        }
                     }
                     else
                     {
