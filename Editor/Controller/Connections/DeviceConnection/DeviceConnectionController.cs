@@ -184,6 +184,7 @@ namespace ARdevKit.Controller.Connections.DeviceConnection
                 if (!(project == null))
                 {
                     project.Close();
+                    File.Delete("tmp\\currentProject.zip");
                 }
             }
             return successfullySent;
