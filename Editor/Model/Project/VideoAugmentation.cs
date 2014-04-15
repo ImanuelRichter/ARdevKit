@@ -103,7 +103,7 @@ namespace ARdevKit.Model.Project
         /// <exception cref="FileNotFoundException">If ImagePath is bad</exception>
         public override Bitmap getIcon()
         {
-            return Properties.Resources.ImageAugmentation_small_;
+            return Properties.Resources.VideoAugmention_small_;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
