@@ -13,7 +13,7 @@ function query(dataPath, plugin)
 		var i = 0;
 		var last = 0;
 		$.each(data[0].dps, function(k, v) {
-			var key = parseInt(k);
+			var key = parseInt(k) + (2 * 60 * 60 * 1000);
 			values[i] = [key, v];
 			i++;
         });
@@ -22,19 +22,23 @@ function query(dataPath, plugin)
 	})
 	.fail(function() { console.log("Failed to load data for " + plugin.id)})
 	.done(function() { console.log("Loaded data for " + plugin.id + " successfully")});
-	update("http://cumulus.teco.edu:4242/api/query?start=1s-ago&m=avg:1s-avg:energy%7Bresource_id=000D6F0000D34235%7D", plugin);
+	update("http://cumulus.teco.edu:4242/api/query?start=1m-ago&m=avg:1m-avg:energy%7Bresource_id=000D6F0000D34235%7D&ms=true", plugin);
 };
 function update(dataPath, plugin)
 {
 	$.getJSON(dataPath, function(data)
 	{
 		var chart = $('#' + plugin.id).highcharts();
-		var point = data[0].dps;
-		var series = chart.series[0],
-            shift = series.data.length > 24;
-        chart.series[0].addPoint(point, true, shift);
+		$.each(data[0].dps, function(k, v) {
+			var key = parseInt(k) + (2 * 60 * 60 * 1000);
+			var point = [key, v];
+			console.log("added " + point);
+			var series = chart.series[0],
+            		shift = series.data.length > 24;
+        		chart.series[0].addPoint(point, true, shift);
+        	});
 		if (plugin.visible)
-			setTimeout(function() { update(dataPath, plugin); }, 1000);
+			setTimeout(function() { update(dataPath, plugin); }, 1000 * 60);
 	})
 	.fail(function() { console.log("Failed to load data")})
 	.done(function() { console.log("Loaded data successfully")});
