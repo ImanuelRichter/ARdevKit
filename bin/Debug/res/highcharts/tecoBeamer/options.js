@@ -4,7 +4,7 @@ function init() {
 			type: 'spline'
 		},
 		title: {
-			text: 'Temperatures'
+			text: 'Energy'
 		},
 		xAxis: {
 			type: 'datetime',
@@ -36,7 +36,7 @@ function init() {
 			color: {
 				linearGradient: { x1: 0, x2: 0, y1: 0, y1: 1 },
 				stops: [
-					[0, '#0000FF'],
+					[0, '#55AA22'],
 					[1, '#DD210E']
 				]
 			},

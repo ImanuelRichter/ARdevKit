@@ -40,6 +40,6 @@ function update(dataPath, plugin)
 		if (plugin.visible)
 			setTimeout(function() { update(dataPath, plugin); }, 1000 * 60);
 	})
-	.fail(function() { console.log("Failed to load data")})
-	.done(function() { console.log("Loaded data successfully")});
+	.fail(function() { console.log("Failed to update data for " + plugin.id)})
+	.done(function() { console.log("Updated data for " + plugin.id + " successfully")});
 };
