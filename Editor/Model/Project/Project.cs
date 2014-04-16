@@ -360,13 +360,13 @@ namespace ARdevKit.Model.Project
         /// </summary>
         /// <param name="augmentation">The augmentation.</param>
         /// <param name="index">The index.</param>
-        public void RemoveAugmentation(AbstractAugmentation augmentation, int index)
+        public void RemoveAugmentation(AbstractAugmentation augmentation)
         {
             if (augmentation is Abstract2DAugmentation)
             {
                 Abstract2DAugmentation augmentationToBeRemoved = (Abstract2DAugmentation)augmentation;
                 bool deleteFile = true;
-                int i = index;
+                int i = 0;
 
                 while (deleteFile && i < trackables.Count)
                 {
